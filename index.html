@@ -1,182 +1,780 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Passport Radio</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-
-background:linear-gradient(135deg,#07132d,#001933,#000814);
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
-overflow:hidden;
-
-}
-
-.globe{
-
-position:absolute;
-
-width:700px;
-
-height:700px;
-
-border-radius:50%;
-
-border:2px solid rgba(255,255,255,.08);
-
-animation:spin 80s linear infinite;
-
-opacity:.15;
-
-}
-
-.globe::before{
-
-content:"🌍";
-
-font-size:520px;
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-}
-
-@keyframes spin{
-
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
-
-}
-
-.card{
-
-position:relative;
-
-z-index:10;
-
-text-align:center;
-
-padding:50px;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-border-radius:20px;
-
-box-shadow:0 0 30px rgba(0,0,0,.4);
-
-}
-
-h1{
-
-font-size:60px;
-
-margin-bottom:15px;
-
-}
-
-h2{
-
-font-weight:300;
-
-letter-spacing:3px;
-
-margin-bottom:40px;
-
-color:#ccc;
-
-}
-
-button{
-
-padding:20px 55px;
-
-font-size:22px;
-
-border:none;
-
-border-radius:50px;
-
-background:#ff7b00;
-
-color:white;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-button:hover{
-
-transform:scale(1.05);
-
-background:#ff9500;
-
-}
-
-footer{
-
-margin-top:50px;
-
-color:#aaa;
-
-font-size:14px;
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Passport Radio — uma viagem pelo mundo através da música, das histórias e das culturas."
+  />
+
+  <title>Passport Radio — Cada música é um destino</title>
+
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --navy-deep: #050b13;
+      --navy-soft: #14273d;
+
+      --gold: #d4af37;
+      --gold-bright: #f0ca65;
+      --red: #c8102e;
+      --cream: #f5f1e6;
+
+      --text: #f5f1e6;
+      --text-dim: #b8c0cc;
+
+      --border: rgba(212, 175, 55, 0.24);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+
+      --container: 1180px;
+      --radius: 24px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 12%,
+          rgba(212, 175, 55, 0.09),
+          transparent 28%
+        ),
+        linear-gradient(
+          160deg,
+          var(--navy) 0%,
+          var(--navy-deep) 72%
+        );
+      color: var(--text);
+      font-family:
+        Montserrat,
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin-inline: auto;
+    }
+
+    /* =========================================================
+       Navegação
+       ========================================================= */
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 30;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+      background: rgba(5, 11, 19, 0.78);
+      backdrop-filter: blur(16px);
+    }
+
+    .navbar__inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand__symbol {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--gold);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.12);
+    }
+
+    .brand strong {
+      color: var(--cream);
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .navbar__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--text-dim);
+      font-size: 0.92rem;
+    }
+
+    .navbar__links a {
+      transition:
+        color 0.25s var(--ease),
+        transform 0.25s var(--ease);
+    }
+
+    .navbar__links a:hover {
+      color: var(--gold-bright);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       Hero
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 132px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 820px;
+      height: 820px;
+      left: 50%;
+      top: 47%;
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: orbit 32s linear infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      left: 50%;
+      top: 48%;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle at 38% 34%,
+          rgba(61, 90, 128, 0.34),
+          rgba(13, 27, 42, 0.12) 50%,
+          transparent 72%
+        );
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      transform: translate(-50%, -50%);
+      opacity: 0.78;
+    }
+
+    .flight-route {
+      position: absolute;
+      z-index: 1;
+      width: 620px;
+      height: 250px;
+      left: 50%;
+      top: 48%;
+      border-top: 1px dashed rgba(212, 175, 55, 0.28);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(-14deg);
+    }
+
+    .flight-route::after {
+      content: '✈';
+      position: absolute;
+      top: -17px;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.4rem;
+      text-shadow: 0 0 16px rgba(212, 175, 55, 0.5);
+      animation: fly 8s linear infinite;
+    }
+
+    .hero__card {
+      position: relative;
+      z-index: 5;
+      width: min(100%, 820px);
+      padding: clamp(42px, 7vw, 82px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 39, 61, 0.74),
+          rgba(5, 11, 19, 0.84)
+        );
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      text-align: center;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .hero__eyebrow::before,
+    .hero__eyebrow::after {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold)
+      );
+    }
+
+    .hero__eyebrow::after {
+      background: linear-gradient(
+        90deg,
+        var(--gold),
+        transparent
+      );
+    }
+
+    .hero h1 {
+      margin-top: 28px;
+      font-size: clamp(3rem, 8vw, 6.6rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 12px;
+      color: var(--red);
+      font-size: 0.48em;
+      letter-spacing: 0.22em;
+    }
+
+    .hero__slogan {
+      margin-top: 28px;
+      color: var(--gold-bright);
+      font-size: clamp(1rem, 2.3vw, 1.4rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero__lead {
+      max-width: 650px;
+      margin: 24px auto 0;
+      color: var(--text-dim);
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 28px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition:
+        transform 0.28s var(--ease),
+        box-shadow 0.28s var(--ease),
+        background 0.28s var(--ease),
+        border-color 0.28s var(--ease);
+    }
+
+    .btn--primary {
+      background: linear-gradient(
+        135deg,
+        var(--gold-bright),
+        var(--gold)
+      );
+      color: #171008;
+      box-shadow: 0 14px 34px rgba(212, 175, 55, 0.22);
+      animation: breathe 3.2s ease-in-out infinite;
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 44px rgba(212, 175, 55, 0.32);
+    }
+
+    .btn--outline {
+      border-color: rgba(212, 175, 55, 0.38);
+      background: rgba(5, 11, 19, 0.36);
+      color: var(--gold-bright);
+    }
+
+    .btn--outline:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .hero__click {
+      margin-top: 34px;
+      color: var(--cream);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .hero__click strong {
+      color: var(--red);
+    }
+
+    /* =========================================================
+       Apresentação
+       ========================================================= */
+
+    .about {
+      position: relative;
+      padding: 110px 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(13, 27, 42, 0.7),
+          var(--navy-deep)
+        );
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about__stamp {
+      position: relative;
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(
+          circle,
+          rgba(200, 16, 46, 0.15),
+          transparent 48%
+        ),
+        rgba(13, 27, 42, 0.72);
+      overflow: hidden;
+    }
+
+    .about__stamp::before {
+      content: 'PASSPORT RADIO';
+      display: grid;
+      place-items: center;
+      width: 260px;
+      height: 260px;
+      border: 9px double rgba(200, 16, 46, 0.72);
+      border-radius: 50%;
+      color: rgba(200, 16, 46, 0.88);
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+      transform: rotate(-13deg);
+    }
+
+    .about__stamp::after {
+      content: 'MÚSICA • HISTÓRIAS • CULTURAS';
+      position: absolute;
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      transform: translateY(52px) rotate(-13deg);
+    }
+
+    .about__eyebrow {
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .about h2 {
+      margin-top: 18px;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .about h2 span {
+      color: var(--gold);
+    }
+
+    .about p {
+      margin-top: 24px;
+      color: var(--text-dim);
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .about__features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .feature {
+      padding: 18px;
+      border: 1px solid rgba(212, 175, 55, 0.13);
+      border-radius: 14px;
+      background: rgba(20, 39, 61, 0.42);
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--gold-bright);
+      font-size: 0.9rem;
+    }
+
+    .feature span {
+      display: block;
+      margin-top: 5px;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       Rodapé
+       ========================================================= */
+
+    footer {
+      padding: 34px 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+      background: #03070d;
+      color: var(--text-dim);
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* =========================================================
+       Animações
+       ========================================================= */
+
+    @keyframes orbit {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @keyframes fly {
+      from {
+        left: 0;
+      }
+
+      to {
+        left: calc(100% - 30px);
+      }
+    }
+
+    @keyframes breathe {
+      0%,
+      100% {
+        box-shadow: 0 14px 34px rgba(212, 175, 55, 0.2);
+      }
+
+      50% {
+        box-shadow:
+          0 18px 46px rgba(212, 175, 55, 0.35),
+          0 0 26px rgba(212, 175, 55, 0.16);
+      }
+    }
+
+    /* =========================================================
+       Responsividade
+       ========================================================= */
+
+    @media (max-width: 840px) {
+      .navbar__links {
+        display: none;
+      }
+
+      .about__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about__stamp {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .navbar__inner {
+        min-height: 72px;
+      }
+
+      .brand {
+        font-size: 0.84rem;
+      }
+
+      .brand__symbol {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero {
+        padding-top: 112px;
+      }
+
+      .hero__card {
+        padding: 42px 22px;
+        border-radius: 18px;
+      }
+
+      .hero__eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 0.17em;
+      }
+
+      .hero__eyebrow::before,
+      .hero__eyebrow::after {
+        width: 18px;
+      }
+
+      .hero__lead {
+        font-size: 0.94rem;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .about {
+        padding: 80px 0;
+      }
+
+      .about__features {
+        grid-template-columns: 1fr;
+      }
+
+      .about__stamp::before {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero::before,
+      .flight-route::after,
+      .btn--primary {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="brand" href="#inicio" aria-label="Passport Radio">
+        <span class="brand__symbol">🎙</span>
 
-<div class="globe"></div>
+        <span>
+          <strong>Passport</strong> Radio
+        </span>
+      </a>
 
-<div class="card">
+      <nav class="navbar__links" aria-label="Navegação principal">
+        <a href="#inicio">Embarque</a>
+        <a href="#sobre">A rádio</a>
+        <a href="#sobre">Destinos</a>
+        <a href="#sobre">Programas</a>
+      </nav>
+    </div>
+  </header>
 
-<h1>🎙 Passport Radio</h1>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="flight-route" aria-hidden="true"></div>
 
-<h2>Every Song Is A Destination</h2>
+      <div class="container">
+        <div class="hero__card">
+          <span class="hero__eyebrow">
+            Música sem fronteiras
+          </span>
 
-<button>✈ BOARD FLIGHT</button>
+          <h1>
+            Passport
+            <span>Radio</span>
+          </h1>
 
-<footer>
+          <p class="hero__slogan">
+            Cada música é um destino.
+          </p>
 
-Music without borders.<br>
+          <p class="hero__lead">
+            Embarque numa viagem por músicas, histórias,
+            culturas e apresentações ao vivo que atravessam
+            fronteiras e revelam novos lugares ao mundo.
+          </p>
 
-Stories without limits.
+          <div class="hero__actions">
+            <a
+              class="btn btn--primary"
+              href="#sobre"
+            >
+              ✈ Embarcar agora
+            </a>
 
-</footer>
+            <a
+              class="btn btn--outline"
+              href="#sobre"
+            >
+              Conhecer a viagem
+            </a>
+          </div>
 
-</div>
+          <p class="hero__click">
+            3... 2... 1... <strong>Click!</strong>
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <section id="sobre" class="about">
+      <div class="container about__grid">
+        <div class="about__stamp" aria-hidden="true"></div>
+
+        <div>
+          <span class="about__eyebrow">
+            O mundo. A música. A sua viagem.
+          </span>
+
+          <h2>
+            Mais do que uma rádio.
+            <span> Um passaporte musical.</span>
+          </h2>
+
+          <p>
+            A Passport Radio conecta países, artistas, histórias
+            e culturas através da música. Cada transmissão é uma
+            nova rota; cada apresentação ao vivo, um novo destino;
+            cada descoberta, um carimbo no passaporte.
+          </p>
+
+          <p>
+            Aqui, a música não é apenas reproduzida. Ela é apresentada,
+            contextualizada e transformada numa experiência para quem
+            deseja descobrir o que existe além das playlists comuns.
+          </p>
+
+          <div class="about__features">
+            <article class="feature">
+              <strong>🎙 Música ao vivo</strong>
+              <span>
+                Apresentações, concertos e registros com verdadeira energia.
+              </span>
+            </article>
+
+            <article class="feature">
+              <strong>🌍 Culturas que se conectam</strong>
+              <span>
+                Bandas, países e histórias que atravessam fronteiras.
+              </span>
+            </article>
+
+            <article class="feature">
+              <strong>📖 Histórias que inspiram</strong>
+              <span>
+                Bastidores, curiosidades e pessoas por trás de cada canção.
+              </span>
+            </article>
+
+            <article class="feature">
+              <strong>✈ Destinos que transformam</strong>
+              <span>
+                Uma nova viagem sonora a cada programa.
+              </span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Passport Radio</strong>
+    · Cada música é um destino.
+    · 3... 2... 1... Click!
+  </footer>
 </body>
 </html>
