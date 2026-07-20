@@ -1,17 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passport Radio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Passport Radio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#07132d,#001933,#000814);
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+overflow:hidden;
+
+}
+
+.globe{
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+border-radius:50%;
+
+border:2px solid rgba(255,255,255,.08);
+
+animation:spin 80s linear infinite;
+
+opacity:.15;
+
+}
+
+.globe::before{
+
+content:"🌍";
+
+font-size:520px;
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+}
+
+@keyframes spin{
+
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+
+}
+
+.card{
+
+position:relative;
+
+z-index:10;
+
+text-align:center;
+
+padding:50px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+box-shadow:0 0 30px rgba(0,0,0,.4);
+
+}
+
+h1{
+
+font-size:60px;
+
+margin-bottom:15px;
+
+}
+
+h2{
+
+font-weight:300;
+
+letter-spacing:3px;
+
+margin-bottom:40px;
+
+color:#ccc;
+
+}
+
+button{
+
+padding:20px 55px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff7b00;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+background:#ff9500;
+
+}
+
+footer{
+
+margin-top:50px;
+
+color:#aaa;
+
+font-size:14px;
+
+}
+
+</style>
+
 </head>
+
 <body>
+
+<div class="globe"></div>
+
+<div class="card">
 
 <h1>🎙 Passport Radio</h1>
 
-<p>Every Song Is A Destination.</p>
+<h2>Every Song Is A Destination</h2>
 
-<p>Website under construction.</p>
+<button>✈ BOARD FLIGHT</button>
+
+<footer>
+
+Music without borders.<br>
+
+Stories without limits.
+
+</footer>
+
+</div>
 
 </body>
 </html>
