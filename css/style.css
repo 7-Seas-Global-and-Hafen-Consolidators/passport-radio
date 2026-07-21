@@ -603,6 +603,101 @@ h1 span {
 }
 
 /* ============================================================
+   Boutique de Bordo
+   ============================================================ */
+
+.boutique {
+  position: relative;
+  overflow: hidden;
+  padding:
+    126px
+    max(24px, calc((100vw - var(--container)) / 2));
+  background:
+    linear-gradient(180deg, rgba(20, 39, 61, 0.38), transparent 24%),
+    var(--navy-dark);
+}
+
+.boutique::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: -270px;
+  top: 18%;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 34px rgba(212, 175, 55, 0.025), 0 0 0 68px rgba(212, 175, 55, 0.018);
+}
+
+.boutique-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 56px;
+}
+
+.boutique-card {
+  position: relative;
+  min-height: 286px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 26px 22px 22px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: var(--radius-small);
+  background:
+    linear-gradient(145deg, rgba(20, 39, 61, 0.84), rgba(5, 11, 19, 0.82));
+  transition:
+    transform 0.32s var(--ease),
+    border-color 0.32s var(--ease),
+    box-shadow 0.32s var(--ease);
+}
+
+.boutique-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
+}
+
+.boutique-card > span {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.06);
+  color: var(--gold-bright);
+  font-size: 1.45rem;
+}
+
+.boutique-card h3 {
+  margin-top: 28px;
+  color: var(--cream);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.boutique-card p {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.boutique-card small {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
    Fundadores
    ============================================================ */
 
@@ -945,6 +1040,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .boutique-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .boarding-pass {
     max-width: 620px;
     transform: none;
@@ -1024,6 +1123,15 @@ footer {
 
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .boutique {
+    padding-block: 86px;
+  }
+
+  .boutique-grid {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
   }
 
   .card {
