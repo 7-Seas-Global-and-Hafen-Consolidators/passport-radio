@@ -698,6 +698,273 @@ h1 span {
 }
 
 /* ============================================================
+   Página Boutique
+   ============================================================ */
+
+.boutique-page {
+  background:
+    radial-gradient(circle at 88% 11%, rgba(200, 16, 46, 0.09), transparent 24%),
+    var(--navy-deep);
+}
+
+.boutique-hero {
+  position: relative;
+  max-width: var(--container);
+  min-height: 88vh;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 70px;
+  padding: 142px 24px 90px;
+  overflow: hidden;
+}
+
+.boutique-hero::before {
+  content: '';
+  position: absolute;
+  width: 680px;
+  height: 680px;
+  right: -260px;
+  top: 52%;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.boutique-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.boutique-hero__copy {
+  position: relative;
+  z-index: 2;
+}
+
+.boutique-hero h1 {
+  max-width: 740px;
+}
+
+.baggage-tag {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 360px);
+  min-height: 440px;
+  justify-self: center;
+  padding: 58px 38px 34px;
+  border: 1px solid rgba(23, 32, 43, 0.28);
+  border-radius: 18px;
+  background: var(--cream);
+  color: #17202b;
+  box-shadow: 24px 30px 0 rgba(212, 175, 55, 0.14), var(--shadow);
+  transform: rotate(5deg);
+}
+
+.baggage-tag::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  width: 1px;
+  border-left: 1px dashed rgba(23, 32, 43, 0.24);
+}
+
+.baggage-tag__hole {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  width: 19px;
+  height: 19px;
+  border: 5px solid rgba(23, 32, 43, 0.18);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.baggage-tag p,
+.baggage-tag small,
+.baggage-tag__route span {
+  color: #68717c;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.baggage-tag strong {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+}
+
+.baggage-tag__route {
+  display: grid;
+  gap: 6px;
+  margin-top: 64px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(23, 32, 43, 0.28);
+}
+
+.baggage-tag__route b {
+  font-size: 0.92rem;
+}
+
+.baggage-tag__route span:nth-of-type(2) {
+  margin-top: 10px;
+}
+
+.baggage-tag > small {
+  position: absolute;
+  right: 14px;
+  bottom: 34px;
+  writing-mode: vertical-rl;
+}
+
+.boutique-catalog {
+  padding:
+    126px
+    max(24px, calc((100vw - var(--container)) / 2));
+  background: var(--navy-dark);
+}
+
+.boutique-catalog__heading {
+  max-width: 760px;
+}
+
+.boutique-products {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 58px;
+}
+
+.product-card {
+  grid-column: span 2;
+  min-height: 326px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: linear-gradient(145deg, rgba(20, 39, 61, 0.7), rgba(5, 11, 19, 0.9));
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.product-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.34);
+}
+
+.product-card--featured {
+  border-color: rgba(212, 175, 55, 0.5);
+  background: linear-gradient(145deg, rgba(60, 50, 21, 0.64), rgba(5, 11, 19, 0.9));
+}
+
+.product-card__topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-card__topline small {
+  color: var(--text-faint);
+  font-size: inherit;
+  text-align: right;
+}
+
+.product-card__icon {
+  margin-top: 34px;
+  font-size: 2.7rem;
+  filter: saturate(0.68);
+}
+
+.product-card h3 {
+  margin-top: 22px;
+  color: var(--gold-bright);
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.product-card p {
+  margin-top: 11px;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.product-card__status {
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--text-faint);
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.product-card--featured .product-card__status {
+  color: var(--gold);
+}
+
+.boutique-notice {
+  max-width: var(--container);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 72px 24px 110px;
+}
+
+.boutique-notice__mark {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  color: var(--gold-bright);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.boutique-notice h2 {
+  margin-top: 12px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.boutique-notice h2 span {
+  color: var(--gold);
+}
+
+.boutique-notice p:last-child {
+  max-width: 650px;
+  margin-top: 13px;
+  color: var(--text-dim);
+  font-size: 0.86rem;
+}
+
+/* ============================================================
    Fundadores
    ============================================================ */
 
@@ -1066,6 +1333,29 @@ footer {
     text-align: center;
   }
 
+  .boutique-hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    text-align: center;
+  }
+
+  .boutique-hero .description {
+    margin-inline: auto;
+  }
+
+  .boutique-hero .buttons {
+    justify-content: center;
+  }
+
+  .boutique-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-card,
+  .product-card:nth-child(4) {
+    grid-column: auto;
+  }
+
   .description {
     margin-inline: auto;
   }
@@ -1101,6 +1391,21 @@ footer {
     padding-top: 112px;
   }
 
+  .boutique-hero {
+    min-height: auto;
+    padding-top: 112px;
+    padding-bottom: 76px;
+  }
+
+  .boutique-hero h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .baggage-tag {
+    min-height: 390px;
+    padding-inline: 28px;
+  }
+
   h1 {
     font-size: clamp(3rem, 15vw, 5rem);
   }
@@ -1132,6 +1437,21 @@ footer {
   .boutique-grid {
     grid-template-columns: 1fr;
     margin-top: 42px;
+  }
+
+  .boutique-products {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+  }
+
+  .boutique-notice {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    padding-top: 68px;
+  }
+
+  .boutique-notice .btn-primary {
+    width: 100%;
   }
 
   .card {
