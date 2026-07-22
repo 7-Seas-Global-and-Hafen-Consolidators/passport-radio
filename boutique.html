@@ -1,480 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Boutique de Bordo da Passport Radio: camisetas, canecas, passaportes musicais, etiquetas de bagagem e futuras edições limitadas."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boutique de Bordo da Passport Radio: coleções, produtos e experiências para quem embarca na viagem.">
   <title>Boutique de Bordo | Passport Radio</title>
-
-  <link
-    rel="stylesheet"
-    href="/css/style.css?v=6"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=20">
 </head>
-
 <body class="boutique-page">
-  <header class="header">
-    <a
-      href="index.html"
-      class="logo"
-      aria-label="Voltar para a Passport Radio"
-    >
-      <span
-        class="logo__symbol"
-        aria-hidden="true"
-      >
-        PR
-      </span>
-
-      <span>Passport Radio</span>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Passport Radio - página inicial">
+      <span class="brand-mark">PR</span>
+      <span class="brand-copy"><strong>Passport Radio</strong><small>Every Song Is A Destination</small></span>
     </a>
-
-    <nav aria-label="Navegação da Boutique">
-      <a href="index.html">Voltar à rádio</a>
-      <a href="#primeiro-voo">Primeiro Voo</a>
-      <a href="#colecao">A coleção</a>
-      <a href="#novidades">Lista de embarque</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="#founders">Primeiro Voo</a>
+      <a href="#collections">Coleções</a>
+      <a href="#interest">Lista de embarque</a>
+      <a href="contato.html">Contato</a>
     </nav>
-
-    <a
-      href="#novidades"
-      class="header__cta"
-    >
-      Receber novidades
-    </a>
+    <a class="header-action" href="#interest">Reservar interesse</a>
   </header>
 
   <main>
-    <section
-      class="boutique-hero"
-      aria-labelledby="boutique-title"
-    >
-      <div class="boutique-hero__copy">
-        <p class="subtitle">
-          Boutique de Bordo · Em preparação
-        </p>
-
-        <h1 id="boutique-title">
-          A viagem também
-          <span>continua fora do rádio.</span>
-        </h1>
-
-        <p class="description">
-          Uma coleção para vestir, guardar e compartilhar os destinos
-          que a música abre diante de nós. Os primeiros produtos oficiais
-          da Passport Radio estão sendo preparados para o embarque.
-        </p>
-
-        <div class="buttons">
-          <a
-            href="#colecao"
-            class="btn-primary"
-          >
-            Explorar a coleção
-          </a>
-
-          <a
-            href="#primeiro-voo"
-            class="btn-secondary"
-          >
-            Conhecer o Primeiro Voo
-          </a>
+    <section class="shop-hero" aria-labelledby="shop-title">
+      <img class="shop-hero__image" src="/images/kit-passport-radio.png" alt="Coleção premium Passport Radio com camiseta, caneca, passaporte, garrafa, caderno e acessórios">
+      <div class="shop-hero__veil"></div>
+      <div class="shop-hero__content shell">
+        <p class="eyebrow">Boutique de Bordo</p>
+        <h1 id="shop-title">Leve uma parte<br><span>da viagem com você.</span></h1>
+        <p>Peças criadas para guardar memória, marcar pertencimento e acompanhar cada novo destino da Passport Radio. Nada de lembrancinhas genéricas: coleções editoriais, numeradas e produzidas com propósito.</p>
+        <div class="hero-actions">
+          <a class="button button--gold" href="#founders">Conhecer o Primeiro Voo</a>
+          <a class="button button--glass" href="#collections">Explorar coleções</a>
         </div>
       </div>
+    </section>
 
-      <div
-        class="baggage-tag"
-        aria-label="Etiqueta de bagagem Passport Radio"
-      >
-        <span
-          class="baggage-tag__hole"
-          aria-hidden="true"
-        ></span>
+    <section class="commerce-manifesto section-pad">
+      <div class="shell manifesto-grid">
+        <div><p class="eyebrow">Não é doação</p><h2>É participação<br><span>na viagem.</span></h2></div>
+        <div class="manifesto-copy"><p>A Boutique de Bordo nasce para ajudar a Passport Radio a permanecer no ar sem transformar apoio em esmola. Cada compra entrega algo real, útil, colecionável e conectado à história da rádio.</p><p>Os primeiros produtos serão feitos sob demanda, com lotes controlados, evitando desperdício e permitindo que cada coleção tenha identidade própria.</p></div>
+      </div>
+    </section>
 
-        <p>Passenger</p>
+    <section class="founders-flight section-pad" id="founders">
+      <div class="shell founders-flight__grid">
+        <div class="founders-flight__media"><img src="/images/passageiro-fundador.png" alt="Passageiro fundador segurando passaporte e cartão de embarque da Passport Radio"></div>
+        <div class="founders-flight__copy">
+          <p class="eyebrow">First Flight · Passageiros Fundadores</p>
+          <h2>Seu nome não entra apenas numa lista.<br><span>Ele entra na história.</span></h2>
+          <p>O Primeiro Voo será reservado aos passageiros que embarcarem antes da transmissão oficial. Cada participante receberá um número próprio e benefícios ligados à comunidade e à Boutique.</p>
+          <ul class="benefit-list">
+            <li><span>01</span> Número oficial de Passageiro Fundador</li>
+            <li><span>02</span> Boarding pass e passaporte musical personalizados</li>
+            <li><span>03</span> Nome no futuro Hall dos Fundadores</li>
+            <li><span>04</span> Acesso antecipado, votações e quizzes</li>
+            <li><span>05</span> Condições especiais em futuras coleções</li>
+          </ul>
+          <a class="button button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20quero%20reservar%20meu%20interesse%20como%20Passageiro%20Fundador%20da%20Passport%20Radio.%20Entendo%20que%20ainda%20não%20há%20cobrança%20nem%20obrigação%20de%20compra.">Reservar meu assento</a>
+        </div>
+      </div>
+    </section>
 
-        <strong>
-          Passport<br>Radio
-        </strong>
+    <section class="product-story section-pad">
+      <div class="shell product-story__grid">
+        <div class="product-story__copy">
+          <p class="eyebrow">Documento de viagem</p>
+          <h2>O Passaporte Musical<br><span>será o coração da comunidade.</span></h2>
+          <p>Países, programas, festivais, artistas, quizzes e descobertas ganharão carimbos. O visitante poderá acompanhar sua própria rota musical e transformar audição em memória.</p>
+          <a class="text-link" href="#interest">Entrar na lista do passaporte</a>
+        </div>
+        <div class="product-story__media"><img src="/images/passaporte-musical.png" alt="Passaporte musical e identidade visual da Passport Radio"></div>
+      </div>
+    </section>
 
-        <div class="baggage-tag__route">
-          <span>From</span>
-          <b>Everywhere</b>
-
-          <span>To</span>
-          <b>Somewhere new</b>
+    <section class="shop-collections section-pad" id="collections">
+      <div class="shell">
+        <div class="section-intro">
+          <p class="eyebrow">Coleções de bordo</p>
+          <h2>Produtos que nascem<br><span>de histórias reais.</span></h2>
+          <p>Cada coleção poderá reunir camisetas, canecas, cadernos, porta-passaportes, squeeze, mouse pads, chaveiros, pôsteres e edições especiais. O produto muda; a história permanece.</p>
         </div>
 
-        <small>PR · 001 / 2026</small>
+        <div class="shop-collection-grid">
+          <article class="shop-collection-card">
+            <img src="/images/collection-american-rock.png" alt="Coleção The American Rock Highway">
+            <div><small>Passport Collection</small><h3>The American Rock Highway</h3><p>Estradas, arenas e bandas que transformaram o rock em espetáculo mundial.</p><a class="text-link" href="#interest">Quero receber o lançamento</a></div>
+          </article>
+          <article class="shop-collection-card">
+            <img src="/images/collection-progressive-rock.png" alt="Coleção The Architects of Progressive Rock">
+            <div><small>Passport Collection</small><h3>The Architects of Progressive Rock</h3><p>Uma coleção para quem atravessa décadas guiado por ideias, instrumentos e composições sem fronteiras.</p><a class="text-link" href="#interest">Quero receber o lançamento</a></div>
+          </article>
+          <article class="shop-collection-card">
+            <img src="/images/collection-drum-masters.png" alt="Coleção The Drum Masters">
+            <div><small>Passport Collection</small><h3>The Drum Masters</h3><p>O pulso, a técnica e as histórias dos bateristas que mudaram o peso da música.</p><a class="text-link" href="#interest">Quero receber o lançamento</a></div>
+          </article>
+          <article class="shop-collection-card">
+            <img src="/images/collection-synthpop.png" alt="Coleção The Golden Age of Synthpop">
+            <div><small>Passport Collection</small><h3>The Golden Age of Synthpop</h3><p>Cidades noturnas, sintetizadores e a estética que ainda define o futuro.</p><a class="text-link" href="#interest">Quero receber o lançamento</a></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section
-      class="boutique-notice"
-      id="primeiro-voo"
-      aria-labelledby="first-flight-title"
-    >
-      <div
-        class="boutique-notice__mark"
-        aria-hidden="true"
-      >
-        001
-      </div>
-
-      <div>
-        <p class="section-label">
-          Campanha inaugural
-        </p>
-
-        <h2 id="first-flight-title">
-          Coleção
-          <span>Primeiro Voo.</span>
-        </h2>
-
-        <p>
-          A primeira coleção da Passport Radio será criada para marcar
-          o nascimento da rádio e a chegada dos primeiros passageiros.
-          As peças serão produzidas somente após a confirmação de interesse,
-          evitando desperdício e mantendo cada edição verdadeiramente especial.
-        </p>
-      </div>
-
-      <a
-        href="https://wa.me/5547991353900?text=Olá%2C%20quero%20entrar%20na%20lista%20de%20interesse%20da%20Coleção%20Primeiro%20Voo%20da%20Passport%20Radio.%20Entendo%20que%20ainda%20não%20há%20cobrança%20nem%20compromisso%20de%20compra."
-        class="btn-primary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Entrar na lista do Primeiro Voo
-      </a>
-    </section>
-
-    <section
-      class="boutique-catalog"
-      id="colecao"
-      aria-labelledby="catalog-title"
-    >
-      <div class="section-heading boutique-catalog__heading">
-        <p class="section-label">
-          O que vem a bordo
-        </p>
-
-        <h2 id="catalog-title">
-          Objetos para
-          <span>novos destinos.</span>
-        </h2>
-
-        <p>
-          Cada peça nasce de uma história, uma rota e uma descoberta musical.
-          Nada de produtos genéricos: cada coleção terá identidade própria,
-          ligada às viagens da Passport Radio.
-        </p>
-      </div>
-
-      <div class="boutique-products">
-        <article class="product-card product-card--featured">
-          <div class="product-card__topline">
-            <span>01</span>
-            <small>Peça central</small>
-          </div>
-
-          <div
-            class="product-card__icon"
-            aria-hidden="true"
-          >
-            👕
-          </div>
-
-          <h3>Camisetas Oficiais</h3>
-
-          <p>
-            Coleções inspiradas em países, bandas, festivais,
-            apresentações históricas e destinos musicais.
-          </p>
-
-          <span class="product-card__status">
-            Lista de interesse aberta
-          </span>
-
-          <a
-            href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20nas%20Camisetas%20Oficiais%20da%20Passport%20Radio.%20Quero%20receber%20os%20modelos%2C%20tamanhos%20e%20valores%20quando%20forem%20divulgados."
-            class="btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="width: 100%; margin-top: 18px;"
-          >
-            Tenho interesse
-          </a>
-        </article>
-
-        <article class="product-card">
-          <div class="product-card__topline">
-            <span>02</span>
-            <small>Ritual diário</small>
-          </div>
-
-          <div
-            class="product-card__icon"
-            aria-hidden="true"
-          >
-            ☕
-          </div>
-
-          <h3>Canecas de Bordo</h3>
-
-          <p>
-            Para começar o dia com uma descoberta e acompanhar
-            cada novo programa da Passport Radio.
-          </p>
-
-          <span class="product-card__status">
-            Lista de interesse aberta
-          </span>
-
-          <a
-            href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20nas%20Canecas%20de%20Bordo%20da%20Passport%20Radio.%20Quero%20receber%20os%20modelos%20e%20valores%20quando%20forem%20divulgados."
-            class="btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="width: 100%; margin-top: 18px;"
-          >
-            Quero conhecer
-          </a>
-        </article>
-
-        <article class="product-card">
-          <div class="product-card__topline">
-            <span>03</span>
-            <small>Documento de viagem</small>
-          </div>
-
-          <div
-            class="product-card__icon"
-            aria-hidden="true"
-          >
-            🛂
-          </div>
-
-          <h3>Passaporte Musical</h3>
-
-          <p>
-            Um espaço para registrar programas, países, descobertas
-            e os futuros carimbos da comunidade.
-          </p>
-
-          <span class="product-card__status">
-            Interesse antecipado
-          </span>
-
-          <a
-            href="https://wa.me/5547991353900?text=Olá%2C%20quero%20entrar%20na%20lista%20do%20Passaporte%20Musical%20da%20Passport%20Radio.%20Gostaria%20de%20conhecer%20o%20projeto%20quando%20ele%20for%20apresentado."
-            class="btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="width: 100%; margin-top: 18px;"
-          >
-            Reservar meu interesse
-          </a>
-        </article>
-
-        <article class="product-card">
-          <div class="product-card__topline">
-            <span>04</span>
-            <small>Próxima conexão</small>
-          </div>
-
-          <div
-            class="product-card__icon"
-            aria-hidden="true"
-          >
-            🏷️
-          </div>
-
-          <h3>Etiquetas de Bagagem</h3>
-
-          <p>
-            Um pequeno sinal para quem reconhece que toda viagem
-            pode começar por uma música.
-          </p>
-
-          <span class="product-card__status">
-            Lista de interesse aberta
-          </span>
-
-          <a
-            href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20nas%20Etiquetas%20de%20Bagagem%20da%20Passport%20Radio.%20Quero%20ser%20avisado%20quando%20os%20modelos%20forem%20apresentados."
-            class="btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="width: 100%; margin-top: 18px;"
-          >
-            Avisem-me no embarque
-          </a>
-        </article>
-
-        <article class="product-card">
-          <div class="product-card__topline">
-            <span>05</span>
-            <small>Para poucos</small>
-          </div>
-
-          <div
-            class="product-card__icon"
-            aria-hidden="true"
-          >
-            🎁
-          </div>
-
-          <h3>Edições Limitadas</h3>
-
-          <p>
-            Peças especiais para os Passageiros Fundadores
-            e para os grandes momentos da Passport Radio.
-          </p>
-
-          <span class="product-card__status">
-            Acesso antecipado
-          </span>
-
-          <a
-            href="https://wa.me/5547991353900?text=Olá%2C%20quero%20receber%20informações%20sobre%20as%20Edições%20Limitadas%20da%20Passport%20Radio%20e%20as%20condições%20destinadas%20aos%20Passageiros%20Fundadores."
-            class="btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="width: 100%; margin-top: 18px;"
-          >
-            Quero acesso antecipado
-          </a>
-        </article>
+    <section class="product-lines section-pad">
+      <div class="shell">
+        <div class="section-intro section-intro--left"><p class="eyebrow">O que poderá vir a bordo</p><h2>Menos catálogo.<br><span>Mais desejo e significado.</span></h2></div>
+        <div class="product-lines__grid">
+          <article><span>01</span><h3>Uniformes de bordo</h3><p>Camisetas e moletons ligados a destinos, festivais e coleções documentais.</p></article>
+          <article><span>02</span><h3>Objetos de viagem</h3><p>Porta-passaporte, tags de bagagem, squeeze, chaveiros e kits numerados.</p></article>
+          <article><span>03</span><h3>Rituais do dia</h3><p>Canecas, cadernos, mouse pads e peças para acompanhar a rádio em casa ou no trabalho.</p></article>
+          <article><span>04</span><h3>Edições de coleção</h3><p>Pôsteres, certificados, carimbos e itens reservados a Passageiros Fundadores.</p></article>
+        </div>
       </div>
     </section>
 
-    <section
-      class="boutique-notice"
-      id="novidades"
-      aria-labelledby="notice-title"
-    >
-      <div
-        class="boutique-notice__mark"
-        aria-hidden="true"
-      >
-        PR
+    <section class="interest-section section-pad" id="interest">
+      <div class="shell interest-section__inner">
+        <p class="eyebrow">Lista de embarque</p>
+        <h2>Primeiro aviso.<br><span>Primeiro acesso.</span></h2>
+        <p>Entrar na lista é gratuito e não cria obrigação de compra. Quando modelos, valores, tamanhos e condições estiverem definidos, você recebe as informações antes da abertura pública.</p>
+        <div class="interest-actions">
+          <a class="button button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20quero%20entrar%20na%20lista%20de%20embarque%20da%20Boutique%20de%20Bordo%20da%20Passport%20Radio.%20Quero%20receber%20novidades%20sobre%20o%20Primeiro%20Voo%20e%20as%20futuras%20coleções.">Entrar na lista de embarque</a>
+          <a class="button button--glass" href="contato.html">Propor parceria</a>
+        </div>
       </div>
-
-      <div>
-        <p class="section-label">
-          Lista de embarque
-        </p>
-
-        <h2 id="notice-title">
-          Primeiro aviso,
-          <span>primeiro acesso.</span>
-        </h2>
-
-        <p>
-          Entrar na lista é gratuito e não cria obrigação de compra.
-          Quando modelos, valores, tamanhos e condições estiverem definidos,
-          você receberá as informações antes da abertura pública.
-        </p>
-      </div>
-
-      <a
-        href="https://wa.me/5547991353900?text=Olá%2C%20quero%20entrar%20na%20Lista%20de%20Embarque%20da%20Boutique%20Passport%20Radio.%20Quero%20receber%20as%20novidades%20e%20os%20lançamentos%20sem%20compromisso%20de%20compra."
-        class="btn-primary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Entrar na lista de embarque
-      </a>
-    </section>
-
-    <section
-      class="boutique-notice"
-      aria-labelledby="partnership-title"
-    >
-      <div
-        class="boutique-notice__mark"
-        aria-hidden="true"
-      >
-        B2B
-      </div>
-
-      <div>
-        <p class="section-label">
-          Parcerias de bordo
-        </p>
-
-        <h2 id="partnership-title">
-          Sua marca pode
-          <span>embarcar conosco.</span>
-        </h2>
-
-        <p>
-          A Passport Radio está aberta a conversar com gráficas,
-          confecções, fabricantes, lojas, festivais, espaços culturais
-          e empresas interessadas em campanhas e coleções colaborativas.
-        </p>
-      </div>
-
-      <a
-        href="https://wa.me/5547991353900?text=Olá%2C%20represento%20uma%20empresa%20e%20gostaria%20de%20conversar%20sobre%20uma%20possível%20parceria%20comercial%20com%20a%20Passport%20Radio."
-        class="btn-secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Propor uma parceria
-      </a>
     </section>
   </main>
 
-  <footer>
-    <div class="footer__brand">
-      <span aria-hidden="true">✈</span>
-
-      <div>
-        <strong>Passport Radio</strong>
-        <p>Every Song Is A Destination.</p>
-      </div>
+  <footer class="site-footer">
+    <div class="shell site-footer__grid">
+      <div class="brand brand--footer"><span class="brand-mark">PR</span><span class="brand-copy"><strong>Passport Radio</strong><small>Every Song Is A Destination</small></span></div>
+      <nav aria-label="Navegação do rodapé"><a href="index.html">Início</a><a href="radio.html">Cabine</a><a href="destinos.html">Destinos</a><a href="programacao.html">Programação</a><a href="contato.html">Contato</a></nav>
+      <p>© 2026 Boutique de Bordo · Passport Radio</p>
     </div>
-
-    <div class="footer__links">
-      <a href="index.html">Início</a>
-      <a href="radio.html">A Rádio</a>
-      <a href="destinos.html">Destinos</a>
-      <a href="programacao.html">Programação</a>
-      <a href="contato.html">Contato</a>
-    </div>
-
-    <p class="footer__legal">
-      Boutique de Bordo · © 2026
-    </p>
   </footer>
-</body>
 
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open');
+    });
+  </script>
+</body>
 </html>
