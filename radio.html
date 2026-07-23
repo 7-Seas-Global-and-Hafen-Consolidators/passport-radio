@@ -591,6 +591,179 @@
       margin-top: 34px;
     }
 
+
+    /* ========================================================
+       PLAYER REAL — PRIMEIRO VOO
+       ======================================================== */
+
+    .passport-player {
+      margin-top: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, .32);
+      border-radius: 18px;
+      background:
+        radial-gradient(
+          circle at 88% 20%,
+          rgba(212, 175, 55, .12),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(2, 6, 11, .96),
+          rgba(8, 21, 34, .92)
+        );
+      box-shadow:
+        0 24px 65px rgba(0, 0, 0, .42),
+        inset 0 1px 0 rgba(255, 255, 255, .025);
+    }
+
+    .passport-player audio {
+      display: none;
+    }
+
+    .passport-player__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 24px;
+      border-bottom: 1px solid rgba(212, 175, 55, .16);
+      background: rgba(2, 6, 11, .48);
+    }
+
+    .passport-player__header small {
+      display: block;
+      color: var(--gold);
+      font-size: .55rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .passport-player__header strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.65rem;
+      line-height: 1;
+    }
+
+    .passport-player__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-light);
+      font-size: .54rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .passport-player__status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 14px rgba(212, 175, 55, .72);
+    }
+
+    .passport-player__controls {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 25px 24px 23px;
+    }
+
+    .passport-player__play {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(212, 175, 55, .64);
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(212, 175, 55, .16),
+          rgba(2, 6, 11, .94) 68%
+        );
+      color: var(--gold-light);
+      font-size: 1.18rem;
+      cursor: pointer;
+      box-shadow:
+        0 0 0 7px rgba(212, 175, 55, .035),
+        0 15px 32px rgba(0, 0, 0, .36);
+      transition:
+        transform .28s var(--ease),
+        border-color .28s var(--ease),
+        box-shadow .28s var(--ease);
+    }
+
+    .passport-player__play:hover {
+      transform: translateY(-2px) scale(1.025);
+      border-color: var(--gold-light);
+      box-shadow:
+        0 0 0 9px rgba(212, 175, 55, .045),
+        0 18px 38px rgba(0, 0, 0, .46);
+    }
+
+    .passport-player__timeline {
+      min-width: 0;
+    }
+
+    .passport-player__time,
+    .passport-player__route {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--text-faint);
+      font-size: .57rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .passport-player__progress {
+      width: 100%;
+      height: 4px;
+      margin-block: 14px;
+      appearance: none;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold) 0%,
+          var(--gold) var(--player-progress, 0%),
+          rgba(255, 255, 255, .13) var(--player-progress, 0%),
+          rgba(255, 255, 255, .13) 100%
+        );
+      cursor: pointer;
+    }
+
+    .passport-player__progress::-webkit-slider-thumb {
+      width: 15px;
+      height: 15px;
+      appearance: none;
+      border: 2px solid #02060b;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 12px rgba(212, 175, 55, .6);
+    }
+
+    .passport-player__progress::-moz-range-thumb {
+      width: 13px;
+      height: 13px;
+      border: 2px solid #02060b;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 12px rgba(212, 175, 55, .6);
+    }
+
     /* ========================================================
        RESPONSIVIDADE
        ======================================================== */
@@ -664,6 +837,24 @@
       .broadcast-format__card {
         min-height: 300px;
         padding: 27px;
+      }
+
+      .passport-player__header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .passport-player__controls {
+        grid-template-columns: 1fr;
+      }
+
+      .passport-player__play {
+        margin-inline: auto;
+      }
+
+      .passport-player__route {
+        flex-direction: column;
+        gap: 5px;
       }
 
       .broadcast-click {
@@ -877,12 +1068,70 @@
             pessoas e apresentações ao vivo.
           </p>
 
-          <p>
-            O player definitivo será conectado somente quando o servidor
-            de transmissão estiver pronto. Até lá, esta página funciona
-            como cabine de preparação, arquivo do projeto e porta de entrada
-            para os primeiros passageiros.
-          </p>
+          <div class="passport-player">
+
+            <div class="passport-player__header">
+              <div>
+                <small>Agora no ar · Arquivo inaugural</small>
+                <strong>Primeiro Voo</strong>
+              </div>
+
+              <span class="passport-player__status">
+                Pronto para embarque
+              </span>
+            </div>
+
+            <audio
+              id="passport-audio"
+              preload="metadata"
+            >
+              <source
+                src="/audio/primeiro-voo.mp3.mp3"
+                type="audio/mpeg"
+              >
+
+              Seu navegador não consegue reproduzir este áudio.
+            </audio>
+
+            <div class="passport-player__controls">
+
+              <button
+                class="passport-player__play"
+                id="passport-play"
+                type="button"
+                aria-label="Reproduzir Primeiro Voo"
+              >
+                <span id="passport-play-symbol">▶</span>
+              </button>
+
+              <div class="passport-player__timeline">
+
+                <div class="passport-player__time">
+                  <span id="passport-current-time">00:00</span>
+                  <span id="passport-duration">00:00</span>
+                </div>
+
+                <input
+                  id="passport-progress"
+                  class="passport-player__progress"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="0.1"
+                  aria-label="Progresso do áudio"
+                >
+
+                <div class="passport-player__route">
+                  <span>Origem: São Paulo</span>
+                  <span>Destino: O mundo</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
 
           <div class="broadcast-feature__facts">
 
@@ -1198,6 +1447,109 @@
         });
       });
     }
+
+    const audio = document.querySelector("#passport-audio");
+    const playButton = document.querySelector("#passport-play");
+    const playSymbol = document.querySelector("#passport-play-symbol");
+    const progress = document.querySelector("#passport-progress");
+    const currentTimeLabel =
+      document.querySelector("#passport-current-time");
+    const durationLabel =
+      document.querySelector("#passport-duration");
+
+    const formatAudioTime = (seconds) => {
+      if (!Number.isFinite(seconds)) {
+        return "00:00";
+      }
+
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+
+      return `${String(minutes).padStart(2, "0")}:${String(
+        remainingSeconds
+      ).padStart(2, "0")}`;
+    };
+
+    if (
+      audio &&
+      playButton &&
+      playSymbol &&
+      progress &&
+      currentTimeLabel &&
+      durationLabel
+    ) {
+      playButton.addEventListener("click", async () => {
+        try {
+          if (audio.paused) {
+            await audio.play();
+          } else {
+            audio.pause();
+          }
+        } catch (error) {
+          console.error("Não foi possível iniciar o áudio:", error);
+        }
+      });
+
+      audio.addEventListener("play", () => {
+        playSymbol.textContent = "❚❚";
+        playButton.setAttribute(
+          "aria-label",
+          "Pausar Primeiro Voo"
+        );
+      });
+
+      audio.addEventListener("pause", () => {
+        playSymbol.textContent = "▶";
+        playButton.setAttribute(
+          "aria-label",
+          "Reproduzir Primeiro Voo"
+        );
+      });
+
+      audio.addEventListener("loadedmetadata", () => {
+        durationLabel.textContent =
+          formatAudioTime(audio.duration);
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        currentTimeLabel.textContent =
+          formatAudioTime(audio.currentTime);
+
+        const percentage =
+          audio.duration > 0
+            ? (audio.currentTime / audio.duration) * 100
+            : 0;
+
+        progress.value = percentage;
+
+        progress.style.setProperty(
+          "--player-progress",
+          `${percentage}%`
+        );
+      });
+
+      progress.addEventListener("input", () => {
+        if (audio.duration > 0) {
+          audio.currentTime =
+            (Number(progress.value) / 100) * audio.duration;
+        }
+
+        progress.style.setProperty(
+          "--player-progress",
+          `${progress.value}%`
+        );
+      });
+
+      audio.addEventListener("ended", () => {
+        playSymbol.textContent = "▶";
+        progress.value = 0;
+        progress.style.setProperty(
+          "--player-progress",
+          "0%"
+        );
+      });
+    }
+
   </script>
 
 </body>
