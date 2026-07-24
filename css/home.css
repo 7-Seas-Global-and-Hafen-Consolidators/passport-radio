@@ -1596,3 +1596,163 @@
     text-align: center;
   }
 }
+
+/* ============================================================
+   PASSPORT RADIO — CORREÇÕES DE ENQUADRAMENTO E MAPA V3
+   ============================================================ */
+
+.home-page #movimentos .story-grid { align-items: start; }
+
+.home-page #movimentos .story-card,
+.home-page #movimentos .story-card--wide {
+  align-self: start;
+  min-height: 0;
+}
+
+.home-page #movimentos .story-card a,
+.home-page #movimentos .story-card--wide a {
+  height: auto;
+}
+
+.home-page #movimentos .story-card img,
+.home-page #movimentos .story-card--wide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center top;
+  background: #02060b;
+}
+
+.home-page #movimentos .story-card__body { min-height: 0; }
+.home-page #movimentos .story-card--wide { grid-column: span 8; }
+.home-page #movimentos .story-card:not(.story-card--wide) { grid-column: span 4; }
+
+.home-page #arquivos .story-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+}
+
+.home-page #arquivos .story-card,
+.home-page #arquivos .story-card--wide {
+  grid-column: span 4;
+  align-self: start;
+  min-height: 0;
+}
+
+.home-page #arquivos .story-card a,
+.home-page #arquivos .story-card--wide a {
+  height: auto;
+}
+
+.home-page #arquivos .story-card img,
+.home-page #arquivos .story-card--wide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center top;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.06), transparent 48%),
+    #02060b;
+}
+
+.home-page #arquivos .story-card__body { min-height: 205px; }
+
+.home-page #festivais .festival-card img,
+.home-page #festivais .festival-card--large img {
+  object-fit: contain;
+  object-position: center;
+  background: #02060b;
+}
+
+.home-page .world-map-section__media {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-page .world-map-section__media::before {
+  display: block;
+  opacity: 1;
+  background:
+    radial-gradient(circle at 18% 39%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.42) 3px 8px, transparent 12px),
+    radial-gradient(circle at 31% 34%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.34) 3px 8px, transparent 12px),
+    radial-gradient(circle at 45% 30%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.4) 3px 9px, transparent 13px),
+    radial-gradient(circle at 56% 36%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.34) 3px 8px, transparent 12px),
+    radial-gradient(circle at 70% 42%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.4) 3px 9px, transparent 13px),
+    radial-gradient(circle at 82% 68%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.36) 3px 8px, transparent 12px),
+    radial-gradient(circle at 31% 69%, rgba(255,222,130,1) 0 2px, rgba(240,202,101,.36) 3px 8px, transparent 12px);
+  animation: pr-map-pulse-v3 2.25s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+}
+
+.home-page .world-map-section__media::after {
+  display: block;
+  opacity: 1;
+  background:
+    linear-gradient(104deg, transparent 0 28%, rgba(255,224,145,.08) 31%, rgba(255,224,145,.72) 32%, rgba(255,224,145,.08) 33%, transparent 36% 100%),
+    linear-gradient(147deg, transparent 0 42%, rgba(240,202,101,.07) 45%, rgba(240,202,101,.55) 46%, rgba(240,202,101,.07) 47%, transparent 50% 100%),
+    radial-gradient(circle, rgba(255,226,150,.95) 0 2px, rgba(255,226,150,.22) 3px 10px, transparent 12px);
+  background-size: 210% 100%, 190% 100%, 18px 18px;
+  background-position: 170% 0, -110% 0, 0 0;
+  animation: pr-map-routes-v3 7s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes pr-map-pulse-v3 {
+  0% { opacity: .42; filter: brightness(.86) drop-shadow(0 0 2px rgba(240,202,101,.18)); }
+  100% { opacity: 1; filter: brightness(1.28) drop-shadow(0 0 9px rgba(240,202,101,.7)); }
+}
+
+@keyframes pr-map-routes-v3 {
+  0% { background-position: 175% 0, -120% 0, 0 0; opacity: .12; }
+  18% { opacity: .72; }
+  50% { opacity: .95; }
+  82% { opacity: .72; }
+  100% { background-position: -125% 0, 180% 0, 90px 45px; opacity: .12; }
+}
+
+.home-page .site-header {
+  box-shadow: 0 10px 34px rgba(0,0,0,.18);
+}
+
+.home-page .site-header.is-scrolled {
+  box-shadow: 0 14px 42px rgba(0,0,0,.42);
+}
+
+@media (max-width: 1080px) {
+  .home-page #movimentos .story-card,
+  .home-page #movimentos .story-card--wide,
+  .home-page #arquivos .story-card,
+  .home-page #arquivos .story-card--wide {
+    grid-column: span 6;
+  }
+
+  .home-page #arquivos .story-card__body { min-height: 0; }
+}
+
+@media (max-width: 680px) {
+  .home-page #movimentos .story-grid,
+  .home-page #arquivos .story-grid { display: block; }
+
+  .home-page #movimentos .story-card,
+  .home-page #movimentos .story-card--wide,
+  .home-page #arquivos .story-card,
+  .home-page #arquivos .story-card--wide {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .home-page #movimentos .story-card img,
+  .home-page #movimentos .story-card--wide img,
+  .home-page #arquivos .story-card img,
+  .home-page #arquivos .story-card--wide img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .home-page .world-map-section__media::after { animation-duration: 9s; }
+}
