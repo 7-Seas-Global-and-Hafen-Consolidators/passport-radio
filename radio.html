@@ -23,7 +23,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="/css/style.css?v=22">
+  <link rel="stylesheet" href="/css/style.css?v=23">
 
   <style>
     .radio-documentary-page {
@@ -764,6 +764,190 @@
       box-shadow: 0 0 12px rgba(212, 175, 55, .6);
     }
 
+
+    /* ========================================================
+       PLAYER MULTIFAIXAS — ATÉ CINCO VOOS
+       ======================================================== */
+
+    .passport-player__navigation {
+      display: grid;
+      grid-template-columns: auto auto auto 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 25px 24px 10px;
+    }
+
+    .passport-player__skip {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(212, 175, 55, .34);
+      border-radius: 50%;
+      background: rgba(2, 6, 11, .72);
+      color: var(--gold-light);
+      font-size: 1rem;
+      cursor: pointer;
+      transition:
+        transform .25s var(--ease),
+        border-color .25s var(--ease),
+        background .25s var(--ease);
+    }
+
+    .passport-player__skip:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-light);
+      background: rgba(212, 175, 55, .08);
+    }
+
+    .passport-player__skip:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .passport-player__track-meta {
+      min-width: 0;
+      margin-left: 8px;
+    }
+
+    .passport-player__track-meta small {
+      display: block;
+      color: var(--text-faint);
+      font-size: .54rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .passport-player__track-meta strong {
+      display: block;
+      margin-top: 5px;
+      overflow: hidden;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.35rem;
+      line-height: 1.05;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .passport-player__controls {
+      padding-top: 12px;
+    }
+
+    .passport-player__playlist {
+      display: grid;
+      gap: 8px;
+      padding: 4px 24px 24px;
+    }
+
+    .passport-player__track {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 13px 15px;
+      border: 1px solid rgba(212, 175, 55, .14);
+      border-radius: 12px;
+      background: rgba(2, 6, 11, .48);
+      color: var(--text-soft);
+      text-align: left;
+      cursor: pointer;
+      transition:
+        transform .25s var(--ease),
+        border-color .25s var(--ease),
+        background .25s var(--ease);
+    }
+
+    .passport-player__track:hover {
+      transform: translateX(3px);
+      border-color: rgba(212, 175, 55, .38);
+      background: rgba(212, 175, 55, .055);
+    }
+
+    .passport-player__track.is-active {
+      border-color: rgba(212, 175, 55, .58);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(212, 175, 55, .13),
+          rgba(2, 6, 11, .55)
+        );
+      color: var(--cream);
+    }
+
+    .passport-player__track-number {
+      color: var(--gold);
+      font-size: .58rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .passport-player__track-copy {
+      min-width: 0;
+    }
+
+    .passport-player__track-copy strong {
+      display: block;
+      overflow: hidden;
+      color: inherit;
+      font-size: .76rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .passport-player__track-copy small {
+      display: block;
+      margin-top: 3px;
+      overflow: hidden;
+      color: var(--text-faint);
+      font-size: .54rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .passport-player__track-state {
+      color: var(--gold-light);
+      font-size: .52rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .passport-player__message {
+      min-height: 20px;
+      padding: 0 24px 20px;
+      color: var(--text-faint);
+      font-size: .62rem;
+      line-height: 1.5;
+    }
+
+    .passport-player__message.is-error {
+      color: #ff9eaa;
+    }
+
+    @media (max-width: 620px) {
+      .passport-player__navigation {
+        grid-template-columns: auto auto auto;
+      }
+
+      .passport-player__track-meta {
+        grid-column: 1 / -1;
+        margin: 8px 0 0;
+        text-align: center;
+      }
+
+      .passport-player__track {
+        grid-template-columns: 34px 1fr;
+      }
+
+      .passport-player__track-state {
+        display: none;
+      }
+    }
+
     /* ========================================================
        RESPONSIVIDADE
        ======================================================== */
@@ -1068,15 +1252,15 @@
             pessoas e apresentações ao vivo.
           </p>
 
-          <div class="passport-player">
+          <div class="passport-player" data-player-version="2">
 
             <div class="passport-player__header">
               <div>
-                <small>Agora no ar · Arquivo inaugural</small>
-                <strong>Primeiro Voo</strong>
+                <small>Arquivo sonoro · Cabine Passport Radio</small>
+                <strong id="passport-player-heading">Primeiro Voo</strong>
               </div>
 
-              <span class="passport-player__status">
+              <span class="passport-player__status" id="passport-player-status">
                 Pronto para embarque
               </span>
             </div>
@@ -1085,15 +1269,19 @@
               id="passport-audio"
               preload="metadata"
             >
-              <source
-                src="/audio/primeiro-voo.mp3.mp3"
-                type="audio/mpeg"
-              >
-
               Seu navegador não consegue reproduzir este áudio.
             </audio>
 
-            <div class="passport-player__controls">
+            <div class="passport-player__navigation">
+              <button
+                class="passport-player__skip"
+                id="passport-previous"
+                type="button"
+                aria-label="Faixa anterior"
+                title="Faixa anterior"
+              >
+                ◀
+              </button>
 
               <button
                 class="passport-player__play"
@@ -1104,6 +1292,23 @@
                 <span id="passport-play-symbol">▶</span>
               </button>
 
+              <button
+                class="passport-player__skip"
+                id="passport-next"
+                type="button"
+                aria-label="Próxima faixa"
+                title="Próxima faixa"
+              >
+                ▶
+              </button>
+
+              <div class="passport-player__track-meta">
+                <small id="passport-track-counter">Voo 01 de 05</small>
+                <strong id="passport-track-title">Primeiro Voo</strong>
+              </div>
+            </div>
+
+            <div class="passport-player__controls">
               <div class="passport-player__timeline">
 
                 <div class="passport-player__time">
@@ -1123,13 +1328,27 @@
                 >
 
                 <div class="passport-player__route">
-                  <span>Origem: São Paulo</span>
-                  <span>Destino: O mundo</span>
+                  <span id="passport-track-origin">Origem: São Paulo</span>
+                  <span id="passport-track-destination">Destino: O mundo</span>
                 </div>
 
               </div>
-
             </div>
+
+            <div
+              class="passport-player__playlist"
+              id="passport-playlist"
+              aria-label="Lista de voos sonoros"
+            ></div>
+
+            <p
+              class="passport-player__message"
+              id="passport-player-message"
+              role="status"
+              aria-live="polite"
+            >
+              Selecione um voo ou utilize os controles de anterior e próximo.
+            </p>
 
           </div>
 
@@ -1451,11 +1670,88 @@
     const audio = document.querySelector("#passport-audio");
     const playButton = document.querySelector("#passport-play");
     const playSymbol = document.querySelector("#passport-play-symbol");
+    const previousButton = document.querySelector("#passport-previous");
+    const nextButton = document.querySelector("#passport-next");
     const progress = document.querySelector("#passport-progress");
     const currentTimeLabel =
       document.querySelector("#passport-current-time");
     const durationLabel =
       document.querySelector("#passport-duration");
+    const trackTitle =
+      document.querySelector("#passport-track-title");
+    const playerHeading =
+      document.querySelector("#passport-player-heading");
+    const trackCounter =
+      document.querySelector("#passport-track-counter");
+    const trackOrigin =
+      document.querySelector("#passport-track-origin");
+    const trackDestination =
+      document.querySelector("#passport-track-destination");
+    const playlistElement =
+      document.querySelector("#passport-playlist");
+    const playerStatus =
+      document.querySelector("#passport-player-status");
+    const playerMessage =
+      document.querySelector("#passport-player-message");
+
+    /*
+      Para adicionar ou trocar músicas, edite somente esta lista.
+
+      Arquivos previstos na pasta /audio:
+      1. primeiro-voo.mp3.mp3
+      2. segundo-voo.mp3
+      3. terceiro-voo.mp3
+      4. quarto-voo.mp3
+      5. quinto-voo.mp3
+
+      Os três últimos já ficam preparados no player.
+      Basta subir os arquivos usando exatamente esses nomes.
+    */
+    const passportTracks = [
+      {
+        title: "Primeiro Voo",
+        file: "/audio/primeiro-voo.mp3.mp3",
+        origin: "São Paulo",
+        destination: "O mundo",
+        description: "Arquivo inaugural",
+        available: true
+      },
+      {
+        title: "Segundo Voo",
+        file: "/audio/segundo-voo.mp3",
+        origin: "São Paulo",
+        destination: "Nova rota",
+        description: "Segunda partida",
+        available: true
+      },
+      {
+        title: "Terceiro Voo",
+        file: "/audio/terceiro-voo.mp3",
+        origin: "São Paulo",
+        destination: "A definir",
+        description: "Próxima chegada",
+        available: false
+      },
+      {
+        title: "Quarto Voo",
+        file: "/audio/quarto-voo.mp3",
+        origin: "São Paulo",
+        destination: "A definir",
+        description: "Próxima chegada",
+        available: false
+      },
+      {
+        title: "Quinto Voo",
+        file: "/audio/quinto-voo.mp3",
+        origin: "São Paulo",
+        destination: "A definir",
+        description: "Próxima chegada",
+        available: false
+      }
+    ];
+
+    let currentTrackIndex = 0;
+    let shouldResumeAfterLoading = false;
 
     const formatAudioTime = (seconds) => {
       if (!Number.isFinite(seconds)) {
@@ -1470,45 +1766,287 @@
       ).padStart(2, "0")}`;
     };
 
+    const setPlayerMessage = (message, isError = false) => {
+      if (!playerMessage) {
+        return;
+      }
+
+      playerMessage.textContent = message;
+      playerMessage.classList.toggle("is-error", isError);
+    };
+
+    const updatePlaylistButtons = () => {
+      if (!playlistElement) {
+        return;
+      }
+
+      playlistElement
+        .querySelectorAll(".passport-player__track")
+        .forEach((button, index) => {
+          const track = passportTracks[index];
+          const isActive = index === currentTrackIndex;
+
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-current", isActive ? "true" : "false");
+
+          const state = button.querySelector(
+            ".passport-player__track-state"
+          );
+
+          if (state) {
+            state.textContent = isActive
+              ? "Selecionado"
+              : track.available
+                ? "Embarcar"
+                : "Em preparação";
+          }
+        });
+    };
+
+    const renderPlaylist = () => {
+      if (!playlistElement) {
+        return;
+      }
+
+      playlistElement.innerHTML = "";
+
+      passportTracks.forEach((track, index) => {
+        const button = document.createElement("button");
+        button.className = "passport-player__track";
+        button.type = "button";
+        button.dataset.trackIndex = String(index);
+        button.setAttribute(
+          "aria-label",
+          `${track.title}: ${track.description}`
+        );
+
+        button.innerHTML = `
+          <span class="passport-player__track-number">
+            ${String(index + 1).padStart(2, "0")}
+          </span>
+
+          <span class="passport-player__track-copy">
+            <strong>${track.title}</strong>
+            <small>${track.description}</small>
+          </span>
+
+          <span class="passport-player__track-state"></span>
+        `;
+
+        button.addEventListener("click", () => {
+          const wasPlaying = !audio.paused;
+          loadTrack(index, wasPlaying);
+        });
+
+        playlistElement.appendChild(button);
+      });
+
+      updatePlaylistButtons();
+    };
+
+    const resetTimeline = () => {
+      if (currentTimeLabel) {
+        currentTimeLabel.textContent = "00:00";
+      }
+
+      if (durationLabel) {
+        durationLabel.textContent = "00:00";
+      }
+
+      if (progress) {
+        progress.value = 0;
+        progress.style.setProperty("--player-progress", "0%");
+      }
+    };
+
+    const updateTrackInterface = () => {
+      const track = passportTracks[currentTrackIndex];
+
+      if (trackTitle) {
+        trackTitle.textContent = track.title;
+      }
+
+      if (playerHeading) {
+        playerHeading.textContent = track.title;
+      }
+
+      if (trackCounter) {
+        trackCounter.textContent =
+          `Voo ${String(currentTrackIndex + 1).padStart(2, "0")} de ` +
+          `${String(passportTracks.length).padStart(2, "0")}`;
+      }
+
+      if (trackOrigin) {
+        trackOrigin.textContent = `Origem: ${track.origin}`;
+      }
+
+      if (trackDestination) {
+        trackDestination.textContent =
+          `Destino: ${track.destination}`;
+      }
+
+      if (playButton) {
+        playButton.setAttribute(
+          "aria-label",
+          `Reproduzir ${track.title}`
+        );
+      }
+
+      document.title =
+        `${track.title} | Cabine de Transmissão | Passport Radio`;
+
+      updatePlaylistButtons();
+    };
+
+    const loadTrack = (index, autoplay = false) => {
+      if (
+        !audio ||
+        index < 0 ||
+        index >= passportTracks.length
+      ) {
+        return;
+      }
+
+      currentTrackIndex = index;
+      const track = passportTracks[currentTrackIndex];
+
+      shouldResumeAfterLoading = autoplay;
+      audio.pause();
+      audio.src = track.file;
+      audio.load();
+
+      resetTimeline();
+      updateTrackInterface();
+
+      if (playerStatus) {
+        playerStatus.textContent = track.available
+          ? "Preparando embarque"
+          : "Aguardando arquivo";
+      }
+
+      if (track.available) {
+        setPlayerMessage(
+          `${track.title} selecionado. Pressione reproduzir para embarcar.`
+        );
+      } else {
+        setPlayerMessage(
+          `${track.title} já está preparado no player. ` +
+          `Suba o arquivo ${track.file.split("/").pop()} na pasta audio ` +
+          `e depois altere available para true na lista passportTracks.`,
+          false
+        );
+      }
+    };
+
+    const playSelectedTrack = async () => {
+      const track = passportTracks[currentTrackIndex];
+
+      if (!track.available) {
+        setPlayerMessage(
+          `O arquivo ${track.file.split("/").pop()} ainda não foi ativado. ` +
+          `Suba a música e altere available para true.`,
+          true
+        );
+        return;
+      }
+
+      try {
+        await audio.play();
+      } catch (error) {
+        console.error("Não foi possível iniciar o áudio:", error);
+        setPlayerMessage(
+          `Não foi possível abrir ${track.title}. Confira se o arquivo ` +
+          `${track.file.split("/").pop()} está na pasta audio e se o nome ` +
+          `está exatamente igual ao código.`,
+          true
+        );
+      }
+    };
+
+    const moveTrack = (direction) => {
+      const newIndex =
+        (currentTrackIndex + direction + passportTracks.length) %
+        passportTracks.length;
+
+      const wasPlaying = !audio.paused;
+      loadTrack(newIndex, wasPlaying);
+    };
+
     if (
       audio &&
       playButton &&
       playSymbol &&
+      previousButton &&
+      nextButton &&
       progress &&
       currentTimeLabel &&
       durationLabel
     ) {
+      renderPlaylist();
+      loadTrack(0, false);
+
       playButton.addEventListener("click", async () => {
-        try {
-          if (audio.paused) {
-            await audio.play();
-          } else {
-            audio.pause();
-          }
-        } catch (error) {
-          console.error("Não foi possível iniciar o áudio:", error);
+        if (audio.paused) {
+          await playSelectedTrack();
+        } else {
+          audio.pause();
         }
       });
 
+      previousButton.addEventListener("click", () => {
+        moveTrack(-1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        moveTrack(1);
+      });
+
       audio.addEventListener("play", () => {
+        const track = passportTracks[currentTrackIndex];
+
         playSymbol.textContent = "❚❚";
         playButton.setAttribute(
           "aria-label",
-          "Pausar Primeiro Voo"
+          `Pausar ${track.title}`
         );
+
+        if (playerStatus) {
+          playerStatus.textContent = "No ar";
+        }
+
+        setPlayerMessage(`${track.title} em reprodução.`);
       });
 
       audio.addEventListener("pause", () => {
+        const track = passportTracks[currentTrackIndex];
+
         playSymbol.textContent = "▶";
         playButton.setAttribute(
           "aria-label",
-          "Reproduzir Primeiro Voo"
+          `Reproduzir ${track.title}`
         );
+
+        if (
+          playerStatus &&
+          audio.currentTime > 0 &&
+          !audio.ended
+        ) {
+          playerStatus.textContent = "Pausado";
+        }
       });
 
-      audio.addEventListener("loadedmetadata", () => {
+      audio.addEventListener("loadedmetadata", async () => {
         durationLabel.textContent =
           formatAudioTime(audio.duration);
+
+        if (playerStatus) {
+          playerStatus.textContent = "Pronto para embarque";
+        }
+
+        if (shouldResumeAfterLoading) {
+          shouldResumeAfterLoading = false;
+          await playSelectedTrack();
+        }
       });
 
       audio.addEventListener("timeupdate", () => {
@@ -1547,6 +2085,68 @@
           "--player-progress",
           "0%"
         );
+
+        const nextIndex =
+          (currentTrackIndex + 1) % passportTracks.length;
+
+        const nextTrack = passportTracks[nextIndex];
+
+        if (nextTrack.available) {
+          loadTrack(nextIndex, true);
+        } else {
+          if (playerStatus) {
+            playerStatus.textContent = "Voo concluído";
+          }
+
+          setPlayerMessage(
+            `${passportTracks[currentTrackIndex].title} concluído. ` +
+            `Selecione outro voo para continuar.`
+          );
+        }
+      });
+
+      audio.addEventListener("error", () => {
+        const track = passportTracks[currentTrackIndex];
+
+        if (playerStatus) {
+          playerStatus.textContent = "Arquivo não localizado";
+        }
+
+        setPlayerMessage(
+          `O navegador não encontrou ${track.file.split("/").pop()}. ` +
+          `Confirme o nome do arquivo dentro da pasta audio.`,
+          true
+        );
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const target = event.target;
+
+        if (
+          target instanceof HTMLInputElement ||
+          target instanceof HTMLTextAreaElement ||
+          target instanceof HTMLSelectElement
+        ) {
+          return;
+        }
+
+        if (event.code === "Space") {
+          event.preventDefault();
+
+          if (audio.paused) {
+            playSelectedTrack();
+          } else {
+            audio.pause();
+          }
+        }
+
+        if (event.code === "ArrowLeft") {
+          moveTrack(-1);
+        }
+
+        if (event.code === "ArrowRight") {
+          moveTrack(1);
+        }
       });
     }
 
