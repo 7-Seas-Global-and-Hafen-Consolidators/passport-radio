@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=30">
+  <link rel="stylesheet" href="/css/style.css?v=31">
 
   <style>
     :root {
@@ -987,6 +987,41 @@
         transform: none;
       }
     }
+
+    /* ACERVO OFICIAL DA BOUTIQUE */
+
+    .boutique-page .brand-logo {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      object-fit: contain;
+      border-radius: 50%;
+      filter: drop-shadow(0 8px 20px rgba(212, 175, 55, .18));
+    }
+
+    .boutique-page .product-card > img {
+      object-position: center;
+    }
+
+    .boutique-page .product-card:nth-child(1) > img,
+    .boutique-page .product-card:nth-child(5) > img,
+    .boutique-page .product-card:nth-child(6) > img,
+    .boutique-page .product-card:nth-child(9) > img {
+      object-position: center 38%;
+    }
+
+    .boutique-page .founder-form__grid {
+      align-items: end;
+    }
+
+    @media (max-width: 620px) {
+      .boutique-page .brand-logo {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+      }
+    }
+
   </style>
 </head>
 
@@ -994,7 +1029,7 @@
 
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Passport Radio - página inicial">
-      <span class="brand-mark">PR</span>
+      <img class="brand-logo" src="/images/logo-passport-radio.png.jpeg" alt="" width="58" height="58">
       <span class="brand-copy">
         <strong>Passport Radio</strong>
         <small>Every Song Is A Destination</small>
@@ -1018,7 +1053,7 @@
   <main>
 
     <section class="shop-hero" aria-labelledby="shop-title">
-      <img class="shop-hero__image" src="/images/kit-passport-radio.png" alt="Coleção premium Passport Radio com camiseta, caneca, passaporte, garrafa, caderno e acessórios">
+      <img class="shop-hero__image" src="/images/boutique/kit-em-uso.png" alt="Coleção premium Passport Radio com camiseta, caneca, passaporte, garrafa, caderno e acessórios">
       <div class="shop-hero__veil"></div>
 
       <div class="shop-hero__content">
@@ -1076,7 +1111,7 @@
     <section class="founders-flight shop-section" id="founders">
       <div class="shop-shell founders-flight__grid reveal">
         <div class="founders-flight__media">
-          <img src="/images/passageiro-fundador.png" alt="Passageiro fundador segurando passaporte e cartão de embarque da Passport Radio">
+          <img src="/images/boutique/passageiro-fundador.png" alt="Passageiro fundador segurando passaporte e cartão de embarque da Passport Radio">
         </div>
 
         <div class="founders-flight__copy">
@@ -1099,9 +1134,7 @@
             <li><span>05</span> Condições especiais em futuras coleções</li>
           </ul>
 
-          <a class="shop-button shop-button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20quero%20reservar%20meu%20interesse%20como%20Passageiro%20Fundador%20da%20Passport%20Radio.%20Entendo%20que%20ainda%20não%20há%20cobrança%20nem%20obrigação%20de%20compra.">
-            Reservar meu assento
-          </a>
+          <a class="shop-button shop-button--gold" href="#interest">Reservar meu assento</a>
         </div>
       </div>
     </section>
@@ -1110,7 +1143,7 @@
       <div class="shop-shell">
         <div class="founder-kit__hero reveal">
           <div class="founder-kit__image">
-            <img src="/images/colecao-primeiro-voo.png" alt="Coleção Primeiro Voo da Passport Radio">
+            <img src="/images/boutique/kit-em-uso.png" alt="Coleção Primeiro Voo da Passport Radio">
           </div>
 
           <div>
@@ -1179,7 +1212,7 @@
         </div>
 
         <div class="product-story__media">
-          <img src="/images/passaporte-musical.png" alt="Passaporte musical e identidade visual da Passport Radio">
+          <img src="/images/boutique/passport.png" alt="Passaporte musical e identidade visual da Passport Radio">
         </div>
       </div>
     </section>
@@ -1195,113 +1228,139 @@
           </h2>
 
           <p class="shop-section-copy">
-            A Boutique começa como uma exposição viva. O visitante descobre as peças, escolhe o que mais combina com a sua viagem e entra na lista antes da abertura dos primeiros lotes.
+            A Boutique começa como uma exposição viva. Cada peça abaixo já possui uma fotografia própria, criada para mostrar como a Passport Radio pode acompanhar a vida real: estudo, trabalho, viagens, parques, aeroportos e momentos de descoberta.
           </p>
         </div>
 
         <div class="products-grid">
 
           <article class="product-card reveal">
-            <img src="/images/kit-passport-radio.png" alt="Camiseta e objetos da Passport Radio">
+            <img src="/images/boutique/t-shirt%20university.png" alt="Estudante usando camiseta Passport Radio em ambiente universitário" loading="lazy">
             <div class="product-card__body">
               <small>Uniforme de bordo</small>
               <h3>Camiseta Passport Radio</h3>
-              <p>Malha estampada sob demanda, com artes ligadas ao Primeiro Voo, destinos e coleções editoriais.</p>
+              <p>Malha produzida sob demanda, com artes ligadas ao Primeiro Voo, festivais, destinos e coleções editoriais.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20na%20camiseta%20da%20Passport%20Radio.%20Quero%20receber%20modelos%2C%20tamanhos%20e%20condições%20quando%20o%20primeiro%20lote%20abrir.">Tenho interesse</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Camiseta">Tenho interesse</a>
               </div>
             </div>
           </article>
 
           <article class="product-card reveal">
-            <img src="/images/kit-passport-radio.png" alt="Caneca da Passport Radio">
+            <img src="/images/boutique/caneca.png" alt="Caneca Passport Radio em uma cena cotidiana de viagem" loading="lazy">
             <div class="product-card__body">
               <small>Ritual de bordo</small>
               <h3>Caneca Passport Radio</h3>
-              <p>Caneca personalizada para acompanhar programas, viagens, histórias e o ritual diário de quem vive música.</p>
+              <p>Uma peça para café, histórias e o ritual diário de quem começa o dia escolhendo um novo destino musical.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20na%20caneca%20da%20Passport%20Radio.%20Quero%20receber%20os%20modelos%20e%20as%20condições%20quando%20o%20primeiro%20lote%20abrir.">Tenho interesse</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Caneca">Tenho interesse</a>
               </div>
             </div>
           </article>
 
           <article class="product-card reveal">
-            <img src="/images/passaporte-musical.png" alt="Capa e passaporte musical da Passport Radio">
+            <img src="/images/boutique/passport.png" alt="Porta-passaporte e passaporte musical da Passport Radio" loading="lazy">
             <div class="product-card__body">
               <small>Documento de viagem</small>
-              <h3>Capa de Passaporte</h3>
-              <p>Capa personalizada com identidade da Passport Radio, pensada para uso real e para integrar o kit fundador.</p>
+              <h3>Porta-passaporte</h3>
+              <p>Proteção para o documento real e símbolo físico da rota construída dentro do universo Passport Radio.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20na%20capa%20de%20passaporte%20da%20Passport%20Radio.%20Quero%20receber%20os%20modelos%20e%20as%20condições%20quando%20o%20primeiro%20lote%20abrir.">Tenho interesse</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Capa de passaporte">Tenho interesse</a>
               </div>
             </div>
           </article>
 
           <article class="product-card reveal">
-            <img src="/images/colecao-primeiro-voo.png" alt="Chaveiros e pequenos itens colecionáveis da Passport Radio">
+            <img src="/images/boutique/chaveiro.png" alt="Chaveiro metálico Passport Radio em apartamento brasileiro" loading="lazy">
             <div class="product-card__body">
               <small>Pequenos objetos</small>
               <h3>Chaveiro de Embarque</h3>
-              <p>Peça acessível para começar a coleção, marcar o primeiro destino e apresentar a Passport Radio a novos passageiros.</p>
+              <p>Uma peça acessível para marcar o primeiro destino e carregar a identidade Passport Radio todos os dias.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" target="_blank" rel="noopener noreferrer" href="https://wa.me/5547991353900?text=Olá%2C%20tenho%20interesse%20no%20chaveiro%20de%20embarque%20da%20Passport%20Radio.%20Quero%20receber%20os%20modelos%20e%20as%20condições%20quando%20o%20primeiro%20lote%20abrir.">Tenho interesse</a>
-                <article class="product-card reveal">
-            <img src="/images/kit-passport-radio.png" alt="Squeeze personalizada da Passport Radio">
-            <div class="product-card__body">
-              <small>Companheira de rota</small>
-              <h3>Squeeze Passport Radio</h3>
-              <p>Uma peça feita para academia, trabalho, metrô, estrada e qualquer lugar onde a música acompanha o passageiro.</p>
-              <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
-              <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" href="#interest">Quero esta peça</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Chaveiro">Tenho interesse</a>
               </div>
             </div>
           </article>
 
           <article class="product-card reveal">
-            <img src="/images/kit-passport-radio.png" alt="Moletom da Passport Radio">
+            <img src="/images/boutique/squeeze%20academia.png" alt="Squeeze Passport Radio em uma academia" loading="lazy">
+            <div class="product-card__body">
+              <small>Companheira de rota</small>
+              <h3>Squeeze Passport Radio</h3>
+              <p>Para academia, trabalho, metrô, estrada e qualquer lugar onde uma música acompanha o passageiro.</p>
+              <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
+              <div class="product-card__actions">
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Squeeze">Tenho interesse</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <img src="/images/boutique/moletom.png" alt="Casal usando moletom Passport Radio em um parque urbano" loading="lazy">
             <div class="product-card__body">
               <small>Uniforme de viagem</small>
               <h3>Moletom Passport Radio</h3>
               <p>Uma peça para noites frias, festivais, aeroportos e viagens longas, com identidade discreta e colecionável.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" href="#interest">Quero esta peça</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Moletom">Tenho interesse</a>
               </div>
             </div>
           </article>
 
           <article class="product-card reveal">
-            <img src="/images/kit-passport-radio.png" alt="Caderno e mouse pad da Passport Radio">
+            <img src="/images/boutique/caderno%20coworking.png" alt="Caderno Passport Radio em uma reunião criativa" loading="lazy">
+            <div class="product-card__body">
+              <small>Diário de rota</small>
+              <h3>Caderno Passport Radio</h3>
+              <p>Para registrar descobertas, viagens, bandas, festivais e aquelas músicas que chegam no momento certo.</p>
+              <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
+              <div class="product-card__actions">
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Caderno">Tenho interesse</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <img src="/images/boutique/mouse%20pad.png" alt="Mouse pad Passport Radio em um home office" loading="lazy">
             <div class="product-card__body">
               <small>Estação pessoal</small>
-              <h3>Cadernos e Mouse Pads</h3>
-              <p>Objetos para escrever rotas, guardar descobertas e transformar a mesa de trabalho numa pequena cabine.</p>
+              <h3>Mouse Pad Passport Radio</h3>
+              <p>Uma rota musical sobre a mesa para transformar trabalho, estudo e pesquisa numa pequena cabine de comando.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" href="#interest">Quero esta peça</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Mouse pad">Tenho interesse</a>
               </div>
             </div>
           </article>
 
           <article class="product-card reveal">
-            <img src="/images/kit-passport-radio.png" alt="Capa de celular, toalha e acessórios da Passport Radio">
+            <img src="/images/boutique/capa%20de%20celular.png" alt="Capa de celular Passport Radio sendo usada em um parque" loading="lazy">
             <div class="product-card__body">
-              <small>Objetos do cotidiano</small>
-              <h3>Capas, Toalhas e Acessórios</h3>
-              <p>Peças personalizadas para levar a identidade da Passport Radio para a rotina sem perder o acabamento editorial.</p>
+              <small>Objeto do cotidiano</small>
+              <h3>Capa de Celular</h3>
+              <p>Uma maneira simples de levar a identidade da Passport Radio para fotografias, encontros e momentos comuns.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
-                <a class="shop-button shop-button--gold" href="#interest">Quero esta peça</a>
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Capa de celular">Tenho interesse</a>
               </div>
             </div>
           </article>
 
-        </div>
+          <article class="product-card reveal">
+            <img src="/images/boutique/kit-em-uso.png" alt="Conjunto de produtos e identidade visual Passport Radio em uso" loading="lazy">
+            <div class="product-card__body">
+              <small>Primeiro Voo</small>
+              <h3>Kit de Embarque</h3>
+              <p>Uma combinação de peças escolhidas para os primeiros passageiros, com composição definida conforme a procura e a viabilidade do lote.</p>
+              <div class="product-card__price"><strong>Condições reservadas</strong><span>proposta antecipada aos fundadores</span></div>
+              <div class="product-card__actions">
+                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Kit Primeiro Voo">Reservar interesse</a>
+              </div>
             </div>
           </article>
 
@@ -1376,7 +1435,7 @@
         </h2>
 
         <p class="shop-section-copy">
-          O cadastro é gratuito, não cria obrigação de compra e garante prioridade nas informações do Primeiro Voo. Os primeiros passageiros poderão receber acesso antecipado, numeração de fundador, votação de coleções e propostas reservadas de embarque.
+          Este cadastro identifica os primeiros passageiros interessados nas peças, coleções e experiências da Passport Radio. Você receberá novidades, convites, acesso antecipado e informações sobre o Primeiro Voo. Nenhuma compra é automática: qualquer proposta será apresentada antes para sua decisão.
         </p>
 
         <form class="founder-form" action="https://formsubmit.co/passport@passportradio.online" method="POST">
@@ -1407,8 +1466,13 @@
             </label>
 
             <label>
+              <span>Telefone</span>
+              <input type="tel" name="Telefone" required autocomplete="tel" placeholder="+55...">
+            </label>
+
+            <label>
               <span>WhatsApp</span>
-              <input type="tel" name="WhatsApp" autocomplete="tel" placeholder="+55...">
+              <input type="tel" name="WhatsApp" required inputmode="tel" placeholder="+55...">
             </label>
 
             <label>
@@ -1428,6 +1492,21 @@
                 <option>Quero conhecer tudo</option>
               </select>
             </label>
+
+            <label>
+              <span>Faixa de participação que gostaria de conhecer</span>
+              <select name="Faixa de participação" required>
+                <option value="" selected disabled>Escolha uma opção</option>
+                <option>R$ 5</option>
+                <option>R$ 10</option>
+                <option>R$ 20</option>
+                <option>R$ 30</option>
+                <option>R$ 50</option>
+                <option>R$ 100</option>
+                <option>Outro valor</option>
+                <option>Ainda não sei</option>
+              </select>
+            </label>
           </div>
 
           <fieldset class="founder-form__choices">
@@ -1441,7 +1520,7 @@
 
           <label class="founder-form__message">
             <span>Conte um pouco sobre a sua relação com a música</span>
-            <textarea name="Mensagem do passageiro" rows="5" placeholder="Uma banda, uma memória, um festival, uma viagem..."></textarea>
+            <textarea name="Mensagem do passageiro" rows="5" required placeholder="Uma banda, uma memória, um festival, uma viagem..."></textarea>
           </label>
 
           <label class="founder-form__consent">
@@ -1454,7 +1533,7 @@
           </button>
 
           <p class="founder-form__note">
-            Cadastro gratuito. Nenhuma cobrança será feita nesta etapa.
+            O envio registra seu interesse e suas preferências. Nenhuma cobrança é realizada por este formulário.
           </p>
         </form>
       </div>
@@ -1465,7 +1544,7 @@
   <footer class="site-footer">
     <div class="shell site-footer__grid">
       <div class="brand brand--footer">
-        <span class="brand-mark">PR</span>
+        <img class="brand-logo" src="/images/logo-passport-radio.png.jpeg" alt="" width="58" height="58" loading="lazy">
         <span class="brand-copy">
           <strong>Passport Radio</strong>
           <small>Every Song Is A Destination</small>
@@ -1522,6 +1601,22 @@
     } else {
       revealItems.forEach((item) => item.classList.add("is-visible"));
     }
+
+    const productSelect = document.querySelector('select[name="Produto preferido"]');
+
+    document.querySelectorAll(".product-interest[data-product]").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (!productSelect) return;
+        const selectedProduct = button.dataset.product;
+        const matchingOption = Array.from(productSelect.options).find(
+          (option) => option.textContent.trim() === selectedProduct
+        );
+        if (matchingOption) {
+          productSelect.value = matchingOption.value || matchingOption.textContent;
+        }
+      });
+    });
+
   </script>
 
 </body>
