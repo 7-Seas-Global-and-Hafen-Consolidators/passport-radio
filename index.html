@@ -6,53 +6,73 @@
   <meta name="description" content="Passport Radio: um museu documental interativo sobre música, artistas, festivais, cidades e apresentações ao vivo do mundo inteiro.">
   <meta name="theme-color" content="#050b13">
   <title>Passport Radio | Every Song Is A Destination</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css?v=21">
-  <link rel="stylesheet" href="/css/home.css?v=1">
-  <script src="/css/js/app.js?v=1" defer></script>
+  <link rel="stylesheet" href="/css/home.css?v=2">
+  <script src="/css/js/app.js?v=2" defer></script>
 </head>
+
 <body class="home-page">
   <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
 
   <header class="site-header" data-site-header>
     <a class="brand" href="index.html" aria-label="Passport Radio — página inicial">
-      <span class="brand-mark" aria-hidden="true">PR</span>
-      <span class="brand-copy"><strong>Passport Radio</strong><small>Every Song Is A Destination</small></span>
+      <img class="brand-logo" src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="58" height="58">
+      <span class="brand-copy">
+        <strong>Passport Radio</strong>
+        <small>Every Song Is A Destination</small>
+      </span>
     </a>
+
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle>
       <span class="nav-toggle__label">Menu</span>
       <span class="nav-toggle__lines" aria-hidden="true"><i></i><i></i></span>
     </button>
+
     <nav class="main-nav" id="main-nav" aria-label="Navegação principal" data-main-nav>
       <a href="#em-destaque">Em destaque</a>
       <a href="#collections">Coleções</a>
+      <a href="#movimentos">Movimentos</a>
       <a href="#arquivos">Arquivos</a>
+      <a href="#festivais">Festivais</a>
       <a href="destinos.html">Destinos</a>
       <a href="radio.html">Ao vivo</a>
       <a href="boutique.html">Boutique</a>
-      <a href="contato.html">Contato</a>
     </nav>
-    <a class="header-action" href="radio.html"><span>Embarcar</span><small>3... 2... 1... CLICK!</small></a>
+
+    <a class="header-action" href="radio.html">
+      <span>Embarcar</span>
+      <small>3... 2... 1... CLICK!</small>
+    </a>
   </header>
 
   <main id="conteudo-principal">
-    <section class="cinematic-hero" aria-labelledby="hero-title">
-      <img src="/images/hero-terminal.png" alt="Terminal internacional da Passport Radio com painel de destinos musicais" class="cinematic-hero__image" fetchpriority="high">
+    <section class="cinematic-hero cinematic-hero--historic" aria-labelledby="hero-title">
+      <img src="/images/when-music-united-the-world.png" alt="When Music United the World — exposição histórica da Passport Radio inspirada no Live Aid de 1985" class="cinematic-hero__image" fetchpriority="high">
       <div class="cinematic-hero__veil" aria-hidden="true"></div>
+
       <div class="cinematic-hero__content shell">
-        <p class="eyebrow">Museu documental interativo sobre música</p>
-        <h1 id="hero-title">Você não aperta apenas o play.<span>Você atravessa uma história.</span></h1>
-        <p class="hero-lead">Artistas, cidades, festivais, bastidores, instrumentos e apresentações ao vivo. Primeiro vem a história. Depois, a música nunca mais soa do mesmo jeito.</p>
+        <p class="eyebrow">Historic Moments · Collection 012</p>
+        <h1 id="hero-title">When Music<span>United the World.</span></h1>
+        <p class="hero-lead">
+          Em 13 de julho de 1985, cidades, continentes, palcos e milhões de pessoas foram ligados pela música.
+          Não foi apenas um concerto. Foi um momento histórico.
+        </p>
         <div class="hero-actions">
-          <a class="button button--gold" href="#em-destaque">Começar a viagem</a>
-          <a class="button button--glass" href="radio.html">Entrar na cabine</a>
+          <a class="button button--gold" href="#em-destaque">Entrar na exposição</a>
+          <a class="button button--glass" href="radio.html">Ir para a cabine</a>
         </div>
-        <p class="hero-ritual">O ritual de embarque começa em <strong>3... 2... 1... CLICK!</strong></p>
+        <p class="hero-ritual">Nenhum passaporte foi exigido. Apenas música. <strong>3... 2... 1... CLICK!</strong></p>
       </div>
-      <div class="hero-status shell" aria-label="Informações do embarque Passport Radio">
-        <span><small>Voo</small> PR321</span><span><small>Origem</small> São Paulo</span><span><small>Destino</small> O mundo</span><span><small>Passageiro</small> Nomad</span>
+
+      <div class="hero-status shell" aria-label="Informações da exposição em destaque">
+        <span><small>Data</small>13 Jul 1985</span>
+        <span><small>Origem</small>O mundo</span>
+        <span><small>Destino</small>Memória</span>
+        <span><small>Passageiro</small>Nomad</span>
       </div>
     </section>
 
@@ -62,10 +82,12 @@
           <p class="eyebrow">Dear Nomad...</p>
           <h2 id="story-opening-title">Toda grande viagem<span>começa com uma pergunta.</span></h2>
         </div>
+
         <div class="story-opening__copy">
-          <p>Você sabia que Frank Carlton Serafino Feranna Jr. morreu por alguns minutos e voltou para transformar aquela experiência em uma das músicas mais explosivas do rock?</p>
+          <p>Você sabia que Frank Carlton Serafino Feranna Jr. morreu por alguns minutos e voltou para transformar aquela experiência numa das músicas mais explosivas do rock?</p>
           <p>Não reconheceu o nome? Calma, meus Nômades. Um minuto... <strong>3... 2... 1... CLICK!</strong></p>
-          <a class="text-link" href="programacao.html">Descobrir a próxima história</a>
+          <p>Nikki Sixx transformou uma quase fatalidade em “Kickstart My Heart”. Mas o resto da história fica para a próxima viagem.</p>
+          <a class="text-link" href="radio.html">Ouvir a próxima história</a>
         </div>
       </div>
     </section>
@@ -73,16 +95,20 @@
     <section class="featured-exhibition section-pad" id="em-destaque" aria-labelledby="featured-title">
       <div class="shell">
         <div class="section-intro section-intro--split">
-          <div><p class="eyebrow">Current Exhibition</p><h2 id="featured-title">Uma sala principal.<span>Mil caminhos para continuar.</span></h2></div>
-          <p>A exposição em destaque muda com o tempo. Hoje, o embarque atravessa palcos, cidades e memórias que ajudaram a transformar o rock em um idioma mundial.</p>
+          <div>
+            <p class="eyebrow">Current Exhibition</p>
+            <h2 id="featured-title">Um dia.<span>O mundo inteiro ouvindo junto.</span></h2>
+          </div>
+          <p>Londres, Filadélfia, Sydney, Tóquio, Moscou, Colônia, Viena, Belgrado e Oslo: uma rota musical que atravessou continentes e entrou para a história.</p>
         </div>
+
         <article class="feature-card feature-card--cinematic">
-          <img src="/images/legends-live-performance.png" alt="The Legends of Live Performance — coleção Passport Radio" loading="lazy">
+          <img src="/images/when-music-united-the-world.png" alt="When Music United the World — Live Aid 1985" loading="lazy">
           <div class="feature-card__overlay">
-            <p class="collection-number">Exposição em destaque · Collection 021</p>
-            <h3>The Legends of Live Performance</h3>
-            <p>Os concertos que ultrapassaram o palco e entraram para a memória coletiva. O som, o risco, a plateia e o instante que nunca se repete.</p>
-            <a class="button button--gold" href="programacao.html">Entrar na exposição</a>
+            <p class="collection-number">Historic Moments · Collection 012</p>
+            <h3>When Music United the World</h3>
+            <p>Queen, U2, David Bowie, Black Sabbath, Dire Straits, Madonna, Duran Duran, The Who, Paul McCartney, Phil Collins, Santana, INXS e dezenas de outros nomes ligados por uma única transmissão.</p>
+            <a class="button button--gold" href="/images/when-music-united-the-world.png" target="_blank" rel="noopener noreferrer">Ver exposição completa</a>
           </div>
         </article>
       </div>
@@ -93,29 +119,126 @@
         <div class="section-intro">
           <p class="eyebrow">Passport Collections</p>
           <h2 id="collections-title">Não são categorias.<span>São salas de uma exposição viva.</span></h2>
-          <p>Cada imagem é uma porta de entrada para um universo editorial: histórias, personagens, gravações, cidades, equipamentos, curiosidades e apresentações ao vivo.</p>
+          <p>Cada imagem é uma porta para histórias, cidades, personagens, instrumentos, gravações, curiosidades e apresentações ao vivo.</p>
         </div>
+
         <div class="museum-grid museum-grid--editorial">
-          <article class="museum-card museum-card--wide"><a href="programacao.html"><img src="/images/collection-progressive-rock.png" alt="The Architects of Progressive Rock" loading="lazy"><span class="museum-card__caption"><small>Collection 001 · Progressive</small><strong>The Architects of Progressive Rock</strong></span></a></article>
-          <article class="museum-card"><a href="programacao.html"><img src="/images/drum-masters.png" alt="The Drum Masters" loading="lazy"><span class="museum-card__caption"><small>Collection 002 · Instrument Masters</small><strong>The Drum Masters</strong></span></a></article>
-          <article class="museum-card"><a href="programacao.html"><img src="/images/collection-guitar-heroes.png" alt="The Guitar Heroes" loading="lazy"><span class="museum-card__caption"><small>Collection 003 · Instrument Masters</small><strong>The Guitar Heroes</strong></span></a></article>
-          <article class="museum-card museum-card--tall"><a href="programacao.html"><img src="/images/collection-synthpop.png" alt="The Golden Age of Synthpop" loading="lazy"><span class="museum-card__caption"><small>Collection 004 · Electronic</small><strong>The Golden Age of Synthpop</strong></span></a></article>
-          <article class="museum-card"><a href="programacao.html"><img src="/images/bass-legends.png" alt="The Bass Legends" loading="lazy"><span class="museum-card__caption"><small>Collection 005 · Instrument Masters</small><strong>The Bass Legends</strong></span></a></article>
-          <article class="museum-card"><a href="programacao.html"><img src="/images/keyboard-wizards.png" alt="The Keyboard Wizards" loading="lazy"><span class="museum-card__caption"><small>Collection 006 · Instrument Masters</small><strong>The Keyboard Wizards</strong></span></a></article>
+          <article class="museum-card museum-card--wide">
+            <a href="/images/collection-progressive-rock.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/collection-progressive-rock.png" alt="The Architects of Progressive Rock" loading="lazy">
+              <span class="museum-card__caption"><small>Collection 001 · Progressive</small><strong>The Architects of Progressive Rock</strong></span>
+            </a>
+          </article>
+
+          <article class="museum-card">
+            <a href="/images/drum-masters.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/drum-masters.png" alt="The Drum Masters" loading="lazy">
+              <span class="museum-card__caption"><small>Collection 002 · Instrument Masters</small><strong>The Drum Masters</strong></span>
+            </a>
+          </article>
+
+          <article class="museum-card">
+            <a href="/images/collection-guitar-heroes.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/collection-guitar-heroes.png" alt="The Guitar Heroes" loading="lazy">
+              <span class="museum-card__caption"><small>Collection 003 · Instrument Masters</small><strong>The Guitar Heroes</strong></span>
+            </a>
+          </article>
+
+          <article class="museum-card museum-card--tall">
+            <a href="/images/collection-synthpop.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/collection-synthpop.png" alt="The Golden Age of Synthpop" loading="lazy">
+              <span class="museum-card__caption"><small>Collection 004 · Electronic</small><strong>The Golden Age of Synthpop</strong></span>
+            </a>
+          </article>
+
+          <article class="museum-card">
+            <a href="/images/bass-legends.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/bass-legends.png" alt="The Bass Legends" loading="lazy">
+              <span class="museum-card__caption"><small>Collection 005 · Instrument Masters</small><strong>The Bass Legends</strong></span>
+            </a>
+          </article>
+
+          <article class="museum-card">
+            <a href="/images/keyboard-wizards.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/keyboard-wizards.png" alt="The Keyboard Wizards" loading="lazy">
+              <span class="museum-card__caption"><small>Collection 006 · Instrument Masters</small><strong>The Keyboard Wizards</strong></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="museum-wing museum-wing--dark section-pad" id="movimentos" aria-labelledby="movements-title">
+      <div class="shell">
+        <div class="section-intro section-intro--split">
+          <div>
+            <p class="eyebrow">Movements That Changed Everything</p>
+            <h2 id="movements-title">Do primeiro acorde<span>às revoluções que vieram depois.</span></h2>
+          </div>
+          <p>Rockabilly, Punk, Gothic Rock e a história brasileira aparecem como movimentos, lugares, linguagem e comportamento — nunca como simples playlists.</p>
+        </div>
+
+        <div class="story-grid story-grid--archive">
+          <article class="story-card story-card--wide">
+            <a href="/images/rock-brasileiro-history.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/rock-brasileiro-history.png" alt="Rock Brasileiro — coleção histórica Passport Radio" loading="lazy">
+              <div class="story-card__body">
+                <small>Collection 010 · Brasil</small>
+                <h3>Rock Brasileiro</h3>
+                <p>De Raul Seixas, Rita Lee e Os Mutantes a Titãs, Legião Urbana, Camisa de Vênus, Raimundos, Charlie Brown Jr., CPM 22, Matanza e tantas outras rotas. No final, a tradição permanece: TOCA RAUUUUUUL!</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="/images/gothic-rock-archives.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/gothic-rock-archives.png" alt="Gothic Rock Archives" loading="lazy">
+              <div class="story-card__body"><small>Collection 007 · Alternative Movements</small><h3>Gothic Rock Archives</h3><p>Quando a escuridão aprendeu elegância.</p></div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="/images/punk-rebellion.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/punk-rebellion.png" alt="Punk Rebellion" loading="lazy">
+              <div class="story-card__body"><small>Collection 008 · Counter Culture</small><h3>Punk Rebellion</h3><p>Três acordes, muitas cidades e uma revolução que jamais pediu licença.</p></div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="/images/rockabilly-roots.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/rockabilly-roots.png" alt="Rockabilly Roots" loading="lazy">
+              <div class="story-card__body"><small>Collection 009 · The First Revolution</small><h3>Rockabilly Roots</h3><p>Antes das arenas, o rock aprendeu a caminhar pelas estradas americanas.</p></div>
+            </a>
+          </article>
+
+          <article class="story-card story-card--wide">
+            <a href="/images/women-who-changed-rock.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/women-who-changed-rock.png" alt="Women Who Changed Rock" loading="lazy">
+              <div class="story-card__body">
+                <small>Collection 011 · Hall of Fame</small>
+                <h3>Women Who Changed Rock</h3>
+                <p>Vozes, guitarras, baixos, teclados e baterias que abriram novas rotas para todas as gerações que vieram depois.</p>
+              </div>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="museum-wing museum-wing--dark section-pad" aria-labelledby="metal-title">
       <div class="shell">
-        <div class="section-intro section-intro--left"><p class="eyebrow">Routes Into The Loud</p><h2 id="metal-title">Metal sem fronteiras.<span>Da origem aos extremos.</span></h2></div>
+        <div class="section-intro section-intro--left">
+          <p class="eyebrow">Routes Into The Loud</p>
+          <h2 id="metal-title">Metal sem fronteiras.<span>Da origem aos extremos.</span></h2>
+        </div>
+
         <div class="horizontal-gallery" aria-label="Coleções de metal">
-          <article class="gallery-card"><a href="programacao.html"><img src="/images/titans-heavy-metal.png" alt="The Titans of Heavy Metal" loading="lazy"><div><small>1968 — Hoje</small><h3>The Titans of Heavy Metal</h3></div></a></article>
-          <article class="gallery-card"><a href="programacao.html"><img src="/images/german-metal-empire.png" alt="The German Metal Empire" loading="lazy"><div><small>Alemanha</small><h3>The German Metal Empire</h3></div></a></article>
-          <article class="gallery-card"><a href="programacao.html"><img src="/images/scandinavian-metal-empire.png" alt="The Scandinavian Metal Empire" loading="lazy"><div><small>Finlândia e Escandinávia</small><h3>Sounds of the North</h3></div></a></article>
-          <article class="gallery-card"><a href="programacao.html"><img src="/images/masters-progressive-metal.png" alt="The Masters of Progressive Metal" loading="lazy"><div><small>Progressive Metal</small><h3>The Masters of Progressive Metal</h3></div></a></article>
-          <article class="gallery-card"><a href="programacao.html"><img src="/images/symphonic-metal.png" alt="Kings and Queens of Symphonic Metal" loading="lazy"><div><small>Orquestra e peso</small><h3>Symphonic Metal</h3></div></a></article>
-          <article class="gallery-card"><a href="programacao.html"><img src="/images/collection-dark-metal.png" alt="The Dark Side of Metal" loading="lazy"><div><small>Atmosferas e extremos</small><h3>The Dark Side of Metal</h3></div></a></article>
+          <article class="gallery-card"><a href="/images/titans-heavy-metal.png" target="_blank" rel="noopener noreferrer"><img src="/images/titans-heavy-metal.png" alt="The Titans of Heavy Metal" loading="lazy"><div><small>1968 — Hoje</small><h3>The Titans of Heavy Metal</h3></div></a></article>
+          <article class="gallery-card"><a href="/images/german-metal-empire.png" target="_blank" rel="noopener noreferrer"><img src="/images/german-metal-empire.png" alt="The German Metal Empire" loading="lazy"><div><small>Alemanha</small><h3>The German Metal Empire</h3></div></a></article>
+          <article class="gallery-card"><a href="/images/scandinavian-metal-empire.png" target="_blank" rel="noopener noreferrer"><img src="/images/scandinavian-metal-empire.png" alt="The Scandinavian Metal Empire" loading="lazy"><div><small>Finlândia e Escandinávia</small><h3>Sounds of the North</h3></div></a></article>
+          <article class="gallery-card"><a href="/images/masters-progressive-metal.png" target="_blank" rel="noopener noreferrer"><img src="/images/masters-progressive-metal.png" alt="The Masters of Progressive Metal" loading="lazy"><div><small>Progressive Metal</small><h3>The Masters of Progressive Metal</h3></div></a></article>
+          <article class="gallery-card"><a href="/images/symphonic-metal.png" target="_blank" rel="noopener noreferrer"><img src="/images/symphonic-metal.png" alt="Kings and Queens of Symphonic Metal" loading="lazy"><div><small>Orquestra e peso</small><h3>Symphonic Metal</h3></div></a></article>
+          <article class="gallery-card"><a href="/images/collection-dark-metal.png" target="_blank" rel="noopener noreferrer"><img src="/images/collection-dark-metal.png" alt="The Dark Side of Metal" loading="lazy"><div><small>Atmosferas e extremos</small><h3>The Dark Side of Metal</h3></div></a></article>
         </div>
       </div>
     </section>
@@ -126,23 +249,40 @@
           <div><p class="eyebrow">The Human Instrument</p><h2 id="voices-title">Vozes que atravessaram décadas.<span>Vozes que viraram memória.</span></h2></div>
           <p>Algumas vozes não interpretam apenas uma música. Elas definem uma época, transformam uma banda e acompanham milhões de pessoas por toda uma vida.</p>
         </div>
+
         <div class="voices-layout">
-          <article class="voices-layout__main"><a href="programacao.html"><img src="/images/voices-that-changed-music.png" alt="The Voices That Changed Music" loading="lazy"><div class="voices-layout__copy"><small>Passport Collection</small><h3>The Voices That Changed Music</h3><p>Do peso de Ronnie James Dio à elegância de Sting. As vozes que se tornaram imortais.</p></div></a></article>
-          <article class="voices-layout__portrait"><a href="programacao.html"><img src="/images/voices-of-the-world.png" alt="The Voices of the World" loading="lazy"><div class="voices-layout__copy"><small>World Voices</small><h3>The Voices of the World</h3></div></a></article>
+          <article class="voices-layout__main">
+            <a href="/images/voices-that-changed-music.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/voices-that-changed-music.png" alt="The Voices That Changed Music" loading="lazy">
+              <div class="voices-layout__copy"><small>Passport Collection</small><h3>The Voices That Changed Music</h3><p>Do peso de Ronnie James Dio à elegância de Sting. As vozes que se tornaram imortais.</p></div>
+            </a>
+          </article>
+
+          <article class="voices-layout__portrait">
+            <a href="/images/voices-of-the-world.png" target="_blank" rel="noopener noreferrer">
+              <img src="/images/voices-of-the-world.png" alt="The Voices of the World" loading="lazy">
+              <div class="voices-layout__copy"><small>World Voices</small><h3>The Voices of the World</h3></div>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="passport-files section-pad" id="arquivos" aria-labelledby="files-title">
       <div class="shell">
-        <div class="section-intro"><p class="eyebrow">Passport Files</p><h2 id="files-title">Uma banda.<span>Uma cidade. Uma história inteira.</span></h2><p>Arquivos documentais que começam pelo nome de uma banda e terminam atravessando bairros, estúdios, estradas, palcos, mudanças de formação e histórias quase esquecidas.</p></div>
+        <div class="section-intro">
+          <p class="eyebrow">Passport Files</p>
+          <h2 id="files-title">Uma banda.<span>Uma cidade. Uma história inteira.</span></h2>
+          <p>Arquivos documentais que começam pelo nome de uma banda e terminam atravessando bairros, estúdios, estradas, palcos, mudanças de formação e histórias quase esquecidas.</p>
+        </div>
+
         <div class="story-grid story-grid--archive">
-          <article class="story-card story-card--wide"><a href="programacao.html"><img src="/images/def-leppard-london.png" alt="Arquivo editorial do Def Leppard em Londres" loading="lazy"><div class="story-card__body"><small>Reino Unido · Sheffield e Londres</small><h3>Def Leppard</h3><p>Guitarras, sobrevivência e a obstinação de uma banda que recusou desaparecer.</p></div></a></article>
-          <article class="story-card"><a href="programacao.html"><img src="/images/elf.png" alt="Arquivo editorial da banda ELF" loading="lazy"><div class="story-card__body"><small>Estados Unidos · Nova York</small><h3>ELF</h3><p>Antes do Rainbow e do Black Sabbath, Ronnie James Dio já construía sua própria estrada.</p></div></a></article>
-          <article class="story-card"><a href="programacao.html"><img src="/images/living-colour.png" alt="Arquivo editorial do Living Colour" loading="lazy"><div class="story-card__body"><small>Estados Unidos · Nova York</small><h3>Living Colour</h3><p>Identidade, peso, virtuosismo e uma cidade em transformação.</p></div></a></article>
-          <article class="story-card"><a href="programacao.html"><img src="/images/thin-lizzy.png" alt="Arquivo editorial do Thin Lizzy" loading="lazy"><div class="story-card__body"><small>Irlanda · Dublin</small><h3>Thin Lizzy</h3><p>Phil Lynott, ruas molhadas, guitarras gêmeas e a poesia elétrica de Dublin.</p></div></a></article>
-          <article class="story-card"><a href="programacao.html"><img src="/images/destination-mana.png" alt="Arquivo editorial da banda Maná" loading="lazy"><div class="story-card__body"><small>México · Guadalajara</small><h3>Maná</h3><p>Uma das grandes rotas do rock latino-americano.</p></div></a></article>
-          <article class="story-card"><a href="programacao.html"><img src="/images/rpm.png" alt="Arquivo editorial da banda RPM" loading="lazy"><div class="story-card__body"><small>Brasil · São Paulo</small><h3>RPM</h3><p>Tecnologia, palco e a inquietação de uma geração.</p></div></a></article>
+          <article class="story-card story-card--wide"><a href="/images/def-leppard-london.png" target="_blank" rel="noopener noreferrer"><img src="/images/def-leppard-london.png" alt="Arquivo editorial do Def Leppard em Londres" loading="lazy"><div class="story-card__body"><small>Reino Unido · Sheffield e Londres</small><h3>Def Leppard</h3><p>Guitarras, sobrevivência e a obstinação de uma banda que recusou desaparecer.</p></div></a></article>
+          <article class="story-card"><a href="/images/elf.png" target="_blank" rel="noopener noreferrer"><img src="/images/elf.png" alt="Arquivo editorial da banda ELF" loading="lazy"><div class="story-card__body"><small>Estados Unidos · Nova York</small><h3>ELF</h3><p>Antes do Rainbow e do Black Sabbath, o pequeno grande homem Ronnie James Dio já construía sua própria estrada.</p></div></a></article>
+          <article class="story-card"><a href="/images/living-colour.png" target="_blank" rel="noopener noreferrer"><img src="/images/living-colour.png" alt="Arquivo editorial do Living Colour" loading="lazy"><div class="story-card__body"><small>Estados Unidos · Nova York</small><h3>Living Colour</h3><p>Identidade, peso, virtuosismo e uma cidade em transformação.</p></div></a></article>
+          <article class="story-card"><a href="/images/thin-lizzy.png" target="_blank" rel="noopener noreferrer"><img src="/images/thin-lizzy.png" alt="Arquivo editorial do Thin Lizzy" loading="lazy"><div class="story-card__body"><small>Irlanda · Dublin</small><h3>Thin Lizzy</h3><p>Phil Lynott, ruas molhadas, guitarras gêmeas e a poesia elétrica de Dublin.</p></div></a></article>
+          <article class="story-card"><a href="/images/destination-mana.png" target="_blank" rel="noopener noreferrer"><img src="/images/destination-mana.png" alt="Arquivo editorial da banda Maná" loading="lazy"><div class="story-card__body"><small>México · Guadalajara</small><h3>Maná</h3><p>Uma das grandes rotas do rock latino-americano.</p></div></a></article>
+          <article class="story-card"><a href="/images/rpm.png" target="_blank" rel="noopener noreferrer"><img src="/images/rpm.png" alt="Arquivo editorial da banda RPM" loading="lazy"><div class="story-card__body"><small>Brasil · São Paulo</small><h3>RPM</h3><p>Tecnologia, palco e a inquietação de uma geração.</p></div></a></article>
         </div>
       </div>
     </section>
@@ -150,24 +290,43 @@
     <section class="continental-routes section-pad" aria-labelledby="routes-title">
       <div class="shell continental-routes__grid">
         <div class="continental-routes__media"><img src="/images/latin-rock-legends.png" alt="Vozes da Nossa América — história do rock em espanhol e português" loading="lazy"></div>
-        <div class="continental-routes__copy"><p class="eyebrow">Vozes da Nossa América</p><h2 id="routes-title">Histórias que ultrapassaram fronteiras<span>e se tornaram parte de uma geração.</span></h2><p>Brasil, México, Argentina, Chile e outras rotas do continente se encontram numa coleção que trata o rock latino-americano como história, identidade, resistência e memória coletiva.</p><a class="button button--glass" href="destinos.html">Explorar a América Latina</a></div>
+        <div class="continental-routes__copy">
+          <p class="eyebrow">Vozes da Nossa América</p>
+          <h2 id="routes-title">Histórias que ultrapassaram fronteiras<span>e se tornaram parte de uma geração.</span></h2>
+          <p>Brasil, México, Argentina, Chile e outras rotas do continente se encontram numa coleção que trata o rock latino-americano como história, identidade, resistência e memória coletiva.</p>
+          <a class="button button--glass" href="destinos.html">Explorar a América Latina</a>
+        </div>
       </div>
     </section>
 
     <section class="world-map-section section-pad" aria-labelledby="map-title">
       <div class="shell world-map-section__grid">
-        <div class="world-map-section__copy"><p class="eyebrow">Explore by Destination</p><h2 id="map-title">Cada ponto no mapa<span>pode abrir uma nova memória.</span></h2><p>Das ruas de Dublin aos clubes de Nova York. Dos festivais finlandeses à cena coreana. A Passport Radio acompanha a música até o lugar onde ela nasceu.</p><a class="text-link" href="destinos.html">Abrir o mapa de destinos</a></div>
+        <div class="world-map-section__copy">
+          <p class="eyebrow">Explore by Destination</p>
+          <h2 id="map-title">Cada ponto no mapa<span>pode abrir uma nova memória.</span></h2>
+          <p>Das ruas de Dublin aos clubes de Nova York. Dos festivais finlandeses à cena coreana. A Passport Radio acompanha a música até o lugar onde ela nasceu.</p>
+          <a class="text-link" href="destinos.html">Abrir o mapa de destinos</a>
+        </div>
         <div class="world-map-section__media"><img src="/images/mapa-global.png" alt="Mapa mundial com rotas douradas conectando destinos musicais" loading="lazy"></div>
       </div>
     </section>
 
-    <section class="festival-feature section-pad" aria-labelledby="festival-title">
+    <section class="festival-feature section-pad" id="festivais" aria-labelledby="festival-title">
       <div class="shell">
-        <div class="section-intro section-intro--left"><p class="eyebrow">Festival Passport</p><h2 id="festival-title">Onde milhares de histórias<span>acontecem na mesma noite.</span></h2></div>
+        <div class="section-intro section-intro--left">
+          <p class="eyebrow">Festival Passport</p>
+          <h2 id="festival-title">Onde milhares de histórias<span>acontecem na mesma noite.</span></h2>
+        </div>
+
         <div class="festival-grid">
-          <article class="festival-card festival-card--large"><a href="destinos.html"><img src="/images/pentaport-rock-festival-korea.png" alt="Incheon Pentaport Rock Festival" loading="lazy"><div><small>Coreia do Sul · Incheon</small><h3>Pentaport Rock Festival</h3><p>Muito além do K-pop: uma das grandes portas de entrada para a cena rock coreana.</p></div></a></article>
-          <article class="festival-card"><a href="destinos.html"><img src="/images/sweden-festival.png" alt="Sweden Rock Festival" loading="lazy"><div><small>Suécia · Sölvesborg</small><h3>Sweden Rock Festival</h3><p>Uma rota escandinava feita de guitarras, memória e longas noites.</p></div></a></article>
-          <article class="festival-card"><a href="destinos.html"><img src="/images/madeiras-pagas.png" alt="Arquivo de festivais e histórias de turnê" loading="lazy"><div><small>Histórias de estrada</small><h3>Madeiras Pagas</h3><p>Os momentos em que um riff, um solo ou uma apresentação justificaram cada quilómetro da viagem.</p></div></a></article>
+          <article class="festival-card festival-card--large"><a href="/images/pentaport-rock-festival-korea.png" target="_blank" rel="noopener noreferrer"><img src="/images/pentaport-rock-festival-korea.png" alt="Incheon Pentaport Rock Festival" loading="lazy"><div><small>Coreia do Sul · Incheon</small><h3>Pentaport Rock Festival</h3><p>Muito além do K-pop: uma das grandes portas de entrada para a cena rock coreana.</p></div></a></article>
+          <article class="festival-card"><a href="/images/wacken-open-air.png" target="_blank" rel="noopener noreferrer"><img src="/images/wacken-open-air.png" alt="Wacken Open Air" loading="lazy"><div><small>Alemanha · Wacken</small><h3>Wacken Open Air</h3><p>Uma pequena vila transformada em destino mundial do metal.</p></div></a></article>
+          <article class="festival-card"><a href="/images/glastonbury-festival.png" target="_blank" rel="noopener noreferrer"><img src="/images/glastonbury-festival.png" alt="Glastonbury Festival" loading="lazy"><div><small>Reino Unido · Pilton</small><h3>Glastonbury Festival</h3><p>Música, contracultura e gerações reunidas num dos festivais mais emblemáticos do planeta.</p></div></a></article>
+          <article class="festival-card"><a href="/images/fuji-rock-festival.png" target="_blank" rel="noopener noreferrer"><img src="/images/fuji-rock-festival.png" alt="Fuji Rock Festival" loading="lazy"><div><small>Japão · Niigata</small><h3>Fuji Rock Festival</h3><p>Montanhas, chuva, multidões e uma das rotas musicais mais singulares da Ásia.</p></div></a></article>
+          <article class="festival-card"><a href="/images/hollywood-festival.png" target="_blank" rel="noopener noreferrer"><img src="/images/hollywood-festival.png" alt="Hollywood Rock Festival" loading="lazy"><div><small>Brasil · São Paulo e Rio de Janeiro</small><h3>Hollywood Rock</h3><p>Uma geração brasileira diante de alguns dos maiores nomes da música internacional.</p></div></a></article>
+          <article class="festival-card"><a href="/images/sweden-festival.png" target="_blank" rel="noopener noreferrer"><img src="/images/sweden-festival.png" alt="Sweden Rock Festival" loading="lazy"><div><small>Suécia · Sölvesborg</small><h3>Sweden Rock Festival</h3><p>Uma rota escandinava feita de guitarras, memória e longas noites.</p></div></a></article>
+          <article class="festival-card"><a href="/images/hellfest.png" target="_blank" rel="noopener noreferrer"><img src="/images/hellfest.png" alt="Hellfest" loading="lazy"><div><small>França · Clisson</small><h3>Hellfest</h3><p>Uma cidade medieval convertida em território mundial da música pesada.</p></div></a></article>
+          <article class="festival-card"><a href="/images/tuska-open-air.png" target="_blank" rel="noopener noreferrer"><img src="/images/tuska-open-air.png" alt="Tuska Open Air" loading="lazy"><div><small>Finlândia · Helsinque</small><h3>Tuska Open Air</h3><p>O som do norte transformado em encontro internacional.</p></div></a></article>
         </div>
       </div>
     </section>
@@ -175,23 +334,36 @@
     <section class="founder-feature section-pad" id="founders">
       <div class="shell founder-feature__grid">
         <div class="founder-feature__media"><img src="/images/passageiro-fundador.png" alt="Passageiro fundador da Passport Radio em um aeroporto" loading="lazy"></div>
-        <div class="founder-feature__copy"><p class="eyebrow">Primeiro Voo</p><h2>Há viagens que acontecem todos os dias.<span>Esta acontece uma única vez.</span></h2><p>Os Passageiros Fundadores entrarão antes da decolagem oficial, receberão identidade numerada, acesso antecipado e participação na construção dos próximos destinos da Passport Radio.</p><a class="button button--gold" href="boutique.html#founders">Conhecer o Primeiro Voo</a></div>
+        <div class="founder-feature__copy">
+          <p class="eyebrow">Primeiro Voo</p>
+          <h2>Há viagens que acontecem todos os dias.<span>Esta acontece uma única vez.</span></h2>
+          <p>Os Passageiros Fundadores entrarão antes da decolagem oficial, receberão identidade numerada, acesso antecipado e participação na construção dos próximos destinos da Passport Radio.</p>
+          <a class="button button--gold" href="boutique.html#founders">Conhecer o Primeiro Voo</a>
+        </div>
       </div>
     </section>
 
     <section class="boutique-preview section-pad" aria-labelledby="boutique-title">
       <div class="shell boutique-preview__grid">
-        <div class="boutique-preview__copy"><p class="eyebrow">Boutique de Bordo</p><h2 id="boutique-title">Objetos para levar<span>um pedaço da viagem com você.</span></h2><p>Coleções inspiradas em festivais, cidades, histórias e destinos musicais. Não são lembranças genéricas: são capítulos físicos do universo Passport Radio.</p><a class="button button--glass" href="boutique.html">Visitar a Boutique</a></div>
+        <div class="boutique-preview__copy">
+          <p class="eyebrow">Boutique de Bordo</p>
+          <h2 id="boutique-title">Objetos para levar<span>um pedaço da viagem com você.</span></h2>
+          <p>Coleções inspiradas em festivais, cidades, histórias e destinos musicais. Não são lembranças genéricas: são capítulos físicos do universo Passport Radio.</p>
+          <a class="button button--glass" href="boutique.html">Visitar a Boutique</a>
+        </div>
         <div class="boutique-preview__media"><img src="/images/colecao-primeiro-voo.png" alt="Coleção Primeiro Voo da Passport Radio" loading="lazy"></div>
       </div>
     </section>
 
-    <section class="final-boarding section-pad">
+    <section class="final-boarding section-pad" id="final-boarding">
       <div class="shell final-boarding__inner">
         <p class="eyebrow">Próxima transmissão</p>
         <h2>A história está pronta.<span>Agora deixe a música entrar.</span></h2>
         <p>Ajuste os auscultadores. Apague as luzes. Escolha o próximo destino.</p>
-        <div class="final-boarding__actions"><a class="button button--gold" href="radio.html">Ir para a cabine</a><a class="button button--glass" href="programacao.html">Ver próximas viagens</a></div>
+        <div class="final-boarding__actions">
+          <a class="button button--gold" href="radio.html">Ir para a cabine</a>
+          <a class="button button--glass" href="destinos.html">Explorar destinos</a>
+        </div>
         <strong class="final-boarding__ritual">3... 2... 1... CLICK!</strong>
       </div>
     </section>
@@ -199,12 +371,33 @@
 
   <footer class="site-footer">
     <div class="shell site-footer__grid">
-      <div class="brand brand--footer"><span class="brand-mark" aria-hidden="true">PR</span><span class="brand-copy"><strong>Passport Radio</strong><small>Every Song Is A Destination</small></span></div>
-      <nav aria-label="Navegação do rodapé"><a href="#collections">Coleções</a><a href="destinos.html">Destinos</a><a href="programacao.html">Programação</a><a href="radio.html">Cabine</a><a href="boutique.html">Boutique</a><a href="contato.html">Contato</a></nav>
+      <a class="brand brand--footer" href="index.html" aria-label="Passport Radio — página inicial">
+        <img class="brand-logo" src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="58" height="58" loading="lazy">
+        <span class="brand-copy"><strong>Passport Radio</strong><small>Every Song Is A Destination</small></span>
+      </a>
+
+      <nav aria-label="Navegação do rodapé">
+        <a href="#collections">Coleções</a>
+        <a href="#movimentos">Movimentos</a>
+        <a href="#festivais">Festivais</a>
+        <a href="destinos.html">Destinos</a>
+        <a href="radio.html">Cabine</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Redes sociais da Passport Radio">
+        <a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Passport Radio">Instagram</a>
+        <a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer" aria-label="Facebook da Passport Radio">Facebook</a>
+        <a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer" aria-label="YouTube da Passport Radio">YouTube</a>
+      </div>
+
       <p>© 2026 Passport Radio · Primeiro a história. Depois: 3... 2... 1... CLICK!</p>
     </div>
   </footer>
 
-  <noscript><p class="noscript-message">A navegação principal continua disponível, mas algumas animações da experiência Passport Radio precisam de JavaScript habilitado.</p></noscript>
+  <noscript>
+    <p class="noscript-message">A navegação principal continua disponível, mas algumas animações da experiência Passport Radio precisam de JavaScript habilitado.</p>
+  </noscript>
 </body>
 </html>
