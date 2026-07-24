@@ -23,7 +23,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="/css/style.css?v=23">
+  <link rel="stylesheet" href="/css/style.css?v=24">
 
   <style>
     .radio-documentary-page {
@@ -766,7 +766,7 @@
 
 
     /* ========================================================
-       PLAYER MULTIFAIXAS — ATÉ CINCO VOOS
+       PLAYER MULTIFAIXAS — ATÉ VINTE VOOS
        ======================================================== */
 
     .passport-player__navigation {
@@ -946,6 +946,37 @@
       .passport-player__track-state {
         display: none;
       }
+    }
+
+
+    .passport-player__playlist {
+      max-height: 540px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, .52) rgba(2, 6, 11, .3);
+    }
+
+    .passport-player__playlist::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .passport-player__playlist::-webkit-scrollbar-track {
+      background: rgba(2, 6, 11, .3);
+    }
+
+    .passport-player__playlist::-webkit-scrollbar-thumb {
+      border: 2px solid rgba(2, 6, 11, .72);
+      border-radius: 999px;
+      background: rgba(212, 175, 55, .52);
+    }
+
+    .passport-player__track.is-unavailable {
+      opacity: .58;
+    }
+
+    .passport-player__track.is-checking {
+      cursor: wait;
     }
 
     /* ========================================================
@@ -1303,7 +1334,7 @@
               </button>
 
               <div class="passport-player__track-meta">
-                <small id="passport-track-counter">Voo 01 de 05</small>
+                <small id="passport-track-counter">Voo 01 de 20</small>
                 <strong id="passport-track-title">Primeiro Voo</strong>
               </div>
             </div>
@@ -1695,59 +1726,147 @@
       document.querySelector("#passport-player-message");
 
     /*
-      Para adicionar ou trocar músicas, edite somente esta lista.
+      PLAYER AUTOMÁTICO PARA 20 VOOS
 
-      Arquivos previstos na pasta /audio:
-      1. primeiro-voo.mp3.mp3
-      2. segundo-voo.mp3
-      3. terceiro-voo.mp3
-      4. quarto-voo.mp3
-      5. quinto-voo.mp3
+      Você não precisa mais editar o HTML quando subir uma música nova.
 
-      Os três últimos já ficam preparados no player.
-      Basta subir os arquivos usando exatamente esses nomes.
+      Basta enviar o arquivo para a pasta /audio usando exatamente um
+      destes nomes:
+
+      primeiro-voo.mp3.mp3
+      segundo-voo.mp3
+      terceiro-voo.mp3
+      quarto-voo.mp3
+      quinto-voo.mp3
+      sexto-voo.mp3
+      setimo-voo.mp3
+      oitavo-voo.mp3
+      nono-voo.mp3
+      decimo-voo.mp3
+      decimo-primeiro-voo.mp3
+      decimo-segundo-voo.mp3
+      decimo-terceiro-voo.mp3
+      decimo-quarto-voo.mp3
+      decimo-quinto-voo.mp3
+      decimo-sexto-voo.mp3
+      decimo-setimo-voo.mp3
+      decimo-oitavo-voo.mp3
+      decimo-nono-voo.mp3
+      vigesimo-voo.mp3
+
+      Ao abrir a página, o player verifica sozinho quais arquivos existem.
+      Os arquivos encontrados aparecem como "Embarcar".
+      Os que ainda não foram enviados aparecem como "Em preparação".
     */
+
     const passportTracks = [
       {
         title: "Primeiro Voo",
         file: "/audio/primeiro-voo.mp3.mp3",
-        origin: "São Paulo",
-        destination: "O mundo",
-        description: "Arquivo inaugural",
-        available: true
+        description: "Arquivo inaugural"
       },
       {
         title: "Segundo Voo",
         file: "/audio/segundo-voo.mp3",
-        origin: "São Paulo",
-        destination: "Nova rota",
-        description: "Segunda partida",
-        available: true
+        description: "Segunda partida"
       },
       {
-  title: "Quarto Voo",
-  file: "/audio/quarto-voo.mp3",
-  origin: "São Paulo",
-  destination: "Nova rota",
-  description: "Quarta partida",
-  available: true
-},
-{
-  title: "Sétimo Voo",
-  file: "/audio/setimo-voo.mp3",
-  origin: "São Paulo",
-  destination: "Nova rota",
-  description: "Sétima partida",
-  available: true
-},
-{
-  title: "Oitavo Voo",
-  file: "/audio/oitavo-voo.mp3",
-  origin: "São Paulo",
-  destination: "Nova rota",
-  description: "Oitava partida",
-  available: true
-}
+        title: "Terceiro Voo",
+        file: "/audio/terceiro-voo.mp3",
+        description: "Terceira partida"
+      },
+      {
+        title: "Quarto Voo",
+        file: "/audio/quarto-voo.mp3",
+        description: "Quarta partida"
+      },
+      {
+        title: "Quinto Voo",
+        file: "/audio/quinto-voo.mp3",
+        description: "Quinta partida"
+      },
+      {
+        title: "Sexto Voo",
+        file: "/audio/sexto-voo.mp3",
+        description: "Sexta partida"
+      },
+      {
+        title: "Sétimo Voo",
+        file: "/audio/setimo-voo.mp3",
+        description: "Sétima partida"
+      },
+      {
+        title: "Oitavo Voo",
+        file: "/audio/oitavo-voo.mp3",
+        description: "Oitava partida"
+      },
+      {
+        title: "Nono Voo",
+        file: "/audio/nono-voo.mp3",
+        description: "Nona partida"
+      },
+      {
+        title: "Décimo Voo",
+        file: "/audio/decimo-voo.mp3",
+        description: "Décima partida"
+      },
+      {
+        title: "Décimo Primeiro Voo",
+        file: "/audio/decimo-primeiro-voo.mp3",
+        description: "Décima primeira partida"
+      },
+      {
+        title: "Décimo Segundo Voo",
+        file: "/audio/decimo-segundo-voo.mp3",
+        description: "Décima segunda partida"
+      },
+      {
+        title: "Décimo Terceiro Voo",
+        file: "/audio/decimo-terceiro-voo.mp3",
+        description: "Décima terceira partida"
+      },
+      {
+        title: "Décimo Quarto Voo",
+        file: "/audio/decimo-quarto-voo.mp3",
+        description: "Décima quarta partida"
+      },
+      {
+        title: "Décimo Quinto Voo",
+        file: "/audio/decimo-quinto-voo.mp3",
+        description: "Décima quinta partida"
+      },
+      {
+        title: "Décimo Sexto Voo",
+        file: "/audio/decimo-sexto-voo.mp3",
+        description: "Décima sexta partida"
+      },
+      {
+        title: "Décimo Sétimo Voo",
+        file: "/audio/decimo-setimo-voo.mp3",
+        description: "Décima sétima partida"
+      },
+      {
+        title: "Décimo Oitavo Voo",
+        file: "/audio/decimo-oitavo-voo.mp3",
+        description: "Décima oitava partida"
+      },
+      {
+        title: "Décimo Nono Voo",
+        file: "/audio/decimo-nono-voo.mp3",
+        description: "Décima nona partida"
+      },
+      {
+        title: "Vigésimo Voo",
+        file: "/audio/vigesimo-voo.mp3",
+        description: "Vigésima partida"
+      }
+    ].map((track) => ({
+      ...track,
+      origin: "São Paulo",
+      destination: "O mundo",
+      available: false,
+      checked: false
+    }));
 
     let currentTrackIndex = 0;
     let shouldResumeAfterLoading = false;
@@ -1774,6 +1893,38 @@
       playerMessage.classList.toggle("is-error", isError);
     };
 
+    const fileNameFromPath = (path) =>
+      path.split("/").pop() || path;
+
+    const checkTrackAvailability = async (track) => {
+      try {
+        const response = await fetch(track.file, {
+          method: "HEAD",
+          cache: "no-store"
+        });
+
+        if (response.ok) {
+          return true;
+        }
+
+        /*
+          Alguns servidores não aceitam HEAD. Nesse caso, tenta buscar
+          apenas o primeiro byte do arquivo, sem baixar a música inteira.
+        */
+        const fallback = await fetch(track.file, {
+          method: "GET",
+          headers: {
+            Range: "bytes=0-0"
+          },
+          cache: "no-store"
+        });
+
+        return fallback.ok || fallback.status === 206;
+      } catch (error) {
+        return false;
+      }
+    };
+
     const updatePlaylistButtons = () => {
       if (!playlistElement) {
         return;
@@ -1786,18 +1937,36 @@
           const isActive = index === currentTrackIndex;
 
           button.classList.toggle("is-active", isActive);
-          button.setAttribute("aria-current", isActive ? "true" : "false");
+          button.classList.toggle(
+            "is-unavailable",
+            track.checked && !track.available
+          );
+          button.classList.toggle(
+            "is-checking",
+            !track.checked
+          );
+
+          button.setAttribute(
+            "aria-current",
+            isActive ? "true" : "false"
+          );
 
           const state = button.querySelector(
             ".passport-player__track-state"
           );
 
-          if (state) {
-            state.textContent = isActive
-              ? "Selecionado"
-              : track.available
-                ? "Embarcar"
-                : "Em preparação";
+          if (!state) {
+            return;
+          }
+
+          if (!track.checked) {
+            state.textContent = "Verificando";
+          } else if (isActive && track.available) {
+            state.textContent = "Selecionado";
+          } else if (track.available) {
+            state.textContent = "Embarcar";
+          } else {
+            state.textContent = "Em preparação";
           }
         });
     };
@@ -1811,7 +1980,8 @@
 
       passportTracks.forEach((track, index) => {
         const button = document.createElement("button");
-        button.className = "passport-player__track";
+        button.className =
+          "passport-player__track is-checking";
         button.type = "button";
         button.dataset.trackIndex = String(index);
         button.setAttribute(
@@ -1829,10 +1999,28 @@
             <small>${track.description}</small>
           </span>
 
-          <span class="passport-player__track-state"></span>
+          <span class="passport-player__track-state">
+            Verificando
+          </span>
         `;
 
         button.addEventListener("click", () => {
+          if (!track.checked) {
+            setPlayerMessage(
+              `Aguarde um instante. O arquivo de ${track.title} ainda está sendo verificado.`
+            );
+            return;
+          }
+
+          if (!track.available) {
+            setPlayerMessage(
+              `${track.title} está preparado no painel, mas o arquivo ` +
+              `${fileNameFromPath(track.file)} ainda não foi enviado para a pasta audio.`,
+              false
+            );
+            return;
+          }
+
           const wasPlaying = !audio.paused;
           loadTrack(index, wasPlaying);
         });
@@ -1891,9 +2079,6 @@
         );
       }
 
-      document.title =
-        `${track.title} | Cabine de Transmissão | Passport Radio`;
-
       updatePlaylistButtons();
     };
 
@@ -1906,10 +2091,20 @@
         return;
       }
 
-      currentTrackIndex = index;
-      const track = passportTracks[currentTrackIndex];
+      const track = passportTracks[index];
 
+      if (!track.available) {
+        setPlayerMessage(
+          `${track.title} ainda está em preparação. Envie ` +
+          `${fileNameFromPath(track.file)} para a pasta audio.`,
+          false
+        );
+        return;
+      }
+
+      currentTrackIndex = index;
       shouldResumeAfterLoading = autoplay;
+
       audio.pause();
       audio.src = track.file;
       audio.load();
@@ -1918,23 +2113,12 @@
       updateTrackInterface();
 
       if (playerStatus) {
-        playerStatus.textContent = track.available
-          ? "Preparando embarque"
-          : "Aguardando arquivo";
+        playerStatus.textContent = "Preparando embarque";
       }
 
-      if (track.available) {
-        setPlayerMessage(
-          `${track.title} selecionado. Pressione reproduzir para embarcar.`
-        );
-      } else {
-        setPlayerMessage(
-          `${track.title} já está preparado no player. ` +
-          `Suba o arquivo ${track.file.split("/").pop()} na pasta audio ` +
-          `e depois altere available para true na lista passportTracks.`,
-          false
-        );
-      }
+      setPlayerMessage(
+        `${track.title} selecionado. Pressione reproduzir para embarcar.`
+      );
     };
 
     const playSelectedTrack = async () => {
@@ -1942,8 +2126,7 @@
 
       if (!track.available) {
         setPlayerMessage(
-          `O arquivo ${track.file.split("/").pop()} ainda não foi ativado. ` +
-          `Suba a música e altere available para true.`,
+          `${track.title} ainda não possui arquivo disponível.`,
           true
         );
         return;
@@ -1953,22 +2136,98 @@
         await audio.play();
       } catch (error) {
         console.error("Não foi possível iniciar o áudio:", error);
+
         setPlayerMessage(
           `Não foi possível abrir ${track.title}. Confira se o arquivo ` +
-          `${track.file.split("/").pop()} está na pasta audio e se o nome ` +
-          `está exatamente igual ao código.`,
+          `${fileNameFromPath(track.file)} está dentro da pasta audio.`,
           true
         );
       }
     };
 
+    const findNextAvailableIndex = (
+      startIndex,
+      direction = 1
+    ) => {
+      for (
+        let step = 1;
+        step <= passportTracks.length;
+        step += 1
+      ) {
+        const index =
+          (
+            startIndex +
+            direction * step +
+            passportTracks.length
+          ) % passportTracks.length;
+
+        if (passportTracks[index].available) {
+          return index;
+        }
+      }
+
+      return -1;
+    };
+
     const moveTrack = (direction) => {
-      const newIndex =
-        (currentTrackIndex + direction + passportTracks.length) %
-        passportTracks.length;
+      const newIndex = findNextAvailableIndex(
+        currentTrackIndex,
+        direction
+      );
+
+      if (newIndex === -1) {
+        setPlayerMessage(
+          "Nenhum outro voo com áudio disponível foi encontrado.",
+          true
+        );
+        return;
+      }
 
       const wasPlaying = !audio.paused;
       loadTrack(newIndex, wasPlaying);
+    };
+
+    const verifyAllTracks = async () => {
+      setPlayerMessage(
+        "Verificando os arquivos disponíveis na cabine..."
+      );
+
+      await Promise.all(
+        passportTracks.map(async (track) => {
+          track.available =
+            await checkTrackAvailability(track);
+          track.checked = true;
+          updatePlaylistButtons();
+        })
+      );
+
+      const availableCount = passportTracks.filter(
+        (track) => track.available
+      ).length;
+
+      const firstAvailableIndex = passportTracks.findIndex(
+        (track) => track.available
+      );
+
+      if (firstAvailableIndex === -1) {
+        if (playerStatus) {
+          playerStatus.textContent = "Nenhum voo disponível";
+        }
+
+        setPlayerMessage(
+          "Nenhum arquivo de áudio foi encontrado na pasta audio.",
+          true
+        );
+        return;
+      }
+
+      loadTrack(firstAvailableIndex, false);
+
+      setPlayerMessage(
+        `${availableCount} ${
+          availableCount === 1 ? "voo disponível" : "voos disponíveis"
+        }. Os demais permanecem em preparação.`
+      );
     };
 
     if (
@@ -1982,7 +2241,7 @@
       durationLabel
     ) {
       renderPlaylist();
-      loadTrack(0, false);
+      verifyAllTracks();
 
       playButton.addEventListener("click", async () => {
         if (audio.paused) {
@@ -2085,12 +2344,15 @@
           "0%"
         );
 
-        const nextIndex =
-          (currentTrackIndex + 1) % passportTracks.length;
+        const nextIndex = findNextAvailableIndex(
+          currentTrackIndex,
+          1
+        );
 
-        const nextTrack = passportTracks[nextIndex];
-
-        if (nextTrack.available) {
+        if (
+          nextIndex !== -1 &&
+          nextIndex !== currentTrackIndex
+        ) {
           loadTrack(nextIndex, true);
         } else {
           if (playerStatus) {
@@ -2098,8 +2360,7 @@
           }
 
           setPlayerMessage(
-            `${passportTracks[currentTrackIndex].title} concluído. ` +
-            `Selecione outro voo para continuar.`
+            `${passportTracks[currentTrackIndex].title} concluído.`
           );
         }
       });
@@ -2107,13 +2368,17 @@
       audio.addEventListener("error", () => {
         const track = passportTracks[currentTrackIndex];
 
+        track.available = false;
+        track.checked = true;
+        updatePlaylistButtons();
+
         if (playerStatus) {
           playerStatus.textContent = "Arquivo não localizado";
         }
 
         setPlayerMessage(
-          `O navegador não encontrou ${track.file.split("/").pop()}. ` +
-          `Confirme o nome do arquivo dentro da pasta audio.`,
+          `O navegador não encontrou ${fileNameFromPath(track.file)}. ` +
+          `Confira o nome do arquivo dentro da pasta audio.`,
           true
         );
       });
@@ -2124,7 +2389,8 @@
         if (
           target instanceof HTMLInputElement ||
           target instanceof HTMLTextAreaElement ||
-          target instanceof HTMLSelectElement
+          target instanceof HTMLSelectElement ||
+          target instanceof HTMLButtonElement
         ) {
           return;
         }
