@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=31">
+  <link rel="stylesheet" href="/css/style.css?v=32">
 
   <style>
     :root {
@@ -1022,6 +1022,84 @@
       }
     }
 
+
+    /* AJUSTES DE ENQUADRAMENTO DOS PRODUTOS — V2 */
+
+    .boutique-page .products-grid {
+      align-items: start;
+    }
+
+    .boutique-page .product-card {
+      min-height: 480px;
+    }
+
+    .boutique-page .product-card > img {
+      object-fit: cover;
+      object-position: center center;
+      filter: brightness(.72) saturate(.88);
+    }
+
+    /* Camiseta */
+    .boutique-page .product-card:nth-child(1) > img {
+      object-position: center 42%;
+    }
+
+    /* Caneca */
+    .boutique-page .product-card:nth-child(2) > img {
+      object-position: center 58%;
+    }
+
+    /* Porta-passaporte: mostra a mesa e o produto */
+    .boutique-page .product-card:nth-child(3) > img {
+      object-position: center 76%;
+    }
+
+    /* Chaveiro */
+    .boutique-page .product-card:nth-child(4) > img {
+      object-position: center 58%;
+    }
+
+    /* Squeeze: desce o enquadramento para mostrar a garrafa inteira */
+    .boutique-page .product-card:nth-child(5) > img {
+      object-position: center 78%;
+    }
+
+    /* Moletom: recupera o casal e clareia a fotografia */
+    .boutique-page .product-card:nth-child(6) > img {
+      object-position: center 28%;
+      filter: brightness(.86) saturate(.92);
+    }
+
+    /* Caderno: reduz o excesso de aproximação */
+    .boutique-page .product-card:nth-child(7) > img {
+      object-fit: contain;
+      object-position: center;
+      background: #02060b;
+      filter: brightness(.82) saturate(.86);
+    }
+
+    /* Mouse pad */
+    .boutique-page .product-card:nth-child(8) > img {
+      object-position: center 60%;
+    }
+
+    /* Capa de celular */
+    .boutique-page .product-card:nth-child(9) > img {
+      object-position: center 42%;
+    }
+
+    @media (max-width: 820px) {
+      .boutique-page .product-card {
+        min-height: 440px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .boutique-page .product-card {
+        min-height: 420px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1351,19 +1429,6 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/kit-em-uso.png" alt="Conjunto de produtos e identidade visual Passport Radio em uso" loading="lazy">
-            <div class="product-card__body">
-              <small>Primeiro Voo</small>
-              <h3>Kit de Embarque</h3>
-              <p>Uma combinação de peças escolhidas para os primeiros passageiros, com composição definida conforme a procura e a viabilidade do lote.</p>
-              <div class="product-card__price"><strong>Condições reservadas</strong><span>proposta antecipada aos fundadores</span></div>
-              <div class="product-card__actions">
-                <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Kit Primeiro Voo">Reservar interesse</a>
-              </div>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
@@ -1447,7 +1512,7 @@
           <div class="founder-form__grid">
             <label>
               <span>Nome completo</span>
-              <input type="text" name="Nome completo" required autocomplete="name" placeholder="Como devemos chamar você?">
+              <input type="text" name="Nome completo" required minlength="5" maxlength="80" autocomplete="name" pattern="(?=.{5,80}$)[A-Za-zÀ-ÿ]+(?:[ '-][A-Za-zÀ-ÿ]+)+" title="Informe nome e sobrenome." placeholder="Nome e sobrenome">
             </label>
 
             <label>
@@ -1457,22 +1522,22 @@
 
             <label>
               <span>País</span>
-              <input type="text" name="País" required autocomplete="country-name" placeholder="Brasil, Suíça, Portugal...">
+              <input type="text" name="País" required minlength="3" maxlength="60" autocomplete="country-name" pattern="[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'-]{2,}" title="Informe um país válido com pelo menos 3 letras." placeholder="Brasil, Suíça, Portugal...">
             </label>
 
             <label>
               <span>Cidade</span>
-              <input type="text" name="Cidade" required autocomplete="address-level2" placeholder="Sua cidade">
+              <input type="text" name="Cidade" required minlength="3" maxlength="80" autocomplete="address-level2" pattern="[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'-]{2,}" title="Informe uma cidade válida com pelo menos 3 letras." placeholder="Sua cidade">
             </label>
 
             <label>
               <span>Telefone</span>
-              <input type="tel" name="Telefone" required autocomplete="tel" placeholder="+55...">
+              <input type="tel" name="Telefone" required minlength="10" maxlength="20" autocomplete="tel" inputmode="tel" pattern="\+?[0-9 ()-]{10,20}" title="Informe DDI, DDD e número. Exemplo: +55 11 99999-9999." placeholder="+55 11 99999-9999">
             </label>
 
             <label>
               <span>WhatsApp</span>
-              <input type="tel" name="WhatsApp" required inputmode="tel" placeholder="+55...">
+              <input type="tel" name="WhatsApp" required minlength="10" maxlength="20" inputmode="tel" pattern="\+?[0-9 ()-]{10,20}" title="Informe um WhatsApp válido com DDI e DDD." placeholder="+55 11 99999-9999">
             </label>
 
             <label>
@@ -1520,7 +1585,7 @@
 
           <label class="founder-form__message">
             <span>Conte um pouco sobre a sua relação com a música</span>
-            <textarea name="Mensagem do passageiro" rows="5" required placeholder="Uma banda, uma memória, um festival, uma viagem..."></textarea>
+            <textarea name="Mensagem do passageiro" rows="5" required minlength="15" maxlength="1000" placeholder="Uma banda, uma memória, um festival, uma viagem..."></textarea>
           </label>
 
           <label class="founder-form__consent">
@@ -1616,6 +1681,41 @@
         }
       });
     });
+
+
+    const founderForm = document.querySelector(".founder-form");
+
+    if (founderForm) {
+      const phoneFields = founderForm.querySelectorAll('input[type="tel"]');
+
+      const validatePhone = (field) => {
+        const digits = field.value.replace(/\D/g, "");
+        const repeatedDigit = /^(\d)\1+$/.test(digits);
+        const uniqueDigits = new Set(digits).size;
+
+        if (digits.length < 10) {
+          field.setCustomValidity("Informe DDI, DDD e número com pelo menos 10 dígitos.");
+        } else if (repeatedDigit || uniqueDigits < 4) {
+          field.setCustomValidity("Esse número parece fictício. Informe um telefone real.");
+        } else {
+          field.setCustomValidity("");
+        }
+      };
+
+      phoneFields.forEach((field) => {
+        field.addEventListener("input", () => validatePhone(field));
+        field.addEventListener("blur", () => validatePhone(field));
+      });
+
+      founderForm.addEventListener("submit", (event) => {
+        phoneFields.forEach(validatePhone);
+
+        if (!founderForm.checkValidity()) {
+          event.preventDefault();
+          founderForm.reportValidity();
+        }
+      });
+    }
 
   </script>
 
