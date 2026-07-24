@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Boutique de Bordo da Passport Radio: coleções, produtos, kits e experiências para quem embarca na viagem.">
+  <meta name="description" content="Boutique de Bordo da Passport Radio: objetos, coleções e histórias reais para acompanhar a música em todos os caminhos da vida.">
   <title>Boutique de Bordo | Passport Radio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=32">
+  <link rel="stylesheet" href="/css/style.css?v=33">
 
   <style>
     :root {
@@ -1100,6 +1100,151 @@
       }
     }
 
+
+    /* EVERYDAY JOURNEYS */
+
+    .everyday-journeys {
+      border-top: 1px solid var(--shop-line);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(212,175,55,.07), transparent 28%),
+        linear-gradient(180deg, #07131f 0%, #02060b 100%);
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 60px;
+    }
+
+    .journey-card {
+      position: relative;
+      min-height: 430px;
+      grid-column: span 4;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border: 1px solid var(--shop-line);
+      border-radius: var(--shop-radius);
+      background: var(--shop-navy);
+      box-shadow: 0 24px 64px rgba(0,0,0,.36);
+      isolation: isolate;
+      transition:
+        transform .4s cubic-bezier(.22,1,.36,1),
+        border-color .4s cubic-bezier(.22,1,.36,1);
+    }
+
+    .journey-card--wide {
+      grid-column: span 8;
+    }
+
+    .journey-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--shop-line-strong);
+    }
+
+    .journey-card > img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.62) saturate(.84);
+      transition:
+        transform 1s cubic-bezier(.22,1,.36,1),
+        filter 1s cubic-bezier(.22,1,.36,1);
+    }
+
+    .journey-card:hover > img {
+      transform: scale(1.035);
+      filter: brightness(.72) saturate(.96);
+    }
+
+    .journey-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(2,6,11,.98) 0%, rgba(2,6,11,.54) 50%, transparent 86%);
+    }
+
+    .journey-card__body {
+      width: 100%;
+      padding: 30px;
+    }
+
+    .journey-card__body small {
+      color: var(--shop-gold);
+      font-size: .57rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .journey-card__body h3 {
+      margin-top: 9px;
+      color: var(--shop-cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 3.4vw, 3.4rem);
+      line-height: .98;
+    }
+
+    .journey-card__body p {
+      max-width: 600px;
+      margin-top: 12px;
+      color: #d0d5dc;
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+
+    .journey-card--hospital > img { object-position: center 36%; }
+    .journey-card--bookstore > img { object-position: center 44%; }
+    .journey-card--metro > img { object-position: center 52%; }
+    .journey-card--job > img { object-position: center 40%; }
+    .journey-card--home > img { object-position: center 46%; }
+    .journey-card--show > img { object-position: center 38%; }
+    .journey-card--university > img { object-position: center 50%; }
+
+    /* Enquadramentos com classes, sem depender da ordem dos cards */
+
+    .product-card--shirt > img { object-position: center 42%; }
+    .product-card--mug > img { object-position: center 54%; }
+    .product-card--passport > img { object-position: center 67%; }
+    .product-card--keychain > img { object-position: center 58%; }
+    .product-card--bottle > img { object-position: center 66%; }
+    .product-card--hoodie > img {
+      object-position: center 34%;
+      filter: brightness(.82) saturate(.92);
+    }
+    .product-card--notebook > img { object-position: center 48%; }
+    .product-card--mousepad > img { object-position: center 54%; }
+    .product-card--phonecase > img { object-position: center 40%; }
+
+    @media (max-width: 980px) {
+      .journey-card,
+      .journey-card--wide {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-card,
+      .journey-card--wide {
+        grid-column: auto;
+        min-height: 400px;
+      }
+
+      .journey-card__body {
+        padding: 26px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1120,6 +1265,7 @@
       <a href="index.html">Início</a>
       <a href="#founders">Primeiro Voo</a>
       <a href="#produtos">Produtos</a>
+      <a href="#cotidiano">Cotidiano</a>
       <a href="#collections">Coleções</a>
       <a href="#interest">Lista de embarque</a>
       <a href="contato.html">Contato</a>
@@ -1168,19 +1314,19 @@
     <section class="commerce-manifesto shop-section">
       <div class="shop-shell commerce-manifesto__grid reveal">
         <div>
-          <p class="shop-eyebrow">Não é doação</p>
+          <p class="shop-eyebrow">Boutique com propósito</p>
           <h2 class="shop-section-title">
-            É participação
-            <span>na viagem.</span>
+            Objetos com história.
+            <span>Memórias para levar.</span>
           </h2>
         </div>
 
         <div class="commerce-manifesto__copy">
           <p>
-            A Boutique de Bordo nasce para ajudar a Passport Radio a permanecer no ar sem transformar apoio em esmola. Cada compra entrega algo real, útil, colecionável e conectado à história da rádio.
+            A Boutique de Bordo nasce para transformar histórias musicais em objetos reais, úteis e colecionáveis. Cada peça acompanha o passageiro no trabalho, no estudo, no transporte público, em casa e nos momentos que ficam na memória.
           </p>
           <p>
-            Os primeiros produtos serão feitos sob demanda, com lotes controlados, evitando desperdício e permitindo que cada coleção tenha identidade própria. <strong>Você não compra apenas um objeto. Você leva um capítulo da viagem.</strong>
+            Os primeiros produtos serão feitos sob demanda, em lotes controlados, evitando desperdício e permitindo que cada coleção tenha identidade própria. <strong>Você não leva apenas um objeto. Leva um capítulo da viagem.</strong>
           </p>
         </div>
       </div>
@@ -1290,7 +1436,7 @@
         </div>
 
         <div class="product-story__media">
-          <img src="/images/boutique/passport.png" alt="Passaporte musical e identidade visual da Passport Radio">
+          <img src="/images/boutique/passport-aeroporto.png" alt="Passaporte musical e identidade visual da Passport Radio">
         </div>
       </div>
     </section>
@@ -1306,18 +1452,18 @@
           </h2>
 
           <p class="shop-section-copy">
-            A Boutique começa como uma exposição viva. Cada peça abaixo já possui uma fotografia própria, criada para mostrar como a Passport Radio pode acompanhar a vida real: estudo, trabalho, viagens, parques, aeroportos e momentos de descoberta.
+            A Boutique começa como uma exposição viva. Cada peça aparece dentro da vida real: estudo, trabalho, transporte público, encontros, parques, shows, cafés e momentos de descoberta.
           </p>
         </div>
 
         <div class="products-grid">
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/t-shirt%20university.png" alt="Estudante usando camiseta Passport Radio em ambiente universitário" loading="lazy">
+          <article class="product-card product-card--shirt reveal">
+            <img src="/images/boutique/t-shirt-university.png" alt="Jovem usando camiseta Passport Radio na rotina universitária" loading="lazy">
             <div class="product-card__body">
-              <small>Uniforme de bordo</small>
+              <small>Destino: universidade</small>
               <h3>Camiseta Passport Radio</h3>
-              <p>Malha produzida sob demanda, com artes ligadas ao Primeiro Voo, festivais, destinos e coleções editoriais.</p>
+              <p>Uma peça para acompanhar aulas, encontros, transporte e todos os caminhos de quem leva música para a vida cotidiana.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Camiseta">Tenho interesse</a>
@@ -1325,12 +1471,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/caneca.png" alt="Caneca Passport Radio em uma cena cotidiana de viagem" loading="lazy">
+          <article class="product-card product-card--mug reveal">
+            <img src="/images/boutique/universidade-canecas-passport-radio.png" alt="Grupo de estudantes com canecas Passport Radio numa universidade pública" loading="lazy">
             <div class="product-card__body">
-              <small>Ritual de bordo</small>
+              <small>Destino: conversa</small>
               <h3>Caneca Passport Radio</h3>
-              <p>Uma peça para café, histórias e o ritual diário de quem começa o dia escolhendo um novo destino musical.</p>
+              <p>Uma pausa, uma descoberta e uma conversa que começa quando alguém pergunta: onde você encontrou essa caneca?</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Caneca">Tenho interesse</a>
@@ -1338,12 +1484,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/passport.png" alt="Porta-passaporte e passaporte musical da Passport Radio" loading="lazy">
+          <article class="product-card product-card--passport reveal">
+            <img src="/images/boutique/passport-aeroporto.png" alt="Porta-passaporte Passport Radio numa mesa com café e pão de queijo" loading="lazy">
             <div class="product-card__body">
               <small>Documento de viagem</small>
               <h3>Porta-passaporte</h3>
-              <p>Proteção para o documento real e símbolo físico da rota construída dentro do universo Passport Radio.</p>
+              <p>Proteção para o documento real e símbolo físico de uma rota construída por músicas, cidades e memórias.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Capa de passaporte">Tenho interesse</a>
@@ -1351,12 +1497,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/chaveiro.png" alt="Chaveiro metálico Passport Radio em apartamento brasileiro" loading="lazy">
+          <article class="product-card product-card--keychain reveal">
+            <img src="/images/boutique/kit-em-uso.png" alt="Objetos cotidianos e acessórios da coleção Passport Radio" loading="lazy">
             <div class="product-card__body">
-              <small>Pequenos objetos</small>
+              <small>Destino: casa</small>
               <h3>Chaveiro de Embarque</h3>
-              <p>Uma peça acessível para marcar o primeiro destino e carregar a identidade Passport Radio todos os dias.</p>
+              <p>Uma única chave para abrir a porta de casa e um pequeno símbolo para lembrar que toda chegada também é um destino.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Chaveiro">Tenho interesse</a>
@@ -1364,12 +1510,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/squeeze%20academia.png" alt="Squeeze Passport Radio em uma academia" loading="lazy">
+          <article class="product-card product-card--bottle reveal">
+            <img src="/images/boutique/squeeze-academia.png" alt="Squeeze Passport Radio numa academia de bairro" loading="lazy">
             <div class="product-card__body">
-              <small>Companheira de rota</small>
+              <small>Destino: academia</small>
               <h3>Squeeze Passport Radio</h3>
-              <p>Para academia, trabalho, metrô, estrada e qualquer lugar onde uma música acompanha o passageiro.</p>
+              <p>Para o treino, o trabalho, o metrô e qualquer caminho em que uma música ajude a seguir mais um pouco.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Squeeze">Tenho interesse</a>
@@ -1377,12 +1523,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/moletom.png" alt="Casal usando moletom Passport Radio em um parque urbano" loading="lazy">
+          <article class="product-card product-card--hoodie reveal">
+            <img src="/images/boutique/moletom-parque.png" alt="Casal de cerca de 60 anos caminhando de mãos dadas com moletons Passport Radio" loading="lazy">
             <div class="product-card__body">
-              <small>Uniforme de viagem</small>
+              <small>Destino: uma vida inteira</small>
               <h3>Moletom Passport Radio</h3>
-              <p>Uma peça para noites frias, festivais, aeroportos e viagens longas, com identidade discreta e colecionável.</p>
+              <p>Algumas viagens duram décadas e continuam sendo feitas de mãos dadas, com a mesma música acompanhando o caminho.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Moletom">Tenho interesse</a>
@@ -1390,12 +1536,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/caderno%20coworking.png" alt="Caderno Passport Radio em uma reunião criativa" loading="lazy">
+          <article class="product-card product-card--notebook reveal">
+            <img src="/images/boutique/livraria-shopping.png" alt="Caderno Passport Radio numa livraria de shopping em São Paulo" loading="lazy">
             <div class="product-card__body">
-              <small>Diário de rota</small>
+              <small>Destino: descoberta</small>
               <h3>Caderno Passport Radio</h3>
-              <p>Para registrar descobertas, viagens, bandas, festivais e aquelas músicas que chegam no momento certo.</p>
+              <p>Para registrar bandas, livros, ideias, festivais e aquelas músicas que chegam exatamente no momento certo.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Caderno">Tenho interesse</a>
@@ -1403,12 +1549,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/mouse%20pad.png" alt="Mouse pad Passport Radio em um home office" loading="lazy">
+          <article class="product-card product-card--mousepad reveal">
+            <img src="/images/boutique/primeiro-home-office.png" alt="Jovem no primeiro trabalho em home office usando mouse pad Passport Radio" loading="lazy">
             <div class="product-card__body">
-              <small>Estação pessoal</small>
+              <small>Destino: primeira oportunidade</small>
               <h3>Mouse Pad Passport Radio</h3>
-              <p>Uma rota musical sobre a mesa para transformar trabalho, estudo e pesquisa numa pequena cabine de comando.</p>
+              <p>Uma rota musical sobre a mesa no dia em que o trabalho, a independência e uma nova fase finalmente começam.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Mouse pad">Tenho interesse</a>
@@ -1416,12 +1562,12 @@
             </div>
           </article>
 
-          <article class="product-card reveal">
-            <img src="/images/boutique/capa%20de%20celular.png" alt="Capa de celular Passport Radio sendo usada em um parque" loading="lazy">
+          <article class="product-card product-card--phonecase reveal">
+            <img src="/images/boutique/moletom-casal-parque-alternativo.png" alt="Cena cotidiana da coleção Passport Radio" loading="lazy">
             <div class="product-card__body">
-              <small>Objeto do cotidiano</small>
+              <small>Destino: sábado à noite</small>
               <h3>Capa de Celular</h3>
-              <p>Uma maneira simples de levar a identidade da Passport Radio para fotografias, encontros e momentos comuns.</p>
+              <p>Uma peça feita para acompanhar fotografias, encontros, mensagens e os pequenos preparativos antes de sair com os amigos.</p>
               <div class="product-card__price"><strong>Coleção em preparação</strong><span>produção sob demanda</span></div>
               <div class="product-card__actions">
                 <a class="shop-button shop-button--gold product-interest" href="#interest" data-product="Capa de celular">Tenho interesse</a>
@@ -1429,6 +1575,95 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <section class="everyday-journeys shop-section" id="cotidiano">
+      <div class="shop-shell">
+        <div class="reveal">
+          <p class="shop-eyebrow">Passport Radio Everyday Journeys</p>
+          <h2 class="shop-section-title">
+            A música acompanha
+            <span>a vida como ela é.</span>
+          </h2>
+          <p class="shop-section-copy">
+            Não é sobre luxo, pose ou uma rotina inalcançável. É sobre o ônibus da primeira entrevista, o primeiro trabalho, a consulta médica, a livraria, a faculdade e o show esperado durante meses. Os produtos aparecem porque fazem parte da história — nunca porque a história existe para vender o produto.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-card journey-card--wide journey-card--metro reveal">
+            <img src="/images/boutique/metro-commute.png" alt="Passageira ouvindo música durante uma viagem cotidiana de metrô" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: Metro</small>
+              <h3>A viagem começa antes de chegar.</h3>
+              <p>Entre uma estação e outra, uma música transforma o trajeto de todos os dias numa memória particular.</p>
+            </div>
+          </article>
+
+          <article class="journey-card journey-card--hospital reveal">
+            <img src="/images/boutique/hospital-rocker.png" alt="Senhor roqueiro aguardando atendimento num hospital" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: Hospital</small>
+              <h3>Rock não tem idade.</h3>
+              <p>A música também acompanha os dias difíceis — com coragem, dignidade e histórias de uma vida inteira.</p>
+            </div>
+          </article>
+
+          <article class="journey-card journey-card--bookstore reveal">
+            <img src="/images/boutique/livraria-shopping.png" alt="Jovem numa livraria de shopping durante um momento de leitura e descoberta" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: Bookstore</small>
+              <h3>Uma descoberta puxa a outra.</h3>
+              <p>Um livro, um lanche, uma banda desconhecida e uma tarde comum que termina diferente de como começou.</p>
+            </div>
+          </article>
+
+          <article class="journey-card journey-card--job reveal">
+            <img src="/images/boutique/primeiro-emprego-onibus.png" alt="Jovem esperando o ônibus para sua primeira entrevista de emprego" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: First Job</small>
+              <h3>O frio na barriga também tem trilha sonora.</h3>
+              <p>Currículo na mochila, endereço no celular e esperança suficiente para embarcar.</p>
+            </div>
+          </article>
+
+          <article class="journey-card journey-card--home reveal">
+            <img src="/images/boutique/primeiro-home-office.png" alt="Jovem celebrando seu primeiro trabalho em home office" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: First Opportunity</small>
+              <h3>“Eu consegui.”</h3>
+              <p>O primeiro trabalho transforma uma mesa simples no começo de uma nova independência.</p>
+            </div>
+          </article>
+
+          <article class="journey-card journey-card--wide journey-card--show reveal">
+            <img src="/images/boutique/show-night-alice-cooper.png" alt="Jovem a caminho de um show aguardado durante meses" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: Concert Night</small>
+              <h3>Valeu cada centavo guardado.</h3>
+              <p>Meses de espera, economia, metrô, fila e aquele instante em que as luzes se apagam: algumas viagens começam diante de um palco.</p>
+            </div>
+          </article>
+
+          <article class="journey-card journey-card--wide journey-card--university reveal">
+            <img src="/images/boutique/universidade-canecas-passport-radio.png" alt="Estudantes reunidos numa universidade pública com canecas Passport Radio" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: University Life</small>
+              <h3>Uma caneca pode começar uma conversa.</h3>
+              <p>Amizade, curiosidade, café e música partilhados numa mesa de universidade pública.</p>
+            </div>
+          </article>
+
+          <article class="journey-card reveal">
+            <img src="/images/boutique/moletom-casal-parque-alternativo.png" alt="Casal usando peças Passport Radio durante um passeio no parque" loading="lazy">
+            <div class="journey-card__body">
+              <small>Destination: City Park</small>
+              <h3>O cotidiano também merece ser lembrado.</h3>
+              <p>Sem palco, sem pose e sem pressa: apenas pessoas vivendo o próprio caminho.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1532,12 +1767,12 @@
 
             <label>
               <span>Telefone</span>
-              <input type="tel" name="Telefone" required minlength="10" maxlength="20" autocomplete="tel" inputmode="tel" pattern="\+?[0-9 ()-]{10,20}" title="Informe DDI, DDD e número. Exemplo: +55 11 99999-9999." placeholder="+55 11 99999-9999">
+              <input type="tel" name="Telefone" required minlength="10" maxlength="20" autocomplete="tel" inputmode="tel" pattern="\+[0-9 ()-]{10,20}" title="Comece com + e informe DDI, DDD e número. Exemplo: +55 11 99999-9999." placeholder="+55 11 99999-9999">
             </label>
 
             <label>
               <span>WhatsApp</span>
-              <input type="tel" name="WhatsApp" required minlength="10" maxlength="20" inputmode="tel" pattern="\+?[0-9 ()-]{10,20}" title="Informe um WhatsApp válido com DDI e DDD." placeholder="+55 11 99999-9999">
+              <input type="tel" name="WhatsApp" required minlength="10" maxlength="20" inputmode="tel" pattern="\+[0-9 ()-]{10,20}" title="Comece com + e informe um WhatsApp válido com DDI e DDD." placeholder="+55 11 99999-9999">
             </label>
 
             <label>
@@ -1687,19 +1922,50 @@
 
     if (founderForm) {
       const phoneFields = founderForm.querySelectorAll('input[type="tel"]');
+      const placeFields = founderForm.querySelectorAll('input[name="País"], input[name="Cidade"]');
+      const interestFields = Array.from(founderForm.querySelectorAll('input[name="Interesses"]'));
 
       const validatePhone = (field) => {
-        const digits = field.value.replace(/\D/g, "");
+        const raw = field.value.trim();
+        const digits = raw.replace(/\D/g, "");
         const repeatedDigit = /^(\d)\1+$/.test(digits);
         const uniqueDigits = new Set(digits).size;
 
-        if (digits.length < 10) {
-          field.setCustomValidity("Informe DDI, DDD e número com pelo menos 10 dígitos.");
-        } else if (repeatedDigit || uniqueDigits < 4) {
+        if (!raw.startsWith("+")) {
+          field.setCustomValidity("Comece pelo sinal + e informe DDI, DDD e número.");
+        } else if (digits.length < 11 || digits.length > 15) {
+          field.setCustomValidity("Informe um número completo com DDI, DDD e entre 11 e 15 dígitos.");
+        } else if (repeatedDigit || uniqueDigits < 5) {
           field.setCustomValidity("Esse número parece fictício. Informe um telefone real.");
         } else {
           field.setCustomValidity("");
         }
+      };
+
+      const validatePlace = (field) => {
+        const letters = field.value
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^A-Za-z]/g, "")
+          .toLowerCase();
+
+        const uniqueLetters = new Set(letters).size;
+        const repeatedLetter = /^([a-z])\1+$/.test(letters);
+
+        if (letters.length < 3 || repeatedLetter || uniqueLetters < 2) {
+          field.setCustomValidity(`Informe ${field.name === "Cidade" ? "uma cidade" : "um país"} válido.`);
+        } else {
+          field.setCustomValidity("");
+        }
+      };
+
+      const validateInterests = () => {
+        const hasSelection = interestFields.some((field) => field.checked);
+        interestFields.forEach((field, index) => {
+          field.setCustomValidity(!hasSelection && index === 0
+            ? "Selecione pelo menos um interesse."
+            : "");
+        });
       };
 
       phoneFields.forEach((field) => {
@@ -1707,8 +1973,19 @@
         field.addEventListener("blur", () => validatePhone(field));
       });
 
+      placeFields.forEach((field) => {
+        field.addEventListener("input", () => validatePlace(field));
+        field.addEventListener("blur", () => validatePlace(field));
+      });
+
+      interestFields.forEach((field) => {
+        field.addEventListener("change", validateInterests);
+      });
+
       founderForm.addEventListener("submit", (event) => {
         phoneFields.forEach(validatePhone);
+        placeFields.forEach(validatePlace);
+        validateInterests();
 
         if (!founderForm.checkValidity()) {
           event.preventDefault();
