@@ -2071,3 +2071,67 @@
   object-position: center 24%;
   background: #02060b;
 }
+
+/* ============================================================
+   PASSPORT RADIO — LIVE ARCHIVES
+   Nova galeria editorial com as Hero Photos definitivas.
+   ============================================================ */
+
+.home-page .hero-archive-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+}
+
+.home-page .hero-archive-grid .story-card,
+.home-page .hero-archive-grid .story-card--wide {
+  min-height: 0;
+  align-self: start;
+}
+
+.home-page .hero-archive-grid .story-card {
+  grid-column: span 4;
+}
+
+.home-page .hero-archive-grid .story-card--wide {
+  grid-column: span 8;
+}
+
+.home-page .hero-archive-grid .story-card a {
+  height: auto;
+}
+
+.home-page .hero-archive-grid .story-card img,
+.home-page .hero-archive-grid .story-card--wide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  background: #02060b;
+}
+
+.home-page .hero-archive-grid .story-card__body {
+  min-height: 210px;
+}
+
+@media (max-width: 1080px) {
+  .home-page .hero-archive-grid .story-card,
+  .home-page .hero-archive-grid .story-card--wide {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-page .hero-archive-grid {
+    display: block;
+  }
+
+  .home-page .hero-archive-grid .story-card,
+  .home-page .hero-archive-grid .story-card--wide {
+    margin-top: 18px;
+  }
+
+  .home-page .hero-archive-grid .story-card__body {
+    min-height: 0;
+  }
+}
