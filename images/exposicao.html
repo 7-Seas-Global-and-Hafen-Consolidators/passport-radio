@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exposição editorial da Passport Radio. Primeiro a história. Depois: 3... 2... 1... CLICK!">
+  <meta name="theme-color" content="#02060b">
+  <title>Exposição | Passport Radio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=21">
+
+  <style>
+    :root {
+      --page-black: #02060b;
+      --page-navy: #081522;
+      --page-gold: #d4af37;
+      --page-gold-light: #f0ca65;
+      --page-cream: #f4f0e6;
+      --page-muted: #aeb8c6;
+      --page-border: rgba(212, 175, 55, 0.25);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(212,175,55,.09), transparent 30%),
+        linear-gradient(145deg, var(--page-navy), var(--page-black) 72%);
+      color: var(--page-cream);
+      font-family: Montserrat, Arial, Helvetica, sans-serif;
+    }
+
+    .exhibition-shell {
+      width: min(calc(100% - 40px), 1180px);
+      margin-inline: auto;
+    }
+
+    .exhibition-header {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--page-border);
+    }
+
+    .exhibition-brand {
+      color: var(--page-cream);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .exhibition-back {
+      padding: 10px 16px;
+      border: 1px solid var(--page-border);
+      border-radius: 999px;
+      color: var(--page-gold-light);
+      font-size: .7rem;
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .exhibition-main {
+      min-height: calc(100vh - 82px);
+      display: grid;
+      align-items: center;
+      padding-block: 70px;
+    }
+
+    .exhibition-card {
+      max-width: 900px;
+      padding: clamp(34px, 6vw, 74px);
+      border: 1px solid var(--page-border);
+      border-radius: 24px;
+      background: rgba(2, 6, 11, .62);
+      box-shadow: 0 30px 90px rgba(0,0,0,.42);
+    }
+
+    .exhibition-kicker {
+      margin: 0;
+      color: var(--page-gold-light);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 20px 0 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3.6rem, 9vw, 8rem);
+      line-height: .88;
+      letter-spacing: -.045em;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--page-gold-light);
+    }
+
+    .exhibition-lead {
+      max-width: 690px;
+      margin: 28px 0 0;
+      color: var(--page-muted);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .exhibition-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .exhibition-button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid var(--page-border);
+      border-radius: 999px;
+      color: var(--page-gold-light);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .exhibition-button--gold {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--page-gold-light), var(--page-gold));
+      color: #171008;
+    }
+
+    .exhibition-ritual {
+      margin-top: 34px;
+      color: var(--page-gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 3.4rem);
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      .exhibition-header { min-height: 72px; }
+      .exhibition-main { min-height: calc(100vh - 72px); }
+      .exhibition-card { padding: 30px 24px; }
+      .exhibition-actions { flex-direction: column; }
+      .exhibition-button { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="exhibition-header exhibition-shell">
+    <a class="exhibition-brand" href="index.html">Passport Radio</a>
+    <a class="exhibition-back" href="index.html#festivais">Voltar à Home</a>
+  </header>
+
+  <main class="exhibition-main exhibition-shell">
+    <section class="exhibition-card" aria-labelledby="exhibition-title">
+      <p class="exhibition-kicker">Passport Exhibition</p>
+      <h1 id="exhibition-title">A próxima sala<span>está sendo preparada.</span></h1>
+
+      <p class="exhibition-lead" id="exhibition-description">
+        Esta exposição já faz parte do mapa editorial da Passport Radio. O arquivo completo, com história, cidade, artistas, bastidores e apresentações ao vivo, será aberto em breve.
+      </p>
+
+      <div class="exhibition-actions">
+        <a class="exhibition-button exhibition-button--gold" href="index.html">Voltar à página inicial</a>
+        <a class="exhibition-button" href="radio.html">Ir para a cabine</a>
+      </div>
+
+      <div class="exhibition-ritual">3... 2... 1... CLICK!</div>
+    </section>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const collection = params.get("colecao");
+
+    if (collection) {
+      const formatted = collection
+        .split("-")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+      document.title = `${formatted} | Passport Radio`;
+      document.querySelector(".exhibition-kicker").textContent = "Passport Exhibition · Em preparação";
+      document.getElementById("exhibition-description").textContent =
+        `A exposição “${formatted}” já está registrada no mapa editorial da Passport Radio. O arquivo documental completo será aberto em breve.`;
+    }
+  </script>
+</body>
+</html>
