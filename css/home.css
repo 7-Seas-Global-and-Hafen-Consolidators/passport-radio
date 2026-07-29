@@ -2135,3 +2135,17 @@
     min-height: 0;
   }
 }
+
+/* ============================================================
+   PASSPORT RADIO — WACKEN OPEN AIR
+   Corrige o enquadramento do pôster vertical dentro do card.
+   ============================================================ */
+
+.home-page #festivais .festival-card img[src$="wacken-open-air-festival.png"] {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center 23%;
+  background: #02060b;
+}
