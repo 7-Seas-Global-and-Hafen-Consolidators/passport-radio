@@ -1,1 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A história de Wuthering Heights, de Kate Bush, e sua conexão com o Angra e André Matos.">
+  <meta name="theme-color" content="#02060b">
+  <title>Wuthering Heights: de Kate Bush ao Angra | Passport Radio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #02060b;
+      --black-soft: #050b13;
+      --navy: #081522;
+      --gold: #d4af37;
+      --gold-light: #f0ca65;
+      --cream: #f4f0e6;
+      --muted: #aeb8c6;
+      --border: rgba(212, 175, 55, 0.22);
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 84% 12%, rgba(212, 175, 55, 0.08), transparent 28%),
+        linear-gradient(145deg, var(--navy), var(--black) 64%);
+      color: var(--cream);
+      font-family: Montserrat, Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), 1120px);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      color: var(--cream);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .back {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: 96px 0 58px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 1020px;
+      margin: 20px 0 0;
+      font-size: clamp(3.4rem, 7.7vw, 7.4rem);
+      line-height: 0.91;
+      letter-spacing: -0.045em;
+    }
+
+    .lead {
+      max-width: 790px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-top: 48px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      filter: sepia(0.08) contrast(1.03);
+    }
+
+    .article {
+      max-width: 790px;
+      padding: 70px 0 118px;
+    }
+
+    .article p {
+      margin: 0 0 24px;
+      color: #c9d1dc;
+      font-size: 1rem;
+      line-height: 1.92;
+    }
+
+    .article h2 {
+      margin: 56px 0 20px;
+      color: var(--cream);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.98;
+    }
+
+    blockquote {
+      margin: 42px 0;
+      padding: 26px 30px;
+      border-left: 3px solid var(--gold);
+      background: rgba(212, 175, 55, 0.055);
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.55rem;
+      line-height: 1.5;
+    }
+
+    .bridge {
+      margin-top: 52px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(8, 21, 34, 0.68);
+    }
+
+    .bridge small {
+      display: block;
+      color: var(--gold-light);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .bridge strong {
+      display: block;
+      margin-top: 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1;
+    }
+
+    .bridge p {
+      margin: 16px 0 0;
+    }
+
+    .click {
+      margin-top: 64px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      color: #758195;
+      font-size: 0.65rem;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(calc(100% - 24px), 1120px);
+      }
+
+      .topbar {
+        min-height: 72px;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .back {
+        padding-inline: 13px;
+        font-size: 0.6rem;
+      }
+
+      .bridge {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar shell">
+    <a class="brand" href="index.html">Passport Radio</a>
+    <a class="back" href="index.html#noticias">Voltar às histórias</a>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <p class="eyebrow">Arquivo histórico · Kate Bush · 1978</p>
+      <h1>A história de “Wuthering Heights”, música de Kate Bush que se tornou clássico do Angra</h1>
+      <p class="lead">
+        Antes de atravessar o oceano e ganhar uma releitura inesquecível na voz de André Matos,
+        a canção nasceu numa madrugada, diante de um piano, sob a luz da lua e inspirada por uma das histórias mais intensas da literatura inglesa.
+      </p>
+
+      <img
+        class="hero-image"
+        src="/images/kate_bush_the_dreaming_capa_corte.webp"
+        alt="Kate Bush em fotografia de época"
+      >
+    </section>
+
+    <article class="article shell">
+      <p>
+        “Wuthering Heights” foi o primeiro grande sucesso da cantora e compositora inglesa Kate Bush.
+        Inspirada no romance homônimo de Emily Brontë — publicado no Brasil como “O Morro dos Ventos Uivantes” —
+        a música entrou no álbum de estreia <em>The Kick Inside</em>, lançado em fevereiro de 1978.
+      </p>
+
+      <h2>Uma canção nascida da literatura</h2>
+
+      <p>
+        Publicado em 1847, o romance acompanha a relação trágica entre Heathcliff e Catherine,
+        marcada por amor, orgulho, ausência, vingança e uma ligação emocional que atravessa a própria morte.
+        Kate Bush transformou essa atmosfera numa narrativa cantada em primeira pessoa, como se Catherine retornasse para chamar Heathcliff.
+      </p>
+
+      <p>
+        Curiosamente, Kate não havia terminado o livro quando compôs a música.
+        Ela conhecia a história por relatos de seu irmão, leu algumas passagens e encontrou na personagem Cathy
+        uma forma de projetar sentimentos próprios de desejo, obsessão e distância.
+      </p>
+
+      <blockquote>
+        “O nome Cathy ajudou e facilitou a projeção dos meus próprios sentimentos de desejo por alguém a ponto de odiá-la.”
+        — Kate Bush
+      </blockquote>
+
+      <h2>A madrugada em que tudo aconteceu</h2>
+
+      <p>
+        Kate contou que escreveu a canção em seu apartamento, sentada ao piano, numa noite de março,
+        por volta da meia-noite. As cortinas estavam abertas e, sempre que levantava os olhos em busca de ideias,
+        encontrava a lua diante da janela.
+      </p>
+
+      <p>
+        Segundo ela, o refrão surgiu com facilidade e tinha uma sensação circular.
+        Uma versão mais complicada chegou a ser esboçada, mas Kate decidiu preservar a primeira forma,
+        repetitiva e hipnótica, porque ela carregava exatamente a atmosfera que procurava.
+      </p>
+
+      <blockquote>
+        “Eu olhava para a lua. As ideias surgiram com muita facilidade. Eu não conseguia sair do refrão.”
+        — Kate Bush
+      </blockquote>
+
+      <h2>Quando o Brasil entrou nessa história</h2>
+
+      <p>
+        Quinze anos depois do lançamento de <em>The Kick Inside</em>, “Wuthering Heights” encontrou uma nova vida no Brasil.
+        O Angra incluiu uma releitura da música em seu álbum de estreia, <em>Angels Cry</em>, lançado em 1993.
+      </p>
+
+      <p>
+        A versão preservou a dramaticidade da composição original, mas a levou para outro território:
+        guitarras, peso, arranjos de metal melódico e a interpretação extraordinária de André Matos.
+        O alcance vocal do cantor transformou a faixa em um dos momentos mais marcantes do início da carreira da banda.
+      </p>
+
+      <div class="bridge">
+        <small>Da literatura ao metal brasileiro</small>
+        <strong>Emily Brontë → Kate Bush → Angra → André Matos</strong>
+        <p>
+          Uma história do século XIX atravessou o pop britânico dos anos 1970 e chegou ao heavy metal brasileiro dos anos 1990
+          sem perder sua intensidade emocional.
+        </p>
+      </div>
+
+      <h2>Quando uma música deixa de pertencer ao seu tempo</h2>
+
+      <p>
+        Poucas composições conseguem atravessar literatura, art rock, pop e heavy metal mantendo a mesma força.
+        “Wuthering Heights” fez exatamente isso. Cada nova interpretação não apaga a anterior:
+        acrescenta uma nova camada à viagem.
+      </p>
+
+      <p>
+        Da Inglaterra imaginada por Emily Brontë ao piano de Kate Bush, e daquele piano ao estúdio em que o Angra gravou <em>Angels Cry</em>,
+        a música continua provando que grandes histórias não pertencem apenas a uma época.
+        Elas encontram novos caminhos, novas vozes e novos destinos.
+      </p>
+
+      <div class="click">3... 2... 1... CLICK!</div>
+    </article>
+  </main>
+
+  <footer>
+    © 2026 Passport Radio · Primeiro a história. Depois a música.
+  </footer>
+</body>
+</html>
