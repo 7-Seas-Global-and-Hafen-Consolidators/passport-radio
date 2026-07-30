@@ -1,1 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mr. Nomad relembra o Live Aid de 1985 e o ranking dos dez momentos mais marcantes da história do rock.">
+  <meta name="theme-color" content="#02060b">
+  <title>Qual o momento mais marcante da história do rock? | Passport Radio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #02060b;
+      --navy: #071522;
+      --gold: #d4af37;
+      --gold-light: #f0ca65;
+      --cream: #f3f0e8;
+      --text: #c7ced7;
+      --muted: #7c8997;
+      --line: rgba(212,175,55,.22);
+      --shadow: 0 30px 90px rgba(0,0,0,.52);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--black);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 82% 5%, rgba(212,175,55,.08), transparent 25rem),
+        linear-gradient(180deg, #07131f 0%, var(--black) 40%, var(--black) 100%);
+      color: var(--cream);
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+
+    .shell {
+      width: min(calc(100% - 44px), 1160px);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      color: var(--cream);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .back {
+      padding: 11px 17px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold-light);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(860px, 92vh);
+      display: flex;
+      align-items: flex-end;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero__image {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.84) contrast(1.07) brightness(.61);
+    }
+
+    .hero__veil {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(2,6,11,.98) 0%, rgba(2,6,11,.76) 48%, rgba(2,6,11,.18) 100%),
+        linear-gradient(0deg, rgba(2,6,11,1) 0%, transparent 52%);
+    }
+
+    .hero__content {
+      width: min(calc(100% - 44px), 1160px);
+      margin-inline: auto;
+      padding: 150px 0 115px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, .ranking-number, blockquote {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 20px 0 0;
+      font-size: clamp(4rem, 8vw, 8rem);
+      line-height: .86;
+      letter-spacing: -.05em;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero__lead {
+      max-width: 790px;
+      margin: 30px 0 0;
+      color: #d5dae0;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 25px;
+      margin-top: 31px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: #9ba6b1;
+      font-size: .68rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .meta strong { color: var(--cream); }
+
+    .article {
+      max-width: 810px;
+      padding: 90px 0 120px;
+    }
+
+    .article p {
+      margin: 0 0 26px;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.95;
+    }
+
+    .article p:first-child::first-letter {
+      float: left;
+      margin: 8px 11px 0 0;
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: .72;
+    }
+
+    .article h2 {
+      margin: 58px 0 24px;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: .94;
+      letter-spacing: -.035em;
+    }
+
+    blockquote {
+      margin: 46px 0;
+      padding: 28px 32px;
+      border-left: 3px solid var(--gold);
+      background: rgba(212,175,55,.07);
+      color: var(--gold-light);
+      font-size: clamp(1.65rem, 3vw, 2.3rem);
+      line-height: 1.4;
+    }
+
+    .ranking {
+      display: grid;
+      gap: 14px;
+      margin: 36px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ranking li {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 92px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(16,38,58,.68), rgba(2,6,11,.93));
+    }
+
+    .ranking-number {
+      color: var(--gold-light);
+      font-size: 2.35rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .ranking strong {
+      display: block;
+      color: var(--cream);
+      font-size: .96rem;
+      line-height: 1.55;
+    }
+
+    .ranking small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .7rem;
+      line-height: 1.5;
+    }
+
+    .next-route {
+      margin-top: 65px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(212,175,55,.10), transparent 28%),
+        var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .next-route small {
+      color: var(--gold);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .next-route h2 {
+      margin-top: 14px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .next-route p { margin-bottom: 0; }
+
+    .ritual {
+      margin-top: 64px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 5.1rem);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      color: #73808c;
+      font-size: .65rem;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      .shell, .hero__content {
+        width: min(calc(100% - 26px), 1160px);
+      }
+
+      .hero {
+        min-height: 820px;
+      }
+
+      .hero__content {
+        padding-top: 120px;
+      }
+
+      .ranking li {
+        grid-template-columns: 54px 1fr;
+        padding: 16px;
+      }
+
+      .ranking-number { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar shell">
+    <a class="brand" href="index.html">Passport Radio</a>
+    <a class="back" href="index.html#em-destaque">Voltar à exposição</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__image" src="/images/live-aid-1985.png" alt="Palco e público do Live Aid no Wembley Stadium em 13 de julho de 1985">
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow">Passport Review · Historic Moments</p>
+        <h1 id="hero-title">Qual o momento mais marcante<span>da história do rock?</span></h1>
+
+        <p class="hero__lead">
+          Entre Woodstock, MTV, Beatles, Motown e Glastonbury, uma pesquisa colocou o Live Aid no topo dos momentos que mudaram a história do rock.
+        </p>
+
+        <div class="meta">
+          <span><strong>Resenha:</strong> Mr. Nomad</span>
+          <span><strong>Data:</strong> 30/07/2026</span>
+          <span><strong>Destino:</strong> Londres · Filadélfia</span>
+          <span><strong>Leitura:</strong> 3 minutos</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="article shell">
+      <p>
+        Qual o momento mais marcante da história do rock? O momento mais marcante destes 50 anos em que o rock reinou sobre a Terra foi — senhoras e senhores — a realização do Live Aid.
+      </p>
+
+      <p>
+        Foi em 13 de julho de 1985 que o mundo se reuniu para acompanhar bandas e artistas em apresentações simultâneas na Inglaterra e nos Estados Unidos. O festival beneficente arrecadava recursos para o combate à fome na Etiópia e transformou dois estádios em um único palco transmitido para o planeta.
+      </p>
+
+      <p>
+        No Brasil, o dia 13 de julho acabaria consagrado como Dia Mundial do Rock, uma tradição diretamente ligada à memória do Live Aid.
+      </p>
+
+      <blockquote>
+        Um dia. Dois continentes. Um mundo inteiro ouvindo junto.
+      </blockquote>
+
+      <p>
+        A escolha apareceu em uma pesquisa realizada com duas mil pessoas selecionadas pela rede britânica HMV. O Live Aid foi apontado como o maior momento do rock em seus primeiros 50 anos.
+      </p>
+
+      <h2>A concorrência foi pesada.</h2>
+
+      <p>
+        O resultado colocou lado a lado festivais, programas de televisão, gravadoras, encontros decisivos e momentos que atravessaram gerações. O top ten ficou assim:
+      </p>
+
+      <ol class="ranking">
+        <li><span class="ranking-number">01</span><div><strong>Live Aid</strong><small>1985</small></div></li>
+        <li><span class="ranking-number">02</span><div><strong>Surgimento da MTV</strong><small>1981</small></div></li>
+        <li><span class="ranking-number">03</span><div><strong>Festival de Woodstock</strong><small>1969</small></div></li>
+        <li><span class="ranking-number">04</span><div><strong>Entrevista dos Sex Pistols no programa de Bill Grundy</strong><small>1976</small></div></li>
+        <li><span class="ranking-number">05</span><div><strong>Beatles ocupam os cinco primeiros lugares da parada norte-americana</strong><small>1964</small></div></li>
+        <li><span class="ranking-number">06</span><div><strong>Estreia do programa Top of the Pops</strong><small>1964</small></div></li>
+        <li><span class="ranking-number">07</span><div><strong>Nascimento da Motown Records</strong><small>1959</small></div></li>
+        <li><span class="ranking-number">08</span><div><strong>Brian Epstein e George Martin se conhecem</strong><small>1962</small></div></li>
+        <li><span class="ranking-number">09</span><div><strong>A morte de Kurt Cobain</strong><small>1994</small></div></li>
+        <li><span class="ranking-number">10</span><div><strong>Primeiro Glastonbury Festival</strong><small>1970</small></div></li>
+      </ol>
+
+      <section class="next-route">
+        <small>Próximos destinos</small>
+        <h2>Dez posições. Dez histórias esperando para ser abertas.</h2>
+        <p>
+          Woodstock, MTV, Sex Pistols, Beatles, Motown e Glastonbury são os próximos portões desta viagem. Cada item deste ranking pode se transformar numa nova exposição da Passport Radio.
+        </p>
+      </section>
+
+      <div class="ritual">3... 2... 1... CLICK!</div>
+    </article>
+  </main>
+
+  <footer>
+    © 2026 Passport Radio · Primeiro a história. Depois a música.
+  </footer>
+</body>
+</html>
