@@ -174,7 +174,6 @@
       <a href="#arquivos">Arquivos</a>
       <a href="#noticias">Histórias</a>
       <a href="#apoie">Apoie</a>
-      <a href="#cotidiano">Vida real</a>
       <a href="destinos.html">Destinos</a>
       <a href="radio.html">Ao vivo</a>
       <a href="boutique.html">Boutique</a>
@@ -559,82 +558,36 @@
       </div>
     </section>
 
-    <section class="founder-feature section-pad" id="founders">
-      <div class="shell founder-feature__grid">
-        <div class="founder-feature__media"><img src="/images/boutique/passageiro-fundador.png" alt="Passageiro fundador da Passport Radio iniciando uma nova etapa da viagem" loading="lazy"></div>
-        <div class="founder-feature__copy">
-          <p class="eyebrow">Primeiro Voo</p>
-          <h2>Há viagens que acontecem todos os dias.<span>Esta acontece uma única vez.</span></h2>
-          <p>Os Passageiros Fundadores entrarão antes da decolagem oficial, receberão identidade numerada, acesso antecipado e participação na construção dos próximos destinos da Passport Radio.</p>
-          <a class="button button--gold" href="boutique.html#founders">Conhecer o Primeiro Voo</a>
-        </div>
-      </div>
-    </section>
 
-    <section class="boutique-preview section-pad" aria-labelledby="boutique-title">
-      <div class="shell boutique-preview__grid">
-        <div class="boutique-preview__copy">
+    <section class="boutique-new section-pad" id="boutique" aria-labelledby="boutique-new-title">
+      <style>
+        .boutique-new{background:linear-gradient(145deg,#06111b,#02060b 72%);border-top:1px solid rgba(215,169,89,.18);border-bottom:1px solid rgba(215,169,89,.18)}
+        .boutique-new__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(42px,7vw,90px);align-items:center}
+        .boutique-new__media{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+        .boutique-new__media img{width:100%;height:100%;object-fit:cover;border-radius:22px;border:1px solid rgba(215,169,89,.18);box-shadow:0 28px 70px rgba(0,0,0,.38)}
+        .boutique-new__media img:first-child{grid-row:span 2;min-height:520px}
+        .boutique-new__media img:not(:first-child){min-height:250px}
+        .boutique-new__copy h2{margin:14px 0 24px}
+        .boutique-new__copy h2 span{display:block}
+        .boutique-new__copy p:not(.eyebrow){color:rgba(255,255,255,.72);line-height:1.9}
+        .boutique-new__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+        @media(max-width:900px){.boutique-new__grid{grid-template-columns:1fr}.boutique-new__media{order:2}}
+        @media(max-width:620px){.boutique-new__media{grid-template-columns:1fr}.boutique-new__media img:first-child{grid-row:auto;min-height:380px}.boutique-new__media img:not(:first-child){min-height:280px}}
+      </style>
+      <div class="shell boutique-new__grid">
+        <div class="boutique-new__copy">
           <p class="eyebrow">Boutique de Bordo</p>
-          <h2 id="boutique-title">Objetos para levar<span>um pedaço da viagem com você.</span></h2>
-          <p>Peças ligadas a festivais, cidades, histórias e momentos comuns da vida. Não são lembranças genéricas: são objetos que acompanham estudo, trabalho, amizade, cuidado, descobertas e viagens de todos os tamanhos.</p>
-          <a class="button button--glass" href="boutique.html">Visitar a Boutique</a>
-        </div>
-        <div class="boutique-preview__media"><img src="/images/boutique/kit-em-uso.png" alt="Objetos da Boutique Passport Radio integrados a uma cena cotidiana" loading="lazy"></div>
-      </div>
-    </section>
-
-    <section class="museum-wing museum-wing--dark section-pad" id="cotidiano" aria-labelledby="everyday-title">
-      <div class="shell">
-        <div class="section-intro section-intro--split">
-          <div>
-            <p class="eyebrow">Passport Radio Everyday Journeys</p>
-            <h2 id="everyday-title">A música acompanha<span>a vida como ela realmente é.</span></h2>
+          <h2 id="boutique-new-title">Vista a música.<span>Leve a história.</span></h2>
+          <p>Moda, acessórios, objetos de escritório, tecnologia, viagem e coleções inspiradas por bandas, festivais e destinos musicais. A nova Boutique Passport Radio reúne uma família inteira de produtos para acompanhar a vida real.</p>
+          <div class="boutique-new__actions">
+            <a class="button button--gold" href="boutique.html">Entrar na Boutique</a>
+            <a class="button button--glass" href="boutique.html#mega-acervo">Ver o mega acervo</a>
           </div>
-          <p>Não é preciso embarcar num avião para começar uma viagem. Às vezes, o destino é o primeiro emprego, a universidade, uma consulta, uma livraria, um encontro ou simplesmente a volta para casa.</p>
         </div>
-
-        <div class="story-grid story-grid--archive">
-          <article class="story-card story-card--wide">
-            <a class="exhibition-link" href="boutique.html#produtos">
-              <img src="/images/boutique/primeiro-home-office.png" alt="Jovem celebrando o primeiro trabalho em home office com objetos Passport Radio" loading="lazy">
-              <div class="story-card__body"><small>Destination · First Home Office</small><h3>Eu consegui.</h3><p>O primeiro trabalho, uma mesa simples e a trilha sonora de uma vida que começa a mudar.</p></div>
-            </a>
-          </article>
-
-          <article class="story-card">
-            <a class="exhibition-link" href="boutique.html#produtos">
-              <img src="/images/boutique/universidade-canecas-passport-radio.png" alt="Estudantes de universidade pública reunidos com canecas Passport Radio" loading="lazy">
-              <div class="story-card__body"><small>Destination · Universidade</small><h3>Uma mesa. Muitas histórias.</h3><p>Amizade, café, estudo e aquela caneca que todo mundo pergunta onde encontrou.</p></div>
-            </a>
-          </article>
-
-          <article class="story-card">
-            <a class="exhibition-link" href="boutique.html#produtos">
-              <img src="/images/boutique/primeiro-emprego-onibus.png" alt="Jovem esperando o ônibus para sua primeira entrevista de emprego" loading="lazy">
-              <div class="story-card__body"><small>Destination · Primeiro emprego</small><h3>O frio na barriga também viaja.</h3><p>Currículo na mochila, esperança no peito e uma música ajudando a acreditar.</p></div>
-            </a>
-          </article>
-
-          <article class="story-card">
-            <a class="exhibition-link" href="boutique.html#produtos">
-              <img src="/images/boutique/hospital-rocker.png" alt="Homem roqueiro aguardando atendimento hospitalar com seus objetos Passport Radio" loading="lazy">
-              <div class="story-card__body"><small>Destination · Cuidado</small><h3>Rock não tem idade.</h3><p>A música continua presente nos dias fáceis, nos difíceis e em todos os capítulos entre eles.</p></div>
-            </a>
-          </article>
-
-          <article class="story-card">
-            <a class="exhibition-link" href="boutique.html#produtos">
-              <img src="/images/boutique/livraria-shopping.png" alt="Jovem em uma livraria de shopping descobrindo música, livros e novas histórias" loading="lazy">
-              <div class="story-card__body"><small>Destination · Livraria</small><h3>Uma tarde pode abrir um mundo.</h3><p>Livro, lanche, fones de ouvido e a descoberta que transforma uma tarde comum.</p></div>
-            </a>
-          </article>
-
-          <article class="story-card story-card--wide">
-            <a class="exhibition-link" href="boutique.html#produtos">
-              <img src="/images/boutique/moletom-parque.png" alt="Casal maduro caminhando de mãos dadas no Parque Ibirapuera com moletons Passport Radio" loading="lazy">
-              <div class="story-card__body"><small>Destination · A Lifetime Together</small><h3>Algumas viagens duram uma vida inteira.</h3><p>Duas pessoas, décadas de memórias e a mesma música continuando a tocar.</p></div>
-            </a>
-          </article>
+        <div class="boutique-new__media">
+          <img src="/images/boutique/camisetas-rock.png" alt="Camisetas da Boutique Passport Radio" loading="lazy">
+          <img src="/images/boutique/acessorios-escritorio-e-tecnologia.png" alt="Acessórios de escritório e tecnologia Passport Radio" loading="lazy">
+          <img src="/images/boutique/chaveiros-colecao-premium.png" alt="Coleção premium de chaveiros Passport Radio" loading="lazy">
         </div>
       </div>
     </section>
@@ -665,8 +618,7 @@
         <a href="#movimentos">Movimentos</a>
         <a href="#noticias">Histórias</a>
         <a href="#apoie">Apoie</a>
-        <a href="#cotidiano">Vida real</a>
-        <a href="destinos.html">Destinos</a>
+          <a href="destinos.html">Destinos</a>
         <a href="radio.html">Cabine</a>
         <a href="boutique.html">Boutique</a>
         <a href="contato.html">Contato</a>
