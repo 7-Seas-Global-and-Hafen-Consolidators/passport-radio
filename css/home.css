@@ -2154,3 +2154,124 @@
 
 /* PASSPORT RADIO — PASSPORT STORIES */
 .home-page .passport-news{background:radial-gradient(circle at 86% 12%,rgba(211,9,53,.12),transparent 30%),radial-gradient(circle at 12% 88%,rgba(212,175,55,.08),transparent 32%),#02060b}.home-page .passport-news__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:58px}.home-page .passport-news__feature{position:relative;min-height:620px;overflow:hidden;border:1px solid var(--pr-border);border-radius:var(--pr-radius);background:#02060b;box-shadow:var(--pr-shadow)}.home-page .passport-news__feature a{position:absolute;inset:0;display:block}.home-page .passport-news__feature img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.72) saturate(.86) contrast(1.04);transition:transform .8s var(--pr-ease),filter .8s var(--pr-ease)}.home-page .passport-news__feature:hover img{transform:scale(1.035);filter:brightness(.82) saturate(.94) contrast(1.05)}.home-page .passport-news__overlay{position:absolute;inset:auto 0 0;padding:clamp(28px,4vw,48px);background:linear-gradient(0deg,rgba(2,6,11,.99) 0%,rgba(2,6,11,.9) 52%,transparent 100%)}.home-page .passport-news__overlay small{color:var(--pr-gold-light);font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.home-page .passport-news__overlay h3{max-width:720px;margin-top:13px;color:var(--pr-cream);font-size:clamp(2.2rem,4.3vw,4.7rem);line-height:.96}.home-page .passport-news__overlay p{max-width:660px;margin-top:18px;color:var(--pr-muted);line-height:1.72}.home-page .passport-news__overlay span{display:inline-flex;margin-top:24px;padding-bottom:5px;border-bottom:1px solid var(--pr-gold);color:var(--pr-gold-light);font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}@media(max-width:860px){.home-page .passport-news__grid{grid-template-columns:1fr}.home-page .passport-news__feature{min-height:560px}}@media(max-width:680px){.home-page .passport-news__feature{min-height:520px}}
+
+/* ============================================================
+   ROCK NACIONAL — TOP 30 / chamada tipográfica sem imagem
+   ============================================================ */
+.home-page .story-card--rock-ranking {
+  min-height: 610px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(200, 16, 46, 0.16), transparent 25%),
+    radial-gradient(circle at 18% 82%, rgba(212, 175, 55, 0.10), transparent 28%),
+    linear-gradient(145deg, #071522 0%, #02060b 72%);
+}
+
+.home-page .story-card--rock-ranking .exhibition-link {
+  position: absolute;
+  inset: 0;
+}
+
+.home-page .rock-ranking-card {
+  position: relative;
+  min-height: 610px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(180px, .62fr) minmax(0, 1.38fr);
+  align-items: end;
+  gap: clamp(28px, 6vw, 88px);
+  padding: clamp(30px, 6vw, 78px);
+  overflow: hidden;
+}
+
+.home-page .rock-ranking-card::before {
+  content: "ROCK BRASILEIRO";
+  position: absolute;
+  right: -20px;
+  top: 46%;
+  color: rgba(255,255,255,.025);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(5rem, 13vw, 12rem);
+  font-weight: 700;
+  letter-spacing: -.06em;
+  line-height: .8;
+  transform: rotate(-90deg) translateX(50%);
+  transform-origin: right center;
+  pointer-events: none;
+}
+
+.home-page .rock-ranking-card__stamp {
+  position: absolute;
+  left: clamp(30px, 6vw, 78px);
+  top: clamp(30px, 5vw, 60px);
+  color: var(--pr-gold-light);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.home-page .rock-ranking-card__number {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 202, 101, .48);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(10rem, 24vw, 20rem);
+  font-weight: 700;
+  line-height: .58;
+  letter-spacing: -.09em;
+  opacity: .78;
+}
+
+.home-page .rock-ranking-card__copy {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.home-page .rock-ranking-card__copy small {
+  color: var(--pr-gold-light);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.home-page .rock-ranking-card__copy h3 {
+  margin-top: 16px;
+  font-size: clamp(3.1rem, 6vw, 6.4rem);
+  line-height: .87;
+  letter-spacing: -.055em;
+}
+
+.home-page .rock-ranking-card__copy p {
+  max-width: 650px;
+  margin-top: 22px;
+  color: var(--pr-muted);
+  line-height: 1.8;
+}
+
+.home-page .rock-ranking-card__cta {
+  display: inline-flex;
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--pr-gold);
+  color: var(--pr-gold-light);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .home-page .rock-ranking-card {
+    grid-template-columns: 1fr;
+    align-content: end;
+    min-height: 650px;
+  }
+  .home-page .rock-ranking-card__number {
+    position: absolute;
+    left: 22px;
+    top: 150px;
+    font-size: 13rem;
+    opacity: .38;
+  }
+}
