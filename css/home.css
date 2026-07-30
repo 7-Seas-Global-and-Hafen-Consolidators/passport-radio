@@ -2159,6 +2159,7 @@
    ROCK NACIONAL — TOP 30 / chamada tipográfica sem imagem
    ============================================================ */
 .home-page .story-card--rock-ranking {
+  position: relative;
   min-height: 610px;
   background:
     radial-gradient(circle at 82% 18%, rgba(200, 16, 46, 0.16), transparent 25%),
@@ -2169,6 +2170,9 @@
 .home-page .story-card--rock-ranking .exhibition-link {
   position: absolute;
   inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .home-page .rock-ranking-card {
@@ -2273,5 +2277,39 @@
     top: 150px;
     font-size: 13rem;
     opacity: .38;
+  }
+}
+
+
+/* ============================================================
+   HOTFIX — ROCK NACIONAL TOP 30
+   Mantém o conteúdo tipográfico dentro do card e visível no grid.
+   ============================================================ */
+.home-page #movimentos .story-card--rock-ranking {
+  position: relative !important;
+  display: block !important;
+  min-height: 610px !important;
+  overflow: hidden !important;
+}
+
+.home-page #movimentos .story-card--rock-ranking > .exhibition-link {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.home-page #movimentos .story-card--rock-ranking .rock-ranking-card {
+  display: grid !important;
+  width: 100% !important;
+  min-height: 610px !important;
+  height: 100% !important;
+}
+
+@media (max-width: 760px) {
+  .home-page #movimentos .story-card--rock-ranking,
+  .home-page #movimentos .story-card--rock-ranking .rock-ranking-card {
+    min-height: 650px !important;
   }
 }
