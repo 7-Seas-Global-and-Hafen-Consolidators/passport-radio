@@ -1,206 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Exposição editorial da Passport Radio. Primeiro a história. Depois: 3... 2... 1... CLICK!">
-  <meta name="theme-color" content="#02060b">
-  <title>Exposição | Passport Radio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=21">
-
-  <style>
-    :root {
-      --page-black: #02060b;
-      --page-navy: #081522;
-      --page-gold: #d4af37;
-      --page-gold-light: #f0ca65;
-      --page-cream: #f4f0e6;
-      --page-muted: #aeb8c6;
-      --page-border: rgba(212, 175, 55, 0.25);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      background:
-        radial-gradient(circle at 78% 18%, rgba(212,175,55,.09), transparent 30%),
-        linear-gradient(145deg, var(--page-navy), var(--page-black) 72%);
-      color: var(--page-cream);
-      font-family: Montserrat, Arial, Helvetica, sans-serif;
-    }
-
-    .exhibition-shell {
-      width: min(calc(100% - 40px), 1180px);
-      margin-inline: auto;
-    }
-
-    .exhibition-header {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--page-border);
-    }
-
-    .exhibition-brand {
-      color: var(--page-cream);
-      font-size: .8rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .exhibition-back {
-      padding: 10px 16px;
-      border: 1px solid var(--page-border);
-      border-radius: 999px;
-      color: var(--page-gold-light);
-      font-size: .7rem;
-      font-weight: 800;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .exhibition-main {
-      min-height: calc(100vh - 82px);
-      display: grid;
-      align-items: center;
-      padding-block: 70px;
-    }
-
-    .exhibition-card {
-      max-width: 900px;
-      padding: clamp(34px, 6vw, 74px);
-      border: 1px solid var(--page-border);
-      border-radius: 24px;
-      background: rgba(2, 6, 11, .62);
-      box-shadow: 0 30px 90px rgba(0,0,0,.42);
-    }
-
-    .exhibition-kicker {
-      margin: 0;
-      color: var(--page-gold-light);
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 20px 0 0;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(3.6rem, 9vw, 8rem);
-      line-height: .88;
-      letter-spacing: -.045em;
-    }
-
-    h1 span {
-      display: block;
-      color: var(--page-gold-light);
-    }
-
-    .exhibition-lead {
-      max-width: 690px;
-      margin: 28px 0 0;
-      color: var(--page-muted);
-      font-size: 1rem;
-      line-height: 1.85;
-    }
-
-    .exhibition-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .exhibition-button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 24px;
-      border: 1px solid var(--page-border);
-      border-radius: 999px;
-      color: var(--page-gold-light);
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .exhibition-button--gold {
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--page-gold-light), var(--page-gold));
-      color: #171008;
-    }
-
-    .exhibition-ritual {
-      margin-top: 34px;
-      color: var(--page-gold-light);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 3.4rem);
-      font-weight: 700;
-    }
-
-    @media (max-width: 640px) {
-      .exhibition-header { min-height: 72px; }
-      .exhibition-main { min-height: calc(100vh - 72px); }
-      .exhibition-card { padding: 30px 24px; }
-      .exhibition-actions { flex-direction: column; }
-      .exhibition-button { width: 100%; }
-    }
-  </style>
-</head>
-
-<body>
-  <header class="exhibition-header exhibition-shell">
-    <a class="exhibition-brand" href="index.html">Passport Radio</a>
-    <a class="exhibition-back" href="index.html#festivais">Voltar à Home</a>
-  </header>
-
-  <main class="exhibition-main exhibition-shell">
-    <section class="exhibition-card" aria-labelledby="exhibition-title">
-      <p class="exhibition-kicker">Passport Exhibition</p>
-      <h1 id="exhibition-title">A próxima sala<span>está sendo preparada.</span></h1>
-
-      <p class="exhibition-lead" id="exhibition-description">
-        Esta exposição já faz parte do mapa editorial da Passport Radio. O arquivo completo, com história, cidade, artistas, bastidores e apresentações ao vivo, será aberto em breve.
-      </p>
-
-      <div class="exhibition-actions">
-        <a class="exhibition-button exhibition-button--gold" href="index.html">Voltar à página inicial</a>
-        <a class="exhibition-button" href="radio.html">Ir para a cabine</a>
-      </div>
-
-      <div class="exhibition-ritual">3... 2... 1... CLICK!</div>
-    </section>
-  </main>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const collection = params.get("colecao");
-
-    if (collection) {
-      const formatted = collection
-        .split("-")
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-
-      document.title = `${formatted} | Passport Radio`;
-      document.querySelector(".exhibition-kicker").textContent = "Passport Exhibition · Em preparação";
-      document.getElementById("exhibition-description").textContent =
-        `A exposição “${formatted}” já está registrada no mapa editorial da Passport Radio. O arquivo documental completo será aberto em breve.`;
-    }
-  </script>
-</body>
-</html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Exposições documentais da Passport Radio: Drum Masters e Bass Legends.">
+<meta name="theme-color" content="#02060b">
+<title>Exposição | Passport Radio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#02060b;--navy:#081522;--gold:#d4af37;--gold2:#f0ca65;--cream:#f4f0e6;--muted:#aeb8c6;--line:rgba(212,175,55,.25)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 8%,rgba(212,175,55,.09),transparent 28rem),linear-gradient(145deg,var(--navy),var(--black) 72%);color:var(--cream);font-family:Montserrat,Arial,sans-serif}.shell{width:min(calc(100% - 40px),1240px);margin:auto}.top{position:sticky;top:0;z-index:20;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);background:rgba(2,6,11,.9);backdrop-filter:blur(16px)}.brand{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--cream)}.back{padding:10px 16px;border:1px solid var(--line);border-radius:999px;color:var(--gold2);font-size:.67rem;font-weight:800;text-transform:uppercase;text-decoration:none}.hero{padding:clamp(80px,10vw,150px) 0 70px}.kicker{margin:0;color:var(--gold2);font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.hero h1{max-width:1000px;margin:18px 0 0;font:700 clamp(4rem,10vw,9rem)/.84 "Cormorant Garamond",serif;letter-spacing:-.05em}.hero h1 span{display:block;color:var(--gold2)}.lead{max-width:820px;margin:30px 0 0;color:var(--muted);font-size:1rem;line-height:1.9}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:40px;border:1px solid var(--line);background:var(--line);border-radius:18px;overflow:hidden}.stats div{padding:22px;background:rgba(2,6,11,.9)}.stats small{display:block;color:#758195;font-size:.56rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em}.stats strong{display:block;margin-top:6px;color:var(--cream);font-size:.84rem}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding-bottom:120px}.star{position:relative;overflow:hidden;min-height:430px;border:1px solid var(--line);border-radius:22px;background:#071522;box-shadow:0 24px 70px rgba(0,0,0,.34)}.star:nth-child(7n+1){grid-column:span 2}.star img{width:100%;height:100%;min-height:430px;object-fit:cover;filter:saturate(.78) brightness(.76);transition:transform .8s ease,filter .8s ease}.star:hover img{transform:scale(1.035);filter:saturate(.96) brightness(.88)}.caption{position:absolute;inset:auto 0 0;padding:74px 24px 24px;background:linear-gradient(transparent,rgba(2,6,11,.96))}.caption small{color:var(--gold2);font-size:.58rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.caption h2{margin:8px 0 0;font:700 clamp(1.9rem,3vw,3.1rem)/.95 "Cormorant Garamond",serif}.caption p{margin:9px 0 0;color:var(--muted);font-size:.74rem}.final{padding:90px 0 120px;border-top:1px solid var(--line);text-align:center}.final h2{margin:0;font:700 clamp(3rem,7vw,6rem)/.9 "Cormorant Garamond",serif}.final h2 span{display:block;color:var(--gold2)}.ritual{margin-top:30px;color:var(--gold2);font:700 clamp(2rem,5vw,4rem) "Cormorant Garamond",serif}.empty{max-width:900px;padding:60px;border:1px solid var(--line);border-radius:24px;background:rgba(2,6,11,.6)}@media(max-width:820px){.gallery{grid-template-columns:1fr 1fr}.star:nth-child(7n+1){grid-column:span 2}.stats{grid-template-columns:1fr}}@media(max-width:560px){.gallery{grid-template-columns:1fr}.star,.star:nth-child(7n+1){grid-column:auto}.hero h1{font-size:3.8rem}.top{min-height:70px}.back{padding:9px 12px}}
+</style>
+</head><body>
+<header class="top"><div class="shell" style="display:flex;align-items:center;justify-content:space-between;gap:20px"><a class="brand" href="index.html">Passport Radio</a><a class="back" href="index.html#collections">Voltar às coleções</a></div></header>
+<main><section class="hero shell"><p class="kicker" id="kicker">Passport Exhibition</p><h1 id="title">A próxima sala<span>está sendo preparada.</span></h1><p class="lead" id="lead">O arquivo documental completo será aberto em breve.</p><div class="stats" id="stats" hidden></div></section><section class="gallery shell" id="gallery"></section><section class="final"><div class="shell"><h2>Legendas passam.<span>O que foi tocado permanece.</span></h2><div class="ritual">3... 2... 1... CLICK!</div></div></section></main>
+<script>
+const collections={
+'drum-masters':{kicker:'Collection 002 · Instrument Masters',title:['The Drum Masters','Os arquitetos do pulso.'],lead:'Uma homenagem fotográfica aos bateristas que transformaram tempo, impacto, silêncio e explosão em linguagem. Não são apenas músicos atrás do kit: são os motores que fizeram o rock avançar.',path:'/exhibitions/drum-masters/',role:'Bateria · Percussão',items:[
+['ALEX VAN HALEN_APRIMORADA.png','Alex Van Halen','Van Halen'],['BILL BRUFORD_APRIMORADA.png','Bill Bruford','Yes · King Crimson'],['CARL PALMER_APRIMORADA.png','Carl Palmer','Emerson, Lake & Palmer'],['CHESTER THOMPSON__APRIMORADA.png','Chester Thompson','Genesis · Frank Zappa'],['DANNY CAREY_APRIMORADA.png','Danny Carey','Tool'],['DAVE LOMBARDO_APRIMORADA.png','Dave Lombardo','Slayer'],['GAVIN HARRISON_APRIMORADA.png','Gavin Harrison','Porcupine Tree · King Crimson'],['IAN PAICE_APRIMORADA.png','Ian Paice','Deep Purple'],['JOHN BONHAM__APRIMORADA.png','John Bonham','Led Zeppelin'],['LARS ULRICH__APRIMORADA.png','Lars Ulrich','Metallica'],['MIKE PORTNOY_APRIMORADA.png','Mike Portnoy','Dream Theater'],['NEIL PEART_APRIMORADA.png','Neil Peart','Rush'],['NICKO MCBRAIN__APRIMORADA.png','Nicko McBrain','Iron Maiden'],['RICHARD JOHN CYRIL ALLEN_APRIMORADA.png','Rick Allen','Def Leppard'],['SIMON PHILIPS__APRIMORADA.png','Simon Phillips','Toto · The Who'],['STEWART COPELAND__APRIMORADA.png','Stewart Copeland','The Police'],['TOMMY ALDRIDGE_APRIMORADA.png','Tommy Aldridge','Whitesnake · Ozzy Osbourne'],['VINNIE COLAIUTA_APRIMORADA.png','Vinnie Colaiuta','Frank Zappa · Sting']]},
+'bass-legends':{kicker:'Collection 005 · Instrument Masters',title:['The Bass Legends','A fundação que também canta.'],lead:'Dos graves que sustentam uma canção às linhas que assumem o protagonismo: esta sala celebra baixistas cuja identidade pode ser reconhecida antes mesmo de qualquer voz entrar.',path:'/bass-legends/',role:'Baixo · Composição',items:[
+['ALEX WEBSTER__APRIMORADA.png','Alex Webster','Cannibal Corpse'],['ALEXANDRA MERL__APRIMORADA.png','Alexandra Merl','Heavy Metal'],['BILLY SHEEHAN_APRIMORADA.png','Billy Sheehan','Mr. Big · David Lee Roth'],['CHRIS SQUIRE_APRIMORADA.png','Chris Squire','Yes'],['CLIFF BURTON_APRIMORADA.png','Cliff Burton','Metallica'],['DOUG WIMBISH__APRIMORADA.png','Doug Wimbish','Living Colour'],['DUFF MCKAGAN_APRIMORADA.png','Duff McKagan','Guns N’ Roses'],['GEDDY LEE_APRIMORADA.png','Geddy Lee','Rush'],['JACK BRUCE_APRIMORADA.png','Jack Bruce','Cream'],['JOHN ENTWISTLE__APRIMORADA.png','John Entwistle','The Who'],['JOHN PAUL JONES_APRIMORADA.png','John Paul Jones','Led Zeppelin'],['MARCUS MILLER__APRIMORADA.png','Marcus Miller','Solo · Miles Davis'],['NATHAN EAST_APRIMORADA.png','Nathan East','Eric Clapton · Toto'],['PHIL LYNOTT 1_APRIMORADA.png','Phil Lynott','Thin Lizzy'],['ROGER GLOVER_APRIMORADA.png','Roger Glover','Deep Purple'],['SIMON GALLUP_APRIMORADA.png','Simon Gallup','The Cure'],['STEVE HARRIS_APRIMORADA.png','Steve Harris','Iron Maiden'],['STING_APRIMORADA.png','Sting','The Police'],['TONY LEVIN_APRIMORADA.png','Tony Levin','King Crimson · Peter Gabriel'],['VICTOR WOOTEN__APRIMORADA.png','Victor Wooten','Béla Fleck and the Flecktones']]}}
+const key=new URLSearchParams(location.search).get('colecao');const data=collections[key];
+if(data){document.title=data.title[0]+' | Passport Radio';document.getElementById('kicker').textContent=data.kicker;document.getElementById('title').innerHTML=data.title[0]+'<span>'+data.title[1]+'</span>';document.getElementById('lead').textContent=data.lead;const stats=document.getElementById('stats');stats.hidden=false;stats.innerHTML='<div><small>Arquivo</small><strong>'+data.items.length+' homenagens</strong></div><div><small>Linguagem</small><strong>Fotografia documental</strong></div><div><small>Ritual</small><strong>Primeiro a história. Depois a música.</strong></div>';document.getElementById('gallery').innerHTML=data.items.map((x,i)=>'<article class="star"><img loading="lazy" src="'+data.path+encodeURIComponent(x[0]).replace(/%2F/g,'/')+'" alt="'+x[1]+'"><div class="caption"><small>'+data.role+'</small><h2>'+x[1]+'</h2><p>'+x[2]+'</p></div></article>').join('')}else{document.getElementById('gallery').innerHTML='<div class="empty"><p class="kicker">Passport Exhibition · Em preparação</p><h2 style="font:700 3.5rem/.95 Cormorant Garamond,serif">Esta sala já está no mapa.</h2><p class="lead">O arquivo completo será aberto em breve.</p></div>'}
+</script></body></html>

@@ -430,7 +430,7 @@
       .route-grid{grid-template-columns:repeat(2,1fr)}
     }
 
-    @media(max-width:820px){
+    @media(max-width:820px){.shooting-stars__intro{grid-template-columns:1fr}.shooting-stars__grid{grid-template-columns:1fr}
       .catalogue-grid,.mega-gallery__grid{grid-template-columns:1fr}
       .product-card--wide{grid-column:auto}
       .shop-hero__status{grid-template-columns:repeat(2,1fr)}
@@ -470,6 +470,20 @@
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
     }
+
+    .shooting-stars{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(circle at 82% 18%,rgba(212,175,55,.08),transparent 26rem),#030911}
+    .shooting-stars__intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:46px}
+    .shooting-stars__intro .section-copy{margin:0}
+    .shooting-stars__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .shooting-card{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#071522;box-shadow:var(--shadow)}
+    .shooting-card img{aspect-ratio:16/10;object-fit:cover;filter:saturate(.82) brightness(.8);transition:transform .8s ease,filter .8s ease}
+    .shooting-card:hover img{transform:scale(1.025);filter:saturate(.96) brightness(.9)}
+    .shooting-card__body{padding:25px}
+    .shooting-card small{color:var(--gold-light);font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .shooting-card h3{margin:10px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:2.25rem;line-height:.95}
+    .shooting-card p{margin:14px 0 0;color:var(--text);font-size:.82rem;line-height:1.75}
+    .shooting-stars__closing{max-width:900px;margin:58px auto 0;text-align:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.5rem,6vw,5.3rem);font-weight:700;line-height:.92}
+    .shooting-stars__closing span{display:block;color:var(--gold-light)}
   </style>
 </head>
 
@@ -681,6 +695,21 @@
       </div>
     </section>
 
+
+    <section class="shooting-stars shop-section" id="shooting-stars" aria-labelledby="shooting-title">
+      <div class="shop-shell">
+        <div class="shooting-stars__intro">
+          <div><p class="eyebrow">Shooting Stars Collection</p><h2 class="section-title" id="shooting-title">A história não fica apenas no arquivo.<span>Ela também pode ser vestida.</span></h2></div>
+          <p class="section-copy">Três volumes de camisetas em preto e branco transformam algumas das imagens mais fortes do acervo Passport Radio em peças editoriais de homenagem.</p>
+        </div>
+        <div class="shooting-stars__grid">
+          <article class="shooting-card"><img src="/images/camisetas-shooting-stars-vol-01.png" alt="Shooting Stars Volume 01 com The Runaways, Aerosmith, Dimmu Borgir e Nightwish"><div class="shooting-card__body"><small>Volume 01 · Shooting Stars</small><h3>Da rebeldia ao sinfônico.</h3><p>The Runaways · Aerosmith · Dimmu Borgir · Nightwish</p></div></article>
+          <article class="shooting-card"><img src="/images/camisetas-shooting-stars-vol-02.png" alt="Shooting Stars Volume 02 com Dream Theater, Iron Maiden, Arch Enemy e Immortal"><div class="shooting-card__body"><small>Volume 02 · Shooting Stars</small><h3>Precisão, aço e extremidade.</h3><p>Dream Theater · Iron Maiden · Arch Enemy · Immortal</p></div></article>
+          <article class="shooting-card"><img src="/images/camisetas-shooting-stars-vol-03.png" alt="Shooting Stars Volume 03 com Epica, Bon Jovi, Mötley Crüe e Within Temptation"><div class="shooting-card__body"><small>Volume 03 · Shooting Stars</small><h3>Palco, melodia e permanência.</h3><p>Epica · Bon Jovi · Mötley Crüe · Within Temptation</p></div></article>
+        </div>
+        <div class="shooting-stars__closing">Não é uma estampa.<span>É uma passagem da história da música.</span></div>
+      </div>
+    </section>
     <section class="mega-gallery shop-section" id="mega-acervo" aria-labelledby="mega-title">
       <div class="shop-shell">
         <p class="eyebrow">The Mega Archive</p>
