@@ -2,96 +2,86 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Passport Radio: música, história, cultura, notícias, resenhas, arquivos ao vivo, coleções e rádio em uma única plataforma editorial." name="description"/>
-  <meta content="#0b0b0b" name="theme-color"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Passport Radio: música, história, cultura, notícias, resenhas, arquivos ao vivo, coleções e rádio em uma única plataforma editorial."/>
+  <meta name="theme-color" content="#0a0a0a"/>
   <title>Passport Radio | Music. History. Culture. Live.</title>
 
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet"/>
 
-  <link href="/css/style.css?v=24" rel="stylesheet"/>
-  <link href="/css/home.css?v=15" rel="stylesheet"/>
-  <script defer="" src="/css/js/app.js?v=3"></script>
+  <link rel="stylesheet" href="/css/style.css?v=24"/>
+  <link rel="stylesheet" href="/css/home.css?v=16"/>
+  <script defer src="/css/js/app.js?v=3"></script>
 </head>
-
-<body class="home-page home-page--war">
+<body class="home-page home-page--portal">
   <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
 
   <!-- ==========================================================
-       HEADER — COMPACTO E ORIENTADO A CONTEÚDO
+       HEADER / PORTAL BAR
   ========================================================== -->
-  <header class="site-header" data-site-header="">
-    <a aria-label="Passport Radio — página inicial" class="brand" href="index.html">
-      <img alt="Passport Radio" class="brand-logo" height="46" src="/images/logo-passport-radio.png.jpeg" width="46"/>
-      <span class="brand-copy">
-        <strong>Passport Radio</strong>
-        <small>Music · History · Culture · Live</small>
-      </span>
-    </a>
+  <header class="portal-header" data-site-header="">
+    <div class="portal-header__inner">
+      <a class="portal-brand" href="index.html" aria-label="Passport Radio — página inicial">
+        <img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="44" height="44"/>
+        <span><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span>
+      </a>
 
-    <button aria-controls="main-nav" aria-expanded="false" class="nav-toggle" data-nav-toggle="" type="button">
-      <span class="nav-toggle__label">Menu</span>
-      <span aria-hidden="true" class="nav-toggle__lines"><i></i><i></i></span>
-    </button>
+      <button class="nav-toggle" type="button" data-nav-toggle="" aria-controls="main-nav" aria-expanded="false">
+        <span>Menu</span><i></i><i></i>
+      </button>
 
-    <nav aria-label="Navegação principal" class="main-nav" data-main-nav="" id="main-nav">
-      <a href="#agora">Agora</a>
-      <a href="#noticias">Notícias</a>
-      <a href="#ao-vivo">Ao vivo</a>
-      <a href="#explorar">Explorar</a>
-      <a href="#arquivos">Arquivos</a>
-      <a href="#loja">Loja</a>
-      <a href="#apoie">Apoie</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+      <nav class="portal-nav" id="main-nav" data-main-nav="" aria-label="Navegação principal">
+        <a href="#agora">Agora</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#resenhas">Resenhas</a>
+        <a href="#arquivos">Arquivos</a>
+        <a href="#explorar">Explorar</a>
+        <a href="#loja">Loja</a>
+        <a href="#apoie">Apoie</a>
+        <a href="contato.html">Contato</a>
+      </nav>
 
-    <a class="header-action" href="radio.html">
-      <span class="header-action__pulse" aria-hidden="true"></span>
-      <span>ON AIR</span>
-      <small>3... 2... 1... CLICK!</small>
-    </a>
+      <a class="portal-live" href="radio.html"><span></span><b>ON AIR</b><small>3...2...1... CLICK!</small></a>
+    </div>
   </header>
 
   <main id="conteudo-principal">
 
     <!-- ==========================================================
-         FRONT PAGE — UMA MANCHETE + TRÊS CHAMADAS
+         TOP DESK — UMA MANCHETE + COLUNA DE CHAMADAS
     ========================================================== -->
-    <section aria-labelledby="hero-title" class="front-page" id="agora">
-      <div class="shell front-page__grid">
-        <article class="front-lead">
+    <section class="top-desk" id="agora" aria-labelledby="top-story-title">
+      <div class="portal-shell top-desk__grid">
+        <article class="lead-story">
           <a href="live-aid-momento-mais-marcante-rock.html">
-            <img alt="Live Aid 1985 em Wembley" fetchpriority="high" src="/images/live-aid-1985.png"/>
-            <div class="front-lead__overlay">
-              <span class="kicker">Especial · História do Rock</span>
-              <h1 id="hero-title">O dia em que o rock parou o mundo.</h1>
+            <img src="/images/live-aid-1985.png" alt="Live Aid 1985 em Wembley" fetchpriority="high"/>
+            <div class="lead-story__body">
+              <span class="meta">Especial · História do Rock</span>
+              <h1 id="top-story-title">O dia em que o rock parou o mundo.</h1>
               <p>Live Aid, 13 de julho de 1985. Música, televisão e milhões de pessoas conectadas no mesmo instante.</p>
-              <strong>Ler a história →</strong>
             </div>
           </a>
         </article>
 
-        <aside aria-label="Destaques agora" class="front-rail">
-          <article class="front-card front-card--hot">
+        <aside class="top-list" aria-label="Destaques agora">
+          <article class="top-list__item">
             <a href="greta-van-fleet-palace-for-the-people.html">
-              <img alt="Greta Van Fleet" loading="eager" src="/greta-van-fleet-palace-for-the-people.webp"/>
-              <div><span class="kicker">Agora · Greta Van Fleet</span><h2>Novo álbum, novo single e a pergunta de sempre: isso veio de 1971?</h2></div>
+              <img src="/greta-van-fleet-palace-for-the-people.webp" alt="Greta Van Fleet"/>
+              <div><span class="meta">Agora · Greta Van Fleet</span><h2>Novo álbum, novo single e a velha pergunta: isso veio de 1971?</h2></div>
             </a>
           </article>
-
-          <article class="front-card">
+          <article class="top-list__item">
             <a href="iron-maiden-musicas-favoritas.html">
-              <img alt="Iron Maiden" loading="eager" src="/images/ironmaiden_future_past_tour_2024.webp"/>
-              <div><span class="kicker">Iron Maiden</span><h2>Bruce, Adrian e Dave escolhem suas músicas favoritas.</h2></div>
+              <img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden"/>
+              <div><span class="meta">Iron Maiden</span><h2>Bruce, Adrian e Dave escolhem suas músicas favoritas.</h2></div>
             </a>
           </article>
-
-          <article class="front-card">
+          <article class="top-list__item">
             <a href="do-classico-ao-moderno-13-estilos-de-rock.html">
-              <img alt="Subgêneros do rock" loading="eager" src="/images/13-estilos-de-rock.jpg"/>
-              <div><span class="kicker">Guia</span><h2>Do rockabilly ao pop punk: 13 estilos, 13 histórias.</h2></div>
+              <img src="/images/13-estilos-de-rock.jpg" alt="Treze estilos de rock"/>
+              <div><span class="meta">Guia</span><h2>Do rockabilly ao pop punk: 13 estilos, 13 histórias.</h2></div>
             </a>
           </article>
         </aside>
@@ -99,12 +89,12 @@
     </section>
 
     <!-- ==========================================================
-         NEWSWIRE — SINAL DE SITE VIVO
+         NEWSWIRE — RITMO DE PORTAL
     ========================================================== -->
-    <section aria-label="Atualizações" class="newswire">
-      <div class="shell newswire__inner">
-        <strong><i></i> AGORA</strong>
-        <div class="newswire__items">
+    <section class="newswire" aria-label="Atualizações agora">
+      <div class="portal-shell newswire__inner">
+        <strong>AGORA</strong>
+        <div class="newswire__links">
           <a href="tony-iommi-karl-brazil.html">Tony Iommi inicia nova fase solo com Karl Brazil</a>
           <a href="led-zeppelin-achilles-last-stand.html">Achilles Last Stand: o Zeppelin no limite</a>
           <a href="casa-das-maquinas-brilho-nos-olhos.html">Casa das Máquinas retorna em plena forma</a>
@@ -114,93 +104,99 @@
     </section>
 
     <!-- ==========================================================
-         LATEST STORIES — CARA DE PORTAL
+         CONTEÚDO CENTRAL + SIDEBAR
     ========================================================== -->
-    <section aria-labelledby="latest-title" class="portal-section" id="noticias">
-      <div class="shell">
-        <div class="section-head">
-          <div><span>Latest Stories</span><h2 id="latest-title">Fique ligado no que importa.</h2></div>
-          <p>Atualidade, história, bastidores e opinião sem transformar cada chamada em um pôster de três andares.</p>
-        </div>
+    <section class="portal-section" id="noticias" aria-labelledby="latest-title">
+      <div class="portal-shell content-layout">
+        <div class="content-main">
+          <div class="section-head">
+            <div><span class="section-label">Latest Stories</span><h2 id="latest-title">Fique ligado no que importa.</h2></div>
+            <a href="#arquivos">Ver mais histórias →</a>
+          </div>
 
-        <div class="stories-grid">
-          <article class="story-feature">
+          <article class="news-feature">
             <a href="greta-van-fleet-palace-for-the-people.html">
-              <img alt="Greta Van Fleet" loading="lazy" src="/greta-van-fleet-palace-for-the-people.webp"/>
-              <div><span class="meta">Passport News · 31/07/2026</span><h3>Greta Van Fleet anuncia novo álbum e lança “Saw You Stand”</h3><p>Palace For The People chega em outubro, abrindo mais uma discussão sobre passado, presente e identidade no rock.</p><strong>Ler agora →</strong></div>
+              <img src="/greta-van-fleet-palace-for-the-people.webp" alt="Greta Van Fleet" loading="lazy"/>
+              <div><span class="meta">Passport News · 31/07/2026</span><h3>Greta Van Fleet anuncia novo álbum e lança “Saw You Stand”</h3><p>Palace For The People chega em outubro e reabre a discussão sobre passado, presente e identidade no rock.</p></div>
             </a>
           </article>
 
-          <div class="story-list">
-            <article><a href="led-zeppelin-achilles-last-stand.html"><img alt="Led Zeppelin" loading="lazy" src="/images/led-zeppelin-a-cancao-rockprogressiva.png"/><div><span class="meta">Led Zeppelin</span><h3>A canção que Robert Plant chamou de “rock progressivo enlouquecido”</h3></div></a></article>
-            <article><a href="kate-bush-wuthering-heights.html"><img alt="Kate Bush" loading="lazy" src="/images/kate_bush_the_dreaming_capa_corte.webp"/><div><span class="meta">Kate Bush</span><h3>Wuthering Heights: da literatura ao clássico eternizado também pelo Angra</h3></div></a></article>
-            <article><a href="tony-iommi-karl-brazil.html"><img alt="Tony Iommi" loading="lazy" src="/images/tony-iommi-2026.webp"/><div><span class="meta">Tony Iommi</span><h3>Quem é Karl Brazil, novo membro da banda de Tony Iommi?</h3></div></a></article>
-            <article><a href="jerry-lee-lewis-selvagem-rock.html"><img alt="Jerry Lee Lewis" loading="lazy" src="/images/jerry-lee-lewis.png"/><div><span class="meta">Jerry Lee Lewis</span><h3>Pianos incendiados, armas e caos: o selvagem da primeira geração do rock</h3></div></a></article>
-            <article><a href="casa-das-maquinas-brilho-nos-olhos.html"><img alt="Casa das Máquinas" loading="lazy" src="/images/brilho-nos-olhos-capa.jpg"/><div><span class="meta">Rock Nacional</span><h3>Casa das Máquinas retorna em plena forma meio século depois</h3></div></a></article>
+          <div class="news-list">
+            <article><a href="led-zeppelin-achilles-last-stand.html"><img src="/images/led-zeppelin-a-cancao-rockprogressiva.png" alt="Led Zeppelin" loading="lazy"/><div><span>Led Zeppelin</span><h3>A canção que Robert Plant chamou de “rock progressivo enlouquecido”</h3></div></a></article>
+            <article><a href="kate-bush-wuthering-heights.html"><img src="/images/kate_bush_the_dreaming_capa_corte.webp" alt="Kate Bush" loading="lazy"/><div><span>Kate Bush</span><h3>Wuthering Heights: da literatura ao clássico eternizado também pelo Angra</h3></div></a></article>
+            <article><a href="tony-iommi-karl-brazil.html"><img src="/images/tony-iommi-2026.webp" alt="Tony Iommi" loading="lazy"/><div><span>Tony Iommi</span><h3>Quem é Karl Brazil, novo membro da banda de Tony Iommi?</h3></div></a></article>
+            <article><a href="jerry-lee-lewis-selvagem-rock.html"><img src="/images/jerry-lee-lewis.png" alt="Jerry Lee Lewis" loading="lazy"/><div><span>Jerry Lee Lewis</span><h3>Pianos incendiados, armas e caos: o selvagem da primeira geração do rock</h3></div></a></article>
+            <article><a href="casa-das-maquinas-brilho-nos-olhos.html"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Casa das Máquinas" loading="lazy"/><div><span>Rock Nacional</span><h3>Casa das Máquinas retorna em plena forma meio século depois</h3></div></a></article>
           </div>
         </div>
+
+        <aside class="sidebar" aria-label="Mais da Passport Radio">
+          <section class="sidebar-box sidebar-box--live" id="ao-vivo">
+            <span class="section-label">ON AIR</span>
+            <h3>Passport Radio</h3>
+            <p>Rock · Metal · Pop · Soul · Progressive · Alternative</p>
+            <a href="radio.html">Abrir a cabine →</a>
+          </section>
+
+          <section class="sidebar-box">
+            <span class="section-label">Mais lidas</span>
+            <ol class="ranked-list">
+              <li><a href="rock-nacional-top-30.html"><b>01</b><span>Rock Nacional: o TOP 30 do gênero</span></a></li>
+              <li><a href="do-classico-ao-moderno-13-estilos-de-rock.html"><b>02</b><span>13 estilos de rock para explorar</span></a></li>
+              <li><a href="live-aid-momento-mais-marcante-rock.html"><b>03</b><span>O momento mais marcante da história do rock?</span></a></li>
+              <li><a href="iron-maiden-musicas-favoritas.html"><b>04</b><span>Iron Maiden e suas músicas favoritas</span></a></li>
+              <li><a href="kate-bush-wuthering-heights.html"><b>05</b><span>Kate Bush, literatura e Wuthering Heights</span></a></li>
+            </ol>
+          </section>
+
+          <section class="sidebar-box sidebar-shop">
+            <span class="section-label">Official Merch</span>
+            <img src="/images/boutique/camisetas-rock.png" alt="Camisetas da Boutique Passport Radio" loading="lazy"/>
+            <h3>Vista a música.</h3>
+            <a href="boutique.html">Entrar na loja →</a>
+          </section>
+        </aside>
       </div>
     </section>
 
     <!-- ==========================================================
-         ON AIR — EMISSORA VISÍVEL
+         RESENHAS / ARQUIVO EM CARDS COMPACTOS
     ========================================================== -->
-    <section aria-labelledby="onair-title" class="onair-strip" id="ao-vivo">
-      <div class="shell onair-strip__grid">
-        <div class="onair-strip__main">
-          <span class="section-label">ON AIR</span>
-          <h2 id="onair-title">A história termina. O volume sobe.</h2>
-          <p>A cabine continua sendo o coração sonoro da Passport Radio.</p>
-          <div class="button-row"><a class="war-button war-button--primary" href="radio.html">Abrir a cabine</a><a class="war-button" href="#arquivos">Explorar arquivos</a></div>
-        </div>
-        <div class="onair-strip__board">
-          <div><span>NO AR AGORA</span><strong>Passport Radio</strong><small>Rock · Metal · Pop · Soul · Progressive · Alternative</small></div>
-          <div><span>LIVE &amp; RARE</span><strong>Performances no volume certo.</strong></div>
-          <div><span>STORIES</span><strong>Primeiro o contexto. Depois a música.</strong></div>
-          <div><span>ARCHIVES</span><strong>Décadas de som em uma única cabine.</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================
-         MERCH — PRIMEIRO ATAQUE COMERCIAL
-    ========================================================== -->
-    <section aria-labelledby="merch-title" class="portal-section portal-section--dark" id="loja">
-      <div class="shell">
-        <div class="section-head section-head--compact">
-          <div><span>Official Merch</span><h2 id="merch-title">Vista a música. Leve a atitude.</h2></div>
-          <a class="section-link" href="boutique.html">Entrar na loja →</a>
-        </div>
-
-        <div class="merch-grid">
-          <article class="merch-card merch-card--lead"><a href="boutique.html"><img alt="Camisetas Passport Radio" loading="lazy" src="/images/boutique/camisetas-rock.png"/><div><span>CAMISETAS</span><h3>Rock não é uniforme. É identidade.</h3><strong>Ver coleção →</strong></div></a></article>
-          <article class="merch-card"><a href="boutique.html#mega-acervo"><img alt="Acessórios de escritório e tecnologia" loading="lazy" src="/images/boutique/acessorios-escritorio-e-tecnologia.png"/><div><span>DESK &amp; TECH</span><h3>Música também mora na sua mesa.</h3><strong>Explorar →</strong></div></a></article>
-          <article class="merch-card"><a href="boutique.html#mega-acervo"><img alt="Chaveiros Passport Radio" loading="lazy" src="/images/boutique/chaveiros-colecao-premium.png"/><div><span>ACCESSORIES</span><h3>Pequenos objetos. Grandes histórias.</h3><strong>Explorar →</strong></div></a></article>
-        </div>
-
-        <p class="commerce-note">Compras e pagamentos da Boutique são processados pela <strong>Guiropa World</strong>, estrutura operacional do projeto.</p>
-      </div>
-    </section>
-
-    <!-- ==========================================================
-         EXPLORE MUSIC — CAMADA ENCICLOPÉDICA
-    ========================================================== -->
-    <section aria-labelledby="explore-title" class="portal-section" id="explorar">
-      <div class="shell">
+    <section class="portal-section portal-section--alt" id="resenhas" aria-labelledby="reviews-title">
+      <div class="portal-shell">
         <div class="section-head">
-          <div><span>Explore Music</span><h2 id="explore-title">Uma enciclopédia que faz barulho.</h2></div>
-          <p>Bandas, artistas, gêneros, instrumentos, décadas, festivais e movimentos ligados por contexto — não por algoritmo.</p>
+          <div><span class="section-label">Reviews & Archives</span><h2 id="reviews-title">História, palco e contexto.</h2></div>
+          <a href="#arquivos">Explorar arquivos →</a>
         </div>
 
-        <div class="knowledge-grid">
-          <a href="rock-nacional-top-30.html"><b>01</b><strong>Rock Brasileiro</strong><span>Sete décadas e trinta posições.</span></a>
-          <a href="do-classico-ao-moderno-13-estilos-de-rock.html"><b>02</b><strong>Estilos de Rock</strong><span>Do rockabilly ao pop punk.</span></a>
-          <a href="exposicao.html?colecao=drum-masters"><b>03</b><strong>Drum Masters</strong><span>Técnica, histórias e performances.</span></a>
-          <a href="exposicao.html?colecao=bass-legends"><b>04</b><strong>Bass Legends</strong><span>O instrumento que você sente primeiro.</span></a>
-          <a href="exposicao.html?colecao=the-cure"><b>05</b><strong>Gothic &amp; Alternative</strong><span>Atmosfera e movimentos.</span></a>
-          <a href="exposicao.html?colecao=type-o-negative"><b>06</b><strong>Dark &amp; Heavy</strong><span>Peso, tensão e extremos.</span></a>
-          <a href="exposicao.html?colecao=ramones"><b>07</b><strong>Punk</strong><span>Velocidade, ruptura e atitude.</span></a>
-          <a href="destinos.html"><b>08</b><strong>Cenas &amp; Cidades</strong><span>Onde movimentos nasceram.</span></a>
+        <div class="card-grid card-grid--4">
+          <article class="media-card"><a href="exposicao.html?colecao=george-michael"><img src="/images/george-michael.png" alt="George Michael" loading="lazy"/><span>Live Archive</span><h3>George Michael</h3></a></article>
+          <article class="media-card"><a href="exposicao.html?colecao=depeche-mode"><img src="/images/depeche-mode.png" alt="Depeche Mode" loading="lazy"/><span>Electronic</span><h3>Depeche Mode</h3></a></article>
+          <article class="media-card"><a href="exposicao.html?colecao=the-cure"><img src="/images/the-cure.png" alt="The Cure" loading="lazy"/><span>Alternative</span><h3>The Cure</h3></a></article>
+          <article class="media-card"><a href="exposicao.html?colecao=type-o-negative"><img src="/images/type-o-negative.png" alt="Type O Negative" loading="lazy"/><span>Dark Archive</span><h3>Type O Negative</h3></a></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         EXPLORE MUSIC — ENCICLOPÉDIA / LINKS
+    ========================================================== -->
+    <section class="portal-section" id="explorar" aria-labelledby="explore-title">
+      <div class="portal-shell encyclopedia-layout">
+        <div>
+          <span class="section-label">Explore Music</span>
+          <h2 id="explore-title">Uma enciclopédia que faz barulho.</h2>
+          <p class="section-copy">Bandas, artistas, gêneros, instrumentos, décadas, festivais e movimentos ligados por contexto — não por algoritmo.</p>
+        </div>
+        <div class="topic-grid">
+          <a href="rock-nacional-top-30.html"><b>01</b><span><strong>Rock Brasileiro</strong><small>Sete décadas e trinta posições.</small></span></a>
+          <a href="do-classico-ao-moderno-13-estilos-de-rock.html"><b>02</b><span><strong>Estilos de Rock</strong><small>Do rockabilly ao pop punk.</small></span></a>
+          <a href="exposicao.html?colecao=drum-masters"><b>03</b><span><strong>Drum Masters</strong><small>Técnica, histórias e performances.</small></span></a>
+          <a href="exposicao.html?colecao=bass-legends"><b>04</b><span><strong>Bass Legends</strong><small>O instrumento que você sente primeiro.</small></span></a>
+          <a href="exposicao.html?colecao=the-cure"><b>05</b><span><strong>Gothic & Alternative</strong><small>Atmosfera e movimentos.</small></span></a>
+          <a href="exposicao.html?colecao=type-o-negative"><b>06</b><span><strong>Dark & Heavy</strong><small>Peso, tensão e extremos.</small></span></a>
+          <a href="exposicao.html?colecao=ramones"><b>07</b><span><strong>Punk</strong><small>Velocidade, ruptura e atitude.</small></span></a>
+          <a href="destinos.html"><b>08</b><span><strong>Cenas & Cidades</strong><small>Onde movimentos nasceram.</small></span></a>
         </div>
       </div>
     </section>
@@ -208,96 +204,108 @@
     <!-- ==========================================================
          INSTRUMENT MASTERS
     ========================================================== -->
-    <section aria-labelledby="masters-title" class="portal-section portal-section--dark">
-      <div class="shell">
-        <div class="section-head section-head--compact"><div><span>Instrument Masters</span><h2 id="masters-title">Antes do mito, vem o músico.</h2></div></div>
+    <section class="portal-section portal-section--alt" aria-labelledby="masters-title">
+      <div class="portal-shell">
+        <div class="section-head"><div><span class="section-label">Instrument Masters</span><h2 id="masters-title">Antes do mito, vem o músico.</h2></div></div>
         <div class="masters-grid">
-          <article class="master-card"><a href="exposicao.html?colecao=drum-masters"><img alt="The Drum Masters" loading="lazy" src="/exhibitions/drum-masters/ALEX VAN HALEN_APRIMORADA.png"/><div><span>DRUM MASTERS</span><h3>Baquetas, técnica, violência e precisão.</h3><strong>Entrar no arquivo →</strong></div></a></article>
-          <article class="master-card"><a href="exposicao.html?colecao=bass-legends"><img alt="The Bass Legends" loading="lazy" src="/bass-legends/GEDDY LEE_APRIMORADA.png"/><div><span>BASS LEGENDS</span><h3>Graves que sustentaram algumas das maiores bandas da história.</h3><strong>Entrar no arquivo →</strong></div></a></article>
+          <article><a href="exposicao.html?colecao=drum-masters"><img src="/exhibitions/drum-masters/ALEX VAN HALEN_APRIMORADA.png" alt="Drum Masters" loading="lazy"/><div><span>DRUM MASTERS</span><h3>Baquetas, técnica, violência e precisão.</h3></div></a></article>
+          <article><a href="exposicao.html?colecao=bass-legends"><img src="/bass-legends/GEDDY LEE_APRIMORADA.png" alt="Bass Legends" loading="lazy"/><div><span>BASS LEGENDS</span><h3>Graves que sustentaram algumas das maiores bandas da história.</h3></div></a></article>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================
-         LIVE ARCHIVES — GRID COMPACTO
+         LIVE ARCHIVES — FAIXA HORIZONTAL, NÃO TORRE VERTICAL
     ========================================================== -->
-    <section aria-labelledby="archives-title" class="portal-section" id="arquivos">
-      <div class="shell">
-        <div class="section-head"><div><span>Live Archives</span><h2 id="archives-title">Uma banda. Um palco. Sem filtro.</h2></div><p>Retratos de artistas em seu ambiente natural: luz, suor, ruído, silêncio, público e presença.</p></div>
-
-        <div class="archive-grid">
-          <article class="archive-card archive-card--feature"><a href="exposicao.html?colecao=george-michael"><img alt="George Michael" loading="lazy" src="/images/george-michael.png"/><div><span>UK · LIVE ARCHIVE</span><h3>George Michael</h3><p>Uma voz capaz de transformar estádio em conversa.</p></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=depeche-mode"><img alt="Depeche Mode" loading="lazy" src="/images/depeche-mode.png"/><div><span>ELECTRONIC</span><h3>Depeche Mode</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=the-cure"><img alt="The Cure" loading="lazy" src="/images/the-cure.png"/><div><span>ALTERNATIVE</span><h3>The Cure</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=type-o-negative"><img alt="Type O Negative" loading="lazy" src="/images/type-o-negative.png"/><div><span>DARK ARCHIVE</span><h3>Type O Negative</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=scorpions"><img alt="Scorpions" loading="lazy" src="/images/scorpions.png"/><div><span>ARENA ARCHIVE</span><h3>Scorpions</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=ramones"><img alt="Ramones" loading="lazy" src="/images/the-ramones.png"/><div><span>PUNK</span><h3>Ramones</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=the-mission"><img alt="The Mission" loading="lazy" src="/images/the-mission-uk.png"/><div><span>GOTHIC</span><h3>The Mission</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=the-who"><img alt="The Who" loading="lazy" src="/images/the-who.png"/><div><span>ROCK ARCHIVE</span><h3>The Who</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=the-cult"><img alt="The Cult" loading="lazy" src="/images/the-cult.png"/><div><span>ROCK ARCHIVE</span><h3>The Cult</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=u2"><img alt="U2" loading="lazy" src="/images/u2-tourne.png"/><div><span>STADIUM</span><h3>U2</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=erasure"><img alt="Erasure" loading="lazy" src="/images/erasure-live-2026.png"/><div><span>POP · LIVE 2026</span><h3>Erasure</h3></div></a></article>
-          <article class="archive-card"><a href="exposicao.html?colecao=zz-top"><img alt="ZZ Top" loading="lazy" src="/images/zz-top.jpg"/><div><span>TEXAS</span><h3>ZZ Top</h3></div></a></article>
+    <section class="portal-section" id="arquivos" aria-labelledby="archives-title">
+      <div class="portal-shell">
+        <div class="section-head"><div><span class="section-label">Live Archives</span><h2 id="archives-title">Uma banda. Um palco. Sem filtro.</h2></div><a href="radio.html">Ouvir ao vivo →</a></div>
+        <div class="archive-strip" aria-label="Arquivos ao vivo">
+          <article><a href="exposicao.html?colecao=scorpions"><img src="/images/scorpions.png" alt="Scorpions" loading="lazy"/><span>Scorpions</span></a></article>
+          <article><a href="exposicao.html?colecao=ramones"><img src="/images/the-ramones.png" alt="Ramones" loading="lazy"/><span>Ramones</span></a></article>
+          <article><a href="exposicao.html?colecao=the-mission"><img src="/images/the-mission-uk.png" alt="The Mission" loading="lazy"/><span>The Mission</span></a></article>
+          <article><a href="exposicao.html?colecao=the-who"><img src="/images/the-who.png" alt="The Who" loading="lazy"/><span>The Who</span></a></article>
+          <article><a href="exposicao.html?colecao=the-cult"><img src="/images/the-cult.png" alt="The Cult" loading="lazy"/><span>The Cult</span></a></article>
+          <article><a href="exposicao.html?colecao=u2"><img src="/images/u2-tourne.png" alt="U2" loading="lazy"/><span>U2</span></a></article>
+          <article><a href="exposicao.html?colecao=erasure"><img src="/images/erasure-live-2026.png" alt="Erasure" loading="lazy"/><span>Erasure</span></a></article>
+          <article><a href="exposicao.html?colecao=zz-top"><img src="/images/zz-top.jpg" alt="ZZ Top" loading="lazy"/><span>ZZ Top</span></a></article>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================
-         GÊNEROS — ÍNDICE RÁPIDO
+         GENRES / QUICK LINKS
     ========================================================== -->
-    <section aria-labelledby="genre-title" class="genre-strip">
-      <div class="shell">
-        <span>No borders. No algorithm.</span>
-        <h2 id="genre-title">Rock. Pop. Metal. Black Metal. Soul. Symphonic. Speed. Punk. Progressive. Tudo.</h2>
-        <div class="genre-links"><a href="do-classico-ao-moderno-13-estilos-de-rock.html">Classic Rock</a><a href="exposicao.html?colecao=type-o-negative">Dark</a><a href="exposicao.html?colecao=the-cure">Gothic</a><a href="exposicao.html?colecao=ramones">Punk</a><a href="rock-nacional-top-30.html">Brasil</a><a href="exposicao.html?colecao=george-michael">Pop</a><a href="exposicao.html?colecao=depeche-mode">Electronic</a><a href="exposicao.html?colecao=scorpions">Hard Rock</a><a href="exposicao.html?colecao=the-who">Classic</a><a href="radio.html">Live</a></div>
+    <section class="genre-bar" aria-label="Gêneros musicais">
+      <div class="portal-shell">
+        <strong>Rock. Pop. Metal. Black Metal. Soul. Symphonic. Speed. Punk. Progressive. Tudo.</strong>
+        <div>
+          <a href="do-classico-ao-moderno-13-estilos-de-rock.html">Classic Rock</a>
+          <a href="exposicao.html?colecao=type-o-negative">Dark</a>
+          <a href="exposicao.html?colecao=the-cure">Gothic</a>
+          <a href="exposicao.html?colecao=ramones">Punk</a>
+          <a href="rock-nacional-top-30.html">Brasil</a>
+          <a href="exposicao.html?colecao=george-michael">Pop</a>
+          <a href="exposicao.html?colecao=depeche-mode">Electronic</a>
+          <a href="exposicao.html?colecao=scorpions">Hard Rock</a>
+          <a href="exposicao.html?colecao=the-who">Classic</a>
+          <a href="radio.html">Live</a>
+        </div>
       </div>
     </section>
 
     <!-- ==========================================================
-         SECOND COMMERCE STRIKE
+         LOJA — FAIXA COMERCIAL COMPACTA
     ========================================================== -->
-    <section aria-labelledby="shop-title" class="shop-strike">
-      <div class="shell shop-strike__grid">
-        <img class="shop-strike__image" alt="Coleção oficial Passport Radio" loading="lazy" src="/images/boutique/camisetas-rock.png"/>
-        <div><span class="section-label">Official Collections</span><h2 id="shop-title">Você ouviu a história. Agora vista o volume.</h2><p>Camisetas, acessórios, objetos de escritório, tecnologia e coleções ligadas à cultura musical.</p><div class="button-row"><a class="war-button war-button--primary" href="boutique.html">Ver a Boutique</a><a class="war-button" href="boutique.html#mega-acervo">Mega acervo</a></div><small>Operação comercial e processamento de pagamentos: <strong>Guiropa World</strong>.</small></div>
+    <section class="portal-section portal-section--alt" id="loja" aria-labelledby="shop-title">
+      <div class="portal-shell">
+        <div class="section-head"><div><span class="section-label">Official Collections</span><h2 id="shop-title">Você ouviu a história. Agora vista o volume.</h2></div><a href="boutique.html">Ver a Boutique →</a></div>
+        <div class="shop-grid">
+          <article><a href="boutique.html"><img src="/images/boutique/camisetas-rock.png" alt="Camisetas" loading="lazy"/><div><span>CAMISETAS</span><h3>Rock não é uniforme. É identidade.</h3></div></a></article>
+          <article><a href="boutique.html#mega-acervo"><img src="/images/boutique/acessorios-escritorio-e-tecnologia.png" alt="Acessórios de escritório e tecnologia" loading="lazy"/><div><span>DESK & TECH</span><h3>Música também mora na sua mesa.</h3></div></a></article>
+          <article><a href="boutique.html#mega-acervo"><img src="/images/boutique/chaveiros-colecao-premium.png" alt="Chaveiros" loading="lazy"/><div><span>ACCESSORIES</span><h3>Pequenos objetos. Grandes histórias.</h3></div></a></article>
+        </div>
+        <p class="commercial-note">Compras e pagamentos da Boutique são processados pela <strong>Guiropa World</strong>, estrutura operacional do projeto.</p>
       </div>
     </section>
 
     <!-- ==========================================================
-         APOIO + ASAAS + GUIROPA WORLD
+         APOIO — SEM VALOR SUGERIDO / SEM MÍNIMO
     ========================================================== -->
-    <section aria-labelledby="support-title" class="support-strip" id="apoie">
-      <div class="shell support-strip__grid">
-        <div><span class="section-label">Keep Independent Music Culture Alive</span><h2 id="support-title">Quer ajudar esta máquina a continuar ligada?</h2><p>Apoio voluntário para infraestrutura, acervo, produção editorial, novas mídias e desenvolvimento.</p><div class="button-row"><a class="war-button war-button--primary" href="https://www.asaas.com/c/dwbjyv79vyrfj4ry" rel="noopener noreferrer" target="_blank">Apoiar pelo Asaas</a><a class="war-button" href="#noticias">Continuar lendo</a></div></div>
-        <aside class="support-strip__value"><span>APOIO VOLUNTÁRIO</span><strong>Você escolhe o valor.</strong><p>Contribua com o quanto puder diretamente na página segura do Asaas.</p><small>Pagamentos e operação institucional apoiados pela <strong>Guiropa World</strong>.</small></aside>
+    <section class="support-band" id="apoie" aria-labelledby="support-title">
+      <div class="portal-shell support-band__grid">
+        <div><span class="section-label">Keep Independent Music Culture Alive</span><h2 id="support-title">Ajude esta máquina a continuar ligada.</h2><p>O apoio voluntário mantém infraestrutura, acervo, produção editorial, novas mídias e desenvolvimento.</p></div>
+        <div class="support-band__action"><a href="https://www.asaas.com/c/dwbjyv79vyrfj4ry" target="_blank" rel="noopener noreferrer">Apoiar pelo Asaas →</a><p>Você escolhe o valor. Contribua com o quanto puder.</p><small>Pagamentos e operação institucional apoiados pela <strong>Guiropa World</strong>.</small></div>
       </div>
     </section>
 
-    <!-- ==========================================================
-         FINAL
-    ========================================================== -->
-    <section class="final-command">
-      <div class="shell final-command__inner"><div><span>Still here?</span><h2>Então aumenta essa porra.</h2><p>História lida. Arquivo aberto. Volume pronto.</p></div><a href="radio.html"><b>3</b><b>2</b><b>1</b><strong>CLICK!</strong></a></div>
-    </section>
   </main>
 
   <!-- ==========================================================
-       FOOTER — SITEMAP LIMPO
+       FOOTER — SIMPLES, LEGÍVEL, SEM AMONTOAR
   ========================================================== -->
-  <footer class="site-footer">
-    <div class="shell site-footer__top">
-      <a aria-label="Passport Radio — página inicial" class="brand" href="index.html"><img alt="Passport Radio" class="brand-logo" height="46" loading="lazy" src="/images/logo-passport-radio.png.jpeg" width="46"/><span class="brand-copy"><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span></a>
-      <p>Música sem fronteira de gênero. História sem enrolação. Cultura musical em movimento.</p>
+  <footer class="portal-footer">
+    <div class="portal-shell portal-footer__grid">
+      <div class="portal-footer__brand">
+        <a href="index.html"><img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="52" height="52"/><strong>Passport Radio</strong></a>
+        <p>Music · History · Culture · Live</p>
+      </div>
+
+      <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#arquivos">Live Archives</a><a href="#explorar">Explore Music</a></div>
+      <div class="footer-col"><strong>OUVIR & EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Cenas & cidades</a><a href="exposicao.html?colecao=drum-masters">Drum Masters</a><a href="exposicao.html?colecao=bass-legends">Bass Legends</a></div>
+      <div class="footer-col"><strong>LOJA & APOIO</strong><a href="boutique.html">Boutique</a><a href="boutique.html#mega-acervo">Mega acervo</a><a href="#apoie">Apoiar</a><a href="contato.html">Contato</a></div>
+      <div class="footer-col"><strong>REDES</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a></div>
     </div>
-    <div class="shell site-footer__grid">
-      <nav class="footer-column" aria-label="Conteúdo"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#arquivos">Live Archives</a><a href="#explorar">Explore Music</a><a href="rock-nacional-top-30.html">Rock Nacional</a></nav>
-      <nav class="footer-column" aria-label="Ouvir"><strong>OUVIR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Cenas &amp; cidades</a><a href="exposicao.html?colecao=drum-masters">Drum Masters</a><a href="exposicao.html?colecao=bass-legends">Bass Legends</a></nav>
-      <nav class="footer-column" aria-label="Loja e apoio"><strong>LOJA &amp; APOIO</strong><a href="boutique.html">Boutique</a><a href="boutique.html#mega-acervo">Mega acervo</a><a href="#apoie">Apoiar</a><a href="contato.html">Contato</a></nav>
-      <nav class="footer-column" aria-label="Redes"><strong>REDES</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" rel="noopener noreferrer" target="_blank">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" rel="noopener noreferrer" target="_blank">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" rel="noopener noreferrer" target="_blank">YouTube</a></nav>
-    </div>
-    <div class="shell site-footer__bottom"><p>© 2026 Passport Radio. Todos os direitos reservados.</p><p>Operação e pagamentos: <strong>Guiropa World</strong>.</p><p>3... 2... 1... CLICK!</p></div>
+    <div class="portal-shell portal-footer__bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação e pagamentos: <strong>Guiropa World</strong>.</span></div>
   </footer>
 
-  <noscript><p class="noscript-message">A navegação principal continua disponível, mas algumas animações precisam de JavaScript habilitado.</p></noscript>
+  <!-- ==========================================================
+       PLAYER PERSISTENTE — A RÁDIO COMO INFRAESTRUTURA
+  ========================================================== -->
+  <a class="sticky-player" href="radio.html" aria-label="Ouvir Passport Radio ao vivo">
+    <span class="sticky-player__play">▶</span>
+    <span><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span>
+    <b>OUVIR</b>
+  </a>
 </body>
 </html>
