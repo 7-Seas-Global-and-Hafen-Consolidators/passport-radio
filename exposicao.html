@@ -3,24 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Exposições documentais da Passport Radio: Drum Masters e Bass Legends.">
-<meta name="theme-color" content="#02060b">
+<meta name="description" content="Arquivos visuais de músicos da Passport Radio.">
+<meta name="theme-color" content="#070809">
 <title>Exposição | Passport Radio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--black:#02060b;--navy:#081522;--gold:#d4af37;--gold2:#f0ca65;--cream:#f4f0e6;--muted:#aeb8c6;--line:rgba(212,175,55,.25)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 8%,rgba(212,175,55,.09),transparent 28rem),linear-gradient(145deg,var(--navy),var(--black) 72%);color:var(--cream);font-family:Montserrat,Arial,sans-serif}.shell{width:min(calc(100% - 40px),1240px);margin:auto}.top{position:sticky;top:0;z-index:20;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);background:rgba(2,6,11,.9);backdrop-filter:blur(16px)}.brand{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--cream)}.back{padding:10px 16px;border:1px solid var(--line);border-radius:999px;color:var(--gold2);font-size:.67rem;font-weight:800;text-transform:uppercase;text-decoration:none}.hero{padding:clamp(80px,10vw,150px) 0 70px}.kicker{margin:0;color:var(--gold2);font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}.hero h1{max-width:1000px;margin:18px 0 0;font:700 clamp(4rem,10vw,9rem)/.84 "Cormorant Garamond",serif;letter-spacing:-.05em}.hero h1 span{display:block;color:var(--gold2)}.lead{max-width:820px;margin:30px 0 0;color:var(--muted);font-size:1rem;line-height:1.9}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:40px;border:1px solid var(--line);background:var(--line);border-radius:18px;overflow:hidden}.stats div{padding:22px;background:rgba(2,6,11,.9)}.stats small{display:block;color:#758195;font-size:.56rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em}.stats strong{display:block;margin-top:6px;color:var(--cream);font-size:.84rem}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding-bottom:120px}.star{position:relative;overflow:hidden;min-height:430px;border:1px solid var(--line);border-radius:22px;background:#071522;box-shadow:0 24px 70px rgba(0,0,0,.34)}.star:nth-child(7n+1){grid-column:span 2}.star img{width:100%;height:100%;min-height:430px;object-fit:cover;filter:saturate(.78) brightness(.76);transition:transform .8s ease,filter .8s ease}.star:hover img{transform:scale(1.035);filter:saturate(.96) brightness(.88)}.caption{position:absolute;inset:auto 0 0;padding:74px 24px 24px;background:linear-gradient(transparent,rgba(2,6,11,.96))}.caption small{color:var(--gold2);font-size:.58rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.caption h2{margin:8px 0 0;font:700 clamp(1.9rem,3vw,3.1rem)/.95 "Cormorant Garamond",serif}.caption p{margin:9px 0 0;color:var(--muted);font-size:.74rem}.final{padding:90px 0 120px;border-top:1px solid var(--line);text-align:center}.final h2{margin:0;font:700 clamp(3rem,7vw,6rem)/.9 "Cormorant Garamond",serif}.final h2 span{display:block;color:var(--gold2)}.ritual{margin-top:30px;color:var(--gold2);font:700 clamp(2rem,5vw,4rem) "Cormorant Garamond",serif}.empty{max-width:900px;padding:60px;border:1px solid var(--line);border-radius:24px;background:rgba(2,6,11,.6)}@media(max-width:820px){.gallery{grid-template-columns:1fr 1fr}.star:nth-child(7n+1){grid-column:span 2}.stats{grid-template-columns:1fr}}@media(max-width:560px){.gallery{grid-template-columns:1fr}.star,.star:nth-child(7n+1){grid-column:auto}.hero h1{font-size:3.8rem}.top{min-height:70px}.back{padding:9px 12px}}
-</style>
-</head><body>
-<header class="top"><div class="shell" style="display:flex;align-items:center;justify-content:space-between;gap:20px"><a class="brand" href="index.html">Passport Radio</a><a class="back" href="index.html#collections">Voltar às coleções</a></div></header>
-<main><section class="hero shell"><p class="kicker" id="kicker">Passport Exhibition</p><h1 id="title">A próxima sala<span>está sendo preparada.</span></h1><p class="lead" id="lead">O arquivo documental completo será aberto em breve.</p><div class="stats" id="stats" hidden></div></section><section class="gallery shell" id="gallery"></section><section class="final"><div class="shell"><h2>Legendas passam.<span>O que foi tocado permanece.</span></h2><div class="ritual">3... 2... 1... CLICK!</div></div></section></main>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=30">
+
 <script>
 const collections={
-'drum-masters':{kicker:'Collection 002 · Instrument Masters',title:['The Drum Masters','Os arquitetos do pulso.'],lead:'Uma homenagem fotográfica aos bateristas que transformaram tempo, impacto, silêncio e explosão em linguagem. Não são apenas músicos atrás do kit: são os motores que fizeram o rock avançar.',path:'/exhibitions/drum-masters/',role:'Bateria · Percussão',items:[
-['ALEX VAN HALEN_APRIMORADA.png','Alex Van Halen','Van Halen'],['BILL BRUFORD_APRIMORADA.png','Bill Bruford','Yes · King Crimson'],['CARL PALMER_APRIMORADA.png','Carl Palmer','Emerson, Lake & Palmer'],['CHESTER THOMPSON__APRIMORADA.png','Chester Thompson','Genesis · Frank Zappa'],['DANNY CAREY_APRIMORADA.png','Danny Carey','Tool'],['DAVE LOMBARDO_APRIMORADA.png','Dave Lombardo','Slayer'],['GAVIN HARRISON_APRIMORADA.png','Gavin Harrison','Porcupine Tree · King Crimson'],['IAN PAICE_APRIMORADA.png','Ian Paice','Deep Purple'],['JOHN BONHAM__APRIMORADA.png','John Bonham','Led Zeppelin'],['LARS ULRICH__APRIMORADA.png','Lars Ulrich','Metallica'],['MIKE PORTNOY_APRIMORADA.png','Mike Portnoy','Dream Theater'],['NEIL PEART_APRIMORADA.png','Neil Peart','Rush'],['NICKO MCBRAIN__APRIMORADA.png','Nicko McBrain','Iron Maiden'],['RICHARD JOHN CYRIL ALLEN_APRIMORADA.png','Rick Allen','Def Leppard'],['SIMON PHILIPS__APRIMORADA.png','Simon Phillips','Toto · The Who'],['STEWART COPELAND__APRIMORADA.png','Stewart Copeland','The Police'],['TOMMY ALDRIDGE_APRIMORADA.png','Tommy Aldridge','Whitesnake · Ozzy Osbourne'],['VINNIE COLAIUTA_APRIMORADA.png','Vinnie Colaiuta','Frank Zappa · Sting']]},
-'bass-legends':{kicker:'Collection 005 · Instrument Masters',title:['The Bass Legends','A fundação que também canta.'],lead:'Dos graves que sustentam uma canção às linhas que assumem o protagonismo: esta sala celebra baixistas cuja identidade pode ser reconhecida antes mesmo de qualquer voz entrar.',path:'/bass-legends/',role:'Baixo · Composição',items:[
-['ALEX WEBSTER__APRIMORADA.png','Alex Webster','Cannibal Corpse'],['ALEXANDRA MERL__APRIMORADA.png','Alexandra Merl','Heavy Metal'],['BILLY SHEEHAN_APRIMORADA.png','Billy Sheehan','Mr. Big · David Lee Roth'],['CHRIS SQUIRE_APRIMORADA.png','Chris Squire','Yes'],['CLIFF BURTON_APRIMORADA.png','Cliff Burton','Metallica'],['DOUG WIMBISH__APRIMORADA.png','Doug Wimbish','Living Colour'],['DUFF MCKAGAN_APRIMORADA.png','Duff McKagan','Guns N’ Roses'],['GEDDY LEE_APRIMORADA.png','Geddy Lee','Rush'],['JACK BRUCE_APRIMORADA.png','Jack Bruce','Cream'],['JOHN ENTWISTLE__APRIMORADA.png','John Entwistle','The Who'],['JOHN PAUL JONES_APRIMORADA.png','John Paul Jones','Led Zeppelin'],['MARCUS MILLER__APRIMORADA.png','Marcus Miller','Solo · Miles Davis'],['NATHAN EAST_APRIMORADA.png','Nathan East','Eric Clapton · Toto'],['PHIL LYNOTT 1_APRIMORADA.png','Phil Lynott','Thin Lizzy'],['ROGER GLOVER_APRIMORADA.png','Roger Glover','Deep Purple'],['SIMON GALLUP_APRIMORADA.png','Simon Gallup','The Cure'],['STEVE HARRIS_APRIMORADA.png','Steve Harris','Iron Maiden'],['STING_APRIMORADA.png','Sting','The Police'],['TONY LEVIN_APRIMORADA.png','Tony Levin','King Crimson · Peter Gabriel'],['VICTOR WOOTEN__APRIMORADA.png','Victor Wooten','Béla Fleck and the Flecktones']]}}
-const key=new URLSearchParams(location.search).get('colecao');const data=collections[key];
-if(data){document.title=data.title[0]+' | Passport Radio';document.getElementById('kicker').textContent=data.kicker;document.getElementById('title').innerHTML=data.title[0]+'<span>'+data.title[1]+'</span>';document.getElementById('lead').textContent=data.lead;const stats=document.getElementById('stats');stats.hidden=false;stats.innerHTML='<div><small>Arquivo</small><strong>'+data.items.length+' homenagens</strong></div><div><small>Linguagem</small><strong>Fotografia documental</strong></div><div><small>Ritual</small><strong>Primeiro a história. Depois a música.</strong></div>';document.getElementById('gallery').innerHTML=data.items.map((x,i)=>'<article class="star"><img loading="lazy" src="'+data.path+encodeURIComponent(x[0]).replace(/%2F/g,'/')+'" alt="'+x[1]+'"><div class="caption"><small>'+data.role+'</small><h2>'+x[1]+'</h2><p>'+x[2]+'</p></div></article>').join('')}else{document.getElementById('gallery').innerHTML='<div class="empty"><p class="kicker">Passport Exhibition · Em preparação</p><h2 style="font:700 3.5rem/.95 Cormorant Garamond,serif">Esta sala já está no mapa.</h2><p class="lead">O arquivo completo será aberto em breve.</p></div>'}
-</script></body></html>
+'drum-masters':{kicker:'Instrument Masters · Drums',title:'Drum Masters',lead:'Bateristas que transformaram tempo, impacto e precisão em identidade.',path:'/exhibitions/drum-masters/',role:'Drums',items:[
+['ALEX VAN HALEN_APRIMORADA.png','Alex Van Halen','Van Halen'],['BILL BRUFORD_APRIMORADA.png','Bill Bruford','Yes · King Crimson'],['CARL PALMER_APRIMORADA.png','Carl Palmer','ELP'],['CHESTER THOMPSON__APRIMORADA.png','Chester Thompson','Genesis · Frank Zappa'],['DANNY CAREY_APRIMORADA.png','Danny Carey','Tool'],['DAVE LOMBARDO_APRIMORADA.png','Dave Lombardo','Slayer'],['GAVIN HARRISON_APRIMORADA.png','Gavin Harrison','Porcupine Tree'],['IAN PAICE_APRIMORADA.png','Ian Paice','Deep Purple'],['JOHN BONHAM__APRIMORADA.png','John Bonham','Led Zeppelin'],['LARS ULRICH__APRIMORADA.png','Lars Ulrich','Metallica'],['MIKE PORTNOY_APRIMORADA.png','Mike Portnoy','Dream Theater'],['NEIL PEART_APRIMORADA.png','Neil Peart','Rush'],['NICKO MCBRAIN__APRIMORADA.png','Nicko McBrain','Iron Maiden'],['RICHARD JOHN CYRIL ALLEN_APRIMORADA.png','Rick Allen','Def Leppard'],['SIMON PHILIPS__APRIMORADA.png','Simon Phillips','Toto · The Who'],['STEWART COPELAND__APRIMORADA.png','Stewart Copeland','The Police'],['TOMMY ALDRIDGE_APRIMORADA.png','Tommy Aldridge','Whitesnake'],['VINNIE COLAIUTA_APRIMORADA.png','Vinnie Colaiuta','Frank Zappa · Sting']]},
+'bass-legends':{kicker:'Instrument Masters · Bass',title:'Bass Legends',lead:'Baixistas cujas linhas sustentam, conduzem e às vezes comandam a música.',path:'/bass-legends/',role:'Bass',items:[
+['ALEX WEBSTER__APRIMORADA.png','Alex Webster','Cannibal Corpse'],['ALEXANDRA MERL__APRIMORADA.png','Alexandra Merl','Heavy Metal'],['BILLY SHEEHAN_APRIMORADA.png','Billy Sheehan','Mr. Big'],['CHRIS SQUIRE_APRIMORADA.png','Chris Squire','Yes'],['CLIFF BURTON_APRIMORADA.png','Cliff Burton','Metallica'],['DOUG WIMBISH__APRIMORADA.png','Doug Wimbish','Living Colour'],['DUFF MCKAGAN_APRIMORADA.png','Duff McKagan','Guns N’ Roses'],['GEDDY LEE_APRIMORADA.png','Geddy Lee','Rush'],['JACK BRUCE_APRIMORADA.png','Jack Bruce','Cream'],['JOHN ENTWISTLE__APRIMORADA.png','John Entwistle','The Who'],['JOHN PAUL JONES_APRIMORADA.png','John Paul Jones','Led Zeppelin'],['MARCUS MILLER__APRIMORADA.png','Marcus Miller','Solo · Miles Davis'],['NATHAN EAST_APRIMORADA.png','Nathan East','Eric Clapton · Toto'],['PHIL LYNOTT 1_APRIMORADA.png','Phil Lynott','Thin Lizzy'],['ROGER GLOVER_APRIMORADA.png','Roger Glover','Deep Purple'],['SIMON GALLUP_APRIMORADA.png','Simon Gallup','The Cure'],['STEVE HARRIS_APRIMORADA.png','Steve Harris','Iron Maiden'],['STING_APRIMORADA.png','Sting','The Police'],['TONY LEVIN_APRIMORADA.png','Tony Levin','King Crimson'],['VICTOR WOOTEN__APRIMORADA.png','Victor Wooten','Béla Fleck']]}
+};
+const key=new URLSearchParams(location.search).get('colecao')||'drum-masters';
+const data=collections[key]||collections['drum-masters'];
+document.title=data.title+' | Passport Radio';
+document.getElementById('kicker').textContent=data.kicker;
+document.getElementById('title').textContent=data.title;
+document.getElementById('lead').textContent=data.lead;
+document.getElementById('stats').innerHTML=`<span class="stat">${data.items.length} nomes</span><span class="stat">Arquivo visual</span><span class="stat">Atualização contínua</span>`;
+document.getElementById('gallery').innerHTML=data.items.map(x=>`<article class="star"><img loading="lazy" src="${data.path+encodeURIComponent(x[0]).replace(/%2F/g,'/')}" alt="${x[1]}"><div class="caption"><small>${data.role}</small><h2>${x[1]}</h2><p>${x[2]}</p></div></article>`).join('');
+</script>
+
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Passport Radio">
+    <span class="brand-mark">PR</span>
+    <span><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span>
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+    <a href="index.html">Agora</a>
+    <a href="index.html#noticias">Notícias</a>
+    <a href="radio.html">Ao Vivo</a>
+    <a href="destinos.html">Explorar</a>
+    <a href="exposicao.html?colecao=drum-masters">Arquivos</a>
+    <a href="loja.html">Loja</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <div class="header-actions">
+    <a class="header-chip header-chip--live" href="radio.html">ON AIR</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="page-hero"><div class="shell exhibition-head">
+  <div><span class="kicker" id="kicker">Arquivo</span><h1 id="title">Instrument Masters</h1><p id="lead">Arquivo documental da Passport Radio.</p></div>
+  <div class="stats" id="stats"></div>
+</div></section>
+<section class="section"><div class="shell"><div class="gallery" id="gallery"></div></div></section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div><strong>Passport Radio</strong><p>Music · History · Culture · Live</p><p>3... 2... 1... CLICK!</p></div>
+    <div><strong>Conteúdo</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#resenhas">Resenhas</a><a href="exposicao.html?colecao=drum-masters">Arquivos</a></div>
+    <div><strong>Ouvir</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explorar música</a></div>
+    <div><strong>Loja & Apoio</strong><a href="loja.html">Boutique</a><a href="index.html#apoie">Apoiar</a></div>
+    <div><strong>Contato</strong><a href="contato.html">Central de contato</a><a href="mailto:passport@passportradio.online">E-mail</a></div>
+  </div>
+  <div class="shell footer-bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação e pagamentos: <b>Guiropa World</b>.</span></div>
+</footer>
+<div class="floating-contact">
+  <a class="float-wa" href="https://wa.me/48732099369?text=Olá%2C%20quero%20falar%20com%20a%20Passport%20Radio." target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a class="float-tg" href="https://t.me/m/t6seeX61ZTlk" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+</div>
+<a class="player-bar" href="radio.html" aria-label="Ouvir Passport Radio">
+  <span class="player-play">▶</span><span class="player-copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span><b>OUVIR</b>
+</a>
+<script>
+const toggle=document.querySelector('.nav-toggle'), nav=document.querySelector('.main-nav');
+if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});}
+</script>
+
+</body>
+</html>
