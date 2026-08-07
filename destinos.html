@@ -1,727 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Índice musical da Passport Radio.">
+<meta name="theme-color" content="#070809">
+<title>Explorar Música | Passport Radio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=30">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Explore destinos musicais, artistas, cidades, festivais e histórias ao vivo na Passport Radio."
-  >
-
-  <title>Destinos Musicais | Passport Radio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link rel="stylesheet" href="/css/style.css?v=21">
 </head>
-
-<body class="destinations-page">
-
-  <header class="site-header">
-
-    <a
-      class="brand"
-      href="index.html"
-      aria-label="Passport Radio - página inicial"
-    >
-      <span class="brand-mark">PR</span>
-
-      <span class="brand-copy">
-        <strong>Passport Radio</strong>
-        <small>Every Song Is A Destination</small>
-      </span>
-    </a>
-
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="main-nav"
-    >
-      Menu
-    </button>
-
-    <nav
-      class="main-nav"
-      id="main-nav"
-      aria-label="Navegação principal"
-    >
-      <a href="index.html">Início</a>
-      <a href="#mapa">Mapa</a>
-      <a href="#artistas">Artistas</a>
-      <a href="#festivais">Festivais</a>
-      <a href="#colecoes">Coleções</a>
-      <a href="boutique.html">Boutique</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-
-    <a class="header-action" href="radio.html">
-      Entrar na cabine
-    </a>
-
-  </header>
-
-  <main>
-
-    <section
-      class="cinematic-hero"
-      aria-labelledby="destinations-title"
-    >
-
-      <img
-        class="cinematic-hero__image"
-        src="/images/hero-terminal.png"
-        alt="Terminal internacional cinematográfico da Passport Radio"
-      >
-
-      <div class="cinematic-hero__veil"></div>
-
-      <div class="cinematic-hero__content shell">
-
-        <p class="eyebrow">
-          Destinos Musicais · Passport Radio
-        </p>
-
-        <h1 id="destinations-title">
-          O mundo inteiro
-          <span>cabe dentro de uma música.</span>
-        </h1>
-
-        <p class="hero-lead">
-          Uma cidade. Uma pessoa. Um festival. Uma apresentação ao vivo.
-          Cada destino começa com uma história e termina com uma nova
-          memória musical.
-        </p>
-
-        <div class="hero-actions">
-
-          <a
-            class="button button--gold"
-            href="#mapa"
-          >
-            Abrir o mapa
-          </a>
-
-          <a
-            class="button button--glass"
-            href="#artistas"
-          >
-            Explorar histórias
-          </a>
-
-        </div>
-
-        <p class="hero-ritual">
-          Primeiro, a história. Depois:
-          <strong>3... 2... 1... Click!</strong>
-        </p>
-
-      </div>
-
-      <div class="hero-status" aria-label="Informações da viagem">
-
-        <span>
-          <small>Origem</small>
-          São Paulo
-        </span>
-
-        <span>
-          <small>Destino</small>
-          O mundo
-        </span>
-
-        <span>
-          <small>Formato</small>
-          Documentário musical
-        </span>
-
-        <span>
-          <small>Status</small>
-          Embarque aberto
-        </span>
-
-      </div>
-
-    </section>
-
-    <section class="manifesto-section section-pad">
-
-      <div class="shell manifesto-grid">
-
-        <div>
-
-          <p class="eyebrow">
-            Um passaporte musical
-          </p>
-
-          <h2>
-            Não colecionamos países.
-            <span>Colecionamos histórias.</span>
-          </h2>
-
-        </div>
-
-        <div class="manifesto-copy">
-
-          <p>
-            Na Passport Radio, um destino não é apenas um ponto no mapa.
-            É o lugar onde uma banda começou, onde uma canção ganhou outro
-            significado ou onde uma apresentação ao vivo se tornou parte
-            da memória de uma geração.
-          </p>
-
-          <p>
-            Cada viagem reúne cidade, país, pessoas, bastidores, contexto
-            cultural, curiosidades e música apresentada ao vivo.
-            <strong>Nunca uma playlist. Sempre uma experiência.</strong>
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section
-      class="map-feature section-pad"
-      id="mapa"
-    >
-
-      <div class="shell map-feature__grid">
-
-        <div class="map-feature__media">
-
-          <img
-            src="/images/mapa-global.png"
-            alt="Mapa mundial escuro com rotas musicais douradas"
-          >
-
-        </div>
-
-        <div class="map-feature__copy">
-
-          <p class="eyebrow">
-            Cada luz abre uma história
-          </p>
-
-          <h2>
-            Uma rota pode atravessar
-            <span>continentes e décadas.</span>
-          </h2>
-
-          <p>
-            São Paulo encontra Guadalajara. Londres encontra Birmingham.
-            Tóquio encontra Naeba. Helsinque encontra o mundo.
-            As conexões da Passport Radio não seguem fronteiras de gênero,
-            idioma ou época.
-          </p>
-
-          <p>
-            O mapa não serve para escolher onde clicar. Ele mostra quantas
-            histórias ainda estão esperando para serem descobertas.
-          </p>
-
-          <a class="text-link" href="#artistas">
-            Conhecer os primeiros destinos
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section
-      class="collections section-pad"
-      id="artistas"
-    >
-
-      <div class="shell">
-
-        <div class="section-intro">
-
-          <p class="eyebrow">
-            Destinos editoriais
-          </p>
-
-          <h2>
-            Uma banda. Uma cidade.
-            <span>Uma história inteira.</span>
-          </h2>
-
-          <p>
-            Não apresentamos nomes como categorias. Cada artista se torna
-            uma expedição documental construída a partir de pessoas,
-            lugares, instrumentos, arquivos e apresentações ao vivo.
-          </p>
-
-        </div>
-
-        <div class="collection-stack">
-
-          <article class="collection-panel">
-
-            <img
-              src="/images/destination-mana.png"
-              alt="Exposição editorial sobre a banda Maná e Guadalajara"
-            >
-
-            <div class="collection-panel__content">
-
-              <p class="collection-number">
-                México · Guadalajara · 1986
-              </p>
-
-              <h3>Maná</h3>
-
-              <p>
-                A história de uma banda que levou o rock latino para
-                diferentes continentes sem abandonar sua origem mexicana.
-              </p>
-
-              <a class="text-link" href="radio.html">
-                Preparar esta rota
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="collection-panel collection-panel--reverse">
-
-            <img
-              src="/images/destination-rpm.png"
-              alt="Exposição editorial sobre o grupo RPM em São Paulo"
-            >
-
-            <div class="collection-panel__content">
-
-              <p class="collection-number">
-                Brasil · São Paulo · 1983
-              </p>
-
-              <h3>RPM</h3>
-
-              <p>
-                Sintetizadores, fitas, cadernos de estúdio e a transformação
-                do rock brasileiro durante uma das décadas mais intensas
-                de sua história.
-              </p>
-
-              <a class="text-link" href="radio.html">
-                Preparar esta rota
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section
-      class="destinations-showcase section-pad"
-      id="festivais"
-    >
-
-      <div class="shell">
-
-        <div class="section-intro">
-
-          <p class="eyebrow">
-            Festivais são destinos
-          </p>
-
-          <h2>
-            Há viagens que acontecem
-            <span>todos os dias. Estas acontecem uma única vez.</span>
-          </h2>
-
-          <p>
-            Chuva, lama, montanhas, cidades, luzes, estradas e multidões.
-            Alguns festivais não são apenas eventos: tornam-se parte da vida
-            de quem esteve lá.
-          </p>
-
-        </div>
-
-        <div class="story-grid">
-
-          <article class="story-card story-card--wide">
-
-            <img
-              src="/images/festival-sweden-rock.png"
-              alt="Festival Sweden Rock em atmosfera cinematográfica"
-            >
-
-            <div class="story-card__body">
-
-              <small>
-                Suécia · Expedição escandinava
-              </small>
-
-              <h3>Sweden Rock Festival</h3>
-
-              <p>
-                O encontro entre o verão escandinavo, o rock clássico e uma
-                comunidade internacional reunida por música, estrada e memória.
-              </p>
-
-            </div>
-
-          </article>
-
-          <article class="story-card">
-
-            <img
-              src="/images/festival-pentaport.png"
-              alt="Incheon Pentaport Rock Festival na Coreia do Sul"
-            >
-
-            <div class="story-card__body">
-
-              <small>
-                Coreia do Sul · Incheon
-              </small>
-
-              <h3>Pentaport Rock Festival</h3>
-
-              <p>
-                Arquitetura, chuva, luzes urbanas e um dos grandes encontros
-                do rock asiático com o restante do mundo.
-              </p>
-
-            </div>
-
-          </article>
-
-          <article class="story-card">
-
-            <img
-              src="/images/mapa-editorial.png"
-              alt="Mapa editorial artesanal da Passport Radio"
-            >
-
-            <div class="story-card__body">
-
-              <small>
-                Arquivo Passport
-              </small>
-
-              <h3>Cada festival deixa um carimbo.</h3>
-
-              <p>
-                As rotas, os ingressos, os passes e os registros ao vivo
-                formam um arquivo de memórias que atravessa continentes.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section
-      class="collections-hub section-pad"
-      id="colecoes"
-    >
-
-      <div class="shell">
-
-        <div class="section-intro">
-
-          <p class="eyebrow">
-            Passport Collections
-          </p>
-
-          <h2>
-            Não são categorias.
-            <span>São salas de uma exposição viva.</span>
-          </h2>
-
-          <p>
-            Instrumentos, movimentos, cenas e gerações são apresentados
-            como grandes coleções documentais, sempre conectadas a cidades,
-            países e apresentações ao vivo.
-          </p>
-
-        </div>
-
-        <div class="collections-grid">
-
-          <article class="collection-card">
-
-            <img
-              src="/images/collection-progressive-rock.png"
-              alt="Coleção The Architects of Progressive Rock"
-            >
-
-            <div class="collection-card__overlay">
-
-              <small>
-                Passport Collection
-              </small>
-
-              <h3>The Architects of Progressive Rock</h3>
-
-              <p>
-                Uma viagem por bibliotecas musicais, sintetizadores,
-                manuscritos e músicos que transformaram imaginação em som.
-              </p>
-
-              <span>Entrar na coleção</span>
-
-            </div>
-
-          </article>
-
-          <article class="collection-card">
-
-            <img
-              src="/images/collection-drum-masters.png"
-              alt="Coleção The Drum Masters"
-            >
-
-            <div class="collection-card__overlay">
-
-              <small>
-                Passport Collection
-              </small>
-
-              <h3>The Drum Masters</h3>
-
-              <p>
-                O pulso, a técnica e as histórias de quem construiu o coração
-                rítmico de gerações inteiras.
-              </p>
-
-              <span>Entrar na coleção</span>
-
-            </div>
-
-          </article>
-
-          <article class="collection-card">
-
-            <img
-              src="/images/collection-guitar-heroes.png"
-              alt="Coleção The Guitar Heroes"
-            >
-
-            <div class="collection-card__overlay">
-
-              <small>
-                Passport Collection
-              </small>
-
-              <h3>The Guitar Heroes</h3>
-
-              <p>
-                Instrumentos, amplificadores, cadernos e mãos que mudaram
-                para sempre a maneira como o mundo ouve uma guitarra.
-              </p>
-
-              <span>Entrar na coleção</span>
-
-            </div>
-
-          </article>
-
-          <article class="collection-card">
-
-            <img
-              src="/images/collection-synthpop.png"
-              alt="Coleção The Golden Age of Synthpop"
-            >
-
-            <div class="collection-card__overlay">
-
-              <small>
-                Passport Collection
-              </small>
-
-              <h3>The Golden Age of Synthpop</h3>
-
-              <p>
-                Berlim, Londres, Oslo, sintetizadores analógicos e a
-                revolução eletrônica que transformou a música pop.
-              </p>
-
-              <span>Entrar na coleção</span>
-
-            </div>
-
-          </article>
-
-          <article class="collection-card">
-
-            <img
-              src="/images/collection-dark-metal.png"
-              alt="Coleção The Dark Side of Metal"
-            >
-
-            <div class="collection-card__overlay">
-
-              <small>
-                Passport Collection
-              </small>
-
-              <h3>The Dark Side of Metal</h3>
-
-              <p>
-                Florestas nórdicas, catedrais, arquivos e cenas extremas
-                que transformaram escuridão em música.
-              </p>
-
-              <span>Entrar na coleção</span>
-
-            </div>
-
-          </article>
-
-          <article class="collection-card">
-
-            <img
-              src="/images/collection-american-rock.png"
-              alt="Coleção The American Rock Highway"
-            >
-
-            <div class="collection-card__overlay">
-
-              <small>
-                Passport Collection
-              </small>
-
-              <h3>The American Rock Highway</h3>
-
-              <p>
-                Estradas, estúdios, arenas e cidades que ajudaram a construir
-                a dimensão mundial do rock americano.
-              </p>
-
-              <span>Entrar na coleção</span>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="final-boarding section-pad">
-
-      <div class="shell final-boarding__inner">
-
-        <p class="eyebrow">
-          Próximo embarque
-        </p>
-
-        <h2>
-          Você não escolhe apenas uma faixa.
-          <span>Você embarca numa história.</span>
-        </h2>
-
-        <div class="final-boarding__actions">
-
-          <a
-            class="button button--gold"
-            href="radio.html"
-          >
-            Entrar na cabine
-          </a>
-
-          <a
-            class="button button--glass"
-            href="boutique.html"
-          >
-            Conhecer a Boutique
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-
-    <div class="shell site-footer__grid">
-
-      <div class="brand brand--footer">
-
-        <span class="brand-mark">PR</span>
-
-        <span class="brand-copy">
-          <strong>Passport Radio</strong>
-          <small>Every Song Is A Destination</small>
-        </span>
-
-      </div>
-
-      <nav aria-label="Navegação do rodapé">
-        <a href="index.html">Início</a>
-        <a href="radio.html">Cabine</a>
-        <a href="programacao.html">Programação</a>
-        <a href="boutique.html">Boutique</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-
-      <p>
-        © 2026 Passport Radio · 3... 2... 1... Click!
-      </p>
-
-    </div>
-
-  </footer>
-
-  <script>
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".main-nav");
-
-    if (toggle && nav) {
-      toggle.addEventListener("click", () => {
-        const isOpen =
-          toggle.getAttribute("aria-expanded") === "true";
-
-        toggle.setAttribute(
-          "aria-expanded",
-          String(!isOpen)
-        );
-
-        nav.classList.toggle("is-open");
-      });
-
-      nav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          toggle.setAttribute("aria-expanded", "false");
-          nav.classList.remove("is-open");
-        });
-      });
-    }
-  </script>
+<body>
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Passport Radio">
+    <span class="brand-mark">PR</span>
+    <span><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span>
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+    <a href="index.html">Agora</a>
+    <a href="index.html#noticias">Notícias</a>
+    <a href="radio.html">Ao Vivo</a>
+    <a href="destinos.html">Explorar</a>
+    <a href="exposicao.html?colecao=drum-masters">Arquivos</a>
+    <a href="loja.html">Loja</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <div class="header-actions">
+    <a class="header-chip header-chip--live" href="radio.html">ON AIR</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="page-hero"><div class="shell">
+  <span class="kicker">Explore Music</span>
+  <h1>Bandas, gêneros, cenas, instrumentos e histórias.</h1>
+  <p>Sem mapa, aeroporto ou carimbo. Esta página agora funciona como índice musical: entre por um assunto e continue navegando.</p>
+</div></section>
+<section class="section"><div class="shell">
+  <div class="section-head"><div><span class="kicker">Comece por aqui</span><h2 class="section-title">Explore por assunto.</h2></div><p>Uma camada enciclopédica para conectar tudo o que já existe no acervo.</p></div>
+  <div class="topic-grid">
+    <a class="topic-card" href="rock-nacional-top-30.html"><img src="/images/brilho-nos-olhos-capa.jpg" alt=""><div class="topic-card__body"><span class="kicker">Brasil</span><h3>Rock Brasileiro</h3><p>Bandas, décadas, cenas e histórias.</p></div></a>
+    <a class="topic-card" href="do-classico-ao-moderno-13-estilos-de-rock.html"><img src="/images/13-estilos-de-rock.jpg" alt=""><div class="topic-card__body"><span class="kicker">Guia</span><h3>Estilos de Rock</h3><p>Do rockabilly ao pop punk.</p></div></a>
+    <a class="topic-card" href="exposicao.html?colecao=drum-masters"><img src="/exhibitions/drum-masters/ALEX VAN HALEN_APRIMORADA.png" alt=""><div class="topic-card__body"><span class="kicker">Instrumentos</span><h3>Drum Masters</h3><p>Técnica, impacto e história.</p></div></a>
+    <a class="topic-card" href="exposicao.html?colecao=bass-legends"><img src="/bass-legends/GEDDY LEE_APRIMORADA.png" alt=""><div class="topic-card__body"><span class="kicker">Instrumentos</span><h3>Bass Legends</h3><p>Os graves que sustentam tudo.</p></div></a>
+    <a class="topic-card" href="iron-maiden-musicas-favoritas.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt=""><div class="topic-card__body"><span class="kicker">Metal</span><h3>Iron Maiden</h3><p>Histórias, repertório e palco.</p></div></a>
+    <a class="topic-card" href="greta-van-fleet-palace-for-the-people.html"><img src="/greta-van-fleet-palace-for-the-people.webp" alt=""><div class="topic-card__body"><span class="kicker">Agora</span><h3>Greta Van Fleet</h3><p>Novo álbum e identidade.</p></div></a>
+  </div>
+</div></section>
+<section class="section"><div class="shell">
+  <div class="section-head"><div><span class="kicker">Índice</span><h2 class="section-title">Uma enciclopédia que faz barulho.</h2></div></div>
+  <div class="index-grid">
+    <a href="do-classico-ao-moderno-13-estilos-de-rock.html"><b>Classic Rock</b><small>Raízes e evolução</small></a>
+    <a href="exposicao.html?colecao=drum-masters"><b>Drums</b><small>Bateristas e técnica</small></a>
+    <a href="exposicao.html?colecao=bass-legends"><b>Bass</b><small>Baixistas e linguagem</small></a>
+    <a href="rock-nacional-top-30.html"><b>Brasil</b><small>Sete décadas</small></a>
+    <a href="kate-bush-wuthering-heights.html"><b>Art Rock</b><small>Kate Bush e além</small></a>
+    <a href="led-zeppelin-achilles-last-stand.html"><b>Progressive</b><small>Led Zeppelin e fronteiras</small></a>
+    <a href="jerry-lee-lewis-selvagem-rock.html"><b>Rock & Roll</b><small>Primeira geração</small></a>
+    <a href="radio.html"><b>Live</b><small>Ao vivo e arquivos</small></a>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div><strong>Passport Radio</strong><p>Music · History · Culture · Live</p><p>3... 2... 1... CLICK!</p></div>
+    <div><strong>Conteúdo</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#resenhas">Resenhas</a><a href="exposicao.html?colecao=drum-masters">Arquivos</a></div>
+    <div><strong>Ouvir</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explorar música</a></div>
+    <div><strong>Loja & Apoio</strong><a href="loja.html">Boutique</a><a href="index.html#apoie">Apoiar</a></div>
+    <div><strong>Contato</strong><a href="contato.html">Central de contato</a><a href="mailto:passport@passportradio.online">E-mail</a></div>
+  </div>
+  <div class="shell footer-bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação e pagamentos: <b>Guiropa World</b>.</span></div>
+</footer>
+<div class="floating-contact">
+  <a class="float-wa" href="https://wa.me/48732099369?text=Olá%2C%20quero%20falar%20com%20a%20Passport%20Radio." target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a class="float-tg" href="https://t.me/m/t6seeX61ZTlk" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+</div>
+<a class="player-bar" href="radio.html" aria-label="Ouvir Passport Radio">
+  <span class="player-play">▶</span><span class="player-copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span><b>OUVIR</b>
+</a>
+<script>
+const toggle=document.querySelector('.nav-toggle'), nav=document.querySelector('.main-nav');
+if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});}
+</script>
 
 </body>
 </html>
