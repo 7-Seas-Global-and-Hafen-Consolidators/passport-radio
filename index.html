@@ -274,6 +274,26 @@
     /* ==========================================================
        FOOTER
        ========================================================== */
+    /* CONTACT HUB — keeps visitors inside the new homepage */
+    .contact-hub { padding:34px 0; border-top:1px solid var(--line); background:#0a0a0a; }
+    .contact-hub__grid { display:grid; grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(220px,.45fr)); gap:14px; align-items:stretch; }
+    .contact-hub__intro { padding:22px 0; }
+    .contact-hub__intro h2 { margin:5px 0 8px; font-size:clamp(1.45rem,2.4vw,2.15rem); line-height:1.02; }
+    .contact-hub__intro p { max-width:620px; color:#8d8d8d; font-size:.72rem; line-height:1.6; }
+    .contact-card { display:flex; flex-direction:column; justify-content:space-between; min-height:148px; padding:18px; border:1px solid var(--line); background:#111; }
+    .contact-card small { color:var(--yellow); font-size:.52rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .contact-card h3 { margin:10px 0 5px; font-size:1.08rem; }
+    .contact-card p { color:#818181; font-size:.65rem; line-height:1.5; }
+    .contact-button { display:inline-flex; width:max-content; margin-top:14px; padding:10px 14px; border:1px solid #333; background:#171717; color:#fff; font-size:.58rem; font-weight:900; letter-spacing:.04em; text-transform:uppercase; transition:.2s ease; }
+    .contact-button:hover { transform:translateY(-2px); border-color:var(--red); background:var(--red); }
+    .contact-button--whatsapp { background:#171717; }
+    .contact-button--telegram { background:#171717; }
+
+    /* QUICK CONTACT — always reachable, above the fixed player */
+    .quick-contact { position:fixed; z-index:1200; right:14px; bottom:52px; display:grid; gap:7px; }
+    .quick-contact a { display:flex; align-items:center; justify-content:center; min-width:92px; min-height:34px; padding:0 11px; border:1px solid #2d2d2d; background:rgba(10,10,10,.94); color:#fff; box-shadow:0 8px 24px rgba(0,0,0,.35); font-size:.56rem; font-weight:900; letter-spacing:.035em; text-transform:uppercase; backdrop-filter:blur(10px); }
+    .quick-contact a:hover { border-color:var(--red); background:var(--red); }
+
     .footer { padding:28px 0 18px; background:#070707; }
     .footer__grid { display:grid; grid-template-columns:1.25fr repeat(4,1fr); gap:26px; align-items:start; }
     .footer-brand a { display:flex; align-items:center; gap:9px; }
@@ -354,6 +374,8 @@
       .wire__links a:nth-child(n+2) { display:none; }
       .sidebar { position:static; grid-template-columns:repeat(3,1fr); }
       .masters { grid-template-columns:1fr; }
+      .contact-hub__grid { grid-template-columns:1fr 1fr; }
+      .contact-hub__intro { grid-column:1/-1; }
       .footer__grid { grid-template-columns:repeat(2,1fr); }
       .footer-brand { grid-column:1/-1; }
     }
@@ -397,6 +419,10 @@
       .shop-grid { grid-template-columns:1fr; }
       .shop-card a { display:grid; grid-template-columns:115px 1fr; }
       .shop-card img { width:115px; height:96px; }
+      .contact-hub__grid { grid-template-columns:1fr; }
+      .contact-hub__intro { grid-column:auto; }
+      .quick-contact { right:8px; bottom:50px; }
+      .quick-contact a { min-width:80px; min-height:32px; font-size:.52rem; }
       .footer__grid { grid-template-columns:1fr 1fr; gap:20px 18px; }
       .footer__bottom { display:grid; gap:5px; }
     }
@@ -421,7 +447,7 @@
         <a href="#resenhas">Resenhas</a>
         <a href="#explorar">Explorar</a>
         <a href="#arquivos">Arquivos</a>
-        <a href="#loja">Loja</a>
+        <a href="loja.html">Loja</a>
         <a href="#apoie">Apoie</a>
         <a href="contato.html">Contato</a>
       </nav>
@@ -478,7 +504,7 @@
         <aside class="sidebar" aria-label="Mais da Passport Radio">
           <section class="sidebox"><span class="section-label">ON AIR</span><h3>Passport Radio</h3><p>Rock · Metal · Pop · Soul · Progressive · Alternative</p><a href="radio.html">Abrir a cabine →</a></section>
           <section class="sidebox"><span class="section-label">Mais lidas</span><ol class="ranked"><li><a href="rock-nacional-top-30.html"><b>01</b><span>Rock Nacional: o TOP 30 do gênero</span></a></li><li><a href="do-classico-ao-moderno-13-estilos-de-rock.html"><b>02</b><span>13 estilos de rock para explorar</span></a></li><li><a href="live-aid-momento-mais-marcante-rock.html"><b>03</b><span>O momento mais marcante da história do rock?</span></a></li><li><a href="iron-maiden-musicas-favoritas.html"><b>04</b><span>Iron Maiden e suas músicas favoritas</span></a></li><li><a href="kate-bush-wuthering-heights.html"><b>05</b><span>Kate Bush, literatura e Wuthering Heights</span></a></li></ol></section>
-          <section class="sidebox side-shop"><span class="section-label">Official Merch</span><img src="/images/boutique/camisetas-rock.png" alt="Camisetas da Boutique Passport Radio" loading="lazy" /><h3>Vista a música.</h3><a href="boutique.html">Entrar na loja →</a></section>
+          <section class="sidebox side-shop"><span class="section-label">Official Merch</span><img src="/images/boutique/camisetas-rock.png" alt="Camisetas da Boutique Passport Radio" loading="lazy" /><h3>Vista a música.</h3><a href="loja.html">Entrar na loja →</a></section>
         </aside>
       </div>
     </section>
@@ -543,11 +569,11 @@
 
     <!-- SHOP -->
     <section class="section section--alt" id="loja">
-      <div class="shell"><div class="section-head"><div><span class="section-label">Official Collections</span><h2>Você ouviu a história. Agora vista o volume.</h2></div><a href="boutique.html">Ver a Boutique →</a></div>
+      <div class="shell"><div class="section-head"><div><span class="section-label">Official Collections</span><h2>Você ouviu a história. Agora vista o volume.</h2></div><a href="loja.html">Ver a Boutique →</a></div>
         <div class="shop-grid">
-          <article class="shop-card"><a href="boutique.html"><img src="/images/boutique/camisetas-rock.png" alt="Camisetas" loading="lazy" /><div class="shop-card__copy"><small>CAMISETAS</small><h3>Rock não é uniforme. É identidade.</h3></div></a></article>
-          <article class="shop-card"><a href="boutique.html#mega-acervo"><img src="/images/boutique/acessorios-escritorio-e-tecnologia.png" alt="Acessórios de escritório e tecnologia" loading="lazy" /><div class="shop-card__copy"><small>DESK & TECH</small><h3>Música também mora na sua mesa.</h3></div></a></article>
-          <article class="shop-card"><a href="boutique.html#mega-acervo"><img src="/images/boutique/chaveiros-colecao-premium.png" alt="Chaveiros" loading="lazy" /><div class="shop-card__copy"><small>ACCESSORIES</small><h3>Pequenos objetos. Grandes histórias.</h3></div></a></article>
+          <article class="shop-card"><a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!%20Quero%20saber%20mais%20sobre%20as%20camisetas." target="_blank" rel="noopener noreferrer"><img src="/images/boutique/camisetas-rock.png" alt="Camisetas" loading="lazy" /><div class="shop-card__copy"><small>CAMISETAS</small><h3>Rock não é uniforme. É identidade.</h3></div></a></article>
+          <article class="shop-card"><a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!%20Quero%20saber%20mais%20sobre%20Desk%20%26%20Tech." target="_blank" rel="noopener noreferrer"><img src="/images/boutique/acessorios-escritorio-e-tecnologia.png" alt="Acessórios de escritório e tecnologia" loading="lazy" /><div class="shop-card__copy"><small>DESK & TECH</small><h3>Música também mora na sua mesa.</h3></div></a></article>
+          <article class="shop-card"><a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!%20Quero%20saber%20mais%20sobre%20os%20acess%C3%B3rios." target="_blank" rel="noopener noreferrer"><img src="/images/boutique/chaveiros-colecao-premium.png" alt="Chaveiros" loading="lazy" /><div class="shop-card__copy"><small>ACCESSORIES</small><h3>Pequenos objetos. Grandes histórias.</h3></div></a></article>
         </div>
         <p class="commercial-note">Compras e pagamentos da Boutique são processados pela <strong>Guiropa World</strong>, estrutura operacional do projeto.</p>
       </div>
@@ -563,18 +589,41 @@
   </main>
 
   <!-- FOOTER -->
+  <section class="contact-hub" id="contato" aria-labelledby="contact-title">
+    <div class="shell contact-hub__grid">
+      <div class="contact-hub__intro">
+        <span class="section-label">Contato direto</span>
+        <h2 id="contact-title">Fale com a Passport Radio.</h2>
+        <p>Pautas, parcerias, imprensa, Boutique ou qualquer boa história. Escolha o canal e fale diretamente com a equipe.</p>
+      </div>
+      <article class="contact-card">
+        <div><small>WhatsApp</small><h3>Mensagem direta.</h3><p>O caminho mais rápido para Boutique, parcerias, pautas e informações gerais.</p></div>
+        <a class="contact-button contact-button--whatsapp" href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+      </article>
+      <article class="contact-card">
+        <div><small>Telegram</small><h3>Canal internacional.</h3><p>Abra uma conversa diretamente pelo Telegram, sem exibir o número na página.</p></div>
+        <a class="contact-button contact-button--telegram" href="https://t.me/+447594716370" target="_blank" rel="noopener noreferrer">Abrir Telegram</a>
+      </article>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="shell footer__grid">
       <div class="footer-brand"><a href="index.html"><img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="46" height="46" /><strong>Passport Radio</strong></a><p>Music · History · Culture · Live</p></div>
       <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#arquivos">Live Archives</a><a href="#explorar">Explore Music</a></div>
       <div class="footer-col"><strong>OUVIR & EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Cenas & cidades</a><a href="exposicao.html?colecao=drum-masters">Drum Masters</a><a href="exposicao.html?colecao=bass-legends">Bass Legends</a></div>
-      <div class="footer-col"><strong>LOJA & APOIO</strong><a href="boutique.html">Boutique</a><a href="boutique.html#mega-acervo">Mega acervo</a><a href="#apoie">Apoiar</a><a href="contato.html">Contato</a></div>
+      <div class="footer-col"><strong>LOJA & APOIO</strong><a href="loja.html">Boutique</a><a href="loja.html">Mega acervo</a><a href="#apoie">Apoiar</a><a href="contato.html">Contato</a></div>
       <div class="footer-col"><strong>REDES</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a></div>
     </div>
     <div class="shell footer__bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação e pagamentos: <strong>Guiropa World</strong>.</span></div>
   </footer>
 
   <!-- PLAYER FIXO -->
+  <div class="quick-contact" aria-label="Contato rápido">
+    <a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp da Passport Radio">WhatsApp</a>
+    <a href="https://t.me/+447594716370" target="_blank" rel="noopener noreferrer" aria-label="Abrir Telegram da Passport Radio">Telegram</a>
+  </div>
+
   <a class="player" href="radio.html" aria-label="Ouvir Passport Radio ao vivo"><span class="player__play">▶</span><span class="player__copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span><b>OUVIR</b></a>
 
   <script>
