@@ -230,30 +230,46 @@
       background:#fff;color:#111;font-size:.66rem;font-weight:900;text-transform:uppercase
     }
     .ad-button:hover{background:var(--red);color:#fff}
-    .ad-call h2{
-      display:inline-block;
+    .ad-call{
       position:relative;
+      overflow:hidden;
+      border-left:5px solid var(--red);
+      animation:adPanelPulse 2.8s ease-in-out infinite;
     }
-    .ad-call h2::after{
+    .ad-call::before{
       content:"";
       position:absolute;
-      right:-18px;
-      top:50%;
-      width:9px;
-      height:9px;
-      margin-top:-4px;
-      border-radius:50%;
+      left:0;top:0;bottom:0;
+      width:5px;
       background:var(--red);
-      box-shadow:0 0 0 0 rgba(215,25,32,.5);
-      animation:passportPulse 2.2s ease-out infinite;
+      box-shadow:0 0 0 rgba(215,25,32,0);
+      animation:adLinePulse 1.8s ease-in-out infinite;
     }
-    @keyframes passportPulse{
-      0%{box-shadow:0 0 0 0 rgba(215,25,32,.5);opacity:1}
-      55%{box-shadow:0 0 0 12px rgba(215,25,32,0);opacity:.9}
-      100%{box-shadow:0 0 0 0 rgba(215,25,32,0);opacity:1}
+    .ad-call h2{display:inline-block;position:relative}
+    .ad-call h2::after{
+      content:"";
+      display:inline-block;
+      width:10px;height:10px;
+      margin-left:12px;
+      border-radius:50%;
+      vertical-align:middle;
+      background:var(--red);
+      animation:adDotPulse 1.35s ease-in-out infinite;
+    }
+    @keyframes adPanelPulse{
+      0%,100%{background:#111}
+      50%{background:#161313}
+    }
+    @keyframes adLinePulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(215,25,32,0)}
+      50%{box-shadow:0 0 22px 7px rgba(215,25,32,.38)}
+    }
+    @keyframes adDotPulse{
+      0%,100%{opacity:.35;transform:scale(.78)}
+      50%{opacity:1;transform:scale(1.25)}
     }
     @media (prefers-reduced-motion:reduce){
-      .ad-call h2::after{animation:none}
+      .ad-call,.ad-call::before,.ad-call h2::after{animation:none}
     }
 
     /* store */
@@ -277,7 +293,24 @@
     .support p{max-width:720px;margin-top:12px;color:#aaa;font-size:.82rem;line-height:1.6}
     .support__box{padding:22px;border:1px solid #383838;border-left:5px solid var(--red);background:#181818}
     .support__button{display:flex;min-height:48px;align-items:center;justify-content:center;padding:0 18px;background:var(--red);color:#fff;font-size:.7rem;font-weight:900;text-transform:uppercase}
-    .support__button:hover{background:#fff;color:#111}
+    .support__button{
+      position:relative;
+      animation:supportPulse 1.7s ease-in-out infinite;
+      box-shadow:0 0 0 0 rgba(215,25,32,.0);
+    }
+    .support__button:hover{background:#fff;color:#111;animation:none}
+    .support__box{animation:supportBoxPulse 2.5s ease-in-out infinite}
+    @keyframes supportPulse{
+      0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(215,25,32,0)}
+      50%{transform:scale(1.018);box-shadow:0 0 24px 5px rgba(215,25,32,.34)}
+    }
+    @keyframes supportBoxPulse{
+      0%,100%{border-left-color:var(--red)}
+      50%{border-left-color:#ff5a60}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .support__button,.support__box{animation:none}
+    }
     .support__box p{margin-top:12px;color:#fff;font-weight:700}
     .support__box small{display:block;margin-top:8px;color:#888;font-size:.6rem}
 
