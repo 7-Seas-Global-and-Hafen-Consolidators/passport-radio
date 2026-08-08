@@ -5,47 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Cannibal Corpse: história, formação, instrumentos, discos e curiosidades. Passport Radio Archives.">
-
   <meta name="theme-color" content="#ffffff">
 
   <title>Cannibal Corpse | Passport Radio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/style.css?v=30">
-  <link rel="stylesheet" href="../css/historias.css?v=1">
+  <link rel="stylesheet" href="../css/historias.css?v=2">
+
+  <style>
+    .story-video{
+      width:min(calc(100% - 36px),1240px);
+      margin:80px auto;
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);
+      background:#111;
+      color:#fff;
+    }
+
+    .story-video__media{
+      position:relative;
+      aspect-ratio:16/9;
+      min-height:0;
+      background:#000;
+      overflow:hidden;
+    }
+
+    .story-video__media iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      background:#000;
+    }
+
+    .story-video__copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:44px;
+    }
+
+    .story-video__copy .story-label{
+      color:#d71920;
+    }
+
+    .story-video__copy h2{
+      margin:10px 0 0;
+      color:#fff;
+      font-size:clamp(2.2rem,4vw,4.8rem);
+      line-height:.94;
+      letter-spacing:-.05em;
+    }
+
+    .story-video__copy p{
+      margin:18px 0 0;
+      color:#aaa;
+      font-size:.86rem;
+      line-height:1.7;
+    }
+
+    .story-video__note{
+      margin-top:24px!important;
+      padding-top:18px;
+      border-top:2px solid #d71920;
+      color:#fff!important;
+      font-weight:800;
+    }
+
+    @media(max-width:900px){
+      .story-video{grid-template-columns:1fr}
+      .story-video__copy{padding:34px}
+    }
+
+    @media(max-width:640px){
+      .story-video{
+        width:min(calc(100% - 20px),1240px);
+        margin:42px auto;
+      }
+      .story-video__copy{padding:26px 22px}
+      .story-video__copy h2{font-size:2.5rem}
+    }
+  </style>
 </head>
 
 <body class="story-page">
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
 <header class="site-header">
-
   <a class="brand" href="../index.html" aria-label="Passport Radio">
     <span class="brand-mark">PR</span>
-
     <span>
       <strong>PASSPORT RADIO</strong>
       <small>Music · History · Culture · Live</small>
     </span>
   </a>
 
-  <button
-    class="nav-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="main-nav">
-    Menu
-  </button>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
 
   <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
     <a href="../index.html">Agora</a>
@@ -58,71 +119,39 @@
   </nav>
 
   <div class="header-actions">
-    <a class="header-chip header-chip--live" href="../radio.html">
-      ON AIR
-    </a>
+    <a class="header-chip header-chip--live" href="../radio.html">ON AIR</a>
   </div>
-
 </header>
-
 
 <main id="conteudo">
 
-
-<!-- =========================================================
-     STORY HERO
-========================================================= -->
-
 <article class="story">
 
-
 <section class="story-hero">
-
   <div class="story-hero__image">
-
     <img
-      src="../images/ALEX WEBSTER__APRIMORADA.png"
+      src="../images/cannibal-corpse-live.png"
       alt="Cannibal Corpse em apresentação ao vivo"
+      fetchpriority="high"
     >
-
   </div>
 
-
   <div class="story-hero__copy">
-
-    <span class="story-kicker">
-      PASSPORT ARCHIVES · DEATH METAL
-    </span>
-
-    <h1>
-      Cannibal Corpse
-    </h1>
+    <span class="story-kicker">PASSPORT ARCHIVES · DEATH METAL</span>
+    <h1>Cannibal Corpse</h1>
 
     <p class="story-deck">
       Você pode não gostar de death metal.
       Só não cometa o erro de achar que esses sujeitos não sabem tocar.
     </p>
 
-    <div class="story-meta">
-      Buffalo · New York · 1988
-    </div>
-
+    <div class="story-meta">Buffalo · New York · 1988</div>
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     INTRODUÇÃO — MR. NOMAD
-========================================================= -->
-
 <section class="story-section story-intro">
-
   <div class="story-content">
-
-    <span class="story-label">
-      MR. NOMAD
-    </span>
+    <span class="story-label">MR. NOMAD</span>
 
     <h2>
       Primeiro, esqueça o barulho.
@@ -155,23 +184,12 @@
       ignore o vocal por alguns segundos e siga apenas o baixo.
       Depois a gente conversa.
     </p>
-
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     ORIGEM
-========================================================= -->
-
 <section class="story-section">
-
   <div class="story-content">
-
-    <span class="story-label">
-      01 · ORIGINS
-    </span>
+    <span class="story-label">01 · ORIGINS</span>
 
     <h2>
       Buffalo, 1988.
@@ -196,26 +214,13 @@
       começavam a levar velocidade, peso e agressividade ainda mais longe.
     </p>
 
-    <p>
-      O Cannibal Corpse entrou exatamente nesse território.
-    </p>
-
+    <p>O Cannibal Corpse entrou exatamente nesse território.</p>
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     NOME
-========================================================= -->
-
 <section class="story-section story-section--dark">
-
   <div class="story-content">
-
-    <span class="story-label">
-      02 · THE NAME
-    </span>
+    <span class="story-label">02 · THE NAME</span>
 
     <h2>
       Cannibal Corpse.
@@ -232,41 +237,23 @@
       “cadáver canibal” — funcionava quase como uma declaração estética.
     </p>
 
-    <p>
-      Não havia intenção de suavizar o produto.
-      Muito pelo contrário.
-    </p>
+    <p>Não havia intenção de suavizar o produto. Muito pelo contrário.</p>
 
     <p>
       As capas dos discos e as letras levariam essa escolha tão longe
       que alguns lançamentos enfrentariam restrições e controvérsias
       em diferentes mercados.
     </p>
-
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     WHO PLAYS WHAT
-========================================================= -->
-
 <section class="story-section">
-
   <div class="story-content story-content--wide">
+    <span class="story-label">03 · WHO PLAYS WHAT</span>
 
-    <span class="story-label">
-      03 · WHO PLAYS WHAT
-    </span>
-
-    <h2>
-      Quem faz o quê dentro da máquina.
-    </h2>
-
+    <h2>Quem faz o quê dentro da máquina.</h2>
 
     <div class="musician-grid">
-
       <article class="musician-card">
         <span>VOCALS</span>
         <h3>George “Corpsegrinder” Fisher</h3>
@@ -275,7 +262,6 @@
           mais imediatamente reconhecíveis do death metal.
         </p>
       </article>
-
 
       <article class="musician-card musician-card--featured">
         <span>BASS</span>
@@ -286,7 +272,6 @@
         </p>
       </article>
 
-
       <article class="musician-card">
         <span>GUITAR</span>
         <h3>Rob Barrett</h3>
@@ -295,7 +280,6 @@
           do grupo.
         </p>
       </article>
-
 
       <article class="musician-card">
         <span>GUITAR</span>
@@ -306,7 +290,6 @@
         </p>
       </article>
 
-
       <article class="musician-card">
         <span>DRUMS</span>
         <h3>Paul Mazurkiewicz</h3>
@@ -315,45 +298,28 @@
           a manter a violência organizada.
         </p>
       </article>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     ALEX WEBSTER
-========================================================= -->
-
 <section class="story-feature">
-
   <div class="story-feature__image">
-
     <img
-      src="../images/ALEX WEBSTER__APRIMORADA.png"
-      alt="Alex Webster, baixista do Cannibal Corpse"
+      src="../images/alex-webster-bass.jpg"
+      alt="Alex Webster tocando baixo"
+      loading="lazy"
     >
-
   </div>
 
-
   <div class="story-feature__copy">
-
-    <span class="story-label">
-      BASS MASTERS
-    </span>
+    <span class="story-label">BASS MASTERS</span>
 
     <h2>
       Alex Webster:
       precisão onde aparentemente existe caos.
     </h2>
 
-    <p>
-      Agora chegamos ao sujeito que interessa particularmente
-      ao Mr. Nomad.
-    </p>
+    <p>Agora chegamos ao sujeito que interessa particularmente ao Mr. Nomad.</p>
 
     <p>
       Alex Webster é membro fundador do Cannibal Corpse e se tornou
@@ -362,8 +328,7 @@
 
     <p>
       Em uma parede sonora dominada por guitarras distorcidas,
-      bateria veloz e vocal brutal, o baixo poderia simplesmente
-      desaparecer.
+      bateria veloz e vocal brutal, o baixo poderia simplesmente desaparecer.
     </p>
 
     <p>
@@ -372,137 +337,83 @@
     </p>
 
     <blockquote>
-      No Cannibal Corpse, o baixo não está procurando um lugar
-      para se esconder.
+      No Cannibal Corpse, o baixo não está procurando um lugar para se esconder.
     </blockquote>
-
   </div>
-
 </section>
-
-
-<!-- =========================================================
-     DISCOS
-========================================================= -->
 
 <section class="story-section">
-
   <div class="story-content">
+    <span class="story-label">04 · ESSENTIAL RECORDS</span>
 
-    <span class="story-label">
-      04 · ESSENTIAL RECORDS
-    </span>
-
-    <h2>
-      Cinco portas de entrada para o caos.
-    </h2>
-
+    <h2>Cinco portas de entrada para o caos.</h2>
 
     <div class="story-list">
-
-      <div>
-        <strong>Eaten Back to Life</strong>
-        <span>1990</span>
-      </div>
-
-      <div>
-        <strong>Butchered at Birth</strong>
-        <span>1991</span>
-      </div>
-
-      <div>
-        <strong>Tomb of the Mutilated</strong>
-        <span>1992</span>
-      </div>
-
-      <div>
-        <strong>The Bleeding</strong>
-        <span>1994</span>
-      </div>
-
-      <div>
-        <strong>Kill</strong>
-        <span>2006</span>
-      </div>
-
+      <div><strong>Eaten Back to Life</strong><span>1990</span></div>
+      <div><strong>Butchered at Birth</strong><span>1991</span></div>
+      <div><strong>Tomb of the Mutilated</strong><span>1992</span></div>
+      <div><strong>The Bleeding</strong><span>1994</span></div>
+      <div><strong>Kill</strong><span>2006</span></div>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     MÚSICAS
-========================================================= -->
-
 <section class="story-section story-section--dark">
-
   <div class="story-content">
-
-    <span class="story-label">
-      05 · START HERE
-    </span>
+    <span class="story-label">05 · START HERE</span>
 
     <h2>
       Quer entender a banda?
       Comece por aqui.
     </h2>
 
-
     <div class="track-list">
-
-      <div>
-        <span>01</span>
-        <strong>Hammer Smashed Face</strong>
-      </div>
-
-      <div>
-        <span>02</span>
-        <strong>Stripped, Raped and Strangled</strong>
-      </div>
-
-      <div>
-        <span>03</span>
-        <strong>Make Them Suffer</strong>
-      </div>
-
-      <div>
-        <span>04</span>
-        <strong>Scourge of Iron</strong>
-      </div>
-
-      <div>
-        <span>05</span>
-        <strong>Inhumane Harvest</strong>
-      </div>
-
+      <div><span>01</span><strong>Hammer Smashed Face</strong></div>
+      <div><span>02</span><strong>Stripped, Raped and Strangled</strong></div>
+      <div><span>03</span><strong>Make Them Suffer</strong></div>
+      <div><span>04</span><strong>Scourge of Iron</strong></div>
+      <div><span>05</span><strong>Inhumane Harvest</strong></div>
     </div>
-
   </div>
-
 </section>
 
+<section class="story-video" aria-labelledby="live-archive-title">
+  <div class="story-video__media">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/6CxuyY7vMDw?rel=0&modestbranding=1"
+      title="Cannibal Corpse — Live Archive"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-<!-- =========================================================
-     CURIOSIDADES
-========================================================= -->
+  <div class="story-video__copy">
+    <span class="story-label">LIVE ARCHIVE · CANNIBAL CORPSE</span>
 
-<section class="story-section">
-
-  <div class="story-content">
-
-    <span class="story-label">
-      06 · FILE NOTES
-    </span>
-
-    <h2>
-      Algumas coisas que talvez você não esperasse.
+    <h2 id="live-archive-title">
+      Agora esqueça a ficha técnica.
+      Veja a máquina funcionando.
     </h2>
 
+    <p>
+      Depois da história, vem o palco: peso, precisão, velocidade
+      e o baixo de Alex Webster trabalhando no meio do caos.
+    </p>
+
+    <p class="story-video__note">
+      Aperte play aqui mesmo. Você continua dentro da Passport Radio.
+    </p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="story-content">
+    <span class="story-label">06 · FILE NOTES</span>
+
+    <h2>Algumas coisas que talvez você não esperasse.</h2>
 
     <div class="fact-grid">
-
       <article>
         <strong>01</strong>
         <p>
@@ -511,7 +422,6 @@
           através de diferentes formações.
         </p>
       </article>
-
 
       <article>
         <strong>02</strong>
@@ -522,7 +432,6 @@
         </p>
       </article>
 
-
       <article>
         <strong>03</strong>
         <p>
@@ -530,7 +439,6 @@
           marcada por enorme disciplina de turnês e consistência musical.
         </p>
       </article>
-
 
       <article>
         <strong>04</strong>
@@ -540,25 +448,13 @@
           underground para uma audiência internacional.
         </p>
       </article>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     MR NOMAD FINAL
-========================================================= -->
-
 <section class="nomad-closing">
-
   <div class="story-content">
-
-    <span class="story-label">
-      MR. NOMAD SAYS
-    </span>
+    <span class="story-label">MR. NOMAD SAYS</span>
 
     <h2>
       Brutalidade é fácil.
@@ -570,9 +466,7 @@
       para acompanhar o café da manhã.
     </p>
 
-    <p>
-      Tudo bem.
-    </p>
+    <p>Tudo bem.</p>
 
     <p>
       Mas da próxima vez que alguém disser que death metal
@@ -585,53 +479,24 @@
       E siga o baixo de Alex Webster.
     </p>
 
-    <p class="nomad-signature">
-      — Mr. Nomad
-    </p>
-
+    <p class="nomad-signature">— Mr. Nomad</p>
   </div>
-
 </section>
 
-
-<!-- =========================================================
-     NEXT DESTINATION
-========================================================= -->
-
 <nav class="next-story" aria-label="Próxima história">
-
-  <span>
-    NEXT DESTINATION
-  </span>
+  <span>NEXT DESTINATION</span>
 
   <a href="within-temptation.html">
-
-    <small>
-      SYMPHONIC METAL · NETHERLANDS
-    </small>
-
-    <strong>
-      Within Temptation →
-    </strong>
-
+    <small>SYMPHONIC METAL · NETHERLANDS</small>
+    <strong>Within Temptation →</strong>
   </a>
-
 </nav>
 
-
 </article>
-
 </main>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
 <footer class="footer">
-
   <div class="shell footer-grid">
-
     <div>
       <strong>PASSPORT RADIO</strong>
       <p>Music · History · Culture · Live</p>
@@ -662,37 +527,21 @@
       <a href="../contato.html">Central de contato</a>
       <a href="mailto:passport@passportradio.online">E-mail</a>
     </div>
-
   </div>
-
 
   <div class="shell footer-bottom">
-
-    <span>
-      © 2026 Passport Radio. Todos os direitos reservados.
-    </span>
-
-    <span>
-      Operação e pagamentos:
-      <b>Guiropa World</b>.
-    </span>
-
+    <span>© 2026 Passport Radio. Todos os direitos reservados.</span>
+    <span>Operação e pagamentos: <b>Guiropa World</b>.</span>
   </div>
-
 </footer>
 
-
 <script>
+const toggle=document.querySelector('.nav-toggle');
+const nav=document.querySelector('.main-nav');
 
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.main-nav');
-
-if (toggle && nav) {
-
-  toggle.addEventListener('click', () => {
-
-    const open =
-      toggle.getAttribute('aria-expanded') === 'true';
+if(toggle&&nav){
+  toggle.addEventListener('click',()=>{
+    const open=toggle.getAttribute('aria-expanded')==='true';
 
     toggle.setAttribute(
       'aria-expanded',
@@ -703,11 +552,8 @@ if (toggle && nav) {
       'is-open',
       !open
     );
-
   });
-
 }
-
 </script>
 
 </body>
