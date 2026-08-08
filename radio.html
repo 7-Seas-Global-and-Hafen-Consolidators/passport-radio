@@ -3,717 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Central de escuta e programação da Passport Radio.">
-<meta name="theme-color" content="#070809">
-<title>Ao Vivo | Passport Radio</title>
-
+<meta name="description" content="Passport Radio — broadcasts, arquivos sonoros, histórias e música ao vivo.">
+<meta name="theme-color" content="#ffffff">
+<title>ON AIR | Passport Radio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css?v=30">
-
 <style>
-/* ============================================================
-   PASSPORT RADIO — PLAYER REAL / ARQUIVOS SONOROS
-   Mantido dentro de radio.html para não alterar o CSS global.
-   ============================================================ */
-
-.audio-player {
-  margin-top: 22px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  background: #0b0c0e;
-}
-
-.audio-player__top {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 14px;
-  align-items: center;
-}
-
-.audio-player__controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.audio-control {
-  width: 38px;
-  height: 38px;
-  border: 1px solid #3a3b3e;
-  border-radius: 50%;
-  background: #151619;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 900;
-}
-
-.audio-control:hover {
-  border-color: var(--red);
-}
-
-.audio-control--main {
-  width: 48px;
-  height: 48px;
-  border-color: var(--red);
-  background: var(--red);
-}
-
-.audio-player__meta strong {
-  display: block;
-  font-size: .9rem;
-}
-
-.audio-player__meta small {
-  display: block;
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: .63rem;
-}
-
-.audio-player__time {
-  min-width: 88px;
-  color: var(--muted);
-  font-size: .62rem;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-.audio-progress {
-  width: 100%;
-  margin-top: 12px;
-  accent-color: var(--red);
-  cursor: pointer;
-}
-
-.track-list {
-  margin-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.track-row {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: center;
-  padding: 12px 0;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-
-.track-row:hover strong,
-.track-row.is-active strong {
-  color: #fff;
-}
-
-.track-row.is-active {
-  background: linear-gradient(90deg, rgba(227,27,35,.10), transparent 72%);
-}
-
-.track-row__number {
-  color: var(--red);
-  font-size: .64rem;
-  font-weight: 900;
-}
-
-.track-row strong {
-  display: block;
-  font-size: .82rem;
-}
-
-.track-row small {
-  display: block;
-  margin-top: 3px;
-  color: var(--faint);
-  font-size: .6rem;
-}
-
-.track-row__status {
-  color: var(--faint);
-  font-size: .58rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.track-row.is-active .track-row__status {
-  color: var(--red);
-}
-
-.player-bar {
-  color: inherit;
-}
-
-.player-bar__button {
-  border: 0;
-  cursor: pointer;
-}
-
-.player-bar__next {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 52px;
-  height: 32px;
-  padding: 0 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background: #17181b;
-  color: #fff;
-  font-size: .58rem;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-.player-bar__next:hover {
-  border-color: var(--red);
-}
-
-.player-copy small {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.radio-note strong {
-  color: #fff;
-}
-
-@media (max-width:640px) {
-  .audio-player__top {
-    grid-template-columns: 1fr;
-  }
-
-  .audio-player__time {
-    text-align: left;
-  }
-
-  .track-row {
-    grid-template-columns: 42px 1fr;
-  }
-
-  .track-row__status {
-    display: none;
-  }
-
-  .player-bar__next {
-    display: none;
-  }
-}
+:root{--bg:#fff;--soft:#f5f5f3;--ink:#111;--muted:#6b6b6b;--line:#e2e2e2;--red:#d71920;--black:#111;--shell:1240px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body.live-page{margin:0;padding:0 0 58px;overflow-x:hidden;background:#fff;color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}.live-page img{display:block;max-width:100%}.live-page a{color:inherit;text-decoration:none}.live-page button{font:inherit}.live-shell{width:min(calc(100% - 36px),var(--shell));margin:auto}
+.live-page .site-header{position:sticky;top:0;z-index:8000;min-height:66px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:0 max(18px,calc((100vw - var(--shell))/2));border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(14px)}.live-page .brand{display:flex;align-items:center;gap:10px;min-width:205px}.live-page .brand-mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid #222;border-radius:50%;color:#111;font-size:.7rem;font-weight:900}.live-page .brand strong{display:block;color:#111;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}.live-page .brand small{display:block;color:#777;font-size:.5rem}.live-page .main-nav{display:flex;justify-content:center;align-items:center;gap:18px}.live-page .main-nav a{color:#222;font-size:.67rem;font-weight:800}.live-page .main-nav a:hover{color:var(--red)}.live-page .header-actions{display:flex;align-items:center}.live-page .header-chip{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 13px;border:1px solid #d5d5d5;border-radius:999px;background:#fff;color:#111;font-size:.61rem;font-weight:900;text-transform:uppercase}.live-page .header-chip--live::before{content:"";width:7px;height:7px;margin-right:7px;border-radius:50%;background:var(--red)}.live-page .nav-toggle{display:none;border:0;background:none;color:#111;font-weight:900}
+.live-hero{padding:46px 0 30px;border-bottom:1px solid var(--line)}.live-kicker{display:block;color:#666;font-size:.58rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.live-hero__grid{display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:42px;align-items:end}.live-hero h1{max-width:920px;margin:9px 0 0;font-size:clamp(3.2rem,7vw,7.4rem);line-height:.86;letter-spacing:-.065em;font-weight:900}.live-hero p{max-width:700px;margin:20px 0 0;color:var(--muted);font-size:.88rem;line-height:1.7}.live-now{padding:20px;border-top:3px solid var(--red);background:#111;color:#fff}.live-now small{color:#999;font-size:.55rem;font-weight:800;text-transform:uppercase}.live-now h2{margin:6px 0 0;font-size:1.6rem;line-height:1.05}.live-now p{margin:6px 0 0;color:#aaa;font-size:.67rem;line-height:1.45}
+.audio-player{margin-top:18px;padding:14px;border:1px solid #333;background:#0d0d0d}.audio-player__top{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}.audio-player__controls{display:flex;align-items:center;gap:8px}.audio-control{width:36px;height:36px;border:1px solid #444;border-radius:50%;background:#171717;color:#fff;cursor:pointer;font-weight:900}.audio-control--main{width:46px;height:46px;border-color:var(--red);background:var(--red)}.audio-player__meta strong{display:block;font-size:.84rem}.audio-player__meta small{display:block;margin-top:3px;color:#888;font-size:.58rem}.audio-player__time{min-width:88px;color:#888;font-size:.58rem;text-align:right;font-variant-numeric:tabular-nums}.audio-progress{width:100%;margin-top:12px;accent-color:var(--red);cursor:pointer}
+.live-section{padding:48px 0;border-bottom:1px solid var(--line)}.live-section--soft{background:var(--soft)}.live-section--black{background:#111;color:#fff}.live-section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:24px}.live-section-head h2{margin:6px 0 0;font-size:clamp(2rem,4vw,4rem);line-height:.95;letter-spacing:-.045em}.live-section-head p{max-width:520px;color:var(--muted);font-size:.75rem;line-height:1.55}.live-section--black .live-section-head p{color:#aaa}
+.story-grid{display:grid;grid-template-columns:1.35fr repeat(3,1fr);gap:18px}.story-card{border-top:1px solid var(--line)}.story-card img{width:100%;height:180px;object-fit:cover}.story-card--lead img{height:300px}.story-card__copy{padding-top:10px}.story-card small{color:#777;font-size:.52rem;font-weight:800;text-transform:uppercase}.story-card h3{margin:4px 0 0;font-size:.96rem;line-height:1.18}.story-card--lead h3{font-size:1.4rem}.story-card p{margin:7px 0 0;color:var(--muted);font-size:.68rem;line-height:1.5}
+.archive-layout{display:grid;grid-template-columns:360px 1fr;gap:34px}.archive-intro h2{margin:6px 0 0;font-size:2.4rem;line-height:.95;letter-spacing:-.04em}.archive-intro p{margin-top:12px;color:var(--muted);font-size:.76rem;line-height:1.6}.track-list{border-top:2px solid #111}.track-row{width:100%;display:grid;grid-template-columns:54px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;text-align:left;cursor:pointer}.track-row__number{color:var(--red);font-size:.66rem;font-weight:900}.track-row strong{display:block;font-size:.85rem}.track-row small{display:block;margin-top:2px;color:#888;font-size:.58rem}.track-row__status{color:#777;font-size:.56rem;font-weight:900;text-transform:uppercase}.track-row.is-active{background:linear-gradient(90deg,rgba(215,25,32,.07),transparent 72%)}.track-row.is-active .track-row__status{color:var(--red)}
+.band-files{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.band-file{padding:18px;border:1px solid var(--line);background:#fff}.band-file small{color:#777;font-size:.54rem;font-weight:900;text-transform:uppercase}.band-file h3{margin:8px 0 0;font-size:1.08rem}.band-file p{margin:8px 0 0;color:#777;font-size:.68rem;line-height:1.5}.band-file a{display:inline-block;margin-top:12px;font-size:.62rem;font-weight:900}.band-file a:hover{color:var(--red)}
+.nomad-block{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:38px;align-items:center}.nomad-stage{min-height:320px;display:grid;place-items:center;border:1px solid #333;background:#0b0b0b;color:#666;text-align:center;padding:30px}.nomad-stage strong{display:block;color:#fff;font-size:1.5rem}.nomad-stage span{display:block;margin-top:8px;color:#777;font-size:.68rem}.nomad-copy h2{margin:7px 0 0;font-size:clamp(2.3rem,4vw,4.5rem);line-height:.94;letter-spacing:-.05em}.nomad-copy p{margin:14px 0 0;color:#aaa;font-size:.78rem;line-height:1.65}
+.live-ad{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:34px 0}.live-ad h2{margin:5px 0 0;font-size:clamp(2rem,4vw,4rem);line-height:.94;letter-spacing:-.045em}.live-ad p{max-width:700px;margin-top:8px;color:#aaa;font-size:.74rem}.live-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;background:#111;color:#fff;font-size:.62rem;font-weight:900;text-transform:uppercase}.live-section--black .live-button{background:#fff;color:#111}.live-button:hover{background:var(--red)!important;color:#fff}
+.live-page .footer{padding:30px 0 80px;background:#111;color:#fff}.live-page .footer-grid{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:26px}.live-page .footer strong{display:block;margin-bottom:7px;color:#fff;font-size:.64rem;text-transform:uppercase}.live-page .footer a,.live-page .footer p{display:block;margin:5px 0;color:#aaa;font-size:.61rem}.live-page .footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:22px;padding-top:13px;border-top:1px solid #333;color:#777;font-size:.57rem}.live-page .footer-bottom b{color:#fff}
+.player-bar{position:fixed;left:0;right:0;bottom:0;z-index:9000;min-height:52px;display:grid;grid-template-columns:32px 1fr auto;gap:9px;align-items:center;padding:7px max(16px,calc((100vw - var(--shell))/2));border-top:3px solid var(--red);background:rgba(17,17,17,.985);color:#fff}.player-bar__button{width:30px;height:30px;border:0;border-radius:50%;background:var(--red);color:#fff;cursor:pointer}.player-copy{display:grid}.player-copy strong{font-size:.64rem}.player-copy small{color:#888;font-size:.49rem}.player-bar__next{min-width:70px;height:32px;border:1px solid #444;background:#171717;color:#fff;font-size:.55rem;font-weight:900;cursor:pointer}.player-bar__next:hover{border-color:var(--red)}
+@media(max-width:980px){.live-page .main-nav{gap:11px}.live-page .main-nav a{font-size:.61rem}.live-hero__grid,.archive-layout,.nomad-block{grid-template-columns:1fr}.story-grid{grid-template-columns:repeat(2,1fr)}.story-card--lead{grid-column:1/-1}.story-card--lead img{height:260px}.band-files{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.live-page .site-header{grid-template-columns:1fr auto auto}.live-page .nav-toggle{display:block}.live-page .main-nav{position:absolute;top:66px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:10px 18px 14px;border-bottom:1px solid var(--line);background:#fff}.live-page .main-nav.is-open{display:flex}.live-page .main-nav a{padding:10px 0;border-bottom:1px solid var(--line)}.live-section-head{align-items:flex-start;flex-direction:column}.live-page .footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.live-shell{width:min(calc(100% - 20px),var(--shell))}.live-page .brand{min-width:0}.live-page .brand small{display:none}.live-hero{padding:28px 0 20px}.live-hero h1{font-size:3.2rem}.live-now{padding:15px}.audio-player__top{grid-template-columns:1fr}.audio-player__time{text-align:left}.story-grid,.band-files{grid-template-columns:1fr}.story-card--lead{grid-column:auto}.story-card img,.story-card--lead img{height:190px}.track-row{grid-template-columns:40px 1fr}.track-row__status{display:none}.live-ad{grid-template-columns:1fr}.live-page .footer-grid{grid-template-columns:1fr 1fr}.live-page .footer-bottom{display:grid;gap:5px}.player-bar__next{display:none}}
 </style>
 </head>
-
-<body>
-
+<body class="live-page">
 <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
-
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Passport Radio">
-    <span class="brand-mark">PR</span>
-    <span>
-      <strong>Passport Radio</strong>
-      <small>Music · History · Culture · Live</small>
-    </span>
-  </a>
-
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-    Menu
-  </button>
-
+  <a class="brand" href="index.html" aria-label="Passport Radio"><span class="brand-mark">PR</span><span><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
   <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-    <a href="index.html">Agora</a>
-    <a href="index.html#noticias">Notícias</a>
-    <a href="radio.html">Ao Vivo</a>
-    <a href="destinos.html">Explorar</a>
-    <a href="exposicao.html?colecao=drum-masters">Arquivos</a>
-    <a href="loja.html">Loja</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html">Agora</a><a href="index.html#noticias">Notícias</a><a href="#player">Ao Vivo</a><a href="index.html#agenda">Agenda</a><a href="#historias">Histórias</a><a href="#arquivos">Arquivos</a><a href="loja.html">Loja</a><a href="#anuncie">Anuncie</a><a href="contato.html">Contato</a>
   </nav>
-
-  <div class="header-actions">
-    <a class="header-chip header-chip--live" href="#player">ON AIR</a>
-  </div>
+  <div class="header-actions"><a class="header-chip header-chip--live" href="#player">ON AIR</a></div>
 </header>
-
 <main id="conteudo">
-
-<section class="page-hero">
-  <div class="shell">
-    <span class="kicker">ON AIR · Passport Radio</span>
-    <h1>Primeiro o contexto. Depois, o volume.</h1>
-    <p>
-      A cabine agora toca os arquivos sonoros já publicados pela Passport Radio.
-      Escolha um voo, aperte play e continue explorando enquanto o áudio segue.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="shell radio-layout">
-
-    <div class="radio-console" id="player">
-
-      <div class="radio-now">
-        <div class="radio-cover">
-          <img src="/images/live-aid-1985.png" alt="Passport Radio ao vivo">
-        </div>
-
-        <div>
-          <span class="kicker">Tocando agora</span>
-          <h2 id="currentTrackTitle">Primeiro Voo</h2>
-          <p id="currentTrackDescription">
-            Arquivo sonoro da Passport Radio · 3... 2... 1... CLICK!
-          </p>
-
-          <div class="radio-controls">
-            <button class="big-play" id="heroPlay" type="button" aria-label="Reproduzir Primeiro Voo">▶</button>
-            <a class="button" href="index.html#noticias">Ver histórias</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="audio-player" aria-label="Player de áudio da Passport Radio">
-        <div class="audio-player__top">
-
-          <div class="audio-player__controls">
-            <button class="audio-control" id="prevTrack" type="button" aria-label="Faixa anterior">◀</button>
-            <button class="audio-control audio-control--main" id="mainPlay" type="button" aria-label="Reproduzir">▶</button>
-            <button class="audio-control" id="nextTrack" type="button" aria-label="Próxima faixa">▶</button>
-          </div>
-
-          <div class="audio-player__meta">
-            <strong id="playerTrackTitle">Primeiro Voo</strong>
-            <small id="playerTrackMeta">Passport Radio · Arquivo sonoro</small>
-          </div>
-
-          <div class="audio-player__time">
-            <span id="currentTime">0:00</span>
-            /
-            <span id="duration">0:00</span>
-          </div>
-        </div>
-
-        <input
-          class="audio-progress"
-          id="progress"
-          type="range"
-          min="0"
-          max="100"
-          step="0.1"
-          value="0"
-          aria-label="Progresso da faixa"
-        >
-
-        <audio id="passportAudio" preload="metadata">
-          <source src="/audio/primeiro-voo.mp3.mp3" type="audio/mpeg">
-          Seu navegador não suporta áudio HTML5.
-        </audio>
-      </div>
-
-      <div class="track-list" id="trackList" aria-label="Arquivos sonoros">
-
-        <button class="track-row is-active" type="button" data-track="0">
-          <span class="track-row__number">01</span>
-          <span>
-            <strong>Primeiro Voo</strong>
-            <small>Passport Radio · Arquivo sonoro</small>
-          </span>
-          <span class="track-row__status">No player</span>
-        </button>
-
-        <button class="track-row" type="button" data-track="1">
-          <span class="track-row__number">02</span>
-          <span>
-            <strong>Segundo Voo</strong>
-            <small>Passport Radio · Arquivo sonoro</small>
-          </span>
-          <span class="track-row__status">Ouvir</span>
-        </button>
-
-        <button class="track-row" type="button" data-track="2">
-          <span class="track-row__number">03</span>
-          <span>
-            <strong>Quarto Voo</strong>
-            <small>Passport Radio · Arquivo sonoro</small>
-          </span>
-          <span class="track-row__status">Ouvir</span>
-        </button>
-
-        <button class="track-row" type="button" data-track="3">
-          <span class="track-row__number">04</span>
-          <span>
-            <strong>Sétimo Voo</strong>
-            <small>Passport Radio · Arquivo sonoro</small>
-          </span>
-          <span class="track-row__status">Ouvir</span>
-        </button>
-
-        <button class="track-row" type="button" data-track="4">
-          <span class="track-row__number">05</span>
-          <span>
-            <strong>Oitavo Voo</strong>
-            <small>Passport Radio · Arquivo sonoro</small>
-          </span>
-          <span class="track-row__status">Ouvir</span>
-        </button>
-
-      </div>
+<section class="live-hero">
+  <div class="live-shell live-hero__grid">
+    <div><span class="live-kicker">ON AIR · PASSPORT RADIO</span><h1>Música tocando. História aberta.</h1><p>Ao vivo, arquivos raros, histórias, bandas e gente que fez barulho de verdade. Aperte play. O resto começa daqui.</p></div>
+    <div class="live-now" id="player"><small>Tocando agora</small><h2 id="currentTrackTitle">Dee Snider · Wacken</h2><p id="currentTrackDescription">Passport Radio Broadcast · Live & Rare</p>
+      <div class="audio-player" aria-label="Player da Passport Radio"><div class="audio-player__top"><div class="audio-player__controls"><button class="audio-control" id="prevTrack" type="button" aria-label="Faixa anterior">◀</button><button class="audio-control audio-control--main" id="mainPlay" type="button" aria-label="Reproduzir">▶</button><button class="audio-control" id="nextTrack" type="button" aria-label="Próxima faixa">▶</button></div><div class="audio-player__meta"><strong id="playerTrackTitle">Dee Snider · Wacken</strong><small id="playerTrackMeta">Passport Radio · Live & Rare</small></div><div class="audio-player__time"><span id="currentTime">0:00</span> / <span id="duration">0:00</span></div></div><input class="audio-progress" id="progress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Progresso da faixa"><audio id="passportAudio" preload="metadata"><source src="/audio/primeiro-voo.mp3.mp3" type="audio/mpeg">Seu navegador não suporta áudio HTML5.</audio></div>
     </div>
-
-    <aside class="sidebar">
-
-      <div class="sidebox">
-        <span class="kicker">Acesso rápido</span>
-        <h3>Continue pela música.</h3>
-        <div class="tag-row">
-          <a class="tag" href="exposicao.html?colecao=drum-masters">Drum Masters</a>
-          <a class="tag" href="exposicao.html?colecao=bass-legends">Bass Legends</a>
-          <a class="tag" href="destinos.html">Explorar</a>
-        </div>
-      </div>
-
-      <div class="radio-note">
-        <strong>Arquivos conectados:</strong>
-        Primeiro Voo, Segundo Voo, Quarto Voo, Sétimo Voo e Oitavo Voo.
-        Ao terminar uma faixa, a próxima começa automaticamente.
-      </div>
-
-      <div class="sidebox">
-        <span class="kicker">Contato</span>
-        <h3>WhatsApp ou Telegram.</h3>
-        <p>Fale direto com a equipe sem sair procurando número.</p>
-
-        <div class="contact-actions" style="margin-top:12px">
-          <a class="button button--red"
-             href="https://wa.me/48732099369"
-             target="_blank"
-             rel="noopener">
-            WhatsApp
-          </a>
-
-          <a class="button"
-             href="https://t.me/m/t6seeX61ZTlk"
-             target="_blank"
-             rel="noopener">
-            Telegram
-          </a>
-        </div>
-      </div>
-
-    </aside>
   </div>
 </section>
-
+<section class="live-section" id="historias"><div class="live-shell"><div class="live-section-head"><div><span class="live-kicker">STORIES IN ROTATION</span><h2>Você conhece a música. Agora conheça a história.</h2></div><p>Bandas, músicos, instrumentos, discos, curiosidades e contexto. Sem ficha técnica com cheiro de Wikipédia.</p></div><div class="story-grid">
+<article class="story-card story-card--lead"><a href="historias/cannibal-corpse.html"><img src="/images/ALEX WEBSTER__APRIMORADA.png" alt="Cannibal Corpse e Alex Webster" loading="lazy"><div class="story-card__copy"><small>Death Metal · Bass Masters</small><h3>Cannibal Corpse: brutalidade é fácil. Tocar brutalidade com precisão é outra conversa.</h3><p>Buffalo, 1988, death metal, formação, discos e Alex Webster desmontando a ideia de que isso tudo é apenas barulho.</p></div></a></article>
+<article class="story-card"><a href="iron-maiden-musicas-favoritas.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden" loading="lazy"><div class="story-card__copy"><small>Heavy Metal</small><h3>Iron Maiden</h3><p>Décadas, guitarras, baixo na frente e um catálogo que virou linguagem.</p></div></a></article>
+<article class="story-card"><a href="led-zeppelin-achilles-last-stand.html"><img src="/images/led-zeppelin-a-cancao-rockprogressiva.png" alt="Led Zeppelin" loading="lazy"><div class="story-card__copy"><small>Classic Rock</small><h3>Led Zeppelin</h3><p>Quando peso, blues e progressivo aprenderam a morar na mesma música.</p></div></a></article>
+<article class="story-card"><a href="kate-bush-wuthering-heights.html"><img src="/images/kate_bush_the_dreaming_capa_corte.webp" alt="Kate Bush" loading="lazy"><div class="story-card__copy"><small>Art Rock</small><h3>Kate Bush</h3><p>Literatura, teatro, voz e uma canção que recusou envelhecer.</p></div></a></article>
+</div></div></section>
+<section class="live-section live-section--soft" id="arquivos"><div class="live-shell archive-layout"><div class="archive-intro"><span class="live-kicker">PASSPORT AUDIO ARCHIVES</span><h2>Perdeu? Ouça quando quiser.</h2><p>Os arquivos antigos continuam vivos, mas a época de “Primeiro Voo”, “Segundo Voo” e companhia acabou. Aqui eles entram como arquivo sonoro da Passport Radio.</p></div><div class="track-list" id="trackList" aria-label="Arquivos sonoros">
+<button class="track-row is-active" type="button" data-track="0"><span class="track-row__number">01</span><span><strong>Dee Snider · Wacken</strong><small>Live & Rare · Passport Radio</small></span><span class="track-row__status">No player</span></button>
+<button class="track-row" type="button" data-track="1"><span class="track-row__number">02</span><span><strong>Passport Archive 002</strong><small>Arquivo sonoro</small></span><span class="track-row__status">Ouvir</span></button>
+<button class="track-row" type="button" data-track="2"><span class="track-row__number">03</span><span><strong>Passport Archive 003</strong><small>Arquivo sonoro</small></span><span class="track-row__status">Ouvir</span></button>
+<button class="track-row" type="button" data-track="3"><span class="track-row__number">04</span><span><strong>Passport Archive 004</strong><small>Arquivo sonoro</small></span><span class="track-row__status">Ouvir</span></button>
+<button class="track-row" type="button" data-track="4"><span class="track-row__number">05</span><span><strong>Passport Archive 005</strong><small>Arquivo sonoro</small></span><span class="track-row__status">Ouvir</span></button>
+</div></div></section>
+<section class="live-section"><div class="live-shell"><div class="live-section-head"><div><span class="live-kicker">MR. NOMAD · BAND FILES</span><h2>Quem toca o quê. E por que isso importa.</h2></div><p>História curta, integrantes, instrumentos, discos, músicas e aquelas curiosidades que fazem a ficha técnica virar conversa.</p></div><div class="band-files">
+<article class="band-file"><small>Publicado</small><h3>Cannibal Corpse</h3><p>Buffalo · 1988 · Death Metal · Alex Webster no baixo.</p><a href="historias/cannibal-corpse.html">Abrir história →</a></article>
+<article class="band-file"><small>Próximo arquivo</small><h3>Dream Theater</h3><p>Progressive Metal · guitarra, baixo, bateria e teclado em estado de engenharia.</p></article>
+<article class="band-file"><small>Próximo arquivo</small><h3>Within Temptation</h3><p>Symphonic Metal · Holanda · peso, atmosfera e uma identidade que atravessou fases.</p></article>
+<article class="band-file"><small>Próximo arquivo</small><h3>Arch Enemy</h3><p>Melodic Death Metal · guitarras em primeiro plano e uma trajetória de várias eras.</p></article>
+<article class="band-file"><small>Próximo arquivo</small><h3>Immortal</h3><p>Black Metal · Noruega · som, imagem e uma assinatura impossível de confundir.</p></article>
+<article class="band-file"><small>Próximo arquivo</small><h3>The Runaways</h3><p>Rock · Los Angeles · guitarras, atitude e uma mudança de eixo na história do gênero.</p></article>
+</div></div></section>
+<section class="live-section live-section--black" id="nomads"><div class="live-shell nomad-block"><div class="nomad-copy"><span class="live-kicker">PASSPORT NOMADS</span><h2>Elas não apresentam a música. Elas entram nela.</h2><p>Guitarra, baixo, bateria, teclas e cordas como linguagem visual da Passport Radio. Os vídeos das Nomads entram aqui como transições editoriais entre gêneros, instrumentos e histórias.</p></div><div class="nomad-stage"><div><strong>NOMADS · VIDEO ARCHIVE</strong><span>Área pronta para receber os vídeos oficiais.</span></div></div></div></section>
+<section class="live-section live-section--black" id="anuncie" style="border-top:1px solid #333"><div class="live-shell live-ad"><div><span class="live-kicker">PUBLICIDADE</span><h2>Seu show, marca ou lançamento pode tocar aqui também.</h2><p>Publicidade identificada, patrocínio de broadcasts, banners, festivais, instrumentos, lojas e projetos ligados à cultura musical.</p></div><a class="live-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20formatos%20de%20publicidade%20da%20Passport%20Radio." target="_blank" rel="noopener noreferrer">Quero anunciar</a></div></section>
 </main>
-
-<footer class="footer">
-  <div class="shell footer-grid">
-
-    <div>
-      <strong>Passport Radio</strong>
-      <p>Music · History · Culture · Live</p>
-      <p>3... 2... 1... CLICK!</p>
-    </div>
-
-    <div>
-      <strong>Conteúdo</strong>
-      <a href="index.html#noticias">Últimas histórias</a>
-      <a href="index.html#resenhas">Resenhas</a>
-      <a href="exposicao.html?colecao=drum-masters">Arquivos</a>
-    </div>
-
-    <div>
-      <strong>Ouvir</strong>
-      <a href="#player">Ao vivo</a>
-      <a href="destinos.html">Explorar música</a>
-    </div>
-
-    <div>
-      <strong>Loja & Apoio</strong>
-      <a href="loja.html">Boutique</a>
-      <a href="index.html#apoie">Apoiar</a>
-    </div>
-
-    <div>
-      <strong>Contato</strong>
-      <a href="contato.html">Central de contato</a>
-      <a href="mailto:passport@passportradio.online">E-mail</a>
-    </div>
-
-  </div>
-
-  <div class="shell footer-bottom">
-    <span>© 2026 Passport Radio. Todos os direitos reservados.</span>
-    <span>Operação e pagamentos: <b>Guiropa World</b>.</span>
-  </div>
-</footer>
-
-<div class="floating-contact">
-  <a
-    class="float-wa"
-    href="https://wa.me/48732099369?text=Olá%2C%20quero%20falar%20com%20a%20Passport%20Radio."
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
-  >WA</a>
-
-  <a
-    class="float-tg"
-    href="https://t.me/m/t6seeX61ZTlk"
-    target="_blank"
-    rel="noopener"
-    aria-label="Telegram"
-  >TG</a>
-</div>
-
-<div class="player-bar" aria-label="Player fixo da Passport Radio">
-  <button class="player-play player-bar__button" id="bottomPlay" type="button" aria-label="Reproduzir">▶</button>
-
-  <span class="player-copy">
-    <strong id="bottomTrackTitle">Primeiro Voo</strong>
-    <small id="bottomTrackMeta">Passport Radio · 3...2...1... CLICK!</small>
-  </span>
-
-  <button class="player-bar__next" id="bottomNext" type="button" aria-label="Próxima faixa">
-    PRÓXIMA
-  </button>
-</div>
-
+<footer class="footer"><div class="live-shell footer-grid"><div><strong>Passport Radio</strong><p>Music · History · Culture · Live</p><p>3... 2... 1... CLICK!</p></div><div><strong>Conteúdo</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#resenhas">Resenhas</a><a href="index.html#agenda">Agenda</a></div><div><strong>Ouvir</strong><a href="#player">Ao vivo</a><a href="#arquivos">Arquivos</a><a href="#nomads">Nomads</a></div><div><strong>Loja & Apoio</strong><a href="loja.html">Passport Store</a><a href="index.html#apoie">Apoiar</a><a href="#anuncie">Anuncie</a></div><div><strong>Contato</strong><a href="contato.html">Central de contato</a><a href="mailto:passport@passportradio.online">E-mail</a></div></div><div class="live-shell footer-bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação comercial e pagamentos: <b>Guiropa World</b>.</span></div></footer>
+<div class="player-bar" aria-label="Player fixo da Passport Radio"><button class="player-bar__button" id="bottomPlay" type="button" aria-label="Reproduzir">▶</button><span class="player-copy"><strong id="bottomTrackTitle">Dee Snider · Wacken</strong><small id="bottomTrackMeta">Passport Radio · Live & Rare</small></span><button class="player-bar__next" id="bottomNext" type="button" aria-label="Próxima faixa">PRÓXIMA</button></div>
 <script>
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.main-nav');
-
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    nav.classList.toggle('is-open', !open);
-  });
-}
-
-/* ============================================================
-   PASSPORT RADIO — PLAYER
-   Arquivos existentes em /audio/
-   ============================================================ */
-
-const tracks = [
-  {
-    title: 'Primeiro Voo',
-    src: '/audio/primeiro-voo.mp3.mp3'
-  },
-  {
-    title: 'Segundo Voo',
-    src: '/audio/segundo-voo.mp3'
-  },
-  {
-    title: 'Quarto Voo',
-    src: '/audio/quarto-voo.mp3'
-  },
-  {
-    title: 'Sétimo Voo',
-    src: '/audio/setimo-voo.mp3'
-  },
-  {
-    title: 'Oitavo Voo',
-    src: '/audio/oitavo-voo.mp3'
-  }
-];
-
-const audio = document.getElementById('passportAudio');
-
-const heroPlay = document.getElementById('heroPlay');
-const mainPlay = document.getElementById('mainPlay');
-const bottomPlay = document.getElementById('bottomPlay');
-
-const prevTrack = document.getElementById('prevTrack');
-const nextTrack = document.getElementById('nextTrack');
-const bottomNext = document.getElementById('bottomNext');
-
-const progress = document.getElementById('progress');
-const currentTime = document.getElementById('currentTime');
-const duration = document.getElementById('duration');
-
-const currentTrackTitle = document.getElementById('currentTrackTitle');
-const playerTrackTitle = document.getElementById('playerTrackTitle');
-const bottomTrackTitle = document.getElementById('bottomTrackTitle');
-
-const rows = Array.from(document.querySelectorAll('.track-row'));
-
-let currentTrackIndex = 0;
-
-function formatTime(seconds) {
-  if (!Number.isFinite(seconds)) return '0:00';
-
-  const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
-
-  return `${minutes}:${secs}`;
-}
-
-function updatePlayButtons() {
-  const icon = audio.paused ? '▶' : '❚❚';
-
-  heroPlay.textContent = icon;
-  mainPlay.textContent = icon;
-  bottomPlay.textContent = icon;
-
-  const label = audio.paused ? 'Reproduzir' : 'Pausar';
-
-  heroPlay.setAttribute('aria-label', label);
-  mainPlay.setAttribute('aria-label', label);
-  bottomPlay.setAttribute('aria-label', label);
-}
-
-function updateTrackUI() {
-  const track = tracks[currentTrackIndex];
-
-  currentTrackTitle.textContent = track.title;
-  playerTrackTitle.textContent = track.title;
-  bottomTrackTitle.textContent = track.title;
-
-  rows.forEach((row, index) => {
-    const active = index === currentTrackIndex;
-
-    row.classList.toggle('is-active', active);
-
-    const status = row.querySelector('.track-row__status');
-
-    if (status) {
-      status.textContent = active ? (audio.paused ? 'No player' : 'Tocando') : 'Ouvir';
-    }
-  });
-}
-
-function loadTrack(index, autoplay = false) {
-  currentTrackIndex = (index + tracks.length) % tracks.length;
-
-  const track = tracks[currentTrackIndex];
-
-  audio.src = track.src;
-  audio.load();
-
-  progress.value = 0;
-  currentTime.textContent = '0:00';
-  duration.textContent = '0:00';
-
-  updateTrackUI();
-
-  if (autoplay) {
-    audio.play().catch(() => {
-      updatePlayButtons();
-    });
-  }
-}
-
-function togglePlay() {
-  if (audio.paused) {
-    audio.play().catch(error => {
-      console.error('Não foi possível iniciar o áudio:', error);
-    });
-  } else {
-    audio.pause();
-  }
-}
-
-function playNext() {
-  loadTrack(currentTrackIndex + 1, true);
-}
-
-function playPrevious() {
-  if (audio.currentTime > 4) {
-    audio.currentTime = 0;
-    return;
-  }
-
-  loadTrack(currentTrackIndex - 1, true);
-}
-
-heroPlay.addEventListener('click', togglePlay);
-mainPlay.addEventListener('click', togglePlay);
-bottomPlay.addEventListener('click', togglePlay);
-
-nextTrack.addEventListener('click', playNext);
-bottomNext.addEventListener('click', playNext);
-prevTrack.addEventListener('click', playPrevious);
-
-rows.forEach(row => {
-  row.addEventListener('click', () => {
-    const index = Number(row.dataset.track);
-    loadTrack(index, true);
-  });
-});
-
-audio.addEventListener('play', () => {
-  updatePlayButtons();
-  updateTrackUI();
-});
-
-audio.addEventListener('pause', () => {
-  updatePlayButtons();
-  updateTrackUI();
-});
-
-audio.addEventListener('loadedmetadata', () => {
-  duration.textContent = formatTime(audio.duration);
-});
-
-audio.addEventListener('timeupdate', () => {
-  currentTime.textContent = formatTime(audio.currentTime);
-
-  if (audio.duration) {
-    progress.value = (audio.currentTime / audio.duration) * 100;
-  }
-});
-
-audio.addEventListener('ended', playNext);
-
-audio.addEventListener('error', () => {
-  const track = tracks[currentTrackIndex];
-  console.error('Erro ao carregar o arquivo:', track.src);
-
-  document.getElementById('currentTrackDescription').textContent =
-    'Não foi possível carregar este arquivo. Confira o nome do MP3 no diretório /audio/.';
-});
-
-progress.addEventListener('input', () => {
-  if (!audio.duration) return;
-
-  audio.currentTime = (Number(progress.value) / 100) * audio.duration;
-});
-
-document.addEventListener('keydown', event => {
-  const target = event.target;
-  const typing =
-    target &&
-    (target.tagName === 'INPUT' ||
-     target.tagName === 'TEXTAREA' ||
-     target.tagName === 'SELECT' ||
-     target.isContentEditable);
-
-  if (typing) return;
-
-  if (event.code === 'Space') {
-    event.preventDefault();
-    togglePlay();
-  }
-
-  if (event.code === 'ArrowRight' && event.altKey) {
-    playNext();
-  }
-
-  if (event.code === 'ArrowLeft' && event.altKey) {
-    playPrevious();
-  }
-});
-
-loadTrack(0, false);
-updatePlayButtons();
+const toggle=document.querySelector('.nav-toggle'),nav=document.querySelector('.main-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open)});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}))}
+const tracks=[{title:'Dee Snider · Wacken',meta:'Live & Rare · Passport Radio',src:'/audio/primeiro-voo.mp3.mp3'},{title:'Passport Archive 002',meta:'Arquivo sonoro · Passport Radio',src:'/audio/segundo-voo.mp3'},{title:'Passport Archive 003',meta:'Arquivo sonoro · Passport Radio',src:'/audio/quarto-voo.mp3'},{title:'Passport Archive 004',meta:'Arquivo sonoro · Passport Radio',src:'/audio/setimo-voo.mp3'},{title:'Passport Archive 005',meta:'Arquivo sonoro · Passport Radio',src:'/audio/oitavo-voo.mp3'}];
+const audio=document.getElementById('passportAudio'),mainPlay=document.getElementById('mainPlay'),bottomPlay=document.getElementById('bottomPlay'),prevTrack=document.getElementById('prevTrack'),nextTrack=document.getElementById('nextTrack'),bottomNext=document.getElementById('bottomNext'),progress=document.getElementById('progress'),currentTime=document.getElementById('currentTime'),duration=document.getElementById('duration'),currentTrackTitle=document.getElementById('currentTrackTitle'),playerTrackTitle=document.getElementById('playerTrackTitle'),playerTrackMeta=document.getElementById('playerTrackMeta'),bottomTrackTitle=document.getElementById('bottomTrackTitle'),bottomTrackMeta=document.getElementById('bottomTrackMeta'),rows=Array.from(document.querySelectorAll('.track-row'));let currentTrackIndex=0;
+function formatTime(seconds){if(!Number.isFinite(seconds))return'0:00';const minutes=Math.floor(seconds/60),secs=Math.floor(seconds%60).toString().padStart(2,'0');return`${minutes}:${secs}`}
+function updatePlayButtons(){const icon=audio.paused?'▶':'❚❚';mainPlay.textContent=icon;bottomPlay.textContent=icon;const label=audio.paused?'Reproduzir':'Pausar';mainPlay.setAttribute('aria-label',label);bottomPlay.setAttribute('aria-label',label)}
+function updateTrackUI(){const track=tracks[currentTrackIndex];currentTrackTitle.textContent=track.title;playerTrackTitle.textContent=track.title;playerTrackMeta.textContent=track.meta;bottomTrackTitle.textContent=track.title;bottomTrackMeta.textContent=track.meta;rows.forEach((row,index)=>{const active=index===currentTrackIndex;row.classList.toggle('is-active',active);const status=row.querySelector('.track-row__status');if(status)status.textContent=active?(audio.paused?'No player':'Tocando'):'Ouvir'})}
+function loadTrack(index,autoplay=false){currentTrackIndex=(index+tracks.length)%tracks.length;const track=tracks[currentTrackIndex];audio.src=track.src;audio.load();progress.value=0;currentTime.textContent='0:00';duration.textContent='0:00';updateTrackUI();if(autoplay)audio.play().catch(()=>updatePlayButtons())}
+function togglePlay(){if(audio.paused){audio.play().catch(error=>console.error('Não foi possível iniciar o áudio:',error))}else audio.pause()}
+function playNext(){loadTrack(currentTrackIndex+1,true)}function playPrevious(){if(audio.currentTime>4){audio.currentTime=0;return}loadTrack(currentTrackIndex-1,true)}
+mainPlay.addEventListener('click',togglePlay);bottomPlay.addEventListener('click',togglePlay);nextTrack.addEventListener('click',playNext);bottomNext.addEventListener('click',playNext);prevTrack.addEventListener('click',playPrevious);rows.forEach(row=>row.addEventListener('click',()=>loadTrack(Number(row.dataset.track),true)));audio.addEventListener('play',()=>{updatePlayButtons();updateTrackUI()});audio.addEventListener('pause',()=>{updatePlayButtons();updateTrackUI()});audio.addEventListener('loadedmetadata',()=>duration.textContent=formatTime(audio.duration));audio.addEventListener('timeupdate',()=>{currentTime.textContent=formatTime(audio.currentTime);if(audio.duration)progress.value=(audio.currentTime/audio.duration)*100});audio.addEventListener('ended',playNext);audio.addEventListener('error',()=>{document.getElementById('currentTrackDescription').textContent='Não foi possível carregar este arquivo. Confira o MP3 no diretório /audio/.'});progress.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(Number(progress.value)/100)*audio.duration});document.addEventListener('keydown',event=>{const target=event.target,typing=target&&(target.tagName==='INPUT'||target.tagName==='TEXTAREA'||target.tagName==='SELECT'||target.isContentEditable);if(typing)return;if(event.code==='Space'){event.preventDefault();togglePlay()}if(event.code==='ArrowRight'&&event.altKey)playNext();if(event.code==='ArrowLeft'&&event.altKey)playPrevious()});loadTrack(0,false);updatePlayButtons();
 </script>
-
 </body>
 </html>
