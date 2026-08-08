@@ -21,6 +21,11 @@
 .editorial-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}.editorial-lead img{width:100%;height:360px;object-fit:cover}.editorial-lead h3{margin-top:12px;font-size:clamp(1.8rem,3vw,3.4rem);line-height:.98;letter-spacing:-.04em}.editorial-lead p{margin-top:10px;color:var(--muted);font-size:.75rem;line-height:1.55}.editorial-list{border-top:2px solid #111}.editorial-item{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}.editorial-item img{width:110px;height:76px;object-fit:cover}.editorial-item small{display:block;color:#777;font-size:.54rem;font-weight:900;text-transform:uppercase}.editorial-item strong{display:block;margin-top:4px;font-size:.9rem;line-height:1.18}
 .genre-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}.genre-card{padding:20px;min-height:190px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;transition:background .2s ease}.genre-card:hover{background:#111;color:#fff}.genre-card b{color:var(--red);font-size:.63rem}.genre-card strong{display:block;margin-top:12px;font-size:1.02rem}.genre-card small{display:block;margin-top:8px;color:#777;font-size:.64rem;line-height:1.55}.genre-card:hover small{color:#bbb}
 .genre-brief{margin-top:24px;padding:28px;border-left:5px solid var(--red);background:#111;color:#fff}.genre-brief .eyebrow{color:var(--red)}.genre-brief h3{margin-top:7px;font-size:clamp(2rem,4vw,4rem);line-height:.95;letter-spacing:-.045em}.genre-brief p{max-width:920px;margin-top:14px;color:#aaa;font-size:.76rem;line-height:1.7}
+.genre-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line);margin-top:18px}
+.genre-notes article{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;scroll-margin-top:90px}
+.genre-notes span{color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.12em}
+.genre-notes h3{margin-top:8px;font-size:1.28rem;line-height:1.05;letter-spacing:-.03em}
+.genre-notes p{margin-top:10px;color:#6f6f6f;font-size:.66rem;line-height:1.6}
 .instrument-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:0;background:#111;color:#fff}.instrument-hero__media img{width:100%;height:100%;min-height:420px;object-fit:cover}.instrument-hero__copy{display:flex;flex-direction:column;justify-content:center;padding:42px}.instrument-hero__copy .eyebrow{color:var(--red)}.instrument-hero__copy h3{margin-top:8px;font-size:clamp(2.4rem,4vw,4.8rem);line-height:.94;letter-spacing:-.05em}.instrument-hero__copy p{margin-top:14px;color:#aaa;font-size:.78rem;line-height:1.65}.instrument-links{display:grid;grid-template-columns:repeat(4,1fr);margin-top:18px;border-top:1px solid #333;border-left:1px solid #333}.instrument-links a{padding:16px;border-right:1px solid #333;border-bottom:1px solid #333}.instrument-links a:hover{background:#1b1b1b}.instrument-links small{display:block;color:#777;font-size:.52rem;font-weight:900;text-transform:uppercase}.instrument-links strong{display:block;margin-top:5px;color:#fff;font-size:.82rem;line-height:1.15}.instrument-links span{display:block;margin-top:8px;color:#999;font-size:.57rem;line-height:1.5}
 .scene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.scene-card{padding-top:14px;border-top:2px solid #111}.scene-card img{width:100%;height:190px;object-fit:cover}.scene-card small{display:block;margin-top:10px;color:#777;font-size:.53rem;font-weight:900;text-transform:uppercase}.scene-card h3{margin-top:4px;font-size:1.05rem}.scene-card p{margin-top:6px;color:#777;font-size:.66rem;line-height:1.5}
 .nomad-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.nomad-copy h2{margin-top:7px;font-size:clamp(2.6rem,5vw,5.4rem);line-height:.92;letter-spacing:-.055em}.nomad-copy p{margin-top:14px;max-width:620px;color:#aaa;font-size:.78rem;line-height:1.65}.nomad-stage{min-height:320px;display:grid;place-items:center;border:1px solid #333;background:#0b0b0b;text-align:center;padding:30px}.nomad-stage strong{display:block;color:#fff;font-size:1.4rem}.nomad-stage span{display:block;margin-top:8px;color:#777;font-size:.65rem}
@@ -78,7 +83,7 @@
 
 @media(max-width:980px){.portal-grid{grid-template-columns:repeat(2,1fr)}.genre-grid{grid-template-columns:repeat(2,1fr)}.instrument-hero,.editorial-grid,.nomad-grid{grid-template-columns:1fr}.instrument-links{grid-template-columns:repeat(2,1fr)}.scene-grid{grid-template-columns:repeat(2,1fr)}.index-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:860px){.header__inner{grid-template-columns:1fr auto auto}.menu-button{display:block}.nav{position:absolute;top:66px;left:0;right:0;display:none;grid-template-columns:repeat(2,1fr);gap:0;padding:8px 16px 14px;border-bottom:1px solid var(--line);background:#fff}.nav.is-open{display:grid}.nav a{padding:10px;border-bottom:1px solid var(--line)}.footer__grid{grid-template-columns:repeat(2,1fr)}.footer-brand{grid-column:1/-1}}
-@media(max-width:620px){.shell{width:min(calc(100% - 20px),var(--shell))}.trustbar{text-align:left;padding-inline:10px}.brand{min-width:0}.brand__copy small{display:none}.onair{min-width:76px}.hero{padding:38px 0 28px}.hero h1{font-size:3.2rem}.portal-grid,.scene-grid,.genre-grid,.index-grid{grid-template-columns:1fr}.portal-card{min-height:260px}.section{padding:34px 0}.section-head{align-items:flex-start;flex-direction:column}.editorial-item{grid-template-columns:88px 1fr}.editorial-item img{width:88px;height:66px}.instrument-hero__copy{padding:28px 22px}.instrument-links{grid-template-columns:1fr 1fr}.quick-contact{right:8px;bottom:52px}.footer__grid{grid-template-columns:1fr 1fr}.footer__bottom{display:grid;gap:5px}}
+@media(max-width:620px){.shell{width:min(calc(100% - 20px),var(--shell))}.trustbar{text-align:left;padding-inline:10px}.brand{min-width:0}.brand__copy small{display:none}.onair{min-width:76px}.hero{padding:38px 0 28px}.hero h1{font-size:3.2rem}.portal-grid,.scene-grid,.genre-grid,.index-grid,.genre-notes{grid-template-columns:1fr}.portal-card{min-height:260px}.section{padding:34px 0}.section-head{align-items:flex-start;flex-direction:column}.editorial-item{grid-template-columns:88px 1fr}.editorial-item img{width:88px;height:66px}.instrument-hero__copy{padding:28px 22px}.instrument-links{grid-template-columns:1fr 1fr}.quick-contact{right:8px;bottom:52px}.footer__grid{grid-template-columns:1fr 1fr}.footer__bottom{display:grid;gap:5px}}
 </style>
 </head>
 <body>
@@ -93,7 +98,7 @@
     </a>
     <button class="menu-button" type="button" aria-controls="main-nav" aria-expanded="false">MENU</button>
     <nav class="nav" id="main-nav" aria-label="Navegação principal">
-      <a href="index.html">Agora</a><a href="index.html#noticias">Notícias</a><a href="brasil.html">Brasil</a><a href="estilos.html">Estilos</a><a href="instrument-masters.html">Instrumentos</a><a href="cenas.html">Cenas</a><a href="nomads.html">Nomads</a><a href="radio.html">Ao Vivo</a><a href="loja.html">Loja</a><a href="contato.html">Contato</a>
+      <a href="index.html">Agora</a><a href="index.html#noticias">Notícias</a><a href="#rock-brasileiro">Brasil</a><a href="#estilos">Estilos</a><a href="instrument-masters.html">Instrumentos</a><a href="#cenas">Cenas</a><a href="#nomads">Nomads</a><a href="radio.html">Ao Vivo</a><a href="loja.html">Loja</a><a href="contato.html">Contato</a>
     </nav>
     <a class="onair" href="radio.html"><span class="onair__dot"></span><b>ON AIR</b><small>3...2...1... CLICK!</small></a>
   </div>
@@ -105,11 +110,11 @@
 <section class="section"><div class="shell">
   <div class="section-head"><div><span class="eyebrow">COMECE POR AQUI</span><h2>Seis portas. Nenhum labirinto.</h2></div><p>Cada porta abre um arquivo editorial próprio. A central organiza o acervo sem devolver ninguém às páginas antigas.</p></div>
   <div class="portal-grid">
-    <a class="portal-card portal-card--red" href="brasil.html"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Rock Brasileiro" loading="lazy"><div class="portal-card__overlay"><small>01 · BRASIL</small><h3>Rock Brasileiro</h3><p>Bandas, décadas, cenas e histórias de um país tentando descobrir como soar como ele mesmo.</p></div></a>
-    <a class="portal-card" href="estilos.html"><img src="/images/13-estilos-de-rock.jpg" alt="Estilos de Rock" loading="lazy"><div class="portal-card__overlay"><small>02 · GÊNEROS</small><h3>Estilos do Rock</h3><p>Do rockabilly ao black metal. A música muda de roupa, velocidade e intenção.</p></div></a>
+    <a class="portal-card portal-card--red" href="#rock-brasileiro"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Rock Brasileiro" loading="lazy"><div class="portal-card__overlay"><small>01 · BRASIL</small><h3>Rock Brasileiro</h3><p>Bandas, décadas, cenas e histórias de um país tentando descobrir como soar como ele mesmo.</p></div></a>
+    <a class="portal-card" href="#estilos"><img src="/images/13-estilos-de-rock.jpg" alt="Estilos de Rock" loading="lazy"><div class="portal-card__overlay"><small>02 · GÊNEROS</small><h3>Estilos do Rock</h3><p>Do rockabilly ao black metal. A música muda de roupa, velocidade e intenção.</p></div></a>
     <a class="portal-card" href="instrument-masters.html"><img src="/images/alex-webster-bass.jpg" alt="Alex Webster tocando baixo" loading="lazy"><div class="portal-card__overlay"><small>03 · INSTRUMENTOS</small><h3>Instrument Masters</h3><p>Baixo, bateria, guitarra, teclas e voz. Antes da lenda, existe alguém tocando.</p></div></a>
-    <a class="portal-card" href="cenas.html"><img src="/images/wacken-open-air-festival.png" alt="Cenas e festivais" loading="lazy"><div class="portal-card__overlay"><small>04 · CULTURA</small><h3>Cenas</h3><p>Festivais, cidades e movimentos. Música nunca acontece sozinha.</p></div></a>
-    <a class="portal-card portal-card--nomads" href="nomads.html">
+    <a class="portal-card" href="#cenas"><img src="/images/wacken-open-air-festival.png" alt="Cenas e festivais" loading="lazy"><div class="portal-card__overlay"><small>04 · CULTURA</small><h3>Cenas</h3><p>Festivais, cidades e movimentos. Música nunca acontece sozinha.</p></div></a>
+    <a class="portal-card portal-card--nomads" href="#nomads">
         <div class="nomads-visual" aria-hidden="true">
           <span class="nomads-visual__word">NOMADS</span>
           <span class="nomads-visual__line">GUITAR · BASS · DRUMS · KEYS · STRINGS</span>
@@ -127,7 +132,7 @@
     <div class="editorial-list">
       <a class="editorial-item" href="rock-nacional-top-30.html"><img src="/images/casa-das-maquinas-2026.jpg" alt="Rock Nacional" loading="lazy"><span><small>ARQUIVO BRASIL</small><strong>Sete décadas de rock brasileiro para discutir sem pedir licença.</strong></span></a>
       <a class="editorial-item" href="live-aid-momento-mais-marcante-rock.html"><img src="/images/live-aid-1985.png" alt="Live Aid" loading="lazy"><span><small>CONTEXTO GLOBAL</small><strong>O dia em que o rock parou o mundo.</strong></span></a>
-      <a class="editorial-item" href="iron-maiden-musicas-favoritas.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden" loading="lazy"><span><small>PALCO & INFLUÊNCIA</small><strong>Como repertório, fãs e estrada constroem uma linguagem.</strong></span></a>
+      <a class="editorial-item" href="#heavy-metal-brief"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden" loading="lazy"><span><small>PALCO & INFLUÊNCIA</small><strong>Como repertório, fãs e estrada constroem uma linguagem.</strong></span></a>
     </div>
   </div>
 </div></section>
@@ -135,20 +140,28 @@
 <section class="section" id="estilos"><div class="shell">
   <div class="section-head"><div><span class="eyebrow">ESTILOS DO ROCK</span><h2>O rock nunca foi uma coisa só.</h2></div><p>Em vez de uma apostila interminável, cada gênero funciona como porta de entrada para histórias, bandas e movimentos.</p></div>
   <div class="genre-grid">
-    <a class="genre-card" href="jerry-lee-lewis-selvagem-rock.html"><b>01</b><strong>Rock &amp; Roll</strong><small>Quando rhythm &amp; blues, country e juventude bateram de frente. Piano, guitarra e uma geração descobrindo que música também podia ser problema.</small></a>
-    <a class="genre-card" href="#estilos"><b>02</b><strong>Rockabilly</strong><small>Contrabaixo estalando, guitarra seca e ecos de Memphis. Antes da distorção dominar tudo, o rock já tinha pressa, topete e gasolina.</small></a>
-    <a class="genre-card" href="iron-maiden-musicas-favoritas.html"><b>03</b><strong>Heavy Metal</strong><small>Peso não é só volume. Riff, dinâmica, identidade visual e um palco que deixou de ser cenário para virar território.</small></a>
+    <a class="genre-card" href="#rock-roll-brief"><b>01</b><strong>Rock &amp; Roll</strong><small>Quando rhythm &amp; blues, country e juventude bateram de frente. Piano, guitarra e uma geração descobrindo que música também podia ser problema.</small></a>
+    <a class="genre-card" href="#rockabilly-brief"><b>02</b><strong>Rockabilly</strong><small>Contrabaixo estalando, guitarra seca e ecos de Memphis. Antes da distorção dominar tudo, o rock já tinha pressa, topete e gasolina.</small></a>
+    <a class="genre-card" href="#heavy-metal-brief"><b>03</b><strong>Heavy Metal</strong><small>Peso não é só volume. Riff, dinâmica, identidade visual e um palco que deixou de ser cenário para virar território.</small></a>
     <a class="genre-card" href="historias/cannibal-corpse.html"><b>04</b><strong>Death Metal</strong><small>Velocidade, precisão e brutalidade organizada. Quando tocar pesado passou a exigir uma disciplina quase cirúrgica.</small></a>
     <a class="genre-card" href="#progressive-brief"><b>05</b><strong>Progressive</strong><small>Quando verso, refrão e quatro minutos deixaram de bastar. Suítes, compassos quebrados e músicos tratando o álbum como arquitetura.</small></a>
-    <a class="genre-card" href="kate-bush-wuthering-heights.html"><b>06</b><strong>Art Rock</strong><small>Teatro, literatura, produção e composição dividindo a mesma sala. A música deixa de apenas tocar e começa a construir um mundo.</small></a>
-    <a class="genre-card" href="#cenas"><b>07</b><strong>Gothic &amp; Alternative</strong><small>Atmosfera antes de fórmula. Clubes, cidades, guitarras, baixos e estética criaram linguagens que não pediam licença ao mainstream.</small></a>
-    <a class="genre-card" href="#cenas"><b>08</b><strong>Punk</strong><small>Urgência acima da perfeição. Três acordes podiam bastar — desde que houvesse alguma coisa verdadeira para gritar.</small></a>
+    <a class="genre-card" href="#art-rock-brief"><b>06</b><strong>Art Rock</strong><small>Teatro, literatura, produção e composição dividindo a mesma sala. A música deixa de apenas tocar e começa a construir um mundo.</small></a>
+    <a class="genre-card" href="#gothic-brief"><b>07</b><strong>Gothic &amp; Alternative</strong><small>Atmosfera antes de fórmula. Clubes, cidades, guitarras, baixos e estética criaram linguagens que não pediam licença ao mainstream.</small></a>
+    <a class="genre-card" href="#punk-brief"><b>08</b><strong>Punk</strong><small>Urgência acima da perfeição. Três acordes podiam bastar — desde que houvesse alguma coisa verdadeira para gritar.</small></a>
   </div>
   <article class="genre-brief" id="progressive-brief">
     <span class="eyebrow">MR. NOMAD · PROGRESSIVE</span>
     <h3>Antes de “progressivo” virar rótulo, era só gente tentando descobrir até onde uma música podia ir.</h3>
     <p>O progressive cresceu quando bandas começaram a tratar duração, timbre, arranjo e estrutura como território aberto. A canção podia mudar de compasso, atravessar movimentos diferentes, carregar sintetizadores, acústicos, orquestrações e voltar ao riff sem pedir desculpas. Aqui ele fica dentro da Passport — sem ressuscitar página antiga e sem mandar ninguém para o 666.</p>
   </article>
+  <div class="genre-notes">
+    <article id="rock-roll-brief"><span>MR. NOMAD · ROCK &amp; ROLL</span><h3>Jerry Lee Lewis nasceu Jerry Lee Lewis. O nome artístico não precisou esconder o incêndio.</h3><p>Piano martelado, country, rhythm &amp; blues e uma geração descobrindo que comportamento também fazia parte do som. O rock &amp; roll chega aqui como origem em movimento, não como peça de museu.</p></article>
+    <article id="rockabilly-brief"><span>MR. NOMAD · ROCKABILLY</span><h3>Antes do amplificador virar parede, o baixo já estalava como arma de percussão.</h3><p>Memphis, slap bass, eco curto, guitarra seca e urgência. Rockabilly é onde country e rhythm &amp; blues param de respeitar a distância entre eles.</p></article>
+    <article id="heavy-metal-brief"><span>MR. NOMAD · HEAVY METAL</span><h3>O peso não começou no volume. Começou na intenção.</h3><p>Riff, dinâmica, palco e imagem foram ficando maiores até o metal criar sua própria gramática. Depois vieram dezenas de dialetos — todos ainda devendo alguma coisa à ideia de transformar peso em identidade.</p></article>
+    <article id="art-rock-brief"><span>MR. NOMAD · ART ROCK</span><h3>Catherine Bush. Kate Bush. Antes da personagem, uma compositora tratando literatura como matéria-prima.</h3><p>Art rock começa quando a canção aceita teatro, imagem, literatura e produção como parte da composição. Não é enfeite intelectual: é outra forma de construir mundo.</p></article>
+    <article id="gothic-brief"><span>MR. NOMAD · GOTHIC &amp; ALTERNATIVE</span><h3>Antes do preto virar uniforme, havia cidades, clubes e bandas procurando outra temperatura emocional.</h3><p>Baixos à frente, guitarras atmosféricas, vozes dramáticas e uma estética que cresceu junto com a música. O movimento nasceu de cenas, não de uma checklist.</p></article>
+    <article id="punk-brief"><span>MR. NOMAD · PUNK</span><h3>Três acordes nunca foram a regra. A urgência era.</h3><p>Punk reduziu distância: entre palco e plateia, entre ideia e gravação, entre vontade e ação. A técnica podia vir depois; a necessidade de dizer alguma coisa vinha primeiro.</p></article>
+  </div>
 </div></section>
 
 <section class="section section--black" id="instrument-masters"><div class="shell">
@@ -186,11 +199,11 @@
 <section class="section"><div class="shell">
   <div class="section-head"><div><span class="eyebrow">ÍNDICE</span><h2>Uma enciclopédia que faz barulho.</h2></div></div>
   <div class="index-grid">
-    <a href="brasil.html"><b>Rock Brasileiro</b><small>Bandas, décadas e contexto</small></a>
-    <a href="estilos.html"><b>Estilos</b><small>Do rock & roll ao extremo</small></a>
+    <a href="#rock-brasileiro"><b>Rock Brasileiro</b><small>Bandas, décadas e contexto</small></a>
+    <a href="#estilos"><b>Estilos</b><small>Do rock & roll ao extremo</small></a>
     <a href="instrument-masters.html"><b>Instrument Masters</b><small>Baixo, bateria e além</small></a>
-    <a href="cenas.html"><b>Cenas</b><small>Cidades, festivais e movimentos</small></a>
-    <a href="nomads.html"><b>Nomads</b><small>Instrument sessions e audiovisual</small></a>
+    <a href="#cenas"><b>Cenas</b><small>Cidades, festivais e movimentos</small></a>
+    <a href="#nomads"><b>Nomads</b><small>Instrument sessions e audiovisual</small></a>
     <a href="historias/cannibal-corpse.html"><b>Death Metal</b><small>Cannibal Corpse · Alex Webster</small></a>
     <a href="#progressive-brief"><b>Progressive</b><small>Fronteiras da composição · briefing Mr. Nomad</small></a>
     <a href="radio.html"><b>Live</b><small>Broadcasts e arquivos ao vivo</small></a>
@@ -202,7 +215,7 @@
   <div class="shell footer__grid">
     <div class="footer-brand"><a href="index.html"><img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="46" height="46"><strong>Passport Radio</strong></a><p>Music · History · Culture · Live</p></div>
     <div class="footer-col"><strong>CONTEÚDO</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#resenhas">Resenhas</a><a href="index.html#agenda">Agenda de shows</a></div>
-    <div class="footer-col"><strong>EXPLORAR</strong><a href="brasil.html">Rock Brasileiro</a><a href="estilos.html">Estilos</a><a href="instrument-masters.html">Instrument Masters</a><a href="cenas.html">Cenas</a><a href="nomads.html">Nomads</a></div>
+    <div class="footer-col"><strong>EXPLORAR</strong><a href="#rock-brasileiro">Rock Brasileiro</a><a href="#estilos">Estilos</a><a href="instrument-masters.html">Instrument Masters</a><a href="#cenas">Cenas</a><a href="#nomads">Nomads</a></div>
     <div class="footer-col"><strong>OUVIR & COMPRAR</strong><a href="radio.html">Ao Vivo</a><a href="loja.html">Passport Store</a><a href="index.html#apoie">Apoie</a></div>
     <div class="footer-col"><strong>CONTATO</strong><a href="contato.html">Central de contato</a><a href="mailto:passport@passportradio.online">E-mail</a></div>
   </div>
