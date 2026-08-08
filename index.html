@@ -421,6 +421,247 @@
       .footer__grid{grid-template-columns:1fr 1fr;gap:20px 18px}
       .footer__bottom{display:grid;gap:5px}
     }
+
+    /* cookie consent — Passport Radio white / black / red */
+    .cookie-banner{
+      position:fixed;
+      left:18px;
+      right:18px;
+      bottom:64px;
+      z-index:12000;
+      display:none;
+      width:min(calc(100% - 36px),1180px);
+      margin:0 auto;
+      padding:18px 18px 16px;
+      border:1px solid #d9d9d9;
+      border-top:3px solid var(--red);
+      background:rgba(255,255,255,.985);
+      color:#111;
+      box-shadow:0 16px 46px rgba(0,0,0,.18);
+      backdrop-filter:blur(12px)
+    }
+    .cookie-banner.is-visible{display:block}
+    .cookie-banner__grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:22px;
+      align-items:center
+    }
+    .cookie-banner__label{
+      display:block;
+      margin-bottom:5px;
+      color:var(--red);
+      font-size:.54rem;
+      font-weight:900;
+      letter-spacing:.13em;
+      text-transform:uppercase
+    }
+    .cookie-banner h2{
+      font-size:1.22rem;
+      line-height:1.06;
+      letter-spacing:-.025em
+    }
+    .cookie-banner p{
+      max-width:780px;
+      margin-top:7px;
+      color:#6f6f6f;
+      font-size:.67rem;
+      line-height:1.55
+    }
+    .cookie-banner__actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:8px
+    }
+    .cookie-btn{
+      min-height:40px;
+      padding:0 14px;
+      border:1px solid #111;
+      background:#fff;
+      color:#111;
+      font-size:.57rem;
+      font-weight:900;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+      cursor:pointer
+    }
+    .cookie-btn:hover{background:#111;color:#fff}
+    .cookie-btn--primary{
+      border-color:var(--red);
+      background:var(--red);
+      color:#fff;
+      animation:cookieAcceptPulse 1.9s ease-in-out infinite
+    }
+    .cookie-btn--primary:hover{
+      border-color:#111;
+      background:#111;
+      color:#fff;
+      animation:none
+    }
+    @keyframes cookieAcceptPulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(215,25,32,0)}
+      50%{box-shadow:0 0 20px 4px rgba(215,25,32,.24)}
+    }
+
+    .cookie-modal{
+      position:fixed;
+      inset:0;
+      z-index:13000;
+      display:none;
+      place-items:center;
+      padding:20px;
+      background:rgba(0,0,0,.42)
+    }
+    .cookie-modal.is-visible{display:grid}
+    .cookie-modal__panel{
+      width:min(100%,680px);
+      max-height:min(86vh,760px);
+      overflow:auto;
+      border:1px solid #d9d9d9;
+      border-top:4px solid var(--red);
+      background:#fff;
+      color:#111;
+      box-shadow:0 24px 80px rgba(0,0,0,.24)
+    }
+    .cookie-modal__head{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:flex-start;
+      padding:22px;
+      border-bottom:1px solid var(--line)
+    }
+    .cookie-modal__head small{
+      display:block;
+      color:var(--red);
+      font-size:.54rem;
+      font-weight:900;
+      letter-spacing:.13em;
+      text-transform:uppercase
+    }
+    .cookie-modal__head h2{
+      margin-top:5px;
+      font-size:1.65rem;
+      letter-spacing:-.035em
+    }
+    .cookie-close{
+      width:36px;
+      height:36px;
+      border:1px solid #111;
+      background:#fff;
+      color:#111;
+      cursor:pointer
+    }
+    .cookie-close:hover{background:#111;color:#fff}
+    .cookie-modal__body{padding:22px}
+    .cookie-modal__intro{
+      margin-bottom:18px;
+      color:#6f6f6f;
+      font-size:.69rem;
+      line-height:1.6
+    }
+    .cookie-choice{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      padding:17px 0;
+      border-top:1px solid var(--line);
+      align-items:center
+    }
+    .cookie-choice strong{display:block;font-size:.76rem}
+    .cookie-choice p{
+      margin-top:5px;
+      color:#777;
+      font-size:.62rem;
+      line-height:1.5
+    }
+    .cookie-choice__status{
+      color:#777;
+      font-size:.55rem;
+      font-weight:900;
+      text-transform:uppercase
+    }
+    .cookie-switch{
+      position:relative;
+      width:48px;
+      height:26px;
+      display:inline-block
+    }
+    .cookie-switch input{
+      width:1px;
+      height:1px;
+      opacity:0;
+      position:absolute
+    }
+    .cookie-switch span{
+      position:absolute;
+      inset:0;
+      border-radius:999px;
+      background:#d2d2d2;
+      cursor:pointer;
+      transition:.2s
+    }
+    .cookie-switch span::after{
+      content:"";
+      position:absolute;
+      width:20px;
+      height:20px;
+      left:3px;
+      top:3px;
+      border-radius:50%;
+      background:#fff;
+      box-shadow:0 1px 4px rgba(0,0,0,.18);
+      transition:.2s
+    }
+    .cookie-switch input:checked + span{background:var(--red)}
+    .cookie-switch input:checked + span::after{transform:translateX(22px)}
+    .cookie-modal__actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:8px;
+      padding:18px 22px 22px;
+      border-top:1px solid var(--line)
+    }
+    .cookie-policy{
+      padding:0 22px 22px;
+      color:#777;
+      font-size:.58rem;
+      line-height:1.6
+    }
+    .cookie-settings-link{
+      border:0;
+      padding:0;
+      background:none;
+      color:#aaa;
+      font:inherit;
+      font-size:.62rem;
+      cursor:pointer;
+      text-align:left
+    }
+    .cookie-settings-link:hover{color:#fff}
+
+    @media(max-width:760px){
+      .cookie-banner{
+        left:8px;
+        right:8px;
+        bottom:58px;
+        width:auto;
+        padding:15px
+      }
+      .cookie-banner__grid{grid-template-columns:1fr}
+      .cookie-banner__actions{justify-content:flex-start}
+      .cookie-btn{flex:1 1 auto}
+      .cookie-modal{padding:8px}
+      .cookie-modal__head,.cookie-modal__body{padding:18px}
+      .cookie-modal__actions{padding:14px 18px 18px}
+      .cookie-policy{padding:0 18px 18px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .cookie-btn--primary{animation:none}
+    }
+
   </style>
 </head>
 
@@ -751,7 +992,7 @@
       <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#agenda">Agenda de shows</a><a href="#broadcasts">Broadcasts</a></div>
       <div class="footer-col"><strong>EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explore Music</a><a href="instrument-masters.html#drums">Drum Masters</a><a href="instrument-masters.html#bass">Bass Masters</a></div>
       <div class="footer-col"><strong>COMERCIAL</strong><a href="loja.html">Passport Store</a><a href="#anuncie">Anuncie</a><a href="#apoie">Apoie</a><a href="#contato">Contato</a></div>
-      <div class="footer-col"><strong>REDES</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a></div>
+      <div class="footer-col"><strong>REDES & PRIVACIDADE</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a><button class="cookie-settings-link" type="button" data-cookie-settings>Preferências de cookies</button></div>
     </div>
 
     <div class="shell footer__bottom">
@@ -759,6 +1000,76 @@
       <span>Operação comercial e pagamentos: <strong>Guiropa World</strong>.</span>
     </div>
   </footer>
+
+
+  <aside class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-labelledby="cookie-title">
+    <div class="cookie-banner__grid">
+      <div>
+        <span class="cookie-banner__label">PRIVACIDADE & COOKIES</span>
+        <h2 id="cookie-title">Sua escolha. Seus dados.</h2>
+        <p>A Passport Radio usa tecnologias essenciais para funcionar e, com sua autorização, recursos de audiência e mídia externa para entender o que interessa e melhorar a experiência. Sua escolha fica salva neste navegador e pode ser alterada depois.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-btn cookie-btn--primary" type="button" data-cookie-accept>ACEITAR TODOS</button>
+        <button class="cookie-btn" type="button" data-cookie-essential>SOMENTE ESSENCIAIS</button>
+        <button class="cookie-btn" type="button" data-cookie-preferences>PREFERÊNCIAS</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="cookie-modal" id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <div class="cookie-modal__panel">
+      <div class="cookie-modal__head">
+        <div>
+          <small>CONTROLE DE PRIVACIDADE</small>
+          <h2 id="cookie-modal-title">Preferências de cookies</h2>
+        </div>
+        <button class="cookie-close" type="button" data-cookie-close aria-label="Fechar">×</button>
+      </div>
+
+      <div class="cookie-modal__body">
+        <p class="cookie-modal__intro">Os essenciais permanecem ativos porque sustentam funções básicas e permitem lembrar a sua escolha. As demais categorias só ficam autorizadas quando você permitir.</p>
+
+        <div class="cookie-choice">
+          <div>
+            <strong>Essenciais</strong>
+            <p>Recursos básicos do site e armazenamento da sua preferência de privacidade. Sempre ativos.</p>
+          </div>
+          <div><span class="cookie-choice__status">Sempre ativo</span></div>
+        </div>
+
+        <div class="cookie-choice">
+          <div>
+            <strong>Audiência & desempenho</strong>
+            <p>Permite, quando houver ferramenta configurada para isso, medir visitas e entender quais conteúdos funcionam melhor.</p>
+          </div>
+          <label class="cookie-switch" aria-label="Permitir audiência e desempenho">
+            <input id="cookie-analytics" type="checkbox">
+            <span></span>
+          </label>
+        </div>
+
+        <div class="cookie-choice">
+          <div>
+            <strong>Mídia externa</strong>
+            <p>Autoriza recursos incorporados de terceiros, como players e conteúdos externos, quando uma página usar esse tipo de integração.</p>
+          </div>
+          <label class="cookie-switch" aria-label="Permitir mídia externa">
+            <input id="cookie-media" type="checkbox">
+            <span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cookie-modal__actions">
+        <button class="cookie-btn" type="button" data-cookie-essential>SOMENTE ESSENCIAIS</button>
+        <button class="cookie-btn cookie-btn--primary" type="button" data-cookie-save>SALVAR PREFERÊNCIAS</button>
+        <button class="cookie-btn cookie-btn--primary" type="button" data-cookie-accept>ACEITAR TODOS</button>
+      </div>
+
+      <p class="cookie-policy">A Passport Radio não vende sua escolha de privacidade. Este painel está preparado para controlar recursos não essenciais quando forem utilizados no site. Operação comercial: Guiropa World.</p>
+    </div>
+  </div>
 
   <div class="quick-contact" aria-label="Contato rápido">
     <a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -786,6 +1097,92 @@
         menuButton.setAttribute('aria-expanded','false');
       }));
     }
+
+    (() => {
+      const STORAGE_KEY='passport_cookie_consent_v1';
+      const banner=document.getElementById('cookie-banner');
+      const modal=document.getElementById('cookie-modal');
+      const analytics=document.getElementById('cookie-analytics');
+      const media=document.getElementById('cookie-media');
+
+      if(!banner || !modal) return;
+
+      const readConsent=()=>{
+        try{
+          const raw=localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : null;
+        }catch(e){
+          return null;
+        }
+      };
+
+      const applyConsent=(value)=>{
+        document.documentElement.dataset.cookieAnalytics=String(Boolean(value?.analytics));
+        document.documentElement.dataset.cookieMedia=String(Boolean(value?.media));
+        window.dispatchEvent(new CustomEvent('passport:consentchange',{detail:value}));
+      };
+
+      const writeConsent=(prefs)=>{
+        const value={
+          essential:true,
+          analytics:Boolean(prefs.analytics),
+          media:Boolean(prefs.media),
+          updatedAt:new Date().toISOString()
+        };
+
+        try{
+          localStorage.setItem(STORAGE_KEY,JSON.stringify(value));
+        }catch(e){}
+
+        applyConsent(value);
+        banner.classList.remove('is-visible');
+        modal.classList.remove('is-visible');
+        return value;
+      };
+
+      const openPreferences=()=>{
+        const current=readConsent() || {analytics:false,media:false};
+        analytics.checked=Boolean(current.analytics);
+        media.checked=Boolean(current.media);
+        modal.classList.add('is-visible');
+      };
+
+      const current=readConsent();
+
+      if(current){
+        applyConsent(current);
+      }else{
+        banner.classList.add('is-visible');
+      }
+
+      document.querySelectorAll('[data-cookie-accept]').forEach(btn=>{
+        btn.addEventListener('click',()=>writeConsent({analytics:true,media:true}));
+      });
+
+      document.querySelectorAll('[data-cookie-essential]').forEach(btn=>{
+        btn.addEventListener('click',()=>writeConsent({analytics:false,media:false}));
+      });
+
+      document.querySelectorAll('[data-cookie-preferences],[data-cookie-settings]').forEach(btn=>{
+        btn.addEventListener('click',openPreferences);
+      });
+
+      document.querySelector('[data-cookie-save]')?.addEventListener('click',()=>{
+        writeConsent({analytics:analytics.checked,media:media.checked});
+      });
+
+      document.querySelector('[data-cookie-close]')?.addEventListener('click',()=>{
+        modal.classList.remove('is-visible');
+      });
+
+      modal.addEventListener('click',(event)=>{
+        if(event.target===modal) modal.classList.remove('is-visible');
+      });
+
+      document.addEventListener('keydown',(event)=>{
+        if(event.key==='Escape') modal.classList.remove('is-visible');
+      });
+    })();
   </script>
 </body>
 </html>
