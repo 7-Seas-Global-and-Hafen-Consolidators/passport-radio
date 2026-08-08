@@ -1,0 +1,1177 @@
+/* ==========================================================
+   PASSPORT RADIO — HISTÓRIAS / MR. NOMAD
+   Editorial White System v1
+   ========================================================== */
+
+:root{
+  --story-bg:#ffffff;
+  --story-soft:#f5f5f3;
+  --story-ink:#111111;
+  --story-muted:#6d6d6d;
+  --story-faint:#909090;
+  --story-line:#e2e2e2;
+  --story-red:#d71920;
+  --story-black:#101010;
+  --story-shell:1240px;
+  --story-reading:760px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body.story-page{
+  margin:0;
+  overflow-x:hidden;
+  background:var(--story-bg);
+  color:var(--story-ink);
+  font-family:Inter,Montserrat,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+body.story-page img{
+  display:block;
+  max-width:100%;
+}
+
+body.story-page a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* ==========================================================
+   HEADER — SOBRESCREVE O STYLE.CSS ESCURO
+   ========================================================== */
+
+.story-page .site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  min-height:68px;
+
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:24px;
+
+  padding-inline:max(
+    18px,
+    calc((100vw - var(--story-shell))/2)
+  );
+
+  border-bottom:1px solid var(--story-line);
+
+  background:rgba(255,255,255,.97);
+
+  backdrop-filter:blur(14px);
+}
+
+.story-page .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:max-content;
+}
+
+.story-page .brand-mark{
+  display:grid;
+  place-items:center;
+
+  width:34px;
+  height:34px;
+
+  border:1px solid #222;
+  border-radius:50%;
+
+  color:#111;
+
+  font-size:.72rem;
+  font-weight:900;
+}
+
+.story-page .brand strong{
+  display:block;
+
+  color:#111;
+
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+}
+
+.story-page .brand small{
+  display:block;
+
+  margin-top:1px;
+
+  color:#777;
+
+  font-size:.52rem;
+}
+
+.story-page .main-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:22px;
+}
+
+.story-page .main-nav a{
+  color:#222;
+
+  font-size:.7rem;
+  font-weight:800;
+}
+
+.story-page .main-nav a:hover{
+  color:var(--story-red);
+}
+
+.story-page .header-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.story-page .header-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:34px;
+
+  padding:0 13px;
+
+  border:1px solid #d8d8d8;
+  border-radius:999px;
+
+  background:#fff;
+
+  color:#111;
+
+  font-size:.62rem;
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+.story-page .header-chip--live{
+  border-color:var(--story-red);
+}
+
+.story-page .header-chip--live::before{
+  content:"";
+
+  width:7px;
+  height:7px;
+
+  margin-right:7px;
+
+  border-radius:50%;
+
+  background:var(--story-red);
+}
+
+.story-page .nav-toggle{
+  display:none;
+
+  border:0;
+
+  background:none;
+
+  color:#111;
+
+  font-size:.72rem;
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   STORY BASE
+   ========================================================== */
+
+.story{
+  width:100%;
+}
+
+.story-kicker,
+.story-label{
+  display:block;
+
+  color:#666;
+
+  font-size:.6rem;
+  font-weight:900;
+
+  letter-spacing:.16em;
+
+  text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.story-hero{
+  width:min(
+    calc(100% - 36px),
+    var(--story-shell)
+  );
+
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.25fr)
+    minmax(380px,.75fr);
+
+  min-height:560px;
+
+  border-bottom:1px solid var(--story-line);
+}
+
+.story-hero__image{
+  min-height:560px;
+
+  overflow:hidden;
+
+  background:#ececec;
+}
+
+.story-hero__image img{
+  width:100%;
+  height:100%;
+
+  min-height:560px;
+
+  object-fit:cover;
+}
+
+.story-hero__copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  padding:48px 42px;
+}
+
+.story-hero h1{
+  margin:10px 0 0;
+
+  max-width:9ch;
+
+  color:#111;
+
+  font-size:clamp(
+    3.2rem,
+    6vw,
+    7rem
+  );
+
+  font-weight:900;
+
+  line-height:.84;
+
+  letter-spacing:-.065em;
+}
+
+.story-deck{
+  max-width:520px;
+
+  margin:24px 0 0;
+
+  color:#4f4f4f;
+
+  font-size:1rem;
+
+  line-height:1.6;
+}
+
+.story-meta{
+  margin-top:26px;
+
+  padding-top:16px;
+
+  border-top:1px solid var(--story-line);
+
+  color:#777;
+
+  font-size:.62rem;
+  font-weight:800;
+
+  letter-spacing:.09em;
+
+  text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   READING SECTIONS
+   ========================================================== */
+
+.story-section{
+  padding:82px 20px;
+
+  border-bottom:1px solid var(--story-line);
+
+  background:#fff;
+}
+
+.story-content{
+  width:min(
+    100%,
+    var(--story-reading)
+  );
+
+  margin:0 auto;
+}
+
+.story-content--wide{
+  width:min(
+    100%,
+    1080px
+  );
+}
+
+.story-section h2{
+  max-width:800px;
+
+  margin:12px 0 0;
+
+  color:#111;
+
+  font-size:clamp(
+    2rem,
+    4vw,
+    4rem
+  );
+
+  line-height:.98;
+
+  letter-spacing:-.045em;
+}
+
+.story-section p{
+  margin:24px 0 0;
+
+  color:#4e4e4e;
+
+  font-size:.98rem;
+
+  line-height:1.86;
+}
+
+.story-intro .story-lead{
+  color:#111;
+
+  font-size:1.25rem;
+  font-weight:700;
+
+  line-height:1.58;
+}
+
+.story-nomad{
+  margin-top:34px !important;
+
+  padding:22px 0 0;
+
+  border-top:3px solid #111;
+
+  color:#111 !important;
+
+  font-size:1.05rem !important;
+
+  font-weight:800;
+}
+
+
+/* ==========================================================
+   DARK INTERRUPTION
+   ========================================================== */
+
+.story-section--dark{
+  border-bottom:0;
+
+  background:var(--story-black);
+
+  color:#fff;
+}
+
+.story-section--dark .story-label{
+  color:#888;
+}
+
+.story-section--dark h2{
+  color:#fff;
+}
+
+.story-section--dark p{
+  color:#b7b7b7;
+}
+
+
+/* ==========================================================
+   WHO PLAYS WHAT
+   ========================================================== */
+
+.musician-grid{
+  margin-top:36px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(5,minmax(0,1fr));
+
+  border-top:1px solid var(--story-line);
+  border-left:1px solid var(--story-line);
+}
+
+.musician-card{
+  min-height:220px;
+
+  padding:20px;
+
+  border-right:1px solid var(--story-line);
+  border-bottom:1px solid var(--story-line);
+
+  background:#fff;
+}
+
+.musician-card span{
+  color:#777;
+
+  font-size:.55rem;
+  font-weight:900;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+}
+
+.musician-card h3{
+  margin:15px 0 0;
+
+  color:#111;
+
+  font-size:1.05rem;
+
+  line-height:1.1;
+}
+
+.musician-card p{
+  margin:12px 0 0;
+
+  color:#777;
+
+  font-size:.7rem;
+
+  line-height:1.55;
+}
+
+.musician-card--featured{
+  background:#111;
+}
+
+.musician-card--featured span{
+  color:var(--story-red);
+}
+
+.musician-card--featured h3{
+  color:#fff;
+}
+
+.musician-card--featured p{
+  color:#aaa;
+}
+
+
+/* ==========================================================
+   FEATURE — ALEX WEBSTER
+   ========================================================== */
+
+.story-feature{
+  width:min(
+    calc(100% - 36px),
+    var(--story-shell)
+  );
+
+  margin:80px auto;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.05fr)
+    minmax(380px,.95fr);
+
+  background:#111;
+}
+
+.story-feature__image{
+  min-height:640px;
+
+  overflow:hidden;
+}
+
+.story-feature__image img{
+  width:100%;
+  height:100%;
+
+  min-height:640px;
+
+  object-fit:cover;
+}
+
+.story-feature__copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  padding:50px;
+}
+
+.story-feature .story-label{
+  color:var(--story-red);
+}
+
+.story-feature h2{
+  margin:10px 0 0;
+
+  color:#fff;
+
+  font-size:clamp(
+    2.4rem,
+    4vw,
+    4.8rem
+  );
+
+  line-height:.95;
+
+  letter-spacing:-.05em;
+}
+
+.story-feature p{
+  margin:20px 0 0;
+
+  color:#b3b3b3;
+
+  font-size:.9rem;
+
+  line-height:1.75;
+}
+
+.story-feature blockquote{
+  margin:34px 0 0;
+
+  padding:22px 0 0;
+
+  border-top:3px solid var(--story-red);
+
+  color:#fff;
+
+  font-size:1.2rem;
+  font-weight:800;
+
+  line-height:1.45;
+}
+
+
+/* ==========================================================
+   ESSENTIAL RECORDS
+   ========================================================== */
+
+.story-list{
+  margin-top:34px;
+
+  border-top:2px solid #111;
+}
+
+.story-list div{
+  display:grid;
+
+  grid-template-columns:1fr auto;
+
+  gap:20px;
+
+  align-items:center;
+
+  padding:18px 0;
+
+  border-bottom:1px solid var(--story-line);
+}
+
+.story-list strong{
+  color:#111;
+
+  font-size:1rem;
+}
+
+.story-list span{
+  color:#777;
+
+  font-size:.68rem;
+  font-weight:800;
+}
+
+
+/* ==========================================================
+   START HERE / TRACKS
+   ========================================================== */
+
+.track-list{
+  margin-top:36px;
+
+  border-top:1px solid #333;
+}
+
+.track-list div{
+  display:grid;
+
+  grid-template-columns:52px 1fr;
+
+  gap:15px;
+
+  align-items:center;
+
+  padding:17px 0;
+
+  border-bottom:1px solid #333;
+}
+
+.track-list span{
+  color:var(--story-red);
+
+  font-size:.67rem;
+  font-weight:900;
+}
+
+.track-list strong{
+  color:#fff;
+
+  font-size:.95rem;
+}
+
+
+/* ==========================================================
+   FACTS
+   ========================================================== */
+
+.fact-grid{
+  margin-top:36px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:1px;
+
+  background:var(--story-line);
+
+  border:1px solid var(--story-line);
+}
+
+.fact-grid article{
+  padding:28px;
+
+  background:#fff;
+}
+
+.fact-grid strong{
+  display:block;
+
+  color:var(--story-red);
+
+  font-size:.75rem;
+}
+
+.fact-grid p{
+  margin:10px 0 0;
+
+  color:#555;
+
+  font-size:.82rem;
+
+  line-height:1.65;
+}
+
+
+/* ==========================================================
+   MR NOMAD CLOSING
+   ========================================================== */
+
+.nomad-closing{
+  padding:110px 20px;
+
+  background:#f5f5f3;
+}
+
+.nomad-closing h2{
+  max-width:800px;
+
+  margin:12px 0 0;
+
+  color:#111;
+
+  font-size:clamp(
+    2.5rem,
+    5vw,
+    5rem
+  );
+
+  line-height:.92;
+
+  letter-spacing:-.055em;
+}
+
+.nomad-closing p{
+  margin:24px 0 0;
+
+  color:#555;
+
+  font-size:1rem;
+
+  line-height:1.8;
+}
+
+.nomad-signature{
+  margin-top:38px !important;
+
+  color:#111 !important;
+
+  font-weight:900;
+}
+
+
+/* ==========================================================
+   NEXT STORY
+   ========================================================== */
+
+.next-story{
+  width:min(
+    calc(100% - 36px),
+    var(--story-shell)
+  );
+
+  margin:0 auto;
+
+  padding:50px 0 72px;
+
+  display:grid;
+
+  grid-template-columns:160px 1fr;
+
+  gap:30px;
+
+  border-top:1px solid var(--story-line);
+}
+
+.next-story > span{
+  color:#777;
+
+  font-size:.57rem;
+  font-weight:900;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+}
+
+.next-story a{
+  display:grid;
+
+  gap:5px;
+}
+
+.next-story small{
+  color:#777;
+
+  font-size:.56rem;
+  font-weight:800;
+
+  text-transform:uppercase;
+}
+
+.next-story strong{
+  color:#111;
+
+  font-size:clamp(
+    1.8rem,
+    4vw,
+    4rem
+  );
+
+  line-height:.95;
+
+  letter-spacing:-.045em;
+}
+
+.next-story a:hover strong{
+  color:var(--story-red);
+}
+
+
+/* ==========================================================
+   FOOTER OVERRIDE
+   ========================================================== */
+
+.story-page .footer{
+  padding:32px 0 84px;
+
+  border-top:0;
+
+  background:#111;
+
+  color:#fff;
+}
+
+.story-page .footer-grid{
+  display:grid;
+
+  grid-template-columns:
+    1.25fr repeat(4,1fr);
+
+  gap:24px;
+}
+
+.story-page .footer strong{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:#fff;
+
+  font-size:.67rem;
+
+  text-transform:uppercase;
+}
+
+.story-page .footer a,
+.story-page .footer p{
+  display:block;
+
+  margin:5px 0;
+
+  color:#aaa;
+
+  font-size:.64rem;
+}
+
+.story-page .footer a:hover{
+  color:#fff;
+}
+
+.story-page .footer-bottom{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:16px;
+
+  margin-top:24px;
+
+  padding-top:16px;
+
+  border-top:1px solid #333;
+
+  color:#777;
+
+  font-size:.58rem;
+}
+
+.story-page .footer-bottom b{
+  color:#fff;
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+.story-page .skip-link{
+  position:fixed;
+
+  left:14px;
+  top:14px;
+
+  z-index:9999;
+
+  transform:translateY(-180%);
+
+  padding:10px 14px;
+
+  background:#111;
+
+  color:#fff;
+
+  font-weight:900;
+}
+
+.story-page .skip-link:focus{
+  transform:none;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media(max-width:1050px){
+
+  .story-page .main-nav{
+    gap:12px;
+  }
+
+  .story-page .main-nav a{
+    font-size:.62rem;
+  }
+
+  .story-hero{
+    grid-template-columns:
+      minmax(0,1.1fr)
+      minmax(340px,.9fr);
+  }
+
+  .musician-grid{
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+  }
+
+  .story-feature{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE NAV / TABLET
+   ========================================================== */
+
+@media(max-width:900px){
+
+  .story-page .site-header{
+    grid-template-columns:
+      auto auto auto;
+  }
+
+  .story-page .nav-toggle{
+    display:block;
+  }
+
+  .story-page .main-nav{
+    position:absolute;
+
+    top:68px;
+    left:0;
+    right:0;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    gap:0;
+
+    padding:12px 18px;
+
+    border-bottom:1px solid var(--story-line);
+
+    background:#fff;
+  }
+
+  .story-page .main-nav.is-open{
+    display:flex;
+  }
+
+  .story-page .main-nav a{
+    padding:11px 0;
+
+    border-bottom:1px solid var(--story-line);
+
+    color:#111;
+  }
+
+  .story-hero{
+    grid-template-columns:1fr;
+  }
+
+  .story-hero__image,
+  .story-hero__image img{
+    min-height:420px;
+  }
+
+  .story-hero__copy{
+    padding:34px 0 46px;
+  }
+
+  .story-hero h1{
+    max-width:none;
+  }
+
+  .story-feature{
+    grid-template-columns:1fr;
+
+    margin:60px auto;
+  }
+
+  .story-feature__image,
+  .story-feature__image img{
+    min-height:480px;
+  }
+
+  .story-feature__copy{
+    padding:38px;
+  }
+
+  .musician-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media(max-width:640px){
+
+  .story-page .site-header{
+    min-height:60px;
+
+    padding-inline:12px;
+  }
+
+  .story-page .brand small{
+    display:none;
+  }
+
+  .story-page .header-chip--live{
+    padding:0 9px;
+  }
+
+  .story-hero{
+    width:min(
+      calc(100% - 20px),
+      var(--story-shell)
+    );
+  }
+
+  .story-hero__image,
+  .story-hero__image img{
+    min-height:300px;
+  }
+
+  .story-hero__copy{
+    padding:26px 0 34px;
+  }
+
+  .story-hero h1{
+    font-size:3.5rem;
+  }
+
+  .story-deck{
+    font-size:.9rem;
+  }
+
+  .story-section{
+    padding:58px 14px;
+  }
+
+  .story-section h2{
+    font-size:2.2rem;
+  }
+
+  .story-section p{
+    font-size:.9rem;
+    line-height:1.75;
+  }
+
+  .story-intro .story-lead{
+    font-size:1.08rem;
+  }
+
+  .musician-grid{
+    grid-template-columns:1fr;
+  }
+
+  .musician-card{
+    min-height:auto;
+  }
+
+  .story-feature{
+    width:min(
+      calc(100% - 20px),
+      var(--story-shell)
+    );
+
+    margin:40px auto;
+  }
+
+  .story-feature__image,
+  .story-feature__image img{
+    min-height:340px;
+  }
+
+  .story-feature__copy{
+    padding:28px 22px;
+  }
+
+  .story-feature h2{
+    font-size:2.5rem;
+  }
+
+  .fact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .nomad-closing{
+    padding:72px 14px;
+  }
+
+  .nomad-closing h2{
+    font-size:3rem;
+  }
+
+  .next-story{
+    width:min(
+      calc(100% - 20px),
+      var(--story-shell)
+    );
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+
+    padding:38px 0 58px;
+  }
+
+  .story-page .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .story-page .footer-grid > div:first-child{
+    grid-column:1/-1;
+  }
+
+  .story-page .footer-bottom{
+    flex-direction:column;
+  }
+
+}
