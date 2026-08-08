@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Boutique oficial da Passport Radio.">
-<meta name="theme-color" content="#070809">
+<meta name="description" content="Passport Store — camisetas, canecas e produtos ligados à cultura musical.">
+<meta name="theme-color" content="#ffffff">
 <title>Loja | Passport Radio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css?v=30">
-
+<link rel="stylesheet" href="/css/loja.css?v=21">
 </head>
-<body>
+<body class="store-page">
 
 <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+<div class="store-topline">PREÇO DIRETO · PAGAMENTO FACILITADO · FRETE GRÁTIS EM PRODUTOS SELECIONADOS</div>
+
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="Passport Radio">
     <span class="brand-mark">PR</span>
@@ -27,58 +30,515 @@
     <a href="radio.html">Ao Vivo</a>
     <a href="destinos.html">Explorar</a>
     <a href="exposicao.html?colecao=drum-masters">Arquivos</a>
-    <a href="loja.html">Loja</a>
+    <a href="loja.html" aria-current="page">Loja</a>
     <a href="contato.html">Contato</a>
   </nav>
-  <div class="header-actions">
-    <a class="header-chip header-chip--live" href="radio.html">ON AIR</a>
-  </div>
+  <div class="header-actions"><a class="header-chip header-chip--live" href="radio.html">ON AIR</a></div>
 </header>
 
 <main id="conteudo">
 
-<section class="page-hero"><div class="shell">
-  <span class="kicker">Official Merch</span>
-  <h1>Vista a música. Leve a atitude.</h1>
-  <p>Uma loja direta, visual e simples. Sem catálogo sem fim no primeiro clique: escolha a família, veja o acervo e fale com a equipe.</p>
-</div></section>
-<section class="section"><div class="shell shop-hero">
-  <div class="shop-hero__media"><img src="/images/boutique/camisetas-rock.png" alt="Camisetas da Passport Radio"></div>
-  <div class="shop-hero__copy"><span class="kicker">Camisetas</span><h1>Rock não é uniforme. É identidade.</h1><p>Clássicos, metal, alternative, punk, pop e muito mais. Atendimento direto para disponibilidade e tamanhos.</p><div class="contact-actions" style="margin-top:18px"><a class="button button--red" href="https://wa.me/48732099369?text=Olá%2C%20quero%20ver%20as%20camisetas%20da%20Boutique%20Passport%20Radio." target="_blank" rel="noopener">Quero camisetas</a></div></div>
-</div></section>
-<section class="section"><div class="shell">
-  <div class="section-head"><div><span class="kicker">Coleções</span><h2 class="section-title">Escolha por família.</h2></div><p>Produtos organizados para comprar rápido, sem transformar a página num catálogo interminável.</p></div>
-  <div class="shop-grid">
-    <article class="product-card"><img src="/images/boutique/acessorios-escritorio-e-tecnologia.png" alt=""><div class="product-card__body"><span class="kicker">Desk & Tech</span><h3>Acessórios, escritório e tecnologia.</h3><p>Objetos para mesa, trabalho e uso diário.</p><a class="button" href="https://wa.me/48732099369?text=Olá%2C%20quero%20ver%20Desk%20%26%20Tech%20da%20Passport%20Radio." target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="product-card"><img src="/images/boutique/chaveiros-colecao-premium.png" alt=""><div class="product-card__body"><span class="kicker">Accessories</span><h3>Chaveiros e pequenos objetos.</h3><p>Bandas, símbolos e coleções para carregar.</p><a class="button" href="https://wa.me/48732099369?text=Olá%2C%20quero%20ver%20os%20acessórios%20da%20Passport%20Radio." target="_blank" rel="noopener">Consultar</a></div></article>
-    <article class="product-card"><img src="/images/boutique/camisetas-rock.png" alt=""><div class="product-card__body"><span class="kicker">Apparel</span><h3>Camisetas e vestuário.</h3><p>Do classic rock ao metal, punk e alternative.</p><a class="button" href="https://wa.me/48732099369?text=Olá%2C%20quero%20ver%20o%20vestuário%20da%20Passport%20Radio." target="_blank" rel="noopener">Consultar</a></div></article>
+<section class="store-hero">
+  <div class="store-shell">
+    <span class="store-eyebrow">Passport Store</span>
+    <h1>Rock não é uniforme.<br>É identidade.</h1>
+    <p>Camisetas, canecas e peças para quem carrega música fora dos fones. Produto na tela, preço na tela e compra sem novela.</p>
+    <div class="store-pills" aria-label="Categorias">
+      <button class="store-pill is-active" data-filter="all">Todos</button>
+      <button class="store-pill" data-filter="camiseta">Camisetas</button>
+      <button class="store-pill" data-filter="caneca">Canecas</button>
+      <button class="store-pill" data-filter="manga-longa">Manga longa</button>
+      <button class="store-pill" data-filter="baby-look">Feminino</button>
+    </div>
   </div>
-  <p style="margin:18px 0 0;color:var(--muted);font-size:.68rem">Compras e pagamentos são processados pela <strong>Guiropa World</strong>, estrutura operacional do projeto.</p>
-</div></section>
-<section class="section"><div class="shell contact-strip"><div><h2>Não encontrou o que queria?</h2><p>Chama no WhatsApp ou Telegram e pergunta direto.</p></div><div class="contact-actions"><a class="button button--red" href="https://wa.me/48732099369?text=Olá%2C%20quero%20falar%20sobre%20a%20Boutique%20Passport%20Radio." target="_blank" rel="noopener">WhatsApp</a><a class="button" href="https://t.me/m/t6seeX61ZTlk" target="_blank" rel="noopener">Telegram</a></div></div></section>
+</section>
+
+<div class="store-shell store-benefits">
+  <div class="store-benefit"><b>PREÇO DIRETO</b><small>Sem desconto cenográfico</small></div>
+  <div class="store-benefit"><b>ATÉ 5X*</b><small>Conforme condição do pagamento</small></div>
+  <div class="store-benefit"><b>FRETE GRÁTIS*</b><small>Em produtos participantes</small></div>
+  <div class="store-benefit"><b>ATENDIMENTO DIRETO</b><small>WhatsApp Passport Radio</small></div>
+</div>
+
+<section class="store-section">
+  <div class="store-shell">
+    <div class="store-section-head">
+      <div><span class="store-eyebrow">Destaques</span><h2>Entrou. Viu. Gostou. Comprou.</h2></div>
+      <p>Sem “consultar”. Sem catálogo escondido. O produto já chega com preço e botão de compra.</p>
+    </div>
+    <div class="product-grid" id="products">
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/foo-fighters-eagle.png" alt="Foo Fighters Eagle">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Foo Fighters Eagle</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Foo%20Fighters%20Eagle%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Foo%20Fighters%20Eagle%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Foo Fighters Eagle">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="vestido">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/rolling-stones-dress.png" alt="The Rolling Stones Tongue Classic">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Vestido</div>
+          <h3>The Rolling Stones Tongue Classic</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20The%20Rolling%20Stones%20Tongue%20Classic%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20The%20Rolling%20Stones%20Tongue%20Classic%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar The Rolling Stones Tongue Classic">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="vestido">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/guns-roses-dress.png" alt="Guns N' Roses Bullet Logo">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Vestido</div>
+          <h3>Guns N' Roses Bullet Logo</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Guns%20N%27%20Roses%20Bullet%20Logo%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Guns%20N%27%20Roses%20Bullet%20Logo%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Guns N' Roses Bullet Logo">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/scorpions-hurricane.png" alt="Scorpions Rock You Like A Hurricane">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Scorpions Rock You Like A Hurricane</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Scorpions%20Rock%20You%20Like%20A%20Hurricane%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Scorpions%20Rock%20You%20Like%20A%20Hurricane%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Scorpions Rock You Like A Hurricane">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/woodstock-69.png" alt="Woodstock 69 Poster">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Woodstock 69 Poster</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Woodstock%2069%20Poster%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Woodstock%2069%20Poster%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Woodstock 69 Poster">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="manga-longa">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/motorhead-long-sleeve.png" alt="Motörhead Iron Cross Sword">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Manga Longa</div>
+          <h3>Motörhead Iron Cross Sword</h3>
+          <div class="product-price">R$ 98,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Mot%C3%B6rhead%20Iron%20Cross%20Sword%20por%20R%24%2098%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Mot%C3%B6rhead%20Iron%20Cross%20Sword%20por%20R%24%2098%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Motörhead Iron Cross Sword">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta-especial">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/motorhead-snaggletooth.png" alt="Motörhead Snaggletooth">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta Especial</div>
+          <h3>Motörhead Snaggletooth</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Mot%C3%B6rhead%20Snaggletooth%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Mot%C3%B6rhead%20Snaggletooth%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Motörhead Snaggletooth">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="baby-look">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/matanza-fest.png" alt="Matanza Fest">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Baby Look</div>
+          <h3>Matanza Fest</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Matanza%20Fest%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Matanza%20Fest%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Matanza Fest">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="baby-look">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/slipknot-debut.png" alt="Slipknot Debut Album">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Baby Look</div>
+          <h3>Slipknot Debut Album</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Slipknot%20Debut%20Album%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Slipknot%20Debut%20Album%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Slipknot Debut Album">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/the-cure-boys-dont-cry.png" alt="The Cure Boys Don't Cry">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>The Cure Boys Don't Cry</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20The%20Cure%20Boys%20Don%27t%20Cry%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20The%20Cure%20Boys%20Don%27t%20Cry%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar The Cure Boys Don't Cry">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="manga-longa">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/iron-maiden-senjutsu-long.png" alt="Iron Maiden Senjutsu Album">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Manga Longa</div>
+          <h3>Iron Maiden Senjutsu Album</h3>
+          <div class="product-price">R$ 98,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Iron%20Maiden%20Senjutsu%20Album%20por%20R%24%2098%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Iron%20Maiden%20Senjutsu%20Album%20por%20R%24%2098%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Iron Maiden Senjutsu Album">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta-tie-dye">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/iron-maiden-trooper-tiedye.png" alt="Iron Maiden The Trooper Tie Dye">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta Tie Dye</div>
+          <h3>Iron Maiden The Trooper Tie Dye</h3>
+          <div class="product-price">R$ 88,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Iron%20Maiden%20The%20Trooper%20Tie%20Dye%20por%20R%24%2088%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Iron%20Maiden%20The%20Trooper%20Tie%20Dye%20por%20R%24%2088%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Iron Maiden The Trooper Tie Dye">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/type-o-negative-bloody-kisses.png" alt="Type O Negative Bloody Kisses">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Type O Negative Bloody Kisses</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Type%20O%20Negative%20Bloody%20Kisses%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Type%20O%20Negative%20Bloody%20Kisses%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Type O Negative Bloody Kisses">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/def-leppard-hysteria.png" alt="Def Leppard Hysteria">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Def Leppard Hysteria</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Def%20Leppard%20Hysteria%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Def%20Leppard%20Hysteria%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Def Leppard Hysteria">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/acdc-for-those.png" alt="AC/DC For Those About To Rock">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>AC/DC For Those About To Rock</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20AC/DC%20For%20Those%20About%20To%20Rock%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20AC/DC%20For%20Those%20About%20To%20Rock%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar AC/DC For Those About To Rock">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/slayer-seasons.png" alt="Slayer Seasons in the Abyss">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Slayer Seasons in the Abyss</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Slayer%20Seasons%20in%20the%20Abyss%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Slayer%20Seasons%20in%20the%20Abyss%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Slayer Seasons in the Abyss">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/foo-fighters-logo.png" alt="Foo Fighters Logo">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Foo Fighters Logo</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Foo%20Fighters%20Logo%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Foo%20Fighters%20Logo%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Foo Fighters Logo">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="camiseta">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/avenged-sevenfold-life.png" alt="Avenged Sevenfold Life Is But A Dream">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Camiseta</div>
+          <h3>Avenged Sevenfold Life Is But A Dream</h3>
+          <div class="product-price">R$ 78,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Avenged%20Sevenfold%20Life%20Is%20But%20A%20Dream%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Avenged%20Sevenfold%20Life%20Is%20But%20A%20Dream%20por%20R%24%2078%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Avenged Sevenfold Life Is But A Dream">+</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="store-section">
+  <div class="store-shell">
+    <div class="store-banner">
+      <div>
+        <small>3... 2... 1... CLICK!</small>
+        <h2>Caneca preta. Café forte. Volume alto.</h2>
+        <p>As primeiras canecas entram com preço direto e atendimento imediato.</p>
+      </div>
+      <a class="buy-button" href="#canecas">Ver canecas</a>
+    </div>
+  </div>
+</section>
+
+<section class="store-section" id="canecas">
+  <div class="store-shell">
+    <div class="store-section-head">
+      <div><span class="store-eyebrow">Canecas</span><h2>Na mesa também toca rock.</h2></div>
+      <p>Produtos visuais, sem cenário inventado e sem firula.</p>
+    </div>
+    <div class="product-grid">
+
+      <article class="product" data-category="caneca">
+        <div class="product-media">
+          <span class="product-badge">DESTAQUE</span>
+          <img loading="lazy" src="/images/store/rush-fly-by-night.webp" alt="Rush Fly By Night">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Caneca</div>
+          <h3>Rush Fly By Night</h3>
+          <div class="product-price">R$ 48,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Rush%20Fly%20By%20Night%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Rush%20Fly%20By%20Night%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Rush Fly By Night">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="caneca">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/guns-roses-mug.jpg" alt="Guns N' Roses Bullet Logo">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Caneca</div>
+          <h3>Guns N' Roses Bullet Logo</h3>
+          <div class="product-price">R$ 48,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Guns%20N%27%20Roses%20Bullet%20Logo%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Guns%20N%27%20Roses%20Bullet%20Logo%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Guns N' Roses Bullet Logo">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="caneca">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/acdc-power-up-mug.jpg" alt="AC/DC Power Up">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Caneca</div>
+          <h3>AC/DC Power Up</h3>
+          <div class="product-price">R$ 48,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20AC/DC%20Power%20Up%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20AC/DC%20Power%20Up%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar AC/DC Power Up">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="caneca">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/metallica-ride-lightning-mug.jpg" alt="Metallica Ride The Lightning">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Caneca</div>
+          <h3>Metallica Ride The Lightning</h3>
+          <div class="product-price">R$ 48,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Metallica%20Ride%20The%20Lightning%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Metallica%20Ride%20The%20Lightning%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Metallica Ride The Lightning">+</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="caneca">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/black-sabbath-mug.jpg" alt="Black Sabbath European Tour">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Caneca</div>
+          <h3>Black Sabbath European Tour</h3>
+          <div class="product-price">R$ 48,89</div>
+          <div class="product-installments">ou em até 5x no pagamento*</div>
+          <div class="product-actions">
+            <a class="buy-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Black%20Sabbath%20European%20Tour%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener">Comprar</a>
+            <a class="quick-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20Black%20Sabbath%20European%20Tour%20por%20R%24%2048%2C89.%20Pode%20me%20passar%20tamanhos/disponibilidade%20e%20o%20link%20de%20pagamento%3F" target="_blank" rel="noopener" aria-label="Comprar Black Sabbath European Tour">+</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="store-section">
+  <div class="store-shell">
+    <div class="store-banner">
+      <div>
+        <small>Não achou a banda?</small>
+        <h2>Pede. A gente procura.</h2>
+        <p>Essa conversa também ajuda a decidir o que entra primeiro no estoque.</p>
+      </div>
+      <a class="buy-button" href="https://wa.me/48732099369?text=Olá!%20Quero%20pedir%20uma%20banda%20ou%20produto%20para%20a%20Passport%20Store." target="_blank" rel="noopener">Pedir no WhatsApp</a>
+    </div>
+    <p class="store-note">* Parcelamento, frete e disponibilidade dependem das condições aplicáveis no fechamento do pedido. Compras e pagamentos são processados pela <strong>Guiropa World</strong>. Antes da publicação comercial definitiva, confirme a autorização/licenciamento das estampas e marcas comercializadas.</p>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div class="shell footer-grid">
+  <div class="store-shell footer-grid">
     <div><strong>Passport Radio</strong><p>Music · History · Culture · Live</p><p>3... 2... 1... CLICK!</p></div>
-    <div><strong>Conteúdo</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#resenhas">Resenhas</a><a href="exposicao.html?colecao=drum-masters">Arquivos</a></div>
+    <div><strong>Conteúdo</strong><a href="index.html#noticias">Últimas histórias</a><a href="exposicao.html?colecao=drum-masters">Arquivos</a></div>
     <div><strong>Ouvir</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explorar música</a></div>
-    <div><strong>Loja & Apoio</strong><a href="loja.html">Boutique</a><a href="index.html#apoie">Apoiar</a></div>
+    <div><strong>Loja & Apoio</strong><a href="loja.html">Loja</a><a href="index.html#apoie">Apoiar</a></div>
     <div><strong>Contato</strong><a href="contato.html">Central de contato</a><a href="mailto:passport@passportradio.online">E-mail</a></div>
   </div>
-  <div class="shell footer-bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação e pagamentos: <b>Guiropa World</b>.</span></div>
+  <div class="store-shell footer-bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação e pagamentos: <b>Guiropa World</b>.</span></div>
 </footer>
+
 <div class="floating-contact">
-  <a class="float-wa" href="https://wa.me/48732099369?text=Olá%2C%20quero%20falar%20com%20a%20Passport%20Radio." target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a class="float-wa" href="https://wa.me/48732099369?text=Olá%2C%20quero%20falar%20com%20a%20Passport%20Store." target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
   <a class="float-tg" href="https://t.me/m/t6seeX61ZTlk" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
 </div>
+
 <a class="player-bar" href="radio.html" aria-label="Ouvir Passport Radio">
-  <span class="player-play">▶</span><span class="player-copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span><b>OUVIR</b>
+  <span class="player-play">▶</span>
+  <span class="player-copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span>
+  <b>OUVIR</b>
 </a>
+
 <script>
 const toggle=document.querySelector('.nav-toggle'), nav=document.querySelector('.main-nav');
 if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});}
+
+const pills=[...document.querySelectorAll('.store-pill')];
+const products=[...document.querySelectorAll('#products .product')];
+pills.forEach(pill=>pill.addEventListener('click',()=>{
+  pills.forEach(x=>x.classList.remove('is-active'));
+  pill.classList.add('is-active');
+  const filter=pill.dataset.filter;
+  products.forEach(card=>{
+    const cat=card.dataset.category;
+    card.style.display=(filter==='all'||cat.includes(filter))?'block':'none';
+  });
+}));
 </script>
 
 </body>
