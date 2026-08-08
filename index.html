@@ -230,6 +230,31 @@
       background:#fff;color:#111;font-size:.66rem;font-weight:900;text-transform:uppercase
     }
     .ad-button:hover{background:var(--red);color:#fff}
+    .ad-call h2{
+      display:inline-block;
+      position:relative;
+    }
+    .ad-call h2::after{
+      content:"";
+      position:absolute;
+      right:-18px;
+      top:50%;
+      width:9px;
+      height:9px;
+      margin-top:-4px;
+      border-radius:50%;
+      background:var(--red);
+      box-shadow:0 0 0 0 rgba(215,25,32,.5);
+      animation:passportPulse 2.2s ease-out infinite;
+    }
+    @keyframes passportPulse{
+      0%{box-shadow:0 0 0 0 rgba(215,25,32,.5);opacity:1}
+      55%{box-shadow:0 0 0 12px rgba(215,25,32,0);opacity:.9}
+      100%{box-shadow:0 0 0 0 rgba(215,25,32,0);opacity:1}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .ad-call h2::after{animation:none}
+    }
 
     /* store */
     .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 16px}
@@ -238,21 +263,23 @@
     .shop-card small{color:#777;font-size:.55rem;font-weight:800;text-transform:uppercase}
     .shop-card h3{margin-top:3px;font-size:.9rem;line-height:1.17}
     .shop-price{margin-top:8px;color:var(--red);font-size:1.08rem;font-weight:900}
+    .shop-installment{display:block;margin-top:2px;color:#666;font-size:.61rem;font-weight:700}
     .shop-buy{display:inline-flex;margin-top:9px;padding:8px 11px;background:#111;color:#fff;font-size:.57rem;font-weight:900;text-transform:uppercase}
     .shop-buy:hover{background:var(--red)}
     .commercial-note{margin-top:18px;color:#777;font-size:.65rem}
     .commercial-note strong{color:#111}
 
     /* support */
-    .support{padding:34px 0;border-bottom:1px solid var(--line);background:#fff}
-    .support__grid{display:grid;grid-template-columns:1fr 330px;gap:30px;align-items:center}
-    .support h2{font-size:1.85rem;line-height:1.05;letter-spacing:-.03em}
-    .support p{margin-top:7px;color:var(--muted);font-size:.78rem}
-    .support__box{padding:18px;border:1px solid var(--line);background:var(--soft)}
-    .support__button{display:inline-flex;min-height:42px;align-items:center;justify-content:center;padding:0 18px;background:#111;color:#fff;font-size:.68rem;font-weight:900;text-transform:uppercase}
-    .support__button:hover{background:var(--red)}
-    .support__box p{margin-top:10px;color:#333}
-    .support__box small{display:block;margin-top:8px;color:#777;font-size:.6rem}
+    .support{padding:48px 0;border-bottom:1px solid #292929;background:#111;color:#fff}
+    .support__grid{display:grid;grid-template-columns:1fr 360px;gap:44px;align-items:center}
+    .support .section-label{color:var(--red)}
+    .support h2{max-width:760px;font-size:clamp(2.35rem,4.4vw,4.7rem);line-height:.92;letter-spacing:-.05em}
+    .support p{max-width:720px;margin-top:12px;color:#aaa;font-size:.82rem;line-height:1.6}
+    .support__box{padding:22px;border:1px solid #383838;border-left:5px solid var(--red);background:#181818}
+    .support__button{display:flex;min-height:48px;align-items:center;justify-content:center;padding:0 18px;background:var(--red);color:#fff;font-size:.7rem;font-weight:900;text-transform:uppercase}
+    .support__button:hover{background:#fff;color:#111}
+    .support__box p{margin-top:12px;color:#fff;font-weight:700}
+    .support__box small{display:block;margin-top:8px;color:#888;font-size:.6rem}
 
     /* contact */
     .contact-hub{padding:42px 0;border-top:1px solid var(--line);background:#fff}
@@ -591,8 +618,8 @@
         <div class="topic-grid">
           <a href="destinos.html#rock-brasileiro"><b>01</b><span><strong>Rock Brasileiro</strong><small>Sete décadas, cenas e histórias.</small></span></a>
           <a href="destinos.html#estilos"><b>02</b><span><strong>Estilos de Rock</strong><small>Das raízes às novas linguagens.</small></span></a>
-          <a href="destinos.html#instrument-masters"><b>03</b><span><strong>Drum Masters</strong><small>Bateristas, técnica e história.</small></span></a>
-          <a href="destinos.html#instrument-masters"><b>04</b><span><strong>Bass Legends</strong><small>Os graves que sustentam a música.</small></span></a>
+          <a href="instrument-masters.html"><b>03</b><span><strong>Instrument Masters</strong><small>Baixo, bateria, técnica, identidade e história.</small></span></a>
+          <a href="destinos.html#nomads"><b>04</b><span><strong>Nomads</strong><small>Instrument sessions e linguagem audiovisual.</small></span></a>
           <a href="destinos.html#cenas"><b>05</b><span><strong>Cenas &amp; Movimentos</strong><small>Onde a música aconteceu e por quê.</small></span></a>
           <a href="radio.html"><b>06</b><span><strong>Ao Vivo</strong><small>Arquivos sonoros e programação.</small></span></a>
         </div>
@@ -604,7 +631,7 @@
         <div>
           <small>Publicidade</small>
           <h2>Anuncie na Passport Radio.</h2>
-          <p>Shows, festivais, bandas, instrumentos, lojas, lançamentos e marcas que conversam com cultura musical. Espaços comerciais identificados com clareza.</p>
+          <p>Seu show, festival, instrumento, loja, lançamento ou marca entra no meio da conversa — não escondido no rodapé. Publicidade identificada com clareza e integrada ao universo musical da Passport.</p>
         </div>
         <a class="ad-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20formatos%20de%20publicidade%20da%20Passport%20Radio." target="_blank" rel="noopener noreferrer">Quero anunciar</a>
       </div>
@@ -620,22 +647,22 @@
         <div class="shop-grid">
           <article class="shop-card">
             <img src="/images/store/foo-fighters-eagle.png" alt="Foo Fighters Eagle" loading="lazy" />
-            <div class="shop-card__copy"><small>Camiseta</small><h3>Foo Fighters Eagle</h3><div class="shop-price">R$ 78,89</div><a class="shop-buy" href="https://www.asaas.com/c/l8jkx9tgn0n5qgzl" target="_blank" rel="noopener noreferrer">Comprar</a></div>
+            <div class="shop-card__copy"><small>Camiseta</small><h3>Foo Fighters Eagle</h3><div class="shop-price">R$ 78,89</div><span class="shop-installment">ou até 5x de R$ 15,78</span><a class="shop-buy" href="https://www.asaas.com/c/l8jkx9tgn0n5qgzl" target="_blank" rel="noopener noreferrer">Comprar</a></div>
           </article>
 
           <article class="shop-card">
             <img src="/images/store/the-cure-boys-dont-cry.png" alt="The Cure Boys Don't Cry" loading="lazy" />
-            <div class="shop-card__copy"><small>Camiseta</small><h3>The Cure Boys Don't Cry</h3><div class="shop-price">R$ 78,89</div><a class="shop-buy" href="loja.html">Ver produto</a></div>
+            <div class="shop-card__copy"><small>Camiseta</small><h3>The Cure Boys Don't Cry</h3><div class="shop-price">R$ 78,89</div><span class="shop-installment">ou até 5x de R$ 15,78</span><a class="shop-buy" href="loja.html">Ver produto</a></div>
           </article>
 
           <article class="shop-card">
             <img src="/images/store/motorhead-snaggletooth.png" alt="Motörhead Snaggletooth" loading="lazy" />
-            <div class="shop-card__copy"><small>Camiseta especial</small><h3>Motörhead Snaggletooth</h3><div class="shop-price">R$ 78,89</div><a class="shop-buy" href="loja.html">Ver produto</a></div>
+            <div class="shop-card__copy"><small>Camiseta especial</small><h3>Motörhead Snaggletooth</h3><div class="shop-price">R$ 78,89</div><span class="shop-installment">ou até 5x de R$ 15,78</span><a class="shop-buy" href="loja.html">Ver produto</a></div>
           </article>
 
           <article class="shop-card">
             <img src="/images/store/rush-fly-by-night.webp" alt="Rush Fly By Night" loading="lazy" />
-            <div class="shop-card__copy"><small>Caneca</small><h3>Rush Fly By Night</h3><div class="shop-price">R$ 48,89</div><a class="shop-buy" href="loja.html#canecas">Ver produto</a></div>
+            <div class="shop-card__copy"><small>Caneca</small><h3>Rush Fly By Night</h3><div class="shop-price">R$ 48,89</div><span class="shop-installment">ou até 5x de R$ 9,78</span><a class="shop-buy" href="loja.html#canecas">Ver produto</a></div>
           </article>
         </div>
 
@@ -646,14 +673,14 @@
     <section class="support" id="apoie">
       <div class="shell support__grid">
         <div>
-          <span class="section-label">Apoie</span>
-          <h2>Curte o que a gente faz?</h2>
-          <p>A Passport Radio é independente. Se quiser fortalecer o projeto, contribua com o quanto puder.</p>
+          <span class="section-label">KEEP INDEPENDENT MUSIC CULTURE ALIVE</span>
+          <h2>Mantenha a Passport no ar.</h2>
+          <p>Histórias, arquivos, broadcasts, pesquisa e produção independente continuam porque alguém decide que cultura musical ainda merece espaço. Se a Passport faz sentido para você, entre nessa história.</p>
         </div>
 
         <div class="support__box">
-          <a class="support__button" href="https://www.asaas.com/c/dwbjyv79vyrfj4ry" target="_blank" rel="noopener noreferrer">Apoiar pelo Asaas</a>
-          <p>Você escolhe o valor.</p>
+          <a class="support__button" href="https://www.asaas.com/c/dwbjyv79vyrfj4ry" target="_blank" rel="noopener noreferrer">APOIAR A PASSPORT</a>
+          <p>Você escolhe o valor. A gente transforma apoio em história, som e arquivo.</p>
           <small>Operação e pagamentos: <strong>Guiropa World</strong>.</small>
         </div>
       </div>
@@ -689,7 +716,7 @@
       </div>
 
       <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#agenda">Agenda de shows</a><a href="#broadcasts">Broadcasts</a></div>
-      <div class="footer-col"><strong>EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explore Music</a><a href="destinos.html#instrument-masters">Drum Masters</a><a href="destinos.html#instrument-masters">Bass Legends</a></div>
+      <div class="footer-col"><strong>EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explore Music</a><a href="instrument-masters.html#drums">Drum Masters</a><a href="instrument-masters.html#bass">Bass Masters</a></div>
       <div class="footer-col"><strong>COMERCIAL</strong><a href="loja.html">Passport Store</a><a href="#anuncie">Anuncie</a><a href="#apoie">Apoie</a><a href="#contato">Contato</a></div>
       <div class="footer-col"><strong>REDES</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a></div>
     </div>
