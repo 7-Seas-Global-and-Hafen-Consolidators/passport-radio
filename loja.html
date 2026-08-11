@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Passport Store — camisetas, canecas e produtos ligados à cultura musical.">
+<meta name="description" content="Passport Store — camisetas, canecas, roupas e tênis ligados à cultura musical.">
 <meta name="theme-color" content="#ffffff">
 <title>Loja | Passport Radio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css?v=30">
 <link rel="stylesheet" href="/css/loja.css?v=21">
+
+<style>
+.product-size{display:flex;align-items:center;gap:8px;margin-top:10px}
+.product-size label{font-size:.6rem;font-weight:900;text-transform:uppercase;color:#555}
+.product-size select{min-height:36px;padding:0 28px 0 10px;border:1px solid #d9d9d9;background:#fff;color:#111;font:700 .7rem Inter,Arial,sans-serif}
+.product-size select:focus{outline:2px solid #111;outline-offset:1px}
+</style>
+
 </head>
 <body class="store-page">
 
@@ -42,13 +50,14 @@
   <div class="store-shell">
     <span class="store-eyebrow">Passport Store</span>
     <h1>Rock não é uniforme.<br>É identidade.</h1>
-    <p>Camisetas, canecas e peças para quem carrega música fora dos fones. Produto na tela, preço na tela e compra sem novela.</p>
+    <p>Camisetas, canecas, peças e tênis. Produto na tela, preço na tela e compra sem novela.</p>
     <div class="store-pills" aria-label="Categorias">
       <button class="store-pill is-active" data-filter="all">Todos</button>
       <button class="store-pill" data-filter="camiseta">Camisetas</button>
       <button class="store-pill" data-filter="caneca">Canecas</button>
       <button class="store-pill" data-filter="manga-longa">Manga longa</button>
       <button class="store-pill" data-filter="baby-look">Feminino</button>
+      <button class="store-pill" data-filter="tenis">Tênis</button>
     </div>
   </div>
 </section>
@@ -373,7 +382,1000 @@
           </div>
         </div>
       </article>
-    </div>
+    
+
+      <!-- TÊNIS -->
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-03-06%20Guns%20N'Roses%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Guns N' Roses">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Guns N' Roses</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-1">Número</label>
+            <select id="shoe-size-1" class="shoe-size" data-product="Guns N' Roses" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Guns%20N%27%20Roses%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Guns%20N%27%20Roses%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-04-13%20Ozzy%20Osbourne%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Ozzy Osbourne">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Ozzy Osbourne</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-2">Número</label>
+            <select id="shoe-size-2" class="shoe-size" data-product="Ozzy Osbourne" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Ozzy%20Osbourne%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Ozzy%20Osbourne%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-04-45%20ABBA%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="ABBA">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>ABBA</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-3">Número</label>
+            <select id="shoe-size-3" class="shoe-size" data-product="ABBA" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20ABBA%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20ABBA%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-05-03%20Judas%20Priest%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Judas Priest">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Judas Priest</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-4">Número</label>
+            <select id="shoe-size-4" class="shoe-size" data-product="Judas Priest" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Judas%20Priest%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Judas%20Priest%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-05-48%20Van%20Halen%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Van Halen">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Van Halen</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-5">Número</label>
+            <select id="shoe-size-5" class="shoe-size" data-product="Van Halen" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Van%20Halen%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Van%20Halen%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-06-25%20Stevie%20Nicks%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Stevie Nicks">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Stevie Nicks</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-6">Número</label>
+            <select id="shoe-size-6" class="shoe-size" data-product="Stevie Nicks" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Stevie%20Nicks%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Stevie%20Nicks%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-06-49%20Rage%20Against%20The%20Machine%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Rage Against The Machine">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Rage Against The Machine</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-7">Número</label>
+            <select id="shoe-size-7" class="shoe-size" data-product="Rage Against The Machine" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Rage%20Against%20The%20Machine%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Rage%20Against%20The%20Machine%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-07-09%20DAVID%20BOWIE%20limited%20editiob%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="David Bowie">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>David Bowie</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-8">Número</label>
+            <select id="shoe-size-8" class="shoe-size" data-product="David Bowie" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20David%20Bowie%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20David%20Bowie%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-07-33%20BON%20JOVI%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Bon Jovi">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Bon Jovi</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-9">Número</label>
+            <select id="shoe-size-9" class="shoe-size" data-product="Bon Jovi" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Bon%20Jovi%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Bon%20Jovi%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-07-50%20IRON%20MAIDEN%20live%20after%20death%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Iron Maiden">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Iron Maiden</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-10">Número</label>
+            <select id="shoe-size-10" class="shoe-size" data-product="Iron Maiden" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Iron%20Maiden%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Iron%20Maiden%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-08-23%20Venom%20black%20metal%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Venom">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Venom</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-11">Número</label>
+            <select id="shoe-size-11" class="shoe-size" data-product="Venom" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Venom%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Venom%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          <span class="product-badge product-badge--red">NOVO</span>
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-08-43%20The%20Clash%20London%20Calling%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="The Clash">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>The Clash</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-12">Número</label>
+            <select id="shoe-size-12" class="shoe-size" data-product="The Clash" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20The%20Clash%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20The%20Clash%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-09-02%20Sex%20Pistols%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Sex Pistols">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Sex Pistols</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-13">Número</label>
+            <select id="shoe-size-13" class="shoe-size" data-product="Sex Pistols" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Sex%20Pistols%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Sex%20Pistols%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-09-33%20U2%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="U2">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>U2</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-14">Número</label>
+            <select id="shoe-size-14" class="shoe-size" data-product="U2" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20U2%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20U2%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-10-01%20Pantera%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Pantera">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Pantera</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-15">Número</label>
+            <select id="shoe-size-15" class="shoe-size" data-product="Pantera" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Pantera%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Pantera%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-10-18%20ELVIS%20PRESLEY%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Elvis Presley">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Elvis Presley</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-16">Número</label>
+            <select id="shoe-size-16" class="shoe-size" data-product="Elvis Presley" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Elvis%20Presley%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Elvis%20Presley%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-10-41%20MOTLEY%20CRUE%20limited%20edition%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Mötley Crüe">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Mötley Crüe</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-17">Número</label>
+            <select id="shoe-size-17" class="shoe-size" data-product="Mötley Crüe" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20M%C3%B6tley%20Cr%C3%BCe%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20M%C3%B6tley%20Cr%C3%BCe%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-10-56%20KORN%20follow%20the%20leader%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Korn">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Korn</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-18">Número</label>
+            <select id="shoe-size-18" class="shoe-size" data-product="Korn" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Korn%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Korn%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-11-24%20Judas%20Priest%20all%20albums%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Judas Priest — All Albums">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Judas Priest — All Albums</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-19">Número</label>
+            <select id="shoe-size-19" class="shoe-size" data-product="Judas Priest — All Albums" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Judas%20Priest%20%E2%80%94%20All%20Albums%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Judas%20Priest%20%E2%80%94%20All%20Albums%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-11-47%20FOO%20FIGHTERS%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Foo Fighters">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Foo Fighters</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-20">Número</label>
+            <select id="shoe-size-20" class="shoe-size" data-product="Foo Fighters" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Foo%20Fighters%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Foo%20Fighters%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-12-03%20PEARL%20JAM%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Pearl Jam">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Pearl Jam</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-21">Número</label>
+            <select id="shoe-size-21" class="shoe-size" data-product="Pearl Jam" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Pearl%20Jam%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Pearl%20Jam%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-12-18%20QUEEN%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Queen">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Queen</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-22">Número</label>
+            <select id="shoe-size-22" class="shoe-size" data-product="Queen" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Queen%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Queen%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-12-39%20DEF%20LEPPARD%20hysteria%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Def Leppard">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Def Leppard</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-23">Número</label>
+            <select id="shoe-size-23" class="shoe-size" data-product="Def Leppard" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Def%20Leppard%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Def%20Leppard%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-13-08%20POISON%20glam%20rock%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Poison">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Poison</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-24">Número</label>
+            <select id="shoe-size-24" class="shoe-size" data-product="Poison" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Poison%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Poison%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-13-24%20CANNIBAL%20CORPSE%20high%20top%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Cannibal Corpse — Cano Alto">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Cannibal Corpse — Cano Alto</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-25">Número</label>
+            <select id="shoe-size-25" class="shoe-size" data-product="Cannibal Corpse — Cano Alto" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Cannibal%20Corpse%20%E2%80%94%20Cano%20Alto%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Cannibal%20Corpse%20%E2%80%94%20Cano%20Alto%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-13-41%20CANNIBAL%20CORPSE%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Cannibal Corpse">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Cannibal Corpse</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-26">Número</label>
+            <select id="shoe-size-26" class="shoe-size" data-product="Cannibal Corpse" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Cannibal%20Corpse%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Cannibal%20Corpse%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-14-10%20HAMMERFALL%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="HammerFall">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>HammerFall</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-27">Número</label>
+            <select id="shoe-size-27" class="shoe-size" data-product="HammerFall" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20HammerFall%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20HammerFall%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-14-28%20GREEN%20DAY%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Green Day">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Green Day</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-28">Número</label>
+            <select id="shoe-size-28" class="shoe-size" data-product="Green Day" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Green%20Day%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Green%20Day%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-14-41%20MARILYN%20MANSON%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Marilyn Manson">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Marilyn Manson</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-29">Número</label>
+            <select id="shoe-size-29" class="shoe-size" data-product="Marilyn Manson" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Marilyn%20Manson%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Marilyn%20Manson%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-15-00%20ROB%20ZOMBIE%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Rob Zombie">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Rob Zombie</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-30">Número</label>
+            <select id="shoe-size-30" class="shoe-size" data-product="Rob Zombie" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Rob%20Zombie%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Rob%20Zombie%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-15-27%20FREDDIE%20MERCURY%20queen%20band%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Freddie Mercury">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Freddie Mercury</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-31">Número</label>
+            <select id="shoe-size-31" class="shoe-size" data-product="Freddie Mercury" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Freddie%20Mercury%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Freddie%20Mercury%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-15-39%20SOUNDGARDEN%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Soundgarden">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Soundgarden</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-32">Número</label>
+            <select id="shoe-size-32" class="shoe-size" data-product="Soundgarden" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Soundgarden%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Soundgarden%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-15-57%20EVANESCENCE%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Evanescence">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>Evanescence</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-33">Número</label>
+            <select id="shoe-size-33" class="shoe-size" data-product="Evanescence" data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Evanescence%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Evanescence%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-16-18%20W%5C.A.S.P.%2040%20years%20live%20world%20tour%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="W.A.S.P.">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano baixo</div>
+          <h3>W.A.S.P.</h3>
+          <div class="product-price">R$ 199,90</div>
+          <div class="product-installments">5x de R$ 39,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-34">Número</label>
+            <select id="shoe-size-34" class="shoe-size" data-product="W.A.S.P." data-price="R$ 199,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20W.A.S.P.%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20W.A.S.P.%20por%20R%24%20199%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-16-37%20Alice%20Cooper%20poison%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Alice Cooper">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Alice Cooper</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-35">Número</label>
+            <select id="shoe-size-35" class="shoe-size" data-product="Alice Cooper" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Alice%20Cooper%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Alice%20Cooper%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-17-33%20Type%20O%20Negative%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Type O Negative">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Type O Negative</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-36">Número</label>
+            <select id="shoe-size-36" class="shoe-size" data-product="Type O Negative" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Type%20O%20Negative%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Type%20O%20Negative%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-17-54%20Bruce%20Springsteen%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Bruce Springsteen">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Bruce Springsteen</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-37">Número</label>
+            <select id="shoe-size-37" class="shoe-size" data-product="Bruce Springsteen" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Bruce%20Springsteen%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Bruce%20Springsteen%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-18-13%20Anthrax%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Anthrax">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Anthrax</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-38">Número</label>
+            <select id="shoe-size-38" class="shoe-size" data-product="Anthrax" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Anthrax%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Anthrax%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-18-29%20Frank%20Zappa%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Frank Zappa">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Frank Zappa</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-39">Número</label>
+            <select id="shoe-size-39" class="shoe-size" data-product="Frank Zappa" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Frank%20Zappa%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Frank%20Zappa%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-18-49%20Joy%20Division%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Joy Division">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Joy Division</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-40">Número</label>
+            <select id="shoe-size-40" class="shoe-size" data-product="Joy Division" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Joy%20Division%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Joy%20Division%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-19-20%20Kiss%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="KISS">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>KISS</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-41">Número</label>
+            <select id="shoe-size-41" class="shoe-size" data-product="KISS" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20KISS%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20KISS%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-19-44%20Prince%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="Prince">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>Prince</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-42">Número</label>
+            <select id="shoe-size-42" class="shoe-size" data-product="Prince" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Prince%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20Prince%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="tenis">
+        <div class="product-media">
+          
+          <img loading="lazy" src="/images/store/tenis/Screenshot%202026-08-10%20at%2022-19-59%20The%20Beatles%20shoes%20%E2%80%93%20Bornrocker%20Brand.png" alt="The Beatles">
+        </div>
+        <div class="product-info">
+          <div class="product-type">Tênis · Cano alto</div>
+          <h3>The Beatles</h3>
+          <div class="product-price">R$ 249,90</div>
+          <div class="product-installments">5x de R$ 49,98 no cartão*</div>
+          <div class="product-size">
+            <label for="shoe-size-43">Número</label>
+            <select id="shoe-size-43" class="shoe-size" data-product="The Beatles" data-price="R$ 249,90">
+              <option value="">Escolha</option>
+              <option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option>
+            </select>
+          </div>
+          <div class="product-actions">
+            <a class="buy-button shoe-buy" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20The%20Beatles%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento." target="_blank" rel="noopener" data-base-url="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20comprar%20o%20t%C3%AAnis%20The%20Beatles%20por%20R%24%20249%2C90.%20Quero%20escolher%20o%20n%C3%BAmero%20%2834%2C%2035%2C%2036%2C%2037%2C%2038%2C%2039%2C%2040%2C%2041%2C%2042%2C%2043%20e%2044%29%20e%20receber%20o%20link%20de%20pagamento.">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+</div>
   </div>
 </section>
 
@@ -539,6 +1541,28 @@ pills.forEach(pill=>pill.addEventListener('click',()=>{
     card.style.display=(filter==='all'||cat.includes(filter))?'block':'none';
   });
 }));
+
+document.querySelectorAll('.shoe-size').forEach(select=>{
+  const card=select.closest('.product');
+  const buy=card?.querySelector('.shoe-buy');
+  if(!buy) return;
+
+  buy.addEventListener('click',e=>{
+    const size=select.value;
+    if(!size){
+      e.preventDefault();
+      select.focus();
+      alert('Escolha o número do tênis antes de comprar.');
+      return;
+    }
+
+    const product=select.dataset.product;
+    const price=select.dataset.price;
+    const text=`Olá! Quero comprar o tênis ${product}, número ${size}, por ${price}. Pode me enviar o link de pagamento?`;
+    buy.href='https://wa.me/48732099369?text='+encodeURIComponent(text);
+  });
+});
+
 </script>
 
 </body>
