@@ -233,59 +233,22 @@
     .topic-grid small{display:block;margin-top:2px;color:#777;font-size:.59rem}
 
     /* advertising */
-    .ad-call{
-      display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
-      padding:34px 0
-    }
-    .ad-call small{color:#888;font-size:.58rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
-    .ad-call h2{margin-top:5px;font-size:clamp(2rem,4vw,3.8rem);line-height:.95;letter-spacing:-.045em}
-    .ad-call p{max-width:700px;margin-top:10px;color:#aaa;font-size:.76rem}
-    .ad-button{
-      display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;
-      background:#fff;color:#111;font-size:.66rem;font-weight:900;text-transform:uppercase
-    }
-    .ad-button:hover{background:var(--red);color:#fff}
-    .ad-call{
-      position:relative;
-      overflow:hidden;
-      border-left:5px solid var(--red);
-      animation:adPanelPulse 2.8s ease-in-out infinite;
-    }
-    .ad-call::before{
-      content:"";
-      position:absolute;
-      left:0;top:0;bottom:0;
-      width:5px;
-      background:var(--red);
-      box-shadow:0 0 0 rgba(215,25,32,0);
-      animation:adLinePulse 1.8s ease-in-out infinite;
-    }
-    .ad-call h2{display:inline-block;position:relative}
-    .ad-call h2::after{
-      content:"";
-      display:inline-block;
-      width:10px;height:10px;
-      margin-left:12px;
-      border-radius:50%;
-      vertical-align:middle;
-      background:var(--red);
-      animation:adDotPulse 1.35s ease-in-out infinite;
-    }
-    @keyframes adPanelPulse{
-      0%,100%{background:#111}
-      50%{background:#161313}
-    }
-    @keyframes adLinePulse{
-      0%,100%{box-shadow:0 0 0 0 rgba(215,25,32,0)}
-      50%{box-shadow:0 0 22px 7px rgba(215,25,32,.38)}
-    }
-    @keyframes adDotPulse{
-      0%,100%{opacity:.35;transform:scale(.78)}
-      50%{opacity:1;transform:scale(1.25)}
-    }
-    @media (prefers-reduced-motion:reduce){
-      .ad-call,.ad-call::before,.ad-call h2::after{animation:none}
-    }
+    .ad-call{padding:34px 0;position:relative;overflow:hidden;border-left:5px solid var(--red);animation:adPanelPulse 2.8s ease-in-out infinite}
+    .ad-call::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--red);animation:adLinePulse 1.8s ease-in-out infinite}
+    .ad-campaign{display:block;position:relative;width:100%;border:1px solid #2d2d2d;background:#090909;overflow:hidden;box-shadow:0 20px 55px rgba(0,0,0,.32)}
+    .ad-campaign img{display:block;width:100%;height:auto;aspect-ratio:3.55/1;object-fit:cover;object-position:center;transition:transform .28s ease,filter .28s ease}
+    .ad-campaign:hover img{transform:scale(1.008);filter:brightness(1.06)}
+    .ad-campaign__tag{position:absolute;left:12px;top:12px;z-index:2;padding:6px 9px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.76);color:#fff;font-size:.52rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(8px)}
+    .ad-campaign__footer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:18px 20px;border-top:1px solid #2d2d2d;background:#0d0d0d}
+    .ad-campaign__footer small{display:block;color:#8b8b8b;font-size:.54rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+    .ad-campaign__footer strong{display:block;margin-top:4px;color:#fff;font-size:1.05rem;line-height:1.15}
+    .ad-campaign__footer span{display:block;margin-top:5px;color:#999;font-size:.66rem;line-height:1.45}
+    .ad-campaign__button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;background:var(--red);color:#fff!important;font-size:.64rem!important;font-weight:900;text-transform:uppercase;white-space:nowrap}
+    .ad-campaign:hover .ad-campaign__button{background:#fff;color:#111!important}
+    @keyframes adPanelPulse{0%,100%{background:#111}50%{background:#161313}}
+    @keyframes adLinePulse{0%,100%{box-shadow:0 0 0 0 rgba(215,25,32,0)}50%{box-shadow:0 0 22px 7px rgba(215,25,32,.38)}}
+    @media(max-width:760px){.ad-call{padding:26px 0}.ad-campaign img{aspect-ratio:2/1}.ad-campaign__footer{grid-template-columns:1fr;padding:15px}.ad-campaign__button{width:100%}}
+    @media (prefers-reduced-motion:reduce){.ad-call,.ad-call::before{animation:none}.ad-campaign img{transition:none}}
 
     /* store */
     .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 16px}
@@ -782,7 +745,7 @@
         <a href="#resenhas">Resenhas</a>
         <a href="#explorar">Explorar</a>
         <a href="loja.html">Loja</a>
-        <a href="#anuncie">Anuncie</a>
+        <a href="anuncie.html">Anuncie</a>
         <a href="#apoie">Apoie</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -995,12 +958,18 @@
 
     <section class="section section--black" id="anuncie">
       <div class="shell ad-call">
-        <div>
-          <small>Publicidade</small>
-          <h2>Anuncie na Passport Radio.</h2>
-          <p>Seu show, festival, instrumento, loja, lançamento ou marca entra no meio da conversa — não escondido no rodapé. Publicidade identificada com clareza e integrada ao universo musical da Passport.</p>
-        </div>
-        <a class="ad-button" href="https://wa.me/48732099369?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20formatos%20de%20publicidade%20da%20Passport%20Radio." target="_blank" rel="noopener noreferrer">Quero anunciar</a>
+        <a class="ad-campaign" href="anuncie.html" aria-label="Anuncie na Passport Radio">
+          <span class="ad-campaign__tag">Publicidade · Espaço disponível</span>
+          <img src="/images/ads/passport-radio-anuncie-aqui.png" alt="Anuncie na Passport Radio — publicidade para artistas, bandas, shows, festivais, lojas e marcas" loading="lazy" />
+          <div class="ad-campaign__footer">
+            <div>
+              <small>Anuncie na Passport Radio</small>
+              <strong>Sua banda. Seu show. Sua loja. Sua marca.</strong>
+              <span>Formatos para artistas, festivais, produtoras, instrumentos, lojas, lançamentos e marcas ligadas à música.</span>
+            </div>
+            <span class="ad-campaign__button">Ver formatos e anunciar →</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -1084,7 +1053,7 @@
 
       <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#agenda">Agenda de shows</a><a href="#broadcasts">Broadcasts</a></div>
       <div class="footer-col"><strong>EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explore Music</a><a href="instrument-masters.html#drums">Drum Masters</a><a href="instrument-masters.html#bass">Bass Masters</a></div>
-      <div class="footer-col"><strong>COMERCIAL</strong><a href="loja.html">Passport Store</a><a href="#anuncie">Anuncie</a><a href="#apoie">Apoie</a><a href="#contato">Contato</a></div>
+      <div class="footer-col"><strong>COMERCIAL</strong><a href="loja.html">Passport Store</a><a href="anuncie.html">Anuncie</a><a href="#apoie">Apoie</a><a href="#contato">Contato</a></div>
       <div class="footer-col"><strong>REDES & PRIVACIDADE</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a><button class="cookie-settings-link" type="button" data-cookie-settings>Preferências de cookies</button></div>
     </div>
 
