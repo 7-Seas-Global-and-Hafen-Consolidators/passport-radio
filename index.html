@@ -1022,17 +1022,24 @@
             <p>Dê o play aqui. Se quiser levar a seleção com você, abra a playlist completa no Spotify.</p>
           </div>
 
-          <div class="spotify-embed" data-spotify-embed data-src="https://open.spotify.com/embed/playlist/6UcytwjagG5aLabTMW4Vt0?utm_source=generator">
-            <div class="spotify-consent">
-              <strong>O Spotify espera sua autorização.</strong>
-              <p>O player é mídia externa. Autorize essa categoria nas preferências de cookies para carregá-lo dentro da Passport.</p>
-              <button type="button" data-cookie-settings>Permitir mídia externa</button>
-            </div>
+          <div class="spotify-embed">
+            <iframe
+              data-testid="embed-iframe"
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/playlist/6UcytwjagG5aLabTMW4Vt0?utm_source=generator&theme=0&si=058798f1d3cc445b"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Passport Radio no Spotify">
+            </iframe>
           </div>
 
           <div class="spotify-card__foot">
             <span>A Passport continua sendo a casa. O Spotify é mais uma pista de pouso.</span>
-            <a class="spotify-open" href="https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0?si=L4h1fKtLTS6tI5cuJsWM3Q" target="_blank" rel="noopener noreferrer">Abrir no Spotify ↗</a>
+            <a class="spotify-open" href="https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0?si=2LBQOOypSbuXG1mmcAm47Q" target="_blank" rel="noopener noreferrer">Abrir no Spotify ↗</a>
           </div>
         </div>
       </div>
@@ -1451,34 +1458,6 @@
 
   <script>
     (() => {
-      const mountSpotify=()=>{
-        const allowed=document.documentElement.dataset.cookieMedia==='true';
-        document.querySelectorAll('[data-spotify-embed]').forEach(host=>{
-          const already=host.querySelector('iframe');
-          if(allowed && !already){
-            const iframe=document.createElement('iframe');
-            iframe.src=host.dataset.src;
-            iframe.title='Passport Radio no Spotify';
-            iframe.loading='lazy';
-            iframe.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-            iframe.setAttribute('allowfullscreen','');
-            host.innerHTML='';
-            host.appendChild(iframe);
-          }
-          if(!allowed && already){
-            host.innerHTML=`<div class="spotify-consent"><strong>O Spotify espera sua autorização.</strong><p>O player é mídia externa. Autorize essa categoria nas preferências de cookies para carregá-lo dentro da Passport.</p><button type="button" data-cookie-settings>Permitir mídia externa</button></div>`;
-            host.querySelector('[data-cookie-settings]')?.addEventListener('click',()=>document.querySelector('[data-cookie-preferences]')?.click());
-          }
-        });
-      };
-
-      window.addEventListener('passport:consentchange',mountSpotify);
-      mountSpotify();
-
-      document.querySelectorAll('[data-spotify-embed] [data-cookie-settings]').forEach(btn=>{
-        btn.addEventListener('click',()=>document.querySelector('[data-cookie-preferences]')?.click());
-      });
-
       document.querySelectorAll('[data-passport-form]').forEach(form=>{
         const button=form.querySelector('.listener-submit');
         const status=form.querySelector('.form-status');
