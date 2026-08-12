@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Passport Radio: rock, metal, música ao vivo, notícias, histórias, resenhas, agenda de shows, arquivos e loja. Cultura musical, contexto e descoberta em um só lugar." />
+  <meta name="description" content="Passport Radio: rock, metal, música ao vivo, notícias, histórias, resenhas, agenda, arquivos, Spotify, participação dos ouvintes e loja. Cultura musical, contexto e descoberta em um só lugar." />
   <meta name="theme-color" content="#ffffff" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <title>Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja</title>
@@ -435,6 +435,72 @@
       .footer__bottom{display:grid;gap:5px}
     }
 
+
+
+    /* spotify + participation */
+    .passport-spotify{padding:52px 0;border-bottom:1px solid var(--line);background:#fff}
+    .passport-spotify__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);gap:42px;align-items:center}
+    .passport-spotify__copy h2{max-width:760px;font-size:clamp(2.3rem,4.5vw,5rem);line-height:.9;letter-spacing:-.055em}
+    .passport-spotify__copy p{max-width:680px;margin-top:14px;color:var(--muted);font-size:.81rem;line-height:1.65}
+    .passport-spotify__copy .passport-hit{margin-top:20px;padding:17px 18px;border-left:5px solid var(--red);background:var(--soft);color:#111;font-size:.86rem;font-weight:800;line-height:1.55}
+    .passport-spotify__copy .passport-hit strong{color:var(--red)}
+    .spotify-card{border:1px solid var(--line);background:#111;color:#fff;overflow:hidden}
+    .spotify-card__head{padding:18px 18px 14px;border-bottom:1px solid #303030}
+    .spotify-card__head small{display:block;color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .spotify-card__head h3{margin-top:5px;font-size:1.35rem;line-height:1.05}
+    .spotify-card__head p{margin-top:7px;color:#999;font-size:.66rem;line-height:1.5}
+    .spotify-embed{min-height:352px;display:grid;place-items:center;background:#0d0d0d}
+    .spotify-embed iframe{display:block;width:100%;height:352px;border:0}
+    .spotify-consent{padding:28px;max-width:470px;text-align:center}
+    .spotify-consent strong{display:block;font-size:1rem}
+    .spotify-consent p{margin-top:8px;color:#999;font-size:.67rem;line-height:1.55}
+    .spotify-consent button,.spotify-open{display:inline-flex;align-items:center;justify-content:center;margin-top:14px;min-height:42px;padding:0 15px;border:0;background:var(--red);color:#fff;font-size:.59rem;font-weight:900;text-transform:uppercase;cursor:pointer}
+    .spotify-consent button:hover,.spotify-open:hover{background:#fff;color:#111}
+    .spotify-card__foot{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 18px;border-top:1px solid #303030}
+    .spotify-card__foot span{color:#888;font-size:.58rem}
+    .spotify-open{margin-top:0;background:#fff;color:#111}
+    .spotify-open:hover{background:var(--red);color:#fff}
+
+    .participation{padding:52px 0;border-bottom:1px solid var(--line);background:var(--soft)}
+    .participation__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.55fr);gap:36px;align-items:end;margin-bottom:28px}
+    .participation__head h2{max-width:850px;font-size:clamp(2.1rem,4vw,4.6rem);line-height:.92;letter-spacing:-.05em}
+    .participation__head p{color:var(--muted);font-size:.78rem;line-height:1.65}
+    .participation__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .listener-card{padding:24px;border:1px solid #d8d8d8;background:#fff}
+    .listener-card small{display:block;color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .listener-card h3{margin-top:5px;font-size:clamp(1.55rem,2.4vw,2.5rem);line-height:.96;letter-spacing:-.04em}
+    .listener-card>p{margin-top:10px;color:#6e6e6e;font-size:.72rem;line-height:1.6}
+    .listener-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+    .listener-form .full{grid-column:1/-1}
+    .listener-form label{display:grid;gap:5px;color:#555;font-size:.55rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .listener-form input,.listener-form select,.listener-form textarea{width:100%;min-height:44px;padding:10px 11px;border:1px solid #cfcfcf;background:#fff;color:#111;font:inherit;font-size:.72rem;outline:none}
+    .listener-form textarea{min-height:118px;resize:vertical;line-height:1.5}
+    .listener-form input:focus,.listener-form select:focus,.listener-form textarea:focus{border-color:#111;box-shadow:0 0 0 1px #111}
+    .listener-check{grid-column:1/-1;display:grid!important;grid-template-columns:18px 1fr!important;gap:8px!important;align-items:start!important;font-size:.61rem!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;line-height:1.45;color:#666!important}
+    .listener-check input{width:16px!important;height:16px!important;min-height:0!important;margin:1px 0 0;padding:0}
+    .listener-submit{grid-column:1/-1;min-height:46px;border:0;background:#111;color:#fff;font-size:.61rem;font-weight:900;text-transform:uppercase;cursor:pointer}
+    .listener-submit:hover{background:var(--red)}
+    .listener-submit:disabled{opacity:.55;cursor:wait}
+    .form-status{grid-column:1/-1;min-height:18px;color:#666;font-size:.62rem;font-weight:700;line-height:1.45}
+    .form-status.is-success{color:#157347}.form-status.is-error{color:#b42318}
+    .privacy-note{grid-column:1/-1;color:#8a8a8a;font-size:.54rem;line-height:1.5}
+    .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+
+    @media(max-width:900px){
+      .passport-spotify__grid,.participation__head{grid-template-columns:1fr}
+      .participation__grid{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .passport-spotify{padding:36px 0}.passport-spotify__grid{gap:24px}
+      .spotify-embed,.spotify-embed iframe{min-height:352px;height:352px}
+      .spotify-card__foot{display:grid}
+      .spotify-open{width:100%}
+      .participation{padding:36px 0}
+      .listener-card{padding:18px}
+      .listener-form{grid-template-columns:1fr}
+      .listener-form .full,.listener-check,.listener-submit,.form-status,.privacy-note{grid-column:auto}
+    }
+
     /* cookie consent — Passport Radio white / black / red */
     .cookie-banner{
       position:fixed;
@@ -761,20 +827,20 @@
     <section class="top" id="agora">
       <div class="shell top__grid">
         <article class="lead">
-          <a href="white-metal-isso-e-musica-crista.html">
-            <img src="/images/white-metal/Mortification.jpg" alt="Mortification — White Metal e Christian Metal" fetchpriority="high" />
+          <a href="roger-taylor-i-see-you-now-novo-album-2026.html">
+            <img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026 diante de um microfone vintage" fetchpriority="high" />
             <div class="lead__copy">
-              <span class="kicker">Mr. Nomad · White Metal · 11/08/2026</span>
-              <h1>White Metal: isso é música cristã?</h1>
-              <p>Do hard rock de arena ao death metal: Mortification, Trouble, Stryper, Whitecross, Deliverance e Extol numa viagem que destrói qualquer ideia de que metal cristão soa de um jeito só.</p>
+              <span class="kicker">Mr. Nomad · Roger Taylor · 12/08/2026</span>
+              <h1>Roger Taylor não vive do passado.</h1>
+              <p>Aos 77, o baterista, cantor, compositor e multi-instrumentista do Queen lança música nova, prepara seu sétimo álbum solo e lembra ao mundo que nunca foi apenas o homem sentado atrás de Freddie Mercury.</p>
             </div>
           </a>
         </article>
 
         <aside class="top-list" aria-label="Destaques agora">
+          <article class="top-item"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" /><div><small>Mr. Nomad · Hoobastank · 12/08/2026</small><h2>Hoobastank volta ao começo: 25 anos depois, o primeiro álbum inteiro no Roxy.</h2></div></a></article>
+          <article class="top-item"><a href="white-metal-isso-e-musica-crista.html"><img src="/images/white-metal/Mortification.jpg" alt="Mortification — White Metal e Christian Metal" /><div><small>Mr. Nomad · White Metal</small><h2>White Metal: isso é música cristã?</h2></div></a></article>
           <article class="top-item"><a href="historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt="Eye of the Tiger — Rocky III, Survivor e Stallone" /><div><small>Mr. Nomad · Rock & Cinema</small><h2>Stallone queria Queen. O “não” produziu Eye of the Tiger.</h2></div></a></article>
-          <article class="top-item"><a href="greta-van-fleet-palace-for-the-people.html"><img src="/greta-van-fleet-palace-for-the-people.webp" alt="Greta Van Fleet" /><div><small>Agora · Greta Van Fleet</small><h2>Novo álbum, novo single e a velha pergunta: isso veio de 1971?</h2></div></a></article>
-          <article class="top-item"><a href="iron-maiden-musicas-favoritas.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden" /><div><small>Iron Maiden</small><h2>Bruce, Adrian e Dave escolhem suas músicas favoritas.</h2></div></a></article>
         </aside>
       </div>
     </section>
@@ -783,9 +849,9 @@
       <div class="shell wire__inner">
         <strong>AGORA</strong>
         <div class="wire__links">
-          <a href="white-metal-isso-e-musica-crista.html">NOVO · White Metal: isso é música cristã?</a>
-          <a href="historias/eye-of-the-tiger.html">Stallone queria Queen. O “não” produziu Eye of the Tiger</a>
-          <a href="tony-iommi-karl-brazil.html">Tony Iommi inicia nova fase solo com Karl Brazil</a>
+          <a href="roger-taylor-i-see-you-now-novo-album-2026.html">NOVO · Roger Taylor não vive do passado</a>
+          <a href="hoobastank-25-anos-album-estreia-roxy-2026.html">NOVO · Hoobastank celebra 25 anos do álbum de estreia</a>
+          <a href="white-metal-isso-e-musica-crista.html">White Metal: isso é música cristã?</a>
         </div>
         <a class="wire__live" href="radio.html">OUVIR AO VIVO</a>
       </div>
@@ -799,19 +865,19 @@
           </div>
 
           <article class="feature-news">
-            <a href="white-metal-isso-e-musica-crista.html">
-              <img src="/images/white-metal/Mortification.jpg" alt="Mortification — White Metal e Christian Metal" loading="lazy" />
-              <div><small>Mr. Nomad · White Metal · 11/08/2026</small><h3>White Metal: isso é música cristã?</h3><p>Mortification, Trouble, Stryper, Whitecross, Deliverance e Extol numa viagem do hard rock de arena ao metal extremo.</p></div>
+            <a href="hoobastank-25-anos-album-estreia-roxy-2026.html">
+              <img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" loading="lazy" />
+              <div><small>Mr. Nomad · Hoobastank · 12/08/2026</small><h3>Hoobastank volta ao começo.</h3><p>Vinte e cinco anos depois, a banda volta a Los Angeles para tocar o álbum de estreia inteiro — enquanto “The Reason” encontra outra geração e a banda volta a criar.</p></div>
             </a>
           </article>
 
           <div class="news-list">
+            <article class="news-row"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026" loading="lazy" /><div><small>Mr. Nomad · Roger Taylor</small><h3>Aos 77, Roger Taylor ainda tem coisa nova para dizer.</h3></div></a></article>
+            <article class="news-row"><a href="white-metal-isso-e-musica-crista.html"><img src="/images/white-metal/Mortification.jpg" alt="Mortification — White Metal" loading="lazy" /><div><small>Mr. Nomad · White Metal</small><h3>White Metal: isso é música cristã?</h3></div></a></article>
             <article class="news-row"><a href="historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt="Eye of the Tiger — Rocky III, Survivor e Stallone" loading="lazy" /><div><small>Mr. Nomad · Rock & Cinema</small><h3>Stallone queria Queen. O “não” produziu Eye of the Tiger.</h3></div></a></article>
             <article class="news-row"><a href="led-zeppelin-achilles-last-stand.html"><img src="/images/led-zeppelin-a-cancao-rockprogressiva.png" alt="Led Zeppelin" loading="lazy" /><div><small>Led Zeppelin</small><h3>A canção que Robert Plant chamou de “rock progressivo enlouquecido”</h3></div></a></article>
-            <article class="news-row"><a href="kate-bush-wuthering-heights.html"><img src="/images/kate_bush_the_dreaming_capa_corte.webp" alt="Kate Bush" loading="lazy" /><div><small>Kate Bush</small><h3>Wuthering Heights: da literatura ao clássico eternizado também pelo Angra</h3></div></a></article>
             <article class="news-row"><a href="tony-iommi-karl-brazil.html"><img src="/images/tony-iommi-2026.webp" alt="Tony Iommi" loading="lazy" /><div><small>Tony Iommi</small><h3>Quem é Karl Brazil, novo membro da banda de Tony Iommi?</h3></div></a></article>
             <article class="news-row"><a href="jerry-lee-lewis-selvagem-rock.html"><img src="/images/jerry-lee-lewis.png" alt="Jerry Lee Lewis" loading="lazy" /><div><small>Jerry Lee Lewis</small><h3>Pianos incendiados, armas e caos: o selvagem da primeira geração do rock</h3></div></a></article>
-            <article class="news-row"><a href="casa-das-maquinas-brilho-nos-olhos.html"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Casa das Máquinas" loading="lazy" /><div><small>Rock Nacional</small><h3>Casa das Máquinas retorna em plena forma meio século depois</h3></div></a></article>
           </div>
         </div>
 
@@ -846,10 +912,10 @@
           <div><span class="section-label">Resenhas & Histórias</span><h2>História, palco e contexto.</h2></div>
         </div>
         <div class="card-grid">
+          <article class="media-card"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Roger Taylor</small><h3>Ele nunca foi apenas o cara atrás de Freddie</h3></div></a></article>
+          <article class="media-card"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Hoobastank</small><h3>Um quarto de século depois, ainda há uma razão</h3></div></a></article>
           <article class="media-card"><a href="white-metal-isso-e-musica-crista.html"><img src="/images/white-metal/Mortification.jpg" alt="Mortification — White Metal" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · White Metal</small><h3>Isso é música cristã? Do hard rock ao metal extremo</h3></div></a></article>
           <article class="media-card"><a href="historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt="Sylvester Stallone em Rocky III" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · 1982</small><h3>Como Queen, Stallone e uma guitarra quebrada criaram Eye of the Tiger</h3></div></a></article>
-          <article class="media-card"><a href="live-aid-momento-mais-marcante-rock.html"><img src="/images/live-aid-1985.png" alt="Live Aid" loading="lazy" /><div class="media-card__copy"><small>História do Rock</small><h3>O momento que colocou o mundo para ouvir junto</h3></div></a></article>
-          <article class="media-card"><a href="iron-maiden-musicas-favoritas.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden" loading="lazy" /><div class="media-card__copy"><small>Iron Maiden</small><h3>As escolhas de Bruce, Adrian e Dave</h3></div></a></article>
         </div>
       </div>
     </section>
@@ -938,6 +1004,40 @@
       </div>
     </section>
 
+    <section class="passport-spotify" id="spotify" aria-labelledby="spotify-title">
+      <div class="shell passport-spotify__grid">
+        <div class="passport-spotify__copy">
+          <span class="section-label">Passport Radio · Spotify</span>
+          <h2 id="spotify-title">NÃO. NINGUÉM TROCOU DE RÁDIO.</h2>
+          <p>Acabou Gorgoroth. Entrou Bryan Adams. Depois Rhapsody of Fire. George Michael apareceu no corredor. E agora está tocando Immortal.</p>
+          <div class="passport-hit">Você olha para o player e pensa: <strong>“TA POOOOORRA. QUEM MEXEU NESSA PROGRAMAÇÃO?”</strong><br><br>Ninguém.<br><strong>Era a Passport o tempo inteiro.</strong></div>
+          <p>Aqui música não precisa pedir licença para a música anterior. A playlist pública da Passport começou com 791 faixas — versões ao vivo, performances especiais, clássicos, descobertas e mudanças de direção sem aviso prévio.</p>
+          <p><strong>Não tente adivinhar a próxima. Essa é parte da graça.</strong></p>
+        </div>
+
+        <div class="spotify-card">
+          <div class="spotify-card__head">
+            <small>Ouça sem sair daqui</small>
+            <h3>Passport Radio no Spotify</h3>
+            <p>Dê o play aqui. Se quiser levar a seleção com você, abra a playlist completa no Spotify.</p>
+          </div>
+
+          <div class="spotify-embed" data-spotify-embed data-src="https://open.spotify.com/embed/playlist/6UcytwjagG5aLabTMW4Vt0?utm_source=generator">
+            <div class="spotify-consent">
+              <strong>O Spotify espera sua autorização.</strong>
+              <p>O player é mídia externa. Autorize essa categoria nas preferências de cookies para carregá-lo dentro da Passport.</p>
+              <button type="button" data-cookie-settings>Permitir mídia externa</button>
+            </div>
+          </div>
+
+          <div class="spotify-card__foot">
+            <span>A Passport continua sendo a casa. O Spotify é mais uma pista de pouso.</span>
+            <a class="spotify-open" href="https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0?si=L4h1fKtLTS6tI5cuJsWM3Q" target="_blank" rel="noopener noreferrer">Abrir no Spotify ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="explorar">
       <div class="shell explore-layout">
         <div>
@@ -1007,6 +1107,101 @@
       </div>
     </section>
 
+    <section class="participation" id="sua-musica" aria-labelledby="participation-title">
+      <div class="shell">
+        <div class="participation__head">
+          <div>
+            <span class="section-label">Agora é sua vez</span>
+            <h2 id="participation-title">A GAVETA EXPLODE. E VOCÊ PODE AJUDAR.</h2>
+          </div>
+          <p>A Passport não programa por cerca. Se uma música merece estar aqui, ela pode entrar. Você pode escolher o que deveria tocar depois — ou contar por que uma música inteira mora dentro da sua vida.</p>
+        </div>
+
+        <div class="participation__grid">
+          <article class="listener-card">
+            <small>Não tente adivinhar a próxima</small>
+            <h3>O QUE VEM DEPOIS?</h3>
+            <p>Acabou de tocar uma música. Você tem outra na cabeça. Não precisa combinar. Aliás, talvez seja melhor que não combine.</p>
+
+            <form class="listener-form" action="https://formspree.io/f/mwleblbo" method="POST" data-passport-form>
+              <input type="hidden" name="tipo" value="O que vem depois — pedido de música">
+              <input type="hidden" name="_subject" value="Passport Radio — O que vem depois?">
+              <label class="hp-field" aria-hidden="true">Não preencher<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+
+              <label>Seu nome
+                <input type="text" name="nome" autocomplete="name" required>
+              </label>
+              <label>Seu e-mail
+                <input type="email" name="email" autocomplete="email" placeholder="Opcional para resposta">
+              </label>
+              <label>Artista
+                <input type="text" name="artista" required>
+              </label>
+              <label>Música
+                <input type="text" name="musica" required>
+              </label>
+              <label class="full">Onde você gostaria de encontrá-la?
+                <select name="onde">
+                  <option value="Qualquer lugar da Passport">Qualquer lugar da Passport</option>
+                  <option value="Radio ao vivo">Rádio ao vivo</option>
+                  <option value="Player da Passport">Player da Passport</option>
+                  <option value="Spotify">Spotify</option>
+                </select>
+              </label>
+              <label class="full">O que deveria tocar antes ou depois dela?
+                <textarea name="combinacao" placeholder="Pode ser uma combinação perfeitamente sensata. Ou completamente irresponsável."></textarea>
+              </label>
+
+              <button class="listener-submit" type="submit">MANDAR PARA A PASSPORT →</button>
+              <div class="form-status" role="status" aria-live="polite"></div>
+              <p class="privacy-note">Enviado diretamente pelo Formspree. Seu endereço de e-mail, se informado, é usado apenas para responder a esta mensagem.</p>
+            </form>
+          </article>
+
+          <article class="listener-card">
+            <small>Tem música que você escuta. E tem música que acontece com você.</small>
+            <h3>QUAL É A SUA?</h3>
+            <p>Uma pessoa. Uma cidade. Uma noite. Uma perda. Um amor. Uma época inteira. Tem alguma música que abre uma dessas portas?</p>
+
+            <form class="listener-form" action="https://formspree.io/f/mwleblbo" method="POST" data-passport-form>
+              <input type="hidden" name="tipo" value="Historia de ouvinte">
+              <input type="hidden" name="_subject" value="Passport Radio — História de ouvinte">
+              <label class="hp-field" aria-hidden="true">Não preencher<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+
+              <label>Seu nome
+                <input type="text" name="nome" autocomplete="name" required>
+              </label>
+              <label>Seu e-mail
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+              <label>Artista
+                <input type="text" name="artista" required>
+              </label>
+              <label>Música
+                <input type="text" name="musica" required>
+              </label>
+              <label class="full">Por que essa música ficou com você?
+                <textarea name="historia" required placeholder="Conte do seu jeito. Não precisa escrever bonito. Precisa ser verdadeiro."></textarea>
+              </label>
+
+              <label class="listener-check">
+                <input type="checkbox" name="autoriza_historia" value="Sim">
+                <span>Autorizo a Passport Radio a mencionar esta história no site ou na programação. Se ela for usada, meu sobrenome pode ser preservado.</span>
+              </label>
+              <label class="listener-check">
+                <input type="checkbox" name="quero_novidades" value="Sim">
+                <span>Quero receber novidades da Passport Radio por e-mail.</span>
+              </label>
+
+              <button class="listener-submit" type="submit">CONTAR PARA A PASSPORT →</button>
+              <div class="form-status" role="status" aria-live="polite"></div>
+              <p class="privacy-note">A história só poderá ser publicada se você marcar a autorização acima. O envio acontece pelo Formspree sem exibir o e-mail particular de destino no site.</p>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="support" id="apoie">
       <div class="shell support__grid">
         <div>
@@ -1052,10 +1247,10 @@
         <p>Music · History · Culture · Live</p>
       </div>
 
-      <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#agenda">Agenda de shows</a><a href="#broadcasts">Broadcasts</a></div>
+      <div class="footer-col"><strong>CONTEÚDO</strong><a href="#noticias">Últimas histórias</a><a href="#resenhas">Resenhas</a><a href="#agenda">Agenda de shows</a><a href="#broadcasts">Broadcasts</a><a href="#sua-musica">Sua música</a></div>
       <div class="footer-col"><strong>EXPLORAR</strong><a href="radio.html">Ao vivo</a><a href="destinos.html">Explore Music</a><a href="instrument-masters.html#drums">Drum Masters</a><a href="instrument-masters.html#bass">Bass Masters</a></div>
       <div class="footer-col"><strong>COMERCIAL</strong><a href="loja.html">Passport Store</a><a href="anuncie.html">Anuncie</a><a href="#apoie">Apoie</a><a href="#contato">Contato</a></div>
-      <div class="footer-col"><strong>REDES & PRIVACIDADE</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a><button class="cookie-settings-link" type="button" data-cookie-settings>Preferências de cookies</button></div>
+      <div class="footer-col"><strong>REDES & PRIVACIDADE</strong><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/share/1HzGkck1KC/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0?si=L4h1fKtLTS6tI5cuJsWM3Q" target="_blank" rel="noopener noreferrer">Spotify</a><button class="cookie-settings-link" type="button" data-cookie-settings>Preferências de cookies</button></div>
     </div>
 
     <div class="shell footer__bottom">
@@ -1250,6 +1445,74 @@
 
       document.addEventListener('keydown',(event)=>{
         if(event.key==='Escape') modal.classList.remove('is-visible');
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const mountSpotify=()=>{
+        const allowed=document.documentElement.dataset.cookieMedia==='true';
+        document.querySelectorAll('[data-spotify-embed]').forEach(host=>{
+          const already=host.querySelector('iframe');
+          if(allowed && !already){
+            const iframe=document.createElement('iframe');
+            iframe.src=host.dataset.src;
+            iframe.title='Passport Radio no Spotify';
+            iframe.loading='lazy';
+            iframe.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+            iframe.setAttribute('allowfullscreen','');
+            host.innerHTML='';
+            host.appendChild(iframe);
+          }
+          if(!allowed && already){
+            host.innerHTML=`<div class="spotify-consent"><strong>O Spotify espera sua autorização.</strong><p>O player é mídia externa. Autorize essa categoria nas preferências de cookies para carregá-lo dentro da Passport.</p><button type="button" data-cookie-settings>Permitir mídia externa</button></div>`;
+            host.querySelector('[data-cookie-settings]')?.addEventListener('click',()=>document.querySelector('[data-cookie-preferences]')?.click());
+          }
+        });
+      };
+
+      window.addEventListener('passport:consentchange',mountSpotify);
+      mountSpotify();
+
+      document.querySelectorAll('[data-spotify-embed] [data-cookie-settings]').forEach(btn=>{
+        btn.addEventListener('click',()=>document.querySelector('[data-cookie-preferences]')?.click());
+      });
+
+      document.querySelectorAll('[data-passport-form]').forEach(form=>{
+        const button=form.querySelector('.listener-submit');
+        const status=form.querySelector('.form-status');
+
+        form.addEventListener('submit',async(event)=>{
+          event.preventDefault();
+          if(!form.reportValidity()) return;
+
+          if(button){button.disabled=true;button.dataset.originalText=button.textContent;button.textContent='ENVIANDO...';}
+          if(status){status.textContent='Enviando para a Passport...';status.className='form-status';}
+
+          try{
+            const response=await fetch(form.action,{
+              method:'POST',
+              body:new FormData(form),
+              headers:{'Accept':'application/json'}
+            });
+
+            if(!response.ok) throw new Error('Formspree response not ok');
+
+            form.reset();
+            if(status){
+              status.textContent='Chegou. A Passport recebeu sua mensagem.';
+              status.className='form-status is-success';
+            }
+          }catch(error){
+            if(status){
+              status.textContent='Não foi desta vez. Tente novamente ou use o contato direto da Passport.';
+              status.className='form-status is-error';
+            }
+          }finally{
+            if(button){button.disabled=false;button.textContent=button.dataset.originalText||'ENVIAR';}
+          }
+        });
       });
     })();
   </script>
