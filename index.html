@@ -444,22 +444,26 @@
     .passport-spotify__copy p{max-width:680px;margin-top:14px;color:var(--muted);font-size:.81rem;line-height:1.65}
     .passport-spotify__copy .passport-hit{margin-top:20px;padding:17px 18px;border-left:5px solid var(--red);background:var(--soft);color:#111;font-size:.86rem;font-weight:800;line-height:1.55}
     .passport-spotify__copy .passport-hit strong{color:var(--red)}
-    .spotify-card{border:1px solid var(--line);background:#111;color:#fff;overflow:hidden}
-    .spotify-card__head{padding:18px 18px 14px;border-bottom:1px solid #303030}
+    .spotify-card{position:relative;overflow:hidden;min-height:390px;border:1px solid #252525;background:#0d0d0d;color:#fff;display:grid;align-content:space-between}
+    .spotify-card::after{content:"";position:absolute;right:-85px;bottom:-105px;width:310px;height:310px;border:1px solid rgba(215,25,32,.28);border-radius:50%;box-shadow:0 0 0 42px rgba(215,25,32,.035),0 0 0 86px rgba(215,25,32,.02);pointer-events:none}
+    .spotify-card__head{position:relative;z-index:1;padding:24px 24px 18px;border-bottom:1px solid #292929}
     .spotify-card__head small{display:block;color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    .spotify-card__head h3{margin-top:5px;font-size:1.35rem;line-height:1.05}
-    .spotify-card__head p{margin-top:7px;color:#999;font-size:.66rem;line-height:1.5}
-    .spotify-embed{min-height:352px;display:grid;place-items:center;background:#0d0d0d}
-    .spotify-embed iframe{display:block;width:100%;height:352px;border:0}
-    .spotify-consent{padding:28px;max-width:470px;text-align:center}
-    .spotify-consent strong{display:block;font-size:1rem}
-    .spotify-consent p{margin-top:8px;color:#999;font-size:.67rem;line-height:1.55}
-    .spotify-consent button,.spotify-open{display:inline-flex;align-items:center;justify-content:center;margin-top:14px;min-height:42px;padding:0 15px;border:0;background:var(--red);color:#fff;font-size:.59rem;font-weight:900;text-transform:uppercase;cursor:pointer}
-    .spotify-consent button:hover,.spotify-open:hover{background:#fff;color:#111}
-    .spotify-card__foot{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 18px;border-top:1px solid #303030}
-    .spotify-card__foot span{color:#888;font-size:.58rem}
-    .spotify-open{margin-top:0;background:#fff;color:#111}
-    .spotify-open:hover{background:var(--red);color:#fff}
+    .spotify-card__head h3{margin-top:6px;font-size:clamp(1.7rem,3vw,2.8rem);line-height:.95;letter-spacing:-.045em}
+    .spotify-card__head p{max-width:520px;margin-top:10px;color:#aaa;font-size:.7rem;line-height:1.55}
+    .spotify-owned{position:relative;z-index:1;display:grid;grid-template-columns:148px minmax(0,1fr);gap:22px;align-items:center;padding:24px}
+    .spotify-owned__art{width:148px;height:148px;border:1px solid #333;background:#050505;object-fit:cover;border-radius:4px;box-shadow:0 18px 42px rgba(0,0,0,.35)}
+    .spotify-owned__copy{display:grid;gap:10px}
+    .spotify-owned__copy>small{color:#8b8b8b;font-size:.54rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+    .spotify-owned__copy strong{display:block;font-size:1.45rem;line-height:1.05}
+    .spotify-owned__copy p{color:#999;font-size:.68rem;line-height:1.55}
+    .spotify-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+    .spotify-stats span{padding:7px 9px;border:1px solid #333;background:#151515;color:#fff;font-size:.58rem;font-weight:900;text-transform:uppercase}
+    .spotify-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:5px}
+    .spotify-open,.spotify-home{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:0 15px;border:1px solid #fff;background:#fff;color:#111;font-size:.59rem;font-weight:900;text-transform:uppercase}
+    .spotify-open:hover{border-color:var(--red);background:var(--red);color:#fff}
+    .spotify-home{border-color:#3a3a3a;background:#151515;color:#fff}
+    .spotify-home:hover{border-color:#fff;background:#fff;color:#111}
+    .spotify-card__foot{position:relative;z-index:1;padding:14px 24px;border-top:1px solid #292929;color:#858585;font-size:.58rem;line-height:1.5}
 
     .participation{padding:52px 0;border-bottom:1px solid var(--line);background:var(--soft)}
     .participation__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.55fr);gap:36px;align-items:end;margin-bottom:28px}
@@ -492,9 +496,11 @@
     }
     @media(max-width:620px){
       .passport-spotify{padding:36px 0}.passport-spotify__grid{gap:24px}
-      .spotify-embed,.spotify-embed iframe{min-height:352px;height:352px}
-      .spotify-card__foot{display:grid}
-      .spotify-open{width:100%}
+      .spotify-card{min-height:0}
+      .spotify-owned{grid-template-columns:96px 1fr;gap:14px;padding:18px}
+      .spotify-owned__art{width:96px;height:96px}
+      .spotify-actions{grid-column:1/-1}
+      .spotify-open,.spotify-home{width:100%}
       .participation{padding:36px 0}
       .listener-card{padding:18px}
       .listener-form{grid-template-columns:1fr}
@@ -1017,29 +1023,31 @@
 
         <div class="spotify-card">
           <div class="spotify-card__head">
-            <small>Ouça sem sair daqui</small>
-            <h3>Passport Radio no Spotify</h3>
-            <p>Dê o play aqui. Se quiser levar a seleção com você, abra a playlist completa no Spotify.</p>
+            <small>Passport Radio · fora de casa</small>
+            <h3>A playlist continua. O anúncio deles, não.</h3>
+            <p>Sem preview de 30 segundos no meio da nossa Home. Sem pop-up mandando você instalar nada. A Passport fica aqui; o Spotify só entra quando você decide ir até ele.</p>
           </div>
 
-          <div class="spotify-embed">
-            <iframe
-              data-testid="embed-iframe"
-              style="border-radius:12px"
-              src="https://open.spotify.com/embed/playlist/6UcytwjagG5aLabTMW4Vt0?utm_source=generator&theme=0&si=058798f1d3cc445b"
-              width="100%"
-              height="352"
-              frameborder="0"
-              allowfullscreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Passport Radio no Spotify">
-            </iframe>
+          <div class="spotify-owned">
+            <img class="spotify-owned__art" src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" loading="lazy" />
+            <div class="spotify-owned__copy">
+              <small>Playlist pública</small>
+              <strong>Passport Radio</strong>
+              <p>Ao vivo, raridades, clássicos e curvas musicais sem aviso prévio. Luis Miguel pode entregar o microfone para Gorgoroth. Ninguém vai pedir desculpas.</p>
+              <div class="spotify-stats" aria-label="Dados da playlist">
+                <span>791 músicas</span>
+                <span>+24 horas</span>
+                <span>Every Song Is A Destination</span>
+              </div>
+              <div class="spotify-actions">
+                <a class="spotify-home" href="radio.html">Ouvir a Passport aqui →</a>
+                <a class="spotify-open" href="https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0?si=2LBQOOypSbuXG1mmcAm47Q" target="_blank" rel="noopener noreferrer">Levar a Passport para o Spotify ↗</a>
+              </div>
+            </div>
           </div>
 
           <div class="spotify-card__foot">
-            <span>A Passport continua sendo a casa. O Spotify é mais uma pista de pouso.</span>
-            <a class="spotify-open" href="https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0?si=2LBQOOypSbuXG1mmcAm47Q" target="_blank" rel="noopener noreferrer">Abrir no Spotify ↗</a>
+            O Spotify é distribuição. A Passport continua sendo a casa.
           </div>
         </div>
       </div>
