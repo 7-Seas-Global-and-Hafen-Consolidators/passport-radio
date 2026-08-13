@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Passport Radio: rock, metal, música ao vivo, notícias, histórias, resenhas, agenda, arquivos, Spotify, participação dos ouvintes e loja. Cultura musical, contexto e descoberta em um só lugar." />
+  <meta name="description" content="Passport Radio: rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda, participação dos ouvintes e loja. Cultura musical, contexto e descoberta em um só lugar." />
   <meta name="theme-color" content="#ffffff" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <title>Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja</title>
@@ -13,13 +13,13 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Passport Radio" />
   <meta property="og:title" content="Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja" />
-  <meta property="og:description" content="Rock, metal, música ao vivo, histórias, notícias, resenhas, agenda de shows, arquivos e loja. Primeiro a história. Depois a música." />
+  <meta property="og:description" content="Rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda de shows e loja. Primeiro a história. Depois a música." />
   <meta property="og:url" content="https://www.passportradio.online/" />
   <meta property="og:image" content="https://www.passportradio.online/images/logo-passport-radio.png.jpeg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja" />
-  <meta name="twitter:description" content="Rock, metal, música ao vivo, histórias, notícias, resenhas, agenda, arquivos e loja." />
+  <meta name="twitter:description" content="Rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda e loja." />
   <meta name="twitter:image" content="https://www.passportradio.online/images/logo-passport-radio.png.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -747,6 +747,121 @@
       .cookie-btn--primary{animation:none}
     }
 
+
+    /* definitive 1980s archive feature */
+    .eighties-home{
+      padding:0 0 22px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .eighties-home__card{
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+      gap:42px;
+      align-items:end;
+      min-height:330px;
+      padding:46px;
+      border-top:5px solid var(--red);
+      background:#101010;
+      color:#fff;
+      box-shadow:0 22px 60px rgba(0,0,0,.10);
+    }
+    .eighties-home__card::after{
+      content:"80";
+      position:absolute;
+      right:-18px;
+      bottom:-88px;
+      color:rgba(255,255,255,.035);
+      font-size:21rem;
+      font-weight:900;
+      line-height:1;
+      letter-spacing:-.09em;
+      pointer-events:none;
+    }
+    .eighties-home__copy,
+    .eighties-home__side{
+      position:relative;
+      z-index:1;
+    }
+    .eighties-home__label{
+      display:block;
+      margin-bottom:12px;
+      color:var(--red);
+      font-size:.58rem;
+      font-weight:900;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+    .eighties-home h2{
+      max-width:900px;
+      font-size:clamp(2.7rem,5.6vw,6.2rem);
+      line-height:.88;
+      letter-spacing:-.06em;
+    }
+    .eighties-home__copy p{
+      max-width:760px;
+      margin-top:18px;
+      color:#b0b0b0;
+      font-size:.82rem;
+      line-height:1.65;
+    }
+    .eighties-home__side{
+      display:grid;
+      gap:15px;
+      align-content:end;
+      padding-left:24px;
+      border-left:1px solid #333;
+    }
+    .eighties-home__side strong{
+      font-size:1rem;
+      line-height:1.3;
+    }
+    .eighties-home__side p{
+      color:#929292;
+      font-size:.69rem;
+      line-height:1.55;
+    }
+    .eighties-home__button{
+      display:inline-flex;
+      width:max-content;
+      min-height:46px;
+      align-items:center;
+      justify-content:center;
+      padding:0 17px;
+      background:var(--red);
+      color:#fff;
+      font-size:.61rem;
+      font-weight:900;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+    .eighties-home__button:hover{
+      background:#fff;
+      color:#111;
+    }
+    @media(max-width:820px){
+      .eighties-home__card{
+        grid-template-columns:1fr;
+        gap:28px;
+        min-height:0;
+        padding:34px 26px;
+      }
+      .eighties-home__side{
+        padding:24px 0 0;
+        border-left:0;
+        border-top:1px solid #333;
+      }
+    }
+    @media(max-width:620px){
+      .eighties-home{padding-bottom:12px}
+      .eighties-home__card{padding:28px 20px}
+      .eighties-home h2{font-size:clamp(2.6rem,14vw,4.5rem)}
+      .eighties-home__card::after{font-size:13rem;bottom:-48px}
+      .eighties-home__button{width:100%}
+    }
+
   </style>
 
 <script type="application/ld+json">
@@ -855,11 +970,37 @@
       <div class="shell wire__inner">
         <strong>AGORA</strong>
         <div class="wire__links">
+          <a href="anos-80-bandas-musicas-rock-new-wave.html">NOVO · Anos 80: a década que se recusou a morrer</a>
           <a href="1986-musicas-rock-radio-anos-80.html">NOVO · 1986: quando o rádio ainda podia mudar o seu dia</a>
           <a href="thomas-youngblood-kamelot-trinta-anos-estrada.html">NOVO · Thomas Youngblood explica por que o Kamelot não quer morar na estrada</a>
           <a href="roger-taylor-i-see-you-now-novo-album-2026.html">NOVO · Roger Taylor não vive do passado</a>
         </div>
         <a class="wire__live" href="radio.html">OUVIR AO VIVO</a>
+      </div>
+    </section>
+
+    <section class="eighties-home" aria-labelledby="eighties-home-title">
+      <div class="shell">
+        <a class="eighties-home__card" href="anos-80-bandas-musicas-rock-new-wave.html">
+          <div class="eighties-home__copy">
+            <span class="eighties-home__label">Novo arquivo · Mr. Nomad · Anos 80</span>
+            <h2 id="eighties-home-title">ANOS 80: A DÉCADA QUE SE RECUSOU A MORRER.</h2>
+            <p>
+              De A Flock of Seagulls a Yazoo. De Duran Duran a The Sisters of Mercy.
+              De Debbie Gibson a RPM. New wave, synthpop, pós-punk, gothic, pop, rock,
+              Brasil, músicos escondidos atrás das estrelas, performances ao vivo e um
+              arquivo A–Z feito para quem ainda escuta a banda inteira.
+            </p>
+          </div>
+          <div class="eighties-home__side">
+            <strong>Centenas de artistas. Dezenas de performances. Uma década que ainda toca.</strong>
+            <p>
+              Não é ranking. Não é playlist automática. É contexto, memória, palco e o
+              tipo de detalhe que faz uma música conhecida soar diferente outra vez.
+            </p>
+            <span class="eighties-home__button">Entrar no arquivo →</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -1070,6 +1211,7 @@
           <a href="destinos.html#nomads"><b>04</b><span><strong>Nomads</strong><small>Instrument sessions e linguagem audiovisual.</small></span></a>
           <a href="destinos.html#cenas"><b>05</b><span><strong>Cenas &amp; Movimentos</strong><small>Onde a música aconteceu e por quê.</small></span></a>
           <a href="radio.html"><b>06</b><span><strong>Ao Vivo</strong><small>Arquivos sonoros e programação.</small></span></a>
+          <a href="anos-80-bandas-musicas-rock-new-wave.html"><b>07</b><span><strong>Arquivo Anos 80</strong><small>New wave, synthpop, pós-punk, pop, rock, Brasil e A–Z.</small></span></a>
         </div>
       </div>
     </section>
