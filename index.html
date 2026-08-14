@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Passport Radio: rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda, participação dos ouvintes e loja. Cultura musical, contexto e descoberta em um só lugar." />
+  <meta name="description" content="Passport Radio: rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, metal sinfônico, Therion, Rhapsody of Fire, agenda, participação dos ouvintes e loja. Cultura musical, contexto e descoberta em um só lugar." />
   <meta name="theme-color" content="#ffffff" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <title>Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja</title>
@@ -13,7 +13,7 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Passport Radio" />
   <meta property="og:title" content="Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja" />
-  <meta property="og:description" content="Rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda de shows e loja. Primeiro a história. Depois a música." />
+  <meta property="og:description" content="Rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, metal sinfônico, Therion, Rhapsody of Fire, agenda de shows e loja. Primeiro a história. Depois a música." />
   <meta property="og:url" content="https://www.passportradio.online/" />
   <meta property="og:image" content="https://www.passportradio.online/images/logo-passport-radio.png.jpeg" />
 
@@ -862,42 +862,106 @@
       .eighties-home__button{width:100%}
     }
 
-
-    /* Passport Radio — proteção editorial seletiva
-       O conteúdo editorial da Home não pode ser selecionado/copied por meios casuais.
-       Áreas essenciais e interativas ficam explicitamente livres:
-       agenda, broadcasts, Spotify, navegação de exploração, publicidade, loja,
-       participação, apoio, formulários, player, cookies e contatos. */
-    .passport-protected{
+    /* Passport Radio — editorial protection only.
+       Commercial, forms, player, navigation and external services remain fully interactive. */
+    .editorial-protected{
       -webkit-user-select:none;
       -moz-user-select:none;
       -ms-user-select:none;
       user-select:none;
       -webkit-touch-callout:none;
     }
-
-    .passport-protected img{
+    .editorial-protected img{
       -webkit-user-drag:none;
       user-drag:none;
     }
 
-    .passport-protected .passport-open,
-    .passport-protected .passport-open *,
-    .passport-protected input,
-    .passport-protected textarea,
-    .passport-protected select,
-    .passport-protected option,
-    .passport-protected [contenteditable="true"]{
-      -webkit-user-select:text;
-      -moz-user-select:text;
-      -ms-user-select:text;
-      user-select:text;
-      -webkit-touch-callout:default;
+    /* Symphonic Metal — newest Passport stories */
+    .symphonic-home{
+      padding:38px 0 44px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
     }
-
-    .passport-protected .passport-open img{
-      -webkit-user-drag:auto;
-      user-drag:auto;
+    .symphonic-home__head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:24px;
+      margin-bottom:20px;
+    }
+    .symphonic-home__head h2{
+      max-width:820px;
+      font-size:clamp(2rem,4vw,4.4rem);
+      line-height:.92;
+      letter-spacing:-.05em;
+    }
+    .symphonic-home__head p{
+      max-width:450px;
+      color:var(--muted);
+      font-size:.75rem;
+      line-height:1.55;
+    }
+    .symphonic-home__grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+    .symphonic-story{
+      display:grid;
+      grid-template-columns:minmax(210px,.92fr) minmax(0,1.08fr);
+      min-height:240px;
+      border-top:4px solid var(--red);
+      background:#111;
+      color:#fff;
+      overflow:hidden;
+    }
+    .symphonic-story img{
+      width:100%;
+      height:100%;
+      min-height:240px;
+      object-fit:cover;
+    }
+    .symphonic-story__copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:24px;
+    }
+    .symphonic-story__copy small{
+      color:#e9585d;
+      font-size:.55rem;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .symphonic-story__copy h3{
+      margin-top:8px;
+      font-size:clamp(1.45rem,2.5vw,2.6rem);
+      line-height:.98;
+      letter-spacing:-.04em;
+    }
+    .symphonic-story__copy p{
+      margin-top:12px;
+      color:#aaa;
+      font-size:.7rem;
+      line-height:1.55;
+    }
+    .symphonic-story__cta{
+      margin-top:18px;
+      color:#fff;
+      font-size:.6rem;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+    @media(max-width:900px){
+      .symphonic-home__grid{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .symphonic-home{padding:28px 0 34px}
+      .symphonic-home__head{align-items:flex-start;flex-direction:column}
+      .symphonic-story{grid-template-columns:1fr}
+      .symphonic-story img{height:210px;min-height:0}
+      .symphonic-story__copy{padding:20px}
     }
 
   </style>
@@ -981,11 +1045,11 @@
     </div>
   </header>
 
-  <main id="conteudo-principal" class="passport-protected">
+  <main id="conteudo-principal">
 
     <section class="top" id="agora">
       <div class="shell top__grid">
-        <article class="lead">
+        <article class="lead editorial-protected">
           <a href="1986-musicas-rock-radio-anos-80.html">
             <img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock, o rádio e os anos 80" fetchpriority="high" />
             <div class="lead__copy">
@@ -997,18 +1061,20 @@
         </article>
 
         <aside class="top-list" aria-label="Destaques agora">
-          <article class="top-item"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" /><div><small>Mr. Nomad · Kamelot · 12/08/2026</small><h2>Thomas Youngblood: a estrada cobra. E o Kamelot aprendeu a não deixar que ela cobre a banda inteira.</h2></div></a></article>
-          <article class="top-item"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026 diante de um microfone vintage" /><div><small>Mr. Nomad · Roger Taylor · 12/08/2026</small><h2>Roger Taylor não vive do passado.</h2></div></a></article>
-          <article class="top-item"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" /><div><small>Mr. Nomad · Hoobastank · 12/08/2026</small><h2>Hoobastank volta ao começo: 25 anos depois, o primeiro álbum inteiro no Roxy.</h2></div></a></article>
+          <article class="top-item editorial-protected"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" /><div><small>Mr. Nomad · Kamelot · 12/08/2026</small><h2>Thomas Youngblood: a estrada cobra. E o Kamelot aprendeu a não deixar que ela cobre a banda inteira.</h2></div></a></article>
+          <article class="top-item editorial-protected"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026 diante de um microfone vintage" /><div><small>Mr. Nomad · Roger Taylor · 12/08/2026</small><h2>Roger Taylor não vive do passado.</h2></div></a></article>
+          <article class="top-item editorial-protected"><a href="rhapsody-of-fire-symphonic-power-metal.html"><img src="/images/rhapsody-of-fire/Rhapsody_of_Fire_Rockharz_2025_15.jpg" alt="Rhapsody of Fire ao vivo no Rockharz" /><div><small>NOVO · Mr. Nomad · Rhapsody of Fire · 14/08/2026</small><h2>Rhapsody of Fire: quando o power metal virou cinema.</h2></div></a></article>
         </aside>
       </div>
     </section>
 
-    <section class="wire passport-open" aria-label="Atualizações agora">
+    <section class="wire" aria-label="Atualizações agora">
       <div class="shell wire__inner">
         <strong>AGORA</strong>
         <div class="wire__links">
-          <a href="anos-80-bandas-musicas-rock-new-wave.html">NOVO · Anos 80: a década que se recusou a morrer</a>
+          <a href="rhapsody-of-fire-symphonic-power-metal.html">NOVO · Rhapsody of Fire: quando o power metal virou cinema</a>
+          <a href="therion-miskolc-experience-symphonic-metal.html">NOVO · Therion: quando o metal encontrou a orquestra</a>
+          <a href="anos-80-bandas-musicas-rock-new-wave.html">Anos 80: a década que se recusou a morrer</a>
           <a href="1986-musicas-rock-radio-anos-80.html">NOVO · 1986: quando o rádio ainda podia mudar o seu dia</a>
           <a href="thomas-youngblood-kamelot-trinta-anos-estrada.html">NOVO · Thomas Youngblood explica por que o Kamelot não quer morar na estrada</a>
           <a href="roger-taylor-i-see-you-now-novo-album-2026.html">NOVO · Roger Taylor não vive do passado</a>
@@ -1019,7 +1085,7 @@
 
     <section class="eighties-home" aria-labelledby="eighties-home-title">
       <div class="shell">
-        <a class="eighties-home__card" href="anos-80-bandas-musicas-rock-new-wave.html">
+        <a class="eighties-home__card editorial-protected" href="anos-80-bandas-musicas-rock-new-wave.html">
           <div class="eighties-home__copy">
             <span class="eighties-home__label">Novo arquivo · Mr. Nomad · Anos 80</span>
             <h2 id="eighties-home-title">ANOS 80: A DÉCADA QUE SE RECUSOU A MORRER.</h2>
@@ -1042,6 +1108,40 @@
       </div>
     </section>
 
+    <section class="symphonic-home" aria-labelledby="symphonic-home-title">
+      <div class="shell">
+        <div class="symphonic-home__head">
+          <div>
+            <span class="section-label">NOVO ARQUIVO · SYMPHONIC METAL · MR. NOMAD</span>
+            <h2 id="symphonic-home-title">DUAS PORTAS. A MESMA PERGUNTA: ATÉ ONDE O METAL PODE CRESCER?</h2>
+          </div>
+          <p>Therion coloca banda, coro e orquestra no mesmo palco. Rhapsody of Fire pega velocidade, fantasia e arranjo sinfônico e transforma power metal em cinema.</p>
+        </div>
+
+        <div class="symphonic-home__grid">
+          <a class="symphonic-story editorial-protected" href="therion-miskolc-experience-symphonic-metal.html">
+            <img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion durante The Miskolc Experience com orquestra e coro" loading="lazy" />
+            <div class="symphonic-story__copy">
+              <small>14/08/2026 · Therion · The Miskolc Experience</small>
+              <h3>Quando o metal encontrou a orquestra.</h3>
+              <p>Banda, coro, solistas e orquestra. Não como decoração: como arquitetura. Mr. Nomad desmonta as camadas e manda você ouvir de novo.</p>
+              <span class="symphonic-story__cta">Entrar na experiência →</span>
+            </div>
+          </a>
+
+          <a class="symphonic-story editorial-protected" href="rhapsody-of-fire-symphonic-power-metal.html">
+            <img src="/images/rhapsody-of-fire/Rhapsody_of_Fire_Rockharz_2025_15.jpg" alt="Rhapsody of Fire ao vivo no Rockharz" loading="lazy" />
+            <div class="symphonic-story__copy">
+              <small>14/08/2026 · Rhapsody of Fire · Symphonic Power Metal</small>
+              <h3>Quando o power metal virou cinema.</h3>
+              <p>De The Village of Dwarves a Emerald Sword: músicos, velocidade, fantasia, emoção e cinco performances ao vivo para ouvir a máquina inteira.</p>
+              <span class="symphonic-story__cta">Continuar a viagem →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="noticias">
       <div class="shell content-layout">
         <div>
@@ -1049,14 +1149,16 @@
             <div><span class="section-label">Latest Stories</span><h2>Fique ligado no que importa.</h2></div>
           </div>
 
-          <article class="feature-news">
-            <a href="1986-musicas-rock-radio-anos-80.html">
-              <img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock, o rádio e os anos 80" loading="lazy" />
-              <div><small>Mr. Nomad · 1986 · 13/08/2026</small><h3>1986: quando o rádio ainda podia mudar o seu dia.</h3><p>26 músicas, memórias, músicos escondidos nos créditos e performances ao vivo para revisitar um ano em que o rádio ainda podia surpreender.</p></div>
+          <article class="feature-news editorial-protected">
+            <a href="rhapsody-of-fire-symphonic-power-metal.html">
+              <img src="/images/rhapsody-of-fire/Rhapsody_of_Fire_Rockharz_2025_15.jpg" alt="Rhapsody of Fire ao vivo no Rockharz" loading="lazy" />
+              <div><small>NOVO · Mr. Nomad · Rhapsody of Fire · 14/08/2026</small><h3>Rhapsody of Fire: quando o power metal virou cinema.</h3><p>Fantasia, velocidade, músicos, arranjos e cinco performances ao vivo para descobrir o que existe por baixo de toda aquela escala cinematográfica.</p></div>
             </a>
           </article>
 
-          <div class="news-list">
+          <div class="news-list editorial-protected">
+            <article class="news-row"><a href="therion-miskolc-experience-symphonic-metal.html"><img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion em The Miskolc Experience" loading="lazy" /><div><small>NOVO · Mr. Nomad · Therion</small><h3>Therion: quando o metal encontrou a orquestra.</h3></div></a></article>
+            <article class="news-row"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock e o rádio" loading="lazy" /><div><small>Mr. Nomad · 1986</small><h3>1986: quando o rádio ainda podia mudar o seu dia.</h3></div></a></article>
             <article class="news-row"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" loading="lazy" /><div><small>Mr. Nomad · Kamelot</small><h3>Thomas Youngblood: a estrada cobra.</h3></div></a></article>
             <article class="news-row"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" loading="lazy" /><div><small>Mr. Nomad · Hoobastank</small><h3>Vinte e cinco anos depois, o Hoobastank volta ao começo no Roxy.</h3></div></a></article>
             <article class="news-row"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026" loading="lazy" /><div><small>Mr. Nomad · Roger Taylor</small><h3>Aos 77, Roger Taylor ainda tem coisa nova para dizer.</h3></div></a></article>
@@ -1098,16 +1200,16 @@
         <div class="section-head">
           <div><span class="section-label">Resenhas & Histórias</span><h2>História, palco e contexto.</h2></div>
         </div>
-        <div class="card-grid">
-          <article class="media-card"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock, o rádio e os anos 80" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · 1986</small><h3>Quando o rádio ainda podia mudar o seu dia</h3></div></a></article>
-          <article class="media-card"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Roger Taylor</small><h3>Ele nunca foi apenas o cara atrás de Freddie</h3></div></a></article>
-          <article class="media-card"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Kamelot</small><h3>Trinta anos de estrada cobram um preço. Youngblood aprendeu onde está o limite.</h3></div></a></article>
-          <article class="media-card"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Hoobastank</small><h3>Um quarto de século depois, ainda há uma razão</h3></div></a></article>
+        <div class="card-grid editorial-protected">
+          <article class="media-card"><a href="rhapsody-of-fire-symphonic-power-metal.html"><img src="/images/rhapsody-of-fire/Rhapsody_of_Fire_Rockharz_2025_15.jpg" alt="Rhapsody of Fire ao vivo" loading="lazy" /><div class="media-card__copy"><small>NOVO · Mr. Nomad · Rhapsody of Fire</small><h3>Quando o power metal virou cinema</h3></div></a></article>
+          <article class="media-card"><a href="therion-miskolc-experience-symphonic-metal.html"><img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion e orquestra em Miskolc" loading="lazy" /><div class="media-card__copy"><small>NOVO · Mr. Nomad · Therion</small><h3>Quando o metal encontrou a orquestra</h3></div></a></article>
+          <article class="media-card"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock e o rádio" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · 1986</small><h3>Quando o rádio ainda podia mudar o seu dia</h3></div></a></article>
+          <article class="media-card"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Kamelot</small><h3>Trinta anos de estrada cobram um preço</h3></div></a></article>
         </div>
       </div>
     </section>
 
-    <section class="section passport-open" id="agenda">
+    <section class="section" id="agenda">
       <div class="shell">
         <div class="section-head">
           <div><span class="section-label">Agenda de Shows · Brasil</span><h2>O palco não espera.</h2></div>
@@ -1167,7 +1269,7 @@
       </div>
     </section>
 
-    <section class="section section--black passport-open" id="broadcasts">
+    <section class="section section--black" id="broadcasts">
       <div class="shell">
         <div class="section-head">
           <div><span class="section-label">Broadcasts</span><h2>Histórias para ouvir no volume certo.</h2></div>
@@ -1191,7 +1293,7 @@
       </div>
     </section>
 
-    <section class="passport-spotify passport-open" id="spotify" aria-labelledby="spotify-title">
+    <section class="passport-spotify" id="spotify" aria-labelledby="spotify-title">
       <div class="shell passport-spotify__grid">
         <div class="passport-spotify__copy">
           <span class="section-label">Passport Radio · Spotify</span>
@@ -1234,7 +1336,7 @@
       </div>
     </section>
 
-    <section class="section passport-open" id="explorar">
+    <section class="section" id="explorar">
       <div class="shell explore-layout">
         <div>
           <span class="section-label">Explore Music</span>
@@ -1250,11 +1352,12 @@
           <a href="destinos.html#cenas"><b>05</b><span><strong>Cenas &amp; Movimentos</strong><small>Onde a música aconteceu e por quê.</small></span></a>
           <a href="radio.html"><b>06</b><span><strong>Ao Vivo</strong><small>Arquivos sonoros e programação.</small></span></a>
           <a href="anos-80-bandas-musicas-rock-new-wave.html"><b>07</b><span><strong>Arquivo Anos 80</strong><small>New wave, synthpop, pós-punk, pop, rock, Brasil e A–Z.</small></span></a>
+          <a href="therion-miskolc-experience-symphonic-metal.html"><b>08</b><span><strong>Symphonic Metal</strong><small>Therion, Rhapsody of Fire e a expansão do metal sinfônico.</small></span></a>
         </div>
       </div>
     </section>
 
-    <section class="section section--black passport-open" id="anuncie">
+    <section class="section section--black" id="anuncie">
       <div class="shell ad-call">
         <a class="ad-campaign" href="anuncie.html" aria-label="Anuncie na Passport Radio">
           <span class="ad-campaign__tag">Publicidade · Espaço disponível</span>
@@ -1271,7 +1374,7 @@
       </div>
     </section>
 
-    <section class="section passport-open" id="loja">
+    <section class="section" id="loja">
       <div class="shell">
         <div class="section-head">
           <div><span class="section-label">Passport Store</span><h2>Produto. Preço. Comprar.</h2></div>
@@ -1304,7 +1407,7 @@
       </div>
     </section>
 
-    <section class="participation passport-open" id="sua-musica" aria-labelledby="participation-title">
+    <section class="participation" id="sua-musica" aria-labelledby="participation-title">
       <div class="shell">
         <div class="participation__head">
           <div>
@@ -1399,7 +1502,7 @@
       </div>
     </section>
 
-    <section class="support passport-open" id="apoie">
+    <section class="support" id="apoie">
       <div class="shell support__grid">
         <div>
           <span class="section-label">KEEP INDEPENDENT MUSIC CULTURE ALIVE</span>
@@ -1543,56 +1646,6 @@
     <audio id="passport-audio" preload="metadata"></audio>
   </div>
 
-
-  <script>
-    /* PASSPORT RADIO — EDITORIAL CONTENT PROTECTION
-       Protege apenas o conteúdo editorial.
-       Não interfere em loja, áudio, Spotify, agenda, formulários, publicidade,
-       apoio, cookies, botões, inputs ou demais zonas marcadas como .passport-open. */
-    (() => {
-      const root = document.querySelector('.passport-protected');
-      if(!root) return;
-
-      const getElement = (node) => {
-        if(!node) return null;
-        return node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-      };
-
-      const isOpen = (node) => {
-        const el = getElement(node);
-        return Boolean(el && el.closest(
-          '.passport-open, input, textarea, select, option, button, audio, video, iframe, [contenteditable="true"]'
-        ));
-      };
-
-      root.addEventListener('contextmenu', (event) => {
-        if(isOpen(event.target)) return;
-        event.preventDefault();
-      });
-
-      root.addEventListener('selectstart', (event) => {
-        if(isOpen(event.target)) return;
-        event.preventDefault();
-      });
-
-      root.addEventListener('dragstart', (event) => {
-        if(isOpen(event.target)) return;
-        if(getElement(event.target)?.closest('img')) event.preventDefault();
-      });
-
-      const blockClipboardIfProtected = (event) => {
-        const selection = window.getSelection?.();
-        const anchor = selection?.anchorNode;
-        if(!anchor || !root.contains(getElement(anchor)) || isOpen(anchor)) return;
-        event.preventDefault();
-        if(event.clipboardData) event.clipboardData.setData('text/plain','');
-      };
-
-      document.addEventListener('copy', blockClipboardIfProtected);
-      document.addEventListener('cut', blockClipboardIfProtected);
-    })();
-  </script>
-
   <script>
     const menuButton=document.querySelector('.menu-button');
     const nav=document.querySelector('.nav');
@@ -1732,6 +1785,54 @@
             if(button){button.disabled=false;button.textContent=button.dataset.originalText||'ENVIAR';}
           }
         });
+      });
+    })();
+  </script>
+
+  <script>
+    /* PASSPORT RADIO — EDITORIAL CONTENT PROTECTION
+       Protects editorial cards/stories only. Store, forms, player, menus, tickets,
+       support, contact, cookies and external-service controls remain untouched. */
+    (() => {
+      const protectedSelector='.editorial-protected';
+
+      const insideProtected=(node)=>{
+        if(!node) return false;
+        const element=node.nodeType===1 ? node : node.parentElement;
+        return Boolean(element && element.closest(protectedSelector));
+      };
+
+      document.addEventListener('contextmenu',(event)=>{
+        if(insideProtected(event.target)) event.preventDefault();
+      });
+
+      document.addEventListener('copy',(event)=>{
+        const selection=window.getSelection();
+        if(selection && insideProtected(selection.anchorNode)) event.preventDefault();
+      });
+
+      document.addEventListener('cut',(event)=>{
+        const selection=window.getSelection();
+        if(selection && insideProtected(selection.anchorNode)) event.preventDefault();
+      });
+
+      document.addEventListener('dragstart',(event)=>{
+        if(event.target instanceof Element && event.target.matches('.editorial-protected img, .editorial-protected img *')){
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener('keydown',(event)=>{
+        const active=document.activeElement;
+        if(active && (active.matches('input,textarea,select,[contenteditable="true"]'))) return;
+
+        const key=event.key.toLowerCase();
+        if(!(event.ctrlKey || event.metaKey)) return;
+
+        if(['c','x'].includes(key)){
+          const selection=window.getSelection();
+          if(selection && insideProtected(selection.anchorNode)) event.preventDefault();
+        }
       });
     })();
   </script>
