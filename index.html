@@ -862,6 +862,44 @@
       .eighties-home__button{width:100%}
     }
 
+
+    /* Passport Radio — proteção editorial seletiva
+       O conteúdo editorial da Home não pode ser selecionado/copied por meios casuais.
+       Áreas essenciais e interativas ficam explicitamente livres:
+       agenda, broadcasts, Spotify, navegação de exploração, publicidade, loja,
+       participação, apoio, formulários, player, cookies e contatos. */
+    .passport-protected{
+      -webkit-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+      -webkit-touch-callout:none;
+    }
+
+    .passport-protected img{
+      -webkit-user-drag:none;
+      user-drag:none;
+    }
+
+    .passport-protected .passport-open,
+    .passport-protected .passport-open *,
+    .passport-protected input,
+    .passport-protected textarea,
+    .passport-protected select,
+    .passport-protected option,
+    .passport-protected [contenteditable="true"]{
+      -webkit-user-select:text;
+      -moz-user-select:text;
+      -ms-user-select:text;
+      user-select:text;
+      -webkit-touch-callout:default;
+    }
+
+    .passport-protected .passport-open img{
+      -webkit-user-drag:auto;
+      user-drag:auto;
+    }
+
   </style>
 
 <script type="application/ld+json">
@@ -943,7 +981,7 @@
     </div>
   </header>
 
-  <main id="conteudo-principal">
+  <main id="conteudo-principal" class="passport-protected">
 
     <section class="top" id="agora">
       <div class="shell top__grid">
@@ -966,7 +1004,7 @@
       </div>
     </section>
 
-    <section class="wire" aria-label="Atualizações agora">
+    <section class="wire passport-open" aria-label="Atualizações agora">
       <div class="shell wire__inner">
         <strong>AGORA</strong>
         <div class="wire__links">
@@ -1069,7 +1107,7 @@
       </div>
     </section>
 
-    <section class="section" id="agenda">
+    <section class="section passport-open" id="agenda">
       <div class="shell">
         <div class="section-head">
           <div><span class="section-label">Agenda de Shows · Brasil</span><h2>O palco não espera.</h2></div>
@@ -1129,7 +1167,7 @@
       </div>
     </section>
 
-    <section class="section section--black" id="broadcasts">
+    <section class="section section--black passport-open" id="broadcasts">
       <div class="shell">
         <div class="section-head">
           <div><span class="section-label">Broadcasts</span><h2>Histórias para ouvir no volume certo.</h2></div>
@@ -1153,7 +1191,7 @@
       </div>
     </section>
 
-    <section class="passport-spotify" id="spotify" aria-labelledby="spotify-title">
+    <section class="passport-spotify passport-open" id="spotify" aria-labelledby="spotify-title">
       <div class="shell passport-spotify__grid">
         <div class="passport-spotify__copy">
           <span class="section-label">Passport Radio · Spotify</span>
@@ -1196,7 +1234,7 @@
       </div>
     </section>
 
-    <section class="section" id="explorar">
+    <section class="section passport-open" id="explorar">
       <div class="shell explore-layout">
         <div>
           <span class="section-label">Explore Music</span>
@@ -1216,7 +1254,7 @@
       </div>
     </section>
 
-    <section class="section section--black" id="anuncie">
+    <section class="section section--black passport-open" id="anuncie">
       <div class="shell ad-call">
         <a class="ad-campaign" href="anuncie.html" aria-label="Anuncie na Passport Radio">
           <span class="ad-campaign__tag">Publicidade · Espaço disponível</span>
@@ -1233,7 +1271,7 @@
       </div>
     </section>
 
-    <section class="section" id="loja">
+    <section class="section passport-open" id="loja">
       <div class="shell">
         <div class="section-head">
           <div><span class="section-label">Passport Store</span><h2>Produto. Preço. Comprar.</h2></div>
@@ -1266,7 +1304,7 @@
       </div>
     </section>
 
-    <section class="participation" id="sua-musica" aria-labelledby="participation-title">
+    <section class="participation passport-open" id="sua-musica" aria-labelledby="participation-title">
       <div class="shell">
         <div class="participation__head">
           <div>
@@ -1361,7 +1399,7 @@
       </div>
     </section>
 
-    <section class="support" id="apoie">
+    <section class="support passport-open" id="apoie">
       <div class="shell support__grid">
         <div>
           <span class="section-label">KEEP INDEPENDENT MUSIC CULTURE ALIVE</span>
@@ -1504,6 +1542,56 @@
     <span class="player__status"><i></i><span id="player-status">PLAYLIST</span></span>
     <audio id="passport-audio" preload="metadata"></audio>
   </div>
+
+
+  <script>
+    /* PASSPORT RADIO — EDITORIAL CONTENT PROTECTION
+       Protege apenas o conteúdo editorial.
+       Não interfere em loja, áudio, Spotify, agenda, formulários, publicidade,
+       apoio, cookies, botões, inputs ou demais zonas marcadas como .passport-open. */
+    (() => {
+      const root = document.querySelector('.passport-protected');
+      if(!root) return;
+
+      const getElement = (node) => {
+        if(!node) return null;
+        return node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+      };
+
+      const isOpen = (node) => {
+        const el = getElement(node);
+        return Boolean(el && el.closest(
+          '.passport-open, input, textarea, select, option, button, audio, video, iframe, [contenteditable="true"]'
+        ));
+      };
+
+      root.addEventListener('contextmenu', (event) => {
+        if(isOpen(event.target)) return;
+        event.preventDefault();
+      });
+
+      root.addEventListener('selectstart', (event) => {
+        if(isOpen(event.target)) return;
+        event.preventDefault();
+      });
+
+      root.addEventListener('dragstart', (event) => {
+        if(isOpen(event.target)) return;
+        if(getElement(event.target)?.closest('img')) event.preventDefault();
+      });
+
+      const blockClipboardIfProtected = (event) => {
+        const selection = window.getSelection?.();
+        const anchor = selection?.anchorNode;
+        if(!anchor || !root.contains(getElement(anchor)) || isOpen(anchor)) return;
+        event.preventDefault();
+        if(event.clipboardData) event.clipboardData.setData('text/plain','');
+      };
+
+      document.addEventListener('copy', blockClipboardIfProtected);
+      document.addEventListener('cut', blockClipboardIfProtected);
+    })();
+  </script>
 
   <script>
     const menuButton=document.querySelector('.menu-button');
