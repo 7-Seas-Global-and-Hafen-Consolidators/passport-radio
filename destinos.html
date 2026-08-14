@@ -3,242 +3,582 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Explore a música na Passport Radio: Rock Brasileiro, estilos, instrumentos, cenas, Nomads, histórias e arquivos ao vivo.">
+<meta name="description" content="Arquivo musical da Passport Radio: rock brasileiro, anos 80, progressive, heavy metal, gothic e alternative, punk, músicos, instrumentos, shows e performances ao vivo.">
 <meta name="theme-color" content="#ffffff">
-<title>Explorar Música | Passport Radio</title>
+<title>Arquivo Musical: bandas, estilos, músicos e histórias | Passport Radio</title>
+<link rel="canonical" href="https://www.passportradio.online/destinos.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Passport Radio">
+<meta property="og:title" content="Arquivo Musical | Passport Radio">
+<meta property="og:description" content="Bandas, artistas, discos, instrumentos, estilos, cenas, décadas e performances. Uma enciclopédia musical que faz barulho.">
+<meta property="og:url" content="https://www.passportradio.online/destinos.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#fff;--soft:#f5f5f3;--ink:#111;--muted:#6d6d6d;--line:#e1e1e1;--red:#d71920;--black:#111;--shell:1240px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;padding:0 0 54px;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}h1,h2,h3,p{margin:0}.shell{width:min(calc(100% - 36px),var(--shell));margin:auto}
-.skip-link{position:fixed;left:12px;top:12px;z-index:99999;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}.skip-link:focus{width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;padding:10px 14px;background:#111;color:#fff;font-weight:800}
-.trustbar{padding:7px 16px;border-bottom:1px solid var(--line);background:#fafafa;color:#666;font-size:.58rem;font-weight:700;text-align:center}.trustbar strong{color:#111}
-.header{position:sticky;top:0;z-index:8000;border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(14px)}.header__inner{min-height:66px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}.brand{display:flex;align-items:center;gap:10px;min-width:205px}.brand img{width:42px;height:42px;object-fit:cover;border-radius:50%}.brand__copy{display:grid;gap:1px}.brand__copy strong{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}.brand__copy small{color:#777;font-size:.53rem}.nav{display:flex;justify-content:center;align-items:center;gap:16px}.nav a{font-size:.67rem;font-weight:800}.nav a:hover{color:var(--red)}.onair{display:grid;grid-template-columns:8px auto;align-items:center;column-gap:7px;min-width:102px;padding:7px 11px;border:1px solid #d9d9d9;border-radius:999px}.onair__dot{width:8px;height:8px;border-radius:50%;background:var(--red)}.onair b{font-size:.61rem;letter-spacing:.08em}.onair small{grid-column:2;color:#777;font-size:.42rem}.menu-button{display:none;border:0;background:none;color:#111;font-size:.7rem;font-weight:900}
-.hero{padding:68px 0 44px;border-bottom:1px solid var(--line)}.eyebrow{display:block;margin-bottom:8px;color:#666;font-size:.58rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.hero h1{max-width:1000px;font-size:clamp(3.3rem,7vw,7.2rem);line-height:.87;letter-spacing:-.065em;font-weight:900}.hero p{max-width:760px;margin-top:20px;color:var(--muted);font-size:.88rem;line-height:1.7}
-.section{padding:48px 0;border-bottom:1px solid var(--line)}.section--soft{background:var(--soft)}.section--black{background:#111;color:#fff}.section-head{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:24px}.section-head h2{margin-top:6px;font-size:clamp(2rem,4vw,4rem);line-height:.96;letter-spacing:-.045em}.section-head p{max-width:560px;color:var(--muted);font-size:.76rem;line-height:1.6}.section--black .section-head p{color:#aaa}
-.portal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.portal-card{position:relative;min-height:320px;overflow:hidden;background:#111;color:#fff}.portal-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) brightness(.68);transition:transform .5s ease,filter .5s ease}.portal-card:hover img{transform:scale(1.03);filter:saturate(1) brightness(.78)}.portal-card__overlay{position:absolute;inset:auto 0 0;padding:70px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,.92))}.portal-card small{color:#d3d3d3;font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.portal-card h3{margin-top:5px;font-size:1.55rem;line-height:1}.portal-card p{margin-top:7px;color:#d0d0d0;font-size:.68rem;line-height:1.45}.portal-card--red .portal-card__overlay{border-bottom:4px solid var(--red)}
-.editorial-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}.editorial-lead img{width:100%;height:360px;object-fit:cover}.editorial-lead h3{margin-top:12px;font-size:clamp(1.8rem,3vw,3.4rem);line-height:.98;letter-spacing:-.04em}.editorial-lead p{margin-top:10px;color:var(--muted);font-size:.75rem;line-height:1.55}.editorial-list{border-top:2px solid #111}.editorial-item{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}.editorial-item img{width:110px;height:76px;object-fit:cover}.editorial-item small{display:block;color:#777;font-size:.54rem;font-weight:900;text-transform:uppercase}.editorial-item strong{display:block;margin-top:4px;font-size:.9rem;line-height:1.18}
-.genre-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}.genre-card{padding:20px;min-height:190px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;transition:background .2s ease}.genre-card:hover{background:#111;color:#fff}.genre-card b{color:var(--red);font-size:.63rem}.genre-card strong{display:block;margin-top:12px;font-size:1.02rem}.genre-card small{display:block;margin-top:8px;color:#777;font-size:.64rem;line-height:1.55}.genre-card:hover small{color:#bbb}
-.genre-brief{margin-top:24px;padding:28px;border-left:5px solid var(--red);background:#111;color:#fff}.genre-brief .eyebrow{color:var(--red)}.genre-brief h3{margin-top:7px;font-size:clamp(2rem,4vw,4rem);line-height:.95;letter-spacing:-.045em}.genre-brief p{max-width:920px;margin-top:14px;color:#aaa;font-size:.76rem;line-height:1.7}
-.genre-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line);margin-top:18px}
-.genre-notes article{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;scroll-margin-top:90px}
-.genre-notes span{color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.12em}
-.genre-notes h3{margin-top:8px;font-size:1.28rem;line-height:1.05;letter-spacing:-.03em}
-.genre-notes p{margin-top:10px;color:#6f6f6f;font-size:.66rem;line-height:1.6}
-.instrument-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:0;background:#111;color:#fff}.instrument-hero__media img{width:100%;height:100%;min-height:420px;object-fit:cover}.instrument-hero__copy{display:flex;flex-direction:column;justify-content:center;padding:42px}.instrument-hero__copy .eyebrow{color:var(--red)}.instrument-hero__copy h3{margin-top:8px;font-size:clamp(2.4rem,4vw,4.8rem);line-height:.94;letter-spacing:-.05em}.instrument-hero__copy p{margin-top:14px;color:#aaa;font-size:.78rem;line-height:1.65}.instrument-links{display:grid;grid-template-columns:repeat(4,1fr);margin-top:18px;border-top:1px solid #333;border-left:1px solid #333}.instrument-links a{padding:16px;border-right:1px solid #333;border-bottom:1px solid #333}.instrument-links a:hover{background:#1b1b1b}.instrument-links small{display:block;color:#777;font-size:.52rem;font-weight:900;text-transform:uppercase}.instrument-links strong{display:block;margin-top:5px;color:#fff;font-size:.82rem;line-height:1.15}.instrument-links span{display:block;margin-top:8px;color:#999;font-size:.57rem;line-height:1.5}
-.scene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.scene-card{padding-top:14px;border-top:2px solid #111}.scene-card img{width:100%;height:190px;object-fit:cover}.scene-card small{display:block;margin-top:10px;color:#777;font-size:.53rem;font-weight:900;text-transform:uppercase}.scene-card h3{margin-top:4px;font-size:1.05rem}.scene-card p{margin-top:6px;color:#777;font-size:.66rem;line-height:1.5}
-.nomad-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.nomad-copy h2{margin-top:7px;font-size:clamp(2.6rem,5vw,5.4rem);line-height:.92;letter-spacing:-.055em}.nomad-copy p{margin-top:14px;max-width:620px;color:#aaa;font-size:.78rem;line-height:1.65}.nomad-stage{min-height:320px;display:grid;place-items:center;border:1px solid #333;background:#0b0b0b;text-align:center;padding:30px}.nomad-stage strong{display:block;color:#fff;font-size:1.4rem}.nomad-stage span{display:block;margin-top:8px;color:#777;font-size:.65rem}
-.index-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.index-grid a{padding:16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.index-grid b{display:block;font-size:.78rem}.index-grid small{display:block;margin-top:4px;color:#777;font-size:.58rem}.index-grid a:hover b{color:var(--red)}
-.footer{padding:30px 0 20px;background:#111;color:#fff}.footer__grid{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:26px}.footer-brand a{display:flex;align-items:center;gap:9px}.footer-brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}.footer-brand strong{font-size:.72rem;text-transform:uppercase}.footer-brand p{margin-top:8px;color:#777;font-size:.61rem}.footer-col{display:grid;gap:7px;align-content:start}.footer-col strong{font-size:.62rem;letter-spacing:.06em}.footer-col a{color:#aaa;font-size:.62rem}.footer-col a:hover{color:#fff}.footer__bottom{display:flex;justify-content:space-between;gap:20px;margin-top:22px;padding-top:13px;border-top:1px solid #333;color:#777;font-size:.58rem}.footer__bottom strong{color:#fff}
-.quick-contact{position:fixed;z-index:1200;right:14px;bottom:56px;display:grid;gap:7px}.quick-contact a{display:flex;align-items:center;justify-content:center;min-width:92px;min-height:34px;padding:0 11px;border:1px solid #333;background:rgba(17,17,17,.96);color:#fff;font-size:.56rem;font-weight:900;text-transform:uppercase}.quick-contact a:hover{background:var(--red);border-color:var(--red)}
-.player{position:fixed;left:0;right:0;bottom:0;z-index:9000;min-height:50px;display:grid;grid-template-columns:32px 1fr auto;gap:9px;align-items:center;padding:6px max(16px,calc((100vw - var(--shell))/2));border-top:3px solid var(--red);background:rgba(17,17,17,.985);color:#fff}.player__play{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--red);font-size:.65rem}.player__copy{display:grid}.player__copy strong{font-size:.66rem}.player__copy small{color:#888;font-size:.5rem}.player>b{font-size:.63rem}
+:root{
+  --bg:#fff;
+  --soft:#f5f5f3;
+  --ink:#111;
+  --muted:#6b6b6b;
+  --faint:#898989;
+  --line:#dfdfdf;
+  --red:#d71920;
+  --black:#101010;
+  --shell:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;padding:0 0 54px;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+.shell{width:min(calc(100% - 36px),var(--shell));margin:auto}
+.skip-link{position:fixed;left:12px;top:12px;z-index:99999;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip-link:focus{width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;padding:10px 14px;background:#111;color:#fff;font-weight:800}
 
-.portal-card--nomads{
-  background:
-    radial-gradient(circle at 78% 18%,rgba(215,25,32,.22),transparent 26rem),
-    linear-gradient(135deg,#161616,#050505 72%);
-}
-.nomads-visual{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:26px;
-  overflow:hidden;
-}
-.nomads-visual:before{
-  content:"";
-  position:absolute;
-  width:230px;height:230px;
-  right:-54px;top:-58px;
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 38px rgba(255,255,255,.025),
-    0 0 0 76px rgba(255,255,255,.018);
-}
-.nomads-visual__word{
-  position:relative;
-  color:#fff;
-  font-size:clamp(2.8rem,5vw,5.2rem);
-  line-height:.86;
-  letter-spacing:-.07em;
-  font-weight:900;
-}
-.nomads-visual__line{
-  position:relative;
-  margin-top:12px;
-  color:#999;
-  font-size:.52rem;
-  font-weight:900;
-  letter-spacing:.12em;
-}
-.nomads-visual__pulse{
-  position:relative;
-  margin-top:7px;
-  color:var(--red);
-  font-size:.55rem;
-  font-weight:900;
-  letter-spacing:.14em;
-}
+/* TRUST / HEADER */
+.trustbar{padding:7px 16px;border-bottom:1px solid var(--line);background:#fafafa;color:#666;font-size:.58rem;font-weight:700;text-align:center}
+.trustbar strong{color:#111}
+.header{position:sticky;top:0;z-index:8000;border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(14px)}
+.header__inner{min-height:66px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;min-width:205px}
+.brand img{width:42px;height:42px;object-fit:cover;border-radius:50%}
+.brand__copy{display:grid;gap:1px}
+.brand__copy strong{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.brand__copy small{color:#777;font-size:.53rem}
+.nav{display:flex;justify-content:center;align-items:center;gap:15px}
+.nav a{font-size:.66rem;font-weight:800}
+.nav a:hover{color:var(--red)}
+.onair{display:grid;grid-template-columns:8px auto;align-items:center;column-gap:7px;min-width:102px;padding:7px 11px;border:1px solid #d9d9d9;border-radius:999px}
+.onair__dot{width:8px;height:8px;border-radius:50%;background:var(--red)}
+.onair b{font-size:.61rem;letter-spacing:.08em}
+.onair small{grid-column:2;color:#777;font-size:.42rem}
+.menu-button{display:none;border:0;background:none;color:#111;font-size:.7rem;font-weight:900}
 
-@media(max-width:980px){.portal-grid{grid-template-columns:repeat(2,1fr)}.genre-grid{grid-template-columns:repeat(2,1fr)}.instrument-hero,.editorial-grid,.nomad-grid{grid-template-columns:1fr}.instrument-links{grid-template-columns:repeat(2,1fr)}.scene-grid{grid-template-columns:repeat(2,1fr)}.index-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:860px){.header__inner{grid-template-columns:1fr auto auto}.menu-button{display:block}.nav{position:absolute;top:66px;left:0;right:0;display:none;grid-template-columns:repeat(2,1fr);gap:0;padding:8px 16px 14px;border-bottom:1px solid var(--line);background:#fff}.nav.is-open{display:grid}.nav a{padding:10px;border-bottom:1px solid var(--line)}.footer__grid{grid-template-columns:repeat(2,1fr)}.footer-brand{grid-column:1/-1}}
-@media(max-width:620px){.shell{width:min(calc(100% - 20px),var(--shell))}.trustbar{text-align:left;padding-inline:10px}.brand{min-width:0}.brand__copy small{display:none}.onair{min-width:76px}.hero{padding:38px 0 28px}.hero h1{font-size:3.2rem}.portal-grid,.scene-grid,.genre-grid,.index-grid,.genre-notes{grid-template-columns:1fr}.portal-card{min-height:260px}.section{padding:34px 0}.section-head{align-items:flex-start;flex-direction:column}.editorial-item{grid-template-columns:88px 1fr}.editorial-item img{width:88px;height:66px}.instrument-hero__copy{padding:28px 22px}.instrument-links{grid-template-columns:1fr 1fr}.quick-contact{right:8px;bottom:52px}.footer__grid{grid-template-columns:1fr 1fr}.footer__bottom{display:grid;gap:5px}}
+/* HERO */
+.hero{padding:72px 0 50px;border-bottom:1px solid var(--line)}
+.eyebrow{display:block;margin-bottom:8px;color:var(--red);font-size:.58rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.hero h1{max-width:1020px;font-size:clamp(3.5rem,7.5vw,7.6rem);line-height:.85;letter-spacing:-.07em;font-weight:900}
+.hero p{max-width:820px;margin-top:22px;color:var(--muted);font-size:.9rem;line-height:1.75}
+.hero__quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.hero__quick a{padding:8px 10px;border:1px solid var(--line);font-size:.6rem;font-weight:900;text-transform:uppercase}
+.hero__quick a:hover{background:#111;color:#fff;border-color:#111}
+
+/* PORTAS OBJETIVAS */
+.section{padding:52px 0;border-bottom:1px solid var(--line)}
+.section--soft{background:var(--soft)}
+.section--black{background:#111;color:#fff}
+.section-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:26px}
+.section-head h2{margin-top:6px;font-size:clamp(2.2rem,4.5vw,4.6rem);line-height:.93;letter-spacing:-.052em}
+.section-head p{max-width:590px;color:var(--muted);font-size:.78rem;line-height:1.65}
+.section--black .section-head p{color:#aaa}
+
+.archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.archive-card{min-height:245px;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column}
+.archive-card:hover{background:#111;color:#fff}
+.archive-card__no{color:var(--red);font-size:.58rem;font-weight:900;letter-spacing:.12em}
+.archive-card h3{margin-top:26px;font-size:1.4rem;line-height:1;letter-spacing:-.035em}
+.archive-card p{margin-top:9px;color:#6f6f6f;font-size:.68rem;line-height:1.55}
+.archive-card:hover p{color:#bbb}
+.archive-card__tags{margin-top:auto;padding-top:22px;color:#898989;font-size:.56rem;line-height:1.55}
+.archive-card:hover .archive-card__tags{color:#aaa}
+
+/* BLOCO DE CATEGORIA */
+.category{scroll-margin-top:84px}
+.category__hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);border-top:1px solid var(--line)}
+.category__media{min-height:390px;background:#111;overflow:hidden}
+.category__media img{width:100%;height:100%;min-height:390px;object-fit:cover}
+.category__copy{display:flex;flex-direction:column;justify-content:center;padding:42px}
+.category__copy h2{margin-top:8px;font-size:clamp(2.5rem,5vw,5.2rem);line-height:.9;letter-spacing:-.06em}
+.category__copy p{margin-top:16px;color:#666;font-size:.8rem;line-height:1.72}
+.category__keywords{margin-top:18px;color:#8a8a8a;font-size:.58rem;font-weight:700;line-height:1.65;text-transform:uppercase;letter-spacing:.05em}
+
+.story-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.story-link{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.story-link:hover{background:var(--soft)}
+.story-link small{display:block;color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.story-link strong{display:block;margin-top:7px;font-size:1rem;line-height:1.16}
+.story-link span{display:block;margin-top:9px;color:#777;font-size:.64rem;line-height:1.5}
+.story-link--dark{background:#111;color:#fff}
+.story-link--dark:hover{background:#1b1b1b}
+.story-link--dark span{color:#aaa}
+
+/* INSTRUMENTS */
+.instrument-panel{display:grid;grid-template-columns:1.05fr .95fr;background:#111;color:#fff}
+.instrument-panel__media{min-height:520px}
+.instrument-panel__media img{width:100%;height:100%;min-height:520px;object-fit:cover}
+.instrument-panel__copy{padding:46px;display:flex;flex-direction:column;justify-content:center}
+.instrument-panel__copy h2{margin-top:8px;font-size:clamp(2.8rem,5.4vw,5.5rem);line-height:.9;letter-spacing:-.06em}
+.instrument-panel__copy p{margin-top:18px;color:#aaa;font-size:.8rem;line-height:1.7}
+.instrument-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.instrument-actions a{padding:9px 11px;border:1px solid #3a3a3a;color:#fff;font-size:.6rem;font-weight:900}
+.instrument-actions a:hover{background:#fff;color:#111}
+.instrument-list{display:grid;grid-template-columns:repeat(2,1fr);margin-top:28px;border-top:1px solid #333;border-left:1px solid #333}
+.instrument-list a{padding:17px;border-right:1px solid #333;border-bottom:1px solid #333}
+.instrument-list small{display:block;color:#777;font-size:.52rem;font-weight:900;text-transform:uppercase}
+.instrument-list strong{display:block;margin-top:5px;font-size:.82rem}
+.instrument-list span{display:block;margin-top:7px;color:#999;font-size:.58rem;line-height:1.5}
+
+/* AO VIVO */
+.live-strip{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#111;color:#fff}
+.live-strip__copy{padding:48px}
+.live-strip__copy h2{margin-top:8px;font-size:clamp(2.7rem,5vw,5.3rem);line-height:.9;letter-spacing:-.06em}
+.live-strip__copy p{margin-top:16px;color:#aaa;font-size:.8rem;line-height:1.72}
+.live-strip__copy a{display:inline-block;margin-top:22px;padding:10px 13px;background:var(--red);font-size:.62rem;font-weight:900;text-transform:uppercase}
+.live-strip__list{display:grid;align-content:center;padding:34px;border-left:1px solid #333}
+.live-row{padding:13px 0;border-bottom:1px solid #333}
+.live-row:last-child{border-bottom:0}
+.live-row small{color:#777;font-size:.52rem;font-weight:900;text-transform:uppercase}
+.live-row strong{display:block;margin-top:4px;font-size:.88rem;line-height:1.2}
+
+/* COMERCIAL EM TODAS AS PAGINAS */
+.commercial{padding:0;background:#fff}
+.commercial__head{padding:42px 0 22px}
+.commercial__head h2{margin-top:6px;font-size:clamp(2.2rem,4.3vw,4.4rem);line-height:.94;letter-spacing:-.05em}
+.commercial__head p{max-width:700px;margin-top:12px;color:#777;font-size:.72rem;line-height:1.6}
+.commercial-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.commercial-card{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:205px;display:flex;flex-direction:column}
+.commercial-card small{color:var(--red);font-size:.55rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+.commercial-card h3{margin-top:9px;font-size:1.45rem}
+.commercial-card p{margin-top:9px;color:#777;font-size:.67rem;line-height:1.55}
+.commercial-card a{display:inline-block;align-self:flex-start;margin-top:auto;padding-top:20px;font-size:.62rem;font-weight:900;text-transform:uppercase}
+.commercial-card:hover{background:#111;color:#fff}
+.commercial-card:hover p{color:#aaa}
+.commercial-note{padding:16px 0 42px;color:#777;font-size:.61rem;line-height:1.55}
+.commercial-note strong{color:#111}
+
+/* FOOTER */
+.footer{padding:30px 0 20px;background:#111;color:#fff}
+.footer__grid{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:26px}
+.footer-brand a{display:flex;align-items:center;gap:9px}
+.footer-brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.footer-brand strong{font-size:.72rem;text-transform:uppercase}
+.footer-brand p{margin-top:8px;color:#777;font-size:.61rem}
+.footer-col{display:grid;gap:7px;align-content:start}
+.footer-col strong{font-size:.62rem;letter-spacing:.06em}
+.footer-col a{color:#aaa;font-size:.62rem}
+.footer-col a:hover{color:#fff}
+.footer__bottom{display:flex;justify-content:space-between;gap:20px;margin-top:22px;padding-top:13px;border-top:1px solid #333;color:#777;font-size:.58rem}
+.footer__bottom strong{color:#fff}
+
+.quick-contact{position:fixed;z-index:1200;right:14px;bottom:64px;display:grid;gap:7px}
+.quick-contact a{display:flex;align-items:center;justify-content:center;min-width:86px;min-height:32px;padding:0 10px;background:#111;color:#fff;border:1px solid #333;font-size:.58rem;font-weight:900}
+.player{position:fixed;z-index:9000;left:0;right:0;bottom:0;min-height:54px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:0 max(16px,calc((100vw - var(--shell))/2));border-top:3px solid var(--red);background:rgba(17,17,17,.985);color:#fff}
+.player__play{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--red)}
+.player__copy strong{display:block;font-size:.7rem}
+.player__copy small{display:block;margin-top:2px;color:#aaa;font-size:.55rem}
+.player>b{font-size:.62rem}
+
+@media(max-width:1000px){
+  .archive-grid{grid-template-columns:repeat(2,1fr)}
+  .category__hero,.instrument-panel,.live-strip{grid-template-columns:1fr}
+  .category__media,.category__media img{min-height:320px}
+  .instrument-panel__media,.instrument-panel__media img{min-height:420px}
+  .story-links{grid-template-columns:repeat(2,1fr)}
+  .commercial-grid{grid-template-columns:1fr}
+  .live-strip__list{border-left:0;border-top:1px solid #333}
+  .footer__grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:820px){
+  .header__inner{grid-template-columns:auto auto}
+  .nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px;background:#fff;border-bottom:1px solid var(--line)}
+  .nav.is-open{display:flex}
+  .nav a{padding:11px 0;border-bottom:1px solid #eee}
+  .menu-button{display:block;justify-self:end}
+  .onair{display:none}
+  .section-head{align-items:start;flex-direction:column}
+  .instrument-list{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .shell{width:min(calc(100% - 24px),var(--shell))}
+  .hero{padding:46px 0 34px}
+  .hero h1{font-size:3.4rem}
+  .archive-grid,.story-links{grid-template-columns:1fr}
+  .archive-card{min-height:205px}
+  .category__copy,.instrument-panel__copy,.live-strip__copy{padding:28px 22px}
+  .category__copy h2,.instrument-panel__copy h2,.live-strip__copy h2{font-size:2.8rem}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .footer__grid>div:first-child{grid-column:1/-1}
+  .footer__bottom{flex-direction:column}
+  .quick-contact{display:none}
+}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"Arquivo Musical | Passport Radio",
+  "url":"https://www.passportradio.online/destinos.html",
+  "description":"Arquivo musical da Passport Radio com bandas, estilos, músicos, instrumentos, décadas, histórias e performances ao vivo.",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Passport Radio",
+    "url":"https://www.passportradio.online/"
+  },
+  "mainEntity":{
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Rock Brasileiro","url":"https://www.passportradio.online/destinos.html#rock-brasileiro"},
+      {"@type":"ListItem","position":2,"name":"Anos 80","url":"https://www.passportradio.online/destinos.html#anos-80"},
+      {"@type":"ListItem","position":3,"name":"Progressive","url":"https://www.passportradio.online/destinos.html#progressive"},
+      {"@type":"ListItem","position":4,"name":"Heavy Metal","url":"https://www.passportradio.online/destinos.html#heavy-metal"},
+      {"@type":"ListItem","position":5,"name":"Gothic & Alternative","url":"https://www.passportradio.online/destinos.html#gothic-alternative"},
+      {"@type":"ListItem","position":6,"name":"Punk","url":"https://www.passportradio.online/destinos.html#punk"},
+      {"@type":"ListItem","position":7,"name":"Instrument Masters","url":"https://www.passportradio.online/destinos.html#instrument-masters"},
+      {"@type":"ListItem","position":8,"name":"Ao Vivo","url":"https://www.passportradio.online/destinos.html#ao-vivo"}
+    ]
+  }
+}
+</script>
 </head>
+
 <body>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
-<div class="trustbar">Passport Radio é uma marca independente. Operação comercial e pagamentos: <strong>Guiropa World</strong>.</div>
+
+<div class="trustbar">
+  Passport Radio é uma mídia musical independente. Operação comercial e pagamentos: <strong>Guiropa World</strong>.
+</div>
 
 <header class="header">
   <div class="shell header__inner">
-    <a class="brand" href="index.html" aria-label="Passport Radio — página inicial">
+    <a class="brand" href="index.html" aria-label="Passport Radio">
       <img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="42" height="42">
-      <span class="brand__copy"><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span>
+      <span class="brand__copy">
+        <strong>Passport Radio</strong>
+        <small>Music · History · Culture · Live</small>
+      </span>
     </a>
-    <button class="menu-button" type="button" aria-controls="main-nav" aria-expanded="false">MENU</button>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+
     <nav class="nav" id="main-nav" aria-label="Navegação principal">
-      <a href="index.html">Agora</a><a href="index.html#noticias">Notícias</a><a href="#rock-brasileiro">Brasil</a><a href="#estilos">Estilos</a><a href="instrument-masters.html">Instrumentos</a><a href="#cenas">Cenas</a><a href="#nomads">Nomads</a><a href="radio.html">Ao Vivo</a><a href="loja.html">Loja</a><a href="contato.html">Contato</a>
+      <a href="index.html">Agora</a>
+      <a href="index.html#noticias">Notícias</a>
+      <a href="index.html#agenda">Shows</a>
+      <a href="radio.html">Ao Vivo</a>
+      <a href="destinos.html" aria-current="page">Arquivo</a>
+      <a href="loja.html">Loja</a>
+      <a href="anuncie.html">Anuncie</a>
+      <a href="index.html#apoie">Apoie</a>
+      <a href="contato.html">Contato</a>
     </nav>
-    <a class="onair" href="radio.html"><span class="onair__dot"></span><b>ON AIR</b><small>3...2...1... CLICK!</small></a>
+
+    <a class="onair" href="radio.html">
+      <span class="onair__dot"></span>
+      <b>ON AIR</b>
+      <small>3...2...1... CLICK!</small>
+    </a>
   </div>
 </header>
 
 <main id="conteudo">
-<section class="hero"><div class="shell"><span class="eyebrow">EXPLORE MUSIC</span><h1>Entre por qualquer porta. A música continua do outro lado.</h1><p>Bandas, gêneros, instrumentos, cidades, movimentos, performances e histórias. Sem mapa, aeroporto, carimbo ou coleção de RPG. Aqui a Passport organiza música por contexto.</p></div></section>
 
-<section class="section"><div class="shell">
-  <div class="section-head"><div><span class="eyebrow">COMECE POR AQUI</span><h2>Seis portas. Nenhum labirinto.</h2></div><p>Cada porta abre um arquivo editorial próprio. A central organiza o acervo sem devolver ninguém às páginas antigas.</p></div>
-  <div class="portal-grid">
-    <a class="portal-card portal-card--red" href="#rock-brasileiro"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Rock Brasileiro" loading="lazy"><div class="portal-card__overlay"><small>01 · BRASIL</small><h3>Rock Brasileiro</h3><p>Bandas, décadas, cenas e histórias de um país tentando descobrir como soar como ele mesmo.</p></div></a>
-    <a class="portal-card" href="#estilos"><img src="/images/13-estilos-de-rock.jpg" alt="Estilos de Rock" loading="lazy"><div class="portal-card__overlay"><small>02 · GÊNEROS</small><h3>Estilos do Rock</h3><p>Do rockabilly ao black metal. A música muda de roupa, velocidade e intenção.</p></div></a>
-    <a class="portal-card" href="instrument-masters.html"><img src="/images/alex-webster-bass.jpg" alt="Alex Webster tocando baixo" loading="lazy"><div class="portal-card__overlay"><small>03 · INSTRUMENTOS</small><h3>Instrument Masters</h3><p>Baixo, bateria, guitarra, teclas e voz. Antes da lenda, existe alguém tocando.</p></div></a>
-    <a class="portal-card" href="#cenas"><img src="/images/wacken-open-air-festival.png" alt="Cenas e festivais" loading="lazy"><div class="portal-card__overlay"><small>04 · CULTURA</small><h3>Cenas</h3><p>Festivais, cidades e movimentos. Música nunca acontece sozinha.</p></div></a>
-    <a class="portal-card portal-card--nomads" href="#nomads">
-        <div class="nomads-visual" aria-hidden="true">
-          <span class="nomads-visual__word">NOMADS</span>
-          <span class="nomads-visual__line">GUITAR · BASS · DRUMS · KEYS · STRINGS</span>
-          <span class="nomads-visual__pulse">3... 2... 1... CLICK!</span>
-        </div>
-        <div class="portal-card__overlay"><small>05 · AUDIOVISUAL</small><h3>Nomads</h3><p>Instrumentos em movimento. Performance, técnica, atitude e imagem dentro da linguagem Passport.</p></div></a>
-    <a class="portal-card portal-card--red" href="radio.html"><img src="/images/cannibal-corpse-live.png" alt="Passport Radio ao vivo" loading="lazy"><div class="portal-card__overlay"><small>06 · ON AIR</small><h3>Ao Vivo</h3><p>Broadcasts, arquivos sonoros, histórias e shows incorporados dentro da Passport.</p></div></a>
-  </div>
-</div></section>
+<section class="hero">
+  <div class="shell">
+    <span class="eyebrow">ARQUIVO PASSPORT</span>
+    <h1>Uma enciclopédia que faz barulho.</h1>
+    <p>Bandas, artistas, discos, instrumentos, estilos, décadas, cenas, histórias e performances. Não é uma lista de nomes jogados numa página. Cada entrada serve para levar você a outra música, outra banda ou outra história.</p>
 
-<section class="section section--soft" id="rock-brasileiro"><div class="shell">
-  <div class="section-head"><div><span class="eyebrow">ROCK BRASILEIRO</span><h2>Um país tentando descobrir como soar como ele mesmo.</h2></div><p>Não é ranking pelo ranking. É contexto, palco, décadas, contradições e as bandas que empurraram a história para frente.</p></div>
-  <div class="editorial-grid">
-    <article class="editorial-lead"><a href="casa-das-maquinas-brilho-nos-olhos.html"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Casa das Máquinas" loading="lazy"><h3>Casa das Máquinas retorna em plena forma meio século depois.</h3><p>Uma história de sobrevivência, estrada e rock brasileiro contada sem nostalgia preguiçosa.</p></a></article>
-    <div class="editorial-list">
-      <a class="editorial-item" href="rock-nacional-top-30.html"><img src="/images/casa-das-maquinas-2026.jpg" alt="Rock Nacional" loading="lazy"><span><small>ARQUIVO BRASIL</small><strong>Sete décadas de rock brasileiro para discutir sem pedir licença.</strong></span></a>
-      <a class="editorial-item" href="live-aid-momento-mais-marcante-rock.html"><img src="/images/live-aid-1985.png" alt="Live Aid" loading="lazy"><span><small>CONTEXTO GLOBAL</small><strong>O dia em que o rock parou o mundo.</strong></span></a>
-      <a class="editorial-item" href="#heavy-metal-brief"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden" loading="lazy"><span><small>PALCO & INFLUÊNCIA</small><strong>Como repertório, fãs e estrada constroem uma linguagem.</strong></span></a>
+    <div class="hero__quick" aria-label="Acesso rápido ao arquivo">
+      <a href="#rock-brasileiro">Rock Brasileiro</a>
+      <a href="#anos-80">Anos 80</a>
+      <a href="#progressive">Progressive</a>
+      <a href="#heavy-metal">Heavy Metal</a>
+      <a href="#gothic-alternative">Gothic & Alternative</a>
+      <a href="#punk">Punk</a>
+      <a href="#instrument-masters">Instrument Masters</a>
+      <a href="#ao-vivo">Ao Vivo</a>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="section" id="estilos"><div class="shell">
-  <div class="section-head"><div><span class="eyebrow">ESTILOS DO ROCK</span><h2>O rock nunca foi uma coisa só.</h2></div><p>Em vez de uma apostila interminável, cada gênero funciona como porta de entrada para histórias, bandas e movimentos.</p></div>
-  <div class="genre-grid">
-    <a class="genre-card" href="#rock-roll-brief"><b>01</b><strong>Rock &amp; Roll</strong><small>Quando rhythm &amp; blues, country e juventude bateram de frente. Piano, guitarra e uma geração descobrindo que música também podia ser problema.</small></a>
-    <a class="genre-card" href="#rockabilly-brief"><b>02</b><strong>Rockabilly</strong><small>Contrabaixo estalando, guitarra seca e ecos de Memphis. Antes da distorção dominar tudo, o rock já tinha pressa, topete e gasolina.</small></a>
-    <a class="genre-card" href="#heavy-metal-brief"><b>03</b><strong>Heavy Metal</strong><small>Peso não é só volume. Riff, dinâmica, identidade visual e um palco que deixou de ser cenário para virar território.</small></a>
-    <a class="genre-card" href="historias/cannibal-corpse.html"><b>04</b><strong>Death Metal</strong><small>Velocidade, precisão e brutalidade organizada. Quando tocar pesado passou a exigir uma disciplina quase cirúrgica.</small></a>
-    <a class="genre-card" href="#progressive-brief"><b>05</b><strong>Progressive</strong><small>Quando verso, refrão e quatro minutos deixaram de bastar. Suítes, compassos quebrados e músicos tratando o álbum como arquitetura.</small></a>
-    <a class="genre-card" href="#art-rock-brief"><b>06</b><strong>Art Rock</strong><small>Teatro, literatura, produção e composição dividindo a mesma sala. A música deixa de apenas tocar e começa a construir um mundo.</small></a>
-    <a class="genre-card" href="#gothic-brief"><b>07</b><strong>Gothic &amp; Alternative</strong><small>Atmosfera antes de fórmula. Clubes, cidades, guitarras, baixos e estética criaram linguagens que não pediam licença ao mainstream.</small></a>
-    <a class="genre-card" href="#punk-brief"><b>08</b><strong>Punk</strong><small>Urgência acima da perfeição. Três acordes podiam bastar — desde que houvesse alguma coisa verdadeira para gritar.</small></a>
-  </div>
-  <article class="genre-brief" id="progressive-brief">
-    <span class="eyebrow">MR. NOMAD · PROGRESSIVE</span>
-    <h3>Antes de “progressivo” virar rótulo, era só gente tentando descobrir até onde uma música podia ir.</h3>
-    <p>O progressive cresceu quando bandas começaram a tratar duração, timbre, arranjo e estrutura como território aberto. A canção podia mudar de compasso, atravessar movimentos diferentes, carregar sintetizadores, acústicos, orquestrações e voltar ao riff sem pedir desculpas. Aqui ele fica dentro da Passport — sem ressuscitar página antiga e sem mandar ninguém para o 666.</p>
-  </article>
-  <div class="genre-notes">
-    <article id="rock-roll-brief"><span>MR. NOMAD · ROCK &amp; ROLL</span><h3>Jerry Lee Lewis nasceu Jerry Lee Lewis. O nome artístico não precisou esconder o incêndio.</h3><p>Piano martelado, country, rhythm &amp; blues e uma geração descobrindo que comportamento também fazia parte do som. O rock &amp; roll chega aqui como origem em movimento, não como peça de museu.</p></article>
-    <article id="rockabilly-brief"><span>MR. NOMAD · ROCKABILLY</span><h3>Antes do amplificador virar parede, o baixo já estalava como arma de percussão.</h3><p>Memphis, slap bass, eco curto, guitarra seca e urgência. Rockabilly é onde country e rhythm &amp; blues param de respeitar a distância entre eles.</p></article>
-    <article id="heavy-metal-brief"><span>MR. NOMAD · HEAVY METAL</span><h3>O peso não começou no volume. Começou na intenção.</h3><p>Riff, dinâmica, palco e imagem foram ficando maiores até o metal criar sua própria gramática. Depois vieram dezenas de dialetos — todos ainda devendo alguma coisa à ideia de transformar peso em identidade.</p></article>
-    <article id="art-rock-brief"><span>MR. NOMAD · ART ROCK</span><h3>Catherine Bush. Kate Bush. Antes da personagem, uma compositora tratando literatura como matéria-prima.</h3><p>Art rock começa quando a canção aceita teatro, imagem, literatura e produção como parte da composição. Não é enfeite intelectual: é outra forma de construir mundo.</p></article>
-    <article id="gothic-brief"><span>MR. NOMAD · GOTHIC &amp; ALTERNATIVE</span><h3>Antes do preto virar uniforme, havia cidades, clubes e bandas procurando outra temperatura emocional.</h3><p>Baixos à frente, guitarras atmosféricas, vozes dramáticas e uma estética que cresceu junto com a música. O movimento nasceu de cenas, não de uma checklist.</p></article>
-    <article id="punk-brief"><span>MR. NOMAD · PUNK</span><h3>Três acordes nunca foram a regra. A urgência era.</h3><p>Punk reduziu distância: entre palco e plateia, entre ideia e gravação, entre vontade e ação. A técnica podia vir depois; a necessidade de dizer alguma coisa vinha primeiro.</p></article>
-  </div>
-</div></section>
+<section class="section section--soft">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="eyebrow">ENTRADAS DO ARQUIVO</span><h2>Entre por qualquer porta.</h2></div>
+      <p>As antigas caixas vazias agora levam a conteúdo real e visível. Sem clicar para escurecer a tela e descobrir absolutamente porra nenhuma.</p>
+    </div>
 
-<section class="section section--black" id="instrument-masters"><div class="shell">
-  <div class="section-head"><div><span class="eyebrow">INSTRUMENT MASTERS</span><h2>Antes da lenda, existe alguém tocando.</h2></div><p>Drum Masters e Bass Legends deixam de ser páginas mortas isoladas e passam a fazer parte de uma série editorial maior.</p></div>
-  <div class="instrument-hero">
-    <div class="instrument-hero__media"><img src="/images/alex-webster-bass.jpg" alt="Alex Webster tocando baixo" loading="lazy"></div>
-    <div class="instrument-hero__copy">
-      <span class="eyebrow">BASS MASTERS · ALEX WEBSTER</span>
-      <h3>O baixo não está procurando um lugar para se esconder.</h3>
-      <p>Técnica, função, som e história. O instrumento deixa de ser categoria e vira narrativa. Alex Webster abre a série porque já temos banda, matéria, foto e performance para contar a história inteira. <a href="instrument-masters.html" style="color:#fff;font-weight:900;text-decoration:underline">Entrar em Instrument Masters →</a></p>
-      <div class="instrument-links">
-        <a href="historias/cannibal-corpse.html"><small>Publicado · Bass</small><strong>Alex Webster · Alex Webster</strong><span>O nome civil e o nome conhecido são o mesmo. No Cannibal Corpse, precisão não aparece para exibir técnica: aparece para fazer o caos continuar de pé.</span></a>
-        <a href="instrument-masters.html#drums"><small>Drums</small><strong>Neil Ellwood Peart · Neil Peart</strong><span>Antes de “The Professor”, havia um baterista que tratava cada virada como parte da composição — e ainda escrevia boa parte das palavras do Rush.</span></a>
-        <a href="instrument-masters.html#bass"><small>Bass</small><strong>John Alec Entwistle · John Entwistle</strong><span>Enquanto o The Who explodia na frente, ele fazia o baixo correr por baixo da música como se fosse outro instrumento solista.</span></a>
-        <a href="instrument-masters.html#drums"><small>Drums</small><strong>Michael Stephen Portnoy · Mike Portnoy</strong><span>O apelido é curto; a arquitetura nunca foi. No Dream Theater, bateria, arranjo e direção musical frequentemente parecem partes da mesma máquina.</span></a>
+    <div class="archive-grid">
+      <a class="archive-card" href="#rock-brasileiro"><span class="archive-card__no">01</span><h3>Rock Brasileiro</h3><p>Bandas, discos, histórias e cenas que nasceram aqui — sem esperar alguém de fora avisar que eram importantes.</p><div class="archive-card__tags">Casa das Máquinas · Angra · Sepultura · Ratos de Porão · Violeta de Outono · Marcelo Nova</div></a>
+      <a class="archive-card" href="#anos-80"><span class="archive-card__no">02</span><h3>Anos 80</h3><p>Rock, metal, new wave, pós-punk, synthpop e um rádio que ainda conseguia mudar o dia de alguém.</p><div class="archive-card__tags">1986 · The Cure · Depeche Mode · Queen · Duran Duran · RPM</div></a>
+      <a class="archive-card" href="#progressive"><span class="archive-card__no">03</span><h3>Progressive</h3><p>Quando duração, compasso, arranjo e técnica deixaram de pedir licença para a música pop.</p><div class="archive-card__tags">Yes · Rush · King Crimson · Genesis · Dream Theater · Queensrÿche</div></a>
+      <a class="archive-card" href="#heavy-metal"><span class="archive-card__no">04</span><h3>Heavy Metal</h3><p>Do riff clássico ao power, symphonic, thrash, death e outras ramificações que fizeram o peso falar idiomas diferentes.</p><div class="archive-card__tags">Iron Maiden · Black Sabbath · Rhapsody of Fire · Therion · Kamelot · Cannibal Corpse</div></a>
+      <a class="archive-card" href="#gothic-alternative"><span class="archive-card__no">05</span><h3>Gothic & Alternative</h3><p>Baixo na frente, atmosfera, clubes, cidades e bandas que transformaram temperatura emocional em linguagem.</p><div class="archive-card__tags">The Cure · Sisters of Mercy · The Mission · Type O Negative · Depeche Mode</div></a>
+      <a class="archive-card" href="#punk"><span class="archive-card__no">06</span><h3>Punk</h3><p>A urgência veio primeiro. Depois apareceram os rótulos, as cenas, as brigas e uma quantidade enorme de bandas.</p><div class="archive-card__tags">Ramones · The Clash · Sex Pistols · Ratos de Porão · Plebe Rude</div></a>
+      <a class="archive-card" href="#instrument-masters"><span class="archive-card__no">07</span><h3>Instrument Masters</h3><p>Quem toca, como toca e por que importa. Bateria, baixo e os próximos instrumentos do arquivo.</p><div class="archive-card__tags">Drum Masters · Bass Legends · músicos · técnica · história</div></a>
+      <a class="archive-card" href="#ao-vivo"><span class="archive-card__no">08</span><h3>Ao Vivo</h3><p>A música fora do estúdio: shows históricos, performances, festivais, raridades e a programação imprevisível da Passport.</p><div class="archive-card__tags">Bootlegs · performances · festivais · rádio · arquivo ao vivo</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ROCK BRASILEIRO -->
+<section class="section category" id="rock-brasileiro">
+  <div class="shell">
+    <div class="category__hero">
+      <div class="category__media"><img src="/images/casa-das-maquinas-2026.jpg" alt="Casa das Máquinas, banda brasileira de rock" loading="lazy"></div>
+      <div class="category__copy">
+        <span class="eyebrow">ROCK BRASILEIRO</span>
+        <h2>O Brasil não precisava pedir licença.</h2>
+        <p>Do progressivo e hard rock dos anos 70 ao punk, metal, pós-punk e cenas independentes, o arquivo brasileiro da Passport existe para lembrar uma coisa simples: havia — e há — muito mais acontecendo do que a programação repetitiva deixa parecer.</p>
+        <div class="category__keywords">Rock brasileiro · metal brasileiro · punk brasileiro · anos 70 · anos 80 · bandas brasileiras · história do rock no Brasil</div>
+      </div>
+    </div>
+
+    <div class="story-links">
+      <a class="story-link" href="casa-das-maquinas-brilho-nos-olhos.html"><small>Casa das Máquinas</small><strong>Brilho nos Olhos: quando uma banda brasileira resolve voltar olhando para frente.</strong><span>História, disco, contexto e retorno.</span></a>
+      <a class="story-link" href="rock-nacional-top-30.html"><small>Rock Nacional</small><strong>Rock brasileiro: décadas de música que não cabem numa playlist preguiçosa.</strong><span>Uma entrada ampla para o arquivo nacional.</span></a>
+      <a class="story-link" href="tony-iommi-karl-brazil.html"><small>Brasil no radar</small><strong>Tony Iommi, Karl Brazil e as conexões que atravessam fronteiras.</strong><span>Músicos, bandas e relações menos óbvias.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ANOS 80 -->
+<section class="section section--soft category" id="anos-80">
+  <div class="shell">
+    <div class="category__hero">
+      <div class="category__media"><img src="/images/depeche-mode.png" alt="Depeche Mode em arquivo da Passport Radio" loading="lazy"></div>
+      <div class="category__copy">
+        <span class="eyebrow">ANOS 80</span>
+        <h2>A década que se recusou a morrer.</h2>
+        <p>New wave, pós-punk, heavy metal, hard rock, synthpop, pop, gothic, Brasil e rádio. Aqui a década não aparece como fantasia neon: aparece como uma rede de músicos, cenas, discos e histórias que continuam vazando para o presente.</p>
+        <div class="category__keywords">Música anos 80 · rock anos 80 · new wave · synthpop · pós-punk · gothic rock · heavy metal anos 80 · rádio em 1986</div>
+      </div>
+    </div>
+
+    <div class="story-links">
+      <a class="story-link story-link--dark" href="anos-80-bandas-musicas-rock-new-wave.html"><small>Arquivo principal</small><strong>Anos 80: a década que se recusou a morrer.</strong><span>Bandas, músicos, gêneros, Brasil, performances e um arquivo A–Z.</span></a>
+      <a class="story-link" href="1986-musicas-rock-radio-anos-80.html"><small>1986</small><strong>Quando o rádio ainda podia mudar o seu dia.</strong><span>Músicas, memória e a sensação de descobrir algo sem algoritmo.</span></a>
+      <a class="story-link" href="kate-bush-wuthering-heights.html"><small>Art Pop</small><strong>Kate Bush e Wuthering Heights: quando literatura entrou no pop pela porta da frente.</strong><span>Composição, personagem e produção.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESSIVE -->
+<section class="section category" id="progressive">
+  <div class="shell">
+    <div class="category__hero">
+      <div class="category__media"><img src="/images/led-zeppelin-a-cancao-rockprogressiva.png" alt="Led Zeppelin em arquivo sobre rock progressivo" loading="lazy"></div>
+      <div class="category__copy">
+        <span class="eyebrow">PROGRESSIVE</span>
+        <h2>Antes de virar rótulo, era só gente tentando ir mais longe.</h2>
+        <p>Yes, Rush, King Crimson, Genesis, Marillion, Dream Theater, Queensrÿche e outros mundos onde duração, métrica, conceito e arranjo deixam de ser obstáculo. O progressive entra aqui como linguagem, não como prova de matemática.</p>
+        <div class="category__keywords">Rock progressivo · metal progressivo · progressive metal · Yes · Rush · King Crimson · Genesis · Dream Theater · Queensrÿche</div>
+      </div>
+    </div>
+
+    <div class="story-links">
+      <a class="story-link" href="led-zeppelin-achilles-last-stand.html"><small>Led Zeppelin</small><strong>A canção que Robert Plant chamou de “rock progressivo enlouquecido”.</strong><span>Achilles Last Stand e o limite entre hard rock e progressive.</span></a>
+      <a class="story-link" href="therion-miskolc-experience-symphonic-metal.html"><small>Orquestra + metal</small><strong>Therion: quando o metal encontrou a orquestra.</strong><span>Outra forma de ampliar o vocabulário do peso.</span></a>
+      <a class="story-link" href="do-classico-ao-moderno-13-estilos-de-rock.html"><small>Estilos de rock</small><strong>Do clássico ao moderno: 13 caminhos que o rock resolveu abrir.</strong><span>Progressive dentro de uma árvore musical maior.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- HEAVY METAL -->
+<section class="section section--soft category" id="heavy-metal">
+  <div class="shell">
+    <div class="category__hero">
+      <div class="category__media"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt="Iron Maiden em arquivo de heavy metal" loading="lazy"></div>
+      <div class="category__copy">
+        <span class="eyebrow">HEAVY METAL</span>
+        <h2>Peso nunca significou uma coisa só.</h2>
+        <p>Heavy clássico, power metal, symphonic, thrash, death, white metal e dezenas de ramificações. A graça começa justamente quando uma palavra deixa de dar conta de todas as bandas que colocaram amplificador, velocidade, técnica, teatro e brutalidade na mesma árvore.</p>
+        <div class="category__keywords">Heavy metal · power metal · symphonic metal · thrash metal · death metal · Iron Maiden · Black Sabbath · Rhapsody of Fire · Therion · Kamelot</div>
+      </div>
+    </div>
+
+    <div class="story-links">
+      <a class="story-link story-link--dark" href="rhapsody-of-fire-symphonic-power-metal.html"><small>Power Metal</small><strong>Rhapsody of Fire: quando o power metal virou cinema.</strong><span>Fantasia, velocidade, arranjos e performance.</span></a>
+      <a class="story-link" href="therion-miskolc-experience-symphonic-metal.html"><small>Symphonic Metal</small><strong>Therion: quando o metal encontrou a orquestra.</strong><span>Banda, coro, solistas e camadas.</span></a>
+      <a class="story-link" href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><small>Kamelot</small><strong>Thomas Youngblood: trinta anos de estrada cobram um preço.</strong><span>Guitarra, banda e permanência.</span></a>
+      <a class="story-link" href="white-metal-isso-e-musica-crista.html"><small>White Metal</small><strong>White Metal: isso é música cristã?</strong><span>Rótulo, fé, mercado e metal.</span></a>
+      <a class="story-link" href="iron-maiden-musicas-favoritas.html"><small>Iron Maiden</small><strong>Iron Maiden e as músicas que continuam voltando.</strong><span>Uma banda grande demais para uma única porta de entrada.</span></a>
+      <a class="story-link" href="historias/cannibal-corpse.html"><small>Death Metal</small><strong>Cannibal Corpse e Alex Webster: quando precisão sustenta o caos.</strong><span>Baixo, técnica e brutalidade.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GOTHIC -->
+<section class="section category" id="gothic-alternative">
+  <div class="shell">
+    <div class="category__hero">
+      <div class="category__media"><img src="/images/the-cure.png" alt="The Cure em arquivo Gothic e Alternative" loading="lazy"></div>
+      <div class="category__copy">
+        <span class="eyebrow">GOTHIC &amp; ALTERNATIVE</span>
+        <h2>Antes do preto virar uniforme, havia uma cena inteira procurando outra temperatura.</h2>
+        <p>The Cure, Sisters of Mercy, The Mission, Type O Negative, Depeche Mode e parentes próximos entram pela música: baixo, atmosfera, produção, palco e cidades. A estética vem junto — mas nunca substitui o som.</p>
+        <div class="category__keywords">Gothic rock · alternative rock · post-punk · The Cure · Sisters of Mercy · The Mission · Type O Negative · Depeche Mode</div>
+      </div>
+    </div>
+
+    <div class="story-links">
+      <a class="story-link" href="anos-80-bandas-musicas-rock-new-wave.html"><small>Anos 80</small><strong>The Cure, Sisters, Depeche Mode e a década por trás da estética.</strong><span>O arquivo maior onde essas conexões já aparecem.</span></a>
+      <a class="story-link" href="radio.html"><small>Ao Vivo</small><strong>Procure a versão ao vivo. Depois descubra o que aquela banda muda no palco.</strong><span>A programação da Passport atravessa gêneros sem pedir autorização.</span></a>
+      <a class="story-link story-link--dark" href="index.html#noticias"><small>Arquivo crescendo</small><strong>Gothic &amp; Alternative não vai ficar parado em cinco nomes.</strong><span>Novas matérias alimentam esta entrada conforme são publicadas.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PUNK -->
+<section class="section section--soft category" id="punk">
+  <div class="shell">
+    <div class="category__hero">
+      <div class="category__media"><img src="/images/the-ramones.png" alt="Ramones em arquivo punk da Passport Radio" loading="lazy"></div>
+      <div class="category__copy">
+        <span class="eyebrow">PUNK</span>
+        <h2>Três acordes nunca foram a regra. A urgência era.</h2>
+        <p>Ramones, Clash, Sex Pistols, hardcore, punk brasileiro e tudo que veio depois. O arquivo não tenta transformar punk em decoração vintage: tenta mostrar por que reduzir distância entre ideia e ação mudou música, palco e comportamento.</p>
+        <div class="category__keywords">Punk rock · Ramones · The Clash · Sex Pistols · hardcore · punk brasileiro · Ratos de Porão · Plebe Rude</div>
+      </div>
+    </div>
+
+    <div class="story-links">
+      <a class="story-link" href="do-classico-ao-moderno-13-estilos-de-rock.html"><small>Estilos</small><strong>Punk dentro da árvore que o rock foi criando.</strong><span>Origem, contexto e relação com outros movimentos.</span></a>
+      <a class="story-link" href="rock-nacional-top-30.html"><small>Brasil</small><strong>Quando punk, pós-punk e rock brasileiro começaram a falar com sotaque próprio.</strong><span>Bandas e histórias nacionais.</span></a>
+      <a class="story-link story-link--dark" href="index.html#noticias"><small>Arquivo em expansão</small><strong>Ramones é porta de entrada. Não ponto final.</strong><span>As próximas matérias vão preencher esta seção sem criar páginas vazias.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENT MASTERS -->
+<section class="section section--black category" id="instrument-masters">
+  <div class="shell">
+    <div class="instrument-panel">
+      <div class="instrument-panel__media"><img src="/images/alex-webster-bass.jpg" alt="Alex Webster tocando baixo no Cannibal Corpse" loading="lazy"></div>
+      <div class="instrument-panel__copy">
+        <span class="eyebrow">INSTRUMENT MASTERS</span>
+        <h2>Antes da lenda, existe alguém tocando.</h2>
+        <p>Nome verdadeiro, instrumento, bandas, projetos, contexto e aquilo que merece ser ouvido com mais atenção. O arquivo deixa de ser uma galeria de figurinhas e passa a funcionar como uma enciclopédia de músicos.</p>
+
+        <div class="instrument-actions">
+          <a href="exposicao.html?colecao=drum-masters">Drum Masters →</a>
+          <a href="exposicao.html?colecao=bass-legends">Bass Legends →</a>
+          <a href="instrument-masters.html">Instrument Masters →</a>
+        </div>
+
+        <div class="instrument-list">
+          <a href="exposicao.html?colecao=drum-masters#john-bonham"><small>Bateria</small><strong>John Bonham</strong><span>Peso é só metade da história. O groove explica o resto.</span></a>
+          <a href="exposicao.html?colecao=drum-masters#mike-portnoy"><small>Bateria</small><strong>Mike Portnoy</strong><span>Dream Theater, composição, arranjo e uma carreira cheia de projetos paralelos.</span></a>
+          <a href="historias/cannibal-corpse.html"><small>Baixo</small><strong>Alex Webster</strong><span>Precisão suficiente para impedir que o caos desmorone.</span></a>
+          <a href="exposicao.html?colecao=bass-legends"><small>Baixo</small><strong>Simon Gallup · Steve Harris · Tony Levin</strong><span>Quando o instrumento para de se esconder atrás da guitarra.</span></a>
+        </div>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="section" id="cenas"><div class="shell">
-  <div class="section-head"><div><span class="eyebrow">CENAS</span><h2>Música nunca acontece sozinha.</h2></div><p>Cidades, festivais, clubes, movimentos e momentos que ajudaram a transformar som em cultura.</p></div>
-  <div class="scene-grid">
-    <article class="scene-card"><img src="/images/wacken-open-air-festival.png" alt="Wacken Open Air" loading="lazy"><small>GERMANY · FESTIVAL CULTURE</small><h3>Wacken</h3><p>Metal, lama, multidão e décadas transformando uma pequena cidade em destino mundial.</p></article>
-    <article class="scene-card"><img src="/images/hollywood-festival-1983.png" alt="Festival de rock" loading="lazy"><small>BRASIL · FESTIVAIS</small><h3>Grandes palcos brasileiros</h3><p>Quando festivais deixam de ser evento e passam a marcar uma geração.</p></article>
-    <article class="scene-card"><img src="/images/the-cure.png" alt="The Cure" loading="lazy"><small>UK · ALTERNATIVE CULTURE</small><h3>Gothic & Alternative</h3><p>Clubes, estética, cidades e bandas que criaram uma linguagem própria.</p></article>
+<!-- AO VIVO -->
+<section class="section category" id="ao-vivo">
+  <div class="shell">
+    <div class="live-strip">
+      <div class="live-strip__copy">
+        <span class="eyebrow">AO VIVO</span>
+        <h2>O estúdio termina. A música continua.</h2>
+        <p>A Passport toca performances ao vivo e gravações raras atravessando estilos sem montar uma cerca entre eles. O objetivo não é prever a próxima faixa. É justamente o contrário.</p>
+        <a href="radio.html">Ouvir a Passport Radio →</a>
+      </div>
+
+      <div class="live-strip__list">
+        <div class="live-row"><small>Ao vivo</small><strong>George Michael pode encontrar Gorgoroth na mesma programação.</strong></div>
+        <div class="live-row"><small>Arquivo</small><strong>Shows históricos, versões diferentes e performances que mudam músicas conhecidas.</strong></div>
+        <div class="live-row"><small>Festivais</small><strong>Wacken, grandes palcos, cenas locais e eventos que viraram história.</strong></div>
+        <div class="live-row"><small>Regra</small><strong>Você pode saber o que está tocando. Não precisa saber o que vem depois.</strong></div>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="section section--black" id="nomads"><div class="shell nomad-grid">
-  <div class="nomad-copy"><span class="eyebrow">PASSPORT NOMADS</span><h2>Elas não apresentam a música. Elas entram nela.</h2><p>As Nomads passam a funcionar como linguagem audiovisual da Passport: guitarra, baixo, bateria, teclas e cordas. Os vídeos entram como transições entre instrumento, gênero e história — nunca como enfeite.</p></div>
-  <div class="nomad-stage"><div><strong>NOMADS · INSTRUMENT SESSIONS</strong><span>Área pronta para receber os vídeos oficiais sem mandar ninguém para fora da Passport.</span></div></div>
-</div></section>
+<!-- CONTINUE A PASSPORT -->
+<section class="commercial">
+  <div class="shell">
+    <div class="commercial__head">
+      <span class="eyebrow">CONTINUE A PASSPORT</span>
+      <h2>Leia. Ouça. Compre. Anuncie. Apoie.</h2>
+      <p>Conteúdo independente precisa circular — e também precisa pagar servidor, produção e operação. As três portas comerciais ficam visíveis sem transformar a matéria em outdoor.</p>
+    </div>
 
-<section class="section"><div class="shell">
-  <div class="section-head"><div><span class="eyebrow">ÍNDICE</span><h2>Uma enciclopédia que faz barulho.</h2></div></div>
-  <div class="index-grid">
-    <a href="#rock-brasileiro"><b>Rock Brasileiro</b><small>Bandas, décadas e contexto</small></a>
-    <a href="#estilos"><b>Estilos</b><small>Do rock & roll ao extremo</small></a>
-    <a href="instrument-masters.html"><b>Instrument Masters</b><small>Baixo, bateria e além</small></a>
-    <a href="#cenas"><b>Cenas</b><small>Cidades, festivais e movimentos</small></a>
-    <a href="#nomads"><b>Nomads</b><small>Instrument sessions e audiovisual</small></a>
-    <a href="historias/cannibal-corpse.html"><b>Death Metal</b><small>Cannibal Corpse · Alex Webster</small></a>
-    <a href="#progressive-brief"><b>Progressive</b><small>Fronteiras da composição · briefing Mr. Nomad</small></a>
-    <a href="radio.html"><b>Live</b><small>Broadcasts e arquivos ao vivo</small></a>
+    <div class="commercial-grid">
+      <a class="commercial-card" href="loja.html"><small>Loja</small><h3>Produto. Preço. Comprar.</h3><p>Produtos da Passport Radio e coleções ligadas à música, cultura e ao próprio arquivo editorial.</p><span>VER A LOJA →</span></a>
+      <a class="commercial-card" href="anuncie.html"><small>Anuncie</small><h3>Sua marca dentro da música.</h3><p>Publicidade, parcerias, eventos e presença comercial dentro de uma mídia musical independente.</p><span>ANUNCIAR →</span></a>
+      <a class="commercial-card" href="index.html#apoie"><small>Apoie</small><h3>Ajude a manter a Passport no ar.</h3><p>Se a Passport já fez você descobrir uma música, uma banda ou uma história, existe uma maneira direta de ajudar.</p><span>APOIAR →</span></a>
+    </div>
+
+    <p class="commercial-note"><strong>Passport Radio</strong> é uma iniciativa editorial independente. Operação comercial e processamento de pagamentos realizados por <strong>Guiropa World</strong>. Essa identificação também pode aparecer nas etapas de cobrança e pagamento.</p>
   </div>
-</div></section>
+</section>
+
 </main>
 
 <footer class="footer">
   <div class="shell footer__grid">
-    <div class="footer-brand"><a href="index.html"><img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="46" height="46"><strong>Passport Radio</strong></a><p>Music · History · Culture · Live</p></div>
-    <div class="footer-col"><strong>CONTEÚDO</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#resenhas">Resenhas</a><a href="index.html#agenda">Agenda de shows</a></div>
-    <div class="footer-col"><strong>EXPLORAR</strong><a href="#rock-brasileiro">Rock Brasileiro</a><a href="#estilos">Estilos</a><a href="instrument-masters.html">Instrument Masters</a><a href="#cenas">Cenas</a><a href="#nomads">Nomads</a></div>
-    <div class="footer-col"><strong>OUVIR & COMPRAR</strong><a href="radio.html">Ao Vivo</a><a href="loja.html">Passport Store</a><a href="index.html#apoie">Apoie</a></div>
-    <div class="footer-col"><strong>CONTATO</strong><a href="contato.html">Central de contato</a><a href="mailto:passport@passportradio.online">E-mail</a></div>
+    <div class="footer-brand">
+      <a href="index.html"><img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="46" height="46"><strong>Passport Radio</strong></a>
+      <p>Music · History · Culture · Live</p>
+    </div>
+
+    <div class="footer-col">
+      <strong>CONTEÚDO</strong>
+      <a href="index.html#noticias">Últimas histórias</a>
+      <a href="index.html#agenda">Shows no radar</a>
+      <a href="destinos.html">Arquivo</a>
+    </div>
+
+    <div class="footer-col">
+      <strong>ARQUIVO</strong>
+      <a href="#rock-brasileiro">Rock Brasileiro</a>
+      <a href="#anos-80">Anos 80</a>
+      <a href="#heavy-metal">Heavy Metal</a>
+      <a href="#instrument-masters">Instrument Masters</a>
+    </div>
+
+    <div class="footer-col">
+      <strong>OUVIR &amp; APOIAR</strong>
+      <a href="radio.html">Ao Vivo</a>
+      <a href="loja.html">Loja</a>
+      <a href="anuncie.html">Anuncie</a>
+      <a href="index.html#apoie">Apoie</a>
+    </div>
+
+    <div class="footer-col">
+      <strong>CONTATO</strong>
+      <a href="contato.html">Central de contato</a>
+      <a href="mailto:passport@passportradio.online">E-mail</a>
+    </div>
   </div>
-  <div class="shell footer__bottom"><span>© 2026 Passport Radio. Todos os direitos reservados.</span><span>Operação comercial e pagamentos: <strong>Guiropa World</strong>.</span></div>
+
+  <div class="shell footer__bottom">
+    <span>© 2026 Passport Radio. Todos os direitos reservados.</span>
+    <span>Operação comercial e pagamentos: <strong>Guiropa World</strong>.</span>
+  </div>
 </footer>
 
 <div class="quick-contact" aria-label="Contato rápido">
   <a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-  <a href="https://t.me/+447594716370" target="_blank" rel="noopener noreferrer">Telegram</a>
+  <a href="https://t.me/m/t6seeX61ZTlk" target="_blank" rel="noopener noreferrer">Telegram</a>
 </div>
 
 <a class="player" href="radio.html" aria-label="Ouvir Passport Radio ao vivo">
-  <span class="player__play">▶</span><span class="player__copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span><b>OUVIR</b>
+  <span class="player__play">▶</span>
+  <span class="player__copy"><strong>AO VIVO</strong><small>Passport Radio · 3...2...1... CLICK!</small></span>
+  <b>OUVIR</b>
 </a>
 
 <script>
 const menuButton=document.querySelector('.menu-button');
 const nav=document.querySelector('.nav');
+
 if(menuButton&&nav){
   menuButton.addEventListener('click',()=>{
     const open=nav.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded',String(open));
   });
+
   nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
     nav.classList.remove('is-open');
     menuButton.setAttribute('aria-expanded','false');
