@@ -2,9 +2,1597 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Therion — The Miskolc Experience | Passport Radio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Therion e The Miskolc Experience: quando o metal encontrou a orquestra | Passport Radio</title>
+
+  <meta
+    name="description"
+    content="Therion, The Miskolc Experience e a arquitetura do metal sinfônico: banda, orquestra, coro, vozes e músicos analisados pelo Mr. Nomad na Passport Radio.">
+
+  <meta
+    name="keywords"
+    content="Therion, The Miskolc Experience, symphonic metal, metal sinfônico, Christofer Johnsson, orquestra, coro, metal ao vivo, Passport Radio, Mr. Nomad">
+
+  <meta name="author" content="Passport Radio">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Therion — quando o metal encontrou a orquestra">
+  <meta property="og:description" content="The Miskolc Experience visto como ele merece: banda, orquestra, coro, vozes e a arquitetura por trás do metal sinfônico.">
+  <meta property="og:site_name" content="Passport Radio">
+
+  <link rel="canonical" href="https://www.passportradio.online/therion-miskolc-experience-symphonic-metal.html">
+
+  <style>
+    :root{
+      --bg:#02060B;
+      --navy:#081522;
+      --gold:#D4AF37;
+      --text:#F3F0E8;
+      --muted:#A5ADB7;
+      --red:#D30935;
+      --line:rgba(255,255,255,.12);
+      --soft:rgba(255,255,255,.055);
+      --max:1180px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+      line-height:1.65;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .passport-protected{
+      -webkit-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+      -webkit-touch-callout:none;
+    }
+
+    .passport-protected img{
+      -webkit-user-drag:none;
+    }
+
+    .shell{
+      width:min(calc(100% - 36px), var(--max));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      border-bottom:1px solid var(--line);
+      background:rgba(2,6,11,.94);
+      backdrop-filter:blur(14px);
+    }
+
+    .topbar__inner{
+      min-height:66px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      text-decoration:none;
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .brand span{
+      color:var(--gold);
+    }
+
+    .back{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:.7rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .hero{
+      min-height:82vh;
+      display:flex;
+      align-items:flex-end;
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:
+        linear-gradient(180deg,rgba(2,6,11,.16),rgba(2,6,11,.72) 54%,#02060B 100%),
+        url("images/therion-miskolc/514f0363cf5c724191e743a882b769eb.jpg")
+        center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(2,6,11,.92) 0%,rgba(2,6,11,.55) 48%,rgba(2,6,11,.20) 100%);
+    }
+
+    .hero__content{
+      position:relative;
+      z-index:2;
+      padding:120px 0 74px;
+      max-width:920px;
+    }
+
+    .eyebrow{
+      margin-bottom:16px;
+      color:var(--gold);
+      font-size:.65rem;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    h1,h2,h3{
+      margin:0;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:500;
+    }
+
+    h1{
+      max-width:920px;
+      font-size:clamp(3.2rem,8vw,7.8rem);
+      line-height:.88;
+      letter-spacing:-.055em;
+    }
+
+    .hero__dek{
+      max-width:760px;
+      margin:26px 0 0;
+      color:#D4D8DE;
+      font-size:clamp(1rem,1.8vw,1.3rem);
+      line-height:1.55;
+    }
+
+    .hero__meta{
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px 18px;
+      color:var(--muted);
+      font-size:.66rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .article{
+      padding:72px 0 110px;
+    }
+
+    .article__inner{
+      max-width:850px;
+      margin:0 auto;
+    }
+
+    .chapter{
+      margin:0 0 88px;
+    }
+
+    .chapter__number{
+      display:block;
+      margin-bottom:12px;
+      color:var(--gold);
+      font-size:.62rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .chapter h2{
+      margin-bottom:24px;
+      font-size:clamp(2.4rem,5vw,5rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+    }
+
+    .chapter h3{
+      margin:42px 0 18px;
+      font-size:clamp(1.8rem,3.4vw,3rem);
+      line-height:1;
+      letter-spacing:-.025em;
+    }
+
+    .chapter p{
+      margin:0 0 22px;
+      color:#D6DAE0;
+      font-size:1rem;
+    }
+
+    .lead{
+      font-size:clamp(1.15rem,2vw,1.42rem) !important;
+      color:#fff !important;
+      line-height:1.55;
+    }
+
+    .quote{
+      margin:38px 0;
+      padding:28px 32px;
+      border-left:4px solid var(--gold);
+      background:var(--soft);
+    }
+
+    .quote p{
+      margin:0;
+      color:#fff;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(1.3rem,2.5vw,2rem);
+      line-height:1.35;
+    }
+
+    .listen{
+      margin:38px 0;
+      padding:26px 28px;
+      border:1px solid rgba(212,175,55,.45);
+      background:linear-gradient(180deg,rgba(212,175,55,.08),rgba(212,175,55,.025));
+      color:#D8DDE4;
+      font-size:.92rem;
+      line-height:1.7;
+    }
+
+    .listen strong{
+      display:block;
+      margin-bottom:10px;
+      color:var(--gold);
+      font-size:.67rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .media{
+      margin:48px 0;
+    }
+
+    .media img{
+      border:1px solid var(--line);
+    }
+
+    .caption{
+      margin-top:9px;
+      color:#7F8995;
+      font-size:.63rem;
+      line-height:1.5;
+    }
+
+    .video{
+      position:relative;
+      overflow:hidden;
+      width:100%;
+      aspect-ratio:16/9;
+      margin:42px 0 10px;
+      background:#000;
+      border:1px solid var(--line);
+    }
+
+    .video iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .video-title{
+      color:#808995 !important;
+      font-size:.65rem !important;
+    }
+
+    .people{
+      margin:36px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .person{
+      display:grid;
+      grid-template-columns:minmax(190px,.8fr) minmax(0,1.2fr);
+      gap:22px;
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .person:last-child{
+      border-bottom:0;
+    }
+
+    .person strong{
+      color:#fff;
+      font-size:.86rem;
+    }
+
+    .person span{
+      color:var(--muted);
+      font-size:.75rem;
+    }
+
+    .click{
+      margin:54px 0 0;
+      color:var(--gold);
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(2rem,5vw,4rem);
+      font-weight:700;
+      letter-spacing:-.04em;
+    }
+
+    @media(max-width:700px){
+      .hero{
+        min-height:76vh;
+      }
+
+      .hero__content{
+        padding:96px 0 52px;
+      }
+
+      .article{
+        padding-top:54px;
+      }
+
+      .person{
+        grid-template-columns:1fr;
+        gap:4px;
+      }
+
+      .quote{
+        padding:22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
+<header class="topbar">
+  <div class="shell topbar__inner">
+    <a class="brand" href="index.html">PASSPORT <span>RADIO</span></a>
+    <a class="back" href="index.html">← Voltar à Passport</a>
+  </div>
+</header>
+
+<main class="passport-protected">
+
+  <section class="hero">
+    <div class="shell">
+      <div class="hero__content">
+
+        <div class="eyebrow">
+          Music · History · Symphonic Metal · Mr. Nomad
+        </div>
+
+        <h1>
+          THERION:
+          QUANDO O METAL
+          ENCONTROU A ORQUESTRA
+        </h1>
+
+        <p class="hero__dek">
+          The Miskolc Experience não colocou uma orquestra atrás de uma banda
+          apenas para fazer tudo parecer maior. Fez algo muito mais interessante:
+          colocou dois idiomas musicais na mesma sala e obrigou os dois a conversar.
+        </p>
+
+        <div class="hero__meta">
+          <span>Passport Radio</span>
+          <span>Mr. Nomad</span>
+          <span>Arquivo Symphonic Metal</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <article class="article">
+    <div class="shell">
+      <div class="article__inner">
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            01 · Antes de falar em metal
+          </span>
+
+          <h2>
+            Onde estão as guitarras?
+          </h2>
+
+          <p class="lead">
+            Não procure.
+          </p>
+
+          <p>
+            Elas ainda não chegaram.
+          </p>
+
+          <p>
+            E talvez essa seja a melhor maneira de começar uma história sobre
+            metal sinfônico.
+          </p>
+
+          <p>
+            Porque existe uma maneira preguiçosa de explicar o gênero:
+            guitarra pesada, bateria, baixo, alguma orquestração por cima
+            e uma voz grandiosa no centro.
+          </p>
+
+          <p>
+            Está correto.
+          </p>
+
+          <p>
+            E não explica droga nenhuma.
+          </p>
+
+          <div class="quote">
+            <p>
+              Antes de entender o que acontece quando o metal encontra a orquestra,
+              você precisa ouvir a orquestra sem o metal.
+            </p>
+          </div>
+
+          <p>
+            Então faça uma coisa.
+          </p>
+
+          <p>
+            Não espere o riff.
+          </p>
+
+          <p>
+            Não espere bateria entrando como uma locomotiva.
+          </p>
+
+          <p>
+            Não procure aquela parede de guitarras que normalmente avisa ao ouvido:
+            “você está numa banda de metal”.
+          </p>
+
+          <p>
+            Primeiro escute o outro mundo.
+          </p>
+
+
+          <div class="listen">
+            <strong>Preste atenção nisso</strong>
+
+            Cordas.
+
+            Violinos.
+
+            Violas.
+
+            Cellos.
+
+            Contrabaixos.
+
+            Madeiras.
+
+            Metais.
+
+            Percussão.
+
+            Coro.
+
+            Respiração.
+
+            Dinâmica.
+
+            Espaço.
+
+            Guarde esse som.
+
+            Vamos precisar dele daqui a pouco.
+          </div>
+
+
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/y_Hwb26adXw"
+              title="Therion - Miskolc Experience Part 1"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p class="video-title">
+            Therion — The Miskolc Experience · Part 1
+          </p>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            02 · Agora devolva as guitarras
+          </span>
+
+          <h2>
+            A colisão.
+          </h2>
+
+          <p class="lead">
+            Agora chegaram guitarras, baixo e bateria.
+          </p>
+
+          <p>
+            E aqui começa a pergunta realmente interessante.
+          </p>
+
+          <p>
+            Quem vai sair da frente?
+          </p>
+
+          <p>
+            A orquestra?
+          </p>
+
+          <p>
+            A banda?
+          </p>
+
+          <p>
+            O coro?
+          </p>
+
+          <p>
+            A voz solista?
+          </p>
+
+          <p>
+            Ninguém.
+          </p>
+
+          <p>
+            Esse é o ponto.
+          </p>
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/maxresdefault32.jpg"
+              alt="Therion durante The Miskolc Experience com orquestra e coro">
+            <div class="caption">
+              Therion · The Miskolc Experience · banda, orquestra e coro dividindo o mesmo palco.
+            </div>
+          </div>
+
+          <div class="listen">
+            <strong>Agora escute por camadas</strong>
+
+            Primeiro a bateria.
+
+            Depois procure a percussão orquestral.
+
+            Volte.
+
+            Agora siga o baixo.
+
+            Depois os contrabaixos.
+
+            Volte outra vez.
+
+            Pegue a guitarra.
+
+            Agora as cordas.
+
+            Escute o vocalista.
+
+            Depois escute o coro respondendo.
+
+            Só então devolva tudo ao mesmo tempo.
+          </div>
+
+
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/AS9r-SPVGQQ"
+              title="Therion - Miskolc Experience Part 2"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <p class="video-title">
+            Therion — The Miskolc Experience · Part 2
+          </p>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            03 · Quem está fazendo esse som?
+          </span>
+
+          <h2>
+            Não me diga apenas “Therion”.
+          </h2>
+
+          <p class="lead">
+            Banda não é logotipo.
+          </p>
+
+          <p>
+            Banda é gente.
+          </p>
+
+          <p>
+            E se você vai ouvir esse palco como o Mr. Nomad quer,
+            precisa começar a enxergar quem está fazendo cada parte daquela máquina funcionar.
+          </p>
+
+          <div class="quote">
+            <p>
+              Não saia daqui conhecendo apenas o nome da banda.
+              Procure as pessoas.
+            </p>
+          </div>
+          <h3>
+            Christofer Johnsson
+          </h3>
+
+          <p>
+            Se existe um nome sem o qual esta história simplesmente não acontece,
+            é Christofer Johnsson.
+          </p>
+
+          <p>
+            Fundador do Therion, compositor, guitarrista e arquiteto de grande parte
+            da linguagem musical que transformou a banda ao longo das décadas,
+            Johnsson é também uma excelente demonstração de por que reduzir um músico
+            ao instrumento que aparece em sua ficha é uma péssima ideia.
+          </p>
+
+          <p>
+            Guitarra é uma parte da história.
+          </p>
+
+          <p>
+            Voz também foi.
+          </p>
+
+          <p>
+            Composição, arranjo, direção musical e a própria concepção de como
+            elementos aparentemente distantes poderiam coexistir dentro do Therion
+            completam uma imagem muito maior.
+          </p>
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/0.jpg"
+              alt="Christofer Johnsson e Therion durante apresentação sinfônica">
+            <div class="caption">
+              Christofer Johnsson · Therion · a arquitetura musical por trás de uma banda em transformação permanente.
+            </div>
+          </div>
+
+          <div class="listen">
+            <strong>Não olhe apenas para a guitarra</strong>
+
+            Observe quando ela entra.
+
+            Observe principalmente quando ela não entra.
+
+            Em um arranjo desse tamanho, tocar também significa saber deixar espaço.
+
+            Há momentos em que a guitarra precisa ocupar o primeiro plano.
+
+            Em outros, precisa permitir que cordas, metais, coro ou voz carreguem a narrativa.
+
+            Isso não é ausência.
+
+            É arranjo.
+          </div>
+
+
+          <h3>
+            Uma banda que aprendeu a mudar
+          </h3>
+
+          <p>
+            O Therion que chegou ao universo sinfônico não nasceu pronto.
+          </p>
+
+          <p>
+            Antes das grandes orquestrações, dos coros monumentais e das vozes
+            líricas que se tornariam parte de sua identidade, existiu uma banda
+            muito mais próxima do death metal.
+          </p>
+
+          <p>
+            E isso importa.
+          </p>
+
+          <p>
+            Porque The Miskolc Experience não é o resultado de alguém simplesmente
+            decidir colocar cinquenta músicos atrás de amplificadores.
+          </p>
+
+          <p>
+            É consequência de uma transformação musical construída durante anos.
+          </p>
+
+          <p>
+            O peso não desapareceu.
+          </p>
+
+          <p>
+            Ele aprendeu outro vocabulário.
+          </p>
+
+          <div class="quote">
+            <p>
+              O Therion não abandonou o metal para encontrar a música clássica.
+              Aprendeu a fazer os dois ocuparem a mesma frase.
+            </p>
+          </div>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            04 · Therion não começou aqui
+          </span>
+
+          <h2>
+            Antes da orquestra havia outra criatura.
+          </h2>
+
+          <p class="lead">
+            Volte para a Suécia do fim dos anos 1980.
+          </p>
+
+          <p>
+            Antes de existir o Therion que hoje associamos a coros, sopranos,
+            tenores, orquestrações e estruturas monumentais, havia uma banda
+            jovem procurando sua própria linguagem dentro do metal extremo.
+          </p>
+
+          <p>
+            A trajetória passa pelo nome Blitzkrieg, depois Megatherion,
+            até chegar a Therion — nome ligado a uma referência que já apontava
+            para algo maior do que simplesmente mais uma banda de death metal.
+          </p>
+
+          <p>
+            Os primeiros discos pertencem a outro território sonoro.
+          </p>
+
+          <p>
+            O que torna a história fascinante é justamente acompanhar o momento
+            em que aquela criatura começa a ganhar novas partes.
+          </p>
+
+          <p>
+            Teclados aparecem.
+          </p>
+
+          <p>
+            Arranjos se expandem.
+          </p>
+
+          <p>
+            Vozes deixam de obedecer a uma única tradição.
+          </p>
+
+          <p>
+            Elementos clássicos deixam de ser decoração e começam a interferir
+            na própria estrutura das composições.
+          </p>
+
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/images.jpg"
+              alt="Therion em apresentação ao vivo">
+            <div class="caption">
+              Therion · uma história marcada menos pela permanência do que pela transformação.
+            </div>
+          </div>
+
+
+          <h3>
+            Theli.
+          </h3>
+
+          <p>
+            Então chegamos a 1996.
+          </p>
+
+          <p>
+            E aqui é impossível passar correndo.
+          </p>
+
+          <p>
+            <em>Theli</em> tornou-se um dos pontos fundamentais para compreender
+            a identidade que o Therion desenvolveria.
+          </p>
+
+          <p>
+            Não porque tenha inventado sozinho a aproximação entre metal
+            e música clássica.
+          </p>
+
+          <p>
+            A história é muito mais interessante — e muito menos conveniente —
+            do que entregar a invenção inteira de um gênero a uma única banda.
+          </p>
+
+          <p>
+            Mas porque no Therion essa aproximação deixou de parecer visita.
+          </p>
+
+          <p>
+            Começou a parecer endereço.
+          </p>
+
+          <div class="quote">
+            <p>
+              Quando a orquestração deixa de ser efeito e passa a participar
+              da composição, alguma coisa mudou.
+            </p>
+          </div>
+
+          <p>
+            E essa diferença é essencial para entender por que anos depois
+            uma experiência como Miskolc faria sentido.
+          </p>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            05 · Miskolc · Hungria
+          </span>
+
+          <h2>
+            Agora coloque todo mundo no palco.
+          </h2>
+
+          <p class="lead">
+            Banda.
+            Orquestra.
+            Coro.
+            Solistas.
+          </p>
+
+          <p>
+            E retire a rede de segurança.
+          </p>
+
+          <p>
+            Em estúdio você pode construir uma parede sonora camada por camada.
+          </p>
+
+          <p>
+            Ao vivo, dezenas de pessoas precisam respirar dentro do mesmo tempo.
+          </p>
+
+          <p>
+            Essa é uma das razões pelas quais The Miskolc Experience é tão
+            interessante para esta história.
+          </p>
+
+          <p>
+            O concerto aconteceu no Miskolc International Opera Festival,
+            na Hungria, em 2007, colocando o Therion diante de uma estrutura
+            musical muito maior do que a formação convencional de uma banda.
+          </p>
+
+          <p>
+            O projeto seria posteriormente lançado como
+            <em>The Miskolc Experience</em>.
+          </p>
+
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/hqdefault.jpg"
+              alt="Therion The Miskolc Experience com músicos de orquestra">
+            <div class="caption">
+              The Miskolc Experience · quando a escala deixa de ser estética e passa a fazer parte da execução.
+            </div>
+          </div>
+
+
+          <h3>
+            Não é banda + fundo.
+          </h3>
+
+          <p>
+            Esse detalhe muda tudo.
+          </p>
+
+          <p>
+            Quando uma orquestra é usada apenas para preencher o fundo,
+            o ouvido percebe duas estruturas:
+          </p>
+
+          <p>
+            a banda na frente;
+          </p>
+
+          <p>
+            e alguma coisa bonita acontecendo atrás.
+          </p>
+
+          <p>
+            Aqui queremos que você tente ouvir de outra maneira.
+          </p>
+
+          <p>
+            Procure relações.
+          </p>
+
+          <p>
+            Uma frase começa em determinado grupo instrumental e encontra
+            resposta em outro.
+          </p>
+
+          <p>
+            Uma voz individual cresce e encontra o coro.
+          </p>
+
+          <p>
+            O peso da banda aparece e a massa orquestral muda sua dimensão.
+          </p>
+
+          <p>
+            E às vezes acontece o contrário:
+            a banda recua porque a música precisa de espaço.
+          </p>
+
+          <div class="listen">
+            <strong>Faça o teste</strong>
+
+            Volte ao vídeo.
+
+            Escolha apenas vinte segundos.
+
+            Não tente ouvir tudo.
+
+            Escolha UMA coisa.
+
+            Bateria.
+
+            Guitarra.
+
+            Baixo.
+
+            Cordas.
+
+            Metais.
+
+            Coro.
+
+            Voz.
+
+            Depois repita os mesmos vinte segundos seguindo outra camada.
+
+            Quando terminar, escute tudo novamente.
+
+            A música será a mesma.
+
+            Sua percepção dela provavelmente não.
+          </div>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            06 · A outra metade da experiência
+          </span>
+
+          <h2>
+            As vozes não estão ali para enfeitar.
+          </h2>
+
+          <p class="lead">
+            No metal sinfônico, “vocal” pode significar coisas completamente diferentes
+            dentro da mesma composição.
+          </p>
+
+          <p>
+            Voz masculina.
+          </p>
+
+          <p>
+            Voz feminina.
+          </p>
+
+          <p>
+            Técnica lírica.
+          </p>
+
+          <p>
+            Voz popular.
+          </p>
+
+          <p>
+            Coro.
+          </p>
+
+          <p>
+            Contraponto.
+          </p>
+
+          <p>
+            Uníssono.
+          </p>
+
+          <p>
+            Resposta.
+          </p>
+
+          <p>
+            Textura.
+          </p>
+
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/hqdefault1.jpg"
+              alt="Vozes e coro durante Therion The Miskolc Experience">
+            <div class="caption">
+              Em Miskolc, a voz também funciona como instrumento de arquitetura.
+            </div>
+          </div>
+
+
+          <div class="quote">
+            <p>
+              Uma soprano não é simplesmente “uma voz mais aguda”.
+              Um coro não é simplesmente “muita gente cantando”.
+            </p>
+          </div>
+
+          <p>
+            O efeito emocional vem justamente da maneira como registros,
+            timbres e volumes diferentes são colocados uns contra os outros.
+          </p>
+
+          <p>
+            É por isso que algumas passagens parecem íntimas mesmo diante
+            de um palco enorme.
+          </p>
+
+          <p>
+            E outras parecem grandes demais para caber nele.
+          </p>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            07 · Mr. Nomad pede mais uma coisa
+          </span>
+
+          <h2>
+            Tire os olhos do vocalista.
+          </h2>
+
+          <p class="lead">
+            Só por alguns segundos.
+          </p>
+
+          <p>
+            Eu sei.
+          </p>
+
+          <p>
+            É difícil.
+          </p>
+
+          <p>
+            Nosso ouvido foi treinado durante décadas para seguir a voz principal.
+          </p>
+
+          <p>
+            Então faça exatamente o contrário.
+          </p>
+
+          <div class="listen">
+            <strong>Mr. Nomad · exercício número dois</strong>
+
+            Olhe para o baterista.
+
+            Conte mentalmente.
+
+            Agora procure o baixo.
+
+            Veja como ele conversa com o bumbo.
+
+            Passe para a guitarra.
+
+            Depois procure os teclados.
+
+            Agora abandone a banda inteira.
+
+            Vá para a orquestra.
+
+            Procure os violinos.
+
+            Desça para cellos e contrabaixos.
+
+            Volte para os metais.
+
+            Escute o coro.
+
+            Só então volte para a voz principal.
+          </div>
+
+          <p>
+            Se você fizer isso, existe uma boa chance de descobrir que passou
+            anos ouvindo algumas músicas sem realmente perceber metade delas.
+          </p>
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/514f0363cf5c724191e743a882b769eb.jpg"
+              alt="Therion e conjunto sinfônico em The Miskolc Experience">
+            <div class="caption">
+              Quanto maior o arranjo, mais interessante fica decidir o que NÃO ouvir primeiro.
+            </div>
+          </div>
+
+          <div class="quote">
+            <p>
+              A música não ficou mais complicada.
+              Você apenas começou a enxergar as engrenagens.
+            </p>
+          </div>
+
+        </section>
+                <section class="chapter">
+
+          <span class="chapter__number">
+            08 · O que Miskolc realmente prova
+          </span>
+
+          <h2>
+            Grande não significa sinfônico.
+          </h2>
+
+          <p class="lead">
+            Cem músicos podem produzir barulho.
+            Cinco podem produzir arquitetura.
+          </p>
+
+          <p>
+            Essa talvez seja a distinção mais importante para levar daqui.
+          </p>
+
+          <p>
+            Metal sinfônico não é definido simplesmente pela quantidade de pessoas
+            no palco.
+          </p>
+
+          <p>
+            Nem pela presença de violinos.
+          </p>
+
+          <p>
+            Nem por uma soprano.
+          </p>
+
+          <p>
+            Nem por teclados imitando uma orquestra.
+          </p>
+
+          <p>
+            Nem pela capacidade de fazer uma música parecer enorme.
+          </p>
+
+          <p>
+            O ponto realmente interessante aparece quando linguagens diferentes
+            deixam de disputar espaço e começam a participar da mesma construção.
+          </p>
+
+          <div class="quote">
+            <p>
+              Orquestração não é tamanho.
+              É função.
+            </p>
+          </div>
+
+          <p>
+            Uma guitarra pode carregar a melodia.
+          </p>
+
+          <p>
+            Depois entregá-la às cordas.
+          </p>
+
+          <p>
+            O coro pode assumir aquilo que antes pertencia a uma única voz.
+          </p>
+
+          <p>
+            A bateria pode sustentar o peso enquanto a percussão orquestral
+            altera completamente sua dimensão.
+          </p>
+
+          <p>
+            E o silêncio pode ser tão importante quanto todos eles.
+          </p>
+
+          <p>
+            É nesse ponto que The Miskolc Experience deixa de ser apenas
+            “Therion tocando com uma orquestra”.
+          </p>
+
+          <p>
+            A experiência passa a mostrar, diante dos nossos olhos,
+            o princípio que sustenta boa parte da linguagem que estamos tentando entender.
+          </p>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            09 · Volte ao começo
+          </span>
+
+          <h2>
+            Agora escute novamente.
+          </h2>
+
+          <p class="lead">
+            Os vídeos não mudaram.
+          </p>
+
+          <p>
+            Você mudou a maneira de ouvi-los.
+          </p>
+
+          <p>
+            Volte ao primeiro.
+          </p>
+
+          <p>
+            Aquele em que pedi para você esquecer as guitarras.
+          </p>
+
+          <p>
+            Depois volte ao segundo.
+          </p>
+
+          <p>
+            Só que agora você já sabe o que procurar.
+          </p>
+
+          <div class="listen">
+            <strong>Última passagem</strong>
+
+            Não procure virtuosismo.
+
+            Não procure velocidade.
+
+            Não procure quem está tocando mais alto.
+
+            Procure decisões.
+
+            Quem entra.
+
+            Quem sai.
+
+            Quem sustenta.
+
+            Quem responde.
+
+            Quem ocupa o espaço.
+
+            E quem deliberadamente deixa esse espaço vazio.
+          </div>
+
+          <p>
+            É aí que um arranjo deixa de ser uma pilha de instrumentos.
+          </p>
+
+          <p>
+            E começa a virar linguagem.
+          </p>
+
+
+          <div class="media">
+            <img
+              src="images/therion-miskolc/maxresdefault32.jpg"
+              alt="Therion The Miskolc Experience em concerto sinfônico">
+            <div class="caption">
+              The Miskolc Experience · Therion · Miskolc, Hungria.
+            </div>
+          </div>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            10 · Passport Radio
+          </span>
+
+          <h2>
+            Isto não termina em Miskolc.
+          </h2>
+
+          <p class="lead">
+            Na verdade, acabamos de abrir a porta.
+          </p>
+
+          <p>
+            Porque uma vez que metal e linguagem sinfônica aprenderam a dividir
+            o mesmo espaço, músicos diferentes começaram a responder à mesma
+            pergunta de maneiras completamente diferentes.
+          </p>
+
+          <p>
+            Alguns procuraram peso.
+          </p>
+
+          <p>
+            Outros procuraram beleza.
+          </p>
+
+          <p>
+            Alguns encontraram o teatro.
+          </p>
+
+          <p>
+            Outros encontraram o cinema.
+          </p>
+
+          <p>
+            Houve quem levasse essa linguagem para territórios mais sombrios.
+          </p>
+
+          <p>
+            Houve quem colocasse velocidade, fantasia e virtuosismo no centro dela.
+          </p>
+
+          <p>
+            E é exatamente para esse último lugar que vamos agora.
+          </p>
+
+          <div class="quote">
+            <p>
+              Se Therion nos mostrou o que acontece quando o metal aprende
+              a conversar com uma orquestra, a próxima viagem pergunta:
+              até onde essa conversa pode crescer?
+            </p>
+          </div>
+
+          <p>
+            Itália.
+          </p>
+
+          <p>
+            Power metal.
+          </p>
+
+          <p>
+            Orquestrações cinematográficas.
+          </p>
+
+          <p>
+            Fantasia.
+          </p>
+
+          <p>
+            Velocidade.
+          </p>
+
+          <p>
+            Coros.
+          </p>
+
+          <p>
+            Guitarras.
+          </p>
+
+          <p>
+            Teclados.
+          </p>
+
+          <p>
+            E algumas melodias capazes de fazer uma pessoa esquecer
+            completamente que entrou aqui apenas para procurar um vídeo.
+          </p>
+
+          <h3>
+            Próximo destino:
+            Rhapsody of Fire.
+          </h3>
+
+          <p>
+            Mas não ainda.
+          </p>
+
+          <p>
+            Primeiro deixe Miskolc terminar.
+          </p>
+
+          <p>
+            Música boa não precisa ser atropelada pela próxima música.
+          </p>
+
+          <div class="click">
+            3... 2... 1... CLICK!
+          </div>
+
+        </section>
+
+
+        <section class="chapter">
+
+          <span class="chapter__number">
+            Passport Radio · Archive
+          </span>
+
+          <h2>
+            Every Song Is A Destination.
+          </h2>
+
+          <p>
+            A Passport Radio é um arquivo editorial dedicado às histórias,
+            pessoas, lugares, movimentos e acontecimentos que existem
+            por trás da música.
+          </p>
+
+          <p>
+            Aqui a música não é tratada como fundo.
+          </p>
+
+          <p>
+            É documento.
+          </p>
+
+          <p>
+            É memória.
+          </p>
+
+          <p>
+            É destino.
+          </p>
+
+        </section>
+
+
+      </div>
+    </div>
+  </article>
+
+</main>
+
+
+<footer style="
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:42px 18px;
+  text-align:center;
+  background:#02060B;
+  color:#7F8995;
+  font-size:.68rem;
+  line-height:1.8;
+">
+  <div style="
+    color:#D4AF37;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  ">
+    Passport Radio
+  </div>
+
+  <div>
+    Music · History · People · Places · Archives
+  </div>
+
+  <div style="margin-top:12px;">
+    © 2026 Passport Radio. All rights reserved.
+  </div>
+</footer>
+
+
+<script>
+/* PASSPORT RADIO — EDITORIAL CONTENT PROTECTION */
+
+(() => {
+
+  const protectedArea = document.querySelector('.passport-protected');
+
+  if (!protectedArea) return;
+
+
+  /* Bloqueia menu de contexto dentro da matéria */
+  protectedArea.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+  });
+
+
+  /* Bloqueia cópia */
+  protectedArea.addEventListener('copy', function(event) {
+    event.preventDefault();
+  });
+
+
+  /* Bloqueia recorte */
+  protectedArea.addEventListener('cut', function(event) {
+    event.preventDefault();
+  });
+
+
+  /* Bloqueia arrastar imagens */
+  protectedArea.addEventListener('dragstart', function(event) {
+
+    if (event.target.closest('img')) {
+      event.preventDefault();
+    }
+
+  });
+
+
+  /* Bloqueia atalhos comuns de cópia/seleção/salvamento */
+  document.addEventListener('keydown', function(event) {
+
+    const key = event.key.toLowerCase();
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      ['c', 'x', 'a', 's'].includes(key)
+    ) {
+      event.preventDefault();
+    }
+
+  });
+
+})();
+</script>
+
 
 </body>
 </html>
