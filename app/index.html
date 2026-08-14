@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#02060B">
+  <meta name="description" content="Passport Radio — música, histórias, arquivos e descobertas em uma experiência instalável.">
+  <title>Passport Radio App</title>
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegação do aplicativo">
+      <a class="brand" href="./">
+        <span class="brand-mark">PR</span>
+        <span class="brand-copy">
+          <strong>Passport Radio</strong>
+          <small>Music · History · Culture · Live</small>
+        </span>
+      </a>
+
+      <nav class="side-nav">
+        <button class="nav-item is-active" data-view="home">Início</button>
+        <button class="nav-item" data-view="live">Ao Vivo</button>
+        <button class="nav-item" data-view="explore">Explorar</button>
+        <button class="nav-item" data-view="stories">Histórias</button>
+        <button class="nav-item" data-view="archive">Arquivos</button>
+        <a class="nav-item nav-link" href="/loja.html">Loja</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <small>PASSAPORTE PARA O SOM</small>
+        <p>Uma música pode abrir uma história inteira.</p>
+      </div>
+    </aside>
+
+    <main class="main-stage">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">PASSPORT APP · V1</span>
+          <strong id="viewTitle">Início</strong>
+        </div>
+        <div class="topbar-actions">
+          <button id="installButton" class="ghost-button" hidden>Instalar app</button>
+          <a class="support-button" href="/#apoie">Apoie</a>
+        </div>
+      </header>
+
+      <section id="view-home" class="view is-visible">
+        <article class="hero-card">
+          <div class="hero-media">
+            <img src="/images/ritchie-blackmore-deep-purple-reunion-2026.webp" alt="Ritchie Blackmore e Deep Purple">
+            <div class="hero-shade"></div>
+            <div class="hero-copy">
+              <span class="live-badge">AGORA</span>
+              <p class="hero-kicker">MÚSICA + HISTÓRIA</p>
+              <h1>Deep Purple</h1>
+              <h2>Smoke on the Water · Live</h2>
+              <p>O player permanece vivo enquanto você navega por histórias, arquivos e descobertas.</p>
+              <div class="hero-actions">
+                <button class="primary-button" data-action="play-demo">▶ Tocar demonstração</button>
+                <a class="secondary-button" href="/ritchie-blackmore-deep-purple-33-anos.html">Conheça a história</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <section class="content-block">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">DESCOBRIR</span>
+              <h2>Portas de entrada</h2>
+            </div>
+          </div>
+          <div class="door-grid">
+            <button class="door" data-jump="explore"><strong>Heavy Metal</strong><small>bandas, discos e histórias</small></button>
+            <button class="door" data-jump="explore"><strong>Progressive</strong><small>música sem pressa</small></button>
+            <button class="door" data-jump="explore"><strong>Gothic & Alternative</strong><small>atmosfera e arquivo</small></button>
+            <button class="door" data-jump="archive"><strong>Instrument Masters</strong><small>músicos e instrumentos</small></button>
+          </div>
+        </section>
+
+        <section class="content-block">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">MR. NOMAD</span>
+              <h2>Histórias em destaque</h2>
+            </div>
+          </div>
+
+          <div class="story-grid">
+            <a class="story-card" href="/sharon-den-adel-within-temptation-30-anos.html">
+              <img src="/images/sharon-den-adel-within-temptation-2026.webp" alt="Sharon den Adel">
+              <div><small>WITHIN TEMPTATION</small><h3>Trinta anos e vontade de mudar tudo outra vez.</h3></div>
+            </a>
+            <a class="story-card" href="/scorpions-hurricane-graphic-novel.html">
+              <img src="/images/scorpions-hurricane-graphic-novel.webp" alt="Scorpions">
+              <div><small>SCORPIONS</small><h3>Quando o furacão saiu da Terra.</h3></div>
+            </a>
+            <a class="story-card" href="/therion-miskolc-experience-symphonic-metal.html">
+              <img src="/images/therion-miskolc/therion-miskolc-experience.webp" alt="Therion">
+              <div><small>THERION</small><h3>Quando o metal encontrou a orquestra.</h3></div>
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <section id="view-live" class="view">
+        <div class="page-intro">
+          <span class="eyebrow">AO VIVO</span>
+          <h1>A música não para quando você muda de tela.</h1>
+          <p>Nesta primeira versão, o player visual já é persistente. No próximo passo conectamos ao áudio real da Passport Radio.</p>
+          <a class="primary-button inline-button" href="/radio.html">Abrir rádio atual</a>
+        </div>
+      </section>
+
+      <section id="view-explore" class="view">
+        <div class="page-intro">
+          <span class="eyebrow">EXPLORAR</span>
+          <h1>Escolha uma porta. Não uma playlist genérica.</h1>
+        </div>
+        <div class="big-links">
+          <a href="/destinos.html">Anos 80</a>
+          <a href="/destinos.html">Progressive</a>
+          <a href="/destinos.html">Heavy Metal</a>
+          <a href="/destinos.html">Gothic & Alternative</a>
+          <a href="/destinos.html">Punk</a>
+          <a href="/instrument-masters.html">Instrument Masters</a>
+        </div>
+      </section>
+
+      <section id="view-stories" class="view">
+        <div class="page-intro">
+          <span class="eyebrow">HISTÓRIAS</span>
+          <h1>Primeiro a história. Depois a música.</h1>
+          <p>As matérias atuais continuam no site. Nesta V1, o app passa a ser a porta de entrada para elas.</p>
+        </div>
+      </section>
+
+      <section id="view-archive" class="view">
+        <div class="page-intro">
+          <span class="eyebrow">ARQUIVOS</span>
+          <h1>Músicos, instrumentos, shows e memória.</h1>
+          <div class="hero-actions">
+            <a class="primary-button" href="/instrument-masters.html">Instrument Masters</a>
+            <a class="secondary-button" href="/exposicao.html?colecao=drum-masters">Drum Masters</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="player-dock" aria-label="Player Passport Radio">
+      <div class="track-art">
+        <img src="/images/ritchie-blackmore-deep-purple-reunion-2026.webp" alt="">
+      </div>
+      <div class="track-copy">
+        <small>AGORA TOCANDO · DEMO VISUAL</small>
+        <strong>Deep Purple — Smoke on the Water</strong>
+      </div>
+      <div class="player-controls">
+        <button aria-label="Anterior" disabled>◀</button>
+        <button id="dockPlay" class="dock-play" aria-label="Tocar">▶</button>
+        <button aria-label="Próxima" disabled>▶</button>
+      </div>
+      <div class="player-status">
+        <span class="signal-dot"></span>
+        <span id="playerStatus">Player pronto</span>
+      </div>
+    </footer>
+
+    <nav class="mobile-nav" aria-label="Navegação móvel">
+      <button data-view="home" class="is-active">Início</button>
+      <button data-view="explore">Explorar</button>
+      <button data-view="live" class="mobile-live">▶</button>
+      <button data-view="stories">Histórias</button>
+      <button data-view="archive">Arquivo</button>
+    </nav>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
 
