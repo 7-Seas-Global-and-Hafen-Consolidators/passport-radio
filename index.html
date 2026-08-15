@@ -15,12 +15,12 @@
   <meta property="og:title" content="Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja" />
   <meta property="og:description" content="Rock, metal, música ao vivo, histórias, notícias, symphonic metal, Therion, Rhapsody of Fire, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda de shows e loja. Primeiro a história. Depois a música." />
   <meta property="og:url" content="https://www.passportradio.online/" />
-  <meta property="og:image" content="https://www.passportradio.online/images/logo-passport-radio.png.jpeg" />
+  <meta property="og:image" content="https://www.passportradio.online/images/passport-radio-definitive.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Passport Radio | Rock, Metal, Música, Histórias, Notícias e Loja" />
   <meta name="twitter:description" content="Rock, metal, música ao vivo, histórias, notícias, arquivo dos anos 80, new wave, synthpop, pós-punk, agenda e loja." />
-  <meta name="twitter:image" content="https://www.passportradio.online/images/logo-passport-radio.png.jpeg" />
+  <meta name="twitter:image" content="https://www.passportradio.online/images/passport-radio-definitive.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -85,33 +85,36 @@
     /* header */
     .header{
       position:sticky;top:0;z-index:8000;
-      border-bottom:1px solid var(--line);
-      background:rgba(255,255,255,.97);
+      border-bottom:1px solid #252525;
+      background:rgba(8,8,8,.985);
       backdrop-filter:blur(14px)
     }
     .header__inner{
-      min-height:66px;
+      min-height:82px;
       display:grid;
       grid-template-columns:auto 1fr auto;
       gap:22px;
       align-items:center;
     }
-    .brand{display:flex;align-items:center;gap:10px;min-width:205px}
-    .brand img{width:42px;height:42px;object-fit:cover;border-radius:50%;flex:none}
-    .brand__copy{display:grid;gap:1px}
-    .brand__copy strong{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
-    .brand__copy small{color:#777;font-size:.53rem}
+    .brand{display:flex;align-items:center;min-width:190px}
+    .brand img{
+      width:178px;height:72px;
+      object-fit:contain;object-position:left center;
+      border-radius:0;flex:none
+    }
+    .brand__copy{display:none}
     .nav{display:flex;justify-content:center;align-items:center;gap:16px}
-    .nav a{color:#252525;font-size:.67rem;font-weight:800}
+    .nav a{color:#f1f1f1;font-size:.67rem;font-weight:800}
     .nav a:hover{color:var(--red)}
     .onair{
       display:grid;grid-template-columns:8px auto;align-items:center;column-gap:7px;
-      min-width:102px;padding:7px 11px;border:1px solid #d9d9d9;border-radius:999px
+      min-width:102px;padding:7px 11px;border:1px solid #3a3a3a;border-radius:999px;
+      color:#fff
     }
     .onair__dot{width:8px;height:8px;border-radius:50%;background:var(--red)}
     .onair b{font-size:.61rem;letter-spacing:.08em}
-    .onair small{grid-column:2;color:#777;font-size:.42rem}
-    .menu-button{display:none;border:0;background:none;color:#111;font-size:.7rem;font-weight:900}
+    .onair small{grid-column:2;color:#999;font-size:.42rem}
+    .menu-button{display:none;border:0;background:none;color:#fff;font-size:.7rem;font-weight:900}
 
     /* hero */
     .top{padding:24px 0 20px}
@@ -308,9 +311,12 @@
     /* footer + fixed */
     .footer{padding:30px 0 20px;background:#111;color:#fff}
     .footer__grid{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:26px;align-items:start}
-    .footer-brand a{display:flex;align-items:center;gap:9px}
-    .footer-brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-    .footer-brand strong{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+    .footer-brand a{display:block;width:max-content;max-width:100%}
+    .footer-brand img{
+      width:190px;height:auto;
+      border-radius:0;object-fit:contain;object-position:left center
+    }
+    .footer-brand strong{display:none}
     .footer-brand p{margin-top:8px;color:#777;font-size:.61rem}
     .footer-col{display:grid;align-content:start;gap:7px}
     .footer-col strong{margin-bottom:2px;font-size:.62rem;letter-spacing:.06em}
@@ -381,12 +387,12 @@
       .header__inner{grid-template-columns:1fr auto auto}
       .menu-button{display:block}
       .nav{
-        position:absolute;top:66px;left:0;right:0;display:none;
+        position:absolute;top:82px;left:0;right:0;display:none;
         grid-template-columns:repeat(2,1fr);gap:0;padding:8px 16px 14px;
-        border-bottom:1px solid var(--line);background:#fff
+        border-bottom:1px solid #2c2c2c;background:#0b0b0b
       }
       .nav.is-open{display:grid}
-      .nav a{padding:10px;border-bottom:1px solid var(--line)}
+      .nav a{padding:10px;border-bottom:1px solid #2c2c2c}
       .top__grid,.content-layout,.explore-layout,.support__grid,.broadcast-layout{grid-template-columns:1fr}
       .lead a{grid-template-columns:1fr}
       .lead img{height:280px}
@@ -407,7 +413,7 @@
     @media(max-width:620px){
       .shell{width:min(calc(100% - 20px),var(--shell))}
       .trustbar{text-align:left;padding-inline:10px}
-      .brand{min-width:0}.brand__copy small{display:none}.onair{min-width:76px}
+      .brand{min-width:0}.brand img{width:125px;height:62px}.onair{min-width:76px}
       .top{padding:12px 0}
       .lead img{height:220px}.lead__copy{padding:18px 0}.lead h1{font-size:2.1rem}
       .top-list{grid-template-columns:1fr}
@@ -450,8 +456,13 @@
     .spotify-card__head small{display:block;color:var(--red);font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
     .spotify-card__head h3{margin-top:6px;font-size:clamp(1.7rem,3vw,2.8rem);line-height:.95;letter-spacing:-.045em}
     .spotify-card__head p{max-width:520px;margin-top:10px;color:#aaa;font-size:.7rem;line-height:1.55}
-    .spotify-owned{position:relative;z-index:1;display:grid;grid-template-columns:148px minmax(0,1fr);gap:22px;align-items:center;padding:24px}
-    .spotify-owned__art{width:148px;height:148px;border:1px solid #333;background:#050505;object-fit:cover;border-radius:4px;box-shadow:0 18px 42px rgba(0,0,0,.35)}
+    .spotify-owned{position:relative;z-index:1;display:grid;grid-template-columns:190px minmax(0,1fr);gap:22px;align-items:center;padding:24px}
+    .spotify-owned__art{
+      width:190px;height:128px;
+      border:0;background:#050505;
+      object-fit:contain;object-position:center;
+      border-radius:0;box-shadow:none
+    }
     .spotify-owned__copy{display:grid;gap:10px}
     .spotify-owned__copy>small{color:#8b8b8b;font-size:.54rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
     .spotify-owned__copy strong{display:block;font-size:1.45rem;line-height:1.05}
@@ -497,8 +508,8 @@
     @media(max-width:620px){
       .passport-spotify{padding:36px 0}.passport-spotify__grid{gap:24px}
       .spotify-card{min-height:0}
-      .spotify-owned{grid-template-columns:96px 1fr;gap:14px;padding:18px}
-      .spotify-owned__art{width:96px;height:96px}
+      .spotify-owned{grid-template-columns:118px 1fr;gap:14px;padding:18px}
+      .spotify-owned__art{width:118px;height:80px}
       .spotify-actions{grid-column:1/-1}
       .spotify-open,.spotify-home{width:100%}
       .participation{padding:36px 0}
@@ -979,7 +990,7 @@
       "url": "https://www.passportradio.online/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.passportradio.online/images/logo-passport-radio.png.jpeg"
+        "url": "https://www.passportradio.online/images/passport-radio-definitive.jpg"
       },
       "description": "Plataforma independente de música, rock, metal, histórias, notícias, resenhas, agenda de shows, arquivos, rádio e loja."
     },
@@ -1016,6 +1027,15 @@
 Sharon den Adel / Within Temptation integrada em AGORA, Latest Stories e História/Palco/Contexto.
 Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
 -->
+<!--
+  PASSPORT RADIO — identidade Route 66 definitiva
+  Alterações desta revisão:
+  - novo logo em header, Spotify, footer, Open Graph, Twitter e Schema.org
+  - header escuro para integrar o JPG sem caixa preta artificial
+  - logo preservado inteiro, sem recorte circular
+  - remoção do terceiro selo promocional do bloco Spotify
+  - restante da home preservado
+-->
 <body>
   <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
 
@@ -1026,8 +1046,7 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
   <header class="header">
     <div class="shell header__inner">
       <a class="brand" href="index.html" aria-label="Passport Radio — página inicial">
-        <img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="42" height="42" />
-        <span class="brand__copy"><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span>
+        <img src="/images/passport-radio-definitive.jpg" alt="Passport Radio — Route 66" />
       </a>
 
       <button class="menu-button" type="button" aria-controls="main-nav" aria-expanded="false">MENU</button>
@@ -1324,7 +1343,7 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
           </div>
 
           <div class="spotify-owned">
-            <img class="spotify-owned__art" src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" loading="lazy" />
+            <img class="spotify-owned__art" src="/images/passport-radio-definitive.jpg" alt="Passport Radio" loading="lazy" />
             <div class="spotify-owned__copy">
               <small>Playlist pública</small>
               <strong>Passport Radio</strong>
@@ -1332,7 +1351,6 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
               <div class="spotify-stats" aria-label="Dados da playlist">
                 <span>791 músicas</span>
                 <span>+24 horas</span>
-                <span>Every Song Is A Destination</span>
               </div>
               <div class="spotify-actions">
                 <a class="spotify-home" href="radio.html">Ouvir a Passport aqui →</a>
@@ -1555,7 +1573,7 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
   <footer class="footer">
     <div class="shell footer__grid">
       <div class="footer-brand">
-        <a href="index.html"><img src="/images/logo-passport-radio.png.jpeg" alt="Passport Radio" width="46" height="46" /><strong>Passport Radio</strong></a>
+        <a href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio — Route 66" /></a>
         <p>Music · History · Culture · Live</p>
       </div>
 
