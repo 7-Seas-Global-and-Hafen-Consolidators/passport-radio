@@ -1,0 +1,157 @@
+name: Fix Within Temptation Broken Link
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-link:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Replace broken Within Temptation link everywhere
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          OLD = "/historias/within-temptation.html"
+          NEW = "/sharon-den-adel-within-temptation-30-anos.html"
+
+          html_files = [
+              p for p in Path(".").rglob("*.html")
+              if ".git" not in p.parts
+          ]
+
+          changed = []
+          replacements = 0
+
+          for path in html_files:
+              text = path.read_text(encoding="utf-8", errors="ignore")
+              count = text.count(OLD)
+
+              if count:
+                  text = text.replace(OLD, NEW)
+                  path.write_text(text, encoding="utf-8")
+                  changed.append((str(path), count))
+                  replacements += count
+
+          print(f"HTML scanned: {len(html_files)}")
+          print(f"Replacements: {replacements}")
+
+          if changed:
+              print("Changed files:")
+              for filename, count in changed:
+                  print(f"  {filename} ({count} replacement(s))")
+          else:
+              print("No files contained the broken URL.")
+          PY
+
+      - name: Verify old URL is gone
+        shell: bash
+        run: |
+          if grep -Rni --include='*.html' --exclude-dir='.git' '/historias/within-temptation.html' . ; then
+            echo "ERROR: broken Within Temptation URL still exists."
+            exit 1
+          fi
+
+          test -f sharon-den-adel-within-temptation-30-anos.html
+
+          echo "OK: old URL removed."
+          echo "OK: destination file exists."
+
+      - name: Audit other internal HTML links
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlsplit, unquote
+          import re
+
+          root = Path(".").resolve()
+          broken = []
+
+          href_re = re.compile(r'''href\s*=\s*["']([^"']+)["']''', re.I)
+
+          for html_file in Path(".").rglob("*.html"):
+              if ".git" in html_file.parts:
+                  continue
+
+              text = html_file.read_text(encoding="utf-8", errors="ignore")
+
+              for href in href_re.findall(text):
+                  href = href.strip()
+
+                  if not href:
+                      continue
+
+                  lower = href.lower()
+
+                  if (
+                      lower.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "data:"))
+                      or href.startswith("#")
+                  ):
+                      continue
+
+                  parts = urlsplit(href)
+                  path_part = unquote(parts.path)
+
+                  if not path_part:
+                      continue
+
+                  if not path_part.lower().endswith(".html"):
+                      continue
+
+                  if path_part.startswith("/"):
+                      target = root / path_part.lstrip("/")
+                  else:
+                      target = html_file.parent.resolve() / path_part
+
+                  target = target.resolve()
+
+                  if not target.exists():
+                      try:
+                          shown_target = str(target.relative_to(root))
+                      except ValueError:
+                          shown_target = str(target)
+
+                      broken.append((str(html_file), href, shown_target))
+
+          if broken:
+              print("OTHER BROKEN INTERNAL .HTML LINKS FOUND:")
+              for source, href, target in broken:
+                  print(f"  {source}")
+                  print(f"    href:   {href}")
+                  print(f"    target: {target}")
+              print()
+              print(f"Total other broken links: {len(broken)}")
+              print("Audit only: these were NOT changed automatically.")
+          else:
+              print("No other broken internal .html links found.")
+          PY
+
+      - name: Show changed files
+        shell: bash
+        run: |
+          git status --short
+
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name "Passport Radio Link Fix Bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "fix(links): repair Within Temptation destination"
+          git push
