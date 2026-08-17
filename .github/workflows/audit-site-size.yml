@@ -3,6 +3,9 @@ name: Audit Passport Site Size
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   audit-size:
     runs-on: ubuntu-latest
@@ -11,47 +14,106 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show repository size
+      - name: Audit repository size safely
         shell: bash
         run: |
-          echo "======================================"
-          echo "TOTAL REPOSITORY"
-          echo "======================================"
-          du -sh .
+          python3 <<'PY'
+          from pathlib import Path
 
-          echo
-          echo "======================================"
-          echo "TOP LEVEL DIRECTORIES"
-          echo "======================================"
-          du -sh -- * .[^.]* 2>/dev/null | sort -hr | head -40
+          ROOT = Path(".")
+          SKIP_PARTS = {".git"}
 
-          echo
-          echo "======================================"
-          echo "20 LARGEST FILES"
-          echo "======================================"
-          find . -type f -not -path './.git/*' -printf '%s %p\n' \
-            | sort -nr \
-            | head -20 \
-            | awk '{
-                size=$1;
-                $1="";
-                printf "%.2f MB  %s\n", size/1024/1024, substr($0,2)
-              }'
+          def file_size(path):
+              try:
+                  return path.stat().st_size
+              except (OSError, PermissionError):
+                  return 0
 
-          echo
-          echo "======================================"
-          echo "AUDIO DIRECTORY"
-          echo "======================================"
-          du -sh audio 2>/dev/null || true
+          def tree_size(path):
+              if path.is_file():
+                  return file_size(path)
+              total = 0
+              try:
+                  for p in path.rglob("*"):
+                      if any(part in SKIP_PARTS for part in p.parts):
+                          continue
+                      if p.is_file():
+                          total += file_size(p)
+              except (OSError, PermissionError):
+                  pass
+              return total
 
-          echo
-          echo "======================================"
-          echo "IMAGES DIRECTORY"
-          echo "======================================"
-          du -sh images 2>/dev/null || true
+          def human(n):
+              units = ["B", "KB", "MB", "GB", "TB"]
+              value = float(n)
+              for unit in units:
+                  if value < 1024 or unit == units[-1]:
+                      return f"{value:.2f} {unit}"
+                  value /= 1024
 
-          echo
-          echo "======================================"
-          echo "APP DIRECTORY"
-          echo "======================================"
-          du -sh app 2>/dev/null || true
+          all_files = []
+          total = 0
+
+          for p in ROOT.rglob("*"):
+              if any(part in SKIP_PARTS for part in p.parts):
+                  continue
+              if p.is_file():
+                  size = file_size(p)
+                  total += size
+                  all_files.append((size, p))
+
+          print("=" * 60)
+          print("TOTAL REPOSITORY CONTENT (excluding .git)")
+          print("=" * 60)
+          print(human(total))
+
+          print()
+          print("=" * 60)
+          print("TOP LEVEL ITEMS")
+          print("=" * 60)
+
+          top_items = []
+          for p in ROOT.iterdir():
+              if p.name == ".git":
+                  continue
+              top_items.append((tree_size(p), p))
+
+          for size, p in sorted(top_items, reverse=True)[:40]:
+              print(f"{human(size):>12}  {p}")
+
+          print()
+          print("=" * 60)
+          print("20 LARGEST FILES")
+          print("=" * 60)
+
+          for size, p in sorted(all_files, reverse=True)[:20]:
+              print(f"{human(size):>12}  {p}")
+
+          print()
+          print("=" * 60)
+          print("KEY DIRECTORIES")
+          print("=" * 60)
+
+          for name in ["audio", "images", "app", "css", "historias"]:
+              p = ROOT / name
+              print(f"{name:12} {human(tree_size(p)) if p.exists() else 'NOT FOUND'}")
+
+          print()
+          print("=" * 60)
+          print("FILE TYPES")
+          print("=" * 60)
+
+          ext_totals = {}
+          ext_counts = {}
+
+          for size, p in all_files:
+              ext = p.suffix.lower() or "[no extension]"
+              ext_totals[ext] = ext_totals.get(ext, 0) + size
+              ext_counts[ext] = ext_counts.get(ext, 0) + 1
+
+          for ext, size in sorted(ext_totals.items(), key=lambda x: x[1], reverse=True)[:25]:
+              print(f"{human(size):>12}  {ext:15}  {ext_counts[ext]} file(s)")
+
+          print()
+          print("AUDIT COMPLETE — NO FILES WERE MODIFIED OR DELETED.")
+          PY
