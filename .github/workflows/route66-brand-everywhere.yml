@@ -1,4 +1,4 @@
-name: Route 66 Every HTML Article
+name: Route 66 Definitive Brand Cleanup
 
 on:
   workflow_dispatch:
@@ -7,127 +7,492 @@ permissions:
   contents: write
 
 jobs:
-  replace-every-html-brand:
+  route66-brand-cleanup:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Physically replace legacy branding in every HTML file
+      - name: Replace every legacy Passport Radio visual brand
         shell: bash
         run: |
           python3 <<'PY'
           from pathlib import Path
-          import re, html
+          import re
+          import html as html_lib
 
           LOGO = "/images/passport-radio-definitive.jpg"
-          CSS_TAG = '<link rel="stylesheet" href="/css/route66-everywhere.css?v=20260817-1">'
-          LOGO_TAG = f'<img class="route66-definitive-logo" src="{LOGO}" alt="Passport Radio — Route 66">'
+          ABS_LOGO = "https://www.passportradio.online/images/passport-radio-definitive.jpg"
+          CSS_HREF = "/css/route66-everywhere.css?v=20260817-2"
+          CSS_TAG = f'<link rel="stylesheet" href="{CSS_HREF}">'
+          LOGO_TAG = (
+              f'<img class="route66-definitive-logo" '
+              f'src="{LOGO}" '
+              f'alt="Passport Radio — Route 66">'
+          )
 
-          def plain(s):
-              s = re.sub(r'<script\b[^>]*>.*?</script>', '', s, flags=re.I|re.S)
-              s = re.sub(r'<style\b[^>]*>.*?</style>', '', s, flags=re.I|re.S)
-              s = re.sub(r'<[^>]+>', ' ', s)
-              return re.sub(r'\s+', ' ', html.unescape(s)).strip().lower()
+          # ---------------------------------------------------------
+          # HELPERS
+          # ---------------------------------------------------------
 
-          def replace_brand_markup(chunk):
-              chunk = re.sub(r'<span\b[^>]*class=["\'][^"\']*(?:brand-mark|logo__symbol)[^"\']*["\'][^>]*>.*?</span>', LOGO_TAG, chunk, flags=re.I|re.S)
-              chunk = re.sub(r'<img\b[^>]*src=["\'][^"\']*(?:logo-passport-radio|passport-logo|logo_passport)[^"\']*["\'][^>]*>', LOGO_TAG, chunk, flags=re.I|re.S)
-              anchor_re = re.compile(r'<a\b([^>]*)>(.*?)</a>', re.I|re.S)
-              def repl_anchor(m):
-                  t = plain(m.group(2))
-                  if t in {
-                      'passport radio',
-                      'passport radio music · history · culture · live',
-                      'passport radio music · history · people · places · archives',
-                      'passport radio music history culture live',
-                  }:
-                      return f'<a{m.group(1)}>{LOGO_TAG}</a>'
-                  return m.group(0)
-              chunk = anchor_re.sub(repl_anchor, chunk)
-              chunk = re.sub(r'(<img\b[^>]*route66-definitive-logo[^>]*>)\s*<span\b[^>]*class=["\'][^"\']*(?:brand__copy|brand-copy)[^"\']*["\'][^>]*>.*?</span>', r'\1', chunk, flags=re.I|re.S)
-              chunk = re.sub(r'(<img\b[^>]*route66-definitive-logo[^>]*>)\s*<span\b[^>]*>\s*<strong\b[^>]*>\s*Passport\s+Radio\s*</strong>\s*<small\b[^>]*>.*?</small>\s*</span>', r'\1', chunk, flags=re.I|re.S)
-              chunk = re.sub(r'<(?:strong|b)\b[^>]*>\s*Passport\s+Radio\s*</(?:strong|b)>', LOGO_TAG, chunk, flags=re.I)
-              return chunk
+          def plain(fragment):
+              fragment = re.sub(
+                  r'<script\b[^>]*>.*?</script>',
+                  '',
+                  fragment,
+                  flags=re.I | re.S
+              )
+              fragment = re.sub(
+                  r'<style\b[^>]*>.*?</style>',
+                  '',
+                  fragment,
+                  flags=re.I | re.S
+              )
+              fragment = re.sub(r'<[^>]+>', ' ', fragment)
+              fragment = html_lib.unescape(fragment)
+              fragment = re.sub(r'\s+', ' ', fragment)
+              return fragment.strip().lower()
 
-          html_files = [p for p in Path('.').rglob('*.html') if '.git' not in p.parts]
-          changed = 0
-          for path in html_files:
-              text = path.read_text(encoding='utf-8', errors='ignore')
-              original = text
+          def has_brand_class(attrs):
+              m = re.search(
+                  r'class\s*=\s*["\']([^"\']*)["\']',
+                  attrs,
+                  flags=re.I
+              )
+              if not m:
+                  return False
 
-              text = re.sub(r'(?i)(?:https?://[^"\']+)?/?images/(?:logo-passport-radio[^"\']*|passport-logo[^"\']*|logo_passport[^"\']*)', LOGO, text)
+              classes = m.group(1).split()
 
-              text = re.sub(r'<header\b[^>]*>.*?</header>', lambda m: replace_brand_markup(m.group(0)), text, flags=re.I|re.S)
-              text = re.sub(r'<footer\b[^>]*>.*?</footer>', lambda m: replace_brand_markup(m.group(0)), text, flags=re.I|re.S)
+              return any(
+                  c == "brand" or
+                  c.startswith("brand--") or
+                  c == "site-brand" or
+                  c == "logo"
+                  for c in classes
+              )
 
-              # Standalone article HTMLs often do not use semantic header/footer.
-              # Patch branding in the first and last 12k chars of EVERY HTML file,
-              # never in the article body.
-              if len(text) <= 24000:
-                  text = replace_brand_markup(text)
+          def normalize_brand_anchor(match):
+              attrs = match.group(1)
+              body = match.group(2)
+
+              if not has_brand_class(attrs):
+                  return match.group(0)
+
+              body_text = plain(body)
+
+              # Only touch anchors that are clearly Passport branding.
+              is_passport_brand = (
+                  "passport radio" in body_text
+                  or
+                  re.search(
+                      r'class\s*=\s*["\'][^"\']*brand-mark',
+                      body,
+                      flags=re.I
+                  )
+                  or
+                  re.search(
+                      r'class\s*=\s*["\'][^"\']*brand-logo',
+                      body,
+                      flags=re.I
+                  )
+                  or
+                  re.search(
+                      r'logo-passport-radio|passport-logo|logo_passport|passport-radio-definitive',
+                      body,
+                      flags=re.I
+                  )
+              )
+
+              if not is_passport_brand:
+                  return match.group(0)
+
+              # Normalize home link so nested /historias pages work too.
+              if re.search(r'\bhref\s*=', attrs, flags=re.I):
+                  attrs = re.sub(
+                      r'\bhref\s*=\s*["\'][^"\']*["\']',
+                      'href="/"',
+                      attrs,
+                      count=1,
+                      flags=re.I
+                  )
               else:
-                  text = replace_brand_markup(text[:12000]) + text[12000:-12000] + replace_brand_markup(text[-12000:])
+                  attrs += ' href="/"'
 
-              text = re.sub(r'\s*<link\b[^>]*href=["\'][^"\']*route66-(?:brand|definitive|everywhere)\.css[^"\']*["\'][^>]*>', '', text, flags=re.I)
-              text = re.sub(r'\s*<script\b[^>]*src=["\'][^"\']*route66-brand\.js[^"\']*["\'][^>]*>\s*</script>', '', text, flags=re.I|re.S)
+              # Normalize aria-label.
+              if re.search(r'\baria-label\s*=', attrs, flags=re.I):
+                  attrs = re.sub(
+                      r'\baria-label\s*=\s*["\'][^"\']*["\']',
+                      'aria-label="Passport Radio — página inicial"',
+                      attrs,
+                      count=1,
+                      flags=re.I
+                  )
+              else:
+                  attrs += ' aria-label="Passport Radio — página inicial"'
+
+              return f'<a{attrs}>{LOGO_TAG}</a>'
+
+          def patch_html(text):
+              # -----------------------------------------------------
+              # 1. OLD IMAGE REFERENCES / STRUCTURED DATA
+              # -----------------------------------------------------
+
+              # Absolute old logo URLs -> absolute definitive URL
+              text = re.sub(
+                  r'https?://(?:www\.)?passportradio\.online/'
+                  r'images/'
+                  r'(?:logo-passport-radio[^"\'>\s]*|'
+                  r'passport-logo[^"\'>\s]*|'
+                  r'logo_passport[^"\'>\s]*)',
+                  ABS_LOGO,
+                  text,
+                  flags=re.I
+              )
+
+              # Relative/root old logo paths -> definitive root path
+              text = re.sub(
+                  r'(?:(?:\.\./)+|(?:\./)?|/)images/'
+                  r'(?:logo-passport-radio[^"\'>\s]*|'
+                  r'passport-logo[^"\'>\s]*|'
+                  r'logo_passport[^"\'>\s]*)',
+                  LOGO,
+                  text,
+                  flags=re.I
+              )
+
+              # -----------------------------------------------------
+              # 2. BRAND ANCHORS
+              # -----------------------------------------------------
+
+              # Important:
+              # We replace the WHOLE <a class="brand">...</a>.
+              # Therefore PR, brand-copy, strong text, old image etc.
+              # disappear together without touching normal page text.
+              anchor_re = re.compile(
+                  r'<a\b([^>]*)>(.*?)</a>',
+                  flags=re.I | re.S
+              )
+
+              text = anchor_re.sub(normalize_brand_anchor, text)
+
+              # -----------------------------------------------------
+              # 3. REMOVE PREVIOUS ROUTE66 PATCH ASSETS
+              # -----------------------------------------------------
+
+              text = re.sub(
+                  r'\s*<link\b[^>]*href=["\'][^"\']*'
+                  r'route66-(?:brand|definitive|everywhere)\.css'
+                  r'[^"\']*["\'][^>]*>',
+                  '',
+                  text,
+                  flags=re.I
+              )
+
+              text = re.sub(
+                  r'\s*<script\b[^>]*src=["\'][^"\']*'
+                  r'route66-brand\.js[^"\']*["\'][^>]*>'
+                  r'\s*</script>',
+                  '',
+                  text,
+                  flags=re.I | re.S
+              )
+
+              # -----------------------------------------------------
+              # 4. INSTALL ONE DEFINITIVE CSS
+              # -----------------------------------------------------
 
               if re.search(r'</head\s*>', text, flags=re.I):
-                  text = re.sub(r'</head\s*>', f'  {CSS_TAG}\n</head>', text, count=1, flags=re.I)
+                  text = re.sub(
+                      r'</head\s*>',
+                      f'  {CSS_TAG}\n</head>',
+                      text,
+                      count=1,
+                      flags=re.I
+                  )
 
-              if text != original:
-                  path.write_text(text, encoding='utf-8')
+              return text
+
+          # ---------------------------------------------------------
+          # PROCESS EVERY HTML FILE RECURSIVELY
+          # ---------------------------------------------------------
+
+          html_files = [
+              p for p in Path('.').rglob('*.html')
+              if '.git' not in p.parts
+          ]
+
+          changed = 0
+
+          for path in html_files:
+              original = path.read_text(
+                  encoding='utf-8',
+                  errors='ignore'
+              )
+
+              updated = patch_html(original)
+
+              if updated != original:
+                  path.write_text(updated, encoding='utf-8')
                   changed += 1
+                  print(f'CHANGED: {path}')
 
-          print(f'HTML scanned: {len(html_files)}')
-          print(f'HTML changed: {changed}')
+          print()
+          print(f'HTML scanned : {len(html_files)}')
+          print(f'HTML changed : {changed}')
+
           PY
 
+          mkdir -p css
+
           cat > css/route66-everywhere.css <<'CSS'
-          .route66-definitive-logo{display:block!important;width:178px!important;height:72px!important;max-width:none!important;object-fit:contain!important;object-position:left center!important;border:0!important;border-radius:0!important;background:#080808!important;box-shadow:none!important}
-          header,.site-header,.header{background:#080808!important;color:#fff!important;border-bottom-color:#262626!important}
-          header nav a,.site-header nav a,.header nav a,.main-nav a,.nav a{color:#f3f0e8!important}
-          header nav a:hover,.site-header nav a:hover,.header nav a:hover,.main-nav a:hover,.nav a:hover{color:#d71920!important}
-          footer{background:#080808!important;color:#f3f0e8!important}
-          footer .route66-definitive-logo{width:190px!important;height:92px!important}
-          .brand-mark,.logo__symbol{color:transparent!important;font-size:0!important;border:0!important;border-radius:0!important;width:178px!important;min-width:178px!important;height:72px!important;background:#080808 url("/images/passport-radio-definitive.jpg") left center/contain no-repeat!important}
-          @media(max-width:760px){.route66-definitive-logo{width:128px!important;height:58px!important}footer .route66-definitive-logo{width:150px!important;height:74px!important}.brand-mark,.logo__symbol{width:128px!important;min-width:128px!important;height:58px!important}}
+          /*
+            PASSPORT RADIO
+            ROUTE 66 — DEFINITIVE VISUAL BRAND
+            -----------------------------------
+            This file controls ONLY the definitive logo presentation.
+            It must not redesign article bodies, navigation or footers.
+          */
+
+          .brand{
+            display:flex !important;
+            align-items:center !important;
+            flex:0 0 auto !important;
+            min-width:0 !important;
+            text-decoration:none !important;
+          }
+
+          .brand .route66-definitive-logo,
+          a.brand > .route66-definitive-logo{
+            display:block !important;
+            width:178px !important;
+            height:72px !important;
+            max-width:178px !important;
+            object-fit:contain !important;
+            object-position:left center !important;
+            border:0 !important;
+            border-radius:0 !important;
+            background:transparent !important;
+            box-shadow:none !important;
+            margin:0 !important;
+            padding:0 !important;
+          }
+
+          /*
+            Safety net for a legacy mark that somehow survives.
+            It does NOT create another visible logo.
+          */
+          .brand-mark,
+          .brand-copy,
+          .brand__copy,
+          .logo__symbol{
+            display:none !important;
+          }
+
+          /*
+            Some old styles force every .brand img to circles,
+            44px, 52px etc. Kill those rules.
+          */
+          .brand img.route66-definitive-logo{
+            width:178px !important;
+            height:72px !important;
+            min-width:178px !important;
+            max-width:178px !important;
+            border-radius:0 !important;
+          }
+
+          footer .brand .route66-definitive-logo,
+          .site-footer .brand .route66-definitive-logo{
+            width:178px !important;
+            height:72px !important;
+            min-width:178px !important;
+            max-width:178px !important;
+          }
+
+          @media (max-width:760px){
+            .brand .route66-definitive-logo,
+            a.brand > .route66-definitive-logo,
+            .brand img.route66-definitive-logo,
+            footer .brand .route66-definitive-logo,
+            .site-footer .brand .route66-definitive-logo{
+              width:132px !important;
+              height:58px !important;
+              min-width:132px !important;
+              max-width:132px !important;
+            }
+          }
           CSS
 
-      - name: Verify every HTML page
+      - name: Verify definitive Route 66 branding
         shell: bash
         run: |
-          FAILED=0
-          echo "=== OLD LOGO REFERENCES LEFT ==="
-          if grep -RniE --include='*.html' 'logo-passport-radio|passport-logo|logo_passport' . ; then FAILED=1; else echo "NONE"; fi
+          set -u
 
-          echo "=== HTML PAGES WITHOUT DEFINITIVE CSS ==="
+          FAILED=0
+
+          echo
+          echo "========================================"
+          echo " OLD LOGO FILE REFERENCES"
+          echo "========================================"
+
+          if grep -RniE \
+            --include='*.html' \
+            --exclude-dir='.git' \
+            'logo-passport-radio|passport-logo|logo_passport' . ; then
+            echo "ERROR: old logo reference still exists."
+            FAILED=1
+          else
+            echo "NONE"
+          fi
+
+          echo
+          echo "========================================"
+          echo " LEGACY PR / BRAND MARKUP IN HTML"
+          echo "========================================"
+
+          if grep -RniE \
+            --include='*.html' \
+            --exclude-dir='.git' \
+            'class=["'\''][^"'\'']*(brand-mark|brand-copy|brand__copy|logo__symbol)[^"'\'']*["'\'']' . ; then
+            echo "ERROR: legacy visual brand markup still exists."
+            FAILED=1
+          else
+            echo "NONE"
+          fi
+
+          echo
+          echo "========================================"
+          echo " BRAND ANCHORS WITHOUT DEFINITIVE LOGO"
+          echo "========================================"
+
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          failed = False
+
+          anchor_re = re.compile(
+              r'<a\b([^>]*)>(.*?)</a>',
+              re.I | re.S
+          )
+
+          for path in Path('.').rglob('*.html'):
+              if '.git' in path.parts:
+                  continue
+
+              text = path.read_text(
+                  encoding='utf-8',
+                  errors='ignore'
+              )
+
+              for match in anchor_re.finditer(text):
+                  attrs = match.group(1)
+                  body = match.group(2)
+
+                  class_match = re.search(
+                      r'class\s*=\s*["\']([^"\']*)["\']',
+                      attrs,
+                      re.I
+                  )
+
+                  if not class_match:
+                      continue
+
+                  classes = class_match.group(1).split()
+
+                  if not (
+                      'brand' in classes
+                      or 'site-brand' in classes
+                  ):
+                      continue
+
+                  if 'passport-radio-definitive.jpg' not in body:
+                      print(f'ERROR: {path}')
+                      print(match.group(0)[:400])
+                      print()
+                      failed = True
+
+          if failed:
+              sys.exit(1)
+
+          print('NONE')
+          PY
+
+          if [ $? -ne 0 ]; then
+            FAILED=1
+          fi
+
+          echo
+          echo "========================================"
+          echo " HTML WITHOUT ROUTE66 CSS"
+          echo "========================================"
+
           while IFS= read -r -d '' f; do
-            if ! grep -q '/css/route66-everywhere.css' "$f"; then
-              echo "$f"
+            if ! grep -q '/css/route66-everywhere.css?v=20260817-2' "$f"; then
+              echo "ERROR: $f"
               FAILED=1
             fi
-          done < <(find . -name '*.html' -not -path './.git/*' -print0)
+          done < <(
+            find . \
+              -name '*.html' \
+              -not -path './.git/*' \
+              -print0
+          )
 
-          echo "=== TOTAL HTML FILES ==="
-          find . -name '*.html' -not -path './.git/*' | wc -l
+          echo
+          echo "========================================"
+          echo " DEFINITIVE LOGO STATISTICS"
+          echo "========================================"
 
-          echo "=== HTML FILES REFERENCING DEFINITIVE LOGO ==="
-          grep -Ril --include='*.html' 'passport-radio-definitive.jpg' . | wc -l
+          TOTAL_HTML=$(
+            find . \
+              -name '*.html' \
+              -not -path './.git/*' |
+            wc -l
+          )
+
+          LOGO_HTML=$(
+            grep -Ril \
+              --include='*.html' \
+              --exclude-dir='.git' \
+              'passport-radio-definitive.jpg' . |
+            wc -l
+          )
+
+          echo "Total HTML files: $TOTAL_HTML"
+          echo "HTML files containing definitive logo: $LOGO_HTML"
+
+          echo
+          echo "========================================"
 
           if [ "$FAILED" -ne 0 ]; then
-            echo "EXORCISM FAILED"
+            echo "ROUTE 66 CLEANUP FAILED"
             exit 1
           fi
-          echo "EVERY HTML PAGE IS NOW UNDER ROUTE 66 BRANDING"
+
+          echo "ROUTE 66 BRAND CLEANUP PASSED"
+          echo "CILEIDE HAS LEFT THE BUILDING."
+          echo "========================================"
+
+      - name: Show changed files
+        shell: bash
+        run: |
+          git status --short
 
       - name: Commit and push
         shell: bash
         run: |
           git config user.name "Passport Radio Brand Bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add .
-          if git diff --cached --quiet; then echo "Nothing to commit."; exit 0; fi
-          git commit -m "fix(brand): replace legacy branding in every HTML article"
+
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "fix(brand): enforce definitive Route 66 identity sitewide"
           git push
