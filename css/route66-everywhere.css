@@ -1,0 +1,75 @@
+/*
+  PASSPORT RADIO
+  ROUTE 66 — DEFINITIVE VISUAL BRAND
+  -----------------------------------
+  This file controls ONLY the definitive logo presentation.
+  It must not redesign article bodies, navigation or footers.
+*/
+
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  flex:0 0 auto !important;
+  min-width:0 !important;
+  text-decoration:none !important;
+}
+
+.brand .route66-definitive-logo,
+a.brand > .route66-definitive-logo{
+  display:block !important;
+  width:178px !important;
+  height:72px !important;
+  max-width:178px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/*
+  Safety net for a legacy mark that somehow survives.
+  It does NOT create another visible logo.
+*/
+.brand-mark,
+.brand-copy,
+.brand__copy,
+.logo__symbol{
+  display:none !important;
+}
+
+/*
+  Some old styles force every .brand img to circles,
+  44px, 52px etc. Kill those rules.
+*/
+.brand img.route66-definitive-logo{
+  width:178px !important;
+  height:72px !important;
+  min-width:178px !important;
+  max-width:178px !important;
+  border-radius:0 !important;
+}
+
+footer .brand .route66-definitive-logo,
+.site-footer .brand .route66-definitive-logo{
+  width:178px !important;
+  height:72px !important;
+  min-width:178px !important;
+  max-width:178px !important;
+}
+
+@media (max-width:760px){
+  .brand .route66-definitive-logo,
+  a.brand > .route66-definitive-logo,
+  .brand img.route66-definitive-logo,
+  footer .brand .route66-definitive-logo,
+  .site-footer .brand .route66-definitive-logo{
+    width:132px !important;
+    height:58px !important;
+    min-width:132px !important;
+    max-width:132px !important;
+  }
+}
