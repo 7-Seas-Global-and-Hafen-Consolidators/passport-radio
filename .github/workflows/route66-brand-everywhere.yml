@@ -1,4 +1,4 @@
-name: Route 66 Brand Everywhere
+name: Route 66 Every HTML Article
 
 on:
   workflow_dispatch:
@@ -7,332 +7,127 @@ permissions:
   contents: write
 
 jobs:
-  apply-brand:
+  replace-every-html-brand:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create global Route 66 branding assets and patch every HTML page
+      - name: Physically replace legacy branding in every HTML file
         shell: bash
         run: |
-          mkdir -p css js
-
-          cat > css/route66-brand.css <<'CSS'
-          /* PASSPORT RADIO — ROUTE 66 DEFINITIVE BRAND — GLOBAL */
-          :root{
-            --pr-route66-logo:url("/images/passport-radio-definitive.jpg");
-          }
-
-          /* Any header/footer that receives the global brand */
-          .pr-route66-header,
-          header.site-header,
-          header.header{
-            background:#080808 !important;
-            border-bottom-color:#262626 !important;
-            color:#fff !important;
-          }
-
-          /* Definitive logo image */
-          .pr-route66-logo{
-            display:block !important;
-            width:178px !important;
-            height:72px !important;
-            max-width:none !important;
-            object-fit:contain !important;
-            object-position:left center !important;
-            border:0 !important;
-            border-radius:0 !important;
-            background:#080808 !important;
-            box-shadow:none !important;
-          }
-
-          footer .pr-route66-logo{
-            width:190px !important;
-            height:92px !important;
-          }
-
-          /* Legacy PR circles are killed even before JS replaces them */
-          .brand-mark,
-          .logo__symbol{
-            display:block !important;
-            width:178px !important;
-            min-width:178px !important;
-            height:72px !important;
-            border:0 !important;
-            border-radius:0 !important;
-            color:transparent !important;
-            font-size:0 !important;
-            line-height:0 !important;
-            overflow:hidden !important;
-            background:
-              #080808 var(--pr-route66-logo)
-              left center / contain no-repeat !important;
-            box-shadow:none !important;
-          }
-
-          /* Hide duplicated copy only inside actual logo wrappers */
-          header .brand > :not(.brand-mark):not(.pr-route66-logo),
-          header .logo > :not(.logo__symbol):not(.pr-route66-logo),
-          footer .brand > :not(.brand-mark):not(.pr-route66-logo),
-          footer .logo > :not(.logo__symbol):not(.pr-route66-logo){
-            display:none !important;
-          }
-
-          /* Navigation in formerly white headers */
-          header.site-header nav a,
-          header.site-header .main-nav a,
-          header.header nav a,
-          header.header .nav a,
-          header.header .main-nav a{
-            color:#f3f0e8 !important;
-          }
-
-          header.site-header nav a:hover,
-          header.site-header .main-nav a:hover,
-          header.header nav a:hover,
-          header.header .nav a:hover,
-          header.header .main-nav a:hover{
-            color:#d71920 !important;
-          }
-
-          header .header-chip,
-          header .header-action,
-          header .onair{
-            color:#fff !important;
-            background:#111 !important;
-            border-color:#3a3a3a !important;
-          }
-
-          /* Text-only article headers/footers transformed by JS */
-          .pr-route66-brand-anchor{
-            display:inline-flex !important;
-            align-items:center !important;
-            text-decoration:none !important;
-          }
-
-          .pr-route66-brand-text{
-            display:none !important;
-          }
-
-          .pr-route66-footer{
-            background:#080808 !important;
-            color:#f3f0e8 !important;
-          }
-
-          @media (max-width:760px){
-            .pr-route66-logo{
-              width:128px !important;
-              height:58px !important;
-            }
-
-            .brand-mark,
-            .logo__symbol{
-              width:128px !important;
-              min-width:128px !important;
-              height:58px !important;
-            }
-
-            header.site-header,
-            header.header,
-            .pr-route66-header{
-              min-height:72px !important;
-            }
-
-            header.site-header .main-nav,
-            header.site-header nav.is-open,
-            header.header .main-nav,
-            header.header .nav,
-            header.header nav.is-open{
-              background:#0b0b0b !important;
-              border-color:#2b2b2b !important;
-            }
-
-            footer .pr-route66-logo{
-              width:150px !important;
-              height:74px !important;
-            }
-          }
-          CSS
-
-          cat > js/route66-brand.js <<'JS'
-          (() => {
-            const LOGO = '/images/passport-radio-definitive.jpg';
-
-            const normalize = value =>
-              (value || '')
-                .replace(/\s+/g, ' ')
-                .trim()
-                .toLowerCase();
-
-            const logoImage = () => {
-              const img = document.createElement('img');
-              img.src = LOGO;
-              img.alt = 'Passport Radio — Route 66';
-              img.className = 'pr-route66-logo';
-              img.decoding = 'async';
-              return img;
-            };
-
-            const replaceWrapper = wrapper => {
-              if (!wrapper || wrapper.dataset.route66Done === '1') return;
-              wrapper.dataset.route66Done = '1';
-              wrapper.classList.add('pr-route66-brand-anchor');
-              wrapper.replaceChildren(logoImage());
-            };
-
-            /* 1. Known legacy wrappers */
-            document.querySelectorAll(
-              'header .brand, header .logo, footer .brand, footer .logo'
-            ).forEach(replaceWrapper);
-
-            /* 2. Any old PR badge left outside the common wrappers */
-            document.querySelectorAll('.brand-mark, .logo__symbol').forEach(old => {
-              const parent = old.closest('a,div');
-              if (parent) replaceWrapper(parent);
-            });
-
-            /* 3. Text-only brand links in article pages */
-            document.querySelectorAll('header a, footer a').forEach(a => {
-              const t = normalize(a.textContent);
-              if (
-                t === 'passport radio' ||
-                t === 'passport radio music · history · culture · live' ||
-                t === 'passport radio music · history · people · places · archives'
-              ){
-                replaceWrapper(a);
-              }
-            });
-
-            /* 4. Short text-only brand blocks, when there is no anchor */
-            document.querySelectorAll('header strong, header b, footer strong, footer b').forEach(el => {
-              if (normalize(el.textContent) !== 'passport radio') return;
-              const host = el.closest('a, .brand, .logo') || el.parentElement;
-              if (host && normalize(host.textContent).length < 90) replaceWrapper(host);
-            });
-
-            /* 5. Header/footer integration */
-            document.querySelectorAll('header').forEach(h => h.classList.add('pr-route66-header'));
-            document.querySelectorAll('footer').forEach(f => f.classList.add('pr-route66-footer'));
-
-            /* 6. Replace legacy logo image files that survived in markup */
-            document.querySelectorAll('img').forEach(img => {
-              const src = img.getAttribute('src') || '';
-              if (
-                src.includes('logo-passport-radio') ||
-                src.includes('passport-logo') ||
-                src.includes('logo_passport')
-              ){
-                img.src = LOGO;
-                img.classList.add('pr-route66-logo');
-                img.removeAttribute('width');
-                img.removeAttribute('height');
-              }
-            });
-          })();
-          JS
-
           python3 <<'PY'
           from pathlib import Path
-          import re
+          import re, html
 
-          CSS_TAG = '<link rel="stylesheet" href="/css/route66-brand.css?v=20260814-1">'
-          JS_TAG = '<script src="/js/route66-brand.js?v=20260814-1" defer></script>'
-          NEW_LOGO = '/images/passport-radio-definitive.jpg'
+          LOGO = "/images/passport-radio-definitive.jpg"
+          CSS_TAG = '<link rel="stylesheet" href="/css/route66-everywhere.css?v=20260817-1">'
+          LOGO_TAG = f'<img class="route66-definitive-logo" src="{LOGO}" alt="Passport Radio — Route 66">'
 
-          html_files = [
-              p for p in Path('.').rglob('*.html')
-              if '.git' not in p.parts
-          ]
+          def plain(s):
+              s = re.sub(r'<script\b[^>]*>.*?</script>', '', s, flags=re.I|re.S)
+              s = re.sub(r'<style\b[^>]*>.*?</style>', '', s, flags=re.I|re.S)
+              s = re.sub(r'<[^>]+>', ' ', s)
+              return re.sub(r'\s+', ' ', html.unescape(s)).strip().lower()
 
+          def replace_brand_markup(chunk):
+              chunk = re.sub(r'<span\b[^>]*class=["\'][^"\']*(?:brand-mark|logo__symbol)[^"\']*["\'][^>]*>.*?</span>', LOGO_TAG, chunk, flags=re.I|re.S)
+              chunk = re.sub(r'<img\b[^>]*src=["\'][^"\']*(?:logo-passport-radio|passport-logo|logo_passport)[^"\']*["\'][^>]*>', LOGO_TAG, chunk, flags=re.I|re.S)
+              anchor_re = re.compile(r'<a\b([^>]*)>(.*?)</a>', re.I|re.S)
+              def repl_anchor(m):
+                  t = plain(m.group(2))
+                  if t in {
+                      'passport radio',
+                      'passport radio music · history · culture · live',
+                      'passport radio music · history · people · places · archives',
+                      'passport radio music history culture live',
+                  }:
+                      return f'<a{m.group(1)}>{LOGO_TAG}</a>'
+                  return m.group(0)
+              chunk = anchor_re.sub(repl_anchor, chunk)
+              chunk = re.sub(r'(<img\b[^>]*route66-definitive-logo[^>]*>)\s*<span\b[^>]*class=["\'][^"\']*(?:brand__copy|brand-copy)[^"\']*["\'][^>]*>.*?</span>', r'\1', chunk, flags=re.I|re.S)
+              chunk = re.sub(r'(<img\b[^>]*route66-definitive-logo[^>]*>)\s*<span\b[^>]*>\s*<strong\b[^>]*>\s*Passport\s+Radio\s*</strong>\s*<small\b[^>]*>.*?</small>\s*</span>', r'\1', chunk, flags=re.I|re.S)
+              chunk = re.sub(r'<(?:strong|b)\b[^>]*>\s*Passport\s+Radio\s*</(?:strong|b)>', LOGO_TAG, chunk, flags=re.I)
+              return chunk
+
+          html_files = [p for p in Path('.').rglob('*.html') if '.git' not in p.parts]
           changed = 0
           for path in html_files:
               text = path.read_text(encoding='utf-8', errors='ignore')
               original = text
 
-              # Replace every known old logo filename/path in raw HTML/meta/schema.
-              text = re.sub(
-                  r'(?i)(?:/)?images/(?:logo-passport-radio(?:\.png)?(?:\.jpeg|\.jpg|\.png)?|passport-logo[^"\']*|logo_passport[^"\']*)',
-                  NEW_LOGO,
-                  text
-              )
+              text = re.sub(r'(?i)(?:https?://[^"\']+)?/?images/(?:logo-passport-radio[^"\']*|passport-logo[^"\']*|logo_passport[^"\']*)', LOGO, text)
 
-              # Add global CSS to EVERY HTML page, after all page CSS,
-              # so it wins the cascade. Insert immediately before </head>.
-              if '/css/route66-brand.css' not in text:
-                  text = re.sub(
-                      r'</head\s*>',
-                      f'  {CSS_TAG}\n</head>',
-                      text,
-                      count=1,
-                      flags=re.I
-                  )
+              text = re.sub(r'<header\b[^>]*>.*?</header>', lambda m: replace_brand_markup(m.group(0)), text, flags=re.I|re.S)
+              text = re.sub(r'<footer\b[^>]*>.*?</footer>', lambda m: replace_brand_markup(m.group(0)), text, flags=re.I|re.S)
 
-              # Add global JS to EVERY HTML page, at the very end of body.
-              if '/js/route66-brand.js' not in text:
-                  text = re.sub(
-                      r'</body\s*>',
-                      f'  {JS_TAG}\n</body>',
-                      text,
-                      count=1,
-                      flags=re.I
-                  )
+              # Standalone article HTMLs often do not use semantic header/footer.
+              # Patch branding in the first and last 12k chars of EVERY HTML file,
+              # never in the article body.
+              if len(text) <= 24000:
+                  text = replace_brand_markup(text)
+              else:
+                  text = replace_brand_markup(text[:12000]) + text[12000:-12000] + replace_brand_markup(text[-12000:])
+
+              text = re.sub(r'\s*<link\b[^>]*href=["\'][^"\']*route66-(?:brand|definitive|everywhere)\.css[^"\']*["\'][^>]*>', '', text, flags=re.I)
+              text = re.sub(r'\s*<script\b[^>]*src=["\'][^"\']*route66-brand\.js[^"\']*["\'][^>]*>\s*</script>', '', text, flags=re.I|re.S)
+
+              if re.search(r'</head\s*>', text, flags=re.I):
+                  text = re.sub(r'</head\s*>', f'  {CSS_TAG}\n</head>', text, count=1, flags=re.I)
 
               if text != original:
                   path.write_text(text, encoding='utf-8')
                   changed += 1
 
-          print(f'HTML pages scanned: {len(html_files)}')
-          print(f'HTML pages changed: {changed}')
-          print('Global CSS: css/route66-brand.css')
-          print('Global JS:  js/route66-brand.js')
+          print(f'HTML scanned: {len(html_files)}')
+          print(f'HTML changed: {changed}')
           PY
 
-      - name: Verify definitive logo propagation
+          cat > css/route66-everywhere.css <<'CSS'
+          .route66-definitive-logo{display:block!important;width:178px!important;height:72px!important;max-width:none!important;object-fit:contain!important;object-position:left center!important;border:0!important;border-radius:0!important;background:#080808!important;box-shadow:none!important}
+          header,.site-header,.header{background:#080808!important;color:#fff!important;border-bottom-color:#262626!important}
+          header nav a,.site-header nav a,.header nav a,.main-nav a,.nav a{color:#f3f0e8!important}
+          header nav a:hover,.site-header nav a:hover,.header nav a:hover,.main-nav a:hover,.nav a:hover{color:#d71920!important}
+          footer{background:#080808!important;color:#f3f0e8!important}
+          footer .route66-definitive-logo{width:190px!important;height:92px!important}
+          .brand-mark,.logo__symbol{color:transparent!important;font-size:0!important;border:0!important;border-radius:0!important;width:178px!important;min-width:178px!important;height:72px!important;background:#080808 url("/images/passport-radio-definitive.jpg") left center/contain no-repeat!important}
+          @media(max-width:760px){.route66-definitive-logo{width:128px!important;height:58px!important}footer .route66-definitive-logo{width:150px!important;height:74px!important}.brand-mark,.logo__symbol{width:128px!important;min-width:128px!important;height:58px!important}}
+          CSS
+
+      - name: Verify every HTML page
         shell: bash
         run: |
-          echo "Checking Route 66 global assets..."
-          test -f css/route66-brand.css
-          test -f js/route66-brand.js
-          test -f images/passport-radio-definitive.jpg
+          FAILED=0
+          echo "=== OLD LOGO REFERENCES LEFT ==="
+          if grep -RniE --include='*.html' 'logo-passport-radio|passport-logo|logo_passport' . ; then FAILED=1; else echo "NONE"; fi
 
-          echo "Pages without global CSS:"
-          MISSING_CSS=0
-          while IFS= read -r -d '' file; do
-            if ! grep -q '/css/route66-brand.css' "$file"; then
-              echo "  $file"
-              MISSING_CSS=1
+          echo "=== HTML PAGES WITHOUT DEFINITIVE CSS ==="
+          while IFS= read -r -d '' f; do
+            if ! grep -q '/css/route66-everywhere.css' "$f"; then
+              echo "$f"
+              FAILED=1
             fi
           done < <(find . -name '*.html' -not -path './.git/*' -print0)
 
-          echo "Pages without global JS:"
-          MISSING_JS=0
-          while IFS= read -r -d '' file; do
-            if ! grep -q '/js/route66-brand.js' "$file"; then
-              echo "  $file"
-              MISSING_JS=1
-            fi
-          done < <(find . -name '*.html' -not -path './.git/*' -print0)
+          echo "=== TOTAL HTML FILES ==="
+          find . -name '*.html' -not -path './.git/*' | wc -l
 
-          if [ "$MISSING_CSS" -ne 0 ] || [ "$MISSING_JS" -ne 0 ]; then
-            echo "Brand propagation verification failed."
+          echo "=== HTML FILES REFERENCING DEFINITIVE LOGO ==="
+          grep -Ril --include='*.html' 'passport-radio-definitive.jpg' . | wc -l
+
+          if [ "$FAILED" -ne 0 ]; then
+            echo "EXORCISM FAILED"
             exit 1
           fi
+          echo "EVERY HTML PAGE IS NOW UNDER ROUTE 66 BRANDING"
 
-          echo "SUCCESS: every HTML page now loads the Route 66 global branding."
-
-      - name: Commit all propagated branding changes
+      - name: Commit and push
         shell: bash
         run: |
           git config user.name "Passport Radio Brand Bot"
           git config user.email "actions@users.noreply.github.com"
-
           git add .
-          if git diff --cached --quiet; then
-            echo "Nothing to commit."
-            exit 0
-          fi
-
-          git commit -m "feat(brand): propagate Route 66 identity across every page"
+          if git diff --cached --quiet; then echo "Nothing to commit."; exit 0; fi
+          git commit -m "fix(brand): replace legacy branding in every HTML article"
           git push
