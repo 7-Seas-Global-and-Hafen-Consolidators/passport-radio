@@ -2,9 +2,46 @@
   PASSPORT RADIO
   ROUTE 66 — DEFINITIVE VISUAL BRAND
   -----------------------------------
-  This file controls ONLY the definitive logo presentation.
-  It must not redesign article bodies, navigation or footers.
+
+  Definitive Route 66 identity layer.
+
+  Responsibilities:
+  1. Protect and standardize the definitive Route 66 logo.
+  2. Neutralize surviving legacy PR marks.
+  3. Remove cold blue/airport-grey tones inherited from older layouts.
+  4. Unify Passport Radio around:
+     BLACK · WARM IVORY · AGED GOLD · WARM STONE.
+
+  This stylesheet must NOT alter article structure,
+  editorial hierarchy, image dimensions or page composition.
 */
+
+
+/* =========================================================
+   DEFINITIVE PASSPORT RADIO PALETTE
+   ========================================================= */
+
+:root{
+  --route66-black:#02060B;
+  --route66-black-soft:#07090B;
+
+  --route66-ivory:#F3F0E8;
+  --route66-stone:#B8B0A3;
+  --route66-stone-soft:#8F887E;
+
+  --route66-gold:#D4AF37;
+  --route66-gold-light:#E6C65B;
+
+  --route66-line:rgba(212,175,55,.16);
+  --route66-line-strong:rgba(212,175,55,.28);
+
+  --route66-panel:rgba(212,175,55,.035);
+}
+
+
+/* =========================================================
+   DEFINITIVE LOGO
+   ========================================================= */
 
 .brand{
   display:flex !important;
@@ -17,23 +54,29 @@
 .brand .route66-definitive-logo,
 a.brand > .route66-definitive-logo{
   display:block !important;
+
   width:178px !important;
   height:72px !important;
   max-width:178px !important;
+
   object-fit:contain !important;
   object-position:left center !important;
+
   border:0 !important;
   border-radius:0 !important;
+
   background:transparent !important;
   box-shadow:none !important;
+
   margin:0 !important;
   padding:0 !important;
 }
 
-/*
-  Safety net for a legacy mark that somehow survives.
-  It does NOT create another visible logo.
-*/
+
+/* =========================================================
+   KILL LEGACY BRAND MARKS
+   ========================================================= */
+
 .brand-mark,
 .brand-copy,
 .brand__copy,
@@ -41,34 +84,278 @@ a.brand > .route66-definitive-logo{
   display:none !important;
 }
 
-/*
-  Some old styles force every .brand img to circles,
-  44px, 52px etc. Kill those rules.
-*/
+
+/* =========================================================
+   PROTECT LOGO FROM OLD IMAGE RULES
+   ========================================================= */
+
 .brand img.route66-definitive-logo{
   width:178px !important;
   height:72px !important;
+
   min-width:178px !important;
   max-width:178px !important;
+
   border-radius:0 !important;
 }
+
+
+/* =========================================================
+   FOOTER LOGO
+   ========================================================= */
 
 footer .brand .route66-definitive-logo,
 .site-footer .brand .route66-definitive-logo{
   width:178px !important;
   height:72px !important;
+
   min-width:178px !important;
   max-width:178px !important;
 }
 
+
+/* =========================================================
+   ROUTE 66 COLOR EXORCISM
+   ---------------------------------------------------------
+   Removes cold blue-grey inherited from legacy Passport
+   layouts without redesigning page composition.
+   ========================================================= */
+
+html,
+body{
+  background-color:var(--route66-black) !important;
+}
+
+
+/* PRIMARY COPY */
+
+body{
+  color:var(--route66-ivory);
+}
+
+
+/* SECONDARY COPY — NO MORE AIRPORT BLUE */
+
+p,
+.lead,
+.story-deck,
+.story-meta,
+.article p,
+.hero-copy p,
+.page-intro p,
+.video-copy p,
+.story-content p,
+.dialogue-turn p,
+.commercial-note{
+  color:var(--route66-stone) !important;
+}
+
+
+/* SMALL / MUTED INFORMATION */
+
+small,
+.muted,
+.meta,
+.story-meta,
+.footer-bottom,
+footer p{
+  color:var(--route66-stone-soft) !important;
+}
+
+
+/* HEADINGS REMAIN WARM IVORY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.article h1,
+.article h2,
+.story-page h1,
+.story-page h2,
+.story-page h3{
+  color:var(--route66-ivory) !important;
+}
+
+
+/* =========================================================
+   GOLD IDENTITY
+   ========================================================= */
+
+.eyebrow,
+.kicker,
+.story-kicker,
+.story-label,
+.dialogue-who,
+.passport-file small,
+.click,
+.nomad-signature{
+  color:var(--route66-gold) !important;
+}
+
+
+/* =========================================================
+   DIVIDERS / BORDERS
+   ========================================================= */
+
+header,
+.site-header,
+.topbar,
+footer,
+.footer,
+.site-footer,
+.article,
+.story-section,
+.story-content,
+.dialogue-turn,
+.passport-file,
+blockquote{
+  border-color:var(--route66-line) !important;
+}
+
+
+/* GENERIC LEGACY DIVIDERS */
+
+hr{
+  border:0 !important;
+  border-top:1px solid var(--route66-line) !important;
+}
+
+
+/* =========================================================
+   QUOTES / CALLOUTS
+   ========================================================= */
+
+blockquote{
+  color:var(--route66-gold-light) !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(212,175,55,.075),
+      rgba(212,175,55,.025)
+    ) !important;
+
+  border-left-color:var(--route66-gold) !important;
+}
+
+
+/* =========================================================
+   ARCHIVE / INFORMATION PANELS
+   ========================================================= */
+
+.passport-file,
+.fact-grid article,
+.musician-card,
+.discography article{
+  border-color:var(--route66-line) !important;
+}
+
+
+/* =========================================================
+   DARK SECTIONS
+   ========================================================= */
+
+.story-section--dark,
+.black,
+.nomad-closing{
+  background-color:#080A0C !important;
+}
+
+.story-section--dark p,
+.black p,
+.nomad-closing p{
+  color:var(--route66-stone) !important;
+}
+
+
+/* =========================================================
+   SOFT SECTIONS
+   ---------------------------------------------------------
+   Prevent cold grey/blue inherited backgrounds.
+   ========================================================= */
+
+.story-section--soft{
+  background:#0A0B0C !important;
+}
+
+.story-section--soft p{
+  color:var(--route66-stone) !important;
+}
+
+
+/* =========================================================
+   HEADER / FOOTER
+   ========================================================= */
+
+header,
+.site-header{
+  background-color:var(--route66-black) !important;
+}
+
+footer,
+.footer,
+.site-footer{
+  background-color:var(--route66-black-soft) !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+header nav a,
+.site-header nav a,
+.main-nav a{
+  color:var(--route66-ivory) !important;
+}
+
+header nav a:hover,
+.site-header nav a:hover,
+.main-nav a:hover{
+  color:var(--route66-gold) !important;
+}
+
+
+/* =========================================================
+   BUTTONS / CHIPS
+   ========================================================= */
+
+.back,
+.header-chip,
+.button,
+.secondary-button{
+  border-color:var(--route66-line-strong) !important;
+}
+
+
+/* =========================================================
+   FINAL CLICK SIGNATURE
+   ========================================================= */
+
+.click,
+.story-nomad{
+  color:var(--route66-gold) !important;
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+   ========================================================= */
+
 @media (max-width:760px){
+
   .brand .route66-definitive-logo,
   a.brand > .route66-definitive-logo,
   .brand img.route66-definitive-logo,
   footer .brand .route66-definitive-logo,
   .site-footer .brand .route66-definitive-logo{
+
     width:132px !important;
     height:58px !important;
+
     min-width:132px !important;
     max-width:132px !important;
   }
