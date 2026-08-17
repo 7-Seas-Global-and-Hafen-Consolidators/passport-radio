@@ -1,0 +1,57 @@
+name: Audit Passport Site Size
+
+on:
+  workflow_dispatch:
+
+jobs:
+  audit-size:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository size
+        shell: bash
+        run: |
+          echo "======================================"
+          echo "TOTAL REPOSITORY"
+          echo "======================================"
+          du -sh .
+
+          echo
+          echo "======================================"
+          echo "TOP LEVEL DIRECTORIES"
+          echo "======================================"
+          du -sh -- * .[^.]* 2>/dev/null | sort -hr | head -40
+
+          echo
+          echo "======================================"
+          echo "20 LARGEST FILES"
+          echo "======================================"
+          find . -type f -not -path './.git/*' -printf '%s %p\n' \
+            | sort -nr \
+            | head -20 \
+            | awk '{
+                size=$1;
+                $1="";
+                printf "%.2f MB  %s\n", size/1024/1024, substr($0,2)
+              }'
+
+          echo
+          echo "======================================"
+          echo "AUDIO DIRECTORY"
+          echo "======================================"
+          du -sh audio 2>/dev/null || true
+
+          echo
+          echo "======================================"
+          echo "IMAGES DIRECTORY"
+          echo "======================================"
+          du -sh images 2>/dev/null || true
+
+          echo
+          echo "======================================"
+          echo "APP DIRECTORY"
+          echo "======================================"
+          du -sh app 2>/dev/null || true
