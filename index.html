@@ -1021,7 +1021,224 @@
 }
 </script>
 
-  <link rel="stylesheet" href="/css/route66-everywhere.css?v=20260817-3">
+  <link rel="stylesheet" href="/css/route66-everywhere.css?v=20260817-4">
+
+  <!-- EMERGENCY WHITE EDITORIAL THEME — 17/08/2026
+       Keeps Route 66 logo/header/footer, restores the homepage content to white.
+       Inline and !important on purpose so no stale external CSS can override it. -->
+  <style id="passport-white-theme-restoration">
+    :root{
+      --bg:#ffffff !important;
+      --soft:#f6f6f4 !important;
+      --ink:#111111 !important;
+      --muted:#686868 !important;
+      --faint:#8b8b8b !important;
+      --line:#e3e3e3 !important;
+    }
+
+    html,
+    body{
+      background:#ffffff !important;
+      color:#111111 !important;
+    }
+
+    main,
+    #conteudo-principal,
+    .top,
+    .section,
+    .section--soft,
+    .section--black,
+    .symphonic-home,
+    .eighties-home,
+    .passport-spotify,
+    .participation,
+    .contact-hub,
+    .support{
+      background:#ffffff !important;
+      color:#111111 !important;
+    }
+
+    .lead,
+    .lead__copy,
+    .top-list,
+    .top-item,
+    .content-layout,
+    .feature-news,
+    .news-list,
+    .news-row,
+    .sidebox,
+    .media-card,
+    .explore-layout,
+    .topic-grid,
+    .agenda,
+    .broadcast-layout,
+    .broadcast-feature,
+    .broadcast-list,
+    .broadcast-item{
+      background:#ffffff !important;
+      color:#111111 !important;
+      border-color:#e3e3e3 !important;
+    }
+
+    .symphonic-home__head,
+    .symphonic-card,
+    .symphonic-card__copy,
+    .eighties-home__card,
+    .eighties-home__copy,
+    .eighties-home__side,
+    .spotify-card,
+    .spotify-card__head,
+    .spotify-owned,
+    .spotify-card__foot,
+    .listener-card,
+    .contact-card,
+    .support__box,
+    .ad-campaign,
+    .ad-campaign__footer{
+      background:#ffffff !important;
+      color:#111111 !important;
+      border-color:#e3e3e3 !important;
+      box-shadow:none !important;
+    }
+
+    .symphonic-home__head h2,
+    .symphonic-card h3,
+    .eighties-home h2,
+    .eighties-home__side strong,
+    .broadcast-feature h3,
+    .broadcast-item strong,
+    .spotify-card__head h3,
+    .spotify-owned__copy strong,
+    .support h2,
+    .support__box p,
+    .ad-campaign__footer strong{
+      color:#111111 !important;
+    }
+
+    .section--black .section-label,
+    .section--black .section-head>p,
+    .symphonic-home__head p,
+    .symphonic-card p,
+    .eighties-home__copy p,
+    .eighties-home__side p,
+    .broadcast-feature p,
+    .broadcast-item small,
+    .broadcast-item span,
+    .spotify-card__head p,
+    .spotify-owned__copy>small,
+    .spotify-owned__copy p,
+    .spotify-card__foot,
+    .support p,
+    .support__box small,
+    .ad-campaign__footer small,
+    .ad-campaign__footer span{
+      color:#686868 !important;
+    }
+
+    .symphonic-card,
+    .spotify-card,
+    .ad-campaign,
+    .support__box{
+      border:1px solid #e3e3e3 !important;
+    }
+
+    .eighties-home__card{
+      border-top:5px solid var(--red) !important;
+    }
+
+    .eighties-home__side{
+      border-left-color:#e3e3e3 !important;
+    }
+
+    .broadcast-feature{
+      border-right-color:#e3e3e3 !important;
+    }
+
+    .broadcast-item{
+      border-bottom-color:#e3e3e3 !important;
+    }
+
+    .spotify-card::after{
+      opacity:.12 !important;
+    }
+
+    .spotify-stats span{
+      background:#f6f6f4 !important;
+      color:#111111 !important;
+      border-color:#d8d8d8 !important;
+    }
+
+    .spotify-home{
+      background:#111111 !important;
+      color:#ffffff !important;
+      border-color:#111111 !important;
+    }
+
+    .ad-call{
+      background:#ffffff !important;
+      animation:none !important;
+    }
+
+    .ad-call::before{
+      animation:none !important;
+    }
+
+    .support__box{
+      border-left:5px solid var(--red) !important;
+      animation:none !important;
+    }
+
+    .support__button{
+      animation:none !important;
+    }
+
+    .wire,
+    .trustbar{
+      background:#fafafa !important;
+      color:#666666 !important;
+    }
+
+    /* Keep definitive dark chrome only where it belongs. */
+    .header,
+    .header__inner,
+    .nav,
+    .footer,
+    .player,
+    .quick-contact a{
+      background-color:#111111 !important;
+      color:#ffffff !important;
+    }
+
+    .header .nav a,
+    .onair,
+    .footer,
+    .footer a,
+    .player,
+    .player button,
+    .quick-contact a{
+      color:#ffffff !important;
+    }
+
+    @media(max-width:860px){
+      .nav{
+        background:#0b0b0b !important;
+      }
+    }
+
+    @media(max-width:820px){
+      .eighties-home__side{
+        border-left:0 !important;
+        border-top:1px solid #e3e3e3 !important;
+      }
+    }
+
+    @media(max-width:860px){
+      .broadcast-feature{
+        border-right:0 !important;
+        border-bottom:1px solid #e3e3e3 !important;
+      }
+    }
+  </style>
 </head>
 
 <!-- PASSPORT RADIO HOME — atualização Sharon 14/08/2026
