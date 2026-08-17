@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Preview do novo player Route 66 da Passport Radio.">
+<title>Passport Radio · Route 66 Player Preview</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#ffffff;
+  --panel:#ffffff;
+  --panel-2:#f6f6f4;
+  --ink:#111111;
+  --muted:#6b6b6b;
+  --gold:#d71920;
+  --gold-2:#ef2b32;
+  --line:#dedede;
+  --line-soft:#ededed;
+  --shell:1180px;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(215,25,32,.035),transparent 34%),
+    linear-gradient(180deg,#ffffff,#f6f6f4 64%);
+  color:var(--ink);
+  font-family:Montserrat,Arial,sans-serif;
+}
+
+body{padding-bottom:98px}
+
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+
+.shell{
+  width:min(calc(100% - 36px),var(--shell));
+  margin:auto;
+}
+
+.preview-header{
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  border-bottom:1px solid var(--line);
+}
+
+.preview-logo{
+  display:block;
+  width:172px;
+  height:68px;
+  object-fit:contain;
+  object-position:left center;
+}
+
+.preview-header small{
+  color:var(--muted);
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.hero{
+  padding:86px 0 56px;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:.61rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  max-width:900px;
+  margin:14px 0 0;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(4rem,9vw,8.5rem);
+  line-height:.84;
+  letter-spacing:-.045em;
+}
+
+.hero p{
+  max-width:720px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.8;
+}
+
+.station{
+  margin-top:44px;
+  border:1px solid var(--line);
+  background:#ffffff;
+  box-shadow:0 24px 70px rgba(0,0,0,.08);
+}
+
+.station-top{
+  display:grid;
+  grid-template-columns:160px minmax(0,1fr);
+  min-height:420px;
+}
+
+.station-brand{
+  padding:30px 24px;
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.station-brand img{
+  width:110px;
+  height:auto;
+  display:block;
+}
+
+.station-brand span{
+  color:var(--gold);
+  font-size:.56rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.station-main{
+  padding:44px;
+  display:grid;
+  align-content:center;
+}
+
+.station-kicker{
+  color:var(--gold-2);
+  font-size:.6rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.station-title{
+  margin:10px 0 0;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(2.8rem,6vw,6.2rem);
+  line-height:.9;
+}
+
+.station-meta{
+  margin-top:13px;
+  color:var(--muted);
+  font-size:.72rem;
+}
+
+.controls{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:auto auto auto minmax(160px,1fr) auto;
+  gap:12px;
+  align-items:center;
+}
+
+.round{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:#ffffff;
+  color:var(--ink);
+  cursor:pointer;
+}
+
+.play{
+  width:58px;
+  height:58px;
+  border-color:var(--gold);
+  background:var(--gold);
+  color:#ffffff;
+  font-weight:900;
+}
+
+.round:hover{border-color:var(--gold)}
+.play:hover{background:var(--gold-2)}
+
+.progress-wrap{
+  display:grid;
+  gap:8px;
+}
+
+#progress{
+  width:100%;
+  accent-color:var(--gold);
+  cursor:pointer;
+}
+
+.time{
+  color:var(--muted);
+  font-size:.56rem;
+  font-variant-numeric:tabular-nums;
+  text-align:right;
+}
+
+.station-bottom{
+  border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:18px 24px;
+  background:#ffffff;
+}
+
+.station-bottom strong{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.5rem;
+}
+
+.station-bottom small{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:.56rem;
+}
+
+.station-bottom b{
+  color:var(--gold);
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.archive{
+  padding:54px 0 90px;
+}
+
+.archive-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:20px;
+}
+
+.archive h2{
+  margin:7px 0 0;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(2.6rem,5vw,4.7rem);
+  line-height:.95;
+}
+
+.archive-head p{
+  max-width:500px;
+  color:var(--muted);
+  font-size:.72rem;
+  line-height:1.6;
+}
+
+.track-list{
+  border-top:1px solid var(--line);
+}
+
+.track{
+  width:100%;
+  border:0;
+  border-bottom:1px solid var(--line-soft);
+  background:transparent;
+  color:var(--ink);
+  display:grid;
+  grid-template-columns:54px minmax(0,1fr) auto;
+  gap:16px;
+  align-items:center;
+  padding:16px 8px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.track:hover,
+.track.is-active{
+  background:rgba(215,25,32,.045);
+}
+
+.track-number{
+  color:var(--gold);
+  font-size:.62rem;
+  font-weight:800;
+}
+
+.track strong{
+  display:block;
+  font-size:.78rem;
+}
+
+.track small{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:.54rem;
+}
+
+.track-state{
+  color:var(--muted);
+  font-size:.54rem;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.track.is-active .track-state{color:var(--gold)}
+
+.global-dock{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:9999;
+  height:82px;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:16px;
+  padding:0 max(18px,calc((100vw - var(--shell))/2));
+  background:rgba(255,255,255,.985);
+  border-top:1px solid var(--gold);
+  box-shadow:0 -12px 40px rgba(0,0,0,.10);
+  backdrop-filter:blur(18px);
+}
+
+.dock-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.dock-brand img{
+  width:92px;
+  height:46px;
+  object-fit:contain;
+}
+
+.dock-copy{
+  min-width:0;
+}
+
+.dock-copy small{
+  color:var(--gold);
+  font-size:.5rem;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+
+.dock-copy strong{
+  display:block;
+  margin-top:4px;
+  font-size:.72rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.dock-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.dock-controls button{
+  border:1px solid var(--line);
+  background:#ffffff;
+  color:#111111;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.dock-controls .dock-play{
+  width:44px;
+  height:44px;
+  border-color:var(--gold);
+  background:var(--gold);
+  color:#ffffff;
+  font-weight:900;
+}
+
+@media(max-width:760px){
+  body{padding-bottom:76px}
+  .preview-header{min-height:74px}
+  .preview-logo{width:132px;height:58px}
+  .preview-header small{display:none}
+  .hero{padding-top:56px}
+  .station-top{grid-template-columns:1fr}
+  .station-brand{display:none}
+  .station-main{padding:30px 20px}
+  .controls{grid-template-columns:auto auto auto 1fr}
+  .time{grid-column:1/-1;text-align:left}
+  .archive-head{display:block}
+  .archive-head p{margin-top:12px}
+  .global-dock{
+    height:70px;
+    grid-template-columns:minmax(0,1fr) auto;
+    padding:0 12px;
+  }
+  .dock-brand img{display:none}
+  .dock-controls button:not(.dock-play){display:none}
+  .station-bottom{grid-template-columns:1fr}
+}
+
+@media(max-width:480px){
+  .track{
+    grid-template-columns:40px minmax(0,1fr);
+  }
+  .track-state{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header class="preview-header shell">
+  <img class="preview-logo" src="/images/passport-radio-definitive.jpg" alt="Passport Radio Route 66">
+  <small>Passport Radio · Player Preview</small>
+</header>
+
+<main>
+  <section class="hero shell">
+    <span class="eyebrow">Passport Radio · New Global Player</span>
+    <h1>A rádio continua. A página muda.</h1>
+    <p>
+      Uma única identidade para ouvir a Passport Radio em qualquer área do site.
+      O player deixa de parecer um bloco separado e passa a fazer parte da nova Route 66.
+    </p>
+
+    <div class="station">
+      <div class="station-top">
+        <aside class="station-brand">
+          <img src="/images/passport-radio-definitive.jpg" alt="">
+          <span>Every Song Is A Destination</span>
+        </aside>
+
+        <section class="station-main">
+          <span class="station-kicker">Now Playing · Live & Rare</span>
+          <h2 class="station-title" id="heroTrack">Alice Cooper — School's Out · Hellfest 2022</h2>
+          <div class="station-meta" id="heroMeta">Passport Radio · Live Broadcast</div>
+
+          <div class="controls">
+            <button class="round" id="prevBtn" type="button" aria-label="Anterior">◀</button>
+            <button class="round play" id="playBtn" type="button" aria-label="Tocar">▶</button>
+            <button class="round" id="nextBtn" type="button" aria-label="Próxima">▶</button>
+
+            <div class="progress-wrap">
+              <input id="progress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Progresso">
+            </div>
+
+            <div class="time"><span id="timeCurrent">0:00</span> / <span id="timeTotal">0:00</span></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="station-bottom">
+        <div>
+          <strong>3... 2... 1... CLICK!</strong>
+          <small>Player único · Home · Histórias · Arquivos · Loja · Passport Radio</small>
+        </div>
+        <b>Passport Radio Live</b>
+      </div>
+    </div>
+  </section>
+
+  <section class="archive shell">
+    <div class="archive-head">
+      <div>
+        <span class="eyebrow">Audio Archive</span>
+        <h2>Faixas atualmente ligadas ao player.</h2>
+      </div>
+      <p>
+        Esta página é apenas o preview visual do novo player. Nenhuma página atual da Passport Radio é alterada por ela.
+      </p>
+    </div>
+
+    <div class="track-list" id="trackList"></div>
+  </section>
+</main>
+
+<div class="global-dock">
+  <div class="dock-brand">
+    <img src="/images/passport-radio-definitive.jpg" alt="">
+    <div class="dock-copy">
+      <small>NOW PLAYING · PASSPORT RADIO</small>
+      <strong id="dockTrack">Alice Cooper — School's Out · Hellfest 2022</strong>
+    </div>
+  </div>
+
+  <div></div>
+
+  <div class="dock-controls">
+    <button id="dockPrev" type="button" aria-label="Anterior">◀</button>
+    <button class="dock-play" id="dockPlay" type="button" aria-label="Tocar">▶</button>
+    <button id="dockNext" type="button" aria-label="Próxima">▶</button>
+  </div>
+</div>
+
+<audio id="audio" preload="metadata"></audio>
+
+<script>
+const tracks = [
+  {title:"Alice Cooper — School's Out · Hellfest 2022", src:"/ALICE COOPER 'School's Out' - Live At Hellfest 2022 - Full Show Exclusively Available On 'Road'.mp3"},
+  {title:"Alice Cooper — Feed My Frankenstein · Hellfest 2022", src:"/ALICE COOPER - Feed My Frankenstein (Live At Hellfest 2022).mp3"},
+  {title:"David Bowie — Heroes · Live", src:"/David Bowie - Heroes (live).mp3"},
+  {title:"David Gilmour — Comfortably Numb · Pompeii", src:"/David Gilmour - Comfortably Numb (Live At Pompeii).mp3"},
+  {title:"Depeche Mode — Enjoy The Silence · Berlin", src:"/Depeche Mode - Enjoy The Silence (Live in Berlin).mp3"},
+  {title:"Huey Lewis & The News — Stuck With You · Live", src:"/Huey Lewis & The News - Stuck With You (live).mp3"},
+  {title:"Huey Lewis & The News — The Power Of Love · BBC2 1987", src:"/Huey Lewis And The News - The Power Of Love (Live) - BBC2 - Monday 31st August 1987.mp3"},
+  {title:"Liam Gallagher — Stand By Me · Reading 2021", src:"/Liam Gallagher - Stand By Me (Reading 2021).mp3"},
+  {title:"Lynyrd Skynyrd feat. Brent Smith — Simple Man · Live", src:"/Lynyrd Skynyrd - _Simple Man_ (Feat. Brent Smith of Shinedown) - Official Live Video.mp3"},
+  {title:"Simply Red — Holding Back The Years · Symphonica In Rosso", src:"/Simply Red - Holding Back The Years (Symphonica In Rosso).mp3"},
+  {title:"Sinéad O'Connor — Nothing Compares 2 U · Live 1990", src:"/Sinéad O'Connor - Nothing Compares 2 U (Live in Europe 1990).mp3"},
+  {title:"Supertramp — It's Raining Again · Munich 1983", src:"/Supertramp - It's Raining Again (Live in Munich - 1983).mp3"},
+  {title:"Supertramp — The Logical Song · Munich 1983", src:"/Supertramp - The Logical Song (Live In Munich 1983).mp3"},
+  {title:"The Verve — Bittersweet Symphony · Glastonbury 2008", src:"/The Verve - Bittersweet Symphony (Glastonbury 2008).mp3"},
+  {title:"Tina Turner — The Best · Wembley 2000", src:"/Tina Turner - The Best - Live Wembley (2000).mp3"},
+  {title:"Dee Snider — Wacken", src:"/audio/primeiro-voo.mp3.mp3"},
+  {title:"Passport Archive 002", src:"/audio/segundo-voo.mp3"},
+  {title:"Passport Archive 003", src:"/audio/quarto-voo.mp3"},
+  {title:"Passport Archive 004", src:"/audio/setimo-voo.mp3"},
+  {title:"Passport Archive 005", src:"/audio/oitavo-voo.mp3"}
+];
+
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const dockPlay = document.getElementById("dockPlay");
+const dockPrev = document.getElementById("dockPrev");
+const dockNext = document.getElementById("dockNext");
+const progress = document.getElementById("progress");
+const heroTrack = document.getElementById("heroTrack");
+const heroMeta = document.getElementById("heroMeta");
+const dockTrack = document.getElementById("dockTrack");
+const timeCurrent = document.getElementById("timeCurrent");
+const timeTotal = document.getElementById("timeTotal");
+const trackList = document.getElementById("trackList");
+
+let currentIndex = 0;
+
+function formatTime(seconds){
+  if(!Number.isFinite(seconds)) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60).toString().padStart(2,"0");
+  return `${m}:${s}`;
+}
+
+function renderTracks(){
+  trackList.innerHTML = "";
+  tracks.forEach((track,index)=>{
+    const btn = document.createElement("button");
+    btn.className = "track" + (index===currentIndex ? " is-active" : "");
+    btn.type = "button";
+    btn.innerHTML = `
+      <span class="track-number">${String(index+1).padStart(2,"0")}</span>
+      <span><strong>${track.title}</strong><small>Live & Rare · Passport Radio</small></span>
+      <span class="track-state">${index===currentIndex ? (audio.paused ? "No player" : "Tocando") : "Ouvir"}</span>
+    `;
+    btn.addEventListener("click",()=>loadTrack(index,true));
+    trackList.appendChild(btn);
+  });
+}
+
+function updateUI(){
+  const track = tracks[currentIndex];
+  heroTrack.textContent = track.title;
+  heroMeta.textContent = "Passport Radio · Live Broadcast";
+  dockTrack.textContent = track.title;
+
+  const icon = audio.paused ? "▶" : "❚❚";
+  playBtn.textContent = icon;
+  dockPlay.textContent = icon;
+
+  renderTracks();
+}
+
+function loadTrack(index, autoplay=false){
+  currentIndex = (index + tracks.length) % tracks.length;
+  audio.src = tracks[currentIndex].src;
+  audio.load();
+  progress.value = 0;
+  timeCurrent.textContent = "0:00";
+  timeTotal.textContent = "0:00";
+  updateUI();
+
+  if(autoplay){
+    audio.play().catch(()=>updateUI());
+  }
+}
+
+function togglePlay(){
+  if(audio.paused){
+    audio.play().catch(()=>updateUI());
+  }else{
+    audio.pause();
+  }
+}
+
+function next(){
+  loadTrack(currentIndex + 1, true);
+}
+
+function previous(){
+  if(audio.currentTime > 4){
+    audio.currentTime = 0;
+    return;
+  }
+  loadTrack(currentIndex - 1, true);
+}
+
+playBtn.addEventListener("click",togglePlay);
+dockPlay.addEventListener("click",togglePlay);
+prevBtn.addEventListener("click",previous);
+dockPrev.addEventListener("click",previous);
+nextBtn.addEventListener("click",next);
+dockNext.addEventListener("click",next);
+
+audio.addEventListener("play",updateUI);
+audio.addEventListener("pause",updateUI);
+audio.addEventListener("loadedmetadata",()=>{
+  timeTotal.textContent = formatTime(audio.duration);
+});
+audio.addEventListener("timeupdate",()=>{
+  timeCurrent.textContent = formatTime(audio.currentTime);
+  if(audio.duration){
+    progress.value = (audio.currentTime / audio.duration) * 100;
+  }
+});
+audio.addEventListener("ended",next);
+
+progress.addEventListener("input",()=>{
+  if(audio.duration){
+    audio.currentTime = (Number(progress.value)/100) * audio.duration;
+  }
+});
+
+loadTrack(0,false);
+</script>
+
+</body>
+</html>
