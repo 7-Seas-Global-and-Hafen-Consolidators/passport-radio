@@ -204,6 +204,33 @@
 }
 </style>
 
+
+<style>
+/* ===== STORE FIX: clean public copy + header stacking ===== */
+.site-header{
+  position:relative !important;
+  top:auto !important;
+  z-index:40 !important;
+}
+.store-topline{
+  position:relative !important;
+  z-index:41 !important;
+}
+.store-universe,
+.store-visual-reference,
+.store-az,
+.store-section{
+  position:relative;
+  z-index:1;
+}
+.store-reference-card{
+  isolation:isolate;
+}
+.store-reference-copy{
+  z-index:3;
+}
+</style>
+
 </head>
 <body class="store-page">
 
@@ -268,18 +295,18 @@
         <span class="store-kicker">Passport Rock Store · Explore</span>
         <h2>UM ARSENAL.<br><span>MUITAS PORTAS.</span></h2>
       </div>
-      <p>O catálogo original continua inteiro logo abaixo. Esta nova camada só abre novas maneiras de entrar na loja — por banda, categoria, música física, coleção, década ou objeto.</p>
+      <p>Explore a loja por banda, categoria, música física, coleção, década ou objeto.</p>
     </div>
 
     <nav class="store-universe-nav" aria-label="Universo da loja">
-      <a href="#products" data-store-jump="tenis"><b>Calçados</b><strong>Tênis</strong><small>Os 43 modelos originais continuam no catálogo.</small></a>
+      <a href="#products" data-store-jump="tenis"><b>Calçados</b><strong>Tênis</strong><small>Modelos de cano baixo e cano alto.</small></a>
       <a href="#products" data-store-jump="camiseta"><b>Vestuário</b><strong>Camisetas</strong><small>Rock, metal, clássico, alternativo e mais.</small></a>
       <a href="#products" data-store-jump="moletom"><b>Vestuário</b><strong>Moletons</strong><small>Peças para frio e uso diário.</small></a>
       <a href="#products" data-store-jump="mochila"><b>Acessórios</b><strong>Mochilas</strong><small>Trabalho, estudo, show e estrada.</small></a>
       <a href="#products" data-store-jump="caneca"><b>Casa</b><strong>Canecas</strong><small>Objetos de rotina e coleção.</small></a>
       <a href="#products" data-store-jump="relogio"><b>Objetos</b><strong>Relógios</strong><small>Design ligado a bandas e cultura rock.</small></a>
-      <a href="#physical-music"><b>Música</b><strong>Vinil · CD · DVD</strong><small>Nova ala preparada para catálogo físico.</small></a>
-      <a href="#referencias-visuais"><b>Coleções</b><strong>Bandas &amp; clássicos</strong><small>Uma leitura visual ampliada do universo rock.</small></a>
+      <a href="#physical-music"><b>Música</b><strong>Vinil · CD · DVD</strong><small>Vinil, CDs, DVDs e edições especiais.</small></a>
+      <a href="#referencias-visuais"><b>Coleções</b><strong>Bandas &amp; clássicos</strong><small>Coleções, clássicos e identidades do rock.</small></a>
       <a href="#bands-az"><b>Descoberta</b><strong>Bandas A–Z</strong><small>Entre pelo nome da banda.</small></a>
       <a href="anos-80-bandas-musicas-rock-new-wave.html"><b>Arquivo</b><strong>Shop The Archive</strong><small>Da história para o produto e de volta à história.</small></a>
     </nav>
@@ -290,46 +317,46 @@
   <div class="store-shell">
     <div class="store-universe-head">
       <div>
-        <span class="store-kicker">Rock retail universe</span>
-        <h2>MAIS ROCK.<br><span>MAIS IMAGEM.</span></h2>
+        <span class="store-kicker">Passport Rock Store</span>
+        <h2>MAIS ROCK.<br><span>MAIS ESCOLHAS.</span></h2>
       </div>
-      <p>Imagens incorporadas diretamente das referências de lojas que entraram na reunião: Fatum Rock Store, Consulado do Rock e Heavy Metal Rock. Elas ampliam visualmente as novas alas sem substituir nenhum produto original da Passport.</p>
+      <p>Camisetas, coleções, música física e objetos que atravessam décadas, bandas e histórias. Explore o universo do rock e encontre o próximo item da sua coleção.</p>
     </div>
 
     <div class="store-reference-grid">
       <a class="store-reference-card store-reference-card--wide" href="#products">
-        <img loading="lazy" src="https://images.fatum.com.br/site/produtos/LED-ZEPPELIN-TOUR--75.png?losslevel=1&v=10.8" alt="Referência de vestuário Led Zeppelin da Fatum Rock Store">
-        <span class="store-reference-copy"><small>Vestuário · Referência Fatum</small><strong>Band tees com presença de produto.</strong><span>Imagem trazida da referência enviada para ampliar a leitura da categoria.</span></span>
+        <img loading="lazy" src="https://images.fatum.com.br/site/produtos/LED-ZEPPELIN-TOUR--75.png?losslevel=1&v=10.8" alt="Referência de vestuário Led Zeppelin">
+        <span class="store-reference-copy"><small>Vestuário · Clássicos do Rock</small><strong>Led Zeppelin · U.S. Tour 1975</strong><span>Clássicos do rock em peças que carregam história.</span></span>
       </a>
 
       <a class="store-reference-card" href="#products">
-        <img loading="lazy" src="https://images.fatum.com.br/site/produtos/PEARL-JAM-TEN-OFFWHITE.webp?losslevel=1&v=10.8" alt="Referência de camiseta Pearl Jam da Fatum Rock Store">
-        <span class="store-reference-copy"><small>Vestuário · Referência Fatum</small><strong>Pearl Jam · linha gráfica.</strong></span>
+        <img loading="lazy" src="https://images.fatum.com.br/site/produtos/PEARL-JAM-TEN-OFFWHITE.webp?losslevel=1&v=10.8" alt="Referência de camiseta Pearl Jam">
+        <span class="store-reference-copy"><small>Vestuário · Clássicos do Rock</small><strong>Pearl Jam · Ten</strong></span>
       </a>
 
       <a class="store-reference-card" href="#bands-az">
-        <img loading="lazy" src="https://consuladodorock.com.br/cdn/shop/collections/Metallica_2.jpg?v=1754939358&width=1200" alt="Coleção Metallica do Consulado do Rock">
-        <span class="store-reference-copy"><small>Bandas · Referência Consulado</small><strong>Metallica como porta de entrada.</strong></span>
+        <img loading="lazy" src="https://consuladodorock.com.br/cdn/shop/collections/Metallica_2.jpg?v=1754939358&width=1200" alt="Coleção Metallica">
+        <span class="store-reference-copy"><small>Bandas · Coleções</small><strong>Metallica</strong></span>
       </a>
 
       <a class="store-reference-card" href="#bands-az">
-        <img loading="lazy" src="https://consuladodorock.com.br/cdn/shop/collections/Capa_Evanescence.jpg?v=1753968728&width=1200" alt="Coleção Evanescence do Consulado do Rock">
-        <span class="store-reference-copy"><small>Bandas · Referência Consulado</small><strong>Evanescence · coleção por artista.</strong></span>
+        <img loading="lazy" src="https://consuladodorock.com.br/cdn/shop/collections/Capa_Evanescence.jpg?v=1753968728&width=1200" alt="Coleção Evanescence">
+        <span class="store-reference-copy"><small>Bandas · Coleções</small><strong>Evanescence</strong></span>
       </a>
 
       <a class="store-reference-card" href="#bands-az">
-        <img loading="lazy" src="https://consuladodorock.com.br/cdn/shop/collections/the_rolling_stones_2.png?v=1773861826&width=1200" alt="Coleção Rolling Stones do Consulado do Rock">
-        <span class="store-reference-copy"><small>Bandas · Referência Consulado</small><strong>Rolling Stones · catálogo por banda.</strong></span>
+        <img loading="lazy" src="https://consuladodorock.com.br/cdn/shop/collections/the_rolling_stones_2.png?v=1773861826&width=1200" alt="Coleção Rolling Stones">
+        <span class="store-reference-copy"><small>Bandas · Coleções</small><strong>The Rolling Stones</strong></span>
       </a>
 
       <a class="store-reference-card" id="physical-music" href="#products">
-        <img loading="lazy" src="https://hmrock.com.br/wp-content/uploads/2026/07/cd-angra3.jpg" alt="CD do Angra na Heavy Metal Rock">
-        <span class="store-reference-copy"><small>Música física · Referência HMR</small><strong>CDs entram no arsenal.</strong></span>
+        <img loading="lazy" src="https://hmrock.com.br/wp-content/uploads/2026/07/cd-angra3.jpg" alt="CD do Angra">
+        <span class="store-reference-copy"><small>Música física · CDs</small><strong>Angra · Música física</strong></span>
       </a>
 
       <a class="store-reference-card" href="#products">
-        <img loading="lazy" src="https://hmrock.com.br/wp-content/uploads/2026/07/cd-deeppurplesplat.jpg" alt="CD Deep Purple na Heavy Metal Rock">
-        <span class="store-reference-copy"><small>Música física · Referência HMR</small><strong>Deep Purple · physical music.</strong></span>
+        <img loading="lazy" src="https://hmrock.com.br/wp-content/uploads/2026/07/cd-deeppurplesplat.jpg" alt="CD Deep Purple">
+        <span class="store-reference-copy"><small>Música física · CDs</small><strong>Deep Purple · Música física</strong></span>
       </a>
     </div>
   </div>
@@ -340,7 +367,7 @@
     <span class="store-kicker">Shop by band</span>
     <div class="store-universe-head" style="margin-bottom:0">
       <div><h2>BANDAS A–Z.<br><span>ENTRE PELO NOME.</span></h2></div>
-      <p>O índice abre a arquitetura da loja para coleções por banda. O catálogo original não foi reclassificado à força: os links levam ao catálogo geral até cada coleção específica ganhar sua própria página.</p>
+      <p>Encontre sua banda. Descubra produtos, coleções, música e histórias.</p>
     </div>
 
     <div class="store-az-row">
