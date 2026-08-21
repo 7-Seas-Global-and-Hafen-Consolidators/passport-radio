@@ -116,26 +116,34 @@
     .onair small{grid-column:2;color:#999;font-size:.42rem}
     .menu-button{display:none;border:0;background:none;color:#fff;font-size:.7rem;font-weight:900}
 
-    /* hero */
+    /* editorial desk */
+    .desk-nav{border-bottom:1px solid var(--line);background:#fff}
+    .desk-nav__inner{min-height:38px;display:flex;align-items:center;gap:22px;overflow:auto;scrollbar-width:none}
+    .desk-nav__inner::-webkit-scrollbar{display:none}
+    .desk-nav strong{flex:none;color:var(--red);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase}
+    .desk-nav a{flex:none;color:#333;font-size:.61rem;font-weight:800;white-space:nowrap}
+    .desk-nav a:hover{color:var(--red)}
+
+    /* hero / front page */
     .top{padding:24px 0 20px}
-    .top__grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(330px,.75fr);gap:24px}
+    .top__grid{display:grid;grid-template-columns:minmax(0,1.58fr) minmax(360px,.92fr);gap:28px;align-items:stretch}
     .lead{border-bottom:1px solid var(--line)}
-    .lead a{display:grid;grid-template-columns:58% 42%;min-height:340px}
-    .lead img{width:100%;height:340px;object-fit:cover}
-    .lead__copy{display:flex;flex-direction:column;justify-content:flex-end;padding:28px;background:#fff}
+    .lead a{display:grid;grid-template-rows:minmax(330px,1fr) auto;min-height:520px;background:#fff}
+    .lead img{width:100%;height:100%;min-height:330px;max-height:430px;object-fit:cover}
+    .lead__copy{display:grid;gap:10px;padding:22px 2px 2px;background:#fff}
     .kicker,.section-label{
       display:block;margin-bottom:7px;color:#555;
       font-size:.59rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase
     }
-    .lead h1{max-width:12ch;font-size:clamp(2.45rem,4vw,4rem);line-height:.96;letter-spacing:-.045em}
-    .lead p{margin-top:13px;color:var(--muted);font-size:.84rem;line-height:1.55}
+    .lead h1{max-width:17ch;font-size:clamp(2.7rem,4.4vw,4.8rem);line-height:.91;letter-spacing:-.055em}
+    .lead p{max-width:760px;color:var(--muted);font-size:.86rem;line-height:1.58}
 
-    .top-list{display:grid;border-top:1px solid var(--line)}
+    .top-list{display:grid;grid-template-rows:repeat(4,1fr);border-top:3px solid #111}
     .top-item{border-bottom:1px solid var(--line)}
-    .top-item a{min-height:108px;display:grid;grid-template-columns:132px 1fr;gap:13px;padding:11px 0;align-items:center}
-    .top-item img{width:132px;height:90px;object-fit:cover}
-    .top-item small{display:block;margin-bottom:4px;color:#777;font-size:.55rem;font-weight:800;text-transform:uppercase}
-    .top-item h2{font-size:1.05rem;line-height:1.16;letter-spacing:-.015em}
+    .top-item a{height:100%;min-height:118px;display:grid;grid-template-columns:144px 1fr;gap:15px;padding:13px 0;align-items:center}
+    .top-item img{width:144px;height:96px;object-fit:cover}
+    .top-item small{display:block;margin-bottom:5px;color:#777;font-size:.53rem;font-weight:800;text-transform:uppercase}
+    .top-item h2{font-size:1.02rem;line-height:1.13;letter-spacing:-.018em}
 
     /* ticker */
     .wire{border-block:1px solid var(--line);background:#fafafa}
@@ -144,6 +152,16 @@
     .wire__links{display:flex;gap:18px;min-width:0;overflow:hidden;white-space:nowrap}
     .wire__links a{overflow:hidden;text-overflow:ellipsis;color:#333;font-size:.69rem}
     .wire__live{font-size:.63rem;font-weight:900;color:var(--red)}
+
+    /* front-page discovery strip */
+    .frontline{padding:22px 0 26px;border-bottom:1px solid var(--line);background:#fff}
+    .frontline__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:3px solid #111;border-bottom:1px solid var(--line)}
+    .frontline-card{min-width:0;padding:16px 18px 18px;border-right:1px solid var(--line)}
+    .frontline-card:last-child{border-right:0}
+    .frontline-card small{display:block;margin-bottom:8px;color:var(--red);font-size:.52rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+    .frontline-card strong{display:block;font-size:.92rem;line-height:1.18;letter-spacing:-.015em}
+    .frontline-card span{display:block;margin-top:7px;color:#777;font-size:.63rem;line-height:1.45}
+    .frontline-card:hover strong{color:var(--red)}
 
     /* sections */
     .section{padding:44px 0;border-bottom:1px solid var(--line)}
@@ -378,6 +396,10 @@
 
     @media(max-width:1080px){
       .nav{gap:10px}.nav a{font-size:.61rem}
+      .top__grid{grid-template-columns:minmax(0,1.35fr) minmax(320px,.85fr)}
+      .frontline__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .frontline-card:nth-child(2){border-right:0}
+      .frontline-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
       .content-layout{grid-template-columns:minmax(0,1fr) 270px}
       .card-grid,.shop-grid{grid-template-columns:repeat(2,1fr)}
     }
@@ -394,9 +416,9 @@
       .nav.is-open{display:grid}
       .nav a{padding:10px;border-bottom:1px solid #2c2c2c}
       .top__grid,.content-layout,.explore-layout,.support__grid,.broadcast-layout{grid-template-columns:1fr}
-      .lead a{grid-template-columns:1fr}
-      .lead img{height:280px}
-      .top-list{grid-template-columns:repeat(3,1fr);border-top:0}
+      .lead a{grid-template-rows:auto auto;min-height:0}
+      .lead img{height:320px;min-height:0}
+      .top-list{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;border-top:3px solid #111}
       .top-item a{display:block;min-height:0;padding:0}
       .top-item img{width:100%;height:115px}
       .top-item div{padding:9px 0}
@@ -418,6 +440,9 @@
       .lead img{height:220px}.lead__copy{padding:18px 0}.lead h1{font-size:2.1rem}
       .top-list{grid-template-columns:1fr}
       .top-item a{display:grid;grid-template-columns:112px 1fr;gap:12px;padding:10px 0}
+      .frontline__grid{grid-template-columns:1fr}
+      .frontline-card,.frontline-card:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}
+      .frontline-card:last-child{border-bottom:0}
       .top-item img{width:112px;height:76px}
       .wire__inner{grid-template-columns:auto 1fr}.wire__live{display:none}.wire__links a:nth-child(n+2){display:none}
       .section{padding:32px 0}
@@ -1070,6 +1095,20 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
     </div>
   </header>
 
+  <nav class="desk-nav" aria-label="Atalhos editoriais">
+    <div class="shell desk-nav__inner">
+      <strong>Passport Desk</strong>
+      <a href="#noticias">Últimas</a>
+      <a href="#resenhas">Stories & Reviews</a>
+      <a href="#symphonic-metal">Symphonic Metal</a>
+      <a href="anos-80-bandas-musicas-rock-new-wave.html">Anos 80</a>
+      <a href="instrument-masters.html">Instrument Masters</a>
+      <a href="#agenda">Shows</a>
+      <a href="#broadcasts">Watch & Listen</a>
+      <a href="destinos.html">Arquivo A–Z</a>
+    </div>
+  </nav>
+
   <main id="conteudo-principal">
 
     <section class="top" id="agora" data-passport-protected>
@@ -1089,6 +1128,7 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
           <article class="top-item"><a href="rhapsody-of-fire-symphonic-power-metal.html"><img src="/images/rhapsody-of-fire/Rhapsody_of_Fire_Rockharz_2025_15.jpg" alt="Rhapsody of Fire ao vivo — symphonic power metal na Passport Radio" /><div><small>Mr. Nomad · Rhapsody of Fire · 14/08/2026</small><h2>Rhapsody of Fire: quando o Power Metal virou cinema.</h2></div></a></article>
           <article class="top-item"><a href="therion-miskolc-experience-symphonic-metal.html"><img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion no The Miskolc Experience com orquestra e coro" /><div><small>Mr. Nomad · Therion · 14/08/2026</small><h2>Therion: quando o metal encontrou a orquestra.</h2></div></a></article>
           <article class="top-item"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock, o rádio e os anos 80" /><div><small>Mr. Nomad · 1986 · 13/08/2026</small><h2>1986: quando o rádio ainda podia mudar o seu dia.</h2></div></a></article>
+          <article class="top-item"><a href="sharon-den-adel-within-temptation-30-anos.html"><img src="/images/sharon-den-adel-within-temptation-2026.webp" alt="Sharon den Adel e Within Temptation ao vivo em 2026" /><div><small>Mr. Nomad · Within Temptation · 14/08/2026</small><h2>Três pessoas na plateia. Trinta anos depois, vontade de mudar tudo outra vez.</h2></div></a></article>
         </aside>
       </div>
     </section>
@@ -1103,6 +1143,31 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
           <a href="scorpions-hurricane-graphic-novel.html">NOVO · Scorpions cansou da Terra. Agora o furacão vai pro espaço</a>
         </div>
         <a class="wire__live" href="radio.html">OUVIR AO VIVO</a>
+      </div>
+    </section>
+
+    <section class="frontline" aria-label="Descoberta editorial" data-passport-protected>
+      <div class="shell frontline__grid">
+        <a class="frontline-card" href="white-metal-isso-e-musica-crista.html">
+          <small>Mais lidas</small>
+          <strong>White Metal: isso é música cristã?</strong>
+          <span>Uma das portas mais acessadas do arquivo recente.</span>
+        </a>
+        <a class="frontline-card" href="historias/eye-of-the-tiger.html">
+          <small>Do arquivo</small>
+          <strong>Stallone queria Queen. O “não” produziu Eye of the Tiger.</strong>
+          <span>Rock, cinema e a história por trás de uma música que todo mundo conhece.</span>
+        </a>
+        <a class="frontline-card" href="instrument-masters.html">
+          <small>Explore</small>
+          <strong>Instrument Masters</strong>
+          <span>Bateria, baixo, técnica e identidade em exposições vivas.</span>
+        </a>
+        <a class="frontline-card" href="radio.html">
+          <small>Watch & Listen</small>
+          <strong>Live & Rare · Passport Radio</strong>
+          <span>Performances completas, raridades e mudanças de direção sem aviso.</span>
+        </a>
       </div>
     </section>
 
