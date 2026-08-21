@@ -253,6 +253,20 @@
     .topic-grid strong{display:block;font-size:.76rem}
     .topic-grid small{display:block;margin-top:2px;color:#777;font-size:.59rem}
 
+    /* rock universe / encyclopedia gateway */
+    .rock-universe{padding:52px 0;background:#111;color:#fff;border-bottom:1px solid #2b2b2b}
+    .rock-universe .explore-layout{grid-template-columns:330px 1fr;align-items:start}
+    .rock-universe .section-label{color:var(--red)}
+    .rock-universe h2{font-size:clamp(2.4rem,4vw,4.6rem);line-height:.9;letter-spacing:-.055em}
+    .rock-universe p{max-width:520px;margin-top:14px;color:#aaa;font-size:.78rem;line-height:1.6}
+    .rock-universe .topic-grid{border-color:#343434}
+    .rock-universe .topic-grid a{min-height:92px;border-color:#343434;align-items:start;transition:background .18s ease}
+    .rock-universe .topic-grid a:hover{background:#191919}
+    .rock-universe .topic-grid b{font-size:.72rem}
+    .rock-universe .topic-grid strong{color:#fff;font-size:.86rem}
+    .rock-universe .topic-grid small{color:#8d8d8d;line-height:1.4}
+    .rock-universe__note{display:block;margin-top:18px;color:#777;font-size:.59rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+
     /* advertising */
     .ad-call{padding:34px 0;position:relative;overflow:hidden;border-left:5px solid var(--red);animation:adPanelPulse 2.8s ease-in-out infinite}
     .ad-call::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--red);animation:adLinePulse 1.8s ease-in-out infinite}
@@ -416,6 +430,7 @@
       .nav.is-open{display:grid}
       .nav a{padding:10px;border-bottom:1px solid #2c2c2c}
       .top__grid,.content-layout,.explore-layout,.support__grid,.broadcast-layout{grid-template-columns:1fr}
+      .rock-universe .topic-grid{grid-template-columns:1fr}
       .lead a{grid-template-rows:auto auto;min-height:0}
       .lead img{height:320px;min-height:0}
       .top-list{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;border-top:3px solid #111}
@@ -1234,6 +1249,29 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
       </div>
     </section>
 
+    <section class="rock-universe" id="explorar" data-passport-protected aria-labelledby="rock-universe-title">
+      <div class="shell explore-layout">
+        <div>
+          <span class="section-label">Explore · O universo do rock</span>
+          <h2 id="rock-universe-title">ENTRE POR ONDE QUISER.</h2>
+          <p>Bandas, artistas, gêneros, décadas, instrumentos, cenas, festivais, histórias e performances ligados entre si. A Passport deixa de ser uma sequência de páginas e começa a funcionar como um mapa vivo do rock.</p>
+          <span class="rock-universe__note">Um assunto leva ao próximo. E ao próximo. E ao próximo.</span>
+        </div>
+        <div class="topic-grid">
+          <a href="destinos.html"><b>01</b><span><strong>Bandas &amp; Artistas</strong><small>Nomes, histórias, integrantes e conexões.</small></span></a>
+          <a href="destinos.html#estilos"><b>02</b><span><strong>Gêneros &amp; Estilos</strong><small>Rock, metal e suas ramificações.</small></span></a>
+          <a href="anos-80-bandas-musicas-rock-new-wave.html"><b>03</b><span><strong>Décadas</strong><small>Comece pelos anos 80 e atravesse o arquivo.</small></span></a>
+          <a href="instrument-masters.html"><b>04</b><span><strong>Instrument Masters</strong><small>Bateria, baixo, guitarra, técnica e identidade.</small></span></a>
+          <a href="destinos.html#cenas"><b>05</b><span><strong>Cenas &amp; Movimentos</strong><small>Onde a música aconteceu e por quê.</small></span></a>
+          <a href="destinos.html#rock-brasileiro"><b>06</b><span><strong>Rock Brasileiro</strong><small>Sete décadas, cenas, bandas e histórias.</small></span></a>
+          <a href="rhapsody-of-fire-symphonic-power-metal.html"><b>07</b><span><strong>Symphonic Metal</strong><small>Rhapsody, Therion e o universo sinfônico.</small></span></a>
+          <a href="radio.html"><b>08</b><span><strong>Live &amp; Rare</strong><small>Rádio, performances e arquivos sonoros.</small></span></a>
+          <a href="destinos.html#nomads"><b>09</b><span><strong>Mr. Nomad</strong><small>Histórias guiadas para ouvir de outro jeito.</small></span></a>
+          <a href="historias/eye-of-the-tiger.html"><b>10</b><span><strong>Histórias por trás das músicas</strong><small>Quando uma canção abre outra porta.</small></span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="noticias" data-passport-protected>
       <div class="shell content-layout">
         <div>
@@ -1242,25 +1280,20 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
           </div>
 
           <article class="feature-news">
-            <a href="frank-beard-zz-top-1949-2026.html">
-              <img src="/images/frank-beard-zz-top-01.jpg" alt="Frank Beard com Billy Gibbons e Dusty Hill — ZZ Top" loading="lazy" />
-              <div><small>IN MEMORIAM · Mr. Nomad · Frank Beard · 19/08/2026</small><h3>Frank Beard: the heartbeat of ZZ Top.</h3><p>Da juventude no Texas a mais de cinco décadas ao lado de Billy Gibbons e Dusty Hill. Vida, estrada, groove, legado e uma despedida da Passport Radio a Frank Lee Beard.</p></div>
+            <a href="sharon-den-adel-within-temptation-30-anos.html">
+              <img src="/images/sharon-den-adel-within-temptation-2026.webp" alt="Sharon den Adel e Within Temptation ao vivo em 2026" loading="lazy" />
+              <div><small>Mr. Nomad · Within Temptation · 14/08/2026</small><h3>Três pessoas na plateia. Trinta anos depois, Sharon den Adel quer mudar tudo outra vez.</h3><p>Uma história de persistência, palco e reinvenção abre o fluxo de notícias sem repetir o memorial que já domina a capa.</p></div>
             </a>
           </article>
 
           <div class="news-list">
-            <article class="news-row"><a href="sharon-den-adel-within-temptation-30-anos.html"><img src="/images/sharon-den-adel-within-temptation-2026.webp" alt="Sharon den Adel e Within Temptation ao vivo em 2026" loading="lazy" /><div><small>Mr. Nomad · Within Temptation · 14/08/2026</small><h3>Três pessoas na plateia. Trinta anos depois, Sharon den Adel quer mudar tudo outra vez.</h3></div></a></article>
-            <article class="news-row"><a href="ritchie-blackmore-deep-purple-33-anos.html"><img src="/images/ritchie-blackmore-deep-purple-reunion-2026.webp" alt="Ritchie Blackmore reunido ao Deep Purple em 2026" loading="lazy" /><div><small>Mr. Nomad · Deep Purple · 14/08/2026</small><h3>Ritchie Blackmore voltou ao Deep Purple. Bastaram quatro notas para apagar 33 anos.</h3></div></a></article>
-            <article class="news-row"><a href="scorpions-hurricane-graphic-novel.html"><img src="/images/scorpions-hurricane-graphic-novel.webp" alt="Scorpions Hurricane — graphic novel oficial" loading="lazy" /><div><small>Mr. Nomad · Scorpions · 14/08/2026</small><h3>Scorpions cansou da Terra. Agora o furacão vai pro espaço.</h3></div></a></article>
-            <article class="news-row"><a href="rhapsody-of-fire-symphonic-power-metal.html"><img src="/images/rhapsody-of-fire/Rhapsody_of_Fire_Rockharz_2025_15.jpg" alt="Rhapsody of Fire ao vivo" loading="lazy" /><div><small>Mr. Nomad · Rhapsody of Fire · 14/08/2026</small><h3>Rhapsody of Fire: quando o Power Metal virou cinema.</h3></div></a></article>
-            <article class="news-row"><a href="therion-miskolc-experience-symphonic-metal.html"><img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion The Miskolc Experience" loading="lazy" /><div><small>Mr. Nomad · Therion · 14/08/2026</small><h3>Therion: quando o metal encontrou a orquestra.</h3></div></a></article>
-            <article class="news-row"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock e o rádio" loading="lazy" /><div><small>Mr. Nomad · 1986</small><h3>1986: quando o rádio ainda podia mudar o seu dia.</h3></div></a></article>
-            <article class="news-row"><a href="anos-80-bandas-musicas-rock-new-wave.html"><img src="/images/1986/attachment-the-outfield-your-love.webp" alt="Arquivo musical dos anos 80" loading="lazy" /><div><small>Mr. Nomad · Anos 80</small><h3>Anos 80: a década que se recusou a morrer.</h3></div></a></article>
-            <article class="news-row"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" loading="lazy" /><div><small>Mr. Nomad · Kamelot</small><h3>Thomas Youngblood: a estrada cobra.</h3></div></a></article>
-            <article class="news-row"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" loading="lazy" /><div><small>Mr. Nomad · Hoobastank</small><h3>Vinte e cinco anos depois, o Hoobastank volta ao começo no Roxy.</h3></div></a></article>
+            <article class="news-row"><a href="ritchie-blackmore-deep-purple-33-anos.html"><img src="/images/ritchie-blackmore-deep-purple-reunion-2026.webp" alt="Ritchie Blackmore reunido ao Deep Purple em 2026" loading="lazy" /><div><small>Mr. Nomad · Deep Purple</small><h3>Ritchie Blackmore voltou ao Deep Purple. Bastaram quatro notas para apagar 33 anos.</h3></div></a></article>
+            <article class="news-row"><a href="scorpions-hurricane-graphic-novel.html"><img src="/images/scorpions-hurricane-graphic-novel.webp" alt="Scorpions Hurricane — graphic novel oficial" loading="lazy" /><div><small>Mr. Nomad · Scorpions</small><h3>Scorpions cansou da Terra. Agora o furacão vai pro espaço.</h3></div></a></article>
             <article class="news-row"><a href="roger-taylor-i-see-you-now-novo-album-2026.html"><img src="/images/roger-taylor/rogertayloriseeaug2026_638.webp" alt="Roger Taylor em 2026" loading="lazy" /><div><small>Mr. Nomad · Roger Taylor</small><h3>Aos 77, Roger Taylor ainda tem coisa nova para dizer.</h3></div></a></article>
+            <article class="news-row"><a href="hoobastank-25-anos-album-estreia-roxy-2026.html"><img src="/images/hoobastank/hoobastankjune2026_638.webp" alt="Hoobastank em 2026" loading="lazy" /><div><small>Mr. Nomad · Hoobastank</small><h3>Vinte e cinco anos depois, o Hoobastank volta ao começo no Roxy.</h3></div></a></article>
+            <article class="news-row"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" loading="lazy" /><div><small>Mr. Nomad · Kamelot</small><h3>Thomas Youngblood: a estrada cobra.</h3></div></a></article>
             <article class="news-row"><a href="white-metal-isso-e-musica-crista.html"><img src="/images/white-metal/Mortification.jpg" alt="Mortification — White Metal" loading="lazy" /><div><small>Mr. Nomad · White Metal</small><h3>White Metal: isso é música cristã?</h3></div></a></article>
-            <article class="news-row"><a href="historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt="Eye of the Tiger — Rocky III, Survivor e Stallone" loading="lazy" /><div><small>Mr. Nomad · Rock & Cinema</small><h3>Stallone queria Queen. O “não” produziu Eye of the Tiger.</h3></div></a></article>
+            <article class="news-row"><a href="historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt="Eye of the Tiger — Rocky III, Survivor e Stallone" loading="lazy" /><div><small>Mr. Nomad · Rock &amp; Cinema</small><h3>Stallone queria Queen. O “não” produziu Eye of the Tiger.</h3></div></a></article>
           </div>
         </div>
 
@@ -1295,13 +1328,10 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
           <div><span class="section-label">Resenhas & Histórias</span><h2>História, palco e contexto.</h2></div>
         </div>
         <div class="card-grid">
-          <article class="media-card"><a href="sharon-den-adel-within-temptation-30-anos.html"><img src="/images/sharon-den-adel-within-temptation-2026.webp" alt="Sharon den Adel e Within Temptation ao vivo em 2026" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Within Temptation</small><h3>Três pessoas. Trinta anos. E vontade de mudar tudo outra vez.</h3></div></a></article>
-          <article class="media-card"><a href="ritchie-blackmore-deep-purple-33-anos.html"><img src="/images/ritchie-blackmore-deep-purple-reunion-2026.webp" alt="Ritchie Blackmore de volta ao Deep Purple em 2026" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Deep Purple</small><h3>33 anos depois, bastaram quatro notas</h3></div></a></article>
-          <article class="media-card"><a href="scorpions-hurricane-graphic-novel.html"><img src="/images/scorpions-hurricane-graphic-novel.webp" alt="Scorpions Hurricane — graphic novel oficial" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Scorpions</small><h3>O furacão saiu da Terra e foi parar no espaço</h3></div></a></article>
-          <article class="media-card"><a href="rhapsody-of-fire-symphonic-power-metal.html"><img src="/images/rhapsody-of-fire/Rhapsody-3-madrid.jpg" alt="Rhapsody of Fire ao vivo" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Rhapsody of Fire</small><h3>Quando o Power Metal virou cinema</h3></div></a></article>
-          <article class="media-card"><a href="therion-miskolc-experience-symphonic-metal.html"><img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion The Miskolc Experience" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Therion</small><h3>Quando o metal encontrou a orquestra</h3></div></a></article>
-          <article class="media-card"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock e o rádio" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · 1986</small><h3>Quando o rádio ainda podia mudar o seu dia</h3></div></a></article>
-          <article class="media-card"><a href="thomas-youngblood-kamelot-trinta-anos-estrada.html"><img src="/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp" alt="Thomas Youngblood, guitarrista e fundador do Kamelot" loading="lazy" /><div class="media-card__copy"><small>Mr. Nomad · Kamelot</small><h3>Trinta anos de estrada cobram um preço</h3></div></a></article>
+          <article class="media-card"><a href="rhapsody-of-fire-symphonic-power-metal.html"><img src="/images/rhapsody-of-fire/Rhapsody-3-madrid.jpg" alt="Rhapsody of Fire ao vivo" loading="lazy" /><div class="media-card__copy"><small>Symphonic Power Metal</small><h3>Rhapsody of Fire: quando o Power Metal virou cinema</h3></div></a></article>
+          <article class="media-card"><a href="therion-miskolc-experience-symphonic-metal.html"><img src="/images/therion-miskolc/maxresdefault32.jpg" alt="Therion The Miskolc Experience" loading="lazy" /><div class="media-card__copy"><small>Symphonic Metal</small><h3>Therion: quando o metal encontrou a orquestra</h3></div></a></article>
+          <article class="media-card"><a href="1986-musicas-rock-radio-anos-80.html"><img src="/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp" alt="1986: músicas que marcaram o rock e o rádio" loading="lazy" /><div class="media-card__copy"><small>Arquivo · 1986</small><h3>Quando o rádio ainda podia mudar o seu dia</h3></div></a></article>
+          <article class="media-card"><a href="historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt="Eye of the Tiger — Rocky III, Survivor e Stallone" loading="lazy" /><div class="media-card__copy"><small>Rock &amp; Cinema</small><h3>Stallone queria Queen. O “não” produziu Eye of the Tiger</h3></div></a></article>
         </div>
       </div>
     </section>
@@ -1314,19 +1344,7 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
         </div>
 
         <div class="agenda">
-          <article class="event-row">
-            <div class="event-date"><strong>13 AGO</strong><span>2026 · Qui</span></div>
-            <div class="event-main"><strong>Sticky Fingers</strong><small>São Paulo</small></div>
-            <div class="event-place">Audio · 21h</div>
-            <div><a class="ticket" href="https://www.ticketmaster.com.br/event/sticky-fingers-sao-paulo" target="_blank" rel="noopener noreferrer">Ingressos ↗</a><small class="ticket-source">Venda oficial · Ticketmaster</small></div>
-          </article>
 
-          <article class="event-row">
-            <div class="event-date"><strong>15 AGO</strong><span>2026 · Sáb</span></div>
-            <div class="event-main"><strong>Edu Falaschi</strong><small>São Paulo</small></div>
-            <div class="event-place">Tokio Marine Hall · 21h</div>
-            <div><a class="ticket" href="https://www.ticketmaster.com.br/event/edu-falaschi-tokio-marine-hall" target="_blank" rel="noopener noreferrer">Ingressos ↗</a><small class="ticket-source">Venda oficial · Ticketmaster</small></div>
-          </article>
 
           <article class="event-row">
             <div class="event-date"><strong>22–23 AGO</strong><span>2026 · Fim de semana</span></div>
@@ -1432,26 +1450,6 @@ Ritchie Blackmore, Scorpions, Rhapsody of Fire e Therion preservados.
       </div>
     </section>
 
-    <section class="section" id="explorar" data-passport-protected>
-      <div class="shell explore-layout">
-        <div>
-          <span class="section-label">Explore Music</span>
-          <h2>Rock, metal e música com contexto.</h2>
-          <p>Bandas, artistas, gêneros, instrumentos, décadas, festivais e movimentos ligados por história, contexto e descoberta — não por algoritmo.</p>
-        </div>
-
-        <div class="topic-grid">
-          <a href="destinos.html#rock-brasileiro"><b>01</b><span><strong>Rock Brasileiro</strong><small>Sete décadas, cenas e histórias.</small></span></a>
-          <a href="destinos.html#estilos"><b>02</b><span><strong>Estilos de Rock</strong><small>Das raízes às novas linguagens.</small></span></a>
-          <a href="instrument-masters.html"><b>03</b><span><strong>Instrument Masters</strong><small>Baixo, bateria, técnica, identidade e história.</small></span></a>
-          <a href="destinos.html#nomads"><b>04</b><span><strong>Nomads</strong><small>Instrument sessions e linguagem audiovisual.</small></span></a>
-          <a href="destinos.html#cenas"><b>05</b><span><strong>Cenas &amp; Movimentos</strong><small>Onde a música aconteceu e por quê.</small></span></a>
-          <a href="radio.html"><b>06</b><span><strong>Ao Vivo</strong><small>Arquivos sonoros e programação.</small></span></a>
-          <a href="anos-80-bandas-musicas-rock-new-wave.html"><b>07</b><span><strong>Arquivo Anos 80</strong><small>New wave, synthpop, pós-punk, pop, rock, Brasil e A–Z.</small></span></a>
-          <a href="rhapsody-of-fire-symphonic-power-metal.html"><b>08</b><span><strong>Symphonic Metal</strong><small>Therion, Rhapsody of Fire, orquestra, power metal e as próximas viagens.</small></span></a>
-        </div>
-      </div>
-    </section>
 
     <section class="section section--black" id="anuncie">
       <div class="shell ad-call">
