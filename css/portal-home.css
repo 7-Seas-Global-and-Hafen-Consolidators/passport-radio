@@ -2013,3 +2013,29 @@ p{
       minmax(0,1fr);
   }
 }
+
+
+/* =========================================================
+   PASSPORT LIVE — SECOND PLAYER
+   ========================================================= */
+.passport-live-radio{position:fixed;left:var(--side);right:0;bottom:var(--player);z-index:10990;min-height:74px;background:radial-gradient(circle at 14% 0%,rgba(215,25,32,.16),transparent 34%),linear-gradient(180deg,#181818 0%,#0d0d0d 100%);color:#fff;border-top:1px solid rgba(201,182,144,.42);border-bottom:1px solid rgba(255,255,255,.07);box-shadow:0 -12px 34px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.025)}
+.passport-live-radio::before{content:"";position:absolute;left:0;top:-1px;width:100%;height:2px;background:linear-gradient(90deg,#5f1619 0%,#d71920 18%,#d0b782 42%,#d71920 68%,#5f1619 100%);opacity:.9}
+.passport-live-panel{min-height:74px;display:grid;grid-template-columns:minmax(170px,.55fr) minmax(360px,1.35fr) auto;gap:18px;align-items:center;padding:10px 20px}
+.passport-live-head{min-width:0;display:flex;align-items:center;padding-right:18px;border-right:1px solid rgba(255,255,255,.10)}
+.passport-live-head::before{content:"";flex:0 0 auto;width:9px;height:9px;margin-right:10px;border-radius:50%;background:#d71920;box-shadow:0 0 0 4px rgba(215,25,32,.11),0 0 14px rgba(215,25,32,.62);animation:passportLivePulse 1.65s ease-in-out infinite}
+.passport-live-head small{display:block;margin-bottom:3px;color:#c9b690;font-size:.48rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase}
+#passport-live-channel-name{display:block;overflow:hidden;color:#fff;font-size:.86rem;font-weight:900;letter-spacing:.07em;white-space:nowrap;text-overflow:ellipsis;text-transform:uppercase}
+.passport-live-channels{min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.passport-live-channel{position:relative;min-height:42px;padding:0 16px;overflow:hidden;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));color:#c8c8c8;cursor:pointer;font-family:inherit;font-size:.56rem;font-weight:900;letter-spacing:.10em;text-transform:uppercase;transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease}
+.passport-live-channel::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.08) 46%,transparent 62%);transform:translateX(-120%);transition:transform .42s ease}
+.passport-live-channel:hover{transform:translateY(-1px);border-color:rgba(201,182,144,.52);color:#fff;box-shadow:0 7px 18px rgba(0,0,0,.26)}
+.passport-live-channel:hover::before{transform:translateX(120%)}
+.passport-live-channel.is-active{border-color:#d71920;background:radial-gradient(circle at 50% -40%,rgba(255,255,255,.16),transparent 56%),linear-gradient(180deg,#c71920,#8e1117);color:#fff;box-shadow:0 0 0 1px rgba(215,25,32,.18),0 8px 22px rgba(0,0,0,.34),0 0 18px rgba(215,25,32,.14)}
+.passport-live-channel.is-active::after{content:"ON AIR";position:absolute;top:3px;right:9px;color:rgba(255,255,255,.72);font-size:.34rem;font-weight:900;letter-spacing:.08em}
+.passport-live-controls{display:flex;align-items:center;gap:12px}
+.passport-live-play{position:relative;width:46px;height:46px;flex:0 0 auto;display:grid;place-items:center;padding:0;border:1px solid #d71920;border-radius:50%;background:radial-gradient(circle at 35% 28%,#f03b42 0%,#d71920 38%,#921117 100%);color:#fff;cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:900;box-shadow:0 0 0 5px rgba(215,25,32,.08),0 8px 20px rgba(0,0,0,.32);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.passport-live-play:hover{transform:scale(1.06);filter:brightness(1.08);box-shadow:0 0 0 6px rgba(215,25,32,.11),0 10px 24px rgba(0,0,0,.38),0 0 20px rgba(215,25,32,.22)}
+#passport-live-status{min-width:84px;color:#b9aa8e;font-size:.49rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+@keyframes passportLivePulse{0%,100%{opacity:.64;transform:scale(.92)}50%{opacity:1;transform:scale(1.08)}}
+@media(max-width:980px){.passport-live-radio{left:0}.passport-live-panel{grid-template-columns:minmax(130px,.45fr) minmax(300px,1.3fr) auto;gap:12px;padding-left:12px;padding-right:12px}.passport-live-head{padding-right:12px}.passport-live-channel{min-height:40px;padding-left:10px;padding-right:10px;font-size:.51rem}.passport-live-play{width:42px;height:42px}}
+@media(max-width:650px){body{padding-bottom:calc(var(--player) + 112px)}.passport-live-radio{min-height:112px}.passport-live-panel{min-height:112px;grid-template-columns:1fr auto;gap:8px 10px;padding:8px 10px}.passport-live-head{border-right:0;padding-right:0}.passport-live-head small{font-size:.42rem}#passport-live-channel-name{font-size:.72rem}.passport-live-channels{grid-column:1/-1;grid-row:2;gap:6px}.passport-live-channel{min-height:36px;padding:0 7px;font-size:.44rem;letter-spacing:.06em}.passport-live-channel.is-active::after{display:none}.passport-live-controls{grid-column:2;grid-row:1;justify-content:flex-end}.passport-live-play{width:38px;height:38px;font-size:.68rem}#passport-live-status{display:none}}
