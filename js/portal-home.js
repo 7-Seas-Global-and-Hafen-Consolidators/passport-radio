@@ -112,3 +112,70 @@ if (menu && side) {
 
   load();
 })();
+
+/* Agenda Passport — curadoria Brasil, setembro/2026 em diante.
+   Mantém a URL e o layout da Home; substitui apenas os cards antigos da agenda. */
+(() => {
+  const agenda = document.querySelector('#agenda .agenda');
+  if (!agenda) return;
+
+  const events = [
+    {
+      date: '19 SET', year: '2026', artist: 'Helloween', city: 'São Paulo · SP',
+      place: 'Suhai Music Hall · 21h',
+      url: 'https://www.eventim.com.br/event/helloween-suhai-music-hall-21068671/'
+    },
+    {
+      date: '25–28 OUT', year: '2026', artist: 'Iron Maiden · Run For Your Lives', city: 'São Paulo · SP + Curitiba · PR',
+      place: 'Nubank Parque · Arena da Baixada',
+      url: 'https://www.livepass.com.br/artist/iron-maiden/'
+    },
+    {
+      date: '07 NOV', year: '2026', artist: 'Sepultura · Celebrating Life Through Death', city: 'São Paulo · SP',
+      place: 'Pacaembu',
+      url: 'https://www.sepultura.com.br/pt/tour'
+    },
+    {
+      date: '05 DEZ', year: '2026', artist: 'Deep Purple', city: 'São Paulo · SP',
+      place: 'Suhai Music Hall · 21h',
+      url: 'https://www.eventim.com.br/artist/deep-purple/'
+    },
+    {
+      date: '17 DEZ', year: '2026', artist: 'Slayer · Reign In Blood 40th Anniversary', city: 'São Paulo · SP',
+      place: 'Nubank Parque · Kreator + Korzus',
+      url: 'https://www.livepass.com.br/artist/slayer-2026/'
+    },
+    {
+      date: '15 JAN', year: '2027', artist: 'System Of A Down + Faith No More', city: 'Rio de Janeiro · RJ',
+      place: 'Maracanã · One Night Only',
+      url: 'https://www.eventim.com.br/artist/faith-no-more/'
+    },
+    {
+      date: '22 JAN–04 FEV', year: '2027', artist: 'Rush · Tour Brasil', city: 'Curitiba · São Paulo · Rio · Belo Horizonte · Brasília',
+      place: '5 cidades · 6 apresentações',
+      url: 'https://www.eventim.com.br/'
+    },
+    {
+      date: '18–20 FEV', year: '2027', artist: 'Foo Fighters · Take Cover Tour', city: 'Belo Horizonte · MG + São Paulo · SP',
+      place: 'Arena MRV · MorumBIS · 20h',
+      url: 'https://www.ticketmaster.com.br/event/pv-artista-foo-fighters-belo-horizonte'
+    }
+  ];
+
+  agenda.innerHTML = events.map((event) => `
+    <article class="event">
+      <div class="date">
+        <strong>${event.date}</strong>
+        <span>${event.year}</span>
+      </div>
+      <div class="event-main">
+        <strong>${event.artist}</strong>
+        <small>${event.city}</small>
+      </div>
+      <div class="place">${event.place}</div>
+      <div>
+        <a class="ticket" href="${event.url}" target="_blank" rel="noopener">INGRESSOS ↗</a>
+      </div>
+    </article>
+  `).join('');
+})();
