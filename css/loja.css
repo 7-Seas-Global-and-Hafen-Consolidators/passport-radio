@@ -68,6 +68,10 @@ body.store-page{background:var(--store-bg);color:var(--store-ink)}
 .store-page .footer-bottom{border-color:#333;color:#777}
 .store-page .player-bar{background:rgba(17,17,17,.98);border-top:3px solid var(--store-red);color:#fff}
 
+/* Emergency cleanup: hide the accidental injected catalogue wall without touching the legitimate Passport Store catalogue. */
+.passport-local-expansion,
+#catalogo-local-expandido{display:none!important}
+
 @media(max-width:1050px){
   .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .store-benefits{grid-template-columns:repeat(2,1fr)}
