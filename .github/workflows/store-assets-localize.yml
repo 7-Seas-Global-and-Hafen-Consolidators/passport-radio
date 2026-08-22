@@ -1,95 +1,20 @@
-name: Rebuild Passport Store selected catalog
-on:
-  push:
-    paths:
-      - '.github/workflows/store-assets-localize.yml'
-  workflow_dispatch:
-permissions:
-  contents: write
-jobs:
-  rebuild-store:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - name: Purge broken imported cards and rebuild selected batch
-        shell: python
-        run: |
-          from pathlib import Path
-          from urllib.parse import quote
-          import re
+items=[
+('vitrola','Raveo','Toca-discos Raveo · 3 velocidades','/produto/raveo-turner.html','21x','/images/store/imported/raveo-turner.jpg','Vitrola · Toca-discos'),
+('vitrola','Raveo','Vitrola Bluetooth Raveo Harmony','/produto/raveo-harmony.html','21x','/images/store/imported/raveo-harmony.jpg','Vitrola · Toca-discos'),
 
-          p=Path('loja.html')
-          s=p.read_text(encoding='utf-8')
-          marker='<!-- PASSPORT-CATALOG-AUG22-2026 -->'
+('fone','Soundcore','Soundcore P20i','/produto/soundcore-p20i.html','5x','/images/store/imported/soundcore-p20i.jpg','Áudio · True Wireless'),
 
-          # Remove the entire previously injected AUG22 batch. Those cards were
-          # created with generic/reused boutique images and are the source of
-          # the repeated "zombie" artwork visible in production.
-          if marker in s:
-              head, tail = s.split(marker,1)
-              while True:
-                  m=re.match(r'\s*<article class="product product--source".*?</article>',tail,re.S)
-                  if not m:
-                      break
-                  tail=tail[m.end():]
-              s=head+marker+'\n'+tail.lstrip('\n')
+('fone','JBL','JBL Tune 520BT','/produto/jbl-tune-520bt.html','5x','/images/store/imported/jbl-tune-520bt.jpg','Áudio · Headphone'),
 
-          # Also remove any selected-batch cards from an interrupted prior run,
-          # so this workflow is idempotent and cannot duplicate products.
-          selected_names=[
-            'Toca-discos Raveo · 3 velocidades',
-            'Vitrola Bluetooth Raveo Harmony',
-            'Toca-discos multifuncional com alto-falantes',
-            'Soundcore Bluetooth Headphones',
-            'JBL Tune 520BT',
-            'Guitarra Elétrica TEG-340 Vermelha',
-            'Tagima Millenium 6 Natural',
-            'Contrabaixo Tagima 4 Cordas',
-            'Baixolão Strinberg SB240C Elétrico',
-            'Pedaleira multifuncional recarregável',
-            'JBL Cinema SB595 · Soundbar 5.1 + Subwoofer',
-            'JBL Wave Beam 2',
-            'Nextpal · reposição para toca-discos',
-          ]
-          for name in selected_names:
-              pat=re.compile(r'\s*<article class="product product--source"[^>]*>.*?<img[^>]+alt="'+re.escape(name)+r'".*?</article>',re.S)
-              s=pat.sub('',s)
+('fone','JBL','JBL Wave Beam 2','/produto/jbl-wave-beam-2.html','5x','/images/store/imported/jbl-wave-beam-2.jpg','Áudio · True Wireless'),
 
-          items=[
-            ('vitrola','Raveo','Toca-discos Raveo · 3 velocidades','https://www.amazon.com.br/Raveo-Toca-discos-velocidades-auxiliares-tecnologia/dp/B0CVYMBJJJ','21x','https://m.media-amazon.com/images/I/71+nwMbFdKL._AC_SL1500_.jpg','Vitrola · Toca-discos'),
-            ('vitrola','Raveo','Vitrola Bluetooth Raveo Harmony','https://www.amazon.com.br/Vitrola-Bluetooth-Bivolt-Raveo-Harmony/dp/B075ZJ513F','21x','https://m.media-amazon.com/images/I/61-I-0OlULL._AC_SL1200_.jpg','Vitrola · Toca-discos'),
-            ('fone','Soundcore','Soundcore Bluetooth Headphones','https://www.amazon.com.br/soundcore-Bluetooth-Resist%C3%AAncia-Microfones-Personaliz%C3%A1vel/dp/B0BTYCRJSS','5x','https://m.media-amazon.com/images/I/61ljZu9+GXL._AC_SL1500_.jpg','Áudio · Headphone'),
-            ('fone','JBL','JBL Tune 520BT','https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0C4CCMNQT','5x','https://m.media-amazon.com/images/I/51ouXTgynpL._AC_SL1500_.jpg','Áudio · Headphone'),
-            ('guitarra','Thomaz','Guitarra Elétrica TEG-340 Vermelha','https://www.amazon.com.br/Guitarra-El%C3%A9trica-TEG-340-Vermelho-Thomaz/dp/B09RZZXM8F','21x','https://m.magazineluiza.com.br/a-static/420x420/guitarra-eletrica-sg-de-madeira-macica-thomaz-teg-340-vermelho/micromega3/10186576588/d70e0c46cb9d6a68217eb6f7709e4278.jpeg','Instrumento · Guitarra'),
-            ('baixo','Tagima','Tagima Millenium 6 Natural','https://www.amazon.com.br/Contra-Cordas-Tagima-Millenium-Natural/dp/B09BX7TTZG','21x','https://m.media-amazon.com/images/I/51SQZKNJyZL._AC_SL1500_.jpg','Instrumento · Baixo'),
-            ('baixo','Strinberg','Baixolão Strinberg SB240C Elétrico','https://www.amazon.com.br/Baixol%C3%A3o-Strinberg-Sb240c-El%C3%A9trico-Natural/dp/B07ZHH31QT','21x','https://a-static.mlcdn.com.br/420x420/baixolao-4-cordas-eletrico-strinberg-sb240c-ns-natural-fosco-original/audiodriver/5824/7f6b47061730851dd5ed028c2712038d.jpeg','Instrumento · Baixo'),
-            ('pedaleira','','Pedaleira multifuncional recarregável','https://www.amazon.com.br/pedaleira%EF%BC%8CCom-sintonizadores-equaliza%C3%A7%C3%A3o-compress%C3%A3o-recarreg%C3%A1vel/dp/B0D9XLD41W','21x','https://m.media-amazon.com/images/I/71FDqiLlkML._AC_SL1500_.jpg','Instrumento · Pedaleira'),
-            ('soundbar','JBL','JBL Cinema SB595 · Soundbar 5.1 + Subwoofer','https://www.amazon.com.br/JBL-Soundbar-Cinema-Canais-Subwoofer/dp/B0FZXTYQ3V','21x','https://m.media-amazon.com/images/I/51n1AK9rmdL._AC_SL1500_.jpg','Áudio · Soundbar'),
-            ('fone','JBL','JBL Wave Beam 2','https://www.amazon.com.br/Ouvido-JBL-Bluetooth-Auricular-Resistente/dp/B0DHL93XCN','5x','https://m.media-amazon.com/images/I/61DFgTmj9xL._AC_SL1500_.jpg','Áudio · True Wireless'),
-          ]
+('guitarra','Thomaz','Guitarra Elétrica TEG-340 Vermelha','/produto/thomaz-teg340.html','21x','/images/store/imported/thomaz-teg-340.jpeg','Instrumento · Guitarra'),
 
-          def card(cat,band,name,url,parcel,img,typ):
-              bandattr=f' data-band="{band}"' if band else ''
-              wa=quote('Olá! Quero comprar '+name+'. Pode me enviar o preço final e o link de pagamento?')
-              return f'''\n      <article class="product product--source" data-category="{cat}"{bandattr}>\n        <div class="product-media"><span class="product-badge product-badge--red">NOVO</span><img loading="lazy" src="{img}" alt="{name}"></div>\n        <div class="product-info"><div class="product-type">{typ}</div><h3>{name}</h3><div class="product-price">PREÇO DIRETO</div><div class="product-installments">parcelamento em até {parcel}*</div><div class="product-actions"><a class="buy-button" href="{url}" target="_blank" rel="noopener sponsored">Ver produto</a><a class="quick-button" href="https://wa.me/48732099369?text={wa}" target="_blank" rel="noopener" aria-label="Comprar {name}">+</a></div></div>\n      </article>'''
+('baixo','Tagima','Tagima Millenium 6 Natural','/produto/tagima-millenium-6.html','21x','/images/store/imported/tagima-millenium-6.jpg','Instrumento · Baixo'),
 
-          block=''.join(card(*x) for x in items)
-          if marker not in s:
-              raise SystemExit('Catalog marker missing; refusing unsafe rewrite')
-          s=s.replace(marker,marker+block,1)
-          p.write_text(s,encoding='utf-8')
-          print('Zombie AUG22 catalog purged; selected batch rebuilt:',len(items),'cards')
+('baixo','Strinberg','Baixolão Strinberg SB240C Elétrico','/produto/strinberg-sb240c.html','21x','/images/store/imported/strinberg-sb240c.jpeg','Instrumento · Baixo'),
 
-      - name: Commit rebuilt store
-        shell: bash
-        run: |
-          git config user.name 'Passport Store Bot'
-          git config user.email 'actions@users.noreply.github.com'
-          git add loja.html
-          if git diff --cached --quiet; then
-            echo 'No store changes to commit.'
-            exit 0
-          fi
-          git commit -m 'Rebuild store selected catalog without generic zombie cards'
-          git push
-# trigger rebuild-v2 2026-08-22
+('pedaleira','','Cuvave Cube Baby Bass','/produto/cuvave-cube-baby.html','5x','/images/store/imported/cuvave-cube-baby-bass.jpg','Instrumento · Pedaleira'),
+
+('soundbar','JBL','JBL Cinema SB595 · Soundbar 5.1 + Subwoofer','/produto/jbl-cinema-sb595.html','21x','/images/store/imported/jbl-sb595.jpg','Áudio · Soundbar'),
+]
