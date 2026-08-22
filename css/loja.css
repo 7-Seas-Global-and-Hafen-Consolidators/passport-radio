@@ -55,6 +55,9 @@ body.store-page{background:var(--store-bg);color:var(--store-ink)}
 .quick-button{display:inline-flex;align-items:center;justify-content:center;min-width:40px;border:1px solid #ddd;background:#fff;color:#111;font-weight:900}
 .quick-button:hover{border-color:#111}
 
+/* Remove the four oversized editorial showcase/image bands above the real catalogue. */
+.store-showcase{display:none!important}
+
 .store-banner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:28px;background:#111;color:#fff}
 .store-banner small{display:block;color:#aaa;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
 .store-banner h2{margin:6px 0 0;font-size:clamp(1.8rem,3.4vw,3.3rem);line-height:.95}
