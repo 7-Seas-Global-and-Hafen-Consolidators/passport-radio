@@ -3,15 +3,13 @@
   LIVE CHANNEL ENGINE
   ===================
 
-  Segundo motor de áudio da Passport Radio.
-
   PLAYER 1:
   portal-home.js
   -> arquivos MP3 locais
 
   PLAYER 2:
   passport-live.js
-  -> canais contínuos de rádio ao vivo
+  -> stream ao vivo
 */
 
 (() => {
@@ -20,18 +18,13 @@
   const CHANNELS = {
     metal: {
       label: "METAL",
-      country: "us",
-      alias: "metalmanialive",
-      stationId: "131956",
-      stream: "1"
+      stream:
+        "https://stations.radio-host.com/proxy/metalmanialive/stream"
     },
 
     unplugged: {
       label: "UNPLUGGED",
-      country: "us",
-      alias: "unpluggedlive",
-      stationId: "151148",
-      stream: "1"
+      stream: ""
     }
   };
 
@@ -62,7 +55,8 @@
   }
 
   function setStatus(text) {
-    const status = document.getElementById("passport-live-status");
+    const status =
+      document.getElementById("passport-live-status");
 
     if (status) {
       status.textContent = text;
@@ -70,7 +64,10 @@
   }
 
   function setChannelLabel(text) {
-    const label = document.getElementById("passport-live-channel-name");
+    const label =
+      document.getElementById(
+        "passport-live-channel-name"
+      );
 
     if (label) {
       label.textContent = text;
@@ -78,10 +75,16 @@
   }
 
   function buildPlayer() {
-    const host = document.getElementById("passport-live-radio");
+    const host =
+      document.getElementById(
+        "passport-live-radio"
+      );
 
     if (!host) {
-      console.warn("[Passport Live] área do player não encontrada.");
+      console.warn(
+        "[Passport Live] área do player não encontrada."
+      );
+
       return;
     }
 
@@ -89,8 +92,6 @@
       <section class="passport-live-panel">
 
         <div class="passport-live-head">
-          <span class="passport-live-dot"></span>
-
           <div>
             <small>PASSPORT LIVE</small>
 
@@ -120,258 +121,271 @@
 
         </div>
 
-        <div
-          id="passport-orb-player"
-          class="orbP passport-orb-player"
-        >
-
-          <audio
-            id="passport-live-audio"
-            preload="none"
-          ></audio>
+        <div class="passport-live-controls">
 
           <button
             id="passport-live-play"
             type="button"
-            class="orb_play passport-live-play"
-            title="Ouvir ao vivo"
-            country="us"
-            alias="metalmanialive"
-            stream="1"
+            class="passport-live-play"
+            aria-label="Ouvir ao vivo"
           >
             ▶
           </button>
 
-          <span
-            id="passport-live-status"
-            class="orbPtt"
-            loading="CONECTANDO"
-            playing="NO AR"
-            error="SINAL INDISPONÍVEL"
-            not_supported="NAVEGADOR NÃO COMPATÍVEL"
-            external="OUVIR"
-            geo_blocked="INDISPONÍVEL"
-          >
+          <span id="passport-live-status">
             PRONTO
           </span>
 
         </div>
 
+        <audio
+          id="passport-live-audio"
+          preload="none"
+        ></audio>
+
       </section>
     `;
 
     installChannelButtons();
+    installPlayerControls();
 
-    console.log(
-      "[Passport Live] motor criado.",
-      CHANNELS
-    );
+    selectChannel("metal", false);
   }
 
   function installChannelButtons() {
     const buttons =
-      document.querySelectorAll("[data-live-channel]");
+      document.querySelectorAll(
+        "[data-live-channel]"
+      );
 
     buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const channelKey =
-          button.dataset.liveChannel;
+      button.addEventListener(
+        "click",
+        () => {
+          const channelKey =
+            button.dataset.liveChannel;
 
-        selectChannel(channelKey);
-
-        buttons.forEach((item) => {
-          item.classList.toggle(
-            "is-active",
-            item === button
+          selectChannel(
+            channelKey,
+            false
           );
-        });
-      });
+
+          buttons.forEach((item) => {
+            item.classList.toggle(
+              "is-active",
+              item === button
+            );
+          });
+        }
+      );
     });
   }
 
-  function selectChannel(channelKey) {
-    const config = CHANNELS[channelKey];
+  function installPlayerControls() {
+    const play =
+      document.getElementById(
+        "passport-live-play"
+      );
+
+    const live =
+      getLiveAudio();
+
+    if (!play || !live) {
+      return;
+    }
+
+    play.addEventListener(
+      "click",
+      async () => {
+        if (!live.src) {
+          setStatus(
+            "CANAL SEM STREAM"
+          );
+
+          return;
+        }
+
+        if (!live.paused) {
+          live.pause();
+          return;
+        }
+
+        stopArchive();
+
+        setStatus(
+          "CONECTANDO"
+        );
+
+        try {
+          await live.play();
+        } catch (error) {
+          console.error(
+            "[Passport Live] erro ao tocar:",
+            error
+          );
+
+          setStatus(
+            "ERRO AO CONECTAR"
+          );
+        }
+      }
+    );
+
+    live.addEventListener(
+      "playing",
+      () => {
+        play.textContent = "Ⅱ";
+        setStatus("NO AR");
+      }
+    );
+
+    live.addEventListener(
+      "pause",
+      () => {
+        play.textContent = "▶";
+        setStatus("PAUSADO");
+      }
+    );
+
+    live.addEventListener(
+      "waiting",
+      () => {
+        setStatus(
+          "CONECTANDO"
+        );
+      }
+    );
+
+    live.addEventListener(
+      "stalled",
+      () => {
+        setStatus(
+          "RECONECTANDO"
+        );
+      }
+    );
+
+    live.addEventListener(
+      "error",
+      () => {
+        play.textContent = "▶";
+
+        setStatus(
+          "SINAL INDISPONÍVEL"
+        );
+
+        console.error(
+          "[Passport Live] erro de áudio:",
+          live.error
+        );
+      }
+    );
+  }
+
+  function selectChannel(
+    channelKey,
+    autoplay
+  ) {
+    const config =
+      CHANNELS[channelKey];
 
     if (!config) {
-      console.warn(
-        "[Passport Live] canal inexistente:",
-        channelKey
+      return;
+    }
+
+    currentChannel =
+      channelKey;
+
+    const live =
+      getLiveAudio();
+
+    if (!live) {
+      return;
+    }
+
+    const wasPlaying =
+      !live.paused;
+
+    live.pause();
+
+    live.removeAttribute("src");
+    live.load();
+
+    setChannelLabel(
+      config.label
+    );
+
+    if (!config.stream) {
+      setStatus(
+        "AGUARDANDO STREAM"
       );
 
       return;
     }
 
-    currentChannel = channelKey;
+    live.src =
+      config.stream;
 
-    stopLive();
+    live.load();
 
-    const playButton =
-      document.getElementById("passport-live-play");
-
-    if (!playButton) return;
-
-    playButton.setAttribute(
-      "country",
-      config.country
+    setStatus(
+      "PRONTO"
     );
 
-    playButton.setAttribute(
-      "alias",
-      config.alias
-    );
+    if (
+      autoplay ||
+      wasPlaying
+    ) {
+      stopArchive();
 
-    playButton.setAttribute(
-      "stream",
-      config.stream
-    );
+      live.play().catch(
+        (error) => {
+          console.error(
+            "[Passport Live] autoplay falhou:",
+            error
+          );
 
-    setChannelLabel(config.label);
-    setStatus("PRONTO");
-
-    rebuildOrbPlayer(config);
+          setStatus(
+            "CLIQUE NO PLAY"
+          );
+        }
+      );
+    }
 
     console.log(
-      "[Passport Live] canal selecionado:",
-      config
+      "[Passport Live] canal:",
+      channelKey,
+      config.stream
     );
-  }
-
-  function rebuildOrbPlayer(config) {
-    const oldPlayer =
-      document.getElementById("passport-orb-player");
-
-    if (!oldPlayer) return;
-
-    oldPlayer.innerHTML = `
-      <audio
-        id="passport-live-audio"
-        preload="none"
-      ></audio>
-
-      <button
-        id="passport-live-play"
-        type="button"
-        class="orb_play passport-live-play"
-        title="Ouvir ao vivo"
-        country="${config.country}"
-        alias="${config.alias}"
-        stream="${config.stream}"
-      >
-        ▶
-      </button>
-
-      <span
-        id="passport-live-status"
-        class="orbPtt"
-        loading="CONECTANDO"
-        playing="NO AR"
-        error="SINAL INDISPONÍVEL"
-        not_supported="NAVEGADOR NÃO COMPATÍVEL"
-        external="OUVIR"
-        geo_blocked="INDISPONÍVEL"
-      >
-        PRONTO
-      </span>
-    `;
-
-    initOnlineRadioBox();
-  }
-
-  function initOnlineRadioBox() {
-    if (!window.orbp_w) {
-      window.orbp_w = {
-        lang: "en-us"
-      };
-    }
-
-    window.orbp_w.cmd =
-      window.orbp_w.cmd || [];
-
-    window.orbp_w.apiUrl =
-      "https://onlineradiobox.com";
-
-    window.orbp_w.cmd.push(() => {
-      try {
-        window.orbp_w.init(
-          "passport-orb-player"
-        );
-      } catch (error) {
-        console.error(
-          "[Passport Live] erro ao iniciar canal:",
-          error
-        );
-      }
-    });
-
-    loadOrbScript();
-  }
-
-  function loadOrbScript() {
-    const existing =
-      document.querySelector(
-        'script[data-passport-orb="true"]'
-      );
-
-    if (existing) {
-      if (
-        window.orbp_w &&
-        typeof window.orbp_w.init === "function"
-      ) {
-        try {
-          window.orbp_w.init(
-            "passport-orb-player"
-          );
-        } catch (error) {}
-      }
-
-      return;
-    }
-
-    const script =
-      document.createElement("script");
-
-    script.src =
-      "https://ecdn.onlineradiobox.com/js/pwidget2.min.235ca64e.js";
-
-    script.async = true;
-
-    script.dataset.passportOrb =
-      "true";
-
-    script.onload = () => {
-      console.log(
-        "[Passport Live] Online Radio Box carregado."
-      );
-    };
-
-    script.onerror = () => {
-      console.error(
-        "[Passport Live] falha ao carregar Online Radio Box."
-      );
-
-      setStatus(
-        "SINAL INDISPONÍVEL"
-      );
-    };
-
-    document.head.appendChild(script);
   }
 
   function installMutualExclusion() {
     document.addEventListener(
       "play",
       (event) => {
-        const target = event.target;
+        const target =
+          event.target;
 
-        if (!(target instanceof HTMLMediaElement)) {
+        if (
+          !(
+            target instanceof
+            HTMLMediaElement
+          )
+        ) {
           return;
         }
 
-        if (target.id === "passport-live-audio") {
+        if (
+          target.id ===
+          "passport-live-audio"
+        ) {
           stopArchive();
         }
 
-        if (target.id === "audio") {
+        if (
+          target.id ===
+          "audio"
+        ) {
           stopLive();
         }
       },
@@ -382,15 +396,17 @@
   function boot() {
     buildPlayer();
     installMutualExclusion();
-    initOnlineRadioBox();
 
     console.log(
-      "[Passport Live] inicialização concluída.",
+      "[Passport Live] pronto.",
       currentChannel
     );
   }
 
-  if (document.readyState === "loading") {
+  if (
+    document.readyState ===
+    "loading"
+  ) {
     document.addEventListener(
       "DOMContentLoaded",
       boot
