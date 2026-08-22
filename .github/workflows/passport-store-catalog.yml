@@ -1,16 +1,13 @@
-# manual trigger 2026-08-22
 name: Passport Store catalog expansion
 on:
-  push:
-    paths:
-      - '.github/workflows/passport-store-catalog.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
   expand-store:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Add curated music catalog
         shell: python
         run: |
@@ -19,7 +16,8 @@ jobs:
           p=Path('loja.html')
           s=p.read_text(encoding='utf-8')
           if 'PASSPORT-CATALOG-AUG22-2026' in s:
-              raise SystemExit('catalog already installed')
+              print('catalog already installed — nothing to do')
+              raise SystemExit(0)
           items=[
             ('vitrola','Raveo','Toca-discos Raveo · 3 velocidades','https://www.amazon.com.br/Raveo-Toca-discos-velocidades-auxiliares-tecnologia/dp/B0CVYMBJJJ','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
             ('vitrola','Raveo','Vitrola Bluetooth Raveo Harmony','https://www.amazon.com.br/Vitrola-Bluetooth-Bivolt-Raveo-Harmony/dp/B075ZJ513F','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
@@ -68,10 +66,14 @@ jobs:
           extra=needle+'\n      <button class="store-pill" data-filter="vinil">Vinis</button>\n      <button class="store-pill" data-filter="vitrola">Vitrolas</button>\n      <button class="store-pill" data-filter="fone">Áudio</button>\n      <button class="store-pill" data-filter="guitarra">Guitarras</button>\n      <button class="store-pill" data-filter="baixo">Baixos</button>\n      <button class="store-pill" data-filter="pedaleira">Pedaleiras</button>\n      <button class="store-pill" data-filter="chaveiro">Chaveiros</button>\n      <button class="store-pill" data-filter="carteira">Carteiras</button>'
           s=s.replace(needle,extra,1)
           p.write_text(s,encoding='utf-8')
-      - name: Commit catalog
+      - name: Commit catalog if changed
         run: |
           git config user.name "Passport Store Bot"
           git config user.email "actions@users.noreply.github.com"
           git add loja.html
+          if git diff --cached --quiet; then
+            echo "No catalog changes to commit."
+            exit 0
+          fi
           git commit -m "Expand Passport Store music catalog"
           git push
