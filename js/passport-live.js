@@ -1,0 +1,114 @@
+const side = document.getElementById('portal-side');
+const menu = document.getElementById('menu');
+
+if (menu && side) {
+  menu.onclick = () => {
+    const open = side.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  };
+
+  side.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      side.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    })
+  );
+}
+
+(() => {
+  const files = [
+    "Camisa de Venus - Silvia (Piranha)..mp3",
+    "How Soon Is Now - Johnny Marr Live At The Crazy Face Factory.mp3",
+    "Crowded House - Don't Dream It's Over _ Glastonbury 2022.mp3",
+    "The Cult - She Sells Sanctuary.mp3",
+    "Foreigner - I Want To Know What Love Is (Live at Farm Aid 1985).mp3",
+    "R.E.M. - Drive (Live in Germany 2003).mp3",
+    "Epica - Cry for the Moon - Live at Wacken Open Air 2022.mp3",
+    "Tarja - Demons In You (Ft. Alissa White-Gluz) Live At Wacken 2016.mp3",
+    "George Michael - Jesus to a Child (1994 Berlin MTV Awards).mp3",
+    "Tarja Turunen - Wuthering Heighs (Angra).mp3",
+    "Duran Duran - _Planet Earth_ Global Citizen Performance.mp3",
+    "Duran Duran - A View To A kill (Live).mp3",
+    "Tears for Fears - Shout (live).mp3",
+    "Journey - Don't Stop Believin' (Live In Japan 2017.mp3",
+    "Bad Company Performes _Bad Company_ at the Hard Rock Live.mp3",
+    "The Beatles - Twist & Shout (Live At The Royal Variety Performance).mp3",
+    "14 Bis - Linda Juventude (Ao Vivo).mp3",
+    "Scorpions - Still Loving You (Live at Hellfest 2022).mp3",
+    "Depeche Mode-Just Can´t Get Enough. SOPRON-HUNGARY 2018..mp3",
+    "MORRISSEY - There Is A Light That Never Goes Out (Live Manchester 2005).mp3",
+    "HD - Alice Cooper - Hey Stoopid.mp3",
+    "VAN HALEN - JUMP (LIVE) - 04_02_2015.mp3",
+    "The Cranberries _Linger_ Live at Java Rockin'land 2011.mp3",
+    "INXS – The Stairs (Official Live Video) Live From Wembley Stadium 1991 _ Live Baby Live.mp3",
+    "Depeche Mode - Policy Of Truth (Live).mp3",
+    "Depeche Mode - Everything Counts (Global Spirit Tour).mp3",
+    "Coldplay - Stayin' Alive (ft. Barry Gibb) (Glastonbury 2016).mp3",
+    "Bryan Adams - Heaven (Live At Wembley 1996).mp3",
+    "Out of Touch (1991) - Hall & Oates.mp3"
+  ];
+
+  const playlist = files.map((file, id) => ({
+    id,
+    file,
+    src: '/audio/' + encodeURIComponent(file),
+    title: file
+      .replace(/\.(mp3|mpeg|webm)$/i, '')
+      .replace(/[_]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+  }));
+
+  const audio = document.getElementById('audio');
+  const play = document.getElementById('play');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const track = document.getElementById('track');
+  const meta = document.getElementById('meta');
+  const state = document.getElementById('state');
+
+  if (!audio || !playlist.length) return;
+
+  let i =
+    Number(sessionStorage.getItem('passport_portal_track') || 0) %
+    playlist.length;
+
+  const load = () => {
+    const t = playlist[i];
+
+    audio.src = t.src;
+    track.textContent = t.title;
+    meta.textContent = 'Passport Radio · Live & Rare';
+
+    sessionStorage.setItem('passport_portal_track', String(i));
+  };
+
+  const go = (n) => {
+    i = (n + playlist.length) % playlist.length;
+    load();
+    audio.play().catch(() => {});
+  };
+
+  play.onclick = () =>
+    audio.paused
+      ? audio.play().catch(() => {})
+      : audio.pause();
+
+  prev.onclick = () => go(i - 1);
+  next.onclick = () => go(i + 1);
+
+  audio.onplay = () => {
+    play.textContent = 'Ⅱ';
+    state.textContent = 'TOCANDO';
+  };
+
+  audio.onpause = () => {
+    play.textContent = '▶';
+    state.textContent = 'PLAYLIST';
+  };
+
+  audio.onended = () => go(i + 1);
+  audio.onerror = () => go(i + 1);
+
+  load();
+})();
