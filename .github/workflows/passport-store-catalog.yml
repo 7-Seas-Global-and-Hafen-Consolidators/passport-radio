@@ -1,3 +1,4 @@
+# manual trigger 2026-08-22
 name: Passport Store catalog expansion
 on:
   push:
@@ -63,7 +64,6 @@ jobs:
           s=s[:pos]+block+s[pos:]
           s=s.replace('<div class="store-benefit"><b>ATÉ 5X*</b><small>Conforme condição do pagamento</small></div>','<div class="store-benefit"><b>ATÉ 21X*</b><small>5x no catálogo · até 21x em equipamentos selecionados</small></div>',1)
           s=s.replace('<div class="store-topline">PREÇO DIRETO · PAGAMENTO FACILITADO · FRETE GRÁTIS EM PRODUTOS SELECIONADOS</div>','<div class="store-topline">PREÇO DIRETO · ATÉ 5X NO CATÁLOGO · ATÉ 21X EM EQUIPAMENTOS SELECIONADOS · FRETE GRÁTIS EM PRODUTOS SELECIONADOS</div>',1)
-          # Add category pills without disturbing existing filters.
           needle='<button class="store-pill" data-filter="relogio">Relógios</button>'
           extra=needle+'\n      <button class="store-pill" data-filter="vinil">Vinis</button>\n      <button class="store-pill" data-filter="vitrola">Vitrolas</button>\n      <button class="store-pill" data-filter="fone">Áudio</button>\n      <button class="store-pill" data-filter="guitarra">Guitarras</button>\n      <button class="store-pill" data-filter="baixo">Baixos</button>\n      <button class="store-pill" data-filter="pedaleira">Pedaleiras</button>\n      <button class="store-pill" data-filter="chaveiro">Chaveiros</button>\n      <button class="store-pill" data-filter="carteira">Carteiras</button>'
           s=s.replace(needle,extra,1)
