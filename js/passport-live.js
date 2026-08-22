@@ -9,7 +9,12 @@
 
   PLAYER 2:
   passport-live.js
-  -> stream ao vivo
+  -> canais de rádio ao vivo
+
+  CANAIS:
+  - METAL
+  - UNPLUGGED
+  - LIVE JAM
 */
 
 (() => {
@@ -24,7 +29,14 @@
 
     unplugged: {
       label: "UNPLUGGED",
-      stream: ""
+      stream:
+        "https://stations.radio-host.com/proxy/unpluggedlive/stream"
+    },
+
+    livejam: {
+      label: "LIVE JAM",
+      stream:
+        "https://stations.radio-host.com/proxy/livejam/stream"
     }
   };
 
@@ -36,6 +48,10 @@
 
   function getLiveAudio() {
     return document.getElementById("passport-live-audio");
+  }
+
+  function getLivePlayButton() {
+    return document.getElementById("passport-live-play");
   }
 
   function stopArchive() {
@@ -74,6 +90,20 @@
     }
   }
 
+  function updateActiveButton(channelKey) {
+    const buttons =
+      document.querySelectorAll(
+        "[data-live-channel]"
+      );
+
+    buttons.forEach((button) => {
+      button.classList.toggle(
+        "is-active",
+        button.dataset.liveChannel === channelKey
+      );
+    });
+  }
+
   function buildPlayer() {
     const host =
       document.getElementById(
@@ -92,13 +122,17 @@
       <section class="passport-live-panel">
 
         <div class="passport-live-head">
+
           <div>
-            <small>PASSPORT LIVE</small>
+            <small>
+              PASSPORT LIVE
+            </small>
 
             <strong id="passport-live-channel-name">
               METAL
             </strong>
           </div>
+
         </div>
 
         <div class="passport-live-channels">
@@ -119,6 +153,14 @@
             UNPLUGGED
           </button>
 
+          <button
+            type="button"
+            class="passport-live-channel"
+            data-live-channel="livejam"
+          >
+            LIVE JAM
+          </button>
+
         </div>
 
         <div class="passport-live-controls">
@@ -128,6 +170,7 @@
             type="button"
             class="passport-live-play"
             aria-label="Ouvir ao vivo"
+            title="Ouvir ao vivo"
           >
             ▶
           </button>
@@ -149,7 +192,10 @@
     installChannelButtons();
     installPlayerControls();
 
-    selectChannel("metal", false);
+    selectChannel(
+      "metal",
+      false
+    );
   }
 
   function installChannelButtons() {
@@ -167,15 +213,8 @@
 
           selectChannel(
             channelKey,
-            false
+            true
           );
-
-          buttons.forEach((item) => {
-            item.classList.toggle(
-              "is-active",
-              item === button
-            );
-          });
         }
       );
     });
@@ -183,9 +222,7 @@
 
   function installPlayerControls() {
     const play =
-      document.getElementById(
-        "passport-live-play"
-      );
+      getLivePlayButton();
 
     const live =
       getLiveAudio();
@@ -234,16 +271,32 @@
     live.addEventListener(
       "playing",
       () => {
-        play.textContent = "Ⅱ";
-        setStatus("NO AR");
+        const playButton =
+          getLivePlayButton();
+
+        if (playButton) {
+          playButton.textContent = "Ⅱ";
+        }
+
+        setStatus(
+          "NO AR"
+        );
       }
     );
 
     live.addEventListener(
       "pause",
       () => {
-        play.textContent = "▶";
-        setStatus("PAUSADO");
+        const playButton =
+          getLivePlayButton();
+
+        if (playButton) {
+          playButton.textContent = "▶";
+        }
+
+        setStatus(
+          "PAUSADO"
+        );
       }
     );
 
@@ -266,9 +319,25 @@
     );
 
     live.addEventListener(
+      "canplay",
+      () => {
+        if (live.paused) {
+          setStatus(
+            "PRONTO"
+          );
+        }
+      }
+    );
+
+    live.addEventListener(
       "error",
       () => {
-        play.textContent = "▶";
+        const playButton =
+          getLivePlayButton();
+
+        if (playButton) {
+          playButton.textContent = "▶";
+        }
 
         setStatus(
           "SINAL INDISPONÍVEL"
@@ -290,11 +359,13 @@
       CHANNELS[channelKey];
 
     if (!config) {
+      console.warn(
+        "[Passport Live] canal inexistente:",
+        channelKey
+      );
+
       return;
     }
-
-    currentChannel =
-      channelKey;
 
     const live =
       getLiveAudio();
@@ -303,25 +374,27 @@
       return;
     }
 
+    currentChannel =
+      channelKey;
+
     const wasPlaying =
       !live.paused;
 
     live.pause();
 
-    live.removeAttribute("src");
+    live.removeAttribute(
+      "src"
+    );
+
     live.load();
 
     setChannelLabel(
       config.label
     );
 
-    if (!config.stream) {
-      setStatus(
-        "AGUARDANDO STREAM"
-      );
-
-      return;
-    }
+    updateActiveButton(
+      channelKey
+    );
 
     live.src =
       config.stream;
@@ -332,16 +405,20 @@
       "PRONTO"
     );
 
-    if (
-      autoplay ||
-      wasPlaying
-    ) {
+    const shouldPlay =
+      autoplay || wasPlaying;
+
+    if (shouldPlay) {
       stopArchive();
+
+      setStatus(
+        "CONECTANDO"
+      );
 
       live.play().catch(
         (error) => {
           console.error(
-            "[Passport Live] autoplay falhou:",
+            "[Passport Live] erro ao trocar canal:",
             error
           );
 
@@ -353,8 +430,8 @@
     }
 
     console.log(
-      "[Passport Live] canal:",
-      channelKey,
+      "[Passport Live] canal selecionado:",
+      config.label,
       config.stream
     );
   }
@@ -395,10 +472,11 @@
 
   function boot() {
     buildPlayer();
+
     installMutualExclusion();
 
     console.log(
-      "[Passport Live] pronto.",
+      "[Passport Live] motor iniciado.",
       currentChannel
     );
   }
