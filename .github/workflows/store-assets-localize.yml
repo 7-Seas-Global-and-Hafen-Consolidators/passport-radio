@@ -1,4 +1,4 @@
-name: Localize Passport Store product images
+name: Rebuild Passport Store selected catalog
 on:
   push:
     paths:
@@ -7,114 +7,89 @@ on:
 permissions:
   contents: write
 jobs:
-  localize-store-images:
+  rebuild-store:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Download exact product images into repository
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p images/store/imported
-          fetch() {
-            url="$1"; dest="$2"
-            echo "Fetching $dest"
-            curl -L --fail --retry 3 --retry-delay 2 -A 'Mozilla/5.0' "$url" -o "$dest"
-            test -s "$dest"
-          }
-          fetch 'https://m.media-amazon.com/images/I/71+nwMbFdKL._AC_SL1500_.jpg' 'images/store/imported/raveo-turner.jpg'
-          fetch 'https://m.media-amazon.com/images/I/61-I-0OlULL._AC_SL1200_.jpg' 'images/store/imported/raveo-harmony.jpg'
-          fetch 'https://m.media-amazon.com/images/I/61ljZu9+GXL._AC_SL1500_.jpg' 'images/store/imported/soundcore-p20i.jpg'
-          fetch 'https://m.media-amazon.com/images/I/51ouXTgynpL._AC_SL1500_.jpg' 'images/store/imported/jbl-tune-520bt.jpg'
-          fetch 'https://m.media-amazon.com/images/I/71FDqiLlkML._AC_SL1500_.jpg' 'images/store/imported/cuvave-cube-baby-bass.jpg'
-          fetch 'https://m.magazineluiza.com.br/a-static/420x420/guitarra-eletrica-sg-de-madeira-macica-thomaz-teg-340-vermelho/micromega3/10186576588/d70e0c46cb9d6a68217eb6f7709e4278.jpeg' 'images/store/imported/thomaz-teg-340.jpeg'
-          fetch 'https://a-static.mlcdn.com.br/420x420/baixolao-4-cordas-eletrico-strinberg-sb240c-ns-natural-fosco-original/audiodriver/5824/7f6b47061730851dd5ed028c2712038d.jpeg' 'images/store/imported/strinberg-sb240c.jpeg'
-          fetch 'https://m.media-amazon.com/images/I/51SQZKNJyZL._AC_SL1500_.jpg' 'images/store/imported/tagima-millenium-6.jpg'
-          fetch 'https://m.media-amazon.com/images/I/51n1AK9rmdL._AC_SL1500_.jpg' 'images/store/imported/jbl-sb595.jpg'
-          fetch 'https://m.media-amazon.com/images/I/61DFgTmj9xL._AC_SL1500_.jpg' 'images/store/imported/jbl-wave-beam-2.jpg'
-      - name: Resolve remaining Amazon main images
+      - name: Purge broken imported cards and rebuild selected batch
         shell: python
         run: |
           from pathlib import Path
-          import re, urllib.request
-          Path('images/store/imported').mkdir(parents=True, exist_ok=True)
-          targets={
-            'https://www.amazon.com.br/Toca-Discos-Multifuncional-Alto-Falantes-Velocidades-Integrados/dp/B0H2MFKDC8':'images/store/imported/toca-discos-multifuncional.jpg',
-            'https://www.amazon.com.br/Nextpal-toca-discos-substitui%C3%A7%C3%A3o-compat%C3%ADvel-fon%C3%B3grafo/dp/B0FX53Z546':'images/store/imported/nextpal-agulha.jpg',
-          }
-          for page,dest in targets.items():
-              req=urllib.request.Request(page,headers={'User-Agent':'Mozilla/5.0'})
-              try:
-                  html=urllib.request.urlopen(req,timeout=30).read().decode('utf-8','ignore')
-                  m=re.search(r'id="landingImage"[^>]+data-old-hires="([^"]+)"',html)
-                  if not m:
-                      m=re.search(r'data-old-hires="([^"]+)"[^>]+id="landingImage"',html)
-                  if not m:
-                      print('Could not resolve image for',page)
-                      continue
-                  img=m.group(1).replace('&amp;','&')
-                  req2=urllib.request.Request(img,headers={'User-Agent':'Mozilla/5.0'})
-                  Path(dest).write_bytes(urllib.request.urlopen(req2,timeout=30).read())
-                  print('Resolved',dest)
-              except Exception as e:
-                  print('Skipping unresolved image:',page,e)
-      - name: Replace wrong generic images and finalize selected batch
-        shell: python
-        run: |
-          from pathlib import Path
-          import re
           from urllib.parse import quote
+          import re
+
           p=Path('loja.html')
           s=p.read_text(encoding='utf-8')
-          s=s.replace('Contrabaixo Tagima 4 Cordas','Tagima Millenium 6 Natural',1)
-          s=s.replace('https://www.amazon.com.br/Tagima-Contra-Baixo-Cordas-Basswood/dp/B0D7NPGKFX','https://www.amazon.com.br/Contra-Cordas-Tagima-Millenium-Natural/dp/B09BX7TTZG',1)
-          replacements={
-            'Toca-discos Raveo · 3 velocidades':'/images/store/imported/raveo-turner.jpg',
-            'Vitrola Bluetooth Raveo Harmony':'/images/store/imported/raveo-harmony.jpg',
-            'Soundcore Bluetooth Headphones':'/images/store/imported/soundcore-p20i.jpg',
-            'JBL Tune 520BT':'/images/store/imported/jbl-tune-520bt.jpg',
-            'Guitarra Elétrica TEG-340 Vermelha':'/images/store/imported/thomaz-teg-340.jpeg',
-            'Tagima Millenium 6 Natural':'/images/store/imported/tagima-millenium-6.jpg',
-            'Baixolão Strinberg SB240C Elétrico':'/images/store/imported/strinberg-sb240c.jpeg',
-            'Pedaleira multifuncional recarregável':'/images/store/imported/cuvave-cube-baby-bass.jpg',
-          }
-          optional={
-            'Toca-discos multifuncional com alto-falantes':'/images/store/imported/toca-discos-multifuncional.jpg',
-          }
-          for name,img in replacements.items():
-              pattern=re.compile(r'(<article class="product product--source"[^>]*>.*?<img loading="lazy" src=")[^"]+(" alt="'+re.escape(name)+r'".*?</article>)',re.S)
-              s,n=pattern.subn(r'\1'+img+r'\2',s,count=1)
-              if n!=1:
-                  raise SystemExit(f'Could not update exact card image for: {name}')
-          for name,img in optional.items():
-              if Path(img.lstrip('/')).exists():
-                  pattern=re.compile(r'(<article class="product product--source"[^>]*>.*?<img loading="lazy" src=")[^"]+(" alt="'+re.escape(name)+r'".*?</article>)',re.S)
-                  s,_=pattern.subn(r'\1'+img+r'\2',s,count=1)
           marker='<!-- PASSPORT-CATALOG-AUG22-2026 -->'
-          extra=[]
+
+          # Remove the entire previously injected AUG22 batch. Those cards were
+          # created with generic/reused boutique images and are the source of
+          # the repeated "zombie" artwork visible in production.
+          if marker in s:
+              head, tail = s.split(marker,1)
+              while True:
+                  m=re.match(r'\s*<article class="product product--source".*?</article>',tail,re.S)
+                  if not m:
+                      break
+                  tail=tail[m.end():]
+              s=head+marker+'\n'+tail.lstrip('\n')
+
+          # Also remove any selected-batch cards from an interrupted prior run,
+          # so this workflow is idempotent and cannot duplicate products.
+          selected_names=[
+            'Toca-discos Raveo · 3 velocidades',
+            'Vitrola Bluetooth Raveo Harmony',
+            'Toca-discos multifuncional com alto-falantes',
+            'Soundcore Bluetooth Headphones',
+            'JBL Tune 520BT',
+            'Guitarra Elétrica TEG-340 Vermelha',
+            'Tagima Millenium 6 Natural',
+            'Contrabaixo Tagima 4 Cordas',
+            'Baixolão Strinberg SB240C Elétrico',
+            'Pedaleira multifuncional recarregável',
+            'JBL Cinema SB595 · Soundbar 5.1 + Subwoofer',
+            'JBL Wave Beam 2',
+            'Nextpal · reposição para toca-discos',
+          ]
+          for name in selected_names:
+              pat=re.compile(r'\s*<article class="product product--source"[^>]*>.*?<img[^>]+alt="'+re.escape(name)+r'".*?</article>',re.S)
+              s=pat.sub('',s)
+
+          items=[
+            ('vitrola','Raveo','Toca-discos Raveo · 3 velocidades','https://www.amazon.com.br/Raveo-Toca-discos-velocidades-auxiliares-tecnologia/dp/B0CVYMBJJJ','21x','https://m.media-amazon.com/images/I/71+nwMbFdKL._AC_SL1500_.jpg','Vitrola · Toca-discos'),
+            ('vitrola','Raveo','Vitrola Bluetooth Raveo Harmony','https://www.amazon.com.br/Vitrola-Bluetooth-Bivolt-Raveo-Harmony/dp/B075ZJ513F','21x','https://m.media-amazon.com/images/I/61-I-0OlULL._AC_SL1200_.jpg','Vitrola · Toca-discos'),
+            ('fone','Soundcore','Soundcore Bluetooth Headphones','https://www.amazon.com.br/soundcore-Bluetooth-Resist%C3%AAncia-Microfones-Personaliz%C3%A1vel/dp/B0BTYCRJSS','5x','https://m.media-amazon.com/images/I/61ljZu9+GXL._AC_SL1500_.jpg','Áudio · Headphone'),
+            ('fone','JBL','JBL Tune 520BT','https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0C4CCMNQT','5x','https://m.media-amazon.com/images/I/51ouXTgynpL._AC_SL1500_.jpg','Áudio · Headphone'),
+            ('guitarra','Thomaz','Guitarra Elétrica TEG-340 Vermelha','https://www.amazon.com.br/Guitarra-El%C3%A9trica-TEG-340-Vermelho-Thomaz/dp/B09RZZXM8F','21x','https://m.magazineluiza.com.br/a-static/420x420/guitarra-eletrica-sg-de-madeira-macica-thomaz-teg-340-vermelho/micromega3/10186576588/d70e0c46cb9d6a68217eb6f7709e4278.jpeg','Instrumento · Guitarra'),
+            ('baixo','Tagima','Tagima Millenium 6 Natural','https://www.amazon.com.br/Contra-Cordas-Tagima-Millenium-Natural/dp/B09BX7TTZG','21x','https://m.media-amazon.com/images/I/51SQZKNJyZL._AC_SL1500_.jpg','Instrumento · Baixo'),
+            ('baixo','Strinberg','Baixolão Strinberg SB240C Elétrico','https://www.amazon.com.br/Baixol%C3%A3o-Strinberg-Sb240c-El%C3%A9trico-Natural/dp/B07ZHH31QT','21x','https://a-static.mlcdn.com.br/420x420/baixolao-4-cordas-eletrico-strinberg-sb240c-ns-natural-fosco-original/audiodriver/5824/7f6b47061730851dd5ed028c2712038d.jpeg','Instrumento · Baixo'),
+            ('pedaleira','','Pedaleira multifuncional recarregável','https://www.amazon.com.br/pedaleira%EF%BC%8CCom-sintonizadores-equaliza%C3%A7%C3%A3o-compress%C3%A3o-recarreg%C3%A1vel/dp/B0D9XLD41W','21x','https://m.media-amazon.com/images/I/71FDqiLlkML._AC_SL1500_.jpg','Instrumento · Pedaleira'),
+            ('soundbar','JBL','JBL Cinema SB595 · Soundbar 5.1 + Subwoofer','https://www.amazon.com.br/JBL-Soundbar-Cinema-Canais-Subwoofer/dp/B0FZXTYQ3V','21x','https://m.media-amazon.com/images/I/51n1AK9rmdL._AC_SL1500_.jpg','Áudio · Soundbar'),
+            ('fone','JBL','JBL Wave Beam 2','https://www.amazon.com.br/Ouvido-JBL-Bluetooth-Auricular-Resistente/dp/B0DHL93XCN','5x','https://m.media-amazon.com/images/I/61DFgTmj9xL._AC_SL1500_.jpg','Áudio · True Wireless'),
+          ]
+
           def card(cat,band,name,url,parcel,img,typ):
               bandattr=f' data-band="{band}"' if band else ''
               wa=quote('Olá! Quero comprar '+name+'. Pode me enviar o preço final e o link de pagamento?')
               return f'''\n      <article class="product product--source" data-category="{cat}"{bandattr}>\n        <div class="product-media"><span class="product-badge product-badge--red">NOVO</span><img loading="lazy" src="{img}" alt="{name}"></div>\n        <div class="product-info"><div class="product-type">{typ}</div><h3>{name}</h3><div class="product-price">PREÇO DIRETO</div><div class="product-installments">parcelamento em até {parcel}*</div><div class="product-actions"><a class="buy-button" href="{url}" target="_blank" rel="noopener sponsored">Ver produto</a><a class="quick-button" href="https://wa.me/48732099369?text={wa}" target="_blank" rel="noopener" aria-label="Comprar {name}">+</a></div></div>\n      </article>'''
-          if 'JBL Cinema SB595' not in s:
-              extra.append(card('soundbar','JBL','JBL Cinema SB595 · Soundbar 5.1 + Subwoofer','https://www.amazon.com.br/JBL-Soundbar-Cinema-Canais-Subwoofer/dp/B0FZXTYQ3V','21x','/images/store/imported/jbl-sb595.jpg','Áudio · Soundbar'))
-          if 'JBL Wave Beam 2' not in s:
-              extra.append(card('fone','JBL','JBL Wave Beam 2','https://www.amazon.com.br/Ouvido-JBL-Bluetooth-Auricular-Resistente/dp/B0DHL93XCN','5x','/images/store/imported/jbl-wave-beam-2.jpg','Áudio · True Wireless'))
-          if 'Nextpal · reposição para toca-discos' not in s and Path('images/store/imported/nextpal-agulha.jpg').exists():
-              extra.append(card('agulha','Nextpal','Nextpal · reposição para toca-discos','https://www.amazon.com.br/Nextpal-toca-discos-substitui%C3%A7%C3%A3o-compat%C3%ADvel-fon%C3%B3grafo/dp/B0FX53Z546','5x','/images/store/imported/nextpal-agulha.jpg','Áudio · Agulha / reposição'))
-          if extra:
-              s=s.replace(marker,marker+''.join(extra),1)
+
+          block=''.join(card(*x) for x in items)
+          if marker not in s:
+              raise SystemExit('Catalog marker missing; refusing unsafe rewrite')
+          s=s.replace(marker,marker+block,1)
           p.write_text(s,encoding='utf-8')
-      - name: Commit localized product images
+          print('Zombie AUG22 catalog purged; selected batch rebuilt:',len(items),'cards')
+
+      - name: Commit rebuilt store
         shell: bash
         run: |
           git config user.name 'Passport Store Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add loja.html images/store/imported
+          git add loja.html
           if git diff --cached --quiet; then
-            echo 'No changes to commit.'
+            echo 'No store changes to commit.'
             exit 0
           fi
-          git commit -m 'Fix imported store product images and final selected batch'
+          git commit -m 'Rebuild store selected catalog without generic zombie cards'
           git push
-# trigger 2026-08-22 final selected batch
+# trigger rebuild-v2 2026-08-22
