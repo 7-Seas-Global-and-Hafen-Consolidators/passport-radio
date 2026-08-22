@@ -1,0 +1,77 @@
+name: Passport Store catalog expansion
+on:
+  push:
+    paths:
+      - '.github/workflows/passport-store-catalog.yml'
+permissions:
+  contents: write
+jobs:
+  expand-store:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add curated music catalog
+        shell: python
+        run: |
+          from pathlib import Path
+          from urllib.parse import quote
+          p=Path('loja.html')
+          s=p.read_text(encoding='utf-8')
+          if 'PASSPORT-CATALOG-AUG22-2026' in s:
+              raise SystemExit('catalog already installed')
+          items=[
+            ('vitrola','Raveo','Toca-discos Raveo · 3 velocidades','https://www.amazon.com.br/Raveo-Toca-discos-velocidades-auxiliares-tecnologia/dp/B0CVYMBJJJ','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('vitrola','Raveo','Vitrola Bluetooth Raveo Harmony','https://www.amazon.com.br/Vitrola-Bluetooth-Bivolt-Raveo-Harmony/dp/B075ZJ513F','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('vitrola','','Toca-discos multifuncional com alto-falantes','https://www.amazon.com.br/Toca-Discos-Multifuncional-Alto-Falantes-Velocidades-Integrados/dp/B0H2MFKDC8','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('fone','Soundcore','Soundcore Bluetooth Headphones','https://www.amazon.com.br/soundcore-Bluetooth-Resist%C3%AAncia-Microfones-Personaliz%C3%A1vel/dp/B0BTYCRJSS','5x','/images/boutique/estojos-fones-e-acessorios.png'),
+            ('fone','JBL','JBL Tune 520BT','https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0C4CCMNQT','5x','/images/boutique/estojos-fones-e-acessorios.png'),
+            ('cd','Hibria','Hibria — On The Shortness Of Life','https://www.lojabackinblack.com.br/cd-hibria-on-the-shortness-of-life','5x','https://hmrock.com.br/wp-content/uploads/2026/07/cd-deeppurplesplat.jpg'),
+            ('ecobag','Rita Lee','Ecobag Rita Lee','https://www.lojabackinblack.com.br/bolsa-ecobag-rita-lee','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('ecobag','Ramones','Ecobag Ramones','https://www.lojabackinblack.com.br/bolsa-ecobag-ramones','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('almofada','Accept','Capa de Almofada Accept — Blood of the Nations','https://cyberrock.com.br/produtos/decoracao/capa-almofada-accept-blood-of-the-nations.html','5x','/images/boutique/cadernos-e-canetas.png'),
+            ('tenis','Whitesnake','Tênis Star Cano Alto Whitesnake','https://www.longrider.com.br/tenis/tenis-star-cano-alto-banda-whitesnake?variant_id=20091','5x','/images/store/tenis/Screenshot%202026-08-10%20at%2022-07-33%20BON%20JOVI%20shoes%20%E2%80%93%20Bornrocker%20Brand.png'),
+            ('guitarra','Thomaz','Guitarra Elétrica TEG-340 Vermelha','https://www.amazon.com.br/Guitarra-El%C3%A9trica-TEG-340-Vermelho-Thomaz/dp/B09RZZXM8F','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('baixo','Tagima','Contrabaixo Tagima 4 Cordas','https://www.amazon.com.br/Tagima-Contra-Baixo-Cordas-Basswood/dp/B0D7NPGKFX','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('baixo','Strinberg','Baixolão Strinberg SB240C Elétrico','https://www.amazon.com.br/Baixol%C3%A3o-Strinberg-Sb240c-El%C3%A9trico-Natural/dp/B07ZHH31QT','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('pedaleira','','Pedaleira multifuncional recarregável','https://www.amazon.com.br/pedaleira%EF%BC%8CCom-sintonizadores-equaliza%C3%A7%C3%A3o-compress%C3%A3o-recarreg%C3%A1vel/dp/B0D9XLD41W','21x','/images/boutique/acessorios-escritorio-e-tecnologia.png'),
+            ('vinil','Nirvana','Nirvana — Nevermind · Limited Silver','https://www.amazon.com.br/Nevermind-Exclusive-Limited-Silver-Condition-VG/dp/B07SZ2ND5F','5x','/images/boutique/suportes-smartphone-e-porta-canetas.png'),
+            ('vinil','AC/DC','AC/DC — The Razors Edge','https://www.amazon.com.br/Razors-Edge-Disco-Vinil-AC/dp/B0000CF35N','5x','/images/boutique/suportes-smartphone-e-porta-canetas.png'),
+            ('vinil','Tears For Fears','Tears For Fears — Rule The World','https://www.amazon.com.br/World-Disco-Vinil-Tears-Fears/dp/B076BWF1ND','5x','/images/boutique/suportes-smartphone-e-porta-canetas.png'),
+            ('vinil','ABBA','ABBA — Gold: Greatest Hits','https://www.amazon.com.br/Gold-Greatest-Hits-Disco-Vinil/dp/B00JSRXE3G','5x','/images/boutique/suportes-smartphone-e-porta-canetas.png'),
+            ('vinil','Guns N’ Roses','Guns N’ Roses — Appetite for Destruction','https://www.amazon.com.br/Appetite-Destruction-Vinyl-Reissue-Roses/dp/B07Z75ZRSL','5x','/images/boutique/suportes-smartphone-e-porta-canetas.png'),
+            ('relogio','','VELMORAS — Relógio Temático de Guitarrista','https://www.amazon.com/VELMORAS-Personalized-Guitarist-Classic-Watches/dp/B0H4PZZMWL','5x','/images/store/relogios/Screenshot%202026-08-11%20at%2006-22-39%20Rel%C3%B3gio%20de%20pulso%20Mot%C3%B6rhead%20-%20Heavy%20Metal%20Rock.png'),
+            ('relogio','Kiss','KISS — Relógio de Pulso','https://hmrock.com.br/produto/relogio-de-pulso-kiss/','5x','/images/store/relogios/Screenshot%202026-08-11%20at%2006-19-38%20Rel%C3%B3gio%20de%20pulso%20Ozzy%20Osbourne%20-%20Heavy%20Metal%20Rock.png'),
+            ('relogio','Pink Floyd','Pink Floyd — Relógio de Pulso','https://hmrock.com.br/produto/relogio-de-pulso-pink-floyd/','5x','/images/store/relogios/Screenshot%202026-08-11%20at%2006-23-10%20Rel%C3%B3gio%20de%20pulso%20Pink%20Floyd%20-%20Heavy%20Metal%20Rock.png'),
+            ('chaveiro','Deep Purple','Deep Purple — Chaveiro','https://hmrock.com.br/produto/chaveiro-deep-purple/','5x','/images/boutique/chaveiros-colecao-completa.png'),
+            ('chaveiro','Queen','Queen — Chaveiro','https://hmrock.com.br/produto/chaveiro-queen-4/','5x','/images/boutique/chaveiros-colecao-completa.png'),
+            ('chaveiro','Scorpions','Scorpions — Chaveiro','https://hmrock.com.br/produto/chaveiro-scorpions-2/','5x','/images/boutique/chaveiros-colecao-completa.png'),
+            ('carteira','Nirvana','Nirvana — In Utero · Carteira','https://hmrock.com.br/produto/carteira-nirvana-in-utero/','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('carteira','Black Sabbath','Black Sabbath — Carteira','https://hmrock.com.br/produto/carteira-black-sabbath/','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('carteira','Megadeth','Megadeth — Carteira','https://hmrock.com.br/produto/carteira-megadeth-3/','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('carteira','Venom','Venom — Welcome to Hell · Carteira','https://hmrock.com.br/produto/carteira-venom-welcome-to-hell/','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('carteira','Angra','Angra — Angels Cry · Carteira','https://hmrock.com.br/produto/carteira-angra-angels-cry/','5x','/images/boutique/acessorios-pessoais-e-documentos.png'),
+            ('quadro','Bon Jovi','Bon Jovi — Tela','https://hmrock.com.br/produto/tela-bon-jovi/','5x','/images/store/quadros/Screenshot%202026-08-11%20at%2005-29-02%20Azulejo%20Personalizado%2015x15%20cm%20em%20Cer%C3%A2mica%20com%20Suporte%20Queen.png'),
+          ]
+          def card(cat,band,name,url,parcel,img):
+              bandattr=f' data-band="{band}"' if band else ''
+              typ={'vitrola':'Vitrola · Toca-discos','fone':'Áudio · Headphone','cd':'CD','ecobag':'Ecobag','almofada':'Decoração · Almofada','tenis':'Tênis','guitarra':'Instrumento · Guitarra','baixo':'Instrumento · Baixo','pedaleira':'Instrumento · Pedaleira','vinil':'Vinil · LP','relogio':'Relógio','chaveiro':'Chaveiro','carteira':'Carteira','quadro':'Decoração · Tela'}[cat]
+              return f'''\n      <article class="product product--source" data-category="{cat}"{bandattr}>\n        <div class="product-media"><span class="product-badge product-badge--red">NOVO</span><img loading="lazy" src="{img}" alt="{name}"></div>\n        <div class="product-info"><div class="product-type">{typ}</div><h3>{name}</h3><div class="product-price">PREÇO DIRETO</div><div class="product-installments">parcelamento em até {parcel}*</div><div class="product-actions"><a class="buy-button" href="{url}" target="_blank" rel="noopener sponsored">Ver produto</a><a class="quick-button" href="https://wa.me/48732099369?text={quote('Olá! Quero comprar '+name+'. Pode me enviar o preço final e o link de pagamento?')}" target="_blank" rel="noopener" aria-label="Comprar {name}">+</a></div></div>\n      </article>'''
+          block='\n\n      <!-- PASSPORT-CATALOG-AUG22-2026 -->\n      '+''.join(card(*x) for x in items)+'\n'
+          marker='\n</div>\n  </div>\n</section>\n\n<section class="store-section">\n  <div class="store-shell">\n    <div class="store-banner">'
+          pos=s.find(marker, s.find('id="products"'))
+          if pos<0: raise SystemExit('product-grid marker not found')
+          s=s[:pos]+block+s[pos:]
+          s=s.replace('<div class="store-benefit"><b>ATÉ 5X*</b><small>Conforme condição do pagamento</small></div>','<div class="store-benefit"><b>ATÉ 21X*</b><small>5x no catálogo · até 21x em equipamentos selecionados</small></div>',1)
+          s=s.replace('<div class="store-topline">PREÇO DIRETO · PAGAMENTO FACILITADO · FRETE GRÁTIS EM PRODUTOS SELECIONADOS</div>','<div class="store-topline">PREÇO DIRETO · ATÉ 5X NO CATÁLOGO · ATÉ 21X EM EQUIPAMENTOS SELECIONADOS · FRETE GRÁTIS EM PRODUTOS SELECIONADOS</div>',1)
+          # Add category pills without disturbing existing filters.
+          needle='<button class="store-pill" data-filter="relogio">Relógios</button>'
+          extra=needle+'\n      <button class="store-pill" data-filter="vinil">Vinis</button>\n      <button class="store-pill" data-filter="vitrola">Vitrolas</button>\n      <button class="store-pill" data-filter="fone">Áudio</button>\n      <button class="store-pill" data-filter="guitarra">Guitarras</button>\n      <button class="store-pill" data-filter="baixo">Baixos</button>\n      <button class="store-pill" data-filter="pedaleira">Pedaleiras</button>\n      <button class="store-pill" data-filter="chaveiro">Chaveiros</button>\n      <button class="store-pill" data-filter="carteira">Carteiras</button>'
+          s=s.replace(needle,extra,1)
+          p.write_text(s,encoding='utf-8')
+      - name: Commit catalog
+        run: |
+          git config user.name "Passport Store Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add loja.html
+          git commit -m "Expand Passport Store music catalog"
+          git push
