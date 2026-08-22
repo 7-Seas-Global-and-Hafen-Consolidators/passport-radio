@@ -1,0 +1,65 @@
+name: Localize Passport Store product images
+on:
+  push:
+    paths:
+      - '.github/workflows/store-assets-localize.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  localize-store-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Download exact product images into repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p images/store/imported
+          fetch() {
+            url="$1"; dest="$2"
+            echo "Fetching $dest"
+            curl -L --fail --retry 3 --retry-delay 2 -A 'Mozilla/5.0' "$url" -o "$dest"
+            test -s "$dest"
+          }
+          fetch 'https://m.media-amazon.com/images/I/71+nwMbFdKL._AC_SL1500_.jpg' 'images/store/imported/raveo-turner.jpg'
+          fetch 'https://m.media-amazon.com/images/I/61-I-0OlULL._AC_SL1200_.jpg' 'images/store/imported/raveo-harmony.jpg'
+          fetch 'https://m.media-amazon.com/images/I/61ljZu9+GXL._AC_SL1500_.jpg' 'images/store/imported/soundcore-p20i.jpg'
+          fetch 'https://m.media-amazon.com/images/I/51ouXTgynpL._AC_SL1500_.jpg' 'images/store/imported/jbl-tune-520bt.jpg'
+          fetch 'https://m.media-amazon.com/images/I/71FDqiLlkML._AC_SL1500_.jpg' 'images/store/imported/cuvave-cube-baby-bass.jpg'
+          fetch 'https://m.magazineluiza.com.br/a-static/420x420/guitarra-eletrica-sg-de-madeira-macica-thomaz-teg-340-vermelho/micromega3/10186576588/d70e0c46cb9d6a68217eb6f7709e4278.jpeg' 'images/store/imported/thomaz-teg-340.jpeg'
+          fetch 'https://a-static.mlcdn.com.br/420x420/baixolao-4-cordas-eletrico-strinberg-sb240c-ns-natural-fosco-original/audiodriver/5824/7f6b47061730851dd5ed028c2712038d.jpeg' 'images/store/imported/strinberg-sb240c.jpeg'
+      - name: Replace wrong generic images only on matching imported cards
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('loja.html')
+          s=p.read_text(encoding='utf-8')
+          replacements={
+            'Toca-discos Raveo · 3 velocidades':'/images/store/imported/raveo-turner.jpg',
+            'Vitrola Bluetooth Raveo Harmony':'/images/store/imported/raveo-harmony.jpg',
+            'Soundcore Bluetooth Headphones':'/images/store/imported/soundcore-p20i.jpg',
+            'JBL Tune 520BT':'/images/store/imported/jbl-tune-520bt.jpg',
+            'Guitarra Elétrica TEG-340 Vermelha':'/images/store/imported/thomaz-teg-340.jpeg',
+            'Baixolão Strinberg SB240C Elétrico':'/images/store/imported/strinberg-sb240c.jpeg',
+            'Pedaleira multifuncional recarregável':'/images/store/imported/cuvave-cube-baby-bass.jpg',
+          }
+          for name,img in replacements.items():
+              pattern=re.compile(r'(<article class="product product--source"[^>]*>.*?<img loading="lazy" src=")[^"]+(" alt="'+re.escape(name)+r'".*?</article>)',re.S)
+              s,n=pattern.subn(r'\1'+img+r'\2',s,count=1)
+              if n!=1:
+                  raise SystemExit(f'Could not update exact card image for: {name}')
+          p.write_text(s,encoding='utf-8')
+      - name: Commit localized product images
+        shell: bash
+        run: |
+          git config user.name 'Passport Store Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add loja.html images/store/imported
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Fix imported store product images'
+          git push
