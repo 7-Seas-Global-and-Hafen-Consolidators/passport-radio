@@ -9,6 +9,37 @@
 .store-actions,.product-actions{display:flex;flex-wrap:wrap;gap:8px}
 .store-pill{white-space:nowrap}
 
+/* Passport Store: nunca mandar a compra para Amazon.
+   Mantém as imagens intactas e transforma o atalho WhatsApp
+   já existente nesses cards no CTA principal visível. */
+.product--source .buy-button[href*="amazon.com.br"]{
+  display:none!important;
+}
+.product--source .quick-button[href*="wa.me"]{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  flex:1 1 auto;
+  min-width:120px;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:0;
+  background:#111;
+  color:#fff;
+  font-size:0!important;
+  font-weight:900;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+.product--source .quick-button[href*="wa.me"]::after{
+  content:"Comprar";
+  font-size:.68rem;
+  letter-spacing:.04em;
+}
+.product--source .quick-button[href*="wa.me"]:hover{
+  background:#d71920;
+}
+
 @media(max-width:980px){
   .store-grid,.products-grid,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
