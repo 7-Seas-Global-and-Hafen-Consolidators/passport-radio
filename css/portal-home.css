@@ -22,6 +22,16 @@ a:focus-visible,button:focus-visible{
   outline-offset:3px!important;
 }
 
+/* PASSPORT LIVE ARCHIVE — additive layer; existing three streams remain intact. */
+.passport-live-channel--archive{border-color:#d4af37!important}
+.passport-live-channel--archive.is-active{background:#d4af37!important;color:#080808!important}
+.passport-live-archive-copy{min-width:0;padding:9px 0 2px}
+.passport-live-archive-copy strong,.passport-live-archive-copy small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.passport-live-archive-copy strong{font-size:.78rem;letter-spacing:.035em}
+.passport-live-archive-copy small{margin-top:3px;font-size:.58rem;letter-spacing:.09em;opacity:.66}
+#passport-live-prev,#passport-live-next{border:0;background:transparent;color:inherit;cursor:pointer;font:inherit;padding:8px 10px}
+.passport-youtube-stage{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;pointer-events:none!important;opacity:.001!important}
+
 @media(max-width:980px){
   .portal-top{left:0!important}
   main{margin-left:0!important}
@@ -37,6 +47,7 @@ a:focus-visible,button:focus-visible{
   .hero{padding-top:28px!important}
   .hero-grid,.quick-grid,.news-layout{grid-template-columns:1fr!important}
   .hero-side{grid-template-columns:1fr!important}
+  .passport-live-channels{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 
 @media(max-width:480px){
