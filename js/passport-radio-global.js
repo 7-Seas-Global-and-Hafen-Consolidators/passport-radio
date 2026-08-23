@@ -10,8 +10,8 @@
 })();
 
 /* PASSPORT RADIO · LIVE & RARE · WACKENTV UNDERGROUND TUNNEL
-   Audio-first hidden YouTube engine. Only WackenTV live performances are accepted.
-   Interviews, podcasts, documentaries, trailers, recaps and backstage material are rejected.
+   Six supplied Wacken playlists are loaded as one continuous bank.
+   Restricted to body.live-page + #player; the three 24h online players are untouched.
 */
 (() => {
   "use strict";
@@ -19,7 +19,15 @@
   const host=document.getElementById("player");
   if(!host)return;
 
-  const WACKEN_UPLOADS="UUvQT6N9nu2BJ-lJuMg1jEZQ";
+  const WACKEN_PLAYLISTS=[
+    "PLPfPNs01OQC3_H1e978hugznB6S7ItZ8Q",
+    "PLPfPNs01OQC0Wl_hPub-3_PTUvxsAN36l",
+    "PLPfPNs01OQC3ET6JyUgbW6R5Yp8BReNFd",
+    "PLPfPNs01OQC1cp6O1jxo-bfWMG0-l_clJ",
+    "PLPfPNs01OQC0_wDTyJ_UWJKZOvBdN4fXt",
+    "PLPfPNs01OQC0ixXl9wwUBqWxSOLmd4P3w"
+  ];
+  let playlistBankIndex=0;
   const oldPlayer=host.querySelector(".audio-player"),oldAudio=document.getElementById("passportAudio");
   if(oldAudio){oldAudio.pause();oldAudio.removeAttribute("autoplay")}
   if(oldPlayer)oldPlayer.remove();
@@ -41,42 +49,33 @@
 
   const stage=document.createElement("div");
   stage.className="live-rare-stage";
-  stage.innerHTML=`<div class="live-rare-engine" aria-hidden="true"><div id="passport-live-rare-engine"></div></div><div class="live-rare-tunnel"><div class="live-rare-tunnel-copy"><div class="live-rare-kicker">LIVE & RARE · PASSPORT RADIO</div><div class="live-rare-tunnel-title" id="liveRareTunnelTitle">Localizando performances do WackenTV…</div><div class="live-rare-tunnel-meta" id="liveRareTunnelMeta">WACKEN OPEN AIR · PERFORMANCE FEED</div></div></div><div class="live-rare-console"><div class="live-rare-brand"><span>LIVE & RARE · PASSPORT RADIO</span><span id="liveRareStatus">LOADING</span></div><div class="live-rare-title" id="liveRareTitle">WackenTV</div><div class="live-rare-sub" id="liveRareMeta">Official WackenTV · Live Performances</div><div class="live-rare-controls"><button class="live-rare-btn" id="liveRarePrev" type="button" aria-label="Anterior">◀</button><button class="live-rare-btn live-rare-btn--play" id="liveRarePlay" type="button" aria-label="Reproduzir">▶</button><button class="live-rare-btn" id="liveRareNext" type="button" aria-label="Próxima">▶</button><input class="live-rare-progress" id="liveRareProgress" type="range" min="0" max="100" step=".1" value="0" aria-label="Progresso"></div></div>`;
+  stage.innerHTML=`<div class="live-rare-engine" aria-hidden="true"><div id="passport-live-rare-engine"></div></div><div class="live-rare-tunnel"><div class="live-rare-tunnel-copy"><div class="live-rare-kicker">LIVE & RARE · PASSPORT RADIO</div><div class="live-rare-tunnel-title" id="liveRareTunnelTitle">Carregando acervo Wacken…</div><div class="live-rare-tunnel-meta" id="liveRareTunnelMeta">WACKEN OPEN AIR · UNDERGROUND FEED</div></div></div><div class="live-rare-console"><div class="live-rare-brand"><span>LIVE & RARE · PASSPORT RADIO</span><span id="liveRareStatus">LOADING</span></div><div class="live-rare-title" id="liveRareTitle">Wacken Archive</div><div class="live-rare-sub" id="liveRareMeta">Six Wacken playlists · Underground Archive</div><div class="live-rare-controls"><button class="live-rare-btn" id="liveRarePrev" type="button" aria-label="Anterior">◀</button><button class="live-rare-btn live-rare-btn--play" id="liveRarePlay" type="button" aria-label="Reproduzir">▶</button><button class="live-rare-btn" id="liveRareNext" type="button" aria-label="Próxima">▶</button><input class="live-rare-progress" id="liveRareProgress" type="range" min="0" max="100" step=".1" value="0" aria-label="Progresso"></div></div>`;
   host.appendChild(stage);
 
   const q=id=>document.getElementById(id);
   const title=q("liveRareTitle"),meta=q("liveRareMeta"),status=q("liveRareStatus"),play=q("liveRarePlay"),progress=q("liveRareProgress"),tunnelTitle=q("liveRareTunnelTitle"),tunnelMeta=q("liveRareTunnelMeta");
-  let player=null,ready=false,timer=null,wantPlay=false,scanDirection=1,scanCount=0,validating=false,validationTimer=null;
+  let player=null,ready=false,timer=null,wantPlay=false,validating=false,validationTimer=null;
 
   function parseDisplay(raw){
-    const clean=String(raw||"WackenTV").replace(/\s+-\s+YouTube$/i,"").trim();
+    const clean=String(raw||"Wacken").replace(/\s+-\s+YouTube$/i,"").trim();
     const year=(clean.match(/\b(19|20)\d{2}\b/)||[])[0]||"";
     const artist=(clean.split(/\s+-\s+/)[0]||clean).trim();
     return {clean,artist,year};
   }
 
-  function looksLikePerformance(raw,duration){
-    const t=String(raw||"").toLowerCase();
-    const blocked=/(interview|deep talk|podcast|talk show|documentary|behind[ -]the[ -]scenes|backstage|campground|harry metal|recap|aftermovie|trailer|teaser|announcement|line[ -]?up|running order|festival update|news|message from|greeting|statement|press conference|making of|preview|reaction|tour vlog|vlog|crew|arrival|setup|soundcheck|shorts?)/i.test(t);
-    if(blocked)return false;
-    if(Number(duration)>0&&Number(duration)<70)return false;
-    const performance=/(live at wacken|live @ wacken|live from wacken|wacken open air.*live|live.*wacken open air|full show|full concert|full set|metal battle.*live|live performance|[0-9]+ songs?.*live)/i.test(t);
-    return performance;
-  }
-
   function syncFromVideo(){
     if(!ready)return false;
     const data=player.getVideoData?player.getVideoData():{};
-    const raw=data&&data.title?data.title:"WackenTV";
+    const raw=data&&data.title?data.title:"Wacken";
     const d=parseDisplay(raw);
     title.textContent=d.clean;
-    meta.textContent=`WACKENTV · WACKEN OPEN AIR${d.year?` · ${d.year}`:""}`;
+    meta.textContent=`WACKEN · PLAYLIST ${playlistBankIndex+1}/6${d.year?` · ${d.year}`:""}`;
     tunnelTitle.textContent=d.clean;
-    tunnelMeta.textContent=`WACKENTV · LIVE PERFORMANCE${d.year?` · ${d.year}`:""}`;
+    tunnelMeta.textContent=`WACKEN · UNDERGROUND ARCHIVE · PLAYLIST ${playlistBankIndex+1}/6`;
     const top=q("currentTrackTitle");if(top)top.textContent=d.clean;
-    const desc=q("currentTrackDescription");if(desc)desc.textContent="Passport Radio · Live & Rare · WackenTV performance";
+    const desc=q("currentTrackDescription");if(desc)desc.textContent="Passport Radio · Live & Rare · Wacken Archive";
     const bt=q("bottomTrackTitle");if(bt)bt.textContent=d.artist;
-    const bm=q("bottomTrackMeta");if(bm)bm.textContent=`WackenTV · Live & Rare${d.year?` · ${d.year}`:""}`;
+    const bm=q("bottomTrackMeta");if(bm)bm.textContent=`Wacken · Live & Rare · Playlist ${playlistBankIndex+1}/6`;
     return true;
   }
 
@@ -89,62 +88,51 @@
     },500);
   }
 
-  function advanceAfterReject(){
-    validating=false;
+  function cueBank(bankIndex,itemIndex=0,autoplay=false){
+    if(!ready)return;
+    playlistBankIndex=(bankIndex+WACKEN_PLAYLISTS.length)%WACKEN_PLAYLISTS.length;
+    validating=true;
+    status.textContent="LOADING";
     clearTimeout(validationTimer);
-    scanCount++;
-    if(scanCount>400){status.textContent="RETRY";scanCount=0;setTimeout(()=>{try{player.cuePlaylist({listType:"playlist",list:WACKEN_UPLOADS,index:Math.floor(Math.random()*50)})}catch(e){}},500);return}
-    status.textContent="SCANNING";
-    try{player.mute()}catch(e){}
-    setTimeout(()=>{try{scanDirection<0?player.previousVideo():player.nextVideo()}catch(e){};setTimeout(startValidation,250)},160);
+    try{player.mute();player.setVolume(0);player.cuePlaylist({listType:"playlist",list:WACKEN_PLAYLISTS[playlistBankIndex],index:Math.max(0,itemIndex)})}catch(e){}
+    validationTimer=setTimeout(()=>validateCurrent(0,autoplay),700);
   }
 
-  function acceptCurrent(){
-    validating=false;
-    clearTimeout(validationTimer);
-    scanCount=0;
-    syncFromVideo();
-    if(wantPlay){
-      try{player.unMute();player.setVolume(100);player.playVideo()}catch(e){}
-      status.textContent="ON AIR";
-      play.textContent="Ⅱ";
-      watch();
-    }else{
-      try{player.pauseVideo();player.unMute();player.setVolume(100)}catch(e){}
-      status.textContent="READY";
-      play.textContent="▶";
-      clearInterval(timer);
-    }
-  }
-
-  function validateCurrent(attempt=0){
+  function validateCurrent(attempt=0,autoplay=false){
     if(!ready||!player||!player.getVideoData)return;
     const data=player.getVideoData()||{};
     const raw=data.title||"";
-    const dur=player.getDuration?player.getDuration():0;
-    if((!raw||!dur)&&attempt<20){validationTimer=setTimeout(()=>validateCurrent(attempt+1),250);return}
-    if(!raw||!dur){advanceAfterReject();return}
-    if(looksLikePerformance(raw,dur))acceptCurrent();else advanceAfterReject();
-  }
-
-  function startValidation(){
-    if(!ready||validating)return;
-    validating=true;
-    status.textContent="SCANNING";
-    clearTimeout(validationTimer);
-    try{player.mute();player.setVolume(0);player.playVideo()}catch(e){}
-    validationTimer=setTimeout(()=>validateCurrent(0),350);
+    if(!raw&&attempt<24){validationTimer=setTimeout(()=>validateCurrent(attempt+1,autoplay),250);return}
+    if(!raw){cueBank(playlistBankIndex+1,0,autoplay);return}
+    validating=false;
+    syncFromVideo();
+    if(autoplay||wantPlay){
+      wantPlay=true;
+      try{player.unMute();player.setVolume(100);player.playVideo()}catch(e){}
+      status.textContent="ON AIR";play.textContent="Ⅱ";watch();
+    }else{
+      try{player.pauseVideo();player.unMute();player.setVolume(100)}catch(e){}
+      status.textContent="READY";play.textContent="▶";clearInterval(timer);
+    }
   }
 
   function move(direction){
     if(!ready)return;
-    scanDirection=direction;
-    validating=false;
-    clearTimeout(validationTimer);
-    status.textContent="SCANNING";
-    try{player.mute();player.setVolume(0)}catch(e){}
-    try{direction<0?player.previousVideo():player.nextVideo()}catch(e){}
-    setTimeout(startValidation,300);
+    validating=false;clearTimeout(validationTimer);
+    const list=player.getPlaylist?player.getPlaylist():[];
+    const idx=player.getPlaylistIndex?player.getPlaylistIndex():0;
+    if(direction>0&&list.length&&idx>=list.length-1){cueBank(playlistBankIndex+1,0,true);return}
+    if(direction<0&&idx<=0){
+      const previousBank=(playlistBankIndex-1+WACKEN_PLAYLISTS.length)%WACKEN_PLAYLISTS.length;
+      playlistBankIndex=previousBank;
+      validating=true;status.textContent="LOADING";
+      try{player.mute();player.setVolume(0);player.cuePlaylist({listType:"playlist",list:WACKEN_PLAYLISTS[playlistBankIndex],index:0})}catch(e){}
+      setTimeout(()=>{const p=player.getPlaylist?player.getPlaylist():[];if(p.length){try{player.playVideoAt(p.length-1)}catch(e){}}setTimeout(()=>validateCurrent(0,true),500)},800);
+      return;
+    }
+    status.textContent="LOADING";
+    try{player.mute();player.setVolume(0);direction<0?player.previousVideo():player.nextVideo()}catch(e){}
+    validating=true;setTimeout(()=>validateCurrent(0,true),500);
   }
 
   function makePlayer(){
@@ -153,19 +141,14 @@
       width:"320",height:"180",
       playerVars:{playsinline:1,rel:0,controls:0,fs:0,disablekb:1,iv_load_policy:3,autoplay:0,origin:location.origin},
       events:{
-        onReady:()=>{
-          ready=true;
-          status.textContent="SCANNING";
-          try{player.mute();player.setVolume(0);player.cuePlaylist({listType:"playlist",list:WACKEN_UPLOADS,index:0})}catch(e){}
-          setTimeout(startValidation,650);
-        },
+        onReady:()=>{ready=true;cueBank(0,0,false)},
         onStateChange:e=>{
-          if(e.data===YT.PlayerState.CUED&&validating)setTimeout(()=>validateCurrent(0),180);
-          else if(e.data===YT.PlayerState.PLAYING&&validating)setTimeout(()=>validateCurrent(0),180);
-          else if(e.data===YT.PlayerState.PAUSED&&!wantPlay&&!validating){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer)}
+          if(e.data===YT.PlayerState.CUED&&validating)setTimeout(()=>validateCurrent(0,wantPlay),180);
+          else if(e.data===YT.PlayerState.PLAYING&&!validating){syncFromVideo();status.textContent="ON AIR";play.textContent="Ⅱ";watch()}
+          else if(e.data===YT.PlayerState.PAUSED&&!validating){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer)}
           else if(e.data===YT.PlayerState.ENDED&&!validating){wantPlay=true;move(1)}
         },
-        onError:()=>{validating=false;clearTimeout(validationTimer);status.textContent="SCANNING";setTimeout(()=>move(scanDirection),250)}
+        onError:()=>{validating=false;clearTimeout(validationTimer);status.textContent="SKIP";setTimeout(()=>move(1),250)}
       }
     });
   }
@@ -180,13 +163,11 @@
 
   function toggle(){
     if(!ready)return;
-    if(!validating&&player.getPlayerState()===YT.PlayerState.PLAYING){wantPlay=false;player.pauseVideo();return}
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){wantPlay=false;player.pauseVideo();return}
     wantPlay=true;
     if(validating)return;
     try{player.unMute();player.setVolume(100);player.playVideo()}catch(e){}
-    status.textContent="ON AIR";
-    play.textContent="Ⅱ";
-    watch();
+    status.textContent="ON AIR";play.textContent="Ⅱ";watch();
   }
 
   play.addEventListener("click",toggle);
