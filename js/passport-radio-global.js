@@ -13,8 +13,7 @@
    Restricted to body.live-page + #player only.
    The three separate 24h online players are not initialized or modified here.
    WackenTV uploads playlist: UUvQT6N9nu2BJ-lJuMg1jEZQ
-   The tunnel walks the full upload feed, but silently skips shorts, promos,
-   interviews and other non-performance material before opening the audio.
+   The tunnel walks the WackenTV upload feed and silently skips obvious non-performance uploads.
 */
 (() => {
   "use strict";
@@ -48,7 +47,7 @@
 
   const q=id=>document.getElementById(id);
   const title=q("liveRareTitle"),meta=q("liveRareMeta"),status=q("liveRareStatus"),play=q("liveRarePlay"),progress=q("liveRareProgress"),tunnelTitle=q("liveRareTunnelTitle"),tunnelMeta=q("liveRareTunnelMeta");
-  let player=null,ready=false,timer=null,wantPlay=false,scanDirection=1,scanCount=0;
+  let player=null,ready=false,timer=null,wantPlay=false,scanDirection=1,scanCount=0,validating=false;
 
   function parseDisplay(raw){
     const clean=String(raw||"WackenTV").replace(/\s+-\s+YouTube$/i,"").trim();
@@ -61,7 +60,7 @@
     const t=String(raw||"").toLowerCase();
     const blocked=/(shorts?|teaser|trailer|announcement|line-?up|running order|interview|podcast|talk|reaction|behind the scenes|behind-the-scenes|backstage|campground|harry metal|recap|aftermovie|documentary|festival update|news|message from|greeting|statement|press conference|making of|preview)/i.test(t);
     if(blocked)return false;
-    if(Number(duration)>0&&Number(duration)<75)return false;
+    if(Number(duration)>0&&Number(duration)<70)return false;
     return true;
   }
 
@@ -90,41 +89,59 @@
     },500);
   }
 
-  function scanCurrent(){
-    if(!ready)return;
-    const data=player.getVideoData?player.getVideoData():{};
-    const raw=data&&data.title?data.title:"";
-    const dur=player.getDuration?player.getDuration():0;
-    if(!raw){setTimeout(scanCurrent,120);return}
-    if(!looksLikePerformance(raw,dur)){
-      scanCount++;
-      if(scanCount>5000){status.textContent="END";return}
-      status.textContent="SCANNING";
-      try{player.mute()}catch(e){}
-      setTimeout(()=>{scanDirection<0?player.previousVideo():player.nextVideo()},40);
-      return;
-    }
+  function rejectAndAdvance(){
+    validating=false;
+    scanCount++;
+    if(scanCount>5000){status.textContent="END";return}
+    status.textContent="SCANNING";
+    try{player.mute();player.pauseVideo()}catch(e){}
+    setTimeout(()=>{scanDirection<0?player.previousVideo():player.nextVideo();setTimeout(startValidation,120)},90);
+  }
+
+  function acceptCurrent(){
+    validating=false;
     scanCount=0;
     syncFromVideo();
-    status.textContent=wantPlay?"ON AIR":"READY";
-    play.textContent=wantPlay?"Ⅱ":"▶";
     if(wantPlay){
       try{player.unMute();player.setVolume(100)}catch(e){}
-      if(player.getPlayerState()!==YT.PlayerState.PLAYING)player.playVideo();
+      status.textContent="ON AIR";
+      play.textContent="Ⅱ";
       watch();
     }else{
       try{player.pauseVideo();player.unMute();player.setVolume(100)}catch(e){}
+      status.textContent="READY";
+      play.textContent="▶";
       clearInterval(timer);
     }
+  }
+
+  function validateCurrent(){
+    if(!ready||!player||!player.getVideoData)return;
+    const data=player.getVideoData()||{};
+    const raw=data.title||"";
+    const dur=player.getDuration?player.getDuration():0;
+    if(!raw||!dur){setTimeout(validateCurrent,120);return}
+    if(looksLikePerformance(raw,dur))acceptCurrent();else rejectAndAdvance();
+  }
+
+  function startValidation(){
+    if(!ready||validating)return;
+    validating=true;
+    status.textContent="SCANNING";
+    try{player.mute()}catch(e){}
+    const state=player.getPlayerState?player.getPlayerState():-1;
+    if(state!==YT.PlayerState.PLAYING){try{player.playVideo()}catch(e){}}
+    setTimeout(validateCurrent,160);
   }
 
   function move(direction){
     if(!ready)return;
     scanDirection=direction;
+    validating=false;
     status.textContent="SCANNING";
-    try{player.mute()}catch(e){}
+    try{player.mute();player.pauseVideo()}catch(e){}
     direction<0?player.previousVideo():player.nextVideo();
-    setTimeout(scanCurrent,120);
+    setTimeout(startValidation,120);
   }
 
   function makePlayer(){
@@ -133,14 +150,14 @@
       width:"1",height:"1",
       playerVars:{playsinline:1,rel:0,controls:0,fs:0,disablekb:1,iv_load_policy:3},
       events:{
-        onReady:()=>{ready=true;status.textContent="SCANNING";player.mute();player.cuePlaylist({listType:"playlist",list:WACKEN_UPLOADS,index:0});setTimeout(scanCurrent,180);},
+        onReady:()=>{ready=true;status.textContent="SCANNING";player.mute();player.cuePlaylist({listType:"playlist",list:WACKEN_UPLOADS,index:0});setTimeout(startValidation,220);},
         onStateChange:e=>{
-          if(e.data===YT.PlayerState.CUED){setTimeout(scanCurrent,80);}
-          else if(e.data===YT.PlayerState.PLAYING){setTimeout(scanCurrent,80);}
-          else if(e.data===YT.PlayerState.PAUSED&&!wantPlay){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer);}
+          if(e.data===YT.PlayerState.CUED){setTimeout(startValidation,80);}
+          else if(e.data===YT.PlayerState.PLAYING&&validating){setTimeout(validateCurrent,100);}
+          else if(e.data===YT.PlayerState.PAUSED&&!wantPlay&&!validating){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer);}
           else if(e.data===YT.PlayerState.ENDED){wantPlay=true;move(1);}
         },
-        onError:()=>{status.textContent="SCANNING";try{player.mute()}catch(e){};setTimeout(()=>move(scanDirection),80);}
+        onError:()=>{validating=false;status.textContent="SCANNING";try{player.mute()}catch(e){};setTimeout(()=>move(scanDirection),100);}
       }
     });
   }
@@ -154,8 +171,11 @@
 
   function toggle(){
     if(!ready)return;
-    if(player.getPlayerState()===YT.PlayerState.PLAYING){wantPlay=false;player.pauseVideo();return}
-    wantPlay=true;status.textContent="SCANNING";try{player.mute()}catch(e){};scanCurrent();
+    if(player.getPlayerState()===YT.PlayerState.PLAYING&&!validating){wantPlay=false;player.pauseVideo();return}
+    wantPlay=true;
+    if(validating)return;
+    status.textContent="SCANNING";
+    startValidation();
   }
   play.addEventListener("click",toggle);
   q("liveRarePrev").addEventListener("click",()=>move(-1));
