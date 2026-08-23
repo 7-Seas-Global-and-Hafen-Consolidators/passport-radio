@@ -1,206 +1,23 @@
 /* PASSPORT RADIO · GLOBAL AUDIO STATE */
-(() => {
-  "use strict";
-  const STORAGE_KEY="passportRadioGlobalPlayer";
-  function saveState(audio){if(!audio||!audio.src)return;const state={src:audio.currentSrc||audio.src,currentTime:Number.isFinite(audio.currentTime)?audio.currentTime:0,volume:audio.volume,muted:audio.muted,playing:!audio.paused&&!audio.ended,savedAt:Date.now()};try{sessionStorage.setItem(STORAGE_KEY,JSON.stringify(state))}catch(e){}}
-  function readState(){try{const raw=sessionStorage.getItem(STORAGE_KEY);return raw?JSON.parse(raw):null}catch(e){return null}}
-  function restoreState(audio){const state=readState();if(!audio||!state||!state.src)return;const current=audio.currentSrc||audio.src;if(current&&new URL(current,location.href).href!==new URL(state.src,location.href).href)return;audio.volume=typeof state.volume==="number"?state.volume:audio.volume;audio.muted=!!state.muted;const elapsed=state.playing&&state.savedAt?Math.max(0,(Date.now()-state.savedAt)/1000):0,target=Math.max(0,Number(state.currentTime||0)+elapsed);const apply=()=>{try{audio.currentTime=Number.isFinite(audio.duration)&&audio.duration>0?Math.min(target,Math.max(0,audio.duration-.25)):target}catch(e){}if(state.playing){const p=audio.play();if(p&&p.catch)p.catch(()=>{})}};audio.readyState>=1?apply():audio.addEventListener("loadedmetadata",apply,{once:true})}
-  function install(){const audio=document.querySelector("audio");if(!audio)return;restoreState(audio);const save=()=>saveState(audio);["play","pause","volumechange","seeked","ended"].forEach(x=>audio.addEventListener(x,save));setInterval(()=>{if(!audio.paused)save()},1000);window.addEventListener("pagehide",save)}
-  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",install):install();
-})();
+(()=>{"use strict";const K="passportRadioGlobalPlayer";function save(a){if(!a||!a.src)return;try{sessionStorage.setItem(K,JSON.stringify({src:a.currentSrc||a.src,currentTime:Number.isFinite(a.currentTime)?a.currentTime:0,volume:a.volume,muted:a.muted,playing:!a.paused&&!a.ended,savedAt:Date.now()}))}catch(e){}}function read(){try{return JSON.parse(sessionStorage.getItem(K)||"null")}catch(e){return null}}function install(){const a=document.querySelector("audio");if(!a)return;const s=read();if(s&&s.src){const cur=a.currentSrc||a.src;if(!cur||new URL(cur,location.href).href===new URL(s.src,location.href).href){a.volume=typeof s.volume==="number"?s.volume:a.volume;a.muted=!!s.muted;const t=Math.max(0,Number(s.currentTime||0)+(s.playing&&s.savedAt?(Date.now()-s.savedAt)/1000:0));const apply=()=>{try{a.currentTime=Number.isFinite(a.duration)&&a.duration>0?Math.min(t,Math.max(0,a.duration-.25)):t}catch(e){}if(s.playing){const p=a.play();if(p&&p.catch)p.catch(()=>{})}};a.readyState>=1?apply():a.addEventListener("loadedmetadata",apply,{once:true})}}["play","pause","volumechange","seeked","ended"].forEach(x=>a.addEventListener(x,()=>save(a)));setInterval(()=>{if(!a.paused)save(a)},1000);window.addEventListener("pagehide",()=>save(a))}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",install):install()})();
 
-/* PASSPORT RADIO · LIVE & RARE · WACKENTV UNDERGROUND TUNNEL
-   Six supplied Wacken playlists are traversed item by item.
-   Restricted to body.live-page + #player; the three 24h online players are untouched.
-*/
-(() => {
-  "use strict";
-  if(!document.body.classList.contains("live-page"))return;
-  const host=document.getElementById("player");
-  if(!host)return;
-
-  const WACKEN_PLAYLISTS=[
-    "PLPfPNs01OQC3_H1e978hugznB6S7ItZ8Q",
-    "PLPfPNs01OQC0Wl_hPub-3_PTUvxsAN36l",
-    "PLPfPNs01OQC3ET6JyUgbW6R5Yp8BReNFd",
-    "PLPfPNs01OQC1cp6O1jxo-bfWMG0-l_clJ",
-    "PLPfPNs01OQC0_wDTyJ_UWJKZOvBdN4fXt",
-    "PLPfPNs01OQC0ixXl9wwUBqWxSOLmd4P3w"
-  ];
-
-  let playlistBankIndex=0,itemIndex=0,currentItems=[],currentVideoId="";
-  let player=null,ready=false,timer=null,wantPlay=false,loadingItem=false,retryTimer=null;
-
-  const oldPlayer=host.querySelector(".audio-player"),oldAudio=document.getElementById("passportAudio");
-  if(oldAudio){oldAudio.pause();oldAudio.removeAttribute("autoplay")}
-  if(oldPlayer)oldPlayer.remove();
-
-  const style=document.createElement("style");
-  style.textContent=`
-    .live-rare-stage{position:relative;margin-top:18px;border:1px solid #303030;background:#090909;overflow:hidden}
-    .live-rare-engine{position:fixed!important;left:-10000px!important;top:0!important;width:320px!important;height:180px!important;opacity:.001!important;overflow:hidden!important;pointer-events:none!important;z-index:-1!important}
-    .live-rare-engine iframe{width:320px!important;height:180px!important;border:0!important;pointer-events:none!important}
-    .live-rare-tunnel{position:relative;min-height:178px;display:flex;align-items:flex-end;padding:20px;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#292929 0,#171717 24%,#0b0b0b 52%,#050505 76%,#020202 100%)}
-    .live-rare-tunnel:before{content:"";position:absolute;inset:-40%;background:repeating-radial-gradient(ellipse at center,transparent 0 22px,rgba(255,255,255,.035) 23px 24px,transparent 25px 44px);transform:scaleY(.42);animation:tunnelPulse 4s linear infinite;pointer-events:none}
-    .live-rare-tunnel:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;background:#d71920;box-shadow:0 0 20px 5px rgba(215,25,32,.5);transform:translate(-50%,-50%)}
-    @keyframes tunnelPulse{from{transform:scaleY(.42) scale(.82)}to{transform:scaleY(.42) scale(1.18)}}
-    .live-rare-tunnel-copy{position:relative;z-index:2;max-width:88%}.live-rare-kicker{color:#d71920;font-size:.54rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.live-rare-tunnel-title{margin-top:7px;color:#fff;font-size:clamp(1.05rem,3vw,1.8rem);font-weight:900;line-height:1.02}.live-rare-tunnel-meta{margin-top:6px;color:#8b8b8b;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-    .live-rare-console{padding:15px;border-top:1px solid #262626}.live-rare-brand{display:flex;justify-content:space-between;gap:12px;color:#d71920;font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.live-rare-title{margin-top:7px;color:#fff;font-size:1rem;font-weight:900;line-height:1.15}.live-rare-sub{margin-top:4px;color:#888;font-size:.59rem}.live-rare-controls{display:grid;grid-template-columns:auto auto auto 1fr;gap:9px;align-items:center;margin-top:14px}.live-rare-btn{width:38px;height:38px;border:1px solid #444;border-radius:50%;background:#171717;color:#fff;cursor:pointer;font-weight:900}.live-rare-btn--play{width:48px;height:48px;border-color:#d71920;background:#d71920}.live-rare-progress{width:100%;accent-color:#d71920}
-    @media(max-width:560px){.live-rare-tunnel{min-height:155px;padding:14px}.live-rare-console{padding:12px}.live-rare-controls{grid-template-columns:auto auto auto}.live-rare-progress{grid-column:1/-1}.live-rare-title{font-size:.9rem}}
-  `;
-  document.head.appendChild(style);
-
-  const stage=document.createElement("div");
-  stage.className="live-rare-stage";
-  stage.innerHTML=`<div class="live-rare-engine" aria-hidden="true"><div id="passport-live-rare-engine"></div></div><div class="live-rare-tunnel"><div class="live-rare-tunnel-copy"><div class="live-rare-kicker">LIVE & RARE · PASSPORT RADIO</div><div class="live-rare-tunnel-title" id="liveRareTunnelTitle">Carregando acervo Wacken…</div><div class="live-rare-tunnel-meta" id="liveRareTunnelMeta">WACKEN OPEN AIR · UNDERGROUND FEED</div></div></div><div class="live-rare-console"><div class="live-rare-brand"><span>LIVE & RARE · PASSPORT RADIO</span><span id="liveRareStatus">LOADING</span></div><div class="live-rare-title" id="liveRareTitle">Wacken Archive</div><div class="live-rare-sub" id="liveRareMeta">Six Wacken playlists · Underground Archive</div><div class="live-rare-controls"><button class="live-rare-btn" id="liveRarePrev" type="button" aria-label="Anterior">◀</button><button class="live-rare-btn live-rare-btn--play" id="liveRarePlay" type="button" aria-label="Reproduzir">▶</button><button class="live-rare-btn" id="liveRareNext" type="button" aria-label="Próxima">▶</button><input class="live-rare-progress" id="liveRareProgress" type="range" min="0" max="100" step=".1" value="0" aria-label="Progresso"></div></div>`;
-  host.appendChild(stage);
-
-  const q=id=>document.getElementById(id);
-  const title=q("liveRareTitle"),meta=q("liveRareMeta"),status=q("liveRareStatus"),play=q("liveRarePlay"),progress=q("liveRareProgress"),tunnelTitle=q("liveRareTunnelTitle"),tunnelMeta=q("liveRareTunnelMeta");
-
-  function parseDisplay(raw){
-    const clean=String(raw||"Wacken").replace(/\s+-\s+YouTube$/i,"").trim();
-    const year=(clean.match(/\b(19|20)\d{2}\b/)||[])[0]||"";
-    const artist=(clean.split(/\s+-\s+/)[0]||clean).trim();
-    return {clean,artist,year};
-  }
-
-  function syncFromVideo(){
-    if(!ready)return false;
-    const data=player.getVideoData?player.getVideoData():{};
-    if(!data||!data.title)return false;
-    const d=parseDisplay(data.title);
-    const itemLabel=currentItems.length?` · ${itemIndex+1}/${currentItems.length}`:"";
-    title.textContent=d.clean;
-    meta.textContent=`WACKEN · PLAYLIST ${playlistBankIndex+1}/6${itemLabel}${d.year?` · ${d.year}`:""}`;
-    tunnelTitle.textContent=d.clean;
-    tunnelMeta.textContent=`WACKEN · UNDERGROUND ARCHIVE · PLAYLIST ${playlistBankIndex+1}/6${itemLabel}`;
-    const top=q("currentTrackTitle");if(top)top.textContent=d.clean;
-    const desc=q("currentTrackDescription");if(desc)desc.textContent="Passport Radio · Live & Rare · Wacken Archive";
-    const bt=q("bottomTrackTitle");if(bt)bt.textContent=d.artist;
-    const bm=q("bottomTrackMeta");if(bm)bm.textContent=`Wacken · Live & Rare · Playlist ${playlistBankIndex+1}/6${d.year?` · ${d.year}`:""}`;
-    return true;
-  }
-
-  function watch(){
-    clearInterval(timer);
-    timer=setInterval(()=>{
-      if(!ready||!player.getCurrentTime)return;
-      const dur=player.getDuration?player.getDuration():0,t=player.getCurrentTime();
-      if(dur>0)progress.value=Math.max(0,Math.min(100,(t/dur)*100));
-    },500);
-  }
-
-  function nextBank(autoplay=true){loadBank(playlistBankIndex+1,0,autoplay)}
-  function prevBank(autoplay=true){loadBank(playlistBankIndex-1,-1,autoplay)}
-
-  function loadBank(bankIndex,targetIndex=0,autoplay=false){
-    if(!ready)return;
-    clearTimeout(retryTimer);
-    playlistBankIndex=(bankIndex+WACKEN_PLAYLISTS.length)%WACKEN_PLAYLISTS.length;
-    currentItems=[];itemIndex=0;currentVideoId="";loadingItem=true;
-    status.textContent="LOADING";progress.value=0;
-    try{player.mute();player.setVolume(0);player.cuePlaylist({listType:"playlist",list:WACKEN_PLAYLISTS[playlistBankIndex],index:0})}catch(e){nextBank(autoplay);return}
-    const started=Date.now();
-    const poll=()=>{
-      if(!ready)return;
-      const list=player.getPlaylist?player.getPlaylist():[];
-      if(Array.isArray(list)&&list.length){
-        currentItems=list.slice();
-        itemIndex=targetIndex<0?currentItems.length-1:Math.min(Math.max(0,targetIndex),currentItems.length-1);
-        cueItem(itemIndex,autoplay);
-        return;
-      }
-      if(Date.now()-started>8000){nextBank(autoplay);return}
-      retryTimer=setTimeout(poll,250);
-    };
-    retryTimer=setTimeout(poll,300);
-  }
-
-  function cueItem(index,autoplay=false){
-    if(!ready)return;
-    if(!currentItems.length){nextBank(autoplay);return}
-    if(index>=currentItems.length){nextBank(autoplay);return}
-    if(index<0){prevBank(autoplay);return}
-    itemIndex=index;
-    currentVideoId=currentItems[itemIndex];
-    loadingItem=true;status.textContent="LOADING";progress.value=0;
-    try{player.mute();player.setVolume(0);player.cueVideoById(currentVideoId)}catch(e){skipBroken(1,autoplay);return}
-    waitForItem(0,autoplay);
-  }
-
-  function waitForItem(attempt=0,autoplay=false){
-    if(!ready||!currentVideoId)return;
-    const data=player.getVideoData?player.getVideoData():{};
-    const same=data&&data.video_id===currentVideoId;
-    const raw=same&&data.title?data.title:"";
-    if(!raw&&attempt<24){retryTimer=setTimeout(()=>waitForItem(attempt+1,autoplay),250);return}
-    if(!raw){skipBroken(1,autoplay);return}
-    loadingItem=false;syncFromVideo();
-    if(autoplay||wantPlay){
-      wantPlay=true;
-      try{player.unMute();player.setVolume(100);player.playVideo()}catch(e){skipBroken(1,true);return}
-      status.textContent="ON AIR";play.textContent="Ⅱ";watch();
-    }else{
-      try{player.pauseVideo();player.unMute();player.setVolume(100)}catch(e){}
-      status.textContent="READY";play.textContent="▶";clearInterval(timer);
-    }
-  }
-
-  function skipBroken(direction=1,autoplay=true){
-    clearTimeout(retryTimer);loadingItem=false;
-    const next=itemIndex+direction;
-    if(next>=0&&next<currentItems.length){cueItem(next,autoplay);return}
-    direction<0?prevBank(autoplay):nextBank(autoplay);
-  }
-
-  function move(direction){
-    if(!ready)return;
-    wantPlay=true;
-    clearTimeout(retryTimer);
-    skipBroken(direction,true);
-  }
-
-  function makePlayer(){
-    if(player||!window.YT||!YT.Player)return;
-    player=new YT.Player("passport-live-rare-engine",{
-      width:"320",height:"180",
-      playerVars:{playsinline:1,rel:0,controls:0,fs:0,disablekb:1,iv_load_policy:3,autoplay:0,origin:location.origin},
-      events:{
-        onReady:()=>{ready=true;loadBank(0,0,false)},
-        onStateChange:e=>{
-          if(e.data===YT.PlayerState.CUED&&loadingItem)setTimeout(()=>waitForItem(0,wantPlay),120);
-          else if(e.data===YT.PlayerState.PLAYING&&!loadingItem){syncFromVideo();status.textContent="ON AIR";play.textContent="Ⅱ";watch()}
-          else if(e.data===YT.PlayerState.PAUSED&&!loadingItem){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer)}
-          else if(e.data===YT.PlayerState.ENDED&&!loadingItem){wantPlay=true;skipBroken(1,true)}
-        },
-        onError:()=>{status.textContent="SKIP";setTimeout(()=>skipBroken(1,wantPlay||true),180)}
-      }
-    });
-  }
-
-  function loadApi(){
-    if(window.YT&&YT.Player){makePlayer();return}
-    const existing=document.querySelector('script[src="https://www.youtube.com/iframe_api"]');
-    const prior=window.onYouTubeIframeAPIReady;
-    window.onYouTubeIframeAPIReady=()=>{if(typeof prior==="function")prior();makePlayer()};
-    if(!existing){const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";document.head.appendChild(s)}
-  }
-
-  function toggle(){
-    if(!ready)return;
-    if(player.getPlayerState()===YT.PlayerState.PLAYING){wantPlay=false;player.pauseVideo();return}
-    wantPlay=true;
-    if(loadingItem)return;
-    try{player.unMute();player.setVolume(100);player.playVideo()}catch(e){skipBroken(1,true);return}
-    status.textContent="ON AIR";play.textContent="Ⅱ";watch();
-  }
-
-  play.addEventListener("click",toggle);
-  q("liveRarePrev").addEventListener("click",()=>move(-1));
-  q("liveRareNext").addEventListener("click",()=>move(1));
-  progress.addEventListener("input",()=>{if(!ready)return;const dur=player.getDuration?player.getDuration():0;if(dur>0)player.seekTo((Number(progress.value)/100)*dur,true)});
-  const bp=q("bottomPlay");if(bp)bp.addEventListener("click",e=>{e.stopImmediatePropagation();toggle()},{capture:true});
-  const bn=q("bottomNext");if(bn)bn.addEventListener("click",e=>{e.stopImmediatePropagation();move(1)},{capture:true});
-  loadApi();
+/* LIVE & RARE · WACKEN — isolated to radio.html live-page/#player only. */
+(()=>{"use strict";
+if(!document.body.classList.contains("live-page"))return;const host=document.getElementById("player");if(!host)return;
+const LISTS=["PLPfPNs01OQC3_H1e978hugznB6S7ItZ8Q","PLPfPNs01OQC0Wl_hPub-3_PTUvxsAN36l","PLPfPNs01OQC3ET6JyUgbW6R5Yp8BReNFd","PLPfPNs01OQC1cp6O1jxo-bfWMG0-l_clJ","PLPfPNs01OQC0_wDTyJ_UWJKZOvBdN4fXt","PLPfPNs01OQC0ixXl9wwUBqWxSOLmd4P3w"];
+const old=host.querySelector(".audio-player"),oa=document.getElementById("passportAudio");if(oa){oa.pause();oa.removeAttribute("autoplay")}if(old)old.remove();
+const st=document.createElement("style");st.textContent=`.live-rare-stage{position:relative;margin-top:18px;border:1px solid #303030;background:#090909;overflow:hidden}.live-rare-engine{position:fixed!important;left:-9999px!important;top:0!important;width:480px!important;height:270px!important;opacity:.01!important;pointer-events:none!important}.live-rare-engine iframe{width:480px!important;height:270px!important;border:0!important}.live-rare-tunnel{position:relative;min-height:178px;display:flex;align-items:flex-end;padding:20px;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#292929 0,#171717 24%,#0b0b0b 52%,#050505 76%,#020202 100%)}.live-rare-tunnel:before{content:"";position:absolute;inset:-40%;background:repeating-radial-gradient(ellipse at center,transparent 0 22px,rgba(255,255,255,.035) 23px 24px,transparent 25px 44px);transform:scaleY(.42);animation:tunnelPulse 4s linear infinite}.live-rare-tunnel:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;background:#d71920;box-shadow:0 0 20px 5px rgba(215,25,32,.5);transform:translate(-50%,-50%)}@keyframes tunnelPulse{from{transform:scaleY(.42) scale(.82)}to{transform:scaleY(.42) scale(1.18)}}.live-rare-tunnel-copy{position:relative;z-index:2;max-width:88%}.live-rare-kicker,.live-rare-brand{color:#d71920;font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.live-rare-tunnel-title{margin-top:7px;color:#fff;font-size:clamp(1.05rem,3vw,1.8rem);font-weight:900}.live-rare-tunnel-meta,.live-rare-sub{margin-top:6px;color:#888;font-size:.58rem}.live-rare-console{padding:15px;border-top:1px solid #262626}.live-rare-brand{display:flex;justify-content:space-between;gap:12px}.live-rare-title{margin-top:7px;color:#fff;font-size:1rem;font-weight:900}.live-rare-controls{display:grid;grid-template-columns:auto auto auto 1fr;gap:9px;align-items:center;margin-top:14px}.live-rare-btn{width:38px;height:38px;border:1px solid #444;border-radius:50%;background:#171717;color:#fff;cursor:pointer;font-weight:900}.live-rare-btn--play{width:48px;height:48px;border-color:#d71920;background:#d71920}.live-rare-progress{width:100%;accent-color:#d71920}@media(max-width:560px){.live-rare-controls{grid-template-columns:auto auto auto}.live-rare-progress{grid-column:1/-1}}`;document.head.appendChild(st);
+const stage=document.createElement("div");stage.className="live-rare-stage";stage.innerHTML=`<div class="live-rare-engine" aria-hidden="true"><div id="passport-live-rare-engine"></div></div><div class="live-rare-tunnel"><div class="live-rare-tunnel-copy"><div class="live-rare-kicker">LIVE & RARE · PASSPORT RADIO</div><div class="live-rare-tunnel-title" id="liveRareTunnelTitle">Carregando acervo Wacken…</div><div class="live-rare-tunnel-meta" id="liveRareTunnelMeta">WACKEN OPEN AIR · UNDERGROUND FEED</div></div></div><div class="live-rare-console"><div class="live-rare-brand"><span>LIVE & RARE · PASSPORT RADIO</span><span id="liveRareStatus">LOADING</span></div><div class="live-rare-title" id="liveRareTitle">Wacken Archive</div><div class="live-rare-sub" id="liveRareMeta">6 playlists · Wacken Archive</div><div class="live-rare-controls"><button class="live-rare-btn" id="liveRarePrev">◀</button><button class="live-rare-btn live-rare-btn--play" id="liveRarePlay">▶</button><button class="live-rare-btn" id="liveRareNext">▶</button><input class="live-rare-progress" id="liveRareProgress" type="range" min="0" max="100" step=".1" value="0"></div></div>`;host.appendChild(stage);
+const q=x=>document.getElementById(x),title=q("liveRareTitle"),meta=q("liveRareMeta"),status=q("liveRareStatus"),play=q("liveRarePlay"),progress=q("liveRareProgress"),tt=q("liveRareTunnelTitle"),tm=q("liveRareTunnelMeta");
+let p=null,ready=false,bank=0,idx=0,ids=[],want=false,tick=null,token=0,bankTimer=null,itemTimer=null,errorTimer=null;
+function clearAsync(){clearTimeout(bankTimer);clearTimeout(itemTimer);clearTimeout(errorTimer)}
+function sync(){if(!ready)return;const d=p.getVideoData?p.getVideoData():{};if(!d||!d.title)return;const clean=String(d.title).replace(/\s+-\s+YouTube$/i,"").trim(),label=ids.length?`${idx+1}/${ids.length}`:"?";title.textContent=clean;meta.textContent=`WACKEN · PLAYLIST ${bank+1}/6 · ${label}`;tt.textContent=clean;tm.textContent=`WACKEN · UNDERGROUND ARCHIVE · PLAYLIST ${bank+1}/6 · ${label}`;const a=q("currentTrackTitle");if(a)a.textContent=clean;const b=q("currentTrackDescription");if(b)b.textContent="Passport Radio · Live & Rare · Wacken Archive";const c=q("bottomTrackTitle");if(c)c.textContent=clean;const d2=q("bottomTrackMeta");if(d2)d2.textContent=`Wacken · Playlist ${bank+1}/6 · ${label}`}
+function watch(){clearInterval(tick);tick=setInterval(()=>{if(!ready)return;const d=p.getDuration?p.getDuration():0,t=p.getCurrentTime?p.getCurrentTime():0;if(d>0)progress.value=Math.min(100,t/d*100)},500)}
+function loadBank(n,target=0,autoplay=false){if(!ready)return;clearAsync();const my=++token;bank=(n+LISTS.length)%LISTS.length;ids=[];idx=0;status.textContent="LOADING";try{p.mute();p.cuePlaylist({listType:"playlist",list:LISTS[bank],index:0})}catch(e){bankTimer=setTimeout(()=>{if(my===token)loadBank(bank+1,0,autoplay)},400);return}const start=Date.now();const poll=()=>{if(my!==token)return;const a=p.getPlaylist?p.getPlaylist():[];if(Array.isArray(a)&&a.length){ids=a.slice();idx=target<0?ids.length-1:Math.min(target,ids.length-1);loadItem(idx,autoplay);return}if(Date.now()-start>12000){loadBank(bank+1,0,autoplay);return}bankTimer=setTimeout(poll,300)};bankTimer=setTimeout(poll,400)}
+function loadItem(n,autoplay=true){if(!ready)return;if(n>=ids.length){loadBank(bank+1,0,autoplay);return}if(n<0){loadBank(bank-1,-1,autoplay);return}clearAsync();const my=++token;idx=n;const vid=ids[idx];status.textContent="LOADING";progress.value=0;try{p.mute();p.cueVideoById(vid)}catch(e){itemTimer=setTimeout(()=>{if(my===token)loadItem(idx+1,autoplay)},250);return}let tries=0;const verify=()=>{if(my!==token)return;const d=p.getVideoData?p.getVideoData():{},same=d&&d.video_id===vid;if(!same||!d.title){if(++tries<40){itemTimer=setTimeout(verify,200);return}loadItem(idx+1,autoplay);return}sync();if(autoplay||want){want=true;try{p.unMute();p.setVolume(100);p.playVideo()}catch(e){loadItem(idx+1,true);return}status.textContent="ON AIR";play.textContent="Ⅱ";watch()}else{try{p.pauseVideo();p.unMute();p.setVolume(100)}catch(e){}status.textContent="READY";play.textContent="▶"}};itemTimer=setTimeout(verify,180)}
+function move(d){if(!ready)return;want=true;loadItem(idx+d,true)}
+function make(){if(p||!window.YT||!YT.Player)return;p=new YT.Player("passport-live-rare-engine",{width:"480",height:"270",playerVars:{playsinline:1,rel:0,controls:0,fs:0,disablekb:1,iv_load_policy:3,autoplay:0,origin:location.origin},events:{onReady:()=>{ready=true;loadBank(0,0,false)},onStateChange:e=>{if(e.data===YT.PlayerState.PLAYING){sync();status.textContent="ON AIR";play.textContent="Ⅱ";watch()}else if(e.data===YT.PlayerState.PAUSED){status.textContent="PAUSED";play.textContent="▶";clearInterval(tick)}else if(e.data===YT.PlayerState.ENDED){move(1)}},onError:()=>{const my=token;status.textContent="SKIP";clearTimeout(errorTimer);errorTimer=setTimeout(()=>{if(my===token)loadItem(idx+1,true)},500)}}})}
+function api(){if(window.YT&&YT.Player){make();return}const prior=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=()=>{if(typeof prior==="function")prior();make()};if(!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')){const s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";document.head.appendChild(s)}}
+function toggle(){if(!ready)return;if(p.getPlayerState()===YT.PlayerState.PLAYING){want=false;p.pauseVideo();return}want=true;try{p.unMute();p.setVolume(100);p.playVideo()}catch(e){}}
+play.onclick=toggle;q("liveRarePrev").onclick=()=>move(-1);q("liveRareNext").onclick=()=>move(1);progress.oninput=()=>{if(!ready)return;const d=p.getDuration?p.getDuration():0;if(d>0)p.seekTo(Number(progress.value)/100*d,true)};const bp=q("bottomPlay"),bn=q("bottomNext");if(bp)bp.addEventListener("click",e=>{e.stopImmediatePropagation();toggle()},{capture:true});if(bn)bn.addEventListener("click",e=>{e.stopImmediatePropagation();move(1)},{capture:true});api()
 })();
