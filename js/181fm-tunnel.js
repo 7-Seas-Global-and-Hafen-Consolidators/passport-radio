@@ -1,4 +1,4 @@
-/* PASSPORT RADIO · 181.FM 80s CONTINUOUS TUNNEL
+/* PASSPORT RADIO · 80s CONTINUOUS TUNNEL
    Independent from the three existing 24h players and from the YouTube archive engine.
    Runs only on body.live-page + #player.
 */
@@ -40,14 +40,14 @@
   stage.className = "fm181-stage";
   stage.innerHTML = `
     <div class="fm181-head">
-      <div class="fm181-kicker">CONTINUOUS FEED · 181.FM · 80s TUNNEL</div>
+      <div class="fm181-kicker">PASSPORT RADIO · 80s CONTINUOUS</div>
       <div class="fm181-title" id="fm181Title">${streams[0].name}</div>
-      <div class="fm181-meta" id="fm181Meta">Stream 1/${streams.length} · MP3 contínuo</div>
+      <div class="fm181-meta" id="fm181Meta">Canal 1/${streams.length} · transmissão contínua</div>
     </div>
     <div class="fm181-controls">
-      <button class="fm181-btn" id="fm181Prev" type="button" aria-label="Stream anterior">◀</button>
+      <button class="fm181-btn" id="fm181Prev" type="button" aria-label="Canal anterior">◀</button>
       <button class="fm181-btn fm181-btn--play" id="fm181Play" type="button" aria-label="Reproduzir">▶</button>
-      <button class="fm181-btn" id="fm181Next" type="button" aria-label="Próximo stream">▶</button>
+      <button class="fm181-btn" id="fm181Next" type="button" aria-label="Próximo canal">▶</button>
       <span class="fm181-status" id="fm181Status">READY</span>
     </div>
     <div class="fm181-picker" id="fm181Picker"></div>
@@ -68,7 +68,7 @@
   }
   function update(){
     title.textContent = streams[index].name;
-    meta.textContent = `Stream ${index+1}/${streams.length} · MP3 contínuo · 181.fm`;
+    meta.textContent = `Canal ${index+1}/${streams.length} · transmissão contínua`;
     renderPicker();
   }
   function stopYouTubeTunnel(){
