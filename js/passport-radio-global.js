@@ -9,12 +9,12 @@
   document.readyState==="loading"?document.addEventListener("DOMContentLoaded",install):install();
 })();
 
-/* PASSPORT RADIO · LIVE & RARE · WACKENTV FULL UNDERGROUND TUNNEL
-   This block is intentionally restricted to body.live-page + #player.
-   It does not initialize on the separate 24h online-player pages.
-   WackenTV channel: UCvQT6N9nu2BJ-lJuMg1jEZQ
-   Uploads playlist: UUvQT6N9nu2BJ-lJuMg1jEZQ
-   No hand-picked catalog and no title filter: the tunnel follows the channel uploads archive.
+/* PASSPORT RADIO · LIVE & RARE · WACKENTV UNDERGROUND TUNNEL
+   Restricted to body.live-page + #player only.
+   The three separate 24h online players are not initialized or modified here.
+   WackenTV uploads playlist: UUvQT6N9nu2BJ-lJuMg1jEZQ
+   The tunnel walks the full upload feed, but silently skips shorts, promos,
+   interviews and other non-performance material before opening the audio.
 */
 (() => {
   "use strict";
@@ -43,12 +43,12 @@
 
   const stage=document.createElement("div");
   stage.className="live-rare-stage";
-  stage.innerHTML=`<div class="live-rare-engine" aria-hidden="true"><div id="passport-live-rare-engine"></div></div><div class="live-rare-tunnel"><div class="live-rare-tunnel-copy"><div class="live-rare-kicker">LIVE & RARE · PASSPORT RADIO</div><div class="live-rare-tunnel-title" id="liveRareTunnelTitle">Carregando WackenTV…</div><div class="live-rare-tunnel-meta" id="liveRareTunnelMeta">WACKEN OPEN AIR · COMPLETE CHANNEL FEED</div></div></div><div class="live-rare-console"><div class="live-rare-brand"><span>LIVE & RARE · PASSPORT RADIO</span><span id="liveRareStatus">LOADING</span></div><div class="live-rare-title" id="liveRareTitle">WackenTV</div><div class="live-rare-sub" id="liveRareMeta">WackenTV · Underground Archive</div><div class="live-rare-controls"><button class="live-rare-btn" id="liveRarePrev" type="button" aria-label="Anterior">◀</button><button class="live-rare-btn live-rare-btn--play" id="liveRarePlay" type="button" aria-label="Reproduzir">▶</button><button class="live-rare-btn" id="liveRareNext" type="button" aria-label="Próxima">▶</button><input class="live-rare-progress" id="liveRareProgress" type="range" min="0" max="100" step=".1" value="0" aria-label="Progresso"></div></div>`;
+  stage.innerHTML=`<div class="live-rare-engine" aria-hidden="true"><div id="passport-live-rare-engine"></div></div><div class="live-rare-tunnel"><div class="live-rare-tunnel-copy"><div class="live-rare-kicker">LIVE & RARE · PASSPORT RADIO</div><div class="live-rare-tunnel-title" id="liveRareTunnelTitle">Carregando WackenTV…</div><div class="live-rare-tunnel-meta" id="liveRareTunnelMeta">WACKEN OPEN AIR · UNDERGROUND FEED</div></div></div><div class="live-rare-console"><div class="live-rare-brand"><span>LIVE & RARE · PASSPORT RADIO</span><span id="liveRareStatus">LOADING</span></div><div class="live-rare-title" id="liveRareTitle">WackenTV</div><div class="live-rare-sub" id="liveRareMeta">WackenTV · Underground Archive</div><div class="live-rare-controls"><button class="live-rare-btn" id="liveRarePrev" type="button" aria-label="Anterior">◀</button><button class="live-rare-btn live-rare-btn--play" id="liveRarePlay" type="button" aria-label="Reproduzir">▶</button><button class="live-rare-btn" id="liveRareNext" type="button" aria-label="Próxima">▶</button><input class="live-rare-progress" id="liveRareProgress" type="range" min="0" max="100" step=".1" value="0" aria-label="Progresso"></div></div>`;
   host.appendChild(stage);
 
   const q=id=>document.getElementById(id);
   const title=q("liveRareTitle"),meta=q("liveRareMeta"),status=q("liveRareStatus"),play=q("liveRarePlay"),progress=q("liveRareProgress"),tunnelTitle=q("liveRareTunnelTitle"),tunnelMeta=q("liveRareTunnelMeta");
-  let player=null,ready=false,timer=null;
+  let player=null,ready=false,timer=null,wantPlay=false,scanDirection=1,scanCount=0;
 
   function parseDisplay(raw){
     const clean=String(raw||"WackenTV").replace(/\s+-\s+YouTube$/i,"").trim();
@@ -57,15 +57,23 @@
     return {clean,artist,year};
   }
 
+  function looksLikePerformance(raw,duration){
+    const t=String(raw||"").toLowerCase();
+    const blocked=/(shorts?|teaser|trailer|announcement|line-?up|running order|interview|podcast|talk|reaction|behind the scenes|behind-the-scenes|backstage|campground|harry metal|recap|aftermovie|documentary|festival update|news|message from|greeting|statement|press conference|making of|preview)/i.test(t);
+    if(blocked)return false;
+    if(Number(duration)>0&&Number(duration)<75)return false;
+    return true;
+  }
+
   function syncFromVideo(){
     if(!ready)return false;
     const data=player.getVideoData?player.getVideoData():{};
     const raw=data&&data.title?data.title:"WackenTV";
     const d=parseDisplay(raw);
     title.textContent=d.clean;
-    meta.textContent=`WACKENTV · CHANNEL ARCHIVE${d.year?` · ${d.year}`:""}`;
+    meta.textContent=`WACKENTV · WACKEN OPEN AIR${d.year?` · ${d.year}`:""}`;
     tunnelTitle.textContent=d.clean;
-    tunnelMeta.textContent=`WACKENTV · UNDERGROUND FEED${d.year?` · ${d.year}`:""}`;
+    tunnelMeta.textContent=`WACKENTV · UNDERGROUND PERFORMANCE${d.year?` · ${d.year}`:""}`;
     const top=q("currentTrackTitle");if(top)top.textContent=d.clean;
     const desc=q("currentTrackDescription");if(desc)desc.textContent="Passport Radio · Live & Rare · WackenTV";
     const bt=q("bottomTrackTitle");if(bt)bt.textContent=d.artist;
@@ -82,20 +90,57 @@
     },500);
   }
 
+  function scanCurrent(){
+    if(!ready)return;
+    const data=player.getVideoData?player.getVideoData():{};
+    const raw=data&&data.title?data.title:"";
+    const dur=player.getDuration?player.getDuration():0;
+    if(!raw){setTimeout(scanCurrent,120);return}
+    if(!looksLikePerformance(raw,dur)){
+      scanCount++;
+      if(scanCount>5000){status.textContent="END";return}
+      status.textContent="SCANNING";
+      try{player.mute()}catch(e){}
+      setTimeout(()=>{scanDirection<0?player.previousVideo():player.nextVideo()},40);
+      return;
+    }
+    scanCount=0;
+    syncFromVideo();
+    status.textContent=wantPlay?"ON AIR":"READY";
+    play.textContent=wantPlay?"Ⅱ":"▶";
+    if(wantPlay){
+      try{player.unMute();player.setVolume(100)}catch(e){}
+      if(player.getPlayerState()!==YT.PlayerState.PLAYING)player.playVideo();
+      watch();
+    }else{
+      try{player.pauseVideo();player.unMute();player.setVolume(100)}catch(e){}
+      clearInterval(timer);
+    }
+  }
+
+  function move(direction){
+    if(!ready)return;
+    scanDirection=direction;
+    status.textContent="SCANNING";
+    try{player.mute()}catch(e){}
+    direction<0?player.previousVideo():player.nextVideo();
+    setTimeout(scanCurrent,120);
+  }
+
   function makePlayer(){
     if(player||!window.YT||!YT.Player)return;
     player=new YT.Player("passport-live-rare-engine",{
       width:"1",height:"1",
       playerVars:{playsinline:1,rel:0,controls:0,fs:0,disablekb:1,iv_load_policy:3},
       events:{
-        onReady:()=>{ready=true;status.textContent="READY";player.cuePlaylist({listType:"playlist",list:WACKEN_UPLOADS,index:0});},
+        onReady:()=>{ready=true;status.textContent="SCANNING";player.mute();player.cuePlaylist({listType:"playlist",list:WACKEN_UPLOADS,index:0});setTimeout(scanCurrent,180);},
         onStateChange:e=>{
-          if(e.data===YT.PlayerState.CUED){syncFromVideo();status.textContent="READY";play.textContent="▶";}
-          else if(e.data===YT.PlayerState.PLAYING){syncFromVideo();status.textContent="ON AIR";play.textContent="Ⅱ";watch();}
-          else if(e.data===YT.PlayerState.PAUSED){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer);}
-          else if(e.data===YT.PlayerState.ENDED){player.nextVideo();}
+          if(e.data===YT.PlayerState.CUED){setTimeout(scanCurrent,80);}
+          else if(e.data===YT.PlayerState.PLAYING){setTimeout(scanCurrent,80);}
+          else if(e.data===YT.PlayerState.PAUSED&&!wantPlay){syncFromVideo();status.textContent="PAUSED";play.textContent="▶";clearInterval(timer);}
+          else if(e.data===YT.PlayerState.ENDED){wantPlay=true;move(1);}
         },
-        onError:()=>{status.textContent="NEXT";setTimeout(()=>player.nextVideo(),100);}
+        onError:()=>{status.textContent="SCANNING";try{player.mute()}catch(e){};setTimeout(()=>move(scanDirection),80);}
       }
     });
   }
@@ -107,12 +152,16 @@
     window.onYouTubeIframeAPIReady=()=>{if(typeof prior==="function")prior();makePlayer()};
   }
 
-  function toggle(){if(!ready)return;player.getPlayerState()===YT.PlayerState.PLAYING?player.pauseVideo():player.playVideo()}
+  function toggle(){
+    if(!ready)return;
+    if(player.getPlayerState()===YT.PlayerState.PLAYING){wantPlay=false;player.pauseVideo();return}
+    wantPlay=true;status.textContent="SCANNING";try{player.mute()}catch(e){};scanCurrent();
+  }
   play.addEventListener("click",toggle);
-  q("liveRarePrev").addEventListener("click",()=>{if(!ready)return;status.textContent="LOADING";player.previousVideo()});
-  q("liveRareNext").addEventListener("click",()=>{if(!ready)return;status.textContent="LOADING";player.nextVideo()});
+  q("liveRarePrev").addEventListener("click",()=>move(-1));
+  q("liveRareNext").addEventListener("click",()=>move(1));
   progress.addEventListener("input",()=>{if(!ready)return;const dur=player.getDuration?player.getDuration():0;if(dur>0)player.seekTo((Number(progress.value)/100)*dur,true)});
   const bp=q("bottomPlay");if(bp)bp.addEventListener("click",e=>{e.stopImmediatePropagation();toggle()},{capture:true});
-  const bn=q("bottomNext");if(bn)bn.addEventListener("click",e=>{e.stopImmediatePropagation();player.nextVideo()},{capture:true});
+  const bn=q("bottomNext");if(bn)bn.addEventListener("click",e=>{e.stopImmediatePropagation();move(1)},{capture:true});
   loadApi();
 })();
