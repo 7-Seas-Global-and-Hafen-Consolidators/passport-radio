@@ -1,20 +1,11 @@
-items=[
-('vitrola','Raveo','Toca-discos Raveo · 3 velocidades','/produto/raveo-turner.html','21x','/images/store/imported/raveo-turner.jpg','Vitrola · Toca-discos'),
-('vitrola','Raveo','Vitrola Bluetooth Raveo Harmony','/produto/raveo-harmony.html','21x','/images/store/imported/raveo-harmony.jpg','Vitrola · Toca-discos'),
+name: Passport Store legacy workflow
 
-('fone','Soundcore','Soundcore P20i','/produto/soundcore-p20i.html','5x','/images/store/imported/soundcore-p20i.jpg','Áudio · True Wireless'),
+on:
+  workflow_dispatch:
 
-('fone','JBL','JBL Tune 520BT','/produto/jbl-tune-520bt.html','5x','/images/store/imported/jbl-tune-520bt.jpg','Áudio · Headphone'),
-
-('fone','JBL','JBL Wave Beam 2','/produto/jbl-wave-beam-2.html','5x','/images/store/imported/jbl-wave-beam-2.jpg','Áudio · True Wireless'),
-
-('guitarra','Thomaz','Guitarra Elétrica TEG-340 Vermelha','/produto/thomaz-teg340.html','21x','/images/store/imported/thomaz-teg-340.jpeg','Instrumento · Guitarra'),
-
-('baixo','Tagima','Tagima Millenium 6 Natural','/produto/tagima-millenium-6.html','21x','/images/store/imported/tagima-millenium-6.jpg','Instrumento · Baixo'),
-
-('baixo','Strinberg','Baixolão Strinberg SB240C Elétrico','/produto/strinberg-sb240c.html','21x','/images/store/imported/strinberg-sb240c.jpeg','Instrumento · Baixo'),
-
-('pedaleira','','Cuvave Cube Baby Bass','/produto/cuvave-cube-baby.html','5x','/images/store/imported/cuvave-cube-baby-bass.jpg','Instrumento · Pedaleira'),
-
-('soundbar','JBL','JBL Cinema SB595 · Soundbar 5.1 + Subwoofer','/produto/jbl-cinema-sb595.html','21x','/images/store/imported/jbl-sb595.jpg','Áudio · Soundbar'),
-]
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Legacy store workflow disabled
+        run: echo "Legacy store rebuild is disabled. Store content is managed directly in the repository."
