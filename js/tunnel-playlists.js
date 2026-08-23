@@ -12,5 +12,9 @@ window.PASSPORT_TUNNEL_PLAYLISTS = [
   { id: "PLPfPNs01OQC1W-iGG0wy0Oo3W4ihaZZAi", label: "Wacken 08", group: "Wacken" },
   { id: "PLPfPNs01OQC1FebN5K6N7GvI8ChfDApHL", label: "Wacken 09", group: "Wacken" },
   { id: "PLPfPNs01OQC3VGOonL-cJzGSOCPdJtvQf", label: "Wacken 10", group: "Wacken" },
-  { id: "PLPfPNs01OQC2EjBKoDtL8xZRQCwLvk3pH", label: "Wacken 11", group: "Wacken" }
+  { id: "PLPfPNs01OQC2EjBKoDtL8xZRQCwLvk3pH", label: "Wacken 11", group: "Wacken" },
+  { id: "PLlJ6mcpK7uj7vwOEUI-gxnPLQ1o6WBTSy", label: "Archive 12", group: "Live Archive" },
+  { id: "PLlJ6mcpK7uj6GgwYxP-I6OLdPJ-C2wUD4", label: "Archive 13", group: "Live Archive" },
+  { id: "PLlJ6mcpK7uj6scTL_LiDt_XrrHEcB5rTJ", label: "Archive 14", group: "Live Archive" },
+  { id: "PLlJ6mcpK7uj53gpwDuG6baTV2zCTrh_1u", label: "Archive 15", group: "Live Archive" }
 ];
