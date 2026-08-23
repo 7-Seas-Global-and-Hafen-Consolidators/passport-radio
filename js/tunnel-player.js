@@ -28,8 +28,8 @@
     .tunnel-visual:before{content:"";position:absolute;inset:-40%;background:repeating-radial-gradient(ellipse at center,transparent 0 22px,rgba(255,255,255,.035) 23px 24px,transparent 25px 44px);transform:scaleY(.42);animation:tunnelPulse 4s linear infinite;pointer-events:none}
     .tunnel-visual:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;background:#d71920;box-shadow:0 0 20px 5px rgba(215,25,32,.5);transform:translate(-50%,-50%)}
     @keyframes tunnelPulse{from{transform:scaleY(.42) scale(.82)}to{transform:scaleY(.42) scale(1.18)}}
-    .tunnel-copy{position:relative;z-index:2;max-width:90%}.tunnel-kicker,.tunnel-brand{color:#d71920;font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.tunnel-title{margin-top:7px;color:#fff;font-size:clamp(1.05rem,3vw,1.8rem);font-weight:900;line-height:1.04}.tunnel-meta,.tunnel-sub{margin-top:6px;color:#888;font-size:.58rem}.tunnel-console{padding:15px;border-top:1px solid #262626}.tunnel-brand{display:flex;justify-content:space-between;gap:12px}.tunnel-controls{display:grid;grid-template-columns:auto auto auto 1fr;gap:9px;align-items:center;margin-top:14px}.tunnel-btn{width:38px;height:38px;border:1px solid #444;border-radius:50%;background:#171717;color:#fff;cursor:pointer;font-weight:900}.tunnel-btn--play{width:48px;height:48px;border-color:#d71920;background:#d71920}.tunnel-progress{width:100%;accent-color:#d71920}.tunnel-diagnostic{margin-top:8px;color:#666;font-size:.52rem;font-variant-numeric:tabular-nums}
-    @media(max-width:560px){.tunnel-controls{grid-template-columns:auto auto auto}.tunnel-progress{grid-column:1/-1}}
+    .tunnel-copy{position:relative;z-index:2;max-width:90%}.tunnel-kicker,.tunnel-brand{color:#d71920;font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.tunnel-title{margin-top:7px;color:#fff;font-size:clamp(1.05rem,3vw,1.8rem);font-weight:900;line-height:1.04}.tunnel-meta,.tunnel-sub{margin-top:6px;color:#888;font-size:.58rem}.tunnel-console{padding:15px;border-top:1px solid #262626}.tunnel-brand{display:flex;justify-content:space-between;gap:12px}.tunnel-controls{display:grid;grid-template-columns:auto auto auto 1fr;gap:9px;align-items:center;margin-top:14px}.tunnel-btn{width:38px;height:38px;border:1px solid #444;border-radius:50%;background:#171717;color:#fff;cursor:pointer;font-weight:900}.tunnel-btn--play{width:48px;height:48px;border-color:#d71920;background:#d71920}.tunnel-progress{width:100%;accent-color:#d71920}.tunnel-playlist-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.tunnel-playlist-btn{min-height:34px;border:1px solid #3b3b3b;background:#111;color:#bbb;font-size:.52rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}.tunnel-playlist-btn:hover{border-color:#d71920;color:#fff}.tunnel-diagnostic{margin-top:8px;color:#666;font-size:.52rem;font-variant-numeric:tabular-nums}
+    @media(max-width:560px){.tunnel-controls{grid-template-columns:auto auto auto}.tunnel-progress{grid-column:1/-1}.tunnel-playlist-controls{grid-template-columns:1fr}}
   `;
   document.head.appendChild(style);
 
@@ -47,10 +47,14 @@
       <div class="tunnel-title" id="tunnelConsoleTitle">Underground Archive</div>
       <div class="tunnel-sub" id="tunnelConsoleMeta">Playlist 1/${catalog.length}</div>
       <div class="tunnel-controls">
-        <button class="tunnel-btn" id="tunnelPrev" type="button" aria-label="Anterior">◀</button>
+        <button class="tunnel-btn" id="tunnelPrev" type="button" aria-label="Faixa anterior">◀</button>
         <button class="tunnel-btn tunnel-btn--play" id="tunnelPlay" type="button" aria-label="Reproduzir">▶</button>
-        <button class="tunnel-btn" id="tunnelNext" type="button" aria-label="Próxima">▶</button>
+        <button class="tunnel-btn" id="tunnelNext" type="button" aria-label="Próxima faixa">▶</button>
         <input class="tunnel-progress" id="tunnelProgress" type="range" min="0" max="100" step=".1" value="0" aria-label="Progresso">
+      </div>
+      <div class="tunnel-playlist-controls">
+        <button class="tunnel-playlist-btn" id="tunnelPrevPlaylist" type="button">◀ Playlist anterior</button>
+        <button class="tunnel-playlist-btn" id="tunnelNextPlaylist" type="button">Próxima playlist ▶</button>
       </div>
       <div class="tunnel-diagnostic" id="tunnelDiagnostic">playlist 1/${catalog.length} · faixa ?/?</div>
     </div>`;
@@ -61,6 +65,7 @@
     title: $("tunnelTitle"), meta: $("tunnelMeta"), status: $("tunnelStatus"),
     consoleTitle: $("tunnelConsoleTitle"), consoleMeta: $("tunnelConsoleMeta"),
     play: $("tunnelPlay"), prev: $("tunnelPrev"), next: $("tunnelNext"),
+    prevPlaylist: $("tunnelPrevPlaylist"), nextPlaylist: $("tunnelNextPlaylist"),
     progress: $("tunnelProgress"), diagnostic: $("tunnelDiagnostic")
   };
 
@@ -127,6 +132,8 @@
     ui.status.textContent = "LOADING";
     ui.progress.value = 0;
     const src = currentSource();
+    ui.consoleMeta.textContent = `${src.label || src.group || "Playlist"} · ${playlistIndex + 1}/${catalog.length} · carregando`;
+    ui.diagnostic.textContent = `playlist ${playlistIndex + 1}/${catalog.length} · faixa ?/?`;
     try {
       yt.cuePlaylist({ listType: "playlist", list: src.id, index: 0, startSeconds: 0, suggestedQuality: "default" });
     } catch (_) {
@@ -156,6 +163,14 @@
       setTimeout(wait, 250);
     };
     setTimeout(wait, 350);
+  }
+
+  function jumpPlaylist(direction) {
+    if (!ready || !yt) return;
+    stopProgress();
+    const shouldPlay = desiredPlay || (yt.getPlayerState && yt.getPlayerState() === YT.PlayerState.PLAYING);
+    desiredPlay = shouldPlay;
+    loadPlaylist(playlistIndex + direction, shouldPlay);
   }
 
   function advance(direction) {
@@ -262,6 +277,8 @@
   ui.play.addEventListener("click", toggle);
   ui.prev.addEventListener("click", () => advance(-1));
   ui.next.addEventListener("click", () => advance(1));
+  ui.prevPlaylist.addEventListener("click", () => jumpPlaylist(-1));
+  ui.nextPlaylist.addEventListener("click", () => jumpPlaylist(1));
   ui.progress.addEventListener("input", () => {
     if (!ready || !yt) return;
     const dur = yt.getDuration ? yt.getDuration() : 0;
