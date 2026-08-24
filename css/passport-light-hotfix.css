@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ — light-system hardening for legacy templates */
+
+html:has(body){
+  background:#f7f5f0!important;
+}
+
+/* Legacy generic dark modules used by Home and archive pages. */
+html body .dark,
+html body .section--black,
+html body .module.dark,
+html body section.dark{
+  background:#f0ece4!important;
+  color:#111!important;
+  border-color:#ddd8cf!important;
+}
+
+html body .dark h1,
+html body .dark h2,
+html body .dark h3,
+html body .dark h4,
+html body .dark strong,
+html body .dark .program-feature h3,
+html body .dark .program-item strong,
+html body .section--black h1,
+html body .section--black h2,
+html body .section--black h3,
+html body .section--black strong{
+  color:#111!important;
+}
+
+html body .dark p,
+html body .dark span,
+html body .dark small,
+html body .dark .program-item span,
+html body .section--black p,
+html body .section--black span,
+html body .section--black small{
+  color:#6f6a63!important;
+}
+
+html body .dark .program-feature,
+html body .dark .program-item,
+html body .dark .support-box,
+html body .section--black article,
+html body .section--black .archive-card{
+  background:#fff!important;
+  color:#111!important;
+  border-color:#ddd8cf!important;
+}
+
+html body .dark .btn,
+html body .section--black .btn{
+  background:#d71920!important;
+  color:#fff!important;
+  border-color:#d71920!important;
+}
+
+/* Home drawer follows the new paper system instead of being a black wall. */
+html body .portal-side{
+  background:linear-gradient(180deg,#fff 0%,#f2eee7 100%)!important;
+  color:#111!important;
+  border-color:#ddd8cf!important;
+  box-shadow:12px 0 36px rgba(17,17,17,.10)!important;
+  scrollbar-color:#b53a3f #f2eee7!important;
+}
+
+html body .portal-side::-webkit-scrollbar-track{
+  background:#f2eee7!important;
+}
+
+html body .portal-side::-webkit-scrollbar-thumb{
+  background:#b53a3f!important;
+}
+
+html body .side-logo{
+  background:#fff!important;
+  border-color:#ddd8cf!important;
+}
+
+html body .side-foot{
+  color:#6f6a63!important;
+}
+
+/* Generic rails and information boxes become paper/white surfaces. */
+html body .rail,
+html body .rail-box,
+html body .archive-grid,
+html body .archive-card,
+html body .news-list,
+html body .program-list,
+html body .agenda,
+html body .event{
+  border-color:#ddd8cf!important;
+}
+
+html body .rail-box,
+html body .archive-card,
+html body .program-item,
+html body .event{
+  background:#fff!important;
+  color:#111!important;
+}
+
+/* Keep red as direction, not as a giant wall. */
+html body .breaking{
+  background:#d71920!important;
+  color:#fff!important;
+}
+
+/* Commercial close remains light; red belongs to buttons and rules. */
+html body:has(.commercial-now) .close-sale .cta,
+html body:has(.commercial-now) .hero .cta{
+  background:#d71920!important;
+  color:#fff!important;
+  border-color:#d71920!important;
+}
+
+/* Canonical legal tail stays paper-colored even when older footer CSS loads later. */
+html body::after{
+  background:#f0ece4!important;
+  color:#6f6a63!important;
+  border-color:#ddd8cf!important;
+}
