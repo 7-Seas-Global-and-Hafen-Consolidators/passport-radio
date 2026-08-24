@@ -1,5 +1,6 @@
 (() => {
   const STORAGE_KEY = 'passportPromoEntriesV1';
+  const CURRENT_CAMPAIGN = 'Fone Bluetooth 5.4 — Agosto 2026';
   const form = document.querySelector('#promo-entry-form');
   const codeField = document.querySelector('#participation-code');
   const confirmation = document.querySelector('#promo-confirmation');
@@ -40,6 +41,12 @@
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
+  const normalizeCampaign = (value = '') => {
+    const text = String(value || '').trim();
+    if (!text || /PR-0001|Bluetooth 5\.3/i.test(text)) return CURRENT_CAMPAIGN;
+    return text;
+  };
+
   const renderEntries = () => {
     if (!entriesList) return;
     const entries = getEntries();
@@ -51,7 +58,7 @@
 
     entriesList.innerHTML = entries.map((entry) => `
       <article class="entry-card">
-        <div class="entry-card__top"><span>${escapeHtml(entry.campaign)}</span><b>CONFIRMADA</b></div>
+        <div class="entry-card__top"><span>${escapeHtml(normalizeCampaign(entry.campaign))}</span><b>CONFIRMADA</b></div>
         <div class="entry-card__code">${escapeHtml(entry.code)}</div>
         <div class="entry-card__details">
           <span><small>Participante</small>${escapeHtml(entry.name)}</span>
@@ -106,7 +113,7 @@
 
         const data = new FormData(form);
         const entry = {
-          campaign: data.get('campaign') || 'PR-0001 — Fone Bluetooth 5.3',
+          campaign: normalizeCampaign(data.get('campaign')),
           code,
           name: data.get('name') || '',
           email: data.get('email') || '',
