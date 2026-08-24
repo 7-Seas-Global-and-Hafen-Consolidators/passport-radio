@@ -1,5 +1,5 @@
 @import url("./style-base-v30.css");
-@import url("./passport-legal-footer.css?v=202608241038");
+@import url("./passport-legal-footer.css?v=202608241949");
 
 /* PASSPORT RADIO — page cleanup layer 2026-08-22
    Local-only: no external stylesheet dependency. */
@@ -26,6 +26,36 @@ h1,h2,h3,h4,p,a,span,strong{overflow-wrap:anywhere}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
   outline:2px solid #d4af37!important;
   outline-offset:3px!important;
+}
+
+/* =========================================================
+   RADIO — ON AIR · 24H COLOR FIX
+   Beats the legacy global dark !important rule by specificity.
+   Presentation only: no audio/player behavior is touched.
+   ========================================================= */
+html body.live-page header.site-header > a.header-chip[href="#player"],
+html body.live-page .site-header > a.header-chip[href="#player"]{
+  background:#C70000!important;
+  color:#F3E8D6!important;
+  -webkit-text-fill-color:#F3E8D6!important;
+  border-color:#A90909!important;
+  box-shadow:0 4px 14px rgba(199,0,0,.18)!important;
+}
+
+html body.live-page header.site-header > a.header-chip[href="#player"] i,
+html body.live-page .site-header > a.header-chip[href="#player"] i{
+  background:#F0C98E!important;
+  box-shadow:0 0 0 3px rgba(240,201,142,.18)!important;
+}
+
+html body.live-page header.site-header > a.header-chip[href="#player"]:hover,
+html body.live-page .site-header > a.header-chip[href="#player"]:hover,
+html body.live-page header.site-header > a.header-chip[href="#player"]:focus-visible,
+html body.live-page .site-header > a.header-chip[href="#player"]:focus-visible{
+  background:#D57A24!important;
+  color:#F3E8D6!important;
+  -webkit-text-fill-color:#F3E8D6!important;
+  border-color:#D57A24!important;
 }
 
 /* =========================================================
