@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Promoções, prêmios, inscrições e ganhadores da Passport Radio.">
+<meta name="description" content="Promoções, inscrições e resultados da Passport Radio.">
 <meta name="theme-color" content="#ffffff">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <title>Promoções & Prêmios | Passport Radio</title>
@@ -12,13 +12,13 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Passport Radio">
 <meta property="og:title" content="Promoções & Prêmios | Passport Radio">
-<meta property="og:description" content="Promoções, prêmios, inscrições e ganhadores da Passport Radio.">
+<meta property="og:description" content="Promoções, inscrições e resultados da Passport Radio.">
 <meta property="og:url" content="https://www.passportradio.online/promocoes.html">
 <meta property="og:image" content="https://www.passportradio.online/images/passport-radio-definitive.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/promocoes.css?v=202608241655">
+<link rel="stylesheet" href="/css/promocoes.css?v=202608241738">
 <link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
 </head>
 <body>
@@ -34,177 +34,119 @@
       <a href="destinos.html">Explorar</a>
       <a href="loja.html">Loja</a>
       <a href="promocoes.html" aria-current="page">Promoções</a>
-      <a class="promo-onair" href="radio.html">ON AIR</a>
     </nav>
+    <div class="promo-utilities" aria-label="Acessos rápidos">
+      <a href="destinos.html">Buscar</a>
+      <a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener">YouTube</a>
+      <a class="promo-onair" href="radio.html">ON AIR</a>
+    </div>
   </div>
 </header>
 
 <main>
-<section class="promo-hero">
+<section class="promo-hero promo-hero--compact">
   <div class="promo-shell">
     <span class="promo-kicker">Passport Radio</span>
-    <h1>PROMOÇÕES<br><span>& PRÊMIOS</span></h1>
-    <div class="promo-tabs" aria-label="Atalhos da página">
-      <a href="#no-ar">No ar agora</a>
-      <a href="#proximas">Próximas promoções</a>
-      <a href="#ganhadores">Ganhadores</a>
-      <a href="#area-ouvinte">Área do Ouvinte</a>
-      <a href="#redes">Redes oficiais</a>
-    </div>
+    <h1>PROMOÇÕES <span>& PRÊMIOS</span></h1>
   </div>
 </section>
 
-<section class="promo-live" id="no-ar">
+<section class="listener-zone" id="area-ouvinte">
   <div class="promo-shell">
-    <div class="promo-live__head">
-      <span class="promo-kicker">Promoção no ar</span>
-      <h2>PR-0001 · FONE BLUETOOTH 5.3</h2>
+    <div class="listener-tabs" role="tablist" aria-label="Área do Ouvinte">
+      <button type="button" class="is-active" data-listener-tab="events" role="tab" aria-selected="true">LISTA DE EVENTOS</button>
+      <button type="button" data-listener-tab="entries" role="tab" aria-selected="false">MINHAS INSCRIÇÕES</button>
     </div>
 
-    <div class="promo-live__grid">
-      <article class="promo-live__visual prize-visual prize-visual--fone" aria-label="Fone de Ouvido Bluetooth 5.3 rosa TWS">
-        <div class="promo-live__overlay">
-          <span>PR-0001 · INSCRIÇÕES ABERTAS</span>
-          <h3>GANHE UM<br>FONE BLUETOOTH 5.3</h3>
-        </div>
-      </article>
+    <section id="listener-events-panel" class="listener-panel is-active" role="tabpanel">
+      <div class="campaign-grid">
+        <article class="campaign-card campaign-card--active">
+          <a class="campaign-card__media prize-visual prize-visual--fone" href="promocao-fone-bluetooth.html" aria-label="Ganhe um Fone Bluetooth 5.3"></a>
+          <div class="campaign-card__body">
+            <div class="campaign-card__date"><strong>INSCRIÇÕES ABERTAS</strong><span>PR-0001</span></div>
+            <h2>Ganhe um Fone Bluetooth 5.3</h2>
+            <p>Ouça a Passport, publique seu print no Story, marque @passportradio.online e faça sua inscrição.</p>
+            <a class="campaign-action" href="promocao-fone-bluetooth.html">PARTICIPAR AGORA</a>
+          </div>
+        </article>
 
-      <aside class="promo-form" aria-label="Inscrição na promoção PR-0001">
-        <div class="promo-facts">
-          <div><small>Código</small><strong>PR-0001</strong></div>
-          <div><small>Status</small><strong>NO AR</strong></div>
-          <div><small>Inscrições</small><strong>ABERTAS</strong></div>
-        </div>
+        <article class="campaign-card">
+          <div class="campaign-card__media prize-visual prize-visual--nevermind" role="img" aria-label="Nirvana — Nevermind, edição limitada em vinil prateado"></div>
+          <div class="campaign-card__body">
+            <div class="campaign-card__date"><strong>EM BREVE</strong><span>PR-0002</span></div>
+            <h2>Ganhe Nirvana — Nevermind em vinil</h2>
+            <p>Limited Edition Silver Vinyl LP.</p>
+          </div>
+        </article>
 
-        <section class="promo-about" aria-labelledby="sobre-pr0001">
-          <h3 id="sobre-pr0001">SOBRE A PROMOÇÃO</h3>
-          <p>Fone de Ouvido Bluetooth 5.3 com graves potentes, drivers de 13 mm, até 14 horas de reprodução, resistência à água e conexão TWS.</p>
-        </section>
+        <article class="campaign-card">
+          <div class="campaign-card__media prize-visual prize-visual--holy-diver" role="img" aria-label="Dio — Holy Diver em disco de vinil"></div>
+          <div class="campaign-card__body">
+            <div class="campaign-card__date"><strong>EM BREVE</strong><span>PR-0003</span></div>
+            <h2>Ganhe Dio — Holy Diver em vinil</h2>
+            <p>Disco de vinil.</p>
+          </div>
+        </article>
 
-        <section class="promo-steps" aria-labelledby="como-participar-pr0001">
-          <h3 id="como-participar-pr0001">COMO PARTICIPAR</h3>
-          <ol>
-            <li>Ouça a Passport Radio.</li>
-            <li>Tire um print mostrando que está ouvindo.</li>
-            <li>Publique no Story e marque <strong>@passportradio.online</strong>.</li>
-            <li>Complete sua inscrição abaixo.</li>
-          </ol>
-        </section>
+        <article class="campaign-card">
+          <div class="campaign-card__media prize-visual prize-visual--meteora" role="img" aria-label="Linkin Park — Meteora em disco de vinil"></div>
+          <div class="campaign-card__body">
+            <div class="campaign-card__date"><strong>EM BREVE</strong><span>PR-0004</span></div>
+            <h2>Ganhe Linkin Park — Meteora em vinil</h2>
+            <p>Disco de vinil.</p>
+          </div>
+        </article>
 
-        <form id="promo-entry-form" action="https://formspree.io/f/mwleblbo" method="POST">
-          <input type="hidden" name="campaign" value="PR-0001 — Fone Bluetooth 5.3">
-          <input type="hidden" id="participation-code" name="participation_code" value="">
-          <label for="nome">Nome</label>
-          <input id="nome" name="name" type="text" autocomplete="name" required>
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-          <label for="whatsapp">WhatsApp</label>
-          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required>
-          <label for="instagram">@Instagram</label>
-          <input id="instagram" name="instagram" type="text" placeholder="@seuusuario" required>
-          <label for="indicacao">Quem te convidou?</label>
-          <input id="indicacao" name="convidado_por" type="text" placeholder="@usuario ou código">
-          <button class="promo-submit" type="submit">Quero participar</button>
-        </form>
-        <div id="promo-confirmation" class="promo-confirmation" hidden aria-live="polite"></div>
-      </aside>
-    </div>
-  </div>
-</section>
+        <article class="campaign-card">
+          <div class="campaign-card__media prize-visual prize-visual--countdown" role="img" aria-label="Megadeth — Countdown to Extinction em 2 LP"></div>
+          <div class="campaign-card__body">
+            <div class="campaign-card__date"><strong>EM BREVE</strong><span>PR-0005</span></div>
+            <h2>Ganhe Megadeth — Countdown to Extinction em vinil</h2>
+            <p>Edição 2 LP.</p>
+          </div>
+        </article>
+      </div>
 
-<section class="promo-section" id="proximas">
-  <div class="promo-shell">
-    <header class="section-title">
-      <span class="promo-kicker">Próximas promoções</span>
-      <h2>PRÓXIMOS PRÊMIOS</h2>
-    </header>
+      <div class="results-strip" id="ganhadores">
+        <strong>GANHADORES</strong>
+        <span>Nenhum resultado publicado até agora.</span>
+      </div>
+    </section>
 
-    <div class="promo-grid promo-grid--four">
-      <article class="promo-card">
-        <div class="promo-card__media prize-visual prize-visual--nevermind" role="img" aria-label="Nirvana — Nevermind, edição limitada em vinil prateado"></div>
-        <div class="promo-card__body">
-          <div class="promo-card__meta"><b>PR-0002</b><span>EM BREVE</span></div>
-          <h3>Nirvana — Nevermind</h3>
-          <p>Limited Edition Silver Vinyl LP</p>
-        </div>
-      </article>
-
-      <article class="promo-card">
-        <div class="promo-card__media prize-visual prize-visual--holy-diver" role="img" aria-label="Dio — Holy Diver em disco de vinil"></div>
-        <div class="promo-card__body">
-          <div class="promo-card__meta"><b>PR-0003</b><span>EM BREVE</span></div>
-          <h3>Dio — Holy Diver</h3>
-          <p>Disco de vinil</p>
-        </div>
-      </article>
-
-      <article class="promo-card">
-        <div class="promo-card__media prize-visual prize-visual--meteora" role="img" aria-label="Linkin Park — Meteora em disco de vinil"></div>
-        <div class="promo-card__body">
-          <div class="promo-card__meta"><b>PR-0004</b><span>EM BREVE</span></div>
-          <h3>Linkin Park — Meteora</h3>
-          <p>Disco de vinil</p>
-        </div>
-      </article>
-
-      <article class="promo-card">
-        <div class="promo-card__media prize-visual prize-visual--countdown" role="img" aria-label="Megadeth — Countdown to Extinction em 2 LP"></div>
-        <div class="promo-card__body">
-          <div class="promo-card__meta"><b>PR-0005</b><span>EM BREVE</span></div>
-          <h3>Megadeth — Countdown to Extinction</h3>
-          <p>2 LP</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="promo-section promo-section--soft" id="ganhadores">
-  <div class="promo-shell">
-    <header class="section-title">
-      <span class="promo-kicker">Resultados</span>
-      <h2>GANHADORES</h2>
-    </header>
-    <div class="winner-empty">
-      <strong>Nenhum resultado publicado.</strong>
-      <span>Os ganhadores serão publicados aqui após o encerramento de cada promoção.</span>
-    </div>
-  </div>
-</section>
-
-<section class="account-zone" id="area-ouvinte">
-  <div class="promo-shell">
-    <header class="section-title compact">
-      <span class="promo-kicker">Área do Ouvinte</span>
-      <h2>MINHAS INSCRIÇÕES</h2>
-    </header>
-    <div class="account-console">
+    <section id="listener-entries-panel" class="listener-panel" role="tabpanel" hidden>
+      <div class="entries-head">
+        <span class="promo-kicker">Área do Ouvinte</span>
+        <h2>MINHAS INSCRIÇÕES</h2>
+      </div>
       <div id="my-entries-list" class="my-entries" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<section class="promo-section" id="redes">
-  <div class="promo-shell">
-    <header class="section-title">
-      <span class="promo-kicker">Canais oficiais</span>
-      <h2>PASSPORT RADIO</h2>
-    </header>
-    <div class="promo-social">
-      <a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener">Instagram · @passportradio.online</a>
-      <a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener">YouTube · @passportradio-x8m</a>
-      <a href="radio.html">Ouvir a Passport</a>
-    </div>
+    </section>
   </div>
 </section>
 </main>
 
 <footer class="promo-bottom">
   <div class="promo-shell promo-bottom__grid">
-    <div><strong>Passport Radio™</strong><p>Every Song Is A Destination. · 3... 2... 1... CLICK!™</p></div>
-    <div><a href="index.html">Início</a> · <a href="radio.html">Rádio</a> · <a href="loja.html">Loja</a> · <a href="contato.html">Contato</a></div>
+    <div class="promo-bottom__brand">
+      <strong>Passport Radio™</strong>
+      <p>Every Song Is A Destination. · 3... 2... 1... CLICK!™</p>
+    </div>
+    <nav class="promo-bottom__links" aria-label="Rodapé">
+      <a href="index.html">Início</a>
+      <a href="radio.html">Rádio</a>
+      <a href="destinos.html">Explorar</a>
+      <a href="loja.html">Loja</a>
+      <a href="promocoes.html">Promoções</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="promo-bottom__social">
+      <a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </div>
 </footer>
-<script src="/js/promocoes.js?v=202608241655" defer></script>
+<script src="/js/promocoes.js?v=202608241738" defer></script>
 </body>
 </html>
