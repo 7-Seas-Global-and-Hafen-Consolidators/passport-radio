@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ — GLOBAL ON AIR COLOR FIX · 2026-08-24
+   Scope: the top-right live/ON AIR launcher only.
+   No layout, player engine, stream, source, loader or audio behavior is changed. */
+
+:root{
+  --passport-onair-bg:#C70000;
+  --passport-onair-bg-hover:#D57A24;
+  --passport-onair-text:#F3E8D6;
+  --passport-onair-border:#A90909;
+  --passport-onair-dot:#F0C98E;
+}
+
+/* Home / Contato / Destinos */
+html body .top-actions .onair,
+html body .header-actions .onair,
+html body a.onair{
+  background:var(--passport-onair-bg)!important;
+  color:var(--passport-onair-text)!important;
+  border-color:var(--passport-onair-border)!important;
+  box-shadow:0 3px 10px rgba(199,0,0,.16)!important;
+}
+
+/* Promoções */
+html body .promo-onair{
+  background:var(--passport-onair-bg)!important;
+  color:var(--passport-onair-text)!important;
+  border-color:var(--passport-onair-border)!important;
+  box-shadow:0 3px 10px rgba(199,0,0,.16)!important;
+}
+
+/* Loja + matérias / histórias */
+html body .header-chip--live,
+html body a.header-chip[href$="radio.html"]{
+  background:var(--passport-onair-bg)!important;
+  color:var(--passport-onair-text)!important;
+  border-color:var(--passport-onair-border)!important;
+  box-shadow:0 3px 10px rgba(199,0,0,.16)!important;
+}
+
+/* Página Rádio — botão ON AIR · 24H aponta para #player */
+html body.live-page .header-chip{
+  background:var(--passport-onair-bg)!important;
+  color:var(--passport-onair-text)!important;
+  border-color:var(--passport-onair-border)!important;
+  box-shadow:0 3px 10px rgba(199,0,0,.16)!important;
+}
+
+/* Existing live dot remains visible over the red launcher. */
+html body .onair i,
+html body .promo-onair i,
+html body .header-chip--live i,
+html body.live-page .header-chip i{
+  background:var(--passport-onair-dot)!important;
+  box-shadow:0 0 0 3px rgba(240,201,142,.18)!important;
+}
+
+html body .top-actions .onair:hover,
+html body .header-actions .onair:hover,
+html body a.onair:hover,
+html body .promo-onair:hover,
+html body .header-chip--live:hover,
+html body a.header-chip[href$="radio.html"]:hover,
+html body.live-page .header-chip:hover,
+html body .top-actions .onair:focus-visible,
+html body .header-actions .onair:focus-visible,
+html body a.onair:focus-visible,
+html body .promo-onair:focus-visible,
+html body .header-chip--live:focus-visible,
+html body a.header-chip[href$="radio.html"]:focus-visible,
+html body.live-page .header-chip:focus-visible{
+  background:var(--passport-onair-bg-hover)!important;
+  color:var(--passport-onair-text)!important;
+  border-color:var(--passport-onair-bg-hover)!important;
+}
