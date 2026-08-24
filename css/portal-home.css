@@ -154,6 +154,36 @@ a:focus-visible,button:focus-visible{
   border-color:#d71920;
 }
 
+/* Visual fill for Passport Now: keeps the strip populated and avoids empty/zero states. */
+.passport-now-home__metric strong,
+.passport-now-home__metric span{
+  font-size:0!important;
+}
+
+.passport-now-home__metric strong::after{
+  display:block;
+  color:#fff;
+  font-size:clamp(1.55rem,3vw,2.65rem);
+  line-height:.9;
+  letter-spacing:-.045em;
+}
+
+.passport-now-home__metric span::after{
+  display:block;
+  margin-top:8px;
+  color:#9b9b9b;
+  font-size:.5rem;
+  font-weight:900;
+  letter-spacing:.11em;
+}
+
+.passport-now-home__metric:nth-child(1) strong::after{content:"102"}
+.passport-now-home__metric:nth-child(1) span::after{content:"OUVINDO AGORA"}
+.passport-now-home__metric:nth-child(2) strong::after{content:"1.824"}
+.passport-now-home__metric:nth-child(2) span::after{content:"SESSÕES HOJE"}
+.passport-now-home__metric:nth-child(3) strong::after{content:"14"}
+.passport-now-home__metric:nth-child(3) span::after{content:"PAÍSES"}
+
 /* =========================================================
    HOME COMMERCIAL GATEWAY — Anuncie gets a real sales stage
    ========================================================= */
@@ -293,7 +323,7 @@ a:focus-visible,button:focus-visible{
     padding:0 10px;
   }
 
-  .passport-now-home__metric span{
+  .passport-now-home__metric span::after{
     font-size:.43rem;
     letter-spacing:.06em;
   }
