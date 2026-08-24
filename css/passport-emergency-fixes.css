@@ -1,0 +1,411 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ — emergency visual cleanup · 2026-08-24
+   PRESENTATION ONLY. Never alters player engines, sources, streams or audio JS. */
+
+/* =========================================================
+   1. REMOVE THE OLD GLOBAL BLACK NOW-PLAYING STRIP
+   The engine may continue to exist; only the obsolete visual bar is removed.
+   ========================================================= */
+html body .player-bar{
+  display:none!important;
+}
+
+/* =========================================================
+   2. HOME — ONE PERSISTENT PLAYER ONLY
+   The 3-signal dock belongs to the radio page, not as a second fixed Home player.
+   ========================================================= */
+html body:not(.live-page) #passport-live-radio,
+html body:not(.live-page) .passport-live-radio{
+  display:none!important;
+}
+
+/* =========================================================
+   3. RADIO — METAL / UNPLUGGED / LIVE JAM: SIZE P
+   Keep the exact audio controls/IDs; only the shell is compacted and made light.
+   ========================================================= */
+html body.live-page #passport-live-radio{
+  position:static!important;
+  inset:auto!important;
+  width:100%!important;
+  max-width:760px!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+html body.live-page #passport-live-radio .passport-live-panel{
+  min-height:42px!important;
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr) auto!important;
+  gap:8px!important;
+  align-items:center!important;
+  padding:6px 8px!important;
+  border:1px solid #d0d0cc!important;
+  border-top:2px solid #c70000!important;
+  border-radius:9px!important;
+  background:#fff!important;
+  color:#111!important;
+  box-shadow:0 5px 16px rgba(0,0,0,.06)!important;
+}
+
+html body.live-page #passport-live-radio .passport-live-head{
+  min-width:86px!important;
+}
+html body.live-page #passport-live-radio .passport-live-head small{
+  display:none!important;
+}
+html body.live-page #passport-live-radio .passport-live-head strong{
+  margin:0!important;
+  color:#111!important;
+  font-size:.64rem!important;
+  line-height:1!important;
+  letter-spacing:.03em!important;
+}
+html body.live-page #passport-live-radio .passport-live-channels{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:4px!important;
+}
+html body.live-page #passport-live-radio .passport-live-channel{
+  min-height:28px!important;
+  padding:0 8px!important;
+  border:1px solid #deded9!important;
+  border-radius:5px!important;
+  background:#f2f1ed!important;
+  color:#5f5f5a!important;
+  font-size:.46rem!important;
+  font-weight:900!important;
+  letter-spacing:.04em!important;
+}
+html body.live-page #passport-live-radio .passport-live-channel.is-active{
+  border-color:#111!important;
+  border-top-color:#c70000!important;
+  background:#111!important;
+  color:#fff!important;
+}
+html body.live-page #passport-live-radio .passport-live-controls{
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+}
+html body.live-page #passport-live-radio .passport-live-play{
+  width:30px!important;
+  height:30px!important;
+  min-width:30px!important;
+  min-height:30px!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:#c70000!important;
+  color:#fff!important;
+  font-size:.62rem!important;
+  box-shadow:none!important;
+}
+html body.live-page #passport-live-radio #passport-live-status{
+  color:#666!important;
+  font-size:.43rem!important;
+  font-weight:900!important;
+  letter-spacing:.05em!important;
+  white-space:nowrap!important;
+}
+
+/* =========================================================
+   4. LIVE & RARE™ — SIZE P
+   The YouTube/archive engine remains untouched.
+   ========================================================= */
+html body.live-page .live-deck-section{
+  padding:38px 0 42px!important;
+}
+html body.live-page .deck-heading{
+  margin-bottom:14px!important;
+  gap:20px!important;
+}
+html body.live-page .deck-heading h2{
+  font-size:clamp(2.3rem,4.4vw,4.25rem)!important;
+}
+html body.live-page .deck-heading p{
+  max-width:360px!important;
+  font-size:.66rem!important;
+  line-height:1.5!important;
+}
+html body.live-page #player .tunnel-stage{
+  width:min(100%,860px)!important;
+  min-height:210px!important;
+  margin:0 auto!important;
+  grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr)!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.16)!important;
+}
+html body.live-page #player .tunnel-visual{
+  min-height:210px!important;
+  padding:20px!important;
+}
+html body.live-page #player .tunnel-visual:after{
+  right:20px!important;
+  top:20px!important;
+  width:58px!important;
+  height:2px!important;
+}
+html body.live-page #player .tunnel-kicker,
+html body.live-page #player .tunnel-brand{
+  font-size:.45rem!important;
+  letter-spacing:.11em!important;
+}
+html body.live-page #player .tunnel-title{
+  margin-top:6px!important;
+  font-size:clamp(1.55rem,3.2vw,2.8rem)!important;
+  line-height:.94!important;
+}
+html body.live-page #player .tunnel-meta,
+html body.live-page #player .tunnel-sub,
+html body.live-page #player .tunnel-diagnostic{
+  display:none!important;
+}
+html body.live-page #player .tunnel-console{
+  padding:17px!important;
+}
+html body.live-page #player .tunnel-console .tunnel-title{
+  margin-top:10px!important;
+  font-size:clamp(1.1rem,2.1vw,1.75rem)!important;
+}
+html body.live-page #player .tunnel-controls{
+  grid-template-columns:32px 42px 32px 1fr!important;
+  gap:7px!important;
+  margin-top:13px!important;
+}
+html body.live-page #player .tunnel-btn{
+  width:32px!important;
+  height:32px!important;
+}
+html body.live-page #player .tunnel-btn--play{
+  width:42px!important;
+  height:42px!important;
+}
+html body.live-page #player .tunnel-playlist-controls{
+  gap:4px!important;
+  margin-top:9px!important;
+}
+html body.live-page #player .tunnel-playlist-btn{
+  min-height:28px!important;
+  font-size:.43rem!important;
+}
+html body.live-page .live-signature{
+  margin-top:8px!important;
+}
+html body.live-page .live-signature span{
+  font-size:1.35rem!important;
+}
+
+/* =========================================================
+   5. TUNNELS — SIZE P (80s / Soul / MPB)
+   Only visual dimensions change. All audio elements and engines stay intact.
+   ========================================================= */
+html body.live-page .tunnel-stage-shell .passport80s-section,
+html body.live-page .passport-soul-section,
+html body.live-page .passport-mpb-section{
+  padding:28px 0 32px!important;
+}
+html body.live-page .eighties-layout,
+html body.live-page .passport-soul-shell,
+html body.live-page .passport-mpb-shell{
+  grid-template-columns:minmax(190px,.55fr) minmax(0,1.45fr)!important;
+  gap:24px!important;
+}
+html body.live-page .passport80s-section__head h2,
+html body.live-page .passport-soul-title,
+html body.live-page .passport-mpb-title{
+  font-size:clamp(2rem,3.8vw,3.5rem)!important;
+}
+html body.live-page .passport80s-section__head p,
+html body.live-page .passport-soul-copy,
+html body.live-page .passport-mpb-copy{
+  margin-top:10px!important;
+  font-size:.64rem!important;
+  line-height:1.5!important;
+}
+html body.live-page .script-note--80s,
+html body.live-page .passport-soul-script,
+html body.live-page .passport-mpb-script{
+  margin-top:12px!important;
+  font-size:1.45rem!important;
+}
+
+html body.live-page #passport80sPlayer .passport80s-stage,
+html body.live-page .passport-soul-card,
+html body.live-page .passport-mpb-card{
+  max-width:700px!important;
+  margin-left:auto!important;
+  border-radius:14px!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.10)!important;
+}
+html body.live-page #passport80sPlayer .passport80s-head,
+html body.live-page .passport-soul-cardhead,
+html body.live-page .passport-mpb-cardhead{
+  padding:11px 14px!important;
+}
+html body.live-page #passport80sPlayer .passport80s-head:after{
+  right:14px!important;
+  top:14px!important;
+  width:42px!important;
+}
+html body.live-page #passport80sPlayer .passport80s-title{
+  margin-top:5px!important;
+  font-size:clamp(1.35rem,2.7vw,2.2rem)!important;
+}
+html body.live-page #passport80sPlayer .passport80s-meta{
+  margin-top:4px!important;
+  font-size:.49rem!important;
+}
+html body.live-page #passport80sPlayer .passport80s-controls{
+  grid-template-columns:32px 40px 32px 1fr!important;
+  gap:6px!important;
+  padding:9px 14px!important;
+}
+html body.live-page #passport80sPlayer .passport80s-btn{
+  min-width:32px!important;
+  width:32px!important;
+  height:32px!important;
+  border-radius:7px!important;
+}
+html body.live-page #passport80sPlayer .passport80s-btn--play{
+  width:40px!important;
+  height:36px!important;
+  border-radius:7px 15px 7px 15px!important;
+  box-shadow:none!important;
+}
+html body.live-page #passport80sPlayer .passport80s-picker{
+  gap:3px!important;
+  padding:0 14px 12px!important;
+}
+html body.live-page #passport80sPlayer .passport80s-station{
+  min-height:29px!important;
+  padding:5px 7px!important;
+  font-size:.46rem!important;
+}
+
+html body.live-page .passport-soul-console,
+html body.live-page .passport-mpb-console{
+  grid-template-columns:42px 1fr!important;
+  gap:11px!important;
+  padding:12px 14px!important;
+}
+html body.live-page .passport-soul-play,
+html body.live-page .passport-mpb-play{
+  width:42px!important;
+  height:42px!important;
+  font-size:.75rem!important;
+  box-shadow:none!important;
+}
+html body.live-page .passport-soul-now strong,
+html body.live-page .passport-mpb-now strong{
+  font-size:.96rem!important;
+}
+html body.live-page .passport-soul-now span,
+html body.live-page .passport-mpb-now span{
+  font-size:.48rem!important;
+}
+html body.live-page .passport-soul-note,
+html body.live-page .passport-mpb-note{
+  padding:6px 14px 8px!important;
+  font-size:.42rem!important;
+}
+
+/* =========================================================
+   6. HOME PROMOTION — ONE CAMPAIGN, NO VINYL GRID
+   Exact product reference supplied by the project owner.
+   ========================================================= */
+html body .passport-promos-home__grid{
+  grid-template-columns:minmax(0,760px)!important;
+  justify-content:start!important;
+}
+html body .passport-promo-card--nevermind,
+html body .passport-promo-card--holy,
+html body .passport-promo-card--meteora{
+  display:none!important;
+}
+html body .passport-promo-card--featured{
+  grid-column:auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(180px,260px) minmax(0,1fr)!important;
+}
+html body .passport-promo-card--featured .passport-promo-card__media{
+  min-height:220px!important;
+  aspect-ratio:1/1!important;
+  background-size:84% auto!important;
+  background-image:url("https://m.media-amazon.com/images/I/619duhcCzQL._AC_SL1024_.jpg")!important;
+}
+html body .passport-promo-card--featured .passport-promo-card__meta span{
+  display:none!important;
+}
+html body .passport-promo-card--featured .passport-promo-card__meta b{
+  font-size:0!important;
+}
+html body .passport-promo-card--featured .passport-promo-card__meta b::after{
+  content:"INSCRIÇÕES ATÉ 31/08/2026";
+  font-size:.48rem!important;
+}
+html body .passport-promo-card--featured h3{
+  font-size:0!important;
+}
+html body .passport-promo-card--featured h3::after{
+  content:"Ganhe um Fone Bluetooth 5.4";
+  display:block;
+  color:#111;
+  font-size:clamp(1.15rem,1.8vw,1.55rem)!important;
+  line-height:1.05;
+}
+
+@media(max-width:760px){
+  html body.live-page #player .tunnel-stage{
+    grid-template-columns:1fr!important;
+    width:100%!important;
+  }
+  html body.live-page #player .tunnel-visual{
+    min-height:150px!important;
+  }
+  html body.live-page .eighties-layout,
+  html body.live-page .passport-soul-shell,
+  html body.live-page .passport-mpb-shell{
+    grid-template-columns:1fr!important;
+  }
+  html body.live-page #passport80sPlayer .passport80s-stage,
+  html body.live-page .passport-soul-card,
+  html body.live-page .passport-mpb-card{
+    max-width:none!important;
+    margin-left:0!important;
+  }
+  html body.live-page #passport-live-radio{
+    max-width:none!important;
+  }
+  html body.live-page #passport-live-radio .passport-live-panel{
+    grid-template-columns:1fr auto!important;
+  }
+  html body.live-page #passport-live-radio .passport-live-head{
+    display:none!important;
+  }
+  html body.live-page #passport-live-radio .passport-live-channel{
+    min-height:30px!important;
+  }
+  html body .passport-promo-card--featured{
+    grid-template-columns:1fr!important;
+  }
+  html body .passport-promo-card--featured .passport-promo-card__media{
+    min-height:0!important;
+    aspect-ratio:16/10!important;
+    background-size:68% auto!important;
+  }
+}
+
+@media(max-width:480px){
+  html body.live-page #passport-live-radio .passport-live-panel{
+    gap:5px!important;
+    padding:5px!important;
+  }
+  html body.live-page #passport-live-radio .passport-live-channel{
+    padding:0 5px!important;
+    font-size:.42rem!important;
+  }
+  html body.live-page #passport-live-radio #passport-live-status{
+    display:none!important;
+  }
+}
