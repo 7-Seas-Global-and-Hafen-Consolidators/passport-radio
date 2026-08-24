@@ -22,11 +22,86 @@ a:focus-visible,button:focus-visible{
   outline-offset:3px!important;
 }
 
+/* =========================================================
+   2026-08-24 — DESKTOP DRAWER
+   The Route 66 badge rail no longer occupies 236px permanently.
+   Same interaction model as mobile: open on demand, close after use.
+   ========================================================= */
+@media(min-width:981px){
+  body{
+    padding-left:0!important;
+    padding-bottom:calc(var(--player) + 90px)!important;
+  }
+
+  .portal-top{
+    left:0!important;
+    grid-template-columns:auto minmax(0,1fr) auto!important;
+  }
+
+  .menu{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+
+  .portal-side{
+    width:236px!important;
+    transform:translateX(-100%);
+    transition:transform .24s ease;
+    box-shadow:20px 0 50px rgba(0,0,0,.44);
+  }
+
+  .portal-side.open{
+    transform:translateX(0);
+  }
+
+  .player,
+  .passport-live-radio{
+    left:0!important;
+  }
+}
+
+/* Passport 24H replaces the old fixed Dee Snider/Wacken promo copy. */
+.program-feature--passport24 h3{
+  max-width:11ch;
+}
+
+.program-feature--passport24 p{
+  max-width:56ch;
+}
+
+/* Footer hardening: prevent the columns from collapsing into a thin strip. */
+.footer .shell,
+.footer-grid,
+.footer-grid>*{
+  min-width:0;
+}
+
+.footer-grid{
+  grid-template-columns:minmax(180px,1.4fr) repeat(3,minmax(120px,1fr));
+}
+
+.footer-col a,
+.footer-col strong,
+.footer-bottom{
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+
 @media(max-width:980px){
   .portal-top{left:0!important}
   main{margin-left:0!important}
   .portal-side{max-height:100vh;overflow-y:auto;overscroll-behavior:contain}
   .hero-grid,.news-layout{grid-template-columns:1fr!important}
+
+  .footer-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+
+  .footer-grid>div:first-child{
+    grid-column:1/-1;
+  }
 }
 
 @media(max-width:700px){
@@ -37,6 +112,16 @@ a:focus-visible,button:focus-visible{
   .hero{padding-top:28px!important}
   .hero-grid,.quick-grid,.news-layout{grid-template-columns:1fr!important}
   .hero-side{grid-template-columns:1fr!important}
+}
+
+@media(max-width:560px){
+  .footer-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .footer-grid>div:first-child{
+    grid-column:auto;
+  }
 }
 
 @media(max-width:480px){
