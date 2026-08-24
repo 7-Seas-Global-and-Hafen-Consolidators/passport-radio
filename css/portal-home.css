@@ -71,6 +71,155 @@ a:focus-visible,button:focus-visible{
   max-width:56ch;
 }
 
+/* =========================================================
+   PASSPORT NOW™ — compact live metrics strip
+   ========================================================= */
+.passport-now-home{
+  background:#111;
+  color:#fff;
+  border-top:1px solid #2b2b2b;
+  border-bottom:3px solid #d71920;
+}
+
+.passport-now-home__grid{
+  min-height:126px;
+  display:grid;
+  grid-template-columns:minmax(190px,.85fr) minmax(360px,1.45fr) auto;
+  gap:28px;
+  align-items:center;
+  padding-top:22px;
+  padding-bottom:22px;
+}
+
+.passport-now-home .eyebrow{
+  margin:0 0 5px;
+  color:#ff5056;
+}
+
+.passport-now-home h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(1.8rem,3vw,3.1rem);
+  line-height:.93;
+  letter-spacing:-.04em;
+}
+
+.passport-now-home__metrics{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-left:1px solid #343434;
+}
+
+.passport-now-home__metric{
+  min-height:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 22px;
+  border-right:1px solid #343434;
+}
+
+.passport-now-home__metric strong{
+  display:block;
+  color:#fff;
+  font-size:clamp(1.55rem,3vw,2.65rem);
+  line-height:.9;
+  letter-spacing:-.045em;
+}
+
+.passport-now-home__metric span{
+  display:block;
+  margin-top:8px;
+  color:#9b9b9b;
+  font-size:.5rem;
+  font-weight:900;
+  letter-spacing:.11em;
+}
+
+.passport-now-home__cta{
+  display:inline-flex;
+  align-items:center;
+  min-height:42px;
+  padding:0 15px;
+  border:1px solid #4a4a4a;
+  color:#fff;
+  font-size:.55rem;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.passport-now-home__cta:hover{
+  background:#d71920;
+  border-color:#d71920;
+}
+
+/* =========================================================
+   HOME COMMERCIAL GATEWAY — Anuncie gets a real sales stage
+   ========================================================= */
+.passport-commercial-home{
+  background:#d71920!important;
+  color:#fff;
+  border-top:0!important;
+  border-bottom:0!important;
+}
+
+.passport-commercial-home__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);
+  gap:52px;
+  align-items:center;
+}
+
+.passport-commercial-home .eyebrow{
+  color:#fff!important;
+  opacity:.78;
+}
+
+.passport-commercial-home h2{
+  max-width:12ch;
+  margin:8px 0 0;
+  color:#fff;
+  font-size:clamp(2.4rem,5vw,5.2rem);
+  line-height:.88;
+  letter-spacing:-.055em;
+}
+
+.passport-commercial-home p{
+  max-width:68ch;
+  margin-top:16px;
+  color:#ffe2e2!important;
+  font-size:.75rem;
+  line-height:1.65;
+}
+
+.passport-commercial-home__side{
+  min-height:170px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding-left:30px;
+  border-left:1px solid rgba(255,255,255,.28);
+}
+
+.passport-commercial-home__side strong{
+  max-width:30ch;
+  color:#fff;
+  font-size:.58rem;
+  line-height:1.65;
+  letter-spacing:.11em;
+}
+
+.passport-commercial-home .btn{
+  background:#111!important;
+  color:#fff!important;
+}
+
+.passport-commercial-home .btn:hover{
+  background:#fff!important;
+  color:#111!important;
+}
+
 /* Footer hardening: prevent the columns from collapsing into a thin strip. */
 .footer .shell,
 .footer-grid,
@@ -95,6 +244,27 @@ a:focus-visible,button:focus-visible{
   .portal-side{max-height:100vh;overflow-y:auto;overscroll-behavior:contain}
   .hero-grid,.news-layout{grid-template-columns:1fr!important}
 
+  .passport-now-home__grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .passport-now-home__metrics{
+    border-top:1px solid #343434;
+  }
+
+  .passport-commercial-home__grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .passport-commercial-home__side{
+    min-height:auto;
+    padding:24px 0 0;
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.28);
+  }
+
   .footer-grid{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
   }
@@ -112,6 +282,28 @@ a:focus-visible,button:focus-visible{
   .hero{padding-top:28px!important}
   .hero-grid,.quick-grid,.news-layout{grid-template-columns:1fr!important}
   .hero-side{grid-template-columns:1fr!important}
+
+  .passport-now-home__metrics{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .passport-now-home__metric{
+    min-height:64px;
+    padding:0 10px;
+  }
+
+  .passport-now-home__metric span{
+    font-size:.43rem;
+    letter-spacing:.06em;
+  }
+
+  .passport-now-home__cta{
+    justify-self:start;
+  }
+
+  .passport-commercial-home h2{
+    max-width:13ch;
+  }
 }
 
 @media(max-width:560px){
