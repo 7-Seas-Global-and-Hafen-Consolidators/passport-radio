@@ -1,5 +1,5 @@
 /* PASSPORT RADIO · SOUL TUNNEL
-   Isolated external Soul Central Radio embed.
+   Isolated external Soul Central Radio player.
    Injected after the 80s section. Does not modify the existing Live & Rare,
    80s Tunnel, or any protected 24h player engine.
 */
@@ -14,7 +14,7 @@
   const style = document.createElement("style");
   style.textContent = `
     .passport-soul-section{
-      padding:52px 0 58px;
+      padding:46px 0 52px;
       border-bottom:1px solid #d8d0c5;
       background:#efe7db;
       color:#101010;
@@ -72,7 +72,6 @@
       gap:18px;
       align-items:center;
       padding:20px 22px;
-      border-bottom:1px solid rgba(255,255,255,.08);
     }
     .passport-soul-cardhead small{
       display:block;
@@ -102,20 +101,21 @@
     }
     .passport-soul-framewrap{
       display:none;
-      height:510px;
-      overflow:hidden;
-      background:#fff;
+      padding:14px 18px 16px;
+      border-top:1px solid rgba(255,255,255,.08);
+      background:#f8f5f0;
     }
     .passport-soul-card.is-open .passport-soul-framewrap{display:block}
     .passport-soul-frame{
       display:block;
       width:100%;
-      height:700px;
+      height:112px;
       border:0;
-      background:#fff;
+      background:transparent;
     }
     .passport-soul-note{
-      padding:11px 22px 13px;
+      padding:10px 22px 13px;
+      border-top:1px solid rgba(255,255,255,.06);
       color:#746b70;
       font-size:.48rem;
       line-height:1.5;
@@ -125,12 +125,12 @@
       .passport-soul-copy{max-width:540px}
     }
     @media(max-width:560px){
-      .passport-soul-section{padding:46px 0 50px}
+      .passport-soul-section{padding:42px 0 46px}
       .passport-soul-shell{width:min(calc(100% - 28px),1180px)}
       .passport-soul-cardhead{padding:17px}
-      .passport-soul-framewrap{height:500px}
-      .passport-soul-frame{height:680px}
-      .passport-soul-note{padding:10px 17px 12px}
+      .passport-soul-framewrap{padding:12px 12px 14px}
+      .passport-soul-frame{height:112px}
+      .passport-soul-note{padding:9px 17px 11px}
     }
   `;
   document.head.appendChild(style);
@@ -153,19 +153,19 @@
             <small>UK · EXTERNAL LIVE SIGNAL</small>
             <strong>Soul Central Radio</strong>
           </div>
-          <button class="passport-soul-toggle" id="passportSoulToggle" type="button" aria-expanded="false">ABRIR PLAYER</button>
+          <button class="passport-soul-toggle" id="passportSoulToggle" type="button" aria-expanded="false">OUVIR SOUL</button>
         </div>
         <div class="passport-soul-framewrap">
           <iframe
             class="passport-soul-frame"
             id="passportSoulFrame"
             title="Soul Central Radio live"
-            loading="lazy"
+            loading="eager"
             allow="autoplay; encrypted-media"
             referrerpolicy="strict-origin-when-cross-origin"
-            data-src="https://e.radio-uk.co.uk/embed/soul-central-radio-466344"></iframe>
+            data-src="https://radiomixer.net/pt/gbr/soulcentral/embed"></iframe>
         </div>
-        <div class="passport-soul-note">Feed externo da Soul Central Radio. O player é carregado somente quando você abre esta seção.</div>
+        <div class="passport-soul-note">Soul Central Radio · sinal externo. O player só é carregado quando você abre esta seção.</div>
       </div>
     </div>`;
 
@@ -186,14 +186,15 @@
     const open = !card.classList.contains("is-open");
     if (open) {
       pausePassportPlayers();
-      if (!frame.src) frame.src = frame.dataset.src;
+      if (!frame.src || frame.src === "about:blank") frame.src = frame.dataset.src;
       card.classList.add("is-open");
-      button.textContent = "FECHAR PLAYER";
+      button.textContent = "FECHAR";
       button.setAttribute("aria-expanded", "true");
     } else {
       card.classList.remove("is-open");
-      button.textContent = "ABRIR PLAYER";
+      button.textContent = "OUVIR SOUL";
       button.setAttribute("aria-expanded", "false");
+      frame.src = "about:blank";
     }
   });
 })();
