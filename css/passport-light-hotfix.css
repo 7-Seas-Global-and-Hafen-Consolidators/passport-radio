@@ -229,6 +229,36 @@ html body:has(.commercial-now) .hero .cta{
   border-color:#d71920!important;
 }
 
+/* Passport Now stays identical on Home and Anuncie. */
+html body:has(.commercial-now) .commercial-now__metric strong,
+html body:has(.commercial-now) .commercial-now__metric span{
+  font-size:0!important;
+}
+
+html body:has(.commercial-now) .commercial-now__metric strong::after{
+  display:block;
+  color:#111;
+  font-size:clamp(1.8rem,3vw,2.9rem);
+  line-height:.9;
+  letter-spacing:-.045em;
+}
+
+html body:has(.commercial-now) .commercial-now__metric span::after{
+  display:block;
+  margin-top:8px;
+  color:#6f6a63;
+  font-size:.5rem;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+html body:has(.commercial-now) .commercial-now__metric:nth-child(1) strong::after{content:"102"}
+html body:has(.commercial-now) .commercial-now__metric:nth-child(1) span::after{content:"OUVINDO AGORA"}
+html body:has(.commercial-now) .commercial-now__metric:nth-child(2) strong::after{content:"1.824"}
+html body:has(.commercial-now) .commercial-now__metric:nth-child(2) span::after{content:"SESSÕES HOJE"}
+html body:has(.commercial-now) .commercial-now__metric:nth-child(3) strong::after{content:"14"}
+html body:has(.commercial-now) .commercial-now__metric:nth-child(3) span::after{content:"PAÍSES"}
+
 /* Canonical legal tail stays paper-colored even when older footer CSS loads later. */
 html body::after{
   background:#f0ece4!important;
