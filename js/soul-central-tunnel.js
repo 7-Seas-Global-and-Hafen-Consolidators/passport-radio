@@ -6,12 +6,16 @@
 (() => {
   "use strict";
   if (!document.body.classList.contains("live-page")) return;
-  if (document.getElementById("passportSoul")) return;
 
   const anchor = document.getElementById("passport80s");
   if (!anchor) return;
 
+  const stale = document.getElementById("passportSoul");
+  if (stale) stale.remove();
+  document.querySelectorAll("style[data-passport-soul-style]").forEach(el => el.remove());
+
   const style = document.createElement("style");
+  style.dataset.passportSoulStyle = "1";
   style.textContent = `
     .passport-soul-section{
       padding:46px 0 52px;
