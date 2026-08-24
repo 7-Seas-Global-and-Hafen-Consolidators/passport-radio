@@ -1,0 +1,342 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ — WHIPLASH CONTRAST PASS · 2026-08-24
+   Palette lifted from the supplied Whiplash source:
+   white #FFFFFF · ink #000000 · soft #EEEEEE · dark #303030
+   red #C70000 / #CC0702 · gray #606060 / #707070 · lines #CCCCCC / #AAAAAA
+   yellow #FFFF6F reserved for hover on red surfaces. */
+
+:root{
+  --passport-paper:#FFFFFF;
+  --passport-paper-2:#EEEEEE;
+  --passport-card:#FFFFFF;
+  --passport-ink:#000000;
+  --passport-muted:#303030;
+  --passport-muted-2:#606060;
+  --passport-line:#CCCCCC;
+  --passport-red:#CC0702;
+  --passport-red-strong:#C70000;
+  --passport-dark:#303030;
+  --passport-gray:#707070;
+  --passport-warm:#EEEEEE;
+}
+
+html,
+html body,
+html body.live-page{
+  background:#FFFFFF!important;
+  color:#000000!important;
+}
+
+/* Typography must read like ink on paper, never washed out. */
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6{
+  color:#000000!important;
+  opacity:1!important;
+}
+
+html body p,
+html body .lead,
+html body .story-deck,
+html body .article p,
+html body .story-content p,
+html body .page-intro p,
+html body .commercial-note{
+  color:#303030!important;
+  opacity:1!important;
+}
+
+html body small,
+html body .muted,
+html body .meta,
+html body .story-meta,
+html body .caption,
+html body .video-title,
+html body .hero-seo{
+  color:#606060!important;
+  opacity:1!important;
+}
+
+html body .eyebrow,
+html body .kicker,
+html body .live-kicker,
+html body .story-kicker,
+html body .story-label,
+html body .chapter__number,
+html body .click,
+html body .nomad-signature{
+  color:#CC0702!important;
+  opacity:1!important;
+}
+
+/* Header: white paper + black navigation, as explicit as Whiplash. */
+html body header,
+html body .site-header,
+html body .header,
+html body .portal-top,
+html body .topbar{
+  background:#FFFFFF!important;
+  color:#000000!important;
+  border-color:#CCCCCC!important;
+  opacity:1!important;
+}
+
+html body header a,
+html body header nav a,
+html body .site-header a,
+html body .site-header nav a,
+html body .main-nav a,
+html body .top-actions a,
+html body .brand,
+html body .brand strong,
+html body .brand small{
+  color:#000000!important;
+  -webkit-text-fill-color:#000000!important;
+  opacity:1!important;
+  filter:none!important;
+  text-shadow:none!important;
+}
+
+html body .main-nav a:hover,
+html body header nav a:hover,
+html body .site-header nav a:hover,
+html body .top-actions a:hover{
+  color:#CC0702!important;
+  -webkit-text-fill-color:#CC0702!important;
+}
+
+html body .site-header,
+html body .header,
+html body .portal-top,
+html body .topbar{
+  border-bottom:1px solid #CCCCCC!important;
+}
+
+html body .header-chip,
+html body .onair,
+html body .on-air,
+html body .onair-chip{
+  background:#000000!important;
+  color:#FFFFFF!important;
+  -webkit-text-fill-color:#FFFFFF!important;
+  border-color:#000000!important;
+  opacity:1!important;
+}
+
+/* Surfaces: white content, light-gray secondary zones. */
+html body .story-section--dark,
+html body .story-section--soft,
+html body .black,
+html body .nomad-closing,
+html body .packages-section,
+html body .commercial-now,
+html body .passport-now-home,
+html body .continuous-signals,
+html body .live-deck-section,
+html body .dark-section,
+html body .section-dark,
+html body .dark,
+html body .module.dark,
+html body .section--black,
+html body section.dark,
+html body .support-band,
+html body .support-section,
+html body #apoie{
+  background:#EEEEEE!important;
+  color:#000000!important;
+  border-color:#CCCCCC!important;
+}
+
+html body .card,
+html body .story-card,
+html body .collection-card,
+html body .product-card,
+html body .boutique-card,
+html body .format,
+html body .package,
+html body .placement,
+html body .direct-card,
+html body .rule,
+html body .fact-grid article,
+html body .musician-card,
+html body .discography article,
+html body .passport-file,
+html body .contact-card,
+html body .door,
+html body .big-links a,
+html body .rail-box,
+html body .archive-card,
+html body .program-item,
+html body .event,
+html body .quote,
+html body .listen,
+html body .transition{
+  background:#FFFFFF!important;
+  color:#000000!important;
+  border-color:#CCCCCC!important;
+}
+
+html body .card h3,
+html body .story-card h3,
+html body .product-card h3,
+html body .format h3,
+html body .package h3,
+html body .door strong,
+html body .program-item strong,
+html body .event strong,
+html body .quote p,
+html body .transition p,
+html body .listen{
+  color:#000000!important;
+}
+
+html body .card p,
+html body .story-card p,
+html body .product-card p,
+html body .format p,
+html body .package p,
+html body .door small,
+html body .program-item span,
+html body .event small{
+  color:#303030!important;
+}
+
+/* Passport red = Whiplash red family. */
+html body .btn,
+html body .cta,
+html body .primary-button,
+html body .support-button,
+html body .support-cta,
+html body .support-band__cta,
+html body .passport-commercial-home .btn,
+html body .breaking,
+html body .link-button{
+  background:#C70000!important;
+  color:#FFFFFF!important;
+  -webkit-text-fill-color:#FFFFFF!important;
+  border-color:#C70000!important;
+}
+
+html body .btn:hover,
+html body .cta:hover,
+html body .primary-button:hover,
+html body .support-button:hover,
+html body .support-cta:hover,
+html body .support-band__cta:hover,
+html body .passport-commercial-home .btn:hover{
+  background:#9B0000!important;
+  color:#FFFF6F!important;
+  -webkit-text-fill-color:#FFFF6F!important;
+  border-color:#9B0000!important;
+}
+
+html body .breaking,
+html body .breaking *{
+  color:#FFFFFF!important;
+  -webkit-text-fill-color:#FFFFFF!important;
+}
+
+/* Radio shell follows the same contrast rules; actual players keep their own dark identity. */
+html body.live-page .live-hero,
+html body.live-page .tunnels-hub,
+html body.live-page .story-paths,
+html body.live-page .archive-continuity,
+html body.live-page .what-you-find{
+  background:#FFFFFF!important;
+  color:#000000!important;
+  border-color:#CCCCCC!important;
+}
+
+html body.live-page .live-deck-section,
+html body.live-page .continuous-signals,
+html body.live-page #apoie{
+  background:#EEEEEE!important;
+  color:#000000!important;
+  border-color:#CCCCCC!important;
+}
+
+html body.live-page .deck-heading h2,
+html body.live-page .continuous-head h2,
+html body.live-page .tunnels-intro h2,
+html body.live-page .archive-continuity h2,
+html body.live-page .what-you-find h2{
+  color:#000000!important;
+}
+
+html body.live-page .deck-heading p,
+html body.live-page .continuous-head p,
+html body.live-page .tunnels-intro p,
+html body.live-page .signal-ledger,
+html body.live-page .archive-continuity p,
+html body.live-page .what-you-find p{
+  color:#303030!important;
+}
+
+/* Preserve deliberate dark media/player surfaces. */
+html body #player .tunnel-stage,
+html body #player .tunnel-visual,
+html body #passport80sPlayer .passport80s-stage,
+html body #passport80sPlayer .passport80s-head,
+html body #passportSoulPlayer,
+html body #passportMPBPlayer,
+html body .video,
+html body .embed-container{
+  color:inherit;
+}
+
+/* Commercial page: no black acreage, no pale type. */
+html body:has(.commercial-now) .hero,
+html body:has(.commercial-now) .commercial-now,
+html body:has(.commercial-now) .commercial-now__metrics,
+html body:has(.commercial-now) .commercial-now__metric,
+html body:has(.commercial-now) .close-sale{
+  background:#FFFFFF!important;
+  color:#000000!important;
+  border-color:#CCCCCC!important;
+}
+
+html body:has(.commercial-now) .packages-section{
+  background:#EEEEEE!important;
+}
+
+html body:has(.commercial-now) .hero h1,
+html body:has(.commercial-now) .commercial-now h2,
+html body:has(.commercial-now) .commercial-now__metric strong,
+html body:has(.commercial-now) .close-sale h2{
+  color:#000000!important;
+}
+
+html body:has(.commercial-now) .hero p,
+html body:has(.commercial-now) .commercial-now__metric span,
+html body:has(.commercial-now) .close-sale p{
+  color:#303030!important;
+}
+
+/* Footer/legal tail: light gray, black/dark-gray text. */
+html body footer,
+html body .footer,
+html body .site-footer,
+html body::after{
+  background:#EEEEEE!important;
+  color:#303030!important;
+  border-color:#CCCCCC!important;
+}
+
+html body footer a,
+html body footer strong,
+html body .footer a,
+html body .footer strong,
+html body .site-footer a,
+html body .site-footer strong{
+  color:#000000!important;
+}
+
+@media(max-width:760px){
+  html body .portal-side{
+    background:#FFFFFF!important;
+  }
+}
