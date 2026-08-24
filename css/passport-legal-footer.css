@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("./passport-light-system.css?v=202608241327");
 @import url("./passport-light-hotfix.css?v=202608241336");
+@import url("./passport-whiplash-contrast.css?v=202608241409");
 
 /* PASSPORT RADIO™ · GLOBAL LEGAL SIGNATURE
    Canonical legal notice shown at the final edge of every rendered Passport page
@@ -26,9 +27,9 @@ body::after{
   width:100%;
   margin:0;
   padding:24px max(18px, calc((100vw - 1180px) / 2));
-  border-top:1px solid rgba(212,175,55,.16);
-  background:#07090b;
-  color:#8f887e;
+  border-top:1px solid #CCCCCC;
+  background:#EEEEEE;
+  color:#303030;
   white-space:pre-line;
   font-family:Inter,Arial,sans-serif;
   font-size:10px;
