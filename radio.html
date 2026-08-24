@@ -29,626 +29,130 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body.live-page{
-  margin:0;
-  padding:0 0 62px;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:Inter,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
+body.live-page{margin:0;padding:0 0 62px;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button,input{font:inherit}
 .live-shell{width:min(calc(100% - 40px),var(--shell));margin:auto}
-
-/* HEADER — intentionally quiet */
-.site-header{
-  position:sticky;top:0;z-index:8000;
-  min-height:64px;
-  display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;
-  padding:0 max(20px,calc((100vw - var(--shell))/2));
-  border-bottom:1px solid rgba(16,16,16,.08);
-  background:rgba(243,239,231,.94);
-  backdrop-filter:blur(16px);
-}
+.site-header{position:sticky;top:0;z-index:8000;min-height:64px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;padding:0 max(20px,calc((100vw - var(--shell))/2));border-bottom:1px solid rgba(16,16,16,.08);background:rgba(243,239,231,.94);backdrop-filter:blur(16px)}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
-.brand-mark{
-  display:grid;place-items:center;width:38px;height:38px;
-  border:1px solid var(--ink);border-radius:50%;
-  font-size:.69rem;font-weight:900;letter-spacing:.03em
-}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--ink);border-radius:50%;font-size:.69rem;font-weight:900;letter-spacing:.03em}
 .brand strong{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em}
 .brand small{display:block;margin-top:2px;color:#817c74;font-size:.48rem}
 .main-nav{display:flex;justify-content:center;gap:20px}
-.main-nav a{
-  color:#3f3b37;text-decoration:none;
-  font-size:.61rem;font-weight:800;letter-spacing:.035em
-}
+.main-nav a{color:#3f3b37;text-decoration:none;font-size:.61rem;font-weight:800;letter-spacing:.035em}
 .main-nav a:hover{color:var(--rare)}
-.header-chip{
-  padding:9px 13px;border:1px solid var(--ink);border-radius:999px;
-  color:var(--ink);text-decoration:none;font-size:.56rem;font-weight:900;
-  letter-spacing:.08em
-}
-
-/* HERO */
+.header-chip{padding:9px 13px;border:1px solid var(--ink);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.56rem;font-weight:900;letter-spacing:.08em}
 .live-hero{padding:76px 0 56px;border-bottom:1px solid var(--line)}
-.live-hero__grid{
-  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.55fr);
-  gap:64px;align-items:end
-}
-.live-kicker{
-  color:#716c65;font-size:.55rem;font-weight:900;
-  letter-spacing:.18em;text-transform:uppercase
-}
-.live-hero h1{
-  max-width:850px;margin:12px 0 0;
-  font-size:clamp(3.7rem,8vw,8.4rem);
-  line-height:.82;letter-spacing:-.07em
-}
-.live-hero p{
-  max-width:720px;margin:22px 0 0;
-  color:var(--muted);font-size:.88rem;line-height:1.75
-}
-.hero-note{
-  align-self:center;padding:28px 0 10px 28px;
-  border-left:1px solid var(--line)
-}
-.handwritten{
-  font-family:Caveat,cursive;
-  font-weight:600;line-height:.92
-}
-.hero-note .handwritten{
-  display:block;color:var(--rare);
-  font-size:clamp(2.1rem,4vw,3.8rem);
-  transform:rotate(-2deg)
-}
-.hero-note small{
-  display:block;margin-top:14px;color:#8b857d;
-  font-size:.52rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase
-}
-
-/* LIVE & RARE — one large editorial object, engine untouched */
-.live-deck-section{
-  padding:76px 0 82px;
-  background:#0b0b0b;color:#fff
-}
-.deck-heading{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;
-  gap:30px;align-items:end;margin-bottom:28px
-}
-.deck-heading h2{
-  margin:7px 0 0;
-  font-family:"Bebas Neue",Impact,sans-serif;
-  font-size:clamp(3.2rem,7vw,6.7rem);
-  font-weight:400;line-height:.86;letter-spacing:.01em
-}
-.deck-heading p{
-  max-width:410px;margin:0;color:#8e8e8e;
-  font-size:.76rem;line-height:1.65;text-align:right
-}
+.live-hero__grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.55fr);gap:64px;align-items:end}
+.live-kicker{color:#716c65;font-size:.55rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.live-hero h1{max-width:850px;margin:12px 0 0;font-size:clamp(3.7rem,8vw,8.4rem);line-height:.82;letter-spacing:-.07em}
+.live-hero p{max-width:720px;margin:22px 0 0;color:var(--muted);font-size:.88rem;line-height:1.75}
+.hero-note{align-self:center;padding:28px 0 10px 28px;border-left:1px solid var(--line)}
+.handwritten{font-family:Caveat,cursive;font-weight:600;line-height:.92}
+.hero-note .handwritten{display:block;color:var(--rare);font-size:clamp(2.1rem,4vw,3.8rem);transform:rotate(-2deg)}
+.hero-note small{display:block;margin-top:14px;color:#8b857d;font-size:.52rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.live-deck-section{padding:76px 0 82px;background:#0b0b0b;color:#fff}
+.deck-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;margin-bottom:28px}
+.deck-heading h2{margin:7px 0 0;font-family:"Bebas Neue",Impact,sans-serif;font-size:clamp(3.2rem,7vw,6.7rem);font-weight:400;line-height:.86;letter-spacing:.01em}
+.deck-heading p{max-width:410px;margin:0;color:#8e8e8e;font-size:.76rem;line-height:1.65;text-align:right}
 .deck-heading .live-kicker{color:var(--rare)}
-.live-now{
-  position:relative;padding:0!important;border:0!important;
-  background:transparent!important;color:#fff!important
-}
+.live-now{position:relative;padding:0!important;border:0!important;background:transparent!important;color:#fff!important}
 .live-now>small,.live-now>h2,.live-now>p{display:none!important}
 .audio-player{margin:0;padding:0;border:0;background:transparent}
-
-/* Overrides only the skin produced by tunnel-player.js. IDs/engine/events remain untouched. */
-#player .tunnel-stage{
-  margin:0!important;border:0!important;background:#050505!important;
-  display:grid!important;
-  grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr)!important;
-  min-height:390px!important;
-  overflow:hidden!important;
-  box-shadow:0 28px 80px rgba(0,0,0,.28)
-}
-#player .tunnel-visual{
-  min-height:390px!important;padding:42px!important;
-  align-items:flex-end!important;
-  background:
-    linear-gradient(120deg,rgba(200,29,37,.20),transparent 38%),
-    radial-gradient(circle at 72% 24%,#272727 0,#101010 28%,#050505 64%,#020202 100%)!important
-}
-#player .tunnel-visual:before{
-  inset:0!important;
-  background:
-    linear-gradient(90deg,transparent 0 49.8%,rgba(255,255,255,.035) 50%,transparent 50.2%),
-    linear-gradient(0deg,transparent 0 49.8%,rgba(255,255,255,.025) 50%,transparent 50.2%)!important;
-  transform:none!important;animation:none!important
-}
-#player .tunnel-visual:after{
-  left:auto!important;right:38px!important;top:38px!important;
-  width:112px!important;height:3px!important;border-radius:0!important;
-  background:var(--rare)!important;
-  box-shadow:none!important;transform:none!important
-}
+#player .tunnel-stage{margin:0!important;border:0!important;background:#050505!important;display:grid!important;grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr)!important;min-height:390px!important;overflow:hidden!important;box-shadow:0 28px 80px rgba(0,0,0,.28)}
+#player .tunnel-visual{min-height:390px!important;padding:42px!important;align-items:flex-end!important;background:linear-gradient(120deg,rgba(200,29,37,.20),transparent 38%),radial-gradient(circle at 72% 24%,#272727 0,#101010 28%,#050505 64%,#020202 100%)!important}
+#player .tunnel-visual:before{inset:0!important;background:linear-gradient(90deg,transparent 0 49.8%,rgba(255,255,255,.035) 50%,transparent 50.2%),linear-gradient(0deg,transparent 0 49.8%,rgba(255,255,255,.025) 50%,transparent 50.2%)!important;transform:none!important;animation:none!important}
+#player .tunnel-visual:after{left:auto!important;right:38px!important;top:38px!important;width:112px!important;height:3px!important;border-radius:0!important;background:var(--rare)!important;box-shadow:none!important;transform:none!important}
 #player .tunnel-copy{max-width:92%!important}
-#player .tunnel-kicker,
-#player .tunnel-brand{
-  color:var(--rare)!important;
-  font-size:.55rem!important;letter-spacing:.16em!important
-}
-#player .tunnel-title{
-  margin-top:10px!important;color:#fff!important;
-  font-family:"Bebas Neue",Impact,sans-serif!important;
-  font-size:clamp(2.8rem,6vw,5.8rem)!important;
-  font-weight:400!important;line-height:.9!important;letter-spacing:.015em!important
-}
+#player .tunnel-kicker,#player .tunnel-brand{color:var(--rare)!important;font-size:.55rem!important;letter-spacing:.16em!important}
+#player .tunnel-title{margin-top:10px!important;color:#fff!important;font-family:"Bebas Neue",Impact,sans-serif!important;font-size:clamp(2.8rem,6vw,5.8rem)!important;font-weight:400!important;line-height:.9!important;letter-spacing:.015em!important}
 #player .tunnel-meta{margin-top:12px!important;color:#8a8a8a!important}
-#player .tunnel-console{
-  display:flex!important;flex-direction:column!important;justify-content:center!important;
-  padding:36px!important;border:0!important;
-  background:var(--paper)!important;color:var(--ink)!important
-}
-#player .tunnel-console .tunnel-brand{
-  color:#8a1c21!important;font-size:.52rem!important
-}
-#player .tunnel-console .tunnel-title{
-  margin-top:22px!important;color:var(--ink)!important;
-  font-size:clamp(2.1rem,4vw,3.7rem)!important
-}
+#player .tunnel-console{display:flex!important;flex-direction:column!important;justify-content:center!important;padding:36px!important;border:0!important;background:var(--paper)!important;color:var(--ink)!important}
+#player .tunnel-console .tunnel-brand{color:#8a1c21!important;font-size:.52rem!important}
+#player .tunnel-console .tunnel-title{margin-top:22px!important;color:var(--ink)!important;font-size:clamp(2.1rem,4vw,3.7rem)!important}
 #player .tunnel-sub{margin-top:8px!important;color:#817b73!important;font-size:.57rem!important}
-#player .tunnel-controls{
-  grid-template-columns:48px 62px 48px 1fr!important;
-  gap:12px!important;margin-top:28px!important
-}
-#player .tunnel-btn{
-  width:48px!important;height:48px!important;
-  border:0!important;border-radius:0!important;
-  background:#ded7cd!important;color:#292725!important
-}
-#player .tunnel-btn--play{
-  width:62px!important;height:62px!important;
-  background:var(--rare)!important;color:#fff!important;
-  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)!important
-}
+#player .tunnel-controls{grid-template-columns:48px 62px 48px 1fr!important;gap:12px!important;margin-top:28px!important}
+#player .tunnel-btn{width:48px!important;height:48px!important;border:0!important;border-radius:0!important;background:#ded7cd!important;color:#292725!important}
+#player .tunnel-btn--play{width:62px!important;height:62px!important;background:var(--rare)!important;color:#fff!important;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)!important}
 #player .tunnel-progress{accent-color:var(--rare)!important}
-#player .tunnel-playlist-controls{
-  grid-template-columns:1fr 1fr!important;gap:1px!important;margin-top:18px!important
-}
-#player .tunnel-playlist-btn{
-  min-height:38px!important;border:0!important;border-top:1px solid #cfc6ba!important;
-  background:transparent!important;color:#625d56!important;
-  font-size:.49rem!important;letter-spacing:.07em!important
-}
+#player .tunnel-playlist-controls{grid-template-columns:1fr 1fr!important;gap:1px!important;margin-top:18px!important}
+#player .tunnel-playlist-btn{min-height:38px!important;border:0!important;border-top:1px solid #cfc6ba!important;background:transparent!important;color:#625d56!important;font-size:.49rem!important;letter-spacing:.07em!important}
 #player .tunnel-playlist-btn:hover{color:var(--rare)!important;border-color:var(--rare)!important}
 #player .tunnel-diagnostic{margin-top:12px!important;color:#969087!important;font-size:.49rem!important}
-.live-signature{
-  display:flex;justify-content:flex-end;margin-top:18px
-}
-.live-signature span{
-  color:#e0d7ce;font-size:clamp(1.7rem,3vw,2.7rem);
-  transform:rotate(-1deg)
-}
-
-/* 80s — different typography, color language and silhouette */
-.passport80s-section{
-  padding:88px 0;
-  border-bottom:1px solid var(--line);
-  background:var(--paper)
-}
-.eighties-layout{
-  display:grid;grid-template-columns:minmax(220px,.62fr) minmax(0,1.38fr);
-  gap:56px;align-items:center
-}
+.live-signature{display:flex;justify-content:flex-end;margin-top:18px}
+.live-signature span{color:#e0d7ce;font-size:clamp(1.7rem,3vw,2.7rem);transform:rotate(-1deg)}
+.passport80s-section{padding:88px 0;border-bottom:1px solid var(--line);background:var(--paper)}
+.eighties-layout{display:grid;grid-template-columns:minmax(220px,.62fr) minmax(0,1.38fr);gap:56px;align-items:center}
 .passport80s-section__head{margin:0}
 .passport80s-section__head .live-kicker{color:#9a2d64}
-.passport80s-section__head h2{
-  margin:8px 0 0;
-  font-family:"Space Grotesk",Inter,sans-serif;
-  color:var(--ink);
-  font-size:clamp(3rem,6vw,6.2rem);
-  line-height:.88;letter-spacing:-.065em
-}
-.passport80s-section__head p{
-  max-width:350px;margin:18px 0 0;
-  color:#79736b;font-size:.78rem;line-height:1.7
-}
-.script-note--80s{
-  display:block;margin-top:28px;
-  color:#b82772;font-size:clamp(1.8rem,3vw,2.8rem);
-  transform:rotate(-3deg)
-}
-#passport80sPlayer .passport80s-stage{
-  border:0!important;border-radius:38px 6px 38px 6px!important;
-  background:var(--eighties-deep)!important;color:#fff!important;
-  overflow:hidden!important;
-  box-shadow:0 28px 70px rgba(31,15,34,.16)
-}
-#passport80sPlayer .passport80s-head{
-  position:relative;padding:28px 30px!important;
-  border:0!important;
-  background:
-    linear-gradient(120deg,rgba(231,53,135,.24),transparent 45%),
-    linear-gradient(150deg,#1b1325,#0e0b14)!important
-}
-#passport80sPlayer .passport80s-head:after{
-  content:"";
-  position:absolute;right:30px;top:30px;
-  width:76px;height:2px;background:var(--eighties-cyan)
-}
-#passport80sPlayer .passport80s-kicker{
-  color:var(--eighties-cyan)!important;
-  font-size:.52rem!important;letter-spacing:.17em!important
-}
-#passport80sPlayer .passport80s-title{
-  margin-top:10px!important;
-  font-family:"Space Grotesk",Inter,sans-serif!important;
-  font-size:clamp(2.2rem,5vw,4.5rem)!important;
-  font-weight:700!important;letter-spacing:-.055em!important
-}
+.passport80s-section__head h2{margin:8px 0 0;font-family:"Space Grotesk",Inter,sans-serif;color:var(--ink);font-size:clamp(3rem,6vw,6.2rem);line-height:.88;letter-spacing:-.065em}
+.passport80s-section__head p{max-width:350px;margin:18px 0 0;color:#79736b;font-size:.78rem;line-height:1.7}
+.script-note--80s{display:block;margin-top:28px;color:#b82772;font-size:clamp(1.8rem,3vw,2.8rem);transform:rotate(-3deg)}
+#passport80sPlayer .passport80s-stage{border:0!important;border-radius:38px 6px 38px 6px!important;background:var(--eighties-deep)!important;color:#fff!important;overflow:hidden!important;box-shadow:0 28px 70px rgba(31,15,34,.16)}
+#passport80sPlayer .passport80s-head{position:relative;padding:28px 30px!important;border:0!important;background:linear-gradient(120deg,rgba(231,53,135,.24),transparent 45%),linear-gradient(150deg,#1b1325,#0e0b14)!important}
+#passport80sPlayer .passport80s-head:after{content:"";position:absolute;right:30px;top:30px;width:76px;height:2px;background:var(--eighties-cyan)}
+#passport80sPlayer .passport80s-kicker{color:var(--eighties-cyan)!important;font-size:.52rem!important;letter-spacing:.17em!important}
+#passport80sPlayer .passport80s-title{margin-top:10px!important;font-family:"Space Grotesk",Inter,sans-serif!important;font-size:clamp(2.2rem,5vw,4.5rem)!important;font-weight:700!important;letter-spacing:-.055em!important}
 #passport80sPlayer .passport80s-meta{margin-top:9px!important;color:#928a9c!important}
-#passport80sPlayer .passport80s-controls{
-  grid-template-columns:46px 64px 46px 1fr!important;
-  gap:11px!important;padding:22px 30px 18px!important
-}
-#passport80sPlayer .passport80s-btn{
-  min-width:46px!important;width:46px!important;height:46px!important;
-  padding:0!important;border:1px solid #30283a!important;border-radius:10px!important;
-  background:#17121e!important;color:#d5cddd!important
-}
-#passport80sPlayer .passport80s-btn--play{
-  width:64px!important;height:54px!important;
-  border:0!important;border-radius:4px 22px 4px 22px!important;
-  background:var(--eighties)!important;color:#fff!important;
-  box-shadow:10px -8px 0 rgba(100,230,225,.13)!important
-}
-#passport80sPlayer .passport80s-status{
-  color:var(--eighties-cyan)!important;
-  font-size:.52rem!important;letter-spacing:.12em!important
-}
-#passport80sPlayer .passport80s-picker{
-  display:flex!important;flex-wrap:wrap!important;gap:0!important;
-  padding:0 30px 26px!important
-}
-#passport80sPlayer .passport80s-station{
-  flex:1 1 30%!important;min-height:44px!important;
-  padding:10px 12px!important;
-  border:0!important;border-top:1px solid #2b2333!important;
-  background:transparent!important;color:#8e8597!important;
-  text-align:left!important;font-size:.54rem!important
-}
-#passport80sPlayer .passport80s-station.is-active{
-  border-top-color:var(--eighties)!important;
-  background:rgba(231,53,135,.08)!important;
-  color:#fff!important
-}
-
-/* CONTENT — more room for Passport than just players */
-.live-section{
-  padding:84px 0;border-bottom:1px solid var(--line);
-  background:#fffdf9
-}
-.section-heading{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.55fr);
-  gap:52px;align-items:end;margin-bottom:36px
-}
-.live-section h2{
-  max-width:760px;margin:8px 0 0;
-  font-size:clamp(2.6rem,5.4vw,5.6rem);
-  line-height:.9;letter-spacing:-.06em
-}
-.section-heading p{
-  margin:0;color:#7b766f;font-size:.78rem;line-height:1.7
-}
-.editorial-links{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)
-}
-.editorial-link{
-  min-height:170px;padding:24px;
-  border-right:1px solid var(--line);
-  text-decoration:none;
-  display:flex;flex-direction:column;justify-content:space-between
-}
+#passport80sPlayer .passport80s-controls{grid-template-columns:46px 64px 46px 1fr!important;gap:11px!important;padding:22px 30px 18px!important}
+#passport80sPlayer .passport80s-btn{min-width:46px!important;width:46px!important;height:46px!important;padding:0!important;border:1px solid #30283a!important;border-radius:10px!important;background:#17121e!important;color:#d5cddd!important}
+#passport80sPlayer .passport80s-btn--play{width:64px!important;height:54px!important;border:0!important;border-radius:4px 22px 4px 22px!important;background:var(--eighties)!important;color:#fff!important;box-shadow:10px -8px 0 rgba(100,230,225,.13)!important}
+#passport80sPlayer .passport80s-status{color:var(--eighties-cyan)!important;font-size:.52rem!important;letter-spacing:.12em!important}
+#passport80sPlayer .passport80s-picker{display:flex!important;flex-wrap:wrap!important;gap:0!important;padding:0 30px 26px!important}
+#passport80sPlayer .passport80s-station{flex:1 1 30%!important;min-height:44px!important;padding:10px 12px!important;border:0!important;border-top:1px solid #2b2333!important;background:transparent!important;color:#8e8597!important;text-align:left!important;font-size:.54rem!important}
+#passport80sPlayer .passport80s-station.is-active{border-top-color:var(--eighties)!important;background:rgba(231,53,135,.08)!important;color:#fff!important}
+.live-section{padding:84px 0;border-bottom:1px solid var(--line);background:#fffdf9}
+.section-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.55fr);gap:52px;align-items:end;margin-bottom:36px}
+.live-section h2{max-width:760px;margin:8px 0 0;font-size:clamp(2.6rem,5.4vw,5.6rem);line-height:.9;letter-spacing:-.06em}
+.section-heading p{margin:0;color:#7b766f;font-size:.78rem;line-height:1.7}
+.editorial-links{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.editorial-link{min-height:170px;padding:24px;border-right:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;justify-content:space-between}
 .editorial-link:last-child{border-right:0}
-.editorial-link small{
-  color:#888078;font-size:.49rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase
-}
-.editorial-link strong{
-  display:block;max-width:240px;
-  font-size:1.25rem;line-height:1.08;letter-spacing:-.03em
-}
-.editorial-link span{
-  color:var(--rare);font-size:.56rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase
-}
+.editorial-link small{color:#888078;font-size:.49rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.editorial-link strong{display:block;max-width:240px;font-size:1.25rem;line-height:1.08;letter-spacing:-.03em}
+.editorial-link span{color:var(--rare);font-size:.56rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 .editorial-link:hover{background:var(--paper)}
 .archive-section{background:var(--paper)}
-.archive-row{
-  display:grid;grid-template-columns:1fr auto;
-  gap:24px;align-items:center;
-  padding:24px 0;border-top:1px solid var(--line)
-}
+.archive-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:24px 0;border-top:1px solid var(--line)}
 .archive-row:last-child{border-bottom:1px solid var(--line)}
 .archive-row strong{font-size:1rem}
 .archive-row p{margin:4px 0 0!important;color:#817b74!important;font-size:.69rem!important}
-.archive-row a{
-  padding:9px 12px;border:1px solid #aaa197;border-radius:999px;
-  text-decoration:none;font-size:.51rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase
-}
-
-/* FOOTER / rights */
-.footer{
-  padding:66px 0 92px;background:#0b0b0b;color:#fff
-}
-.footer-signature{
-  padding-bottom:34px;border-bottom:1px solid #242424
-}
-.footer-signature .handwritten{
-  display:block;color:#efe5da;
-  font-size:clamp(2.8rem,6vw,5.7rem);
-  transform:rotate(-1deg)
-}
-.footer-signature small{
-  color:var(--rare);font-size:.55rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase
-}
-.footer-grid{
-  display:grid;grid-template-columns:1.45fr repeat(4,1fr);
-  gap:28px;padding-top:34px
-}
+.archive-row a{padding:9px 12px;border:1px solid #aaa197;border-radius:999px;text-decoration:none;font-size:.51rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+.footer{padding:66px 0 92px;background:#0b0b0b;color:#fff}
+.footer-signature{padding-bottom:34px;border-bottom:1px solid #242424}
+.footer-signature .handwritten{display:block;color:#efe5da;font-size:clamp(2.8rem,6vw,5.7rem);transform:rotate(-1deg)}
+.footer-signature small{color:var(--rare);font-size:.55rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.footer-grid{display:grid;grid-template-columns:1.45fr repeat(4,1fr);gap:28px;padding-top:34px}
 .footer strong{display:block;margin-bottom:9px;font-size:.67rem}
-.footer p,.footer a{
-  display:block;margin:6px 0;color:#999;text-decoration:none;
-  font-size:.58rem;line-height:1.55
-}
-.footer-legal{
-  margin-top:34px;padding-top:24px;border-top:1px solid #242424;
-  display:grid;grid-template-columns:1fr minmax(280px,.72fr);gap:36px
-}
+.footer p,.footer a{display:block;margin:6px 0;color:#999;text-decoration:none;font-size:.58rem;line-height:1.55}
+.footer-legal{margin-top:34px;padding-top:24px;border-top:1px solid #242424;display:grid;grid-template-columns:1fr minmax(280px,.72fr);gap:36px}
 .footer-legal p{margin:0;color:#767676;font-size:.53rem;line-height:1.7}
 .footer-legal p:last-child{text-align:right}
-
-/* persistent player — same IDs/events, quieter skin */
-.player-bar{
-  position:fixed;left:0;right:0;bottom:0;z-index:9000;
-  min-height:54px;
-  display:grid;grid-template-columns:38px 1fr auto;gap:11px;align-items:center;
-  padding:7px max(16px,calc((100vw - var(--shell))/2));
-  border-top:1px solid #292929;background:rgba(8,8,8,.96);
-  color:#fff;backdrop-filter:blur(16px)
-}
-.player-bar__button{
-  width:34px;height:34px;border:0;border-radius:0;
-  background:var(--rare);color:#fff;
-  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)
-}
+.player-bar{position:fixed;left:0;right:0;bottom:0;z-index:9000;min-height:54px;display:grid;grid-template-columns:38px 1fr auto;gap:11px;align-items:center;padding:7px max(16px,calc((100vw - var(--shell))/2));border-top:1px solid #292929;background:rgba(8,8,8,.96);color:#fff;backdrop-filter:blur(16px)}
+.player-bar__button{width:34px;height:34px;border:0;border-radius:0;background:var(--rare);color:#fff;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
 .player-copy{display:grid}
 .player-copy strong{font-size:.61rem}
 .player-copy small{color:#777;font-size:.46rem}
-.player-bar__next{
-  height:34px;padding:0 12px;
-  border:1px solid #3a3a3a;background:transparent;color:#ddd;
-  font-size:.49rem;font-weight:900;letter-spacing:.05em
-}
-
-/* mobile */
-@media(max-width:900px){
-  .main-nav{display:none}
-  .live-hero{padding:54px 0 42px}
-  .live-hero__grid,.deck-heading,.eighties-layout,.section-heading{grid-template-columns:1fr}
-  .hero-note{padding:18px 0 0;border-left:0;border-top:1px solid var(--line)}
-  .deck-heading p{text-align:left}
-  #player .tunnel-stage{grid-template-columns:1fr!important}
-  #player .tunnel-visual{min-height:290px!important}
-  #player .tunnel-console{padding:28px!important}
-  .live-signature{justify-content:flex-start}
-  .eighties-layout{gap:32px}
-  .editorial-links{grid-template-columns:1fr}
-  .editorial-link{min-height:130px;border-right:0;border-bottom:1px solid var(--line)}
-  .editorial-link:last-child{border-bottom:0}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-legal{grid-template-columns:1fr}
-  .footer-legal p:last-child{text-align:left}
-}
-@media(max-width:560px){
-  .live-shell{width:min(calc(100% - 28px),var(--shell))}
-  .site-header{min-height:60px;padding:0 14px}
-  .brand small{display:none}
-  .live-hero h1{font-size:clamp(3.3rem,18vw,5rem)}
-  .live-deck-section,.passport80s-section,.live-section{padding:58px 0}
-  #player .tunnel-visual{min-height:250px!important;padding:26px!important}
-  #player .tunnel-visual:after{right:24px!important;top:24px!important;width:70px!important}
-  #player .tunnel-console{padding:24px!important}
-  #player .tunnel-controls{grid-template-columns:44px 58px 44px!important}
-  #player .tunnel-progress{grid-column:1/-1!important}
-  #player .tunnel-playlist-controls{grid-template-columns:1fr!important}
-  #passport80sPlayer .passport80s-head{padding:24px!important}
-  #passport80sPlayer .passport80s-head:after{right:24px;top:24px;width:52px}
-  #passport80sPlayer .passport80s-controls{padding:20px 24px 16px!important}
-  #passport80sPlayer .passport80s-picker{padding:0 24px 22px!important}
-  #passport80sPlayer .passport80s-station{flex:1 1 50%!important}
-  .archive-row{grid-template-columns:1fr}
-  .archive-row a{justify-self:start}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:22px}
-  .footer-legal{gap:18px}
-}
+.player-bar__next{height:34px;padding:0 12px;border:1px solid #3a3a3a;background:transparent;color:#ddd;font-size:.49rem;font-weight:900;letter-spacing:.05em}
+@media(max-width:900px){.main-nav{display:none}.live-hero{padding:54px 0 42px}.live-hero__grid,.deck-heading,.eighties-layout,.section-heading{grid-template-columns:1fr}.hero-note{padding:18px 0 0;border-left:0;border-top:1px solid var(--line)}.deck-heading p{text-align:left}#player .tunnel-stage{grid-template-columns:1fr!important}#player .tunnel-visual{min-height:290px!important}#player .tunnel-console{padding:28px!important}.live-signature{justify-content:flex-start}.eighties-layout{gap:32px}.editorial-links{grid-template-columns:1fr}.editorial-link{min-height:130px;border-right:0;border-bottom:1px solid var(--line)}.editorial-link:last-child{border-bottom:0}.footer-grid{grid-template-columns:1fr 1fr}.footer-legal{grid-template-columns:1fr}.footer-legal p:last-child{text-align:left}}
+@media(max-width:560px){.live-shell{width:min(calc(100% - 28px),var(--shell))}.site-header{min-height:60px;padding:0 14px}.brand small{display:none}.live-hero h1{font-size:clamp(3.3rem,18vw,5rem)}.live-deck-section,.passport80s-section,.live-section{padding:58px 0}#player .tunnel-visual{min-height:250px!important;padding:26px!important}#player .tunnel-visual:after{right:24px!important;top:24px!important;width:70px!important}#player .tunnel-console{padding:24px!important}#player .tunnel-controls{grid-template-columns:44px 58px 44px!important}#player .tunnel-progress{grid-column:1/-1!important}#player .tunnel-playlist-controls{grid-template-columns:1fr!important}#passport80sPlayer .passport80s-head{padding:24px!important}#passport80sPlayer .passport80s-head:after{right:24px;top:24px;width:52px}#passport80sPlayer .passport80s-controls{padding:20px 24px 16px!important}#passport80sPlayer .passport80s-picker{padding:0 24px 22px!important}#passport80sPlayer .passport80s-station{flex:1 1 50%!important}.archive-row{grid-template-columns:1fr}.archive-row a{justify-self:start}.footer-grid{grid-template-columns:1fr 1fr;gap:22px}.footer-legal{gap:18px}}
 </style>
 </head>
 <body class="live-page">
-
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <span class="brand-mark">PR</span>
-    <span><strong>Passport Radio™</strong><small>Music · History · Culture · Live</small></span>
-  </a>
-  <nav class="main-nav" aria-label="Navegação principal">
-    <a href="index.html">Agora</a>
-    <a href="#player">Live &amp; Rare™</a>
-    <a href="#passport80s">80s Tunnel™</a>
-    <a href="#historias">Histórias</a>
-    <a href="#arquivos">Arquivos</a>
-    <a href="index.html#agenda">Agenda</a>
-    <a href="loja.html">Loja</a>
-  </nav>
-  <a class="header-chip" href="#player">ON AIR</a>
-</header>
-
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">PR</span><span><strong>Passport Radio™</strong><small>Music · History · Culture · Live</small></span></a><nav class="main-nav" aria-label="Navegação principal"><a href="index.html">Agora</a><a href="#player">Live &amp; Rare™</a><a href="#passport80s">80s Tunnel™</a><a href="#historias">Histórias</a><a href="#arquivos">Arquivos</a><a href="index.html#agenda">Agenda</a><a href="loja.html">Loja</a></nav><a class="header-chip" href="#player">ON AIR</a></header>
 <main>
-  <section class="live-hero">
-    <div class="live-shell live-hero__grid">
-      <div>
-        <span class="live-kicker">ON AIR · PASSPORT RADIO™</span>
-        <h1>Música tocando.<br>História aberta.</h1>
-        <p>Ao vivo, arquivos raros, histórias, bandas e gente que fez barulho de verdade. Menos painel técnico, mais experiência editorial. Aperte play. O resto começa daqui.</p>
-      </div>
-      <aside class="hero-note" aria-label="Assinatura Passport Radio">
-        <span class="handwritten">Every song is a destination.</span>
-        <small>Passport Radio™ · est. archive culture</small>
-      </aside>
-    </div>
-  </section>
-
-  <section class="live-deck-section" aria-labelledby="liveRareHeading">
-    <div class="live-shell">
-      <div class="deck-heading">
-        <div>
-          <span class="live-kicker">PASSPORT LIVE DESK™ · ARCHIVE SIGNAL</span>
-          <h2 id="liveRareHeading">Live &amp; Rare™</h2>
-        </div>
-        <p>Shows, performances e arquivos em rotação contínua. O motor permanece o mesmo; aqui muda apenas a pele.</p>
-      </div>
-
-      <div class="live-now" id="player">
-        <small>Tocando agora</small>
-        <h2 id="currentTrackTitle">Underground Archive</h2>
-        <p id="currentTrackDescription">Passport Radio · Live &amp; Rare</p>
-        <div class="audio-player"><audio id="passportAudio" preload="none"></audio></div>
-      </div>
-
-      <div class="live-signature" aria-hidden="true">
-        <span class="handwritten">some nights deserve to survive.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="passport80s-section" id="passport80s" aria-labelledby="eightiesHeading">
-    <div class="live-shell eighties-layout">
-      <div class="passport80s-section__head">
-        <span class="live-kicker">PASSPORT RADIO™ · CONTINUOUS</span>
-        <h2 id="eightiesHeading">80s<br>Tunnel™</h2>
-        <p>Seis canais contínuos em um ambiente próprio. Mesma engenharia que já funciona; outra identidade visual.</p>
-        <span class="handwritten script-note--80s">still somewhere in 1986.</span>
-      </div>
-      <div id="passport80sPlayer"></div>
-    </div>
-  </section>
-
-  <section class="live-section" id="historias">
-    <div class="live-shell">
-      <div class="section-heading">
-        <div>
-          <span class="live-kicker">STORIES IN ROTATION™</span>
-          <h2>Você conhece a música. Agora conheça a história.</h2>
-        </div>
-        <p>O player deixa de dominar a página. Aqui entram contexto, gente, memória, bastidores, agenda e tudo aquilo que faz a Passport ser mais do que uma rádio.</p>
-      </div>
-
-      <div class="editorial-links">
-        <a class="editorial-link" href="index.html#noticias">
-          <small>01 · Editorial</small>
-          <strong>Últimas histórias e matérias</strong>
-          <span>Abrir histórias →</span>
-        </a>
-        <a class="editorial-link" href="index.html#agenda">
-          <small>02 · Radar</small>
-          <strong>Agenda, shows e próximos movimentos</strong>
-          <span>Ver agenda →</span>
-        </a>
-        <a class="editorial-link" href="#arquivos">
-          <small>03 · Archive Desk</small>
-          <strong>Voltar para o que merece sobreviver</strong>
-          <span>Explorar arquivos →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="live-section archive-section" id="arquivos">
-    <div class="live-shell">
-      <div class="section-heading">
-        <div>
-          <span class="live-kicker">PASSPORT AUDIO ARCHIVES™</span>
-          <h2>O arquivo continua vivo depois que a faixa sai do ar.</h2>
-        </div>
-        <p>Dois caminhos claros: entrar no acervo Live &amp; Rare™ ou mudar de década no 80s Tunnel™ — sem empilhar mais players na sua frente.</p>
-      </div>
-
-      <div class="archive-row">
-        <div>
-          <strong>Live &amp; Rare™ · Underground Archive</strong>
-          <p>Performances, playlists e material raro em rotação.</p>
-        </div>
-        <a href="#player">Ouvir arquivo</a>
-      </div>
-      <div class="archive-row">
-        <div>
-          <strong>80s Tunnel™ · Continuous</strong>
-          <p>Seis canais, uma década, uma identidade visual própria.</p>
-        </div>
-        <a href="#passport80s">Entrar nos 80s</a>
-      </div>
-    </div>
-  </section>
+<section class="live-hero"><div class="live-shell live-hero__grid"><div><span class="live-kicker">ON AIR · PASSPORT RADIO™</span><h1>Música tocando.<br>História aberta.</h1><p>Ao vivo, arquivos raros, histórias, bandas e gente que fez barulho de verdade. Menos painel técnico, mais experiência editorial. Aperte play. O resto começa daqui.</p></div><aside class="hero-note" aria-label="Assinatura Passport Radio"><span class="handwritten">Every song is a destination.</span><small>Passport Radio™ · est. archive culture</small></aside></div></section>
+<section class="live-deck-section" aria-labelledby="liveRareHeading"><div class="live-shell"><div class="deck-heading"><div><span class="live-kicker">PASSPORT LIVE DESK™ · ARCHIVE SIGNAL</span><h2 id="liveRareHeading">Live &amp; Rare™</h2></div><p>Shows, performances e arquivos em rotação contínua. O motor permanece o mesmo; aqui muda apenas a pele.</p></div><div class="live-now" id="player"><small>Tocando agora</small><h2 id="currentTrackTitle">Underground Archive</h2><p id="currentTrackDescription">Passport Radio · Live &amp; Rare</p><div class="audio-player"><audio id="passportAudio" preload="none"></audio></div></div><div class="live-signature" aria-hidden="true"><span class="handwritten">some nights deserve to survive.</span></div></div></section>
+<section class="passport80s-section" id="passport80s" aria-labelledby="eightiesHeading"><div class="live-shell eighties-layout"><div class="passport80s-section__head"><span class="live-kicker">PASSPORT RADIO™ · CONTINUOUS</span><h2 id="eightiesHeading">80s<br>Tunnel™</h2><p>Seis canais contínuos em um ambiente próprio. Mesma engenharia que já funciona; outra identidade visual.</p><span class="handwritten script-note--80s">still somewhere in 1986.</span></div><div id="passport80sPlayer"></div></div></section>
+<section class="live-section" id="historias"><div class="live-shell"><div class="section-heading"><div><span class="live-kicker">STORIES IN ROTATION™</span><h2>Você conhece a música. Agora conheça a história.</h2></div><p>O player deixa de dominar a página. Aqui entram contexto, gente, memória, bastidores, agenda e tudo aquilo que faz a Passport ser mais do que uma rádio.</p></div><div class="editorial-links"><a class="editorial-link" href="index.html#noticias"><small>01 · Editorial</small><strong>Últimas histórias e matérias</strong><span>Abrir histórias →</span></a><a class="editorial-link" href="index.html#agenda"><small>02 · Radar</small><strong>Agenda, shows e próximos movimentos</strong><span>Ver agenda →</span></a><a class="editorial-link" href="#arquivos"><small>03 · Archive Desk</small><strong>Voltar para o que merece sobreviver</strong><span>Explorar arquivos →</span></a></div></div></section>
+<section class="live-section archive-section" id="arquivos"><div class="live-shell"><div class="section-heading"><div><span class="live-kicker">PASSPORT AUDIO ARCHIVES™</span><h2>O arquivo continua vivo depois que a faixa sai do ar.</h2></div><p>Dois caminhos claros: entrar no acervo Live &amp; Rare™ ou mudar de década no 80s Tunnel™ — sem empilhar mais players na sua frente.</p></div><div class="archive-row"><div><strong>Live &amp; Rare™ · Underground Archive</strong><p>Performances, playlists e material raro em rotação.</p></div><a href="#player">Ouvir arquivo</a></div><div class="archive-row"><div><strong>80s Tunnel™ · Continuous</strong><p>Seis canais, uma década, uma identidade visual própria.</p></div><a href="#passport80s">Entrar nos 80s</a></div></div></section>
 </main>
-
-<footer class="footer">
-  <div class="live-shell">
-    <div class="footer-signature">
-      <span class="handwritten">3... 2... 1... CLICK!™</span>
-      <small>Passport Radio™</small>
-    </div>
-
-    <div class="footer-grid">
-      <div>
-        <strong>Passport Radio™</strong>
-        <p>Music · History · Culture · Live</p>
-        <p>Every Song Is A Destination.™</p>
-      </div>
-      <div>
-        <strong>Conteúdo</strong>
-        <a href="index.html#noticias">Últimas histórias</a>
-        <a href="index.html#agenda">Agenda</a>
-      </div>
-      <div>
-        <strong>Ouvir</strong>
-        <a href="#player">Live &amp; Rare™</a>
-        <a href="#passport80s">80s Tunnel™</a>
-        <a href="#arquivos">Arquivos</a>
-      </div>
-      <div>
-        <strong>Loja &amp; Apoio</strong>
-        <a href="loja.html">Passport Store</a>
-        <a href="anuncie.html">Anuncie</a>
-      </div>
-      <div>
-        <strong>Contato</strong>
-        <a href="contato.html">Central de contato</a>
-      </div>
-    </div>
-
-    <div class="footer-legal">
-      <p>© 2026 Passport Radio™. Todos os direitos reservados. Conteúdo autoral, identidade visual, textos originais, curadoria editorial e design da Passport Radio™.</p>
-      <p>Obras musicais, fonogramas, imagens e marcas de terceiros permanecem de propriedade de seus respectivos titulares.</p>
-    </div>
-  </div>
-</footer>
-
-<div class="player-bar">
-  <button class="player-bar__button" id="bottomPlay" type="button" aria-label="Reproduzir">▶</button>
-  <span class="player-copy">
-    <strong id="bottomTrackTitle">Underground Archive</strong>
-    <small id="bottomTrackMeta">Passport Radio™ · Live &amp; Rare™</small>
-  </span>
-  <button class="player-bar__next" id="bottomNext" type="button">PRÓXIMA</button>
-</div>
-
-<!-- ENGINES PRESERVADOS: mesmas IDs, mesma ordem, mesmos arquivos -->
-<script src="/js/passport-radio-global.js?v=202608232235"></script>
+<footer class="footer"><div class="live-shell"><div class="footer-signature"><span class="handwritten">3... 2... 1... CLICK!™</span><small>Passport Radio™</small></div><div class="footer-grid"><div><strong>Passport Radio™</strong><p>Music · History · Culture · Live</p><p>Every Song Is A Destination.™</p></div><div><strong>Conteúdo</strong><a href="index.html#noticias">Últimas histórias</a><a href="index.html#agenda">Agenda</a></div><div><strong>Ouvir</strong><a href="#player">Live &amp; Rare™</a><a href="#passport80s">80s Tunnel™</a><a href="#arquivos">Arquivos</a></div><div><strong>Loja &amp; Apoio</strong><a href="loja.html">Passport Store</a><a href="anuncie.html">Anuncie</a></div><div><strong>Contato</strong><a href="contato.html">Central de contato</a></div></div><div class="footer-legal"><p>© 2026 Passport Radio™. Todos os direitos reservados. Conteúdo autoral, identidade visual, textos originais, curadoria editorial e design da Passport Radio™.</p><p>Obras musicais, fonogramas, imagens e marcas de terceiros permanecem de propriedade de seus respectivos titulares.</p></div></div></footer>
+<div class="player-bar"><button class="player-bar__button" id="bottomPlay" type="button" aria-label="Reproduzir">▶</button><span class="player-copy"><strong id="bottomTrackTitle">Underground Archive</strong><small id="bottomTrackMeta">Passport Radio™ · Live &amp; Rare™</small></span><button class="player-bar__next" id="bottomNext" type="button">PRÓXIMA</button></div>
+<script src="/js/passport-radio-global.js?v=202608232300"></script>
 <script src="/js/tunnel-playlists.js?v=202608232115"></script>
 <script src="/js/tunnel-player.js?v=202608232115"></script>
 <script src="/js/181fm-tunnel.js?v=202608232115"></script>
-<script src="/js/soul-central-tunnel.js?v=202608232235"></script>
+<script src="/js/soul-central-tunnel.js?v=202608232300"></script>
 </body>
 </html>
