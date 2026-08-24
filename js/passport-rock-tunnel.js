@@ -16,17 +16,20 @@
   const style = document.createElement("style");
   style.textContent = `
     .passport-rock-stage{border:1px solid #303030;background:#080808;color:#fff;overflow:hidden}
-    .passport-rock-head{padding:16px 18px;border-bottom:1px solid #252525;background:linear-gradient(135deg,#151515,#090909)}
+    .passport-rock-head{padding:18px;border-bottom:1px solid #252525;background:linear-gradient(135deg,#151515,#090909)}
     .passport-rock-kicker{color:#d71920;font-size:.54rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    .passport-rock-title{margin-top:7px;font-size:1.12rem;font-weight:900;line-height:1.1}
-    .passport-rock-meta{margin-top:5px;color:#888;font-size:.58rem}
-    .passport-rock-controls{display:grid;grid-template-columns:auto auto auto 1fr;gap:9px;align-items:center;padding:14px 18px}
-    .passport-rock-btn{min-width:38px;height:38px;padding:0 12px;border:1px solid #444;border-radius:999px;background:#171717;color:#fff;cursor:pointer;font-size:.58rem;font-weight:900}
-    .passport-rock-btn--play{width:48px;height:48px;padding:0;border-color:#d71920;background:#d71920;font-size:.9rem}
-    .passport-rock-status{justify-self:end;color:#888;font-size:.54rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-    .passport-rock-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0 18px 16px}
-    .passport-rock-station{min-height:38px;padding:8px 10px;border:1px solid #303030;background:#111;color:#aaa;cursor:pointer;text-align:left;font-size:.57rem;font-weight:800}
+    .passport-rock-title{margin-top:7px;font-size:1.2rem;font-weight:900;line-height:1.1}
+    .passport-rock-meta{margin-top:6px;color:#888;font-size:.58rem}
+    .passport-rock-controls{display:grid;grid-template-columns:auto auto auto 1fr;gap:12px;align-items:center;padding:18px}
+    .passport-rock-btn{min-width:46px;height:46px;padding:0 14px;border:1px solid #444;border-radius:999px;background:#171717;color:#fff;cursor:pointer;font-size:.68rem;font-weight:900}
+    .passport-rock-btn--play{display:grid!important;place-items:center!important;width:72px!important;height:72px!important;min-width:72px!important;padding:0!important;border:2px solid #d71920!important;border-radius:50%!important;background:#d71920!important;color:#fff!important;font-size:1.55rem!important;line-height:1!important;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset}
+    .passport-rock-status{justify-self:end;color:#aaa;font-size:.58rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+    .passport-rock-mainplay{display:flex;align-items:center;justify-content:center;gap:12px;width:calc(100% - 36px);min-height:58px;margin:0 18px 16px;border:1px solid #d71920;background:#d71920;color:#fff;font-size:.78rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+    .passport-rock-mainplay span{font-size:1.2rem;line-height:1}
+    .passport-rock-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:0 18px 18px}
+    .passport-rock-station{min-height:44px;padding:10px 12px;border:1px solid #303030;background:#111;color:#aaa;cursor:pointer;text-align:left;font-size:.6rem;font-weight:800}
     .passport-rock-station.is-active{border-color:#d71920;color:#fff;background:#1a0d0e}
+    @media(max-width:560px){.passport-rock-controls{grid-template-columns:auto auto auto 1fr}.passport-rock-btn--play{width:68px!important;height:68px!important;min-width:68px!important}.passport-rock-mainplay{min-height:62px;font-size:.74rem}}
   `;
   document.head.appendChild(style);
 
@@ -41,10 +44,11 @@
     </div>
     <div class="passport-rock-controls">
       <button class="passport-rock-btn" id="passportRockPrev" type="button" aria-label="Canal anterior">◀</button>
-      <button class="passport-rock-btn passport-rock-btn--play" id="passportRockPlay" type="button" aria-label="Reproduzir">▶</button>
+      <button class="passport-rock-btn passport-rock-btn--play" id="passportRockPlay" type="button" aria-label="Reproduzir Rock Tunnel">▶</button>
       <button class="passport-rock-btn" id="passportRockNext" type="button" aria-label="Próximo canal">▶</button>
       <span class="passport-rock-status" id="passportRockStatus">READY</span>
     </div>
+    <button class="passport-rock-mainplay" id="passportRockMainPlay" type="button"><span>▶</span><b>TOCAR ROCK TUNNEL</b></button>
     <div class="passport-rock-picker" id="passportRockPicker"></div>
     <audio id="passportRockAudio" preload="none"></audio>`;
   host.appendChild(stage);
@@ -54,6 +58,7 @@
   const meta = document.getElementById("passportRockMeta");
   const status = document.getElementById("passportRockStatus");
   const play = document.getElementById("passportRockPlay");
+  const mainPlay = document.getElementById("passportRockMainPlay");
   const picker = document.getElementById("passportRockPicker");
   let index = 0;
 
@@ -76,7 +81,7 @@
     index=(i+streams.length)%streams.length;
     const wasPlaying=!audio.paused;
     audio.pause(); audio.src=streams[index].url; audio.load(); update();
-    status.textContent="READY"; play.textContent="▶";
+    status.textContent="READY"; play.textContent="▶"; mainPlay.innerHTML="<span>▶</span><b>TOCAR ROCK TUNNEL</b>";
     if(autoplay||wasPlaying) start();
   }
   function start(){
@@ -84,17 +89,18 @@
     if(!audio.src) audio.src=streams[index].url;
     status.textContent="CONNECTING";
     const p=audio.play();
-    if(p&&p.catch)p.catch(()=>{status.textContent="ERROR";play.textContent="▶";});
+    if(p&&p.catch)p.catch(()=>{status.textContent="ERROR";play.textContent="▶";mainPlay.innerHTML="<span>▶</span><b>TOCAR ROCK TUNNEL</b>";});
   }
   function toggle(){audio.paused?start():audio.pause();}
 
-  audio.addEventListener("playing",()=>{status.textContent="ON AIR";play.textContent="Ⅱ";});
-  audio.addEventListener("pause",()=>{status.textContent="PAUSED";play.textContent="▶";});
+  audio.addEventListener("playing",()=>{status.textContent="ON AIR";play.textContent="Ⅱ";mainPlay.innerHTML="<span>Ⅱ</span><b>PAUSAR ROCK TUNNEL</b>";});
+  audio.addEventListener("pause",()=>{status.textContent="PAUSED";play.textContent="▶";mainPlay.innerHTML="<span>▶</span><b>TOCAR ROCK TUNNEL</b>";});
   audio.addEventListener("waiting",()=>{status.textContent="BUFFERING";});
   audio.addEventListener("stalled",()=>{status.textContent="BUFFERING";});
-  audio.addEventListener("error",()=>{status.textContent="ERROR";play.textContent="▶";});
+  audio.addEventListener("error",()=>{status.textContent="ERROR";play.textContent="▶";mainPlay.innerHTML="<span>▶</span><b>TOCAR ROCK TUNNEL</b>";});
   document.getElementById("passportRockPrev").addEventListener("click",()=>select(index-1,true));
   document.getElementById("passportRockNext").addEventListener("click",()=>select(index+1,true));
   play.addEventListener("click",toggle);
+  mainPlay.addEventListener("click",toggle);
   select(0,false);
 })();
