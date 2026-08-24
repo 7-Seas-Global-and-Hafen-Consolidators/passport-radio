@@ -2,18 +2,45 @@ const side = document.getElementById('portal-side');
 const menu = document.getElementById('menu');
 
 if (menu && side) {
+  const closeSide = () => {
+    side.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  };
+
   menu.onclick = () => {
     const open = side.classList.toggle('open');
     menu.setAttribute('aria-expanded', String(open));
   };
 
   side.querySelectorAll('a').forEach((a) =>
-    a.addEventListener('click', () => {
-      side.classList.remove('open');
-      menu.setAttribute('aria-expanded', 'false');
-    })
+    a.addEventListener('click', closeSide)
   );
+
+  document.addEventListener('click', (event) => {
+    if (!side.classList.contains('open')) return;
+    if (side.contains(event.target) || menu.contains(event.target)) return;
+    closeSide();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeSide();
+  });
 }
+
+/* Home editorial callout: the old fixed Dee Snider/Wacken feature is now
+   a neutral Passport 24H gateway. No source/provider information is exposed. */
+(() => {
+  const feature = document.querySelector('#programas .program-feature');
+  if (!feature) return;
+
+  feature.classList.add('program-feature--passport24');
+  feature.innerHTML = `
+    <span class="eyebrow">PASSPORT 24H™</span>
+    <h3>A música não para quando a página muda.</h3>
+    <p>Metal · Unplugged · Live Jam · 80s · Soul · MPB · Live & Rare.</p>
+    <a class="btn" href="radio.html">ENTRAR NO AR →</a>
+  `;
+})();
 
 (() => {
   const files = [
