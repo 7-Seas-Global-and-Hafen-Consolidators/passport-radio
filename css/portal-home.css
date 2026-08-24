@@ -386,3 +386,123 @@ a:focus-visible,button:focus-visible{
   .portal-top .top-actions a:not(.onair):not(.top-promos){display:none!important}
   .hero-main,.hero-item,.feature,.news-row{border-radius:0!important}
 }
+
+/* =========================================================
+   2026-08-24 — HOME PLAYER VISUAL INTEGRATION
+   Presentation only. Audio engine, sources and player JS stay untouched.
+   ========================================================= */
+.player{
+  left:50%!important;
+  right:auto!important;
+  bottom:12px!important;
+  width:min(calc(100% - 28px),1180px)!important;
+  min-height:50px!important;
+  transform:translateX(-50%);
+  grid-template-columns:auto auto auto minmax(0,1fr) auto!important;
+  gap:7px!important;
+  padding:6px 10px!important;
+  border:1px solid #d4d4d0!important;
+  border-top:3px solid #d71920!important;
+  border-radius:12px!important;
+  background:rgba(250,249,246,.97)!important;
+  color:#111!important;
+  box-shadow:0 -8px 26px rgba(0,0,0,.12),0 4px 18px rgba(0,0,0,.08)!important;
+  backdrop-filter:blur(14px);
+}
+
+.player button{
+  width:30px;
+  height:30px;
+  display:inline-grid;
+  place-items:center;
+  padding:0!important;
+  border:1px solid #d7d7d2!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  color:#111!important;
+  line-height:1;
+}
+
+.player button:hover{
+  border-color:#111!important;
+  background:#f1f0ec!important;
+}
+
+.player .play{
+  width:34px!important;
+  height:34px!important;
+  border-color:#d71920!important;
+  background:#d71920!important;
+  color:#fff!important;
+  box-shadow:0 4px 12px rgba(215,25,32,.2);
+}
+
+.player .play:hover{
+  background:#ad1117!important;
+  border-color:#ad1117!important;
+}
+
+.player-copy{
+  min-width:0;
+  padding:0 8px;
+}
+
+.player-copy strong{
+  color:#111!important;
+  font-size:.67rem!important;
+  font-weight:900;
+}
+
+.player-copy small{
+  margin-top:2px;
+  color:#727272!important;
+  font-size:.48rem!important;
+}
+
+.player .status{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 9px;
+  border-left:1px solid #ddd;
+  color:#333!important;
+  font-size:.49rem!important;
+  letter-spacing:.06em;
+}
+
+.player .status i{
+  background:#d71920!important;
+  box-shadow:0 0 0 3px rgba(215,25,32,.10);
+}
+
+@media(max-width:700px){
+  .player{
+    bottom:8px!important;
+    width:calc(100% - 16px)!important;
+    min-height:48px!important;
+    padding:5px 7px!important;
+    grid-template-columns:auto auto auto minmax(0,1fr)!important;
+    border-radius:10px!important;
+  }
+
+  .player .status{display:none!important}
+  .player-copy{padding:0 5px}
+}
+
+@media(max-width:480px){
+  .player{
+    grid-template-columns:auto minmax(0,1fr)!important;
+    gap:6px!important;
+  }
+
+  .player #prev,
+  .player #next{display:none!important}
+
+  .player .play{
+    width:36px!important;
+    height:36px!important;
+  }
+
+  .player-copy strong{font-size:.64rem!important}
+  .player-copy small{font-size:.45rem!important}
+}
