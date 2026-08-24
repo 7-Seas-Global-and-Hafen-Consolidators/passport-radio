@@ -3,8 +3,6 @@
   const form = document.querySelector('#promo-entry-form');
   const codeField = document.querySelector('#participation-code');
   const confirmation = document.querySelector('#promo-confirmation');
-  const tabs = [...document.querySelectorAll('[data-account-tab]')];
-  const panels = [...document.querySelectorAll('[data-account-panel]')];
   const entriesList = document.querySelector('#my-entries-list');
 
   const getEntries = () => {
@@ -39,25 +37,8 @@
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
-  const openPanel = (name) => {
-    tabs.forEach((tab) => {
-      const active = tab.dataset.accountTab === name;
-      tab.classList.toggle('is-active', active);
-      tab.setAttribute('aria-selected', String(active));
-    });
-
-    panels.forEach((panel) => {
-      panel.hidden = panel.dataset.accountPanel !== name;
-    });
-  };
-
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => openPanel(tab.dataset.accountTab));
-  });
-
   const renderEntries = () => {
     if (!entriesList) return;
-
     const entries = getEntries();
 
     if (!entries.length) {
@@ -124,7 +105,6 @@
         renderEntries();
 
         document.querySelector('#show-my-entry')?.addEventListener('click', () => {
-          openPanel('entries');
           document.querySelector('#area-ouvinte')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       } catch (_) {
