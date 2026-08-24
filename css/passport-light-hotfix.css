@@ -57,6 +57,114 @@ html body .section--black .btn{
   border-color:#d71920!important;
 }
 
+/* Legacy longform articles: white paper, dark ink, red navigation. */
+html body .article,
+html body article.article,
+html body .story-page,
+html body .story-content,
+html body .article__inner,
+html body .chapter,
+html body .article-body,
+html body .article-content{
+  background-color:transparent!important;
+  color:#111!important;
+  border-color:#ddd8cf!important;
+}
+
+html body .article p,
+html body .article__inner p,
+html body .chapter p,
+html body .story-page p,
+html body .story-content p,
+html body .article-body p,
+html body .article-content p{
+  color:#5f5a54!important;
+}
+
+html body .article .lead,
+html body .article__inner .lead,
+html body .chapter .lead,
+html body .story-page .lead{
+  color:#111!important;
+}
+
+html body .article h1,
+html body .article h2,
+html body .article h3,
+html body .article__inner h1,
+html body .article__inner h2,
+html body .article__inner h3,
+html body .chapter h2,
+html body .chapter h3,
+html body .person strong,
+html body .transition p{
+  color:#111!important;
+}
+
+html body .caption,
+html body .video-title,
+html body .person span,
+html body .hero__meta{
+  color:#77716a!important;
+}
+
+html body .quote,
+html body .listen,
+html body .transition,
+html body .people{
+  background:#fff!important;
+  color:#111!important;
+  border-color:#ddd8cf!important;
+}
+
+html body .quote,
+html body .listen{
+  border-left-color:#d71920!important;
+}
+
+html body .quote p,
+html body .listen,
+html body .listen p,
+html body .transition p{
+  color:#111!important;
+}
+
+html body .quote strong,
+html body .listen strong,
+html body .chapter__number,
+html body .archive-link{
+  color:#d71920!important;
+}
+
+html body .archive-link{
+  border-color:#d71920!important;
+  background:#fff!important;
+}
+
+html body .archive-link:hover{
+  background:#d71920!important;
+  color:#fff!important;
+}
+
+/* Full-bleed photographic heroes keep white type over the image. */
+html body .hero-main .hero-copy h1,
+html body .hero-main .hero-copy h2,
+html body .hero-main .hero-copy p,
+html body .hero-media .hero-copy h1,
+html body .hero-media .hero-copy h2,
+html body .hero-media .hero-copy p,
+html body .hero__content h1,
+html body .hero__content h2,
+html body .hero__content .hero__dek,
+html body .hero__content .hero__meta{
+  color:#fff!important;
+}
+
+html body .hero__content .eyebrow,
+html body .hero-main .hero-copy .eyebrow{
+  color:#ff5056!important;
+}
+
 /* Home drawer follows the new paper system instead of being a black wall. */
 html body .portal-side{
   background:linear-gradient(180deg,#fff 0%,#f2eee7 100%)!important;
@@ -106,6 +214,10 @@ html body .event{
 /* Keep red as direction, not as a giant wall. */
 html body .breaking{
   background:#d71920!important;
+  color:#fff!important;
+}
+
+html body .breaking *{
   color:#fff!important;
 }
 
