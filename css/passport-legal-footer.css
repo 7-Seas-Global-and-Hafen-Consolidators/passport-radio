@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ · GLOBAL LEGAL SIGNATURE
+   Canonical legal notice shown at the final edge of every rendered Passport page
+   that loads the shared site styles. Keep the wording centralized here. */
+
+/* Old compact copyright rows are replaced by the canonical final signature. */
+.footer-legal,
+.footer-bottom{
+  display:none!important;
+}
+
+/* The commercial page footer contained only the old short legal line. */
+body:has(.commercial-now) > footer{
+  display:none!important;
+}
+
+body::after{
+  content:"© 2026 Passport Radio™. Todos os direitos reservados. Conteúdo, curadoria, textos originais, pesquisa, identidade visual e design: Passport Radio™. Obras musicais, fonogramas, imagens e marcas de terceiros permanecem de propriedade de seus respectivos titulares.\A\A Passport Radio™ é uma marca independente.\A Operação comercial e pagamentos: Guiropa World™.";
+  display:block;
+  grid-column:1 / -1;
+  flex:0 0 100%;
+  box-sizing:border-box;
+  width:100%;
+  margin:0;
+  padding:24px max(18px, calc((100vw - 1180px) / 2));
+  border-top:1px solid rgba(212,175,55,.16);
+  background:#07090b;
+  color:#8f887e;
+  white-space:pre-line;
+  font-family:Inter,Arial,sans-serif;
+  font-size:10px;
+  font-weight:500;
+  line-height:1.65;
+  letter-spacing:.01em;
+  text-align:left;
+}
+
+@media(max-width:760px){
+  body::after{
+    padding:20px 16px;
+    font-size:9.5px;
+    line-height:1.6;
+  }
+}
+
+@media print{
+  body::after{
+    background:#fff;
+    color:#333;
+    border-top:1px solid #bbb;
+  }
+}

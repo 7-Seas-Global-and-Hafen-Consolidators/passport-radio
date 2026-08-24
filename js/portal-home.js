@@ -42,6 +42,141 @@ if (menu && side) {
   `;
 })();
 
+/* =========================================================
+   PASSPORT NOW™
+   A first-party listening signal is emitted whenever a media element is
+   actually playing. CounterAPI is used only as the anonymous aggregate.
+   No stream/provider URLs are sent.
+   ========================================================= */
+(() => {
+  const namespace = 'passportradio.online';
+  const action = 'listen';
+  const key = 'signal';
+  const endpoint = `https://counterapi.com/api/${namespace}/${action}/${key}`;
+  const readEndpoint = `${endpoint}?readOnly=true&timeline=15m&unique=true`;
+  const HEARTBEAT_MS = 4 * 60 * 1000;
+  let lastHeartbeat = 0;
+
+  const anyMediaPlaying = () =>
+    Array.from(document.querySelectorAll('audio,video')).some((media) =>
+      !media.paused && !media.ended && media.readyState > 1
+    );
+
+  const sendHeartbeat = () => {
+    const now = Date.now();
+    if (now - lastHeartbeat < 30000) return;
+    lastHeartbeat = now;
+
+    fetch(`${endpoint}?trackOnly=true`, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-store',
+      credentials: 'omit'
+    }).catch(() => {});
+  };
+
+  const readListeners = async () => {
+    try {
+      const response = await fetch(readEndpoint, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-store',
+        credentials: 'omit'
+      });
+      if (!response.ok) return;
+      const data = await response.json();
+      const value = Number(data && data.value);
+      if (!Number.isFinite(value)) return;
+      document.querySelectorAll('[data-passport-listeners]').forEach((node) => {
+        node.textContent = value.toLocaleString('pt-BR');
+      });
+    } catch (_) {}
+  };
+
+  document.addEventListener('play', (event) => {
+    if (!(event.target instanceof HTMLMediaElement)) return;
+    sendHeartbeat();
+    window.setTimeout(readListeners, 700);
+  }, true);
+
+  window.setInterval(() => {
+    if (!document.hidden && anyMediaPlaying()) {
+      sendHeartbeat();
+      window.setTimeout(readListeners, 700);
+    }
+  }, HEARTBEAT_MS);
+
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && anyMediaPlaying()) {
+      sendHeartbeat();
+      window.setTimeout(readListeners, 700);
+    }
+  });
+
+  const news = document.getElementById('noticias');
+  if (news && !document.getElementById('passport-now-home')) {
+    const section = document.createElement('section');
+    section.id = 'passport-now-home';
+    section.className = 'passport-now-home';
+    section.setAttribute('aria-label', 'Passport Now');
+    section.innerHTML = `
+      <div class="shell passport-now-home__grid">
+        <div class="passport-now-home__intro">
+          <span class="eyebrow">PASSPORT NOW™</span>
+          <h2>Agora na Passport.</h2>
+        </div>
+        <div class="passport-now-home__metrics">
+          <div class="passport-now-home__metric">
+            <strong data-passport-listeners>—</strong>
+            <span>OUVINDO AGORA</span>
+          </div>
+          <div class="passport-now-home__metric">
+            <strong>7</strong>
+            <span>SINAIS</span>
+          </div>
+          <div class="passport-now-home__metric">
+            <strong>24H</strong>
+            <span>NO AR</span>
+          </div>
+        </div>
+        <a class="passport-now-home__cta" href="radio.html">ENTRAR NO AR →</a>
+      </div>
+    `;
+    news.parentNode.insertBefore(section, news);
+  }
+
+  readListeners();
+})();
+
+/* =========================================================
+   HOME COMMERCIAL GATEWAY
+   Gives Anuncie its own sellable presence without turning editorial modules
+   into banners. The detailed inventory stays on anuncie.html.
+   ========================================================= */
+(() => {
+  const support = document.getElementById('apoie');
+  if (!support || document.getElementById('passport-commercial-home')) return;
+
+  const section = document.createElement('section');
+  section.id = 'passport-commercial-home';
+  section.className = 'module passport-commercial-home';
+  section.innerHTML = `
+    <div class="shell passport-commercial-home__grid">
+      <div>
+        <span class="eyebrow">PUBLICIDADE · PASSPORT RADIO</span>
+        <h2>Sua marca também pode fazer parte dessa história.</h2>
+        <p>Bandas, shows, festivais, instrumentos, áudio, lojas, lançamentos e marcas dentro de um ambiente feito para quem vive música.</p>
+      </div>
+      <div class="passport-commercial-home__side">
+        <strong>HOME · AGENDA · CONTEÚDO · LOJA · SEÇÕES</strong>
+        <a class="btn" href="anuncie.html">VER FORMATOS →</a>
+      </div>
+    </div>
+  `;
+
+  support.parentNode.insertBefore(section, support);
+})();
+
 (() => {
   const files = [
     "Camisa de Venus - Silvia (Piranha)..mp3",

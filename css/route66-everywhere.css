@@ -1,3 +1,5 @@
+@import url("./passport-legal-footer.css?v=202608241038");
+
 /*
   PASSPORT RADIO
   ROUTE 66 — DEFINITIVE VISUAL BRAND
@@ -394,6 +396,23 @@ header nav a:hover,
 .click,
 .story-nomad{
   color:var(--route66-gold) !important;
+}
+
+
+/* =========================================================
+   ANUNCIE CONTRAST SAFETY
+   Scoped to the commercial page via its unique Passport Now block.
+   Fixes light cards/support areas after the global Route 66 palette.
+   ========================================================= */
+
+body:has(.commercial-now) .card h3,
+body:has(.commercial-now) .rule b,
+body:has(.commercial-now) .support-band h2{
+  color:#111 !important;
+}
+
+body:has(.commercial-now) .card small{
+  color:#d71920 !important;
 }
 
 
