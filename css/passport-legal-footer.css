@@ -4,6 +4,17 @@
    Canonical legal notice shown at the final edge of every rendered Passport page
    that loads the shared site styles. Keep the wording centralized here. */
 
+/* Old compact copyright rows are replaced by the canonical final signature. */
+.footer-legal,
+.footer-bottom{
+  display:none!important;
+}
+
+/* The commercial page footer contained only the old short legal line. */
+body:has(.commercial-now) > footer{
+  display:none!important;
+}
+
 body::after{
   content:"© 2026 Passport Radio™. Todos os direitos reservados. Conteúdo, curadoria, textos originais, pesquisa, identidade visual e design: Passport Radio™. Obras musicais, fonogramas, imagens e marcas de terceiros permanecem de propriedade de seus respectivos titulares.\A\A Passport Radio™ é uma marca independente.\A Operação comercial e pagamentos: Guiropa World™.";
   display:block;
