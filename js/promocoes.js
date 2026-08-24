@@ -6,8 +6,6 @@
   const tabs = [...document.querySelectorAll('[data-account-tab]')];
   const panels = [...document.querySelectorAll('[data-account-panel]')];
   const entriesList = document.querySelector('#my-entries-list');
-  const lookupForm = document.querySelector('#entry-lookup-form');
-  const lookupEmail = document.querySelector('#entry-lookup-email');
 
   const getEntries = () => {
     try {
@@ -47,20 +45,23 @@
       tab.classList.toggle('is-active', active);
       tab.setAttribute('aria-selected', String(active));
     });
+
     panels.forEach((panel) => {
       panel.hidden = panel.dataset.accountPanel !== name;
     });
   };
 
-  tabs.forEach((tab) => tab.addEventListener('click', () => openPanel(tab.dataset.accountTab)));
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => openPanel(tab.dataset.accountTab));
+  });
 
-  const renderEntries = (email = '') => {
+  const renderEntries = () => {
     if (!entriesList) return;
-    const normalized = email.trim().toLowerCase();
-    const entries = getEntries().filter((entry) => !normalized || String(entry.email || '').toLowerCase() === normalized);
+
+    const entries = getEntries();
 
     if (!entries.length) {
-      entriesList.innerHTML = '<div class="account-empty"><strong>Nenhuma inscrição encontrada neste navegador.</strong><span>Participe de uma promoção e seu comprovante aparecerá aqui.</span></div>';
+      entriesList.innerHTML = '<div class="account-empty"><strong>Nenhuma inscrição salva ainda.</strong><span>Quando você participar, o comprovante aparecerá aqui.</span></div>';
       return;
     }
 
@@ -76,16 +77,10 @@
       </article>`).join('');
   };
 
-  if (lookupForm) {
-    lookupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      renderEntries(lookupEmail ? lookupEmail.value : '');
-    });
-  }
-
   if (form) {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+
       const submit = form.querySelector('button[type="submit"]');
       const code = generateCode();
       codeField.value = code;
@@ -104,13 +99,14 @@
 
         const data = new FormData(form);
         const entry = {
-          campaign: data.get('campaign') || 'PR-0001 — Fone Bluetooth',
+          campaign: data.get('campaign') || 'PR-0001 — Fone Bluetooth 5.3',
           code,
           name: data.get('name') || '',
           email: data.get('email') || '',
           instagram: data.get('instagram') || '',
           date: new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date())
         };
+
         const entries = getEntries();
         entries.unshift(entry);
         saveEntries(entries.slice(0, 50));
@@ -118,22 +114,21 @@
         confirmation.innerHTML = `
           <span>INSCRIÇÃO CONFIRMADA</span>
           <strong>Seu código: ${escapeHtml(code)}</strong>
-          <p>Guarde este número. Sua participação na ${escapeHtml(entry.campaign)} foi registrada.</p>
+          <p>${escapeHtml(entry.campaign)}</p>
           <button type="button" id="show-my-entry">Ver minhas inscrições</button>`;
         confirmation.hidden = false;
         confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        const email = entry.email;
+
         form.reset();
         codeField.value = '';
+        renderEntries();
 
         document.querySelector('#show-my-entry')?.addEventListener('click', () => {
-          if (lookupEmail) lookupEmail.value = email;
-          renderEntries(email);
           openPanel('entries');
           document.querySelector('#area-ouvinte')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       } catch (_) {
-        confirmation.innerHTML = '<span>NÃO FOI DESSA VEZ</span><strong>A inscrição não foi enviada.</strong><p>Confira sua conexão e tente novamente.</p>';
+        confirmation.innerHTML = '<span>ERRO NO ENVIO</span><strong>A inscrição não foi enviada.</strong><p>Tente novamente.</p>';
         confirmation.hidden = false;
       } finally {
         submit.disabled = false;
