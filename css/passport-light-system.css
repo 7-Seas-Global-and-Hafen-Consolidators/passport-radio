@@ -1,0 +1,538 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ — GLOBAL LIGHT EDITORIAL SYSTEM
+   Base clara para portal, enciclopedia, materias, radio, loja e paginas comerciais.
+   Regra: papel claro + tinta escura + vermelho como direcao + fotografia como cor.
+   Players e midia preservam contraste proprio. */
+
+:root{
+  --passport-paper:#f7f5f0;
+  --passport-paper-2:#f0ece4;
+  --passport-card:#ffffff;
+  --passport-ink:#111111;
+  --passport-muted:#6f6a63;
+  --passport-muted-2:#8a847b;
+  --passport-line:#ddd8cf;
+  --passport-red:#d71920;
+  --passport-red-soft:#f9e9e9;
+  --passport-warm:#e8dfcf;
+}
+
+/* =========================================================
+   GLOBAL PAGE SURFACE
+   ========================================================= */
+html body,
+html body.live-page{
+  background:var(--passport-paper)!important;
+  color:var(--passport-ink)!important;
+}
+
+html body main,
+html body .main-stage,
+html body .app-shell{
+  color:var(--passport-ink)!important;
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body .article h1,
+html body .article h2,
+html body .story-page h1,
+html body .story-page h2,
+html body .story-page h3{
+  color:var(--passport-ink)!important;
+}
+
+html body p,
+html body .lead,
+html body .story-deck,
+html body .story-meta,
+html body .article p,
+html body .page-intro p,
+html body .story-content p,
+html body .dialogue-turn p,
+html body .commercial-note{
+  color:var(--passport-muted)!important;
+}
+
+html body small,
+html body .muted,
+html body .meta,
+html body .story-meta,
+html body footer p{
+  color:var(--passport-muted-2)!important;
+}
+
+html body .eyebrow,
+html body .kicker,
+html body .story-kicker,
+html body .story-label,
+html body .dialogue-who,
+html body .click,
+html body .nomad-signature,
+html body .chapter__number{
+  color:var(--passport-red)!important;
+}
+
+html body hr{
+  border-color:var(--passport-line)!important;
+}
+
+/* =========================================================
+   HEADER / NAV / FOOTER
+   ========================================================= */
+html body header,
+html body .site-header,
+html body .header,
+html body .portal-top,
+html body .topbar{
+  background:rgba(255,255,255,.97)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body header nav a,
+html body .site-header nav a,
+html body .main-nav a,
+html body .top-actions a{
+  color:var(--passport-ink)!important;
+}
+
+html body header nav a:hover,
+html body .site-header nav a:hover,
+html body .main-nav a:hover{
+  color:var(--passport-red)!important;
+}
+
+html body footer,
+html body .footer,
+html body .site-footer{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body footer a,
+html body .footer a,
+html body .site-footer a,
+html body footer strong,
+html body .footer strong,
+html body .site-footer strong{
+  color:var(--passport-ink)!important;
+}
+
+html body::after{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-muted)!important;
+  border-top:1px solid var(--passport-line)!important;
+}
+
+/* =========================================================
+   GENERIC PANELS / CARDS / ARTICLE SECTIONS
+   ========================================================= */
+html body .story-section--dark,
+html body .story-section--soft,
+html body .black,
+html body .nomad-closing,
+html body .packages-section,
+html body .commercial-now,
+html body .passport-now-home,
+html body .continuous-signals,
+html body .live-deck-section,
+html body .dark-section,
+html body .section-dark{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body .story-section--dark p,
+html body .story-section--soft p,
+html body .black p,
+html body .nomad-closing p,
+html body .packages-section p,
+html body .commercial-now p,
+html body .passport-now-home p,
+html body .continuous-signals p,
+html body .live-deck-section p{
+  color:var(--passport-muted)!important;
+}
+
+html body .card,
+html body .story-card,
+html body .collection-card,
+html body .product-card,
+html body .boutique-card,
+html body .format,
+html body .package,
+html body .placement,
+html body .direct-card,
+html body .rule,
+html body .fact-grid article,
+html body .musician-card,
+html body .discography article,
+html body .passport-file,
+html body .contact-card,
+html body .door,
+html body .big-links a{
+  background:var(--passport-card)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body .package.featured{
+  background:#fff9f9!important;
+  border-color:var(--passport-red)!important;
+}
+
+html body .package h3,
+html body .package-price strong,
+html body .format h3,
+html body .format .price strong,
+html body .placement b,
+html body .direct-card b,
+html body .rule b,
+html body .door strong,
+html body .big-links a{
+  color:var(--passport-ink)!important;
+}
+
+html body .package ul,
+html body .package-price,
+html body .format p,
+html body .placement p,
+html body .direct-card p,
+html body .rule p,
+html body .door small{
+  color:var(--passport-muted)!important;
+}
+
+html body blockquote,
+html body .quote,
+html body .listen{
+  background:var(--passport-card)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-red)!important;
+}
+
+html body blockquote p,
+html body .quote p,
+html body .listen,
+html body .listen p{
+  color:var(--passport-ink)!important;
+}
+
+/* =========================================================
+   HOME — LIGHT PORTAL
+   ========================================================= */
+html body:has(.passport-now-home) .passport-now-home,
+html body:has(.passport-now-home) .passport-now-home__metric,
+html body:has(.passport-now-home) .passport-now-home__metrics{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body:has(.passport-now-home) .passport-now-home h2,
+html body:has(.passport-now-home) .passport-now-home__metric strong{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.passport-now-home) .passport-now-home__metric span{
+  color:var(--passport-muted)!important;
+}
+
+html body:has(.passport-now-home) .passport-now-home__cta{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-ink)!important;
+}
+
+html body:has(.passport-now-home) .passport-now-home__cta:hover{
+  background:var(--passport-red)!important;
+  color:#fff!important;
+  border-color:var(--passport-red)!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-ink)!important;
+  border-top:1px solid var(--passport-line)!important;
+  border-bottom:1px solid var(--passport-line)!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home h2{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home p{
+  color:var(--passport-muted)!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home .eyebrow{
+  color:var(--passport-red)!important;
+  opacity:1!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home__side{
+  border-color:var(--passport-line)!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home__side strong{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.passport-now-home) .passport-commercial-home .btn{
+  background:var(--passport-red)!important;
+  color:#fff!important;
+}
+
+html body:has(.passport-now-home) .hero-side{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.passport-now-home) .hero-item{
+  border-color:var(--passport-line)!important;
+}
+
+html body:has(.passport-now-home) .hero-item h2{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.passport-now-home) .hero-item:hover{
+  background:#fff!important;
+}
+
+/* =========================================================
+   ANUNCIE — SAME COMMERCIAL STRUCTURE, LIGHT SKIN
+   ========================================================= */
+html body:has(.commercial-now) .hero{
+  background:
+    radial-gradient(circle at 88% 24%,rgba(215,25,32,.12),transparent 28%),
+    linear-gradient(135deg,#fff 0%,#f3efe8 100%)!important;
+  color:var(--passport-ink)!important;
+  border-bottom:1px solid var(--passport-line)!important;
+}
+
+html body:has(.commercial-now) .hero::before{
+  color:rgba(215,25,32,.045)!important;
+}
+
+html body:has(.commercial-now) .hero h1{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.commercial-now) .hero p{
+  color:var(--passport-muted)!important;
+}
+
+html body:has(.commercial-now) .hero-note{
+  background:#fff!important;
+  color:var(--passport-muted)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body:has(.commercial-now) .commercial-now,
+html body:has(.commercial-now) .commercial-now__metrics,
+html body:has(.commercial-now) .commercial-now__metric{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body:has(.commercial-now) .commercial-now h2,
+html body:has(.commercial-now) .commercial-now__metric strong{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.commercial-now) .commercial-now__metric span{
+  color:var(--passport-muted)!important;
+}
+
+html body:has(.commercial-now) .packages-section{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.commercial-now) .package .cta{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-ink)!important;
+}
+
+html body:has(.commercial-now) .package.featured .cta,
+html body:has(.commercial-now) .cta{
+  background:var(--passport-red)!important;
+  color:#fff!important;
+  border-color:var(--passport-red)!important;
+}
+
+html body:has(.commercial-now) .close-sale{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-top:4px solid var(--passport-red)!important;
+}
+
+html body:has(.commercial-now) .close-sale::after{
+  color:rgba(215,25,32,.055)!important;
+}
+
+html body:has(.commercial-now) .close-sale h2{
+  color:var(--passport-ink)!important;
+}
+
+html body:has(.commercial-now) .close-sale p{
+  color:var(--passport-muted)!important;
+}
+
+html body:has(.commercial-now) .close-sale .eyebrow{
+  color:var(--passport-red)!important;
+}
+
+/* =========================================================
+   RADIO — PAGE LIGHT, PLAYERS KEEP THEIR OWN IDENTITY
+   ========================================================= */
+html body.live-page .live-deck-section,
+html body.live-page .continuous-signals{
+  background:var(--passport-paper-2)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body.live-page .deck-heading h2,
+html body.live-page .continuous-head h2,
+html body.live-page #passport-live-radio .passport-live-head strong{
+  color:var(--passport-ink)!important;
+}
+
+html body.live-page .deck-heading p,
+html body.live-page .continuous-head p,
+html body.live-page .signal-ledger,
+html body.live-page #passport-live-radio .passport-live-head small{
+  color:var(--passport-muted)!important;
+}
+
+html body.live-page #passport-live-radio .passport-live-panel{
+  border-color:var(--passport-line)!important;
+  color:var(--passport-ink)!important;
+}
+
+html body.live-page #passport-live-radio .passport-live-channel{
+  color:var(--passport-muted)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body.live-page #passport-live-radio .passport-live-channel.is-active{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-top-color:var(--passport-red)!important;
+}
+
+/* =========================================================
+   APP — LIGHT SHELL, PLAYER DOCK STAYS CONTRASTED
+   ========================================================= */
+html body .sidebar{
+  background:linear-gradient(180deg,#fff,#f0ece4)!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body .nav-item{
+  color:var(--passport-muted)!important;
+}
+
+html body .nav-item:hover,
+html body .nav-item.is-active{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+}
+
+html body .topbar{
+  background:rgba(255,255,255,.94)!important;
+}
+
+html body .ghost-button{
+  background:#fff!important;
+  color:var(--passport-ink)!important;
+  border-color:var(--passport-line)!important;
+}
+
+html body .support-button,
+html body .primary-button{
+  background:var(--passport-red)!important;
+  color:#fff!important;
+  border-color:var(--passport-red)!important;
+}
+
+/* =========================================================
+   KEEP FUNCTIONAL MEDIA / PLAYERS CONTRASTED
+   ========================================================= */
+html body .player,
+html body .player-bar,
+html body .player-dock,
+html body .global-player,
+html body .passport-live-radio,
+html body .video,
+html body .embed-container,
+html body iframe{
+  color:inherit;
+}
+
+/* =========================================================
+   SUPPORT / CTA — WARM, NOT BLACK WALLS
+   ========================================================= */
+html body .support-band,
+html body .support-section,
+html body #apoie{
+  background:var(--passport-warm)!important;
+  color:var(--passport-ink)!important;
+  border-color:#d1c5b3!important;
+}
+
+html body .support-band h2,
+html body .support-section h2,
+html body #apoie h2{
+  color:var(--passport-ink)!important;
+}
+
+html body .support-band p,
+html body .support-section p,
+html body #apoie p{
+  color:#625d55!important;
+}
+
+html body .support-band__cta,
+html body .support-cta{
+  background:var(--passport-red)!important;
+  color:#fff!important;
+  border-color:var(--passport-red)!important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media(max-width:760px){
+  html body .portal-side{
+    background:#fff!important;
+    color:var(--passport-ink)!important;
+    border-color:var(--passport-line)!important;
+  }
+
+  html body .mobile-nav{
+    background:#fff!important;
+    border-color:var(--passport-line)!important;
+  }
+
+  html body .mobile-nav button{
+    color:var(--passport-muted)!important;
+  }
+
+  html body .mobile-nav button.is-active{
+    color:var(--passport-ink)!important;
+  }
+}
