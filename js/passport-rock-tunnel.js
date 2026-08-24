@@ -9,8 +9,16 @@
   if (!host || document.getElementById("passportRockTunnel")) return;
 
   const streams = [
-    { name: "Rock Main", url: "https://stream-ar.hellorayo.co.uk/absoluteradio.mp3?direct=true" },
-    { name: "Rock Main HQ", url: "https://stream-ar.hellorayo.co.uk/absoluteradiohigh.aac?direct=true" }
+    { name: "The Buzz · Alt Rock", url: "https://listen.181fm.com/181-buzz_128k.mp3" },
+    { name: "Classic Buzz · Alt", url: "https://listen.181fm.com/181-classicbuzz_128k.mp3" },
+    { name: "The Eagle · Classic", url: "https://listen.181fm.com/181-eagle_128k.mp3" },
+    { name: "Rock 181", url: "https://listen.181fm.com/181-rock_128k.mp3" },
+    { name: "Rock 40 · Rock & Roll", url: "https://listen.181fm.com/181-rock40_128k.mp3" },
+    { name: "80's Hairband", url: "https://listen.181fm.com/181-hairband_128k.mp3" },
+    { name: "Yacht Rock", url: "https://listen.181fm.com/181-yachtrock_128k.mp3" },
+    { name: "Chloe", url: "https://listen.181fm.com/181-chloe_128k.mp3" },
+    { name: "The Point", url: "https://listen.181fm.com/181-thepoint_128k.mp3" },
+    { name: "The Rock! · Hard Rock", url: "https://listen.181fm.com/181-hardrock_128k.mp3" }
   ];
 
   const style = document.createElement("style");
