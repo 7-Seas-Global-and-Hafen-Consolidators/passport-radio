@@ -4,6 +4,9 @@
   const codeField = document.querySelector('#participation-code');
   const confirmation = document.querySelector('#promo-confirmation');
   const entriesList = document.querySelector('#my-entries-list');
+  const tabButtons = [...document.querySelectorAll('[data-listener-tab]')];
+  const eventsPanel = document.querySelector('#listener-events-panel');
+  const entriesPanel = document.querySelector('#listener-entries-panel');
 
   const getEntries = () => {
     try {
@@ -42,7 +45,7 @@
     const entries = getEntries();
 
     if (!entries.length) {
-      entriesList.innerHTML = '<div class="account-empty"><strong>Nenhuma inscrição salva ainda.</strong><span>Quando você participar, o comprovante aparecerá aqui.</span></div>';
+      entriesList.innerHTML = '<div class="account-empty"><strong>Nenhuma inscrição salva ainda.</strong><span>As inscrições confirmadas neste navegador aparecerão aqui.</span></div>';
       return;
     }
 
@@ -57,6 +60,29 @@
         </div>
       </article>`).join('');
   };
+
+  const selectListenerTab = (tab) => {
+    if (!eventsPanel || !entriesPanel) return;
+    const showEntries = tab === 'entries';
+    eventsPanel.hidden = showEntries;
+    entriesPanel.hidden = !showEntries;
+    eventsPanel.classList.toggle('is-active', !showEntries);
+    entriesPanel.classList.toggle('is-active', showEntries);
+    tabButtons.forEach((button) => {
+      const active = button.dataset.listenerTab === tab;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-selected', String(active));
+    });
+    if (showEntries) renderEntries();
+  };
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => selectListenerTab(button.dataset.listenerTab));
+  });
+
+  if (new URLSearchParams(window.location.search).get('tab') === 'entries') {
+    selectListenerTab('entries');
+  }
 
   if (form) {
     form.addEventListener('submit', async (event) => {
@@ -102,10 +128,9 @@
 
         form.reset();
         codeField.value = '';
-        renderEntries();
 
         document.querySelector('#show-my-entry')?.addEventListener('click', () => {
-          document.querySelector('#area-ouvinte')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.location.href = 'promocoes.html?tab=entries#area-ouvinte';
         });
       } catch (_) {
         confirmation.innerHTML = '<span>ERRO NO ENVIO</span><strong>A inscrição não foi enviada.</strong><p>Tente novamente.</p>';
