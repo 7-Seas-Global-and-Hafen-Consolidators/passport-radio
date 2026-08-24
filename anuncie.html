@@ -278,6 +278,66 @@ nav a:hover::after{
 
 
 /* =========================================================
+   PASSPORT NOW
+========================================================= */
+
+.commercial-now{
+  background:#111;
+  color:#fff;
+  border-bottom:3px solid var(--red);
+}
+
+.commercial-now__grid{
+  min-height:116px;
+  display:grid;
+  grid-template-columns:minmax(180px,.8fr) minmax(420px,1.6fr);
+  gap:30px;
+  align-items:center;
+  padding:22px 0;
+}
+
+.commercial-now__title h2{
+  margin:6px 0 0;
+  color:#fff;
+  font-size:clamp(1.8rem,3vw,3rem);
+  line-height:.92;
+  letter-spacing:-.045em;
+}
+
+.commercial-now__metrics{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-left:1px solid #333;
+}
+
+.commercial-now__metric{
+  min-height:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 24px;
+  border-right:1px solid #333;
+}
+
+.commercial-now__metric strong{
+  display:block;
+  color:#fff;
+  font-size:clamp(1.7rem,3vw,2.8rem);
+  line-height:.9;
+  letter-spacing:-.045em;
+}
+
+.commercial-now__metric span{
+  display:block;
+  margin-top:8px;
+  color:#999;
+  font-size:.5rem;
+  font-weight:900;
+  letter-spacing:.11em;
+}
+
+
+/* =========================================================
    SECTIONS
 ========================================================= */
 
@@ -447,6 +507,60 @@ section.content-section{
 
 
 /* =========================================================
+   SUPPORT
+========================================================= */
+
+.support-band{
+  padding:72px 0;
+  background:#e6dcc9;
+  color:#111;
+  border-bottom:1px solid #cfc2ac;
+}
+
+.support-band__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+  gap:60px;
+  align-items:center;
+}
+
+.support-band h2{
+  margin:8px 0 0;
+  max-width:11ch;
+  color:#111;
+  font-size:clamp(2.7rem,5vw,5.1rem);
+  line-height:.88;
+  letter-spacing:-.055em;
+}
+
+.support-band p{
+  margin:16px 0 0;
+  max-width:58ch;
+  color:#625d55!important;
+  font-size:.78rem;
+  line-height:1.65;
+}
+
+.support-band__cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:64px;
+  padding:0 22px;
+  background:#111;
+  color:#fff;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.support-band__cta:hover{
+  background:var(--red);
+}
+
+
+/* =========================================================
    CONTACT
 ========================================================= */
 
@@ -530,7 +644,9 @@ footer{
     max-width:420px;
   }
 
-  .section-head{
+  .section-head,
+  .commercial-now__grid,
+  .support-band__grid{
     grid-template-columns:1fr;
     gap:20px;
   }
@@ -576,7 +692,21 @@ footer{
     font-size:.84rem;
   }
 
-  section.content-section{
+  .commercial-now__metrics{
+    border-top:1px solid #333;
+  }
+
+  .commercial-now__metric{
+    padding:0 10px;
+  }
+
+  .commercial-now__metric span{
+    font-size:.43rem;
+    letter-spacing:.06em;
+  }
+
+  section.content-section,
+  .support-band{
     padding:54px 0;
   }
 
@@ -657,6 +787,10 @@ footer{
         Loja
       </a>
 
+      <a href="index.html#apoie">
+        Apoie
+      </a>
+
       <a href="contato.html">
         Contato
       </a>
@@ -695,8 +829,8 @@ footer{
         instrumentos, lojas, lançamentos e marcas podem
         ocupar posições de destaque dentro da Passport Radio.
         Publicidade integrada a conteúdo, música e cultura —
-        de forma direta, identificada e sem promessa inventada
-        de alcance.
+        com presença clara, contexto certo e espaço de destaque
+        dentro da Passport.
       </p>
 
     </div>
@@ -723,6 +857,34 @@ footer{
 
   </div>
 
+</section>
+
+
+<!-- ======================================================
+     PASSPORT NOW
+====================================================== -->
+
+<section class="commercial-now" aria-label="Passport Now">
+  <div class="shell commercial-now__grid">
+    <div class="commercial-now__title">
+      <span class="eyebrow">PASSPORT NOW™</span>
+      <h2>Agora na Passport.</h2>
+    </div>
+    <div class="commercial-now__metrics">
+      <div class="commercial-now__metric">
+        <strong data-passport-listeners>—</strong>
+        <span>OUVINDO AGORA</span>
+      </div>
+      <div class="commercial-now__metric">
+        <strong>7</strong>
+        <span>SINAIS</span>
+      </div>
+      <div class="commercial-now__metric">
+        <strong>24H</strong>
+        <span>NO AR</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1001,9 +1163,8 @@ footer{
       <p>
         O orçamento considera formato, período,
         posição e necessidade de criação.
-        Não vendemos números que ainda não temos comprovados.
-        Quando houver métricas consolidadas,
-        elas entram no mídia kit.
+        Você recebe uma proposta objetiva com entrega,
+        duração e produção definidas.
       </p>
 
     </div>
@@ -1072,6 +1233,30 @@ footer{
 
   </div>
 
+</section>
+
+
+<!-- ======================================================
+     APOIE
+====================================================== -->
+
+<section class="support-band" id="apoie">
+  <div class="shell support-band__grid">
+    <div>
+      <span class="eyebrow">KEEP INDEPENDENT MUSIC CULTURE ALIVE</span>
+      <h2>Mantenha a Passport no ar.</h2>
+      <p>Publicidade movimenta o negócio. Apoio mantém a independência.</p>
+    </div>
+    <a
+      class="support-band__cta"
+      href="https://www.asaas.com/c/dwbjyv79vyrfj4ry"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>APOIAR A PASSPORT</span>
+      <span>→</span>
+    </a>
+  </div>
 </section>
 
 
@@ -1145,6 +1330,21 @@ footer{
 
 </footer>
 
+<script>
+(() => {
+  const endpoint = 'https://counterapi.com/api/passportradio.online/listen/signal?readOnly=true&timeline=15m&unique=true';
+  fetch(endpoint, {method:'GET', mode:'cors', cache:'no-store', credentials:'omit'})
+    .then((response) => response.ok ? response.json() : null)
+    .then((data) => {
+      const value = Number(data && data.value);
+      if (!Number.isFinite(value)) return;
+      document.querySelectorAll('[data-passport-listeners]').forEach((node) => {
+        node.textContent = value.toLocaleString('pt-BR');
+      });
+    })
+    .catch(() => {});
+})();
+</script>
 
 </body>
 </html>
