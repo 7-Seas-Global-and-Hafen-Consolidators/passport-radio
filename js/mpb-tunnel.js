@@ -1,8 +1,8 @@
 /* PASSPORT RADIO · MPB TUNNEL
    Brazilian music signal from outside Brazil.
-   Primary bridge: Brasil Best public external playlist (Radios.com.br listing 142468).
-   Resilient fallbacks: independent Brazilian-music streams published outside Brazil.
-   Visual identity remains 100% Passport Radio; provider branding is not rendered.
+   Primary bridge: Brasil Best public stream, resolved through public station directories/playlists.
+   Fallback bridges: Brazilian-music streams published outside Brazil.
+   Visual identity remains 100% Passport Radio; provider logo/name is never rendered.
 */
 (() => {
   "use strict";
@@ -20,13 +20,18 @@
   }
   document.querySelectorAll("style[data-passport-mpb-style]").forEach(el => el.remove());
 
+  const RADIO_BROWSER_MIRRORS = [
+    "https://de1.api.radio-browser.info",
+    "https://fi1.api.radio-browser.info",
+    "https://nl1.api.radio-browser.info"
+  ];
+
   const PLAYLIST_ENDPOINTS = [
     { type: "m3u", url: "https://www.radios.com.br/play/playlist/142468/listen-radio.m3u" },
     { type: "pls", url: "https://www.radios.com.br/play/playlist/142468/listen-radio.pls" }
   ];
 
-  /* Verified public audio/mpeg fallbacks from Brazilian-music web radios abroad.
-     Kept technical-only: no third-party logo/name is rendered in the Passport UI. */
+  /* Technical-only fallback signals. No third-party logo/name is rendered. */
   const FALLBACK_STREAMS = [
     "https://usa10.fastcast4u.com/paulinrio",
     "https://eu10.fastcast4u.com/iloverio"
@@ -61,6 +66,7 @@
   const section = document.createElement("section");
   section.className = "passport-mpb-section";
   section.id = "passportMPB";
+  section.dataset.passportTunnelPanel = "1";
   section.setAttribute("aria-labelledby", "passportMPBHeading");
   section.innerHTML = `
     <div class="passport-mpb-shell">
@@ -102,6 +108,7 @@
   let resolving = false;
   let retryTimer = 0;
   let userStopped = false;
+  let preparePromise = null;
 
   function pausePassportPlayers(){
     const yt = document.getElementById("tunnelPlay");
@@ -116,6 +123,62 @@
     if (retryTimer) { clearTimeout(retryTimer); retryTimer = 0; }
   }
 
+  function uniqueHttps(urls){
+    const out = [];
+    urls.forEach(value => {
+      const url = String(value || "").trim();
+      if (!/^https:\/\//i.test(url)) return;
+      if (!out.includes(url)) out.push(url);
+    });
+    return out;
+  }
+
+  async function fetchWithTimeout(url, ms){
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), ms);
+    try {
+      const r = await fetch(url, { cache:"no-store", credentials:"omit", signal:controller.signal });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  async function resolveBrasilBestViaDirectory(){
+    for (const base of RADIO_BROWSER_MIRRORS) {
+      try {
+        const params = new URLSearchParams({
+          name: "Brasil Best",
+          countrycode: "US",
+          hidebroken: "true",
+          limit: "20"
+        });
+        const r = await fetchWithTimeout(`${base}/json/stations/search?${params}`, 4500);
+        const list = await r.json();
+        if (!Array.isArray(list)) continue;
+
+        const matches = list.filter(station => {
+          const name = String(station && station.name || "");
+          const homepage = String(station && station.homepage || "");
+          return /brasil\s*best/i.test(name) || /brasilbest\.com/i.test(homepage);
+        }).sort((a,b) => {
+          const homeA = /brasilbest\.com/i.test(String(a.homepage || "")) ? 1 : 0;
+          const homeB = /brasilbest\.com/i.test(String(b.homepage || "")) ? 1 : 0;
+          const okA = Number(a.lastcheckok || 0);
+          const okB = Number(b.lastcheckok || 0);
+          return (homeB - homeA) || (okB - okA);
+        });
+
+        for (const station of matches) {
+          const resolved = String(station.url_resolved || station.url || "").trim();
+          if (/^https:\/\//i.test(resolved)) return resolved;
+        }
+      } catch (_) {}
+    }
+    return "";
+  }
+
   function parsePlaylist(text, type){
     const body = String(text || "").replace(/\r/g, "");
     if (type === "pls") {
@@ -126,34 +189,30 @@
     return line || "";
   }
 
-  async function fetchWithTimeout(url, ms){
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), ms);
-    try {
-      const r = await fetch(url, { cache:"no-store", credentials:"omit", signal:controller.signal });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return await r.text();
-    } finally {
-      clearTimeout(timer);
+  async function resolveBrasilBestViaPlaylist(){
+    for (const item of PLAYLIST_ENDPOINTS) {
+      try {
+        const r = await fetchWithTimeout(item.url, 4500);
+        const text = await r.text();
+        const stream = parsePlaylist(text, item.type);
+        if (/^https:\/\//i.test(stream)) return stream;
+      } catch (_) {}
     }
+    return "";
   }
 
   async function prepareCandidates(){
-    if (prepared || resolving) return;
+    if (prepared) return candidates;
+    if (resolving && preparePromise) return preparePromise;
     resolving = true;
-    status.textContent = "LOCATING";
-    let primary = "";
-    for (const item of PLAYLIST_ENDPOINTS) {
-      try {
-        const text = await fetchWithTimeout(item.url, 5000);
-        primary = parsePlaylist(text, item.type);
-        if (primary) break;
-      } catch (_) {}
-    }
-    candidates = [...new Set([primary, ...FALLBACK_STREAMS].filter(Boolean))];
+
+    let primary = await resolveBrasilBestViaDirectory();
+    if (!primary) primary = await resolveBrasilBestViaPlaylist();
+
+    candidates = uniqueHttps([primary, ...FALLBACK_STREAMS]);
     prepared = true;
     resolving = false;
-    candidateIndex = 0;
+    return candidates;
   }
 
   function loadCandidate(){
@@ -169,12 +228,22 @@
     return true;
   }
 
+  function handlePlayFailure(error){
+    clearRetry();
+    if (error && error.name === "NotAllowedError") {
+      status.textContent = "TAP PLAY";
+      play.textContent = "▶";
+      return;
+    }
+    tryNext();
+  }
+
   function playCurrent(){
     if (!loadCandidate()) return;
     userStopped = false;
     status.textContent = candidateIndex ? "RETRY" : "CONNECTING";
     const p = audio.play();
-    if (p && p.catch) p.catch(() => tryNext());
+    if (p && p.catch) p.catch(handlePlayFailure);
     retryTimer = setTimeout(() => {
       if (status.textContent !== "ON AIR" && !userStopped) tryNext();
     }, 9000);
@@ -195,9 +264,23 @@
   async function start(){
     pausePassportPlayers();
     userStopped = false;
+
     if (!prepared) {
-      await prepareCandidates();
+      status.textContent = "LOCATING";
+      try {
+        if (!preparePromise) preparePromise = prepareCandidates();
+        await preparePromise;
+      } catch (_) {
+        candidates = uniqueHttps(FALLBACK_STREAMS);
+        prepared = true;
+        resolving = false;
+      }
       if (userStopped) return;
+    }
+
+    if (!candidates.length) {
+      candidates = uniqueHttps(FALLBACK_STREAMS);
+      candidateIndex = 0;
     }
     candidateIndex = Math.min(candidateIndex, Math.max(0, candidates.length - 1));
     playCurrent();
@@ -207,6 +290,8 @@
     userStopped = true;
     clearRetry();
     audio.pause();
+    status.textContent = "PAUSED";
+    play.textContent = "▶";
   }
 
   function toggle(){
@@ -220,7 +305,7 @@
     play.textContent = "Ⅱ";
   });
   audio.addEventListener("pause", () => {
-    if (status.textContent !== "ERROR" && userStopped) status.textContent = "PAUSED";
+    if (userStopped && status.textContent !== "ERROR") status.textContent = "PAUSED";
     play.textContent = "▶";
   });
   audio.addEventListener("waiting", () => { if (!userStopped) status.textContent = "BUFFERING"; });
@@ -235,4 +320,12 @@
       audio.pause();
     }
   }, true);
+
+  /* Resolve the preferred bridge while the visitor reads/scrolls, before the first tap. */
+  preparePromise = prepareCandidates().catch(() => {
+    candidates = uniqueHttps(FALLBACK_STREAMS);
+    prepared = true;
+    resolving = false;
+    return candidates;
+  });
 })();
