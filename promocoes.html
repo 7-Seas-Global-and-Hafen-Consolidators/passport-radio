@@ -22,98 +22,12 @@
 <link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
 </head>
 <body>
-<header class="promo-top">
-  <div class="promo-shell promo-top__row">
-    <a class="promo-brand" href="index.html" aria-label="Passport Radio — Início">
-      <img src="/images/passport-radio-definitive.jpg" alt="Passport Radio">
-      <span><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span>
-    </a>
-    <nav class="promo-nav" aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <a href="radio.html">Rádio</a>
-      <a href="destinos.html">Explorar</a>
-      <a href="loja.html">Loja</a>
-      <a href="promocoes.html" aria-current="page">Promoções</a>
-      <a href="#area-ouvinte">Área do Ouvinte</a>
-      <a class="promo-onair" href="radio.html">ON AIR</a>
-    </nav>
-  </div>
-</header>
+<header class="promo-top"><div class="promo-shell promo-top__row"><a class="promo-brand" href="index.html" aria-label="Passport Radio — Início"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><span><strong>Passport Radio</strong><small>Music · History · Culture · Live</small></span></a><nav class="promo-nav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="radio.html">Rádio</a><a href="destinos.html">Explorar</a><a href="loja.html">Loja</a><a href="promocoes.html" aria-current="page">Promoções</a><a href="#area-ouvinte">Área do Ouvinte</a><a class="promo-onair" href="radio.html">ON AIR</a></nav></div></header>
 <main>
-<section class="promo-hero">
-  <div class="promo-shell">
-    <span class="promo-kicker">Passport Radio · Promoções & Prêmios</span>
-    <h1>PROMOÇÕES<br><span>& PRÊMIOS</span></h1>
-    <p>Ouça a Passport, participe das campanhas e acompanhe o que está no ar, o que vem a seguir e tudo o que já entrou para o arquivo.</p>
-    <div class="promo-tabs" aria-label="Atalhos da página">
-      <a href="#no-ar">No ar agora</a>
-      <a href="#area-ouvinte">Área do Ouvinte</a>
-      <a href="#proximas">Próximas</a>
-      <a href="#arquivo">Arquivo</a>
-      <a href="#redes">Redes oficiais</a>
-    </div>
-  </div>
-</section>
-<section class="account-zone" id="area-ouvinte">
-  <div class="promo-shell">
-    <div class="account-zone__head">
-      <div><span class="promo-kicker">Área do Ouvinte</span><h2>SEU LUGAR<br>NAS PROMOÇÕES.</h2></div>
-      <p>Veja os eventos disponíveis e consulte os comprovantes das inscrições feitas neste navegador.</p>
-    </div>
-    <div class="account-console">
-      <div class="account-tabs" role="tablist" aria-label="Área do Ouvinte">
-        <button type="button" class="is-active" data-account-tab="events" aria-selected="true">Lista de Eventos</button>
-        <button type="button" data-account-tab="entries" aria-selected="false">Minhas Inscrições</button>
-      </div>
-      <div class="account-panel" data-account-panel="events">
-        <div class="event-list">
-          <article class="event-row event-row--live"><div><small>PR-0001 · NO AR</small><strong>Ganhe um fone Bluetooth</strong><span>Escute. Mostre. Convide.</span></div><a href="#no-ar">Participar agora</a></article>
-          <article class="event-row"><div><small>PR-0002 · EM BREVE</small><strong>Headphone para viver a Passport</strong><span>Nova rodada dedicada a áudio.</span></div><span class="event-state">Em breve</span></article>
-          <article class="event-row"><div><small>PR-0003 · EM BREVE</small><strong>Disco de vinil — edição rock</strong><span>Música física, coleção e memória.</span></div><span class="event-state">Em breve</span></article>
-          <article class="event-row"><div><small>PR-0004 · EM BREVE</small><strong>Camiseta de banda</strong><span>Rock para vestir.</span></div><span class="event-state">Em breve</span></article>
-        </div>
-      </div>
-      <div class="account-panel" data-account-panel="entries" hidden>
-        <form class="entry-lookup" id="entry-lookup-form">
-          <label for="entry-lookup-email">E-mail usado na inscrição</label>
-          <div><input id="entry-lookup-email" type="email" autocomplete="email" placeholder="voce@email.com"><button type="submit">Consultar</button></div>
-        </form>
-        <div id="my-entries-list" class="my-entries" aria-live="polite"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="promo-feature" id="no-ar">
-  <div class="promo-shell promo-feature__grid">
-    <article class="promo-feature__visual">
-      <img src="/images/boutique/estojos-fones-e-acessorios.png" alt="Fones e acessórios de áudio">
-      <div class="promo-feature__copy"><small>PROMOÇÃO PASSPORT · PR-0001</small><h2>ESCUTE.<br>MOSTRE.<br>CONVIDE.</h2><p>Primeira campanha da nova área de promoções da Passport. O prêmio: um fone Bluetooth para continuar ouvindo música onde estiver.</p></div>
-    </article>
-    <aside class="promo-form" aria-label="Inscrição na promoção PR-0001">
-      <span class="promo-status">Promoção no ar</span>
-      <h3>Ganhe um fone Bluetooth.</h3>
-      <p>Ouça a Passport, tire um print, publique no Instagram marcando <strong>@passportradio.online</strong> e faça sua inscrição aqui.</p>
-      <form id="promo-entry-form" action="https://formspree.io/f/mwleblbo" method="POST">
-        <input type="hidden" name="campaign" value="PR-0001 — Fone Bluetooth">
-        <input type="hidden" id="participation-code" name="participation_code" value="">
-        <label for="nome">Nome</label><input id="nome" name="name" type="text" autocomplete="name" required>
-        <label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required>
-        <label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required>
-        <label for="instagram">@Instagram</label><input id="instagram" name="instagram" type="text" placeholder="@seuusuario" required>
-        <label for="indicacao">Quem te convidou?</label><input id="indicacao" name="convidado_por" type="text" placeholder="@usuario ou código">
-        <label class="promo-check"><input type="checkbox" name="confirmacao" value="sim" required><span>Confirmo que li como participar e que o perfil informado é meu.</span></label>
-        <button class="promo-submit" type="submit">Quero participar</button>
-      </form>
-      <div id="promo-confirmation" class="promo-confirmation" hidden aria-live="polite"></div>
-      <div class="promo-rules"><b>Como participar:</b> ouça a Passport → tire o print → poste no Story → marque @passportradio.online → complete a inscrição. Sem upload de arquivo nesta página.</div>
-    </aside>
-  </div>
-</section>
+<section class="promo-hero"><div class="promo-shell"><span class="promo-kicker">Passport Radio · Promoções & Prêmios</span><h1>PROMOÇÕES<br><span>& PRÊMIOS</span></h1><p>Ouça a Passport, participe das campanhas e acompanhe o que está no ar, o que vem a seguir e tudo o que já entrou para o arquivo.</p><div class="promo-tabs" aria-label="Atalhos da página"><a href="#no-ar">No ar agora</a><a href="#area-ouvinte">Área do Ouvinte</a><a href="#proximas">Próximas</a><a href="#arquivo">Arquivo</a><a href="#redes">Redes oficiais</a></div></div></section>
+<section class="account-zone" id="area-ouvinte"><div class="promo-shell"><div class="account-zone__head"><div><span class="promo-kicker">Área do Ouvinte</span><h2>SEU LUGAR<br>NAS PROMOÇÕES.</h2></div><p>Veja os eventos disponíveis e consulte os comprovantes das inscrições feitas neste navegador.</p></div><div class="account-console"><div class="account-tabs" role="tablist" aria-label="Área do Ouvinte"><button type="button" class="is-active" data-account-tab="events" aria-selected="true">Lista de Eventos</button><button type="button" data-account-tab="entries" aria-selected="false">Minhas Inscrições</button></div><div class="account-panel" data-account-panel="events"><div class="event-list"><article class="event-row event-row--live"><div><small>PR-0001 · NO AR</small><strong>Ganhe um fone Bluetooth</strong><span>Escute. Mostre. Convide.</span></div><a href="#no-ar">Participar agora</a></article><article class="event-row"><div><small>PR-0002 · EM BREVE</small><strong>Headphone para viver a Passport</strong><span>Nova rodada dedicada a áudio.</span></div><span class="event-state">Em breve</span></article><article class="event-row"><div><small>PR-0003 · EM BREVE</small><strong>Disco de vinil — edição rock</strong><span>Música física, coleção e memória.</span></div><span class="event-state">Em breve</span></article><article class="event-row"><div><small>PR-0004 · EM BREVE</small><strong>Camiseta de banda</strong><span>Rock para vestir.</span></div><span class="event-state">Em breve</span></article></div></div><div class="account-panel" data-account-panel="entries" hidden><form class="entry-lookup" id="entry-lookup-form"><label for="entry-lookup-email">E-mail usado na inscrição</label><div><input id="entry-lookup-email" type="email" autocomplete="email" placeholder="voce@email.com"><button type="submit">Consultar</button></div></form><div id="my-entries-list" class="my-entries" aria-live="polite"></div></div></div></div></section>
+<section class="promo-feature" id="no-ar"><div class="promo-shell promo-feature__grid"><article class="promo-feature__visual"><img src="/images/boutique/estojos-fones-e-acessorios.png" alt="Fones e acessórios de áudio"><div class="promo-feature__copy"><small>PROMOÇÃO PASSPORT · PR-0001</small><h2>ESCUTE.<br>MOSTRE.<br>CONVIDE.</h2><p>Primeira campanha da nova área de promoções da Passport. O prêmio: um fone Bluetooth para continuar ouvindo música onde estiver.</p></div></article><aside class="promo-form" aria-label="Inscrição na promoção PR-0001"><span class="promo-status">Promoção no ar</span><h3>Ganhe um fone Bluetooth.</h3><p>Ouça a Passport, tire um print, publique no Instagram marcando <strong>@passportradio.online</strong> e faça sua inscrição aqui.</p><form id="promo-entry-form" action="https://formspree.io/f/mwleblbo" method="POST"><input type="hidden" name="campaign" value="PR-0001 — Fone Bluetooth"><input type="hidden" id="participation-code" name="participation_code" value=""><label for="nome">Nome</label><input id="nome" name="name" type="text" autocomplete="name" required><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required><label for="instagram">@Instagram</label><input id="instagram" name="instagram" type="text" placeholder="@seuusuario" required><label for="indicacao">Quem te convidou?</label><input id="indicacao" name="convidado_por" type="text" placeholder="@usuario ou código"><label class="promo-check"><input type="checkbox" name="confirmacao" value="sim" required><span>Confirmo que li como participar e que o perfil informado é meu.</span></label><button class="promo-submit" type="submit">Quero participar</button></form><div id="promo-confirmation" class="promo-confirmation" hidden aria-live="polite"></div><div class="promo-rules"><b>Como participar:</b> ouça a Passport → tire o print → poste no Story → marque @passportradio.online → complete a inscrição. Sem upload de arquivo nesta página.</div></aside></div></section>
 <section class="promo-section" id="proximas"><div class="promo-shell"><header class="promo-section__head"><div><span class="promo-kicker">Próximas campanhas</span><h2>O QUE VEM<br>A SEGUIR.</h2></div><p>Uma fila de prêmios diretamente ligados à música e ao universo Passport.</p></header><div class="promo-grid"><article class="promo-card"><div class="promo-card__media"><img src="/images/boutique/estojos-fones-e-acessorios.png" alt="Fone de ouvido"></div><div class="promo-card__body"><div class="promo-card__meta"><b>Áudio</b><span>PR-0002</span></div><h3>Headphone para viver a Passport</h3><p>Uma nova rodada de áudio para quem acompanha a programação e participa pelas redes.</p><div class="promo-card__status promo-card__status--next">Em breve</div></div></article><article class="promo-card"><div class="promo-card__media promo-card__media--vinyl"><div class="vinyl-disc" aria-hidden="true"></div></div><div class="promo-card__body"><div class="promo-card__meta"><b>Vinil</b><span>PR-0003</span></div><h3>Disco de vinil — edição rock</h3><p>Uma campanha para quem ainda gosta de tirar o disco da capa e deixar o lado A começar.</p><div class="promo-card__status promo-card__status--next">Em breve</div></div></article><article class="promo-card"><div class="promo-card__media"><img src="/images/boutique/camisetas-rock.png" alt="Camisetas de rock"></div><div class="promo-card__body"><div class="promo-card__meta"><b>Rockwear</b><span>PR-0004</span></div><h3>Camiseta de banda</h3><p>Uma peça escolhida para quem leva a banda favorita para fora do fone e para dentro da rua.</p><div class="promo-card__status promo-card__status--next">Em breve</div></div></article><article class="promo-card"><div class="promo-card__media promo-card__media--mug"><div class="mug-shape" aria-hidden="true">ROCK<br>ALL<br>DAY</div></div><div class="promo-card__body"><div class="promo-card__meta"><b>Coleção</b><span>PR-0005</span></div><h3>Caneca personalizada de banda</h3><p>Um prêmio pequeno, colecionável e perfeito para campanhas rápidas entre uma grande ação e outra.</p><div class="promo-card__status promo-card__status--next">Em breve</div></div></article></div></div></section>
 <section class="promo-section promo-section--soft" id="arquivo"><div class="promo-shell"><header class="promo-section__head"><div><span class="promo-kicker">Arquivo de formatos</span><h2>IDEIAS QUE<br>FUNCIONAM.</h2></div><p>Quatro formatos clássicos de promoção em rádio rock escolhidos como referência para futuras ações da Passport.</p></header><div class="promo-grid"><article class="promo-card"><div class="promo-card__media"><img src="/images/brilho-nos-olhos-capa.jpg" alt="Show e encontro com artista"></div><div class="promo-card__body"><div class="promo-card__meta"><b>Meet & Greet</b><span>Referência</span></div><h3>Edu Falaschi — encontro com artista</h3><p>Formato de experiência: ingresso + encontro com o artista em uma mesma campanha.</p><div class="promo-card__status">Formato de referência</div></div></article><article class="promo-card"><div class="promo-card__media"><img src="/images/casa-das-maquinas-2026.jpg" alt="Festival de rock"></div><div class="promo-card__body"><div class="promo-card__meta"><b>Festival</b><span>Referência</span></div><h3>Monsters of Rock — ingressos</h3><p>Formato de grande evento, pensado para alto alcance e participação em massa.</p><div class="promo-card__status">Formato de referência</div></div></article><article class="promo-card"><div class="promo-card__media"><img src="/images/13-estilos-de-rock.jpg" alt="Rock e metal"></div><div class="promo-card__body"><div class="promo-card__meta"><b>Interação</b><span>Referência</span></div><h3>Iron Maiden — qual é a música?</h3><p>Formato de desafio musical que transforma repertório e memória do ouvinte em participação.</p><div class="promo-card__status">Formato de referência</div></div></article><article class="promo-card"><div class="promo-card__media"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"></div><div class="promo-card__body"><div class="promo-card__meta"><b>Ingressos</b><span>Referência</span></div><h3>Deep Purple — show internacional</h3><p>Formato direto e simples: cadastro, apuração e ingresso como prêmio principal.</p><div class="promo-card__status">Formato de referência</div></div></article></div><p class="promo-note">Os cards desta seção são referências de formato para planejamento editorial e promocional da Passport Radio; não representam campanhas já realizadas pela Passport.</p></div></section>
 <section class="promo-section" id="redes"><div class="promo-shell"><header class="promo-section__head"><div><span class="promo-kicker">Canais oficiais</span><h2>SIGA. OUÇA.<br>VOLTE.</h2></div><p>As campanhas nascem no site, ganham alcance nas redes e levam o público de volta para a música.</p></header><div class="promo-social"><a href="https://www.instagram.com/passportradio.online?igsh=MTdxb2tya3BkNmNzYw==" target="_blank" rel="noopener">Instagram · @passportradio.online</a><a href="https://youtube.com/@passportradio-x8m?si=Tu-fTQ6Y5K9mN2Dd" target="_blank" rel="noopener">YouTube · @passportradio-x8m</a><a href="radio.html">Ouvir a Passport</a></div></div></section>
-</main>
-<footer class="promo-bottom"><div class="promo-shell promo-bottom__grid"><div><strong>Passport Radio™</strong><p>Every Song Is A Destination. · 3... 2... 1... CLICK!™</p></div><div><a href="index.html">Início</a> · <a href="radio.html">Rádio</a> · <a href="loja.html">Loja</a> · <a href="contato.html">Contato</a></div></div></footer>
-<script src="/js/promocoes.js?v=202608241539" defer></script>
-</body>
-</html>
+</main><footer class="promo-bottom"><div class="promo-shell promo-bottom__grid"><div><strong>Passport Radio™</strong><p>Every Song Is A Destination. · 3... 2... 1... CLICK!™</p></div><div><a href="index.html">Início</a> · <a href="radio.html">Rádio</a> · <a href="loja.html">Loja</a> · <a href="contato.html">Contato</a></div></div></footer><script src="/js/promocoes.js?v=202608241539" defer></script></body></html>
