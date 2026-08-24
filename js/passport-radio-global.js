@@ -6,3 +6,6 @@
 
 /* LIVE PAGE ONLY · isolated Total Soul tunnel loader */
 (()=>{"use strict";function load(){if(!document.body||!document.body.classList.contains("live-page"))return;if(!document.getElementById("passport80s"))return;if(document.querySelector('script[data-passport-total-soul]'))return;const stale=document.getElementById("passportSoul");if(stale){stale.querySelectorAll("audio").forEach(a=>{try{a.pause()}catch(e){}});stale.querySelectorAll("iframe").forEach(f=>{try{f.src="about:blank"}catch(e){}});stale.remove()}const s=document.createElement("script");s.src="/js/total-soul-tunnel.js?v=202608232322";s.dataset.passportTotalSoul="1";document.head.appendChild(s)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load):load()})();
+
+/* LIVE PAGE ONLY · isolated MPB Tunnel loader */
+(()=>{"use strict";function load(){if(!document.body||!document.body.classList.contains("live-page"))return;if(!document.getElementById("passport80s"))return;if(document.querySelector('script[data-passport-mpb]'))return;const s=document.createElement("script");s.src="/js/mpb-tunnel.js?v=202608240030";s.dataset.passportMpb="1";document.head.appendChild(s)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load):load()})();
