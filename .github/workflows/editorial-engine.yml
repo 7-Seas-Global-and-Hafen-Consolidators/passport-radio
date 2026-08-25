@@ -24,6 +24,7 @@ on:
     paths:
       - '.github/workflows/editorial-engine.yml'
       - 'tools/editorial_engine_copilot.py'
+      - 'tools/inject_amazon_affiliate.py'
       - 'data/editorial-engine.json'
 
 permissions:
@@ -137,6 +138,11 @@ jobs:
             --force-batch "$FORCE" \
             $APPLY | tee build/editorial-engine-console.json
 
+      - name: Inject Amazon affiliate layer across site
+        if: steps.settings.outputs.mode == 'pr' || steps.settings.outputs.mode == 'direct'
+        shell: bash
+        run: python tools/inject_amazon_affiliate.py
+
       - name: Add engine report to summary
         if: always()
         shell: bash
@@ -174,6 +180,7 @@ jobs:
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
+          git add -- '*.html' ':(glob)**/*.html' 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -194,8 +201,9 @@ jobs:
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
+          git add -- '*.html' ':(glob)**/*.html' 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No editorial files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
+            echo "No editorial or affiliate files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           git commit -m "Passport Editorial 24H: publish automatic batch"
