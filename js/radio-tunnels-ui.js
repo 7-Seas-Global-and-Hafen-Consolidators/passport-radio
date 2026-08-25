@@ -61,6 +61,53 @@
     }
   }
 
+  function ensurePopoutPilot(){
+    const directory = hub.querySelector(".tunnel-directory");
+    const row = directory && directory.querySelector('[data-tunnel-target="passport5060"]');
+    if (!directory || !row || directory.querySelector("[data-passport-popout-pilot]")) return;
+
+    if (!document.querySelector("style[data-passport-popout-pilot-style]")) {
+      const style = document.createElement("style");
+      style.dataset.passportPopoutPilotStyle = "1";
+      style.textContent = `
+        .tunnel-popout-pilot{display:flex;justify-content:flex-end;padding:10px 0 3px}
+        .tunnel-popout-pilot__button{appearance:none;border:0;background:transparent;color:#8a5a18;cursor:pointer;font:900 .55rem Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+        .tunnel-popout-pilot__button:hover{text-decoration:underline;text-underline-offset:4px}
+        @media(max-width:640px){.tunnel-popout-pilot{justify-content:flex-start;padding:10px 2px 4px}.tunnel-popout-pilot__button{font-size:.52rem}}
+      `;
+      document.head.appendChild(style);
+    }
+
+    const wrap = document.createElement("div");
+    wrap.className = "tunnel-popout-pilot";
+    wrap.dataset.passportPopoutPilot = "1";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "tunnel-popout-pilot__button";
+    button.textContent = "Ouvir 50s & 60s em janela separada ↗";
+    button.setAttribute("aria-label", "Abrir 50s e 60s Tunnel em player separado");
+    button.addEventListener("click", () => {
+      if (window.PassportRadioBridge && typeof window.PassportRadioBridge.pauseLocal === "function") {
+        window.PassportRadioBridge.pauseLocal();
+      } else {
+        document.querySelectorAll("audio").forEach(a => {
+          if (!a.paused) { try { a.pause(); } catch (_) {} }
+        });
+      }
+
+      const popup = window.open(
+        "/passport-player.html?channel=5060",
+        "passportPlayer",
+        "popup=yes,width=470,height=820,resizable=yes,scrollbars=yes"
+      );
+      if (popup) { try { popup.focus(); } catch (_) {} }
+    });
+
+    wrap.appendChild(button);
+    row.insertAdjacentElement("afterend", wrap);
+  }
+
   function loadHitsTunnel(){
     if (document.querySelector('script[data-passport-hits-tunnel]')) return;
     const s = document.createElement("script");
@@ -141,6 +188,7 @@
 
   ensureHitsDirectory();
   ensure5060Directory();
+  ensurePopoutPilot();
 
   hub.querySelectorAll("[data-tunnel-target]").forEach(button => {
     button.addEventListener("click", () => {
