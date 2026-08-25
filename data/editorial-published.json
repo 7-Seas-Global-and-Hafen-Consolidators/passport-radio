@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T09:44:57.614351-03:00",
+  "updated_at": "2026-08-25T10:40:22.449097-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -324,6 +324,121 @@
       "event_key": "dorothy-moore-diamond-gold-2026",
       "fingerprint": "7348b7c0f6cde50faa49904a",
       "source_hash": "7e077f5ebb659ae1f7d03afd"
+    },
+    {
+      "title": "ZZ Top volta à estrada dias após a morte do baterista Frank Beard",
+      "url": "/editorial/2026/08/25/zz-top-volta-a-estrada-dias-apos-a-morte-do-baterista-frank-beard.html",
+      "published_at": "2026-08-25T10:37:31.194727-03:00",
+      "category": "instruments",
+      "format": "FLASH",
+      "entities": [
+        "ZZ Top",
+        "Frank Beard",
+        "Michael Monahan",
+        "Billy Gibbons",
+        "Elwood Francis"
+      ],
+      "event_key": "zztop-drummer-replacement-aug2026",
+      "fingerprint": "13c69a87fe7e0eafc0eb1af5",
+      "source_hash": "b2d288afd65d9e078f109a44"
+    },
+    {
+      "title": "Oberek em movimento: como o giro rural virou língua eletrônica",
+      "url": "/editorial/2026/08/25/oberek-em-movimento-como-o-giro-rural-virou-lingua-eletronica.html",
+      "published_at": "2026-08-25T10:38:07.930884-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Tercet Imperial",
+        "Prymat",
+        "Piotr Zabrodzki",
+        "Jan Emil Młynarski",
+        "Joanna Sztucka",
+        "Gary Gwadera",
+        "Footberk Suite",
+        "Mateusz Kowalski",
+        "Sam Kowalski",
+        "Opla"
+      ],
+      "event_key": "oberek-revival-poland-2026",
+      "fingerprint": "fb94bb60d7ce6ad7c6aca117",
+      "source_hash": "90de3bc03a6e1feae2c3117d"
+    },
+    {
+      "title": "Setembro na Cidade do México: o indie se concentra em três semanas de festa",
+      "url": "/editorial/2026/08/25/setembro-na-cidade-do-mexico-o-indie-se-concentra-em-tres-semanas-de-festa.html",
+      "published_at": "2026-08-25T10:38:39.786269-03:00",
+      "category": "indie",
+      "format": "FLASH",
+      "entities": [
+        "American Football",
+        "Perfume Genius",
+        "Lido Pimienta",
+        "Safety Trance",
+        "Wendy Eisenberg",
+        "Umru",
+        "Tygapaw",
+        "Immasoul",
+        "Baby Milosz",
+        "CFCF"
+      ],
+      "event_key": "pfmf-cdmx-2026-sept",
+      "fingerprint": "3e7c522b9286f460bb4b3ca3",
+      "source_hash": "f573c7d9eddf002c98778059"
+    },
+    {
+      "title": "Taylor Swift Expõe a Máquina do Risco: Quando a Composição Recusa o Repouso",
+      "url": "/editorial/2026/08/25/taylor-swift-expoe-a-maquina-do-risco-quando-a-composicao-recusa-o-repouso.html",
+      "published_at": "2026-08-25T10:39:15.587989-03:00",
+      "category": "alternative_gothic",
+      "format": "STORY",
+      "entities": [
+        "Taylor Swift",
+        "The Recording Academy",
+        "Harvey Mason Jr.",
+        "Max Martin",
+        "Shellback",
+        "Toy Story 5"
+      ],
+      "event_key": "swift-icon-sessions-songwriting-2026",
+      "fingerprint": "d703134c959599108c88b2ad",
+      "source_hash": "b2d9d17487ff251680c149dd"
+    },
+    {
+      "title": "Os Isley Brothers retornam com tema cinematográfico que ecoa resistência",
+      "url": "/editorial/2026/08/25/os-isley-brothers-retornam-com-tema-cinematografico-que-ecoa-resistencia.html",
+      "published_at": "2026-08-25T10:39:56.024904-03:00",
+      "category": "soul",
+      "format": "FLASH",
+      "entities": [
+        "The Isley Brothers",
+        "Ronald Isley",
+        "Ernie Isley",
+        "Diane Warren",
+        "David Kushner",
+        "By Any Means (trilha sonora)"
+      ],
+      "event_key": "isley-by-any-means-aug2026",
+      "fingerprint": "85d85b688941172cf50bea6c",
+      "source_hash": "edff0404428b24310f4c6963"
+    },
+    {
+      "title": "Laneway redimensiona seu mapa: Sydney entra, Adelaide e Perth saem, e um novo capítulo começa",
+      "url": "/editorial/2026/08/25/laneway-redimensiona-seu-mapa-sydney-entra-adelaide-e-perth-saem-e-um-novo-capitulo-come.html",
+      "published_at": "2026-08-25T10:40:22.448081-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Laneway Festival",
+        "Chappell Roan",
+        "Wolf Alice",
+        "Wet Leg",
+        "PinkPantheress",
+        "Jessie Parker"
+      ],
+      "event_key": "laneway-2027-reform",
+      "fingerprint": "2c72b23ddf83d02d2e7fb5cf",
+      "source_hash": "38dac399f246f35bf3c21220"
     }
   ]
 }
