@@ -6,7 +6,7 @@ on:
       mode:
         description: "stage = artifact only; pr = rolling review PR; direct = publish to main"
         required: false
-        default: "pr"
+        default: "direct"
         type: choice
         options: [stage, pr, direct]
       daily_target:
@@ -19,11 +19,17 @@ on:
         default: "-1"
   schedule:
     - cron: '7,27,47 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/editorial-engine.yml'
+      - 'tools/editorial_engine_copilot.py'
 
 permissions:
   contents: write
   pull-requests: write
   actions: read
+  copilot-requests: write
 
 concurrency:
   group: passport-editorial-engine
@@ -36,7 +42,7 @@ jobs:
     timeout-minutes: 55
     env:
       GH_TOKEN: ${{ github.token }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GITHUB_TOKEN: ${{ github.token }}
       PASSPORT_EDITORIAL_MODEL: ${{ vars.PASSPORT_EDITORIAL_MODEL }}
 
     steps:
@@ -51,6 +57,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install GitHub Copilot CLI
+        run: npm install -g @github/copilot@latest
+
       - name: Resolve engine mode and target
         id: settings
         shell: bash
@@ -59,7 +68,7 @@ jobs:
           TARGET="${{ github.event.inputs.daily_target }}"
           FORCE="${{ github.event.inputs.force_batch }}"
           if [ -z "$MODE" ]; then MODE="${{ vars.PASSPORT_EDITORIAL_MODE }}"; fi
-          if [ -z "$MODE" ]; then MODE="pr"; fi
+          if [ -z "$MODE" ]; then MODE="direct"; fi
           if [ -z "$TARGET" ]; then TARGET="70"; fi
           if [ -z "$FORCE" ]; then FORCE="-1"; fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
@@ -115,7 +124,7 @@ jobs:
         run: |
           APPLY=""
           if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
-          python tools/editorial_engine.py \
+          python tools/editorial_engine_copilot.py \
             --queue "${{ steps.tunnel.outputs.queue }}" \
             --config data/editorial-engine.json \
             --state data/editorial-published.json \
@@ -142,8 +151,6 @@ jobs:
           print(f"Already today: **{d.get('already_today',0)}** · generated this run: **{len(d.get('generated',[]))}**")
           for item in d.get('generated',[])[:12]:
               print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
-          if d.get('status') == 'awaiting_openai_api_key':
-              print('\n`OPENAI_API_KEY` is not configured, so nothing was written or published.')
           PY
           fi
 
@@ -175,7 +182,7 @@ jobs:
           if [ -z "$OPEN_PR" ]; then
             gh pr create --base main --head automation/editorial-staging \
               --title "Passport Editorial 24H — fila automática" \
-              --body "Lote contínuo do Passport Editorial Engine™. Conteúdo público em nome da Passport Radio, com deduplicação e bloqueio de rastros de origem. O motor tem capacidade técnica de 200 matérias/dia; a meta corrente é controlada pela configuração." >/dev/null
+              --body "Lote contínuo do Passport Editorial Engine™. Conteúdo público em nome da Passport Radio, com deduplicação e bloqueio de rastros de origem. Capacidade técnica: 200 matérias/dia." >/dev/null
           fi
 
       - name: Publish direct batch
