@@ -4,9 +4,9 @@ Backend editorial discovery system for Passport Radio.
 
 ## Goal
 
-Continuously scan a broad music-news surface, collapse duplicate coverage, and produce a balanced **Top 20 daily editorial queue** without publishing anything automatically.
+Continuously scan a broad music-news surface, collapse duplicate coverage, and produce a large ranked editorial reservoir for the Passport Editorial Engine™.
 
-The tunnel is deliberately invisible to the public Passport experience. Source names, URLs, authors and crawler diagnostics stay in the internal Action artifact. Public articles remain Passport / Mr. Nomad editorial pieces.
+The tunnel is deliberately invisible to the public Passport experience. Source names, URLs, authors and crawler diagnostics stay in the internal Action artifact. Public articles are rendered only by the Passport editorial layer.
 
 ## Coverage
 
@@ -31,23 +31,23 @@ The source map lives in `data/editorial-sources.json`.
 `tools/editorial_tunnel.py`:
 
 1. visits each configured landing page;
-2. discovers a small set of article-like URLs;
-3. fetches article metadata only;
+2. discovers article-like URLs;
+3. fetches article metadata;
 4. classifies each signal by editorial axis;
 5. scores `trend`, `passport` and `archive` value;
 6. filters stories already covered by existing Passport HTML;
 7. merges duplicate stories detected across outlets;
-8. applies category quotas and source diversity;
-9. selects up to 20 items.
+8. applies category/source diversity;
+9. ranks a reservoir of up to **260 signals per run**.
 
-The crawler does **not** copy full article bodies and does not modify the Passport website.
+The crawler itself does not publish or modify Passport pages.
 
 ## Output
 
 Every run writes:
 
-- `editorial-radar.json` — full diagnostic/ranking packet, including internal origins;
-- `editorial-daily.json` — the selected Top 20;
+- `editorial-radar.json` — diagnostic/ranking packet, including internal origins;
+- `editorial-daily.json` — the ranked reservoir consumed by the Editorial Engine;
 - `editorial-queue.md` — a source-free run summary.
 
 These files are uploaded as a GitHub Actions artifact and are not committed into the live site.
@@ -56,8 +56,13 @@ These files are uploaded as a GitHub Actions artifact and are not committed into
 
 `.github/workflows/editorial-tunnel.yml` runs every two hours and can also be triggered manually from GitHub Actions.
 
+Current excavation parameters:
+
+- reservoir: 260
+- up to 8 links per configured entry point
+- freshness window: 72 hours
+- 16 fetch workers
+
 ## Publishing gate
 
-Nothing from the tunnel is auto-published. A selected signal still needs Passport editorial treatment before any HTML is created or added to the Home.
-
-That keeps the discovery engine aggressive while the public voice remains controlled.
+The Tunnel never publishes. The downstream Passport Editorial Engine™ owns writing, a second anti-duplication pass, public-source firewall, HTML generation, feed integration, sitemap updates and the selected publication mode.

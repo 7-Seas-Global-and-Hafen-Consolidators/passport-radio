@@ -1,0 +1,194 @@
+name: Passport Editorial Engine 200
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "stage = artifact only; pr = rolling review PR; direct = publish to main"
+        required: false
+        default: "pr"
+        type: choice
+        options: [stage, pr, direct]
+      daily_target:
+        description: "Publications per day (1-200)"
+        required: false
+        default: "70"
+      force_batch:
+        description: "Manual batch override; -1 uses pacing"
+        required: false
+        default: "-1"
+  schedule:
+    - cron: '7,27,47 * * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+concurrency:
+  group: passport-editorial-engine
+  cancel-in-progress: false
+
+jobs:
+  build-editorial:
+    name: Build Passport editorial batch
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PASSPORT_EDITORIAL_MODEL: ${{ vars.PASSPORT_EDITORIAL_MODEL }}
+
+    steps:
+      - name: Checkout Passport main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Resolve engine mode and target
+        id: settings
+        shell: bash
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          TARGET="${{ github.event.inputs.daily_target }}"
+          FORCE="${{ github.event.inputs.force_batch }}"
+          if [ -z "$MODE" ]; then MODE="${{ vars.PASSPORT_EDITORIAL_MODE }}"; fi
+          if [ -z "$MODE" ]; then MODE="pr"; fi
+          if [ -z "$TARGET" ]; then TARGET="70"; fi
+          if [ -z "$FORCE" ]; then FORCE="-1"; fi
+          case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
+          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 200 ]; then echo "daily_target must be 1..200"; exit 2; fi
+          echo "MODE=$MODE" >> "$GITHUB_ENV"
+          echo "TARGET=$TARGET" >> "$GITHUB_ENV"
+          echo "FORCE=$FORCE" >> "$GITHUB_ENV"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          echo "force=$FORCE" >> "$GITHUB_OUTPUT"
+          echo "Mode: $MODE · target: $TARGET/day · hard capacity: 200/day" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Resume rolling editorial branch
+        if: steps.settings.outputs.mode == 'pr'
+        shell: bash
+        run: |
+          git fetch origin main
+          if git fetch origin automation/editorial-staging:refs/remotes/origin/automation/editorial-staging 2>/dev/null; then
+            git checkout -B automation/editorial-staging origin/automation/editorial-staging
+            git rebase origin/main
+          else
+            git checkout -b automation/editorial-staging origin/main
+          fi
+
+      - name: Locate latest Editorial Tunnel packet
+        id: tunnel
+        shell: bash
+        run: |
+          mkdir -p build/tunnel-download
+          RUN_ID="$(gh run list --workflow editorial-tunnel.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId' 2>/dev/null || true)"
+          if [ -n "$RUN_ID" ]; then
+            gh run download "$RUN_ID" --dir build/tunnel-download || true
+          fi
+          QUEUE="$(find build/tunnel-download -type f -name editorial-daily.json -print -quit 2>/dev/null || true)"
+          if [ -n "$QUEUE" ]; then
+            echo "queue=$QUEUE" >> "$GITHUB_OUTPUT"
+            echo "Using tunnel run $RUN_ID" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No reusable tunnel packet; excavating now." >> "$GITHUB_STEP_SUMMARY"
+            mkdir -p build/editorial-tunnel
+            python tools/editorial_tunnel.py \
+              --sources data/editorial-sources.json \
+              --output-dir build/editorial-tunnel \
+              --daily-limit 260 \
+              --per-source 8 \
+              --max-age-hours 72 \
+              --workers 16
+            echo "queue=build/editorial-tunnel/editorial-daily.json" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Passport Editorial Engine
+        shell: bash
+        run: |
+          APPLY=""
+          if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
+          python tools/editorial_engine.py \
+            --queue "${{ steps.tunnel.outputs.queue }}" \
+            --config data/editorial-engine.json \
+            --state data/editorial-published.json \
+            --feed data/editorial-feed.json \
+            --output-dir build/editorial-engine \
+            --daily-target "$TARGET" \
+            --capacity 200 \
+            --force-batch "$FORCE" \
+            $APPLY | tee build/editorial-engine-console.json
+
+      - name: Add engine report to summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f build/editorial-engine/engine-report.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          p=Path('build/editorial-engine/engine-report.json')
+          d=json.loads(p.read_text())
+          print('\n## Passport Editorial Engine™')
+          print(f"Status: **{d.get('status')}**")
+          print(f"Target: **{d.get('daily_target')}/day** · capacity: **{d.get('daily_capacity')}/day**")
+          print(f"Already today: **{d.get('already_today',0)}** · generated this run: **{len(d.get('generated',[]))}**")
+          for item in d.get('generated',[])[:12]:
+              print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
+          if d.get('status') == 'awaiting_openai_api_key':
+              print('\n`OPENAI_API_KEY` is not configured, so nothing was written or published.')
+          PY
+          fi
+
+      - name: Upload editorial build packet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: passport-editorial-engine-${{ github.run_number }}
+          path: |
+            build/editorial-engine/
+            build/editorial-engine-console.json
+          retention-days: 7
+          if-no-files-found: warn
+
+      - name: Commit rolling review batch
+        if: steps.settings.outputs.mode == 'pr'
+        shell: bash
+        run: |
+          git config user.name "Passport Radio Editorial Engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "Passport Editorial 24H: automatic batch"
+          git push -u origin automation/editorial-staging
+          OPEN_PR="$(gh pr list --head automation/editorial-staging --base main --state open --json number --jq '.[0].number' 2>/dev/null || true)"
+          if [ -z "$OPEN_PR" ]; then
+            gh pr create --base main --head automation/editorial-staging \
+              --title "Passport Editorial 24H — fila automática" \
+              --body "Lote contínuo do Passport Editorial Engine™. Conteúdo público em nome da Passport Radio, com deduplicação e bloqueio de rastros de origem. O motor tem capacidade técnica de 200 matérias/dia; a meta corrente é controlada pela configuração." >/dev/null
+          fi
+
+      - name: Publish direct batch
+        if: steps.settings.outputs.mode == 'direct'
+        shell: bash
+        run: |
+          git config user.name "Passport Radio Editorial Engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No editorial files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "Passport Editorial 24H: publish automatic batch"
+          git pull --rebase origin main
+          git push origin HEAD:main
