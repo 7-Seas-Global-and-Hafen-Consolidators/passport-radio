@@ -1,4 +1,4 @@
-name: Passport Editorial Engine 300
+name: Passport Editorial Engine 25/7 — 500
 
 on:
   workflow_dispatch:
@@ -10,15 +10,15 @@ on:
         type: choice
         options: [stage, pr, direct]
       daily_target:
-        description: "Publications per day (1-400)"
+        description: "Publications per day (1-700)"
         required: false
-        default: "300"
+        default: "500"
       force_batch:
         description: "Manual batch override; -1 uses pacing"
         required: false
         default: "-1"
   schedule:
-    - cron: '2,17,32,47 * * * *'
+    - cron: '2,12,22,32,42,52 * * * *'
   push:
     branches: [main]
     paths:
@@ -72,17 +72,17 @@ jobs:
           FORCE="${{ github.event.inputs.force_batch }}"
           if [ -z "$MODE" ]; then MODE="${{ vars.PASSPORT_EDITORIAL_MODE }}"; fi
           if [ -z "$MODE" ]; then MODE="direct"; fi
-          if [ -z "$TARGET" ]; then TARGET="300"; fi
+          if [ -z "$TARGET" ]; then TARGET="500"; fi
           if [ -z "$FORCE" ]; then FORCE="-1"; fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
-          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 400 ]; then echo "daily_target must be 1..400"; exit 2; fi
+          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 700 ]; then echo "daily_target must be 1..700"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "TARGET=$TARGET" >> "$GITHUB_ENV"
           echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "target=$TARGET" >> "$GITHUB_OUTPUT"
           echo "force=$FORCE" >> "$GITHUB_OUTPUT"
-          echo "Mode: $MODE · target: $TARGET/day · Nitro capacity: 400/day" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: $MODE · publication target: $TARGET/day · Operation 25/7 capacity: 700/day" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Resume rolling editorial branch
         if: steps.settings.outputs.mode == 'pr'
@@ -115,8 +115,8 @@ jobs:
             python tools/editorial_tunnel.py \
               --sources data/editorial-sources.json \
               --output-dir build/editorial-tunnel \
-              --daily-limit 450 \
-              --per-source 12 \
+              --daily-limit 1000 \
+              --per-source 20 \
               --max-age-hours 96 \
               --workers 20
             echo "queue=build/editorial-tunnel/editorial-daily.json" >> "$GITHUB_OUTPUT"
@@ -134,7 +134,7 @@ jobs:
             --feed data/editorial-feed.json \
             --output-dir build/editorial-engine \
             --daily-target "$TARGET" \
-            --capacity 400 \
+            --capacity 700 \
             --force-batch "$FORCE" \
             $APPLY | tee build/editorial-engine-console.json
 
@@ -153,9 +153,9 @@ jobs:
           from pathlib import Path
           p=Path('build/editorial-engine/engine-report.json')
           d=json.loads(p.read_text())
-          print('\n## Passport Editorial Engine™')
+          print('\n## Passport Editorial Engine™ — Operation 25/7')
           print(f"Status: **{d.get('status')}**")
-          print(f"Target: **{d.get('daily_target')}/day** · capacity: **{d.get('daily_capacity')}/day**")
+          print(f"Publication target: **{d.get('daily_target')}/day** · capacity: **{d.get('daily_capacity')}/day**")
           print(f"Already today: **{d.get('already_today',0)}** · generated this run: **{len(d.get('generated',[]))}**")
           for item in d.get('generated',[])[:12]:
               print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
@@ -185,13 +185,13 @@ jobs:
             echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial 24H: automatic batch"
+          git commit -m "Passport Editorial 25/7: automatic batch"
           git push -u origin automation/editorial-staging
           OPEN_PR="$(gh pr list --head automation/editorial-staging --base main --state open --json number --jq '.[0].number' 2>/dev/null || true)"
           if [ -z "$OPEN_PR" ]; then
             gh pr create --base main --head automation/editorial-staging \
-              --title "Passport Editorial 24H — fila automática" \
-              --body "Lote contínuo do Passport Editorial Engine™. Conteúdo público em nome da Passport Radio, com deduplicação e bloqueio de rastros de origem. Meta operacional: 300 matérias/dia. Capacidade Nitro: 400 matérias/dia." >/dev/null
+              --title "Passport Editorial 25/7 — fila automática" \
+              --body "Lote contínuo do Passport Editorial Engine™. Conteúdo público em nome da Passport Radio, com deduplicação e bloqueio de rastros de origem. Meta operacional: 500 matérias publicadas/dia. Capacidade interna: 700 matérias/dia." >/dev/null
           fi
 
       - name: Publish direct batch
@@ -206,6 +206,6 @@ jobs:
             echo "No editorial or affiliate files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial 24H: publish automatic batch"
+          git commit -m "Passport Editorial 25/7: publish automatic batch"
           git pull --rebase origin main
           git push origin HEAD:main
