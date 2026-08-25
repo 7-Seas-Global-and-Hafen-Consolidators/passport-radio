@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T08:57:49.300789-03:00",
-  "daily_capacity": 200,
+  "updated_at": "2026-08-25T09:44:57.614351-03:00",
+  "daily_capacity": 400,
   "ledger": [
     {
       "title": "Covers de Metal e Rock Revelam Quem Realmente Somos",
@@ -217,6 +217,113 @@
       "event_key": "verao-rap-anos80-2026",
       "fingerprint": "a57d78b823b4b2a7c1f94b14",
       "source_hash": "3c5b2ad5374238091768174b"
+    },
+    {
+      "title": "Shelley Fabares: quando a adolescente de Los Angeles virou hit no rádio e estrela de Hollywood",
+      "url": "/editorial/2026/08/25/shelley-fabares-quando-a-adolescente-de-los-angeles-virou-hit-no-radio-e-estrela-de-holl.html",
+      "published_at": "2026-08-25T09:42:10.866896-03:00",
+      "category": "brasil",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Shelley Fabares",
+        "Elvis Presley",
+        "The Donna Reed Show",
+        "Coach",
+        "Johnny Angel"
+      ],
+      "event_key": "shelley-fabares-obit-2026",
+      "fingerprint": "e09f3a9cb28246b26746193e",
+      "source_hash": "8983d4bc0e78368426261c85"
+    },
+    {
+      "title": "Pitty retorna aos palcos com turnê nacional e álbum novo",
+      "url": "/editorial/2026/08/25/pitty-retorna-aos-palcos-com-turne-nacional-e-album-novo.html",
+      "published_at": "2026-08-25T09:42:35.619133-03:00",
+      "category": "brasil",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Pitty",
+        "⚡︎ PITTY ⚡︎",
+        "Turnê Pitty"
+      ],
+      "event_key": "pitty-turne-2026",
+      "fingerprint": "2fe075dca08e17b31cdaa1f4",
+      "source_hash": "74063325604c9d13b977b9ea"
+    },
+    {
+      "title": "KATSEYE atinge o topo da Billboard 200 com 'Wild' e entra em nova era em meio a ausências",
+      "url": "/editorial/2026/08/25/katseye-atinge-o-topo-da-billboard-200-com-wild-e-entra-em-nova-era-em-meio-a-ausencias.html",
+      "published_at": "2026-08-25T09:43:05.609038-03:00",
+      "category": "brasil",
+      "format": "STORY",
+      "entities": [
+        "KATSEYE",
+        "Wild (EP)",
+        "Pinky Up",
+        "Hootie Frutti",
+        "Sophia Laforteza",
+        "Manon Bannerman",
+        "Wildworld Tour"
+      ],
+      "event_key": "katseye-wild-billboard-1",
+      "fingerprint": "a5ea27a0d4e10696ecec4a74",
+      "source_hash": "7293fd56ed04248b773b0c9b"
+    },
+    {
+      "title": "Quando a aprovação vem das baquetas: Portnoy celebra Rush e confirma nova fase do 'Fifty Something'",
+      "url": "/editorial/2026/08/25/quando-a-aprovacao-vem-das-baquetas-portnoy-celebra-rush-e-confirma-nova-fase-do-fifty-s.html",
+      "published_at": "2026-08-25T09:43:34.617414-03:00",
+      "category": "classic_rock",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Rush",
+        "Mike Portnoy",
+        "Anika Nilles",
+        "Geddy Lee",
+        "Alex Lifeson",
+        "Neil Peart",
+        "Fifty Something tour"
+      ],
+      "event_key": "portnoy-rush-fifty-something-2026",
+      "fingerprint": "da535fb68c1755aae56ee206",
+      "source_hash": "2bcfc89687cbae8265a1f432"
+    },
+    {
+      "title": "O Colapso Silencioso: Como Acusações Redirecionam Espaços Alternativos",
+      "url": "/editorial/2026/08/25/o-colapso-silencioso-como-acusacoes-redirecionam-espacos-alternativos.html",
+      "published_at": "2026-08-25T09:44:27.583566-03:00",
+      "category": "alternative_gothic",
+      "format": "STORY",
+      "entities": [
+        "Reggie Watts",
+        "Comedy Bang! Bang!",
+        "Shambala",
+        "Greenbelt",
+        "Electric Picnic",
+        "CAPYAC"
+      ],
+      "event_key": "reggie-watts-festival-removal-2026",
+      "fingerprint": "1bc0bea1d6502ff6b9b32afa",
+      "source_hash": "5f3ed609d7c92864604b76bd"
+    },
+    {
+      "title": "Dorothy Moore reúne passado e futuro em concerto Diamond & Gold: 80 anos e 50 de 'Misty Blue'",
+      "url": "/editorial/2026/08/25/dorothy-moore-reune-passado-e-futuro-em-concerto-diamond-gold-80-anos-e-50-de-misty-blue.html",
+      "published_at": "2026-08-25T09:44:57.613181-03:00",
+      "category": "classic_rock",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Dorothy Moore",
+        "Misty Blue",
+        "The Poppies",
+        "Malaco Records",
+        "Farish Street Records",
+        "Michael Eubanks",
+        "Nia Renee"
+      ],
+      "event_key": "dorothy-moore-diamond-gold-2026",
+      "fingerprint": "7348b7c0f6cde50faa49904a",
+      "source_hash": "7e077f5ebb659ae1f7d03afd"
     }
   ]
 }
