@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#171513">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex,nofollow">
+<title>Passport Radio™ · Player Separado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#171513;color:#f4efe7;font-family:Inter,Arial,sans-serif}
+body{min-height:100vh}
+.popout-top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(23,21,19,.96);backdrop-filter:blur(14px)}
+.popout-brand{display:flex;align-items:center;gap:11px;color:#f4efe7;text-decoration:none}
+.popout-mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid #9a681f;border-radius:50%;font-family:"Bebas Neue",Impact,sans-serif;font-size:1.08rem;letter-spacing:.04em;color:#e2bd7d}
+.popout-brand strong{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.popout-brand small{display:block;margin-top:2px;color:#9b958e;font-size:.48rem;letter-spacing:.11em;text-transform:uppercase}
+.popout-close{border:0;background:transparent;color:#d6cfc6;font:800 .52rem Inter,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer}
+.popout-status{padding:20px 20px 4px;text-align:center}
+.popout-status small{color:#b77a27;font-size:.5rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.popout-status p{margin:7px auto 0;max-width:520px;color:#a9a29a;font-size:.68rem;line-height:1.55}
+#popoutStage{padding:0 0 28px}
+#popoutStage .passport-5060-section{border-bottom:0;background:#efe7da}
+#popoutStage .passport-5060-shell{width:min(calc(100% - 28px),760px);grid-template-columns:1fr;gap:24px}
+#popoutStage .passport-5060-title{font-size:clamp(3rem,12vw,5.2rem)}
+.popout-foot{display:flex;justify-content:center;padding:0 18px 28px}
+.popout-site{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#f4efe7;text-decoration:none;font-size:.58rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.popout-error{margin:32px auto;padding:24px;width:min(calc(100% - 32px),620px);border:1px solid rgba(255,255,255,.12);border-radius:20px;color:#d6cfc6;text-align:center;line-height:1.6}
+@media(max-width:560px){.popout-top{padding:12px 14px}.popout-status{padding:18px 16px 0}}
+</style>
+</head>
+<body class="live-page passport-popout-page">
+<header class="popout-top">
+  <a class="popout-brand" href="radio.html" target="_blank" rel="noopener">
+    <span class="popout-mark">PR</span>
+    <span><strong>Passport Radio™</strong><small>Player separado · Pilot</small></span>
+  </a>
+  <button class="popout-close" type="button" onclick="window.close()">Fechar</button>
+</header>
+
+<div class="popout-status">
+  <small>PASSPORT PLAYER WINDOW™</small>
+  <p>A música continua aqui enquanto você navega pela Passport na outra janela.</p>
+</div>
+
+<main id="popoutStage" aria-live="polite">
+  <div id="passport80s" hidden aria-hidden="true"></div>
+</main>
+
+<div class="popout-foot">
+  <a class="popout-site" href="radio.html" target="_blank" rel="noopener">Abrir Passport Radio →</a>
+</div>
+
+<script src="/js/passport-window-bridge.js?v=202608242305"></script>
+<script>
+(() => {
+  "use strict";
+  const params = new URLSearchParams(location.search);
+  const channel = (params.get("channel") || "5060").toLowerCase();
+
+  if (!["5060","50s60s","50s-60s"].includes(channel)) {
+    document.getElementById("popoutStage").innerHTML = '<div class="popout-error"><strong>Canal ainda não disponível neste piloto.</strong><br>O primeiro teste do player separado é o 50s &amp; 60s Tunnel™.</div>';
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = "/js/50s-60s-tunnel.js?v=202608242230";
+  script.dataset.passportPopoutEngine = "5060";
+  script.addEventListener("load", () => {
+    const panel = document.getElementById("passport5060");
+    if (!panel) return;
+    panel.hidden = false;
+    panel.setAttribute("aria-hidden", "false");
+    document.title = "50s & 60s Tunnel™ · Passport Radio™";
+  });
+  document.head.appendChild(script);
+})();
+</script>
+</body>
+</html>
