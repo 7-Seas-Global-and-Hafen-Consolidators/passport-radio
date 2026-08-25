@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T15:10:47.747924-03:00",
+  "updated_at": "2026-08-25T16:07:10.519560-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -1081,6 +1081,105 @@
       "event_key": "burnham-plays-rusholme-kyiv-2026",
       "fingerprint": "ca076acb7e6de1c8fc6c8735",
       "source_hash": "35d6ab05c4f15d01d0ef58f4"
+    },
+    {
+      "title": "De volta a Watertown: Brothers Osborne lançam quinto álbum e recalibram o country para 2026",
+      "url": "/editorial/2026/08/25/de-volta-a-watertown-brothers-osborne-lancam-quinto-album-e-recalibram-o-country-para-20.html",
+      "published_at": "2026-08-25T16:03:11.491712-03:00",
+      "category": "legacy_archive",
+      "format": "FLASH",
+      "entities": [
+        "Brothers Osborne",
+        "Watertown (álbum)",
+        "Bottle It Up",
+        "R.I.P."
+      ],
+      "event_key": "brothers-osborne-watertown-2026",
+      "fingerprint": "98d5e659cc4b32d037876447",
+      "source_hash": "f8834f650f71ff6112d59395"
+    },
+    {
+      "title": "Os Anos 70 à Mesa: Quando a Comida Abraçou o Mesmo Hedonismo do Rock",
+      "url": "/editorial/2026/08/25/os-anos-70-a-mesa-quando-a-comida-abracou-o-mesmo-hedonismo-do-rock.html",
+      "published_at": "2026-08-25T16:04:56.930060-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Coronel Sanders",
+        "Kentucky Fried Chicken",
+        "Cultura Pop Anos 70"
+      ],
+      "event_key": "seventies-food-aesthetics-rock-culture",
+      "fingerprint": "4d8b160e5a7186bc5c163613",
+      "source_hash": "926eecd8cf531ec72f4c93db"
+    },
+    {
+      "title": "BUHR desembarca no Sesc com corpo novo",
+      "url": "/editorial/2026/08/25/buhr-desembarca-no-sesc-com-corpo-novo.html",
+      "published_at": "2026-08-25T16:05:33.095486-03:00",
+      "category": "brasil",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "BUHR",
+        "Feixe de Fogo",
+        "Rami Freitas",
+        "Sesc 24 de Maio"
+      ],
+      "event_key": "buhr-feixe-fogo-sesc-2026",
+      "fingerprint": "424e61768dc96698ead0f21c",
+      "source_hash": "1f2f9912341d6e44906f21e0"
+    },
+    {
+      "title": "Choosin' Texas: o país que virou fenômeno e igualou um recorde histórico",
+      "url": "/editorial/2026/08/25/choosin-texas-o-pais-que-virou-fenomeno-e-igualou-um-recorde-historico.html",
+      "published_at": "2026-08-25T16:06:11.247418-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "Ella Langley",
+        "Shaboozey",
+        "Lil Nas X",
+        "Billy Ray Cyrus",
+        "Stella Lefty",
+        "Taylor Swift",
+        "Morgan Wallen"
+      ],
+      "event_key": "ella-langley-choosin-texas-19semanas",
+      "fingerprint": "aa51cf91199a964237bf94f4",
+      "source_hash": "ca52d4eac09d17fd0d8ad360"
+    },
+    {
+      "title": "Pabllo Vittar convida Urias para o segundo movimento de Lost in Lust",
+      "url": "/editorial/2026/08/25/pabllo-vittar-convida-urias-para-o-segundo-movimento-de-lost-in-lust.html",
+      "published_at": "2026-08-25T16:06:35.380151-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "Pabllo Vittar",
+        "Urias",
+        "Lost in Lust",
+        "Body Type",
+        "Rodrigo Gorky"
+      ],
+      "event_key": "pabllo-vittar-body-type-2026",
+      "fingerprint": "f09aa4770f0c5fe658a7108f",
+      "source_hash": "e2fc18f40c0f4a9b10e23dbf"
+    },
+    {
+      "title": "Henry Threadgill Reinventa O Desafio",
+      "url": "/editorial/2026/08/25/henry-threadgill-reinventa-o-desafio.html",
+      "published_at": "2026-08-25T16:07:10.518393-03:00",
+      "category": "indie",
+      "format": "FLASH",
+      "entities": [
+        "Henry Threadgill",
+        "Vijay Iyer",
+        "Dafnis Prieto",
+        "Zooid"
+      ],
+      "event_key": "threadgill-new-albums-2026",
+      "fingerprint": "e7586d1ba6672a4763a9b3d8",
+      "source_hash": "b4ad787e8bc2ec561564aac2"
     }
   ]
 }
