@@ -3,7 +3,7 @@ name: Passport Editorial Tunnel
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '17 * * * *'
 
 permissions:
   contents: read
@@ -32,10 +32,10 @@ jobs:
           python tools/editorial_tunnel.py \
             --sources data/editorial-sources.json \
             --output-dir build/editorial-tunnel \
-            --daily-limit 260 \
-            --per-source 8 \
-            --max-age-hours 72 \
-            --workers 16
+            --daily-limit 450 \
+            --per-source 12 \
+            --max-age-hours 96 \
+            --workers 20
 
       - name: Add queue to run summary
         if: always()
