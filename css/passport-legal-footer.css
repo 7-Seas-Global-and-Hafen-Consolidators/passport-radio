@@ -41,11 +41,144 @@ body::after{
   text-align:left;
 }
 
+/* PASSPORT RADIO™ · KEEP IT ON AIR
+   Shared floating conversion point. The link itself is injected by
+   /js/passport-legal-footer.js on editorial/archive pages and by
+   /js/editorial-home.js on the portal home. */
+.passport-support-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:2147483000;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  max-width:min(310px,calc(100vw - 28px));
+  box-sizing:border-box;
+  padding:12px 14px 12px 15px;
+  border:1px solid rgba(0,0,0,.14);
+  border-radius:999px;
+  background:rgba(255,255,255,.97);
+  color:#111!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.20);
+  font-family:Inter,Arial,sans-serif;
+  text-decoration:none!important;
+  transform:translateZ(0);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+}
+.passport-support-float::before{
+  content:"";
+  flex:0 0 auto;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#0070ba;
+  box-shadow:0 0 0 4px rgba(0,112,186,.12);
+}
+.passport-support-float__copy{
+  display:grid;
+  gap:2px;
+  min-width:0;
+}
+.passport-support-float__copy strong{
+  display:block;
+  color:#111!important;
+  font-size:10px;
+  font-weight:900;
+  line-height:1.15;
+  letter-spacing:.055em;
+  white-space:nowrap;
+}
+.passport-support-float__copy small{
+  display:block;
+  color:#5f6368!important;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:.09em;
+}
+.passport-support-float__go{
+  color:#0070ba;
+  font-size:17px;
+  font-weight:900;
+  line-height:1;
+}
+.passport-support-float:hover,
+.passport-support-float:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(0,112,186,.45);
+  box-shadow:0 16px 42px rgba(0,0,0,.25);
+  outline:none;
+}
+
+/* Keep the conversion point above fixed audio/player surfaces. */
+body:has(#passport-player) .passport-support-float,
+body:has(.player) .passport-support-float{
+  bottom:92px;
+}
+
+/* Home support block: Asaas remains available; PayPal becomes the second route. */
+.passport-paypal-support{
+  display:grid;
+  gap:10px;
+  width:100%;
+  margin-top:12px;
+  padding-top:14px;
+  border-top:1px solid rgba(127,127,127,.30);
+}
+.passport-paypal-support .passport-paypal-direct{
+  display:flex!important;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  box-sizing:border-box;
+  background:#0070ba!important;
+  border-color:#0070ba!important;
+  color:#fff!important;
+}
+.passport-paypal-support__caption{
+  display:block;
+  color:inherit;
+  opacity:.72;
+  font-family:Inter,Arial,sans-serif;
+  font-size:9px;
+  line-height:1.45;
+  letter-spacing:.025em;
+}
+#paypal-container-WK4CLBGVD2Y4C{
+  width:100%;
+  min-height:44px;
+}
+
 @media(max-width:760px){
   body::after{
     padding:20px 16px;
     font-size:9.5px;
     line-height:1.6;
+  }
+
+  .passport-support-float{
+    right:10px;
+    bottom:12px;
+    gap:9px;
+    padding:10px 12px;
+    max-width:calc(100vw - 20px);
+  }
+  body:has(#passport-player) .passport-support-float,
+  body:has(.player) .passport-support-float{
+    bottom:84px;
+  }
+  .passport-support-float__copy strong{
+    font-size:8.8px;
+    letter-spacing:.04em;
+  }
+  .passport-support-float__copy small{
+    font-size:7.4px;
+  }
+  .passport-support-float__go{
+    font-size:15px;
   }
 }
 
@@ -54,5 +187,9 @@ body::after{
     background:#fff;
     color:#333;
     border-top:1px solid #bbb;
+  }
+  .passport-support-float,
+  .passport-paypal-support{
+    display:none!important;
   }
 }
