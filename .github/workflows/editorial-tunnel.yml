@@ -1,0 +1,54 @@
+name: Passport Editorial Tunnel
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */2 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: passport-editorial-tunnel
+  cancel-in-progress: true
+
+jobs:
+  excavate:
+    name: Excavate editorial signals
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Passport
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Editorial Tunnel
+        run: |
+          python tools/editorial_tunnel.py \
+            --sources data/editorial-sources.json \
+            --output-dir build/editorial-tunnel \
+            --daily-limit 20 \
+            --per-source 4 \
+            --max-age-hours 48 \
+            --workers 10
+
+      - name: Add queue to run summary
+        if: always()
+        run: |
+          if [ -f build/editorial-tunnel/editorial-queue.md ]; then
+            cat build/editorial-tunnel/editorial-queue.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload private editorial packet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: passport-editorial-tunnel-${{ github.run_number }}
+          path: build/editorial-tunnel/
+          retention-days: 7
+          if-no-files-found: warn
