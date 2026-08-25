@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T17:07:03.065006-03:00",
+  "updated_at": "2026-08-25T17:54:08.046738-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -1403,6 +1403,109 @@
       "event_key": "dolly-parton-legacy-2026",
       "fingerprint": "0c33a469a663bb0491ebc1ef",
       "source_hash": "2f080c2e8ac0bb4884180bdb"
+    },
+    {
+      "title": "Fim de uma era: Dolly Parton morre aos 80 anos",
+      "url": "/editorial/2026/08/25/fim-de-uma-era-dolly-parton-morre-aos-80-anos.html",
+      "published_at": "2026-08-25T17:49:38.238997-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Dolly Parton",
+        "Miley Cyrus"
+      ],
+      "event_key": "dolly-parton-morte-2026",
+      "fingerprint": "13e08e7af8b8d54454e1baa7",
+      "source_hash": "72654899654994579c6da390"
+    },
+    {
+      "title": "Quando a guitarra dita seu próprio gênero",
+      "url": "/editorial/2026/08/25/quando-a-guitarra-dita-seu-proprio-genero.html",
+      "published_at": "2026-08-25T17:50:03.436854-03:00",
+      "category": "instruments",
+      "format": "FLASH",
+      "entities": [
+        "Gusttavo Lima",
+        "Steve Vai",
+        "Kiko Loureiro",
+        "Angra",
+        "Megadeth",
+        "Ibanez JEMJR"
+      ],
+      "event_key": "gusttavo-lima-steve-vai-guitarra-2026",
+      "fingerprint": "e39bcfa74a881263dd8eb312",
+      "source_hash": "056b3362711d25cd52878188"
+    },
+    {
+      "title": "O Kiss morreu quando vendeu sua alma: como uma lenda se tornou propriedade corporativa",
+      "url": "/editorial/2026/08/25/o-kiss-morreu-quando-vendeu-sua-alma-como-uma-lenda-se-tornou-propriedade-corporativa.html",
+      "published_at": "2026-08-25T17:50:28.648391-03:00",
+      "category": "pop_poprock",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Kiss",
+        "Gene Simmons",
+        "Paul Stanley",
+        "Pophouse Entertainment"
+      ],
+      "event_key": "kiss-pophouse-agreement-2024",
+      "fingerprint": "fe7725ec516cf97d7c51fa98",
+      "source_hash": "1d74fd62eacced317217b901"
+    },
+    {
+      "title": "Soundgarden volta ao palco de Seattle para show de intervalo do NFL Kickoff",
+      "url": "/editorial/2026/08/25/soundgarden-volta-ao-palco-de-seattle-para-show-de-intervalo-do-nfl-kickoff.html",
+      "published_at": "2026-08-25T17:50:54.936370-03:00",
+      "category": "instruments",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Soundgarden",
+        "Taylor Momsen",
+        "Mike McCready",
+        "Chris Cornell",
+        "Matt Cameron",
+        "Kim Thayil",
+        "Ben Shepherd"
+      ],
+      "event_key": "soundgarden-nfl-halftime-2026-seattle",
+      "fingerprint": "76f036202d6ef8332615b014",
+      "source_hash": "9def729a2f3ecfaab2c2624b"
+    },
+    {
+      "title": "Aos 77 anos, Dolly Parton entra no rock como uma mulher que não tem mais tempo a perder",
+      "url": "/editorial/2026/08/25/aos-77-anos-dolly-parton-entra-no-rock-como-uma-mulher-que-nao-tem-mais-tempo-a-perder.html",
+      "published_at": "2026-08-25T17:51:26.562551-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Dolly Parton",
+        "Hayley Williams",
+        "Paramore",
+        "Rockstar",
+        "Linda Perry",
+        "Joan Jett"
+      ],
+      "event_key": "dolly-parton-rockstar-hayley-williams-2026",
+      "fingerprint": "7b467a23745bb6247238b5e6",
+      "source_hash": "eec7ef1b267c2731d567e9bd"
+    },
+    {
+      "title": "No palco com Gil: quando a história pessoal vira monumento",
+      "url": "/editorial/2026/08/25/no-palco-com-gil-quando-a-historia-pessoal-vira-monumento.html",
+      "published_at": "2026-08-25T17:54:08.045575-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "Gilberto Gil",
+        "Miguel Falabella",
+        "Newton Moreno",
+        "Gui Ventura",
+        "Luci Saluzzi",
+        "Teatro Santander"
+      ],
+      "event_key": "gil-andar-com-fe-santander-2026",
+      "fingerprint": "c08bcc4a5b196b825f07e9bd",
+      "source_hash": "6c0bbfc76771b52b32130eeb"
     }
   ]
 }
