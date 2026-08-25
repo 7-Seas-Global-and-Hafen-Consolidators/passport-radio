@@ -7,9 +7,10 @@ variables inside the Copilot subprocess to the same personal token so GitHub
 CLI user validation cannot accidentally fall back to the GitHub Actions app
 token (which returns "Resource not accessible by integration" for /user).
 
-Nitro mode raises the operational hard ceiling from 200 to 400 publications/day
-for this Copilot-backed path. The editorial pacing, deduplication, source firewall
-and all validation rules from the base engine remain unchanged.
+Operation 25/7 raises the operational hard ceiling to 700 publications/day for
+this Copilot-backed path. The publication target is controlled by the workflow
+and is currently 500/day. Editorial pacing, deduplication, source firewall and
+all validation rules from the base engine remain unchanged.
 """
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ import sys
 import editorial_engine as engine
 
 
-NITRO_HARD_CAP = 400
+NITRO_HARD_CAP = 700
 
 
 def enable_nitro_capacity() -> None:

@@ -32,8 +32,8 @@ jobs:
           python tools/editorial_tunnel.py \
             --sources data/editorial-sources.json \
             --output-dir build/editorial-tunnel \
-            --daily-limit 450 \
-            --per-source 12 \
+            --daily-limit 1000 \
+            --per-source 20 \
             --max-age-hours 96 \
             --workers 20
 
