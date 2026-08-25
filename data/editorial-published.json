@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T13:14:11.961075-03:00",
+  "updated_at": "2026-08-25T14:05:19.140056-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -756,6 +756,116 @@
       "event_key": "fender-harrison-bass-vi-2026",
       "fingerprint": "20f37b789f73fde3438460bc",
       "source_hash": "af1e5d651b2780f0c73c5ef2"
+    },
+    {
+      "title": "Jeremiah Chiu transforma ruído e campo em paisagens sintéticas em Edge Conditions",
+      "url": "/editorial/2026/08/25/jeremiah-chiu-transforma-ruido-e-campo-em-paisagens-sinteticas-em-edge-conditions.html",
+      "published_at": "2026-08-25T13:58:48.780829-03:00",
+      "category": "instruments",
+      "format": "FLASH",
+      "entities": [
+        "Jeremiah Chiu",
+        "SML",
+        "Edge Conditions",
+        "Plastic Mind / Elastic Machines",
+        "Booker Stardrum",
+        "Takako Minekawa",
+        "Korey Martin",
+        "Marquis Hill",
+        "Patrick Shiroishi"
+      ],
+      "event_key": "jeremiah-chiu-edge-conditions-2026",
+      "fingerprint": "a51339c7a81e3448172b8a6f",
+      "source_hash": "3d2dbb5caff291f7f30ddf72"
+    },
+    {
+      "title": "Sessenta anos buscando um som que ainda não existe: Marshall reimagina o legado Hendrix para a geração agora",
+      "url": "/editorial/2026/08/25/sessenta-anos-buscando-um-som-que-ainda-nao-existe-marshall-reimagina-o-legado-hendrix-p.html",
+      "published_at": "2026-08-25T14:00:26.710690-03:00",
+      "category": "instruments",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Jimi Hendrix",
+        "Marshall",
+        "Janie Hendrix",
+        "Ally Venable",
+        "JMH Studio Edition"
+      ],
+      "event_key": "marshall-jmh-studio-edition-60-anos-hendrix",
+      "fingerprint": "dba137148857770d34c9d837",
+      "source_hash": "3ffec56d4f05c72ce285a6a5"
+    },
+    {
+      "title": "Amy Winehouse: O Arquivo Vivo de Back to Black Volta Inteiro",
+      "url": "/editorial/2026/08/25/amy-winehouse-o-arquivo-vivo-de-back-to-black-volta-inteiro.html",
+      "published_at": "2026-08-25T14:01:16.118206-03:00",
+      "category": "pop_poprock",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Amy Winehouse",
+        "Back to Black",
+        "Mark Ronson",
+        "Salaam Remi",
+        "Mischa Richter",
+        "Alex Lake"
+      ],
+      "event_key": "amy-winehouse-back-to-black-20-anniversary",
+      "fingerprint": "54f76fa645529f8d5d86e3f2",
+      "source_hash": "2f737e1ccdac39c042007664"
+    },
+    {
+      "title": "A Voz do Instrumento: MXR Recalibra a Talk Box para uma Nova Geração",
+      "url": "/editorial/2026/08/25/a-voz-do-instrumento-mxr-recalibra-a-talk-box-para-uma-nova-geracao.html",
+      "published_at": "2026-08-25T14:03:51.994603-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Byron 'Mr. TalkBox' Chambers",
+        "MXR",
+        "Talk Box",
+        "Gospel",
+        "Funk",
+        "R&B",
+        "Pop"
+      ],
+      "event_key": "mxr-chambers-talkbox-2026",
+      "fingerprint": "b696de4d131feaca0953ad29",
+      "source_hash": "1f29fb556594124a8f49fbff"
+    },
+    {
+      "title": "Austrália traça linha: gráficos musicais agora rejeitam criações 100% sintéticas",
+      "url": "/editorial/2026/08/25/australia-traca-linha-graficos-musicais-agora-rejeitam-criacoes-100-sinteticas.html",
+      "published_at": "2026-08-25T14:04:35.231981-03:00",
+      "category": "alternative_gothic",
+      "format": "FLASH",
+      "entities": [
+        "ARIA",
+        "Annabelle Herd",
+        "Apple Music",
+        "TIDAL",
+        "Bandcamp",
+        "Spotify",
+        "Beatport"
+      ],
+      "event_key": "aria-ai-charts-ban-2026",
+      "fingerprint": "1d7c343e00181895ca4e3263",
+      "source_hash": "3e04821d95fd7ae11b7df196"
+    },
+    {
+      "title": "Kiss sob novo comando: a banda que precisa de permissão para tocar",
+      "url": "/editorial/2026/08/25/kiss-sob-novo-comando-a-banda-que-precisa-de-permissao-para-tocar.html",
+      "published_at": "2026-08-25T14:05:19.138953-03:00",
+      "category": "pop_poprock",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Kiss",
+        "Gene Simmons",
+        "Paul Stanley",
+        "Pophouse"
+      ],
+      "event_key": "kiss-pophouse-ownership-2024",
+      "fingerprint": "b870f682825b3abee3d39808",
+      "source_hash": "2af6c0400e60d530fc1296af"
     }
   ]
 }
