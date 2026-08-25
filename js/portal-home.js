@@ -341,3 +341,49 @@ if (menu && side) {
     </article>
   `).join('');
 })();
+
+/* Latest Mr. Nomad story — keeps the static Home architecture intact and
+   swaps only editorial content after the DOM is available. */
+(() => {
+  const storyUrl = 'before-evanescence-darkness-came-from-bristol.html';
+  const imageUrl = 'https://cdn.mos.cms.futurecdn.net/YxnPHZXvKtR3CWyEqfiHnQ.jpg';
+
+  const hero = document.querySelector('.hero-main > a');
+  if (hero) {
+    hero.href = storyUrl;
+    hero.innerHTML = `
+      <img src="${imageUrl}" alt="Amy Lee e a capa de Dummy, do Portishead" referrerpolicy="no-referrer">
+      <div class="hero-copy">
+        <span class="eyebrow">Mr. Nomad · Portishead → Evanescence · 25/08/2026</span>
+        <h1>Before Evanescence: the darkness came from Bristol.</h1>
+        <p>Antes de Fallen e de Bring Me to Life, havia Dummy, Beth Gibbons, Bristol e uma adolescente chamada Amy Lee ouvindo tudo.</p>
+      </div>
+    `;
+  }
+
+  const breaking = document.querySelector('.breaking-track');
+  if (breaking) {
+    breaking.innerHTML = `
+      Portishead → Evanescence · The Darkness Came From Bristol
+      &nbsp; · &nbsp;
+      Chris Slade · The Man Behind The Thunder
+      &nbsp; · &nbsp;
+      Frank Beard · 1949–2026
+      &nbsp; · &nbsp;
+      Sharon den Adel
+    `;
+  }
+
+  const feature = document.querySelector('#noticias .feature > a');
+  if (feature) {
+    feature.href = storyUrl;
+    feature.innerHTML = `
+      <img src="${imageUrl}" alt="Amy Lee e a capa de Dummy, do Portishead" referrerpolicy="no-referrer">
+      <div>
+        <small>Mr. Nomad · Gothic / Alternative Archives™ · 25/08/2026</small>
+        <h3>Antes do Evanescence, a escuridão veio de Bristol.</h3>
+        <p>Dummy, Portishead, Beth Gibbons e a ponte escondida até Amy Lee.</p>
+      </div>
+    `;
+  }
+})();
