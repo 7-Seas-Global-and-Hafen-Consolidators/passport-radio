@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T16:47:03.650711-03:00",
+  "updated_at": "2026-08-25T17:07:03.065006-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -1300,6 +1300,109 @@
       "event_key": "dolly-parton-obituary-2026",
       "fingerprint": "ea0cac69503b85353a37e544",
       "source_hash": "86ec3a3bb60627d5613628f6"
+    },
+    {
+      "title": "O riff que virou icônico: como 'Jolene' transformou Dolly Parton e atravessou gêneros",
+      "url": "/editorial/2026/08/25/o-riff-que-virou-iconico-como-jolene-transformou-dolly-parton-e-atravessou-generos.html",
+      "published_at": "2026-08-25T17:04:00.154469-03:00",
+      "category": "instruments",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Dolly Parton",
+        "Jolene",
+        "Chip Young",
+        "Wayne Moss",
+        "The White Stripes",
+        "Beyoncé"
+      ],
+      "event_key": "jolene-making-and-legacy",
+      "fingerprint": "1211dee679ee034b19152004",
+      "source_hash": "9365e22ad4c72552ebdad1ba"
+    },
+    {
+      "title": "Meio-mastro nacional: Trump ordena homenagem oficial a Dolly Parton",
+      "url": "/editorial/2026/08/25/meio-mastro-nacional-trump-ordena-homenagem-oficial-a-dolly-parton.html",
+      "published_at": "2026-08-25T17:04:26.484449-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Dolly Parton"
+      ],
+      "event_key": "trump-flags-dolly-2026",
+      "fingerprint": "d2d10b4928240e2b855e89fd",
+      "source_hash": "091c882abb1e0c9f68197c66"
+    },
+    {
+      "title": "O brilho que se apaga: o mundo da música reage à morte de Dolly Parton",
+      "url": "/editorial/2026/08/25/o-brilho-que-se-apaga-o-mundo-da-musica-reage-a-morte-de-dolly-parton.html",
+      "published_at": "2026-08-25T17:04:53.819393-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Dolly Parton",
+        "Kacey Musgraves",
+        "Maren Morris",
+        "Jack White",
+        "Highwomen"
+      ],
+      "event_key": "dolly-parton-tributos-2026",
+      "fingerprint": "f6891ff9f9abfa0f55bcac0a",
+      "source_hash": "b9762b95eeb5aa46db9278c2"
+    },
+    {
+      "title": "Dois ícones do metal pesado cruzam caminhos em turnê que redefine a rota alternativa de outono",
+      "url": "/editorial/2026/08/25/dois-icones-do-metal-pesado-cruzam-caminhos-em-turne-que-redefine-a-rota-alternativa-de.html",
+      "published_at": "2026-08-25T17:05:14.461190-03:00",
+      "category": "alternative_gothic",
+      "format": "FLASH",
+      "entities": [
+        "Corrosion of Conformity",
+        "The Sword",
+        "Hippie Death Cult",
+        "Good God / Baad Man"
+      ],
+      "event_key": "coc-thesword-tour-fall2026",
+      "fingerprint": "dad85197f549c9ba46c21b43",
+      "source_hash": "e183d409a65a28857485ed04"
+    },
+    {
+      "title": "A obsessão que virou saudade eterna: como 'Jolene' se tornou a música mais regravada de Dolly Parton",
+      "url": "/editorial/2026/08/25/a-obsessao-que-virou-saudade-eterna-como-jolene-se-tornou-a-musica-mais-regravada-de-dol.html",
+      "published_at": "2026-08-25T17:05:50.883717-03:00",
+      "category": "brasil",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Dolly Parton",
+        "Jolene",
+        "Carl Dean",
+        "Beyoncé",
+        "The White Stripes",
+        "Miley Cyrus",
+        "Whitney Houston"
+      ],
+      "event_key": "dolly-parton-morte-jolene-legado",
+      "fingerprint": "5ac364d7ad14ba82d46a9de2",
+      "source_hash": "9d87378a0be19e943a014eb0"
+    },
+    {
+      "title": "A Genialidade Que O Country Fingiu Não Ver",
+      "url": "/editorial/2026/08/25/a-genialidade-que-o-country-fingiu-nao-ver.html",
+      "published_at": "2026-08-25T17:07:03.063515-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Dolly Parton",
+        "Jolene",
+        "I Will Always Love You",
+        "Taylor Swift",
+        "Beyoncé",
+        "Sabrina Carpenter",
+        "Miley Cyrus",
+        "Whitney Houston"
+      ],
+      "event_key": "dolly-parton-legacy-2026",
+      "fingerprint": "0c33a469a663bb0491ebc1ef",
+      "source_hash": "2f080c2e8ac0bb4884180bdb"
     }
   ]
 }
