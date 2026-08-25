@@ -19,7 +19,7 @@
   }
   document.querySelectorAll("style[data-passport-hits-style]").forEach(el => el.remove());
 
-  const STREAM = "https://stream-mz.hellorayo.co.uk/net1london.aac";
+  const STREAM = "https://streaming.hotmixradio.com/hotmix-new-en-mp3";
 
   const style = document.createElement("style");
   style.dataset.passportHitsStyle = "1";
