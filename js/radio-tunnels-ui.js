@@ -9,9 +9,41 @@
   const hub = document.getElementById("passportTunnels");
   if (!hub) return;
 
-  const panelIds = ["passport80s", "passportSoul", "passportMPB"];
+  const panelIds = ["passport80s", "passportSoul", "passportMPB", "passportHits"];
   let activeId = "";
   let applying = false;
+
+  function ensureHitsDirectory(){
+    const directory = hub.querySelector(".tunnel-directory");
+    if (!directory || directory.querySelector('[data-tunnel-target="passportHits"]')) return;
+
+    const button = document.createElement("button");
+    button.className = "tunnel-directory__row";
+    button.type = "button";
+    button.dataset.tunnelTarget = "passportHits";
+    button.setAttribute("aria-controls", "passportHits");
+    button.setAttribute("aria-expanded", "false");
+    button.innerHTML = `
+      <span class="tunnel-directory__number">04</span>
+      <strong class="tunnel-directory__title">Passport Hits Tunnel™</strong>
+      <span class="tunnel-directory__format">Pop · Top 40</span>
+      <span class="tunnel-directory__state">24 HOURS</span>
+      <span class="tunnel-directory__action">Abrir player</span>`;
+    directory.appendChild(button);
+
+    const intro = hub.querySelector(".tunnels-intro p");
+    if (intro && /^Três ambientes musicais contínuos/.test((intro.textContent || "").trim())) {
+      intro.textContent = "Quatro ambientes musicais contínuos, organizados sem transformar a página numa parede de players. Abra um por vez; a engenharia dos canais permanece independente.";
+    }
+  }
+
+  function loadHitsTunnel(){
+    if (document.querySelector('script[data-passport-hits-tunnel]')) return;
+    const s = document.createElement("script");
+    s.src = "/js/passport-hits-tunnel.js?v=202608242059";
+    s.dataset.passportHitsTunnel = "1";
+    document.head.appendChild(s);
+  }
 
   function getPanels(){
     return panelIds.map(id => document.getElementById(id)).filter(Boolean);
@@ -75,6 +107,8 @@
     normalizePanels();
   }
 
+  ensureHitsDirectory();
+
   hub.querySelectorAll("[data-tunnel-target]").forEach(button => {
     button.addEventListener("click", () => {
       const id = button.dataset.tunnelTarget;
@@ -92,7 +126,7 @@
       if (a !== target && !a.paused) { try { a.pause(); } catch (_) {} }
     });
 
-    const panel = target.closest("[data-passport-tunnel-panel]") || target.closest("#passport80s,#passportSoul,#passportMPB");
+    const panel = target.closest("[data-passport-tunnel-panel]") || target.closest("#passport80s,#passportSoul,#passportMPB,#passportHits");
     if (panel && panelIds.includes(panel.id)) {
       activeId = panel.id;
       normalizePanels();
@@ -111,7 +145,7 @@
   document.addEventListener("pause", event => {
     const target = event.target;
     if (!(target instanceof HTMLMediaElement)) return;
-    const panel = target.closest("#passport80s,#passportSoul,#passportMPB");
+    const panel = target.closest("#passport80s,#passportSoul,#passportMPB,#passportHits");
     if (panel && panelIds.includes(panel.id)) {
       requestAnimationFrame(() => {
         if (target.paused) setButtonState(panel.id, "24 HOURS");
@@ -141,6 +175,7 @@
 
   normalizePanels();
   bindTunnelControls();
+  loadHitsTunnel();
 
   /* Deep links can open a tunnel, but the normal page starts compact. */
   const hash = location.hash.replace("#", "");
