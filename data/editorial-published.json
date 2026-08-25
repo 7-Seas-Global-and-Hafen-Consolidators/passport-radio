@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T14:39:21.073666-03:00",
+  "updated_at": "2026-08-25T15:10:47.747924-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -976,6 +976,111 @@
       "event_key": "amy-winehouse-back-to-black-20yr-reissue",
       "fingerprint": "5dd09bc44ae218c40b9ec356",
       "source_hash": "3f331a23c4ca7806cd3bde74"
+    },
+    {
+      "title": "Dallas Tece Sua Rede: Temi Coker e a Potência Criativa Preta em Foco",
+      "url": "/editorial/2026/08/25/dallas-tece-sua-rede-temi-coker-e-a-potencia-criativa-preta-em-foco.html",
+      "published_at": "2026-08-25T15:07:24.178377-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Temi Coker",
+        "Pencil on Paper",
+        "Emmanuel Gillespie",
+        "Dallas",
+        "Coker Studio"
+      ],
+      "event_key": "dallas-creative-scene-temi-coker",
+      "fingerprint": "7989202d9cb5c8aa6a62753d",
+      "source_hash": "413c79b27083d9049a030487"
+    },
+    {
+      "title": "A Volta do Monstro de Três Cilindros: Bachman-Turner Overdrive Retoma a Estrada",
+      "url": "/editorial/2026/08/25/a-volta-do-monstro-de-tres-cilindros-bachman-turner-overdrive-retoma-a-estrada.html",
+      "published_at": "2026-08-25T15:08:01.820871-03:00",
+      "category": "alternative_gothic",
+      "format": "FLASH",
+      "entities": [
+        "Bachman-Turner Overdrive",
+        "Randy Bachman",
+        "Tal Bachman",
+        "The Guess Who",
+        "No Speed Limit Tour"
+      ],
+      "event_key": "bto-no-speed-limit-tour-2027",
+      "fingerprint": "94ffafa8a300ec97c08b3908",
+      "source_hash": "a2b5a57c27ec56b3c28be525"
+    },
+    {
+      "title": "O Clássico de Caridade que Forjou Duas Décadas de Metal em Phoenix",
+      "url": "/editorial/2026/08/25/o-classico-de-caridade-que-forjou-duas-decadas-de-metal-em-phoenix.html",
+      "published_at": "2026-08-25T15:08:28.408810-03:00",
+      "category": "alternative_gothic",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Alice Cooper",
+        "Dee Snider",
+        "Lzzy Hale",
+        "Joe Hottinger",
+        "Halestorm",
+        "John 5 & the Creatures",
+        "Solid Rock Teen Centers"
+      ],
+      "event_key": "alice-cooper-christmas-pudding-2026",
+      "fingerprint": "66685b780785d24994894a95",
+      "source_hash": "47ba3cb130d597b7dfd30eec"
+    },
+    {
+      "title": "Queens of the Stone Age desafiam a ideia de 'perfeição' em Perfecth",
+      "url": "/editorial/2026/08/25/queens-of-the-stone-age-desafiam-a-ideia-de-perfeicao-em-perfecth.html",
+      "published_at": "2026-08-25T15:08:54.505821-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Queens of the Stone Age",
+        "Perfecth (álbum)",
+        "Insignificant Other (canção)",
+        "Easy Street (canção)",
+        "Matador Records"
+      ],
+      "event_key": "qotsa-perfecth-2026",
+      "fingerprint": "31b50818b272887b62b36208",
+      "source_hash": "d2492490a8a933d928598f30"
+    },
+    {
+      "title": "Amplificação em Roxo: Marshall amplia tributo Hendrix com três edições de 60 anos",
+      "url": "/editorial/2026/08/25/amplificacao-em-roxo-marshall-amplia-tributo-hendrix-com-tres-edicoes-de-60-anos.html",
+      "published_at": "2026-08-25T15:10:06.157573-03:00",
+      "category": "instruments",
+      "format": "MR_NOMAD",
+      "entities": [
+        "James Marshall \"Jimi\" Hendrix",
+        "Marshall Amplification",
+        "JMH Studio Bundle",
+        "Major V",
+        "Emberton III"
+      ],
+      "event_key": "marshall-hendrix-60th-expansion-2026",
+      "fingerprint": "f0454c22ddf838ad1813ed2f",
+      "source_hash": "610c7353839370739fa9417e"
+    },
+    {
+      "title": "Vitória do instrumento: Andy Burnham, os Smiths e um acorde em Kyiv",
+      "url": "/editorial/2026/08/25/vitoria-do-instrumento-andy-burnham-os-smiths-e-um-acorde-em-kyiv.html",
+      "published_at": "2026-08-25T15:10:47.746892-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Johnny Marr",
+        "The Smiths",
+        "Rusholme Ruffians",
+        "Andy Burnham",
+        "Hatful of Hollow",
+        "The Age of Everything"
+      ],
+      "event_key": "burnham-plays-rusholme-kyiv-2026",
+      "fingerprint": "ca076acb7e6de1c8fc6c8735",
+      "source_hash": "35d6ab05c4f15d01d0ef58f4"
     }
   ]
 }
