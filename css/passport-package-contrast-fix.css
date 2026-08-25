@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO™ · PACKAGE CONTRAST FIX · 2026-08-25
+   Fixes only the commercial package block on anuncie.html.
+   No radio/player/stream behavior is touched. */
+
+body:has(.launch-offer) .packages-section{
+  background:#EEEEEE!important;
+  color:#111111!important;
+}
+
+body:has(.launch-offer) .packages-section .section-head h2,
+body:has(.launch-offer) .packages-section .section-head .eyebrow{
+  color:#111111!important;
+}
+
+body:has(.launch-offer) .packages-section .section-head p{
+  color:#555555!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package{
+  background:#FFFFFF!important;
+  color:#111111!important;
+  border-color:#C8C8C8!important;
+}
+
+body:has(.launch-offer) .package.featured{
+  background:#FFF8F8!important;
+  border-color:#D71920!important;
+}
+
+body:has(.launch-offer) .package small{
+  color:#5A5A5A!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package-price{
+  color:#555555!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package-price strong{
+  color:#111111!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package ul,
+body:has(.launch-offer) .package li{
+  color:#555555!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package li::before{
+  color:#D71920!important;
+}
+
+body:has(.launch-offer) .package .cta{
+  background:#FFFFFF!important;
+  color:#111111!important;
+  border-color:#111111!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package .cta span{
+  color:inherit!important;
+  opacity:1!important;
+}
+
+body:has(.launch-offer) .package .cta:hover,
+body:has(.launch-offer) .package .cta:focus-visible{
+  background:#111111!important;
+  color:#FFFFFF!important;
+  border-color:#111111!important;
+}
+
+body:has(.launch-offer) .package.featured .cta{
+  background:#D71920!important;
+  color:#FFFFFF!important;
+  border-color:#D71920!important;
+}
+
+body:has(.launch-offer) .package.featured .cta:hover,
+body:has(.launch-offer) .package.featured .cta:focus-visible{
+  background:#111111!important;
+  color:#FFFFFF!important;
+  border-color:#111111!important;
+}
