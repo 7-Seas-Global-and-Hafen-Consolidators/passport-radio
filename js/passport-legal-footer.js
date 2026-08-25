@@ -1,5 +1,6 @@
 (() => {
   const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489546241643636';
+  const AMAZON_AFFILIATE_SRC = '/js/passport-amazon-affiliate.js?v=202608251738';
   const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
   const FLOAT_ID = 'passport-support-float';
 
@@ -15,8 +16,19 @@
     document.head.appendChild(script);
   };
 
+  const installAmazonAffiliate = () => {
+    if (!document.head) return;
+    if (window.__PASSPORT_AMAZON_AFFILIATE__ || document.querySelector('script[data-passport-amazon-affiliate]')) return;
+    const script = document.createElement('script');
+    script.src = AMAZON_AFFILIATE_SRC;
+    script.defer = true;
+    script.dataset.passportAmazonAffiliate = '1';
+    document.head.appendChild(script);
+  };
+
   const install = () => {
     installAdSense();
+    installAmazonAffiliate();
     if (!document.body || document.getElementById(FLOAT_ID)) return;
 
     const link = document.createElement('a');
