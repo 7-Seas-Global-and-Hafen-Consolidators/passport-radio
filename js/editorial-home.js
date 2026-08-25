@@ -1,31 +1,83 @@
 (() => {
   const endpoint = '/data/editorial-feed.json';
-  const escapeHTML = (value = '') => String(value).replace(/[&<>'"]/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+
+  const ensureStyle = () => {
+    if (document.querySelector('link[data-passport-editorial-home-style]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/css/editorial-home.css?v=202608250852';
+    link.dataset.passportEditorialHomeStyle = '1';
+    document.head.appendChild(link);
+  };
+
+  const escapeHTML = (value = '') => String(value).replace(/[&<>'"]/g, (ch) => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;'
+  }[ch]));
+
   const stamp = (value) => {
     const d = new Date(value);
     if (Number.isNaN(d.getTime())) return '';
-    return new Intl.DateTimeFormat('pt-BR', {day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'}).format(d);
+    return new Intl.DateTimeFormat('pt-BR', {
+      day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'
+    }).format(d);
   };
-  fetch(endpoint, {cache:'no-store', credentials:'omit'})
+
+  const categoryLabel = (value = '') => {
+    const labels = {
+      pop_poprock: 'Pop · Pop Rock',
+      classic_rock: 'Classic Rock',
+      alternative_gothic: 'Alternative · Gothic',
+      metal: 'Metal',
+      progressive: 'Progressive',
+      punk_hardcore: 'Punk · Hardcore',
+      soul_rnb: 'Soul · R&B',
+      mpb_brazil: 'MPB · Brasil'
+    };
+    return labels[value] || String(value).replace(/_/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+  };
+
+  const formatLabel = (value = '') => String(value).replace(/_/g, ' ');
+
+  ensureStyle();
+
+  fetch(endpoint, { cache:'no-store', credentials:'omit' })
     .then((r) => r.ok ? r.json() : Promise.reject())
     .then((data) => {
       const items = Array.isArray(data && data.items) ? data.items.slice(0, 6) : [];
       if (!items.length || document.getElementById('passport-editorial-home')) return;
-      const anchor = document.getElementById('noticias') || document.getElementById('agenda') || document.querySelector('main section:last-of-type');
+
+      const anchor = document.getElementById('noticias')
+        || document.getElementById('agenda')
+        || document.querySelector('main section:last-of-type');
       if (!anchor || !anchor.parentNode) return;
+
       const section = document.createElement('section');
       section.id = 'passport-editorial-home';
       section.className = 'passport-editorial-home';
       section.innerHTML = `
         <div class="shell">
           <div class="passport-editorial-home__head">
-            <div><small>PASSPORT RADIO · EDITORIAL 24H</small><h2>Novas histórias. O dia inteiro.</h2></div>
+            <div>
+              <small>PASSPORT RADIO · EDITORIAL 24H</small>
+              <h2>Novas histórias. O dia inteiro.</h2>
+            </div>
             <a href="/editorial.html">VER TODO O EDITORIAL →</a>
           </div>
           <div class="passport-editorial-home__grid">
-            ${items.map((item) => `<a href="${escapeHTML(item.url)}"><small>${escapeHTML(item.format)} · ${escapeHTML(item.category)}</small><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.deck || '')}</span><small>${escapeHTML(stamp(item.published_at))}</small></a>`).join('')}
+            ${items.map((item) => `
+              <a class="passport-editorial-home__card" href="${escapeHTML(item.url)}">
+                <div class="passport-editorial-home__meta">
+                  <span class="passport-editorial-home__format">${escapeHTML(formatLabel(item.format))}</span>
+                  <span class="passport-editorial-home__category">${escapeHTML(categoryLabel(item.category))}</span>
+                </div>
+                <strong>${escapeHTML(item.title)}</strong>
+                <span>${escapeHTML(item.deck || '')}</span>
+                <small class="passport-editorial-home__time">${escapeHTML(stamp(item.published_at))}</small>
+              </a>
+            `).join('')}
           </div>
         </div>`;
+
       anchor.parentNode.insertBefore(section, anchor.nextSibling);
     })
     .catch(() => {});
