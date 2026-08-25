@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "daily_target": 70,
-  "daily_capacity": 200,
+  "version": 2,
+  "daily_target": 300,
+  "daily_capacity": 400,
   "max_batch": 6,
   "cooldown_days": 45,
   "ledger_size": 20000,

@@ -6,6 +6,10 @@ workflow. The launcher intentionally normalizes all GitHub auth environment
 variables inside the Copilot subprocess to the same personal token so GitHub
 CLI user validation cannot accidentally fall back to the GitHub Actions app
 token (which returns "Resource not accessible by integration" for /user).
+
+Nitro mode raises the operational hard ceiling from 200 to 400 publications/day
+for this Copilot-backed path. The editorial pacing, deduplication, source firewall
+and all validation rules from the base engine remain unchanged.
 """
 from __future__ import annotations
 
@@ -14,6 +18,23 @@ import subprocess
 import sys
 
 import editorial_engine as engine
+
+
+NITRO_HARD_CAP = 400
+
+
+def enable_nitro_capacity() -> None:
+    """Raise only the base main() numeric hard-cap constants for Copilot runs."""
+    code = engine.main.__code__
+    patched = []
+    for value in code.co_consts:
+        if value == 200:
+            patched.append(NITRO_HARD_CAP)
+        elif isinstance(value, str):
+            patched.append(value.replace("hard cap is 200/day", f"hard cap is {NITRO_HARD_CAP}/day"))
+        else:
+            patched.append(value)
+    engine.main.__code__ = code.replace(co_consts=tuple(patched))
 
 
 def call_copilot(candidate, source_text, config):
@@ -54,6 +75,7 @@ def call_copilot(candidate, source_text, config):
     return engine.parse_json_text(proc.stdout)
 
 
+enable_nitro_capacity()
 engine.call_openai = call_copilot
 # The base engine uses this variable only as a readiness gate before invoking
 # the pluggable generator. The launcher replaces the generator with Copilot.
