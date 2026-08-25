@@ -1,8 +1,22 @@
 (() => {
+  const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489546241643636';
   const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
   const FLOAT_ID = 'passport-support-float';
 
+  const installAdSense = () => {
+    if (!document.head) return;
+    if (document.querySelector('script[data-passport-adsense],script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) return;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = ADSENSE_SRC;
+    script.crossOrigin = 'anonymous';
+    script.dataset.passportAdsense = '1';
+    document.head.appendChild(script);
+  };
+
   const install = () => {
+    installAdSense();
     if (!document.body || document.getElementById(FLOAT_ID)) return;
 
     const link = document.createElement('a');
