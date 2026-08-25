@@ -26,13 +26,10 @@ import datetime as dt
 import html
 from html.parser import HTMLParser
 import json
-import math
-import os
 from pathlib import Path
 import re
 import ssl
 import sys
-import time
 from difflib import SequenceMatcher
 from typing import Any, Iterable
 from urllib.parse import urljoin, urlparse, urlunparse
@@ -718,16 +715,36 @@ def main() -> int:
     per_source = max(1, min(10, args.per_source))
     max_age = max(12, min(168, args.max_age_hours))
 
+    worker_count = max(1, min(16, args.workers))
     discovered: list[tuple[dict[str, Any], str, str]] = []
     health: list[dict[str, Any]] = []
-    for source in sources:
-        links, status = discover_links(source, per_source)
-        health.append(status)
-        for url, anchor in links:
-            discovered.append((source, url, anchor))
+
+    # Landing pages are independent; crawl them concurrently so a few slow
+    # or blocked outlets cannot hold the whole tunnel hostage.
+    with futures.ThreadPoolExecutor(max_workers=worker_count) as executor:
+        jobs = {
+            executor.submit(discover_links, source, per_source): source
+            for source in sources
+        }
+        for job in futures.as_completed(jobs):
+            source = jobs[job]
+            try:
+                links, status = job.result()
+            except Exception as exc:
+                links = []
+                status = {
+                    "name": source["name"],
+                    "url": source["url"],
+                    "ok": False,
+                    "discovered": 0,
+                    "error": f"{type(exc).__name__}: {exc}"[:240],
+                }
+            health.append(status)
+            for url, anchor in links:
+                discovered.append((source, url, anchor))
 
     articles: list[Article] = []
-    with futures.ThreadPoolExecutor(max_workers=max(1, min(16, args.workers))) as executor:
+    with futures.ThreadPoolExecutor(max_workers=worker_count) as executor:
         jobs = [
             executor.submit(fetch_article, source, url, anchor, now)
             for source, url, anchor in discovered
