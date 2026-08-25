@@ -40,7 +40,7 @@
   function loadHitsTunnel(){
     if (document.querySelector('script[data-passport-hits-tunnel]')) return;
     const s = document.createElement("script");
-    s.src = "/js/passport-hits-tunnel.js?v=202608242059";
+    s.src = "/js/passport-hits-tunnel.js?v=202608242208";
     s.dataset.passportHitsTunnel = "1";
     document.head.appendChild(s);
   }
