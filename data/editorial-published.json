@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T12:27:28.091783-03:00",
+  "updated_at": "2026-08-25T13:14:11.961075-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -655,6 +655,107 @@
       "event_key": "jamie-t-ghosts-voice-notes",
       "fingerprint": "e171074f5d91c62d9d4b5852",
       "source_hash": "bb328e4347e7c38c3bc21609"
+    },
+    {
+      "title": "Quando a piada vira confronto: Jelly Roll transforma monólogo em ataque político",
+      "url": "/editorial/2026/08/25/quando-a-piada-vira-confronto-jelly-roll-transforma-monologo-em-ataque-politico.html",
+      "published_at": "2026-08-25T13:11:36.280021-03:00",
+      "category": "alternative_gothic",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Jelly Roll",
+        "Jimmy Kimmel Live!",
+        "Donald Trump",
+        "Kid Rock",
+        "Jason Aldean",
+        "Rock the Country Festival"
+      ],
+      "event_key": "jelly-roll-trump-weight-joke-2026",
+      "fingerprint": "7f94b6f3f5510853473830c6",
+      "source_hash": "e81d51f547a248c611a7a526"
+    },
+    {
+      "title": "Os vinte anos de Back To Black: quando Amy Winehouse redefiniu o alcance da música de câmara no século 21",
+      "url": "/editorial/2026/08/25/os-vinte-anos-de-back-to-black-quando-amy-winehouse-redefiniu-o-alcance-da-musica-de-cam.html",
+      "published_at": "2026-08-25T13:12:14.033049-03:00",
+      "category": "instruments",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Amy Winehouse",
+        "Back To Black",
+        "Mark Ronson",
+        "Salaam Remi"
+      ],
+      "event_key": "back-to-black-20yr-reissue-2026",
+      "fingerprint": "8045e57369f358ec9d92dede",
+      "source_hash": "85a83b037e92b74cfb70c921"
+    },
+    {
+      "title": "Maripool persiste no caos: rotten luck como afirmação",
+      "url": "/editorial/2026/08/25/maripool-persiste-no-caos-rotten-luck-como-afirmacao.html",
+      "published_at": "2026-08-25T13:12:36.805178-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Maripool",
+        "Rotten Luck",
+        "Smoking Room",
+        "Samuelito Cruz",
+        "Toner",
+        "Tony Molina Band"
+      ],
+      "event_key": "maripool-rotten-luck-2026",
+      "fingerprint": "c53d7adc55d3439cb2fa3e4c",
+      "source_hash": "ff89d39778954f3bb82a2a56"
+    },
+    {
+      "title": "O álbum que Billy Joel prefere apagar",
+      "url": "/editorial/2026/08/25/o-album-que-billy-joel-prefere-apagar.html",
+      "published_at": "2026-08-25T13:13:07.753929-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "Billy Joel",
+        "Cold Spring Harbor",
+        "The Stranger",
+        "Columbia Records"
+      ],
+      "event_key": "billy-joel-cold-spring-harbor-rejeicao",
+      "fingerprint": "d2e0b8a6be8325d179e4b96a",
+      "source_hash": "21d69dc9802f227d35a2ee03"
+    },
+    {
+      "title": "TOKIODK deflagra segundo ato de Infração quando viralidade vira material",
+      "url": "/editorial/2026/08/25/tokiodk-deflagra-segundo-ato-de-infracao-quando-viralidade-vira-material.html",
+      "published_at": "2026-08-25T13:13:35.593606-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "TOKIODK",
+        "Infração",
+        "Estilhaços & Cicatrizes",
+        "Nem Era Pra Eu Tá Aqui"
+      ],
+      "event_key": "tokiodk-infracacao-2o-ato-2026",
+      "fingerprint": "ae66e87eadef51ff4ca4fcbd",
+      "source_hash": "2820315a877f440a0234fd0f"
+    },
+    {
+      "title": "Fender traz de volta a Bass VI que redefiniu o som de Abbey Road",
+      "url": "/editorial/2026/08/25/fender-traz-de-volta-a-bass-vi-que-redefiniu-o-som-de-abbey-road.html",
+      "published_at": "2026-08-25T13:14:11.960027-03:00",
+      "category": "prog",
+      "format": "FLASH",
+      "entities": [
+        "Fender Custom Shop",
+        "George Harrison",
+        "Bass VI",
+        "Abbey Road Studios",
+        "The Beatles"
+      ],
+      "event_key": "fender-harrison-bass-vi-2026",
+      "fingerprint": "20f37b789f73fde3438460bc",
+      "source_hash": "af1e5d651b2780f0c73c5ef2"
     }
   ]
 }
