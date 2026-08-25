@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T11:34:39.310320-03:00",
+  "updated_at": "2026-08-25T12:27:28.091783-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -552,6 +552,109 @@
       "event_key": "mike-d-thank-you-2026",
       "fingerprint": "d66774bb6dce473cbdedbee3",
       "source_hash": "d12ad9f91030cb76b45ae998"
+    },
+    {
+      "title": "Quando os Titãs do Rock Aplaudem: Portnoy encontra Anika Nilles e valida a nova batida do Rush",
+      "url": "/editorial/2026/08/25/quando-os-titas-do-rock-aplaudem-portnoy-encontra-anika-nilles-e-valida-a-nova-batida-do.html",
+      "published_at": "2026-08-25T12:24:56.896699-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Rush",
+        "Anika Nilles",
+        "Mike Portnoy",
+        "Neil Peart",
+        "Dream Theater"
+      ],
+      "event_key": "rush-anika-portnoy-meeting-2026",
+      "fingerprint": "80d85ba93b9d1c57ea69c81d",
+      "source_hash": "776938fff3a63853db73bafe"
+    },
+    {
+      "title": "Back to Black — o corpo sonoro que volta a respirar em edição de 20 anos",
+      "url": "/editorial/2026/08/25/back-to-black-o-corpo-sonoro-que-volta-a-respirar-em-edicao-de-20-anos.html",
+      "published_at": "2026-08-25T12:25:34.820104-03:00",
+      "category": "alternative_gothic",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Amy Winehouse",
+        "Back to Black"
+      ],
+      "event_key": "back-to-black-20th-reissue-2026",
+      "fingerprint": "3ccdde655e163f68be947672",
+      "source_hash": "cec5a79bba04381178b4a15e"
+    },
+    {
+      "title": "Perfecth: Queens of the Stone Age anunciam álbum novo e liberam 'Insignificant Other'",
+      "url": "/editorial/2026/08/25/perfecth-queens-of-the-stone-age-anunciam-album-novo-e-liberam-insignificant-other.html",
+      "published_at": "2026-08-25T12:25:59.210415-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Queens of the Stone Age",
+        "Josh Homme",
+        "Dean Fertita",
+        "Michael Shuman",
+        "Perfecth",
+        "Insignificant Other",
+        "Easy Street",
+        "In Times New Roman..."
+      ],
+      "event_key": "qotsa-perfecth-announce-2026",
+      "fingerprint": "6540b5678ac4a63ff9c01361",
+      "source_hash": "3da8aed77a927177e094602b"
+    },
+    {
+      "title": "Refrão Resgatado: Busta Rhymes Reacende J Dilla e D'Angelo em 'This Woman'",
+      "url": "/editorial/2026/08/25/refrao-resgatado-busta-rhymes-reacende-j-dilla-e-d-angelo-em-this-woman.html",
+      "published_at": "2026-08-25T12:26:25.812495-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Busta Rhymes",
+        "J Dilla",
+        "D'Angelo",
+        "Dillagence II",
+        "This Woman",
+        "Hype Williams"
+      ],
+      "event_key": "dilla-dangelo-this-woman",
+      "fingerprint": "ee8654d0f30163069afe790a",
+      "source_hash": "c0bb1437b4ffe3968437deb3"
+    },
+    {
+      "title": "Jim James reaparece vulnerável em 'Lost Child', single que antecipa novo álbum",
+      "url": "/editorial/2026/08/25/jim-james-reaparece-vulneravel-em-lost-child-single-que-antecipa-novo-album.html",
+      "published_at": "2026-08-25T12:26:56.399243-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Jim James",
+        "Wowed Out",
+        "My Morning Jacket",
+        "Maxine Brown",
+        "Oh No Not My Baby",
+        "Joshua Shoemaker"
+      ],
+      "event_key": "jim-james-lost-child-wowed-out-2026",
+      "fingerprint": "43ceace800533638878e6a43",
+      "source_hash": "1c5df7ae9d5d263a69e33095"
+    },
+    {
+      "title": "Jamie T transforma memórias em álbum: 'Ghosts (100 Days Of Morning)' nasceu de notas de voz",
+      "url": "/editorial/2026/08/25/jamie-t-transforma-memorias-em-album-ghosts-100-days-of-morning-nasceu-de-notas-de-voz.html",
+      "published_at": "2026-08-25T12:27:28.090667-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Jamie T",
+        "Ghosts (100 Days Of Morning)",
+        "3310",
+        "Damon Albarn"
+      ],
+      "event_key": "jamie-t-ghosts-voice-notes",
+      "fingerprint": "e171074f5d91c62d9d4b5852",
+      "source_hash": "bb328e4347e7c38c3bc21609"
     }
   ]
 }
