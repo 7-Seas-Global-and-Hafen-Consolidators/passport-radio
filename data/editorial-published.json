@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T17:54:08.046738-03:00",
+  "updated_at": "2026-08-25T18:01:45.394054-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -1506,6 +1506,27 @@
       "event_key": "gil-andar-com-fe-santander-2026",
       "fingerprint": "c08bcc4a5b196b825f07e9bd",
       "source_hash": "6c0bbfc76771b52b32130eeb"
+    },
+    {
+      "title": "Quando Dolly Parton Finalmente Aceitou Ser Rock and Roll",
+      "url": "/editorial/2026/08/25/quando-dolly-parton-finalmente-aceitou-ser-rock-and-roll.html",
+      "published_at": "2026-08-25T17:59:49.199042-03:00",
+      "category": "pop_poprock",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Dolly Parton",
+        "Rob Halford",
+        "Simon Le Bon",
+        "Pink",
+        "Brandi Carlile",
+        "Judas Priest",
+        "Duran Duran",
+        "Rock and Roll Hall of Fame",
+        "Rockstar (álbum)"
+      ],
+      "event_key": "dolly-rockhall-2022-induction",
+      "fingerprint": "dc06124549d4a90d48fbfecc",
+      "source_hash": "d762f8163330e5e1a77eb0cf"
     }
   ]
 }
