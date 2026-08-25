@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T14:05:19.140056-03:00",
+  "updated_at": "2026-08-25T14:39:21.073666-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -866,6 +866,116 @@
       "event_key": "kiss-pophouse-ownership-2024",
       "fingerprint": "b870f682825b3abee3d39808",
       "source_hash": "2af6c0400e60d530fc1296af"
+    },
+    {
+      "title": "Antes do Big 4: a linhagem esquecida que fez o grunge nascer",
+      "url": "/editorial/2026/08/25/antes-do-big-4-a-linhagem-esquecida-que-fez-o-grunge-nascer.html",
+      "published_at": "2026-08-25T14:36:00.326860-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Kim Thayil",
+        "Soundgarden",
+        "Melvins",
+        "Green River",
+        "U-Men",
+        "Buzz Osborne",
+        "Chris Cornell"
+      ],
+      "event_key": "thayil-grunge-genealogy-2026",
+      "fingerprint": "55e12f80ee7aac613d1eccf1",
+      "source_hash": "2e525536332f1929045f4a12"
+    },
+    {
+      "title": "Os filhos do Kiss explicam por que simplesmente usam seu próprio sobrenome",
+      "url": "/editorial/2026/08/25/os-filhos-do-kiss-explicam-por-que-simplesmente-usam-seu-proprio-sobrenome.html",
+      "published_at": "2026-08-25T14:36:35.991854-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "Stanley Simmons",
+        "Nick Simmons",
+        "Evan Stanley",
+        "Gene Simmons",
+        "Paul Stanley",
+        "Kiss",
+        "Dancing While the World is Ending"
+      ],
+      "event_key": "stanley-simmons-nome-legitimidade",
+      "fingerprint": "18cba9de89efb1ebc7b0d632",
+      "source_hash": "6111991353321532a2e5cd9e"
+    },
+    {
+      "title": "Dany Villarreal desenha seu próprio instrumento: a Astryx é mais do que uma guitarra signature",
+      "url": "/editorial/2026/08/25/dany-villarreal-desenha-seu-proprio-instrumento-a-astryx-e-mais-do-que-uma-guitarra-sign.html",
+      "published_at": "2026-08-25T14:37:01.599143-03:00",
+      "category": "instruments",
+      "format": "FLASH",
+      "entities": [
+        "The Warning",
+        "Dany Villarreal",
+        "PRS",
+        "Astryx"
+      ],
+      "event_key": "dany-villarreal-astryx-signature",
+      "fingerprint": "7fc714e0a1d5c5026019e484",
+      "source_hash": "91cfc5d0e2a6dda5bcbce344"
+    },
+    {
+      "title": "Quando o rock encontra a câmara: Cameron Winter em Carnegie Hall pelo olhar de Paul Thomas Anderson",
+      "url": "/editorial/2026/08/25/quando-o-rock-encontra-a-camara-cameron-winter-em-carnegie-hall-pelo-olhar-de-paul-thoma.html",
+      "published_at": "2026-08-25T14:38:00.461246-03:00",
+      "category": "alternative_gothic",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Cameron Winter",
+        "Paul Thomas Anderson",
+        "Benny Safdie",
+        "Ariel Rechtshaid",
+        "Geese",
+        "Heavy Metal (álbum)",
+        "Getting Killed (álbum)",
+        "Live at Carnegie Hall (álbum/filme)"
+      ],
+      "event_key": "cameron-winter-carnegie-film-2026",
+      "fingerprint": "3839cb55afb5de46a904a09e",
+      "source_hash": "e97254be5914ad96a6327555"
+    },
+    {
+      "title": "Quando a Playlist Vira Prova de Imperícia: O Desastre Fonético do Governador do Texas",
+      "url": "/editorial/2026/08/25/quando-a-playlist-vira-prova-de-impericia-o-desastre-fonetico-do-governador-do-texas.html",
+      "published_at": "2026-08-25T14:38:35.276616-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Ella Langley",
+        "Moe Bandy",
+        "Khruangbin",
+        "Greg Abbott",
+        "BigXThaPlug",
+        "Cody Johnson",
+        "George Strait"
+      ],
+      "event_key": "abbott-texas-playlist-typos-2026",
+      "fingerprint": "6bb75929fce121f1c5be1e1e",
+      "source_hash": "e33fd35c4990e375a1ea3323"
+    },
+    {
+      "title": "Vinte Anos Depois, Amy Winehouse Retorna com o que Nunca Ouviram",
+      "url": "/editorial/2026/08/25/vinte-anos-depois-amy-winehouse-retorna-com-o-que-nunca-ouviram.html",
+      "published_at": "2026-08-25T14:39:21.072100-03:00",
+      "category": "indie",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Amy Winehouse",
+        "Back to Black",
+        "Mark Ronson",
+        "Salaam Remi",
+        "Paradiso Amsterdam"
+      ],
+      "event_key": "amy-winehouse-back-to-black-20yr-reissue",
+      "fingerprint": "5dd09bc44ae218c40b9ec356",
+      "source_hash": "3f331a23c4ca7806cd3bde74"
     }
   ]
 }
