@@ -19,7 +19,7 @@
   }
   document.querySelectorAll("style[data-passport-hits-style]").forEach(el => el.remove());
 
-  const STREAM = "https://stream-mz.hellorayo.co.uk/net1london.aac";
+  const STREAM = "https://stream-mz.hellorayo.co.uk/net1london.aac?aw_0_1st.bauer_listenerid=undefined&aw_0_1st.skey=1602676850&direct=true&rp_source=1";
 
   const style = document.createElement("style");
   style.dataset.passportHitsStyle = "1";
