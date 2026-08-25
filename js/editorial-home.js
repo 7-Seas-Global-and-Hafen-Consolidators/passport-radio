@@ -1,4 +1,16 @@
 (() => {
+  const src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489546241643636';
+  if (!document.querySelector('script[data-passport-adsense],script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    script.crossOrigin = 'anonymous';
+    script.dataset.passportAdsense = '1';
+    document.head.appendChild(script);
+  }
+})();
+
+(() => {
   const endpoint = '/data/editorial-feed.json';
 
   const ensureStyle = () => {
