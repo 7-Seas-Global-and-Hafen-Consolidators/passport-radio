@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Copilot-backed launcher for Passport Editorial Engine™.
 
-Uses GitHub Copilot CLI with the workflow GITHUB_TOKEN, so no external API secret
-is required when Copilot CLI is enabled for the repository/organization.
+Uses GitHub Copilot CLI with a personal fine-grained token supplied by the
+workflow. The launcher intentionally normalizes all GitHub auth environment
+variables inside the Copilot subprocess to the same personal token so GitHub
+CLI user validation cannot accidentally fall back to the GitHub Actions app
+token (which returns "Resource not accessible by integration" for /user).
 """
 from __future__ import annotations
 
@@ -20,11 +23,24 @@ def call_copilot(candidate, source_text, config):
     model = os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip()
     if model:
         cmd.extend(["--model", model])
+
     env = os.environ.copy()
-    token = env.get("GITHUB_TOKEN", "").strip() or env.get("GH_TOKEN", "").strip()
+    token = (
+        env.get("COPILOT_GITHUB_TOKEN", "").strip()
+        or env.get("GH_TOKEN", "").strip()
+        or env.get("GITHUB_TOKEN", "").strip()
+    )
     if not token:
-        raise RuntimeError("GITHUB_TOKEN is not available for Copilot CLI")
+        raise RuntimeError("Copilot authentication token is not available")
+
+    # Copilot CLI prefers COPILOT_GITHUB_TOKEN, while some of its GitHub CLI
+    # validation paths consult GH_TOKEN/GITHUB_TOKEN. Keep all three aligned
+    # to the personal PAT for this subprocess only. The workflow's normal
+    # github.token remains untouched for checkout, artifact access and pushes.
+    env["COPILOT_GITHUB_TOKEN"] = token
+    env["GH_TOKEN"] = token
     env["GITHUB_TOKEN"] = token
+
     proc = subprocess.run(
         cmd,
         capture_output=True,
