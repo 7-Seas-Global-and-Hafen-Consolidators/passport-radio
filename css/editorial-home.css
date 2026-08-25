@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+/* PASSPORT RADIO · EDITORIAL 24H · HOME */
+.passport-editorial-home{
+  position:relative;
+  z-index:1;
+  padding:44px 0 48px;
+  border-top:1px solid #d5d3ce;
+  border-bottom:1px solid #d5d3ce;
+  background:#f1efea;
+  color:#111;
+  overflow:hidden;
+}
+
+.passport-editorial-home .shell{
+  position:relative;
+  z-index:2;
+}
+
+.passport-editorial-home__head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:22px;
+}
+
+.passport-editorial-home__head small{
+  display:block;
+  margin-bottom:6px;
+  color:#777;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.passport-editorial-home__head h2{
+  margin:0;
+  max-width:14ch;
+  color:#111;
+  font-size:clamp(2rem,4vw,4.1rem);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+
+.passport-editorial-home__head>a{
+  flex:0 0 auto;
+  color:#d71920;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.passport-editorial-home__grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.passport-editorial-home__card{
+  position:relative;
+  min-width:0;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  padding:18px;
+  border:1px solid #d2d0cb;
+  background:#fff;
+  color:#111!important;
+  text-decoration:none!important;
+  overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+
+.passport-editorial-home__card:hover,
+.passport-editorial-home__card:focus-visible{
+  transform:translateY(-3px);
+  border-color:#aaa69d;
+  box-shadow:0 14px 30px rgba(0,0,0,.09);
+  outline:none;
+}
+
+.passport-editorial-home__card:first-child{
+  grid-column:span 2;
+  min-height:310px;
+  background:#111;
+  border-color:#111;
+  color:#fff!important;
+}
+
+.passport-editorial-home__meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+  color:#777;
+  font-size:.52rem;
+  font-weight:900;
+  line-height:1.2;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+.passport-editorial-home__card:first-child .passport-editorial-home__meta{
+  color:#a9a9a9;
+}
+
+.passport-editorial-home__format{
+  color:#d71920;
+}
+
+.passport-editorial-home__card strong{
+  display:-webkit-box;
+  margin:0;
+  overflow:hidden;
+  color:inherit!important;
+  font-size:clamp(1rem,1.55vw,1.35rem);
+  font-weight:900;
+  line-height:1.03;
+  letter-spacing:-.035em;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+
+.passport-editorial-home__card:first-child strong{
+  max-width:18ch;
+  font-size:clamp(2rem,4.2vw,4.5rem);
+  line-height:.9;
+  letter-spacing:-.06em;
+  -webkit-line-clamp:4;
+}
+
+.passport-editorial-home__card span:not(.passport-editorial-home__format):not(.passport-editorial-home__category):not(.passport-editorial-home__time){
+  display:-webkit-box;
+  margin-top:13px;
+  overflow:hidden;
+  color:#666;
+  font-size:.67rem;
+  line-height:1.5;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+
+.passport-editorial-home__card:first-child span:not(.passport-editorial-home__format):not(.passport-editorial-home__category):not(.passport-editorial-home__time){
+  max-width:72ch;
+  color:#c4c4c4;
+  font-size:.74rem;
+  -webkit-line-clamp:3;
+}
+
+.passport-editorial-home__time{
+  display:block;
+  margin-top:auto;
+  padding-top:18px;
+  color:#8a8a8a;
+  font-size:.5rem;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.passport-editorial-home__card:first-child .passport-editorial-home__time{
+  color:#8d8d8d;
+}
+
+@media(max-width:980px){
+  .passport-editorial-home__grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .passport-editorial-home__card:first-child{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:700px){
+  .passport-editorial-home{
+    padding:34px 0 38px;
+  }
+  .passport-editorial-home__head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:14px;
+  }
+  .passport-editorial-home__head h2{
+    max-width:11ch;
+  }
+  .passport-editorial-home__grid{
+    grid-template-columns:1fr;
+  }
+  .passport-editorial-home__card,
+  .passport-editorial-home__card:first-child{
+    grid-column:auto;
+    min-height:0;
+  }
+  .passport-editorial-home__card:first-child strong{
+    font-size:clamp(2rem,12vw,3.4rem);
+  }
+}
