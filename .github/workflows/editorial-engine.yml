@@ -52,6 +52,7 @@ jobs:
           python-version: '3.12'
 
       - name: Resolve engine mode and target
+        id: settings
         shell: bash
         run: |
           MODE="${{ github.event.inputs.mode }}"
@@ -66,10 +67,13 @@ jobs:
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "TARGET=$TARGET" >> "$GITHUB_ENV"
           echo "FORCE=$FORCE" >> "$GITHUB_ENV"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          echo "force=$FORCE" >> "$GITHUB_OUTPUT"
           echo "Mode: $MODE · target: $TARGET/day · hard capacity: 200/day" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Resume rolling editorial branch
-        if: env.MODE == 'pr'
+        if: steps.settings.outputs.mode == 'pr'
         shell: bash
         run: |
           git fetch origin main
@@ -155,17 +159,16 @@ jobs:
           if-no-files-found: warn
 
       - name: Commit rolling review batch
-        if: env.MODE == 'pr'
+        if: steps.settings.outputs.mode == 'pr'
         shell: bash
         run: |
-          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
-            echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
-          if git diff --cached --quiet; then exit 0; fi
+          if git diff --cached --quiet; then
+            echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           git commit -m "Passport Editorial 24H: automatic batch"
           git push -u origin automation/editorial-staging
           OPEN_PR="$(gh pr list --head automation/editorial-staging --base main --state open --json number --jq '.[0].number' 2>/dev/null || true)"
@@ -176,17 +179,16 @@ jobs:
           fi
 
       - name: Publish direct batch
-        if: env.MODE == 'direct'
+        if: steps.settings.outputs.mode == 'direct'
         shell: bash
         run: |
-          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
-            echo "No editorial files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
-          if git diff --cached --quiet; then exit 0; fi
+          if git diff --cached --quiet; then
+            echo "No editorial files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           git commit -m "Passport Editorial 24H: publish automatic batch"
           git pull --rebase origin main
           git push origin HEAD:main
