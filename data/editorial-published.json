@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T16:07:10.519560-03:00",
+  "updated_at": "2026-08-25T16:47:03.650711-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -1180,6 +1180,126 @@
       "event_key": "threadgill-new-albums-2026",
       "fingerprint": "e7586d1ba6672a4763a9b3d8",
       "source_hash": "b4ad787e8bc2ec561564aac2"
+    },
+    {
+      "title": "Baterista de trânsito: Ryan Goff assume o kit de Rob Zombie em turnê co-headline",
+      "url": "/editorial/2026/08/25/baterista-de-transito-ryan-goff-assume-o-kit-de-rob-zombie-em-turne-co-headline.html",
+      "published_at": "2026-08-25T16:43:24.880564-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Ryan Goff",
+        "Rob Zombie",
+        "Marilyn Manson",
+        "Ginger Fish",
+        "Cruel Hand",
+        "Wain",
+        "The Great Satan",
+        "Freaks on Parade",
+        "The Hu",
+        "Orgy"
+      ],
+      "event_key": "ryan-goff-rob-zombie-fillin-2026",
+      "fingerprint": "08536035038384dcd2f8aae8",
+      "source_hash": "ea844b0df8a77f4ffcc0e197"
+    },
+    {
+      "title": "Quando o cemitério não consegue cumprir seu ofício: o show que migrou",
+      "url": "/editorial/2026/08/25/quando-o-cemiterio-nao-consegue-cumprir-seu-oficio-o-show-que-migrou.html",
+      "published_at": "2026-08-25T16:44:07.495543-03:00",
+      "category": "instruments",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Harms Way",
+        "Bo Lueders",
+        "Twitching Tongues",
+        "Colin Young",
+        "Weekend Nachos",
+        "The Killer",
+        "Bohemian National Cemetery",
+        "Ramova Theatre"
+      ],
+      "event_key": "bo-lueders-memorial-chicago-2026",
+      "fingerprint": "c9838e642f9ff44c0d12cb59",
+      "source_hash": "1c2d745de2cec5081a5a55cd"
+    },
+    {
+      "title": "O Mapa da Genialidade: Por Que as Canções de Dolly Parton Exigem Reavaliação Agora",
+      "url": "/editorial/2026/08/25/o-mapa-da-genialidade-por-que-as-cancoes-de-dolly-parton-exigem-reavaliacao-agora.html",
+      "published_at": "2026-08-25T16:44:34.744976-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Dolly Parton",
+        "Vinyl Me, Please",
+        "Rock & Roll Hall of Fame",
+        "Emmylou Harris",
+        "Linda Ronstadt",
+        "Songteller"
+      ],
+      "event_key": "dolly-parton-catalog-reassessment-2026",
+      "fingerprint": "829b08de39b01086da55df4a",
+      "source_hash": "ed045fc41a79f517403f7dcf"
+    },
+    {
+      "title": "Dolly Parton se foi: a rainha que reescreveu o country para o mundo",
+      "url": "/editorial/2026/08/25/dolly-parton-se-foi-a-rainha-que-reescreveu-o-country-para-o-mundo.html",
+      "published_at": "2026-08-25T16:45:21.826336-03:00",
+      "category": "brasil",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Dolly Parton",
+        "Country",
+        "I Will Always Love You",
+        "Jolene",
+        "9 to 5",
+        "The Trio Project",
+        "Rockstar"
+      ],
+      "event_key": "dolly-parton-death-2026",
+      "fingerprint": "321f133ca62ebcba176fc359",
+      "source_hash": "16299f946eaf39d47c1e7f69"
+    },
+    {
+      "title": "Noite de heróis: Springsteen e Jon Stewart lideram 20º Stand Up For Heroes em Nova York",
+      "url": "/editorial/2026/08/25/noite-de-herois-springsteen-e-jon-stewart-lideram-20o-stand-up-for-heroes-em-nova-york.html",
+      "published_at": "2026-08-25T16:46:19.799284-03:00",
+      "category": "pop_poprock",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Bruce Springsteen",
+        "Jon Stewart",
+        "Bob Woodruff",
+        "Josh Johnson",
+        "Hasan Minhaj",
+        "The Resilient",
+        "Alex Warren"
+      ],
+      "event_key": "stand-up-for-heroes-20",
+      "fingerprint": "c3d815b21854cd504459d5e9",
+      "source_hash": "5b9f04ae332d813d1c36672f"
+    },
+    {
+      "title": "O fim da era de Dolly: quando uma voz de 80 anos carregava sete décadas de América",
+      "url": "/editorial/2026/08/25/o-fim-da-era-de-dolly-quando-uma-voz-de-80-anos-carregava-sete-decadas-de-america.html",
+      "published_at": "2026-08-25T16:47:03.648613-03:00",
+      "category": "alternative_gothic",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Dolly Parton",
+        "Carl Dean",
+        "Dollywood",
+        "Imagination Library",
+        "Jolene",
+        "I Will Always Love You",
+        "9 to 5",
+        "Nashville Songwriters Hall of Fame",
+        "Country Music Hall of Fame",
+        "Rock And Roll Hall of Fame"
+      ],
+      "event_key": "dolly-parton-obituary-2026",
+      "fingerprint": "ea0cac69503b85353a37e544",
+      "source_hash": "86ec3a3bb60627d5613628f6"
     }
   ]
 }
