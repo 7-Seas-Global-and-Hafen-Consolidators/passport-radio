@@ -6,8 +6,8 @@
 
   const AMAZON_LINKS = [
     { href: 'https://www.amazon.com.br/b?node=104007590011&linkCode=ll2&tag=passportradio-20&linkId=edae5781198a3cecf47411d190e375a1&ref_=as_li_ss_tl', label: 'VER SELEÇÃO AMAZON', network: 'AMAZON' },
-    { href: 'https://amzn.to/4xnpFWZ', label: 'ACHADO AMAZON 01', network: 'AMAZON' },
-    { href: 'https://amzn.to/4gi1vah', label: 'ACHADO AMAZON 02', network: 'AMAZON' }
+    { href: 'https://amzn.to/4xnpFWZ', label: 'OFERTA AMAZON', network: 'AMAZON' },
+    { href: 'https://amzn.to/4gi1vah', label: 'MAIS OFERTAS AMAZON', network: 'AMAZON' }
   ];
 
   const SHOPEE_LINK = {
@@ -16,7 +16,7 @@
     network: 'SHOPEE'
   };
 
-  const DISCLOSURE = 'Publicidade e links de afiliado. A Passport Radio pode receber comissão por compras qualificadas.';
+  const DISCLOSURE = 'Como associado da Amazon, eu ganho com compras qualificadas. A Passport Radio também pode receber comissão por compras realizadas em links de outros parceiros.';
 
   const installStyle = () => {
     if (document.getElementById('passport-amazon-affiliate-style')) return;
@@ -63,7 +63,7 @@
     a.className = className;
     a.dataset.passportAffiliate = '1';
     a.dataset.network = item.network;
-    a.innerHTML = `<small>PUBLICIDADE · LINK DE AFILIADO · ${item.network}</small><strong>${item.label}</strong><span>COMPRAR ↗</span>`;
+    a.innerHTML = `<small>PUBLICIDADE</small><strong>${item.label}</strong><span>VER OFERTA ↗</span>`;
     return a;
   };
 
@@ -72,7 +72,7 @@
     const rail = document.createElement('aside');
     rail.id = 'passport-amazon-toprail';
     rail.className = 'passport-amazon-toprail';
-    rail.setAttribute('aria-label', 'Publicidade e links de afiliado');
+    rail.setAttribute('aria-label', 'Publicidade');
     rail.appendChild(makeLink(AMAZON_LINKS[0], 'passport-amazon-toprail__main'));
     const mini = document.createElement('div');
     mini.className = 'passport-amazon-toprail__mini';
@@ -96,8 +96,8 @@
     const wrap = document.createElement('aside');
     wrap.id = 'passport-amazon-mid';
     wrap.className = 'passport-amazon-mid';
-    wrap.setAttribute('aria-label', 'Links patrocinados e de afiliado');
-    wrap.innerHTML = `<div class="passport-amazon-mid__head"><span>PUBLICIDADE</span><strong>OFERTAS & ACHADOS</strong></div>`;
+    wrap.setAttribute('aria-label', 'Publicidade');
+    wrap.innerHTML = `<div class="passport-amazon-mid__head"><span>PUBLICIDADE</span><strong>OFERTAS</strong></div>`;
     const grid = document.createElement('div');
     grid.className = 'passport-amazon-mid__grid';
     [AMAZON_LINKS[0], AMAZON_LINKS[2], SHOPEE_LINK].forEach((item) => grid.appendChild(makeLink(item, 'passport-amazon-card')));
@@ -115,7 +115,7 @@
     const wrap = document.createElement('aside');
     wrap.id = 'passport-amazon-footer';
     wrap.className = 'passport-amazon-footer';
-    wrap.setAttribute('aria-label', 'Publicidade e links de afiliado');
+    wrap.setAttribute('aria-label', 'Publicidade');
     wrap.appendChild(makeLink(SHOPEE_LINK, 'passport-amazon-footer__link'));
     const note = document.createElement('p');
     note.className = 'passport-amazon-disclosure';
