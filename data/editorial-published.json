@@ -1,6 +1,109 @@
 {
   "version": 1,
-  "updated_at": null,
+  "updated_at": "2026-08-25T08:20:25.808102-03:00",
   "daily_capacity": 200,
-  "ledger": []
+  "ledger": [
+    {
+      "title": "Covers de Metal e Rock Revelam Quem Realmente Somos",
+      "url": "/editorial/2026/08/25/covers-de-metal-e-rock-revelam-quem-realmente-somos.html",
+      "published_at": "2026-08-25T08:15:57.711196-03:00",
+      "category": "metal",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Metallica",
+        "Judas Priest",
+        "Depeche Mode",
+        "Mudvayne",
+        "Green Day",
+        "Guns N' Roses",
+        "Aerosmith",
+        "Black Sabbath"
+      ],
+      "event_key": "metal-cover-setlists-2026",
+      "fingerprint": "0046516280daa3f176bbb5e0",
+      "source_hash": "e25d46d565ce1a84e79111f4"
+    },
+    {
+      "title": "Nightwish em suspenso: Floor Jansen confirma que não há próximos passos",
+      "url": "/editorial/2026/08/25/nightwish-em-suspenso-floor-jansen-confirma-que-nao-ha-proximos-passos.html",
+      "published_at": "2026-08-25T08:16:39.620795-03:00",
+      "category": "alternative_gothic",
+      "format": "STORY",
+      "entities": [
+        "Nightwish",
+        "Floor Jansen",
+        "Yesterwynde",
+        "Tarja Turunen"
+      ],
+      "event_key": "nightwish-indefinite-hiatus-2026",
+      "fingerprint": "83ab74431f4f75da2d4d39ab",
+      "source_hash": "66629ce9ced77527c5b494fa"
+    },
+    {
+      "title": "DOWN reescreve seu peso: 'Volume V' chega em 20 de novembro",
+      "url": "/editorial/2026/08/25/down-reescreve-seu-peso-volume-v-chega-em-20-de-novembro.html",
+      "published_at": "2026-08-25T08:17:24.507770-03:00",
+      "category": "metal",
+      "format": "STORY",
+      "entities": [
+        "DOWN",
+        "Volume V",
+        "King Diamond"
+      ],
+      "event_key": "down-volume-v-2026-release",
+      "fingerprint": "e9cb39eb4bea963e96c0e72c",
+      "source_hash": "089dfc856a0fe31cdeefbd9b"
+    },
+    {
+      "title": "Pós-Hardcore Retorna: Shudder to Think Prova Que Alguns Sons Nunca Morrem",
+      "url": "/editorial/2026/08/25/pos-hardcore-retorna-shudder-to-think-prova-que-alguns-sons-nunca-morrem.html",
+      "published_at": "2026-08-25T08:18:16.780736-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Shudder to Think",
+        "Craig Wedren",
+        "Who Sent You?",
+        "Dischord Records"
+      ],
+      "event_key": "shudder-to-think-who-sent-you-ep-2026",
+      "fingerprint": "63bc975db493f2ba2c3fb7d9",
+      "source_hash": "010acd56f0505bee0d77e258"
+    },
+    {
+      "title": "Figurinos de Freddie Mercury chegam ao V&A para contar a cena por trás do espetáculo",
+      "url": "/editorial/2026/08/25/figurinos-de-freddie-mercury-chegam-ao-v-a-para-contar-a-cena-por-tras-do-espetaculo.html",
+      "published_at": "2026-08-25T08:19:53.792931-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Freddie Mercury",
+        "Queen",
+        "Bohemian Rhapsody",
+        "Made in Heaven"
+      ],
+      "event_key": "vanda-splendid-things-2026",
+      "fingerprint": "feef0e1a308a4ac91ba25c96",
+      "source_hash": "9e52cb22ea40aed181808a07"
+    },
+    {
+      "title": "Bad Bunny Traz Debí Tirar Más Fotos de Volta para Casa",
+      "url": "/editorial/2026/08/25/bad-bunny-traz-debi-tirar-mas-fotos-de-volta-para-casa.html",
+      "published_at": "2026-08-25T08:20:25.807574-03:00",
+      "category": "pop_poprock",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Bad Bunny",
+        "Debí Tirar Más Fotos",
+        "Victor Manuelle",
+        "Jowell y Randy",
+        "Rauw Alejandro",
+        "Hiram Bithorn Stadium",
+        "San Juan"
+      ],
+      "event_key": "bad-bunny-dtmf-finale-puerto-rico-2026",
+      "fingerprint": "b3d17f0b9cc020ff03883d43",
+      "source_hash": "195191be695ba5b3946b2832"
+    }
+  ]
 }
