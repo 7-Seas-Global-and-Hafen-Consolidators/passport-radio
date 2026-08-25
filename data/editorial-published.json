@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T08:20:25.808102-03:00",
+  "updated_at": "2026-08-25T08:57:49.300789-03:00",
   "daily_capacity": 200,
   "ledger": [
     {
@@ -104,6 +104,119 @@
       "event_key": "bad-bunny-dtmf-finale-puerto-rico-2026",
       "fingerprint": "b3d17f0b9cc020ff03883d43",
       "source_hash": "195191be695ba5b3946b2832"
+    },
+    {
+      "title": "A guitarra em silêncio: Richard Lloyd enfrenta câncer e aperto financeiro",
+      "url": "/editorial/2026/08/25/a-guitarra-em-silencio-richard-lloyd-enfrenta-cancer-e-aperto-financeiro.html",
+      "published_at": "2026-08-25T08:53:44.155871-03:00",
+      "category": "instruments",
+      "format": "FLASH",
+      "entities": [
+        "Richard Lloyd",
+        "Television",
+        "Marquee Moon"
+      ],
+      "event_key": "richard-lloyd-cancer-fund",
+      "fingerprint": "0829d1cf0028912336b883ab",
+      "source_hash": "4622276ecac1a0ff524ee8a1"
+    },
+    {
+      "title": "Lothario Canta o Que Ninguém Quer Dizer: A Promessa de Quem Ficou",
+      "url": "/editorial/2026/08/25/lothario-canta-o-que-ninguem-quer-dizer-a-promessa-de-quem-ficou.html",
+      "published_at": "2026-08-25T08:54:24.952310-03:00",
+      "category": "alternative_gothic",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Lothario",
+        "Annaliese Redlich",
+        "EP IOU",
+        "Elsa Birrel",
+        "Beth Lockhart",
+        "Will Clifford",
+        "Melbourne"
+      ],
+      "event_key": "lothario-iou-2026",
+      "fingerprint": "9c0dee1b4e53e5355e4df977",
+      "source_hash": "4aee3d9febe477272f112282"
+    },
+    {
+      "title": "A Profundidade do Grito: Quando o Rap Brasileiro Encontra a Si Mesmo",
+      "url": "/editorial/2026/08/25/a-profundidade-do-grito-quando-o-rap-brasileiro-encontra-a-si-mesmo.html",
+      "published_at": "2026-08-25T08:55:13.293524-03:00",
+      "category": "brasil",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Emicida",
+        "Rael",
+        "Derek",
+        "Renan Inquérito",
+        "BK'",
+        "Amabbi",
+        "LEALL",
+        "Victor Xamã e WillsBife",
+        "Yago Oproprio",
+        "Racionais MCs"
+      ],
+      "event_key": "rap-brasil-2026-introspection",
+      "fingerprint": "370916cbf95ee2a32e95094b",
+      "source_hash": "9e0b00ac1e1e0b997e8da115"
+    },
+    {
+      "title": "Disco, chapéu e doações: como Kacey Musgraves transformou o espetáculo em ação por crianças imigrantes",
+      "url": "/editorial/2026/08/25/disco-chapeu-e-doacoes-como-kacey-musgraves-transformou-o-espetaculo-em-acao-por-crianca.html",
+      "published_at": "2026-08-25T08:55:39.027917-03:00",
+      "category": "pop_poprock",
+      "format": "STORY",
+      "entities": [
+        "Kacey Musgraves",
+        "Middle of Nowhere Tour",
+        "Rhinestoned"
+      ],
+      "event_key": "kacey-musgraves-chicago-immigration-2026",
+      "fingerprint": "6769a76069f053e45890201c",
+      "source_hash": "d513de5c9e6ae927f410285a"
+    },
+    {
+      "title": "A impressão digital sonora: IA distingue pianistas do jazz a partir de gravações",
+      "url": "/editorial/2026/08/25/a-impressao-digital-sonora-ia-distingue-pianistas-do-jazz-a-partir-de-gravacoes.html",
+      "published_at": "2026-08-25T08:56:02.906700-03:00",
+      "category": "instruments",
+      "format": "FLASH",
+      "entities": [
+        "Bill Evans",
+        "Oscar Peterson",
+        "Thelonious Monk",
+        "Chick Corea",
+        "Keith Jarrett",
+        "McCoy Tyner",
+        "Ahmad Jamal",
+        "Huw Cheston"
+      ],
+      "event_key": "ia-identifica-pianistas-jazz-2026",
+      "fingerprint": "1e1fefa2089c028588816a9c",
+      "source_hash": "4a3b64a29589e19e08ab34c7"
+    },
+    {
+      "title": "Pistas do futuro: por que o rap brasileiro devia prestar atenção ao verão que voltou aos anos 80",
+      "url": "/editorial/2026/08/25/pistas-do-futuro-por-que-o-rap-brasileiro-devia-prestar-atencao-ao-verao-que-voltou-aos.html",
+      "published_at": "2026-08-25T08:57:49.299804-03:00",
+      "category": "brasil",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Tyga",
+        "Fenix Flexin",
+        "$TARFACE (álbum)",
+        "Rubberz (faixa)",
+        "Kendrick Lamar",
+        "Drake",
+        "BabyChiefDoit",
+        "Vivian Host",
+        "Oliver Wang",
+        "Egyptian Lover"
+      ],
+      "event_key": "verao-rap-anos80-2026",
+      "fingerprint": "a57d78b823b4b2a7c1f94b14",
+      "source_hash": "3c5b2ad5374238091768174b"
     }
   ]
 }
