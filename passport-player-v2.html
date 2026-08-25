@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex,nofollow">
+<title>Passport Player 24H™ · Passport Radio™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/passport-player-v2.css?v=202608251040">
+</head>
+<body class="live-page passport-player-v2-page">
+  <div class="ppv2-topline">PASSPORT RADIO™ · PLAYER 24H · KEEP THE SIGNAL ALIVE</div>
+
+  <header class="ppv2-header">
+    <a class="ppv2-brand" href="/radio.html" target="_blank" rel="noopener" aria-label="Abrir Passport Radio">
+      <img src="/images/passport-radio-definitive.jpg" alt="Passport Radio">
+      <span><strong>PASSPORT RADIO™</strong><small>PLAYER STANDALONE · V2 PILOT</small></span>
+    </a>
+    <div class="ppv2-header-actions">
+      <button id="ppv2Copy" type="button">COPIAR LINK</button>
+      <a href="/radio.html" target="_blank" rel="noopener">ABRIR PASSPORT ↗</a>
+    </div>
+  </header>
+
+  <main class="ppv2-layout">
+    <aside class="ppv2-rail" aria-label="Sinais Passport">
+      <div class="ppv2-rail-head">
+        <span>SINAIS</span>
+        <strong>ESCOLHA O TÚNEL.</strong>
+        <p>Uma janela. Todos os nossos sinais. A música continua enquanto você navega.</p>
+      </div>
+      <nav id="ppv2Channels" class="ppv2-channels"></nav>
+      <div class="ppv2-rail-foot">
+        <span class="ppv2-live-dot" aria-hidden="true"></span>
+        <span>PLAYER INDEPENDENTE</span>
+      </div>
+    </aside>
+
+    <section class="ppv2-stage" aria-live="polite">
+      <div class="ppv2-stage-grid" aria-hidden="true"></div>
+      <div class="ppv2-stage-copy">
+        <div class="ppv2-kicker" id="ppv2Kicker">PASSPORT RADIO™ · SIGNAL</div>
+        <h1 id="ppv2Title">Passport Player 24H™</h1>
+        <p id="ppv2Description">Carregando os motores preservados da Passport.</p>
+      </div>
+
+      <div class="ppv2-console">
+        <button class="ppv2-play" id="ppv2Play" type="button" aria-label="Reproduzir sinal" disabled>
+          <span id="ppv2PlayGlyph">▶</span>
+        </button>
+        <div class="ppv2-now">
+          <small>TOCANDO AGORA /</small>
+          <strong id="ppv2Now">AGUARDANDO MOTOR</strong>
+          <span id="ppv2Detail">Inicializando arquitetura independente…</span>
+        </div>
+        <div class="ppv2-state">
+          <small>STATUS</small>
+          <strong id="ppv2Status">BOOT</strong>
+        </div>
+      </div>
+
+      <div id="ppv2Subcontrols" class="ppv2-subcontrols" hidden></div>
+
+      <div class="ppv2-message" id="ppv2Message">
+        <strong>UM PLAYER. O SITE INTEIRO LIVRE.</strong>
+        <span>Abra matérias, agenda, loja e arquivos em outra janela. Este player continua independente.</span>
+      </div>
+
+      <footer class="ppv2-footer">
+        <span>EVERY SONG IS A DESTINATION.</span>
+        <button type="button" id="ppv2Close">FECHAR PLAYER</button>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ENGINE BAY
+       Off-screen hosts only. Existing Passport engines mount here unchanged.
+       This page never duplicates stream URLs or player state machines. -->
+  <div id="ppv2EngineBay" class="ppv2-engine-bay" aria-hidden="true">
+    <div id="player"></div>
+    <div id="passport80s"></div>
+    <div id="passport80sPlayer"></div>
+    <div id="passport-live-radio"></div>
+  </div>
+
+  <script src="/js/passport-window-bridge.js?v=202608242305"></script>
+  <script src="/js/passport-player-v2.js?v=202608251040"></script>
+</body>
+</html>
