@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = '<script src="/js/passport-amazon-affiliate.js?v=202608251738" defer></script>'
+SCRIPT = '<script src="/js/passport-amazon-affiliate.js?v=202608251829" defer></script>'
 MARKER = 'passport-amazon-affiliate.js'
+SCRIPT_RE = re.compile(
+    r'<script\s+src=["\']/js/passport-amazon-affiliate\.js(?:\?v=[^"\']*)?["\']\s+defer></script>',
+    re.IGNORECASE,
+)
 
 # Protected standalone player surfaces: do not touch the babies.
 EXCLUDED = {
@@ -23,8 +28,16 @@ def should_skip(path: Path) -> bool:
 
 def inject(path: Path) -> bool:
     text = path.read_text(encoding='utf-8', errors='strict')
+
+    # Existing pages: refresh the version so the corrected commercial layer
+    # is fetched immediately instead of waiting on a cached script URL.
     if MARKER in text:
+        updated = SCRIPT_RE.sub(SCRIPT, text)
+        if updated != text:
+            path.write_text(updated, encoding='utf-8')
+            return True
         return False
+
     lower = text.lower()
     idx = lower.rfind('</body>')
     if idx < 0:
@@ -45,7 +58,7 @@ def main() -> int:
         except UnicodeDecodeError:
             continue
 
-    print(f'Amazon affiliate injection: {len(changed)} HTML file(s) updated.')
+    print(f'Affiliate layer injection/refresh: {len(changed)} HTML file(s) updated.')
     for item in changed[:100]:
         print(f'  + {item}')
     if len(changed) > 100:
