@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T10:40:22.449097-03:00",
+  "updated_at": "2026-08-25T11:34:39.310320-03:00",
   "daily_capacity": 400,
   "ledger": [
     {
@@ -439,6 +439,119 @@
       "event_key": "laneway-2027-reform",
       "fingerprint": "2c72b23ddf83d02d2e7fb5cf",
       "source_hash": "38dac399f246f35bf3c21220"
+    },
+    {
+      "title": "Quando o passado soa maior: os cinco shows que salvaram o C6 no Rock",
+      "url": "/editorial/2026/08/25/quando-o-passado-soa-maior-os-cinco-shows-que-salvaram-o-c6-no-rock.html",
+      "published_at": "2026-08-25T11:30:35.644900-03:00",
+      "category": "brasil",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Os Paralamas do Sucesso",
+        "Selvagem?",
+        "Dado Villa-Lobos",
+        "Marcelo Bonfá",
+        "Legião Urbana – Dois",
+        "Ira!",
+        "Vivendo e Não Aprendendo",
+        "Cazuza",
+        "Paulo Ricardo",
+        "RPM – Rádio Pirata Ao Vivo"
+      ],
+      "event_key": "c6-no-rock-2026-top5",
+      "fingerprint": "307980b8c757315398f7a800",
+      "source_hash": "a65c75da5129f6978ea5eca8"
+    },
+    {
+      "title": "Savatage Desenha Seu Retorno de Longo Prazo, com Brasil no Mapa de 2027",
+      "url": "/editorial/2026/08/25/savatage-desenha-seu-retorno-de-longo-prazo-com-brasil-no-mapa-de-2027.html",
+      "published_at": "2026-08-25T11:31:10.153541-03:00",
+      "category": "brasil",
+      "format": "LIVE_SIGNAL",
+      "entities": [
+        "Savatage",
+        "Johnny Lee Middleton",
+        "Jon Oliva",
+        "Trans-Siberian Orchestra",
+        "Monsters of Rock"
+      ],
+      "event_key": "savatage-2027-south-america",
+      "fingerprint": "b2ff10bd1047fd88e1ea93c3",
+      "source_hash": "7f3cd7df3e1fe1b601a70093"
+    },
+    {
+      "title": "Padrão de saídas: como o Slipknot transformou demissões em rotina pública",
+      "url": "/editorial/2026/08/25/padrao-de-saidas-como-o-slipknot-transformou-demissoes-em-rotina-publica.html",
+      "published_at": "2026-08-25T11:32:46.405222-03:00",
+      "category": "brasil",
+      "format": "FLASH",
+      "entities": [
+        "Slipknot",
+        "Joey Jordison",
+        "Chris Fehn",
+        "Craig Jones",
+        "Jay Weinberg",
+        "Sid Wilson",
+        "Paul Gray",
+        "Iowa",
+        "Vol. 3: (The Subliminal Verses)"
+      ],
+      "event_key": "slipknot-demissoes-2026",
+      "fingerprint": "9ee2c0d799cad3b21137a374",
+      "source_hash": "b08a3189d8923bfd71515efd"
+    },
+    {
+      "title": "Queens of the Stone Age costura o imperfeito em 'Perfecth' — novo álbum chega em outubro",
+      "url": "/editorial/2026/08/25/queens-of-the-stone-age-costura-o-imperfeito-em-perfecth-novo-album-chega-em-outubro.html",
+      "published_at": "2026-08-25T11:33:30.042844-03:00",
+      "category": "classic_rock",
+      "format": "FLASH",
+      "entities": [
+        "Queens of the Stone Age",
+        "Perfecth",
+        "Insignificant Other",
+        "Matador Records"
+      ],
+      "event_key": "qotsa-perfecth-announcement-2026",
+      "fingerprint": "b7b568bddbd517a5e07d1600",
+      "source_hash": "19621cc0d04b35d6c3c4e9c2"
+    },
+    {
+      "title": "Quando a Batida Cansa: Chris Slade Encerra Seis Décadas de Compasso",
+      "url": "/editorial/2026/08/25/quando-a-batida-cansa-chris-slade-encerra-seis-decadas-de-compasso.html",
+      "published_at": "2026-08-25T11:34:07.775870-03:00",
+      "category": "classic_rock",
+      "format": "MR_NOMAD",
+      "entities": [
+        "Chris Slade",
+        "AC/DC",
+        "David Gilmour",
+        "Tom Jones",
+        "Chris Slade Timeline",
+        "The Razor's Edge"
+      ],
+      "event_key": "chris-slade-retirement-2026",
+      "fingerprint": "223a62a12a8886b26d489002",
+      "source_hash": "d01294de0ae5077f9d3a7fe2"
+    },
+    {
+      "title": "Mike D Desaprende: Retorno Criativo Após 14 Anos de Silêncio",
+      "url": "/editorial/2026/08/25/mike-d-desaprende-retorno-criativo-apos-14-anos-de-silencio.html",
+      "published_at": "2026-08-25T11:34:39.309247-03:00",
+      "category": "pop_poprock",
+      "format": "FLASH",
+      "entities": [
+        "Mike D",
+        "Thank You",
+        "Beastie Boys",
+        "Adam Yauch",
+        "Skyler Diamond",
+        "Davis Diamond",
+        "Mike D 5D"
+      ],
+      "event_key": "mike-d-thank-you-2026",
+      "fingerprint": "d66774bb6dce473cbdedbee3",
+      "source_hash": "d12ad9f91030cb76b45ae998"
     }
   ]
 }
