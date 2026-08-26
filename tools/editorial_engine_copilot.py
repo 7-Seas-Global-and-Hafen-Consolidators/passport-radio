@@ -2,10 +2,10 @@
 """Copilot-backed launcher for Passport Editorial Engine™ Global.
 
 Uses GitHub Copilot CLI with a personal fine-grained token supplied by the
-workflow. The worldwide runtime owns the approved 1,200-signal reservoir,
-800/day public hard stop, 10-story maximum batch and 24-hour pacing. The base
-engine keeps deduplication, validation, ledger/feed handling and the public
-source firewall.
+workflow. The base engine now owns the approved 1,200-signal capacity,
+800/day public hard stop, 10-story maximum batch, 24-hour pacing, multilingual
+source fetch and the native Mr. Nomad renderer. This launcher only supplies the
+multilingual editorial prompt and Copilot generator.
 """
 from __future__ import annotations
 
@@ -13,11 +13,9 @@ import os
 import subprocess
 
 import editorial_engine as engine
-import editorial_engine_global as global_runtime
-import editorial_renderer_global as global_renderer
 
 
-NITRO_HARD_CAP = global_runtime.RESERVOIR_HARD_CAP
+NITRO_HARD_CAP = engine.RESERVOIR_HARD_CAP
 
 
 def install_global_prompt() -> None:
@@ -58,10 +56,6 @@ def call_copilot(candidate, source_text, config):
     if not token:
         raise RuntimeError("Copilot authentication token is not available")
 
-    # Copilot CLI prefers COPILOT_GITHUB_TOKEN, while some GitHub CLI
-    # validation paths consult GH_TOKEN/GITHUB_TOKEN. Keep all three aligned
-    # inside this subprocess only; checkout/artifact/push continue to use the
-    # workflow's normal github.token.
     env["COPILOT_GITHUB_TOKEN"] = token
     env["GH_TOKEN"] = token
     env["GITHUB_TOKEN"] = token
@@ -80,11 +74,10 @@ def call_copilot(candidate, source_text, config):
 
 
 install_global_prompt()
-engine.render_article = global_renderer.render_article
 engine.call_openai = call_copilot
-# The base generator uses this variable only as a readiness gate before calling
-# the pluggable generator. Production generation is handled by Copilot here.
+# The base engine uses this variable only as a readiness gate before invoking
+# the pluggable generator. The launcher replaces the generator with Copilot.
 os.environ.setdefault("OPENAI_API_KEY", "passport-copilot-launcher")
 
 if __name__ == "__main__":
-    raise SystemExit(global_runtime.main())
+    raise SystemExit(engine.main())
