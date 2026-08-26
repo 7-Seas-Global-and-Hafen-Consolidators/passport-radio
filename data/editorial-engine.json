@@ -1,11 +1,11 @@
 {
-  "version": 3,
-  "daily_target": 500,
-  "daily_capacity": 700,
-  "max_batch": 12,
+  "version": 4,
+  "daily_target": 800,
+  "daily_capacity": 1200,
+  "max_batch": 10,
   "cooldown_days": 45,
-  "ledger_size": 50000,
-  "feed_size": 1500,
+  "ledger_size": 100000,
+  "feed_size": 5000,
   "model": "gpt-5.6-luna",
   "web_search": true,
   "max_output_tokens": 6500,
@@ -39,6 +39,17 @@
     "loudwire.com",
     "stereogum.com",
     "pitchfork.com",
-    "consequence.net"
+    "consequence.net",
+    "soompi.com",
+    "billboard-japan.com",
+    "barks.jp",
+    "natalie.mu",
+    "scmp.com",
+    "bandwagon.asia",
+    "rollingstoneindia.com",
+    "scenenoise.com",
+    "arabnews.com",
+    "musicinafrica.net",
+    "dancehallmag.com"
   ]
 }
