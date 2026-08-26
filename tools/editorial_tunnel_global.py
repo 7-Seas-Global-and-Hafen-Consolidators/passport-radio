@@ -285,25 +285,6 @@ def choose_daily_global(articles: list[base.Article], limit: int) -> list[base.A
 base.choose_daily = choose_daily_global
 
 
-def raise_base_limits() -> None:
-    """Raise only numeric clamps embedded in the base tunnel main()."""
-    code = base.main.__code__
-    patched: list[Any] = []
-    for value in code.co_consts:
-        if value == 10:
-            patched.append(GLOBAL_PER_SOURCE_CAP)
-        elif value == 16:
-            patched.append(GLOBAL_WORKERS_CAP)
-        elif value == 50:
-            patched.append(GLOBAL_DAILY_RESERVOIR)
-        elif value == 120:
-            patched.append(GLOBAL_RADAR_CAP)
-        else:
-            patched.append(value)
-    base.main.__code__ = code.replace(co_consts=tuple(patched))
-
-
-raise_base_limits()
 
 if __name__ == "__main__":
     raise SystemExit(base.main())

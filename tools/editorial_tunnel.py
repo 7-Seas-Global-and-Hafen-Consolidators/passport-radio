@@ -11,7 +11,7 @@ What it does:
 - deduplicates the same story appearing in multiple places;
 - filters stories already covered by Passport HTML;
 - scores trend / Passport fit / archive value;
-- selects a balanced Top 20 editorial queue;
+- selects a balanced worldwide editorial reservoir;
 - writes JSON + Markdown outputs for GitHub Actions artifacts.
 
 It does NOT publish or alter Passport pages.
@@ -38,6 +38,15 @@ from urllib.request import Request, urlopen
 USER_AGENT = "PassportEditorialTunnel/1.0 (+https://www.passportradio.online/)"
 MAX_BYTES = 2_500_000
 DEFAULT_TIMEOUT = 12
+DAILY_RESERVOIR_HARD_CAP = 1200
+PER_SOURCE_HARD_CAP = 24
+WORKERS_HARD_CAP = 32
+RADAR_HARD_CAP = 2400
+GLOBAL_ACCEPT_LANGUAGE = (
+    "pt-BR,pt;q=1.0,en-US;q=0.95,en;q=0.95,es;q=0.9,fr;q=0.85,de;q=0.8,"
+    "it;q=0.8,ja;q=0.75,ko;q=0.75,zh-CN;q=0.75,zh-TW;q=0.7,ar;q=0.7,"
+    "tr;q=0.65,ru;q=0.65,*;q=0.2"
+)
 STOPWORDS = {
     "a","an","and","are","as","at","be","been","but","by","de","da","das","do","dos",
     "e","em","for","from","in","is","it","la","le","na","nas","no","nos","o","of","on",
@@ -296,7 +305,7 @@ def fetch_html(url: str, timeout: int = DEFAULT_TIMEOUT) -> tuple[str, str]:
         headers={
             "User-Agent": USER_AGENT,
             "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.5",
-            "Accept-Language": "en-US,en;q=0.8,pt-BR;q=0.7,pt;q=0.6",
+            "Accept-Language": GLOBAL_ACCEPT_LANGUAGE,
             "Cache-Control": "no-cache",
         },
     )
@@ -712,10 +721,10 @@ def main() -> int:
     root = Path.cwd()
     config = json.loads(Path(args.sources).read_text("utf-8"))
     sources = config["sources"]
-    per_source = max(1, min(10, args.per_source))
+    per_source = max(1, min(PER_SOURCE_HARD_CAP, args.per_source))
     max_age = max(12, min(168, args.max_age_hours))
 
-    worker_count = max(1, min(16, args.workers))
+    worker_count = max(1, min(WORKERS_HARD_CAP, args.workers))
     discovered: list[tuple[dict[str, Any], str, str]] = []
     health: list[dict[str, Any]] = []
 
@@ -763,7 +772,7 @@ def main() -> int:
 
     clustered = merge_duplicates([a for a in articles if a.total_score > 0])
     clustered.sort(key=lambda a: (a.total_score, a.passport_score), reverse=True)
-    selected = choose_daily(clustered, max(1, min(50, args.daily_limit)))
+    selected = choose_daily(clustered, max(1, min(DAILY_RESERVOIR_HARD_CAP, args.daily_limit)))
 
     out = Path(args.output_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -776,11 +785,11 @@ def main() -> int:
         "article_metadata_count": len(articles),
         "cluster_count": len(clustered),
         "already_covered_count": sum(1 for a in clustered if a.already_covered),
-        "items": [article_to_dict(a) for a in clustered[:120]],
+        "items": [article_to_dict(a) for a in clustered[:RADAR_HARD_CAP]],
     }
     daily_payload = {
         "generated_at": now.isoformat(),
-        "target": args.daily_limit,
+        "target": max(1, min(DAILY_RESERVOIR_HARD_CAP, args.daily_limit)),
         "selected": [article_to_dict(a) for a in selected],
     }
 
