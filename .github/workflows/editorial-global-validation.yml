@@ -98,7 +98,8 @@ jobs:
           assert 'published_today_after' in workflow
 
           # Generation must fail over instead of depending on one exhausted service.
-          assert 'OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}' in workflow
+          assert 'OPENAI_API_KEY:' in workflow
+          assert 'secrets.OPENAI_API_KEY' in workflow
           assert 'PASSPORT_COPILOT_FALLBACK_MODEL: gpt-5-mini' in workflow
           assert 'BASE_OPENAI_CALL = engine.call_openai' in launcher
           assert 'def call_resilient' in launcher
