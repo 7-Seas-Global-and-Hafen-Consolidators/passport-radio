@@ -8,7 +8,9 @@ and a generation failover chain:
 
 1. OpenAI Responses API when OPENAI_API_KEY is configured.
 2. GitHub Copilot CLI using the configured/default model.
-3. GitHub Copilot CLI using GPT-5 mini as the quota-emergency fallback.
+3. GitHub Copilot CLI using the configured emergency model when available.
+4. GitHub Copilot CLI `auto`, allowing Copilot to select a model actually
+   available to the authenticated plan and policy.
 
 No backend changes the editorial firewall, deduplication or publication caps.
 """
@@ -26,6 +28,7 @@ REAL_OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
 COPILOT_EMERGENCY_MODEL = (
     os.environ.get("PASSPORT_COPILOT_FALLBACK_MODEL", "").strip() or "gpt-5-mini"
 )
+COPILOT_AUTO_MODEL = "auto"
 
 
 def install_global_prompt() -> None:
@@ -99,13 +102,14 @@ def call_resilient(candidate, source_text, config):
     try:
         return call_copilot(candidate, source_text, config)
     except Exception as exc:
-        primary_error = f"copilot_primary={type(exc).__name__}: {str(exc)[-700:]}"
-        errors.append(primary_error)
+        errors.append(f"copilot_primary={type(exc).__name__}: {str(exc)[-700:]}")
 
-    # GitHub documents that included Copilot models can remain available after
-    # a legacy premium-request quota is exhausted. GPT-5 mini is supported by
-    # Copilot CLI and is deliberately used only as the emergency lane.
-    if configured_model.lower() != COPILOT_EMERGENCY_MODEL.lower():
+    # Keep a specifically configured emergency model as a useful fast path, but
+    # do not assume every Copilot plan exposes every model to the CLI.
+    if (
+        COPILOT_EMERGENCY_MODEL
+        and configured_model.lower() != COPILOT_EMERGENCY_MODEL.lower()
+    ):
         try:
             return call_copilot(
                 candidate,
@@ -117,6 +121,21 @@ def call_resilient(candidate, source_text, config):
             errors.append(
                 f"copilot_{COPILOT_EMERGENCY_MODEL}={type(exc).__name__}: {str(exc)[-700:]}"
             )
+
+    # The current Copilot CLI documents `--model auto` as the plan/policy-aware
+    # selector. It is the final emergency lane after fixed-model attempts fail,
+    # so model retirement or entitlement differences cannot strand the Engine.
+    attempted_models = {configured_model.lower(), COPILOT_EMERGENCY_MODEL.lower()}
+    if COPILOT_AUTO_MODEL not in attempted_models:
+        try:
+            return call_copilot(
+                candidate,
+                source_text,
+                config,
+                model_override=COPILOT_AUTO_MODEL,
+            )
+        except Exception as exc:
+            errors.append(f"copilot_auto={type(exc).__name__}: {str(exc)[-700:]}")
 
     raise RuntimeError("All editorial generation backends failed | " + " | ".join(errors))
 
