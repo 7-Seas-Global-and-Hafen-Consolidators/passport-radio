@@ -7,10 +7,10 @@ variables inside the Copilot subprocess to the same personal token so GitHub
 CLI user validation cannot accidentally fall back to the GitHub Actions app
 token (which returns "Resource not accessible by integration" for /user).
 
-Operation 25/7 raises the operational hard ceiling to 700 publications/day for
-this Copilot-backed path. The publication target is controlled by the workflow
-and is currently 500/day. Editorial pacing, deduplication, source firewall and
-all validation rules from the base engine remain unchanged.
+Operation 25/7 Global raises the operational hard ceiling to 1,200 candidate
+publications/day for this Copilot-backed path. The workflow targets 800 public
+articles/day in batches of 10. Editorial deduplication, source firewall and all
+validation rules from the base engine remain unchanged.
 """
 from __future__ import annotations
 
@@ -21,7 +21,13 @@ import sys
 import editorial_engine as engine
 
 
-NITRO_HARD_CAP = 700
+NITRO_HARD_CAP = 1200
+NOMAD_SIGNATURE = (
+    '<div class="pe-closing pe-nomad-signature">'
+    '<small>— MR. NOMAD</small>'
+    '<p>Aguardo meus Nômades em nosso site.</p>'
+    '</div>'
+)
 
 
 def enable_nitro_capacity() -> None:
@@ -36,6 +42,19 @@ def enable_nitro_capacity() -> None:
         else:
             patched.append(value)
     engine.main.__code__ = code.replace(co_consts=tuple(patched))
+
+
+def install_nomad_signature() -> None:
+    """Append Mr. Nomad's signature to every newly rendered editorial page."""
+    original_render = engine.render_article
+
+    def render_with_nomad(article, url_path, related):
+        rendered = original_render(article, url_path, related)
+        if "pe-nomad-signature" in rendered:
+            return rendered
+        return rendered.replace("</article>", NOMAD_SIGNATURE + "</article>", 1)
+
+    engine.render_article = render_with_nomad
 
 
 def call_copilot(candidate, source_text, config):
@@ -77,6 +96,7 @@ def call_copilot(candidate, source_text, config):
 
 
 enable_nitro_capacity()
+install_nomad_signature()
 engine.call_openai = call_copilot
 # The base engine uses this variable only as a readiness gate before invoking
 # the pluggable generator. The launcher replaces the generator with Copilot.
