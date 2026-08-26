@@ -123,10 +123,13 @@ def call_resilient(candidate, source_text, config):
 
 install_global_prompt()
 engine.call_openai = call_resilient
-# The base engine uses OPENAI_API_KEY as a readiness gate. Keep a harmless
-# placeholder only when no real OpenAI key exists; call_resilient knows whether
-# the original secret was actually present before this assignment.
-os.environ.setdefault("OPENAI_API_KEY", "passport-resilient-launcher")
+# The base engine uses OPENAI_API_KEY only as a readiness gate before calling
+# the pluggable generator. GitHub Actions materializes an unset secret as an
+# empty environment variable, so replace both missing and blank values with a
+# harmless placeholder. REAL_OPENAI_KEY was captured above and still controls
+# whether the real OpenAI API is attempted.
+if not os.environ.get("OPENAI_API_KEY", "").strip():
+    os.environ["OPENAI_API_KEY"] = "passport-resilient-launcher"
 
 if __name__ == "__main__":
     raise SystemExit(engine.main())
