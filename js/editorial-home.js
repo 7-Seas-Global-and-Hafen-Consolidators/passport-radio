@@ -1,5 +1,5 @@
 (() => {
-  const src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489546241643636';
+  const src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7728480662290062';
   if (!document.querySelector('script[data-passport-adsense],script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
     const script = document.createElement('script');
     script.async = true;
@@ -12,22 +12,33 @@
 
 /* =========================================================
    PASSPORT HOME WIRE · GLOBAL SIGNALS 24H
-   Reads only the sanitized tunnel payload. No source names,
+   Reads only the sanitized PT-BR tunnel payload. No source names,
    source URLs or per-source health are rendered on the Home.
-   This block never touches players, player interlock or ads.
+   This block never touches players, player interlock or sponsor blocks.
    ========================================================= */
 (() => {
   const PREMIUM_ENDPOINT = '/data/editorial-feed.json';
-  const TUNNEL_ENDPOINT = 'https://global-signals-production.up.railway.app/feed';
+  const TUNNEL_ENDPOINT = 'https://global-signals-ptbr-production.up.railway.app/feed';
   const REFRESH_MS = 10 * 60 * 1000;
   const PAGE_SIZE = 30;
+  const STORAGE_KEY = 'passport-global-signals-ptbr-v1';
   const state = { premium: [], signals: [], visible: PAGE_SIZE, updatedAt: null, timer: null };
 
   const esc = (value = '') => String(value).replace(/[&<>'"]/g, (ch) => ({
     '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;'
   }[ch]));
 
-  const clean = (value = '') => String(value).replace(/\]\]>/g, '').replace(/\s+/g, ' ').trim();
+  const decodeEntities = (value = '') => {
+    const box = document.createElement('textarea');
+    box.innerHTML = String(value);
+    return box.value;
+  };
+
+  const clean = (value = '') => decodeEntities(String(value))
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\]\]>/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 
   const stamp = (value, full = false) => {
     const d = new Date(value);
@@ -45,6 +56,14 @@
       soul_rnb:'Soul · R&B', mpb_brazil:'MPB · Brasil'
     };
     return labels[value] || String(value).replace(/_/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+  };
+
+  const signalUrl = (signal) => `/signal.html?id=${encodeURIComponent(signal.id)}`;
+
+  const rememberSignals = (items) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ savedAt:Date.now(), items:items.slice(0, 240) }));
+    } catch (_) {}
   };
 
   const ensureStyle = () => {
@@ -71,7 +90,10 @@
         genre: clean(item.genre || 'Música'),
         language: clean(item.language || '')
       };
+
       if (!signal.title) return;
+      if (signal.language.toUpperCase() !== 'PT-BR') return;
+
       const key = signal.title.toLocaleLowerCase('pt-BR').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
       if (!key || seen.has(key)) return;
       seen.add(key);
@@ -98,8 +120,10 @@
     });
     if (!r.ok) throw new Error(`Tunnel ${r.status}`);
     const data = await r.json();
+    const items = sanitize(data);
+    if (items.length) rememberSignals(items);
     return {
-      items: sanitize(data),
+      items,
       generatedAt: data && (data.generated_at || data.updated_at || data.date) || null
     };
   };
@@ -132,33 +156,33 @@
     if (!s) return `
       <article class="passport-wire__hero passport-wire__hero--waiting">
         <div class="passport-wire__eyebrow"><span>RADAR GLOBAL</span><span>24H</span></div>
-        <h3>O radar está aquecendo.</h3>
-        <p>A Home continua inteira enquanto o túnel prepara o próximo snapshot.</p>
+        <h3>O radar está traduzindo o próximo lote.</h3>
+        <p>Só entra na Home o que já estiver em português.</p>
       </article>`;
 
     return `
-      <article class="passport-wire__hero">
+      <a class="passport-wire__hero" href="${esc(signalUrl(s))}">
         <div class="passport-wire__eyebrow"><span>PASSPORT SIGNAL</span><span>${esc(s.region)}</span></div>
         <h3>${esc(s.title)}</h3>
         <p>${esc(s.summary || 'Sinal detectado pelo radar editorial mundial da Passport.')}</p>
-        <small>${esc(stamp(s.date, true))} · ${esc(s.genre)}</small>
-      </article>`;
+        <small>${esc(stamp(s.date, true))} · ${esc(s.genre)} · PT-BR</small>
+      </a>`;
   };
 
   const rail = () => state.signals.slice(1, 7).map((s) => `
-    <article class="passport-wire__rail-item">
+    <a class="passport-wire__rail-item" href="${esc(signalUrl(s))}" style="display:block;text-decoration:none;color:inherit">
       <div><span>${esc(s.region)}</span><span>${esc(s.genre)}</span></div>
       <strong>${esc(s.title)}</strong>
-      <small>${esc(stamp(s.date))}${s.language ? ` · ${esc(s.language)}` : ''}</small>
-    </article>`).join('');
+      <small>${esc(stamp(s.date))} · PT-BR</small>
+    </a>`).join('');
 
   const card = (s, index) => `
-    <article class="passport-wire__signal${index < 3 ? ' passport-wire__signal--hot' : ''}">
+    <a class="passport-wire__signal${index < 3 ? ' passport-wire__signal--hot' : ''}" href="${esc(signalUrl(s))}" style="text-decoration:none;color:inherit">
       <div class="passport-wire__signal-meta"><span>${index < 3 ? 'AGORA' : 'PASSPORT SIGNAL'}</span><span>${esc(s.region)}</span></div>
       <h4>${esc(s.title)}</h4>
       ${s.summary ? `<p>${esc(s.summary)}</p>` : ''}
-      <small>${esc(s.genre)}${s.language ? ` · ${esc(s.language)}` : ''}${s.date ? ` · ${esc(stamp(s.date))}` : ''}</small>
-    </article>`;
+      <small>${esc(s.genre)} · PT-BR${s.date ? ` · ${esc(stamp(s.date))}` : ''}</small>
+    </a>`;
 
   const render = () => {
     const section = mount();
@@ -173,7 +197,7 @@
           <div><small>PASSPORT RADIO · GLOBAL WIRE 24H</small><h2>O mundo da música.<br>Sem intervalo.</h2></div>
           <div class="passport-wire__live" aria-live="polite">
             <span></span><strong>AO VIVO</strong>
-            <small>${total ? `${total} SINAIS NO RADAR` : 'RADAR CONECTANDO'}${updated ? ` · ${esc(updated)}` : ''}</small>
+            <small>${total ? `${total} SINAIS EM PORTUGUÊS` : 'RADAR TRADUZINDO'}${updated ? ` · ${esc(updated)}` : ''}</small>
           </div>
         </header>
 
@@ -181,7 +205,7 @@
           ${hero()}
           <aside class="passport-wire__rail" aria-label="Últimos sinais globais">
             <div class="passport-wire__rail-title">ÚLTIMAS AGORA</div>
-            ${rail() || '<p class="passport-wire__waiting">Aguardando o próximo snapshot global.</p>'}
+            ${rail() || '<p class="passport-wire__waiting">Traduzindo o próximo snapshot global.</p>'}
           </aside>
         </div>
 
@@ -195,14 +219,14 @@
         </div>
 
         <div class="passport-wire__stream">
-          ${visible.map(card).join('') || '<div class="passport-wire__waiting">O túnel está preparando o próximo lote. O restante da Home continua normalmente.</div>'}
+          ${visible.map(card).join('') || '<div class="passport-wire__waiting">O túnel está traduzindo o próximo lote. Nada em outro idioma entra aqui.</div>'}
         </div>
 
         ${state.visible < total ? `<div class="passport-wire__more-wrap"><button class="passport-wire__more" type="button" data-passport-wire-more>MAIS NOTÍCIAS · ${Math.min(PAGE_SIZE, total - state.visible)} →</button></div>` : ''}
 
         <footer class="passport-wire__footer">
           <div><strong>— MR. NOMAD</strong><span>Every Song Is A Destination.</span></div>
-          <small>RADAR GLOBAL · ATUALIZAÇÃO AUTOMÁTICA 24H</small>
+          <small>RADAR GLOBAL · PT-BR · ATUALIZAÇÃO AUTOMÁTICA 24H</small>
         </footer>
       </div>`;
 
@@ -221,7 +245,7 @@
       state.updatedAt = next.generatedAt || new Date().toISOString();
       render();
     } catch (_) {
-      // Keep the last good snapshot. Never collapse the Home on tunnel failure.
+      // Keep the last good PT-BR snapshot. Never collapse the Home on tunnel failure.
     }
   };
 
