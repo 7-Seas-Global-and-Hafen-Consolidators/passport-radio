@@ -36,7 +36,7 @@ jobs:
             tools/editorial_tunnel.py \
             tools/editorial_tunnel_global.py
 
-      - name: Validate worldwide source network and operating invariants
+      - name: Validate worldwide source network and 6-per-day operating policy
         run: |
           python - <<'PY'
           import datetime as dt
@@ -51,9 +51,13 @@ jobs:
           launcher=Path('tools/editorial_engine_copilot.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
-          assert cfg['daily_target'] == 800, cfg
+          # Permanent public policy: six selected stories/day from a 1,200-signal radar.
+          assert cfg['version'] >= 5, cfg
+          assert cfg['daily_target'] == 6, cfg
           assert cfg['daily_capacity'] == 1200, cfg
-          assert cfg['max_batch'] == 10, cfg
+          assert cfg['max_batch'] == 1, cfg
+          assert cfg['generation_call_budget_per_run'] == 1, cfg
+          assert cfg['model'] == 'auto', cfg
           assert len(sources) >= 120, len(sources)
 
           keys=[(x.get('domain'), x.get('url')) for x in sources]
@@ -73,48 +77,51 @@ jobs:
           import editorial_tunnel as base_tunnel
           import editorial_tunnel_global as global_tunnel
 
-          # Native Engine limits: 1200 private reservoir -> hard stop 800 public,
-          # with no more than 10 in any engine subcycle.
-          assert engine.PUBLICATION_HARD_CAP == 800
+          # Base Engine keeps broad native safety ceilings, but Actions policy clamps
+          # every public execution to 6/day and one story per run.
+          assert engine.PUBLICATION_HARD_CAP >= 6
           assert engine.RESERVOIR_HARD_CAP == 1200
-          assert engine.MAX_BATCH_HARD_CAP == 10
-          assert engine.RESERVOIR_HARD_CAP > engine.PUBLICATION_HARD_CAP
+          assert engine.MAX_BATCH_HARD_CAP >= 1
 
-          # Pacing can publish fewer than 10 or zero when already on pace.
-          fixed=dt.datetime(2026,8,26,12,0,0,tzinfo=dt.timezone(dt.timedelta(hours=-3)))
+          # With an hourly scheduler, pacing only asks for a story roughly every 4h.
+          fixed=dt.datetime(2026,8,26,0,17,0,tzinfo=dt.timezone(dt.timedelta(hours=-3)))
           engine.now_sp=lambda: fixed
-          assert engine.desired_batch(800, 400, 10) == 0
-          assert engine.desired_batch(800, 395, 10) == 5
-          assert engine.desired_batch(800, 0, 10) == 10
+          assert engine.desired_batch(6, 0, 1) == 1
+          assert engine.desired_batch(6, 1, 1) == 0
+          fixed=dt.datetime(2026,8,26,12,17,0,tzinfo=dt.timezone(dt.timedelta(hours=-3)))
+          engine.now_sp=lambda: fixed
+          assert engine.desired_batch(6, 3, 1) == 1
+          assert engine.desired_batch(6, 4, 1) == 0
 
-          # Scheduled operation uses pacing. Catch-up may repeat subcycles to recover
-          # GitHub schedule delays, but every invocation remains hard-capped at 10.
+          # Scheduled and manual operation cannot ask Actions for 800/10 anymore.
+          assert "cron: '17 * * * *'" in workflow
+          assert 'default: "6"' in workflow
           assert 'default: "-1"' in workflow
-          assert 'FORCE="-1"' in workflow
-          assert 'daily_target must be 1..800' in workflow
+          assert 'TARGET="6"' in workflow
+          assert 'daily_target must be 1..6' in workflow
+          assert 'force_batch must be -1..1' in workflow
           assert '--capacity 1200' in workflow
-          assert '--max-batch 10' in workflow
-          assert 'CYCLES=6' in workflow
-          assert 'published_today_after' in workflow
+          assert '--max-batch 1' in workflow
+          assert 'CYCLES=6' not in workflow
+          assert 'CYCLES=' not in workflow
+          assert '\n  push:' not in workflow
+          assert 'Global 1200 → 6' in workflow
 
-          # Generation must fail over instead of depending on one exhausted service.
-          assert 'OPENAI_API_KEY:' in workflow
-          assert 'secrets.OPENAI_API_KEY' in workflow
-          assert 'PASSPORT_COPILOT_FALLBACK_MODEL: gpt-5-mini' in workflow
-          assert 'BASE_OPENAI_CALL = engine.call_openai' in launcher
-          assert 'def call_resilient' in launcher
-          assert 'gpt-5-mini' in launcher
-          assert 'All editorial generation backends failed' in launcher
+          # Quota-economy generation: one Copilot call, model auto, no paid OpenAI API
+          # lane and no fixed gpt-5-mini retry.
+          assert 'PASSPORT_EDITORIAL_MODEL: auto' in workflow
+          assert 'OPENAI_API_KEY:' not in workflow
+          assert 'PASSPORT_COPILOT_FALLBACK_MODEL' not in workflow
+          assert 'GENERATION_CALL_BUDGET = 1' in launcher
+          assert 'quota_economy_generation_budget_exhausted' in launcher
+          assert 'COPILOT_MODEL' in launcher
+          assert 'or "auto"' in launcher
+          assert '"--model"' in launcher
+          assert 'gpt-5-mini' not in launcher
+          assert 'BASE_OPENAI_CALL' not in launcher
+          assert 'passport-copilot-quota-economy' in launcher
           assert 'Enforce truthful editorial health' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
-
-          # GitHub Actions exposes an unset secret as an empty environment value.
-          # The launcher must replace that blank only for the base-engine readiness
-          # gate while REAL_OPENAI_KEY remains the source of truth for API usage.
-          assert 'REAL_OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "").strip()' in launcher
-          assert 'if not os.environ.get("OPENAI_API_KEY", "").strip():' in launcher
-          assert 'os.environ["OPENAI_API_KEY"] = "passport-resilient-launcher"' in launcher
-          assert 'setdefault("OPENAI_API_KEY"' not in launcher
 
           # Editorial automation is isolated from commercial/site-wide mutation.
           assert 'inject_amazon_affiliate.py' not in workflow
@@ -135,7 +142,7 @@ jobs:
           assert 'Every Song Is A Destination.' in rendered
           assert 'Aguardo meus Nômades na Passport Radio.' in rendered
 
-          # Multilingual discovery/factual fetch must not be pt/en-only.
+          # Multilingual worldwide discovery remains intact.
           for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
               assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang
               assert lang in base_tunnel.GLOBAL_ACCEPT_LANGUAGE, lang
@@ -152,10 +159,10 @@ jobs:
           assert 'raise_base_limits' not in global_tunnel_text
           assert 'co_consts' not in global_tunnel_text
 
-          # Editorial firewall stays configured and public language stays PT-BR.
+          # Editorial firewall and PT-BR public output remain protected.
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
           assert '<html lang="pt-BR">' in rendered
 
-          print(f'validated {len(sources)} worldwide source entries; empty-secret failover; 1200 reservoir / 800 hard stop / max subcycle 10')
+          print(f'validated {len(sources)} worldwide source entries; 1200 radar / 6 public per day / 1 Copilot call per run / auto model')
           PY
