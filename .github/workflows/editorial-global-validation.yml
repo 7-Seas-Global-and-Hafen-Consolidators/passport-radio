@@ -48,6 +48,7 @@ jobs:
           src=json.loads(Path('data/editorial-sources-global.json').read_text('utf-8'))
           sources=src.get('sources', [])
           workflow=Path('.github/workflows/editorial-engine.yml').read_text('utf-8')
+          launcher=Path('tools/editorial_engine_copilot.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
           assert cfg['daily_target'] == 800, cfg
@@ -73,7 +74,7 @@ jobs:
           import editorial_tunnel_global as global_tunnel
 
           # Native Engine limits: 1200 private reservoir -> hard stop 800 public,
-          # with no more than 10 in any cycle.
+          # with no more than 10 in any engine subcycle.
           assert engine.PUBLICATION_HARD_CAP == 800
           assert engine.RESERVOIR_HARD_CAP == 1200
           assert engine.MAX_BATCH_HARD_CAP == 10
@@ -86,12 +87,31 @@ jobs:
           assert engine.desired_batch(800, 395, 10) == 5
           assert engine.desired_batch(800, 0, 10) == 10
 
-          # The scheduled workflow must use pacing, while manual override remains possible.
+          # Scheduled operation uses pacing. Catch-up may repeat subcycles to recover
+          # GitHub schedule delays, but every invocation remains hard-capped at 10.
           assert 'default: "-1"' in workflow
           assert 'FORCE="-1"' in workflow
           assert 'daily_target must be 1..800' in workflow
           assert '--capacity 1200' in workflow
           assert '--max-batch 10' in workflow
+          assert 'CYCLES=6' in workflow
+          assert 'published_today_after' in workflow
+
+          # Generation must fail over instead of depending on one exhausted service.
+          assert 'OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}' in workflow
+          assert 'PASSPORT_COPILOT_FALLBACK_MODEL: gpt-5-mini' in workflow
+          assert 'BASE_OPENAI_CALL = engine.call_openai' in launcher
+          assert 'def call_resilient' in launcher
+          assert 'gpt-5-mini' in launcher
+          assert 'All editorial generation backends failed' in launcher
+          assert 'Enforce truthful editorial health' in workflow
+          assert 'EDITORIAL BLOCKED' in workflow
+
+          # Editorial automation is isolated from commercial/site-wide mutation.
+          assert 'inject_amazon_affiliate.py' not in workflow
+          assert 'Inject Amazon affiliate layer' not in workflow
+          assert "git add -- '*.html'" not in workflow
+          assert "git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/" in workflow
 
           # Mr. Nomad belongs to the renderer template itself.
           sample={
@@ -128,5 +148,5 @@ jobs:
           assert forbidden and len(forbidden) >= 10
           assert '<html lang="pt-BR">' in rendered
 
-          print(f'validated {len(sources)} worldwide source entries; 1200 reservoir / 800 hard stop / max batch 10')
+          print(f'validated {len(sources)} worldwide source entries; resilient failover; 1200 reservoir / 800 hard stop / max subcycle 10')
           PY
