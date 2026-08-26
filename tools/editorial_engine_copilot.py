@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Resilient launcher for Passport Editorial Engine™ Global.
+"""Quota-economy launcher for Passport Editorial Engine™ Global.
 
-The base engine owns the approved 1,200-signal reservoir, 800/day public hard
-stop, 10-story maximum batch, 24-hour pacing, multilingual factual fetch and
-native Mr. Nomad renderer. This launcher supplies the worldwide PT-BR prompt
-and a generation failover chain:
+The worldwide Radar/Tunnel may keep up to 1,200 selected signals. Public operation
+is intentionally small and quality-first: six publication opportunities per day,
+one article maximum per Engine run and one Copilot generation call maximum per run.
 
-1. OpenAI Responses API when OPENAI_API_KEY is configured.
-2. GitHub Copilot CLI using the configured/default model.
-3. GitHub Copilot CLI using GPT-5 mini as the quota-emergency fallback.
+Generation uses GitHub Copilot CLI with model `auto`, allowing Copilot to select a
+model actually available to the account. There is no OpenAI API paid fallback and
+no second Copilot retry lane. If the single generation call fails, the run reports
+the failure and waits for the next paced window instead of burning more quota.
 
-No backend changes the editorial firewall, deduplication or publication caps.
+No backend changes the editorial firewall, deduplication, PT-BR renderer or native
+Mr. Nomad signature.
 """
 from __future__ import annotations
 
@@ -21,15 +22,13 @@ import editorial_engine as engine
 
 
 NITRO_HARD_CAP = engine.RESERVOIR_HARD_CAP
-BASE_OPENAI_CALL = engine.call_openai
-REAL_OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
-COPILOT_EMERGENCY_MODEL = (
-    os.environ.get("PASSPORT_COPILOT_FALLBACK_MODEL", "").strip() or "gpt-5-mini"
-)
+COPILOT_MODEL = os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip() or "auto"
+GENERATION_CALL_BUDGET = 1
+_generation_calls_used = 0
 
 
 def install_global_prompt() -> None:
-    """Tell every generator how to treat multilingual worldwide discovery."""
+    """Tell the generator how to treat multilingual worldwide discovery."""
     original_build_prompt = engine.build_prompt
 
     def build_prompt_global(candidate, source_text, config):
@@ -39,7 +38,9 @@ def install_global_prompt() -> None:
             "Compreenda e reconstrua os fatos em português do Brasil sem tradução literal, "
             "preservando grafia oficial de artistas, bandas, álbuns, locais e nomes próprios. "
             "Não trate cenas fora do eixo EUA-Reino Unido-Brasil como curiosidade exótica: "
-            "dê contexto local, musical e histórico com o mesmo rigor editorial."
+            "dê contexto local, musical e histórico com o mesmo rigor editorial. "
+            "Esta é uma seleção de apenas seis publicações por dia entre um radar global amplo: "
+            "trate a pauta como peça editorial de alto valor, sem enchimento, repetição ou texto genérico."
         )
         language = str(candidate.get("language") or "não informado")
         axes = ", ".join(str(x) for x in (candidate.get("categories") or [])[:12])
@@ -49,13 +50,18 @@ def install_global_prompt() -> None:
     engine.build_prompt = build_prompt_global
 
 
-def call_copilot(candidate, source_text, config, model_override: str = ""):
+def call_copilot(candidate, source_text, config):
     instructions, input_text = engine.build_prompt(candidate, source_text, config)
     prompt = instructions + "\n\n" + input_text
-    cmd = ["copilot", "-p", prompt, "-s", "--no-ask-user"]
-    model = model_override.strip() or os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip()
-    if model:
-        cmd.extend(["--model", model])
+    cmd = [
+        "copilot",
+        "-p",
+        prompt,
+        "-s",
+        "--no-ask-user",
+        "--model",
+        COPILOT_MODEL,
+    ]
 
     env = os.environ.copy()
     token = (
@@ -83,53 +89,32 @@ def call_copilot(candidate, source_text, config, model_override: str = ""):
     return engine.parse_json_text(proc.stdout)
 
 
-def call_resilient(candidate, source_text, config):
-    """Generate with automatic backend failover without weakening validation."""
-    errors: list[str] = []
+def call_quota_economy(candidate, source_text, config):
+    """Spend at most one Copilot generation request in an Engine process."""
+    global _generation_calls_used
 
-    if REAL_OPENAI_KEY:
-        try:
-            return BASE_OPENAI_CALL(candidate, source_text, config)
-        except Exception as exc:  # the next backend may still be healthy
-            errors.append(f"openai_api={type(exc).__name__}: {str(exc)[-700:]}")
-    else:
-        errors.append("openai_api=OPENAI_API_KEY not configured")
+    configured_budget = int(config.get("generation_call_budget_per_run", 1))
+    if configured_budget != GENERATION_CALL_BUDGET:
+        raise RuntimeError(
+            f"invalid generation_call_budget_per_run={configured_budget}; operational budget is 1"
+        )
+    if _generation_calls_used >= GENERATION_CALL_BUDGET:
+        raise RuntimeError("quota_economy_generation_budget_exhausted")
 
-    configured_model = os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip()
+    _generation_calls_used += 1
     try:
         return call_copilot(candidate, source_text, config)
     except Exception as exc:
-        primary_error = f"copilot_primary={type(exc).__name__}: {str(exc)[-700:]}"
-        errors.append(primary_error)
-
-    # GitHub documents that included Copilot models can remain available after
-    # a legacy premium-request quota is exhausted. GPT-5 mini is supported by
-    # Copilot CLI and is deliberately used only as the emergency lane.
-    if configured_model.lower() != COPILOT_EMERGENCY_MODEL.lower():
-        try:
-            return call_copilot(
-                candidate,
-                source_text,
-                config,
-                model_override=COPILOT_EMERGENCY_MODEL,
-            )
-        except Exception as exc:
-            errors.append(
-                f"copilot_{COPILOT_EMERGENCY_MODEL}={type(exc).__name__}: {str(exc)[-700:]}"
-            )
-
-    raise RuntimeError("All editorial generation backends failed | " + " | ".join(errors))
+        raise RuntimeError(f"copilot_auto={type(exc).__name__}: {str(exc)[-900:]}") from exc
 
 
 install_global_prompt()
-engine.call_openai = call_resilient
-# The base engine uses OPENAI_API_KEY only as a readiness gate before calling
-# the pluggable generator. GitHub Actions materializes an unset secret as an
-# empty environment variable, so replace both missing and blank values with a
-# harmless placeholder. REAL_OPENAI_KEY was captured above and still controls
-# whether the real OpenAI API is attempted.
-if not os.environ.get("OPENAI_API_KEY", "").strip():
-    os.environ["OPENAI_API_KEY"] = "passport-resilient-launcher"
+engine.call_openai = call_quota_economy
+
+# The base engine uses OPENAI_API_KEY only as a readiness gate before invoking
+# engine.call_openai. The launcher replaces that generator with Copilot above;
+# this placeholder never authenticates to or calls the OpenAI API.
+os.environ["OPENAI_API_KEY"] = "passport-copilot-quota-economy"
 
 if __name__ == "__main__":
     raise SystemExit(engine.main())
