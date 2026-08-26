@@ -1,4 +1,4 @@
-name: Passport Editorial Tunnel
+name: Passport Editorial Tunnel Global — 1200
 
 on:
   workflow_dispatch:
@@ -14,9 +14,9 @@ concurrency:
 
 jobs:
   excavate:
-    name: Excavate editorial signals
+    name: Excavate worldwide editorial signals
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Checkout Passport
@@ -27,22 +27,38 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Editorial Tunnel
+      - name: Run Worldwide Editorial Tunnel
         run: |
-          python tools/editorial_tunnel.py \
-            --sources data/editorial-sources.json \
+          python tools/editorial_tunnel_global.py \
+            --sources data/editorial-sources-global.json \
             --output-dir build/editorial-tunnel \
-            --daily-limit 1000 \
+            --daily-limit 1200 \
             --per-source 20 \
             --max-age-hours 96 \
-            --workers 20
+            --workers 24
 
-      - name: Add queue to run summary
+      - name: Add compact radar summary
         if: always()
         run: |
-          if [ -f build/editorial-tunnel/editorial-queue.md ]; then
-            cat build/editorial-tunnel/editorial-queue.md >> "$GITHUB_STEP_SUMMARY"
-          fi
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          radar=Path('build/editorial-tunnel/editorial-radar.json')
+          daily=Path('build/editorial-tunnel/editorial-daily.json')
+          print('## Passport Editorial Tunnel™ — Worldwide 1200')
+          if radar.exists():
+              r=json.loads(radar.read_text('utf-8'))
+              health=r.get('source_health', [])
+              ok=sum(1 for x in health if x.get('ok'))
+              print(f"Sources responding: **{ok}/{len(health)}**")
+              print(f"URLs discovered: **{r.get('discovered_url_count',0)}** · article metadata: **{r.get('article_metadata_count',0)}** · clusters: **{r.get('cluster_count',0)}**")
+          if daily.exists():
+              d=json.loads(daily.read_text('utf-8'))
+              selected=d.get('selected', [])
+              print(f"Selected reservoir: **{len(selected)}/{d.get('target',1200)}**")
+              for item in selected[:12]:
+                  print(f"- {item.get('primary_category','music')} · score {item.get('total_score',0)} · {item.get('title','')}")
+          PY
 
       - name: Upload private editorial packet
         if: always()

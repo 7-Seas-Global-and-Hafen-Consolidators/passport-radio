@@ -1,4 +1,4 @@
-name: Passport Editorial Engine 25/7 — 500
+name: Passport Editorial Engine 25/7 Global — 800
 
 on:
   workflow_dispatch:
@@ -10,22 +10,25 @@ on:
         type: choice
         options: [stage, pr, direct]
       daily_target:
-        description: "Publications per day (1-700)"
+        description: "Publications per day (1-1200)"
         required: false
-        default: "500"
+        default: "800"
       force_batch:
-        description: "Manual batch override; -1 uses pacing"
+        description: "Stories per cycle (0-10); scheduled default is 10"
         required: false
-        default: "-1"
+        default: "10"
   schedule:
     - cron: '2,12,22,32,42,52 * * * *'
   push:
     branches: [main]
     paths:
       - '.github/workflows/editorial-engine.yml'
+      - '.github/workflows/editorial-tunnel.yml'
       - 'tools/editorial_engine_copilot.py'
+      - 'tools/editorial_tunnel_global.py'
       - 'tools/inject_amazon_affiliate.py'
       - 'data/editorial-engine.json'
+      - 'data/editorial-sources-global.json'
 
 permissions:
   contents: write
@@ -39,7 +42,7 @@ concurrency:
 
 jobs:
   build-editorial:
-    name: Build Passport editorial batch
+    name: Build Passport global editorial batch
     runs-on: ubuntu-latest
     timeout-minutes: 55
     env:
@@ -72,17 +75,18 @@ jobs:
           FORCE="${{ github.event.inputs.force_batch }}"
           if [ -z "$MODE" ]; then MODE="${{ vars.PASSPORT_EDITORIAL_MODE }}"; fi
           if [ -z "$MODE" ]; then MODE="direct"; fi
-          if [ -z "$TARGET" ]; then TARGET="500"; fi
-          if [ -z "$FORCE" ]; then FORCE="-1"; fi
+          if [ -z "$TARGET" ]; then TARGET="800"; fi
+          if [ -z "$FORCE" ]; then FORCE="10"; fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
-          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 700 ]; then echo "daily_target must be 1..700"; exit 2; fi
+          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 1200 ]; then echo "daily_target must be 1..1200"; exit 2; fi
+          if [ "$FORCE" -lt 0 ] || [ "$FORCE" -gt 10 ]; then echo "force_batch must be 0..10"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "TARGET=$TARGET" >> "$GITHUB_ENV"
           echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "target=$TARGET" >> "$GITHUB_OUTPUT"
           echo "force=$FORCE" >> "$GITHUB_OUTPUT"
-          echo "Mode: $MODE · publication target: $TARGET/day · Operation 25/7 capacity: 700/day" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: $MODE · publication target: $TARGET/day · reservoir/capacity: 1200/day · batch: $FORCE/cycle" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Resume rolling editorial branch
         if: steps.settings.outputs.mode == 'pr'
@@ -96,7 +100,7 @@ jobs:
             git checkout -b automation/editorial-staging origin/main
           fi
 
-      - name: Locate latest Editorial Tunnel packet
+      - name: Locate latest Global Editorial Tunnel packet
         id: tunnel
         shell: bash
         run: |
@@ -107,18 +111,31 @@ jobs:
           fi
           QUEUE="$(find build/tunnel-download -type f -name editorial-daily.json -print -quit 2>/dev/null || true)"
           if [ -n "$QUEUE" ]; then
+            READY="$(python - "$QUEUE" <<'PY'
+          import json, sys
+          try:
+              d=json.load(open(sys.argv[1], encoding='utf-8'))
+              selected=d.get('selected', [])
+              print('yes' if int(d.get('target', 0)) >= 1200 and len(selected) >= 100 else 'no')
+          except Exception:
+              print('no')
+          PY
+          )"
+            if [ "$READY" != "yes" ]; then QUEUE=""; fi
+          fi
+          if [ -n "$QUEUE" ]; then
             echo "queue=$QUEUE" >> "$GITHUB_OUTPUT"
-            echo "Using tunnel run $RUN_ID" >> "$GITHUB_STEP_SUMMARY"
+            echo "Using worldwide tunnel run $RUN_ID" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "No reusable tunnel packet; excavating now." >> "$GITHUB_STEP_SUMMARY"
+            echo "No reusable 1200-signal worldwide packet; excavating now." >> "$GITHUB_STEP_SUMMARY"
             mkdir -p build/editorial-tunnel
-            python tools/editorial_tunnel.py \
-              --sources data/editorial-sources.json \
+            python tools/editorial_tunnel_global.py \
+              --sources data/editorial-sources-global.json \
               --output-dir build/editorial-tunnel \
-              --daily-limit 1000 \
+              --daily-limit 1200 \
               --per-source 20 \
               --max-age-hours 96 \
-              --workers 20
+              --workers 24
             echo "queue=build/editorial-tunnel/editorial-daily.json" >> "$GITHUB_OUTPUT"
           fi
 
@@ -134,7 +151,8 @@ jobs:
             --feed data/editorial-feed.json \
             --output-dir build/editorial-engine \
             --daily-target "$TARGET" \
-            --capacity 700 \
+            --capacity 1200 \
+            --max-batch 10 \
             --force-batch "$FORCE" \
             $APPLY | tee build/editorial-engine-console.json
 
@@ -153,11 +171,11 @@ jobs:
           from pathlib import Path
           p=Path('build/editorial-engine/engine-report.json')
           d=json.loads(p.read_text())
-          print('\n## Passport Editorial Engine™ — Operation 25/7')
+          print('\n## Passport Editorial Engine™ — Global 1200 → 800')
           print(f"Status: **{d.get('status')}**")
-          print(f"Publication target: **{d.get('daily_target')}/day** · capacity: **{d.get('daily_capacity')}/day**")
-          print(f"Already today: **{d.get('already_today',0)}** · generated this run: **{len(d.get('generated',[]))}**")
-          for item in d.get('generated',[])[:12]:
+          print(f"Publication target: **{d.get('daily_target')}/day** · capacity/reservoir: **{d.get('daily_capacity')}/day**")
+          print(f"Already today: **{d.get('already_today',0)}** · requested this cycle: **{d.get('requested_batch',0)}** · generated: **{len(d.get('generated',[]))}**")
+          for item in d.get('generated',[])[:10]:
               print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
           PY
           fi
@@ -185,13 +203,13 @@ jobs:
             echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial 25/7: automatic batch"
+          git commit -m "Passport Editorial Global: automatic 10-story batch"
           git push -u origin automation/editorial-staging
           OPEN_PR="$(gh pr list --head automation/editorial-staging --base main --state open --json number --jq '.[0].number' 2>/dev/null || true)"
           if [ -z "$OPEN_PR" ]; then
             gh pr create --base main --head automation/editorial-staging \
-              --title "Passport Editorial 25/7 — fila automática" \
-              --body "Lote contínuo do Passport Editorial Engine™. Conteúdo público em nome da Passport Radio, com deduplicação e bloqueio de rastros de origem. Meta operacional: 500 matérias publicadas/dia. Capacidade interna: 700 matérias/dia." >/dev/null
+              --title "Passport Editorial Global — fila automática" \
+              --body "Lote contínuo do Passport Editorial Engine™. Radar mundial privado com até 1.200 sinais selecionados; publicação pública de até 800 matérias/dia em lotes de 10, com deduplicação e bloqueio de rastros de origem." >/dev/null
           fi
 
       - name: Publish direct batch
@@ -206,6 +224,6 @@ jobs:
             echo "No editorial or affiliate files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial 25/7: publish automatic batch"
+          git commit -m "Passport Editorial Global: publish 10-story batch"
           git pull --rebase origin main
           git push origin HEAD:main
