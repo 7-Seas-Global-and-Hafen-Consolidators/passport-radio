@@ -1,51 +1,27 @@
 #!/usr/bin/env python3
-"""Copilot-backed launcher for Passport Editorial Engine™.
+"""Copilot-backed launcher for Passport Editorial Engine™ Global.
 
 Uses GitHub Copilot CLI with a personal fine-grained token supplied by the
-workflow. The launcher intentionally normalizes all GitHub auth environment
-variables inside the Copilot subprocess to the same personal token so GitHub
-CLI user validation cannot accidentally fall back to the GitHub Actions app
-token (which returns "Resource not accessible by integration" for /user).
-
-Operation 25/7 Global raises the operational hard ceiling to 1,200 candidate
-publications/day for this Copilot-backed path. The workflow targets 800 public
-articles/day in batches of 10. Editorial deduplication, source firewall and all
-validation rules from the base engine remain unchanged.
+workflow. The worldwide runtime owns the approved 1,200-signal reservoir,
+800/day public hard stop, 10-story maximum batch and 24-hour pacing. The base
+engine keeps deduplication, validation, ledger/feed handling and the public
+source firewall.
 """
 from __future__ import annotations
 
 import os
 import subprocess
-import sys
 
 import editorial_engine as engine
+import editorial_engine_global as global_runtime
+import editorial_renderer_global as global_renderer
 
 
-NITRO_HARD_CAP = 1200
-NOMAD_SIGNATURE = (
-    '<div class="pe-closing pe-nomad-signature">'
-    '<small>— MR. NOMAD</small>'
-    '<p>Aguardo meus Nômades em nosso site.</p>'
-    '</div>'
-)
-
-
-def enable_nitro_capacity() -> None:
-    """Raise only the base main() numeric hard-cap constants for Copilot runs."""
-    code = engine.main.__code__
-    patched = []
-    for value in code.co_consts:
-        if value == 200:
-            patched.append(NITRO_HARD_CAP)
-        elif isinstance(value, str):
-            patched.append(value.replace("hard cap is 200/day", f"hard cap is {NITRO_HARD_CAP}/day"))
-        else:
-            patched.append(value)
-    engine.main.__code__ = code.replace(co_consts=tuple(patched))
+NITRO_HARD_CAP = global_runtime.RESERVOIR_HARD_CAP
 
 
 def install_global_prompt() -> None:
-    """Tell the base generator how to treat multilingual worldwide discovery."""
+    """Tell the generator how to treat multilingual worldwide discovery."""
     original_build_prompt = engine.build_prompt
 
     def build_prompt_global(candidate, source_text, config):
@@ -65,19 +41,6 @@ def install_global_prompt() -> None:
     engine.build_prompt = build_prompt_global
 
 
-def install_nomad_signature() -> None:
-    """Append Mr. Nomad's signature to every newly rendered editorial page."""
-    original_render = engine.render_article
-
-    def render_with_nomad(article, url_path, related):
-        rendered = original_render(article, url_path, related)
-        if "pe-nomad-signature" in rendered:
-            return rendered
-        return rendered.replace("</article>", NOMAD_SIGNATURE + "</article>", 1)
-
-    engine.render_article = render_with_nomad
-
-
 def call_copilot(candidate, source_text, config):
     instructions, input_text = engine.build_prompt(candidate, source_text, config)
     prompt = instructions + "\n\n" + input_text
@@ -95,10 +58,10 @@ def call_copilot(candidate, source_text, config):
     if not token:
         raise RuntimeError("Copilot authentication token is not available")
 
-    # Copilot CLI prefers COPILOT_GITHUB_TOKEN, while some of its GitHub CLI
+    # Copilot CLI prefers COPILOT_GITHUB_TOKEN, while some GitHub CLI
     # validation paths consult GH_TOKEN/GITHUB_TOKEN. Keep all three aligned
-    # to the personal PAT for this subprocess only. The workflow's normal
-    # github.token remains untouched for checkout, artifact access and pushes.
+    # inside this subprocess only; checkout/artifact/push continue to use the
+    # workflow's normal github.token.
     env["COPILOT_GITHUB_TOKEN"] = token
     env["GH_TOKEN"] = token
     env["GITHUB_TOKEN"] = token
@@ -116,13 +79,12 @@ def call_copilot(candidate, source_text, config):
     return engine.parse_json_text(proc.stdout)
 
 
-enable_nitro_capacity()
 install_global_prompt()
-install_nomad_signature()
+engine.render_article = global_renderer.render_article
 engine.call_openai = call_copilot
-# The base engine uses this variable only as a readiness gate before invoking
-# the pluggable generator. The launcher replaces the generator with Copilot.
+# The base generator uses this variable only as a readiness gate before calling
+# the pluggable generator. Production generation is handled by Copilot here.
 os.environ.setdefault("OPENAI_API_KEY", "passport-copilot-launcher")
 
 if __name__ == "__main__":
-    raise SystemExit(engine.main())
+    raise SystemExit(global_runtime.main())
