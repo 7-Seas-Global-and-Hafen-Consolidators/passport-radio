@@ -44,6 +44,27 @@ def enable_nitro_capacity() -> None:
     engine.main.__code__ = code.replace(co_consts=tuple(patched))
 
 
+def install_global_prompt() -> None:
+    """Tell the base generator how to treat multilingual worldwide discovery."""
+    original_build_prompt = engine.build_prompt
+
+    def build_prompt_global(candidate, source_text, config):
+        instructions, input_text = original_build_prompt(candidate, source_text, config)
+        instructions += (
+            " O material de apoio pode estar em qualquer idioma ou alfabeto. "
+            "Compreenda e reconstrua os fatos em português do Brasil sem tradução literal, "
+            "preservando grafia oficial de artistas, bandas, álbuns, locais e nomes próprios. "
+            "Não trate cenas fora do eixo EUA-Reino Unido-Brasil como curiosidade exótica: "
+            "dê contexto local, musical e histórico com o mesmo rigor editorial."
+        )
+        language = str(candidate.get("language") or "não informado")
+        axes = ", ".join(str(x) for x in (candidate.get("categories") or [])[:12])
+        input_text += f"\nIDIOMA DO SINAL: {language}\nEIXOS INTERNOS DO RADAR: {axes or 'music'}"
+        return instructions, input_text
+
+    engine.build_prompt = build_prompt_global
+
+
 def install_nomad_signature() -> None:
     """Append Mr. Nomad's signature to every newly rendered editorial page."""
     original_render = engine.render_article
@@ -96,6 +117,7 @@ def call_copilot(candidate, source_text, config):
 
 
 enable_nitro_capacity()
+install_global_prompt()
 install_nomad_signature()
 engine.call_openai = call_copilot
 # The base engine uses this variable only as a readiness gate before invoking
