@@ -1,0 +1,73 @@
+name: Validate Global Editorial Engine
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/editorial-engine.yml'
+      - '.github/workflows/editorial-tunnel.yml'
+      - '.github/workflows/editorial-global-validation.yml'
+      - 'tools/editorial_engine.py'
+      - 'tools/editorial_engine_copilot.py'
+      - 'tools/editorial_tunnel.py'
+      - 'tools/editorial_tunnel_global.py'
+      - 'data/editorial-engine.json'
+      - 'data/editorial-sources-global.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Compile editorial Python
+        run: |
+          python -m py_compile \
+            tools/editorial_engine.py \
+            tools/editorial_engine_copilot.py \
+            tools/editorial_tunnel.py \
+            tools/editorial_tunnel_global.py
+
+      - name: Validate worldwide source network and operating numbers
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import sys
+
+          cfg=json.loads(Path('data/editorial-engine.json').read_text('utf-8'))
+          src=json.loads(Path('data/editorial-sources-global.json').read_text('utf-8'))
+          sources=src.get('sources', [])
+
+          assert cfg['daily_target'] == 800, cfg
+          assert cfg['daily_capacity'] == 1200, cfg
+          assert cfg['max_batch'] == 10, cfg
+          assert len(sources) >= 120, len(sources)
+
+          keys=[(x.get('domain'), x.get('url')) for x in sources]
+          assert len(keys) == len(set(keys)), 'duplicate source domain/url pairs'
+
+          required_regions={
+              'brasil','latin_america','central_america','caribbean','uk_ireland',
+              'continental_europe','nordics','eastern_europe','east_asia','south_asia',
+              'southeast_asia','central_asia','middle_east','africa','oceania','north_america'
+          }
+          present={cat for s in sources for cat in s.get('categories', [])}
+          missing=required_regions-present
+          assert not missing, f'missing regions: {sorted(missing)}'
+
+          sys.path.insert(0, str(Path('tools').resolve()))
+          import editorial_tunnel_global as global_tunnel
+          assert global_tunnel.GLOBAL_DAILY_RESERVOIR == 1200
+          assert global_tunnel.GLOBAL_PER_SOURCE_CAP >= 20
+          assert global_tunnel.SOURCE_SELECTION_CAP >= 10
+          print(f'validated {len(sources)} worldwide source entries')
+          PY
