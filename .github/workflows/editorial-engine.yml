@@ -28,7 +28,6 @@ on:
       - 'tools/editorial_engine_copilot.py'
       - 'tools/editorial_tunnel.py'
       - 'tools/editorial_tunnel_global.py'
-      - 'tools/inject_amazon_affiliate.py'
       - 'data/editorial-engine.json'
       - 'data/editorial-sources-global.json'
 
@@ -46,12 +45,14 @@ jobs:
   build-editorial:
     name: Build Passport global editorial batch
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 120
     env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PERSONAL_TOKEN }}
       GH_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ github.token }}
       PASSPORT_EDITORIAL_MODEL: ${{ vars.PASSPORT_EDITORIAL_MODEL }}
+      PASSPORT_COPILOT_FALLBACK_MODEL: gpt-5-mini
 
     steps:
       - name: Checkout Passport main
@@ -88,7 +89,7 @@ jobs:
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "target=$TARGET" >> "$GITHUB_OUTPUT"
           echo "force=$FORCE" >> "$GITHUB_OUTPUT"
-          echo "Mode: $MODE · publication hard stop: $TARGET/day · reservoir/capacity: 1200/day · max batch: 10 · force: $FORCE (-1 = 24h pacing)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: $MODE · publication hard stop: $TARGET/day · reservoir/capacity: 1200/day · max engine subcycle: 10 · force: $FORCE (-1 = 24h pacing + catch-up)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Resume rolling editorial branch
         if: steps.settings.outputs.mode == 'pr'
@@ -141,44 +142,81 @@ jobs:
             echo "queue=build/editorial-tunnel/editorial-daily.json" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Run Passport Editorial Engine
+      - name: Run Passport Editorial Engine with catch-up
         shell: bash
         run: |
           APPLY=""
           if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
-          python tools/editorial_engine_copilot.py \
-            --queue "${{ steps.tunnel.outputs.queue }}" \
-            --config data/editorial-engine.json \
-            --state data/editorial-published.json \
-            --feed data/editorial-feed.json \
-            --output-dir build/editorial-engine \
-            --daily-target "$TARGET" \
-            --capacity 1200 \
-            --max-batch 10 \
-            --force-batch "$FORCE" \
-            $APPLY | tee build/editorial-engine-console.json
+          CYCLES=1
+          if [ "$FORCE" = "-1" ]; then CYCLES=6; fi
+          mkdir -p build/editorial-engine
+          : > build/editorial-engine-console.jsonl
 
-      - name: Inject Amazon affiliate layer across site
-        if: steps.settings.outputs.mode == 'pr' || steps.settings.outputs.mode == 'direct'
-        shell: bash
-        run: python tools/inject_amazon_affiliate.py
+          for CYCLE in $(seq 1 "$CYCLES"); do
+            CYCLE_DIR="build/editorial-engine/cycle-$CYCLE"
+            mkdir -p "$CYCLE_DIR"
+            echo "=== Passport Editorial Engine subcycle $CYCLE/$CYCLES ===" | tee -a build/editorial-engine-console.jsonl
+            python tools/editorial_engine_copilot.py \
+              --queue "${{ steps.tunnel.outputs.queue }}" \
+              --config data/editorial-engine.json \
+              --state data/editorial-published.json \
+              --feed data/editorial-feed.json \
+              --output-dir "$CYCLE_DIR" \
+              --daily-target "$TARGET" \
+              --capacity 1200 \
+              --max-batch 10 \
+              --force-batch "$FORCE" \
+              $APPLY | tee "$CYCLE_DIR/console.json" | tee -a build/editorial-engine-console.jsonl
+
+            cp "$CYCLE_DIR/engine-report.json" build/editorial-engine/engine-report.json
+            read -r STATUS REQUESTED GENERATED PUBLISHED <<<"$(python - "$CYCLE_DIR/engine-report.json" <<'PY'
+          import json, sys
+          d=json.load(open(sys.argv[1], encoding='utf-8'))
+          print(d.get('status','unknown'), int(d.get('requested_batch',0)), len(d.get('generated',[])), int(d.get('published_today_after', d.get('already_today',0))))
+          PY
+          )"
+            echo "subcycle=$CYCLE status=$STATUS requested=$REQUESTED generated=$GENERATED published_today_after=$PUBLISHED" | tee -a build/editorial-engine-console.jsonl
+
+            if [ "$REQUESTED" -eq 0 ] || [ "$PUBLISHED" -ge "$TARGET" ]; then
+              break
+            fi
+            if [ "$GENERATED" -eq 0 ]; then
+              break
+            fi
+          done
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          reports=[]
+          for p in sorted(Path('build/editorial-engine').glob('cycle-*/engine-report.json'), key=lambda x: int(x.parent.name.split('-')[-1])):
+              reports.append(json.loads(p.read_text('utf-8')))
+          aggregate={
+              'cycles': len(reports),
+              'requested_total': sum(int(x.get('requested_batch',0)) for x in reports),
+              'generated_total': sum(len(x.get('generated',[])) for x in reports),
+              'blocked_cycles': sum(1 for x in reports if int(x.get('requested_batch',0)) > 0 and not x.get('generated')),
+              'last_status': reports[-1].get('status') if reports else 'missing_report',
+              'published_today_after': int(reports[-1].get('published_today_after', reports[-1].get('already_today',0))) if reports else 0,
+              'daily_target': int(reports[-1].get('daily_target',0)) if reports else 0,
+          }
+          Path('build/editorial-engine/run-report.json').write_text(json.dumps(aggregate, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          PY
 
       - name: Add engine report to summary
         if: always()
         shell: bash
         run: |
-          if [ -f build/editorial-engine/engine-report.json ]; then
+          if [ -f build/editorial-engine/run-report.json ]; then
             python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
           import json
           from pathlib import Path
-          p=Path('build/editorial-engine/engine-report.json')
-          d=json.loads(p.read_text())
+          d=json.loads(Path('build/editorial-engine/run-report.json').read_text('utf-8'))
           print('\n## Passport Editorial Engine™ — Global 1200 → 800')
-          print(f"Status: **{d.get('status')}**")
-          print(f"Publication target: **{d.get('daily_target')}/day** · capacity/reservoir: **{d.get('daily_capacity')}/day**")
-          print(f"Already today: **{d.get('already_today',0)}** · requested this cycle: **{d.get('requested_batch',0)}** · generated: **{len(d.get('generated',[]))}**")
-          for item in d.get('generated',[])[:10]:
-              print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
+          print(f"Subcycles: **{d.get('cycles',0)}** · requested: **{d.get('requested_total',0)}** · generated: **{d.get('generated_total',0)}**")
+          print(f"Published today after run: **{d.get('published_today_after',0)}/{d.get('daily_target',800)}** · last status: **{d.get('last_status')}**")
+          if d.get('blocked_cycles',0):
+              print(f"⚠️ Blocked subcycles: **{d.get('blocked_cycles')}**")
           PY
           fi
 
@@ -189,7 +227,7 @@ jobs:
           name: passport-editorial-engine-${{ github.run_number }}
           path: |
             build/editorial-engine/
-            build/editorial-engine-console.json
+            build/editorial-engine-console.jsonl
           retention-days: 7
           if-no-files-found: warn
 
@@ -200,7 +238,6 @@ jobs:
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
-          git add -- '*.html' ':(glob)**/*.html' 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -211,21 +248,43 @@ jobs:
           if [ -z "$OPEN_PR" ]; then
             gh pr create --base main --head automation/editorial-staging \
               --title "Passport Editorial Global — fila automática" \
-              --body "Lote contínuo do Passport Editorial Engine™. Radar mundial privado com até 1.200 sinais selecionados; publicação pública de até 800 matérias/dia, pacing de 24 horas e lote máximo de 10, com deduplicação e bloqueio de rastros de origem." >/dev/null
+              --body "Lote contínuo do Passport Editorial Engine™. Radar mundial privado com até 1.200 sinais selecionados; publicação pública de até 800 matérias/dia, pacing de 24 horas e subciclos de no máximo 10, com deduplicação e bloqueio de rastros de origem." >/dev/null
           fi
 
-      - name: Publish direct batch
+      - name: Publish direct editorial batch
         if: steps.settings.outputs.mode == 'direct'
         shell: bash
         run: |
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
-          git add -- '*.html' ':(glob)**/*.html' 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No editorial or affiliate files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
+            echo "No editorial files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial Global: publish paced batch"
+          git commit -m "Passport Editorial Global: publish paced catch-up"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Enforce truthful editorial health
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('build/editorial-engine/run-report.json')
+          if not p.exists():
+              print('::error::Editorial Engine produced no run report.')
+              raise SystemExit(1)
+          d=json.loads(p.read_text('utf-8'))
+          requested=int(d.get('requested_total',0))
+          generated=int(d.get('generated_total',0))
+          blocked=int(d.get('blocked_cycles',0))
+          if requested > 0 and generated == 0:
+              print('::error::EDITORIAL BLOCKED — generation requested but zero articles were produced. Check OpenAI/Copilot backend errors in the artifact.')
+              raise SystemExit(1)
+          if blocked:
+              print(f'::warning::Editorial catch-up published {generated} article(s), but {blocked} later subcycle(s) were blocked; inspect backend health.')
+          print(f'Editorial health OK: requested={requested} generated={generated} blocked_cycles={blocked}')
+          PY
