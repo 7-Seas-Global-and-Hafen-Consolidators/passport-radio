@@ -108,6 +108,14 @@ jobs:
           assert 'Enforce truthful editorial health' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
+          # GitHub Actions exposes an unset secret as an empty environment value.
+          # The launcher must replace that blank only for the base-engine readiness
+          # gate while REAL_OPENAI_KEY remains the source of truth for API usage.
+          assert 'REAL_OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "").strip()' in launcher
+          assert 'if not os.environ.get("OPENAI_API_KEY", "").strip():' in launcher
+          assert 'os.environ["OPENAI_API_KEY"] = "passport-resilient-launcher"' in launcher
+          assert 'setdefault("OPENAI_API_KEY"' not in launcher
+
           # Editorial automation is isolated from commercial/site-wide mutation.
           assert 'inject_amazon_affiliate.py' not in workflow
           assert 'Inject Amazon affiliate layer' not in workflow
@@ -149,5 +157,5 @@ jobs:
           assert forbidden and len(forbidden) >= 10
           assert '<html lang="pt-BR">' in rendered
 
-          print(f'validated {len(sources)} worldwide source entries; resilient failover; 1200 reservoir / 800 hard stop / max subcycle 10')
+          print(f'validated {len(sources)} worldwide source entries; empty-secret failover; 1200 reservoir / 800 hard stop / max subcycle 10')
           PY
