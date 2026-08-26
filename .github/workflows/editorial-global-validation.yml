@@ -36,9 +36,10 @@ jobs:
             tools/editorial_tunnel.py \
             tools/editorial_tunnel_global.py
 
-      - name: Validate worldwide source network and operating numbers
+      - name: Validate worldwide source network and operating invariants
         run: |
           python - <<'PY'
+          import datetime as dt
           import json
           from pathlib import Path
           import sys
@@ -46,6 +47,8 @@ jobs:
           cfg=json.loads(Path('data/editorial-engine.json').read_text('utf-8'))
           src=json.loads(Path('data/editorial-sources-global.json').read_text('utf-8'))
           sources=src.get('sources', [])
+          workflow=Path('.github/workflows/editorial-engine.yml').read_text('utf-8')
+          global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
           assert cfg['daily_target'] == 800, cfg
           assert cfg['daily_capacity'] == 1200, cfg
@@ -65,9 +68,65 @@ jobs:
           assert not missing, f'missing regions: {sorted(missing)}'
 
           sys.path.insert(0, str(Path('tools').resolve()))
+          import editorial_engine as engine
+          import editorial_tunnel as base_tunnel
           import editorial_tunnel_global as global_tunnel
+
+          # Native Engine limits: 1200 private reservoir -> hard stop 800 public,
+          # with no more than 10 in any cycle.
+          assert engine.PUBLICATION_HARD_CAP == 800
+          assert engine.RESERVOIR_HARD_CAP == 1200
+          assert engine.MAX_BATCH_HARD_CAP == 10
+          assert engine.RESERVOIR_HARD_CAP > engine.PUBLICATION_HARD_CAP
+
+          # Pacing can publish fewer than 10 or zero when already on pace.
+          fixed=dt.datetime(2026,8,26,12,0,0,tzinfo=dt.timezone(dt.timedelta(hours=-3)))
+          engine.now_sp=lambda: fixed
+          assert engine.desired_batch(800, 400, 10) == 0
+          assert engine.desired_batch(800, 395, 10) == 5
+          assert engine.desired_batch(800, 0, 10) == 10
+
+          # The scheduled workflow must use pacing, while manual override remains possible.
+          assert 'default: "-1"' in workflow
+          assert 'FORCE="-1"' in workflow
+          assert 'daily_target must be 1..800' in workflow
+          assert '--capacity 1200' in workflow
+          assert '--max-batch 10' in workflow
+
+          # Mr. Nomad belongs to the renderer template itself.
+          sample={
+              'title':'Teste Passport','meta_description':'Teste','deck':'Teste',
+              'published_at':'2026-08-26T12:00:00-03:00','category':'rock','format':'STORY',
+              'kicker':'PASSPORT RADIO · ROCK · 26/08/2026','sections':[],
+              'closing':'Fecho editorial.'
+          }
+          rendered=engine.render_article(sample, '/editorial/teste.html', [])
+          assert 'pe-nomad-signature' in rendered
+          assert 'MR. NOMAD' in rendered
+          assert 'Every Song Is A Destination.' in rendered
+          assert 'Aguardo meus Nômades na Passport Radio.' in rendered
+
+          # Multilingual discovery/factual fetch must not be pt/en-only.
+          for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
+              assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang
+              assert lang in base_tunnel.GLOBAL_ACCEPT_LANGUAGE, lang
+          assert engine.tokens('東京 음악 музыка موسيقى')
+          assert base_tunnel.DAILY_RESERVOIR_HARD_CAP == 1200
+          assert base_tunnel.PER_SOURCE_HARD_CAP >= 20
+          assert base_tunnel.WORKERS_HARD_CAP >= 24
+          assert base_tunnel.RADAR_HARD_CAP >= 1200
+
+          # Global rules add geography/genre intelligence without bytecode mutation.
           assert global_tunnel.GLOBAL_DAILY_RESERVOIR == 1200
           assert global_tunnel.GLOBAL_PER_SOURCE_CAP >= 20
           assert global_tunnel.SOURCE_SELECTION_CAP >= 10
-          print(f'validated {len(sources)} worldwide source entries')
+          assert 'raise_base_limits' not in global_tunnel_text
+          assert 'co_consts' not in global_tunnel_text
+
+          # Editorial firewall stays configured and public language stays PT-BR.
+          forbidden=cfg.get('public_forbidden_patterns', [])
+          assert forbidden and len(forbidden) >= 10
+          assert '<html lang="pt-BR">' in rendered
+
+          print(f'validated {len(sources)} worldwide source entries; 1200 reservoir / 800 hard stop / max batch 10')
           PY
