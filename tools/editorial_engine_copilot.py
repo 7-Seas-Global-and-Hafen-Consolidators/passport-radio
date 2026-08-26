@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Copilot-backed launcher for Passport Editorial Engine™ Global.
+"""Resilient launcher for Passport Editorial Engine™ Global.
 
-Uses GitHub Copilot CLI with a personal fine-grained token supplied by the
-workflow. The base engine now owns the approved 1,200-signal capacity,
-800/day public hard stop, 10-story maximum batch, 24-hour pacing, multilingual
-source fetch and the native Mr. Nomad renderer. This launcher only supplies the
-multilingual editorial prompt and Copilot generator.
+The base engine owns the approved 1,200-signal reservoir, 800/day public hard
+stop, 10-story maximum batch, 24-hour pacing, multilingual factual fetch and
+native Mr. Nomad renderer. This launcher supplies the worldwide PT-BR prompt
+and a generation failover chain:
+
+1. OpenAI Responses API when OPENAI_API_KEY is configured.
+2. GitHub Copilot CLI using the configured/default model.
+3. GitHub Copilot CLI using GPT-5 mini as the quota-emergency fallback.
+
+No backend changes the editorial firewall, deduplication or publication caps.
 """
 from __future__ import annotations
 
@@ -16,10 +21,15 @@ import editorial_engine as engine
 
 
 NITRO_HARD_CAP = engine.RESERVOIR_HARD_CAP
+BASE_OPENAI_CALL = engine.call_openai
+REAL_OPENAI_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
+COPILOT_EMERGENCY_MODEL = (
+    os.environ.get("PASSPORT_COPILOT_FALLBACK_MODEL", "").strip() or "gpt-5-mini"
+)
 
 
 def install_global_prompt() -> None:
-    """Tell the generator how to treat multilingual worldwide discovery."""
+    """Tell every generator how to treat multilingual worldwide discovery."""
     original_build_prompt = engine.build_prompt
 
     def build_prompt_global(candidate, source_text, config):
@@ -39,11 +49,11 @@ def install_global_prompt() -> None:
     engine.build_prompt = build_prompt_global
 
 
-def call_copilot(candidate, source_text, config):
+def call_copilot(candidate, source_text, config, model_override: str = ""):
     instructions, input_text = engine.build_prompt(candidate, source_text, config)
     prompt = instructions + "\n\n" + input_text
     cmd = ["copilot", "-p", prompt, "-s", "--no-ask-user"]
-    model = os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip()
+    model = model_override.strip() or os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip()
     if model:
         cmd.extend(["--model", model])
 
@@ -73,11 +83,50 @@ def call_copilot(candidate, source_text, config):
     return engine.parse_json_text(proc.stdout)
 
 
+def call_resilient(candidate, source_text, config):
+    """Generate with automatic backend failover without weakening validation."""
+    errors: list[str] = []
+
+    if REAL_OPENAI_KEY:
+        try:
+            return BASE_OPENAI_CALL(candidate, source_text, config)
+        except Exception as exc:  # the next backend may still be healthy
+            errors.append(f"openai_api={type(exc).__name__}: {str(exc)[-700:]}")
+    else:
+        errors.append("openai_api=OPENAI_API_KEY not configured")
+
+    configured_model = os.environ.get("PASSPORT_EDITORIAL_MODEL", "").strip()
+    try:
+        return call_copilot(candidate, source_text, config)
+    except Exception as exc:
+        primary_error = f"copilot_primary={type(exc).__name__}: {str(exc)[-700:]}"
+        errors.append(primary_error)
+
+    # GitHub documents that included Copilot models can remain available after
+    # a legacy premium-request quota is exhausted. GPT-5 mini is supported by
+    # Copilot CLI and is deliberately used only as the emergency lane.
+    if configured_model.lower() != COPILOT_EMERGENCY_MODEL.lower():
+        try:
+            return call_copilot(
+                candidate,
+                source_text,
+                config,
+                model_override=COPILOT_EMERGENCY_MODEL,
+            )
+        except Exception as exc:
+            errors.append(
+                f"copilot_{COPILOT_EMERGENCY_MODEL}={type(exc).__name__}: {str(exc)[-700:]}"
+            )
+
+    raise RuntimeError("All editorial generation backends failed | " + " | ".join(errors))
+
+
 install_global_prompt()
-engine.call_openai = call_copilot
-# The base engine uses this variable only as a readiness gate before invoking
-# the pluggable generator. The launcher replaces the generator with Copilot.
-os.environ.setdefault("OPENAI_API_KEY", "passport-copilot-launcher")
+engine.call_openai = call_resilient
+# The base engine uses OPENAI_API_KEY as a readiness gate. Keep a harmless
+# placeholder only when no real OpenAI key exists; call_resilient knows whether
+# the original secret was actually present before this assignment.
+os.environ.setdefault("OPENAI_API_KEY", "passport-resilient-launcher")
 
 if __name__ == "__main__":
     raise SystemExit(engine.main())
