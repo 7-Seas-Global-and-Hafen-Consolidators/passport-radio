@@ -1,5 +1,5 @@
 (() => {
-  const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5489546241643636';
+  const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7728480662290062';
   const AMAZON_AFFILIATE_SRC = '/js/passport-amazon-affiliate.js?v=202608251738';
   const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
   const FLOAT_ID = 'passport-support-float';
