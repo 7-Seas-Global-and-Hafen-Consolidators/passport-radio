@@ -37,6 +37,14 @@ PUBLIC_PUBLISHER = "Passport Radio"
 DEFAULT_LOGO = "/images/passport-radio-definitive.jpg"
 MAX_SOURCE_BYTES = 2_000_000
 MAX_SOURCE_CHARS = 18_000
+PUBLICATION_HARD_CAP = 800
+RESERVOIR_HARD_CAP = 1200
+MAX_BATCH_HARD_CAP = 10
+GLOBAL_ACCEPT_LANGUAGE = (
+    "pt-BR,pt;q=1.0,en-US;q=0.95,en;q=0.95,es;q=0.9,fr;q=0.85,de;q=0.8,"
+    "it;q=0.8,ja;q=0.75,ko;q=0.75,zh-CN;q=0.75,zh-TW;q=0.7,ar;q=0.7,"
+    "tr;q=0.65,ru;q=0.65,*;q=0.2"
+)
 
 STOPWORDS = {
     "a","o","as","os","e","de","da","do","das","dos","em","na","no","nas","nos","para","por","com","um","uma",
@@ -123,8 +131,9 @@ def norm_ascii(value: str) -> str:
 
 
 def tokens(value: str) -> set[str]:
-    words = re.findall(r"[a-z0-9]{3,}", norm_ascii(value))
-    return {w for w in words if w not in STOPWORDS}
+    normalized = unicodedata.normalize("NFKC", value or "").lower()
+    words = re.findall(r"[^\W_]+", normalized, flags=re.UNICODE)
+    return {w for w in words if len(w) >= 2 and w not in STOPWORDS}
 
 
 def fingerprint(value: str) -> str:
@@ -177,7 +186,7 @@ def fetch_source_text(url: str, timeout: int = 15) -> str:
     req = Request(url, headers={
         "User-Agent": USER_AGENT,
         "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.5",
-        "Accept-Language": "pt-BR,pt;q=0.8,en-US;q=0.7,en;q=0.6",
+        "Accept-Language": GLOBAL_ACCEPT_LANGUAGE,
     })
     ctx = ssl.create_default_context()
     try:
@@ -424,7 +433,7 @@ def render_article(article: dict[str, Any], url_path: str, related: list[dict[st
 <div class="pe-topbar">PASSPORT RADIO · {esc(fmt)} · {esc(category)}</div>
 <header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="{DEFAULT_LOGO}" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
 <main><section class="pe-hero"><div class="pe-shell"><span class="pe-kicker">{esc(article['kicker'])}</span><h1>{esc(title)}</h1><p>{esc(article['deck'])}</p><div class="pe-stamp"><b>PASSPORT RADIO</b><span>{esc(published)}</span></div></div></section>
-<div class="pe-shell pe-layout"><article class="pe-prose"><p class="pe-lead">{esc(article['deck'])}</p>{''.join(sections_html)}<div class="pe-closing"><small>PASSPORT RADIO · EDITORIAL</small><p>{esc(article.get('closing'))}</p></div></article><aside class="pe-side"><div><small>PASSPORT RADIO</small><strong>Primeiro a história.<br>Depois a música.</strong><a href="/radio.html">ENTRAR NO AR →</a></div></aside></div>{related_html}</main>
+<div class="pe-shell pe-layout"><article class="pe-prose"><p class="pe-lead">{esc(article['deck'])}</p>{''.join(sections_html)}<div class="pe-closing"><small>PASSPORT RADIO · EDITORIAL</small><p>{esc(article.get('closing'))}</p></div><div class="pe-closing pe-nomad-signature"><small>— MR. NOMAD</small><p>Every Song Is A Destination. Aguardo meus Nômades na Passport Radio.</p></div></article><aside class="pe-side"><div><small>PASSPORT RADIO</small><strong>Primeiro a história.<br>Depois a música.</strong><a href="/radio.html">ENTRAR NO AR →</a></div></aside></div>{related_html}</main>
 <footer class="pe-footer"><div class="pe-shell"><strong>PASSPORT RADIO</strong><span>Every Song Is A Destination.</span></div></footer><script src="/js/passport-legal-footer.js?v=202608241345" defer></script></body></html>'''
 
 
@@ -516,15 +525,22 @@ def main() -> int:
     ap.add_argument("--capacity", type=int, default=0)
     ap.add_argument("--max-batch", type=int, default=0)
     ap.add_argument("--apply", action="store_true")
-    ap.add_argument("--force-batch", type=int, default=-1, help="manual override; 0 means no generation")
+    ap.add_argument("--force-batch", type=int, default=-1, help="-1 uses 24h pacing; 0-10 is a manual override")
     args = ap.parse_args()
 
     config = load_json(Path(args.config), {})
     target = args.daily_target or int(config.get("daily_target", 70))
     capacity = args.capacity or int(config.get("daily_capacity", 200))
     max_batch = args.max_batch or int(config.get("max_batch", 6))
-    if target < 1 or target > capacity or capacity > 200:
-        raise SystemExit(f"invalid target/capacity: target={target} capacity={capacity}; hard cap is 200/day")
+    if target < 1 or target > PUBLICATION_HARD_CAP or target > capacity or capacity < 1 or capacity > RESERVOIR_HARD_CAP:
+        raise SystemExit(
+            f"invalid target/capacity: target={target} capacity={capacity}; "
+            f"public hard stop is {PUBLICATION_HARD_CAP}/day and reservoir hard cap is {RESERVOIR_HARD_CAP}/day"
+        )
+    if max_batch < 1 or max_batch > MAX_BATCH_HARD_CAP:
+        raise SystemExit(f"invalid max_batch={max_batch}; hard cap is {MAX_BATCH_HARD_CAP}/cycle")
+    if args.force_batch < -1 or args.force_batch > MAX_BATCH_HARD_CAP:
+        raise SystemExit(f"invalid force_batch={args.force_batch}; expected -1..{MAX_BATCH_HARD_CAP}")
 
     queue = load_json(Path(args.queue), {})
     selected = queue.get("selected", []) if isinstance(queue, dict) else []

@@ -10,13 +10,13 @@ on:
         type: choice
         options: [stage, pr, direct]
       daily_target:
-        description: "Publications per day (1-1200)"
+        description: "Publications per day (1-800)"
         required: false
         default: "800"
       force_batch:
-        description: "Stories per cycle (0-10); scheduled default is 10"
+        description: "Manual batch override (-1 uses 24h pacing; 0-10 overrides)"
         required: false
-        default: "10"
+        default: "-1"
   schedule:
     - cron: '2,12,22,32,42,52 * * * *'
   push:
@@ -24,7 +24,9 @@ on:
     paths:
       - '.github/workflows/editorial-engine.yml'
       - '.github/workflows/editorial-tunnel.yml'
+      - 'tools/editorial_engine.py'
       - 'tools/editorial_engine_copilot.py'
+      - 'tools/editorial_tunnel.py'
       - 'tools/editorial_tunnel_global.py'
       - 'tools/inject_amazon_affiliate.py'
       - 'data/editorial-engine.json'
@@ -76,17 +78,17 @@ jobs:
           if [ -z "$MODE" ]; then MODE="${{ vars.PASSPORT_EDITORIAL_MODE }}"; fi
           if [ -z "$MODE" ]; then MODE="direct"; fi
           if [ -z "$TARGET" ]; then TARGET="800"; fi
-          if [ -z "$FORCE" ]; then FORCE="10"; fi
+          if [ -z "$FORCE" ]; then FORCE="-1"; fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
-          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 1200 ]; then echo "daily_target must be 1..1200"; exit 2; fi
-          if [ "$FORCE" -lt 0 ] || [ "$FORCE" -gt 10 ]; then echo "force_batch must be 0..10"; exit 2; fi
+          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 800 ]; then echo "daily_target must be 1..800"; exit 2; fi
+          if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 10 ]; then echo "force_batch must be -1..10"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "TARGET=$TARGET" >> "$GITHUB_ENV"
           echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "target=$TARGET" >> "$GITHUB_OUTPUT"
           echo "force=$FORCE" >> "$GITHUB_OUTPUT"
-          echo "Mode: $MODE · publication target: $TARGET/day · reservoir/capacity: 1200/day · batch: $FORCE/cycle" >> "$GITHUB_STEP_SUMMARY"
+          echo "Mode: $MODE · publication hard stop: $TARGET/day · reservoir/capacity: 1200/day · max batch: 10 · force: $FORCE (-1 = 24h pacing)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Resume rolling editorial branch
         if: steps.settings.outputs.mode == 'pr'
@@ -203,13 +205,13 @@ jobs:
             echo "No editorial files generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial Global: automatic 10-story batch"
+          git commit -m "Passport Editorial Global: automatic paced batch"
           git push -u origin automation/editorial-staging
           OPEN_PR="$(gh pr list --head automation/editorial-staging --base main --state open --json number --jq '.[0].number' 2>/dev/null || true)"
           if [ -z "$OPEN_PR" ]; then
             gh pr create --base main --head automation/editorial-staging \
               --title "Passport Editorial Global — fila automática" \
-              --body "Lote contínuo do Passport Editorial Engine™. Radar mundial privado com até 1.200 sinais selecionados; publicação pública de até 800 matérias/dia em lotes de 10, com deduplicação e bloqueio de rastros de origem." >/dev/null
+              --body "Lote contínuo do Passport Editorial Engine™. Radar mundial privado com até 1.200 sinais selecionados; publicação pública de até 800 matérias/dia, pacing de 24 horas e lote máximo de 10, com deduplicação e bloqueio de rastros de origem." >/dev/null
           fi
 
       - name: Publish direct batch
@@ -224,6 +226,6 @@ jobs:
             echo "No editorial or affiliate files generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          git commit -m "Passport Editorial Global: publish 10-story batch"
+          git commit -m "Passport Editorial Global: publish paced batch"
           git pull --rebase origin main
           git push origin HEAD:main
