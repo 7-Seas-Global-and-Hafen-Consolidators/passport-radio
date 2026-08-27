@@ -1,4 +1,4 @@
-name: Passport Editorial Engine — Free Multiprovider 500/day
+name: Passport Editorial Engine — Zero-Cost Multiprovider 500/day
 
 on:
   workflow_dispatch:
@@ -36,7 +36,7 @@ concurrency:
 
 jobs:
   build-editorial:
-    name: Build Passport Full Story editorial batch — free multiprovider
+    name: Build Passport Full Story editorial batch — zero-cost multiprovider
     runs-on: ubuntu-latest
     timeout-minutes: 55
     env:
@@ -46,6 +46,12 @@ jobs:
       PASSPORT_GROQ_MODEL: openai/gpt-oss-120b
       PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite
       PASSPORT_OPENROUTER_MODEL: openrouter/free
+      PASSPORT_OLLAMA_MODEL: qwen2.5:0.5b-instruct
+      PASSPORT_OLLAMA_URL: http://127.0.0.1:11434/api/chat
+      OLLAMA_HOST: 127.0.0.1:11434
+      OLLAMA_CONTEXT_LENGTH: 16384
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_MAX_LOADED_MODELS: 1
       GH_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ github.token }}
 
@@ -68,12 +74,29 @@ jobs:
           if [ -z "$MODE" ]; then MODE="direct"; fi
           if [ -z "$TARGET" ]; then TARGET="500"; fi
           if [ -z "$FORCE" ]; then FORCE="-1"; fi
+          if [ "$FORCE" = "-1" ] && [ "$GITHUB_EVENT_NAME" = "push" ]; then FORCE="1"; fi
+          if [ "$FORCE" = "-1" ] && [ -z "$GROQ_API_KEY" ] && [ -z "$GEMINI_API_KEY" ] && [ -z "$OPENROUTER_API_KEY" ]; then FORCE="4"; fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
           if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 700 ]; then echo "daily_target must be 1..700"; exit 2; fi
           if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 12 ]; then echo "force_batch must be -1..12"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"; echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "target=$TARGET" >> "$GITHUB_OUTPUT"
-          echo "Full Story: $TARGET/day · capacity 700/day · max batch 12 · final language pt-BR · zero-cost provider cascade" >> "$GITHUB_STEP_SUMMARY"
+          echo "Full Story: $TARGET/day · capacity 700/day · max batch 12 · final language pt-BR · zero-cost provider cascade with local no-key fallback" >> "$GITHUB_STEP_SUMMARY"
+      - name: Prepare local zero-key inference fallback
+        if: env.GROQ_API_KEY == '' && env.GEMINI_API_KEY == '' && env.OPENROUTER_API_KEY == ''
+        shell: bash
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          nohup ollama serve > /tmp/passport-ollama.log 2>&1 &
+          ready=0
+          for i in $(seq 1 45); do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null 2>&1; then ready=1; break; fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then cat /tmp/passport-ollama.log || true; exit 1; fi
+          ollama pull "$PASSPORT_OLLAMA_MODEL"
+          curl -fsS http://127.0.0.1:11434/api/tags >/dev/null
+          echo "Local zero-key fallback ready: $PASSPORT_OLLAMA_MODEL" >> "$GITHUB_STEP_SUMMARY"
       - name: Locate latest Global Editorial Tunnel packet
         id: tunnel
         shell: bash
@@ -88,7 +111,7 @@ jobs:
             QUEUE="build/editorial-tunnel/editorial-daily.json"
           fi
           echo "queue=$QUEUE" >> "$GITHUB_OUTPUT"
-      - name: Run Full Story free multiprovider batch
+      - name: Run Full Story zero-cost multiprovider batch
         shell: bash
         run: |
           APPLY=""; if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
@@ -102,7 +125,7 @@ jobs:
           import json
           from pathlib import Path
           d=json.loads(Path('build/editorial-engine/engine-report.json').read_text('utf-8'))
-          print('\n## Passport Editorial Engine™ — Free Multiprovider Full Story')
+          print('\n## Passport Editorial Engine™ — Zero-Cost Multiprovider Full Story')
           print(f"Status: **{d.get('status')}** · requested: **{d.get('requested_batch',0)}** · generated: **{len(d.get('generated',[]))}**")
           print(f"Published today: **{d.get('published_today_after',d.get('already_today',0))}/{d.get('daily_target',500)}**")
           for item in d.get('generated',[])[:12]: print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
@@ -139,6 +162,6 @@ jobs:
           p=Path('build/editorial-engine/engine-report.json')
           if not p.exists(): raise SystemExit('Editorial Engine produced no engine report')
           d=json.loads(p.read_text('utf-8')); requested=int(d.get('requested_batch',0)); generated=len(d.get('generated',[]))
-          if requested > 0 and generated == 0: raise SystemExit('EDITORIAL BLOCKED — stories were due but all free providers produced zero')
+          if requested > 0 and generated == 0: raise SystemExit('EDITORIAL BLOCKED — stories were due but all zero-cost providers produced zero')
           print(f'Editorial health OK: requested={requested} generated={generated} status={d.get("status")}')
           PY
