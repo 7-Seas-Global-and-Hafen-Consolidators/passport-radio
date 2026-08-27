@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -9,6 +9,9 @@
   "generation_call_budget_per_run": 12,
   "local_zero_key_format": "FLASH",
   "local_zero_key_force_batch": 2,
+  "local_zero_key_retry_limit": 1,
+  "local_zero_key_target_margin_words": 40,
+  "local_zero_key_target_window_words": 100,
   "source_firewall_max_chars": 7000,
   "minimum_fact_pack_facts": 2,
   "format_word_range": 450,
