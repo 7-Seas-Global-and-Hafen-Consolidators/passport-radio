@@ -174,10 +174,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "No approved editorial story generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          BASE_SHA="$(git rev-parse HEAD)"
+          git fetch origin main --depth=50
+          REMOTE_SHA="$(git rev-parse origin/main)"
+          if [ "$BASE_SHA" != "$REMOTE_SHA" ]; then
+            echo "EDITORIAL PUBLISH DEFERRED — main advanced during generation ($BASE_SHA -> $REMOTE_SHA). No stale batch was pushed; next serialized cycle will re-evaluate against current main." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 75
+          fi
           BATCH_ID="$(python -c "import json; print(json.load(open('build/editorial-engine/engine-report.json')).get('batch_id','unknown'))")"
           git commit -m "Passport Editorial Constitution: publish batch $BATCH_ID"
-          git fetch origin main --depth=50
-          git rebase origin/main
           git push origin HEAD:main
       - name: Enforce truthful editorial health
         if: always()
