@@ -3,8 +3,9 @@
 
 This wrapper keeps the Constitution, Fact Pack, multiprovider cascade and
 quality gate authoritative. It specializes the no-key local fallback, aligns the
-Ollama structured schema with each editorial format and gives one corrective
-retry to drafts that are structurally repairable without weakening any gate.
+Ollama structured schema with each editorial format, applies a bounded local
+FLASH envelope and gives one corrective retry to drafts that are structurally
+repairable without weakening any gate.
 """
 from __future__ import annotations
 
@@ -30,6 +31,7 @@ _routing_stats = {
     "routed_to_flash": 0,
     "preserved_live_signal": 0,
     "metadata_placeholders_removed": 0,
+    "structural_envelope_candidates": 0,
     "draft_candidates": 0,
     "generation_responses": 0,
     "reprocess_attempts": 0,
@@ -54,6 +56,14 @@ def _local_only() -> bool:
     return not _external_free_configured()
 
 
+def _clamp_int(value: Any, low: int, high: int, default: int) -> int:
+    try:
+        parsed = int(value)
+    except Exception:
+        parsed = default
+    return max(low, min(high, parsed))
+
+
 def _routed_candidate(candidate: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
     routed = copy.deepcopy(candidate)
     if not _local_only():
@@ -75,6 +85,14 @@ def _routed_candidate(candidate: dict[str, Any], config: dict[str, Any]) -> dict
         routed["_fact_pack"]["recommended_format"] = local_format
     if local_format == "FLASH" and original != "FLASH":
         _routing_stats["routed_to_flash"] += 1
+
+    # Keep the structural envelope private to the routed local candidate. It is
+    # consumed only by the Ollama JSON schema and never reaches public output or
+    # the Fact Pack persisted by the core engine.
+    envelope = config.get("local_zero_key_flash_envelope")
+    if local_format == "FLASH" and isinstance(envelope, dict):
+        routed["_local_structural_envelope"] = copy.deepcopy(envelope)
+        _routing_stats["structural_envelope_candidates"] += 1
     return routed
 
 
@@ -103,7 +121,8 @@ def _clean_generated_metadata(article: dict[str, Any]) -> dict[str, Any]:
 
 # The provider schema must never allow a shape that the production validator
 # rejects. The original launcher remains the source of truth for provenance IDs;
-# this wrapper only tightens section count according to the active format.
+# this wrapper tightens the active format and, for local FLASH only, converts the
+# observed word-count failure into a bounded structural envelope.
 _base_structured_output_schema = free._structured_output_schema
 
 
@@ -111,7 +130,33 @@ def _format_aware_schema(candidate: dict[str, Any]) -> dict[str, Any]:
     schema = _base_structured_output_schema(candidate)
     fmt = str(candidate.get("recommended_format") or "STORY").upper()
     max_sections = int(engine.base.FORMAT_MAX_SECTIONS.get(fmt, 5))
-    schema["properties"]["sections"]["maxItems"] = max_sections
+    sections_schema = schema["properties"]["sections"]
+    sections_schema["maxItems"] = max_sections
+
+    envelope = candidate.get("_local_structural_envelope")
+    if fmt != "FLASH" or not isinstance(envelope, dict):
+        return schema
+
+    min_sections = _clamp_int(envelope.get("min_sections"), 1, max_sections, 2)
+    envelope_max_sections = _clamp_int(envelope.get("max_sections"), min_sections, max_sections, max_sections)
+    min_paragraphs = _clamp_int(envelope.get("min_paragraphs_per_section"), 1, 4, 2)
+    max_paragraphs = _clamp_int(envelope.get("max_paragraphs_per_section"), min_paragraphs, 4, 3)
+    min_paragraph_chars = _clamp_int(envelope.get("min_paragraph_chars"), 120, 1200, 420)
+    max_paragraph_chars = _clamp_int(envelope.get("max_paragraph_chars"), min_paragraph_chars, 1600, 680)
+    min_closing_chars = _clamp_int(envelope.get("min_closing_chars"), 20, 500, 100)
+    max_closing_chars = _clamp_int(envelope.get("max_closing_chars"), min_closing_chars, 800, 280)
+
+    sections_schema["minItems"] = min_sections
+    sections_schema["maxItems"] = envelope_max_sections
+    paragraphs_schema = sections_schema["items"]["properties"]["paragraphs"]
+    paragraphs_schema["minItems"] = min_paragraphs
+    paragraphs_schema["maxItems"] = max_paragraphs
+    text_schema = paragraphs_schema["items"]["properties"]["text"]
+    text_schema["minLength"] = min_paragraph_chars
+    text_schema["maxLength"] = max_paragraph_chars
+    closing_schema = schema["properties"]["closing"]
+    closing_schema["minLength"] = min_closing_chars
+    closing_schema["maxLength"] = max_closing_chars
     return schema
 
 
@@ -157,6 +202,17 @@ def _quality_routed_prompt(candidate: dict[str, Any], source_text: str, config: 
             "\nMODO LOCAL ZERO-KEY: compactação editorial autorizada somente pela troca de formato; "
             "nenhum gate factual, de provenance, idioma, anti-cópia ou estrutura foi relaxado."
         )
+
+        envelope = candidate.get("_local_structural_envelope")
+        if fmt == "FLASH" and isinstance(envelope, dict):
+            input_text += (
+                "\nENVELOPE ESTRUTURAL FLASH: o JSON Schema exige "
+                f"{envelope.get('min_sections', 2)}-{envelope.get('max_sections', 3)} seções, "
+                f"{envelope.get('min_paragraphs_per_section', 2)}-{envelope.get('max_paragraphs_per_section', 3)} parágrafos por seção, "
+                f"{envelope.get('min_paragraph_chars', 420)}-{envelope.get('max_paragraph_chars', 680)} caracteres por parágrafo e fechamento entre "
+                f"{envelope.get('min_closing_chars', 100)}-{envelope.get('max_closing_chars', 280)} caracteres. "
+                "Respeite a estrutura sem repetir frases, sem criar fatos e sem adicionar fact_refs inexistentes."
+            )
 
     corrections = candidate.get("_editorial_correction")
     if isinstance(corrections, list) and corrections:
@@ -250,7 +306,7 @@ def _annotate_report() -> None:
         report = json.loads(path.read_text("utf-8"))
     except Exception:
         return
-    report["version"] = max(3, int(report.get("version", 0) or 0))
+    report["version"] = max(4, int(report.get("version", 0) or 0))
     report["drafted"] = int(_routing_stats["draft_candidates"])
     report["generation_responses"] = int(_routing_stats["generation_responses"])
     report["reprocessed"] = int(_routing_stats["reprocess_attempts"])

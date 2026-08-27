@@ -65,8 +65,8 @@ for name, art, pack, expected, critical in cases:
     rows.append({"name":name,"expected":expected,"actual":actual,"critical":critical,"reasons":result.get("reasons",[])})
 metrics=gate.golden_metrics(rows)
 
-# Structured provenance contract stays mandatory and the schema must agree with
-# the production format's maximum section count.
+# Structured provenance contract stays mandatory and the base schema must agree
+# with the production format's maximum section count.
 schema_candidate = {
     "recommended_format": "STORY",
     "_fact_pack": {"facts": FACTS},
@@ -85,11 +85,23 @@ assert flash_schema["properties"]["sections"]["maxItems"] == 3
 
 # Local-only specialization is deterministic and never relaxes the gate.
 engine_cfg=json.loads((ROOT / "data/editorial-engine.json").read_text("utf-8"))
-assert engine_cfg["version"] >= 10
+assert engine_cfg["version"] >= 11
 assert engine_cfg["local_zero_key_format"] == "FLASH"
 assert engine_cfg["local_zero_key_force_batch"] == 2
 assert engine_cfg["local_zero_key_retry_limit"] == 1
 assert engine_cfg["minimum_words"]["FLASH"] == 300
+
+envelope=engine_cfg["local_zero_key_flash_envelope"]
+assert envelope == {
+    "min_sections": 2,
+    "max_sections": 3,
+    "min_paragraphs_per_section": 2,
+    "max_paragraphs_per_section": 3,
+    "min_paragraph_chars": 420,
+    "max_paragraph_chars": 680,
+    "min_closing_chars": 100,
+    "max_closing_chars": 280,
+}
 
 saved={name:os.environ.get(name) for name in ("GROQ_API_KEY","GEMINI_API_KEY","OPENROUTER_API_KEY")}
 try:
@@ -100,12 +112,38 @@ try:
     assert original["recommended_format"] == "MR_NOMAD"
     assert routed["recommended_format"] == "FLASH"
     assert routed["_fact_pack"]["recommended_format"] == "FLASH"
+    assert routed["_local_structural_envelope"] == envelope
 finally:
     for name,value in saved.items():
         if value is None:
             os.environ.pop(name, None)
         else:
             os.environ[name]=value
+
+# The local FLASH schema now makes the observed short-output failure structural.
+# This is a character envelope, not a claim that characters equal words; the
+# production 300-word validator remains authoritative and the real Engine run is
+# still required before declaring the model compliant.
+enveloped_schema=free._structured_output_schema(routed)
+sections_schema=enveloped_schema["properties"]["sections"]
+paragraphs_schema=sections_schema["items"]["properties"]["paragraphs"]
+text_schema=paragraphs_schema["items"]["properties"]["text"]
+closing_schema=enveloped_schema["properties"]["closing"]
+assert sections_schema["minItems"] == 2
+assert sections_schema["maxItems"] == 3
+assert paragraphs_schema["minItems"] == 2
+assert paragraphs_schema["maxItems"] == 3
+assert text_schema["minLength"] == 420
+assert text_schema["maxLength"] == 680
+assert closing_schema["minLength"] == 100
+assert closing_schema["maxLength"] == 280
+structural_floor_chars=(
+    sections_schema["minItems"]
+    * paragraphs_schema["minItems"]
+    * text_schema["minLength"]
+    + closing_schema["minLength"]
+)
+assert structural_floor_chars == 1780
 
 cleaned=router._clean_generated_metadata({
     "entities":["artistas/bandas/álbuns centrais","Iron Maiden"],
@@ -173,6 +211,8 @@ print(json.dumps({
     "structured_output_fact_ids":refs_schema["items"]["enum"],
     "local_router":"FLASH",
     "flash_max_sections":flash_schema["properties"]["sections"]["maxItems"],
+    "flash_structural_envelope":envelope,
+    "flash_structural_floor_chars":structural_floor_chars,
     "single_retry":True,
 }, ensure_ascii=False, indent=2))
 assert metrics["critical_false_accept"] == 0, metrics
