@@ -2,6 +2,14 @@ name: Passport Editorial Tunnel Global — 1200
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/editorial-tunnel.yml'
+      - 'tools/editorial_tunnel_resilient.py'
+      - 'data/editorial-rss-overrides.json'
+      - 'tests/test_editorial_tunnel_rss_fallback.py'
   schedule:
     - cron: '17 * * * *'
 
@@ -27,9 +35,14 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Validate resilient RSS fallback
+        run: |
+          python -m py_compile tools/editorial_tunnel_resilient.py
+          python tests/test_editorial_tunnel_rss_fallback.py
+
       - name: Run Worldwide Editorial Tunnel
         run: |
-          python tools/editorial_tunnel_global.py \
+          python tools/editorial_tunnel_resilient.py \
             --sources data/editorial-sources-global.json \
             --output-dir build/editorial-tunnel \
             --daily-limit 1200 \
@@ -50,8 +63,12 @@ jobs:
               r=json.loads(radar.read_text('utf-8'))
               health=r.get('source_health', [])
               ok=sum(1 for x in health if x.get('ok'))
-              print(f"Sources responding: **{ok}/{len(health)}**")
+              rss=sum(1 for x in health if x.get('ok') and x.get('method') == 'rss')
+              bad=[x for x in health if not x.get('ok')]
+              print(f"Sources responding: **{ok}/{len(health)}** · RSS/Atom recovered: **{rss}** · still unavailable: **{len(bad)}**")
               print(f"URLs discovered: **{r.get('discovered_url_count',0)}** · article metadata: **{r.get('article_metadata_count',0)}** · clusters: **{r.get('cluster_count',0)}**")
+              if bad:
+                  print('Still unavailable: ' + ', '.join(x.get('name','?') for x in bad[:20]))
           if daily.exists():
               d=json.loads(daily.read_text('utf-8'))
               selected=d.get('selected', [])
