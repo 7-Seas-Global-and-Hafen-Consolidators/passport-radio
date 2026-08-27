@@ -2,6 +2,7 @@
 """Synthetic Golden Corpus for Passport Editorial Constitution™ quality gate."""
 from __future__ import annotations
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -9,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str((ROOT / "tools").resolve()))
 import editorial_quality_gate as gate
 import editorial_engine_free as free
+import editorial_engine_quality_router as router
 
 FACTS = [
     {"fact_id":"F_TITLE","type":"signal_title","value":"Iron Maiden anuncia show no Brasil","evidence":"Iron Maiden announces a concert in Brazil","source_ids":["S1"],"status":"DIRECT","critical":True,"allowed_for_generation":True},
@@ -74,7 +76,37 @@ assert set(refs_schema["items"]["enum"]) == {"F_TITLE", "F_DATE"}
 assert "F_CONFLICT" not in refs_schema["items"]["enum"]
 assert schema["additionalProperties"] is False
 
-print(json.dumps({"rows":rows,"metrics":metrics,"structured_output_fact_ids":refs_schema["items"]["enum"]}, ensure_ascii=False, indent=2))
+# Local-only specialization is deterministic and never relaxes the gate.
+engine_cfg=json.loads((ROOT / "data/editorial-engine.json").read_text("utf-8"))
+assert engine_cfg["version"] >= 9
+assert engine_cfg["local_zero_key_format"] == "FLASH"
+assert engine_cfg["local_zero_key_force_batch"] == 2
+assert engine_cfg["minimum_words"]["FLASH"] == 300
+
+saved={name:os.environ.get(name) for name in ("GROQ_API_KEY","GEMINI_API_KEY","OPENROUTER_API_KEY")}
+try:
+    for name in saved:
+        os.environ.pop(name, None)
+    original={"recommended_format":"MR_NOMAD","_fact_pack":{"recommended_format":"MR_NOMAD","facts":FACTS}}
+    routed=router._routed_candidate(original, engine_cfg)
+    assert original["recommended_format"] == "MR_NOMAD"
+    assert routed["recommended_format"] == "FLASH"
+    assert routed["_fact_pack"]["recommended_format"] == "FLASH"
+finally:
+    for name,value in saved.items():
+        if value is None:
+            os.environ.pop(name, None)
+        else:
+            os.environ[name]=value
+
+cleaned=router._clean_generated_metadata({
+    "entities":["artistas/bandas/álbuns centrais","Iron Maiden"],
+    "keywords":["termos de busca","heavy metal"],
+})
+assert cleaned["entities"] == ["Iron Maiden"]
+assert cleaned["keywords"] == ["heavy metal"]
+
+print(json.dumps({"rows":rows,"metrics":metrics,"structured_output_fact_ids":refs_schema["items"]["enum"],"local_router":"FLASH"}, ensure_ascii=False, indent=2))
 assert metrics["critical_false_accept"] == 0, metrics
 assert metrics["false_accept"] == 0, metrics
 assert metrics["correct"] == len(rows), metrics
