@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -11,15 +11,16 @@
   "minimum_fact_pack_facts": 2,
   "format_word_range": 450,
   "quality_gate": {
-    "mode": "shadow",
+    "mode": "enforce",
     "require_fact_refs": true,
+    "require_ptbr": true,
     "anti_copy_window_words": 40
   },
   "provider_timeouts": {
     "groq": 30,
     "gemini": 45,
     "openrouter": 60,
-    "ollama": 330
+    "ollama": 300
   },
   "cooldown_days": 45,
   "ledger_size": 100000,

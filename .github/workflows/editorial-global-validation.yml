@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.12'
       - name: Compile editorial Python
@@ -60,18 +60,19 @@ jobs:
           quality=Path('tools/editorial_quality_gate.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
-          # Constitution v7: 500 is a publication ceiling, not a quota to fill.
-          assert cfg['version'] >= 7, cfg
+          # Constitution v8: 500 is a publication ceiling and the gate is authoritative.
+          assert cfg['version'] >= 8, cfg
           assert cfg['daily_publish_cap'] == 500, cfg
-          assert cfg['daily_target'] == 500, cfg  # compatibility alias only
+          assert cfg['daily_target'] == 500, cfg
           assert cfg['daily_evaluation_cap'] == 1200, cfg
-          assert cfg['daily_capacity'] == 700, cfg  # legacy compatibility field
+          assert cfg['daily_capacity'] == 700, cfg
           assert cfg['max_batch'] == 12, cfg
           assert cfg['generation_call_budget_per_run'] == 12, cfg
           assert cfg['evaluation_scan_per_run'] >= 24, cfg
           assert cfg['model'] == 'auto', cfg
-          assert cfg['quality_gate']['mode'] == 'shadow', cfg
+          assert cfg['quality_gate']['mode'] == 'enforce', cfg
           assert cfg['quality_gate']['require_fact_refs'] is True, cfg
+          assert cfg['quality_gate']['require_ptbr'] is True, cfg
           assert cfg['quality_gate']['anti_copy_window_words'] >= 40, cfg
           assert cfg['minimum_words']['STORY'] >= 850, cfg
           assert cfg['minimum_words']['MR_NOMAD'] >= 1100, cfg
@@ -87,6 +88,7 @@ jobs:
           sys.path.insert(0, str(Path('tools').resolve()))
           import editorial_engine_constitution as engine
           import editorial_fact_pack as fp
+          import editorial_engine_free as free
           import editorial_tunnel as base_tunnel
           import editorial_tunnel_global as global_tunnel
 
@@ -94,7 +96,6 @@ jobs:
           assert engine.EVALUATION_HARD_CAP >= 1200
           assert engine.MAX_BATCH_HARD_CAP == 12
 
-          # Workflow contract: every 10 minutes; 500 publish cap; 1200 deterministic evaluation cap.
           assert "cron: '2,12,22,32,42,52 * * * *'" in workflow
           assert 'default: "500"' in workflow
           assert 'daily publication cap must be 1..500' in workflow
@@ -109,26 +110,36 @@ jobs:
           assert 'PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite' in workflow
           assert 'PASSPORT_OPENROUTER_MODEL: openrouter/free' in workflow
           assert 'PASSPORT_OLLAMA_MODEL: qwen2.5:1.5b-instruct' in workflow
+          assert "PASSPORT_OLLAMA_TIMEOUT: '300'" in workflow
           assert 'OLLAMA_CONTEXT_LENGTH: 8192' in workflow
-          assert 'Fact Pack + shadow gate' in workflow
+          assert 'Fact Pack + enforced quality gate' in workflow
           assert 'QUALITY_LIMITED' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
-          # Free generator: zero-cost cascade, generation budget and circuit breaker.
+          # Supply chain is pinned; floating install script is forbidden.
+          assert 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' in workflow
+          assert 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' in workflow
+          assert 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' in workflow
+          assert 'ollama/ollama/releases/download/v0.33.1/install.sh' in workflow
+          assert '25f64b810b947145095956533e1bdf56eacea2673c55a7e586be4515fc882c9f' in workflow
+          assert 'sha256sum -c -' in workflow
+          assert 'curl -fsSL https://ollama.com/install.sh | sh' not in workflow
+
+          # Zero-cost launcher keeps Phase 2 dynamic structured provenance intact.
           assert 'editorial_engine_constitution' in launcher
           assert 'engine.MAX_BATCH_HARD_CAP = 12' in launcher
-          assert 'min(12' in launcher
-          assert 'groq-free' in launcher
-          assert 'gemini-free' in launcher
-          assert 'openrouter-free' in launcher
+          assert 'groq-free' in launcher and 'gemini-free' in launcher and 'openrouter-free' in launcher
           assert 'ollama-local-zero-key' in launcher
-          assert 'openrouter/free' in launcher
-          assert 'endswith(":free")' in launcher
+          assert 'openrouter/free' in launcher and 'endswith(":free")' in launcher
           assert 'all_free_providers_exhausted' in launcher
           assert 'circuit_breaker' in launcher
           assert 'provider_runtime_snapshot' in launcher
+          assert '_structured_output_schema' in launcher
+          assert '_safe_fact_ids' in launcher
+          assert '"enum": valid_ids' in launcher
+          assert '"minItems": 1' in launcher
 
-          # Constitution: deterministic identities, batch audit, Fact Pack-only generation and shadow gate.
+          # Constitution + Fact Pack + quality gate contracts.
           for marker in ('story_angle_id','event_id','batch_id','fact_refs','QUALITY_LIMITED','BLOCKED','fact-packs.json','shadow-decisions.json'):
               assert marker in constitution, marker
           assert 'generation_view(pack)' in constitution
@@ -136,6 +147,10 @@ jobs:
           assert 'Source Firewall' in factpack
           assert 'generation_view' in factpack
           assert 'WOULD_PUBLISH' in quality and 'WOULD_REJECT' in quality and 'WOULD_REPROCESS' in quality
+          assert 'public_language_not_ptbr' in quality
+          assert 'schema_placeholder_echo' in quality
+          assert 'unverified_numbers' in quality
+          assert 'unverified_literal_quote' in quality
 
           sample_candidate={'title':'Iron Maiden anuncia show no Brasil','description':'A banda confirmou nova apresentação para outubro de 2026.','url':'https://example.invalid/a','primary_category':'metal','recommended_format':'STORY','published':'2026-08-27'}
           pack=fp.build_fact_pack(sample_candidate, 'A banda confirmou a apresentação para 12 de outubro de 2026.', '2026-08-27')
@@ -143,8 +158,11 @@ jobs:
           dumped=json.dumps(view, ensure_ascii=False)
           assert 'https://' not in dumped and 'source_name' not in dumped, dumped
           assert pack['event_id'].startswith('EVT_') and pack['story_angle_id'].startswith('ANG_')
+          sample_candidate['_fact_pack']=pack
+          schema=free._structured_output_schema(sample_candidate)
+          refs=schema['properties']['sections']['items']['properties']['paragraphs']['items']['properties']['fact_refs']
+          assert refs['minItems'] == 1 and refs['items']['enum']
 
-          # Editorial automation remains isolated from commercial/site-wide mutation.
           assert 'inject_amazon_affiliate.py' not in workflow
           assert 'Inject Amazon affiliate layer' not in workflow
           assert "git add -- '*.html'" not in workflow
@@ -159,7 +177,7 @@ jobs:
           assert 'passport:batch-id' in rendered
           assert 'Every Song Is A Destination.' in rendered
 
-          # Worldwide Tunnel stays intact and protected: 1200 radar / 24 workers.
+          # Protected worldwide Tunnel remains unchanged: 1200 radar / 24 workers.
           for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
               assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang
               assert lang in base_tunnel.GLOBAL_ACCEPT_LANGUAGE, lang
@@ -176,5 +194,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; Fact Pack + Golden Corpus + shadow gate; zero-cost providers')
+          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; dynamic structured provenance + ENFORCED quality gate + pinned supply chain')
           PY
