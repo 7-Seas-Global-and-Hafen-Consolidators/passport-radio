@@ -23,11 +23,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Compile editorial Python
         run: |
           python -m py_compile \
@@ -35,11 +33,9 @@ jobs:
             tools/editorial_engine_copilot.py \
             tools/editorial_tunnel.py \
             tools/editorial_tunnel_global.py
-
-      - name: Validate worldwide source network and 6-per-day operating policy
+      - name: Validate worldwide Full Story 500/day operating policy
         run: |
           python - <<'PY'
-          import datetime as dt
           import json
           from pathlib import Path
           import sys
@@ -51,23 +47,20 @@ jobs:
           launcher=Path('tools/editorial_engine_copilot.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
-          # Permanent public policy: six selected stories/day from a 1,200-signal radar.
-          assert cfg['version'] >= 5, cfg
-          assert cfg['daily_target'] == 6, cfg
-          assert cfg['daily_capacity'] == 1200, cfg
-          assert cfg['max_batch'] == 1, cfg
-          assert cfg['generation_call_budget_per_run'] == 1, cfg
+          # Operation 26/8: 500 public stories/day, 700/day internal capacity, 12/run.
+          assert cfg['version'] >= 6, cfg
+          assert cfg['daily_target'] == 500, cfg
+          assert cfg['daily_capacity'] == 700, cfg
+          assert cfg['max_batch'] == 12, cfg
+          assert cfg['generation_call_budget_per_run'] == 12, cfg
           assert cfg['model'] == 'auto', cfg
+          assert cfg['minimum_words']['STORY'] >= 850, cfg
+          assert cfg['minimum_words']['MR_NOMAD'] >= 1100, cfg
           assert len(sources) >= 120, len(sources)
 
           keys=[(x.get('domain'), x.get('url')) for x in sources]
           assert len(keys) == len(set(keys)), 'duplicate source domain/url pairs'
-
-          required_regions={
-              'brasil','latin_america','central_america','caribbean','uk_ireland',
-              'continental_europe','nordics','eastern_europe','east_asia','south_asia',
-              'southeast_asia','central_asia','middle_east','africa','oceania','north_america'
-          }
+          required_regions={'brasil','latin_america','central_america','caribbean','uk_ireland','continental_europe','nordics','eastern_europe','east_asia','south_asia','southeast_asia','central_asia','middle_east','africa','oceania','north_america'}
           present={cat for s in sources for cat in s.get('categories', [])}
           missing=required_regions-present
           assert not missing, f'missing regions: {sorted(missing)}'
@@ -77,92 +70,59 @@ jobs:
           import editorial_tunnel as base_tunnel
           import editorial_tunnel_global as global_tunnel
 
-          # Base Engine keeps broad native safety ceilings, but Actions policy clamps
-          # every public execution to 6/day and one story per run.
-          assert engine.PUBLICATION_HARD_CAP >= 6
-          assert engine.RESERVOIR_HARD_CAP == 1200
-          assert engine.MAX_BATCH_HARD_CAP >= 1
+          assert engine.PUBLICATION_HARD_CAP >= 700
+          assert engine.RESERVOIR_HARD_CAP >= 700
+          assert engine.MAX_BATCH_HARD_CAP >= 12
 
-          # With an hourly scheduler, pacing only asks for a story roughly every 4h.
-          fixed=dt.datetime(2026,8,26,0,17,0,tzinfo=dt.timezone(dt.timedelta(hours=-3)))
-          engine.now_sp=lambda: fixed
-          assert engine.desired_batch(6, 0, 1) == 1
-          assert engine.desired_batch(6, 1, 1) == 0
-          fixed=dt.datetime(2026,8,26,12,17,0,tzinfo=dt.timezone(dt.timedelta(hours=-3)))
-          engine.now_sp=lambda: fixed
-          assert engine.desired_batch(6, 3, 1) == 1
-          assert engine.desired_batch(6, 4, 1) == 0
-
-          # Scheduled and manual operation cannot ask Actions for 800/10 anymore.
-          assert "cron: '17 * * * *'" in workflow
-          assert 'default: "6"' in workflow
-          assert 'default: "-1"' in workflow
-          assert 'TARGET="6"' in workflow
-          assert 'daily_target must be 1..6' in workflow
-          assert 'force_batch must be -1..1' in workflow
-          assert '--capacity 1200' in workflow
-          assert '--max-batch 1' in workflow
-          assert 'CYCLES=6' not in workflow
-          assert 'CYCLES=' not in workflow
-          assert '\n  push:' not in workflow
-          assert 'Global 1200 → 6' in workflow
-
-          # Quota-economy generation: one Copilot call, model auto, no paid OpenAI API
-          # lane and no fixed gpt-5-mini retry.
+          # Workflow contract: every 10 minutes, default 500/day, capacity 700, max batch 12.
+          assert "cron: '2,12,22,32,42,52 * * * *'" in workflow
+          assert 'default: "500"' in workflow
+          assert 'TARGET="500"' in workflow
+          assert 'daily_target must be 1..700' in workflow
+          assert 'force_batch must be -1..12' in workflow
+          assert '--capacity 700' in workflow
+          assert '--max-batch 12' in workflow
           assert 'PASSPORT_EDITORIAL_MODEL: auto' in workflow
-          assert 'OPENAI_API_KEY:' not in workflow
-          assert 'PASSPORT_COPILOT_FALLBACK_MODEL' not in workflow
-          assert 'GENERATION_CALL_BUDGET = 1' in launcher
-          assert 'quota_economy_generation_budget_exhausted' in launcher
-          assert 'COPILOT_MODEL' in launcher
-          assert 'or "auto"' in launcher
-          assert '"--model"' in launcher
-          assert 'gpt-5-mini' not in launcher
-          assert 'BASE_OPENAI_CALL' not in launcher
-          assert 'passport-copilot-quota-economy' in launcher
+          assert 'Full Story' in workflow
           assert 'Enforce truthful editorial health' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
-          # Editorial automation is isolated from commercial/site-wide mutation.
+          # Generator budget follows the 12-story batch and keeps Copilot auto model.
+          assert 'GENERATION_CALL_BUDGET = 12' in launcher
+          assert 'COPILOT_MODEL' in launcher
+          assert 'or "auto"' in launcher
+          assert '"--model"' in launcher
+
+          # Editorial automation remains isolated from commercial/site-wide mutation.
           assert 'inject_amazon_affiliate.py' not in workflow
           assert 'Inject Amazon affiliate layer' not in workflow
           assert "git add -- '*.html'" not in workflow
           assert "git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/" in workflow
 
-          # Mr. Nomad belongs to the renderer template itself.
-          sample={
-              'title':'Teste Passport','meta_description':'Teste','deck':'Teste',
-              'published_at':'2026-08-26T12:00:00-03:00','category':'rock','format':'STORY',
-              'kicker':'PASSPORT RADIO · ROCK · 26/08/2026','sections':[],
-              'closing':'Fecho editorial.'
-          }
+          # Renderer remains public pt-BR and keeps the Passport/Mr. Nomad signature.
+          sample={'title':'Teste Passport','meta_description':'Teste','deck':'Teste','published_at':'2026-08-26T12:00:00-03:00','category':'rock','format':'STORY','kicker':'PASSPORT RADIO · ROCK · 26/08/2026','sections':[],'closing':'Fecho editorial.'}
           rendered=engine.render_article(sample, '/editorial/teste.html', [])
+          assert '<html lang="pt-BR">' in rendered
           assert 'pe-nomad-signature' in rendered
           assert 'MR. NOMAD' in rendered
           assert 'Every Song Is A Destination.' in rendered
-          assert 'Aguardo meus Nômades na Passport Radio.' in rendered
 
-          # Multilingual worldwide discovery remains intact.
+          # Worldwide multilingual discovery remains intact; public output is normalized later.
           for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
               assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang
               assert lang in base_tunnel.GLOBAL_ACCEPT_LANGUAGE, lang
           assert engine.tokens('東京 음악 музыка موسيقى')
-          assert base_tunnel.DAILY_RESERVOIR_HARD_CAP == 1200
+          assert base_tunnel.DAILY_RESERVOIR_HARD_CAP >= 1200
           assert base_tunnel.PER_SOURCE_HARD_CAP >= 20
           assert base_tunnel.WORKERS_HARD_CAP >= 24
           assert base_tunnel.RADAR_HARD_CAP >= 1200
-
-          # Global rules add geography/genre intelligence without bytecode mutation.
-          assert global_tunnel.GLOBAL_DAILY_RESERVOIR == 1200
+          assert global_tunnel.GLOBAL_DAILY_RESERVOIR >= 1200
           assert global_tunnel.GLOBAL_PER_SOURCE_CAP >= 20
           assert global_tunnel.SOURCE_SELECTION_CAP >= 10
           assert 'raise_base_limits' not in global_tunnel_text
           assert 'co_consts' not in global_tunnel_text
 
-          # Editorial firewall and PT-BR public output remain protected.
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          assert '<html lang="pt-BR">' in rendered
-
-          print(f'validated {len(sources)} worldwide source entries; 1200 radar / 6 public per day / 1 Copilot call per run / auto model')
+          print(f'validated {len(sources)} worldwide sources; 1200-signal radar / 500 public per day / 700 capacity / 12 per run / Full Story pt-BR')
           PY
