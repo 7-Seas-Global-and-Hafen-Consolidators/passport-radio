@@ -275,52 +275,73 @@ if (menu && side) {
   load();
 })();
 
-/* Agenda Passport — curadoria Brasil, setembro/2026 em diante.
-   Mantém a URL e o layout da Home; substitui apenas os cards antigos da agenda. */
+/* Agenda Passport — curadoria Brasil, atualizada em 27/08/2026.
+   Mantém a URL e o layout da Home; substitui apenas os cards antigos da agenda.
+   Datas, locais e links abaixo foram conferidos nas bilheterias oficiais. */
 (() => {
   const agenda = document.querySelector('#agenda .agenda');
   if (!agenda) return;
 
   const events = [
     {
+      date: '04 SET', year: '2026', artist: 'Thunderbird · História Ilustrada do Rock Nacional — Anos 80', city: 'São Paulo · SP',
+      place: 'Blue Note São Paulo · 20h',
+      url: 'https://www.eventim.com.br/artist/thunderbird/'
+    },
+    {
+      date: '06 SET', year: '2026', artist: 'mgk', city: 'São Paulo · SP',
+      place: 'Audio · 21h',
+      url: 'https://www.ticketmaster.com.br/event/mgk'
+    },
+    {
       date: '19 SET', year: '2026', artist: 'Helloween', city: 'São Paulo · SP',
       place: 'Suhai Music Hall · 21h',
       url: 'https://www.eventim.com.br/event/helloween-suhai-music-hall-21068671/'
     },
     {
-      date: '25–28 OUT', year: '2026', artist: 'Iron Maiden · Run For Your Lives', city: 'São Paulo · SP + Curitiba · PR',
+      date: '02–03 OUT', year: '2026', artist: 'Angra · Holy Land / Rebirth', city: 'São Paulo · SP',
+      place: 'Tokio Marine Hall · 22h',
+      url: 'https://www.ticketmaster.com.br/event/angra-tokio-marine-hall'
+    },
+    {
+      date: '16 OUT', year: '2026', artist: 'After Forever', city: 'São Paulo · SP',
+      place: 'Tokio Marine Hall',
+      url: 'https://www.ticketmaster.com.br/event/after-forever-tokio-marine-hall'
+    },
+    {
+      date: '25–28 OUT', year: '2026', artist: 'Iron Maiden · Run For Your Lives World Tour', city: 'São Paulo · SP + Curitiba · PR',
       place: 'Nubank Parque · Arena da Baixada',
       url: 'https://www.livepass.com.br/artist/iron-maiden/'
     },
     {
       date: '07 NOV', year: '2026', artist: 'Sepultura · Celebrating Life Through Death', city: 'São Paulo · SP',
-      place: 'Pacaembu',
-      url: 'https://www.sepultura.com.br/pt/tour'
+      place: 'Mercado Livre Arena Pacaembu · 20h30',
+      url: 'https://www.ticketmaster.com.br/event/sepultura'
     },
     {
       date: '05 DEZ', year: '2026', artist: 'Deep Purple', city: 'São Paulo · SP',
       place: 'Suhai Music Hall · 21h',
-      url: 'https://www.eventim.com.br/artist/deep-purple/'
+      url: 'https://www.eventim.com.br/event/deep-purple-suhai-music-hall-21626291/'
     },
     {
       date: '17 DEZ', year: '2026', artist: 'Slayer · Reign In Blood 40th Anniversary', city: 'São Paulo · SP',
       place: 'Nubank Parque · Kreator + Korzus',
-      url: 'https://www.livepass.com.br/artist/slayer-2026/'
+      url: 'https://www.livepass.com.br/event/slayer-reign-in-blood-40th-anniversary-2026-nubank-parque-21728606/'
     },
     {
       date: '15 JAN', year: '2027', artist: 'System Of A Down + Faith No More', city: 'Rio de Janeiro · RJ',
-      place: 'Maracanã · One Night Only',
-      url: 'https://www.eventim.com.br/artist/faith-no-more/'
+      place: 'Estádio Maracanã · 16h',
+      url: 'https://www.eventim.com.br/event/system-of-a-down-e-faith-no-more-estadio-maracana-22023211/'
     },
     {
-      date: '22 JAN–04 FEV', year: '2027', artist: 'Rush · Tour Brasil', city: 'Curitiba · São Paulo · Rio · Belo Horizonte · Brasília',
+      date: '22 JAN–04 FEV', year: '2027', artist: 'Rush · Fifty Something Tour', city: 'Curitiba · São Paulo · Rio · Belo Horizonte · Brasília',
       place: '5 cidades · 6 apresentações',
-      url: 'https://www.eventim.com.br/'
+      url: 'https://www.eventim.com.br/campaign/rush'
     },
     {
-      date: '18–20 FEV', year: '2027', artist: 'Foo Fighters · Take Cover Tour', city: 'Belo Horizonte · MG + São Paulo · SP',
-      place: 'Arena MRV · MorumBIS · 20h',
-      url: 'https://www.ticketmaster.com.br/event/pv-artista-foo-fighters-belo-horizonte'
+      date: '20 FEV', year: '2027', artist: 'Foo Fighters', city: 'São Paulo · SP',
+      place: 'Estádio do MorumBIS · 20h',
+      url: 'https://www.ticketmaster.com.br/event/venda-geral-foo-fighters-sao-paulo'
     }
   ];
 
