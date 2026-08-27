@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Free-tier multiprovider launcher for Passport Editorial Engine™ Full Story.
+"""Zero-cost multiprovider launcher for Passport Editorial Engine™ Full Story.
 
 Provider cascade per story:
 1. Groq free-tier key/model
 2. Gemini free-tier key/model
 3. OpenRouter free router
+4. Local Ollama model on the GitHub Actions runner (no API key)
 
 The shared editorial engine, Tunnel queue, publication gates and pacing remain unchanged.
 """
@@ -85,8 +86,7 @@ def _groq(prompt: str, config: dict) -> dict:
         {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
         int(config.get("api_timeout_seconds", 240)),
     )
-    text = data["choices"][0]["message"]["content"]
-    return engine.parse_json_text(text)
+    return engine.parse_json_text(data["choices"][0]["message"]["content"])
 
 
 def _gemini(prompt: str, config: dict) -> dict:
@@ -110,8 +110,7 @@ def _gemini(prompt: str, config: dict) -> dict:
         int(config.get("api_timeout_seconds", 240)),
     )
     parts = data["candidates"][0]["content"]["parts"]
-    text = "".join(str(part.get("text", "")) for part in parts)
-    return engine.parse_json_text(text)
+    return engine.parse_json_text("".join(str(part.get("text", "")) for part in parts))
 
 
 def _openrouter_free(prompt: str, config: dict) -> dict:
@@ -138,7 +137,30 @@ def _openrouter_free(prompt: str, config: dict) -> dict:
         },
         int(config.get("api_timeout_seconds", 240)),
     )
-    text = data["choices"][0]["message"]["content"]
+    return engine.parse_json_text(data["choices"][0]["message"]["content"])
+
+
+def _ollama_local(prompt: str, config: dict) -> dict:
+    """Use an open-weight model running locally on the Actions runner; no key/billing."""
+    endpoint = os.environ.get("PASSPORT_OLLAMA_URL", "http://127.0.0.1:11434/api/chat").strip()
+    model = os.environ.get("PASSPORT_OLLAMA_MODEL", "qwen2.5:0.5b-instruct").strip()
+    if not endpoint.startswith("http://127.0.0.1:") and not endpoint.startswith("http://localhost:"):
+        raise RuntimeError("Ollama endpoint rejected: local loopback only")
+    payload = {
+        "model": model,
+        "stream": False,
+        "format": "json",
+        "messages": [{"role": "user", "content": prompt}],
+        "options": {
+            "temperature": 0.3,
+            "num_predict": min(8192, int(config.get("max_output_tokens", 6500))),
+            "num_ctx": 16384,
+        },
+    }
+    data = _post_json(endpoint, payload, {"Content-Type": "application/json"}, int(config.get("api_timeout_seconds", 240)))
+    text = str((data.get("message") or {}).get("content") or "")
+    if not text:
+        raise RuntimeError("Ollama returned empty content")
     return engine.parse_json_text(text)
 
 
@@ -157,6 +179,7 @@ def call_free_multiprovider(candidate, source_text, config):
         ("groq-free", _groq),
         ("gemini-free", _gemini),
         ("openrouter-free", _openrouter_free),
+        ("ollama-local-zero-key", _ollama_local),
     )
     for name, provider in providers:
         try:
@@ -173,7 +196,7 @@ def call_free_multiprovider(candidate, source_text, config):
 
 install_full_story_prompt()
 engine.call_openai = call_free_multiprovider
-os.environ["OPENAI_API_KEY"] = "passport-free-multiprovider"
+os.environ["OPENAI_API_KEY"] = "passport-zero-cost-multiprovider"
 
 if __name__ == "__main__":
     raise SystemExit(engine.main())
