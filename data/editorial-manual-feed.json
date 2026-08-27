@@ -1,57 +1,29 @@
 {
-  "version": 1,
-  "updated_at": "2026-08-27T19:42:00-03:00",
+  "version": 2,
+  "updated_at": "2026-08-27T20:32:00-03:00",
   "author": "Mr. Nomad",
   "items": [
-    {
-      "title": "Anette Olzon atravessa a Europa carregando a era mais improvável do Nightwish",
-      "deck": "A turnê de 2026 recolocou Dark Passion Play e Imaginaerum no centro do palco e marcou a primeira excursão continental de Anette desde 2012.",
-      "url": "/editorial/2026/08/27/anette-olzon-nightwish-era-europa-2026.html",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-27T19:38:00-03:00",
-      "entities": ["Nightwish", "Mr. Nomad", "Anette Olzon"],
-      "author": "Mr. Nomad"
-    },
-    {
-      "title": "Floor Jansen levou Nothing Else Matters para uma banda militar — e a canção mudou de uniforme",
-      "deck": "A vocalista do Nightwish reapareceu em vídeo ao lado da Marine Band da Marinha Real Holandesa, transformando o clássico do Metallica em peça sinfônica.",
-      "url": "/editorial/2026/08/27/floor-jansen-nothing-else-matters-marinha.html",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-27T19:37:00-03:00",
-      "entities": ["Nightwish", "Mr. Nomad", "Floor Jansen"],
-      "author": "Mr. Nomad"
-    },
-    {
-      "title": "Floor Jansen abre outra porta: Hytress chega em janeiro e o metal volta ao centro",
-      "deck": "Novo single, novo álbum e uma turnê internacional em 2027: enquanto o Nightwish permanece em pausa, Floor Jansen acelera a própria rota.",
-      "url": "/editorial/2026/08/27/floor-jansen-hytress-bring-me-silence.html",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-27T19:36:00-03:00",
-      "entities": ["Nightwish", "Mr. Nomad", "Floor Jansen"],
-      "author": "Mr. Nomad"
-    },
-    {
-      "title": "Floor Jansen: o Nightwish continua em pausa — e ninguém marcou a volta",
-      "deck": "A vocalista confirmou que a banda permanece em uma suspensão temporária, sem calendário público para retomada. O detalhe importante está na palavra temporária.",
-      "url": "/editorial/2026/08/27/floor-jansen-nightwish-pausa-temporaria.html",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-27T19:35:00-03:00",
-      "entities": ["Nightwish", "Mr. Nomad", "Floor Jansen"],
-      "author": "Mr. Nomad"
-    },
-    {
-      "title": "Nightwish já tem seis novas canções no mapa",
-      "deck": "A banda segue fora da estrada, mas Tuomas Holopainen confirmou que a escrita do próximo álbum já avançou: seis músicas estão prontas e o grupo já fez reservas para trabalhar em 2027.",
-      "url": "/editorial/2026/08/27/nightwish-seis-musicas-proximo-album.html",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-27T19:34:00-03:00",
-      "entities": ["Nightwish", "Mr. Nomad", "Tuomas Holopainen"],
-      "author": "Mr. Nomad"
-    }
+    {"title":"Secos & Molhados: nomes, rostos e instrumentos por trás do choque que virou música brasileira","deck":"A formação clássica durou pouco, mas deixou uma das histórias mais intensas do rock brasileiro: poesia, maquiagem, violões, vozes e músicos que merecem ser ouvidos pelo nome.","url":"/editorial/2026/08/27/secos-e-molhados-historia-integrantes-instrumentos.html","category":"brazilian_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:32:00-03:00","entities":["Secos & Molhados","Ney Matogrosso","João Ricardo","Gérson Conrad","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Made in Brazil: a banda que fez do rock brasileiro uma profissão de risco","deck":"Da Pompeia para décadas de estrada: irmãos Vecchione, dezenas de formações, guitarras, baixo, gaita e uma história que atravessa o rock nacional sem pedir licença.","url":"/editorial/2026/08/27/made-in-brazil-historia-integrantes-rock-brasileiro.html","category":"brazilian_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:31:00-03:00","entities":["Made in Brazil","Oswaldo Vecchione","Celso Vecchione","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Joelho de Porco: a banda que transformou deboche em linguagem de rock","deck":"Tico Terpins, Próspero Albanese, Zé Rodrix e uma turma que misturou rock, humor, teatro e provocação quando quase ninguém sabia onde colocar aquilo.","url":"/editorial/2026/08/27/joelho-de-porco-historia-integrantes-tico-terpins-ze-rodrix.html","category":"brazilian_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:30:00-03:00","entities":["Joelho de Porco","Tico Terpins","Zé Rodrix","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Golpe de Estado: guitarras, nomes reais e a história do hard rock que São Paulo não esqueceu","deck":"Catalau, Hélcio Aguirra, Nélson Brito e Paulo Zinner formaram uma das combinações mais poderosas do hard rock brasileiro dos anos 80.","url":"/editorial/2026/08/27/golpe-de-estado-banda-historia-integrantes-helcio-aguirra.html","category":"brazilian_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:29:00-03:00","entities":["Golpe de Estado","Hélcio Aguirra","Paulo Zinner","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Ratos de Porão: nomes verdadeiros, instrumentos e a história do punk brasileiro que atravessou fronteiras","deck":"João Gordo, Jão, Boka, Juninho e uma linhagem de músicos que levou o hardcore paulistano para muito além do porão.","url":"/editorial/2026/08/27/ratos-de-porao-historia-integrantes-joao-gordo.html","category":"punk_hardcore","format":"MR_NOMAD","published_at":"2026-08-27T20:28:00-03:00","entities":["Ratos de Porão","João Gordo","Jão","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Angra: integrantes, instrumentos e a engenharia musical que colocou o metal brasileiro no mapa","deck":"Andre Matos, Rafael Bittencourt, Kiko Loureiro, Luis Mariutti, Ricardo Confessori e uma história de técnica, ruptura e reinvenção.","url":"/editorial/2026/08/27/angra-historia-integrantes-andre-matos-kiko-loureiro.html","category":"metal","format":"MR_NOMAD","published_at":"2026-08-27T20:27:00-03:00","entities":["Angra","Andre Matos","Kiko Loureiro","Rafael Bittencourt","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Budgie: a banda que o heavy metal ouviu antes de muita gente saber o nome","deck":"Burke Shelley, Tony Bourge, Ray Phillips e a história galesa que deixou riffs para Metallica, Iron Maiden e gerações inteiras encontrarem depois.","url":"/editorial/2026/08/27/budgie-historia-integrantes-burke-shelley-tony-bourge.html","category":"hard_rock_metal","format":"MR_NOMAD","published_at":"2026-08-27T20:26:00-03:00","entities":["Budgie","Burke Shelley","Tony Bourge","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Thin Lizzy: Phil Lynott, guitarras gêmeas e os nomes que construíram uma das bandas mais elegantes do hard rock","deck":"Philip Parris Lynott, Brian Downey, Scott Gorham, Brian Robertson, Gary Moore e uma linhagem de guitarristas que ensinou o rock a harmonizar peso e melodia.","url":"/editorial/2026/08/27/thin-lizzy-historia-integrantes-phil-lynott-guitarras.html","category":"hard_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:25:00-03:00","entities":["Thin Lizzy","Phil Lynott","Scott Gorham","Brian Downey","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Humble Pie: Steve Marriott, Peter Frampton e a banda que fazia o palco parecer pequeno","deck":"Voz, guitarra, Hammond, baixo e bateria: os músicos por trás de Rockin’ the Fillmore e de uma das formações mais explosivas do rock britânico.","url":"/editorial/2026/08/27/humble-pie-historia-integrantes-steve-marriott-frampton.html","category":"classic_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:24:00-03:00","entities":["Humble Pie","Steve Marriott","Peter Frampton","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Marillion: Fish, Steve Hogarth e os músicos que fizeram o progressivo sobreviver aos anos 80","deck":"Steve Rothery, Mark Kelly, Pete Trewavas, Ian Mosley, Fish e Steve Hogarth: nomes, instrumentos e a transformação de uma banda que recusou desaparecer.","url":"/editorial/2026/08/27/marillion-historia-integrantes-fish-steve-hogarth.html","category":"progressive_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:23:00-03:00","entities":["Marillion","Fish","Steve Hogarth","Steve Rothery","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Living Colour: Vernon Reid, Corey Glover e a banda que explodiu os limites do hard rock","deck":"Guitarra, funk, metal, punk e política: os nomes e instrumentos de uma banda que fez o rock encarar suas próprias fronteiras.","url":"/editorial/2026/08/27/living-colour-historia-integrantes-vernon-reid-corey-glover.html","category":"alternative_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:22:00-03:00","entities":["Living Colour","Vernon Reid","Corey Glover","Doug Wimbish","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Temple of the Dog: nomes, instrumentos e a história humana que ligou Andrew Wood, Chris Cornell e Pearl Jam","deck":"Chris Cornell, Stone Gossard, Jeff Ament, Mike McCready, Matt Cameron e Eddie Vedder gravaram um tributo que acabou registrando o nascimento de outra era.","url":"/editorial/2026/08/27/temple-of-the-dog-historia-integrantes-chris-cornell-eddie-vedder.html","category":"alternative_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:21:00-03:00","entities":["Temple of the Dog","Chris Cornell","Eddie Vedder","Andrew Wood","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Faith No More: Mike Patton, Billy Gould e os músicos que transformaram incompatibilidade em som","deck":"Metal, funk, punk, pop, teclados e uma voz impossível de classificar: nomes, instrumentos e conexões da banda que nunca coube em uma prateleira.","url":"/editorial/2026/08/27/faith-no-more-historia-integrantes-mike-patton-billy-gould.html","category":"alternative_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:20:00-03:00","entities":["Faith No More","Mike Patton","Billy Gould","Roddy Bottum","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"The Mission: Wayne Hussey, Craig Adams e a banda que nasceu das cinzas do Sisters of Mercy","deck":"Guitarras de doze cordas, baixo, bateria e atmosfera: os nomes e instrumentos que fizeram The Mission construir identidade própria no rock gótico.","url":"/editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html","category":"alternative_gothic","format":"MR_NOMAD","published_at":"2026-08-27T20:19:00-03:00","entities":["The Mission","Wayne Hussey","Craig Adams","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Cólera: Redson, Pierre e os nomes por trás de uma das raízes mais profundas do punk brasileiro","deck":"Punk, pacifismo, independência e estrada: a história de uma banda paulistana que atravessou décadas sem abandonar a própria convicção.","url":"/editorial/2026/08/27/colera-banda-punk-historia-integrantes-redson-pierre.html","category":"punk_hardcore","format":"MR_NOMAD","published_at":"2026-08-27T20:18:00-03:00","entities":["Cólera","Redson","Pierre","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Léo Jaime: Leonardo Jaime, guitarra, humor e a inteligência pop escondida atrás dos anos 80","deck":"O nome verdadeiro, os instrumentos, as bandas, as composições e as conexões de um personagem que fez o rock brasileiro parecer mais leve sem nunca ser simples.","url":"/editorial/2026/08/27/leo-jaime-historia-nome-verdadeiro-rock-brasileiro.html","category":"brazilian_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:17:00-03:00","entities":["Léo Jaime","Leonardo Jaime","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Kid Abelha: Paula Toller, Leoni, George Israel e os nomes por trás de uma máquina de canções dos anos 80","deck":"Da primeira formação aos grandes sucessos: nomes verdadeiros, instrumentos, compositores e as conexões que fizeram o Kid Abelha atravessar gerações.","url":"/editorial/2026/08/27/kid-abelha-historia-integrantes-paula-toller-leoni.html","category":"brazilian_rock","format":"MR_NOMAD","published_at":"2026-08-27T20:16:00-03:00","entities":["Kid Abelha","Paula Toller","Leoni","George Israel","Mr. Nomad"],"author":"Mr. Nomad"},
+    {"title":"Anette Olzon atravessa a Europa carregando a era mais improvável do Nightwish","deck":"A turnê de 2026 recolocou Dark Passion Play e Imaginaerum no centro do palco e marcou a primeira excursão continental de Anette desde 2012.","url":"/editorial/2026/08/27/anette-olzon-nightwish-era-europa-2026.html","category":"alternative_gothic","format":"MR_NOMAD","published_at":"2026-08-27T19:38:00-03:00","entities":["Nightwish","Mr. Nomad","Anette Olzon"],"author":"Mr. Nomad"},
+    {"title":"Floor Jansen levou Nothing Else Matters para uma banda militar — e a canção mudou de uniforme","deck":"A vocalista do Nightwish reapareceu em vídeo ao lado da Marine Band da Marinha Real Holandesa, transformando o clássico do Metallica em peça sinfônica.","url":"/editorial/2026/08/27/floor-jansen-nothing-else-matters-marinha.html","category":"alternative_gothic","format":"MR_NOMAD","published_at":"2026-08-27T19:37:00-03:00","entities":["Nightwish","Mr. Nomad","Floor Jansen"],"author":"Mr. Nomad"},
+    {"title":"Floor Jansen abre outra porta: Hytress chega em janeiro e o metal volta ao centro","deck":"Novo single, novo álbum e uma turnê internacional em 2027: enquanto o Nightwish permanece em pausa, Floor Jansen acelera a própria rota.","url":"/editorial/2026/08/27/floor-jansen-hytress-bring-me-silence.html","category":"alternative_gothic","format":"MR_NOMAD","published_at":"2026-08-27T19:36:00-03:00","entities":["Nightwish","Mr. Nomad","Floor Jansen"],"author":"Mr. Nomad"},
+    {"title":"Floor Jansen: o Nightwish continua em pausa — e ninguém marcou a volta","deck":"A vocalista confirmou que a banda permanece em uma suspensão temporária, sem calendário público para retomada. O detalhe importante está na palavra temporária.","url":"/editorial/2026/08/27/floor-jansen-nightwish-pausa-temporaria.html","category":"alternative_gothic","format":"MR_NOMAD","published_at":"2026-08-27T19:35:00-03:00","entities":["Nightwish","Mr. Nomad","Floor Jansen"],"author":"Mr. Nomad"},
+    {"title":"Nightwish já tem seis novas canções no mapa","deck":"A banda segue fora da estrada, mas Tuomas Holopainen confirmou que a escrita do próximo álbum já avançou: seis músicas estão prontas e o grupo já fez reservas para trabalhar em 2027.","url":"/editorial/2026/08/27/nightwish-seis-musicas-proximo-album.html","category":"alternative_gothic","format":"MR_NOMAD","published_at":"2026-08-27T19:34:00-03:00","entities":["Nightwish","Mr. Nomad","Tuomas Holopainen"],"author":"Mr. Nomad"}
   ]
 }
