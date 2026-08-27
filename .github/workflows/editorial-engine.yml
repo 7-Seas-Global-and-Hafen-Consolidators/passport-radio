@@ -36,7 +36,7 @@ permissions:
 
 concurrency:
   group: passport-editorial-engine
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   build-editorial:
