@@ -1,4 +1,4 @@
-name: Passport Editorial Engine — Full Story 500/day
+name: Passport Editorial Engine — Free Multiprovider 500/day
 
 on:
   workflow_dispatch:
@@ -24,7 +24,6 @@ permissions:
   contents: write
   pull-requests: write
   actions: read
-  copilot-requests: write
 
 concurrency:
   group: passport-editorial-engine
@@ -32,14 +31,18 @@ concurrency:
 
 jobs:
   build-editorial:
-    name: Build Passport Full Story editorial batch
+    name: Build Passport Full Story editorial batch — free multiprovider
     runs-on: ubuntu-latest
     timeout-minutes: 55
     env:
-      COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PERSONAL_TOKEN }}
+      GROQ_API_KEY: ${{ secrets.GROQ_FREE_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_FREE_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_FREE_API_KEY }}
+      PASSPORT_GROQ_MODEL: openai/gpt-oss-120b
+      PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite
+      PASSPORT_OPENROUTER_MODEL: openrouter/free
       GH_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ github.token }}
-      PASSPORT_EDITORIAL_MODEL: auto
 
     steps:
       - name: Checkout Passport main
@@ -51,8 +54,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install GitHub Copilot CLI
-        run: npm install -g @github/copilot@latest
       - name: Resolve engine mode and target
         id: settings
         shell: bash
@@ -67,7 +68,7 @@ jobs:
           if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 12 ]; then echo "force_batch must be -1..12"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"; echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "target=$TARGET" >> "$GITHUB_OUTPUT"
-          echo "Full Story: $TARGET/day · capacity 700/day · max batch 12 · final language pt-BR" >> "$GITHUB_STEP_SUMMARY"
+          echo "Full Story: $TARGET/day · capacity 700/day · max batch 12 · final language pt-BR · zero-cost provider cascade" >> "$GITHUB_STEP_SUMMARY"
       - name: Locate latest Global Editorial Tunnel packet
         id: tunnel
         shell: bash
@@ -82,12 +83,12 @@ jobs:
             QUEUE="build/editorial-tunnel/editorial-daily.json"
           fi
           echo "queue=$QUEUE" >> "$GITHUB_OUTPUT"
-      - name: Run Full Story editorial batch
+      - name: Run Full Story free multiprovider batch
         shell: bash
         run: |
           APPLY=""; if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
           mkdir -p build/editorial-engine
-          python tools/editorial_engine_copilot.py --queue "${{ steps.tunnel.outputs.queue }}" --config data/editorial-engine.json --state data/editorial-published.json --feed data/editorial-feed.json --output-dir build/editorial-engine --daily-target "$TARGET" --capacity 700 --max-batch 12 --force-batch "$FORCE" $APPLY | tee build/editorial-engine-console.json
+          python tools/editorial_engine_free.py --queue "${{ steps.tunnel.outputs.queue }}" --config data/editorial-engine.json --state data/editorial-published.json --feed data/editorial-feed.json --output-dir build/editorial-engine --daily-target "$TARGET" --capacity 700 --max-batch 12 --force-batch "$FORCE" $APPLY | tee build/editorial-engine-console.json
       - name: Add engine report to summary
         if: always()
         shell: bash
@@ -96,7 +97,7 @@ jobs:
           import json
           from pathlib import Path
           d=json.loads(Path('build/editorial-engine/engine-report.json').read_text('utf-8'))
-          print('\n## Passport Editorial Engine™ — Full Story')
+          print('\n## Passport Editorial Engine™ — Free Multiprovider Full Story')
           print(f"Status: **{d.get('status')}** · requested: **{d.get('requested_batch',0)}** · generated: **{len(d.get('generated',[]))}**")
           print(f"Published today: **{d.get('published_today_after',d.get('already_today',0))}/{d.get('daily_target',500)}**")
           for item in d.get('generated',[])[:12]: print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
@@ -133,6 +134,6 @@ jobs:
           p=Path('build/editorial-engine/engine-report.json')
           if not p.exists(): raise SystemExit('Editorial Engine produced no engine report')
           d=json.loads(p.read_text('utf-8')); requested=int(d.get('requested_batch',0)); generated=len(d.get('generated',[]))
-          if requested > 0 and generated == 0: raise SystemExit('EDITORIAL BLOCKED — stories were due but generation produced zero')
+          if requested > 0 and generated == 0: raise SystemExit('EDITORIAL BLOCKED — stories were due but all free providers produced zero')
           print(f'Editorial health OK: requested={requested} generated={generated} status={d.get("status")}')
           PY
