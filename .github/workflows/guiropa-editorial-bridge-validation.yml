@@ -1,0 +1,31 @@
+name: Validate GUIROPA Editorial Bridge
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/guiropa-editorial-bridge.yml'
+      - 'tools/guiropa_editorial_bridge.py'
+      - 'data/guiropa-editorial-bridge.json'
+      - '.github/workflows/guiropa-editorial-bridge-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile bridge generator
+        run: python -m py_compile tools/guiropa_editorial_bridge.py
+      - name: Validate initial packet
+        run: python - <<'PY'
+          import json
+          d=json.load(open('data/guiropa-editorial-bridge.json', encoding='utf-8'))
+          assert isinstance(d.get('stories'), list)
+          print('Bridge packet contract OK')
+          PY
