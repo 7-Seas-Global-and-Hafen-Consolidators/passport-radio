@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.12'
       - name: Compile editorial Python
@@ -60,8 +60,8 @@ jobs:
           quality=Path('tools/editorial_quality_gate.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
-          # Constitution v7: 500 is a publication ceiling, not a quota to fill.
-          assert cfg['version'] >= 7, cfg
+          # Constitution v8: 500 is a publication ceiling, quality gate is authoritative.
+          assert cfg['version'] >= 8, cfg
           assert cfg['daily_publish_cap'] == 500, cfg
           assert cfg['daily_target'] == 500, cfg  # compatibility alias only
           assert cfg['daily_evaluation_cap'] == 1200, cfg
@@ -70,8 +70,9 @@ jobs:
           assert cfg['generation_call_budget_per_run'] == 12, cfg
           assert cfg['evaluation_scan_per_run'] >= 24, cfg
           assert cfg['model'] == 'auto', cfg
-          assert cfg['quality_gate']['mode'] == 'shadow', cfg
+          assert cfg['quality_gate']['mode'] == 'enforce', cfg
           assert cfg['quality_gate']['require_fact_refs'] is True, cfg
+          assert cfg['quality_gate']['require_ptbr'] is True, cfg
           assert cfg['quality_gate']['anti_copy_window_words'] >= 40, cfg
           assert cfg['minimum_words']['STORY'] >= 850, cfg
           assert cfg['minimum_words']['MR_NOMAD'] >= 1100, cfg
@@ -109,12 +110,22 @@ jobs:
           assert 'PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite' in workflow
           assert 'PASSPORT_OPENROUTER_MODEL: openrouter/free' in workflow
           assert 'PASSPORT_OLLAMA_MODEL: qwen2.5:1.5b-instruct' in workflow
+          assert "PASSPORT_OLLAMA_TIMEOUT: '300'" in workflow
           assert 'OLLAMA_CONTEXT_LENGTH: 8192' in workflow
-          assert 'Fact Pack + shadow gate' in workflow
+          assert 'Fact Pack + enforced quality gate' in workflow
           assert 'QUALITY_LIMITED' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
-          # Free generator: zero-cost cascade, generation budget and circuit breaker.
+          # Supply-chain pins are deliberate and must not silently float.
+          assert 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' in workflow
+          assert 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' in workflow
+          assert 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' in workflow
+          assert 'ollama/ollama/releases/download/v0.33.1/install.sh' in workflow
+          assert '25f64b810b947145095956533e1bdf56eacea2673c55a7e586be4515fc882c9f' in workflow
+          assert 'sha256sum -c -' in workflow
+          assert 'curl -fsSL https://ollama.com/install.sh | sh' not in workflow
+
+          # Free generator: zero-cost cascade, generation budget, circuit breaker, structured local output.
           assert 'editorial_engine_constitution' in launcher
           assert 'engine.MAX_BATCH_HARD_CAP = 12' in launcher
           assert 'min(12' in launcher
@@ -127,8 +138,11 @@ jobs:
           assert 'all_free_providers_exhausted' in launcher
           assert 'circuit_breaker' in launcher
           assert 'provider_runtime_snapshot' in launcher
+          assert '_ollama_article_schema' in launcher
+          assert 'engine._quality_mode = lambda config: "enforce"' in launcher
+          assert 'additionalProperties' in launcher
 
-          # Constitution: deterministic identities, batch audit, Fact Pack-only generation and shadow gate.
+          # Constitution: deterministic identities, batch audit, Fact Pack-only generation and enforced gate.
           for marker in ('story_angle_id','event_id','batch_id','fact_refs','QUALITY_LIMITED','BLOCKED','fact-packs.json','shadow-decisions.json'):
               assert marker in constitution, marker
           assert 'generation_view(pack)' in constitution
@@ -136,6 +150,10 @@ jobs:
           assert 'Source Firewall' in factpack
           assert 'generation_view' in factpack
           assert 'WOULD_PUBLISH' in quality and 'WOULD_REJECT' in quality and 'WOULD_REPROCESS' in quality
+          assert 'public_language_not_ptbr' in quality
+          assert 'schema_placeholder_echo' in quality
+          assert 'unverified_numbers' in quality
+          assert 'unverified_literal_quote' in quality
 
           sample_candidate={'title':'Iron Maiden anuncia show no Brasil','description':'A banda confirmou nova apresentação para outubro de 2026.','url':'https://example.invalid/a','primary_category':'metal','recommended_format':'STORY','published':'2026-08-27'}
           pack=fp.build_fact_pack(sample_candidate, 'A banda confirmou a apresentação para 12 de outubro de 2026.', '2026-08-27')
@@ -176,5 +194,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; Fact Pack + Golden Corpus + shadow gate; zero-cost providers')
+          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; Fact Pack + Golden Corpus + ENFORCED quality gate; zero-cost providers; pinned supply chain')
           PY
