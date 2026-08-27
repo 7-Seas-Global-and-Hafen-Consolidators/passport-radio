@@ -1,0 +1,3 @@
+# Passport Editorial Full Story — Operation 26/8
+
+Public target: 500 stories/day. Internal capacity: 700/day. Cadence: every 10 minutes. Maximum batch: 12/run. Worldwide discovery stays multilingual/private; public editorial output is pt-BR, preserving official proper names. Source pages are fetched for factual body/context when publicly accessible; RSS summaries are fallback discovery material. Passport output is original editorial writing, never verbatim republication. Protected scope: no changes to HOME/radio player behavior, Live & Rare™, Metal, Unplugged, Live Jam, 80s Tunnel™, Soul Tunnel™, MPB Tunnel™, Passport Hits Tunnel™, Continuous Signals™, player/stream interlocks, store or checkout.
