@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -12,6 +12,16 @@
   "local_zero_key_retry_limit": 1,
   "local_zero_key_target_margin_words": 40,
   "local_zero_key_target_window_words": 100,
+  "local_zero_key_flash_envelope": {
+    "min_sections": 2,
+    "max_sections": 3,
+    "min_paragraphs_per_section": 2,
+    "max_paragraphs_per_section": 3,
+    "min_paragraph_chars": 420,
+    "max_paragraph_chars": 680,
+    "min_closing_chars": 100,
+    "max_closing_chars": 280
+  },
   "source_firewall_max_chars": 7000,
   "minimum_fact_pack_facts": 2,
   "format_word_range": 450,
