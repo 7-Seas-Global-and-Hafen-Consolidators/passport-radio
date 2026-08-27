@@ -1,0 +1,21 @@
+[
+  {
+    "id": "unsupported-claims-despite-valid-paragraph-refs",
+    "status": "KNOWN_UNRESOLVED",
+    "scope": "paragraph-level provenance",
+    "description": "A paragraph can declare valid fact_refs while individual sentences still introduce unsupported claims. This case is documented as unresolved and is not treated as solved by quantity, repetition or heading guardrails.",
+    "example": {
+      "supported": [
+        "three shows in Brazil",
+        "São Paulo, Rio de Janeiro and Brasília"
+      ],
+      "unsupported_claims": [
+        "special production equipment will be brought for the shows",
+        "ticket sales will begin in the coming weeks",
+        "this is the first Brazilian visit in five years"
+      ]
+    },
+    "next_possible_layer": "sentence-level fact_refs or typed critical-claim validation",
+    "blocking": false
+  }
+]
