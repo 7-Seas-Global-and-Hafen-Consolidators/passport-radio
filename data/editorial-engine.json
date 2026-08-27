@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -29,7 +29,9 @@
     "mode": "enforce",
     "require_fact_refs": true,
     "require_ptbr": true,
-    "anti_copy_window_words": 40
+    "anti_copy_window_words": 40,
+    "max_paragraph_similarity": 0.88,
+    "min_words_for_similarity": 28
   },
   "provider_timeouts": {
     "groq": 30,
