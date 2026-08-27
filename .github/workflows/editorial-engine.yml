@@ -1,4 +1,4 @@
-name: Passport Editorial Engine — Global 6/day
+name: Passport Editorial Engine — Full Story 500/day
 
 on:
   workflow_dispatch:
@@ -10,15 +10,15 @@ on:
         type: choice
         options: [stage, pr, direct]
       daily_target:
-        description: "Publications per day (1-6)"
+        description: "Publications per day (1-700)"
         required: false
-        default: "6"
+        default: "500"
       force_batch:
-        description: "Manual batch override (-1 uses 24h pacing; 0-1 overrides)"
+        description: "Manual batch override (-1 uses pacing; 0-12 overrides)"
         required: false
         default: "-1"
   schedule:
-    - cron: '17 * * * *'
+    - cron: '2,12,22,32,42,52 * * * *'
 
 permissions:
   contents: write
@@ -32,9 +32,9 @@ concurrency:
 
 jobs:
   build-editorial:
-    name: Build one selected Passport editorial story
+    name: Build Passport Full Story editorial batch
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 55
     env:
       COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PERSONAL_TOKEN }}
       GH_TOKEN: ${{ github.token }}
@@ -47,124 +47,61 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install GitHub Copilot CLI
         run: npm install -g @github/copilot@latest
-
       - name: Resolve engine mode and target
         id: settings
         shell: bash
         run: |
-          MODE="${{ github.event.inputs.mode }}"
-          TARGET="${{ github.event.inputs.daily_target }}"
-          FORCE="${{ github.event.inputs.force_batch }}"
+          MODE="${{ github.event.inputs.mode }}"; TARGET="${{ github.event.inputs.daily_target }}"; FORCE="${{ github.event.inputs.force_batch }}"
           if [ -z "$MODE" ]; then MODE="${{ vars.PASSPORT_EDITORIAL_MODE }}"; fi
           if [ -z "$MODE" ]; then MODE="direct"; fi
-          if [ -z "$TARGET" ]; then TARGET="6"; fi
+          if [ -z "$TARGET" ]; then TARGET="500"; fi
           if [ -z "$FORCE" ]; then FORCE="-1"; fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
-          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 6 ]; then echo "daily_target must be 1..6"; exit 2; fi
-          if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 1 ]; then echo "force_batch must be -1..1"; exit 2; fi
-          echo "MODE=$MODE" >> "$GITHUB_ENV"
-          echo "TARGET=$TARGET" >> "$GITHUB_ENV"
-          echo "FORCE=$FORCE" >> "$GITHUB_ENV"
-          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
-          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
-          echo "force=$FORCE" >> "$GITHUB_OUTPUT"
-          echo "Mode: $MODE · publication policy: max $TARGET/day · worldwide reservoir: 1200/day · max story/run: 1 · Copilot generation calls/run: 1 · model: auto" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Resume rolling editorial branch
-        if: steps.settings.outputs.mode == 'pr'
-        shell: bash
-        run: |
-          git fetch origin main
-          if git fetch origin automation/editorial-staging:refs/remotes/origin/automation/editorial-staging 2>/dev/null; then
-            git checkout -B automation/editorial-staging origin/automation/editorial-staging
-            git rebase origin/main
-          else
-            git checkout -b automation/editorial-staging origin/main
-          fi
-
+          if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 700 ]; then echo "daily_target must be 1..700"; exit 2; fi
+          if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 12 ]; then echo "force_batch must be -1..12"; exit 2; fi
+          echo "MODE=$MODE" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"; echo "FORCE=$FORCE" >> "$GITHUB_ENV"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          echo "Full Story: $TARGET/day · capacity 700/day · max batch 12 · final language pt-BR" >> "$GITHUB_STEP_SUMMARY"
       - name: Locate latest Global Editorial Tunnel packet
         id: tunnel
         shell: bash
         run: |
           mkdir -p build/tunnel-download
           RUN_ID="$(gh run list --workflow editorial-tunnel.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId' 2>/dev/null || true)"
-          if [ -n "$RUN_ID" ]; then
-            gh run download "$RUN_ID" --dir build/tunnel-download || true
-          fi
+          if [ -n "$RUN_ID" ]; then gh run download "$RUN_ID" --dir build/tunnel-download || true; fi
           QUEUE="$(find build/tunnel-download -type f -name editorial-daily.json -print -quit 2>/dev/null || true)"
-          if [ -n "$QUEUE" ]; then
-            READY="$(python - "$QUEUE" <<'PY'
-          import json, sys
-          try:
-              d=json.load(open(sys.argv[1], encoding='utf-8'))
-              selected=d.get('selected', [])
-              print('yes' if int(d.get('target', 0)) >= 1200 and len(selected) >= 100 else 'no')
-          except Exception:
-              print('no')
-          PY
-          )"
-            if [ "$READY" != "yes" ]; then QUEUE=""; fi
-          fi
-          if [ -n "$QUEUE" ]; then
-            echo "queue=$QUEUE" >> "$GITHUB_OUTPUT"
-            echo "Using worldwide Tunnel run $RUN_ID" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "No reusable 1200-signal worldwide packet; excavating now." >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$QUEUE" ]; then
             mkdir -p build/editorial-tunnel
-            python tools/editorial_tunnel_global.py \
-              --sources data/editorial-sources-global.json \
-              --output-dir build/editorial-tunnel \
-              --daily-limit 1200 \
-              --per-source 20 \
-              --max-age-hours 96 \
-              --workers 24
-            echo "queue=build/editorial-tunnel/editorial-daily.json" >> "$GITHUB_OUTPUT"
+            python tools/editorial_tunnel_global.py --sources data/editorial-sources-global.json --output-dir build/editorial-tunnel --daily-limit 1200 --per-source 20 --max-age-hours 96 --workers 24
+            QUEUE="build/editorial-tunnel/editorial-daily.json"
           fi
-
-      - name: Run one quota-economy editorial cycle
+          echo "queue=$QUEUE" >> "$GITHUB_OUTPUT"
+      - name: Run Full Story editorial batch
         shell: bash
         run: |
-          APPLY=""
-          if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
+          APPLY=""; if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
           mkdir -p build/editorial-engine
-          python tools/editorial_engine_copilot.py \
-            --queue "${{ steps.tunnel.outputs.queue }}" \
-            --config data/editorial-engine.json \
-            --state data/editorial-published.json \
-            --feed data/editorial-feed.json \
-            --output-dir build/editorial-engine \
-            --daily-target "$TARGET" \
-            --capacity 1200 \
-            --max-batch 1 \
-            --force-batch "$FORCE" \
-            $APPLY | tee build/editorial-engine-console.json
-
+          python tools/editorial_engine_copilot.py --queue "${{ steps.tunnel.outputs.queue }}" --config data/editorial-engine.json --state data/editorial-published.json --feed data/editorial-feed.json --output-dir build/editorial-engine --daily-target "$TARGET" --capacity 700 --max-batch 12 --force-batch "$FORCE" $APPLY | tee build/editorial-engine-console.json
       - name: Add engine report to summary
         if: always()
         shell: bash
         run: |
-          if [ -f build/editorial-engine/engine-report.json ]; then
-            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f build/editorial-engine/engine-report.json ]; then python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
           import json
           from pathlib import Path
           d=json.loads(Path('build/editorial-engine/engine-report.json').read_text('utf-8'))
-          generated=len(d.get('generated', []))
-          print('\n## Passport Editorial Engine™ — Global 1200 → 6')
-          print(f"Status: **{d.get('status')}** · requested: **{d.get('requested_batch',0)}** · generated: **{generated}**")
-          print(f"Published today after run: **{d.get('published_today_after', d.get('already_today',0))}/{d.get('daily_target',6)}**")
-          for item in d.get('generated', [])[:1]:
-              print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
+          print('\n## Passport Editorial Engine™ — Full Story')
+          print(f"Status: **{d.get('status')}** · requested: **{d.get('requested_batch',0)}** · generated: **{len(d.get('generated',[]))}**")
+          print(f"Published today: **{d.get('published_today_after',d.get('already_today',0))}/{d.get('daily_target',500)}**")
+          for item in d.get('generated',[])[:12]: print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
           PY
           fi
-
       - name: Upload editorial build packet
         if: always()
         uses: actions/upload-artifact@v4
@@ -175,42 +112,17 @@ jobs:
             build/editorial-engine-console.json
           retention-days: 7
           if-no-files-found: warn
-
-      - name: Commit rolling review story
-        if: steps.settings.outputs.mode == 'pr'
-        shell: bash
-        run: |
-          git config user.name "Passport Radio Editorial Engine"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
-          if git diff --cached --quiet; then
-            echo "No editorial story generated; nothing to stage." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          git commit -m "Passport Editorial Global: selected story"
-          git push -u origin automation/editorial-staging
-          OPEN_PR="$(gh pr list --head automation/editorial-staging --base main --state open --json number --jq '.[0].number' 2>/dev/null || true)"
-          if [ -z "$OPEN_PR" ]; then
-            gh pr create --base main --head automation/editorial-staging \
-              --title "Passport Editorial Global — seleção automática" \
-              --body "Seleção contínua do Passport Editorial Engine™. Radar mundial privado com até 1.200 sinais; política pública de até 6 matérias/dia, no máximo 1 por ciclo e uma chamada de geração por execução." >/dev/null
-          fi
-
-      - name: Publish direct selected story
+      - name: Publish direct Full Story batch
         if: steps.settings.outputs.mode == 'direct'
         shell: bash
         run: |
           git config user.name "Passport Radio Editorial Engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/ 2>/dev/null || true
-          if git diff --cached --quiet; then
-            echo "No editorial story generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          git commit -m "Passport Editorial Global: publish selected story"
+          if git diff --cached --quiet; then echo "No editorial story generated; nothing to publish." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          git commit -m "Passport Editorial Full Story: publish automatic batch"
           git pull --rebase origin main
           git push origin HEAD:main
-
       - name: Enforce truthful editorial health
         if: always()
         shell: bash
@@ -219,14 +131,8 @@ jobs:
           import json
           from pathlib import Path
           p=Path('build/editorial-engine/engine-report.json')
-          if not p.exists():
-              print('::error::Editorial Engine produced no engine report.')
-              raise SystemExit(1)
-          d=json.loads(p.read_text('utf-8'))
-          requested=int(d.get('requested_batch',0))
-          generated=len(d.get('generated', []))
-          if requested > 0 and generated == 0:
-              print('::error::EDITORIAL BLOCKED — one story was due but generation produced zero. Inspect the Copilot error in the artifact.')
-              raise SystemExit(1)
+          if not p.exists(): raise SystemExit('Editorial Engine produced no engine report')
+          d=json.loads(p.read_text('utf-8')); requested=int(d.get('requested_batch',0)); generated=len(d.get('generated',[]))
+          if requested > 0 and generated == 0: raise SystemExit('EDITORIAL BLOCKED — stories were due but generation produced zero')
           print(f'Editorial health OK: requested={requested} generated={generated} status={d.get("status")}')
           PY
