@@ -1,7 +1,10 @@
 {
-  "version": 1,
-  "notes": "Public RSS/Atom endpoints used by the resilient Editorial Tunnel when landing pages are blocked, moved or unreliable. These feeds are discovery/provenance inputs only; they never bypass the editorial quality gate.",
+  "version": 2,
+  "notes": "Public RSS/Atom endpoints and corrected first-party landing URLs used by the resilient Editorial Tunnel when configured sections are blocked, moved or unreliable. These are discovery/provenance inputs only; they never bypass the editorial quality gate.",
   "feeds": {
+    "whiplash.net": [
+      "https://whiplash.net/feeds/news.xml"
+    ],
     "npr.org": [
       "https://feeds.npr.org/1039/rss.xml"
     ],
@@ -29,5 +32,11 @@
     "altpress.com": [
       "https://www.altpress.com/feed"
     ]
+  },
+  "landing_urls": {
+    "metal.it": "https://www.metal.it/",
+    "stormbringer.at": "https://stormbringer.at/news",
+    "jame-world.com": "https://www.jame-world.com/en/news",
+    "telemetro.com": "https://www.telemetro.com/entretenimiento/musica"
   }
 }

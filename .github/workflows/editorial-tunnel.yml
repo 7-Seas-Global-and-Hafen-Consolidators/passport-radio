@@ -39,11 +39,49 @@ jobs:
         run: |
           python -m py_compile tools/editorial_tunnel_resilient.py
           python tests/test_editorial_tunnel_rss_fallback.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          cfg=json.loads(Path('data/editorial-rss-overrides.json').read_text('utf-8'))
+          assert cfg.get('version', 0) >= 2
+          feeds=cfg.get('feeds') or {}
+          landings=cfg.get('landing_urls') or {}
+          assert feeds.get('whiplash.net') == ['https://whiplash.net/feeds/news.xml']
+          assert landings.get('metal.it') == 'https://www.metal.it/'
+          assert landings.get('stormbringer.at') == 'https://stormbringer.at/news'
+          assert landings.get('jame-world.com') == 'https://www.jame-world.com/en/news'
+          assert landings.get('telemetro.com') == 'https://www.telemetro.com/entretenimiento/musica'
+          print('editorial_source_overrides: PASS')
+          PY
+
+      - name: Build effective source map
+        run: |
+          mkdir -p build
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          source_path=Path('data/editorial-sources-global.json')
+          override_path=Path('data/editorial-rss-overrides.json')
+          output_path=Path('build/editorial-sources-effective.json')
+          data=json.loads(source_path.read_text('utf-8'))
+          cfg=json.loads(override_path.read_text('utf-8'))
+          landing={str(k).lower().removeprefix('www.'): str(v) for k,v in (cfg.get('landing_urls') or {}).items()}
+          applied=[]
+          for source in data.get('sources', []):
+              domain=str(source.get('domain') or '').lower().removeprefix('www.')
+              replacement=landing.get(domain)
+              if replacement and replacement != source.get('url'):
+                  applied.append({'name': source.get('name'), 'from': source.get('url'), 'to': replacement})
+                  source['url']=replacement
+          output_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8')
+          print(json.dumps({'source_url_overrides_applied': len(applied), 'overrides': applied}, ensure_ascii=False))
+          PY
 
       - name: Run Worldwide Editorial Tunnel
         run: |
           python tools/editorial_tunnel_resilient.py \
-            --sources data/editorial-sources-global.json \
+            --sources build/editorial-sources-effective.json \
             --output-dir build/editorial-tunnel \
             --daily-limit 1200 \
             --per-source 20 \
