@@ -1,9 +1,26 @@
 {
-  "version": 6,
+  "version": 7,
   "daily_target": 500,
+  "daily_publish_cap": 500,
   "daily_capacity": 700,
+  "daily_evaluation_cap": 1200,
   "max_batch": 12,
+  "evaluation_scan_per_run": 48,
   "generation_call_budget_per_run": 12,
+  "source_firewall_max_chars": 7000,
+  "minimum_fact_pack_facts": 2,
+  "format_word_range": 450,
+  "quality_gate": {
+    "mode": "shadow",
+    "require_fact_refs": true,
+    "anti_copy_window_words": 40
+  },
+  "provider_timeouts": {
+    "groq": 30,
+    "gemini": 45,
+    "openrouter": 60,
+    "ollama": 330
+  },
   "cooldown_days": 45,
   "ledger_size": 100000,
   "feed_size": 5000,
