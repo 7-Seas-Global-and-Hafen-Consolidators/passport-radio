@@ -74,7 +74,7 @@ jobs:
 
           assert engine.PUBLICATION_HARD_CAP >= 700
           assert engine.RESERVOIR_HARD_CAP >= 700
-          assert engine.MAX_BATCH_HARD_CAP >= 12
+          assert engine.MAX_BATCH_HARD_CAP >= 10
 
           # Workflow contract: every 10 minutes, default 500/day, capacity 700, max batch 12.
           assert "cron: '2,12,22,32,42,52 * * * *'" in workflow
@@ -93,6 +93,7 @@ jobs:
           assert 'EDITORIAL BLOCKED' in workflow
 
           # Free generator keeps the 12-story batch and zero-cost cascade contract.
+          assert 'engine.MAX_BATCH_HARD_CAP = 12' in launcher
           assert 'min(12' in launcher
           assert 'groq-free' in launcher
           assert 'gemini-free' in launcher
