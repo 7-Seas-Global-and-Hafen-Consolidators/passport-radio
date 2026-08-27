@@ -9,6 +9,10 @@ on:
       - 'tools/editorial_engine.py'
       - 'tools/editorial_engine_copilot.py'
       - 'tools/editorial_engine_free.py'
+      - 'tools/editorial_engine_constitution.py'
+      - 'tools/editorial_fact_pack.py'
+      - 'tools/editorial_quality_gate.py'
+      - 'tests/test_editorial_constitution.py'
       - 'tools/editorial_tunnel.py'
       - 'tools/editorial_tunnel_global.py'
       - 'data/editorial-engine.json'
@@ -33,9 +37,13 @@ jobs:
             tools/editorial_engine.py \
             tools/editorial_engine_copilot.py \
             tools/editorial_engine_free.py \
+            tools/editorial_engine_constitution.py \
+            tools/editorial_fact_pack.py \
+            tools/editorial_quality_gate.py \
             tools/editorial_tunnel.py \
             tools/editorial_tunnel_global.py
-      - name: Validate worldwide Full Story 500/day operating policy
+          python tests/test_editorial_constitution.py
+      - name: Validate worldwide quality-first operating policy
         run: |
           python - <<'PY'
           import json
@@ -47,15 +55,24 @@ jobs:
           sources=src.get('sources', [])
           workflow=Path('.github/workflows/editorial-engine.yml').read_text('utf-8')
           launcher=Path('tools/editorial_engine_free.py').read_text('utf-8')
+          constitution=Path('tools/editorial_engine_constitution.py').read_text('utf-8')
+          factpack=Path('tools/editorial_fact_pack.py').read_text('utf-8')
+          quality=Path('tools/editorial_quality_gate.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
-          # Operation 26/8: 500 public stories/day, 700/day internal capacity, 12/run.
-          assert cfg['version'] >= 6, cfg
-          assert cfg['daily_target'] == 500, cfg
-          assert cfg['daily_capacity'] == 700, cfg
+          # Constitution v7: 500 is a publication ceiling, not a quota to fill.
+          assert cfg['version'] >= 7, cfg
+          assert cfg['daily_publish_cap'] == 500, cfg
+          assert cfg['daily_target'] == 500, cfg  # compatibility alias only
+          assert cfg['daily_evaluation_cap'] == 1200, cfg
+          assert cfg['daily_capacity'] == 700, cfg  # legacy compatibility field
           assert cfg['max_batch'] == 12, cfg
           assert cfg['generation_call_budget_per_run'] == 12, cfg
+          assert cfg['evaluation_scan_per_run'] >= 24, cfg
           assert cfg['model'] == 'auto', cfg
+          assert cfg['quality_gate']['mode'] == 'shadow', cfg
+          assert cfg['quality_gate']['require_fact_refs'] is True, cfg
+          assert cfg['quality_gate']['anti_copy_window_words'] >= 40, cfg
           assert cfg['minimum_words']['STORY'] >= 850, cfg
           assert cfg['minimum_words']['MR_NOMAD'] >= 1100, cfg
           assert len(sources) >= 120, len(sources)
@@ -68,39 +85,64 @@ jobs:
           assert not missing, f'missing regions: {sorted(missing)}'
 
           sys.path.insert(0, str(Path('tools').resolve()))
-          import editorial_engine as engine
+          import editorial_engine_constitution as engine
+          import editorial_fact_pack as fp
           import editorial_tunnel as base_tunnel
           import editorial_tunnel_global as global_tunnel
 
-          assert engine.PUBLICATION_HARD_CAP >= 700
-          assert engine.RESERVOIR_HARD_CAP >= 700
-          assert engine.MAX_BATCH_HARD_CAP >= 10
+          assert engine.PUBLICATION_HARD_CAP == 500
+          assert engine.EVALUATION_HARD_CAP >= 1200
+          assert engine.MAX_BATCH_HARD_CAP == 12
 
-          # Workflow contract: every 10 minutes, default 500/day, capacity 700, max batch 12.
+          # Workflow contract: every 10 minutes; 500 publish cap; 1200 deterministic evaluation cap.
           assert "cron: '2,12,22,32,42,52 * * * *'" in workflow
           assert 'default: "500"' in workflow
-          assert 'TARGET="500"' in workflow
-          assert 'daily_target must be 1..700' in workflow
+          assert 'daily publication cap must be 1..500' in workflow
           assert 'force_batch must be -1..12' in workflow
-          assert '--capacity 700' in workflow
+          assert '--publish-cap "$TARGET"' in workflow
+          assert '--capacity 1200' in workflow
           assert '--max-batch 12' in workflow
+          assert 'fetch-depth: 1' in workflow
+          assert 'Freeze editorial day' in workflow
           assert 'tools/editorial_engine_free.py' in workflow
           assert 'PASSPORT_GROQ_MODEL: openai/gpt-oss-120b' in workflow
           assert 'PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite' in workflow
           assert 'PASSPORT_OPENROUTER_MODEL: openrouter/free' in workflow
-          assert 'Full Story' in workflow
-          assert 'Enforce truthful editorial health' in workflow
+          assert 'PASSPORT_OLLAMA_MODEL: qwen2.5:1.5b-instruct' in workflow
+          assert 'OLLAMA_CONTEXT_LENGTH: 8192' in workflow
+          assert 'Fact Pack + shadow gate' in workflow
+          assert 'QUALITY_LIMITED' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
-          # Free generator keeps the 12-story batch and zero-cost cascade contract.
+          # Free generator: zero-cost cascade, generation budget and circuit breaker.
+          assert 'editorial_engine_constitution' in launcher
           assert 'engine.MAX_BATCH_HARD_CAP = 12' in launcher
           assert 'min(12' in launcher
           assert 'groq-free' in launcher
           assert 'gemini-free' in launcher
           assert 'openrouter-free' in launcher
+          assert 'ollama-local-zero-key' in launcher
           assert 'openrouter/free' in launcher
           assert 'endswith(":free")' in launcher
           assert 'all_free_providers_exhausted' in launcher
+          assert 'circuit_breaker' in launcher
+          assert 'provider_runtime_snapshot' in launcher
+
+          # Constitution: deterministic identities, batch audit, Fact Pack-only generation and shadow gate.
+          for marker in ('story_angle_id','event_id','batch_id','fact_refs','QUALITY_LIMITED','BLOCKED','fact-packs.json','shadow-decisions.json'):
+              assert marker in constitution, marker
+          assert 'generation_view(pack)' in constitution
+          assert 'quality_gate.evaluate' in constitution
+          assert 'Source Firewall' in factpack
+          assert 'generation_view' in factpack
+          assert 'WOULD_PUBLISH' in quality and 'WOULD_REJECT' in quality and 'WOULD_REPROCESS' in quality
+
+          sample_candidate={'title':'Iron Maiden anuncia show no Brasil','description':'A banda confirmou nova apresentação para outubro de 2026.','url':'https://example.invalid/a','primary_category':'metal','recommended_format':'STORY','published':'2026-08-27'}
+          pack=fp.build_fact_pack(sample_candidate, 'A banda confirmou a apresentação para 12 de outubro de 2026.', '2026-08-27')
+          view=fp.generation_view(pack)
+          dumped=json.dumps(view, ensure_ascii=False)
+          assert 'https://' not in dumped and 'source_name' not in dumped, dumped
+          assert pack['event_id'].startswith('EVT_') and pack['story_angle_id'].startswith('ANG_')
 
           # Editorial automation remains isolated from commercial/site-wide mutation.
           assert 'inject_amazon_affiliate.py' not in workflow
@@ -108,15 +150,16 @@ jobs:
           assert "git add -- '*.html'" not in workflow
           assert "git add index.html sitemap.xml data/editorial-feed.json data/editorial-published.json editorial/" in workflow
 
-          # Renderer remains public pt-BR and keeps the Passport/Mr. Nomad signature.
-          sample={'title':'Teste Passport','meta_description':'Teste','deck':'Teste','published_at':'2026-08-26T12:00:00-03:00','category':'rock','format':'STORY','kicker':'PASSPORT RADIO · ROCK · 26/08/2026','sections':[],'closing':'Fecho editorial.'}
+          sample={'title':'Teste Passport','meta_description':'Teste','deck':'Teste','published_at':'2026-08-27T12:00:00-03:00','category':'rock','format':'STORY','kicker':'PASSPORT RADIO · ROCK · 27/08/2026','sections':[{'heading':'Teste','paragraphs':[{'text':'Parágrafo editorial de teste suficientemente longo para renderização.','fact_refs':['FTEST']}]}],'closing':'Fecho editorial.','story_angle_id':'ANG_TEST','batch_id':'batch-test'}
           rendered=engine.render_article(sample, '/editorial/teste.html', [])
           assert '<html lang="pt-BR">' in rendered
           assert 'pe-nomad-signature' in rendered
           assert 'MR. NOMAD' in rendered
+          assert 'passport:story-id' in rendered
+          assert 'passport:batch-id' in rendered
           assert 'Every Song Is A Destination.' in rendered
 
-          # Worldwide multilingual discovery remains intact; public output is normalized later.
+          # Worldwide Tunnel stays intact and protected: 1200 radar / 24 workers.
           for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
               assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang
               assert lang in base_tunnel.GLOBAL_ACCEPT_LANGUAGE, lang
@@ -133,5 +176,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; 1200-signal radar / 500 public per day / 700 capacity / 12 per run / Full Story pt-BR / free multiprovider')
+          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; Fact Pack + Golden Corpus + shadow gate; zero-cost providers')
           PY
