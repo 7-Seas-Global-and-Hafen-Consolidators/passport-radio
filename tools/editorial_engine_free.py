@@ -31,6 +31,13 @@ def install_full_story_prompt() -> None:
 
     def build_prompt_global(candidate, source_text, config):
         instructions, input_text = original_build_prompt(candidate, source_text, config)
+        fmt = str(candidate.get("recommended_format") or "STORY").upper()
+        explicit_minimum = {
+            "FLASH": 500,
+            "STORY": 950,
+            "MR_NOMAD": 1250,
+            "LIVE_SIGNAL": 620,
+        }.get(fmt, 950)
         instructions += (
             " A saída pública é obrigatoriamente português brasileiro natural e consistente. "
             "O material de apoio pode estar em qualquer idioma ou alfabeto: compreenda os fatos e reescreva-os em pt-BR, sem tradução literal. "
@@ -39,6 +46,9 @@ def install_full_story_prompt() -> None:
             "Produza uma matéria completa, substancial, com abertura, desenvolvimento, contexto e fechamento, sem copiar frases da origem e sem inventar fatos. "
             "Se um detalhe não puder ser sustentado pelo material disponível, omita-o. "
             "Evite mistura gratuita de idiomas, frases genéricas, enchimento e repetição. "
+            f"Para este formato, escreva no mínimo {explicit_minimum} palavras de texto editorial útil. "
+            "Distribua o conteúdo em seções com parágrafos substanciais; não responda com resumo curto. "
+            "Crie um título editorial novo e estruturalmente diferente do título do sinal de descoberta. "
             "Responda somente com o JSON solicitado pelo schema editorial, sem markdown ao redor."
         )
         language = str(candidate.get("language") or "não informado")
@@ -48,7 +58,9 @@ def install_full_story_prompt() -> None:
             f"\nIDIOMA DO SINAL: {language}"
             f"\nEIXOS INTERNOS: {axes or 'music'}"
             f"\nESTADO DO CORPO: {body_state}"
+            f"\nMÍNIMO EDITORIAL DESTA RESPOSTA: {explicit_minimum} palavras"
             "\nIDIOMA FINAL OBRIGATÓRIO: pt-BR"
+            "\nIMPORTANTE: o título final não pode repetir nem apenas traduzir o título de entrada."
         )
         return instructions, input_text
 
@@ -143,21 +155,24 @@ def _openrouter_free(prompt: str, config: dict) -> dict:
 def _ollama_local(prompt: str, config: dict) -> dict:
     """Use an open-weight model running locally on the Actions runner; no key/billing."""
     endpoint = os.environ.get("PASSPORT_OLLAMA_URL", "http://127.0.0.1:11434/api/chat").strip()
-    model = os.environ.get("PASSPORT_OLLAMA_MODEL", "qwen2.5:0.5b-instruct").strip()
+    model = os.environ.get("PASSPORT_OLLAMA_MODEL", "qwen2.5:1.5b-instruct").strip()
     if not endpoint.startswith("http://127.0.0.1:") and not endpoint.startswith("http://localhost:"):
         raise RuntimeError("Ollama endpoint rejected: local loopback only")
     payload = {
         "model": model,
         "stream": False,
         "format": "json",
+        "keep_alive": "15m",
         "messages": [{"role": "user", "content": prompt}],
         "options": {
-            "temperature": 0.3,
-            "num_predict": min(8192, int(config.get("max_output_tokens", 6500))),
-            "num_ctx": 16384,
+            "temperature": 0.25,
+            "num_predict": 3600,
+            "num_ctx": 8192,
+            "repeat_penalty": 1.08,
         },
     }
-    data = _post_json(endpoint, payload, {"Content-Type": "application/json"}, int(config.get("api_timeout_seconds", 240)))
+    timeout = max(240, min(360, int(config.get("api_timeout_seconds", 240)) + 60))
+    data = _post_json(endpoint, payload, {"Content-Type": "application/json"}, timeout)
     text = str((data.get("message") or {}).get("content") or "")
     if not text:
         raise RuntimeError("Ollama returned empty content")
@@ -172,16 +187,15 @@ def call_free_multiprovider(candidate, source_text, config):
     _generation_calls_used += 1
 
     instructions, input_text = engine.build_prompt(candidate, source_text, config)
-    prompt = instructions + "\n\n" + input_text
+    full_prompt = instructions + "\n\n" + input_text
     failures = []
 
     providers = (
-        ("groq-free", _groq),
-        ("gemini-free", _gemini),
-        ("openrouter-free", _openrouter_free),
-        ("ollama-local-zero-key", _ollama_local),
+        ("groq-free", _groq, full_prompt),
+        ("gemini-free", _gemini, full_prompt),
+        ("openrouter-free", _openrouter_free, full_prompt),
     )
-    for name, provider in providers:
+    for name, provider, prompt in providers:
         try:
             result = provider(prompt, config)
             print(f"FREE_PROVIDER_OK provider={name}", file=sys.stderr)
@@ -190,6 +204,19 @@ def call_free_multiprovider(candidate, source_text, config):
             detail = str(exc).replace("\n", " ")[-700:]
             failures.append(f"{name}: {detail}")
             print(f"FREE_PROVIDER_FAIL provider={name} detail={detail}", file=sys.stderr)
+
+    # CPU inference needs a compact factual context to avoid long prefill/runaway output.
+    compact_source = (source_text or "")[:7000]
+    local_instructions, local_input = engine.build_prompt(candidate, compact_source, config)
+    local_prompt = local_instructions + "\n\n" + local_input
+    try:
+        result = _ollama_local(local_prompt, config)
+        print("FREE_PROVIDER_OK provider=ollama-local-zero-key", file=sys.stderr)
+        return result
+    except Exception as exc:
+        detail = str(exc).replace("\n", " ")[-700:]
+        failures.append(f"ollama-local-zero-key: {detail}")
+        print(f"FREE_PROVIDER_FAIL provider=ollama-local-zero-key detail={detail}", file=sys.stderr)
 
     raise RuntimeError("all_free_providers_exhausted | " + " | ".join(failures))
 
