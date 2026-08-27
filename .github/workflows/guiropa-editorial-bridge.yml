@@ -1,0 +1,59 @@
+name: GUIROPA Editorial Bridge — Passport Secret Provider
+
+on:
+  schedule:
+    - cron: '6,36 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/guiropa-editorial-bridge.yml'
+      - 'tools/guiropa_editorial_bridge.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guiropa-editorial-bridge-provider
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_FREE_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_FREE_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_FREE_API_KEY }}
+      GUIROPA_GROQ_MODEL: openai/gpt-oss-120b
+      GUIROPA_GEMINI_MODEL: gemini-2.5-flash-lite
+      GUIROPA_OPENROUTER_MODEL: openrouter/free
+
+    steps:
+      - name: Checkout Passport main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate GUIROPA Full Story bridge packet
+        run: python tools/guiropa_editorial_bridge.py
+
+      - name: Commit bridge packet only
+        shell: bash
+        run: |
+          if git diff --quiet -- data/guiropa-editorial-bridge.json; then
+            echo "No bridge packet changes."
+            exit 0
+          fi
+          git config user.name "Passport → GUIROPA Editorial Bridge"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/guiropa-editorial-bridge.json
+          git commit -m "GUIROPA editorial bridge: publish Full Story packet"
+          git pull --rebase origin main
+          git push origin HEAD:main
