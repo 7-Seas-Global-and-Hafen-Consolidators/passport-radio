@@ -1,0 +1,60 @@
+name: GUIROPA Editorial Bridge — Passport Copilot Provider
+
+on:
+  schedule:
+    - cron: '6,36 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/guiropa-editorial-bridge.yml'
+      - 'tools/guiropa_editorial_bridge.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  copilot-requests: write
+
+concurrency:
+  group: guiropa-editorial-bridge-provider
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      COPILOT_PERSONAL_TOKEN: ${{ secrets.COPILOT_PERSONAL_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout Passport main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install GitHub Copilot CLI
+        run: npm install -g @github/copilot@latest
+
+      - name: Generate GUIROPA Full Story bridge packet
+        run: python tools/guiropa_editorial_bridge.py
+
+      - name: Commit bridge packet only
+        shell: bash
+        run: |
+          if git diff --quiet -- data/guiropa-editorial-bridge.json; then
+            echo "No bridge packet changes."
+            exit 0
+          fi
+          git config user.name "Passport → GUIROPA Editorial Bridge"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/guiropa-editorial-bridge.json
+          git commit -m "GUIROPA editorial bridge: publish Full Story packet"
+          git pull --rebase origin main
+          git push origin HEAD:main
