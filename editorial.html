@@ -20,11 +20,23 @@
   const empty = document.getElementById('pe-empty');
   const esc = (v='') => String(v).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const stamp = (v) => { const d=new Date(v); return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(d); };
-  fetch('/data/editorial-feed.json',{cache:'no-store',credentials:'omit'}).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
-    const items=Array.isArray(data&&data.items)?data.items:[];
+  const read = (url) => fetch(url,{cache:'no-store',credentials:'omit'})
+    .then(r=>r.ok?r.json():({items:[]}))
+    .catch(()=>({items:[]}));
+
+  Promise.all([
+    read('/data/editorial-manual-feed.json'),
+    read('/data/editorial-feed.json')
+  ]).then(([manual,automatic])=>{
+    const seen=new Set();
+    const items=[
+      ...(Array.isArray(manual&&manual.items)?manual.items:[]),
+      ...(Array.isArray(automatic&&automatic.items)?automatic.items:[])
+    ].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
+
     if(!items.length){empty.textContent='O próximo sinal editorial ainda está entrando no ar.';return;}
     empty.remove();
-    feed.innerHTML=items.map(item=>`<a href="${esc(item.url)}"><small>${esc(item.format)} · ${esc(item.category)}</small><h2>${esc(item.title)}</h2><p>${esc(item.deck||'')}</p><time>${esc(stamp(item.published_at))} · PASSPORT RADIO</time></a>`).join('');
+    feed.innerHTML=items.map(item=>`<a href="${esc(item.url)}"><small>${esc(item.format)} · ${esc(item.category)}</small><h2>${esc(item.title)}</h2><p>${esc(item.deck||'')}</p><time>${esc(stamp(item.published_at))} · ${esc(item.author||'PASSPORT RADIO')}</time></a>`).join('');
   }).catch(()=>{empty.textContent='O sinal editorial está sendo atualizado.';});
 })();
 </script><script src="/js/passport-legal-footer.js?v=202608241345" defer></script><script src="/js/passport-amazon-affiliate.js?v=202608251849" defer></script>
