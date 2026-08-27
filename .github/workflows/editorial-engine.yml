@@ -22,6 +22,7 @@ on:
     paths:
       - '.github/workflows/editorial-engine.yml'
       - 'tools/editorial_engine_free.py'
+      - 'tools/editorial_engine_quality_router.py'
       - 'tools/editorial_engine_constitution.py'
       - 'tools/editorial_fact_pack.py'
       - 'tools/editorial_quality_gate.py'
@@ -88,17 +89,19 @@ jobs:
           if [ -z "$TARGET" ]; then TARGET="500"; fi
           if [ -z "$FORCE" ]; then FORCE="-1"; fi
           if [ "$FORCE" = "-1" ] && [ "$GITHUB_EVENT_NAME" = "push" ]; then FORCE="1"; fi
-          if [ "$FORCE" = "-1" ] && [ -z "$GROQ_API_KEY" ] && [ -z "$GEMINI_API_KEY" ] && [ -z "$OPENROUTER_API_KEY" ]; then FORCE="4"; fi
+          if [ "$FORCE" = "-1" ] && [ -z "$GROQ_API_KEY" ] && [ -z "$GEMINI_API_KEY" ] && [ -z "$OPENROUTER_API_KEY" ]; then
+            FORCE="$(python -c "import json; print(json.load(open('data/editorial-engine.json')).get('local_zero_key_force_batch',2))")"
+          fi
           case "$MODE" in stage|pr|direct) ;; *) echo "Invalid mode: $MODE"; exit 2;; esac
           if [ "$TARGET" -lt 1 ] || [ "$TARGET" -gt 500 ]; then echo "daily publication cap must be 1..500"; exit 2; fi
           if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 12 ]; then echo "force_batch must be -1..12"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"; echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "target=$TARGET" >> "$GITHUB_OUTPUT"
-          echo "Quality-first: up to $TARGET publications/day · 1200 deterministic evaluation cap · generation budget 12/run · pt-BR · zero-cost cascade · Fact Pack + enforced quality gate" >> "$GITHUB_STEP_SUMMARY"
+          echo "Quality-first: up to $TARGET publications/day · 1200 deterministic evaluation cap · generation budget 12/run · pt-BR · zero-cost cascade · local safe-envelope routing · Fact Pack + enforced quality gate" >> "$GITHUB_STEP_SUMMARY"
       - name: Compile Constitution and run Golden Corpus
         shell: bash
         run: |
-          python -m py_compile tools/editorial_engine.py tools/editorial_engine_constitution.py tools/editorial_fact_pack.py tools/editorial_quality_gate.py tools/editorial_engine_free.py
+          python -m py_compile tools/editorial_engine.py tools/editorial_engine_constitution.py tools/editorial_fact_pack.py tools/editorial_quality_gate.py tools/editorial_engine_free.py tools/editorial_engine_quality_router.py
           python tests/test_editorial_constitution.py
       - name: Prepare local zero-key inference fallback
         if: env.GROQ_API_KEY == '' && env.GEMINI_API_KEY == '' && env.OPENROUTER_API_KEY == ''
@@ -140,7 +143,7 @@ jobs:
         run: |
           APPLY=""; if [ "$MODE" = "pr" ] || [ "$MODE" = "direct" ]; then APPLY="--apply"; fi
           mkdir -p build/editorial-engine
-          python tools/editorial_engine_free.py --queue "${{ steps.tunnel.outputs.queue }}" --config data/editorial-engine.json --state data/editorial-published.json --feed data/editorial-feed.json --output-dir build/editorial-engine --publish-cap "$TARGET" --capacity 1200 --max-batch 12 --force-batch "$FORCE" $APPLY | tee build/editorial-engine-console.json
+          python tools/editorial_engine_quality_router.py --queue "${{ steps.tunnel.outputs.queue }}" --config data/editorial-engine.json --state data/editorial-published.json --feed data/editorial-feed.json --output-dir build/editorial-engine --publish-cap "$TARGET" --capacity 1200 --max-batch 12 --force-batch "$FORCE" $APPLY | tee build/editorial-engine-console.json
       - name: Add engine report to summary
         if: always()
         shell: bash
@@ -153,6 +156,8 @@ jobs:
           print(f"Status: **{d.get('status')}** · requested generation: **{d.get('requested_batch',0)}** · generated: **{len(d.get('generated',[]))}** · evaluated: **{d.get('evaluated',0)}**")
           print(f"Published today: **{d.get('published_today_after',d.get('already_today',0))}/{d.get('daily_publish_cap',500)} cap** · Fact Packs: **{d.get('fact_packs_created',0)}** · quality rejections: **{d.get('quality_rejections',0)}**")
           print(f"Quality gate: **{d.get('quality_gate_mode')}** · batch: **{d.get('batch_id')}** · editorial day: **{d.get('editorial_day')}**")
+          router=((d.get('provider_runtime') or {}).get('quality_router') or {})
+          if router: print(f"Local quality router: **{router}**")
           for item in d.get('generated',[])[:12]: print(f"- {item.get('format')} · {item.get('category')} · {item.get('title')}")
           PY
           fi
