@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "notes": "Public RSS/Atom endpoints used by the resilient Editorial Tunnel when landing pages are blocked, moved or unreliable. These feeds are discovery/provenance inputs only; they never bypass the editorial quality gate.",
+  "feeds": {
+    "npr.org": [
+      "https://feeds.npr.org/1039/rss.xml"
+    ],
+    "natalie.mu": [
+      "https://natalie.mu/music/feed/news"
+    ],
+    "themusic.com.au": [
+      "https://themusic.com.au/feed.rss"
+    ],
+    "metalorgie.com": [
+      "https://www.metalorgie.com/feed/news"
+    ],
+    "brooklynvegan.com": [
+      "https://www.brooklynvegan.com/feed"
+    ],
+    "thequietus.com": [
+      "https://thequietus.com/feed"
+    ],
+    "uniteasia.org": [
+      "https://uniteasia.org/feed"
+    ],
+    "bantmag.com": [
+      "https://bantmag.com/feed/"
+    ],
+    "altpress.com": [
+      "https://www.altpress.com/feed"
+    ]
+  }
+}
