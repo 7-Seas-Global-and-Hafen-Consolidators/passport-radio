@@ -7,8 +7,8 @@ Provider cascade per story:
 3. OpenRouter free router
 4. Local Ollama on the GitHub Actions runner (no API key)
 
-The launcher enforces a per-run generation budget and an in-memory circuit breaker.
-No paid model is accepted by the OpenRouter path.
+The launcher enforces a per-run generation budget, in-memory circuit breaker,
+free-only provider policy and the production Editorial Constitution quality gate.
 """
 from __future__ import annotations
 
@@ -59,12 +59,22 @@ def _record_failure(name: str, exc: Exception) -> str:
     _provider_failures[name] = _provider_failures.get(name, 0) + 1
 
     low = detail.lower()
+    configuration_failure = (
+        "unavailable" in low or "api_key" in low or "api key" in low
+        or "not configured" in low
+    )
     immediate = "http 401" in low or "http 403" in low
-    transient = "http 429" in low or "http 5" in low or "timed out" in low or "timeout" in low or "network error" in low
-    if immediate or (transient and _provider_failures[name] >= 2):
+    transient = (
+        "http 429" in low or re_http_5xx(low)
+        or "timed out" in low or "timeout" in low or "network error" in low
+    )
+    if configuration_failure or immediate or (transient and _provider_failures[name] >= 2):
         _disabled_providers.add(name)
         row["disabled"] = True
     return detail
+
+def re_http_5xx(text: str) -> bool:
+    return any(f"http {code}" in text for code in range(500, 600))
 
 def provider_runtime_snapshot() -> dict:
     snap = copy.deepcopy(_runtime)
@@ -85,12 +95,15 @@ def install_full_story_prompt() -> None:
             "Evite mistura gratuita de idiomas, frases genéricas, enchimento e repetição. "
             f"Para este formato, tente atingir pelo menos {explicit_minimum} palavras úteis sem inventar fatos. "
             "Se o Fact Pack não sustentar profundidade suficiente, prefira precisão a enchimento. "
+            "Cada objeto de parágrafo DEVE conter fact_refs com pelo menos um fact_id válido do FACT_PACK. "
+            "Nunca devolva o texto de exemplo do schema como conteúdo real. "
             "Responda somente com o JSON solicitado."
         )
         input_text += (
             f"\nMÍNIMO EDITORIAL DE REFERÊNCIA: {explicit_minimum} palavras"
             "\nIDIOMA FINAL OBRIGATÓRIO: pt-BR"
             "\nFACT_REFS SÃO OBRIGATÓRIOS EM CADA PARÁGRAFO."
+            "\nNÃO USE PLACEHOLDERS DO SCHEMA COMO CONTEÚDO."
         )
         return instructions, input_text
 
@@ -177,6 +190,52 @@ def _openrouter_free(prompt: str, config: dict) -> dict:
     )
     return engine.parse_json_text(data["choices"][0]["message"]["content"])
 
+def _ollama_article_schema() -> dict:
+    """Strict local structured-output contract; fact_refs cannot be omitted."""
+    paragraph = {
+        "type": "object",
+        "properties": {
+            "text": {"type": "string", "minLength": 30},
+            "fact_refs": {
+                "type": "array",
+                "items": {"type": "string", "pattern": "^F[A-Z0-9_]{2,40}$"},
+                "minItems": 1,
+                "maxItems": 12,
+            },
+        },
+        "required": ["text", "fact_refs"],
+        "additionalProperties": False,
+    }
+    section = {
+        "type": "object",
+        "properties": {
+            "heading": {"type": "string", "minLength": 3},
+            "paragraphs": {"type": "array", "items": paragraph, "minItems": 1, "maxItems": 8},
+        },
+        "required": ["heading", "paragraphs"],
+        "additionalProperties": False,
+    }
+    return {
+        "type": "object",
+        "properties": {
+            "title": {"type": "string", "minLength": 8},
+            "deck": {"type": "string", "minLength": 20},
+            "kicker": {"type": "string"},
+            "format": {"type": "string", "enum": ["FLASH", "STORY", "MR_NOMAD", "LIVE_SIGNAL"]},
+            "category": {"type": "string", "minLength": 2},
+            "meta_description": {"type": "string", "minLength": 20},
+            "entities": {"type": "array", "items": {"type": "string"}, "maxItems": 16},
+            "keywords": {"type": "array", "items": {"type": "string"}, "maxItems": 16},
+            "sections": {"type": "array", "items": section, "minItems": 1, "maxItems": 9},
+            "closing": {"type": "string", "minLength": 10},
+        },
+        "required": [
+            "title", "deck", "format", "category", "meta_description",
+            "entities", "keywords", "sections", "closing"
+        ],
+        "additionalProperties": False,
+    }
+
 def _ollama_local(prompt: str, config: dict) -> dict:
     """Use an open-weight model running locally on the Actions runner; no key/billing."""
     endpoint = os.environ.get("PASSPORT_OLLAMA_URL", "http://127.0.0.1:11434/api/chat").strip()
@@ -186,17 +245,17 @@ def _ollama_local(prompt: str, config: dict) -> dict:
     payload = {
         "model": model,
         "stream": False,
-        "format": "json",
+        "format": _ollama_article_schema(),
         "keep_alive": "15m",
         "messages": [{"role": "user", "content": prompt}],
         "options": {
-            "temperature": 0.2,
-            "num_predict": 3600,
+            "temperature": 0.15,
+            "num_predict": 3000,
             "num_ctx": 8192,
             "repeat_penalty": 1.08,
         },
     }
-    timeout = int(os.environ.get("PASSPORT_OLLAMA_TIMEOUT", _timeout(config, "ollama", 330)))
+    timeout = int(os.environ.get("PASSPORT_OLLAMA_TIMEOUT", _timeout(config, "ollama", 300)))
     data = _post_json(endpoint, payload, {"Content-Type": "application/json"}, timeout)
     text = str((data.get("message") or {}).get("content") or "")
     if not text:
@@ -241,6 +300,9 @@ def call_free_multiprovider(candidate, source_text, config):
     raise RuntimeError("all_free_providers_exhausted | " + " | ".join(failures))
 
 install_full_story_prompt()
+# Production launcher enforces the Constitution. The config may still be used in
+# shadow mode by isolated tests/tools, but scheduled/direct publication cannot bypass it.
+engine._quality_mode = lambda config: "enforce"
 engine.call_openai = call_free_multiprovider
 engine.provider_runtime_snapshot = provider_runtime_snapshot
 os.environ["OPENAI_API_KEY"] = "passport-zero-cost-multiprovider"
