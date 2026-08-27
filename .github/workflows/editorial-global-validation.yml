@@ -116,6 +116,13 @@ jobs:
           assert 'QUALITY_LIMITED' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
+          # Publication must never rebase generated shared state over a newer main.
+          assert 'group: passport-editorial-engine' in workflow
+          assert 'EDITORIAL PUBLISH DEFERRED' in workflow
+          assert 'BASE_SHA="$(git rev-parse HEAD)"' in workflow
+          assert 'REMOTE_SHA="$(git rev-parse origin/main)"' in workflow
+          assert 'git rebase origin/main' not in workflow
+
           # Supply chain is pinned; floating install script is forbidden.
           assert 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' in workflow
           assert 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' in workflow
@@ -194,5 +201,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; dynamic structured provenance + ENFORCED quality gate + pinned supply chain')
+          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; dynamic structured provenance + ENFORCED quality gate + stale-base publication guard + pinned supply chain')
           PY
