@@ -9,10 +9,13 @@ on:
       - 'tools/editorial_engine.py'
       - 'tools/editorial_engine_copilot.py'
       - 'tools/editorial_engine_free.py'
+      - 'tools/editorial_engine_quality_router.py'
       - 'tools/editorial_engine_constitution.py'
       - 'tools/editorial_fact_pack.py'
       - 'tools/editorial_quality_gate.py'
       - 'tests/test_editorial_constitution.py'
+      - 'tests/test_editorial_false_accept_regression.py'
+      - 'tests/editorial-known-failures.json'
       - 'tools/editorial_tunnel.py'
       - 'tools/editorial_tunnel_global.py'
       - 'data/editorial-engine.json'
@@ -37,12 +40,14 @@ jobs:
             tools/editorial_engine.py \
             tools/editorial_engine_copilot.py \
             tools/editorial_engine_free.py \
+            tools/editorial_engine_quality_router.py \
             tools/editorial_engine_constitution.py \
             tools/editorial_fact_pack.py \
             tools/editorial_quality_gate.py \
             tools/editorial_tunnel.py \
             tools/editorial_tunnel_global.py
           python tests/test_editorial_constitution.py
+          python tests/test_editorial_false_accept_regression.py
       - name: Validate worldwide quality-first operating policy
         run: |
           python - <<'PY'
@@ -55,13 +60,15 @@ jobs:
           sources=src.get('sources', [])
           workflow=Path('.github/workflows/editorial-engine.yml').read_text('utf-8')
           launcher=Path('tools/editorial_engine_free.py').read_text('utf-8')
+          router=Path('tools/editorial_engine_quality_router.py').read_text('utf-8')
           constitution=Path('tools/editorial_engine_constitution.py').read_text('utf-8')
           factpack=Path('tools/editorial_fact_pack.py').read_text('utf-8')
           quality=Path('tools/editorial_quality_gate.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
+          known=json.loads(Path('tests/editorial-known-failures.json').read_text('utf-8'))
 
-          # Constitution v8: 500 is a publication ceiling and the gate is authoritative.
-          assert cfg['version'] >= 8, cfg
+          # Constitution v12: 500 is a publication ceiling and the gate is authoritative.
+          assert cfg['version'] >= 12, cfg
           assert cfg['daily_publish_cap'] == 500, cfg
           assert cfg['daily_target'] == 500, cfg
           assert cfg['daily_evaluation_cap'] == 1200, cfg
@@ -74,6 +81,8 @@ jobs:
           assert cfg['quality_gate']['require_fact_refs'] is True, cfg
           assert cfg['quality_gate']['require_ptbr'] is True, cfg
           assert cfg['quality_gate']['anti_copy_window_words'] >= 40, cfg
+          assert 0.80 <= cfg['quality_gate']['max_paragraph_similarity'] <= 0.95, cfg
+          assert cfg['quality_gate']['min_words_for_similarity'] >= 20, cfg
           assert cfg['minimum_words']['STORY'] >= 850, cfg
           assert cfg['minimum_words']['MR_NOMAD'] >= 1100, cfg
           assert len(sources) >= 120, len(sources)
@@ -113,6 +122,8 @@ jobs:
           assert "PASSPORT_OLLAMA_TIMEOUT: '300'" in workflow
           assert 'OLLAMA_CONTEXT_LENGTH: 8192' in workflow
           assert 'Fact Pack + enforced quality gate' in workflow
+          assert 'observed false-accept guards' in workflow
+          assert 'tests/test_editorial_false_accept_regression.py' in workflow
           assert 'QUALITY_LIMITED' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
@@ -157,7 +168,12 @@ jobs:
           assert 'public_language_not_ptbr' in quality
           assert 'schema_placeholder_echo' in quality
           assert 'unverified_numbers' in quality
+          assert 'unverified_quantities' in quality
+          assert 'near_duplicate_paragraphs' in quality
+          assert 'generic_section_headings' in quality
           assert 'unverified_literal_quote' in quality
+          assert 'REPROCESSAMENTO ÚNICO' in router
+          assert any(row.get('status') == 'KNOWN_UNRESOLVED' for row in known), known
 
           sample_candidate={'title':'Iron Maiden anuncia show no Brasil','description':'A banda confirmou nova apresentação para outubro de 2026.','url':'https://example.invalid/a','primary_category':'metal','recommended_format':'STORY','published':'2026-08-27'}
           pack=fp.build_fact_pack(sample_candidate, 'A banda confirmou a apresentação para 12 de outubro de 2026.', '2026-08-27')
@@ -201,5 +217,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; dynamic structured provenance + ENFORCED quality gate + stale-base publication guard + pinned supply chain')
+          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; dynamic structured provenance + ENFORCED quality gate + observed false-accept guards + known adversarial limitation registry + stale-base publication guard + pinned supply chain')
           PY
