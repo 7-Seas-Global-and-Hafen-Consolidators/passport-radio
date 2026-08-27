@@ -18,18 +18,25 @@ FACTS = [
 PACK = {"facts": FACTS}
 
 
-def article(paragraphs, closing="A agenda recoloca a banda no radar brasileiro."):
+def article(paragraphs, closing="A agenda recoloca a banda no radar brasileiro.", title="Iron Maiden prepara novo encontro com o público brasileiro", entities=None, heading="O anúncio"):
     return {
-        "title":"Iron Maiden prepara novo encontro com o público brasileiro",
+        "title": title,
         "deck":"A banda volta ao Brasil com uma nova data no calendário.",
         "meta_description":"Iron Maiden confirma novo compromisso no Brasil.",
-        "sections":[{"heading":"O anúncio","paragraphs":paragraphs}],
+        "entities": entities if entities is not None else ["Iron Maiden", "Brasil"],
+        "sections":[{"heading":heading,"paragraphs":paragraphs}],
         "closing":closing,
     }
 
 
 long_evidence = " ".join(f"palavra{i}" for i in range(1, 46))
 copy_pack = {"facts":[{"fact_id":"F_COPY","type":"source_statement","value":long_evidence,"evidence":long_evidence,"source_ids":["S1"],"status":"SUPPORTED","critical":True,"allowed_for_generation":True}]}
+english_text = (
+    "The band has announced a new concert in Brazil and the show will bring the group back to the country. "
+    "The announcement is part of the new tour and the group has said the event will be a major stop on the schedule. "
+    "The concert is set to happen after the current run of shows and the band will continue with the tour across the region. "
+    "This is the latest update from the group and the new date is expected to attract fans from across the country."
+)
 
 cases = [
     ("good", article([{"text":"Iron Maiden volta ao Brasil em uma nova etapa de sua agenda de shows.","fact_refs":["F_TITLE"]}]), PACK, "WOULD_PUBLISH", False),
@@ -40,15 +47,20 @@ cases = [
     ("no_paragraphs", article([]), PACK, "WOULD_REJECT", True),
     ("verbatim_copy", article([{"text":long_evidence + ".","fact_refs":["F_COPY"]}]), copy_pack, "WOULD_REJECT", True),
     ("short_noncopy", article([{"text":"palavra1 palavra2 palavra3 palavra4 palavra5 fecham o contexto sem reproduzir a origem.","fact_refs":["F_COPY"]}]), copy_pack, "WOULD_PUBLISH", False),
+    ("english_public_copy", article([{"text":english_text,"fact_refs":["F_TITLE"]}], title="Iron Maiden Announces A New Concert In Brazil", closing="The band remains on the road."), PACK, "WOULD_REPROCESS", True),
+    ("schema_placeholder", article([{"text":"Iron Maiden volta ao Brasil em uma nova etapa de sua agenda de shows.","fact_refs":["F_TITLE"]}], entities=["artistas/bandas/álbuns centrais"], heading="Subtítulo: O anúncio"), PACK, "WOULD_REPROCESS", True),
+    ("unsupported_number", article([{"text":"Iron Maiden volta ao Brasil e tocará diante de 90000 pessoas.","fact_refs":["F_TITLE"]}]), PACK, "WOULD_REPROCESS", True),
 ]
 
+cfg={"quality_gate":{"require_fact_refs":True,"require_ptbr":True,"anti_copy_window_words":40}}
 rows=[]
 for name, art, pack, expected, critical in cases:
-    actual=gate.evaluate(art, pack, {"quality_gate":{"require_fact_refs":True,"anti_copy_window_words":40}})["decision"]
-    rows.append({"name":name,"expected":expected,"actual":actual,"critical":critical})
+    result=gate.evaluate(art, pack, cfg)
+    actual=result["decision"]
+    rows.append({"name":name,"expected":expected,"actual":actual,"critical":critical,"reasons":result.get("reasons",[])})
 metrics=gate.golden_metrics(rows)
 
-# Phase 2 contract: local Ollama structured output makes provenance structural.
+# Structured provenance contract from Phase 2 stays mandatory.
 schema_candidate = {
     "recommended_format": "STORY",
     "_fact_pack": {"facts": FACTS},
@@ -64,4 +76,5 @@ assert schema["additionalProperties"] is False
 
 print(json.dumps({"rows":rows,"metrics":metrics,"structured_output_fact_ids":refs_schema["items"]["enum"]}, ensure_ascii=False, indent=2))
 assert metrics["critical_false_accept"] == 0, metrics
+assert metrics["false_accept"] == 0, metrics
 assert metrics["correct"] == len(rows), metrics
