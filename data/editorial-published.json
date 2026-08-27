@@ -1,8 +1,7 @@
 {
-  "version": 2,
-  "updated_at": "2026-08-27T09:18:38.791418-03:00",
-  "daily_publish_cap": 500,
-  "daily_evaluation_cap": 1200,
+  "version": 1,
+  "updated_at": "2026-08-25T18:01:45.394054-03:00",
+  "daily_capacity": 400,
   "ledger": [
     {
       "title": "Covers de Metal e Rock Revelam Quem Realmente Somos",
@@ -1528,24 +1527,6 @@
       "event_key": "dolly-rockhall-2022-induction",
       "fingerprint": "dc06124549d4a90d48fbfecc",
       "source_hash": "d762f8163330e5e1a77eb0cf"
-    },
-    {
-      "title": "O Power of 3: A New Supergroup Unleashes Their Debut",
-      "url": "/editorial/2026/08/27/o-power-of-3-a-new-supergroup-unleashes-their-debut.html",
-      "published_at": "2026-08-27T09:18:38.788532-03:00",
-      "editorial_day": "2026-08-27",
-      "category": "alternative_gothic",
-      "format": "FLASH",
-      "entities": [
-        "artistas/bandas/álbuns centrais"
-      ],
-      "event_key": "EVT_bdcf1cc45db0cb90db8d",
-      "event_id": "EVT_bdcf1cc45db0cb90db8d",
-      "story_angle_id": "ANG_9ca5de1ea5716cefb667",
-      "batch_id": "gha-33070262926-1",
-      "fingerprint": "201e77e108a4fc7024e2ea05",
-      "source_hash": "9067539344725b07733d9f0a",
-      "status": "PUBLISHED"
     }
   ]
 }
