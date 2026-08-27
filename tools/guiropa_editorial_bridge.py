@@ -5,9 +5,8 @@ import html
 import json
 import os
 import re
+import subprocess
 import sys
-import urllib.error
-import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -19,9 +18,7 @@ GUIROPA_FEED_URL = "https://raw.githubusercontent.com/7-Seas-Global-and-Hafen-Co
 BATCH_SIZE = 12
 MAX_SOURCE_CHARS = 9000
 FETCH_BYTES = 220000
-API_TIMEOUT = 240
-MAX_OUTPUT_TOKENS = 9000
-UA = "Mozilla/5.0 (compatible; GUIROPA-Bridge/1.0; +https://passportradio.online/)"
+UA = "Mozilla/5.0 (compatible; GUIROPA-Bridge/2.0; +https://passportradio.online/)"
 
 
 def get_json(url: str) -> dict:
@@ -89,65 +86,55 @@ def parse_json_text(text: str) -> dict:
         return json.loads(match.group(0))
 
 
-def post_json(url: str, payload: dict, headers: dict) -> dict:
-    req = urllib.request.Request(url, data=json.dumps(payload, ensure_ascii=False).encode("utf-8"), headers=headers, method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=API_TIMEOUT) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")[-1000:]
-        raise RuntimeError(f"HTTP {exc.code}: {body}") from exc
-
-
-def call_groq(prompt: str) -> dict:
-    key = os.environ.get("GROQ_API_KEY", "").strip()
-    if not key: raise RuntimeError("GROQ_API_KEY unavailable")
-    payload = {"model": os.environ.get("GUIROPA_GROQ_MODEL", "openai/gpt-oss-120b"), "messages": [{"role": "user", "content": prompt}], "temperature": 0.35, "max_completion_tokens": MAX_OUTPUT_TOKENS, "response_format": {"type": "json_object"}}
-    data = post_json("https://api.groq.com/openai/v1/chat/completions", payload, {"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
-    return parse_json_text(data["choices"][0]["message"]["content"])
-
-
-def call_gemini(prompt: str) -> dict:
-    key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key: raise RuntimeError("GEMINI_API_KEY unavailable")
-    model = os.environ.get("GUIROPA_GEMINI_MODEL", "gemini-2.5-flash-lite")
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{urllib.parse.quote(model, safe='')}:generateContent"
-    payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.35, "maxOutputTokens": MAX_OUTPUT_TOKENS, "responseMimeType": "application/json"}}
-    data = post_json(url, payload, {"x-goog-api-key": key, "Content-Type": "application/json"})
-    return parse_json_text("".join(str(p.get("text", "")) for p in data["candidates"][0]["content"]["parts"]))
-
-
-def call_openrouter(prompt: str) -> dict:
-    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
-    if not key: raise RuntimeError("OPENROUTER_API_KEY unavailable")
-    model = os.environ.get("GUIROPA_OPENROUTER_MODEL", "openrouter/free")
-    payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.35, "max_tokens": MAX_OUTPUT_TOKENS}
-    data = post_json("https://openrouter.ai/api/v1/chat/completions", payload, {"Authorization": f"Bearer {key}", "Content-Type": "application/json", "HTTP-Referer": "https://guiropa.world/", "X-Title": "GUIROPA Editorial Bridge"})
-    return parse_json_text(data["choices"][0]["message"]["content"])
+def call_copilot(prompt: str, token: str, model: str) -> dict:
+    env = os.environ.copy()
+    env["COPILOT_GITHUB_TOKEN"] = token
+    env["GH_TOKEN"] = token
+    env["GITHUB_TOKEN"] = token
+    cmd = ["copilot", "-p", prompt, "-s", "--no-ask-user", "--model", model]
+    proc = subprocess.run(cmd, capture_output=True, text=True, env=env, timeout=420)
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout or "Copilot CLI failed").strip()
+        raise RuntimeError(detail[-1400:])
+    return parse_json_text(proc.stdout)
 
 
 def call_provider(prompt: str) -> tuple[dict, str]:
+    personal = os.environ.get("COPILOT_PERSONAL_TOKEN", "").strip()
+    github_token = os.environ.get("GH_TOKEN", "").strip() or os.environ.get("GITHUB_TOKEN", "").strip()
+    attempts = []
+    if personal:
+        attempts.extend([("passport-copilot-personal-auto", personal, "auto"), ("passport-copilot-personal-mini", personal, "gpt-5-mini")])
+    if github_token and github_token != personal:
+        attempts.extend([("passport-github-token-auto", github_token, "auto"), ("passport-github-token-mini", github_token, "gpt-5-mini")])
+    if not attempts:
+        raise RuntimeError("no Passport Copilot authentication path available")
+
     failures = []
-    for name, fn in (("groq-free", call_groq), ("gemini-free", call_gemini), ("openrouter-free", call_openrouter)):
+    for name, token, model in attempts:
         try:
-            value = fn(prompt)
+            value = call_copilot(prompt, token, model)
             print(f"BRIDGE_PROVIDER_OK provider={name}")
             return value, name
         except Exception as exc:
-            failures.append(f"{name}:{str(exc)[-400:]}")
-            print(f"BRIDGE_PROVIDER_FAIL provider={name} detail={str(exc)[-400:]}", file=sys.stderr)
-    raise RuntimeError("all_bridge_providers_exhausted | " + " | ".join(failures))
+            detail = str(exc).replace("\n", " ")[-700:]
+            failures.append(f"{name}:{detail}")
+            print(f"BRIDGE_PROVIDER_FAIL provider={name} detail={detail}", file=sys.stderr)
+    raise RuntimeError("all_passport_copilot_paths_failed | " + " | ".join(failures))
 
 
 def validate_story(story: dict, allowed: set[str]) -> dict:
     sid = str(story.get("id") or "")
-    if sid not in allowed: raise ValueError(f"unexpected id {sid}")
-    title = str(story.get("titlePt") or "").strip(); excerpt = str(story.get("excerptPt") or "").strip(); body = story.get("bodyPt")
-    if not title or not excerpt or not isinstance(body, list): raise ValueError(f"incomplete story {sid}")
-    body = [str(x).strip() for x in body if str(x).strip()]
-    if len(body) < 4 or len(body) > 10: raise ValueError(f"unsafe paragraphs {sid}")
+    if sid not in allowed:
+        raise ValueError(f"unexpected id {sid}")
+    title = str(story.get("titlePt") or "").strip()
+    excerpt = str(story.get("excerptPt") or "").strip()
+    body = [str(x).strip() for x in (story.get("bodyPt") or []) if str(x).strip()]
+    if not title or not excerpt or len(body) < 4 or len(body) > 10:
+        raise ValueError(f"incomplete story {sid}")
     words = sum(len(p.split()) for p in body)
-    if words < 120 or words > 1100: raise ValueError(f"unsafe words {sid}:{words}")
+    if words < 120 or words > 1100:
+        raise ValueError(f"unsafe words {sid}:{words}")
     return {"id": sid, "titlePt": title, "excerptPt": excerpt, "bodyPt": body}
 
 
@@ -156,18 +143,22 @@ def main() -> int:
     pending = [x for x in (feed.get("items") or []) if not is_ready(x)][:BATCH_SIZE]
     now = datetime.now(timezone.utc).isoformat()
     if not pending:
-        OUT.write_text(json.dumps({"generatedAt": now, "provider": None, "stories": []}, ensure_ascii=False, indent=2) + "\n", "utf-8")
+        OUT.write_text(json.dumps({"generatedAt": now, "provider": None, "source": "passport-radio-copilot-bridge", "stories": []}, ensure_ascii=False, indent=2) + "\n", "utf-8")
         print("GUIROPA_BRIDGE no pending stories")
         return 0
+
     packets = [source_packet(x) for x in pending]
     result, provider = call_provider(build_prompt(packets))
     raw = result.get("stories")
-    if not isinstance(raw, list): raise RuntimeError("stories array missing")
+    if not isinstance(raw, list):
+        raise RuntimeError("stories array missing")
     allowed = {str(x.get("id")) for x in pending}
     stories = [validate_story(x, allowed) for x in raw]
-    if not stories: raise RuntimeError("bridge generated zero valid stories")
+    if not stories:
+        raise RuntimeError("bridge generated zero valid stories")
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({"generatedAt": now, "provider": provider, "source": "passport-radio-secret-bridge", "stories": stories}, ensure_ascii=False, indent=2) + "\n", "utf-8")
+    OUT.write_text(json.dumps({"generatedAt": now, "provider": provider, "source": "passport-radio-copilot-bridge", "stories": stories}, ensure_ascii=False, indent=2) + "\n", "utf-8")
     print(f"GUIROPA_BRIDGE generated={len(stories)} provider={provider}")
     return 0
 
