@@ -8,6 +8,7 @@ on:
       - '.github/workflows/editorial-global-validation.yml'
       - 'tools/editorial_engine.py'
       - 'tools/editorial_engine_copilot.py'
+      - 'tools/editorial_engine_free.py'
       - 'tools/editorial_tunnel.py'
       - 'tools/editorial_tunnel_global.py'
       - 'data/editorial-engine.json'
@@ -31,6 +32,7 @@ jobs:
           python -m py_compile \
             tools/editorial_engine.py \
             tools/editorial_engine_copilot.py \
+            tools/editorial_engine_free.py \
             tools/editorial_tunnel.py \
             tools/editorial_tunnel_global.py
       - name: Validate worldwide Full Story 500/day operating policy
@@ -44,7 +46,7 @@ jobs:
           src=json.loads(Path('data/editorial-sources-global.json').read_text('utf-8'))
           sources=src.get('sources', [])
           workflow=Path('.github/workflows/editorial-engine.yml').read_text('utf-8')
-          launcher=Path('tools/editorial_engine_copilot.py').read_text('utf-8')
+          launcher=Path('tools/editorial_engine_free.py').read_text('utf-8')
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
 
           # Operation 26/8: 500 public stories/day, 700/day internal capacity, 12/run.
@@ -82,16 +84,22 @@ jobs:
           assert 'force_batch must be -1..12' in workflow
           assert '--capacity 700' in workflow
           assert '--max-batch 12' in workflow
-          assert 'PASSPORT_EDITORIAL_MODEL: auto' in workflow
+          assert 'tools/editorial_engine_free.py' in workflow
+          assert 'PASSPORT_GROQ_MODEL: openai/gpt-oss-120b' in workflow
+          assert 'PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite' in workflow
+          assert 'PASSPORT_OPENROUTER_MODEL: openrouter/free' in workflow
           assert 'Full Story' in workflow
           assert 'Enforce truthful editorial health' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
-          # Generator budget follows the 12-story batch and keeps Copilot auto model.
-          assert 'GENERATION_CALL_BUDGET = 12' in launcher
-          assert 'COPILOT_MODEL' in launcher
-          assert 'or "auto"' in launcher
-          assert '"--model"' in launcher
+          # Free generator keeps the 12-story batch and zero-cost cascade contract.
+          assert 'min(12' in launcher
+          assert 'groq-free' in launcher
+          assert 'gemini-free' in launcher
+          assert 'openrouter-free' in launcher
+          assert 'openrouter/free' in launcher
+          assert 'endswith(":free")' in launcher
+          assert 'all_free_providers_exhausted' in launcher
 
           # Editorial automation remains isolated from commercial/site-wide mutation.
           assert 'inject_amazon_affiliate.py' not in workflow
@@ -124,5 +132,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; 1200-signal radar / 500 public per day / 700 capacity / 12 per run / Full Story pt-BR')
+          print(f'validated {len(sources)} worldwide sources; 1200-signal radar / 500 public per day / 700 capacity / 12 per run / Full Story pt-BR / free multiprovider')
           PY
