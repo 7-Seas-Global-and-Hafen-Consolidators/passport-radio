@@ -26,6 +26,8 @@ on:
       - 'tools/editorial_engine_constitution.py'
       - 'tools/editorial_fact_pack.py'
       - 'tools/editorial_quality_gate.py'
+      - 'tests/test_editorial_false_accept_regression.py'
+      - 'tests/editorial-known-failures.json'
       - 'data/editorial-engine.json'
   schedule:
     - cron: '2,12,22,32,42,52 * * * *'
@@ -97,12 +99,13 @@ jobs:
           if [ "$FORCE" -lt -1 ] || [ "$FORCE" -gt 12 ]; then echo "force_batch must be -1..12"; exit 2; fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"; echo "FORCE=$FORCE" >> "$GITHUB_ENV"
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "target=$TARGET" >> "$GITHUB_OUTPUT"
-          echo "Quality-first: up to $TARGET publications/day · 1200 deterministic evaluation cap · generation budget 12/run · pt-BR · zero-cost cascade · local safe-envelope routing · Fact Pack + enforced quality gate" >> "$GITHUB_STEP_SUMMARY"
+          echo "Quality-first: up to $TARGET publications/day · 1200 deterministic evaluation cap · generation budget 12/run · pt-BR · zero-cost cascade · local safe-envelope routing · Fact Pack + enforced quality gate + observed false-accept guards" >> "$GITHUB_STEP_SUMMARY"
       - name: Compile Constitution and run Golden Corpus
         shell: bash
         run: |
           python -m py_compile tools/editorial_engine.py tools/editorial_engine_constitution.py tools/editorial_fact_pack.py tools/editorial_quality_gate.py tools/editorial_engine_free.py tools/editorial_engine_quality_router.py
           python tests/test_editorial_constitution.py
+          python tests/test_editorial_false_accept_regression.py
       - name: Prepare local zero-key inference fallback
         if: env.GROQ_API_KEY == '' && env.GEMINI_API_KEY == '' && env.OPENROUTER_API_KEY == ''
         shell: bash
