@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -22,7 +22,7 @@
     "min_closing_chars": 100,
     "max_closing_chars": 280
   },
-  "source_firewall_max_chars": 7000,
+  "source_firewall_max_chars": 3600,
   "minimum_fact_pack_facts": 2,
   "format_word_range": 450,
   "quality_gate": {
@@ -30,7 +30,7 @@
     "require_fact_refs": true,
     "require_ptbr": true,
     "anti_copy_window_words": 40,
-    "max_paragraph_similarity": 0.88,
+    "max_paragraph_similarity": 0.60,
     "min_words_for_similarity": 28
   },
   "provider_timeouts": {

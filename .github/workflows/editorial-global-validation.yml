@@ -67,8 +67,8 @@ jobs:
           global_tunnel_text=Path('tools/editorial_tunnel_global.py').read_text('utf-8')
           known=json.loads(Path('tests/editorial-known-failures.json').read_text('utf-8'))
 
-          # Constitution v12: 500 is a publication ceiling and the gate is authoritative.
-          assert cfg['version'] >= 12, cfg
+          # Constitution v13: 500 is a publication ceiling and the stricter gate is authoritative.
+          assert cfg['version'] >= 13, cfg
           assert cfg['daily_publish_cap'] == 500, cfg
           assert cfg['daily_target'] == 500, cfg
           assert cfg['daily_evaluation_cap'] == 1200, cfg
@@ -81,8 +81,9 @@ jobs:
           assert cfg['quality_gate']['require_fact_refs'] is True, cfg
           assert cfg['quality_gate']['require_ptbr'] is True, cfg
           assert cfg['quality_gate']['anti_copy_window_words'] >= 40, cfg
-          assert 0.80 <= cfg['quality_gate']['max_paragraph_similarity'] <= 0.95, cfg
+          assert 0.55 <= cfg['quality_gate']['max_paragraph_similarity'] <= 0.95, cfg
           assert cfg['quality_gate']['min_words_for_similarity'] >= 20, cfg
+          assert cfg['source_firewall_max_chars'] <= 4000, cfg
           assert cfg['minimum_words']['STORY'] >= 850, cfg
           assert cfg['minimum_words']['MR_NOMAD'] >= 1100, cfg
           assert len(sources) >= 120, len(sources)
@@ -118,7 +119,7 @@ jobs:
           assert 'PASSPORT_GROQ_MODEL: openai/gpt-oss-120b' in workflow
           assert 'PASSPORT_GEMINI_MODEL: gemini-2.5-flash-lite' in workflow
           assert 'PASSPORT_OPENROUTER_MODEL: openrouter/free' in workflow
-          assert 'PASSPORT_OLLAMA_MODEL: qwen2.5:1.5b-instruct' in workflow
+          assert 'PASSPORT_OLLAMA_MODEL: qwen2.5:3b-instruct' in workflow
           assert "PASSPORT_OLLAMA_TIMEOUT: '300'" in workflow
           assert 'OLLAMA_CONTEXT_LENGTH: 8192' in workflow
           assert 'Fact Pack + enforced quality gate' in workflow
@@ -127,14 +128,12 @@ jobs:
           assert 'QUALITY_LIMITED' in workflow
           assert 'EDITORIAL BLOCKED' in workflow
 
-          # Publication must never rebase generated shared state over a newer main.
           assert 'group: passport-editorial-engine' in workflow
           assert 'EDITORIAL PUBLISH DEFERRED' in workflow
           assert 'BASE_SHA="$(git rev-parse HEAD)"' in workflow
           assert 'REMOTE_SHA="$(git rev-parse origin/main)"' in workflow
           assert 'git rebase origin/main' not in workflow
 
-          # Supply chain is pinned; floating install script is forbidden.
           assert 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' in workflow
           assert 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' in workflow
           assert 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' in workflow
@@ -143,7 +142,6 @@ jobs:
           assert 'sha256sum -c -' in workflow
           assert 'curl -fsSL https://ollama.com/install.sh | sh' not in workflow
 
-          # Zero-cost launcher keeps Phase 2 dynamic structured provenance intact.
           assert 'editorial_engine_constitution' in launcher
           assert 'engine.MAX_BATCH_HARD_CAP = 12' in launcher
           assert 'groq-free' in launcher and 'gemini-free' in launcher and 'openrouter-free' in launcher
@@ -157,7 +155,6 @@ jobs:
           assert '"enum": valid_ids' in launcher
           assert '"minItems": 1' in launcher
 
-          # Constitution + Fact Pack + quality gate contracts.
           for marker in ('story_angle_id','event_id','batch_id','fact_refs','QUALITY_LIMITED','BLOCKED','fact-packs.json','shadow-decisions.json'):
               assert marker in constitution, marker
           assert 'generation_view(pack)' in constitution
@@ -200,7 +197,6 @@ jobs:
           assert 'passport:batch-id' in rendered
           assert 'Every Song Is A Destination.' in rendered
 
-          # Protected worldwide Tunnel remains unchanged: 1200 radar / 24 workers.
           for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
               assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang
               assert lang in base_tunnel.GLOBAL_ACCEPT_LANGUAGE, lang
@@ -217,5 +213,5 @@ jobs:
 
           forbidden=cfg.get('public_forbidden_patterns', [])
           assert forbidden and len(forbidden) >= 10
-          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; dynamic structured provenance + ENFORCED quality gate + observed false-accept guards + known adversarial limitation registry + stale-base publication guard + pinned supply chain')
+          print(f'validated {len(sources)} worldwide sources; Tunnel 1200/24 preserved; publish cap 500; evaluation cap 1200; 3B local fallback + stricter repetition/source firewall + ENFORCED quality gate')
           PY
