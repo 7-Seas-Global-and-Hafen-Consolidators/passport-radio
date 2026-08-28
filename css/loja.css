@@ -1,4 +1,5 @@
 @import url("./loja-base.css");
+@import url("./passport-commercial-polish.css?v=20260828");
 
 /* PASSPORT RADIO — store cleanup layer 2026-08-22 */
 .store-grid,.products-grid,.product-grid{align-items:stretch}
