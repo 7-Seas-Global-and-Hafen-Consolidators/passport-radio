@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-28T02:39:58.984294-03:00",
+  "updated_at": "2026-08-28T01:26:49.362793-03:00",
   "daily_publish_cap": 500,
   "daily_evaluation_cap": 1200,
   "ledger": [
@@ -1565,22 +1565,6 @@
       "batch_id": "gha-33134932983-2",
       "fingerprint": "ee4265c1bec83a1986812e8f",
       "source_hash": "263725c883760be6a9a1ebb0",
-      "status": "PUBLISHED"
-    },
-    {
-      "title": "DOD Lança Pedal de Delay Analógico com Controle Agressivo de Tempo",
-      "url": "/editorial/2026/08/28/dod-lanca-pedal-de-delay-analogico-com-controle-agressivo-de-tempo.html",
-      "published_at": "2026-08-28T02:29:36.675422-03:00",
-      "editorial_day": "2026-08-28",
-      "category": "instruments",
-      "format": "FLASH",
-      "entities": [],
-      "event_key": "EVT_433b5af46438bbcba79d",
-      "event_id": "EVT_433b5af46438bbcba79d",
-      "story_angle_id": "ANG_48ae5b4cc84679ba4a01",
-      "batch_id": "gha-33144417416-1",
-      "fingerprint": "c18d88eba0a61f7ca73eef57",
-      "source_hash": "17007c63e7e620e5284ae251",
       "status": "PUBLISHED"
     }
   ]
