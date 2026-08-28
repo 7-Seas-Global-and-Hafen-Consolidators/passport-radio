@@ -1,0 +1,39 @@
+name: Passport Editorial Engine Heartbeat
+
+on:
+  workflow_run:
+    workflows:
+      - "Passport Editorial Tunnel Global — 1200"
+    types:
+      - completed
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/editorial-engine-heartbeat.yml'
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: passport-editorial-engine-heartbeat
+  cancel-in-progress: true
+
+jobs:
+  dispatch:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch current editorial engine on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run editorial-engine.yml \
+            --repo "${{ github.repository }}" \
+            --ref main \
+            -f mode=direct \
+            -f daily_target=500 \
+            -f force_batch=-1
