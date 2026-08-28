@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Passport Radio Editorial 24H: rock, metal, pop, pop rock, alternative, gothic, progressive, soul, MPB, história e música ao vivo.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><meta name="theme-color" content="#f7f5f0">
 <title>Editorial 24H | Passport Radio</title><link rel="canonical" href="https://www.passportradio.online/editorial.html">
@@ -11,7 +11,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Passport Radio Editorial 24H","url":"https://www.passportradio.online/editorial.html","publisher":{"@type":"Organization","name":"Passport Radio"},"inLanguage":"pt-BR"}</script>
 </head><body>
 <div class="pe-topbar">PASSPORT RADIO · EDITORIAL 24H</div>
-<header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
+<header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/oriente-medio.html">ORIENTE MÉDIO</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
 <main class="pe-hub"><div class="pe-shell"><div class="pe-hub-head"><div><small>PASSPORT RADIO · 24 HORAS</small><h1>EDITORIAL.</h1></div><p>Rock, metal, pop, alternative, gothic, progressive, soul, Brasil e arquivo. Primeiro a história. Depois a música.</p></div><div id="pe-feed" class="pe-feed" aria-live="polite"></div><div id="pe-empty" class="pe-empty">Carregando o sinal editorial…</div></div></main>
 <footer class="pe-footer"><div class="pe-shell"><strong>PASSPORT RADIO</strong><span>Every Song Is A Destination.</span></div></footer>
 <script>
@@ -20,20 +20,10 @@
   const empty = document.getElementById('pe-empty');
   const esc = (v='') => String(v).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const stamp = (v) => { const d=new Date(v); return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(d); };
-  const read = (url) => fetch(url,{cache:'no-store',credentials:'omit'})
-    .then(r=>r.ok?r.json():({items:[]}))
-    .catch(()=>({items:[]}));
-
-  Promise.all([
-    read('/data/editorial-manual-feed.json'),
-    read('/data/editorial-feed.json')
-  ]).then(([manual,automatic])=>{
+  const read = (url) => fetch(url,{cache:'no-store',credentials:'omit'}).then(r=>r.ok?r.json():({items:[]})).catch(()=>({items:[]}));
+  Promise.all([read('/data/editorial-manual-feed.json'),read('/data/editorial-feed.json')]).then(([manual,automatic])=>{
     const seen=new Set();
-    const items=[
-      ...(Array.isArray(manual&&manual.items)?manual.items:[]),
-      ...(Array.isArray(automatic&&automatic.items)?automatic.items:[])
-    ].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
-
+    const items=[...(Array.isArray(manual&&manual.items)?manual.items:[]),...(Array.isArray(automatic&&automatic.items)?automatic.items:[])].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
     if(!items.length){empty.textContent='O próximo sinal editorial ainda está entrando no ar.';return;}
     empty.remove();
     feed.innerHTML=items.map(item=>`<a href="${esc(item.url)}"><small>${esc(item.format)} · ${esc(item.category)}</small><h2>${esc(item.title)}</h2><p>${esc(item.deck||'')}</p><time>${esc(stamp(item.published_at))} · ${esc(item.author||'PASSPORT RADIO')}</time></a>`).join('');
