@@ -19,6 +19,59 @@
     else actions.appendChild(reddit);
   };
 
+  const removeExpiredHomeEvents = () => {
+    const monthMap = {
+      JAN: 0, FEV: 1, MAR: 2, ABR: 3, MAI: 4, JUN: 5,
+      JUL: 6, AGO: 7, SET: 8, OUT: 9, NOV: 10, DEZ: 11
+    };
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    document.querySelectorAll('#agenda .event').forEach(event => {
+      const dateText = event.querySelector('.date strong')?.textContent?.trim().toUpperCase() || '';
+      const yearText = event.querySelector('.date span')?.textContent?.trim() || '';
+      const monthToken = Object.keys(monthMap).find(token => dateText.includes(token));
+      const days = dateText.match(/\d{1,2}/g)?.map(Number) || [];
+      const year = Number(yearText.match(/\d{4}/)?.[0]);
+      if (!monthToken || !days.length || !Number.isFinite(year)) return;
+
+      const lastDay = Math.max(...days);
+      const eventDate = new Date(year, monthMap[monthToken], lastDay, 23, 59, 59, 999);
+      if (eventDate < today) event.remove();
+    });
+  };
+
+  const cleanHomeSurface = () => {
+    document.querySelectorAll('#promocoes .passport-promo-card').forEach(card => {
+      const status = card.querySelector('.passport-promo-card__meta b')?.textContent?.trim().toUpperCase() || '';
+      if (status === 'EM BREVE') card.remove();
+    });
+
+    removeExpiredHomeEvents();
+
+    document.querySelectorAll('.card,.program-item,.contact-card,.product,.event,.passport-promo-card').forEach(card => {
+      const text = card.textContent.replace(/\s+/g, ' ').trim();
+      const media = card.querySelector('img,audio,video,iframe');
+      if (!text && !media) card.remove();
+    });
+
+    const supportNav = document.querySelector('.side-nav a[href="#apoie"]');
+    if (supportNav) {
+      supportNav.setAttribute('aria-label', 'Doar');
+      supportNav.setAttribute('title', 'Doar');
+      supportNav.querySelector('img')?.setAttribute('alt', 'Doar');
+    }
+
+    document.querySelectorAll('.footer a[href="#agenda"]').forEach(link => { link.textContent = 'Shows'; });
+    document.querySelectorAll('.footer a[href="#apoie"]').forEach(link => { link.textContent = 'Doar'; });
+
+    const agendaEyebrow = document.querySelector('#agenda .eyebrow');
+    if (agendaEyebrow) agendaEyebrow.textContent = 'SHOWS · BRASIL';
+
+    const donateButton = document.querySelector('#apoie .support-box .btn');
+    if (donateButton) donateButton.textContent = 'DOAR';
+  };
+
   const installAuditRepairs = () => {
     if (document.documentElement.dataset.passportUxAudit === '1') return;
     document.documentElement.dataset.passportUxAudit = '1';
@@ -83,73 +136,10 @@
     });
   };
 
-  const installPassportNowRising = () => {
-    const metrics = document.querySelector('.passport-now-home__metrics');
-    if (!metrics || metrics.dataset.passportRising === '1') return;
-    metrics.dataset.passportRising = '1';
-
-    const cards = [...metrics.querySelectorAll('.passport-now-home__metric')];
-    if (cards.length < 3) return;
-
-    const strongs = cards.map(card => card.querySelector('strong'));
-    const labels = cards.map(card => card.querySelector('span'));
-    const START = [102, 1824, 14];
-    const MIN_STEP = [2, 18, 1];
-    const MAX_STEP = [11, 74, 4];
-    const STORAGE_KEY = 'passport_now_visual_counters_v2';
-    const format = value => Number(value).toLocaleString('pt-BR');
-    const randomInt = (min,max) => Math.floor(Math.random()*(max-min+1))+min;
-
-    const loadValues = () => {
-      try {
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-        if (Array.isArray(saved) && saved.length === 3 && saved.every(Number.isFinite)) {
-          return saved.map((value,i) => Math.max(START[i], value));
-        }
-      } catch (_) {}
-      return [...START];
-    };
-
-    const animate = (node, nextValue) => {
-      if (!node) return;
-      const previous = Number(node.dataset.passportValue || String(node.textContent).replace(/\D/g,'') || 0);
-      node.dataset.passportValue = String(nextValue);
-      const started = performance.now();
-      const duration = 720;
-      const tick = now => {
-        const progress = Math.min(1,(now-started)/duration);
-        const eased = 1-Math.pow(1-progress,3);
-        node.textContent = format(Math.round(previous + (nextValue-previous)*eased));
-        if (progress < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-
-    const values = loadValues();
-    ['PASSPORT PULSE™','ROTAÇÕES DO SINAL','DESTINATIONS INDEX™'].forEach((text,i) => {
-      if (labels[i]) labels[i].textContent = text;
-      if (strongs[i]) {
-        strongs[i].textContent = format(values[i]);
-        strongs[i].dataset.passportValue = String(values[i]);
-      }
-    });
-
-    const rise = () => {
-      values.forEach((value,i) => {
-        values[i] = value + randomInt(MIN_STEP[i],MAX_STEP[i]);
-        animate(strongs[i], values[i]);
-      });
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(values)); } catch (_) {}
-      window.setTimeout(rise, randomInt(6500,14500));
-    };
-
-    window.setTimeout(rise, randomInt(1800,4200));
-  };
-
   const boot = () => {
     addRedditTop();
+    cleanHomeSurface();
     installAuditRepairs();
-    installPassportNowRising();
   };
 
   if (document.readyState === 'loading') {
