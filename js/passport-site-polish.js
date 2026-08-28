@@ -2,7 +2,7 @@
   'use strict';
 
   const text = (node, value) => {
-    if (node && typeof value === 'string') node.textContent = value;
+    if (node && typeof value === 'string' && node.textContent !== value) node.textContent = value;
   };
 
   const cleanPromotions = () => {
@@ -25,7 +25,9 @@
     });
 
     const grid = section.querySelector('.passport-promos-home__grid');
-    if (grid && grid.children.length === 1) grid.classList.add('passport-promos-home__grid--single');
+    if (grid && grid.children.length === 1 && !grid.classList.contains('passport-promos-home__grid--single')) {
+      grid.classList.add('passport-promos-home__grid--single');
+    }
   };
 
   const parseAgendaEnd = (event) => {
@@ -51,7 +53,7 @@
       if (end && end < now) event.remove();
     });
 
-    if (!agenda.querySelector('.event')) section.hidden = true;
+    if (!agenda.querySelector('.event') && !section.hidden) section.hidden = true;
   };
 
   const plainLabels = () => {
@@ -60,26 +62,26 @@
       text(support.querySelector('.eyebrow'), 'DOAR');
       text(support.querySelector('h2'), 'Ajude a manter a Passport no ar.');
       support.querySelectorAll('a.btn').forEach((a) => {
-        if (/ASAAS/i.test(a.textContent) || /APOIAR A PASSPORT/i.test(a.textContent)) a.textContent = 'DOAR VIA ASAAS';
-        if (/PAYPAL/i.test(a.textContent)) a.textContent = 'DOAR VIA PAYPAL ↗';
+        if (/ASAAS/i.test(a.textContent) || /APOIAR A PASSPORT/i.test(a.textContent)) text(a, 'DOAR VIA ASAAS');
+        if (/PAYPAL/i.test(a.textContent)) text(a, 'DOAR VIA PAYPAL ↗');
       });
     }
 
     document.querySelectorAll('a[href="#apoie"],a[href="index.html#apoie"],a[href="/index.html#apoie"]').forEach((a) => {
-      if (/^APOIE$/i.test(a.textContent.trim()) || /^APOIAR$/i.test(a.textContent.trim())) a.textContent = 'Doar';
+      if (/^APOIE$/i.test(a.textContent.trim()) || /^APOIAR$/i.test(a.textContent.trim())) text(a, 'Doar');
     });
 
     const storeEyebrow = document.querySelector('#loja .eyebrow');
-    if (storeEyebrow && /PASSPORT STORE/i.test(storeEyebrow.textContent)) storeEyebrow.textContent = 'LOJA';
+    if (storeEyebrow && /PASSPORT STORE/i.test(storeEyebrow.textContent)) text(storeEyebrow, 'LOJA');
 
     const agendaEyebrow = document.querySelector('#agenda .eyebrow');
-    if (agendaEyebrow && /AGENDA DE SHOWS/i.test(agendaEyebrow.textContent)) agendaEyebrow.textContent = 'SHOWS · BRASIL';
+    if (agendaEyebrow && /AGENDA DE SHOWS/i.test(agendaEyebrow.textContent)) text(agendaEyebrow, 'SHOWS · BRASIL');
 
     const float = document.getElementById('passport-support-float');
     if (float) {
       text(float.querySelector('.passport-support-float__copy strong'), 'DOAR PARA A PASSPORT');
       text(float.querySelector('.passport-support-float__copy small'), 'PAYPAL · VALOR LIVRE');
-      float.setAttribute('aria-label', 'Doar para a Passport via PayPal');
+      if (float.getAttribute('aria-label') !== 'Doar para a Passport via PayPal') float.setAttribute('aria-label', 'Doar para a Passport via PayPal');
     }
   };
 
@@ -102,7 +104,8 @@
     if (!wire) return;
     const hasStory = !!wire.querySelector('a.passport-wire__hero[href], .passport-wire__signal[href], .passport-wire__rail-item[href]');
     const waitingOnly = !!wire.querySelector('.passport-wire__waiting, .passport-wire__hero--waiting');
-    wire.hidden = !hasStory && waitingOnly;
+    const shouldHide = !hasStory && waitingOnly;
+    if (wire.hidden !== shouldHide) wire.hidden = shouldHide;
   };
 
   const installStyle = () => {
