@@ -1,52 +1,49 @@
 (() => {
   'use strict';
 
-  const namespace = 'passportradio.online';
-  const action = 'listen';
-  const key = 'signal';
-  const endpoint = `https://counterapi.com/api/${namespace}/${action}/${key}`;
-  const liveEndpoint = `${endpoint}?readOnly=true&timeline=15m&unique=true`;
-  const totalEndpoint = `${endpoint}?readOnly=true`;
-  const POLL_MS = 30000;
+  /* PASSPORT NOW™ — kinetic visual counters.
+     These are presentation indexes, not audience analytics. */
+  const STORAGE_KEY = 'passport_now_visual_counters_v1';
+  const START = [102, 1824, 14];
+  const MIN_STEP = [2, 18, 1];
+  const MAX_STEP = [11, 74, 4];
+  const TICK_MIN = 6500;
+  const TICK_MAX = 14500;
 
   const format = (value) => Number(value).toLocaleString('pt-BR');
+  const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const animateNumber = (node, nextValue) => {
     if (!node || !Number.isFinite(nextValue)) return;
-    const previous = Number(node.dataset.passportValue || 0);
-    if (previous === nextValue) {
-      node.textContent = format(nextValue);
-      return;
-    }
-
+    const previous = Number(node.dataset.passportValue || node.textContent.replace(/\D/g, '') || 0);
     node.dataset.passportValue = String(nextValue);
+
     const started = performance.now();
-    const duration = 650;
+    const duration = 720;
     const from = Number.isFinite(previous) ? previous : 0;
 
     const tick = (now) => {
       const progress = Math.min(1, (now - started) / duration);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(from + (nextValue - from) * eased);
-      node.textContent = format(current);
+      node.textContent = format(Math.round(from + (nextValue - from) * eased));
       if (progress < 1) requestAnimationFrame(tick);
     };
 
     requestAnimationFrame(tick);
   };
 
-  const getValue = async (url) => {
-    const response = await fetch(url, {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'no-store',
-      credentials: 'omit'
-    });
-    if (!response.ok) throw new Error(`Passport Now ${response.status}`);
-    const data = await response.json();
-    const value = Number(data && data.value);
-    if (!Number.isFinite(value)) throw new Error('Passport Now invalid value');
-    return value;
+  const loadValues = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      if (Array.isArray(saved) && saved.length === 3 && saved.every(Number.isFinite)) {
+        return saved.map((value, i) => Math.max(START[i], value));
+      }
+    } catch (_) {}
+    return [...START];
+  };
+
+  const saveValues = (values) => {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(values)); } catch (_) {}
   };
 
   const install = () => {
@@ -54,50 +51,34 @@
     if (!metrics || metrics.dataset.passportDynamic === '1') return;
     metrics.dataset.passportDynamic = '1';
 
-    const cards = metrics.querySelectorAll('.passport-now-home__metric');
+    const cards = [...metrics.querySelectorAll('.passport-now-home__metric')];
     if (cards.length < 3) return;
 
-    cards[0].querySelector('strong')?.setAttribute('data-passport-live-now', '1');
-    cards[0].querySelector('span') && (cards[0].querySelector('span').textContent = 'OUVINDO AGORA');
+    const strongs = cards.map(card => card.querySelector('strong'));
+    const labels = cards.map(card => card.querySelector('span'));
+    const labelText = ['PASSPORT PULSE™', 'ROTAÇÕES DO SINAL', 'DESTINATIONS INDEX™'];
 
-    const totalStrong = cards[1].querySelector('strong');
-    const totalLabel = cards[1].querySelector('span');
-    if (totalStrong) {
-      totalStrong.textContent = '—';
-      totalStrong.setAttribute('data-passport-listen-pulses', '1');
-    }
-    if (totalLabel) totalLabel.textContent = 'PULSOS DE ESCUTA';
+    labels.forEach((label, i) => {
+      if (label) label.textContent = labelText[i];
+    });
 
-    const sessionStrong = cards[2].querySelector('strong');
-    const sessionLabel = cards[2].querySelector('span');
-    if (sessionStrong) {
-      sessionStrong.textContent = '0';
-      sessionStrong.dataset.passportSessionStart = String(Date.now());
-    }
-    if (sessionLabel) sessionLabel.textContent = 'MINUTOS NESTA SESSÃO';
+    const values = loadValues();
+    strongs.forEach((node, i) => {
+      if (!node) return;
+      node.textContent = format(values[i]);
+      node.dataset.passportValue = String(values[i]);
+    });
 
-    const updateSession = () => {
-      if (!sessionStrong) return;
-      const started = Number(sessionStrong.dataset.passportSessionStart || Date.now());
-      const minutes = Math.max(0, Math.floor((Date.now() - started) / 60000));
-      animateNumber(sessionStrong, minutes);
+    const rise = () => {
+      values.forEach((value, i) => {
+        values[i] = value + randomInt(MIN_STEP[i], MAX_STEP[i]);
+        animateNumber(strongs[i], values[i]);
+      });
+      saveValues(values);
+      window.setTimeout(rise, randomInt(TICK_MIN, TICK_MAX));
     };
 
-    const refresh = async () => {
-      try {
-        const [live, total] = await Promise.all([
-          getValue(liveEndpoint),
-          getValue(totalEndpoint)
-        ]);
-        animateNumber(cards[0].querySelector('strong'), live);
-        animateNumber(totalStrong, total);
-      } catch (_) {}
-      updateSession();
-    };
-
-    refresh();
-    window.setInterval(refresh, POLL_MS);
-    window.setInterval(updateSession, 15000);
+    window.setTimeout(rise, randomInt(1800, 4200));
   };
 
   if (document.readyState === 'loading') {
