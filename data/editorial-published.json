@@ -1,7 +1,8 @@
 {
-  "version": 1,
-  "updated_at": "2026-08-25T18:01:45.394054-03:00",
-  "daily_capacity": 400,
+  "version": 2,
+  "updated_at": "2026-08-27T21:12:28.447007-03:00",
+  "daily_publish_cap": 500,
+  "daily_evaluation_cap": 1200,
   "ledger": [
     {
       "title": "Covers de Metal e Rock Revelam Quem Realmente Somos",
@@ -1527,6 +1528,25 @@
       "event_key": "dolly-rockhall-2022-induction",
       "fingerprint": "dc06124549d4a90d48fbfecc",
       "source_hash": "d762f8163330e5e1a77eb0cf"
+    },
+    {
+      "title": "ANGRA Celebrará o Aniversário de 30 Anos com Reedição do Álbum Hóspede",
+      "url": "/editorial/2026/08/27/angra-celebrara-o-aniversario-de-30-anos-com-reedicao-do-album-hospede.html",
+      "published_at": "2026-08-27T21:12:28.444511-03:00",
+      "editorial_day": "2026-08-27",
+      "category": "metal",
+      "format": "FLASH",
+      "entities": [
+        "ANGRA",
+        "Hóspede"
+      ],
+      "event_key": "EVT_f4eae6bfaefb53397717",
+      "event_id": "EVT_f4eae6bfaefb53397717",
+      "story_angle_id": "ANG_bbd46ea3da5373053d79",
+      "batch_id": "gha-33128566795-1",
+      "fingerprint": "615f899205ea79c869fe76a2",
+      "source_hash": "2a6d12df37b138f107b93f63",
+      "status": "PUBLISHED"
     }
   ]
 }
