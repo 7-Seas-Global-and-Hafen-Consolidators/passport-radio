@@ -275,77 +275,111 @@ if (menu && side) {
   load();
 })();
 
-/* Agenda Passport — curadoria Brasil, atualizada em 27/08/2026.
+/* Agenda Passport — curadoria Brasil, atualizada em 28/08/2026.
    Mantém a URL e o layout da Home; substitui apenas os cards antigos da agenda.
-   Datas, locais e links abaixo foram conferidos nas bilheterias oficiais. */
+   Eventos vencidos são removidos automaticamente pela data final de cada item. */
 (() => {
   const agenda = document.querySelector('#agenda .agenda');
   if (!agenda) return;
 
   const events = [
     {
-      date: '04 SET', year: '2026', artist: 'Thunderbird · História Ilustrada do Rock Nacional — Anos 80', city: 'São Paulo · SP',
+      date: '04 SET', year: '2026', expires: '2026-09-04', artist: 'Thunderbird · História Ilustrada do Rock Nacional — Anos 80', city: 'São Paulo · SP',
       place: 'Blue Note São Paulo · 20h',
       url: 'https://www.eventim.com.br/artist/thunderbird/'
     },
     {
-      date: '06 SET', year: '2026', artist: 'mgk', city: 'São Paulo · SP',
+      date: '06 SET', year: '2026', expires: '2026-09-06', artist: 'mgk', city: 'São Paulo · SP',
       place: 'Audio · 21h',
       url: 'https://www.ticketmaster.com.br/event/mgk'
     },
     {
-      date: '19 SET', year: '2026', artist: 'Helloween', city: 'São Paulo · SP',
+      date: '19 SET', year: '2026', expires: '2026-09-19', artist: 'Helloween · 40 anos', city: 'São Paulo · SP',
       place: 'Suhai Music Hall · 21h',
       url: 'https://www.eventim.com.br/event/helloween-suhai-music-hall-21068671/'
     },
     {
-      date: '02–03 OUT', year: '2026', artist: 'Angra · Holy Land / Rebirth', city: 'São Paulo · SP',
+      date: '02–03 OUT', year: '2026', expires: '2026-10-03', artist: 'Angra · Holy Land / Rebirth', city: 'São Paulo · SP',
       place: 'Tokio Marine Hall · 22h',
       url: 'https://www.ticketmaster.com.br/event/angra-tokio-marine-hall'
     },
     {
-      date: '16 OUT', year: '2026', artist: 'After Forever', city: 'São Paulo · SP',
+      date: '16 OUT', year: '2026', expires: '2026-10-16', artist: 'Barão Vermelho · Encontro', city: 'São Paulo · SP',
+      place: 'São Paulo · 22h',
+      url: 'https://www.eventim.com.br/artist/barao-vermelho/'
+    },
+    {
+      date: '16 OUT', year: '2026', expires: '2026-10-16', artist: 'After Forever', city: 'São Paulo · SP',
       place: 'Tokio Marine Hall',
       url: 'https://www.ticketmaster.com.br/event/after-forever-tokio-marine-hall'
     },
     {
-      date: '25–28 OUT', year: '2026', artist: 'Iron Maiden · Run For Your Lives World Tour', city: 'São Paulo · SP + Curitiba · PR',
+      date: '24 OUT', year: '2026', expires: '2026-10-24', artist: 'Black Pantera', city: 'Rio de Janeiro · RJ',
+      place: 'Circo Voador · 20h',
+      url: 'https://www.eventim.com.br/artist/black-pantera/'
+    },
+    {
+      date: '25–28 OUT', year: '2026', expires: '2026-10-28', artist: 'Iron Maiden · Run For Your Lives World Tour', city: 'São Paulo · SP + Curitiba · PR',
       place: 'Nubank Parque · Arena da Baixada',
       url: 'https://www.livepass.com.br/artist/iron-maiden/'
     },
     {
-      date: '07 NOV', year: '2026', artist: 'Sepultura · Celebrating Life Through Death', city: 'São Paulo · SP',
+      date: '30 OUT', year: '2026', expires: '2026-10-30', artist: 'Plebe Rude', city: 'Rio de Janeiro · RJ',
+      place: 'Circo Voador · 20h',
+      url: 'https://www.eventim.com.br/artist/plebe-rude/'
+    },
+    {
+      date: '06 NOV', year: '2026', expires: '2026-11-06', artist: 'Opeth', city: 'São Paulo · SP',
+      place: 'São Paulo · 21h30',
+      url: 'https://www.eventim.com.br/artist/opeth/'
+    },
+    {
+      date: '07 NOV', year: '2026', expires: '2026-11-07', artist: 'Sepultura · Celebrating Life Through Death', city: 'São Paulo · SP',
       place: 'Mercado Livre Arena Pacaembu · 20h30',
       url: 'https://www.ticketmaster.com.br/event/sepultura'
     },
     {
-      date: '05 DEZ', year: '2026', artist: 'Deep Purple', city: 'São Paulo · SP',
+      date: '27 NOV', year: '2026', expires: '2026-11-27', artist: 'POP3 · George Israel + Henrique Portugal + Charles Gavin', city: 'São Paulo · SP',
+      place: 'Blue Note São Paulo · 20h e 22h30',
+      url: 'https://www.eventim.com.br/'
+    },
+    {
+      date: '05 DEZ', year: '2026', expires: '2026-12-05', artist: 'Deep Purple', city: 'São Paulo · SP',
       place: 'Suhai Music Hall · 21h',
       url: 'https://www.eventim.com.br/event/deep-purple-suhai-music-hall-21626291/'
     },
     {
-      date: '17 DEZ', year: '2026', artist: 'Slayer · Reign In Blood 40th Anniversary', city: 'São Paulo · SP',
+      date: '17 DEZ', year: '2026', expires: '2026-12-17', artist: 'Slayer · Reign In Blood 40th Anniversary', city: 'São Paulo · SP',
       place: 'Nubank Parque · Kreator + Korzus',
       url: 'https://www.livepass.com.br/event/slayer-reign-in-blood-40th-anniversary-2026-nubank-parque-21728606/'
     },
     {
-      date: '15 JAN', year: '2027', artist: 'System Of A Down + Faith No More', city: 'Rio de Janeiro · RJ',
+      date: '19 DEZ', year: '2026', expires: '2026-12-19', artist: 'Barão Vermelho', city: 'Rio de Janeiro · RJ',
+      place: 'Circo Voador · 20h',
+      url: 'https://www.eventim.com.br/artist/barao-vermelho/'
+    },
+    {
+      date: '15 JAN', year: '2027', expires: '2027-01-15', artist: 'System Of A Down + Faith No More', city: 'Rio de Janeiro · RJ',
       place: 'Estádio Maracanã · 16h',
       url: 'https://www.eventim.com.br/event/system-of-a-down-e-faith-no-more-estadio-maracana-22023211/'
     },
     {
-      date: '22 JAN–04 FEV', year: '2027', artist: 'Rush · Fifty Something Tour', city: 'Curitiba · São Paulo · Rio · Belo Horizonte · Brasília',
+      date: '22 JAN–04 FEV', year: '2027', expires: '2027-02-04', artist: 'Rush · Fifty Something Tour', city: 'Curitiba · São Paulo · Rio · Belo Horizonte · Brasília',
       place: '5 cidades · 6 apresentações',
       url: 'https://www.eventim.com.br/campaign/rush'
     },
     {
-      date: '20 FEV', year: '2027', artist: 'Foo Fighters', city: 'São Paulo · SP',
+      date: '20 FEV', year: '2027', expires: '2027-02-20', artist: 'Foo Fighters', city: 'São Paulo · SP',
       place: 'Estádio do MorumBIS · 20h',
       url: 'https://www.ticketmaster.com.br/event/venda-geral-foo-fighters-sao-paulo'
     }
   ];
 
-  agenda.innerHTML = events.map((event) => `
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const activeEvents = events.filter((event) => new Date(`${event.expires}T23:59:59`) >= today);
+
+  agenda.innerHTML = activeEvents.map((event) => `
     <article class="event">
       <div class="date">
         <strong>${event.date}</strong>
@@ -363,21 +397,21 @@ if (menu && side) {
   `).join('');
 })();
 
-/* Latest Mr. Nomad story — keeps the static Home architecture intact and
+/* Featured Mr. Nomad story — keeps the static Home architecture intact and
    swaps only editorial content after the DOM is available. */
 (() => {
-  const storyUrl = 'before-evanescence-darkness-came-from-bristol.html';
-  const imageUrl = 'https://cdn.mos.cms.futurecdn.net/YxnPHZXvKtR3CWyEqfiHnQ.jpg';
+  const storyUrl = '/editorial/2026/08/27/dolly-parton-1946-2026-vida-cancoes-legado.html';
+  const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Dolly_Parton_in_2022.jpg';
 
   const hero = document.querySelector('.hero-main > a');
   if (hero) {
     hero.href = storyUrl;
     hero.innerHTML = `
-      <img src="${imageUrl}" alt="Amy Lee e a capa de Dummy, do Portishead" referrerpolicy="no-referrer">
+      <img src="${imageUrl}" alt="Dolly Parton em 2022" referrerpolicy="no-referrer">
       <div class="hero-copy">
-        <span class="eyebrow">Mr. Nomad · Portishead → Evanescence · 25/08/2026</span>
-        <h1>Before Evanescence: the darkness came from Bristol.</h1>
-        <p>Antes de Fallen e de Bring Me to Life, havia Dummy, Beth Gibbons, Bristol e uma adolescente chamada Amy Lee ouvindo tudo.</p>
+        <span class="eyebrow">DESTAQUE · Mr. Nomad · Dolly Parton · 1946–2026</span>
+        <h1>Dolly Parton: a menina das montanhas que ensinou o mundo a contar histórias.</h1>
+        <p>Da infância no Tennessee a Jolene, I Will Always Love You, 9 to 5, Dollywood e milhões de livros entregues a crianças: a viagem completa de Dolly Parton.</p>
       </div>
     `;
   }
@@ -385,13 +419,13 @@ if (menu && side) {
   const breaking = document.querySelector('.breaking-track');
   if (breaking) {
     breaking.innerHTML = `
+      DESTAQUE · Dolly Parton · 1946–2026
+      &nbsp; · &nbsp;
       Portishead → Evanescence · The Darkness Came From Bristol
       &nbsp; · &nbsp;
       Chris Slade · The Man Behind The Thunder
       &nbsp; · &nbsp;
       Frank Beard · 1949–2026
-      &nbsp; · &nbsp;
-      Sharon den Adel
     `;
   }
 
@@ -399,11 +433,11 @@ if (menu && side) {
   if (feature) {
     feature.href = storyUrl;
     feature.innerHTML = `
-      <img src="${imageUrl}" alt="Amy Lee e a capa de Dummy, do Portishead" referrerpolicy="no-referrer">
+      <img src="${imageUrl}" alt="Dolly Parton em 2022" referrerpolicy="no-referrer">
       <div>
-        <small>Mr. Nomad · Gothic / Alternative Archives™ · 25/08/2026</small>
-        <h3>Antes do Evanescence, a escuridão veio de Bristol.</h3>
-        <p>Dummy, Portishead, Beth Gibbons e a ponte escondida até Amy Lee.</p>
+        <small>DESTAQUE · Mr. Nomad · Dolly Parton · 27/08/2026</small>
+        <h3>Dolly Parton: a menina das montanhas que ensinou o mundo a contar histórias.</h3>
+        <p>Uma vida de canções, decisões, negócios, livros, cinema e uma capacidade rara de transformar memória em música.</p>
       </div>
     `;
   }
