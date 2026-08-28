@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* Passport Radio — commercial presentation cleanup · 2026-08-28
+   Keep the monetization links. Remove visual alarm, repetition and side clutter. */
+.passport-commercial-marquee,
+.passport-commercial-side{
+  display:none!important;
+}
+
+.passport-commercial-link::after,
+.passport-commercial-link small::before,
+.passport-commercial-link .passport-commercial-cta,
+.passport-commercial-marquee__track{
+  animation:none!important;
+}
+
+.passport-commercial-link::after{
+  display:none!important;
+}
+
+.passport-commercial-top{
+  border-top:1px solid #111!important;
+  border-bottom:1px solid #111!important;
+  box-shadow:none!important;
+}
+
+.passport-commercial-top__main,
+.passport-commercial-mini{
+  min-height:54px!important;
+}
+
+.passport-commercial-top__main{
+  padding-top:9px!important;
+  padding-bottom:9px!important;
+}
+
+.passport-commercial-block{
+  border:1px solid #bbb!important;
+  box-shadow:none!important;
+}
+
+.passport-commercial-footer{
+  border-top:1px solid #222!important;
+}
+
+.passport-commercial-footer__link{
+  border-width:1px!important;
+}
+
+@media(max-width:760px){
+  .passport-commercial-top__main,
+  .passport-commercial-mini{
+    min-height:50px!important;
+  }
+  .passport-commercial-block{
+    width:calc(100% - 24px)!important;
+    margin:16px auto!important;
+  }
+}
