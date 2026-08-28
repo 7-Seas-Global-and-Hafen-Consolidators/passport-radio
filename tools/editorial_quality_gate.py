@@ -40,6 +40,15 @@ SCHEMA_ECHOES = (
 GENERIC_SECTION_HEADINGS = {
     "subtitulo", "titulo", "heading", "section", "secao", "paragrafo", "texto"
 }
+PTBR_FALSE_ACCEPT_PATTERNS = (
+    r"\bcontrolos?\b",
+    r"\bseleccoes?\b",
+    r"\bselecoes de ondas\b",
+    r"\befectos?\b",
+    r"\befectivamente\b",
+    r"\buma design\b",
+    r"\ba pitch\b",
+)
 # Deliberately excludes one/um/uma because those words are too common in normal
 # prose. These mappings are only used when a nearby factual unit is present.
 NUMBER_WORDS = {
@@ -247,9 +256,17 @@ def evaluate(article: dict[str, Any], fact_pack: dict[str, Any], config: dict[st
     last_body = paragraphs[-1]["text"] if paragraphs else ""
     if last_body and not last_body.rstrip().endswith(TERMINAL_PUNCTUATION):
         reprocess.append("truncated_last_paragraph")
+    closing = str(article.get("closing") or "").strip()
+    if closing and (len(closing) < 60 or not closing.rstrip().endswith(TERMINAL_PUNCTUATION)):
+        reprocess.append("truncated_closing")
 
     if require_ptbr and looks_overwhelmingly_english(text):
         reprocess.append("public_language_not_ptbr")
+    if require_ptbr:
+        for pattern in PTBR_FALSE_ACCEPT_PATTERNS:
+            if re.search(pattern, low, flags=re.I):
+                reprocess.append(f"public_language_not_brazilian_pt:{pattern}")
+                break
 
     if any(norm(marker) in low for marker in SCHEMA_ECHOES):
         reprocess.append("schema_placeholder_echo")

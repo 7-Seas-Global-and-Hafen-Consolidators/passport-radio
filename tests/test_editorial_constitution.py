@@ -21,7 +21,7 @@ FACTS = [
 PACK = {"facts": FACTS}
 
 
-def article(paragraphs, closing="A agenda recoloca a banda no radar brasileiro.", title="Iron Maiden prepara novo encontro com o público brasileiro", entities=None, heading="O anúncio"):
+def article(paragraphs, closing="A agenda recoloca a banda no radar brasileiro e mantém o foco apenas no que está confirmado.", title="Iron Maiden prepara novo encontro com o público brasileiro", entities=None, heading="O anúncio"):
     return {
         "title": title,
         "deck":"A banda volta ao Brasil com uma nova data no calendário.",
@@ -65,8 +65,6 @@ for name, art, pack, expected, critical in cases:
     rows.append({"name":name,"expected":expected,"actual":actual,"critical":critical,"reasons":result.get("reasons",[])})
 metrics=gate.golden_metrics(rows)
 
-# Structured provenance contract stays mandatory and the base schema must agree
-# with the production format's maximum section count.
 schema_candidate = {
     "recommended_format": "STORY",
     "_fact_pack": {"facts": FACTS},
@@ -83,7 +81,6 @@ assert schema["properties"]["sections"]["maxItems"] == 5
 flash_schema = free._structured_output_schema({"recommended_format":"FLASH","_fact_pack":{"facts":FACTS}})
 assert flash_schema["properties"]["sections"]["maxItems"] == 3
 
-# Local-only specialization is deterministic and never relaxes the gate.
 engine_cfg=json.loads((ROOT / "data/editorial-engine.json").read_text("utf-8"))
 assert engine_cfg["version"] >= 11
 assert engine_cfg["local_zero_key_format"] == "FLASH"
@@ -120,10 +117,6 @@ finally:
         else:
             os.environ[name]=value
 
-# The local FLASH schema now makes the observed short-output failure structural.
-# This is a character envelope, not a claim that characters equal words; the
-# production 300-word validator remains authoritative and the real Engine run is
-# still required before declaring the model compliant.
 enveloped_schema=free._structured_output_schema(routed)
 sections_schema=enveloped_schema["properties"]["sections"]
 paragraphs_schema=sections_schema["items"]["properties"]["paragraphs"]
@@ -152,8 +145,6 @@ cleaned=router._clean_generated_metadata({
 assert cleaned["entities"] == ["Iron Maiden"]
 assert cleaned["keywords"] == ["heavy metal"]
 
-# One corrective retry is allowed for repairable drafts. It must not recurse and
-# it must keep the exact same Fact Pack/provenance contract.
 def generated(title, body):
     return {
         "title":title,
