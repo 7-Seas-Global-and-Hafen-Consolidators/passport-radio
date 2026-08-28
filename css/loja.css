@@ -40,6 +40,42 @@
   background:#d71920;
 }
 
+/* 2026-08-28 — mostrar catálogo real, não promessa de catálogo.
+   As vitrines abaixo eram apenas portas visuais para linhas ainda sem
+   produto comprável. O visitante agora cai mais rápido nos produtos reais. */
+.store-index,
+.store-showcase{
+  display:none!important;
+}
+
+/* Filtros sem nenhum produto real no catálogo atual. */
+.store-pill[data-filter="vinil"],
+.store-pill[data-filter="vitrola"],
+.store-pill[data-filter="fone"],
+.store-pill[data-filter="guitarra"],
+.store-pill[data-filter="baixo"],
+.store-pill[data-filter="pedaleira"],
+.store-pill[data-filter="chaveiro"],
+.store-pill[data-filter="carteira"]{
+  display:none!important;
+}
+
+/* Não oferecer atalhos para vitrines que foram retiradas. */
+.store-mega a[href="#catalogue-index"],
+.store-mega a[href="#lifestyle"],
+.store-mega a[href="#physical-music"],
+.store-mega a[href="#audio-retro"],
+.store-mega a[href="#geek-cinema"]{
+  display:none!important;
+}
+
+/* Música/Áudio e Geek/Cinema eram menus de categorias ainda sem itens
+   compráveis no grid. Saem até existirem produtos reais. */
+.store-mega details:nth-of-type(4),
+.store-mega details:nth-of-type(5){
+  display:none!important;
+}
+
 @media(max-width:980px){
   .store-grid,.products-grid,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
