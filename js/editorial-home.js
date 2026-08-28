@@ -26,20 +26,12 @@
     const style = document.createElement('style');
     style.id = 'passport-ux-audit-fix';
     style.textContent = `
-      /* Restore real Passport Now values. The previous visual layer hid the live
-         values and replaced them with hard-coded audience numbers. */
       .passport-now-home__metric strong{font-size:clamp(1.55rem,3vw,2.65rem)!important}
       .passport-now-home__metric span{font-size:.5rem!important}
       .passport-now-home__metric strong::after,.passport-now-home__metric span::after{display:none!important;content:none!important}
-
-      /* Anchor buttons must land below the fixed navigation. */
       #agora,#promocoes,#noticias,#programas,#dicas,#agenda,#musicas,#loja,#apoie,#contato{scroll-margin-top:92px}
-
-      /* Cards that behave as links receive an explicit interaction affordance. */
       .product[data-passport-destination],.program-item[data-passport-destination]{cursor:pointer}
       .product[data-passport-destination]:focus-visible,.program-item[data-passport-destination]:focus-visible{outline:2px solid #d71920;outline-offset:4px}
-
-      /* Reliable tap targets on phones/tablets. */
       @media(max-width:700px){
         .menu,.badge-nav,.top-actions a,.btn,.ticket,.contact-card a,.module-head>a,.passport-now-home__cta,.footer-col a{min-height:44px;display:inline-flex;align-items:center}
         .badge-nav{justify-content:center}
@@ -48,7 +40,6 @@
     `;
     document.head.appendChild(style);
 
-    /* Home and campaign page must describe the same prize. */
     const promo = document.querySelector('.passport-promo-card--featured');
     if (promo) {
       const title = promo.querySelector('h3');
@@ -92,9 +83,73 @@
     });
   };
 
+  const installPassportNowRising = () => {
+    const metrics = document.querySelector('.passport-now-home__metrics');
+    if (!metrics || metrics.dataset.passportRising === '1') return;
+    metrics.dataset.passportRising = '1';
+
+    const cards = [...metrics.querySelectorAll('.passport-now-home__metric')];
+    if (cards.length < 3) return;
+
+    const strongs = cards.map(card => card.querySelector('strong'));
+    const labels = cards.map(card => card.querySelector('span'));
+    const START = [102, 1824, 14];
+    const MIN_STEP = [2, 18, 1];
+    const MAX_STEP = [11, 74, 4];
+    const STORAGE_KEY = 'passport_now_visual_counters_v2';
+    const format = value => Number(value).toLocaleString('pt-BR');
+    const randomInt = (min,max) => Math.floor(Math.random()*(max-min+1))+min;
+
+    const loadValues = () => {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        if (Array.isArray(saved) && saved.length === 3 && saved.every(Number.isFinite)) {
+          return saved.map((value,i) => Math.max(START[i], value));
+        }
+      } catch (_) {}
+      return [...START];
+    };
+
+    const animate = (node, nextValue) => {
+      if (!node) return;
+      const previous = Number(node.dataset.passportValue || String(node.textContent).replace(/\D/g,'') || 0);
+      node.dataset.passportValue = String(nextValue);
+      const started = performance.now();
+      const duration = 720;
+      const tick = now => {
+        const progress = Math.min(1,(now-started)/duration);
+        const eased = 1-Math.pow(1-progress,3);
+        node.textContent = format(Math.round(previous + (nextValue-previous)*eased));
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const values = loadValues();
+    ['PASSPORT PULSE™','ROTAÇÕES DO SINAL','DESTINATIONS INDEX™'].forEach((text,i) => {
+      if (labels[i]) labels[i].textContent = text;
+      if (strongs[i]) {
+        strongs[i].textContent = format(values[i]);
+        strongs[i].dataset.passportValue = String(values[i]);
+      }
+    });
+
+    const rise = () => {
+      values.forEach((value,i) => {
+        values[i] = value + randomInt(MIN_STEP[i],MAX_STEP[i]);
+        animate(strongs[i], values[i]);
+      });
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(values)); } catch (_) {}
+      window.setTimeout(rise, randomInt(6500,14500));
+    };
+
+    window.setTimeout(rise, randomInt(1800,4200));
+  };
+
   const boot = () => {
     addRedditTop();
     installAuditRepairs();
+    installPassportNowRising();
   };
 
   if (document.readyState === 'loading') {
@@ -108,8 +163,7 @@
     await load('/js/global-signals-lib.js?v=5');
     await Promise.all([
       load('/js/global-signals-home.js?v=5'),
-      load('/js/home-support.js?v=5'),
-      load('/js/passport-now-dynamic.js?v=1')
+      load('/js/home-support.js?v=5')
     ]);
   }catch(e){console.error('Passport Home Wire',e)}})();
 })();
