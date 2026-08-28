@@ -1,0 +1,66 @@
+name: Passport Editorial One-Shot Quality Cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/editorial-quality-cleanup.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: passport-editorial-quality-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Passport main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 20
+
+      - name: Remove corrupted batch from public surfaces
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          batch_id = 'gha-33128566795-1'
+          bad_path = '/editorial/2026/08/27/angra-celebrara-o-aniversario-de-30-anos-com-reedicao-do-album-hospede.html'
+
+          feed_path = Path('data/editorial-feed.json')
+          feed = json.loads(feed_path.read_text('utf-8'))
+          before = len(feed.get('items', []))
+          feed['items'] = [item for item in feed.get('items', []) if item.get('batch_id') != batch_id and item.get('url') != bad_path]
+          after = len(feed['items'])
+          feed_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + '\n', 'utf-8')
+
+          sitemap_path = Path('sitemap.xml')
+          sitemap = sitemap_path.read_text('utf-8')
+          escaped = re.escape('https://www.passportradio.online' + bad_path)
+          sitemap = re.sub(r'\s*<url>\s*<loc>' + escaped + r'</loc>.*?</url>\s*', '\n', sitemap, flags=re.S)
+          sitemap_path.write_text(sitemap, 'utf-8')
+
+          article = Path(bad_path.lstrip('/'))
+          if article.exists():
+              article.unlink()
+
+          print(f'public feed cleanup: {before} -> {after} items')
+          PY
+
+      - name: Commit cleanup and retire one-shot workflow
+        shell: bash
+        run: |
+          git config user.name "Passport Radio Quality Guard"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/editorial-quality-cleanup.yml
+          git add data/editorial-feed.json sitemap.xml editorial/ || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Passport: remove corrupted Holy Land editorial batch"
+          git push origin HEAD:main
