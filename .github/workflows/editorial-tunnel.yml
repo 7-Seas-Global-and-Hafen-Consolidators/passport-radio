@@ -9,6 +9,7 @@ on:
       - '.github/workflows/editorial-tunnel.yml'
       - 'tools/editorial_tunnel_resilient.py'
       - 'data/editorial-rss-overrides.json'
+      - 'data/editorial-sources-mena.json'
       - 'tests/test_editorial_tunnel_rss_fallback.py'
   schedule:
     - cron: '17 * * * *'
@@ -47,6 +48,7 @@ jobs:
           feeds=cfg.get('feeds') or {}
           landings=cfg.get('landing_urls') or {}
           assert feeds.get('whiplash.net') == ['https://whiplash.net/feeds/news.xml']
+          assert feeds.get('news.howofwhat.com') == ['https://news.howofwhat.com/rss/category/music']
           assert landings.get('metal.it') == 'https://www.metal.it/'
           assert landings.get('stormbringer.at') == 'https://stormbringer.at/news'
           assert landings.get('jame-world.com') == 'https://www.jame-world.com/en/news'
@@ -62,9 +64,19 @@ jobs:
           from pathlib import Path
 
           source_path=Path('data/editorial-sources-global.json')
+          mena_path=Path('data/editorial-sources-mena.json')
           override_path=Path('data/editorial-rss-overrides.json')
           output_path=Path('build/editorial-sources-effective.json')
           data=json.loads(source_path.read_text('utf-8'))
+          mena=json.loads(mena_path.read_text('utf-8'))
+          existing={str(x.get('domain') or '').lower().removeprefix('www.') for x in data.get('sources', [])}
+          added=[]
+          for source in mena.get('sources', []):
+              domain=str(source.get('domain') or '').lower().removeprefix('www.')
+              if domain and domain not in existing:
+                  data.setdefault('sources', []).append(source)
+                  existing.add(domain)
+                  added.append(source.get('name'))
           cfg=json.loads(override_path.read_text('utf-8'))
           landing={str(k).lower().removeprefix('www.'): str(v) for k,v in (cfg.get('landing_urls') or {}).items()}
           applied=[]
@@ -75,7 +87,7 @@ jobs:
                   applied.append({'name': source.get('name'), 'from': source.get('url'), 'to': replacement})
                   source['url']=replacement
           output_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8')
-          print(json.dumps({'source_url_overrides_applied': len(applied), 'overrides': applied}, ensure_ascii=False))
+          print(json.dumps({'mena_sources_added': len(added), 'mena': added, 'source_url_overrides_applied': len(applied), 'overrides': applied}, ensure_ascii=False))
           PY
 
       - name: Run Worldwide Editorial Tunnel
