@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 const stations=[
-{id:'bo',name:'Radio Bolivia',source:'Radio Máxima FM',terms:'Rock boliviano · 80s · 90s · Alternative',lang:'es-BO',dir:'ltr',page:'/radio-bolivia.html',stream:'https://maxradio.azuracast.com.es:8020/CBA.mp3'},
+{id:'bo',name:'Radio Bolivia',source:'Radio San Gabriel 98.2 FM',terms:'Aymara · Español · Música Andina · Noticias · Cultura',lang:'ay-BO',dir:'ltr',page:'/radio-bolivia.html',stream:'https://spanel.gcomstreaming.com:7004/;'},
 {id:'kr',name:'한국 음악 라디오',source:'Big B Radio · Kpop',terms:'K-Pop · 한국 음악 · Pop',lang:'ko-KR',dir:'ltr',page:'/radio-korea.html',stream:'https://antares.dribbcast.com/proxy/kpop?mp=/s'},
 {id:'tr',name:'Türkiye Müzik Radyosu',source:'Türk Rock FM',terms:'Türkçe Rock · Rock · Pop',lang:'tr-TR',dir:'ltr',page:'/radio-turkiye.html',stream:'https://yayin5.radyohizmeti.com/8090/stream;'},
 {id:'cn',name:'中国音乐电台',source:'怀集音乐之声',terms:'华语音乐 · 独立音乐 · Music',lang:'zh-CN',dir:'ltr',page:'/radio-china.html',stream:'https://lhttp.qingting.fm/live/4804/64k.mp3'},
