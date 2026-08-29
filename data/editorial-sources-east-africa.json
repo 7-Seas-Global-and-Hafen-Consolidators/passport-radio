@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "notes": "Music-first discovery sources for Sudan, South Sudan, Uganda, Ethiopia, Eritrea, Somalia, East Africa and regional diasporas. These inputs do not bypass Passport editorial quality/provenance gates.",
+  "sources": [
+    {"name":"The Sudanist · New Sounds of Sudan","url":"https://thesudanist.com/category/culture/music/","domain":"thesudanist.com","categories":["east_africa","sudan","horn_of_africa","hiphop_rap","pop_poprock","world_folk","electronic"],"priority":97,"language":"en"},
+    {"name":"Music In Africa","url":"https://www.musicinafrica.net/","domain":"musicinafrica.net","categories":["east_africa","sudan","south_sudan","uganda","ethiopia","eritrea","somalia","african_music","live_industry"],"priority":97,"language":"en"},
+    {"name":"Pan African Music","url":"https://pan-african-music.com/en/","domain":"pan-african-music.com","categories":["east_africa","sudan","african_music","electronic","hiphop_rap","world_folk","experimental"],"priority":94,"language":"en"},
+    {"name":"Andariya","url":"https://andariya.com/","domain":"andariya.com","categories":["east_africa","sudan","south_sudan","uganda","horn_of_africa","diaspora","culture","music"],"priority":93,"language":"en"},
+    {"name":"Music Custodian","url":"https://musiccustodian.com/","domain":"musiccustodian.com","categories":["east_africa","uganda","kenya","electronic","experimental","world_folk"],"priority":91,"language":"en"},
+    {"name":"West Nile Xpozed","url":"https://www.westnilebiz.com/","domain":"westnilebiz.com","categories":["east_africa","uganda","hiphop_rap","dancehall","pop_poprock","live_industry"],"priority":87,"language":"en"},
+    {"name":"Pulse Uganda Music","url":"https://www.pulse.ug/music","domain":"pulse.ug","categories":["east_africa","uganda","hiphop_rap","pop_poprock","african_music","live_industry"],"priority":86,"language":"en"}
+  ]
+}
