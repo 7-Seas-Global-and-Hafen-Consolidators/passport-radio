@@ -79,8 +79,11 @@ def clean_text(value: Any) -> str:
     text = text.replace("\u00a0", " ")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\s+([,.;:!?])", r"\1", text)
-    text = re.sub(r"([,.;:!?])(\S)", r"\1 \2", text)
     return text.strip()
+
+
+def clean_url(value: Any) -> str:
+    return re.sub(r"\s+", "", str(value or "")).strip()
 
 
 def normalize_ptbr(text: str) -> str:
@@ -97,7 +100,6 @@ def category_for(item: dict[str, Any]) -> str:
     entities = " ".join(clean_text(x) for x in (item.get("entities") or []))
     haystack = f"{title} {deck} {entities}".casefold()
 
-    # Brazil-specific editorial material gets priority over generic genre words.
     brazil_tokens = (
         "gilberto gil", "secos & molhados", "secos e molhados", "ratos de porão",
         "cólera", "angra", "made in brazil", "joelho de porco", "golpe de estado",
@@ -147,7 +149,7 @@ def hygienize(payload: dict[str, Any], max_items: int, max_entity_per_day: int) 
             stats["malformed_removed"] += 1
             continue
         item = dict(raw)
-        url = clean_text(item.get("url"))
+        url = clean_url(item.get("url"))
         title = clean_text(item.get("title"))
         if not url or not title:
             stats["malformed_removed"] += 1
