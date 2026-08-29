@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "updated_at": "2026-08-28T01:26:49.362802-03:00",
+  "updated_at": "2026-08-29T15:20:38.627271-03:00",
   "author": "Passport Radio",
   "items": [
     {
       "title": "Polyphia anuncia novo álbum ‘Be Not Afraid’",
-      "deck": "Novo álbum de instrumental rock da Polyphia será lançado em outubro",
+      "deck": "Novo álbum de rock instrumental da Polyphia será lançado em outubro",
       "url": "/editorial/2026/08/28/polyphia-anuncia-novo-album-be-not-afraid.html",
       "category": "rock",
       "format": "FLASH",
@@ -19,10 +19,10 @@
       "batch_id": "gha-33134932983-2"
     },
     {
-      "title": "Quando Dolly Parton Finalmente Aceitou Ser Rock and Roll",
+      "title": "Quando Dolly Parton finalmente aceitou ser rock and roll",
       "deck": "A maior estrela do country recusou a honraria, reconsiderou e protagonizou uma das cerimônias mais memoráveis do Hall da Fama. O que mudou?",
       "url": "/editorial/2026/08/25/quando-dolly-parton-finalmente-aceitou-ser-rock-and-roll.html",
-      "category": "pop_poprock",
+      "category": "country_americana",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T17:59:49.199042-03:00",
       "entities": [
@@ -56,9 +56,9 @@
     },
     {
       "title": "Aos 77 anos, Dolly Parton entra no rock como uma mulher que não tem mais tempo a perder",
-      "deck": "Quando o Hall da Fama ofereceu uma cadeira, Dolly Parton não pediu gentileza — pediu que tocassem guitarra. Conversando com Hayley Williams, ela conta como se transformou em rockstar de verdade.",
+      "deck": "Quando o Hall da Fama ofereceu uma cadeira, Dolly Parton não pediu gentileza — pediu que tocassem guitarra. Conversando com Hayley Williams, ela conta como se transformou em estrela do rock de verdade.",
       "url": "/editorial/2026/08/25/aos-77-anos-dolly-parton-entra-no-rock-como-uma-mulher-que-nao-tem-mais-tempo-a-perder.html",
-      "category": "pop_poprock",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T17:51:26.562551-03:00",
       "entities": [
@@ -75,7 +75,7 @@
       "title": "Soundgarden volta ao palco de Seattle para show de intervalo do NFL Kickoff",
       "deck": "Os membros remanescentes do Soundgarden se reunirão em 9 de setembro no Lumen Field para o show de intervalo da estreia dos Seahawks; Taylor Momsen assume os vocais e Mike McCready soma guitarras — um gesto que mescla memória, espetáculo e um novo capítulo discográfico.",
       "url": "/editorial/2026/08/25/soundgarden-volta-ao-palco-de-seattle-para-show-de-intervalo-do-nfl-kickoff.html",
-      "category": "instruments",
+      "category": "alternative_rock",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T17:50:54.936370-03:00",
       "entities": [
@@ -93,7 +93,7 @@
       "title": "O Kiss morreu quando vendeu sua alma: como uma lenda se tornou propriedade corporativa",
       "deck": "Após negócio de US$300 milhões com empresa de entretenimento, a banda não pode mais tocar ao vivo sem permissão. Um drama de criatividade capturada em contrato.",
       "url": "/editorial/2026/08/25/o-kiss-morreu-quando-vendeu-sua-alma-como-uma-lenda-se-tornou-propriedade-corporativa.html",
-      "category": "pop_poprock",
+      "category": "hard_rock",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T17:50:28.648391-03:00",
       "entities": [
@@ -108,7 +108,7 @@
       "title": "Quando a guitarra dita seu próprio gênero",
       "deck": "Gusttavo Lima desafia as fronteiras do sertanejo ao dominar o virtuosismo de Steve Vai. A performance coloca uma questão essencial: o grande artista existe dentro ou além do rótulo?",
       "url": "/editorial/2026/08/25/quando-a-guitarra-dita-seu-proprio-genero.html",
-      "category": "instruments",
+      "category": "brazilian_rock",
       "format": "FLASH",
       "published_at": "2026-08-25T17:50:03.436854-03:00",
       "entities": [
@@ -125,7 +125,7 @@
       "title": "Fim de uma era: Dolly Parton morre aos 80 anos",
       "deck": "Morre Dolly Rebecca Parton Dean, voz que moldou o country e atravessou o pop. Sua trajetória como compositora, intérprete e empresária deixa legado cultural e influência intergeracional.",
       "url": "/editorial/2026/08/25/fim-de-uma-era-dolly-parton-morre-aos-80-anos.html",
-      "category": "pop_poprock",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T17:49:38.238997-03:00",
       "entities": [
@@ -135,10 +135,10 @@
       "author": "Passport Radio"
     },
     {
-      "title": "A Genialidade Que O Country Fingiu Não Ver",
+      "title": "A genialidade que o country fingiu não ver",
       "deck": "Dolly Parton reinventou a música country não ao negar seus clichês, mas ao transformá-los em arte. Seu catálogo segue inspirando as maiores artistas da atualidade.",
       "url": "/editorial/2026/08/25/a-genialidade-que-o-country-fingiu-nao-ver.html",
-      "category": "classic_rock",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T17:07:03.063515-03:00",
       "entities": [
@@ -148,24 +148,6 @@
         "Taylor Swift",
         "Beyoncé",
         "Sabrina Carpenter",
-        "Miley Cyrus",
-        "Whitney Houston"
-      ],
-      "author": "Passport Radio"
-    },
-    {
-      "title": "A obsessão que virou saudade eterna: como 'Jolene' se tornou a música mais regravada de Dolly Parton",
-      "deck": "Quando Dolly Parton mergulhou em ciúme real e compôs um clássico que ultrapassaria 400 versões. Morre a mulher que transformou vulnerabilidade em lenda.",
-      "url": "/editorial/2026/08/25/a-obsessao-que-virou-saudade-eterna-como-jolene-se-tornou-a-musica-mais-regravada-de-dol.html",
-      "category": "brasil",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-25T17:05:50.883717-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Jolene",
-        "Carl Dean",
-        "Beyoncé",
-        "The White Stripes",
         "Miley Cyrus",
         "Whitney Houston"
       ],
@@ -183,70 +165,6 @@
         "The Sword",
         "Hippie Death Cult",
         "Good God / Baad Man"
-      ],
-      "author": "Passport Radio"
-    },
-    {
-      "title": "O brilho que se apaga: o mundo da música reage à morte de Dolly Parton",
-      "deck": "A partida de Dolly Parton reverbera além do country: artistas de diferentes gerações destacam a influência cultural e humana que ela deixou.",
-      "url": "/editorial/2026/08/25/o-brilho-que-se-apaga-o-mundo-da-musica-reage-a-morte-de-dolly-parton.html",
-      "category": "pop_poprock",
-      "format": "FLASH",
-      "published_at": "2026-08-25T17:04:53.819393-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Kacey Musgraves",
-        "Maren Morris",
-        "Jack White",
-        "Highwomen"
-      ],
-      "author": "Passport Radio"
-    },
-    {
-      "title": "Meio-mastro nacional: Trump ordena homenagem oficial a Dolly Parton",
-      "deck": "A ordem para hastear bandeiras a meio-mastro por uma semana em memória de Dolly Parton transforma um gesto simbólico em debate sobre rituais públicos e o alcance de seu legado musical e filantrópico.",
-      "url": "/editorial/2026/08/25/meio-mastro-nacional-trump-ordena-homenagem-oficial-a-dolly-parton.html",
-      "category": "pop_poprock",
-      "format": "FLASH",
-      "published_at": "2026-08-25T17:04:26.484449-03:00",
-      "entities": [
-        "Dolly Parton"
-      ],
-      "author": "Passport Radio"
-    },
-    {
-      "title": "O riff que virou icônico: como 'Jolene' transformou Dolly Parton e atravessou gêneros",
-      "deck": "A canção de 1973 condensou identificação popular, um lick de guitarra e economia narrativa que abriram a Parton para o mundo pop — e deram ao country um hino regravado por nomes tão distintos quanto The White Stripes e Beyoncé.",
-      "url": "/editorial/2026/08/25/o-riff-que-virou-iconico-como-jolene-transformou-dolly-parton-e-atravessou-generos.html",
-      "category": "instruments",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-25T17:04:00.154469-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Jolene",
-        "Chip Young",
-        "Wayne Moss",
-        "The White Stripes",
-        "Beyoncé"
-      ],
-      "author": "Passport Radio"
-    },
-    {
-      "title": "O fim da era de Dolly: quando uma voz de 80 anos carregava sete décadas de América",
-      "deck": "Dolly Parton deixa um legado que transcende a música caipira: a imagem de uma mulher que nunca pediu permissão, que fundou impérios, financiou vacinas e reinventou a si mesma até o último capítulo.",
-      "url": "/editorial/2026/08/25/o-fim-da-era-de-dolly-quando-uma-voz-de-80-anos-carregava-sete-decadas-de-america.html",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-25T16:47:03.648613-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Carl Dean",
-        "Dollywood",
-        "Imagination Library",
-        "Jolene",
-        "I Will Always Love You",
-        "9 to 5",
-        "Nashville Songwriters Hall of Fame"
       ],
       "author": "Passport Radio"
     },
@@ -269,45 +187,10 @@
       "author": "Passport Radio"
     },
     {
-      "title": "Dolly Parton se foi: a rainha que reescreveu o country para o mundo",
-      "deck": "Aos 80 anos, a lenda que transformou baladas rústicas em fenômeno global deixa um legado que atravessa gerações, gêneros e continentes. Nenhuma figura foi mais decisiva para redefinir o que a música americana poderia ser.",
-      "url": "/editorial/2026/08/25/dolly-parton-se-foi-a-rainha-que-reescreveu-o-country-para-o-mundo.html",
-      "category": "brasil",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-25T16:45:21.826336-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Country",
-        "I Will Always Love You",
-        "Jolene",
-        "9 to 5",
-        "The Trio Project",
-        "Rockstar"
-      ],
-      "author": "Passport Radio"
-    },
-    {
-      "title": "O Mapa da Genialidade: Por Que as Canções de Dolly Parton Exigem Reavaliação Agora",
-      "deck": "Dolly Parton acumula mais de 3 mil composições ao longo de sete décadas. Um levantamento das essências de seu repertório revela como a cantora reescreveu as regras do que era permitido para mulheres na música.",
-      "url": "/editorial/2026/08/25/o-mapa-da-genialidade-por-que-as-cancoes-de-dolly-parton-exigem-reavaliacao-agora.html",
-      "category": "pop_poprock",
-      "format": "FLASH",
-      "published_at": "2026-08-25T16:44:34.744976-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Vinyl Me, Please",
-        "Rock & Roll Hall of Fame",
-        "Emmylou Harris",
-        "Linda Ronstadt",
-        "Songteller"
-      ],
-      "author": "Passport Radio"
-    },
-    {
       "title": "Quando o cemitério não consegue cumprir seu ofício: o show que migrou",
       "deck": "Um tributo planejado a Bo Lueders, guitarrista que marcou a cena hardcore de Chicago, foi realocado após investigação estatal sobre falhas em cremação. A mudança reflete a fragilidade dos espaços comunitários na hora em que mais importam.",
       "url": "/editorial/2026/08/25/quando-o-cemiterio-nao-consegue-cumprir-seu-oficio-o-show-que-migrou.html",
-      "category": "instruments",
+      "category": "punk_hardcore",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T16:44:07.495543-03:00",
       "entities": [
@@ -326,7 +209,7 @@
       "title": "Baterista de trânsito: Ryan Goff assume o kit de Rob Zombie em turnê co-headline",
       "deck": "A presença de Ryan Goff no kit de Rob Zombie muda a fisionomia do show: substituto com trajetória no hardcore, ele também contribuiu nas sessões do álbum The Great Satan — uma transição que pode redesenhar a pegada rítmica da turnê Freaks on Parade.",
       "url": "/editorial/2026/08/25/baterista-de-transito-ryan-goff-assume-o-kit-de-rob-zombie-em-turne-co-headline.html",
-      "category": "classic_rock",
+      "category": "punk_hardcore",
       "format": "FLASH",
       "published_at": "2026-08-25T16:43:24.880564-03:00",
       "entities": [
@@ -345,7 +228,7 @@
       "title": "Henry Threadgill Reinventa O Desafio",
       "deck": "O saxofonista e compositor Henry Threadgill retorna em projetos que o empurram para novas frentes: gravações com Vijay Iyer e Dafnis Prieto e trabalho contínuo com o ensemble Zooid.",
       "url": "/editorial/2026/08/25/henry-threadgill-reinventa-o-desafio.html",
-      "category": "indie",
+      "category": "rock",
       "format": "FLASH",
       "published_at": "2026-08-25T16:07:10.518393-03:00",
       "entities": [
@@ -376,7 +259,7 @@
       "title": "Choosin' Texas: o país que virou fenômeno e igualou um recorde histórico",
       "deck": "Ella Langley alcança a 19ª semana no topo do Hot 100 com 'Choosin' Texas', emparelhando o recorde de permanência não-natalina e consolidando o domínio country-pop nas paradas.",
       "url": "/editorial/2026/08/25/choosin-texas-o-pais-que-virou-fenomeno-e-igualou-um-recorde-historico.html",
-      "category": "brasil",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T16:06:11.247418-03:00",
       "entities": [
@@ -423,7 +306,7 @@
       "title": "De volta a Watertown: Brothers Osborne lançam quinto álbum e recalibram o country para 2026",
       "deck": "Brothers Osborne anunciam Watertown, LP de 11 faixas que retorna às origens da dupla e adota versões enxutas para a era do streaming. Lançamento previsto para 23/10/2026 pela MCA.",
       "url": "/editorial/2026/08/25/de-volta-a-watertown-brothers-osborne-lancam-quinto-album-e-recalibram-o-country-para-20.html",
-      "category": "legacy_archive",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T16:03:11.491712-03:00",
       "entities": [
@@ -438,7 +321,7 @@
       "title": "Vitória do instrumento: Andy Burnham, os Smiths e um acorde em Kyiv",
       "deck": "O primeiro-ministro britânico tocou um trecho de 'Rusholme Ruffians' durante visita a soldados em Kyiv — um gesto que transforma um riff em símbolo político; Johnny Marr reagiu, destacando o poder cultural da guitarra.",
       "url": "/editorial/2026/08/25/vitoria-do-instrumento-andy-burnham-os-smiths-e-um-acorde-em-kyiv.html",
-      "category": "classic_rock",
+      "category": "progressive_rock",
       "format": "FLASH",
       "published_at": "2026-08-25T15:10:47.746892-03:00",
       "entities": [
@@ -505,7 +388,7 @@
       "title": "A Volta do Monstro de Três Cilindros: Bachman-Turner Overdrive Retoma a Estrada",
       "deck": "Quase uma década depois de despertar, a lenda do hard rock canadense anuncia sua mais ambiciosa turnê desde a ressurreição, trazendo Randy Bachman e companhia de volta às salas norte-americanas em 2027.",
       "url": "/editorial/2026/08/25/a-volta-do-monstro-de-tres-cilindros-bachman-turner-overdrive-retoma-a-estrada.html",
-      "category": "alternative_gothic",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T15:08:01.820871-03:00",
       "entities": [
@@ -537,7 +420,7 @@
       "title": "Vinte Anos Depois, Amy Winehouse Retorna com o que Nunca Ouviram",
       "deck": "Back to Black ganha reedição que resgata demos inéditos e um álbum ao vivo integral de 2007, capturando a artista em seu apogeu criativo.",
       "url": "/editorial/2026/08/25/vinte-anos-depois-amy-winehouse-retorna-com-o-que-nunca-ouviram.html",
-      "category": "indie",
+      "category": "rock",
       "format": "MR_NOMAD",
       "published_at": "2026-08-25T14:39:21.072100-03:00",
       "entities": [
@@ -571,7 +454,7 @@
       "title": "Quando o rock encontra a câmara: Cameron Winter em Carnegie Hall pelo olhar de Paul Thomas Anderson",
       "deck": "Um concerto esgotado ganha tratamento cinematográfico — filme dirigido e filmado por Paul Thomas Anderson estreia em novembro, acompanhado por álbum ao vivo em outubro.",
       "url": "/editorial/2026/08/25/quando-o-rock-encontra-a-camara-cameron-winter-em-carnegie-hall-pelo-olhar-de-paul-thoma.html",
-      "category": "alternative_gothic",
+      "category": "metal",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T14:38:00.461246-03:00",
       "entities": [
@@ -605,7 +488,7 @@
       "title": "Os filhos do Kiss explicam por que simplesmente usam seu próprio sobrenome",
       "deck": "Stanley Simmons, dupla formada por Nick Simmons e Evan Stanley, defende que o nome da banda não é truque de marketing — é apenas quem eles são.",
       "url": "/editorial/2026/08/25/os-filhos-do-kiss-explicam-por-que-simplesmente-usam-seu-proprio-sobrenome.html",
-      "category": "brasil",
+      "category": "hard_rock",
       "format": "FLASH",
       "published_at": "2026-08-25T14:36:35.991854-03:00",
       "entities": [
@@ -623,7 +506,7 @@
       "title": "Antes do Big 4: a linhagem esquecida que fez o grunge nascer",
       "deck": "Kim Thayil revela quem realmente pavimentou o caminho do grunge. Não são os nomes que você imagina.",
       "url": "/editorial/2026/08/25/antes-do-big-4-a-linhagem-esquecida-que-fez-o-grunge-nascer.html",
-      "category": "pop_poprock",
+      "category": "alternative_rock",
       "format": "FLASH",
       "published_at": "2026-08-25T14:36:00.326860-03:00",
       "entities": [
@@ -641,7 +524,7 @@
       "title": "Kiss sob novo comando: a banda que precisa de permissão para tocar",
       "deck": "Gene Simmons confirma que a lendária banda vendeu catálogo, marca e até o direito de usar maquiagem para uma firma sueca. O que isso significa para o futuro do rock.",
       "url": "/editorial/2026/08/25/kiss-sob-novo-comando-a-banda-que-precisa-de-permissao-para-tocar.html",
-      "category": "pop_poprock",
+      "category": "hard_rock",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T14:05:19.138953-03:00",
       "entities": [
@@ -744,7 +627,7 @@
       "title": "Fender traz de volta a Bass VI que redefiniu o som de Abbey Road",
       "deck": "Edição limitada recria o instrumento que George Harrison usou para explorar texturas sonoras únicas nos momentos mais inovadores dos Beatles.",
       "url": "/editorial/2026/08/25/fender-traz-de-volta-a-bass-vi-que-redefiniu-o-som-de-abbey-road.html",
-      "category": "prog",
+      "category": "rock",
       "format": "FLASH",
       "published_at": "2026-08-25T13:14:11.960027-03:00",
       "entities": [
@@ -822,7 +705,7 @@
       "title": "Quando a piada vira confronto: Jelly Roll transforma monólogo em ataque político",
       "deck": "Durante sua abertura como apresentador convidado no late night, Jelly Roll fez piada crua sobre o peso do presidente dos EUA — gesto que empurra discussões sobre responsabilidade artística e ligações políticas do cantor.",
       "url": "/editorial/2026/08/25/quando-a-piada-vira-confronto-jelly-roll-transforma-monologo-em-ataque-politico.html",
-      "category": "alternative_gothic",
+      "category": "country_americana",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T13:11:36.280021-03:00",
       "entities": [
@@ -920,7 +803,7 @@
       "title": "Quando os Titãs do Rock Aplaudem: Portnoy encontra Anika Nilles e valida a nova batida do Rush",
       "deck": "Mike Portnoy — baterista de Dream Theater e fã de longa data — encontrou Anika Nilles durante a turnê de reunião do Rush e publicou elogios que refratam a tensão entre legado e reinvenção.",
       "url": "/editorial/2026/08/25/quando-os-titas-do-rock-aplaudem-portnoy-encontra-anika-nilles-e-valida-a-nova-batida-do.html",
-      "category": "classic_rock",
+      "category": "progressive_rock",
       "format": "FLASH",
       "published_at": "2026-08-25T12:24:56.896699-03:00",
       "entities": [
@@ -954,7 +837,7 @@
       "title": "Quando a Batida Cansa: Chris Slade Encerra Seis Décadas de Compasso",
       "deck": "Aos 79 anos, o baterista galês que marcou o retorno do AC/DC nos anos 1990 anuncia a aposentadoria. Um AVC e a lucidez de quem viu o rock envelhecer.",
       "url": "/editorial/2026/08/25/quando-a-batida-cansa-chris-slade-encerra-seis-decadas-de-compasso.html",
-      "category": "classic_rock",
+      "category": "hard_rock",
       "format": "MR_NOMAD",
       "published_at": "2026-08-25T11:34:07.775870-03:00",
       "entities": [
@@ -1021,7 +904,7 @@
       "title": "Quando o passado soa maior: os cinco shows que salvaram o C6 no Rock",
       "deck": "O festival C6 no Rock transformou nostalgia em ato de resistência artística — estes cinco concertos explicam por que o repertório dos anos 1980 ainda mexe com plateias e curadores.",
       "url": "/editorial/2026/08/25/quando-o-passado-soa-maior-os-cinco-shows-que-salvaram-o-c6-no-rock.html",
-      "category": "brasil",
+      "category": "brazilian_rock",
       "format": "MR_NOMAD",
       "published_at": "2026-08-25T11:30:35.644900-03:00",
       "entities": [
@@ -1057,7 +940,7 @@
       "title": "Os Isley Brothers retornam com tema cinematográfico que ecoa resistência",
       "deck": "Com apenas Ronald e Ernie Isley ativos sob o nome lendário, um tema para filme junta timbres e história: soul antigo encontra um arranjo sombriamente moderno que amplia a narrativa do longa.",
       "url": "/editorial/2026/08/25/os-isley-brothers-retornam-com-tema-cinematografico-que-ecoa-resistencia.html",
-      "category": "soul",
+      "category": "rock",
       "format": "FLASH",
       "published_at": "2026-08-25T10:39:56.024904-03:00",
       "entities": [
@@ -1091,7 +974,7 @@
       "title": "Setembro na Cidade do México: o indie se concentra em três semanas de festa",
       "deck": "Festival anual reúne americanos clássicos, produtores latino-americanos e experimentalistas em um programa que vai ocupar Orbe, Foro Indie Rocks! e Casa del Lago entre 19 e 27 de setembro.",
       "url": "/editorial/2026/08/25/setembro-na-cidade-do-mexico-o-indie-se-concentra-em-tres-semanas-de-festa.html",
-      "category": "indie",
+      "category": "rock",
       "format": "FLASH",
       "published_at": "2026-08-25T10:38:39.786269-03:00",
       "entities": [
@@ -1129,7 +1012,7 @@
       "title": "ZZ Top volta à estrada dias após a morte do baterista Frank Beard",
       "deck": "A banda retomou a turnê norte‑americana com Michael Monahan no lugar do falecido Frank Beard; o movimento diz respeito à continuidade de um trio cuja identidade está atrelada a décadas na estrada.",
       "url": "/editorial/2026/08/25/zz-top-volta-a-estrada-dias-apos-a-morte-do-baterista-frank-beard.html",
-      "category": "instruments",
+      "category": "country_americana",
       "format": "FLASH",
       "published_at": "2026-08-25T10:37:31.194727-03:00",
       "entities": [
@@ -1180,7 +1063,7 @@
       "title": "Quando a aprovação vem das baquetas: Portnoy celebra Rush e confirma nova fase do 'Fifty Something'",
       "deck": "Mike Portnoy, um dos bateristas mais influentes do metal progressivo, assistiu a duas noites da turnê Fifty Something e endossou a escalação que substitui Neil Peart, um voto de confiança que ressoa na comunidade musical.",
       "url": "/editorial/2026/08/25/quando-a-aprovacao-vem-das-baquetas-portnoy-celebra-rush-e-confirma-nova-fase-do-fifty-s.html",
-      "category": "classic_rock",
+      "category": "progressive_rock",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T09:43:34.617414-03:00",
       "entities": [
@@ -1230,7 +1113,7 @@
       "title": "Shelley Fabares: quando a adolescente de Los Angeles virou hit no rádio e estrela de Hollywood",
       "deck": "Aos 82 anos, a atriz que deu voz a gerações desapareceu. Seu legado une TV clássica americana, três filmes com Elvis e uma carreira que não conheceu limite de gênero.",
       "url": "/editorial/2026/08/25/shelley-fabares-quando-a-adolescente-de-los-angeles-virou-hit-no-radio-e-estrela-de-holl.html",
-      "category": "brasil",
+      "category": "country_americana",
       "format": "MR_NOMAD",
       "published_at": "2026-08-25T09:42:10.866896-03:00",
       "entities": [
@@ -1317,7 +1200,7 @@
       "title": "Lothario Canta o Que Ninguém Quer Dizer: A Promessa de Quem Ficou",
       "deck": "Banda de Melbourne transforma solidariedade emocional em post-punk urgente. Annaliese Redlich sai do isolamento criativo e leva 'IOU' por 26 cidades europeias em turnê que é, em si, um ato de fé.",
       "url": "/editorial/2026/08/25/lothario-canta-o-que-ninguem-quer-dizer-a-promessa-de-quem-ficou.html",
-      "category": "alternative_gothic",
+      "category": "punk_hardcore",
       "format": "MR_NOMAD",
       "published_at": "2026-08-25T08:54:24.952310-03:00",
       "entities": [
@@ -1382,7 +1265,7 @@
       "title": "Pós-Hardcore Retorna: Shudder to Think Prova Que Alguns Sons Nunca Morrem",
       "deck": "Depois de quase três décadas, a banda essencial anuncia novo EP com a mesma criatividade intrincada e imprevisível que ajudou a definir uma geração",
       "url": "/editorial/2026/08/25/pos-hardcore-retorna-shudder-to-think-prova-que-alguns-sons-nunca-morrem.html",
-      "category": "classic_rock",
+      "category": "punk_hardcore",
       "format": "FLASH",
       "published_at": "2026-08-25T08:18:16.780736-03:00",
       "entities": [
@@ -1411,7 +1294,7 @@
       "title": "Nightwish em suspenso: Floor Jansen confirma que não há próximos passos",
       "deck": "A vocalista reafirma o hiato da banda finlandesa sem previsão de volta aos palcos. O silêncio permanece a estratégia enquanto o grupo mantém suas portas fechadas.",
       "url": "/editorial/2026/08/25/nightwish-em-suspenso-floor-jansen-confirma-que-nao-ha-proximos-passos.html",
-      "category": "alternative_gothic",
+      "category": "progressive_rock",
       "format": "STORY",
       "published_at": "2026-08-25T08:16:39.620795-03:00",
       "entities": [
@@ -1426,7 +1309,7 @@
       "title": "Covers de Metal e Rock Revelam Quem Realmente Somos",
       "deck": "Análise de 65 bandas em setlists revela que covers não são fuga do repertório — são confissão de identidade. Mudvayne tocou uma duas vezes, Judas Priest mais de mil.",
       "url": "/editorial/2026/08/25/covers-de-metal-e-rock-revelam-quem-realmente-somos.html",
-      "category": "metal",
+      "category": "hard_rock",
       "format": "LIVE_SIGNAL",
       "published_at": "2026-08-25T08:15:57.711196-03:00",
       "entities": [
