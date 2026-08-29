@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: passport-editorial-feed-hygiene
@@ -41,17 +42,25 @@ jobs:
             --max-items 300 \
             --max-entity-per-day 4 \
             --apply | tee /tmp/editorial-feed-hygiene.json
-      - name: Publish hygiene update when needed
+      - name: Open hygiene PR when needed
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet -- data/editorial-feed.json; then
-            echo 'Editorial feed already organized; no commit needed.' >> "$GITHUB_STEP_SUMMARY"
+            echo 'Editorial feed already organized; no PR needed.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          BRANCH="automation/editorial-feed-hygiene-${GITHUB_RUN_ID}"
           git config user.name "Passport Radio Editorial Hygiene"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
           git add data/editorial-feed.json
           git commit -m "Passport Editorial: organize public feed"
-          git pull --rebase origin main
-          git push origin HEAD:main
-          echo 'Editorial feed reorganized and normalized on main.' >> "$GITHUB_STEP_SUMMARY"
+          git push origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Passport Editorial: organize public feed" \
+            --body "Automatic hygiene pass: removes duplicate/malformed public-feed entries, limits same-topic flooding, corrects strong category mismatches and normalizes obvious pt-BR wording issues. Article pages and protected radio/player areas are untouched."
+          echo 'Editorial hygiene PR opened against protected main.' >> "$GITHUB_STEP_SUMMARY"
