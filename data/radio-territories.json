@@ -1,11 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
   "policy": "Native language first. Passport Radio remains the global brand. Streams stay disabled until individually verified and integrated in a separate audio operation.",
   "territories": [
     {"id":"bolivia","page":"/radio-bolivia.html","lang":"es-BO","name":"Radio Bolivia","local_name":"Radio Bolivia","cities":["La Paz","El Alto","Cochabamba","Santa Cruz"],"genres":["Rock boliviano","Cumbia","Folklore","Morenada","Música Aymara","Música Quechua","Pop"],"stream_enabled":false},
     {"id":"korea","page":"/radio-korea.html","lang":"ko-KR","name":"Korea Radio","local_name":"한국 음악 라디오","cities":["서울","부산","인천","대구"],"genres":["드라마 OST","K-Rock","Indie","K-Pop","R&B","Hip-Hop","Electronic"],"stream_enabled":false},
     {"id":"turkiye","page":"/radio-turkiye.html","lang":"tr-TR","name":"Türkiye Radio","local_name":"Türkiye Müzik Radyosu","cities":["İstanbul","Ankara","İzmir"],"genres":["Dizi Müzikleri","Anadolu Rock","Türkçe Pop","Arabesk","Rock","Alternatif","Folk"],"stream_enabled":false},
     {"id":"china","page":"/radio-china.html","lang":"zh-CN","name":"China Radio","local_name":"中国音乐电台","cities":["北京","上海","成都","深圳","广州"],"genres":["华语摇滚","独立音乐","后摇","金属","电子","民谣","流行"],"stream_enabled":false},
-    {"id":"ukraine","page":"/radio-ukraine.html","lang":"uk-UA","name":"Ukraine Radio","local_name":"Українське музичне радіо","cities":["Київ","Одеса","Львів","Харків"],"genres":["Український рок","Постпанк","Альтернатива","Інді","Електроніка","Метал","Фолк"],"stream_enabled":false}
+    {"id":"ukraine","page":"/radio-ukraine.html","lang":"uk-UA","name":"Ukraine Radio","local_name":"Українське музичне радіо","cities":["Київ","Одеса","Львів","Харків"],"genres":["Український рок","Постпанк","Альтернатива","Інді","Електроніка","Метал","Фолк"],"stream_enabled":false},
+    {"id":"iran","page":"/radio-iran.html","lang":"fa-IR","dir":"rtl","name":"Iran Radio","local_name":"رادیو موسیقی ایران","cities":["تهران","شیراز","اصفهان","تبریز"],"genres":["موسیقی ایرانی","راک ایرانی","پاپ فارسی","موسیقی سنتی","الکترونیک","هیپ هاپ","جاز"],"stream_enabled":false},
+    {"id":"venezuela","page":"/radio-venezuela.html","lang":"es-VE","name":"Radio Venezuela","local_name":"Radio Venezuela","cities":["Caracas","Maracaibo","Mérida","Valencia"],"genres":["Rock venezolano","Alternativo","Indie","Pop","Metal","Música venezolana","Latino"],"stream_enabled":false},
+    {"id":"east-africa","page":"/radio-east-africa.html","lang":"sw","name":"East Africa Radio","local_name":"Redio ya Muziki Afrika Mashariki","cities":["Kampala","Addis Ababa","Juba","Khartoum","Mogadishu","Asmara"],"genres":["Muziki wa Afrika Mashariki","Afro-fusion","Hip-Hop","Jazz","Electronic","Rock","Folk"],"languages":["sw","en","am","ar","so","ti"],"stream_enabled":false},
+    {"id":"afghanistan","page":"/radio-afghanistan.html","lang":"fa-AF","dir":"rtl","name":"Afghanistan Radio","local_name":"رادیو موسیقی افغانستان","cities":["کابل","هرات","مزار شریف","قندهار"],"genres":["موسیقی افغانستان","پاپ افغانستان","فولکلور","راک","موسیقی دری","موسیقی پشتو"],"languages":["fa-AF","ps-AF"],"stream_enabled":false}
   ]
 }
