@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "notes": "Music-first discovery sources for Levant, Iran, Iraq and regional diasporas. These inputs do not bypass Passport editorial quality/provenance gates.",
+  "sources": [
+    {"name":"Ma3azef","url":"https://ma3azef.com/","domain":"ma3azef.com","categories":["middle_east","levant","arabic_music","indie","electronic","hiphop_rap"],"priority":96,"language":"ar"},
+    {"name":"SceneNoise","url":"https://scenenoise.com/","domain":"scenenoise.com","categories":["middle_east","arabic_music","indie","electronic","hiphop_rap","pop_poprock"],"priority":96,"language":"en"},
+    {"name":"Ruptured Music","url":"https://rupturedonline.com/category/news/","domain":"rupturedonline.com","categories":["middle_east","lebanon","levant","indie","alternative_gothic","experimental"],"priority":94,"language":"en"},
+    {"name":"Thawra Records","url":"https://thawrarecords.com/","domain":"thawrarecords.com","categories":["middle_east","lebanon","levant","electronic","alternative_gothic","experimental"],"priority":91,"language":"en"},
+    {"name":"Palestine Music Expo","url":"https://pmx.ps/","domain":"pmx.ps","categories":["middle_east","palestine","levant","indie","live_industry"],"priority":95,"language":"en"},
+    {"name":"Palestine Music Space","url":"https://palestinemusicspace.com/music","domain":"palestinemusicspace.com","categories":["middle_east","palestine","levant","rock","indie","hiphop_rap","jazz_blues"],"priority":97,"language":"en"},
+    {"name":"Radio Alhara","url":"https://radioalhara.net/","domain":"radioalhara.net","categories":["middle_east","palestine","levant","electronic","experimental","world_folk"],"priority":95,"language":"ar"},
+    {"name":"BalaFeesh","url":"https://balafeesh.com/","domain":"balafeesh.com","categories":["middle_east","jordan","levant","arabic_music","indie","live_industry"],"priority":92,"language":"en"},
+    {"name":"Harmony Talk","url":"https://en.harmonytalk.com/","domain":"harmonytalk.com","categories":["middle_east","iran","world_folk","classical","instruments"],"priority":92,"language":"en"},
+    {"name":"Music Dans","url":"https://musicdans.com/","domain":"musicdans.com","categories":["middle_east","iran","indie","hiphop_rap","pop_poprock"],"priority":91,"language":"fa"},
+    {"name":"Shakomako","url":"https://www.shakomako.media/","domain":"shakomako.media","categories":["middle_east","iraq","diaspora","culture"],"priority":86,"language":"en"},
+    {"name":"HowOfWhat Music Lebanon","url":"https://news.howofwhat.com/","domain":"news.howofwhat.com","categories":["middle_east","lebanon","levant","music"],"priority":84,"language":"en"}
+  ]
+}

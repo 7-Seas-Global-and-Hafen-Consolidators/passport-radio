@@ -11,7 +11,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Passport Radio Editorial 24H","url":"https://www.passportradio.online/editorial.html","publisher":{"@type":"Organization","name":"Passport Radio"},"inLanguage":"pt-BR"}</script>
 </head><body>
 <div class="pe-topbar">PASSPORT RADIO · EDITORIAL 24H</div>
-<header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
+<header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/oriente-medio.html">ORIENTE MÉDIO</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
 <main class="pe-hub"><div class="pe-shell"><div class="pe-hub-head"><div><small>PASSPORT RADIO · 24 HORAS</small><h1>EDITORIAL.</h1></div><p>Rock, metal, pop, alternativo, gótico, progressivo, soul, Brasil e arquivo. Primeiro a história. Depois a música.</p></div><div id="pe-feed" class="pe-feed" aria-live="polite"></div><div id="pe-empty" class="pe-empty">Carregando o sinal editorial…</div></div></main>
 <footer class="pe-footer"><div class="pe-shell"><strong>PASSPORT RADIO</strong><span>Every Song Is A Destination.</span></div></footer>
 <script>
@@ -20,25 +20,13 @@
   const empty = document.getElementById('pe-empty');
   const esc = (v='') => String(v).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const stamp = (v) => { const d=new Date(v); return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(d); };
-  const read = (url) => fetch(url,{cache:'no-store',credentials:'omit'})
-    .then(r=>r.ok?r.json():({items:[]}))
-    .catch(()=>({items:[]}));
-  const categoryLabels = {
-    brasil:'Brasil', brazilian_rock:'Rock brasileiro', rock:'Rock', classic_rock:'Rock clássico', hard_rock:'Hard rock', hard_rock_metal:'Hard rock / metal', metal:'Metal', punk_hardcore:'Punk / hardcore', progressive_rock:'Rock progressivo', alternative_rock:'Rock alternativo', alternative_gothic:'Alternativo / gótico', pop_poprock:'Pop / pop rock', country_americana:'Country / americana', instruments:'Instrumentos'
-  };
+  const read = (url) => fetch(url,{cache:'no-store',credentials:'omit'}).then(r=>r.ok?r.json():({items:[]})).catch(()=>({items:[]}));
+  const categoryLabels = {brasil:'Brasil', brazilian_rock:'Rock brasileiro', rock:'Rock', classic_rock:'Rock clássico', hard_rock:'Hard rock', hard_rock_metal:'Hard rock / metal', metal:'Metal', punk_hardcore:'Punk / hardcore', progressive_rock:'Rock progressivo', alternative_rock:'Rock alternativo', alternative_gothic:'Alternativo / gótico', pop_poprock:'Pop / pop rock', country_americana:'Country / americana', instruments:'Instrumentos', middle_east:'Oriente Médio', levant:'Levante', palestine:'Palestina', lebanon:'Líbano', jordan:'Jordânia', iran:'Irã', iraq:'Iraque', diaspora:'Diásporas'};
   const formatLabels = {FLASH:'Notícia', LIVE_SIGNAL:'Sinal ao vivo', MR_NOMAD:'Mr. Nomad'};
   const label = (map,value) => map[value] || String(value||'').replace(/_/g,' ');
-
-  Promise.all([
-    read('/data/editorial-manual-feed.json'),
-    read('/data/editorial-feed.json')
-  ]).then(([manual,automatic])=>{
+  Promise.all([read('/data/editorial-manual-feed.json'),read('/data/editorial-feed.json')]).then(([manual,automatic])=>{
     const seen=new Set();
-    const items=[
-      ...(Array.isArray(manual&&manual.items)?manual.items:[]),
-      ...(Array.isArray(automatic&&automatic.items)?automatic.items:[])
-    ].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
-
+    const items=[...(Array.isArray(manual&&manual.items)?manual.items:[]),...(Array.isArray(automatic&&automatic.items)?automatic.items:[])].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
     if(!items.length){empty.textContent='O próximo sinal editorial ainda está entrando no ar.';return;}
     empty.remove();
     feed.innerHTML=items.map(item=>`<a href="${esc(item.url)}"><small>${esc(label(formatLabels,item.format))} · ${esc(label(categoryLabels,item.category))}</small><h2>${esc(item.title)}</h2><p>${esc(item.deck||'')}</p><time>${esc(stamp(item.published_at))} · ${esc(item.author||'PASSPORT RADIO')}</time></a>`).join('');
