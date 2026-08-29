@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: passport-engine-poc
+    runtime: python
+    plan: free
+    branch: main
+    rootDir: .
+    buildCommand: "echo 'Passport Engine POC: no build required'"
+    startCommand: "python services/passport-engine/app.py"
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
