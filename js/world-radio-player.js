@@ -9,7 +9,7 @@ const stations=[
 {id:'ir',name:'رادیو موسیقی ایران',source:'Radio AvazFarsi',terms:'موسیقی فارسی · پاپ ایرانی · Persian Music',lang:'fa-IR',dir:'rtl',page:'/radio-iran.html',stream:'https://radio.avazfarsi.com:8000/radio.mp3'},
 {id:'ve',name:'Radio Venezuela',source:'Llaneros Por Venezuela',terms:'Música venezolana · Folclor · Música nacional',lang:'es-VE',dir:'ltr',page:'/radio-venezuela.html',stream:'https://stream.zeno.fm/12bg6xa7hv8uv'},
 {id:'ea',name:'Redio ya Muziki ya Afrika Mashariki',source:'NRG Radio Kenya',terms:'Muziki wa Afrika Mashariki · Pop · Hip-Hop',lang:'sw',dir:'ltr',page:'/radio-east-africa.html',stream:'https://streamingv2.shoutcast.com/nrg-radio-ke'},
-{id:'af',name:'رادیو موسیقی افغانستان',source:'Arman FM 98.1 · Radio Dil Ha',terms:'موسیقی افغانستان · دری · پشتو · پاپ · موسیقی معاصر · کلاسیک',lang:'fa-AF',dir:'rtl',page:'/radio-afghanistan.html',embed:'https://zeno.fm/player/arman-fm-98-1-arman-af-am'},
+{id:'af',name:'رادیو موسیقی افغانستان',source:'Ariana FM 93.5',terms:'موسیقی افغانستان · دری · پشتو · پاپ · موسیقی معاصر · کلاسیک',lang:'fa-AF',dir:'rtl',page:'/radio-afghanistan.html',stream:'https://streams.radio.co/sa3345aaa8/listen'},
 {id:'ro',name:'Radio Muzică Românească',source:'Rock FM România',terms:'Rock românesc · Rock · Metal',lang:'ro-RO',dir:'ltr',page:'/radio-romania.html',stream:'https://live.rockfm.ro/rockfm.aacp'}
 ];
 const $=s=>document.querySelector(s),list=$('#world-stations'),audio=$('#world-audio'),play=$('#world-play'),stop=$('#world-stop'),controls=$('#world-controls'),embed=$('#world-embed'),name=$('#world-name'),desc=$('#world-description'),status=$('#world-status'),territory=$('#world-territory'),lang=$('#world-lang');
