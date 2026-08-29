@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -41,7 +41,7 @@
   },
   "cooldown_days": 45,
   "ledger_size": 100000,
-  "feed_size": 5000,
+  "feed_size": 300,
   "model": "auto",
   "web_search": true,
   "max_output_tokens": 9000,
