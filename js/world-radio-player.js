@@ -5,12 +5,13 @@ const stations=[
 {id:'kr',name:'한국 음악 라디오',source:'Big B Radio · Kpop',terms:'K-Pop · 한국 음악 · Pop',lang:'ko-KR',dir:'ltr',page:'/radio-korea.html',stream:'https://antares.dribbcast.com/proxy/kpop?mp=/s'},
 {id:'tr',name:'Türkiye Müzik Radyosu',source:'Türk Rock FM',terms:'Türkçe Rock · Rock · Pop',lang:'tr-TR',dir:'ltr',page:'/radio-turkiye.html',stream:'https://yayin5.radyohizmeti.com/8090/stream;'},
 {id:'cn',name:'中国音乐电台',source:'怀集音乐之声',terms:'华语音乐 · 独立音乐 · Music',lang:'zh-CN',dir:'ltr',page:'/radio-china.html',stream:'https://lhttp.qingting.fm/live/4804/64k.mp3'},
-{id:'ua',name:'Українське музичне радіо',source:'Хіт FM Україна',terms:'Українські хіти · Pop · Rock · International Hits',lang:'uk-UA',dir:'ltr',page:'/radio-ukraine.html',stream:'https://tavr.tvstitch.com/HitFM?.mp3'},
+{id:'ua',name:'Українське музичне радіо',source:'Хіт FM Україна',terms:'Українські хіты · Pop · Rock · International Hits',lang:'uk-UA',dir:'ltr',page:'/radio-ukraine.html',stream:'https://tavr.tvstitch.com/HitFM?.mp3'},
 {id:'ir',name:'رادیو موسیقی ایران',source:'Radio AvazFarsi',terms:'موسیقی فارسی · پاپ ایرانی · Persian Music',lang:'fa-IR',dir:'rtl',page:'/radio-iran.html',stream:'https://radio.avazfarsi.com:8000/radio.mp3'},
 {id:'ve',name:'Radio Venezuela',source:'Llaneros Por Venezuela',terms:'Música venezolana · Folclor · Música nacional',lang:'es-VE',dir:'ltr',page:'/radio-venezuela.html',stream:'https://stream.zeno.fm/12bg6xa7hv8uv'},
 {id:'ea',name:'Redio ya Muziki ya Afrika Mashariki',source:'NRG Radio Kenya',terms:'Muziki wa Afrika Mashariki · Pop · Hip-Hop',lang:'sw',dir:'ltr',page:'/radio-east-africa.html',stream:'https://streamingv2.shoutcast.com/nrg-radio-ke'},
 {id:'pk',name:'پاکستانی موسیقی ریڈیو',source:'CityFM89',terms:'پاکستانی موسیقی · پاپ · راک · انڈی · صوفی موسیقی',lang:'ur-PK',dir:'rtl',page:'/radio-mundo-player.html?station=pk',stream:'https://radio.cityfm89.com/stream'},
-{id:'ro',name:'Radio Muzică Românească',source:'Rock FM România',terms:'Rock românesc · Rock · Metal',lang:'ro-RO',dir:'ltr',page:'/radio-romania.html',stream:'https://live.rockfm.ro/rockfm.aacp'}
+{id:'ro',name:'Radio Muzică Românească',source:'Rock FM România',terms:'Rock românesc · Rock · Metal',lang:'ro-RO',dir:'ltr',page:'/radio-romania.html',stream:'https://live.rockfm.ro/rockfm.aacp'},
+{id:'fi',name:'Suomalainen Rock Radio',source:'Radio Rock Finland',terms:'Suomi Rock · Heavy Metal · Power Metal · Symphonic Metal',lang:'fi-FI',dir:'ltr',page:'/radio-mundo-player.html?station=fi',stream:'https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8'}
 ];
 const $=s=>document.querySelector(s),list=$('#world-stations'),audio=$('#world-audio'),play=$('#world-play'),stop=$('#world-stop'),controls=$('#world-controls'),embed=$('#world-embed'),name=$('#world-name'),desc=$('#world-description'),status=$('#world-status'),territory=$('#world-territory'),lang=$('#world-lang');
 let current=null;
