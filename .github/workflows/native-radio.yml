@@ -1,0 +1,31 @@
+name: Validate Native Radio Territories
+
+on:
+  pull_request:
+    paths:
+      - 'radio-*.html'
+      - 'css/territory-radio.css'
+      - 'data/radio-territories.json'
+      - 'scripts/validate_radio_territories.py'
+      - '.github/workflows/native-radio.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'radio-*.html'
+      - 'css/territory-radio.css'
+      - 'data/radio-territories.json'
+      - 'scripts/validate_radio_territories.py'
+
+permissions:
+  contents: read
+
+jobs:
+  native-radio:
+    name: native-radio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_radio_territories.py
