@@ -1,0 +1,68 @@
+name: Passport CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate JSON data
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          files = sorted(Path('data').glob('*.json'))
+          if not files:
+              raise SystemExit('No JSON files found in data/')
+          for path in files:
+              with path.open(encoding='utf-8') as fh:
+                  json.load(fh)
+              print(f'OK JSON: {path}')
+          PY
+
+      - name: Compile Python scripts
+        shell: bash
+        run: |
+          if [ -d scripts ]; then
+            python -m compileall -q scripts
+          fi
+
+      - name: Validate critical editorial surfaces
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          required = [Path('index.html'), Path('editorial.html')]
+          missing = [str(p) for p in required if not p.is_file()]
+          if missing:
+              raise SystemExit('Missing critical surfaces: ' + ', '.join(missing))
+          for path in required:
+              text = path.read_text(encoding='utf-8')
+              if '<html' not in text.lower() or '</html>' not in text.lower():
+                  raise SystemExit(f'Invalid HTML shell: {path}')
+              print(f'OK HTML: {path}')
+          mena = Path('oriente-medio.html')
+          if mena.exists():
+              text = mena.read_text(encoding='utf-8')
+              if '<html' not in text.lower() or '</html>' not in text.lower():
+                  raise SystemExit('Invalid HTML shell: oriente-medio.html')
+              print('OK HTML: oriente-medio.html')
+          PY
