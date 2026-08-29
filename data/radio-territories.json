@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "policy": "Native language first. Passport Radio remains the global brand. Streams stay disabled until individually verified and integrated in a separate audio operation.",
   "territories": [
     {"id":"bolivia","page":"/radio-bolivia.html","lang":"es-BO","name":"Radio Bolivia","local_name":"Radio Bolivia","cities":["La Paz","El Alto","Cochabamba","Santa Cruz"],"genres":["Rock boliviano","Cumbia","Folklore","Morenada","Música Aymara","Música Quechua","Pop"],"stream_enabled":false},
@@ -10,6 +10,7 @@
     {"id":"iran","page":"/radio-iran.html","lang":"fa-IR","dir":"rtl","name":"Iran Radio","local_name":"رادیو موسیقی ایران","cities":["تهران","شیراز","اصفهان","تبریز"],"genres":["موسیقی ایرانی","راک ایرانی","پاپ فارسی","موسیقی سنتی","الکترونیک","هیپ هاپ","جاز"],"stream_enabled":false},
     {"id":"venezuela","page":"/radio-venezuela.html","lang":"es-VE","name":"Radio Venezuela","local_name":"Radio Venezuela","cities":["Caracas","Maracaibo","Mérida","Valencia"],"genres":["Rock venezolano","Alternativo","Indie","Pop","Metal","Música venezolana","Latino"],"stream_enabled":false},
     {"id":"east-africa","page":"/radio-east-africa.html","lang":"sw","name":"East Africa Radio","local_name":"Redio ya Muziki ya Afrika Mashariki","cities":["Kampala","Addis Ababa","Juba","Khartoum","Mogadishu","Asmara"],"genres":["Muziki wa Afrika Mashariki","Afro-fusion","Hip-Hop","Jazz","Electronic","Rock","Folk"],"languages":["sw","en","am","ar","so","ti"],"stream_enabled":false},
-    {"id":"afghanistan","page":"/radio-afghanistan.html","lang":"fa-AF","dir":"rtl","name":"Afghanistan Radio","local_name":"رادیو موسیقی افغانستان","cities":["کابل","هرات","مزار شریف","قندهار"],"genres":["موسیقی افغانستان","پاپ افغانستان","فولکلور","راک","موسیقی دری","موسیقی پشتو"],"languages":["fa-AF","ps-AF"],"stream_enabled":false}
+    {"id":"afghanistan","page":"/radio-afghanistan.html","lang":"fa-AF","dir":"rtl","name":"Afghanistan Radio","local_name":"رادیو موسیقی افغانستان","cities":["کابل","هرات","مزار شریف","قندهار"],"genres":["موسیقی افغانستان","پاپ افغانستان","فولکلور","راک","موسیقی دری","موسیقی پشتو"],"languages":["fa-AF","ps-AF"],"stream_enabled":false},
+    {"id":"romania","page":"/radio-romania.html","lang":"ro-RO","name":"Romania Radio","local_name":"Radio Muzică Românească","cities":["București","Cluj-Napoca","Timișoara","Iași"],"diaspora_cities":["Iporã do Oeste","Itapiranga","Mondaí","São João do Oeste","Tunápolis"],"genres":["Rock românesc","Alternative","Metal","Folk","Pop românesc","Electronic","Muzică tradițională"],"stream_enabled":false}
   ]
 }
