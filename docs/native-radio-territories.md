@@ -16,11 +16,12 @@ Current doors:
 - `/radio-mundo-player.html?station=pk` — Urdu-first Pakistan.
 - `/radio-romania.html` — Romanian, including the Romanian diaspora corridor in southern Brazil.
 - `/radio-mundo-player.html?station=fi` — Finnish.
+- `/radio-mundo-player.html?station=cz` — Czech, HEY Radio terrestrial network with the weekly Dark WAVE program.
 - `/radio-mundo.html` — global directory.
 
 Editorial-only territory pages:
 - `/radio-afghanistan.html` — Dari/Pashto editorial and discovery page retained for language and cultural coverage. It is not presented as a current World Dial station.
 
-Audio safety rule: this operation does not modify `radio.html`, World Dial/player scripts, protected player scripts, existing Tunnel players, Continuous Signals, Live & Rare, Flash House, streams or interlock. `data/radio-territories.json` is a discovery-source file and does not control audio integration.
+Audio safety rule: territory discovery data does not independently control audio. World Dial audio integrations remain in the shared player architecture and must preserve the one-audio-at-a-time interlock.
 
-Discovery rule: public names are plain/native search language, not invented campaign names. Internal Tunnel naming may remain an architecture concept but is not required in public H1/title. Native discovery vocabulary for every registered territory lives in `data/native-radio-search-terms.json`.
+Discovery rule: public names are plain/native search language, not invented campaign names. Internal Tunnel naming may remain an architecture concept but is not required in public H1/title. Native discovery vocabulary for registered territory pages may also live in `data/native-radio-search-terms.json`.
