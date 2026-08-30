@@ -121,7 +121,7 @@ jobs:
           if 'autoplay=' in discovery.lower():
               raise SystemExit('Discovery layer must not enable autoplay')
 
-          for token in ['PASSPORT SIGNAL · RADAR', 'RADAR 24H', 'SINAIS RELACIONADOS']:
+          for token in ['PASSPORT SIGNAL · RADAR', 'signal-status">RADAR', 'POR QUE ESTÁ NO RADAR', 'related-signals']:
               if token not in signal_js:
                   raise SystemExit(f'Missing compact Signal contract: {token}')
 
