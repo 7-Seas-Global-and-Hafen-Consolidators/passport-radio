@@ -17,8 +17,6 @@ def headline_text(item): return " ".join([clean(item.get("title")),clean(item.ge
 def story_text(item): return " ".join([headline_text(item),clean(item.get("_article_context"))," ".join(clean(x) for x in (item.get("_media_terms") or []) if clean(x))])
 
 def central_entities(item):
-    # Centrality must come from title/deck. Background names in body copy do not
-    # silently become mandatory co-subjects for media matching.
     text=norm(headline_text(item)); out=[]
     for e in entities(item):
         if norm(e) and norm(e) in text: out.append(e)
@@ -83,17 +81,29 @@ def event_specificity(item,candidate_context):
     if not wanted:return .55,[]
     return min(1.0,.35+len(matched)/len(wanted)),matched
 
+def media_intent(item):
+    text=norm(story_text(item))
+    return "music video" if any(x in text for x in ("videoclipe","music video","official music video")) else "general"
+
+def media_class(title):
+    t=norm(title)
+    if "official music video" in t or "music video" in t:return "music_video",1.0
+    if any(x in t for x in ("out now","on sale now","teaser","trailer","preview")):return "promo_clip",.35
+    return "general",.60
+
 def evaluate(meta,item,*,score_threshold,confidence_threshold):
     title,channel,description=clean(meta.get("title")),clean(meta.get("channel")),clean(meta.get("description")); context=f"{title} {description}"; joined=norm(f"{context} {channel}")
     vetoes=[n for n,p in HARD_VETO_PATTERNS.items() if re.search(p,joined,re.I)]; penalties=[n for n,p in SOFT_PENALTY_PATTERNS.items() if re.search(p,joined,re.I)]
     info=entity_evidence(item,context,channel); identity=max([m["match"] for m in info["matches"] if m["central"]] or [0.0]); authority,authority_reason=authority_evidence(item,context,channel,info)
     temporal,temporal_class,video_year=temporal_evidence(item,meta.get("published_at")); specificity,what_matches=event_specificity(item,context)
+    intent=media_intent(item); mclass,mpriority=media_class(title)
     article_tokens=tokens(story_text(item)); video_tokens=tokens(context); relevance=min(1.0,(len(article_tokens & video_tokens)/max(1,min(len(article_tokens),14)))*1.8)
     if info["cross_required"] and not info["cross_ok"]:vetoes.append("multi_entity_context_missing")
     if temporal_class=="historical_archive" and specificity<.70:vetoes.append("historical_without_event_context")
     score=.32*identity+.23*authority+.18*relevance+.15*specificity+.12*temporal-.10*len(penalties); score=max(0.0,min(1.0,score)); confidence=score
     if authority<.78:confidence*=.82
-    if temporal_class=="date_unknown":confidence*=.90
+    if temporal_class=="date_unknown" and not (intent=="music_video" and mclass=="music_video" and authority>=.92 and specificity>=.65):confidence*=.90
+    if intent=="music_video" and mclass=="promo_clip":confidence*=.88
     if penalties:confidence*=max(.45,1-.15*len(penalties))
     if vetoes:confidence=0.0
     positive=[]
@@ -102,4 +112,5 @@ def evaluate(meta,item,*,score_threshold,confidence_threshold):
     if specificity>=.70:positive.append("event_specificity")
     if temporal>=.72:positive.append("temporal_fit")
     if info["cross_ok"]:positive.append("entity_context_ok")
-    return {**meta,"identity":round(identity,4),"authority":round(authority,4),"authority_reason":authority_reason,"relevance":round(relevance,4),"event_specificity":round(specificity,4),"event_matches":what_matches,"temporal_score":round(temporal,4),"temporal_class":temporal_class,"video_year":video_year,"entity_evidence":info,"score":round(score,4),"confidence":round(max(0.0,min(1.0,confidence)),4),"positive_matches":positive,"penalties":penalties,"vetoes":list(dict.fromkeys(vetoes)),"thresholds":{"score":score_threshold,"confidence":confidence_threshold}}
+    if intent=="music_video" and mclass=="music_video":positive.append("preferred_media_class")
+    return {**meta,"identity":round(identity,4),"authority":round(authority,4),"authority_reason":authority_reason,"relevance":round(relevance,4),"event_specificity":round(specificity,4),"event_matches":what_matches,"temporal_score":round(temporal,4),"temporal_class":temporal_class,"video_year":video_year,"entity_evidence":info,"media_intent":intent,"media_class":mclass,"media_priority":mpriority,"score":round(score,4),"confidence":round(max(0.0,min(1.0,confidence)),4),"positive_matches":positive,"penalties":penalties,"vetoes":list(dict.fromkeys(vetoes)),"thresholds":{"score":score_threshold,"confidence":confidence_threshold}}
