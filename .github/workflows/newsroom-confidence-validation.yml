@@ -29,10 +29,12 @@ jobs:
         run: python -m py_compile tools/editorial_story_enricher.py tools/newsroom_editorial_confidence.py tools/newsroom_canary_runner.py tests/test_newsroom_media_golden.py
       - name: Run Newsroom golden set
         run: python tests/test_newsroom_media_golden.py
-      - name: Validate frozen Canary 002 manifest
-        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-002.json --run-id "pr-${{ github.run_id }}" --validate-only
-      - name: Run frozen Canary 002 dry-run
-        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-002.json --run-id "pr-${{ github.run_id }}" --dry-run
+      - name: Validate historical Canary 002 manifest
+        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-002.json --run-id "pr-${{ github.run_id }}-legacy" --validate-only
+      - name: Validate active Canary 003 manifest
+        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-003.json --run-id "pr-${{ github.run_id }}" --validate-only
+      - name: Run active Canary 003 dry-run
+        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-003.json --run-id "pr-${{ github.run_id }}" --dry-run
       - name: Preserve validation audit
         if: always()
         uses: actions/upload-artifact@v4
