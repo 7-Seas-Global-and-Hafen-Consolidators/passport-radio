@@ -5,7 +5,7 @@ from urllib.parse import parse_qs, urlsplit
 cfg = json.loads(Path('data/radio-territories.json').read_text('utf-8'))
 assert cfg.get('version') == 4, 'unexpected territory registry version'
 territories = cfg.get('territories', [])
-assert len(territories) == 11, f'expected 11 territories, got {len(territories)}'
+assert len(territories) == 12, f'expected 12 territories, got {len(territories)}'
 
 world_player = Path('radio-mundo-player.html')
 world_player_js = Path('js/world-radio-player.js').read_text('utf-8')
