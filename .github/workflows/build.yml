@@ -49,7 +49,9 @@ jobs:
         shell: bash
         run: |
           node --check js/passport-phase1-discovery.js
+          node --check js/passport-phase2-home.js
           node --check js/editorial-home.js
+          node --check js/global-signals-home.js
           node --check js/global-signal-page.js
           node --check js/global-signals-lib.js
           node --check js/world-radio-player.js
@@ -132,6 +134,52 @@ jobs:
           print('OK Phase 1 discovery contracts')
           print('OK protected audio boundary: no embedded audio/play/autoplay in discovery layer')
           print('OK compact Passport Signal contracts')
+          PY
+
+      - name: Validate Phase 2 Home compression contracts
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          phase2 = Path('js/passport-phase2-home.js').read_text(encoding='utf-8')
+          home = Path('js/global-signals-home.js').read_text(encoding='utf-8')
+          loader = Path('js/editorial-home.js').read_text(encoding='utf-8')
+
+          required_phase2 = [
+              'removeDuplicateQuickGrid',
+              'compactArchiveCards',
+              'compactAgenda',
+              'VER AGENDA COMPLETA',
+          ]
+          for token in required_phase2:
+              if token not in phase2:
+                  raise SystemExit(f'Missing Phase 2 Home contract: {token}')
+
+          required_home = [
+              'HOME_VISIBLE=12',
+              'HOME_TERRITORIES=4',
+              'ABRIR GLOBAL WIRE',
+              'ABRIR WORLD DIAL COMPLETO',
+              'desired:44',
+          ]
+          for token in required_home:
+              if token not in home:
+                  raise SystemExit(f'Missing compact Home Wire contract: {token}')
+
+          if '/js/passport-phase2-home.js?v=20260830' not in loader:
+              raise SystemExit('Phase 2 Home loader is not wired')
+
+          protected_tokens = ['new Audio(', '.play(', 'autoplay=']
+          for token in protected_tokens:
+              if token.lower() in phase2.lower():
+                  raise SystemExit(f'Phase 2 must not touch audio playback: {token}')
+
+          if 'Every Song Is A Destination.' in home or '— MR. NOMAD' in home:
+              raise SystemExit('Legacy visible World Wire footer returned')
+
+          print('OK Phase 2 Home compression contracts')
+          print('OK Global Wire engine depth preserved: desired 44')
+          print('OK protected audio boundary: Phase 2 contains no playback code')
           PY
 
       - name: Validate World Dial HLS compatibility contract
