@@ -5,7 +5,7 @@ import html, re, unicodedata
 
 RECOGNIZED_MEDIA=("npr","kexp","bbc")
 GENERIC_AUTHORITY_WORDS=("music","festival")
-WHAT_TERMS=("album","single","tour","turne","turnê","festival","event","evento","show","concert","live","interview","entrevista","announcement","announces","anuncia","lanca","lança","retorno","reunion","kickoff","hall","fame","rockstar","be not afraid","good god","baad man")
+WHAT_TERMS=("album","single","tour","turne","turnê","festival","event","evento","show","concert","live","interview","entrevista","announcement","announces","anuncia","lanca","lança","retorno","reunion","kickoff","hall","fame","rockstar")
 HARD_VETO_PATTERNS={"reaction":r"\breact(?:ion|s|ing)?\b","fan_edit":r"\bfan[ -]?edit\b|\bfancam\b","ai_cover":r"\bai[ -]?cover\b|\bdeepfake\b","tribute":r"\btribute\b|\btributo\b","tutorial":r"\btutorial\b|\blesson\b|\bkaraoke\b|\btab(?:s)?\b","sped_or_slowed":r"\bsped[ -]?up\b|\bslowed(?:\s*\+\s*reverb)?\b"}
 SOFT_PENALTY_PATTERNS={"cover":r"\bcover\b","review":r"\breview\b|\banalysis\b","compilation":r"\bcompilation\b|\bgreatest hits\b|\bbest of\b","lyrics":r"\blyric(?:s)?\b","full_album":r"\bfull album\b"}
 
@@ -13,24 +13,32 @@ def clean(v): return re.sub(r"\s+"," ",html.unescape(str(v or ""))).strip()
 def norm(v): return re.sub(r"[^a-z0-9]+"," ",unicodedata.normalize("NFKD",clean(v)).encode("ascii","ignore").decode("ascii").casefold()).strip()
 def tokens(v): return {x for x in norm(v).split() if len(x)>=3}
 def entities(item): return [clean(x) for x in (item.get("entities") or []) if clean(x)]
-def story_text(item): return " ".join([clean(item.get("title")),clean(item.get("deck"))])
+def headline_text(item): return " ".join([clean(item.get("title")),clean(item.get("deck"))])
+def story_text(item): return " ".join([headline_text(item),clean(item.get("_article_context"))," ".join(clean(x) for x in (item.get("_media_terms") or []) if clean(x))])
 
 def central_entities(item):
-    text=norm(story_text(item)); out=[]
+    # Centrality must come from title/deck. Background names in body copy do not
+    # silently become mandatory co-subjects for media matching.
+    text=norm(headline_text(item)); out=[]
     for e in entities(item):
         if norm(e) and norm(e) in text: out.append(e)
     return out[:4] or entities(item)[:1]
 
+def media_terms(item):
+    out=[]
+    for raw in item.get("_media_terms") or []:
+        value=clean(raw)
+        if 3<=len(value)<=100 and value.casefold() not in {x.casefold() for x in out}: out.append(value)
+    return out[:6]
+
 def editorial_what(item):
-    text=norm(story_text(item)); found=[t for t in WHAT_TERMS if norm(t) in text]; years=re.findall(r"\b(?:19|20)\d{2}\b",text)
-    return list(dict.fromkeys(found+years))[:6]
+    text=norm(story_text(item)); named=media_terms(item); found=[t for t in WHAT_TERMS if norm(t) in text]; years=re.findall(r"\b(?:19|20)\d{2}\b",text)
+    return list(dict.fromkeys(named+found+years))[:10]
 
 def build_query(item):
-    central=central_entities(item); who=central[:2]
-    # Preserve named work/event entities as context when they occur in the story.
-    extra=[e for e in entities(item)[1:] if norm(e) in norm(story_text(item)) and e not in who][:1]
-    what=editorial_what(item)[:4]
-    return " ".join(who+extra+what) if who else clean(item.get("title"))
+    central=central_entities(item); who=central[:2]; named=media_terms(item)[:2]; generic=[x for x in editorial_what(item) if x not in named][:3]
+    parts=who+named+generic
+    return " ".join(parts) if parts else clean(item.get("title"))
 
 def _entity_match(entity,haystack):
     en,hn=norm(entity),norm(haystack)
@@ -63,11 +71,15 @@ def temporal_evidence(item,published_at):
     if not am:return .55,"article_date_unknown",vy
     delta=int(am.group(1))-vy
     if -1<=delta<=1:return 1.0,"current_window",vy
-    if delta<=3:return .72,"near_context",vy
+    if 0<=delta<=3:return .72,"near_context",vy
     return .32,"historical_archive",vy
 
 def event_specificity(item,candidate_context):
-    wanted=editorial_what(item); cn=norm(candidate_context); matched=[w for w in wanted if norm(w) in cn]
+    cn=norm(candidate_context); named=media_terms(item); named_matches=[w for w in named if norm(w) and norm(w) in cn]
+    if named:
+        ratio=len(named_matches)/len(named)
+        return min(1.0,.35+.65*ratio),named_matches
+    wanted=editorial_what(item); matched=[w for w in wanted if norm(w) in cn]
     if not wanted:return .55,[]
     return min(1.0,.35+len(matched)/len(wanted)),matched
 
@@ -76,7 +88,7 @@ def evaluate(meta,item,*,score_threshold,confidence_threshold):
     vetoes=[n for n,p in HARD_VETO_PATTERNS.items() if re.search(p,joined,re.I)]; penalties=[n for n,p in SOFT_PENALTY_PATTERNS.items() if re.search(p,joined,re.I)]
     info=entity_evidence(item,context,channel); identity=max([m["match"] for m in info["matches"] if m["central"]] or [0.0]); authority,authority_reason=authority_evidence(item,context,channel,info)
     temporal,temporal_class,video_year=temporal_evidence(item,meta.get("published_at")); specificity,what_matches=event_specificity(item,context)
-    article_tokens=tokens(story_text(item)); video_tokens=tokens(context); relevance=min(1.0,(len(article_tokens & video_tokens)/max(1,min(len(article_tokens),10)))*1.8)
+    article_tokens=tokens(story_text(item)); video_tokens=tokens(context); relevance=min(1.0,(len(article_tokens & video_tokens)/max(1,min(len(article_tokens),14)))*1.8)
     if info["cross_required"] and not info["cross_ok"]:vetoes.append("multi_entity_context_missing")
     if temporal_class=="historical_archive" and specificity<.70:vetoes.append("historical_without_event_context")
     score=.32*identity+.23*authority+.18*relevance+.15*specificity+.12*temporal-.10*len(penalties); score=max(0.0,min(1.0,score)); confidence=score
