@@ -6,7 +6,7 @@ on:
       manifest:
         description: "Committed deterministic canary manifest (safety cap: 5)"
         required: false
-        default: "ops/canary/canary-002.json"
+        default: "ops/canary/canary-003.json"
   workflow_run:
     workflows: ["Passport Editorial Engine — Constitution / Zero-Cost Multiprovider"]
     types: [completed]
@@ -36,7 +36,7 @@ jobs:
       - name: Run Newsroom media safety gate
         shell: bash
         env:
-          CANARY_MANIFEST: ${{ github.event.inputs.manifest || 'ops/canary/canary-002.json' }}
+          CANARY_MANIFEST: ${{ github.event.inputs.manifest || 'ops/canary/canary-003.json' }}
         run: |
           python -m py_compile tools/editorial_story_enricher.py tools/newsroom_editorial_confidence.py tools/editorial_engine_quality_router.py tools/newsroom_canary_runner.py tests/test_newsroom_media_golden.py
           python tests/test_newsroom_media_golden.py
