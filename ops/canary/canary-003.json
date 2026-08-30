@@ -1,0 +1,46 @@
+{
+  "run_id": "canary-003",
+  "feed_snapshot_hash": "c7e8ffd77391e3a7e619e207ace67a4dc6ae10c7",
+  "frozen_at": "2026-08-30",
+  "frozen_by": "Passport Radio editorial safety review",
+  "supersedes_for_active_validation": "ops/canary/canary-002.json",
+  "note": "Canary 002 remains immutable historical evidence. Canary 003 corrects one editorially invalid positive after manual review and tests article-aware media matching.",
+  "cases": [
+    {
+      "url": "/editorial/2026/08/28/polyphia-anuncia-novo-album-be-not-afraid.html",
+      "expected": "EMBED",
+      "expected_video_id": "fDltPLFdkYI",
+      "acceptable_class": "official/current video for POWER IN THE BLOOD directly tied to the Be Not Afraid announcement",
+      "forbidden_class": "fan/reaction/cover/AI/derivative or generic unrelated Polyphia media",
+      "rationale": "Valid positive. The finished story explicitly centers the Be Not Afraid announcement and the POWER IN THE BLOOD video recorded in Rio de Janeiro; the media selector must use finished-article context, not feed metadata alone."
+    },
+    {
+      "url": "/editorial/2026/08/25/dois-icones-do-metal-pesado-cruzam-caminhos-em-turne-que-redefine-a-rota-alternativa-de.html",
+      "expected": "NO_VIDEO",
+      "acceptable_class": "none unless media directly represents the Corrosion of Conformity + The Sword co-headlining tour context",
+      "forbidden_class": "single-band album/single video that omits the joint-tour subject",
+      "rationale": "Editorial review invalidated Canary 002's old positive. Video 01t_AchaYdM is a Corrosion of Conformity album/single video; the story's central event is the joint Corrosion of Conformity + The Sword tour, so single-band media is not sufficient."
+    },
+    {
+      "url": "/editorial/2026/08/25/quando-a-guitarra-dita-seu-proprio-genero.html",
+      "expected": "NO_VIDEO",
+      "acceptable_class": "none",
+      "forbidden_class": "entity-crossed or merely plausible performance",
+      "rationale": "Ambiguous multi-entity Gusttavo Lima + Steve Vai control."
+    },
+    {
+      "url": "/editorial/2026/08/25/no-palco-com-gil-quando-a-historia-pessoal-vira-monumento.html",
+      "expected": "NO_VIDEO",
+      "acceptable_class": "none",
+      "forbidden_class": "generic Gilberto Gil documentary/performance unrelated to the specific stage story",
+      "rationale": "Broad biographical/stage-story negative control."
+    },
+    {
+      "url": "/editorial/2026/08/25/soundgarden-volta-ao-palco-de-seattle-para-show-de-intervalo-do-nfl-kickoff.html",
+      "expected": "NO_VIDEO",
+      "acceptable_class": "none",
+      "forbidden_class": "historical or unrelated Soundgarden performance",
+      "rationale": "Stability repeat from Canary 001/002."
+    }
+  ]
+}
