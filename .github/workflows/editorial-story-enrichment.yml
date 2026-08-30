@@ -1,0 +1,56 @@
+name: Passport Newsroom — Story Enrichment
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Recent editorial pages to inspect"
+        required: false
+        default: "300"
+  workflow_run:
+    workflows: ["Passport Editorial Engine — Constitution / Zero-Cost Multiprovider"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: passport-newsroom-enrichment
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 20
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Enrich Passport editorial feed
+        shell: bash
+        env:
+          LIMIT: ${{ github.event.inputs.limit || '300' }}
+        run: |
+          python -m py_compile tools/editorial_story_enricher.py tools/editorial_engine_quality_router.py
+          python tools/editorial_story_enricher.py --limit "$LIMIT" | tee /tmp/passport-newsroom.json
+          cat /tmp/passport-newsroom.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish enrichment without touching RSS or audio territory
+        shell: bash
+        run: |
+          git config user.name "Passport Radio Newsroom"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add editorial/ 2>/dev/null || true
+          if git diff --cached --quiet; then echo "No eligible story enrichment in this cycle." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          BASE_SHA="$(git rev-parse HEAD)"
+          git fetch origin main --depth=20
+          REMOTE_SHA="$(git rev-parse origin/main)"
+          if [ "$BASE_SHA" != "$REMOTE_SHA" ]; then echo "NEWSROOM DEFERRED — main advanced; next cycle retries safely." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          git commit -m "Passport Newsroom: enrich editorial archive"
+          git push origin HEAD:main

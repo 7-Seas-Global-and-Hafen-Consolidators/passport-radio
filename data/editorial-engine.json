@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "daily_target": 500,
   "daily_publish_cap": 500,
   "daily_capacity": 700,
@@ -7,11 +7,11 @@
   "max_batch": 12,
   "evaluation_scan_per_run": 48,
   "generation_call_budget_per_run": 12,
-  "local_zero_key_format": "FLASH",
+  "local_zero_key_format": "STORY",
   "local_zero_key_force_batch": 2,
   "local_zero_key_retry_limit": 1,
   "local_zero_key_target_margin_words": 40,
-  "local_zero_key_target_window_words": 100,
+  "local_zero_key_target_window_words": 180,
   "local_zero_key_flash_envelope": {
     "min_sections": 2,
     "max_sections": 3,
@@ -22,9 +22,9 @@
     "min_closing_chars": 100,
     "max_closing_chars": 280
   },
-  "source_firewall_max_chars": 3600,
+  "source_firewall_max_chars": 7000,
   "minimum_fact_pack_facts": 2,
-  "format_word_range": 450,
+  "format_word_range": 550,
   "quality_gate": {
     "mode": "enforce",
     "require_fact_refs": true,
@@ -47,7 +47,7 @@
   "max_output_tokens": 9000,
   "api_timeout_seconds": 240,
   "minimum_words": {
-    "FLASH": 300,
+    "FLASH": 520,
     "STORY": 850,
     "MR_NOMAD": 1100,
     "LIVE_SIGNAL": 520
