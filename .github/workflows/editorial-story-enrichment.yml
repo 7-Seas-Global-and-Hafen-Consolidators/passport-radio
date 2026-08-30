@@ -41,16 +41,29 @@ jobs:
           python -m py_compile tools/editorial_story_enricher.py tools/editorial_engine_quality_router.py
           python tools/editorial_story_enricher.py --limit "$LIMIT" | tee /tmp/passport-newsroom.json
           cat /tmp/passport-newsroom.json >> "$GITHUB_STEP_SUMMARY"
-      - name: Publish enrichment without touching RSS or audio territory
+      - name: Stage enrichment on a review branch
         shell: bash
         run: |
           git config user.name "Passport Radio Newsroom"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add editorial/ 2>/dev/null || true
-          if git diff --cached --quiet; then echo "No eligible story enrichment in this cycle." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          if git diff --cached --quiet; then
+            echo "No eligible story enrichment in this cycle." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
           BASE_SHA="$(git rev-parse HEAD)"
           git fetch origin main --depth=20
           REMOTE_SHA="$(git rev-parse origin/main)"
-          if [ "$BASE_SHA" != "$REMOTE_SHA" ]; then echo "NEWSROOM DEFERRED — main advanced; next cycle retries safely." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          if [ "$BASE_SHA" != "$REMOTE_SHA" ]; then
+            echo "NEWSROOM DEFERRED — main advanced; next cycle retries safely." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          REVIEW_BRANCH="newsroom/enrichment-${GITHUB_RUN_ID}"
+          git checkout -b "$REVIEW_BRANCH"
           git commit -m "Passport Newsroom: enrich editorial archive"
-          git push origin HEAD:main
+          git push origin "HEAD:refs/heads/$REVIEW_BRANCH"
+
+          echo "NEWSROOM STAGED — enrichment was pushed to review branch \`$REVIEW_BRANCH\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "Protected \`main\` was not modified. Open a pull request from this branch so required CI/build checks can run before merge." >> "$GITHUB_STEP_SUMMARY"
