@@ -45,12 +45,26 @@ jobs:
             python -m compileall -q scripts
           fi
 
+      - name: Validate Phase 1 JavaScript syntax
+        shell: bash
+        run: |
+          node --check js/passport-phase1-discovery.js
+          node --check js/editorial-home.js
+          node --check js/global-signal-page.js
+          node --check js/global-signals-lib.js
+
       - name: Validate critical editorial surfaces
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
-          required = [Path('index.html'), Path('editorial.html')]
+          required = [
+              Path('index.html'),
+              Path('editorial.html'),
+              Path('signal.html'),
+              Path('radio.html'),
+              Path('radio-mundo-player.html'),
+          ]
           missing = [str(p) for p in required if not p.is_file()]
           if missing:
               raise SystemExit('Missing critical surfaces: ' + ', '.join(missing))
@@ -65,4 +79,56 @@ jobs:
               if '<html' not in text.lower() or '</html>' not in text.lower():
                   raise SystemExit('Invalid HTML shell: oriente-medio.html')
               print('OK HTML: oriente-medio.html')
+          PY
+
+      - name: Validate Phase 1 discovery contracts
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          discovery = Path('js/passport-phase1-discovery.js').read_text(encoding='utf-8')
+          radio = Path('radio.html').read_text(encoding='utf-8')
+          tunnels = Path('js/radio-tunnels-ui.js').read_text(encoding='utf-8')
+          home_loader = Path('js/editorial-home.js').read_text(encoding='utf-8')
+          signal = Path('signal.html').read_text(encoding='utf-8')
+          signal_js = Path('js/global-signal-page.js').read_text(encoding='utf-8')
+
+          required_discovery_tokens = [
+              'WORLD DIAL', 'TUNNELS™', 'CONTINUOUS SIGNALS™',
+              'LIVE & RARE™', 'FLASH HOUSE', 'PROGRAMAS',
+              '/radio-mundo-player.html', '/radio.html#passportTunnels',
+              '/radio.html#continuous', '/radio.html#player',
+              '/radio.html#passportFlashHouse'
+          ]
+          for token in required_discovery_tokens:
+              if token not in discovery:
+                  raise SystemExit(f'Missing Phase 1 discovery contract: {token}')
+
+          for anchor in ['id="player"', 'id="passportTunnels"', 'id="continuous"']:
+              if anchor not in radio:
+                  raise SystemExit(f'Broken Phase 1 radio deep-link target: {anchor}')
+
+          if 'passportFlashHouse' not in tunnels:
+              raise SystemExit('Broken Phase 1 Flash House deep-link contract')
+
+          if '/js/passport-phase1-discovery.js?v=20260830' not in home_loader:
+              raise SystemExit('Phase 1 discovery loader is not wired into Home')
+
+          if '<audio' in discovery.lower() or 'new Audio(' in discovery or '.play(' in discovery:
+              raise SystemExit('Discovery layer must not embed or start audio')
+
+          if 'autoplay=' in discovery.lower():
+              raise SystemExit('Discovery layer must not enable autoplay')
+
+          for token in ['PASSPORT SIGNAL · RADAR', 'RADAR 24H', 'SINAIS RELACIONADOS']:
+              if token not in signal_js:
+                  raise SystemExit(f'Missing compact Signal contract: {token}')
+
+          if 'signal-side' in signal or 'rail-title' in signal:
+              raise SystemExit('Legacy giant Signal sidebar returned')
+
+          print('OK Phase 1 discovery contracts')
+          print('OK protected audio boundary: no embedded audio/play/autoplay in discovery layer')
+          print('OK compact Passport Signal contracts')
           PY
