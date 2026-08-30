@@ -38,7 +38,8 @@ jobs:
         env:
           CANARY_MANIFEST: ${{ github.event.inputs.manifest || 'ops/canary/canary-002.json' }}
         run: |
-          python -m py_compile tools/editorial_story_enricher.py tools/editorial_engine_quality_router.py tools/newsroom_canary_runner.py
+          python -m py_compile tools/editorial_story_enricher.py tools/newsroom_editorial_confidence.py tools/editorial_engine_quality_router.py tools/newsroom_canary_runner.py tests/test_newsroom_media_golden.py
+          python tests/test_newsroom_media_golden.py
 
           if [ "$GITHUB_EVENT_NAME" = "workflow_run" ]; then
             echo "Automatic post-Editorial-Engine run remains DRY-RUN and cannot consume a canary manifest." >> "$GITHUB_STEP_SUMMARY"
@@ -64,7 +65,15 @@ jobs:
               exit "$RC"
             fi
           fi
-          echo "Decision audit generated at build/newsroom-audit/$GITHUB_RUN_ID.jsonl on the runner; it is not staged into the public site." >> "$GITHUB_STEP_SUMMARY"
+          echo "Decision audit generated at build/newsroom-audit/$GITHUB_RUN_ID.jsonl." >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve Newsroom decision audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: passport-newsroom-audit-${{ github.run_id }}
+          path: build/newsroom-audit/
+          retention-days: 14
+          if-no-files-found: warn
       - name: Stage canary enrichment on a review branch
         if: github.event_name == 'workflow_dispatch'
         shell: bash
