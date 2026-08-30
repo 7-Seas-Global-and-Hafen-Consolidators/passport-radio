@@ -1,0 +1,43 @@
+name: Passport Newsroom — Confidence Validation
+
+on:
+  pull_request:
+    paths:
+      - 'tools/editorial_story_enricher.py'
+      - 'tools/newsroom_editorial_confidence.py'
+      - 'tools/newsroom_canary_runner.py'
+      - 'tests/test_newsroom_media_golden.py'
+      - 'ops/canary/*.json'
+      - '.github/workflows/editorial-story-enrichment.yml'
+      - '.github/workflows/newsroom-confidence-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-newsroom-confidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Newsroom confidence code
+        run: python -m py_compile tools/editorial_story_enricher.py tools/newsroom_editorial_confidence.py tools/newsroom_canary_runner.py tests/test_newsroom_media_golden.py
+      - name: Run Newsroom golden set
+        run: python tests/test_newsroom_media_golden.py
+      - name: Validate frozen Canary 002 manifest
+        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-002.json --run-id "pr-${{ github.run_id }}" --validate-only
+      - name: Run frozen Canary 002 dry-run
+        run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-002.json --run-id "pr-${{ github.run_id }}" --dry-run
+      - name: Preserve validation audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: passport-newsroom-validation-audit-${{ github.run_id }}
+          path: build/newsroom-audit/
+          retention-days: 14
+          if-no-files-found: warn
