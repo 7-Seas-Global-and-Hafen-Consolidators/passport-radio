@@ -1,6 +1,6 @@
-/* Passport Radio · CONDEMONIO Phase 1 · Discovery only
-   Makes the existing audio architecture impossible to miss without replacing,
-   autoplaying, merging or touching any player/stream/interlock implementation.
+/*
+  PASSPORT RADIO · CONDEMONIO PHASE 1
+  Discovery only: no player replacement, no autoplay, no stream mutation.
 */
 (() => {
   'use strict';
@@ -135,7 +135,7 @@
             <span class="passport-discovery__eyebrow">AGORA NA PASSPORT · OUVIR</span>
             <h2 id="passport-discovery-title">A história abre o caminho. O som está aqui.</h2>
           </div>
-          <p>Cinco arquiteturas de áudio, cada uma com sua própria lógica. Escolha a porta; o player existente continua fazendo o trabalho sem nenhuma nova camada de autoplay.</p>
+          <p>Cinco arquiteturas de áudio, cada uma com sua própria lógica. Escolha a porta; o player existente continua fazendo o trabalho sem nenhuma nova camada automática.</p>
         </div>
         <div class="passport-discovery__doors">${routes.map(makeDoor).join('')}</div>
         <div class="passport-programs-strip">
@@ -168,6 +168,7 @@
   document.body.appendChild(overlay);
 
   let lastFocus = null;
+  const focusable = () => [...overlay.querySelectorAll('a[href],button:not([disabled])')].filter(node => !node.hasAttribute('hidden'));
   const closeOverlay = () => {
     overlay.hidden = true;
     document.body.style.overflow = '';
@@ -191,7 +192,25 @@
     if (event.target.matches('[data-passport-listen-close]') || event.target === overlay) closeOverlay();
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !overlay.hidden) closeOverlay();
+    if (overlay.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeOverlay();
+      return;
+    }
+    if (event.key === 'Tab') {
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   const worldSample = document.querySelector('[data-passport-world-sample]');
