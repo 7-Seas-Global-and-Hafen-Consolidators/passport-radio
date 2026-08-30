@@ -1,9 +1,8 @@
 (() => {
-  const ads='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7728480662290062';
-  if(!document.querySelector('script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')){const s=document.createElement('script');s.async=true;s.src=ads;s.crossOrigin='anonymous';document.head.appendChild(s)}
-  const PAY='https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C',ID='WK4CLBGVD2Y4C',SDK='https://www.paypal.com/sdk/js?client-id=BAATSBUFD6IB4OXS-joVyzzy_g3mrTQpgVKQUEzGeayAmM3SZGlPPDc5F1BLA64l8h-BVGvpf0Rd2TuTz4&components=hosted-buttons&disable-funding=venmo&currency=BRL';
-  const render=()=>{const c=document.getElementById(`paypal-container-${ID}`);if(!c||c.dataset.rendered==='1'||!window.paypal||typeof window.paypal.HostedButtons!=='function')return;try{c.dataset.rendered='1';const r=window.paypal.HostedButtons({hostedButtonId:ID}).render(`#paypal-container-${ID}`);if(r&&r.catch)r.catch(()=>c.dataset.rendered='0')}catch{c.dataset.rendered='0'}};
-  const sdk=()=>{if(window.paypal)return render();if(document.querySelector('script[data-passport-paypal-sdk]'))return;const s=document.createElement('script');s.src=SDK;s.async=true;s.dataset.passportPaypalSdk='1';s.onload=render;document.head.appendChild(s)};
-  const boot=()=>{if(!document.getElementById('passport-support-float')){const a=document.createElement('a');a.id='passport-support-float';a.className='passport-support-float';a.href=PAY;a.target='_blank';a.rel='noopener';a.innerHTML='<span class="passport-support-float__copy"><strong>MANTENHA A PASSPORT NO AR</strong><small>APOIO DIRETO · PAYPAL</small></span><span class="passport-support-float__go">↗</span>';document.body.appendChild(a)}const box=document.querySelector('#apoie .support-box');if(!box||document.getElementById('passport-paypal-support'))return;const asaas=box.querySelector('a.btn[href*="asaas.com"]');if(asaas)asaas.textContent='APOIAR VIA ASAAS';const d=document.createElement('div');d.id='passport-paypal-support';d.className='passport-paypal-support';d.innerHTML=`<a class="btn passport-paypal-direct" href="${PAY}" target="_blank" rel="noopener">APOIAR VIA PAYPAL ↗</a><div id="paypal-container-${ID}"></div><small class="passport-paypal-support__caption">PayPal é uma alternativa direta ao apoio via Asaas. Você escolhe a rota.</small>`;asaas?asaas.insertAdjacentElement('afterend',d):box.prepend(d);if('IntersectionObserver'in window){const o=new IntersectionObserver(e=>{if(e.some(x=>x.isIntersecting)){o.disconnect();sdk()}},{rootMargin:'300px 0px'});o.observe(d)}else sdk()};
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+  if(document.querySelector('script[data-passport-support-global]')) return;
+  const script=document.createElement('script');
+  script.src='/js/passport-support.js?v=1';
+  script.defer=true;
+  script.dataset.passportSupportGlobal='1';
+  document.head.appendChild(script);
 })();
