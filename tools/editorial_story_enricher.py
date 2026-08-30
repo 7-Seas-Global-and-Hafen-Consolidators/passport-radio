@@ -89,13 +89,15 @@ def choose_video(item):
     evaluated=[]
     for vid in ids:
         meta=youtube_metadata(vid); evaluated.append(evaluate_candidate(meta,item) if meta else {"video_id":vid,"vetoes":["oembed_unavailable"],"score":0.0,"confidence":0.0})
-    decision["candidates"]=evaluated; viable=[c for c in evaluated if not c.get("vetoes")]; viable.sort(key=lambda c:(c.get("confidence",0),c.get("score",0)),reverse=True)
+    decision["candidates"]=evaluated; viable=[c for c in evaluated if not c.get("vetoes")]
+    prefer_class=any(c.get("media_intent")=="music_video" for c in viable)
+    viable.sort(key=lambda c:((c.get("media_priority",0) if prefer_class else 0),c.get("confidence",0),c.get("score",0)),reverse=True)
     if not viable:decision["reason_rejected"]="all_candidates_vetoed"; return decision
-    top=viable[0]; runner=viable[1] if len(viable)>1 else None; margin=top["confidence"]-(runner["confidence"] if runner else 0.0)
-    decision.update({"score":top["score"],"confidence":top["confidence"],"positive_matches":top.get("positive_matches",[]),"penalties":top.get("penalties",[]),"temporal_class":top.get("temporal_class"),"event_specificity":top.get("event_specificity"),"authority_reason":top.get("authority_reason"),"entity_evidence":top.get("entity_evidence")})
+    top=viable[0]; runner=viable[1] if len(viable)>1 else None; margin=top["confidence"]-(runner["confidence"] if runner else 0.0); priority_gap=top.get("media_priority",0)-(runner.get("media_priority",0) if runner else 0.0)
+    decision.update({"score":top["score"],"confidence":top["confidence"],"positive_matches":top.get("positive_matches",[]),"penalties":top.get("penalties",[]),"temporal_class":top.get("temporal_class"),"event_specificity":top.get("event_specificity"),"authority_reason":top.get("authority_reason"),"entity_evidence":top.get("entity_evidence"),"media_class":top.get("media_class"),"media_priority":top.get("media_priority")})
     if top["score"]<SCORE_THRESHOLD:decision["reason_rejected"]="score_below_threshold"; return decision
     if top["confidence"]<CONFIDENCE_THRESHOLD:decision["reason_rejected"]="confidence_below_threshold"; return decision
-    if runner and margin<AMBIGUITY_MARGIN:decision["reason_rejected"]="ambiguous_top_candidates"; return decision
+    if runner and margin<AMBIGUITY_MARGIN and priority_gap<.25:decision["reason_rejected"]="ambiguous_top_candidates"; return decision
     thumb=top.get("thumbnail_url") or f"https://i.ytimg.com/vi/{top['video_id']}/hqdefault.jpg"
     if not fetch_bytes_ok(thumb):decision["reason_rejected"]="thumbnail_unavailable"; return decision
     decision["selected_video"]=top["video_id"]; decision["reason_selected"]="evidence_backed_editorial_match"; return decision
@@ -103,7 +105,7 @@ def choose_video(item):
 def audit_path(run_id):
     p=ROOT/"build"/"newsroom-audit"; p.mkdir(parents=True,exist_ok=True); return p/f"{run_id}.jsonl"
 def append_audit(run_id,item,url,decision,outcome):
-    payload={"ts":datetime.now(timezone.utc).isoformat(),"run_id":run_id,"marker_version":MARKER_VERSION,"article":url,"title":clean(item.get("title")),"entities":entities(item),"media_terms":decision.get("media_terms",media_terms(item)),"query":decision.get("query"),"candidates":decision.get("candidates",[]),"selected_video":decision.get("selected_video"),"score":decision.get("score"),"confidence":decision.get("confidence"),"positive_matches":decision.get("positive_matches",[]),"penalties":decision.get("penalties",[]),"reason_selected":decision.get("reason_selected",""),"reason_rejected":decision.get("reason_rejected",""),"temporal_class":decision.get("temporal_class"),"event_specificity":decision.get("event_specificity"),"authority_reason":decision.get("authority_reason"),"entity_evidence":decision.get("entity_evidence"),"thresholds":decision.get("thresholds",{}),"outcome":outcome}
+    payload={"ts":datetime.now(timezone.utc).isoformat(),"run_id":run_id,"marker_version":MARKER_VERSION,"article":url,"title":clean(item.get("title")),"entities":entities(item),"media_terms":decision.get("media_terms",media_terms(item)),"query":decision.get("query"),"candidates":decision.get("candidates",[]),"selected_video":decision.get("selected_video"),"score":decision.get("score"),"confidence":decision.get("confidence"),"positive_matches":decision.get("positive_matches",[]),"penalties":decision.get("penalties",[]),"reason_selected":decision.get("reason_selected",""),"reason_rejected":decision.get("reason_rejected",""),"temporal_class":decision.get("temporal_class"),"event_specificity":decision.get("event_specificity"),"authority_reason":decision.get("authority_reason"),"entity_evidence":decision.get("entity_evidence"),"media_class":decision.get("media_class"),"media_priority":decision.get("media_priority"),"thresholds":decision.get("thresholds",{}),"outcome":outcome}
     with audit_path(run_id).open("a",encoding="utf-8") as fh:fh.write(json.dumps(payload,ensure_ascii=False)+"\n")
 
 def enrich_page(path,item,run_id,dry_run=False):
