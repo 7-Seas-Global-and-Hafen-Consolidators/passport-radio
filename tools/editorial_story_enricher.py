@@ -4,8 +4,10 @@
 Runs AFTER Editorial Engine publication. It never reads or mutates RSS/Tunnel
 configuration, players, streams or radio pages. For recent generated editorial
 pages it adds semantic SEO metadata plus a context-matched YouTube embed and
-its thumbnail as visual media. Failure is fail-open: the original article stays
-untouched when a relevant video cannot be resolved.
+its thumbnail as visual media. Discovery provenance remains internal; public
+media is composed as part of the Passport Radio editorial archive. Failure is
+fail-open: the original article stays untouched when a relevant video cannot be
+resolved.
 """
 from __future__ import annotations
 
@@ -18,8 +20,8 @@ from urllib.parse import quote_plus
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-MARKER = "PASSPORT_NEWSROOM_ENRICHED_V1"
-UA = "Mozilla/5.0 PassportNewsroom/1.0 (+https://www.passportradio.online/)"
+MARKER = "PASSPORT_NEWSROOM_ENRICHED_V2"
+UA = "Mozilla/5.0 PassportNewsroom/2.0 (+https://www.passportradio.online/)"
 
 
 def clean(v):
@@ -43,7 +45,7 @@ def keywords_for(item: dict) -> list[str]:
     vals.extend(item.get("entities") or [])
     vals.append(item.get("category") or "")
     vals.extend(re.findall(r"[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9'’.-]{2,}", item.get("title") or ""))
-    vals.extend(["Passport Radio", "música", "notícias de música"])
+    vals.extend(["Passport Radio", "música", "notícias de música", "história da música", "arquivo musical"])
     out = []
     seen = set()
     for v in vals:
@@ -52,7 +54,7 @@ def keywords_for(item: dict) -> list[str]:
         if not v or k in seen:
             continue
         seen.add(k); out.append(v)
-    return out[:24]
+    return out[:28]
 
 
 def enrich_page(path: Path, item: dict) -> bool:
@@ -61,18 +63,16 @@ def enrich_page(path: Path, item: dict) -> bool:
         return False
     title = clean(item.get("title"))
     entities = [clean(x) for x in (item.get("entities") or []) if clean(x)]
-    query = " ".join(([title] + entities[:3] + ["official music video"]))
+    query = " ".join(([title] + entities[:4] + ["official music video live interview"]))
     video_id = search_youtube(query)
     if not video_id:
         return False
 
     thumb = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg"
     embed = f"https://www.youtube-nocookie.com/embed/{video_id}"
-    watch = f"https://www.youtube.com/watch?v={video_id}"
     kws = keywords_for(item)
     kw_meta = html.escape(", ".join(kws), quote=True)
 
-    # Replace generic social image with the context-matched video thumbnail.
     text = re.sub(r'(<meta property="og:image" content=")[^"]+("\s*/?>)', rf'\1{thumb}\2', text, count=1)
     text = re.sub(r'(<meta name="twitter:image" content=")[^"]+("\s*/?>)', rf'\1{thumb}\2', text, count=1)
 
@@ -85,24 +85,22 @@ def enrich_page(path: Path, item: dict) -> bool:
     )
     text = text.replace("</head>", head_extra + "</head>", 1)
 
-    block = f'''\n<section class="pe-newsroom-media" aria-label="Vídeo relacionado">
+    block = f'''\n<section class="pe-newsroom-media" aria-label="Arquivo audiovisual Passport Radio">
+  <div class="pe-newsroom-archive-label">ARQUIVO PASSPORT RADIO</div>
   <figure>
-    <img src="{thumb}" alt="Vídeo relacionado a {html.escape(title, quote=True)}" loading="lazy" decoding="async">
-    <figcaption>Passport Radio · vídeo relacionado ao acontecimento desta matéria.</figcaption>
+    <img src="{thumb}" alt="Arquivo audiovisual relacionado a {html.escape(title, quote=True)}" loading="lazy" decoding="async">
   </figure>
   <div class="pe-newsroom-video">
-    <iframe src="{embed}" title="{html.escape(title, quote=True)} — vídeo relacionado" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="{embed}" title="{html.escape(title, quote=True)} — Arquivo Passport Radio" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
-  <p class="pe-newsroom-video-link"><a href="{watch}" rel="noopener noreferrer">ABRIR NO YOUTUBE →</a></p>
 </section>\n'''
-    # Put media inside the story, immediately before the editorial closing.
     needle = '<div class="pe-closing"><small>PASSPORT RADIO · EDITORIAL</small>'
     if needle not in text:
         return False
     text = text.replace(needle, block + needle, 1)
 
     css = '''\n<style>
-.pe-newsroom-media{margin:54px 0;border-top:1px solid rgba(0,0,0,.14);padding-top:32px}.pe-newsroom-media figure{margin:0 0 22px}.pe-newsroom-media img{display:block;width:100%;height:auto}.pe-newsroom-media figcaption{margin-top:8px;font-size:.72rem;opacity:.62}.pe-newsroom-video{position:relative;width:100%;aspect-ratio:16/9;background:#000}.pe-newsroom-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.pe-newsroom-video-link{font-size:.72rem;font-weight:800;letter-spacing:.06em}
+.pe-newsroom-media{margin:54px 0;border-top:1px solid rgba(0,0,0,.14);padding-top:32px}.pe-newsroom-archive-label{margin:0 0 14px;font-size:.68rem;font-weight:900;letter-spacing:.14em;opacity:.62}.pe-newsroom-media figure{margin:0 0 22px}.pe-newsroom-media img{display:block;width:100%;height:auto}.pe-newsroom-video{position:relative;width:100%;aspect-ratio:16/9;background:#000}.pe-newsroom-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 </style>\n'''
     text = text.replace("</head>", css + "</head>", 1)
     path.write_text(text, "utf-8")
@@ -112,7 +110,7 @@ def enrich_page(path: Path, item: dict) -> bool:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--feed", default="data/editorial-feed.json")
-    ap.add_argument("--limit", type=int, default=40)
+    ap.add_argument("--limit", type=int, default=300)
     args = ap.parse_args()
     feed = json.loads((ROOT / args.feed).read_text("utf-8"))
     items = feed if isinstance(feed, list) else feed.get("items", [])
