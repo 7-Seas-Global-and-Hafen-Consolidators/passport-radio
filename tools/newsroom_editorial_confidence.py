@@ -83,7 +83,7 @@ def event_specificity(item,candidate_context):
 
 def media_intent(item):
     text=norm(story_text(item))
-    return "music video" if any(x in text for x in ("videoclipe","music video","official music video")) else "general"
+    return "music_video" if any(x in text for x in ("videoclipe","music video","official music video")) else "general"
 
 def media_class(title):
     t=norm(title)
