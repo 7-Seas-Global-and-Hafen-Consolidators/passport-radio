@@ -7,11 +7,11 @@ import html, json, os, re
 from pathlib import Path
 from urllib.parse import quote_plus
 from urllib.request import Request, urlopen
-from newsroom_editorial_confidence import build_query, clean, entities, evaluate
+from newsroom_editorial_confidence import build_query, clean, entities, evaluate, media_terms
 
 ROOT=Path(__file__).resolve().parents[1]
-MARKER_VERSION="3.1"; BLOCK_START="<!-- PASSPORT_NEWSROOM_MEDIA_START:v3 -->"; BLOCK_END="<!-- PASSPORT_NEWSROOM_MEDIA_END -->"
-UA="Mozilla/5.0 PassportNewsroom/3.1 (+https://www.passportradio.online/)"; MAX_CANDIDATES=8
+MARKER_VERSION="3.2"; BLOCK_START="<!-- PASSPORT_NEWSROOM_MEDIA_START:v3 -->"; BLOCK_END="<!-- PASSPORT_NEWSROOM_MEDIA_END -->"
+UA="Mozilla/5.0 PassportNewsroom/3.2 (+https://www.passportradio.online/)"; MAX_CANDIDATES=8
 CONFIDENCE_THRESHOLD=float(os.getenv("PASSPORT_NEWSROOM_CONFIDENCE_THRESHOLD","0.80")); SCORE_THRESHOLD=float(os.getenv("PASSPORT_NEWSROOM_SCORE_THRESHOLD","0.68")); AMBIGUITY_MARGIN=float(os.getenv("PASSPORT_NEWSROOM_AMBIGUITY_MARGIN","0.12"))
 
 def fetch_json(url,timeout=12):
@@ -59,12 +59,30 @@ def youtube_metadata(video_id):
     page=fetch_text(watch)
     return {"video_id":video_id,"title":clean(data.get("title")),"channel":clean(data.get("author_name")),"thumbnail_url":clean(data.get("thumbnail_url")),"published_at":_youtube_date(page),"description":_youtube_description(page)}
 
-def primary_entity(item):
-    es=entities(item); return es[0] if es else ""
+def _strip_markup(fragment):
+    fragment=re.sub(r"<(script|style)\b[^>]*>.*?</\1>"," ",fragment,flags=re.I|re.S)
+    return clean(re.sub(r"<[^>]+>"," ",fragment))
+
+def _article_media_context(page):
+    m=re.search(r'<article\b[^>]*class="[^"]*pe-prose[^"]*"[^>]*>(.*?)</article>',page,re.I|re.S)
+    fragment=m.group(1) if m else page
+    visible=_strip_markup(fragment)
+    raw_terms=[]
+    for value in re.findall(r"<em\b[^>]*>(.*?)</em>",fragment,re.I|re.S): raw_terms.append(_strip_markup(value))
+    raw_terms.extend(re.findall(r'[“"]([^”"]{3,100})[”"]',visible))
+    raw_terms.extend(re.findall(r"'([^']{3,100})'",visible))
+    terms=[]
+    for value in raw_terms:
+        value=clean(value).strip(" .,:;!?—-–")
+        if not value or len(value)>100:continue
+        key=value.casefold()
+        if key not in {x.casefold() for x in terms}: terms.append(value)
+    return visible[:12000],terms[:8]
+
 def evaluate_candidate(meta,item):return evaluate(meta,item,score_threshold=SCORE_THRESHOLD,confidence_threshold=CONFIDENCE_THRESHOLD)
 
 def choose_video(item):
-    query=build_query(item); decision={"query":query,"candidates":[],"selected_video":None,"score":0.0,"confidence":0.0,"positive_matches":[],"penalties":[],"reason_selected":"","reason_rejected":"","thresholds":{"score":SCORE_THRESHOLD,"confidence":CONFIDENCE_THRESHOLD,"ambiguity_margin":AMBIGUITY_MARGIN}}
+    query=build_query(item); decision={"query":query,"candidates":[],"selected_video":None,"score":0.0,"confidence":0.0,"positive_matches":[],"penalties":[],"reason_selected":"","reason_rejected":"","thresholds":{"score":SCORE_THRESHOLD,"confidence":CONFIDENCE_THRESHOLD,"ambiguity_margin":AMBIGUITY_MARGIN},"media_terms":media_terms(item)}
     if not entities(item):decision["reason_rejected"]="missing_specific_entity"; return decision
     ids=search_youtube_candidates(query)
     if not ids:decision["reason_rejected"]="no_candidates"; return decision
@@ -85,20 +103,21 @@ def choose_video(item):
 def audit_path(run_id):
     p=ROOT/"build"/"newsroom-audit"; p.mkdir(parents=True,exist_ok=True); return p/f"{run_id}.jsonl"
 def append_audit(run_id,item,url,decision,outcome):
-    payload={"ts":datetime.now(timezone.utc).isoformat(),"run_id":run_id,"marker_version":MARKER_VERSION,"article":url,"title":clean(item.get("title")),"entities":entities(item),"query":decision.get("query"),"candidates":decision.get("candidates",[]),"selected_video":decision.get("selected_video"),"score":decision.get("score"),"confidence":decision.get("confidence"),"positive_matches":decision.get("positive_matches",[]),"penalties":decision.get("penalties",[]),"reason_selected":decision.get("reason_selected",""),"reason_rejected":decision.get("reason_rejected",""),"temporal_class":decision.get("temporal_class"),"event_specificity":decision.get("event_specificity"),"authority_reason":decision.get("authority_reason"),"entity_evidence":decision.get("entity_evidence"),"thresholds":decision.get("thresholds",{}),"outcome":outcome}
+    payload={"ts":datetime.now(timezone.utc).isoformat(),"run_id":run_id,"marker_version":MARKER_VERSION,"article":url,"title":clean(item.get("title")),"entities":entities(item),"media_terms":decision.get("media_terms",media_terms(item)),"query":decision.get("query"),"candidates":decision.get("candidates",[]),"selected_video":decision.get("selected_video"),"score":decision.get("score"),"confidence":decision.get("confidence"),"positive_matches":decision.get("positive_matches",[]),"penalties":decision.get("penalties",[]),"reason_selected":decision.get("reason_selected",""),"reason_rejected":decision.get("reason_rejected",""),"temporal_class":decision.get("temporal_class"),"event_specificity":decision.get("event_specificity"),"authority_reason":decision.get("authority_reason"),"entity_evidence":decision.get("entity_evidence"),"thresholds":decision.get("thresholds",{}),"outcome":outcome}
     with audit_path(run_id).open("a",encoding="utf-8") as fh:fh.write(json.dumps(payload,ensure_ascii=False)+"\n")
 
 def enrich_page(path,item,run_id,dry_run=False):
     original=path.read_text("utf-8"); url="/"+str(path.relative_to(ROOT)).replace("\\","/")
     if BLOCK_START in original or "PASSPORT_NEWSROOM_ENRICHED_V2" in original:append_audit(run_id,item,url,{"query":"","reason_rejected":"already_enriched"},"SKIP"); return False,"SKIP"
-    decision=choose_video(item); vid=decision.get("selected_video")
-    if not vid:append_audit(run_id,item,url,decision,"NO_VIDEO"); return False,"NO_VIDEO"
+    article_context,article_terms=_article_media_context(original); media_item=dict(item); media_item["_article_context"]=article_context; media_item["_media_terms"]=article_terms
+    decision=choose_video(media_item); vid=decision.get("selected_video")
+    if not vid:append_audit(run_id,media_item,url,decision,"NO_VIDEO"); return False,"NO_VIDEO"
     embed=f"https://www.youtube-nocookie.com/embed/{vid}"; title=clean(item.get("title")); block=f'''\n{BLOCK_START}\n<section class="pe-newsroom-media" data-passport-newsroom-version="{MARKER_VERSION}" data-passport-video="{vid}" aria-label="Arquivo audiovisual Passport Radio">\n  <div class="pe-newsroom-archive-label">ARQUIVO PASSPORT RADIO</div>\n  <div class="pe-newsroom-video">\n    <iframe src="{embed}" title="{html.escape(title,quote=True)} — Arquivo Passport Radio" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>\n  </div>\n</section>\n{BLOCK_END}\n'''; needle='<div class="pe-closing"><small>PASSPORT RADIO · EDITORIAL</small>'
-    if needle not in original:decision.update({"selected_video":None,"reason_selected":"","reason_rejected":"closing_anchor_missing"}); append_audit(run_id,item,url,decision,"NO_VIDEO"); return False,"NO_VIDEO"
+    if needle not in original:decision.update({"selected_video":None,"reason_selected":"","reason_rejected":"closing_anchor_missing"}); append_audit(run_id,media_item,url,decision,"NO_VIDEO"); return False,"NO_VIDEO"
     css='''\n<style data-passport-newsroom-css="v3">\n.pe-newsroom-media{margin:54px 0;border-top:1px solid rgba(0,0,0,.14);padding-top:32px}.pe-newsroom-archive-label{margin:0 0 14px;font-size:.68rem;font-weight:900;letter-spacing:.14em;opacity:.62}.pe-newsroom-video{position:relative;width:100%;aspect-ratio:16/9;background:#000}.pe-newsroom-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}\n</style>\n'''; candidate=original.replace(needle,block+needle,1)
     if 'data-passport-newsroom-css="v3"' not in candidate:candidate=candidate.replace("</head>",css+"</head>",1)
-    if candidate==original or BLOCK_START not in candidate:decision.update({"selected_video":None,"reason_selected":"","reason_rejected":"atomic_composition_failed"}); append_audit(run_id,item,url,decision,"NO_VIDEO"); return False,"NO_VIDEO"
-    append_audit(run_id,item,url,decision,"DRY_RUN_EMBED" if dry_run else "EMBED")
+    if candidate==original or BLOCK_START not in candidate:decision.update({"selected_video":None,"reason_selected":"","reason_rejected":"atomic_composition_failed"}); append_audit(run_id,media_item,url,decision,"NO_VIDEO"); return False,"NO_VIDEO"
+    append_audit(run_id,media_item,url,decision,"DRY_RUN_EMBED" if dry_run else "EMBED")
     if dry_run:return False,"DRY_RUN_EMBED"
     path.write_text(candidate,"utf-8"); return True,"EMBED"
 
