@@ -3,10 +3,10 @@ name: Passport Newsroom — Story Enrichment
 on:
   workflow_dispatch:
     inputs:
-      limit:
-        description: "Canary editorial pages to inspect (safety cap: 5)"
+      manifest:
+        description: "Committed deterministic canary manifest (safety cap: 5)"
         required: false
-        default: "5"
+        default: "ops/canary/canary-002.json"
   workflow_run:
     workflows: ["Passport Editorial Engine — Constitution / Zero-Cost Multiprovider"]
     types: [completed]
@@ -36,25 +36,34 @@ jobs:
       - name: Run Newsroom media safety gate
         shell: bash
         env:
-          REQUESTED_LIMIT: ${{ github.event.inputs.limit || '5' }}
+          CANARY_MANIFEST: ${{ github.event.inputs.manifest || 'ops/canary/canary-002.json' }}
         run: |
-          python -m py_compile tools/editorial_story_enricher.py tools/editorial_engine_quality_router.py
+          python -m py_compile tools/editorial_story_enricher.py tools/editorial_engine_quality_router.py tools/newsroom_canary_runner.py
 
-          LIMIT="$REQUESTED_LIMIT"
-          if ! [[ "$LIMIT" =~ ^[0-9]+$ ]] || [ "$LIMIT" -lt 1 ]; then LIMIT=5; fi
-          if [ "$LIMIT" -gt 5 ]; then
-            echo "NEWSROOM SAFETY GATE: requested limit $LIMIT reduced to canary cap 5." >> "$GITHUB_STEP_SUMMARY"
-            LIMIT=5
-          fi
-
-          EXTRA=""
           if [ "$GITHUB_EVENT_NAME" = "workflow_run" ]; then
-            EXTRA="--dry-run"
-            echo "Automatic post-Editorial-Engine run is DRY-RUN during Safety Gate rollout." >> "$GITHUB_STEP_SUMMARY"
+            echo "Automatic post-Editorial-Engine run remains DRY-RUN and cannot consume a canary manifest." >> "$GITHUB_STEP_SUMMARY"
+            python tools/editorial_story_enricher.py --limit 5 --run-id "$GITHUB_RUN_ID" --dry-run | tee /tmp/passport-newsroom.json
+            cat /tmp/passport-newsroom.json >> "$GITHUB_STEP_SUMMARY"
+          else
+            case "$CANARY_MANIFEST" in
+              ops/canary/*.json) ;;
+              *) echo "CANARY_ABORT: manifest must be a committed ops/canary/*.json file" >&2; exit 2 ;;
+            esac
+            python tools/newsroom_canary_runner.py --manifest "$CANARY_MANIFEST" --run-id "$GITHUB_RUN_ID" --validate-only | tee /tmp/passport-canary-validation.json
+            cat /tmp/passport-canary-validation.json >> "$GITHUB_STEP_SUMMARY"
+            set +e
+            python tools/newsroom_canary_runner.py --manifest "$CANARY_MANIFEST" --run-id "$GITHUB_RUN_ID" | tee /tmp/passport-newsroom.json
+            RC=${PIPESTATUS[0]}
+            set -e
+            cat /tmp/passport-newsroom.json >> "$GITHUB_STEP_SUMMARY"
+            echo '```jsonl' >> "$GITHUB_STEP_SUMMARY"
+            cat "build/newsroom-audit/$GITHUB_RUN_ID.jsonl" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            if [ "$RC" -ne 0 ]; then
+              echo "NEWSROOM CANARY FAILED EXPECTATIONS — no review branch will be staged." >> "$GITHUB_STEP_SUMMARY"
+              exit "$RC"
+            fi
           fi
-
-          python tools/editorial_story_enricher.py --limit "$LIMIT" --run-id "$GITHUB_RUN_ID" $EXTRA | tee /tmp/passport-newsroom.json
-          cat /tmp/passport-newsroom.json >> "$GITHUB_STEP_SUMMARY"
           echo "Decision audit generated at build/newsroom-audit/$GITHUB_RUN_ID.jsonl on the runner; it is not staged into the public site." >> "$GITHUB_STEP_SUMMARY"
       - name: Stage canary enrichment on a review branch
         if: github.event_name == 'workflow_dispatch'
@@ -64,7 +73,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add editorial/ 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No canary page cleared the media confidence gate. NO_VIDEO is a valid result." >> "$GITHUB_STEP_SUMMARY"
+            echo "Canary expectations passed with no staged article mutation." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
@@ -78,7 +87,7 @@ jobs:
 
           REVIEW_BRANCH="newsroom/canary-${GITHUB_RUN_ID}"
           git checkout -b "$REVIEW_BRANCH"
-          git commit -m "Passport Newsroom: five-page media confidence canary"
+          git commit -m "Passport Newsroom: deterministic media confidence canary"
           git push origin "HEAD:refs/heads/$REVIEW_BRANCH"
 
           echo "NEWSROOM CANARY STAGED — review branch \`$REVIEW_BRANCH\`." >> "$GITHUB_STEP_SUMMARY"
