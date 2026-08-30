@@ -28,8 +28,17 @@ def main():
     r=ev({"title":"Artist Alpha + Artist Beta new single collaboration","channel":"Artist Alpha Official","published_at":"2026-08-30"},multi)
     assert "multi_entity_context_missing" not in r["vetoes"], r
 
-    q=c.build_query({"title":"Polyphia anuncia novo álbum Be Not Afraid","deck":"Novo álbum em outubro","entities":["Polyphia","Rise Records"]})
-    assert "Polyphia" in q and "album" in c.norm(q), q
+    # Finished-story context must improve discovery without changing centrality.
+    poly={"title":"Polyphia anuncia novo álbum Be Not Afraid","deck":"Novo álbum em outubro","published_at":"2026-08-28","entities":["Polyphia","Rise Records"],"_article_context":"O videoclipe de POWER IN THE BLOOD foi gravado no Rio de Janeiro para a fase Be Not Afraid.","_media_terms":["POWER IN THE BLOOD","Be Not Afraid"]}
+    q=c.build_query(poly)
+    assert "Polyphia" in q and "POWER IN THE BLOOD" in q and "Be Not Afraid" in q, q
+    assert c.central_entities(poly)==["Polyphia"], c.central_entities(poly)
+
+    # A joint-tour story must not accept a one-band album video merely because
+    # the album is mentioned in background context.
+    coc={"title":"Corrosion of Conformity e The Sword anunciam turnê conjunta","deck":"Corrosion of Conformity e The Sword unem forças em novembro","published_at":"2026-08-25","entities":["Corrosion of Conformity","The Sword","Good God / Baad Man"],"_article_context":"Corrosion of Conformity segue o ciclo de Good God / Baad Man durante a turnê conjunta.","_media_terms":["Good God / Baad Man"]}
+    r=ev({"title":"Corrosion of Conformity - Gimme Some Moore","channel":"Nuclear Blast Records","published_at":"2026-02-11","description":"From Good God / Baad Man"},coc)
+    assert "multi_entity_context_missing" in r["vetoes"], r
 
     assert r["thresholds"] == {"score":SCORE,"confidence":CONF}, r
     print("newsroom_media_golden: PASS")
