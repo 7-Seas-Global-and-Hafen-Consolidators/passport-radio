@@ -51,6 +51,7 @@
     style.textContent = `
       .passport-phase2-agenda-more{display:flex;justify-content:flex-end;margin-top:18px}
       .passport-phase2-agenda-more .btn{cursor:pointer}
+      #agenda .event[data-passport-agenda-overflow="1"][hidden]{display:none!important}
       #dicas .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
       @media(max-width:900px){#dicas .cards{grid-template-columns:1fr}}
     `;
