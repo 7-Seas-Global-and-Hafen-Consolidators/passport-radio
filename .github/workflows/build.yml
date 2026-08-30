@@ -45,13 +45,14 @@ jobs:
             python -m compileall -q scripts
           fi
 
-      - name: Validate Phase 1 JavaScript syntax
+      - name: Validate JavaScript syntax
         shell: bash
         run: |
           node --check js/passport-phase1-discovery.js
           node --check js/editorial-home.js
           node --check js/global-signal-page.js
           node --check js/global-signals-lib.js
+          node --check js/world-radio-player.js
 
       - name: Validate critical editorial surfaces
         shell: bash
@@ -131,4 +132,36 @@ jobs:
           print('OK Phase 1 discovery contracts')
           print('OK protected audio boundary: no embedded audio/play/autoplay in discovery layer')
           print('OK compact Passport Signal contracts')
+          PY
+
+      - name: Validate World Dial HLS compatibility contract
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          player = Path('js/world-radio-player.js').read_text(encoding='utf-8')
+          page = Path('radio-mundo-player.html').read_text(encoding='utf-8')
+
+          required = [
+              "https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8",
+              "https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js",
+              "application/vnd.apple.mpegurl",
+              "Hls.isSupported()",
+              "prepareHls",
+              "destroyHls",
+          ]
+          for token in required:
+              if token not in player:
+                  raise SystemExit(f'Missing World Dial HLS contract: {token}')
+
+          if player.count("{id:'") != 12:
+              raise SystemExit('World Dial station count changed unexpectedly')
+          if 'autoplay=' in player.lower():
+              raise SystemExit('World Dial player must not enable autoplay')
+          if '/js/world-radio-player.js?v=9' not in page:
+              raise SystemExit('World Dial cache version is not v9')
+
+          print('OK World Dial HLS compatibility contract')
+          print('OK Finland terrestrial stream preserved')
+          print('OK World Dial station count preserved: 12')
           PY
