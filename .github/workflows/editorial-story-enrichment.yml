@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "Recent editorial pages to inspect"
+        description: "Canary editorial pages to inspect (safety cap: 5)"
         required: false
-        default: "300"
+        default: "5"
   workflow_run:
     workflows: ["Passport Editorial Engine — Constitution / Zero-Cost Multiprovider"]
     types: [completed]
@@ -33,22 +33,38 @@ jobs:
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.12'
-      - name: Enrich Passport editorial feed
+      - name: Run Newsroom media safety gate
         shell: bash
         env:
-          LIMIT: ${{ github.event.inputs.limit || '300' }}
+          REQUESTED_LIMIT: ${{ github.event.inputs.limit || '5' }}
         run: |
           python -m py_compile tools/editorial_story_enricher.py tools/editorial_engine_quality_router.py
-          python tools/editorial_story_enricher.py --limit "$LIMIT" | tee /tmp/passport-newsroom.json
+
+          LIMIT="$REQUESTED_LIMIT"
+          if ! [[ "$LIMIT" =~ ^[0-9]+$ ]] || [ "$LIMIT" -lt 1 ]; then LIMIT=5; fi
+          if [ "$LIMIT" -gt 5 ]; then
+            echo "NEWSROOM SAFETY GATE: requested limit $LIMIT reduced to canary cap 5." >> "$GITHUB_STEP_SUMMARY"
+            LIMIT=5
+          fi
+
+          EXTRA=""
+          if [ "$GITHUB_EVENT_NAME" = "workflow_run" ]; then
+            EXTRA="--dry-run"
+            echo "Automatic post-Editorial-Engine run is DRY-RUN during Safety Gate rollout." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          python tools/editorial_story_enricher.py --limit "$LIMIT" --run-id "$GITHUB_RUN_ID" $EXTRA | tee /tmp/passport-newsroom.json
           cat /tmp/passport-newsroom.json >> "$GITHUB_STEP_SUMMARY"
-      - name: Stage enrichment on a review branch
+          echo "Decision audit generated at build/newsroom-audit/$GITHUB_RUN_ID.jsonl on the runner; it is not staged into the public site." >> "$GITHUB_STEP_SUMMARY"
+      - name: Stage canary enrichment on a review branch
+        if: github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           git config user.name "Passport Radio Newsroom"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add editorial/ 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No eligible story enrichment in this cycle." >> "$GITHUB_STEP_SUMMARY"
+            echo "No canary page cleared the media confidence gate. NO_VIDEO is a valid result." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
@@ -56,14 +72,14 @@ jobs:
           git fetch origin main --depth=20
           REMOTE_SHA="$(git rev-parse origin/main)"
           if [ "$BASE_SHA" != "$REMOTE_SHA" ]; then
-            echo "NEWSROOM DEFERRED — main advanced; next cycle retries safely." >> "$GITHUB_STEP_SUMMARY"
+            echo "NEWSROOM DEFERRED — main advanced; next manual canary retries safely." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
-          REVIEW_BRANCH="newsroom/enrichment-${GITHUB_RUN_ID}"
+          REVIEW_BRANCH="newsroom/canary-${GITHUB_RUN_ID}"
           git checkout -b "$REVIEW_BRANCH"
-          git commit -m "Passport Newsroom: enrich editorial archive"
+          git commit -m "Passport Newsroom: five-page media confidence canary"
           git push origin "HEAD:refs/heads/$REVIEW_BRANCH"
 
-          echo "NEWSROOM STAGED — enrichment was pushed to review branch \`$REVIEW_BRANCH\`." >> "$GITHUB_STEP_SUMMARY"
-          echo "Protected \`main\` was not modified. Open a pull request from this branch so required CI/build checks can run before merge." >> "$GITHUB_STEP_SUMMARY"
+          echo "NEWSROOM CANARY STAGED — review branch \`$REVIEW_BRANCH\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "Protected \`main\` was not modified. Inspect the canary pages before opening/merging any PR." >> "$GITHUB_STEP_SUMMARY"
