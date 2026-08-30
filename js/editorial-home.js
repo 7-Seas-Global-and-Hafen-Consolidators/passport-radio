@@ -39,16 +39,6 @@
     const donateButton=document.querySelector('#apoie .support-box .btn');if(donateButton)donateButton.textContent='DOAR';
   };
 
-  const addNativeTerritories = () => {
-    if (document.getElementById('passport-native-territories')) return;
-    const contact=document.getElementById('contato');if(!contact)return;
-    const territories=[
-      ['radio-bolivia.html','Radio Bolivia','Rock boliviano · Música Aymara · Música Quechua','es-BO','ltr'],['radio-korea.html','한국 음악 라디오','드라마 OST · K-Rock · 인디 음악','ko-KR','ltr'],['radio-turkiye.html','Türkiye Müzik Radyosu','Dizi Müzikleri · Anadolu Rock · Türkçe Rock','tr-TR','ltr'],['radio-china.html','中国音乐电台','华语摇滚 · 独立音乐 · 后摇','zh-CN','ltr'],['radio-ukraine.html','Українське музичне радіо','Український рок · Постпанк · Інді','uk-UA','ltr'],['radio-iran.html','رادیو موسیقی ایران','راک ایرانی · موسیقی فارسی · موسیقی سنتی','fa-IR','rtl'],['radio-venezuela.html','Radio Venezuela','Rock venezolano · Música venezolana · Alternativa','es-VE','ltr'],['radio-east-africa.html','Redio ya Muziki ya Afrika Mashariki','Muziki wa Afrika Mashariki · Afro-fusion · Hip-Hop','sw','ltr'],['radio-afghanistan.html','رادیو موسیقی افغانستان','موسیقی افغانستان · موسیقی دری · موسیقی پشتو','fa-AF','rtl'],['radio-romania.html','Radio Muzică Românească','Rock românesc · Muzică românească · Muzică tradițională','ro-RO','ltr']];
-    const section=document.createElement('section');section.id='passport-native-territories';section.className='module passport-native-territories';section.setAttribute('aria-label','Passport Radio');
-    section.innerHTML=`<div class="shell"><div class="passport-native-territories__brand">PASSPORT RADIO</div><div class="passport-native-territories__grid">${territories.map(([href,name,terms,lang,dir])=>`<a class="passport-native-territories__door" href="${href}" lang="${lang}" dir="${dir}"><strong>${name}</strong><span>${terms}</span></a>`).join('')}</div><a class="passport-native-territories__all" href="radio-mundo.html">RADIO · MUSIC · МУЗИКА · 음악 · 音乐 · MÜZİK · موسیقی · MUZICĂ →</a></div>`;contact.insertAdjacentElement('beforebegin',section);
-    if(!document.getElementById('passport-native-territories-style')){const style=document.createElement('style');style.id='passport-native-territories-style';style.textContent=`.passport-native-territories{background:#02060b;color:#f3f0e8;border-top:1px solid rgba(212,175,55,.25);border-bottom:1px solid rgba(212,175,55,.18)}.passport-native-territories__brand{font-size:.68rem;font-weight:900;letter-spacing:.24em;color:#d4af37;margin-bottom:22px}.passport-native-territories__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.09)}.passport-native-territories__door{display:block;min-width:0;padding:18px 20px;background:#081522;color:#f3f0e8;text-decoration:none;transition:background .18s ease}.passport-native-territories__door:hover,.passport-native-territories__door:focus-visible{background:#0d2031}.passport-native-territories__door strong{display:block;font-size:clamp(1rem,2vw,1.35rem);line-height:1.25}.passport-native-territories__door span{display:block;margin-top:6px;color:#aeb7bf;font-size:.72rem;line-height:1.45}.passport-native-territories__all{display:inline-flex;margin-top:22px;color:#d4af37;text-decoration:none;font-size:.7rem;font-weight:800;letter-spacing:.06em}@media(max-width:700px){.passport-native-territories__grid{grid-template-columns:1fr}.passport-native-territories__door{padding:16px}.passport-native-territories__all{line-height:1.6}}`;document.head.appendChild(style);}
-  };
-
   const installRisingCounter = () => {
     const KEY='passport_now_rising_v1', EPOCH=Date.UTC(2026,7,29,0,0,0), BASE=1847, RATE_PER_MINUTE=7;
     const target=()=>document.querySelector('[data-passport-listeners]');
@@ -71,7 +61,7 @@
     const programDestinations=[['radio.html#player','Abrir Live & Rare na Passport Radio'],['destinos.html','Abrir Stories Behind The Music nos arquivos'],['destinos.html','Abrir entrevistas e especiais nos arquivos']];document.querySelectorAll('#programas .program-item').forEach((item,index)=>{const destination=programDestinations[index];if(destination)makeCardLink(item,destination[0],destination[1]);});
   };
 
-  const boot=()=>{addRedditTop();cleanHomeSurface();addNativeTerritories();installAuditRepairs();installRisingCounter();};
+  const boot=()=>{addRedditTop();cleanHomeSurface();installAuditRepairs();installRisingCounter();};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
   const load=src=>new Promise((ok,fail)=>{const s=document.createElement('script');s.src=src;s.async=false;s.onload=ok;s.onerror=fail;document.head.appendChild(s)});
   (async()=>{try{await load('/js/global-signals-lib.js?v=5');await Promise.all([load('/js/global-signals-home.js?v=5'),load('/js/home-support.js?v=5')]);}catch(e){console.error('Passport Home Wire',e)}})();
