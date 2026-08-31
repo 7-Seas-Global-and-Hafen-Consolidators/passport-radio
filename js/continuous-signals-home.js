@@ -8,7 +8,8 @@
 
   const SIGNALS = [
     { key: 'metal', label: 'METAL', stream: 'https://mediaserv68.live-streams.nl:18012/OnlyLive' },
-    { key: 'unplugged', label: 'UNPLUGGED', stream: 'https://stations.radio-host.com/proxy/unpluggedlive/stream' },
+    { key: 'unplugged', label: 'UNPLUGGED · RADIO 7', stream: 'https://streams.radio7.de/unplugged/mp3-192/web/' },
+    { key: 'regenbogen', label: 'UNPLUGGED · REGENBOGEN', stream: 'https://stream.regenbogen.de/unplugged/mp3-128/stream.regenbogen.de/' },
     { key: 'livejam', label: 'LIVE JAM', stream: 'https://stations.radio-host.com/proxy/livejam/stream' }
   ];
 
@@ -86,8 +87,6 @@
       if (wasPlaying) start(false);
     };
 
-    /* These assignments deliberately replace portal-home.js MP3 handlers.
-       This is the ownership point that was previously racing with that file. */
     play.onclick = () => {
       if (audio.paused) start(false);
       else {
@@ -126,8 +125,6 @@
     arm(false);
   };
 
-  /* passport-legal-footer.js can inject this file before portal-home.js has
-     finished. Waiting for window.load guarantees our handlers are installed last. */
   if (document.readyState === 'complete') install();
   else window.addEventListener('load', install, { once: true });
 })();
