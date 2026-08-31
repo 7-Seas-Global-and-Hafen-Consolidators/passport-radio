@@ -202,7 +202,7 @@ jobs:
               if token not in player:
                   raise SystemExit(f'Missing World Dial HLS contract: {token}')
 
-          if player.count("{id:'") != 14:
+          if player.count("{id:'") != 15:
               raise SystemExit('World Dial station count changed unexpectedly')
           if 'autoplay=' in player.lower():
               raise SystemExit('World Dial player must not enable autoplay')
@@ -211,5 +211,5 @@ jobs:
 
           print('OK World Dial HLS compatibility contract')
           print('OK Finland terrestrial stream preserved')
-          print('OK World Dial station count preserved: 14')
+          print('OK World Dial station count preserved: 15')
           PY

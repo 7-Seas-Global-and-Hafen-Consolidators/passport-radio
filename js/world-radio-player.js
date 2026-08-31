@@ -14,7 +14,8 @@ const stations=[
 {id:'fi',name:'Suomalainen rockradio',source:'Radio Rock Finland',terms:'Suomirock · Heavy metal · Power metal · Sinfoninen metalli',lang:'fi-FI',dir:'ltr',page:'/radio-mundo-player.html?station=fi',stream:'https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8'},
 {id:'cz',name:'České rockové rádio',source:'HEY Radio · Česká republika',terms:'Rock · Hard rock · Metal · Dark WAVE · Gothic · Post-punk',lang:'cs-CZ',dir:'ltr',page:'/radio-mundo-player.html?station=cz',stream:'https://icecast3.play.cz/hey-radio128.mp3'},
 {id:'lt',name:'Lietuvos roko radijas',source:'ROCK FM · Lietuva',terms:'Lietuviškas rokas · Alternative · Modern Rock · Hard Rock · Metal',lang:'lt-LT',dir:'ltr',page:'/radio-mundo-player.html?station=lt',stream:'https://stream2.rockfm.lt/crf128.mp3'},
-{id:'gr',name:'Ελληνικό ροκ ραδιόφωνο',source:'RED 96.3 · Αθήνα',terms:'Ροκ · Alternative · Pop Rock · Hard Rock · Heavy Metal',lang:'el-GR',dir:'ltr',page:'/radio-mundo-player.html?station=gr',stream:'https://stream.radiojar.com/redfm963'}
+{id:'gr',name:'Ελληνικό ροκ ραδιόφωνο',source:'RED 96.3 · Αθήνα',terms:'Ροκ · Alternative · Pop Rock · Hard Rock · Heavy Metal',lang:'el-GR',dir:'ltr',page:'/radio-mundo-player.html?station=gr',stream:'https://stream.radiojar.com/redfm963'},
+{id:'il',name:'רדיו מוזיקה ישראלית',source:'גלגלצ · ישראל',terms:'מוזיקה ישראלית · פופ · רוק · דאנס · להיטים בינלאומיים',lang:'he-IL',dir:'rtl',page:'/radio-mundo-player.html?station=il',stream:'https://glzwizzlv.bynetcdn.com/glglz_mp3'}
 ];
 const $=s=>document.querySelector(s),list=$('#world-stations'),audio=$('#world-audio'),play=$('#world-play'),stop=$('#world-stop'),controls=$('#world-controls'),embed=$('#world-embed'),name=$('#world-name'),desc=$('#world-description'),status=$('#world-status'),territory=$('#world-territory'),lang=$('#world-lang');
 let current=null,hls=null,hlsLoader=null;
