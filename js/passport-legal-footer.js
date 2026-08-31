@@ -2,6 +2,7 @@
   const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7728480662290062';
   const AMAZON_AFFILIATE_SRC = '/js/passport-amazon-affiliate.js?v=202608251738';
   const HOME_EDITORIAL_SRC = '/js/home-editorial-priority.js?v=202608311216';
+  const EDITORIAL_ROUTE_SRC = '/js/editorial-route.js?v=202608311405';
   const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
   const FLOAT_ID = 'passport-support-float';
 
@@ -36,10 +37,21 @@
     document.head.appendChild(script);
   };
 
+  const installEditorialRoute = () => {
+    if (!document.head || !document.querySelector('.pe-prose')) return;
+    if (document.querySelector('script[data-passport-editorial-route]')) return;
+    const script = document.createElement('script');
+    script.src = EDITORIAL_ROUTE_SRC;
+    script.defer = true;
+    script.dataset.passportEditorialRoute = '1';
+    document.head.appendChild(script);
+  };
+
   const install = () => {
     installAdSense();
     installAmazonAffiliate();
     installHomeEditorial();
+    installEditorialRoute();
     if (!document.body || document.getElementById(FLOAT_ID)) return;
 
     const link = document.createElement('a');
