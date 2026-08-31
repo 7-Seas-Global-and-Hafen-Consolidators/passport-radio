@@ -2,7 +2,7 @@
   const AMAZON_AFFILIATE_SRC = '/js/passport-amazon-affiliate.js?v=202608311800';
   const HOME_EDITORIAL_SRC = '/js/home-editorial-priority.js?v=202608311216';
   const EDITORIAL_ROUTE_SRC = '/js/editorial-route.js?v=202608311405';
-  const CONTINUOUS_HOME_SRC = '/js/continuous-signals-home.js?v=202608312030';
+  const CONTINUOUS_HOME_SRC = '/js/continuous-signals-home.js?v=202608312100';
 
   const installAmazonAffiliate = () => {
     if (!document.head) return;
