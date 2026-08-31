@@ -7,8 +7,10 @@ on:
       - 'tools/newsroom_editorial_confidence.py'
       - 'tools/newsroom_canary_runner.py'
       - 'tools/newsroom_placement_audit.py'
+      - 'tools/newsroom_placement_proposal.py'
       - 'tests/test_newsroom_media_golden.py'
       - 'tests/test_newsroom_placement_audit.py'
+      - 'tests/test_newsroom_placement_proposal.py'
       - 'ops/canary/*.json'
       - '.github/workflows/editorial-story-enrichment.yml'
       - '.github/workflows/newsroom-confidence-validation.yml'
@@ -28,17 +30,21 @@ jobs:
         with:
           python-version: '3.12'
       - name: Compile Newsroom confidence code
-        run: python -m py_compile tools/editorial_story_enricher.py tools/newsroom_editorial_confidence.py tools/newsroom_canary_runner.py tools/newsroom_placement_audit.py tests/test_newsroom_media_golden.py tests/test_newsroom_placement_audit.py
+        run: python -m py_compile tools/editorial_story_enricher.py tools/newsroom_editorial_confidence.py tools/newsroom_canary_runner.py tools/newsroom_placement_audit.py tools/newsroom_placement_proposal.py tests/test_newsroom_media_golden.py tests/test_newsroom_placement_audit.py tests/test_newsroom_placement_proposal.py
       - name: Run Newsroom golden set
         run: python tests/test_newsroom_media_golden.py
       - name: Run placement audit golden set
         run: python tests/test_newsroom_placement_audit.py
+      - name: Run gate-to-placement golden set
+        run: python tests/test_newsroom_placement_proposal.py
       - name: Validate historical Canary 002 manifest
         run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-002.json --run-id "pr-${{ github.run_id }}-legacy" --validate-only
       - name: Validate active Canary 003 manifest
         run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-003.json --run-id "pr-${{ github.run_id }}" --validate-only
       - name: Validate placement audit Canary 001 manifest
         run: python -c "import json,pathlib; p=pathlib.Path('ops/canary/placement-audit-001.json'); d=json.loads(p.read_text()); assert d['version']=='placement-audit-001'; assert d['composition_enabled'] is False; assert len(d['cases'])==5; print('PLACEMENT_AUDIT_CANARY_VALID')"
+      - name: Run gate-to-placement Canary 001
+        run: python tools/newsroom_placement_proposal.py --manifest ops/canary/placement-link-001.json --run-id "pr-${{ github.run_id }}"
       - name: Run active Canary 003 dry-run
         run: python tools/newsroom_canary_runner.py --manifest ops/canary/canary-003.json --run-id "pr-${{ github.run_id }}" --dry-run
       - name: Preserve validation audit
