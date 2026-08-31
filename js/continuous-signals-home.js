@@ -10,7 +10,7 @@
     { key: 'metal', label: 'METAL', stream: 'https://mediaserv68.live-streams.nl:18012/OnlyLive' },
     { key: 'unplugged', label: 'UNPLUGGED · RADIO 7', stream: 'https://streams.radio7.de/unplugged/mp3-192/web/' },
     { key: 'regenbogen', label: 'UNPLUGGED · REGENBOGEN', stream: 'https://stream.regenbogen.de/unplugged/mp3-128/stream.regenbogen.de/' },
-    { key: 'metalwarriors', label: 'HEAVY METAL', stream: 'https://nd02.ehostingperu.net:8009/stream' },
+    { key: 'metalwarriors', label: 'HEAVY METAL', stream: 'https://streaming.viphosting.cl/8012/stream' },
     { key: 'gothic', label: 'GOTHIC PASSPORT™', stream: 'https://streams.radio.co/s62583474c/listen' },
     { key: 'livejam', label: 'LIVE JAM', stream: 'https://stations.radio-host.com/proxy/livejam/stream' }
   ];
