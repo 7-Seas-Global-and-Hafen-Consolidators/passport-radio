@@ -8,6 +8,8 @@ on:
     paths:
       - '.github/workflows/editorial-tunnel.yml'
       - 'tools/editorial_tunnel_resilient.py'
+      - 'tools/editorial_tunnel_graph.py'
+      - 'tools/editorial_topic_intelligence.py'
       - 'data/editorial-rss-overrides.json'
       - 'data/editorial-sources-mena.json'
       - 'data/editorial-sources-east-africa.json'
@@ -36,7 +38,7 @@ jobs:
           python-version: '3.12'
       - name: Validate resilient RSS fallback
         run: |
-          python -m py_compile tools/editorial_tunnel_resilient.py
+          python -m py_compile tools/editorial_tunnel_resilient.py tools/editorial_tunnel_graph.py tools/editorial_topic_intelligence.py
           python tests/test_editorial_tunnel_rss_fallback.py
           python - <<'PY'
           import json
@@ -88,9 +90,9 @@ jobs:
           output_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8')
           print(json.dumps({'regional_sources_added': regional_added, 'source_url_overrides_applied': len(applied), 'overrides': applied}, ensure_ascii=False))
           PY
-      - name: Run Worldwide Editorial Tunnel
+      - name: Run Worldwide Editorial Graph Tunnel
         run: |
-          python tools/editorial_tunnel_resilient.py \
+          python tools/editorial_tunnel_graph.py \
             --sources build/editorial-sources-effective.json \
             --output-dir build/editorial-tunnel \
             --daily-limit 1200 \
@@ -105,7 +107,7 @@ jobs:
           from pathlib import Path
           radar=Path('build/editorial-tunnel/editorial-radar.json')
           daily=Path('build/editorial-tunnel/editorial-daily.json')
-          print('## Passport Editorial Tunnel™ — Worldwide 1200')
+          print('## Passport Editorial Tunnel™ — Worldwide 1200 + Editorial Graph')
           if radar.exists():
               r=json.loads(radar.read_text('utf-8'))
               health=r.get('source_health', [])
@@ -120,8 +122,13 @@ jobs:
               d=json.loads(daily.read_text('utf-8'))
               selected=d.get('selected', [])
               print(f"Selected reservoir: **{len(selected)}/{d.get('target',1200)}**")
+              actions={}
+              for item in selected:
+                  action=item.get('editorial_action','?')
+                  actions[action]=actions.get(action,0)+1
+              print('Editorial Graph actions: ' + ', '.join(f'{k}={v}' for k,v in sorted(actions.items())))
               for item in selected[:12]:
-                  print(f"- {item.get('primary_category','music')} · score {item.get('total_score',0)} · {item.get('title','')}")
+                  print(f"- {item.get('editorial_action','?')} · heat {item.get('hot_score',0)} · {item.get('entity_hint','')} · {item.get('title','')}")
           PY
       - name: Upload private editorial packet
         if: always()
