@@ -24,9 +24,29 @@
   const categoryLabels = {brasil:'Brasil', brazilian_rock:'Rock brasileiro', rock:'Rock', classic_rock:'Rock clássico', hard_rock:'Hard rock', hard_rock_metal:'Hard rock / metal', metal:'Metal', punk_hardcore:'Punk / hardcore', progressive_rock:'Rock progressivo', alternative_rock:'Rock alternativo', alternative_gothic:'Alternativo / gótico', pop_poprock:'Pop / pop rock', country_americana:'Country / americana', instruments:'Instrumentos', middle_east:'Oriente Médio', levant:'Levante', palestine:'Palestina', lebanon:'Líbano', jordan:'Jordânia', iran:'Irã', iraq:'Iraque', east_africa:'África Oriental', horn_of_africa:'Chifre da África', sudan:'Sudão', south_sudan:'Sudão do Sul', uganda:'Uganda', ethiopia:'Etiópia', eritrea:'Eritreia', somalia:'Somália', african_music:'Música africana', diaspora:'Diásporas'};
   const formatLabels = {FLASH:'Notícia', LIVE_SIGNAL:'Sinal ao vivo', MR_NOMAD:'Mr. Nomad'};
   const label = (map,value) => map[value] || String(value||'').replace(/_/g,' ');
+  const priority = [
+    {
+      title:'Por que Babyshambles acabou — e como Pete Doherty reuniu a banda sem Patrick Walden?',
+      deck:'Onze anos sem turnê. Uma reunião que Patrick Walden deveria viver. Um palco no KOKO e uma ausência impossível de esconder.',
+      url:'/editorial/2026/08/30/por-que-babyshambles-acabou-e-como-pete-doherty-reuniu-banda-sem-patrick-walden.html',
+      category:'rock',format:'MR_NOMAD',published_at:'2026-08-30T23:59:00-03:00',author:'Mr. Nomad'
+    },
+    {
+      title:'Por que Weezer voltou ao Blue Album para criar o Gold Album?',
+      deck:'Rivers Cuomo abriu os arquivos. Patrick Wilson voltou a escrever. E o Weezer decidiu descobrir o que ainda existe entre uma guitarra, um amplificador e quatro pessoas.',
+      url:'/editorial/2026/08/30/por-que-weezer-voltou-ao-blue-album-para-criar-gold-album.html',
+      category:'rock',format:'MR_NOMAD',published_at:'2026-08-30T23:58:00-03:00',author:'Mr. Nomad'
+    },
+    {
+      title:'Por que Alabama Shakes parou por 11 anos — e como a banda voltou em 2026',
+      deck:'Não houve uma grande explosão. Houve silêncio. Onze anos depois de Sound & Color, Alabama Shakes voltou — e o caminho de volta começou num pequeno convite no Alabama.',
+      url:'/editorial/2026/08/30/por-que-alabama-shakes-parou-11-anos-e-como-banda-voltou-2026.html',
+      category:'rock',format:'MR_NOMAD',published_at:'2026-08-30T23:57:00-03:00',author:'Mr. Nomad'
+    }
+  ];
   Promise.all([read('/data/editorial-manual-feed.json'),read('/data/editorial-feed.json')]).then(([manual,automatic])=>{
     const seen=new Set();
-    const items=[...(Array.isArray(manual&&manual.items)?manual.items:[]),...(Array.isArray(automatic&&automatic.items)?automatic.items:[])].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
+    const items=[...priority,...(Array.isArray(manual&&manual.items)?manual.items:[]),...(Array.isArray(automatic&&automatic.items)?automatic.items:[])].filter(item=>item&&item.url&&!seen.has(item.url)&&(seen.add(item.url),true));
     if(!items.length){empty.textContent='O próximo sinal editorial ainda está entrando no ar.';return;}
     empty.remove();
     feed.innerHTML=items.map(item=>`<a href="${esc(item.url)}"><small>${esc(label(formatLabels,item.format))} · ${esc(label(categoryLabels,item.category))}</small><h2>${esc(item.title)}</h2><p>${esc(item.deck||'')}</p><time>${esc(stamp(item.published_at))} · ${esc(item.author||'PASSPORT RADIO')}</time></a>`).join('');
