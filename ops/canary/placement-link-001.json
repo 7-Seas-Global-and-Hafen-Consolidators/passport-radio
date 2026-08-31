@@ -1,0 +1,115 @@
+{
+  "version": "placement-link-001",
+  "composition_enabled": false,
+  "purpose": "Link selection gate decisions to placement proposals and G1/G2 audit only; no HTML composition.",
+  "cases": [
+    {
+      "id": "current-official-video-reviewable",
+      "article_id": "/editorial/band-x-current.html",
+      "article_text": "A banda confirmou o novo ciclo. New Fire ganhou videoclipe oficial. O lançamento abre a próxima fase.",
+      "item": {"title": "Band X lança New Fire", "deck": "Novo clipe oficial", "url": "/editorial/band-x-current.html", "_media_terms": ["New Fire"]},
+      "decision": {
+        "query": "Band X New Fire",
+        "selected_video": "VIDEO000001",
+        "score": 0.91,
+        "confidence": 0.90,
+        "reason_selected": "evidence_backed_editorial_match",
+        "media_class": "music_video",
+        "media_terms": ["New Fire"],
+        "thresholds": {"score": 0.68, "confidence": 0.80, "ambiguity_margin": 0.12},
+        "candidates": [
+          {"video_id": "VIDEO000001", "title": "Band X - New Fire (Official Music Video)", "channel": "Band X", "video_year": 2026, "temporal_class": "current_window", "media_class": "music_video", "media_priority": 1.0, "score": 0.91, "confidence": 0.90, "authority": 1.0, "event_specificity": 0.9, "vetoes": []},
+          {"video_id": "VIDEO000002", "title": "Band X teaser", "channel": "Band X", "media_class": "promo_clip", "media_priority": 0.35, "score": 0.78, "confidence": 0.76, "event_specificity": 0.7, "vetoes": []},
+          {"video_id": "VIDEO000003", "title": "Band X reaction", "channel": "Fan TV", "score": 0.62, "confidence": 0.0, "event_specificity": 0.5, "vetoes": ["reaction"]}
+        ]
+      },
+      "expected_state": "REVIEWABLE"
+    },
+    {
+      "id": "unknown-date-demoted-to-illustration",
+      "article_id": "/editorial/band-x-unknown.html",
+      "article_text": "O anúncio abriu o novo ciclo. New Fire ganhou videoclipe oficial. A data do upload não pôde ser confirmada.",
+      "item": {"title": "Band X lança New Fire", "deck": "Novo clipe oficial", "url": "/editorial/band-x-unknown.html", "_media_terms": ["New Fire"]},
+      "decision": {
+        "query": "Band X New Fire",
+        "selected_video": "VIDEO000004",
+        "score": 0.89,
+        "confidence": 0.86,
+        "reason_selected": "evidence_backed_editorial_match",
+        "media_class": "music_video",
+        "media_terms": ["New Fire"],
+        "thresholds": {"score": 0.68, "confidence": 0.80, "ambiguity_margin": 0.12},
+        "candidates": [
+          {"video_id": "VIDEO000004", "title": "Band X - New Fire (Official Music Video)", "channel": "Band X", "video_year": null, "temporal_class": "date_unknown", "media_class": "music_video", "media_priority": 1.0, "score": 0.89, "confidence": 0.86, "authority": 1.0, "event_specificity": 0.9, "vetoes": []},
+          {"video_id": "VIDEO000005", "title": "Band X preview", "channel": "Band X", "score": 0.72, "confidence": 0.68, "vetoes": []},
+          {"video_id": "VIDEO000006", "title": "Fan upload", "channel": "Fan TV", "score": 0.55, "confidence": 0.0, "vetoes": ["fan_edit"]}
+        ]
+      },
+      "expected_state": "REVIEWABLE"
+    },
+    {
+      "id": "historical-with-year-context-reviewable",
+      "article_id": "/editorial/band-x-archive.html",
+      "article_text": "O arquivo recupera outra fase. New Fire aparece em registro histórico. O contexto ajuda a comparar a execução.",
+      "item": {"title": "Band X revisita New Fire", "deck": "Arquivo histórico", "url": "/editorial/band-x-archive.html", "_media_terms": ["New Fire"]},
+      "decision": {
+        "query": "Band X New Fire archive",
+        "selected_video": "VIDEO000007",
+        "score": 0.88,
+        "confidence": 0.84,
+        "reason_selected": "evidence_backed_editorial_match",
+        "media_class": "music_video",
+        "media_terms": ["New Fire"],
+        "thresholds": {"score": 0.68, "confidence": 0.80, "ambiguity_margin": 0.12},
+        "candidates": [
+          {"video_id": "VIDEO000007", "title": "Band X - New Fire archive", "channel": "Band X", "video_year": 1998, "temporal_class": "historical_archive", "media_class": "music_video", "media_priority": 1.0, "score": 0.88, "confidence": 0.84, "authority": 1.0, "event_specificity": 0.9, "vetoes": []},
+          {"video_id": "VIDEO000008", "title": "Band X archive clip", "channel": "Archive TV", "score": 0.70, "confidence": 0.64, "vetoes": []},
+          {"video_id": "VIDEO000009", "title": "Band X tribute", "channel": "Fan TV", "score": 0.50, "confidence": 0.0, "vetoes": ["tribute"]}
+        ]
+      },
+      "expected_state": "REVIEWABLE"
+    },
+    {
+      "id": "insufficient-runners-fails-closed",
+      "article_id": "/editorial/band-x-runners.html",
+      "article_text": "A banda confirmou o novo ciclo. New Fire ganhou videoclipe oficial. O lançamento abre a próxima fase.",
+      "item": {"title": "Band X lança New Fire", "deck": "Novo clipe oficial", "url": "/editorial/band-x-runners.html", "_media_terms": ["New Fire"]},
+      "decision": {
+        "query": "Band X New Fire",
+        "selected_video": "VIDEO000010",
+        "score": 0.91,
+        "confidence": 0.90,
+        "reason_selected": "evidence_backed_editorial_match",
+        "media_class": "music_video",
+        "media_terms": ["New Fire"],
+        "thresholds": {"score": 0.68, "confidence": 0.80, "ambiguity_margin": 0.12},
+        "candidates": [
+          {"video_id": "VIDEO000010", "title": "Band X - New Fire (Official Music Video)", "channel": "Band X", "video_year": 2026, "temporal_class": "current_window", "media_class": "music_video", "media_priority": 1.0, "score": 0.91, "confidence": 0.90, "authority": 1.0, "event_specificity": 0.9, "vetoes": []}
+        ]
+      },
+      "expected_state": "PROPOSED"
+    },
+    {
+      "id": "long-review-report-fails-completeness",
+      "article_id": "/editorial/band-x-long-anchor.html",
+      "article_text": "A banda confirmou o novo ciclo. New Fire ganhou um videoclipe oficial que acompanha cada mudança de dinâmica da faixa enquanto a câmera percorre o palco e destaca a execução de todos os integrantes durante a performance registrada para o lançamento. O ciclo continua.",
+      "item": {"title": "Band X lança New Fire", "deck": "Novo clipe oficial", "url": "/editorial/band-x-long-anchor.html", "_media_terms": ["New Fire"]},
+      "decision": {
+        "query": "Band X New Fire",
+        "selected_video": "VIDEO000011",
+        "score": 0.91,
+        "confidence": 0.90,
+        "reason_selected": "evidence_backed_editorial_match",
+        "media_class": "music_video",
+        "media_terms": ["New Fire"],
+        "thresholds": {"score": 0.68, "confidence": 0.80, "ambiguity_margin": 0.12},
+        "candidates": [
+          {"video_id": "VIDEO000011", "title": "Band X - New Fire (Official Music Video)", "channel": "Band X", "video_year": 2026, "temporal_class": "current_window", "media_class": "music_video", "media_priority": 1.0, "score": 0.91, "confidence": 0.90, "authority": 1.0, "event_specificity": 0.9, "vetoes": []},
+          {"video_id": "VIDEO000012", "title": "Band X teaser", "channel": "Band X", "score": 0.75, "confidence": 0.72, "vetoes": []},
+          {"video_id": "VIDEO000013", "title": "Band X fan clip", "channel": "Fan TV", "score": 0.50, "confidence": 0.0, "vetoes": ["fan_edit"]}
+        ]
+      },
+      "expected_state": "PROPOSED"
+    }
+  ]
+}
