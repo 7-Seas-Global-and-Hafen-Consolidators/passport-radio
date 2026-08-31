@@ -5,15 +5,29 @@
     {title:'Por que Weezer voltou ao Blue Album para criar o Gold Album?',short:'Weezer voltou a 1994 para descobrir o que ainda existe entre quatro músicos e uma guitarra.',url:'/editorial/2026/08/30/por-que-weezer-voltou-ao-blue-album-para-criar-gold-album.html',image:'https://img.youtube.com/vi/e_Ruon4JQzM/maxresdefault.jpg',alt:'Weezer ao vivo',meta:'Mr. Nomad · Weezer'},
     {title:'Por que Alabama Shakes parou por 11 anos — e como a banda voltou em 2026',short:'Alabama Shakes: onze anos de silêncio até o improvável caminho de volta.',url:'/editorial/2026/08/30/por-que-alabama-shakes-parou-11-anos-e-como-banda-voltou-2026.html',image:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Alabama%20Shakes%2001.jpg',alt:'Alabama Shakes ao vivo',meta:'Mr. Nomad · Alabama Shakes'}
   ];
+
+  let lastSignature = '';
+
   const apply = () => {
     const [lead,...sideStories]=stories;
     const hero=document.querySelector('.hero-main > a');
-    if(hero){hero.href=lead.url;hero.innerHTML=`<img src="${lead.image}" alt="${lead.alt}" referrerpolicy="no-referrer"><div class="hero-copy"><span class="eyebrow">${lead.meta}</span><h1>${lead.title}</h1><p>${lead.deck}</p></div>`;}
     const side=Array.from(document.querySelectorAll('.hero-side .hero-item > a'));
-    sideStories.forEach((story,index)=>{const slot=side[index];if(!slot)return;slot.href=story.url;slot.innerHTML=`<img src="${story.image}" alt="${story.alt}" referrerpolicy="no-referrer"><div><small>${story.meta}</small><h2>${story.short}</h2></div>`;});
-    const breaking=document.querySelector('.breaking-track');if(breaking)breaking.innerHTML=stories.map(story=>story.title).join('&nbsp; · &nbsp;');
+    const breaking=document.querySelector('.breaking-track');
     const feature=document.querySelector('#noticias .feature > a');
+    const signature=[hero?.getAttribute('href')||'',...side.map(slot=>slot.getAttribute('href')||''),feature?.getAttribute('href')||''].join('|');
+    const expected=[lead.url,...sideStories.map(story=>story.url),lead.url].join('|');
+    if(signature===expected&&lastSignature===expected)return;
+    if(hero){hero.href=lead.url;hero.innerHTML=`<img src="${lead.image}" alt="${lead.alt}" referrerpolicy="no-referrer"><div class="hero-copy"><span class="eyebrow">${lead.meta}</span><h1>${lead.title}</h1><p>${lead.deck}</p></div>`;}
+    sideStories.forEach((story,index)=>{const slot=side[index];if(!slot)return;slot.href=story.url;slot.innerHTML=`<img src="${story.image}" alt="${story.alt}" referrerpolicy="no-referrer"><div><small>${story.meta}</small><h2>${story.short}</h2></div>`;});
+    if(breaking)breaking.innerHTML=stories.map(story=>story.title).join('&nbsp; · &nbsp;');
     if(feature){feature.href=lead.url;feature.innerHTML=`<img src="${lead.image}" alt="${lead.alt}" referrerpolicy="no-referrer"><div><small>${lead.meta}</small><h3>${lead.title}</h3><p>${lead.deck}</p></div>`;}
+    lastSignature=expected;
   };
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>window.setTimeout(apply,0),{once:true});else window.setTimeout(apply,0);
+
+  const start=()=>{
+    apply();
+    [80,200,450,900,1600,2800].forEach(delay=>window.setTimeout(apply,delay));
+  };
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
