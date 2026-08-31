@@ -1,13 +1,13 @@
 (() => {
   const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7728480662290062';
   const AMAZON_AFFILIATE_SRC = '/js/passport-amazon-affiliate.js?v=202608251738';
+  const HOME_EDITORIAL_SRC = '/js/home-editorial-priority.js?v=202608311216';
   const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
   const FLOAT_ID = 'passport-support-float';
 
   const installAdSense = () => {
     if (!document.head) return;
     if (document.querySelector('script[data-passport-adsense],script[src^="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) return;
-
     const script = document.createElement('script');
     script.async = true;
     script.src = ADSENSE_SRC;
@@ -26,9 +26,20 @@
     document.head.appendChild(script);
   };
 
+  const installHomeEditorial = () => {
+    if (!document.head || location.pathname !== '/') return;
+    if (document.querySelector('script[data-passport-home-editorial]')) return;
+    const script = document.createElement('script');
+    script.src = HOME_EDITORIAL_SRC;
+    script.defer = true;
+    script.dataset.passportHomeEditorial = '1';
+    document.head.appendChild(script);
+  };
+
   const install = () => {
     installAdSense();
     installAmazonAffiliate();
+    installHomeEditorial();
     if (!document.body || document.getElementById(FLOAT_ID)) return;
 
     const link = document.createElement('a');
