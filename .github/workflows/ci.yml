@@ -1,0 +1,207 @@
+name: Passport CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate JSON data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          files = sorted(Path('data').glob('*.json'))
+          if not files:
+              raise SystemExit('No JSON files found in data/')
+          for path in files:
+              with path.open(encoding='utf-8') as fh:
+                  json.load(fh)
+              print(f'OK JSON: {path}')
+          PY
+
+      - name: Compile Python scripts
+        run: |
+          if [ -d scripts ]; then
+            python -m compileall -q scripts
+          fi
+
+      - name: Validate JavaScript syntax
+        run: |
+          node --check js/passport-phase1-discovery.js
+          node --check js/passport-phase2-home.js
+          node --check js/editorial-home.js
+          node --check js/global-signals-home.js
+          node --check js/global-signal-page.js
+          node --check js/global-signals-lib.js
+          node --check js/world-radio-player.js
+
+      - name: Validate critical editorial surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          required = [
+              Path('index.html'),
+              Path('editorial.html'),
+              Path('signal.html'),
+              Path('radio.html'),
+              Path('radio-mundo-player.html'),
+          ]
+          missing = [str(p) for p in required if not p.is_file()]
+          if missing:
+              raise SystemExit('Missing critical surfaces: ' + ', '.join(missing))
+          for path in required:
+              text = path.read_text(encoding='utf-8')
+              if '<html' not in text.lower() or '</html>' not in text.lower():
+                  raise SystemExit(f'Invalid HTML shell: {path}')
+              print(f'OK HTML: {path}')
+          mena = Path('oriente-medio.html')
+          if mena.exists():
+              text = mena.read_text(encoding='utf-8')
+              if '<html' not in text.lower() or '</html>' not in text.lower():
+                  raise SystemExit('Invalid HTML shell: oriente-medio.html')
+              print('OK HTML: oriente-medio.html')
+          PY
+
+      - name: Validate Phase 1 discovery contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          discovery = Path('js/passport-phase1-discovery.js').read_text(encoding='utf-8')
+          radio = Path('radio.html').read_text(encoding='utf-8')
+          tunnels = Path('js/radio-tunnels-ui.js').read_text(encoding='utf-8')
+          home_loader = Path('js/editorial-home.js').read_text(encoding='utf-8')
+          signal = Path('signal.html').read_text(encoding='utf-8')
+          signal_js = Path('js/global-signal-page.js').read_text(encoding='utf-8')
+
+          required_discovery_tokens = [
+              'WORLD DIAL', 'TUNNELS™', 'CONTINUOUS SIGNALS™',
+              'LIVE & RARE™', 'FLASH HOUSE', 'PROGRAMAS',
+              '/radio-mundo-player.html', '/radio.html#passportTunnels',
+              '/radio.html#continuous', '/radio.html#player',
+              '/radio.html#passportFlashHouse'
+          ]
+          for token in required_discovery_tokens:
+              if token not in discovery:
+                  raise SystemExit(f'Missing Phase 1 discovery contract: {token}')
+
+          for anchor in ['id="player"', 'id="passportTunnels"', 'id="continuous"']:
+              if anchor not in radio:
+                  raise SystemExit(f'Broken Phase 1 radio deep-link target: {anchor}')
+
+          if 'passportFlashHouse' not in tunnels:
+              raise SystemExit('Broken Phase 1 Flash House deep-link contract')
+
+          if '/js/passport-phase1-discovery.js?v=20260830' not in home_loader:
+              raise SystemExit('Phase 1 discovery loader is not wired into Home')
+
+          if '<audio' in discovery.lower() or 'new Audio(' in discovery or '.play(' in discovery:
+              raise SystemExit('Discovery layer must not embed or start audio')
+
+          if 'autoplay=' in discovery.lower():
+              raise SystemExit('Discovery layer must not enable autoplay')
+
+          for token in ['PASSPORT SIGNAL · RADAR', 'signal-status">RADAR', 'POR QUE ESTÁ NO RADAR', 'related-signals']:
+              if token not in signal_js:
+                  raise SystemExit(f'Missing compact Signal contract: {token}')
+
+          if 'signal-side' in signal or 'rail-title' in signal:
+              raise SystemExit('Legacy giant Signal sidebar returned')
+
+          print('OK Phase 1 discovery contracts')
+          print('OK protected audio boundary: no embedded audio/play/autoplay in discovery layer')
+          print('OK compact Passport Signal contracts')
+          PY
+
+      - name: Validate Phase 2 Home compression contracts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          phase2 = Path('js/passport-phase2-home.js').read_text(encoding='utf-8')
+          home = Path('js/global-signals-home.js').read_text(encoding='utf-8')
+          loader = Path('js/editorial-home.js').read_text(encoding='utf-8')
+
+          required_phase2 = [
+              'removeDuplicateQuickGrid',
+              'compactArchiveCards',
+              'compactAgenda',
+              'VER AGENDA COMPLETA',
+          ]
+          for token in required_phase2:
+              if token not in phase2:
+                  raise SystemExit(f'Missing Phase 2 Home contract: {token}')
+
+          required_home = [
+              'HOME_VISIBLE=12',
+              'HOME_TERRITORIES=4',
+              'ABRIR GLOBAL WIRE',
+              'ABRIR WORLD DIAL COMPLETO',
+              'desired:44',
+          ]
+          for token in required_home:
+              if token not in home:
+                  raise SystemExit(f'Missing compact Home Wire contract: {token}')
+
+          if '/js/passport-phase2-home.js?v=20260830' not in loader:
+              raise SystemExit('Phase 2 Home loader is not wired')
+
+          protected_tokens = ['new Audio(', '.play(', 'autoplay=']
+          for token in protected_tokens:
+              if token.lower() in phase2.lower():
+                  raise SystemExit(f'Phase 2 must not touch audio playback: {token}')
+
+          if 'Every Song Is A Destination.' in home or '— MR. NOMAD' in home:
+              raise SystemExit('Legacy visible World Wire footer returned')
+
+          print('OK Phase 2 Home compression contracts')
+          print('OK Global Wire engine depth preserved: desired 44')
+          print('OK protected audio boundary: Phase 2 contains no playback code')
+          PY
+
+      - name: Validate World Dial HLS compatibility contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          player = Path('js/world-radio-player.js').read_text(encoding='utf-8')
+          page = Path('radio-mundo-player.html').read_text(encoding='utf-8')
+
+          required = [
+              "https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8",
+              "https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js",
+              "application/vnd.apple.mpegurl",
+              "Hls.isSupported()",
+              "prepareHls",
+              "destroyHls",
+          ]
+          for token in required:
+              if token not in player:
+                  raise SystemExit(f'Missing World Dial HLS contract: {token}')
+
+          if player.count("{id:'") != 13:
+              raise SystemExit('World Dial station count changed unexpectedly')
+          if 'autoplay=' in player.lower():
+              raise SystemExit('World Dial player must not enable autoplay')
+          if '/js/world-radio-player.js?v=9' not in page:
+              raise SystemExit('World Dial cache version is not v9')
+
+          print('OK World Dial HLS compatibility contract')
+          print('OK Finland terrestrial stream preserved')
+          print('OK World Dial station count preserved: 13')
+          PY
