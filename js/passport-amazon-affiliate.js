@@ -8,12 +8,14 @@
   const AMAZON = {
     href: 'https://www.amazon.com.br/b?node=104007590011&linkCode=ll2&tag=passportradio-20&linkId=edae5781198a3cecf47411d190e375a1&ref_=as_li_ss_tl',
     label: 'AMAZON · SELEÇÃO PASSPORT',
+    short: 'AMAZON',
     network: 'AMAZON'
   };
 
   const SHOPEE = {
     href: 'https://s.shopee.com.br/3qMaqyNivG',
     label: 'SHOPEE · ACHADOS PASSPORT',
+    short: 'SHOPEE',
     network: 'SHOPEE'
   };
 
@@ -34,47 +36,87 @@
     const style = document.createElement('style');
     style.id = 'passport-commercial-style';
     style.textContent = `
-      .passport-sponsor-strip,
+      .passport-commercial-rail,
       .passport-corner-ribbon,
       .passport-affiliate-legal{box-sizing:border-box;font-family:Inter,Arial,Helvetica,sans-serif}
-      .passport-sponsor-strip *{box-sizing:border-box}
-      .passport-sponsor-strip{
-        width:min(calc(100% - 32px),1180px);
-        margin:22px auto 28px;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        border:1px solid rgba(17,17,17,.18);
-        background:#f5f1e8;
-        color:#111;
+
+      .passport-commercial-rail{
+        display:none;
+        position:fixed;
+        z-index:42;
+        top:50%;
+        transform:translateY(-50%);
+        width:74px;
+        min-height:330px;
+        border:1px solid rgba(0,0,0,.16);
+        box-shadow:0 8px 28px rgba(0,0,0,.12);
+        text-decoration:none!important;
+        overflow:hidden;
+        isolation:isolate;
       }
-      .passport-sponsor-strip__link{
+      .passport-commercial-rail--left{left:8px}
+      .passport-commercial-rail--right{right:8px}
+      .passport-commercial-rail[data-network="AMAZON"]{background:#131921;color:#fff!important}
+      .passport-commercial-rail[data-network="SHOPEE"]{background:#ee4d2d;color:#fff!important}
+      .passport-commercial-rail__inner{
+        position:absolute;
+        inset:0;
         display:flex;
+        flex-direction:column;
         align-items:center;
         justify-content:space-between;
-        gap:18px;
-        min-height:58px;
-        padding:12px 16px;
-        color:inherit!important;
-        text-decoration:none!important;
+        padding:16px 8px;
       }
-      .passport-sponsor-strip__link + .passport-sponsor-strip__link{border-left:1px solid rgba(17,17,17,.18)}
-      .passport-sponsor-strip__copy{display:grid;gap:3px}
-      .passport-sponsor-strip small{
+      .passport-commercial-rail__brand{
+        writing-mode:vertical-rl;
+        transform:rotate(180deg);
+        font-size:22px;
+        line-height:1;
+        font-weight:1000;
+        letter-spacing:.08em;
+      }
+      .passport-commercial-rail__copy{
+        writing-mode:vertical-rl;
+        transform:rotate(180deg);
         font-size:8px;
-        font-weight:800;
-        letter-spacing:.16em;
-        text-transform:uppercase;
-        color:#6d685f;
-      }
-      .passport-sponsor-strip strong{
-        font-size:12px;
+        line-height:1.15;
         font-weight:900;
-        letter-spacing:.035em;
+        letter-spacing:.13em;
         text-transform:uppercase;
+        opacity:.9;
       }
-      .passport-sponsor-strip__go{font-size:15px;font-weight:900}
-      .passport-sponsor-strip__link:hover,
-      .passport-sponsor-strip__link:focus-visible{background:#fff;outline:2px solid #111;outline-offset:-2px}
+      .passport-commercial-rail__go{
+        width:30px;
+        height:30px;
+        display:grid;
+        place-items:center;
+        border-radius:50%;
+        background:#fff;
+        color:#111;
+        font-size:16px;
+        font-weight:1000;
+      }
+      .passport-commercial-rail::after{
+        content:'';
+        position:absolute;
+        inset:-45% -120%;
+        z-index:-1;
+        background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.30) 50%,transparent 58%);
+        transform:translateX(-55%);
+        animation:passportCommercialSweep 5.8s ease-in-out infinite;
+      }
+      .passport-commercial-rail:hover,
+      .passport-commercial-rail:focus-visible{
+        outline:3px solid #fff;
+        outline-offset:-5px;
+        filter:brightness(1.08);
+      }
+      @keyframes passportCommercialSweep{
+        0%,72%,100%{transform:translateX(-55%);opacity:0}
+        77%{opacity:1}
+        90%{transform:translateX(55%);opacity:1}
+        94%{opacity:0}
+      }
 
       .passport-corner-ribbon{
         display:none;
@@ -109,44 +151,39 @@
         line-height:1.45;
       }
 
-      @media(min-width:1280px){.passport-corner-ribbon{display:block}}
-      @media(max-width:760px){
-        .passport-sponsor-strip{width:calc(100% - 20px);grid-template-columns:1fr;margin:16px auto 20px}
-        .passport-sponsor-strip__link + .passport-sponsor-strip__link{border-left:0;border-top:1px solid rgba(17,17,17,.18)}
-        .passport-affiliate-legal{width:calc(100% - 20px);font-size:8px}
+      @media(min-width:1440px){
+        .passport-commercial-rail{display:block}
+        .passport-corner-ribbon{display:block}
       }
+      @media(min-width:1280px) and (max-width:1439px){.passport-corner-ribbon{display:block}}
+      @media(max-width:760px){.passport-affiliate-legal{width:calc(100% - 20px);font-size:8px}}
+      @media(prefers-reduced-motion:reduce){.passport-commercial-rail::after{animation:none}}
       @media print{
-        .passport-sponsor-strip,.passport-corner-ribbon,.passport-affiliate-legal{display:none!important}
+        .passport-commercial-rail,.passport-corner-ribbon,.passport-affiliate-legal{display:none!important}
       }
     `;
     document.head.appendChild(style);
   };
 
-  const makeSponsor = (item) => {
+  const makeCommercialRail = (item, side) => {
     const a = document.createElement('a');
     a.href = item.href;
     a.target = '_blank';
     a.rel = 'nofollow sponsored noopener noreferrer';
-    a.className = 'passport-sponsor-strip__link';
+    a.className = `passport-commercial-rail passport-commercial-rail--${side}`;
     a.dataset.network = item.network;
-    a.innerHTML = `<span class="passport-sponsor-strip__copy"><small>PARCEIRO · PASSPORT RADIO</small><strong>${item.label}</strong></span><span class="passport-sponsor-strip__go" aria-hidden="true">↗</span>`;
+    a.setAttribute('aria-label', item.label);
+    a.innerHTML = `<span class="passport-commercial-rail__inner"><strong class="passport-commercial-rail__brand">${item.short}</strong><span class="passport-commercial-rail__copy">PARCEIRO · PASSPORT RADIO</span><span class="passport-commercial-rail__go" aria-hidden="true">↗</span></span>`;
     return a;
   };
 
-  const installSponsorStrip = () => {
-    if (document.getElementById('passport-sponsor-strip')) return;
-    const strip = document.createElement('aside');
-    strip.id = 'passport-sponsor-strip';
-    strip.className = 'passport-sponsor-strip';
-    strip.setAttribute('aria-label', 'Parceiros Passport Radio');
-    strip.appendChild(makeSponsor(AMAZON));
-    strip.appendChild(makeSponsor(SHOPEE));
-
-    const header = document.querySelector('header');
-    const main = document.querySelector('main');
-    if (header && header.parentNode) header.insertAdjacentElement('afterend', strip);
-    else if (main) main.insertAdjacentElement('beforebegin', strip);
-    else document.body.prepend(strip);
+  const installCommercialRails = () => {
+    if (document.getElementById('passport-commercial-rail-left')) return;
+    const amazon = makeCommercialRail(AMAZON, 'left');
+    amazon.id = 'passport-commercial-rail-left';
+    const shopee = makeCommercialRail(SHOPEE, 'right');
+    shopee.id = 'passport-commercial-rail-right';
+    document.body.append(amazon, shopee);
   };
 
   const makeRibbon = (item, side) => {
@@ -181,7 +218,7 @@
   const install = () => {
     if (!document.body) return;
     installStyle();
-    installSponsorStrip();
+    installCommercialRails();
     installPassportRibbons();
     installAmazonDisclosure();
   };
