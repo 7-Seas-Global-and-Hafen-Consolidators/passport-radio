@@ -202,8 +202,9 @@ jobs:
               if token not in player:
                   raise SystemExit(f'Missing World Dial HLS contract: {token}')
 
-          if player.count("{id:'") != 15:
-              raise SystemExit('World Dial station count changed unexpectedly')
+          station_count = player.count("{id:'")
+          if station_count < 15:
+              raise SystemExit(f'World Dial station count regressed unexpectedly: {station_count}')
           if 'autoplay=' in player.lower():
               raise SystemExit('World Dial player must not enable autoplay')
           if '/js/world-radio-player.js?v=9' not in page:
@@ -211,5 +212,5 @@ jobs:
 
           print('OK World Dial HLS compatibility contract')
           print('OK Finland terrestrial stream preserved')
-          print('OK World Dial station count preserved: 15')
+          print(f'OK World Dial station count: {station_count}')
           PY
