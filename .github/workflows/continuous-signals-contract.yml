@@ -1,0 +1,23 @@
+name: Continuous Signals Contract
+
+on:
+  pull_request:
+    paths:
+      - 'js/passport-live.js'
+      - 'tools/validate_continuous_signals.py'
+      - '.github/workflows/continuous-signals-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'js/passport-live.js'
+      - 'tools/validate_continuous_signals.py'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python tools/validate_continuous_signals.py
