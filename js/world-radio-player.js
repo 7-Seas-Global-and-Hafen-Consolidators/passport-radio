@@ -12,6 +12,7 @@ const stations=[
 {id:'pk',name:'پاکستانی موسیقی ریڈیو',source:'CityFM89',terms:'پاکستانی موسیقی · پاپ · راک · انڈی · صوفی موسیقی',lang:'ur-PK',dir:'rtl',page:'/radio-mundo-player.html?station=pk',stream:'https://radio.cityfm89.com/stream'},
 {id:'ro',name:'Radio Muzică Românească',source:'Rock FM România',terms:'Rock românesc · Rock · Metal',lang:'ro-RO',dir:'ltr',page:'/radio-romania.html',stream:'https://live.rockfm.ro/rockfm.aacp'},
 {id:'fi',name:'Suomalainen rockradio',source:'Radio Rock Finland',terms:'Suomirock · Heavy metal · Power metal · Sinfoninen metalli',lang:'fi-FI',dir:'ltr',page:'/radio-mundo-player.html?station=fi',stream:'https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8'},
+{id:'jp',name:'日本の音楽ラジオ',source:'TOKYO FM 80.0 · 東京',terms:'J-POP · J-ROCK · 音楽 · エンタメ · カルチャー',lang:'ja-JP',dir:'ltr',page:'/radio-mundo-player.html?station=jp',embed:'https://www.tfm.co.jp/radikoplayer/'},
 {id:'cz',name:'České rockové rádio',source:'HEY Radio · Česká republika',terms:'Rock · Hard rock · Metal · Dark WAVE · Gothic · Post-punk',lang:'cs-CZ',dir:'ltr',page:'/radio-mundo-player.html?station=cz',stream:'https://icecast3.play.cz/hey-radio128.mp3'}
 ];
 const $=s=>document.querySelector(s),list=$('#world-stations'),audio=$('#world-audio'),play=$('#world-play'),stop=$('#world-stop'),controls=$('#world-controls'),embed=$('#world-embed'),name=$('#world-name'),desc=$('#world-description'),status=$('#world-status'),territory=$('#world-territory'),lang=$('#world-lang');
