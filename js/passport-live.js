@@ -6,6 +6,7 @@
     metal: { label: "METAL", stream: "https://mediaserv68.live-streams.nl:18012/OnlyLive" },
     unplugged: { label: "UNPLUGGED · RADIO 7", stream: "https://streams.radio7.de/unplugged/mp3-192/web/" },
     regenbogen: { label: "UNPLUGGED · REGENBOGEN", stream: "https://stream.regenbogen.de/unplugged/mp3-128/stream.regenbogen.de/" },
+    metalwarriors: { label: "METAL WARRIORS · PERU", stream: "https://nd02.ehostingperu.net:8009/stream" },
     livejam: { label: "LIVE JAM", stream: "https://stations.radio-host.com/proxy/livejam/stream" }
   };
 
@@ -91,7 +92,7 @@
   function buildPlayer() {
     const host = document.getElementById("passport-live-radio");
     if (!host) return;
-    host.innerHTML = `<section class="passport-live-panel"><div class="passport-live-head"><div><small>PASSPORT LIVE</small><strong id="passport-live-channel-name">METAL</strong></div></div><div class="passport-live-channels"><button type="button" class="passport-live-channel is-active" data-live-channel="metal">METAL</button><button type="button" class="passport-live-channel" data-live-channel="unplugged">UNPLUGGED · RADIO 7</button><button type="button" class="passport-live-channel" data-live-channel="regenbogen">UNPLUGGED · REGENBOGEN</button><button type="button" class="passport-live-channel" data-live-channel="livejam">LIVE JAM</button></div><div class="passport-live-controls"><button id="passport-live-play" type="button" class="passport-live-play" aria-label="Ouvir ao vivo" title="Ouvir ao vivo">▶</button><span id="passport-live-status">PRONTO</span></div><audio id="passport-live-audio" preload="none"></audio></section>`;
+    host.innerHTML = `<section class="passport-live-panel"><div class="passport-live-head"><div><small>PASSPORT LIVE</small><strong id="passport-live-channel-name">METAL</strong></div></div><div class="passport-live-channels"><button type="button" class="passport-live-channel is-active" data-live-channel="metal">METAL</button><button type="button" class="passport-live-channel" data-live-channel="unplugged">UNPLUGGED · RADIO 7</button><button type="button" class="passport-live-channel" data-live-channel="regenbogen">UNPLUGGED · REGENBOGEN</button><button type="button" class="passport-live-channel" data-live-channel="metalwarriors">METAL WARRIORS · PERU</button><button type="button" class="passport-live-channel" data-live-channel="livejam">LIVE JAM</button></div><div class="passport-live-controls"><button id="passport-live-play" type="button" class="passport-live-play" aria-label="Ouvir ao vivo" title="Ouvir ao vivo">▶</button><span id="passport-live-status">PRONTO</span></div><audio id="passport-live-audio" preload="none"></audio></section>`;
     installChannelButtons();
     installPlayerControls();
     selectChannel("metal", false);
