@@ -1,0 +1,37 @@
+{
+  "version": "placement-audit-001",
+  "purpose": "Validate the Newsroom three-layer placement audit before any composition code exists.",
+  "composition_enabled": false,
+  "cases": [
+    {
+      "id": "media-positive-four-whys",
+      "layer": "media",
+      "expected": "REVIEWABLE",
+      "guards": ["anchor_integrity", "provenance", "accessibility", "runners_up", "report_complete"]
+    },
+    {
+      "id": "media-stale-anchor",
+      "layer": "media",
+      "expected": "REANCHOR_REQUIRED",
+      "reason_code": "ANCHOR_STALE"
+    },
+    {
+      "id": "article-heavy-rhythm",
+      "layer": "article",
+      "expected": "CONFLICT",
+      "reason_code": "ASSEMBLY_RHYTHM_CONFLICT"
+    },
+    {
+      "id": "corpus-bridge-verbatim",
+      "layer": "corpus",
+      "expected": "BRIDGE_REWRITE",
+      "reason_code": "CORPUS_BRIDGE_DUPLICATE"
+    },
+    {
+      "id": "corpus-fingerprint",
+      "layer": "corpus",
+      "expected": "CORPUS_REVIEW_REQUIRED",
+      "reason_code": "CORPUS_FINGERPRINT_FLAG"
+    }
+  ]
+}
