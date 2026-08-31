@@ -3,7 +3,7 @@
   "use strict";
 
   const CHANNELS = {
-    metal: { label: "METAL", stream: "https://stations.radio-host.com/proxy/metalmanialive/stream" },
+    metal: { label: "METAL", stream: "https://mediaserv68.live-streams.nl:18012/OnlyLive" },
     unplugged: { label: "UNPLUGGED", stream: "https://stations.radio-host.com/proxy/unpluggedlive/stream" },
     livejam: { label: "LIVE JAM", stream: "https://stations.radio-host.com/proxy/livejam/stream" }
   };

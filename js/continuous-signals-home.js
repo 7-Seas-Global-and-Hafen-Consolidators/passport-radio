@@ -7,7 +7,7 @@
   if (location.pathname !== '/' && location.pathname !== '/index.html') return;
 
   const SIGNALS = [
-    { key: 'metal', label: 'METAL', stream: 'https://stations.radio-host.com/proxy/metalmanialive/stream' },
+    { key: 'metal', label: 'METAL', stream: 'https://mediaserv68.live-streams.nl:18012/OnlyLive' },
     { key: 'unplugged', label: 'UNPLUGGED', stream: 'https://stations.radio-host.com/proxy/unpluggedlive/stream' },
     { key: 'livejam', label: 'LIVE JAM', stream: 'https://stations.radio-host.com/proxy/livejam/stream' }
   ];
