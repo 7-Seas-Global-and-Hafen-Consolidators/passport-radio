@@ -1,495 +1,178 @@
-/*
-  PASSPORT RADIO
-  LIVE CHANNEL ENGINE
-  ===================
-
-  PLAYER 1:
-  portal-home.js
-  -> arquivos MP3 locais
-
-  PLAYER 2:
-  passport-live.js
-  -> canais de rádio ao vivo
-
-  CANAIS:
-  - METAL
-  - UNPLUGGED
-  - LIVE JAM
-*/
-
+/* PASSPORT RADIO — CONTINUOUS SIGNALS / PASSPORT LIVE */
 (() => {
   "use strict";
 
   const CHANNELS = {
-    metal: {
-      label: "METAL",
-      stream:
-        "https://stations.radio-host.com/proxy/metalmanialive/stream"
-    },
-
-    unplugged: {
-      label: "UNPLUGGED",
-      stream:
-        "https://stations.radio-host.com/proxy/unpluggedlive/stream"
-    },
-
-    livejam: {
-      label: "LIVE JAM",
-      stream:
-        "https://stations.radio-host.com/proxy/livejam/stream"
-    }
+    metal: { label: "METAL", stream: "https://stations.radio-host.com/proxy/metalmanialive/stream" },
+    unplugged: { label: "UNPLUGGED", stream: "https://stations.radio-host.com/proxy/unpluggedlive/stream" },
+    livejam: { label: "LIVE JAM", stream: "https://stations.radio-host.com/proxy/livejam/stream" }
   };
 
   let currentChannel = "metal";
+  let playAttempt = 0;
+  let retryTimer = 0;
+  let userPaused = true;
 
-  function getArchiveAudio() {
-    return document.getElementById("audio");
-  }
-
-  function getLiveAudio() {
-    return document.getElementById("passport-live-audio");
-  }
-
-  function getLivePlayButton() {
-    return document.getElementById("passport-live-play");
-  }
+  const getArchiveAudio = () => document.getElementById("audio");
+  const getLiveAudio = () => document.getElementById("passport-live-audio");
+  const getLivePlayButton = () => document.getElementById("passport-live-play");
 
   function stopArchive() {
     const archive = getArchiveAudio();
-
-    if (archive && !archive.paused) {
-      archive.pause();
-    }
-  }
-
-  function stopLive() {
-    const live = getLiveAudio();
-
-    if (live && !live.paused) {
-      live.pause();
-    }
+    if (archive && !archive.paused) archive.pause();
   }
 
   function setStatus(text) {
-    const status =
-      document.getElementById("passport-live-status");
-
-    if (status) {
-      status.textContent = text;
-    }
+    const status = document.getElementById("passport-live-status");
+    if (status) status.textContent = text;
   }
 
   function setChannelLabel(text) {
-    const label =
-      document.getElementById(
-        "passport-live-channel-name"
-      );
-
-    if (label) {
-      label.textContent = text;
-    }
+    const label = document.getElementById("passport-live-channel-name");
+    if (label) label.textContent = text;
   }
 
   function updateActiveButton(channelKey) {
-    const buttons =
-      document.querySelectorAll(
-        "[data-live-channel]"
-      );
-
-    buttons.forEach((button) => {
-      button.classList.toggle(
-        "is-active",
-        button.dataset.liveChannel === channelKey
-      );
+    document.querySelectorAll("[data-live-channel]").forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.liveChannel === channelKey);
     });
   }
 
-  function buildPlayer() {
-    const host =
-      document.getElementById(
-        "passport-live-radio"
-      );
+  function setPlayGlyph(playing) {
+    const button = getLivePlayButton();
+    if (button) button.textContent = playing ? "Ⅱ" : "▶";
+  }
 
-    if (!host) {
-      console.warn(
-        "[Passport Live] área do player não encontrada."
-      );
+  function getStream(channelKey, retry = false) {
+    const base = CHANNELS[channelKey]?.stream || "";
+    if (!base || !retry) return base;
+    return `${base}${base.includes("?") ? "&" : "?"}_passport=${Date.now()}`;
+  }
 
-      return;
+  function armStream(channelKey, retry = false) {
+    const live = getLiveAudio();
+    if (!live) return;
+    live.pause();
+    live.removeAttribute("src");
+    live.load();
+    live.src = getStream(channelKey, retry);
+    live.load();
+  }
+
+  async function startLive(retry = false) {
+    const live = getLiveAudio();
+    if (!live || !CHANNELS[currentChannel]) return;
+
+    clearTimeout(retryTimer);
+    stopArchive();
+    userPaused = false;
+    setStatus(retry ? "RECONECTANDO" : "CONECTANDO");
+    if (!live.src || retry) armStream(currentChannel, retry);
+
+    const attempt = ++playAttempt;
+    try {
+      await live.play();
+    } catch (error) {
+      if (attempt !== playAttempt || userPaused) return;
+      console.error("[Passport Live] falha de reprodução:", error);
+      if (!retry) {
+        setStatus("RECONECTANDO");
+        retryTimer = window.setTimeout(() => {
+          if (!userPaused) startLive(true);
+        }, 700);
+      } else {
+        setPlayGlyph(false);
+        setStatus("SINAL INDISPONÍVEL");
+      }
     }
+  }
 
-    host.innerHTML = `
-      <section class="passport-live-panel">
-
-        <div class="passport-live-head">
-
-          <div>
-            <small>
-              PASSPORT LIVE
-            </small>
-
-            <strong id="passport-live-channel-name">
-              METAL
-            </strong>
-          </div>
-
-        </div>
-
-        <div class="passport-live-channels">
-
-          <button
-            type="button"
-            class="passport-live-channel is-active"
-            data-live-channel="metal"
-          >
-            METAL
-          </button>
-
-          <button
-            type="button"
-            class="passport-live-channel"
-            data-live-channel="unplugged"
-          >
-            UNPLUGGED
-          </button>
-
-          <button
-            type="button"
-            class="passport-live-channel"
-            data-live-channel="livejam"
-          >
-            LIVE JAM
-          </button>
-
-        </div>
-
-        <div class="passport-live-controls">
-
-          <button
-            id="passport-live-play"
-            type="button"
-            class="passport-live-play"
-            aria-label="Ouvir ao vivo"
-            title="Ouvir ao vivo"
-          >
-            ▶
-          </button>
-
-          <span id="passport-live-status">
-            PRONTO
-          </span>
-
-        </div>
-
-        <audio
-          id="passport-live-audio"
-          preload="none"
-        ></audio>
-
-      </section>
-    `;
-
+  function buildPlayer() {
+    const host = document.getElementById("passport-live-radio");
+    if (!host) return;
+    host.innerHTML = `<section class="passport-live-panel"><div class="passport-live-head"><div><small>PASSPORT LIVE</small><strong id="passport-live-channel-name">METAL</strong></div></div><div class="passport-live-channels"><button type="button" class="passport-live-channel is-active" data-live-channel="metal">METAL</button><button type="button" class="passport-live-channel" data-live-channel="unplugged">UNPLUGGED</button><button type="button" class="passport-live-channel" data-live-channel="livejam">LIVE JAM</button></div><div class="passport-live-controls"><button id="passport-live-play" type="button" class="passport-live-play" aria-label="Ouvir ao vivo" title="Ouvir ao vivo">▶</button><span id="passport-live-status">PRONTO</span></div><audio id="passport-live-audio" preload="none"></audio></section>`;
     installChannelButtons();
     installPlayerControls();
-
-    selectChannel(
-      "metal",
-      false
-    );
+    selectChannel("metal", false);
   }
 
   function installChannelButtons() {
-    const buttons =
-      document.querySelectorAll(
-        "[data-live-channel]"
-      );
-
-    buttons.forEach((button) => {
-      button.addEventListener(
-        "click",
-        () => {
-          const channelKey =
-            button.dataset.liveChannel;
-
-          selectChannel(
-            channelKey,
-            true
-          );
-        }
-      );
+    document.querySelectorAll("[data-live-channel]").forEach((button) => {
+      button.addEventListener("click", () => selectChannel(button.dataset.liveChannel, true));
     });
   }
 
   function installPlayerControls() {
-    const play =
-      getLivePlayButton();
+    const play = getLivePlayButton();
+    const live = getLiveAudio();
+    if (!play || !live) return;
 
-    const live =
-      getLiveAudio();
-
-    if (!play || !live) {
-      return;
-    }
-
-    play.addEventListener(
-      "click",
-      async () => {
-        if (!live.src) {
-          setStatus(
-            "CANAL SEM STREAM"
-          );
-
-          return;
-        }
-
-        if (!live.paused) {
-          live.pause();
-          return;
-        }
-
-        stopArchive();
-
-        setStatus(
-          "CONECTANDO"
-        );
-
-        try {
-          await live.play();
-        } catch (error) {
-          console.error(
-            "[Passport Live] erro ao tocar:",
-            error
-          );
-
-          setStatus(
-            "ERRO AO CONECTAR"
-          );
-        }
+    play.addEventListener("click", () => {
+      if (!live.paused) {
+        userPaused = true;
+        ++playAttempt;
+        clearTimeout(retryTimer);
+        live.pause();
+      } else {
+        startLive(false);
       }
-    );
+    });
 
-    live.addEventListener(
-      "playing",
-      () => {
-        const playButton =
-          getLivePlayButton();
-
-        if (playButton) {
-          playButton.textContent = "Ⅱ";
-        }
-
-        setStatus(
-          "NO AR"
-        );
-      }
-    );
-
-    live.addEventListener(
-      "pause",
-      () => {
-        const playButton =
-          getLivePlayButton();
-
-        if (playButton) {
-          playButton.textContent = "▶";
-        }
-
-        setStatus(
-          "PAUSADO"
-        );
-      }
-    );
-
-    live.addEventListener(
-      "waiting",
-      () => {
-        setStatus(
-          "CONECTANDO"
-        );
-      }
-    );
-
-    live.addEventListener(
-      "stalled",
-      () => {
-        setStatus(
-          "RECONECTANDO"
-        );
-      }
-    );
-
-    live.addEventListener(
-      "canplay",
-      () => {
-        if (live.paused) {
-          setStatus(
-            "PRONTO"
-          );
-        }
-      }
-    );
-
-    live.addEventListener(
-      "error",
-      () => {
-        const playButton =
-          getLivePlayButton();
-
-        if (playButton) {
-          playButton.textContent = "▶";
-        }
-
-        setStatus(
-          "SINAL INDISPONÍVEL"
-        );
-
-        console.error(
-          "[Passport Live] erro de áudio:",
-          live.error
-        );
-      }
-    );
+    live.addEventListener("playing", () => {
+      userPaused = false;
+      setPlayGlyph(true);
+      setStatus("NO AR");
+    });
+    live.addEventListener("pause", () => {
+      setPlayGlyph(false);
+      if (userPaused) setStatus("PAUSADO");
+    });
+    live.addEventListener("waiting", () => { if (!userPaused) setStatus("CONECTANDO"); });
+    live.addEventListener("stalled", () => { if (!userPaused) setStatus("RECONECTANDO"); });
+    live.addEventListener("canplay", () => { if (live.paused && userPaused) setStatus("PRONTO"); });
+    live.addEventListener("error", () => {
+      console.error("[Passport Live] erro de áudio:", live.error);
+      if (!userPaused) setStatus("RECONECTANDO");
+      else setStatus("SINAL INDISPONÍVEL");
+    });
   }
 
-  function selectChannel(
-    channelKey,
-    autoplay
-  ) {
-    const config =
-      CHANNELS[channelKey];
+  function selectChannel(channelKey, autoplay) {
+    const config = CHANNELS[channelKey];
+    const live = getLiveAudio();
+    if (!config || !live) return;
 
-    if (!config) {
-      console.warn(
-        "[Passport Live] canal inexistente:",
-        channelKey
-      );
-
-      return;
-    }
-
-    const live =
-      getLiveAudio();
-
-    if (!live) {
-      return;
-    }
-
-    currentChannel =
-      channelKey;
-
-    const wasPlaying =
-      !live.paused;
-
-    live.pause();
-
-    live.removeAttribute(
-      "src"
-    );
-
-    live.load();
-
-    setChannelLabel(
-      config.label
-    );
-
-    updateActiveButton(
-      channelKey
-    );
-
-    live.src =
-      config.stream;
-
-    live.load();
-
-    setStatus(
-      "PRONTO"
-    );
-
-    const shouldPlay =
-      autoplay || wasPlaying;
-
-    if (shouldPlay) {
-      stopArchive();
-
-      setStatus(
-        "CONECTANDO"
-      );
-
-      live.play().catch(
-        (error) => {
-          console.error(
-            "[Passport Live] erro ao trocar canal:",
-            error
-          );
-
-          setStatus(
-            "CLIQUE NO PLAY"
-          );
-        }
-      );
-    }
-
-    console.log(
-      "[Passport Live] canal selecionado:",
-      config.label,
-      config.stream
-    );
+    ++playAttempt;
+    clearTimeout(retryTimer);
+    userPaused = true;
+    currentChannel = channelKey;
+    setChannelLabel(config.label);
+    updateActiveButton(channelKey);
+    setPlayGlyph(false);
+    setStatus("PRONTO");
+    armStream(channelKey, false);
+    if (autoplay) startLive(false);
   }
 
-  function installMutualExclusion() {
-    document.addEventListener(
-      "play",
-      (event) => {
-        const target =
-          event.target;
-
-        if (
-          !(
-            target instanceof
-            HTMLMediaElement
-          )
-        ) {
-          return;
-        }
-
-        if (
-          target.id ===
-          "passport-live-audio"
-        ) {
-          stopArchive();
-        }
-
-        if (
-          target.id ===
-          "audio"
-        ) {
-          stopLive();
-        }
-      },
-      true
-    );
+  function installArchiveInterlock() {
+    const archive = getArchiveAudio();
+    if (!archive) return;
+    archive.addEventListener("play", () => {
+      const live = getLiveAudio();
+      if (live && !live.paused) {
+        userPaused = true;
+        ++playAttempt;
+        clearTimeout(retryTimer);
+        live.pause();
+      }
+    });
   }
 
-  function boot() {
+  function init() {
     buildPlayer();
-
-    installMutualExclusion();
-
-    console.log(
-      "[Passport Live] motor iniciado.",
-      currentChannel
-    );
+    installArchiveInterlock();
   }
 
-  if (
-    document.readyState ===
-    "loading"
-  ) {
-    document.addEventListener(
-      "DOMContentLoaded",
-      boot
-    );
-  } else {
-    boot();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
+  else init();
 })();
