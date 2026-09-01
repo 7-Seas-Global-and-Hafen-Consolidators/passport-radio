@@ -1,0 +1,22 @@
+{
+  "topic_key": "rush-fifty-something-anika-nilles-neil-peart",
+  "entity": "Rush",
+  "date": "2026-09-01",
+  "publisher": "Passport Radio",
+  "author": "Mr. Nomad",
+  "parent": "/editorial/2026/09/01/rush-sem-neil-peart-anika-nilles-fifty-something.html",
+  "hub": "/editorial/2026/09/01/rush-fifty-something-guia-music-dna.html",
+  "nodes": [
+    {"type":"SIGNAL","path":"/editorial/2026/09/01/rush-adiciona-shows-2026-houston-st-louis-cincinnati-pittsburgh.html"},
+    {"type":"ANSWER","path":"/editorial/2026/09/01/rush-anika-nilles-fifty-something-montreal-2026.html"},
+    {"type":"ANSWER","path":"/editorial/2026/09/01/rush-brasil-2027-datas-fifty-something.html"},
+    {"type":"MUSIC_DNA","path":"/editorial/2026/09/01/quem-e-anika-nilles-baterista-rush.html"},
+    {"type":"MUSIC_DNA","path":"/editorial/2026/09/01/por-que-neil-peart-era-tao-importante-rush.html"},
+    {"type":"MUSIC_DNA","path":"/editorial/2026/09/01/geddy-lee-baixo-teclado-voz-rush.html"},
+    {"type":"MUSIC_DNA","path":"/editorial/2026/09/01/alex-lifeson-guitarra-rush-espaco.html"},
+    {"type":"MUSIC_DNA","path":"/editorial/2026/09/01/loren-gold-tecladista-rush-2026.html"},
+    {"type":"SONG_DNA","path":"/editorial/2026/09/01/rush-tom-sawyer-anika-nilles-bateria-2026.html"},
+    {"type":"SONG_DNA","path":"/editorial/2026/09/01/rush-yyz-sem-solo-neil-peart-2026.html"}
+  ],
+  "protected_scope": ["players","radio","audio","streams","world-dial","tunnels","interlock"]
+}
