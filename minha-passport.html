@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/passport-auth.css?v=1">
+  <link rel="stylesheet" href="/css/passport-auth.css?v=2">
 </head>
 <body>
   <main class="auth-shell">
@@ -31,7 +31,7 @@
 
       <form id="login-form" class="auth-form" autocomplete="on">
         <label>E-mail<input id="login-email" type="email" autocomplete="email" required></label>
-        <label>Senha<input id="login-password" type="password" autocomplete="current-password" minlength="6" required></label>
+        <label>Senha<input id="login-password" type="password" autocomplete="current-password" minlength="8" required></label>
         <button class="auth-primary" type="submit">ENTRAR</button>
         <button class="auth-link" id="forgot-password" type="button">Esqueci minha senha</button>
       </form>
@@ -42,6 +42,13 @@
         <label>Senha<input id="signup-password" type="password" autocomplete="new-password" minlength="8" required></label>
         <button class="auth-primary" type="submit">CRIAR MINHA CONTA</button>
         <p class="auth-small">Você receberá um e-mail para confirmar o cadastro.</p>
+      </form>
+
+      <form id="recovery-form" class="auth-form" autocomplete="on" hidden>
+        <p class="auth-kicker">NOVA SENHA</p>
+        <label>Nova senha<input id="recovery-password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Repita a nova senha<input id="recovery-password-confirm" type="password" autocomplete="new-password" minlength="8" required></label>
+        <button class="auth-primary" type="submit">SALVAR NOVA SENHA</button>
       </form>
 
       <section id="account-panel" class="account-panel" hidden>
@@ -60,6 +67,6 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/js/passport-auth.js?v=1" defer></script>
+  <script src="/js/passport-auth.js?v=2" defer></script>
 </body>
 </html>
