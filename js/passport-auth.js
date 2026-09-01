@@ -3,21 +3,19 @@
 
   const SUPABASE_URL='https://kmrnnudmujezriomimwn.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY='sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y';
+  const ACCOUNT_URL='https://passportradio.online/minha-passport.html';
 
   const $=id=>document.getElementById(id);
   const loginForm=$('login-form');
   const signupForm=$('signup-form');
+  const recoveryForm=$('recovery-form');
   const accountPanel=$('account-panel');
   const message=$('auth-message');
   const tabs=[...document.querySelectorAll('[data-auth-view]')];
+  let recoveryMode=new URLSearchParams(location.search).get('recovery')==='1';
 
   if(!window.supabase){
     show('Não foi possível carregar o serviço de conta. Tente novamente.',true);
-    return;
-  }
-
-  if(SUPABASE_PUBLISHABLE_KEY.includes('PASTE_')){
-    show('Configuração da conta ainda não foi concluída.',true);
     return;
   }
 
@@ -41,27 +39,44 @@
   }
 
   function setView(view){
+    recoveryMode=false;
     clearMessage();
     tabs.forEach(tab=>{
       const active=tab.dataset.authView===view;
+      tab.hidden=false;
       tab.classList.toggle('is-active',active);
       tab.setAttribute('aria-selected',String(active));
     });
     loginForm.hidden=view!=='login';
     signupForm.hidden=view!=='signup';
+    recoveryForm.hidden=true;
     accountPanel.hidden=true;
   }
 
+  function showRecovery(){
+    recoveryMode=true;
+    tabs.forEach(tab=>tab.hidden=true);
+    loginForm.hidden=true;
+    signupForm.hidden=true;
+    accountPanel.hidden=true;
+    recoveryForm.hidden=false;
+    show('Crie uma nova senha para sua Passport.',false,true);
+  }
+
   async function renderSession(session){
+    if(recoveryMode){showRecovery();return;}
     if(!session?.user){
       accountPanel.hidden=true;
+      recoveryForm.hidden=true;
       loginForm.hidden=false;
+      signupForm.hidden=true;
       tabs.forEach(tab=>tab.hidden=false);
       return;
     }
 
     loginForm.hidden=true;
     signupForm.hidden=true;
+    recoveryForm.hidden=true;
     tabs.forEach(tab=>tab.hidden=true);
     accountPanel.hidden=false;
 
@@ -98,28 +113,38 @@
     const {data,error}=await client.auth.signUp({
       email,
       password,
-      options:{
-        data:{display_name:displayName},
-        emailRedirectTo:'https://www.passportradio.online/minha-passport.html'
-      }
+      options:{data:{display_name:displayName},emailRedirectTo:ACCOUNT_URL}
     });
     setBusy(signupForm,false);
     if(error){show(error.message || 'Não foi possível criar a conta.',true);return;}
-    if(data.session){
-      show('Conta criada. Você já está conectado.',false,true);
-    }else{
-      show('Conta criada. Confira seu e-mail para confirmar o cadastro.',false,true);
-    }
+    if(data.session){show('Conta criada. Você já está conectado.',false,true);}
+    else{show('Conta criada. Confira seu e-mail para confirmar o cadastro.',false,true);}
   });
 
   $('forgot-password').addEventListener('click',async()=>{
     const email=$('login-email').value.trim();
     if(!email){show('Digite seu e-mail primeiro.',true);return;}
-    const {error}=await client.auth.resetPasswordForEmail(email,{
-      redirectTo:'https://www.passportradio.online/minha-passport.html?recovery=1'
-    });
+    const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:ACCOUNT_URL+'?recovery=1'});
     if(error){show('Não foi possível enviar a recuperação agora.',true);return;}
     show('Enviamos as instruções de recuperação para seu e-mail.',false,true);
+  });
+
+  recoveryForm.addEventListener('submit',async event=>{
+    event.preventDefault();
+    clearMessage();
+    const password=$('recovery-password').value;
+    const confirm=$('recovery-password-confirm').value;
+    if(password!==confirm){show('As duas senhas precisam ser iguais.',true);return;}
+    setBusy(recoveryForm,true);
+    const {error}=await client.auth.updateUser({password});
+    setBusy(recoveryForm,false);
+    if(error){show('Não foi possível atualizar a senha. Abra novamente o link enviado por e-mail.',true);return;}
+    recoveryMode=false;
+    history.replaceState({},'',location.pathname);
+    recoveryForm.reset();
+    const {data}=await client.auth.getSession();
+    await renderSession(data.session);
+    show('Senha atualizada com sucesso.',false,true);
   });
 
   $('logout-button').addEventListener('click',async()=>{
@@ -128,6 +153,10 @@
     show('Você saiu da sua conta.',false,true);
   });
 
-  client.auth.onAuthStateChange((_event,session)=>{renderSession(session);});
+  client.auth.onAuthStateChange((event,session)=>{
+    if(event==='PASSWORD_RECOVERY') recoveryMode=true;
+    setTimeout(()=>renderSession(session),0);
+  });
+
   client.auth.getSession().then(({data})=>renderSession(data.session));
 })();
