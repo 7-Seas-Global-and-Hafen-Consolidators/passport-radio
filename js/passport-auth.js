@@ -2,7 +2,7 @@
   'use strict';
 
   const SUPABASE_URL='https://kmrnnudmujezriomimwn.supabase.co';
-  const SUPABASE_PUBLISHABLE_KEY='PASTE_SUPABASE_PUBLISHABLE_KEY_HERE';
+  const SUPABASE_PUBLISHABLE_KEY='sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y';
 
   const $=id=>document.getElementById(id);
   const loginForm=$('login-form');
