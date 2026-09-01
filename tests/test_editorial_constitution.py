@@ -83,10 +83,10 @@ assert flash_schema["properties"]["sections"]["maxItems"] == 3
 
 engine_cfg=json.loads((ROOT / "data/editorial-engine.json").read_text("utf-8"))
 assert engine_cfg["version"] >= 11
-assert engine_cfg["local_zero_key_format"] == "FLASH"
+assert engine_cfg["local_zero_key_format"] == "STORY"
 assert engine_cfg["local_zero_key_force_batch"] == 2
 assert engine_cfg["local_zero_key_retry_limit"] == 1
-assert engine_cfg["minimum_words"]["FLASH"] == 300
+assert engine_cfg["minimum_words"]["FLASH"] == 520
 
 envelope=engine_cfg["local_zero_key_flash_envelope"]
 assert envelope == {
@@ -107,36 +107,15 @@ try:
     original={"recommended_format":"MR_NOMAD","_fact_pack":{"recommended_format":"MR_NOMAD","facts":FACTS}}
     routed=router._routed_candidate(original, engine_cfg)
     assert original["recommended_format"] == "MR_NOMAD"
-    assert routed["recommended_format"] == "FLASH"
-    assert routed["_fact_pack"]["recommended_format"] == "FLASH"
-    assert routed["_local_structural_envelope"] == envelope
+    assert routed["recommended_format"] == "STORY"
+    assert routed["_fact_pack"]["recommended_format"] == "STORY"
+    assert "_local_structural_envelope" not in routed
 finally:
     for name,value in saved.items():
         if value is None:
             os.environ.pop(name, None)
         else:
             os.environ[name]=value
-
-enveloped_schema=free._structured_output_schema(routed)
-sections_schema=enveloped_schema["properties"]["sections"]
-paragraphs_schema=sections_schema["items"]["properties"]["paragraphs"]
-text_schema=paragraphs_schema["items"]["properties"]["text"]
-closing_schema=enveloped_schema["properties"]["closing"]
-assert sections_schema["minItems"] == 2
-assert sections_schema["maxItems"] == 3
-assert paragraphs_schema["minItems"] == 2
-assert paragraphs_schema["maxItems"] == 3
-assert text_schema["minLength"] == 420
-assert text_schema["maxLength"] == 680
-assert closing_schema["minLength"] == 100
-assert closing_schema["maxLength"] == 280
-structural_floor_chars=(
-    sections_schema["minItems"]
-    * paragraphs_schema["minItems"]
-    * text_schema["minLength"]
-    + closing_schema["minLength"]
-)
-assert structural_floor_chars == 1780
 
 cleaned=router._clean_generated_metadata({
     "entities":["artistas/bandas/álbuns centrais","Iron Maiden"],
@@ -150,7 +129,7 @@ def generated(title, body):
         "title":title,
         "deck":"A agenda ganha um novo capítulo para o público brasileiro.",
         "kicker":"PASSPORT RADIO",
-        "format":"FLASH",
+        "format":"STORY",
         "category":"metal",
         "meta_description":"Uma atualização factual da agenda do Iron Maiden no Brasil.",
         "entities":["Iron Maiden","Brasil"],
@@ -163,7 +142,7 @@ retry_candidate={
     "title":"Iron Maiden confirma apresentação no Brasil",
     "description":"A banda confirmou nova apresentação no Brasil.",
     "primary_category":"metal",
-    "recommended_format":"FLASH",
+    "recommended_format":"STORY",
     "_fact_pack":{"event_id":"EVT_TEST","story_angle_id":"ANG_TEST","facts":copy.deepcopy(FACTS)},
     "_event_id":"EVT_TEST",
     "_story_angle_id":"ANG_TEST",
@@ -187,7 +166,7 @@ try:
         return copy.deepcopy(responses.pop(0))
     router._original_call=fake_call
     retry_cfg=copy.deepcopy(engine_cfg)
-    retry_cfg["minimum_words"]["FLASH"]=50
+    retry_cfg["minimum_words"]["STORY"]=50
     result=router.call_quality_routed(retry_candidate, "", retry_cfg)
     assert result["title"] == "Uma nova escala brasileira entra na rota do Iron Maiden"
     assert router._routing_stats["reprocess_attempts"] == base_attempts + 1
@@ -200,10 +179,8 @@ print(json.dumps({
     "rows":rows,
     "metrics":metrics,
     "structured_output_fact_ids":refs_schema["items"]["enum"],
-    "local_router":"FLASH",
+    "local_router":"STORY",
     "flash_max_sections":flash_schema["properties"]["sections"]["maxItems"],
-    "flash_structural_envelope":envelope,
-    "flash_structural_floor_chars":structural_floor_chars,
     "single_retry":True,
 }, ensure_ascii=False, indent=2))
 assert metrics["critical_false_accept"] == 0, metrics
