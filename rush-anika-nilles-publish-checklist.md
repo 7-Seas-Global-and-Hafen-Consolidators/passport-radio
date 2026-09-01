@@ -1,0 +1,21 @@
+# Publish checklist — Rush / Anika Nilles
+
+- [x] História Mr. Nomad, não notícia curta
+- [x] Neil Peart tratado como baterista + percussionista + letrista
+- [x] Geddy Lee: voz + baixo + teclados
+- [x] Alex Lifeson: guitarra + voz + texturas
+- [x] Anika Nilles: bateria + composição + produção
+- [x] Loren Gold identificado
+- [x] Show completo YouTube incorporado
+- [x] Timestamps de audição guiada
+- [x] Xanadu / baqueta contextualizado
+- [x] Tom Sawyer contextualizado
+- [x] 2112 integral contextualizado
+- [x] Montreal 02/09/2026
+- [x] Brasil 2027
+- [x] SEO intencional
+- [x] NewsArticle JSON-LD
+- [x] canonical
+- [x] max-image-preview / max-video-preview
+- [x] Créditos públicos: Passport Radio
+- [x] Zero alteração em player / rádio / stream / World Dial / Tunnels
