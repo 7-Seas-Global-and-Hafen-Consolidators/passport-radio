@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Minha Passport — crie sua conta, entre e gerencie sua experiência na Passport Radio.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0b0b0b">
+  <title>Minha Passport | Passport Radio</title>
+  <link rel="canonical" href="https://passportradio.online/minha-passport.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/passport-auth.css?v=1">
+</head>
+<body>
+  <main class="auth-shell">
+    <a class="auth-brand" href="/" aria-label="Voltar para Passport Radio">PASSPORT RADIO</a>
+
+    <section class="auth-card" aria-labelledby="auth-title">
+      <p class="auth-kicker">MINHA PASSPORT</p>
+      <h1 id="auth-title">Sua Passport começa aqui.</h1>
+      <p class="auth-lead">Entre para guardar favoritos, participar das votações e construir sua própria experiência na Passport.</p>
+
+      <div class="auth-tabs" role="tablist" aria-label="Conta Passport">
+        <button class="auth-tab is-active" type="button" data-auth-view="login" role="tab" aria-selected="true">ENTRAR</button>
+        <button class="auth-tab" type="button" data-auth-view="signup" role="tab" aria-selected="false">CRIAR CONTA</button>
+      </div>
+
+      <div id="auth-message" class="auth-message" role="status" aria-live="polite"></div>
+
+      <form id="login-form" class="auth-form" autocomplete="on">
+        <label>E-mail<input id="login-email" type="email" autocomplete="email" required></label>
+        <label>Senha<input id="login-password" type="password" autocomplete="current-password" minlength="6" required></label>
+        <button class="auth-primary" type="submit">ENTRAR</button>
+        <button class="auth-link" id="forgot-password" type="button">Esqueci minha senha</button>
+      </form>
+
+      <form id="signup-form" class="auth-form" autocomplete="on" hidden>
+        <label>Nome ou apelido<input id="signup-name" type="text" autocomplete="nickname" maxlength="60" required></label>
+        <label>E-mail<input id="signup-email" type="email" autocomplete="email" required></label>
+        <label>Senha<input id="signup-password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <button class="auth-primary" type="submit">CRIAR MINHA CONTA</button>
+        <p class="auth-small">Você receberá um e-mail para confirmar o cadastro.</p>
+      </form>
+
+      <section id="account-panel" class="account-panel" hidden>
+        <p class="auth-kicker">VOCÊ ESTÁ DENTRO</p>
+        <h2 id="account-name">Minha Passport</h2>
+        <p id="account-email" class="account-email"></p>
+        <div class="account-grid">
+          <div><strong>Favoritos</strong><span>Em breve aqui.</span></div>
+          <div><strong>Votos</strong><span>Em breve aqui.</span></div>
+        </div>
+        <button class="auth-primary auth-primary--dark" id="logout-button" type="button">SAIR</button>
+      </section>
+    </section>
+
+    <p class="auth-back"><a href="/">← Voltar para a Passport</a></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/passport-auth.js?v=1" defer></script>
+</body>
+</html>
