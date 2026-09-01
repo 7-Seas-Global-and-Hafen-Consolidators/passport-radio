@@ -3,7 +3,7 @@
   const PAYPAL='https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
   const CSS='/css/passport-support.css?v=7';
   const WAIT_SECONDS=15;
-  const DISMISS_KEY='passport-adblock-dismissed-v9';
+  const DISMISS_KEY='passport-adblock-dismissed-v10';
 
   const ensureCss=()=>{let link=document.querySelector('link[data-passport-support-css]');if(link){link.href=CSS;return;}link=document.createElement('link');link.rel='stylesheet';link.href=CSS;link.dataset.passportSupportCss='1';document.head.appendChild(link);};
   const markup=()=>`<div class="passport-support-global__inner"><div class="passport-support-global__copy"><span class="passport-support-global__eyebrow">APOIE · PASSPORT RADIO</span><h2>Mantenha a Passport no ar.</h2><p>Histórias, arquivos, pesquisa e produção independente continuam porque alguém decide que cultura musical ainda merece espaço.</p></div><div class="passport-support-global__actions"><a class="passport-support-global__button passport-support-global__button--primary" href="${ASAAS}" target="_blank" rel="noopener">APOIAR VIA ASAAS ↗</a><a class="passport-support-global__button passport-support-global__button--secondary" href="${PAYPAL}" target="_blank" rel="noopener">PAYPAL · ALTERNATIVA ↗</a><small class="passport-support-global__choice">Você escolhe o valor e a forma de apoio.</small><small class="passport-support-global__note">Recebimentos processados por GUIROPA WORLD INOVA SIMPLES (I.S.) · CNPJ 64.581.935/0001-91</small></div></div>`;
@@ -16,10 +16,17 @@
     overlay.id='passport-adblock-overlay';overlay.className='passport-adblock-overlay';overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-labelledby','passport-adblock-title');
     overlay.innerHTML=`<div class="passport-adblock-card"><div class="passport-adblock-character" aria-hidden="true"><img src="/images/sxwwj(1).jpg?v=1" alt="" loading="eager" decoding="async"></div><div class="passport-adblock-copy"><span class="passport-adblock-eyebrow">PASSPORT RADIO · SINAL INDEPENDENTE</span><h2 id="passport-adblock-title">Contribua para nos manter online</h2><p>Publicidade e contribuições ajudam a manter a Passport Radio gratuita, independente e no ar.</p><p class="passport-adblock-help" aria-live="polite">Escolha como deseja continuar.</p><button class="passport-adblock-primary" type="button">CONTINUAR GRATUITO</button><a class="passport-adblock-continue" href="${ASAAS}" target="_blank" rel="noopener">APOIAR A PASSPORT</a></div></div>`;
     document.body.appendChild(overlay);document.documentElement.classList.add('passport-support-modal-open');
-    const free=overlay.querySelector('.passport-adblock-primary');const support=overlay.querySelector('.passport-adblock-continue');const help=overlay.querySelector('.passport-adblock-help');let countdownStarted=false;let remaining=WAIT_SECONDS;let timer=null;free.focus();
-    const startCountdown=()=>{if(countdownStarted)return;countdownStarted=true;free.disabled=true;free.textContent='CONTINUAR GRATUITO';support.setAttribute('aria-disabled','true');support.style.pointerEvents='none';help.innerHTML='Aguarde <strong>15 segundos</strong> para continuar gratuitamente para a Passport.';support.textContent=`AGUARDE ${remaining}s`;timer=setInterval(()=>{remaining--;if(remaining<=0){clearInterval(timer);timer=null;support.removeAttribute('href');support.removeAttribute('target');support.removeAttribute('rel');support.removeAttribute('aria-disabled');support.style.pointerEvents='';support.textContent='CONTINUAR PARA A PASSPORT';support.setAttribute('role','button');return;}support.textContent=`AGUARDE ${remaining}s`;},1000);};
-    free.addEventListener('click',startCountdown);
-    support.addEventListener('click',event=>{if(!countdownStarted)return;if(timer||support.getAttribute('aria-disabled')==='true'){event.preventDefault();return;}event.preventDefault();overlay.remove();document.documentElement.classList.remove('passport-support-modal-open');try{sessionStorage.setItem(DISMISS_KEY,'1');}catch(_e){}});
+    const free=overlay.querySelector('.passport-adblock-primary');const support=overlay.querySelector('.passport-adblock-continue');const help=overlay.querySelector('.passport-adblock-help');let countdownStarted=false;let ready=false;let remaining=WAIT_SECONDS;let timer=null;free.focus();
+    const release=()=>{overlay.remove();document.documentElement.classList.remove('passport-support-modal-open');try{sessionStorage.setItem(DISMISS_KEY,'1');}catch(_e){}};
+    free.addEventListener('click',()=>{
+      if(ready){release();return;}
+      if(countdownStarted)return;
+      countdownStarted=true;
+      support.style.display='none';
+      help.innerHTML='Aguarde <strong>15 segundos</strong> para continuar gratuitamente para a Passport.';
+      free.textContent=`AGUARDE ${remaining}S`;
+      timer=setInterval(()=>{remaining--;if(remaining<=0){clearInterval(timer);timer=null;ready=true;free.textContent='CONTINUAR PARA A PASSPORT';help.textContent='Pronto. Continue para entrar na Passport.';return;}free.textContent=`AGUARDE ${remaining}S`;},1000);
+    });
   };
 
   const baitProbe=()=>new Promise(resolve=>{const bait=document.createElement('div');bait.innerHTML='&nbsp;';bait.className='adsbox ad-placement adsbygoogle pub_300x250 pub_728x90 text-ad text_ads ad-banner ad-unit advertisement';bait.setAttribute('aria-hidden','true');bait.style.cssText='position:absolute!important;left:0!important;bottom:0!important;width:10px!important;height:10px!important;overflow:hidden!important;pointer-events:none!important;opacity:.01!important;z-index:-1!important;';document.body.appendChild(bait);setTimeout(()=>{const s=getComputedStyle(bait);const blocked=!bait.isConnected||bait.offsetHeight===0||bait.offsetWidth===0||s.display==='none'||s.visibility==='hidden';bait.remove();resolve(blocked);},500);});
