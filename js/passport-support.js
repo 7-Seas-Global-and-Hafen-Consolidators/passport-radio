@@ -53,7 +53,7 @@
     overlay.setAttribute('aria-modal','true');
     overlay.setAttribute('aria-labelledby','passport-adblock-title');
     overlay.innerHTML=`<div class="passport-adblock-card">
-      <div class="passport-adblock-character" aria-hidden="true">😢</div>
+      <div class="passport-adblock-character" aria-hidden="true"><img src="/images/sxwwj(1).jpg" alt="" loading="eager" decoding="async"></div>
       <div class="passport-adblock-copy">
         <span class="passport-adblock-eyebrow">PASSPORT RADIO · SINAL INDEPENDENTE</span>
         <h2 id="passport-adblock-title">Contribua para nos manter online</h2>
