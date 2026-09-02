@@ -1,0 +1,1 @@
+Client-side account panel intentionally selects '*' from favorites and votes and filters only by authenticated user_id. This avoids assuming Qwen's proposed item_name/item_type/signal/round column schema. Display selection is defensive and uses known human-readable fields when present. RLS remains authoritative.
