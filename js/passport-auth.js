@@ -13,6 +13,7 @@
   const message=$('auth-message');
   const welcomeMessage=$('welcome-message');
   const tabs=[...document.querySelectorAll('[data-auth-view]')];
+  const guestIntro=[...document.querySelectorAll('[data-auth-guest]')];
   const initialParams=new URLSearchParams(location.search);
   const welcomeReturn=initialParams.get('bemvindo')==='1';
   let recoveryMode=initialParams.get('recovery')==='1';
@@ -25,6 +26,7 @@
   function clearMessage(){message.textContent='';message.className='auth-message';}
   function setBusy(form,busy){const button=form?.querySelector('button[type="submit"]');if(button) button.disabled=busy;}
   function setWelcome(visible){if(welcomeMessage) welcomeMessage.hidden=!visible;}
+  function setGuestIntro(visible){guestIntro.forEach(element=>element.hidden=!visible);}
 
   function cleanAuthUrl(){
     try{
@@ -36,13 +38,13 @@
   }
 
   function setView(view){
-    recoveryMode=false;clearMessage();setWelcome(false);
+    recoveryMode=false;clearMessage();setWelcome(false);setGuestIntro(true);
     tabs.forEach(tab=>{const active=tab.dataset.authView===view;tab.hidden=false;tab.classList.toggle('is-active',active);tab.setAttribute('aria-selected',String(active));});
     loginForm.hidden=view!=='login';signupForm.hidden=view!=='signup';recoveryForm.hidden=true;accountPanel.hidden=true;
   }
 
   function showRecovery(){
-    recoveryMode=true;setWelcome(false);tabs.forEach(tab=>tab.hidden=true);loginForm.hidden=true;signupForm.hidden=true;accountPanel.hidden=true;recoveryForm.hidden=false;
+    recoveryMode=true;setWelcome(false);setGuestIntro(true);tabs.forEach(tab=>tab.hidden=true);loginForm.hidden=true;signupForm.hidden=true;accountPanel.hidden=true;recoveryForm.hidden=false;
     show('Crie uma nova senha para sua Passport.',false,true);
   }
 
@@ -88,9 +90,9 @@
 
   async function renderSession(session){
     if(recoveryMode){showRecovery();return;}
-    if(!session?.user){setWelcome(false);accountPanel.hidden=true;recoveryForm.hidden=true;loginForm.hidden=false;signupForm.hidden=true;tabs.forEach(tab=>tab.hidden=false);return;}
+    if(!session?.user){setGuestIntro(true);setWelcome(false);accountPanel.hidden=true;recoveryForm.hidden=true;loginForm.hidden=false;signupForm.hidden=true;tabs.forEach(tab=>tab.hidden=false);return;}
 
-    loginForm.hidden=true;signupForm.hidden=true;recoveryForm.hidden=true;tabs.forEach(tab=>tab.hidden=true);accountPanel.hidden=false;
+    setGuestIntro(false);loginForm.hidden=true;signupForm.hidden=true;recoveryForm.hidden=true;tabs.forEach(tab=>tab.hidden=true);accountPanel.hidden=false;
     const user=session.user;
     let displayName=user.user_metadata?.display_name || user.email?.split('@')[0] || 'Minha Passport';
     const {data}=await client.from('profiles').select('display_name').eq('id',user.id).maybeSingle();
