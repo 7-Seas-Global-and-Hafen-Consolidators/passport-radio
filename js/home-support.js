@@ -15,10 +15,30 @@
     }
   };
 
+  const loadPassportAccount=()=>{
+    if(document.querySelector('script[data-passport-account-home]')) return;
+    if(!document.querySelector('script[src*="supabase-js"]')){
+      const supabase=document.createElement('script');
+      supabase.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+      supabase.defer=true;
+      supabase.onload=loadPassportAccount;
+      supabase.dataset.passportSupabaseHome='1';
+      document.head.appendChild(supabase);
+      return;
+    }
+    if(!window.supabase){setTimeout(loadPassportAccount,100);return;}
+    const account=document.createElement('script');
+    account.src='/js/home-passport-account.js?v=20260902';
+    account.defer=true;
+    account.dataset.passportAccountHome='1';
+    document.head.appendChild(account);
+  };
+
+  const boot=()=>{fixPassportContact();loadPassportAccount();};
   if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',fixPassportContact,{once:true});
+    document.addEventListener('DOMContentLoaded',boot,{once:true});
   }else{
-    fixPassportContact();
+    boot();
   }
 
   if(document.querySelector('script[data-passport-support-global]')) return;
