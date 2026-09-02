@@ -1,0 +1,1 @@
+Authenticated UI targets: #account-name, #account-email, #account-favorites, #account-votes, #logout-button. Signed-out UI remains the existing login/signup tabs. Recovery remains in-page. No parallel account UI tree is introduced.
