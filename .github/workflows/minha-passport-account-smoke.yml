@@ -1,0 +1,16 @@
+name: Minha Passport Account Smoke
+on:
+  pull_request:
+    paths:
+      - 'minha-passport.html'
+      - 'js/passport-auth.js'
+      - 'tests/minha-passport-smoke.mjs'
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/minha-passport-smoke.mjs
