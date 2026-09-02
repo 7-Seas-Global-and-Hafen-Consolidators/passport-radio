@@ -23,7 +23,7 @@ body:has(.commercial-now) > footer{
 }
 
 body::after{
-  content:"© 2026 Passport Radio™. Todos os direitos reservados. Conteúdo, curadoria, textos originais, pesquisa, identidade visual e design: Passport Radio™. Obras musicais, fonogramas, imagens e marcas de terceiros permanecem de propriedade de seus respectivos titulares.\A\A Passport Radio™ é uma marca independente.\A Operação comercial e pagamentos: Guiropa World™.";
+  content:"© 2026 Passport Radio™. Todos os direitos reservados. Conteúdo, curadoria, textos originais, pesquisa, identidade visual e design: Passport Radio™. Obras musicais, fonogramas, imagens e marcas de terceiros permanecem de propriedade de seus respectivos titulares.\A\A Passport Radio™ é uma marca independente.\A Operação comercial e pagamentos: Passport Radio.";
   display:block;
   grid-column:1 / -1;
   flex:0 0 100%;
