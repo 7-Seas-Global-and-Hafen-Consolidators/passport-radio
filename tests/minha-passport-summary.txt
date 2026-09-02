@@ -1,0 +1,1 @@
+Repair preserves the existing one-page Passport auth architecture. It removes the two dead 'Em breve aqui.' cards, loads authenticated favorites/votes, preserves JOAN/profile display-name behavior, keeps confirmation/recovery/logout, sets noindex,nofollow, and adds CI/post-deploy probes. No audio files or radio players are touched.
