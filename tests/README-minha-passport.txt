@@ -1,0 +1,1 @@
+Minha Passport validation: smoke test verifies real favorites/votes bindings, profile lookup, confirmation state, recovery path and noindex. Live probe verifies the deployed account page after Pages propagation.
