@@ -11,8 +11,11 @@
   const recoveryForm=$('recovery-form');
   const accountPanel=$('account-panel');
   const message=$('auth-message');
+  const welcomeMessage=$('welcome-message');
   const tabs=[...document.querySelectorAll('[data-auth-view]')];
-  let recoveryMode=new URLSearchParams(location.search).get('recovery')==='1';
+  const initialParams=new URLSearchParams(location.search);
+  const welcomeReturn=initialParams.get('bemvindo')==='1';
+  let recoveryMode=initialParams.get('recovery')==='1';
 
   if(!window.supabase){show('Não foi possível carregar o serviço de conta. Tente novamente.',true);return;}
 
@@ -21,15 +24,25 @@
   function show(text,isError=false,isSuccess=false){message.textContent=text;message.className='auth-message is-visible'+(isError?' is-error':'')+(isSuccess?' is-success':'');}
   function clearMessage(){message.textContent='';message.className='auth-message';}
   function setBusy(form,busy){const button=form?.querySelector('button[type="submit"]');if(button) button.disabled=busy;}
+  function setWelcome(visible){if(welcomeMessage) welcomeMessage.hidden=!visible;}
+
+  function cleanAuthUrl(){
+    try{
+      const url=new URL(location.href);
+      url.hash='';
+      ['code','access_token','refresh_token','token_type','expires_in','expires_at','type'].forEach(key=>url.searchParams.delete(key));
+      history.replaceState({},'',url.pathname+(url.searchParams.toString()?`?${url.searchParams.toString()}`:''));
+    }catch(error){}
+  }
 
   function setView(view){
-    recoveryMode=false;clearMessage();
+    recoveryMode=false;clearMessage();setWelcome(false);
     tabs.forEach(tab=>{const active=tab.dataset.authView===view;tab.hidden=false;tab.classList.toggle('is-active',active);tab.setAttribute('aria-selected',String(active));});
     loginForm.hidden=view!=='login';signupForm.hidden=view!=='signup';recoveryForm.hidden=true;accountPanel.hidden=true;
   }
 
   function showRecovery(){
-    recoveryMode=true;tabs.forEach(tab=>tab.hidden=true);loginForm.hidden=true;signupForm.hidden=true;accountPanel.hidden=true;recoveryForm.hidden=false;
+    recoveryMode=true;setWelcome(false);tabs.forEach(tab=>tab.hidden=true);loginForm.hidden=true;signupForm.hidden=true;accountPanel.hidden=true;recoveryForm.hidden=false;
     show('Crie uma nova senha para sua Passport.',false,true);
   }
 
@@ -75,7 +88,7 @@
 
   async function renderSession(session){
     if(recoveryMode){showRecovery();return;}
-    if(!session?.user){accountPanel.hidden=true;recoveryForm.hidden=true;loginForm.hidden=false;signupForm.hidden=true;tabs.forEach(tab=>tab.hidden=false);return;}
+    if(!session?.user){setWelcome(false);accountPanel.hidden=true;recoveryForm.hidden=true;loginForm.hidden=false;signupForm.hidden=true;tabs.forEach(tab=>tab.hidden=false);return;}
 
     loginForm.hidden=true;signupForm.hidden=true;recoveryForm.hidden=true;tabs.forEach(tab=>tab.hidden=true);accountPanel.hidden=false;
     const user=session.user;
@@ -83,8 +96,17 @@
     const {data}=await client.from('profiles').select('display_name').eq('id',user.id).maybeSingle();
     if(data?.display_name) displayName=data.display_name;
     $('account-name').textContent=displayName;$('account-email').textContent=user.email || '';clearMessage();
+    setWelcome(welcomeReturn);
     await loadMemberData(user.id);
   }
+
+  document.querySelectorAll('[data-password-toggle]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const input=$(button.dataset.passwordToggle);if(!input)return;
+      const showing=input.type==='text';input.type=showing?'password':'text';
+      button.setAttribute('aria-pressed',String(!showing));button.setAttribute('aria-label',showing?'Mostrar senha':'Ocultar senha');
+    });
+  });
 
   tabs.forEach(tab=>tab.addEventListener('click',()=>setView(tab.dataset.authView)));
 
@@ -98,9 +120,9 @@
   signupForm.addEventListener('submit',async event=>{
     event.preventDefault();clearMessage();setBusy(signupForm,true);
     const displayName=$('signup-name').value.trim();const email=$('signup-email').value.trim();const password=$('signup-password').value;
-    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:ACCOUNT_URL}});setBusy(signupForm,false);
+    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:ACCOUNT_URL+'?bemvindo=1'}});setBusy(signupForm,false);
     if(error){show(error.message || 'Não foi possível criar a conta.',true);return;}
-    if(data.session){await renderSession(data.session);show('Conta criada. Você já está conectado.',false,true);}else show('Conta criada. Confira seu e-mail para confirmar o cadastro.',false,true);
+    if(data.session){await renderSession(data.session);show('Conta criada. Você já está conectado.',false,true);}else show('Conta criada. Confira seu e-mail. O link de confirmação leva direto para sua Passport.',false,true);
   });
 
   $('forgot-password').addEventListener('click',async()=>{
@@ -114,10 +136,14 @@
     if(password!==confirm){show('As duas senhas precisam ser iguais.',true);return;}setBusy(recoveryForm,true);
     const {error}=await client.auth.updateUser({password});setBusy(recoveryForm,false);
     if(error){show('Não foi possível atualizar a senha. Abra novamente o link enviado por e-mail.',true);return;}
-    recoveryMode=false;history.replaceState({},'',location.pathname);recoveryForm.reset();const {data}=await client.auth.getSession();await renderSession(data.session);show('Senha atualizada com sucesso.',false,true);
+    recoveryMode=false;cleanAuthUrl();recoveryForm.reset();const {data}=await client.auth.getSession();await renderSession(data.session);show('Senha atualizada com sucesso.',false,true);
   });
 
   $('logout-button').addEventListener('click',async()=>{await client.auth.signOut();setView('login');show('Você saiu da sua conta.',false,true);});
   client.auth.onAuthStateChange((event,session)=>{if(event==='PASSWORD_RECOVERY') recoveryMode=true;setTimeout(()=>renderSession(session),0);});
-  client.auth.getSession().then(({data})=>renderSession(data.session));
+
+  client.auth.getSession().then(async({data})=>{
+    await renderSession(data.session);
+    if(data.session && !recoveryMode && (location.hash || /[?&](code|access_token|refresh_token|token_type|expires_in|expires_at|type)=/.test(location.search))) cleanAuthUrl();
+  });
 })();
