@@ -17,7 +17,7 @@
   document.querySelectorAll("style[data-passport-5060-style]").forEach(el => el.remove());
 
   const STREAM = "https://listen.181fm.com/181-goodtime_128k.mp3";
-  const JG_STREAM = "https://jovem-guarda-relay-production.up.railway.app/jovem-guarda";
+  const JG_STREAM = "https://server02.srvsh.com.br:6966/stream";
 
   const style = document.createElement("style");
   style.dataset.passport5060Style = "1";
@@ -67,7 +67,7 @@
       <div class="passport-5060-stack">
         <div class="passport-5060-card passport-jg-card" id="passportJovemGuardaPlayer">
           <div class="passport-5060-cardhead">
-            <div><small>JOVEM GUARDA™ · BRASIL · 24 HOURS</small><strong>Rádio Studio Souto · Jovem Guarda</strong></div>
+            <div><small>JOVEM GUARDA™ · BRASIL · 24 HOURS</small><strong>Rádio Jovem Guarda · Alagoa Grande/PB</strong></div>
             <span class="passport-5060-status" id="passportJGStatus">READY</span>
           </div>
           <div class="passport-5060-console">
