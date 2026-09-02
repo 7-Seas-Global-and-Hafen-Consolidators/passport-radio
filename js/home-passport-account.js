@@ -5,6 +5,25 @@
   const SUPABASE_PUBLISHABLE_KEY='sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y';
   const ACCOUNT_URL='/minha-passport.html';
 
+  function nameOf(user){
+    return user?.user_metadata?.display_name || user?.email?.split('@')[0] || 'sua conta';
+  }
+
+  function showWelcome(session){
+    if(!session?.user || new URLSearchParams(location.search).get('bemvindo')!=='1') return;
+    const banner=document.createElement('div');
+    banner.id='passport-welcome-home';
+    banner.setAttribute('role','status');
+    banner.style.cssText='position:fixed;top:0;left:0;right:0;z-index:99999;background:#c1121f;color:#fff;text-align:center;font:800 .85rem/1.3 Inter,Arial,sans-serif;padding:10px 16px;letter-spacing:.02em';
+    banner.textContent=`Bem-vindo(a), ${nameOf(session.user)}! Sua Passport está ativa.`;
+    document.body.prepend(banner);
+    try{
+      const url=new URL(location.href);url.searchParams.delete('bemvindo');
+      history.replaceState({},'',url.pathname+(url.searchParams.toString()?`?${url.searchParams.toString()}`:'')+url.hash);
+    }catch(error){}
+    setTimeout(()=>banner.remove(),6000);
+  }
+
   function mount(){
     const contact=document.querySelector('#contato .shell.contact');
     if(!contact || document.getElementById('passport-account-home')) return;
@@ -31,7 +50,7 @@
       const link=document.getElementById('passport-account-link');
       if(!title || !copy || !link) return;
       if(session?.user){
-        const name=session.user.user_metadata?.display_name || session.user.email?.split('@')[0] || 'sua conta';
+        const name=nameOf(session.user);
         title.textContent=`Olá, ${name}.`;
         copy.textContent='Sua Passport está conectada. Acesse sua conta, favoritos e participação.';
         link.textContent='ABRIR MINHA PASSPORT →';
@@ -42,7 +61,7 @@
       }
     };
 
-    client.auth.getSession().then(({data})=>render(data.session));
+    client.auth.getSession().then(({data})=>{render(data.session);showWelcome(data.session);});
     client.auth.onAuthStateChange((_event,session)=>render(session));
   }
 
