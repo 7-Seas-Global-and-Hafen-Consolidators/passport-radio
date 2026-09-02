@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Minha Passport — crie sua conta, entre e gerencie sua experiência na Passport Radio.">
-  <meta name="robots" content="noindex,follow">
+  <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#0b0b0b">
   <title>Minha Passport | Passport Radio</title>
   <link rel="canonical" href="https://passportradio.online/minha-passport.html">
@@ -56,8 +56,8 @@
         <h2 id="account-name">Minha Passport</h2>
         <p id="account-email" class="account-email"></p>
         <div class="account-grid">
-          <div><strong>Favoritos</strong><span>Em breve aqui.</span></div>
-          <div><strong>Votos</strong><span>Em breve aqui.</span></div>
+          <div><strong>Favoritos</strong><span id="account-favorites">Carregando…</span></div>
+          <div><strong>Votos</strong><span id="account-votes">Carregando…</span></div>
         </div>
         <button class="auth-primary auth-primary--dark" id="logout-button" type="button">SAIR</button>
       </section>
@@ -67,6 +67,6 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/js/passport-auth.js?v=2" defer></script>
+  <script src="/js/passport-auth.js?v=3" defer></script>
 </body>
 </html>
