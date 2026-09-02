@@ -98,9 +98,10 @@
     setBusy(loginForm,true);
     const email=$('login-email').value.trim();
     const password=$('login-password').value;
-    const {error}=await client.auth.signInWithPassword({email,password});
+    const {data,error}=await client.auth.signInWithPassword({email,password});
     setBusy(loginForm,false);
     if(error){show('Não foi possível entrar. Confira e-mail e senha.',true);return;}
+    await renderSession(data.session);
   });
 
   signupForm.addEventListener('submit',async event=>{
@@ -117,7 +118,7 @@
     });
     setBusy(signupForm,false);
     if(error){show(error.message || 'Não foi possível criar a conta.',true);return;}
-    if(data.session){show('Conta criada. Você já está conectado.',false,true);}
+    if(data.session){await renderSession(data.session);show('Conta criada. Você já está conectado.',false,true);}
     else{show('Conta criada. Confira seu e-mail para confirmar o cadastro.',false,true);}
   });
 
