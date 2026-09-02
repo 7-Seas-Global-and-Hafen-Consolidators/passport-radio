@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/passport-auth.css?v=2">
+  <link rel="stylesheet" href="/css/passport-auth.css?v=3">
 </head>
 <body>
   <main class="auth-shell">
@@ -28,10 +28,11 @@
       </div>
 
       <div id="auth-message" class="auth-message" role="status" aria-live="polite"></div>
+      <div id="welcome-message" class="auth-message is-success" role="status" aria-live="polite" hidden>Conta confirmada. Bem-vindo à sua Passport.</div>
 
       <form id="login-form" class="auth-form" autocomplete="on">
         <label>E-mail<input id="login-email" type="email" autocomplete="email" required></label>
-        <label>Senha<input id="login-password" type="password" autocomplete="current-password" minlength="8" required></label>
+        <label>Senha<span class="password-field"><input id="login-password" type="password" autocomplete="current-password" minlength="8" required><button class="password-toggle" type="button" data-password-toggle="login-password" aria-label="Mostrar senha" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></span></label>
         <button class="auth-primary" type="submit">ENTRAR</button>
         <button class="auth-link" id="forgot-password" type="button">Esqueci minha senha</button>
       </form>
@@ -39,15 +40,15 @@
       <form id="signup-form" class="auth-form" autocomplete="on" hidden>
         <label>Nome ou apelido<input id="signup-name" type="text" autocomplete="nickname" maxlength="60" required></label>
         <label>E-mail<input id="signup-email" type="email" autocomplete="email" required></label>
-        <label>Senha<input id="signup-password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Senha<span class="password-field"><input id="signup-password" type="password" autocomplete="new-password" minlength="8" required><button class="password-toggle" type="button" data-password-toggle="signup-password" aria-label="Mostrar senha" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></span></label>
         <button class="auth-primary" type="submit">CRIAR MINHA CONTA</button>
-        <p class="auth-small">Você receberá um e-mail para confirmar o cadastro.</p>
+        <p class="auth-small">Você receberá um e-mail para confirmar o cadastro. O link te leva direto para sua Passport.</p>
       </form>
 
       <form id="recovery-form" class="auth-form" autocomplete="on" hidden>
         <p class="auth-kicker">NOVA SENHA</p>
-        <label>Nova senha<input id="recovery-password" type="password" autocomplete="new-password" minlength="8" required></label>
-        <label>Repita a nova senha<input id="recovery-password-confirm" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Nova senha<span class="password-field"><input id="recovery-password" type="password" autocomplete="new-password" minlength="8" required><button class="password-toggle" type="button" data-password-toggle="recovery-password" aria-label="Mostrar senha" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></span></label>
+        <label>Repita a nova senha<span class="password-field"><input id="recovery-password-confirm" type="password" autocomplete="new-password" minlength="8" required><button class="password-toggle" type="button" data-password-toggle="recovery-password-confirm" aria-label="Mostrar senha" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></span></label>
         <button class="auth-primary" type="submit">SALVAR NOVA SENHA</button>
       </form>
 
@@ -67,6 +68,6 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/js/passport-auth.js?v=3" defer></script>
+  <script src="/js/passport-auth.js?v=4" defer></script>
 </body>
 </html>
