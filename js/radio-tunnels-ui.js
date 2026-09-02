@@ -36,16 +36,27 @@
   function ensureJovemGuardaDirectory(){
     const directory = hub.querySelector(".tunnel-directory");
     if (!directory || directory.querySelector("[data-jovem-guarda-directory]")) return;
-    if (!document.querySelector("style[data-jovem-guarda-directory-style]")) {
-      const style = document.createElement("style");
-      style.dataset.jovemGuardaDirectoryStyle = "1";
-      style.textContent = `.tunnel-directory__row[data-jovem-guarda-directory]{position:relative;background:#f5d43b!important;color:#101010!important;border-color:#101010!important;overflow:hidden}.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__number,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__title,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__format,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__state,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__action{color:#101010!important}.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__state{color:#c51f25!important}.tunnel-directory__row[data-jovem-guarda-directory]::after{content:"BRASIL · 1960s";position:absolute;top:9px;right:-35px;width:132px;padding:4px 0;background:#167548;color:#fff;font:900 .42rem Inter,Arial,sans-serif;letter-spacing:.1em;text-align:center;transform:rotate(35deg)}`;
-      document.head.appendChild(style);
-    }
     const row = document.createElement("button");
     row.className = "tunnel-directory__row"; row.type = "button"; row.dataset.jovemGuardaDirectory = "1";
-    row.innerHTML = `<span class="tunnel-directory__number">JG</span><strong class="tunnel-directory__title">Jovem Guarda™</strong><span class="tunnel-directory__format">Iê-iê-iê brasileiro · Studio Souto</span><span class="tunnel-directory__state">● AO VIVO · 24H</span><span class="tunnel-directory__action">Abrir sinal ↗</span>`;
-    row.addEventListener("click", () => window.open("https://onlineradiobox.com/br/studiosoutojovemguarda/?lang=pt", "_blank", "noopener,noreferrer"));
+    row.setAttribute("aria-pressed", "false");
+    row.innerHTML = `<span class="tunnel-directory__number">JG</span><strong class="tunnel-directory__title">Jovem Guarda™</strong><span class="tunnel-directory__format">Iê-iê-iê brasileiro · Studio Souto</span><span class="tunnel-directory__state">24 HOURS</span><span class="tunnel-directory__action">Ouvir agora</span>`;
+    const audio = document.createElement("audio");
+    audio.preload = "none";
+    audio.src = "https://jovem-guarda-relay-production.up.railway.app/jovem-guarda";
+    audio.dataset.jovemGuardaAudio = "1";
+    row.appendChild(audio);
+    const state = row.querySelector(".tunnel-directory__state");
+    const action = row.querySelector(".tunnel-directory__action");
+    const reset = () => { row.setAttribute("aria-pressed", "false"); state.textContent = "24 HOURS"; action.textContent = "Ouvir agora"; };
+    audio.addEventListener("playing", () => { row.setAttribute("aria-pressed", "true"); state.textContent = "ON AIR"; action.textContent = "Pausar"; });
+    audio.addEventListener("pause", reset);
+    audio.addEventListener("error", () => { reset(); state.textContent = "TENTE NOVAMENTE"; });
+    row.addEventListener("click", event => {
+      if (event.target === audio) return;
+      if (!audio.paused) { audio.pause(); return; }
+      document.querySelectorAll("audio").forEach(a => { if (a !== audio && !a.paused) { try { a.pause(); } catch (_) {} } });
+      audio.play().catch(() => { state.textContent = "TOQUE NOVAMENTE"; action.textContent = "Ouvir agora"; });
+    });
     const anchor = directory.querySelector('[data-tunnel-target="passport5060"]');
     if (anchor) anchor.insertAdjacentElement("afterend", row); else directory.prepend(row);
   }
