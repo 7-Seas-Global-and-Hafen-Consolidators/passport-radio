@@ -265,3 +265,16 @@ html body::after{
   color:#6f6a63!important;
   border-color:#ddd8cf!important;
 }
+
+/* Passport Now · Home: public signal count */
+html body .passport-now-home__metric:nth-child(2) strong{
+  font-size:0!important;
+}
+
+html body .passport-now-home__metric:nth-child(2) strong::after{
+  content:"38";
+  font-size:clamp(1.8rem,3vw,2.9rem);
+  line-height:.9;
+  letter-spacing:-.045em;
+  color:#111;
+}
