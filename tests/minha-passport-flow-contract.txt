@@ -1,0 +1,1 @@
+Expected flow: signup -> explicit confirmation-sent state -> email confirmation returns to minha-passport.html -> persisted Supabase session -> account panel -> profile name + real favorites/votes rows -> password recovery returns to minha-passport.html?recovery=1 -> new password -> authenticated panel. Account page is noindex,nofollow.
