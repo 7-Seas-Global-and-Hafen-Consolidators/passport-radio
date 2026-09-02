@@ -33,6 +33,23 @@
     directory.appendChild(button);
   }
 
+  function ensureJovemGuardaDirectory(){
+    const directory = hub.querySelector(".tunnel-directory");
+    if (!directory || directory.querySelector("[data-jovem-guarda-directory]")) return;
+    if (!document.querySelector("style[data-jovem-guarda-directory-style]")) {
+      const style = document.createElement("style");
+      style.dataset.jovemGuardaDirectoryStyle = "1";
+      style.textContent = `.tunnel-directory__row[data-jovem-guarda-directory]{position:relative;background:#f5d43b!important;color:#101010!important;border-color:#101010!important;overflow:hidden}.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__number,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__title,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__format,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__state,.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__action{color:#101010!important}.tunnel-directory__row[data-jovem-guarda-directory] .tunnel-directory__state{color:#c51f25!important}.tunnel-directory__row[data-jovem-guarda-directory]::after{content:"BRASIL · 1960s";position:absolute;top:9px;right:-35px;width:132px;padding:4px 0;background:#167548;color:#fff;font:900 .42rem Inter,Arial,sans-serif;letter-spacing:.1em;text-align:center;transform:rotate(35deg)}`;
+      document.head.appendChild(style);
+    }
+    const row = document.createElement("button");
+    row.className = "tunnel-directory__row"; row.type = "button"; row.dataset.jovemGuardaDirectory = "1";
+    row.innerHTML = `<span class="tunnel-directory__number">JG</span><strong class="tunnel-directory__title">Jovem Guarda™</strong><span class="tunnel-directory__format">Iê-iê-iê brasileiro · Studio Souto</span><span class="tunnel-directory__state">● AO VIVO · 24H</span><span class="tunnel-directory__action">Abrir sinal ↗</span>`;
+    row.addEventListener("click", () => window.open("https://onlineradiobox.com/br/studiosoutojovemguarda/?lang=pt", "_blank", "noopener,noreferrer"));
+    const anchor = directory.querySelector('[data-tunnel-target="passport5060"]');
+    if (anchor) anchor.insertAdjacentElement("afterend", row); else directory.prepend(row);
+  }
+
   function ensureFlashHouseDirectory(){
     const directory = hub.querySelector(".tunnel-directory");
     if (!directory || directory.querySelector('[data-tunnel-target="passportFlashHouse"]')) return;
@@ -70,7 +87,7 @@
   function activate(id,options={}){ const panel=document.getElementById(id); if(!panel)return false; if(activeId&&activeId!==id)pausePanel(document.getElementById(activeId)); activeId=id; normalizePanels(); if(options.scroll)requestAnimationFrame(()=>panel.scrollIntoView({behavior:"smooth",block:"nearest"})); return true; }
   function collapse(id){ if(activeId!==id)return; pausePanel(document.getElementById(id)); activeId=""; normalizePanels(); }
 
-  ensureHitsDirectory(); ensure5060Directory(); ensureFlashHouseDirectory(); ensurePopoutPilot();
+  ensureHitsDirectory(); ensure5060Directory(); ensureJovemGuardaDirectory(); ensureFlashHouseDirectory(); ensurePopoutPilot();
   hub.querySelectorAll("[data-tunnel-target]").forEach(button=>button.addEventListener("click",()=>{ const id=button.dataset.tunnelTarget; if(activeId===id)collapse(id); else activate(id,{scroll:true}); }));
 
   document.addEventListener("play",event=>{ const target=event.target; if(!(target instanceof HTMLMediaElement))return; document.querySelectorAll("audio").forEach(a=>{if(a!==target&&!a.paused){try{a.pause();}catch(_){}}}); const panel=target.closest("[data-passport-tunnel-panel]")||target.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse"); if(panel&&panelIds.includes(panel.id)){activeId=panel.id;normalizePanels();panelIds.forEach(id=>setButtonState(id,id===panel.id?"ON AIR":"24 HOURS"));} if(target.id!=="passportAudio"){const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ"){try{yt.click();}catch(_){}}}},true);
@@ -79,7 +96,7 @@
   const observer=new MutationObserver(()=>{normalizePanels();bindTunnelControls();}); observer.observe(document.body,{childList:true,subtree:true});
   normalizePanels(); bindTunnelControls();
   loadScript("/js/passport-hits-tunnel.js?v=202608242208","data-passport-hits-tunnel");
-  loadScript("/js/50s-60s-tunnel.js?v=202608242230","data-passport-5060-tunnel");
+  loadScript("/js/50s-60s-tunnel.js?v=202609012350","data-passport-5060-tunnel");
   loadScript("/js/flash-house-tunnel.js?v=202608291930","data-passport-flash-house-tunnel");
   const hash=location.hash.replace("#",""); if(panelIds.includes(hash)){const openFromHash=()=>activate(hash,{scroll:false});if(!openFromHash())setTimeout(openFromHash,900);}
 })();
