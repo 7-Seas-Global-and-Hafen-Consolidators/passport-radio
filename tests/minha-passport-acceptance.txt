@@ -1,0 +1,1 @@
+Acceptance: authenticated account panel must never display the literal placeholder 'Em breve aqui.'; it must render rows returned by favorites/votes or an honest empty-state message. Existing profile display_name, signup confirmation, password recovery and logout remain operational.
