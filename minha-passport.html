@@ -18,9 +18,9 @@
     <a class="auth-brand" href="/" aria-label="Voltar para Passport Radio">PASSPORT RADIO</a>
 
     <section class="auth-card" aria-labelledby="auth-title">
-      <p class="auth-kicker">MINHA PASSPORT</p>
-      <h1 id="auth-title">Sua Passport começa aqui.</h1>
-      <p class="auth-lead">Entre para guardar favoritos, participar das votações e construir sua própria experiência na Passport.</p>
+      <p class="auth-kicker" data-auth-guest>MINHA PASSPORT</p>
+      <h1 id="auth-title" data-auth-guest>Sua Passport começa aqui.</h1>
+      <p class="auth-lead" data-auth-guest>Entre para guardar favoritos, participar das votações e construir sua própria experiência na Passport.</p>
 
       <div class="auth-tabs" role="tablist" aria-label="Conta Passport">
         <button class="auth-tab is-active" type="button" data-auth-view="login" role="tab" aria-selected="true">ENTRAR</button>
@@ -68,6 +68,6 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/js/passport-auth.js?v=4" defer></script>
+  <script src="/js/passport-auth.js?v=5" defer></script>
 </body>
 </html>
