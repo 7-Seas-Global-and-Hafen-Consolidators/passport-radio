@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "date": "2026-09-03",
+  "scope": "site-growth-not-editorial-production",
+  "protected": ["audio", "players", "streams", "tunnels", "editorial-engine"],
+  "mission": "Turn every Passport landing page into a discovery, retention and commercial entry point without changing editorial production ownership.",
+  "benchmarks": {
+    "whiplash": ["most-read discovery", "artist hubs", "topic hubs", "deep archive search", "band promotion funnel", "WhatsApp retention"],
+    "louder_metal_hammer": ["newsletter capture", "recurring franchises", "commerce attached to editorial interest", "archive recirculation"],
+    "rolling_stone": ["hierarchy", "popular/recent recirculation", "multi-platform retention"]
+  },
+  "attack_order": [
+    {"id":"P0","name":"Revenue doors","items":["paid advertise funnel", "promote-your-band funnel", "support/club entry", "commercial contact consistency"]},
+    {"id":"P1","name":"Recirculation","items":["most read", "trending topics", "related stories", "artist/entity hubs", "archive doors"]},
+    {"id":"P2","name":"Retention","items":["Telegram", "WhatsApp", "newsletter capture", "follow Passport CTAs"]},
+    {"id":"P3","name":"Search surface","items":["entity pages", "topic pages", "internal links", "structured data", "long-tail landing pages", "indexability checks"]},
+    {"id":"P4","name":"Commercial amplification","items":["affiliate context", "sponsor slots", "controlled ad placements", "store recirculation"]}
+  ],
+  "rules": [
+    "Do not duplicate or replace the editorial posting system.",
+    "Do not copy competitor text, images, branding or proprietary creative expression.",
+    "Benchmark mechanisms and rebuild them in Passport identity.",
+    "No protected audio changes in this operation.",
+    "Every new module must create a measurable next click, retention action or commercial action."
+  ]
+}
