@@ -1,0 +1,7 @@
+<!-- Passport global foundation: add before </body> on site templates/pages -->
+<script src="/js/passport-site-bootstrap.js?v=20260903" defer></script>
+
+<!-- Footer legal links -->
+<a href="/privacidade.html">Privacidade</a>
+<a href="/cookies.html">Cookies</a>
+<a href="/termos.html">Termos</a>
