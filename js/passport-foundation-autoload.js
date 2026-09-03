@@ -1,0 +1,1 @@
+(()=>{'use strict';if(document.querySelector('script[data-passport-legal-foundation]'))return;const s=document.createElement('script');s.src='/js/passport-legal-foundation.js?v=20260903';s.defer=true;s.dataset.passportLegalFoundation='1';document.head.appendChild(s);})();

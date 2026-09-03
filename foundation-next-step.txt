@@ -1,0 +1,1 @@
+NEXT SAFE STEP: integrate one loader tag into index.html, verify Home and both existing player blocks remain byte-for-byte unchanged except for that loader insertion, then open PR and let CI validate before merge.
