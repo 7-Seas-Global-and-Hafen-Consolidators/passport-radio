@@ -136,7 +136,7 @@ jobs:
           print('OK compact Passport Signal contracts')
           PY
 
-      - name: Validate Phase 2 Home compression contracts
+      - name: Validate Home density contracts
         shell: bash
         run: |
           python - <<'PY'
@@ -146,14 +146,25 @@ jobs:
           loader = Path('js/editorial-home.js').read_text(encoding='utf-8')
 
           required_phase2 = [
+              'restoreAgenda',
+              '.quick-grid{gap:14px}',
+              '#dicas .cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}',
+              "event.hidden = false",
+              '.passport-phase2-agenda-more',
+          ]
+          for token in required_phase2:
+              if token not in phase2:
+                  raise SystemExit(f'Missing Home density contract: {token}')
+
+          forbidden_phase2 = [
               'removeDuplicateQuickGrid',
               'compactArchiveCards',
               'compactAgenda',
               'VER AGENDA COMPLETA',
           ]
-          for token in required_phase2:
-              if token not in phase2:
-                  raise SystemExit(f'Missing Phase 2 Home contract: {token}')
+          for token in forbidden_phase2:
+              if token in phase2:
+                  raise SystemExit(f'Legacy Home hiding contract returned: {token}')
 
           required_home = [
               'HOME_VISIBLE=12',
@@ -167,19 +178,20 @@ jobs:
                   raise SystemExit(f'Missing compact Home Wire contract: {token}')
 
           if '/js/passport-phase2-home.js?v=20260830' not in loader:
-              raise SystemExit('Phase 2 Home loader is not wired')
+              raise SystemExit('Home density loader is not wired')
 
           protected_tokens = ['new Audio(', '.play(', 'autoplay=']
           for token in protected_tokens:
               if token.lower() in phase2.lower():
-                  raise SystemExit(f'Phase 2 must not touch audio playback: {token}')
+                  raise SystemExit(f'Home density layer must not touch audio playback: {token}')
 
           if 'Every Song Is A Destination.' in home or '— MR. NOMAD' in home:
               raise SystemExit('Legacy visible World Wire footer returned')
 
-          print('OK Phase 2 Home compression contracts')
+          print('OK Home density contracts')
+          print('OK valid Quick Grid, archive cards and agenda remain visible')
           print('OK Global Wire engine depth preserved: desired 44')
-          print('OK protected audio boundary: Phase 2 contains no playback code')
+          print('OK protected audio boundary: Home density layer contains no playback code')
           PY
 
       - name: Validate World Dial HLS compatibility contract
