@@ -5,6 +5,7 @@
   const CONTINUOUS_HOME_SRC = '/js/continuous-signals-home.js?v=202608312145';
   const RECIRCULATION_SRC = '/js/editorial-recirculation.js?v=20260903';
   const RECIRCULATION_CSS = '/css/editorial-recirculation.css?v=20260903';
+  const ANOS80_VOL2_MEMORY_SRC = '/js/anos-80-vol2-memoria-extra.js?v=202609031723';
 
   const addScript=(src,key)=>{if(!document.head||document.querySelector(`script[data-${key}]`))return;const s=document.createElement('script');s.src=src;s.defer=true;s.setAttribute(`data-${key}`,'1');document.head.appendChild(s);};
   const installAmazonAffiliate=()=>{if(window.__PASSPORT_AMAZON_AFFILIATE__)return;addScript(AMAZON_AFFILIATE_SRC,'passport-amazon-affiliate');};
@@ -16,6 +17,7 @@
     if(!document.querySelector('link[data-passport-recirculation]')){const l=document.createElement('link');l.rel='stylesheet';l.href=RECIRCULATION_CSS;l.dataset.passportRecirculation='1';document.head.appendChild(l);}
     addScript(RECIRCULATION_SRC,'passport-recirculation');
   };
-  const install=()=>{installAmazonAffiliate();installHomeEditorial();installContinuousHome();installEditorialRoute();installRecirculation();};
+  const installAnos80Vol2Memory=()=>{if(location.pathname!=='/anos-80-volume-2-musicas-memoria-brasileira.html')return;addScript(ANOS80_VOL2_MEMORY_SRC,'passport-anos80-vol2-memory');};
+  const install=()=>{installAmazonAffiliate();installHomeEditorial();installContinuousHome();installEditorialRoute();installRecirculation();installAnos80Vol2Memory();};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
