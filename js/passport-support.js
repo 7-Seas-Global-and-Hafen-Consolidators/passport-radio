@@ -1,7 +1,7 @@
 (() => {
   const ASAAS='https://www.asaas.com/c/shpb8gbiswnw4t2n';
   const PAYPAL='https://www.paypal.com/ncp/payment/WK4CLBGVD2Y4C';
-  const CSS='/css/passport-support.css?v=7';
+  const CSS='/css/passport-support.css?v=8';
   const WAIT_SECONDS=15;
   const DISMISS_KEY='passport-adblock-dismissed-v10';
 
