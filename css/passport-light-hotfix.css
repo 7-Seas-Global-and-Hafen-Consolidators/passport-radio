@@ -266,15 +266,13 @@ html body::after{
   border-color:#ddd8cf!important;
 }
 
-/* Passport Now · Home: public signal count */
+/* Passport Now · Home: CANAIS is real DOM content. Do not hide it behind
+   legacy pseudo-elements: editorial-home disables those pseudo-elements. */
 html body .passport-now-home__metric:nth-child(2) strong{
-  font-size:0!important;
+  font-size:clamp(1.55rem,3vw,2.65rem)!important;
 }
 
 html body .passport-now-home__metric:nth-child(2) strong::after{
-  content:"38";
-  font-size:clamp(1.8rem,3vw,2.9rem);
-  line-height:.9;
-  letter-spacing:-.045em;
-  color:#111;
+  display:none!important;
+  content:none!important;
 }
