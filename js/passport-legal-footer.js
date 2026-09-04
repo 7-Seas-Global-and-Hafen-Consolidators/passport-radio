@@ -9,6 +9,8 @@
   const FESTA_PLOC_REMIX_SRC = '/js/festa-ploc-party-remix.js?v=2026090401';
   const FOFONETE_EXIT_SRC = '/js/fofonete-exit-intent.js?v=20260903';
   const FOFONETE_EXIT_CSS = '/css/fofonete-exit-intent.css?v=20260903';
+  const ASAAS_TRUST_SRC = '/js/asaas-footer-trust.js?v=20260904';
+  const ASAAS_TRUST_CSS = '/css/asaas-footer-trust.css?v=20260904';
 
   const addScript=(src,key)=>{if(!document.head||document.querySelector(`script[data-${key}]`))return;const s=document.createElement('script');s.src=src;s.defer=true;s.setAttribute(`data-${key}`,'1');document.head.appendChild(s);};
   const installAmazonAffiliate=()=>{if(window.__PASSPORT_AMAZON_AFFILIATE__)return;addScript(AMAZON_AFFILIATE_SRC,'passport-amazon-affiliate');};
@@ -27,6 +29,11 @@
     if(document.head&&!document.querySelector('link[data-passport-fofonete-exit]')){const l=document.createElement('link');l.rel='stylesheet';l.href=FOFONETE_EXIT_CSS;l.dataset.passportFofoneteExit='1';document.head.appendChild(l);}
     addScript(FOFONETE_EXIT_SRC,'passport-fofonete-exit');
   };
-  const install=()=>{installAmazonAffiliate();installHomeEditorial();installContinuousHome();installEditorialRoute();installRecirculation();installAnos80Vol2Memory();installFestaPlocRemix();installFofoneteExit();};
+  const installAsaasTrust=()=>{
+    if(!document.head||!document.querySelector('footer'))return;
+    if(!document.querySelector('link[data-passport-asaas-trust]')){const l=document.createElement('link');l.rel='stylesheet';l.href=ASAAS_TRUST_CSS;l.dataset.passportAsaasTrust='1';document.head.appendChild(l);}
+    addScript(ASAAS_TRUST_SRC,'passport-asaas-trust');
+  };
+  const install=()=>{installAmazonAffiliate();installHomeEditorial();installContinuousHome();installEditorialRoute();installRecirculation();installAnos80Vol2Memory();installFestaPlocRemix();installFofoneteExit();installAsaasTrust();};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
