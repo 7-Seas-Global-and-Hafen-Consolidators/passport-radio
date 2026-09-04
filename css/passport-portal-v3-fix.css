@@ -1,0 +1,15 @@
+/* PASSPORT PORTAL v3 — FIX VISUAL · carregar APÓS passport-portal-v3.css */
+.pp-col-left,.pp-col-right{background:#f4f1ea;border:1px solid #e0ddd6;padding:12px}
+.pp-col-left .pp-box,.pp-col-right .pp-box{background:#fff;border:1px solid #e0ddd6;margin:0 0 12px}
+#pp-feed > *{padding:10px 2px;border-bottom:1px solid #e0ddd6}
+#pp-feed img{width:140px;height:105px;object-fit:cover;flex-shrink:0;background:#ddd}
+#pp-feed h3{font-size:1.02rem;line-height:1.25;margin:0 0 4px}
+#pp-feed p{font-size:.78rem;line-height:1.45;margin:0}
+@media (max-width:770px){#pp-feed img{width:80px;height:62px}#pp-feed h3{font-size:.95rem}}
+.pp-ad-slot{background:transparent;border:0;min-height:0;margin:6px 0;padding:0}
+.pp-ad-slot.is-empty{display:none}
+a[class*="cornerRibbon"],.pp-ribbon--left,.pp-ribbon--right{top:auto!important;bottom:86px!important;width:200px;font-size:.55rem;z-index:12040}
+@media (max-width:1280px){a[class*="cornerRibbon"],.pp-ribbon--left,.pp-ribbon--right{display:none}}
+.pp-btnrow{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0}
+.pp-btnrow a{background:#d71920;color:#fff;text-decoration:none;font:900 .62rem Inter,Arial,sans-serif;letter-spacing:.06em;padding:8px 11px;text-transform:uppercase}
+.pp-btnrow a:hover{background:#0b0b0b;color:#fff}
