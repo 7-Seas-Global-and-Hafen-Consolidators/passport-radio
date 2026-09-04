@@ -3,38 +3,29 @@
   const HOME_EDITORIAL_SRC = '/js/home-editorial-priority.js?v=202608311216';
   const EDITORIAL_ROUTE_SRC = '/js/editorial-route.js?v=202608311405';
   const CONTINUOUS_HOME_SRC = '/js/continuous-signals-home.js?v=202608312145';
-  const RECIRCULATION_SRC = '/js/editorial-recirculation.js?v=20260903';
-  const RECIRCULATION_CSS = '/css/editorial-recirculation.css?v=20260903';
+  const RECIRCULATION_SRC = '/js/editorial-recirculation.js?v=20260904v2';
+  const RECIRCULATION_CSS = '/css/editorial-recirculation.css?v=20260904v2';
+  const BRAND_NORMALIZER_SRC = '/js/passport-brand-normalizer.js?v=20260904v2';
+  const BRAND_NORMALIZER_CSS = '/css/passport-brand-normalizer.css?v=20260904v2';
   const ANOS80_VOL2_MEMORY_SRC = '/js/anos-80-vol2-memoria-extra.js?v=202609031723';
   const FESTA_PLOC_REMIX_SRC = '/js/festa-ploc-party-remix.js?v=2026090401';
   const FESTA_PLOC_LOGO_FIX_SRC = '/js/festa-ploc-logo-fix.js?v=202609040210';
   const FOFONETE_EXIT_SRC = '/js/fofonete-exit-intent.js?v=20260903';
   const FOFONETE_EXIT_CSS = '/css/fofonete-exit-intent.css?v=20260903';
-  const ASAAS_TRUST_SRC = '/js/asaas-footer-trust.js?v=20260904';
+  const ASAAS_TRUST_SRC = '/js/asaas-footer-trust.js?v=20260904v2';
   const ASAAS_TRUST_CSS = '/css/asaas-footer-trust.css?v=20260904';
-
   const addScript=(src,key)=>{if(!document.head||document.querySelector(`script[data-${key}]`))return;const s=document.createElement('script');s.src=src;s.defer=true;s.setAttribute(`data-${key}`,'1');document.head.appendChild(s);};
+  const addCss=(src,key)=>{if(!document.head||document.querySelector(`link[data-${key}]`))return;const l=document.createElement('link');l.rel='stylesheet';l.href=src;l.setAttribute(`data-${key}`,'1');document.head.appendChild(l);};
   const installAmazonAffiliate=()=>{if(window.__PASSPORT_AMAZON_AFFILIATE__)return;addScript(AMAZON_AFFILIATE_SRC,'passport-amazon-affiliate');};
   const installHomeEditorial=()=>{if(location.pathname!=='/')return;addScript(HOME_EDITORIAL_SRC,'passport-home-editorial');};
   const installContinuousHome=()=>{if(location.pathname!=='/'&&location.pathname!=='/index.html')return;addScript(CONTINUOUS_HOME_SRC,'passport-continuous-home');};
   const installEditorialRoute=()=>{if(!document.querySelector('.pe-prose'))return;addScript(EDITORIAL_ROUTE_SRC,'passport-editorial-route');};
-  const installRecirculation=()=>{
-    if(!document.head||!document.querySelector('.pe-prose'))return;
-    if(!document.querySelector('link[data-passport-recirculation]')){const l=document.createElement('link');l.rel='stylesheet';l.href=RECIRCULATION_CSS;l.dataset.passportRecirculation='1';document.head.appendChild(l);}
-    addScript(RECIRCULATION_SRC,'passport-recirculation');
-  };
+  const installBrandNormalizer=()=>{if(!document.querySelector('.pe-prose'))return;addCss(BRAND_NORMALIZER_CSS,'passport-brand-css');addScript(BRAND_NORMALIZER_SRC,'passport-brand-normalizer');};
+  const installRecirculation=()=>{if(!document.querySelector('.pe-prose'))return;addCss(RECIRCULATION_CSS,'passport-recirculation');addScript(RECIRCULATION_SRC,'passport-recirculation');};
   const installAnos80Vol2Memory=()=>{if(location.pathname!=='/anos-80-volume-2-musicas-memoria-brasileira.html')return;addScript(ANOS80_VOL2_MEMORY_SRC,'passport-anos80-vol2-memory');};
   const installFestaPlocRemix=()=>{if(location.pathname!=='/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html')return;addScript(FESTA_PLOC_REMIX_SRC,'passport-festa-ploc-remix');addScript(FESTA_PLOC_LOGO_FIX_SRC,'passport-festa-ploc-logo-fix');};
-  const installFofoneteExit=()=>{
-    if(!['/loja.html','/anuncie.html'].includes(location.pathname))return;
-    if(document.head&&!document.querySelector('link[data-passport-fofonete-exit]')){const l=document.createElement('link');l.rel='stylesheet';l.href=FOFONETE_EXIT_CSS;l.dataset.passportFofoneteExit='1';document.head.appendChild(l);}
-    addScript(FOFONETE_EXIT_SRC,'passport-fofonete-exit');
-  };
-  const installAsaasTrust=()=>{
-    if(!document.head||!document.querySelector('footer'))return;
-    if(!document.querySelector('link[data-passport-asaas-trust]')){const l=document.createElement('link');l.rel='stylesheet';l.href=ASAAS_TRUST_CSS;l.dataset.passportAsaasTrust='1';document.head.appendChild(l);}
-    addScript(ASAAS_TRUST_SRC,'passport-asaas-trust');
-  };
-  const install=()=>{installAmazonAffiliate();installHomeEditorial();installContinuousHome();installEditorialRoute();installRecirculation();installAnos80Vol2Memory();installFestaPlocRemix();installFofoneteExit();installAsaasTrust();};
+  const installFofoneteExit=()=>{if(!['/loja.html','/anuncie.html'].includes(location.pathname))return;addCss(FOFONETE_EXIT_CSS,'passport-fofonete-exit');addScript(FOFONETE_EXIT_SRC,'passport-fofonete-exit');};
+  const installAsaasTrust=()=>{if(!document.querySelector('footer'))return;addCss(ASAAS_TRUST_CSS,'passport-asaas-trust');addScript(ASAAS_TRUST_SRC,'passport-asaas-trust');};
+  const install=()=>{installAmazonAffiliate();installHomeEditorial();installContinuousHome();installEditorialRoute();installBrandNormalizer();installRecirculation();installAnos80Vol2Memory();installFestaPlocRemix();installFofoneteExit();installAsaasTrust();};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
