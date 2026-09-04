@@ -7,6 +7,7 @@
   const RECIRCULATION_CSS = '/css/editorial-recirculation.css?v=20260903';
   const ANOS80_VOL2_MEMORY_SRC = '/js/anos-80-vol2-memoria-extra.js?v=202609031723';
   const FESTA_PLOC_REMIX_SRC = '/js/festa-ploc-party-remix.js?v=2026090401';
+  const FESTA_PLOC_LOGO_FIX_SRC = '/js/festa-ploc-logo-fix.js?v=202609040210';
   const FOFONETE_EXIT_SRC = '/js/fofonete-exit-intent.js?v=20260903';
   const FOFONETE_EXIT_CSS = '/css/fofonete-exit-intent.css?v=20260903';
   const ASAAS_TRUST_SRC = '/js/asaas-footer-trust.js?v=20260904';
@@ -23,7 +24,7 @@
     addScript(RECIRCULATION_SRC,'passport-recirculation');
   };
   const installAnos80Vol2Memory=()=>{if(location.pathname!=='/anos-80-volume-2-musicas-memoria-brasileira.html')return;addScript(ANOS80_VOL2_MEMORY_SRC,'passport-anos80-vol2-memory');};
-  const installFestaPlocRemix=()=>{if(location.pathname!=='/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html')return;addScript(FESTA_PLOC_REMIX_SRC,'passport-festa-ploc-remix');};
+  const installFestaPlocRemix=()=>{if(location.pathname!=='/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html')return;addScript(FESTA_PLOC_REMIX_SRC,'passport-festa-ploc-remix');addScript(FESTA_PLOC_LOGO_FIX_SRC,'passport-festa-ploc-logo-fix');};
   const installFofoneteExit=()=>{
     if(!['/loja.html','/anuncie.html'].includes(location.pathname))return;
     if(document.head&&!document.querySelector('link[data-passport-fofonete-exit]')){const l=document.createElement('link');l.rel='stylesheet';l.href=FOFONETE_EXIT_CSS;l.dataset.passportFofoneteExit='1';document.head.appendChild(l);}
