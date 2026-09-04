@@ -1,7 +1,6 @@
 (()=>{
 'use strict';
 const stations=[
-{id:'bo',name:'Radio Bolivia',source:'Radio Cultura Andina · São Paulo',terms:'Cultura boliviana · Aymara · Quechua · Español · São Paulo',lang:'es-BO',dir:'ltr',page:'/radio-bolivia.html',external:'https://tunein.com/radio/Radio-Cultura-Andina-s288688/'},
 {id:'py',name:'Radio Paraguay',source:'Popular 103.1 FM · Asunción',terms:'Música · Pop · Rock · Hits · Paraguay',lang:'es-PY',dir:'ltr',page:'/radio-mundo-player.html?station=py',stream:'https://rds3.desdeparaguay.net/transpopular/transpopular/playlist.m3u8'},
 {id:'fr',name:'Radio France',source:'Chérie FM · France',terms:'Pop · Variété française · Hits internationaux · France',lang:'fr-FR',dir:'ltr',page:'/radio-mundo-player.html?station=fr',stream:'https://scdn.nrjaudio.fm/audio1/fr/30201/mp3_128.mp3'},
 {id:'ca',name:'Radio Québec',source:'WKND 91.9 · Québec',terms:'Pop · Rock · Indie · Musique francophone · Hits internationaux · Québec',lang:'fr-CA',dir:'ltr',page:'/radio-mundo-player.html?station=ca',stream:'https://streaming2.cjec.leclerccommunication.ca/proxy/wknd/cjec.mp3'},
