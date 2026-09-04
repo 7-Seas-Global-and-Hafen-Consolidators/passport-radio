@@ -4,7 +4,7 @@
   const SUPABASE_URL='https://kmrnnudmujezriomimwn.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY='sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y';
   const ACCOUNT_URL='https://passportradio.online/minha-passport.html';
-  const HOME_URL='/?bemvindo=1';
+  const DEFAULT_AFTER_LOGIN='/?bemvindo=1';
 
   const $=id=>document.getElementById(id);
   const loginForm=$('login-form');
@@ -19,6 +19,22 @@
   const welcomeReturn=initialParams.get('bemvindo')==='1';
   let recoveryMode=initialParams.get('recovery')==='1';
 
+  function safeReturnTo(value){
+    if(!value || typeof value!=='string') return '';
+    try{
+      const decoded=decodeURIComponent(value);
+      if(!decoded.startsWith('/')) return '';
+      if(decoded.startsWith('//')) return '';
+      if(decoded.includes('://')) return '';
+      return decoded;
+    }catch(error){return '';}
+  }
+
+  const returnToFromUrl=safeReturnTo(initialParams.get('returnTo'));
+  const returnToFromStorage=safeReturnTo(sessionStorage.getItem('passport_return_to'));
+  const RETURN_TO=returnToFromUrl || returnToFromStorage || '';
+  if(RETURN_TO) sessionStorage.setItem('passport_return_to',RETURN_TO);
+
   if(!window.supabase){show('Não foi possível carregar o serviço de conta. Tente novamente.',true);return;}
 
   const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
@@ -28,7 +44,11 @@
   function setBusy(form,busy){const button=form?.querySelector('button[type="submit"]');if(button) button.disabled=busy;}
   function setWelcome(visible){if(welcomeMessage) welcomeMessage.hidden=!visible;}
   function setGuestIntro(visible){guestIntro.forEach(element=>element.hidden=!visible);}
-  function goHome(){location.replace(HOME_URL);}
+  function goAfterAuth(){
+    const target=safeReturnTo(sessionStorage.getItem('passport_return_to')) || RETURN_TO || DEFAULT_AFTER_LOGIN;
+    sessionStorage.removeItem('passport_return_to');
+    location.replace(target);
+  }
 
   function cleanAuthUrl(){
     try{
@@ -107,7 +127,8 @@
   document.querySelectorAll('[data-password-toggle]').forEach(button=>{
     button.addEventListener('click',()=>{
       const input=$(button.dataset.passwordToggle);if(!input)return;
-      const showing=input.type==='text';input.type=showing?'password':'text';
+      const showing=input.type==='text';input.type=showing?'text':'password';
+      input.type=showing?'password':'text';
       button.setAttribute('aria-pressed',String(!showing));button.setAttribute('aria-label',showing?'Mostrar senha':'Ocultar senha');
     });
   });
@@ -119,16 +140,17 @@
     const email=$('login-email').value.trim();const password=$('login-password').value;
     const {data,error}=await client.auth.signInWithPassword({email,password});setBusy(loginForm,false);
     if(error){show('Não foi possível entrar. Confira e-mail e senha.',true);return;}
-    if(data?.session){goHome();return;}
+    if(data?.session){goAfterAuth();return;}
     show('Não foi possível abrir sua sessão agora. Tente novamente.',true);
   });
 
   signupForm.addEventListener('submit',async event=>{
     event.preventDefault();clearMessage();setBusy(signupForm,true);
     const displayName=$('signup-name').value.trim();const email=$('signup-email').value.trim();const password=$('signup-password').value;
-    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:ACCOUNT_URL+'?bemvindo=1'}});setBusy(signupForm,false);
+    const redirectUrl=ACCOUNT_URL+'?bemvindo=1'+(RETURN_TO?'&returnTo='+encodeURIComponent(RETURN_TO):'');
+    const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:redirectUrl}});setBusy(signupForm,false);
     if(error){show(error.message || 'Não foi possível criar a conta.',true);return;}
-    if(data.session){goHome();return;}else show('Conta criada. Confira seu e-mail. O link de confirmação leva direto para sua Passport.',false,true);
+    if(data.session){goAfterAuth();return;}else show('Conta criada. Confira seu e-mail. O link de confirmação leva direto para sua Passport.',false,true);
   });
 
   $('forgot-password').addEventListener('click',async()=>{
@@ -149,7 +171,7 @@
   client.auth.onAuthStateChange((event,session)=>{if(event==='PASSWORD_RECOVERY') recoveryMode=true;setTimeout(()=>renderSession(session),0);});
 
   client.auth.getSession().then(async({data})=>{
-    if(data.session && welcomeReturn && !recoveryMode){goHome();return;}
+    if(data.session && welcomeReturn && !recoveryMode){goAfterAuth();return;}
     await renderSession(data.session);
     if(data.session && !recoveryMode && (location.hash || /[?&](code|access_token|refresh_token|token_type|expires_in|expires_at|type)=/.test(location.search))) cleanAuthUrl();
   });
