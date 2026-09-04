@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 const stations=[
-{id:'bo',name:'Radio Bolivia',source:'Radio San Gabriel 98.2 FM',terms:'Aymara · Español · Música Andina · Noticias · Cultura',lang:'ay-BO',dir:'ltr',page:'/radio-bolivia.html',stream:'https://spanel.gcomstreaming.com:7004/;'},
+{id:'bo',name:'Radio Bolivia',source:'Radio Cultura Andina · São Paulo',terms:'Cultura boliviana · Aymara · Quechua · Español · São Paulo',lang:'es-BO',dir:'ltr',page:'/radio-bolivia.html',external:'https://tunein.com/radio/Radio-Cultura-Andina-s288688/'},
 {id:'kr',name:'한국 음악 라디오',source:'Big B Radio · Kpop',terms:'K-Pop · 한국 음악 · Pop',lang:'ko-KR',dir:'ltr',page:'/radio-korea.html',stream:'https://antares.dribbcast.com/proxy/kpop?mp=/s'},
 {id:'tr',name:'Türkiye Müzik Radyosu',source:'Türk Rock FM',terms:'Türkçe Rock · Rock · Pop',lang:'tr-TR',dir:'ltr',page:'/radio-turkiye.html',stream:'https://yayin5.radyohizmeti.com/8090/stream;'},
 {id:'cn',name:'中国音乐电台',source:'怀集音乐之声',terms:'华语音乐 · 独立音乐 · Music',lang:'zh-CN',dir:'ltr',page:'/radio-china.html',stream:'https://lhttp.qingting.fm/live/4804/64k.mp3'},
@@ -27,44 +27,8 @@ const nativeHls=()=>!!audio.canPlayType(HLS_MIME);
 const readyText=s=>s.source?`FONTE · ${s.source}`:'PRONTO PARA TOCAR';
 const clearEmbed=()=>{embed.hidden=true;embed.replaceChildren()};
 const destroyHls=()=>{if(hls){hls.destroy();hls=null}};
-const loadHls=()=>{
-  if(window.Hls)return Promise.resolve(window.Hls);
-  if(hlsLoader)return hlsLoader;
-  hlsLoader=new Promise((resolve,reject)=>{
-    const script=document.createElement('script');
-    script.src=HLS_CDN;
-    script.async=true;
-    script.crossOrigin='anonymous';
-    script.onload=()=>window.Hls?resolve(window.Hls):reject(new Error('HLS library unavailable'));
-    script.onerror=()=>reject(new Error('HLS library failed to load'));
-    document.head.appendChild(script);
-  }).catch(error=>{hlsLoader=null;throw error});
-  return hlsLoader;
-};
-const prepareHls=async s=>{
-  if(nativeHls()){
-    audio.src=s.stream;
-    return;
-  }
-  const Hls=await loadHls();
-  if(!Hls.isSupported())throw new Error('HLS unsupported');
-  destroyHls();
-  await new Promise((resolve,reject)=>{
-    const instance=new Hls({enableWorker:true});
-    hls=instance;
-    let settled=false;
-    const finish=(fn,value)=>{if(settled)return;settled=true;fn(value)};
-    instance.on(Hls.Events.MEDIA_ATTACHED,()=>instance.loadSource(s.stream));
-    instance.on(Hls.Events.MANIFEST_PARSED,()=>finish(resolve));
-    instance.on(Hls.Events.ERROR,(_event,data)=>{
-      if(data&&data.fatal){
-        destroyHls();
-        finish(reject,new Error(data.details||'HLS fatal error'));
-      }
-    });
-    instance.attachMedia(audio);
-  });
-};
+const loadHls=()=>{if(window.Hls)return Promise.resolve(window.Hls);if(hlsLoader)return hlsLoader;hlsLoader=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=HLS_CDN;script.async=true;script.crossOrigin='anonymous';script.onload=()=>window.Hls?resolve(window.Hls):reject(new Error('HLS library unavailable'));script.onerror=()=>reject(new Error('HLS library failed to load'));document.head.appendChild(script)}).catch(error=>{hlsLoader=null;throw error});return hlsLoader};
+const prepareHls=async s=>{if(nativeHls()){audio.src=s.stream;return}const Hls=await loadHls();if(!Hls.isSupported())throw new Error('HLS unsupported');destroyHls();await new Promise((resolve,reject)=>{const instance=new Hls({enableWorker:true});hls=instance;let settled=false;const finish=(fn,value)=>{if(settled)return;settled=true;fn(value)};instance.on(Hls.Events.MEDIA_ATTACHED,()=>instance.loadSource(s.stream));instance.on(Hls.Events.MANIFEST_PARSED,()=>finish(resolve));instance.on(Hls.Events.ERROR,(_event,data)=>{if(data&&data.fatal){destroyHls();finish(reject,new Error(data.details||'HLS fatal error'))}});instance.attachMedia(audio)})};
 const select=s=>{current=s;document.querySelectorAll('.station').forEach(x=>x.classList.toggle('is-active',x.dataset.id===s.id));name.textContent=s.name;name.lang=s.lang;name.dir=s.dir;desc.textContent=s.terms;desc.lang=s.lang;desc.dir=s.dir;lang.textContent=s.terms;lang.lang=s.lang;lang.dir=s.dir;territory.href=s.page;territory.textContent=s.name+' →';territory.lang=s.lang;territory.dir=s.dir;audio.pause();destroyHls();audio.removeAttribute('src');audio.load();clearEmbed();controls.hidden=false;play.textContent='▶ PLAY';if(s.embed){controls.hidden=true;const frame=document.createElement('iframe');frame.src=s.embed;frame.title=s.source+' · transmissão ao vivo';frame.loading='eager';frame.allow='autoplay';frame.referrerPolicy='strict-origin-when-cross-origin';embed.appendChild(frame);embed.hidden=false;play.disabled=true;stop.disabled=true;status.textContent='AO VIVO NA PASSPORT · '+s.source}else if(s.stream){if(!isHls(s)||nativeHls())audio.src=s.stream;play.disabled=false;stop.disabled=false;status.textContent=readyText(s)}else if(s.external){play.disabled=false;stop.disabled=true;status.textContent=`OUVIR NA FONTE · ${s.source}`}else{play.disabled=true;stop.disabled=true;status.textContent='SINAL INDISPONÍVEL'}};
 stations.forEach(s=>{const b=document.createElement('button');b.type='button';b.className='station';b.dataset.id=s.id;b.lang=s.lang;b.dir=s.dir;b.innerHTML=`<strong></strong><span></span>`;b.querySelector('strong').textContent=s.name;b.querySelector('span').textContent=s.source?`${s.source} · ${s.terms}`:s.terms;b.addEventListener('click',()=>select(s));list.appendChild(b)});
 play.addEventListener('click',async()=>{if(!current)return;if(!current.stream&&current.external){window.open(current.external,'_blank','noopener');return}if(!current.stream)return;if(!audio.paused){audio.pause();play.textContent='▶ PLAY';status.textContent='PAUSADO · '+current.name;return}try{if(isHls(current)&&!audio.getAttribute('src')&&!hls){status.textContent='CONECTANDO · '+current.source;await prepareHls(current)}await audio.play();status.textContent='NO AR · '+current.source;play.textContent='❚❚ PAUSE'}catch{destroyHls();audio.pause();audio.removeAttribute('src');audio.load();status.textContent='SINAL INDISPONÍVEL · TENTE NOVAMENTE'}});
