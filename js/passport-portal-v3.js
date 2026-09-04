@@ -1,55 +1,14 @@
-/* =========================================================
-   PASSPORT PORTAL v3 — dados / circulação / UI
-   NÃO toca: áudio, tunnels, World Dial, Auth, Fofonete.
-   Sem telemetria falsa: blocos editoriais reais do feed.
-   ========================================================= */
-(() => {
-  'use strict';
-  const FEED = '/data/editorial-feed.json';
-  const LOGO = '/images/passport-radio-definitive.jpg';
-  const $ = s => document.querySelector(s);
-  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-  const fmt = v => { try { return new Intl.DateTimeFormat('pt-BR', {day:'2-digit', month:'2-digit', year:'numeric'}).format(new Date(v)); } catch(_) { return ''; } };
-  const daysOld = v => Math.floor((Date.now() - new Date(v).getTime()) / 86400000);
-  const thumbOf = it => it.image || it.image_url || it.thumbnail || it.og_image || LOGO;
-  const catLabel = c => String(c || 'PASSPORT').replace(/_/g, ' ').toUpperCase();
-  const imgTag = (it, cls) => `<img class="${cls}" src="${esc(thumbOf(it))}" alt="${esc(it.title)}" loading="lazy" onerror="this.onerror=null;this.src='${LOGO}';">`;
-  const feedHTML = items => {
-    let out = '';
-    items.forEach((it, i) => {
-      out += `<article class="pp-item"><a href="${esc(it.url)}" tabindex="-1" aria-hidden="true">${imgTag(it, 'pp-item-thumb')}</a><div><span class="pp-item-k">${esc(catLabel(it.category))}</span><h2><a href="${esc(it.url)}">${esc(it.title)}</a></h2>${it.deck ? `<p>${esc(it.deck)}</p>` : ''}<span class="pp-item-meta">${esc(it.author || 'Passport Radio')} · ${fmt(it.published_at)}</span></div></article>`;
-      if (i === 5) out += `<div class="pp-feed-promo"><div><b>PROMOÇÃO · PR-0001</b><strong>Ganhe um Fone Bluetooth 5.3</strong></div><a href="promocao-fone-bluetooth.html">PARTICIPAR →</a></div>`;
-      if (i === 9) out += `<div class="pp-feed-ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7728480662290062" data-ad-slot="1000000003" data-ad-format="auto" data-full-width-responsive="true"></ins></div>`;
-      if (i === 14) out += `<div class="pp-feed-radio"><i></i><div><strong>PASSPORT RADIO · 24H</strong><small>Você muda de matéria, não perde a música.</small></div><a href="radio.html">OUVIR →</a></div>`;
-      if (i === 24) out += `<div class="pp-feed-ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7728480662290062" data-ad-slot="1000000004" data-ad-format="auto" data-full-width-responsive="true"></ins></div>`;
-    });
-    return out;
-  };
-  const recoHTML = items => items.slice(0, 5).map(it => `<li><a href="${esc(it.url)}"><span class="pp-reco-t">${esc(it.title)}</span></a></li>`).join('');
-  const missedHTML = items => items.slice(0, 6).map(it => `<li><a href="${esc(it.url)}">${esc(it.title)}</a></li>`).join('') || '<li><a href="destinos.html">Abrir o arquivo completo →</a></li>';
-  const todayHTML = (hits, older) => { const list = hits.length ? hits : older.slice(0, 4); return list.map(it => `<li><a href="${esc(it.url)}">${esc(it.title)}</a></li>`).join('') || '<li><a href="destinos.html">Arquivo →</a></li>'; };
-  const assuntosHTML = items => {
-    const freq = {};
-    items.forEach(it => (it.entities || []).forEach(e => { const k = norm(e); if (k) freq[k] = (freq[k] || 0) + 1; }));
-    return Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([k]) => `<a href="destinos.html?q=${encodeURIComponent(k)}">${esc(k.replace(/\b\w/g, m => m.toUpperCase()))}</a>`).join('');
-  };
-  const pushAds = () => { document.querySelectorAll('.pp-ad-slot ins.adsbygoogle, .pp-feed-ad ins.adsbygoogle').forEach(() => { (window.adsbygoogle = window.adsbygoogle || []).push({}); }); };
-  const boot = async () => {
-    let items = [];
-    try { const r = await fetch(FEED, { cache: 'no-store' }); if (!r.ok) return; const d = await r.json(); items = Array.isArray(d) ? d : (d.items || []); } catch(_) { return; }
-    if (!items.length) return;
-    items.sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
-    const tk = $('#pp-ticker'); if (tk) tk.textContent = items.slice(0, 8).map(i => i.title).join('  ·  ');
-    const fd = $('#pp-feed'); if (fd) fd.innerHTML = feedHTML(items.slice(0, 40));
-    const reco = [...items].sort((a, b) => { const fa = (a.format === 'MR_NOMAD' || a.format === 'STORY') ? 2 : 0; const fb = (b.format === 'MR_NOMAD' || b.format === 'STORY') ? 2 : 0; return (fb + Math.min((b.entities || []).length, 6) / 6) - (fa + Math.min((a.entities || []).length, 6) / 6); });
-    const rc = $('#pp-reco'); if (rc) rc.innerHTML = recoHTML(reco);
-    const ms = $('#pp-missed'); if (ms) ms.innerHTML = missedHTML(items.filter(i => daysOld(i.published_at) > 10));
-    const now = new Date();
-    const hits = items.filter(i => { const d = new Date(i.published_at); return d.getDate() === now.getDate() && d.getMonth() === now.getMonth() && d.getFullYear() < now.getFullYear(); });
-    const td = $('#pp-today'); if (td) td.innerHTML = todayHTML(hits, items.filter(i => daysOld(i.published_at) > 20));
-    const as = $('#pp-assuntos'); if (as) as.innerHTML = assuntosHTML(items);
-    pushAds();
-  };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true }); else boot();
-})();
+(()=>{'use strict';
+const FEEDS=['/data/editorial-manual-feed.json','/data/editorial-feed.json'],PROMO='/data/promocoes.json',FALLBACK='/images/passport-radio-definitive.jpg',LIMIT=24;
+const esc=v=>String(v||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const MAP=[[/zz top|frank beard/i,'/images/frank-beard-zz-top-01.jpg'],[/therion/i,'/images/therion-miskolc/maxresdefault32.jpg'],[/within temptation|sharon/i,'/images/sharon-den-adel-within-temptation-2026.webp'],[/deep purple|blackmore/i,'/images/ritchie-blackmore-deep-purple-reunion-2026.webp'],[/scorpions/i,'/images/scorpions-hurricane-graphic-novel.webp'],[/roger taylor|\bqueen\b/i,'/images/roger-taylor/rogertayloriseeaug2026_638.webp'],[/hoobastank/i,'/images/hoobastank/hoobastankjune2026_638.webp'],[/rhapsody/i,'/images/rhapsody-of-fire/Rhapsody-3-madrid.jpg'],[/eye of the tiger|stallone|rocky/i,'/images/rocky_3_metro_goldwyn_mayer.webp'],[/1986|anos 80/i,'/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp']];
+const image=i=>{if(i.image&&!i.image.includes('passport-radio-definitive'))return i.image;const t=(i.title||'')+' '+(i.url||'');for(const [r,s] of MAP)if(r.test(t))return s;return FALLBACK};
+const WORLD=[['Paraguay','Rock & Pop 95.5','/radio-mundo-player.html?station=py'],['France','OÜI FM','/radio-mundo-player.html?station=fr'],['한국','Big B Radio','/radio-mundo-player.html?station=kr'],['Türkiye','Türk Rock FM','/radio-turkiye.html'],['Україна','Хіт FM','/radio-ukraine.html'],['România','Rock FM','/radio-romania.html'],['Finland','Radio Rock','/radio-mundo-player.html?station=fi'],['Česko','HEY Radio','/radio-mundo-player.html?station=cz'],['中国','China Radio','/radio-china.html'],['ایران','Iran Music','/radio-iran.html'],['Venezuela','Rock VE','/radio-venezuela.html'],['Bolivia','Radio San Gabriel 98.2 FM','/radio-bolivia.html']];
+const strip=(label,title,href,cta)=>`<div class="pp-strip"><span>${label}</span><strong>${title}</strong><a href="${href}">${cta}</a></div>`;
+function ensureWorld(){const right=document.querySelector('.pp-col-right');if(right&&!document.getElementById('world-dial')){const s=document.createElement('section');s.className='pp-box';s.id='world-dial';s.innerHTML='<h2 class="pp-box-head">World Dial™</h2><div class="pp-world-grid" id="pp-world-dial"></div><a class="pp-link-all" href="radio-mundo.html">VER MAPA COMPLETO →</a>';right.querySelector('#hoje')?.before(s)}const el=document.getElementById('pp-world-dial');if(el)el.innerHTML=WORLD.map(x=>`<a class="pp-world-item" href="${x[2]}"><b>${x[0]}</b><span>${x[1]}</span></a>`).join('')}
+async function feed(){const el=document.getElementById('pp-feed');if(!el)return;const rs=await Promise.allSettled(FEEDS.map(u=>fetch(u,{cache:'no-store'}).then(r=>r.ok?r.json():[])));const seen=new Set(),items=[];rs.forEach(r=>{if(r.status!=='fulfilled')return;(Array.isArray(r.value)?r.value:r.value.items||[]).forEach(i=>{if(i?.url&&!seen.has(i.url)){seen.add(i.url);items.push(i)}})});items.sort((a,b)=>new Date(b.published_at||0)-new Date(a.published_at||0));let h='';items.slice(0,LIMIT).forEach((i,n)=>{h+=`<a class="pp-feed-item" href="${esc(i.url)}"><img src="${esc(image(i))}" alt="${esc(i.title)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK}'"><div><span class="pp-fi-k">${esc((i.format||'')+' · '+(i.category||''))}</span><h3>${esc(i.title)}</h3><p>${esc(i.deck||'')}</p></div></a>`;if(n===7)h+=strip('RÁDIO 24H','Escolha o sinal. Entre no túnel.','radio.html','OUVIR AGORA →');if(n===15)h+=strip('WORLD DIAL™','Rádios do mundo · ao vivo','radio-mundo.html','ABRIR O MAPA →');if(n===23)h+=strip('PROMOÇÕES','Resultados e próximas promoções','promocoes.html','VER PROMOÇÕES →')});h+='<div class="pp-btnrow"><a href="editorial.html">EDITORIAL 24H →</a><a href="destinos.html">ARQUIVO COMPLETO →</a><a href="radio.html">OUVIR A RÁDIO →</a></div>';el.innerHTML=h;const reco=document.getElementById('pp-reco');if(reco)reco.innerHTML=items.filter(i=>i.format==='MR_NOMAD').concat(items).slice(0,5).map(i=>`<li><a href="${esc(i.url)}">${esc(i.title)}</a></li>`).join('');const missed=document.getElementById('pp-missed');if(missed)missed.innerHTML=items.slice(-6).reverse().map(i=>`<li><a href="${esc(i.url)}">${esc(i.title)}</a></li>`).join('');const tags=document.getElementById('pp-assuntos');if(tags){const s=[...new Set(items.map(i=>i.category).filter(Boolean))].slice(0,12);tags.innerHTML=s.map(x=>`<a href="editorial.html">${esc(x.replace(/_/g,' '))}</a>`).join('')}}
+async function promos(){try{const d=await fetch(PROMO,{cache:'no-store'}).then(r=>r.json());const result=d.items.find(i=>i.status==='RESULTADO_PUBLICADO');document.querySelectorAll('.pp-promo-mini').forEach(a=>{if(result)a.innerHTML=`<b>RESULTADO · ${result.id}</b><strong>${result.title}</strong><span>${result.result.winner} · ${result.result.doc}<br>${result.result.note}</span>`});const home=document.querySelector('#promocoes .pp-band-grid');if(home)home.innerHTML=d.items.slice(0,3).map(i=>`<a class="pp-card pp-card-txt" href="${i.url}"><span class="pp-card-k">${i.status==='RESULTADO_PUBLICADO'?'Resultado':i.status.replace('_',' ')} · ${i.id}</span><strong>${i.title}</strong>${i.result?`<span class="pp-card-d">${i.result.winner} · ${i.result.doc}<br>${i.result.note}</span>`:''}</a>`).join('')}catch(_){}}
+function liveLinks(){document.querySelectorAll('#programas .pp-progs>div').forEach((d,i)=>{const href=['radio.html','editorial.html','destinos.html','https://open.spotify.com/playlist/6UcytwjagG5aLabTMW4Vt0'][i]||'radio.html';d.setAttribute('role','link');d.tabIndex=0;d.style.cursor='pointer';d.onclick=()=>location.href=href;d.onkeydown=e=>{if(e.key==='Enter')location.href=href}})}
+function ads(){document.querySelectorAll('.pp-ad-slot').forEach(slot=>{const ins=slot.querySelector('ins.adsbygoogle');if(!ins)return;try{(window.adsbygoogle=window.adsbygoogle||[]).push({})}catch(_){};setTimeout(()=>{const st=ins.getAttribute('data-ad-status');if(st==='unfilled'||(st!=='filled'&&!ins.querySelector('iframe')))slot.style.display='none'},3000)})}
+function boot(){ensureWorld();feed();promos();liveLinks();ads()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();})();
