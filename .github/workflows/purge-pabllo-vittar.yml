@@ -23,7 +23,7 @@ jobs:
       - name: Remove all Pabllo Vittar traces
         run: |
           python - <<'PY'
-          import json
+          import json, re
           from pathlib import Path
 
           needles = ('pabllo vittar', 'pablo vittar', 'pablo vitar', 'pabllo vitar')
@@ -33,10 +33,7 @@ jobs:
               text = json.dumps(value, ensure_ascii=False).casefold()
               return any(n in text for n in needles) or slug in text
 
-          for filename, key in [
-              ('data/editorial-feed.json', 'items'),
-              ('data/editorial-published.json', 'ledger'),
-          ]:
+          for filename, key in [('data/editorial-feed.json', 'items'), ('data/editorial-published.json', 'ledger')]:
               p = Path(filename)
               data = json.loads(p.read_text('utf-8'))
               rows = data.get(key, [])
@@ -58,10 +55,19 @@ jobs:
           if article.exists():
               article.unlink()
               print('article removed')
+
+          # Remove any anchor/card in other editorial pages that points to the purged article.
+          for p in Path('editorial').rglob('*.html'):
+              text = p.read_text('utf-8')
+              original = text
+              text = re.sub(r'<a\b[^>]*href=["\'][^"\']*' + re.escape(slug) + r'[^"\']*["\'][^>]*>.*?</a>', '', text, flags=re.I|re.S)
+              if text != original:
+                  p.write_text(text, 'utf-8')
+                  print('removed residual link from', p)
           PY
       - name: Verify purge
         run: |
-          if git grep -inE 'Pabllo[[:space:]]+Vittar|Pablo[[:space:]]+Vittar|Pablo[[:space:]]+Vitar|Pabllo[[:space:]]+Vitar|pabllo-vittar' -- ':!*.lock'; then
+          if git grep -inE 'Pabllo[[:space:]]+Vittar|Pablo[[:space:]]+Vittar|Pablo[[:space:]]+Vitar|Pabllo[[:space:]]+Vitar|pabllo-vittar' -- ':!*.lock' ':!.github/workflows/purge-pabllo-vittar.yml'; then
             echo 'Pabllo Vittar trace still found' >&2
             exit 1
           fi
