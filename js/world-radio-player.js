@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 const stations=[
-{id:'py',name:'Radio Paraguay',source:'Popular 103.1 FM · Asunción',terms:'Música · Pop · Rock · Hits · Paraguay',lang:'es-PY',dir:'ltr',page:'/radio-mundo-player.html?station=py',stream:'https://rds3.desdeparaguay.net/transpopular/transpopular/playlist.m3u8'},
+{id:'py',name:'Radio Paraguay',source:'Rock & Pop 95.5 FM · Asunción',terms:'Rock paraguayo · Rock · Pop · Música internacional · Paraguay',lang:'es-PY',dir:'ltr',page:'/radio-mundo-player.html?station=py',stream:'https://cp9.serverse.com/proxy/rockandpop/stream'},
 {id:'fr',name:'Radio France',source:'Chérie FM · France',terms:'Pop · Variété française · Hits internationaux · France',lang:'fr-FR',dir:'ltr',page:'/radio-mundo-player.html?station=fr',stream:'https://scdn.nrjaudio.fm/audio1/fr/30201/mp3_128.mp3'},
 {id:'ca',name:'Radio Québec',source:'WKND 91.9 · Québec',terms:'Pop · Rock · Indie · Musique francophone · Hits internationaux · Québec',lang:'fr-CA',dir:'ltr',page:'/radio-mundo-player.html?station=ca',stream:'https://streaming2.cjec.leclerccommunication.ca/proxy/wknd/cjec.mp3'},
 {id:'kr',name:'한국 음악 라디오',source:'Big B Radio · Kpop',terms:'K-Pop · 한국 음악 · Pop',lang:'ko-KR',dir:'ltr',page:'/radio-korea.html',stream:'https://antares.dribbcast.com/proxy/kpop?mp=/s'},
