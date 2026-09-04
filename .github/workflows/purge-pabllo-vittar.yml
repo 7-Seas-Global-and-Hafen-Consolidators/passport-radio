@@ -1,0 +1,78 @@
+name: Purge Pabllo Vittar references
+
+on:
+  push:
+    branches:
+      - editorial/purge-pabllo-vittar-20260904
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: editorial/purge-pabllo-vittar-20260904
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Remove all Pabllo Vittar traces
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          needles = ('pabllo vittar', 'pablo vittar', 'pablo vitar', 'pabllo vitar')
+          slug = 'pabllo-vittar-convida-urias-para-o-segundo-movimento-de-lost-in-lust'
+
+          def hit(value):
+              text = json.dumps(value, ensure_ascii=False).casefold()
+              return any(n in text for n in needles) or slug in text
+
+          for filename, key in [
+              ('data/editorial-feed.json', 'items'),
+              ('data/editorial-published.json', 'ledger'),
+          ]:
+              p = Path(filename)
+              data = json.loads(p.read_text('utf-8'))
+              rows = data.get(key, [])
+              clean = [row for row in rows if not hit(row)]
+              if len(clean) != len(rows):
+                  data[key] = clean
+                  p.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8')
+                  print(filename, 'removed', len(rows) - len(clean))
+
+          sitemap = Path('sitemap.xml')
+          if sitemap.exists():
+              lines = sitemap.read_text('utf-8').splitlines()
+              clean = [line for line in lines if not hit(line)]
+              if clean != lines:
+                  sitemap.write_text('\n'.join(clean) + '\n', 'utf-8')
+                  print('sitemap.xml removed', len(lines) - len(clean), 'line(s)')
+
+          article = Path('editorial/2026/08/25/pabllo-vittar-convida-urias-para-o-segundo-movimento-de-lost-in-lust.html')
+          if article.exists():
+              article.unlink()
+              print('article removed')
+          PY
+      - name: Verify purge
+        run: |
+          if git grep -inE 'Pabllo[[:space:]]+Vittar|Pablo[[:space:]]+Vittar|Pablo[[:space:]]+Vitar|Pabllo[[:space:]]+Vitar|pabllo-vittar' -- ':!*.lock'; then
+            echo 'Pabllo Vittar trace still found' >&2
+            exit 1
+          fi
+      - name: Commit purge
+        run: |
+          if git diff --quiet; then
+            echo 'No remaining tracked references.'
+            exit 0
+          fi
+          git config user.name 'Passport Editorial Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'editorial: purge remaining Pabllo Vittar references'
+          git push origin HEAD:editorial/purge-pabllo-vittar-20260904
