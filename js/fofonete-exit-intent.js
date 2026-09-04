@@ -6,14 +6,15 @@
   const MIN_MS=12000;
   const page=location.pathname.split('/').pop()||'index.html';
   const configs={
+    'index.html':{kicker:'MANTENHA A PASSPORT NO AR',title:'Eu fiz as contas de novo.',text:'Continuou faltando. Se puder ajudar, qualquer valor ajuda a manter a Passport gratuita, independente e no ar.',button:'AJUDAR A MANTER A PASSPORT NO AR',href:SUPPORT,external:true,home:true},
     'loja.html':{kicker:'PASSPORT STORE',title:'Já vai?',text:'Eu já tinha até começado a anotar seu pedido…',button:'VOLTAR PARA A LOJA',href:'#products'},
     'anuncie.html':{kicker:'ANUNCIE NA PASSPORT',title:'Ué… já vai?',text:'Ainda ficou faltando o nome da sua empresa aqui no meu caderninho.',button:'QUERO ANUNCIAR',href:'#contato-comercial'},
     'apoie.html':{kicker:'MANTENHA A PASSPORT NO AR',title:'Eu fiz as contas de novo.',text:'Continuou faltando. Se puder ajudar, qualquer valor ajuda a manter a Passport gratuita, independente e no ar.',button:'AJUDAR A MANTER A PASSPORT NO AR',href:SUPPORT,external:true}
   };
   let cfg=configs[page];
-  if(!cfg && document.getElementById('apoie') && !['loja.html','anuncie.html'].includes(page)) cfg={kicker:'MANTENHA A PASSPORT NO AR',title:'Eu fiz as contas de novo.',text:'Continuou faltando. Se puder ajudar, qualquer valor ajuda a manter a Passport gratuita, independente e no ar.',button:'AJUDAR A MANTER A PASSPORT NO AR',href:SUPPORT,external:true};
+  if(!cfg && document.getElementById('apoie') && !['loja.html','anuncie.html'].includes(page)) cfg={kicker:'MANTENHA A PASSPORT NO AR',title:'Eu fiz as contas de novo.',text:'Continuou faltando. Se puder ajudar, qualquer valor ajuda a manter a Passport gratuita, independente e no ar.',button:'AJUDAR A MANTER A PASSPORT NO AR',href:SUPPORT,external:true,home:location.pathname==='/' };
   if(!cfg)return;
-  let armed=false,shown=false,start=Date.now();
+  let armed=!!cfg.home,shown=false,start=cfg.home?Date.now()-MIN_MS:Date.now();
   try{if(sessionStorage.getItem(SEEN)==='1')return;}catch(_e){}
   const mark=()=>{try{sessionStorage.setItem(SEEN,'1');}catch(_e){}};
   const close=()=>{document.getElementById('fofonete-exit')?.remove();document.documentElement.classList.remove('fofonete-exit-open');};
@@ -28,6 +29,7 @@
     document.addEventListener('keydown',function esc(e){if(e.key==='Escape'){close();document.removeEventListener('keydown',esc);}});
     overlay.querySelector('.fofonete-exit__close').focus();
   };
+  if(cfg.home)setTimeout(show,650);
   ['scroll','click','touchstart','keydown'].forEach(evt=>addEventListener(evt,()=>{armed=true;},{once:true,passive:evt!=='keydown'}));
   document.addEventListener('mouseout',e=>{if(e.clientY<=8&&!e.relatedTarget)show();});
 })();
