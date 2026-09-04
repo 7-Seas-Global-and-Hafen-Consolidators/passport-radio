@@ -12,4 +12,5 @@
     sideStories.forEach((story,index)=>{const slot=side[index];if(!slot)return;slot.href=story.url;slot.innerHTML=`<img src="${story.image}" alt="${story.alt}" referrerpolicy="no-referrer"><div><small>${story.meta}</small><h2>${story.short}</h2></div>`;});if(breaking)breaking.innerHTML=stories.map(story=>story.title).join('&nbsp; · &nbsp;');if(feature){feature.href=lead.url;feature.innerHTML=`<img src="${lead.image}" alt="${lead.alt}" referrerpolicy="no-referrer"><div><small>${lead.meta}</small><h3>${lead.title}</h3><p>${lead.deck}</p></div>`;}lastSignature=expected;
   };
   const start=()=>{apply();[80,200,450,900,1600,2800].forEach(delay=>window.setTimeout(apply,delay));};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+  const portal=document.createElement('script');portal.src='/js/passport-portal-bootstrap.js?v=20260904';portal.defer=true;document.head.appendChild(portal);
 })();
