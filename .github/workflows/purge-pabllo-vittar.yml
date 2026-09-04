@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - editorial/purge-pabllo-vittar-20260904
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -25,45 +28,25 @@ jobs:
           python - <<'PY'
           import json, re
           from pathlib import Path
-
           needles = ('pabllo vittar', 'pablo vittar', 'pablo vitar', 'pabllo vitar')
           slug = 'pabllo-vittar-convida-urias-para-o-segundo-movimento-de-lost-in-lust'
-
           def hit(value):
               text = json.dumps(value, ensure_ascii=False).casefold()
               return any(n in text for n in needles) or slug in text
-
           for filename, key in [('data/editorial-feed.json', 'items'), ('data/editorial-published.json', 'ledger')]:
-              p = Path(filename)
-              data = json.loads(p.read_text('utf-8'))
-              rows = data.get(key, [])
-              clean = [row for row in rows if not hit(row)]
+              p = Path(filename); data = json.loads(p.read_text('utf-8')); rows = data.get(key, []); clean = [row for row in rows if not hit(row)]
               if len(clean) != len(rows):
-                  data[key] = clean
-                  p.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8')
-                  print(filename, 'removed', len(rows) - len(clean))
-
+                  data[key] = clean; p.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', 'utf-8'); print(filename, 'removed', len(rows)-len(clean))
           sitemap = Path('sitemap.xml')
           if sitemap.exists():
-              lines = sitemap.read_text('utf-8').splitlines()
-              clean = [line for line in lines if not hit(line)]
-              if clean != lines:
-                  sitemap.write_text('\n'.join(clean) + '\n', 'utf-8')
-                  print('sitemap.xml removed', len(lines) - len(clean), 'line(s)')
-
+              lines = sitemap.read_text('utf-8').splitlines(); clean = [line for line in lines if not hit(line)]
+              if clean != lines: sitemap.write_text('\n'.join(clean) + '\n', 'utf-8'); print('sitemap.xml removed', len(lines)-len(clean), 'line(s)')
           article = Path('editorial/2026/08/25/pabllo-vittar-convida-urias-para-o-segundo-movimento-de-lost-in-lust.html')
-          if article.exists():
-              article.unlink()
-              print('article removed')
-
-          # Remove any anchor/card in other editorial pages that points to the purged article.
+          if article.exists(): article.unlink(); print('article removed')
           for p in Path('editorial').rglob('*.html'):
-              text = p.read_text('utf-8')
-              original = text
+              text = p.read_text('utf-8'); original = text
               text = re.sub(r'<a\b[^>]*href=["\'][^"\']*' + re.escape(slug) + r'[^"\']*["\'][^>]*>.*?</a>', '', text, flags=re.I|re.S)
-              if text != original:
-                  p.write_text(text, 'utf-8')
-                  print('removed residual link from', p)
+              if text != original: p.write_text(text, 'utf-8'); print('removed residual link from', p)
           PY
       - name: Verify purge
         run: |
@@ -73,10 +56,7 @@ jobs:
           fi
       - name: Commit purge
         run: |
-          if git diff --quiet; then
-            echo 'No remaining tracked references.'
-            exit 0
-          fi
+          if git diff --quiet; then echo 'No remaining tracked references.'; exit 0; fi
           git config user.name 'Passport Editorial Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
