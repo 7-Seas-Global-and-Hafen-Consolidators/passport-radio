@@ -1,0 +1,10 @@
+/* PASSPORT · WORLD DIAL CONTAINMENT FIX — CSS only */
+.dial{grid-template-columns:minmax(0,1fr) 340px;align-items:start}
+#world-player,#world-player *{writing-mode:horizontal-tb!important;direction:ltr}
+#world-player [dir="rtl"],#world-player [lang]{direction:inherit}
+#world-player{position:sticky;top:76px;min-width:0;overflow:hidden;border:1px solid #35414d;max-width:340px}
+#world-controls{display:flex;gap:8px;flex-wrap:nowrap}
+#world-controls button{flex:1 1 0;min-width:0;white-space:nowrap}
+#world-embed[hidden]{display:none!important}
+#world-name{font-size:1.2rem;overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:980px){.dial{grid-template-columns:1fr}#world-player{position:static;max-width:100%}}
