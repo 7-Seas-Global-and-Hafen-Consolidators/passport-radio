@@ -2,9 +2,9 @@
 (()=>{'use strict';
 const $=s=>document.querySelector(s);
 const FOFONETE={
-  fiscal:'/images/grok_1788580833876.jpg',
-  fechamento:'/images/grok_1788580845386.jpg',
-  bateu:'/images/grok_1788580858549.jpg'
+  fiscal:'/images/grok_1788580858549.jpg',
+  fechamento:'/images/grok_1788580833876.jpg',
+  bateu:'/images/grok_1788580845386.jpg'
 };
 function onAir(){const ticker=$('.pp-ticker');if(!ticker||$('.v5-onair'))return;const s=document.createElement('section');s.className='v5-onair';s.innerHTML='<div class="v5-onair__in"><span class="v5-onair__live"><i></i> PASSPORT ON AIR · 24H</span><span class="v5-onair__copy"><strong>Live & Rare™ · Tunnels™ · Continuous Signals™</strong><span>A história continua no ar.</span></span><a class="v5-onair__cta" href="radio.html">OUVIR →</a></div>';ticker.insertAdjacentElement('afterend',s)}
 function nav(){const actions=$('.pp-top-actions');if(actions&&!actions.querySelector('.v5-support-top')){const a=document.createElement('a');a.className='v5-support-top';a.href='#apoie';a.textContent='APOIAR';actions.insertBefore(a,actions.querySelector('.pp-onair-btn'))}document.querySelectorAll('.pp-nav a').forEach(a=>{const t=a.textContent.trim();if(t==='LOJA')a.href='loja.html';if(t==='APOIE')a.href='#apoie'})}
