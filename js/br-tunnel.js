@@ -22,11 +22,9 @@
   let sourceIndex=0;
   const stopOthers=()=>document.querySelectorAll("audio").forEach(a=>{if(a!==audio&&!a.paused)try{a.pause()}catch(_){}});
   const prepare=(i=0)=>{sourceIndex=i%SOURCES.length;const s=SOURCES[sourceIndex];if(audio.src!==s.url)audio.src=s.url;source.textContent=s.label};
-  const close=()=>{try{audio.pause()}catch(_){}section.hidden=true;section.setAttribute("aria-hidden","true");row.classList.remove("is-active");row.setAttribute("aria-expanded","false");dirState.textContent="24 HOURS"};
-  const open=()=>{hub.querySelectorAll("[data-passport-tunnel-panel]").forEach(p=>{if(p!==section){p.querySelectorAll("audio").forEach(a=>{if(!a.paused)try{a.pause()}catch(_){}});p.hidden=true;p.setAttribute("aria-hidden","true")}});hub.querySelectorAll(".tunnel-directory__row").forEach(b=>{if(b!==row){b.classList.remove("is-active");b.setAttribute("aria-expanded","false")}});section.hidden=false;section.setAttribute("aria-hidden","false");row.classList.add("is-active");row.setAttribute("aria-expanded","true");requestAnimationFrame(()=>section.scrollIntoView({behavior:"smooth",block:"nearest"}))};
   async function start(){stopOthers();prepare(sourceIndex);state.textContent="Conectando…";try{await audio.play();play.textContent="Ⅱ";play.setAttribute("aria-label","Pausar BR Tunnel");state.textContent="ON AIR · ROCK BRASILEIRO";dirState.textContent="ON AIR"}catch(_){state.textContent="Sinal indisponível agora · tente novamente";play.textContent="▶";dirState.textContent="24 HOURS"}}
   function pause(){try{audio.pause()}catch(_){}play.textContent="▶";play.setAttribute("aria-label","Tocar BR Tunnel");state.textContent="Pausado";dirState.textContent="24 HOURS"}
-  row.addEventListener("click",()=>section.hidden?open():close());play.addEventListener("click",()=>audio.paused?start():pause());
+  play.addEventListener("click",()=>audio.paused?start():pause());
   audio.addEventListener("playing",()=>{play.textContent="Ⅱ";state.textContent="ON AIR · ROCK BRASILEIRO";dirState.textContent="ON AIR"});audio.addEventListener("pause",()=>{play.textContent="▶";if(state.textContent.startsWith("ON AIR"))state.textContent="Pausado";dirState.textContent="24 HOURS"});audio.addEventListener("error",()=>{play.textContent="▶";state.textContent="Sinal indisponível agora · tente novamente";dirState.textContent="24 HOURS"});
   prepare(0);
 })();
