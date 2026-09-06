@@ -11,7 +11,9 @@
   const stage = hub?.querySelector(".tunnel-stage-shell");
   if (!hub || !stage) return;
 
-  const STREAM = "https://14923.live.streamtheworld.com/CIDADEROCKBRASILAAC";
+  // Exact Rock Brazuca station route used by Online Radio Box.
+  // This keeps the Passport product decoupled from the station's underlying host URL.
+  const STREAM = "https://onlineradiobox.com/json/br/rockbrazuca/play?platform=web";
   const ID = "passportBRv2";
 
   // Remove any stale BR DOM left by older implementations
