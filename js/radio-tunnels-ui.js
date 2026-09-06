@@ -6,7 +6,7 @@
   "use strict";
   if (!document.body.classList.contains("live-page")) return;
   const hub=document.getElementById("passportTunnels"); if(!hub)return;
-  const panelIds=["passport80s","passportSoul","passportMPB","passportHits","passport5060","passportFlashHouse"];
+  const panelIds=["passport80s","passportSoul","passportMPB","passportHits","passport5060","passportFlashHouse","passportBR"];
   let activeId="",applying=false;
 
   function makeRow(target,number,title,format){
@@ -46,12 +46,13 @@
 
   ensureHitsDirectory();ensure5060Directory();ensureJovemGuardaDirectory();ensureFlashHouseDirectory();ensurePopoutPilot();
   hub.querySelectorAll("[data-tunnel-target]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.tunnelTarget;if(activeId===id)collapse(id);else activate(id,{scroll:true});}));
-  document.addEventListener("play",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;document.querySelectorAll("audio").forEach(a=>{if(a!==t&&!a.paused)try{a.pause();}catch(_){}});const p=t.closest("[data-passport-tunnel-panel]")||t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse");if(p&&panelIds.includes(p.id)){activeId=p.id;normalizePanels();panelIds.forEach(id=>setButtonState(id,id===p.id?"ON AIR":"24 HOURS"));}if(t.id!=="passportAudio"){const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ")try{yt.click();}catch(_){}}},true);
-  document.addEventListener("pause",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;const p=t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse");if(p&&panelIds.includes(p.id))requestAnimationFrame(()=>{if(t.paused)setButtonState(p.id,"24 HOURS");});},true);
+  document.addEventListener("play",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;document.querySelectorAll("audio").forEach(a=>{if(a!==t&&!a.paused)try{a.pause();}catch(_){}});const p=t.closest("[data-passport-tunnel-panel]")||t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse,#passportBR");if(p&&panelIds.includes(p.id)){activeId=p.id;normalizePanels();panelIds.forEach(id=>setButtonState(id,id===p.id?"ON AIR":"24 HOURS"));}if(t.id!=="passportAudio"){const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ")try{yt.click();}catch(_){}}},true);
+  document.addEventListener("pause",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;const p=t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse,#passportBR");if(p&&panelIds.includes(p.id))requestAnimationFrame(()=>{if(t.paused)setButtonState(p.id,"24 HOURS");});},true);
   const bind=()=>{["tunnelPlay","tunnelPrev","tunnelNext","tunnelPrevPlaylist","tunnelNextPlaylist","tunnelPlaylistPrev","tunnelPlaylistNext"].forEach(id=>{const b=document.getElementById(id);if(!b||b.dataset.passportExclusiveBound)return;b.dataset.passportExclusiveBound="1";b.addEventListener("click",()=>document.querySelectorAll("audio").forEach(a=>{if(!a.paused)try{a.pause();}catch(_){}}),{capture:true});});};
   new MutationObserver(()=>{normalizePanels();bind();}).observe(document.body,{childList:true,subtree:true});normalizePanels();bind();
   loadScript("/js/passport-hits-tunnel.js?v=202608242208","data-passport-hits-tunnel");
   loadScript("/js/50s-60s-tunnel.js?v=202609020135","data-passport-5060-tunnel");
   loadScript("/js/flash-house-tunnel.js?v=202608291930","data-passport-flash-house-tunnel");
+  loadScript("/js/br-tunnel.js?v=20260907c","data-passport-br-tunnel");
   const hash=location.hash.replace("#","");if(panelIds.includes(hash)){const f=()=>activate(hash,{scroll:false});if(!f())setTimeout(f,900);}
 })();
