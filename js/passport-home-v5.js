@@ -1,17 +1,124 @@
-/* PASSPORT HOME V5 — additive DOM adapter. Does not fetch feeds or control players. */
-(()=>{'use strict';
-const $=s=>document.querySelector(s);
-const FOFONETE={
-  fiscal:'/images/grok_1788580858549.jpg',
-  fechamento:'/images/grok_1788580833876.jpg',
-  bateu:'/images/grok_1788580845386.jpg'
-};
-function onAir(){const ticker=$('.pp-ticker');if(!ticker||$('.v5-onair'))return;const s=document.createElement('section');s.className='v5-onair';s.innerHTML='<div class="v5-onair__in"><span class="v5-onair__live"><i></i> PASSPORT ON AIR · 24H</span><span class="v5-onair__copy"><strong>Live & Rare™ · Tunnels™ · Continuous Signals™</strong><span>A história continua no ar.</span></span><a class="v5-onair__cta" href="radio.html">OUVIR →</a></div>';ticker.insertAdjacentElement('afterend',s)}
-function nav(){const actions=$('.pp-top-actions');if(actions&&!actions.querySelector('.v5-support-top')){const a=document.createElement('a');a.className='v5-support-top';a.href='#apoie';a.textContent='APOIAR';actions.insertBefore(a,actions.querySelector('.pp-onair-btn'))}document.querySelectorAll('.pp-nav a').forEach(a=>{const t=a.textContent.trim();if(t==='LOJA')a.href='loja.html';if(t==='APOIE')a.href='#apoie'})}
-function left(){const col=$('.pp-col-left');if(!col)return;const boxes=[...col.querySelectorAll('.pp-box')];boxes.forEach(b=>{const h=b.querySelector('.pp-box-head')?.textContent.trim();if(h==='Destaques da Redação')b.querySelector('.pp-box-head').textContent='EM DESTAQUE';if(h==='Clássicos da Casa')b.querySelector('.pp-box-head').textContent='DOSSIÊS / HISTÓRIAS';if(h==='Você Perdeu')b.querySelector('.pp-box-head').textContent='VOCÊ PERDEU';if(h==='Hubs de Crescimento')b.querySelector('.pp-box-head').textContent='EXPLORE'});if(!col.querySelector('.v5-send-pitch')){const s=document.createElement('section');s.className='pp-box v5-send-pitch';s.innerHTML='<h2 class="pp-box-head">PARTICIPE</h2><ul class="pp-mini-list"><li><a href="divulgar-bandas.html">ENVIAR PAUTA →</a></li><li><a href="minha-passport.html">MINHA PASSPORT →</a></li></ul>';col.appendChild(s)}}
-function fofoneteSupport(support){if(!support||support.querySelector('.v5-fofonete'))return;const existing=[...support.querySelectorAll('a')].find(a=>a.href.includes('asaas.com/c/shpb8gbiswnw4t2n'));const f=document.createElement('div');f.className='v5-fofonete';f.innerHTML='<img class="v5-fofonete__img" src="'+FOFONETE.fiscal+'" alt="Fofonete da Passport com caderno de contas" loading="lazy"><div class="v5-fofonete__body"><b>EU FIZ AS CONTAS DE NOVO.</b><p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p><a class="v5-fofonete__cta" href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">APOIAR A PASSPORT →</a></div>';const head=support.querySelector('.pp-box-head');head?head.insertAdjacentElement('afterend',f):support.prepend(f);if(existing)existing.style.display='none'}
-function right(){const col=$('.pp-col-right');if(!col)return;const support=$('#apoie');if(support){const h=support.querySelector('.pp-box-head');if(h)h.textContent='APOIAR A PASSPORT';fofoneteSupport(support);const line=support.querySelector('.pp-btn-line');if(line){line.href='anuncie.html';line.textContent='10 DIAS GRÁTIS · PRIMEIRAS 5 MARCAS →'}}if(!col.querySelector('.v5-commercial')){const s=document.createElement('section');s.className='v5-commercial';s.innerHTML='<b>ANUNCIE NA PASSPORT</b><p>Campanha de lançamento: 10 dias grátis para as primeiras 5 marcas.</p><a href="anuncie.html">QUERO UMA DAS 5 VAGAS →</a>';support?support.insertAdjacentElement('beforebegin',s):col.appendChild(s)}if(!col.querySelector('.v5-store')){const s=document.createElement('section');s.className='v5-store';s.innerHTML='<b>PASSPORT STORE</b><a href="loja.html">ENTRAR NA LOJA →</a>';col.appendChild(s)}if(!col.querySelector('.v5-contact')){const s=document.createElement('section');s.className='v5-contact';s.innerHTML='<b>CONTATO</b><a href="mailto:passport.radio@gmail.com">passport.radio@gmail.com</a><a href="https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!" target="_blank" rel="noopener">WHATSAPP →</a>';col.appendChild(s)}}
-function dossiers(){const feed=$('#pp-feed');if(!feed||$('.v5-dossiers'))return;const s=document.createElement('section');s.className='v5-dossiers v5-dossiers--featured';s.innerHTML='<div class="v5-dossiers__head"><h2>EM DESTAQUE · HISTÓRIAS DA PASSPORT</h2><a href="destinos.html">ARQUIVO →</a></div><div class="v5-dossiers__grid"><a class="v5-dossiers__hero" href="editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html"><span>FESTA PLOC · ANOS 80 · NOSTALGIA</span><strong>Festa PLOC: músicas dos anos 80, nostalgia e shows ao vivo</strong><small>Você cresceu. A pista não recebeu o memorando. Uma viagem pela memória musical que continua reacendendo os anos 80.</small></a><a class="v5-dossiers__hero" href="anos-80-volume-2-musicas-memoria-brasileira.html"><span>ANOS 80 · MEMÓRIA MUSICAL BRASILEIRA</span><strong>Anos 80 Vol. 2 — músicas, artistas e memória brasileira</strong><small>Artistas, instrumentos, histórias e sons que atravessaram a década.</small></a><a href="rhapsody-of-fire-symphonic-power-metal.html"><span>PASSPORT · DOSSIÊ</span><strong>Rhapsody of Fire: quando o Power Metal virou cinema</strong></a><a href="historias/eye-of-the-tiger.html"><span>ROCK & CINEMA</span><strong>Stallone queria Queen. O “não” produziu Eye of the Tiger</strong></a></div>';feed.prepend(s)}
-function boot(){onAir();nav();left();right();const obs=new MutationObserver(()=>{if($('#pp-feed')?.children.length){dossiers();obs.disconnect()}});const feed=$('#pp-feed');if(feed){if(feed.children.length)dossiers();else obs.observe(feed,{childList:true})}}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+/* PASSPORT HOME V5 — additive DOM adapter only.
+   NÃO escreve #pp-feed. Dono do feed = passport-portal-v3.js.
+   O antigo módulo de dossiês foi removido para preservar o writer único.
+*/
+(() => {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+  const WA_OFFICIAL = "https://wa.me/message/NZS7ZW4QHQVBG1";
+  const FOFONETE = {
+    fiscal: "/images/grok_1788580858549.jpg",
+    fechamento: "/images/grok_1788580833876.jpg",
+    bateu: "/images/grok_1788580845386.jpg"
+  };
+
+  function onAir() {
+    const ticker = $(".pp-ticker");
+    if (!ticker || $(".v5-onair")) return;
+    const s = document.createElement("section");
+    s.className = "v5-onair";
+    s.innerHTML =
+      '<div class="v5-onair__in">' +
+      '<span class="v5-onair__live"><i></i> PASSPORT ON AIR · 24H</span>' +
+      '<span class="v5-onair__copy"><strong>Live & Rare™ · Tunnels™ · Continuous Signals™</strong>' +
+      "<span>A história continua no ar.</span></span>" +
+      '<a class="v5-onair__cta" href="radio.html">OUVIR →</a></div>';
+    ticker.insertAdjacentElement("afterend", s);
+  }
+
+  function nav() {
+    const actions = $(".pp-top-actions");
+    if (actions && !actions.querySelector(".v5-support-top")) {
+      const a = document.createElement("a");
+      a.className = "v5-support-top";
+      a.href = "#apoie";
+      a.textContent = "APOIAR";
+      actions.insertBefore(a, actions.querySelector(".pp-onair-btn"));
+    }
+    document.querySelectorAll(".pp-nav a").forEach((a) => {
+      const t = a.textContent.trim();
+      if (t === "LOJA") a.href = "loja.html";
+      if (t === "APOIE") a.href = "#apoie";
+    });
+    // normaliza WhatsApp antigo em qualquer link da página tocado por este adapter
+    document.querySelectorAll('a[href*="wa.me/48732099369"]').forEach((a) => {
+      a.href = WA_OFFICIAL;
+    });
+  }
+
+  function left() {
+    const col = $(".pp-col-left");
+    if (!col) return;
+    [...col.querySelectorAll(".pp-box")].forEach((b) => {
+      const h = b.querySelector(".pp-box-head")?.textContent.trim();
+      if (h === "Destaques da Redação")
+        b.querySelector(".pp-box-head").textContent = "EM DESTAQUE";
+      if (h === "Clássicos da Casa")
+        b.querySelector(".pp-box-head").textContent = "DOSSIÊS / HISTÓRIAS";
+      if (h === "Você Perdeu")
+        b.querySelector(".pp-box-head").textContent = "VOCÊ PERDEU";
+      if (h === "Hubs de Crescimento")
+        b.querySelector(".pp-box-head").textContent = "EXPLORE";
+    });
+    const hasParticipate = [...col.querySelectorAll(".pp-box-head")].some((h) =>
+      /PARTICIPE/i.test(h.textContent || "")
+    );
+    if (!col.querySelector(".v5-send-pitch") && !hasParticipate) {
+      const s = document.createElement("section");
+      s.className = "pp-box v5-send-pitch";
+      s.innerHTML =
+        '<h2 class="pp-box-head">PARTICIPE</h2><ul class="pp-mini-list">' +
+        '<li><a href="divulgar-bandas.html">ENVIAR PAUTA →</a></li>' +
+        '<li><a href="minha-passport.html">MINHA PASSPORT →</a></li></ul>';
+      col.appendChild(s);
+    }
+  }
+
+  function fofoneteSupport(support) {
+    if (!support || support.querySelector(".v5-fofonete")) return;
+    const existing = [...support.querySelectorAll("a")].find((a) =>
+      a.href.includes("asaas.com/c/shpb8gbiswnw4t2n")
+    );
+    const f = document.createElement("div");
+    f.className = "v5-fofonete";
+    f.innerHTML =
+      '<img class="v5-fofonete__img" src="' +
+      FOFONETE.fiscal +
+      '" alt="Fofonete da Passport com caderno de contas" loading="lazy">' +
+      '<div class="v5-fofonete__body"><b>EU FIZ AS CONTAS DE NOVO.</b>' +
+      "<p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p>" +
+      '<a class="v5-fofonete__cta" href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">APOIAR A PASSPORT →</a></div>';
+    const head = support.querySelector(".pp-box-head");
+    head ? head.insertAdjacentElement("afterend", f) : support.prepend(f);
+    if (existing) existing.style.display = "none";
+  }
+
+  function right() {
+    const col = $(".pp-col-right");
+    if (!col) return;
+    const support = $("#apoie") || [...col.querySelectorAll(".pp-box")].find((b) =>
+      /Apoiar/i.test(b.querySelector(".pp-box-head")?.textContent || "")
+    );
+    if (support) fofoneteSupport(support);
+
+    // WhatsApp oficial no contato da sidebar se existir texto genérico
+    col.querySelectorAll("a").forEach((a) => {
+      if (/wa\.me\/48732099369/i.test(a.href)) a.href = WA_OFFICIAL;
+      if (/whatsapp/i.test(a.textContent) && !a.href.includes("wa.me"))
+        a.href = WA_OFFICIAL;
+    });
+  }
+
+  // Este adapter não toca #pp-feed.
+
+  function boot() {
+    onAir();
+    nav();
+    left();
+    right();
+  }
+
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", boot, { once: true });
+  else boot();
 })();
