@@ -1,1 +1,26 @@
-.fofonete-exit--fullscreen{position:fixed;inset:0;z-index:2147483000;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,Arial,sans-serif}.fofonete-exit__card--full{background:#fff;color:#111;max-width:520px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;overflow:hidden;border-top:5px solid var(--pp-red,#e10600);box-shadow:0 30px 90px rgba(0,0,0,.38)}.fofonete-exit__card--full .fofonete-exit__image{width:100%;padding:32px 0 0;display:flex;justify-content:center}.fofonete-exit__card--full .fofonete-exit__image img{width:200px;height:auto;object-fit:contain}.fofonete-exit__card--full .fofonete-exit__copy{padding:24px 32px 32px}.fofonete-exit__kicker{display:block;color:var(--pp-red,#e10600);font-size:.62rem;font-weight:900;letter-spacing:.12em;margin-bottom:8px}.fofonete-exit__card--full h2{font-size:1.6rem;margin:0 0 10px;line-height:1.1}.fofonete-exit__card--full p{color:#555;font-size:.88rem;margin:0 auto 16px;max-width:40ch}.fofonete-exit__countdown{font-size:3.2rem;font-weight:900;color:var(--pp-red,#e10600);margin:8px 0 20px;font-variant-numeric:tabular-nums}.fofonete-exit__cta--primary{display:block;background:var(--pp-red,#e10600);color:#fff!important;padding:14px 24px;font-size:.82rem;font-weight:900;text-decoration:none;margin-bottom:12px}.fofonete-exit__cta--primary:hover{background:#b80500}.fofonete-exit__later{display:block;width:100%;background:transparent;border:1px solid #ccc;padding:12px;font-size:.72rem;font-weight:700;color:#666;cursor:pointer}.fofonete-exit__later:disabled{cursor:not-allowed;opacity:.5}.fofonete-exit__later:not(:disabled):hover{border-color:#111;color:#111}.fofonete-exit-open{overflow:hidden!important}.fofonete-exit button:focus-visible,.fofonete-exit a:focus-visible{outline:3px solid #111;outline-offset:3px}@media(prefers-reduced-motion:reduce){.fofonete-exit--fullscreen{animation:none}.fofonete-exit__countdown{animation:none}}@media(max-width:600px){.fofonete-exit--fullscreen{padding:0}.fofonete-exit__card--full{max-width:100%;max-height:100vh;overflow:auto}.fofonete-exit__card--full .fofonete-exit__copy{padding:20px 16px 24px}.fofonete-exit__card--full .fofonete-exit__image img{width:160px}.fofonete-exit__countdown{font-size:2.4rem}}
+/* PASSPORT RADIO · FOFONETE EXIT-INTENT · CSS do owner único.
+   Arte vertical exibida INTEIRA via object-fit:contain. Sem crop destrutivo. */
+.fofonete-exit--fullscreen{position:fixed;inset:0;z-index:2147483000;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,Arial,sans-serif}
+.fofonete-exit__card--full{background:#fff;color:#111;max-width:560px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;overflow:hidden auto;border-top:5px solid var(--pp-red,#e10600);box-shadow:0 30px 90px rgba(0,0,0,.38);max-height:94vh}
+.fofonete-exit__card--full .fofonete-exit__image{width:100%;background:#7a5230;display:flex;justify-content:center;align-items:center}
+.fofonete-exit__card--full .fofonete-exit__image img{display:block;width:auto;height:auto;max-width:100%;max-height:56vh;object-fit:contain}
+.fofonete-exit__copy{padding:22px 28px 28px}
+.fofonete-exit__kicker{display:block;color:var(--pp-red,#e10600);font-size:.62rem;font-weight:900;letter-spacing:.12em;margin-bottom:8px}
+.fofonete-exit__card--full h2{font-size:1.6rem;margin:0 0 10px;line-height:1.1}
+.fofonete-exit__card--full p{color:#555;font-size:.88rem;margin:0 auto 14px;max-width:44ch}
+.fofonete-exit__countdown{font-size:3rem;font-weight:900;color:var(--pp-red,#e10600);margin:6px 0 16px;font-variant-numeric:tabular-nums}
+.fofonete-exit__cta--primary{display:block;background:var(--pp-red,#e10600);color:#fff!important;padding:14px 24px;font-size:.82rem;font-weight:900;text-decoration:none;margin-bottom:12px}
+.fofonete-exit__cta--primary:hover{background:#b80500}
+.fofonete-exit__later{display:block;width:100%;background:transparent;border:1px solid #ccc;padding:12px;font-size:.72rem;font-weight:700;color:#666;cursor:pointer}
+.fofonete-exit__later:disabled{cursor:not-allowed;opacity:.5}
+.fofonete-exit__later:not(:disabled):hover{border-color:#111;color:#111}
+.fofonete-exit-open{overflow:hidden!important}
+.fofonete-exit button:focus-visible,.fofonete-exit a:focus-visible{outline:3px solid #111;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.fofonete-exit--fullscreen{animation:none}.fofonete-exit__countdown{animation:none}}
+@media(max-width:600px){
+  .fofonete-exit--fullscreen{padding:0}
+  .fofonete-exit__card--full{max-width:100%;max-height:100vh}
+  .fofonete-exit__card--full .fofonete-exit__image img{max-height:40vh}
+  .fofonete-exit__copy{padding:18px 16px 22px}
+  .fofonete-exit__countdown{font-size:2.4rem}
+}
