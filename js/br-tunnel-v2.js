@@ -1,5 +1,5 @@
-/* PASSPORT RADIO · BR TUNNEL™ · POP ROCK BRASIL
-   Restored from the production-proven #276 engine.
+/* PASSPORT RADIO · BR TUNNEL™ · ROCK NACIONAL BRASILEIRO
+   Direct Zeno signal selected after mobile listening test.
    Native radio orchestrator + standalone Player V2 adapter. BR only.
 */
 (() => {
@@ -13,7 +13,7 @@
   const stage = radioStage || standaloneBay;
   if (!stage) return;
 
-  const PLAYLIST = "https://www.radios.com.br/play/playlist/289021/listen-radio.m3u";
+  const STREAM = "https://stream.zeno.fm/4cksare80s8uv";
   const ID = "passportBRv2";
 
   document.querySelectorAll("#passportBR, #passportBRv2").forEach(el => el.remove());
@@ -29,14 +29,14 @@
       <div style="padding:34px 0 40px">
         <span class="live-kicker">PASSPORT RADIO™ · 24 HOURS · BRAZIL</span>
         <h2 style="margin:.25em 0 .18em;font-size:clamp(3rem,9vw,7rem);line-height:.86">BR<br>Tunnel™</h2>
-        <p style="max-width:720px">Rock brasileiro atravessando gerações: clássicos, 80s, 90s, 2000 e novas cenas em sinal contínuo.</p>
+        <p style="max-width:720px">Rock brasileiro dos 80s, 90s e 2000 em sinal contínuo, com clássicos, raridades e versões ao vivo.</p>
         <div style="margin-top:24px;border:1px solid #d8d8d8;background:#fff;padding:20px;max-width:760px">
           <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
             <button type="button" id="brPlay" aria-label="Tocar BR Tunnel" style="width:58px;height:58px;border-radius:50%;border:0;background:#e10600;color:#fff;font-size:1.25rem;cursor:pointer">▶</button>
             <div style="min-width:220px;flex:1">
               <small style="display:block;font-weight:800;letter-spacing:.12em;text-transform:uppercase">BR Tunnel™ · 24H</small>
               <strong id="brStatus" style="display:block;margin-top:5px;font-size:1.1rem">Pronto para tocar</strong>
-              <span style="display:block;margin-top:3px;color:#666;font-size:.82rem">Rock Brasil · sinal contínuo</span>
+              <span style="display:block;margin-top:3px;color:#666;font-size:.82rem">Rock Brasil · 80s · 90s · 2000</span>
             </div>
           </div>
           <audio id="brAudio" preload="none"></audio>
@@ -53,25 +53,6 @@
 
   if (!audio || !play || !status) return;
 
-  let resolvedStream = "";
-
-  async function resolveStream() {
-    if (resolvedStream) return resolvedStream;
-
-    const response = await fetch(PLAYLIST, { cache: "no-store" });
-    if (!response.ok) throw new Error(`BR playlist HTTP ${response.status}`);
-
-    const text = await response.text();
-    const candidate = text
-      .split(/\r?\n/)
-      .map(line => line.trim())
-      .find(line => /^https?:\/\//i.test(line));
-
-    if (!candidate) throw new Error("BR playlist has no stream URL");
-    resolvedStream = candidate;
-    return resolvedStream;
-  }
-
   audio.addEventListener("playing", () => {
     play.textContent = "Ⅱ";
     play.setAttribute("aria-label", "Pausar BR Tunnel");
@@ -87,10 +68,12 @@
   });
 
   audio.addEventListener("error", () => {
-    resolvedStream = "";
     play.textContent = "▶";
+    play.setAttribute("aria-label", "Tocar BR Tunnel");
     status.textContent = "Sinal indisponível agora · tente novamente";
     if (rowState) rowState.textContent = "SIGNAL UNAVAILABLE";
+    audio.removeAttribute("src");
+    try { audio.load(); } catch (_) {}
   });
 
   audio.addEventListener("waiting", () => {
@@ -115,16 +98,16 @@
     status.textContent = "Conectando…";
 
     try {
-      const stream = await resolveStream();
-      if (audio.src !== stream) audio.src = stream;
+      if (audio.src !== STREAM) audio.src = STREAM;
       await audio.play();
     } catch (error) {
-      resolvedStream = "";
       console.warn("[Passport BR Tunnel] stream unavailable", error);
       status.textContent = "Sinal indisponível agora · tente novamente";
       play.textContent = "▶";
       play.setAttribute("aria-label", "Tocar BR Tunnel");
       if (rowState) rowState.textContent = "24 HOURS";
+      audio.removeAttribute("src");
+      try { audio.load(); } catch (_) {}
     }
   });
 })();
