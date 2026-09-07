@@ -1,0 +1,115 @@
+/* PASSPORT SHELL v6 — header, nav, ticker, footer único, float Apoie, player-painel.
+   Carrega em TODAS as páginas. Substitui portal-v3 shell + legal-footer. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body.pp-body{margin:0;background:var(--pp-paper);color:var(--pp-ink);font-family:var(--f-edit);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--pp-red);outline-offset:2px}
+.pp-skip{position:absolute;left:-9999px;background:var(--pp-red);color:#fff;padding:10px 14px;font-weight:900;z-index:var(--z-dialog)}
+.pp-skip:focus{left:8px;top:8px}
+
+/* HEADER — sticky escopado ao body (primeiro filho garantido por shell-v6.js) */
+.pp-topbar{position:sticky;top:0;z-index:var(--z-head);background:var(--pp-studio);isolation:isolate}
+.pp-topbar-in{max-width:var(--shell);margin:0 auto;display:flex;align-items:center;gap:14px;padding:8px 16px;min-height:var(--head-h)}
+.pp-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.pp-brand img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.pp-brand-txt b{color:#fff;font-size:.82rem;letter-spacing:.06em;display:block}
+.pp-brand-txt small{color:#9AA0A8;font-size:.58rem;display:block}
+.pp-search{flex:1;display:flex;max-width:520px}
+.pp-search input{flex:1;height:34px;border:1px solid #3A3F46;background:#16181C;color:#fff;padding:0 10px;font-size:.8rem;font-family:inherit}
+.pp-search button{border:0;background:var(--pp-red);color:#fff;font-weight:900;font-size:.64rem;letter-spacing:.08em;padding:0 14px;cursor:pointer}
+.pp-top-actions{display:flex;gap:4px;margin-left:auto}
+.pp-top-actions a{color:#C9CDD3;font-size:.6rem;font-weight:900;letter-spacing:.05em;padding:8px}
+.pp-top-actions a:hover{color:#fff}
+.pp-onair-btn{background:var(--pp-red);color:#fff!important;display:inline-flex;align-items:center;gap:6px;padding:8px 12px!important}
+.pp-onair-btn i{width:7px;height:7px;border-radius:50%;background:#fff;animation:pp-blink 1.2s infinite}
+@keyframes pp-blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* NAV */
+.pp-nav{position:sticky;top:var(--head-h);z-index:var(--z-nav);background:var(--pp-red);isolation:isolate}
+.pp-nav-in{max-width:var(--shell);margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.pp-nav-in::-webkit-scrollbar{display:none}
+.pp-nav a{color:#fff;font-size:.66rem;font-weight:900;letter-spacing:.05em;padding:11px 13px;white-space:nowrap}
+.pp-nav a:hover,.pp-nav a[aria-current="page"]{background:var(--pp-red-deep)}
+
+/* TICKER */
+.pp-ticker{display:flex;align-items:center;gap:12px;max-width:var(--shell);margin:0 auto;padding:8px 16px;border-bottom:1px solid var(--pp-rule);min-height:var(--tick-h)}
+.pp-ticker-label{background:var(--pp-red);color:#fff;font-size:.6rem;font-weight:900;padding:4px 9px;letter-spacing:.08em}
+.pp-ticker-track{flex:1;font-size:.72rem;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pp-ticker-live{font-size:.66rem;font-weight:900;color:var(--pp-red);white-space:nowrap}
+
+/* FOOTER ÚNICO — 1 owner, 1 linguagem, legal dentro */
+.pp-footer{background:var(--pp-studio);color:#A6ABB3;margin-top:var(--s7)}
+.pp-footer-in{max-width:var(--shell);margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:24px;padding:40px 16px 28px}
+.pp-fcol img{width:48px;height:48px;border-radius:50%;object-fit:cover;margin-bottom:10px}
+.pp-fcol p{font-size:.68rem;line-height:1.6;margin:0}
+.pp-fcol strong{display:block;color:#fff;font-size:.66rem;font-weight:900;letter-spacing:.1em;margin-bottom:10px}
+.pp-fcol a{display:block;font-size:.72rem;padding:3px 0;color:#A6ABB3}
+.pp-fcol a:hover{color:#fff}
+.pp-footer-trust{max-width:var(--shell);margin:0 auto;padding:0 16px 20px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pp-footer-trust span{border:1px solid #2A2E35;color:#8B9097;font-size:.56rem;font-weight:900;letter-spacing:.08em;padding:4px 8px}
+.pp-footer-trust em{font-style:normal;font-size:.6rem;color:#6B7076;margin-left:auto}
+.pp-footer-bottom{border-top:1px solid #22262B;text-align:center;font-size:.64rem;padding:14px 16px;color:#8B9097}
+.pp-footer-bottom a{text-decoration:underline}
+.pp-footer-legal{border-top:1px solid #1A1E23;background:#08090B;color:#6B7076;font-size:.6rem;line-height:1.7;padding:20px 16px;max-width:var(--shell);margin:0 auto}
+
+/* APOIE FLUTUANTE — context-aware, nunca sobre player/footer/CTA */
+.passport-support-float{position:fixed;right:16px;bottom:calc(var(--player-h,84px) + 14px);z-index:var(--z-float);display:flex;align-items:center;gap:10px;max-width:min(300px,calc(100vw - 24px));padding:10px 14px;border:1px solid rgba(16,17,20,.12);border-radius:var(--rp);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:var(--sh2);color:var(--pp-ink)!important;transition:transform var(--t-fast),opacity var(--t-med),bottom var(--t-med)}
+.passport-support-float::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pp-red);box-shadow:0 0 0 4px rgba(215,25,32,.14);flex:0 0 auto}
+.passport-support-float strong{display:block;font-size:.64rem;font-weight:900;letter-spacing:.06em}
+.passport-support-float small{display:block;font-size:.56rem;font-weight:700;letter-spacing:.08em;color:var(--pp-muted)}
+.passport-support-float:hover{transform:translateY(-2px)}
+body[data-float="off"] .passport-support-float{opacity:0;pointer-events:none;transform:translateY(8px)}
+body:not(:has(.player)):not(:has(#passport-player)) .passport-support-float{bottom:16px}
+
+/* PLAYER — PAINEL novo, MOTOR intocado (passport-live.js byte-identical) */
+:root{--player-h:84px}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-player);height:var(--player-h);background:linear-gradient(180deg,#14161A,#0B0C0E);border-top:2px solid var(--pp-red);display:flex;align-items:center;gap:12px;padding:10px 16px;font-family:var(--f-mono)}
+.player button{width:42px;height:42px;border-radius:50%;border:1px solid #2A2E35;background:#1A1C20;color:#E8EAEE;font-size:.9rem;cursor:pointer;transition:background var(--t-fast),border-color var(--t-fast)}
+.player button:hover{border-color:var(--pp-red)}
+.player button.play{background:var(--pp-red);border-color:var(--pp-red);color:#fff;width:48px;height:48px}
+.player-copy{flex:1;min-width:0}
+.player-copy strong{display:block;color:#fff;font-size:.78rem;letter-spacing:.06em}
+.player-copy small{display:block;color:#8B9097;font-size:.6rem;letter-spacing:.04em}
+.player .status{display:flex;align-items:center;gap:8px;color:var(--pp-lamp);font-size:.62rem;font-weight:900;letter-spacing:.08em}
+.player .status i{width:8px;height:8px;border-radius:50%;background:var(--pp-lamp);box-shadow:0 0 8px var(--pp-lamp)}
+/* VU meter — 4 barras, só quando toca */
+.player .pp-vu{display:flex;align-items:flex-end;gap:2px;height:22px;width:34px}
+.player .pp-vu i{flex:1;background:var(--pp-lamp);height:20%;opacity:.35;transition:height var(--t-fast)}
+body[data-playing="1"] .player .pp-vu i{opacity:1;animation:pp-vu .9s ease-in-out infinite}
+body[data-playing="1"] .player .pp-vu i:nth-child(2){animation-delay:.15s}
+body[data-playing="1"] .player .pp-vu i:nth-child(3){animation-delay:.3s}
+body[data-playing="1"] .player .pp-vu i:nth-child(4){animation-delay:.45s}
+@keyframes pp-vu{0%,100%{height:20%}50%{height:95%}}
+
+/* BOTÕES GLOBAIS */
+.pp-btn{display:inline-block;font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:.68rem;padding:12px 18px;border:0;cursor:pointer;transition:background var(--t-fast),color var(--t-fast)}
+.pp-btn--red{background:var(--pp-red);color:#fff}
+.pp-btn--red:hover{background:var(--pp-red-deep)}
+.pp-btn--ink{background:var(--pp-ink);color:#fff}
+.pp-btn--ink:hover{background:#000}
+.pp-btn--ghost{background:transparent;border:1px solid currentColor}
+
+/* RESPONSIVO SHELL */
+@media(max-width:1180px){.pp-footer-in{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:860px){
+  .pp-topbar-in{flex-wrap:wrap;padding:8px 12px}
+  .pp-brand{flex-basis:auto}
+  .pp-search{order:3;flex-basis:100%;max-width:none;margin-top:6px}
+  .pp-top-actions{overflow-x:auto;max-width:100%;scrollbar-width:none}
+  .pp-footer-in{grid-template-columns:1fr 1fr;padding:28px 16px 20px}
+  :root{--player-h:72px}
+  .player button{width:38px;height:38px}.player button.play{width:44px;height:44px}
+  .player .pp-vu{display:none}
+}
+@media(max-width:480px){
+  .passport-support-float small{display:none}
+  .passport-support-float{right:10px;padding:9px 12px}
+  .pp-footer-in{grid-template-columns:1fr}
+}
+@media print{.player,.passport-support-float,.pp-nav{display:none!important}}
+/* GROK DELTA sobre Qwen: mata body::after legado se legal-footer ainda carregar */
+body.pp-body::after{content:none!important;display:none!important}
+body.pp-body{padding-bottom:calc(var(--player-h) + 8px)}
+.player .status i{flex:0 0 auto}

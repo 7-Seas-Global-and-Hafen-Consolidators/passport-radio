@@ -1,0 +1,20 @@
+/* PASSPORT TOKENS v6 — SINAL & PAPEL. Owner único de variáveis. */
+:root{
+  --pp-paper:#FBFAF8;--pp-ink:#101114;--pp-coal:#1A1C20;--pp-rule:#E3E0D8;--pp-muted:#6B6B66;
+  --pp-red:#D71920;--pp-red-deep:#9B0000;--pp-lamp:#FF3B30;
+  --pp-studio:#0B0C0E;--pp-studio-2:#14161A;--pp-studio-rule:#2A2E35;--pp-studio-txt:#E8EAEE;--pp-stage:#08090B;
+  --pp-nomad:#F3EEE3;--pp-nomad-rule:#D8CDB4;--pp-archive:#0E0F12;--pp-shop:#F4F5F7;--pp-shop-stage:#FFFFFF;
+  --f-edit:"Inter",system-ui,Arial,sans-serif;--f-mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,Consolas,monospace;
+  --fs-kicker:.62rem;--fs-meta:.68rem;--fs-body:.95rem;--fs-deck:1.05rem;--fs-h3:1.15rem;
+  --fs-h2:clamp(1.5rem,2.6vw,2.1rem);--fs-lead:clamp(2.1rem,4.2vw,3.6rem);--fs-door:clamp(3rem,7vw,6rem);
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:72px;--s9:96px;
+  --shell:1440px;--rail-l:264px;--rail-r:304px;--gap:24px;--head-h:60px;--nav-h:40px;--tick-h:40px;
+  --r1:2px;--r2:6px;--rp:999px;
+  --sh1:0 1px 2px rgba(16,17,20,.06),0 8px 24px rgba(16,17,20,.06);--sh2:0 2px 6px rgba(16,17,20,.10),0 18px 48px rgba(16,17,20,.14);
+  --z-nav:890;--z-head:900;--z-float:9400;--z-player:9500;--z-fofonete:2147483000;--z-dialog:9700;
+  --t-fast:.15s ease;--t-med:.3s cubic-bezier(.2,.7,.2,1);
+  --player-h:84px;
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}

@@ -1,0 +1,36 @@
+/* PASSPORT STORE/PROMO v6 — pele comercial premium, mesmo universo de marca.
+   Vale para loja.html e promocoes.html. Engine de inscrição/checkout intacta. */
+body.pp-body{background:var(--pp-shop)}
+.pp-store-hero{background:var(--pp-ink);color:#fff;padding:var(--s8) 0 var(--s7)}
+.pp-store-hero__in{max-width:var(--shell);margin:0 auto;padding:0 16px}
+.pp-store-hero h1{margin:0 0 6px;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;letter-spacing:-.03em}
+.pp-store-hero p{margin:0;color:#A6ABB3;font-size:.86rem;max-width:60ch}
+.pp-store-hero .pp-env__kicker{color:var(--pp-lamp)}
+.pp-store-bar{background:#fff;border-bottom:1px solid var(--pp-rule);position:sticky;top:calc(var(--head-h) + var(--nav-h));z-index:var(--z-nav);isolation:isolate}
+.pp-store-bar__in{max-width:var(--shell);margin:0 auto;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.pp-store-bar__in::-webkit-scrollbar{display:none}
+.pp-chip{border:1px solid var(--pp-rule);background:#fff;font-size:.62rem;font-weight:900;letter-spacing:.08em;padding:8px 12px;white-space:nowrap;cursor:pointer}
+.pp-chip[aria-pressed="true"],.pp-chip:hover{border-color:var(--pp-ink);background:var(--pp-ink);color:#fff}
+.pp-store-main{max-width:var(--shell);margin:0 auto;padding:var(--s6) 16px var(--s9)}
+.pp-store-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5)}
+.pp-product .rv6-media{aspect-ratio:1/1}
+.pp-product strong{font-size:1.02rem}
+.pp-product-detail{background:#fff;border:1px solid var(--pp-rule);margin-top:var(--s6);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s6);padding:var(--s6)}
+.pp-product-detail .rv6-media{aspect-ratio:1/1;background:#fff}
+.pp-product-detail h2{margin:0 0 8px;font-size:1.6rem;font-weight:900;letter-spacing:-.02em}
+.pp-product-detail .pp-price{font-size:2rem}
+.pp-product-detail ul{margin:12px 0;padding-left:18px;font-size:.82rem;color:#44443F;line-height:1.6}
+.pp-trust-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pp-trust-row span{border:1px solid var(--pp-rule);font-size:.56rem;font-weight:900;letter-spacing:.08em;padding:5px 9px;color:var(--pp-muted)}
+/* PROMO — esteira com foto real e estados */
+.pp-promo-stack{display:grid;gap:var(--s5)}
+.pp-promo-card{background:#fff;border:1px solid var(--pp-rule);display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);overflow:hidden}
+.pp-promo-card .rv6-media{aspect-ratio:16/10;height:100%}
+.pp-promo-card__b{padding:var(--s5)}
+.pp-promo-card__b b{font-size:.6rem;font-weight:900;letter-spacing:.12em;color:var(--pp-red)}
+.pp-promo-card__b h3{margin:6px 0;font-size:1.4rem;font-weight:900;letter-spacing:-.02em}
+.pp-promo-card__b p{margin:0 0 14px;font-size:.86rem;color:#44443F;line-height:1.55}
+.pp-promo-card[data-status="RESULTADO"]{border-left:6px solid var(--pp-ink)}
+@media(max-width:1180px){.pp-store-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:960px){.pp-store-grid{grid-template-columns:repeat(2,1fr)}.pp-product-detail{grid-template-columns:1fr}.pp-promo-card{grid-template-columns:1fr}}
+@media(max-width:560px){.pp-store-grid{grid-template-columns:1fr}.pp-store-bar{top:var(--head-h)}}
