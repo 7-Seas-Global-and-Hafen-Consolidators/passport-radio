@@ -53,6 +53,39 @@
 
   if (!audio || !play || !status) return;
 
+  // --- INSTRUMENTAÇÃO FORENSE BR-AUDIO (TEMPORÁRIO) ---
+  const brAudio = document.getElementById("brAudio");
+
+  if (brAudio) {
+    const logPrefix = "[BR-AUDIO FORENSIC]";
+    const netState = { 0: "NETWORK_EMPTY", 1: "NETWORK_IDLE", 2: "NETWORK_LOADING", 3: "NETWORK_NO_SOURCE" };
+    const readyState = { 0: "HAVE_NOTHING", 1: "HAVE_METADATA", 2: "HAVE_CURRENT_DATA", 3: "HAVE_FUTURE_DATA", 4: "HAVE_ENOUGH_DATA" };
+    const errCodes = { 1: "MEDIA_ERR_ABORTED", 2: "MEDIA_ERR_NETWORK", 3: "MEDIA_ERR_DECODE", 4: "MEDIA_ERR_SRC_NOT_SUPPORTED" };
+
+    const events = [
+      "loadstart", "loadedmetadata", "loadeddata", "canplay", "canplaythrough",
+      "play", "playing", "waiting", "stalled", "suspend", "abort", "emptied"
+    ];
+
+    events.forEach(evt => {
+      brAudio.addEventListener(evt, () => {
+        console.log(`${logPrefix} EVENT: ${evt} | readyState: ${readyState[brAudio.readyState]} | networkState: ${netState[brAudio.networkState]} | src: ${brAudio.currentSrc}`);
+      });
+    });
+
+    brAudio.addEventListener("error", () => {
+      const err = brAudio.error;
+      console.error(`${logPrefix} 🔥 MEDIA ERROR DETECTED 🔥`);
+      console.error(`Code: ${err?.code} (${errCodes[err?.code] || "UNKNOWN"})`);
+      console.error(`Message: ${err?.message || "No message"}`);
+      console.error(`networkState: ${netState[brAudio.networkState]} | readyState: ${readyState[brAudio.readyState]}`);
+      console.error(`currentSrc: ${brAudio.currentSrc}`);
+    });
+
+    console.log(`${logPrefix} Instrumentation armed. Target src: ${brAudio.src || brAudio.currentSrc}`);
+  }
+  // --- FIM DA INSTRUMENTAÇÃO ---
+
   audio.addEventListener("playing", () => {
     play.textContent = "Ⅱ";
     play.setAttribute("aria-label", "Pausar BR Tunnel");
