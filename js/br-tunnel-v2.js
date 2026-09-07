@@ -52,11 +52,15 @@
   if (!audio || !play || !status) return;
 
   let resolvedStream = "";
+  let recoveryTimer = 0;
+  let shouldPlay = false;
+  let internalRecovery = false;
 
-  async function resolveStream() {
-    if (resolvedStream) return resolvedStream;
+  async function resolveStream(force = false) {
+    if (resolvedStream && !force) return resolvedStream;
+    if (force) resolvedStream = "";
 
-    const response = await fetch(PLAYLIST, { cache: "no-store" });
+    const response = await fetch(`${PLAYLIST}?t=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`BR playlist HTTP ${response.status}`);
 
     const text = await response.text();
@@ -70,7 +74,40 @@
     return resolvedStream;
   }
 
+  function clearRecovery() {
+    if (recoveryTimer) {
+      clearTimeout(recoveryTimer);
+      recoveryTimer = 0;
+    }
+  }
+
+  function recover(delay = 900) {
+    if (!shouldPlay) return;
+    clearRecovery();
+    status.textContent = "Reconectando…";
+    if (rowState) rowState.textContent = "RECONNECTING";
+
+    recoveryTimer = window.setTimeout(async () => {
+      if (!shouldPlay) return;
+      try {
+        const stream = await resolveStream(true);
+        if (!shouldPlay) return;
+        internalRecovery = true;
+        audio.src = stream;
+        audio.load();
+        await audio.play();
+      } catch (error) {
+        console.warn("[Passport BR Tunnel] recovery failed", error);
+        if (shouldPlay) recover(2500);
+      } finally {
+        internalRecovery = false;
+      }
+    }, delay);
+  }
+
   audio.addEventListener("playing", () => {
+    shouldPlay = true;
+    clearRecovery();
     play.textContent = "Ⅱ";
     play.setAttribute("aria-label", "Pausar BR Tunnel");
     status.textContent = "ON AIR · ROCK BRASILEIRO";
@@ -80,18 +117,44 @@
   audio.addEventListener("pause", () => {
     play.textContent = "▶";
     play.setAttribute("aria-label", "Tocar BR Tunnel");
-    if (status.textContent.startsWith("ON AIR")) status.textContent = "Pausado";
-    if (rowState) rowState.textContent = "24 HOURS";
+    if (!internalRecovery) {
+      shouldPlay = false;
+      clearRecovery();
+      if (status.textContent.startsWith("ON AIR") || status.textContent.startsWith("Reconectando")) status.textContent = "Pausado";
+      if (rowState) rowState.textContent = "24 HOURS";
+    }
   });
 
   audio.addEventListener("error", () => {
+    if (shouldPlay) {
+      recover(700);
+      return;
+    }
     play.textContent = "▶";
     status.textContent = "Sinal indisponível agora · tente novamente";
     if (rowState) rowState.textContent = "SIGNAL UNAVAILABLE";
   });
 
+  audio.addEventListener("stalled", () => {
+    if (shouldPlay) recover(1200);
+  });
+
+  audio.addEventListener("ended", () => {
+    if (shouldPlay) recover(500);
+  });
+
   audio.addEventListener("waiting", () => {
-    status.textContent = "Conectando…";
+    if (shouldPlay) status.textContent = "Conectando…";
+  });
+
+  window.addEventListener("online", () => {
+    if (shouldPlay) recover(300);
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && shouldPlay && (audio.paused || audio.ended || audio.networkState === HTMLMediaElement.NETWORK_NO_SOURCE)) {
+      recover(250);
+    }
   });
 
   play.addEventListener("click", async (event) => {
@@ -99,6 +162,8 @@
     event.stopPropagation();
 
     if (!audio.paused) {
+      shouldPlay = false;
+      clearRecovery();
       audio.pause();
       return;
     }
@@ -109,18 +174,18 @@
       }
     });
 
+    shouldPlay = true;
     status.textContent = "Conectando…";
 
     try {
-      const stream = await resolveStream();
-      if (audio.src !== stream) audio.src = stream;
+      const stream = await resolveStream(true);
+      if (!shouldPlay) return;
+      audio.src = stream;
+      audio.load();
       await audio.play();
     } catch (error) {
       console.warn("[Passport BR Tunnel] stream unavailable", error);
-      status.textContent = "Sinal indisponível agora · tente novamente";
-      play.textContent = "▶";
-      play.setAttribute("aria-label", "Tocar BR Tunnel");
-      if (rowState) rowState.textContent = "24 HOURS";
+      if (shouldPlay) recover(1500);
     }
   });
 })();
