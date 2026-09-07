@@ -1,7 +1,7 @@
 /* PASSPORT RADIO · PLAYER V2 WIRING LAYER
    Safe integration layer for Passport radio surfaces. */
 (()=>{"use strict";if(!document.body.classList.contains("live-page"))return;
-const MAP={passport80s:"80s",passportSoul:"soul",passportMPB:"mpb",passportHits:"hits",passport5060:"5060"};
+const MAP={passport80s:"80s",passportSoul:"soul",passportMPB:"mpb",passportHits:"hits",passport5060:"5060",passportBRRock:"brrock"};
 const NATIVE_ONLY=new Set(["continuous"]);const playerUrl=channel=>`/passport-player-v2.html?channel=${encodeURIComponent(channel)}`;
 function pauseLocal(){if(window.PassportRadioBridge&&typeof window.PassportRadioBridge.pauseLocal==="function"){try{window.PassportRadioBridge.pauseLocal();return}catch(_){}}document.querySelectorAll("audio").forEach(audio=>{if(!audio.paused)try{audio.pause()}catch(_){}});const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ")try{yt.click()}catch(_){}}
 function nativeTunnelId(row){if(row?.dataset?.tunnel==="continuous")return"continuous";return""}
