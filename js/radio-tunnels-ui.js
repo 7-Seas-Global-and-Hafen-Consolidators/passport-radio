@@ -29,6 +29,11 @@
     d.appendChild(makeRow("passportFlashHouse","06","Flash House Tunnel™","Flash House · Eurodance · House · Italo · Hi-NRG · Freestyle"));
     const intro=hub.querySelector(".tunnels-intro p");if(intro)intro.textContent="Seis ambientes musicais contínuos, organizados sem transformar a página numa parede de players. Abra um por vez; a engenharia dos canais permanece independente.";
   }
+  function ensureBRRockDirectory(){
+    const d=hub.querySelector(".tunnel-directory");if(!d||d.querySelector('[data-tunnel-target="passportBRRock"]'))return;
+    d.appendChild(makeRow("passportBRRock","07","Rock Brasil Tunnel™","Rock nacional · 80s · 90s · 2000s"));
+    const intro=hub.querySelector(".tunnels-intro p");if(intro)intro.textContent="Sete ambientes musicais contínuos, organizados sem transformar a página numa parede de players. Abra um por vez; a engenharia dos canais permanece independente.";
+  }
   function ensurePopoutPilot(){
     const d=hub.querySelector(".tunnel-directory"),row=d&&d.querySelector('[data-tunnel-target="passport5060"]');if(!d||!row||d.querySelector("[data-passport-popout-pilot]"))return;
     if(!document.querySelector("style[data-passport-popout-pilot-style]")){const s=document.createElement("style");s.dataset.passportPopoutPilotStyle="1";s.textContent=`.tunnel-popout-pilot{display:flex;justify-content:flex-end;padding:10px 0 3px}.tunnel-popout-pilot__button{appearance:none;border:0;background:transparent;color:#8a5a18;cursor:pointer;font:900 .55rem Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}@media(max-width:640px){.tunnel-popout-pilot{justify-content:flex-start;padding:10px 2px 4px}}`;document.head.appendChild(s);}
@@ -44,7 +49,7 @@
   function activate(id,o={}){const p=document.getElementById(id);if(!p)return false;if(activeId&&activeId!==id)pausePanel(document.getElementById(activeId));activeId=id;normalizePanels();if(o.scroll)requestAnimationFrame(()=>p.scrollIntoView({behavior:"smooth",block:"nearest"}));return true;}
   function collapse(id){if(activeId!==id)return;pausePanel(document.getElementById(id));activeId="";normalizePanels();}
 
-  ensureHitsDirectory();ensure5060Directory();ensureJovemGuardaDirectory();ensureFlashHouseDirectory();ensurePopoutPilot();
+  ensureHitsDirectory();ensure5060Directory();ensureJovemGuardaDirectory();ensureFlashHouseDirectory();ensureBRRockDirectory();ensurePopoutPilot();
   hub.querySelectorAll("[data-tunnel-target]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.tunnelTarget;if(activeId===id)collapse(id);else activate(id,{scroll:true});}));
   document.addEventListener("play",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;document.querySelectorAll("audio").forEach(a=>{if(a!==t&&!a.paused)try{a.pause();}catch(_){}});const p=t.closest("[data-passport-tunnel-panel]")||t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse");if(p&&panelIds.includes(p.id)){activeId=p.id;normalizePanels();panelIds.forEach(id=>setButtonState(id,id===p.id?"ON AIR":"24 HOURS"));}if(t.id!=="passportAudio"){const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ")try{yt.click();}catch(_){}}},true);
   document.addEventListener("pause",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;const p=t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse");if(p&&panelIds.includes(p.id))requestAnimationFrame(()=>{if(t.paused)setButtonState(p.id,"24 HOURS");});},true);
