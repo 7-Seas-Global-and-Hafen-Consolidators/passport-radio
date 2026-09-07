@@ -31,7 +31,7 @@
   }
   function ensureBRDirectory(){
     const d=hub.querySelector(".tunnel-directory");if(!d||d.querySelector('[data-tunnel-target="passportBRv2"]'))return;
-    d.appendChild(makeRow("passportBRv2","07","BR Tunnel™","Rock brasileiro · clássicos · 80s · 90s · 2000 · nova cena"));
+    d.appendChild(makeRow("passportBRv2","07","BR Tunnel™","Rock brasileiro · 80s · 90s · 2000 · versões ao vivo"));
   }
   function ensurePopoutPilot(){
     const d=hub.querySelector(".tunnel-directory"),row=d&&d.querySelector('[data-tunnel-target="passport5060"]');if(!d||!row||d.querySelector("[data-passport-popout-pilot]"))return;
@@ -57,6 +57,6 @@
   loadScript("/js/passport-hits-tunnel.js?v=202608242208","data-passport-hits-tunnel");
   loadScript("/js/50s-60s-tunnel.js?v=202609020135","data-passport-5060-tunnel");
   loadScript("/js/flash-house-tunnel.js?v=202608291930","data-passport-flash-house-tunnel");
-  loadScript("/js/br-tunnel-v2.js?v=20260907c","data-passport-br-tunnel-v2");
+  loadScript("/js/br-tunnel-v2.js?v=20260907d","data-passport-br-tunnel-v2");
   const hash=location.hash.replace("#","");if(panelIds.includes(hash)){const f=()=>activate(hash,{scroll:false});if(!f())setTimeout(f,900);}
 })();
