@@ -1,212 +1,217 @@
-/* PASSPORT RADIO · BR TUNNEL™
-   Clean engine · Pop Rock Brasil · Rock Nacional 24H
-   Dedicated to BR only. No other Passport player is modified here.
-*/
-(() => {
-  "use strict";
-  if (!document.body.classList.contains("live-page")) return;
-
-  const PLAYLIST = "https://www.radios.com.br/play/playlist/289021/listen-radio.m3u";
-  const PANEL_ID = "passportBRv2";
+/**
+ * PASSPORT RADIO · BR TUNNEL™
+ * Engenharia Principal · Pop Rock Brasil · Rock Nacional 24H
+ * Versão: 3.0.0 (Cirurgia Completa - Respeita Orquestrador)
+ */
+(function () {
+  const TUNNEL_ID = "br";
+  const PANEL_ID = "passportBR";
   const AUDIO_ID = "brAudio";
   const PLAY_ID = "brPlay";
   const STATUS_ID = "brStatus";
+  const PLAYLIST_URL = "https://www.radios.com.br/play/playlist/289021/listen-radio.m3u";
 
-  const hub = document.getElementById("passportTunnels");
-  const stage = hub?.querySelector(".tunnel-stage-shell");
-  if (!hub || !stage) return;
-
-  /* BR-only sanitation: kill every stale BR engine/panel before mounting one current instance. */
-  hub.querySelectorAll("#passportBR,#passportBRv2,[data-passport-br-engine]").forEach(node => {
-    node.querySelectorAll?.("audio,video").forEach(media => {
-      try { media.pause(); media.removeAttribute("src"); media.load(); } catch (_) {}
-    });
-    try { node.remove(); } catch (_) {}
-  });
-  document.querySelectorAll(`#${AUDIO_ID},#${PLAY_ID},#${STATUS_ID}`).forEach(node => {
-    if (node instanceof HTMLMediaElement) {
-      try { node.pause(); node.removeAttribute("src"); node.load(); } catch (_) {}
-    }
-    try { node.remove(); } catch (_) {}
-  });
-
-  const panel = document.createElement("section");
-  panel.id = PANEL_ID;
-  panel.className = "passport-br-section";
-  panel.dataset.passportTunnelPanel = "1";
-  panel.dataset.passportBrEngine = "current";
-  panel.hidden = true;
-  panel.setAttribute("aria-hidden", "true");
-  panel.innerHTML = `
-    <div class="live-shell">
-      <div style="padding:34px 0 40px">
-        <span class="live-kicker">PASSPORT RADIO™ · 24 HOURS · BRAZIL</span>
-        <h2 style="margin:.25em 0 .18em;font-size:clamp(3rem,9vw,7rem);line-height:.86">BR<br>Tunnel™</h2>
-        <p style="max-width:720px">Rock brasileiro atravessando gerações: clássicos, 80s, 90s, 2000 e novas cenas em sinal contínuo.</p>
-        <div style="margin-top:24px;border:1px solid #d8d8d8;background:#fff;padding:20px;max-width:760px">
-          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
-            <button type="button" id="${PLAY_ID}" aria-label="Tocar BR Tunnel" style="width:58px;height:58px;border-radius:50%;border:0;background:#e10600;color:#fff;font-size:1.25rem;cursor:pointer">▶</button>
-            <div style="min-width:220px;flex:1">
-              <small style="display:block;font-weight:800;letter-spacing:.12em;text-transform:uppercase">BR Tunnel™ · 24H</small>
-              <strong id="${STATUS_ID}" style="display:block;margin-top:5px;font-size:1.1rem">READY</strong>
-              <span style="display:block;margin-top:3px;color:#666;font-size:.82rem">Rock Brasil · sinal contínuo</span>
-            </div>
-          </div>
-          <audio id="${AUDIO_ID}" preload="none"></audio>
-        </div>
-        <span class="handwritten" style="display:block;margin-top:20px">do Brasil, alto e sem pedir licença.</span>
-      </div>
-    </div>`;
-  stage.appendChild(panel);
-
-  const audio = document.getElementById(AUDIO_ID);
-  const play = document.getElementById(PLAY_ID);
-  const status = document.getElementById(STATUS_ID);
-  const rowState = hub.querySelector('[data-tunnel-target="passportBRv2"] .tunnel-directory__state');
-  if (!audio || !play || !status) return;
-
-  let wantsPlayback = false;
-  let recovering = false;
-  let recoveryTimer = 0;
-  let watchdogTimer = 0;
+  let audioEl = null;
+  let playBtn = null;
+  let statusEl = null;
   let resolvedStream = "";
+  let wantsPlayback = false;
+  let recoveryAttempts = 0;
+  let recoveryTimer = null;
+  let watchdogTimer = null;
+  let isInjected = false;
 
-  const setStatus = value => {
-    status.textContent = value;
-    if (rowState) rowState.textContent = value === "ON AIR · ROCK BRASILEIRO" ? "ON AIR" : value;
-  };
+  function log(msg) { console.log(`[BR TUNNEL] ${msg}`); }
 
-  function clearRecovery() {
-    if (recoveryTimer) clearTimeout(recoveryTimer);
-    recoveryTimer = 0;
+  function setStatus(text, state) {
+    if (!statusEl) return;
+    statusEl.textContent = text;
+    statusEl.dataset.state = state || "idle";
   }
 
-  function stopWatchdog() {
-    if (watchdogTimer) clearInterval(watchdogTimer);
-    watchdogTimer = 0;
+  function updatePlayButton(isPlaying) {
+    if (!playBtn) return;
+    playBtn.textContent = isPlaying ? "❚❚" : "▶";
+    playBtn.setAttribute("aria-label", isPlaying ? "Pausar" : "Tocar");
+  }
+
+  function injectEngine() {
+    if (isInjected) return true;
+    let panel = document.getElementById(PANEL_ID) ||
+                document.querySelector(`[data-tunnel-id="${TUNNEL_ID}"]`) ||
+                document.querySelector(`.tunnel-stage-shell[data-tunnel="${TUNNEL_ID}"]`);
+    if (!panel) {
+      log("Painel do orquestrador ainda não existe. Aguardando...");
+      return false;
+    }
+
+    panel.innerHTML = `
+      <div class="br-engine-wrapper" style="width:100%; display:flex; flex-direction:column; gap:12px; padding:10px 0;">
+        <div class="br-controls" style="display:flex; align-items:center; gap:15px;">
+          <button id="${PLAY_ID}" class="br-play-btn" aria-label="Tocar BR Tunnel" style="font-size:28px; background:transparent; border:2px solid currentColor; border-radius:50%; width:50px; height:50px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:inherit; transition: all 0.2s;">▶</button>
+          <div class="br-info" style="display:flex; flex-direction:column; gap:4px;">
+            <strong id="${STATUS_ID}" style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;">AGUARDANDO</strong>
+            <span style="font-size:11px; opacity:0.6; letter-spacing:0.5px;">do Brasil, alto e sem pedir licença.</span>
+          </div>
+        </div>
+        <audio id="${AUDIO_ID}" preload="none" crossorigin="anonymous" playsinline></audio>
+      </div>`;
+
+    audioEl = document.getElementById(AUDIO_ID);
+    playBtn = document.getElementById(PLAY_ID);
+    statusEl = document.getElementById(STATUS_ID);
+    bindEvents();
+    isInjected = true;
+    log("Motor injetado com sucesso no shell do orquestrador.");
+    return true;
+  }
+
+  function bindEvents() {
+    playBtn.addEventListener("click", togglePlayback);
+    audioEl.addEventListener("playing", () => {
+      wantsPlayback = true;
+      recoveryAttempts = 0;
+      clearRecovery();
+      startWatchdog();
+      updatePlayButton(true);
+      setStatus("ON AIR · ROCK BRASILEIRO", "playing");
+    });
+    audioEl.addEventListener("pause", () => {
+      if (audioEl.ended || !wantsPlayback) {
+        updatePlayButton(false);
+        if (!wantsPlayback) setStatus("PAUSADO", "paused");
+      }
+    });
+    audioEl.addEventListener("waiting", () => {
+      if (wantsPlayback) setStatus("BUFFERING...", "buffering");
+    });
+    audioEl.addEventListener("error", () => {
+      log("Erro no áudio: " + (audioEl.error ? audioEl.error.code : "Desconhecido"));
+      if (wantsPlayback) triggerRecovery("ERROR");
+    });
+    audioEl.addEventListener("stalled", () => {
+      if (wantsPlayback) setStatus("RECONECTANDO...", "reconnecting");
+    });
+    audioEl.addEventListener("ended", () => {
+      if (wantsPlayback) triggerRecovery("ENDED");
+    });
+    window.addEventListener("online", () => {
+      if (wantsPlayback) triggerRecovery("ONLINE");
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && wantsPlayback && audioEl.paused) triggerRecovery("VISIBILITY");
+    });
+  }
+
+  function togglePlayback() {
+    if (wantsPlayback) {
+      wantsPlayback = false;
+      audioEl.pause();
+      audioEl.removeAttribute("src");
+      audioEl.load();
+      updatePlayButton(false);
+      setStatus("PAUSADO", "paused");
+      clearRecovery();
+      stopWatchdog();
+    } else {
+      wantsPlayback = true;
+      openSocket();
+    }
+  }
+
+  async function resolveStream() {
+    if (resolvedStream) return resolvedStream;
+    try {
+      setStatus("RESOLVENDO SINAL...", "connecting");
+      const response = await fetch(`${PLAYLIST_URL}?t=${Date.now()}`, { cache: "no-store", mode: "cors" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const text = await response.text();
+      const stream = text.split(/\r?\n/).map(line => line.trim()).find(line => /^https?:\/\//i.test(line));
+      if (!stream) throw new Error("M3U vazio");
+      resolvedStream = stream;
+      return resolvedStream;
+    } catch (err) {
+      log("Falha ao resolver M3U via fetch (CORS/Hotlink): " + err.message);
+      return PLAYLIST_URL;
+    }
+  }
+
+  async function openSocket() {
+    if (!wantsPlayback) return;
+    setStatus("CONECTANDO...", "connecting");
+    const stream = await resolveStream();
+    if (!wantsPlayback) return;
+    if (audioEl.src !== stream) audioEl.src = stream;
+    audioEl.load();
+    try {
+      await audioEl.play();
+    } catch (err) {
+      log("Play falhou: " + err.name);
+      if (err.name === "NotAllowedError") {
+        setStatus("TOQUE PARA ATIVAR", "error");
+        wantsPlayback = false;
+        updatePlayButton(false);
+      } else {
+        triggerRecovery("PLAY_ERROR");
+      }
+    }
+  }
+
+  function triggerRecovery(reason) {
+    if (!wantsPlayback) return;
+    clearRecovery();
+    recoveryAttempts++;
+    if (recoveryAttempts > 5) {
+      setStatus("SINAL INDISPONÍVEL", "error");
+      wantsPlayback = false;
+      updatePlayButton(false);
+      return;
+    }
+    setStatus(`RECONECTANDO (${recoveryAttempts})...`, "reconnecting");
+    const delay = Math.min(1000 * Math.pow(2, recoveryAttempts - 1), 8000);
+    recoveryTimer = setTimeout(() => {
+      audioEl.pause();
+      audioEl.removeAttribute("src");
+      audioEl.load();
+      resolvedStream = "";
+      openSocket();
+    }, delay);
+  }
+
+  function clearRecovery() {
+    if (recoveryTimer) { clearTimeout(recoveryTimer); recoveryTimer = null; }
   }
 
   function startWatchdog() {
     stopWatchdog();
-    watchdogTimer = window.setInterval(() => {
-      if (!wantsPlayback || recovering) return;
-      if (audio.ended || audio.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) recover(100);
+    watchdogTimer = setInterval(() => {
+      if (wantsPlayback && audioEl.paused && audioEl.readyState < 3) {
+        log("Watchdog: Áudio travado, forçando recovery.");
+        triggerRecovery("WATCHDOG");
+      }
     }, 5000);
   }
 
-  async function resolveStream(force = false) {
-    if (resolvedStream && !force) return resolvedStream;
-    if (force) resolvedStream = "";
-    const response = await fetch(`${PLAYLIST}?t=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`BR playlist HTTP ${response.status}`);
-    const text = await response.text();
-    const stream = text.split(/\r?\n/).map(line => line.trim()).find(line => /^https?:\/\//i.test(line));
-    if (!stream) throw new Error("BR playlist has no stream URL");
-    resolvedStream = stream;
-    return stream;
+  function stopWatchdog() {
+    if (watchdogTimer) { clearInterval(watchdogTimer); watchdogTimer = null; }
   }
 
-  async function openSocket(force = false) {
-    if (!wantsPlayback) return;
-    setStatus("CONNECTING");
-    const stream = await resolveStream(force);
-    if (!wantsPlayback) return;
-    audio.src = stream;
-    audio.load();
-    await audio.play();
-  }
+  window.BRTunnelEngine = {
+    init: injectEngine,
+    play: () => { if (!wantsPlayback) togglePlayback(); },
+    pause: () => { if (wantsPlayback) togglePlayback(); },
+    isPlaying: () => wantsPlayback && audioEl && !audioEl.paused
+  };
 
-  function recover(delay = 900) {
-    if (!wantsPlayback) return;
-    clearRecovery();
-    setStatus("RECONNECTING");
-    recoveryTimer = window.setTimeout(async () => {
-      recoveryTimer = 0;
-      if (!wantsPlayback) return;
-      recovering = true;
-      try {
-        audio.removeAttribute("src");
-        audio.load();
-        await openSocket(true);
-      } catch (error) {
-        console.warn("[Passport BR Tunnel] recovery failed", error);
-        if (wantsPlayback) recover(2500);
-      } finally {
-        recovering = false;
-      }
-    }, delay);
-  }
-
-  function stop(intentional = true) {
-    if (intentional) wantsPlayback = false;
-    clearRecovery();
-    stopWatchdog();
-    try { audio.pause(); } catch (_) {}
-    if (intentional) {
-      play.textContent = "▶";
-      play.setAttribute("aria-label", "Tocar BR Tunnel");
-      setStatus("24 HOURS");
-    }
-  }
-
-  play.addEventListener("click", async event => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (wantsPlayback && !audio.paused) {
-      stop(true);
-      return;
-    }
-
-    /* Existing Passport exclusivity: pause other media, but never mutate their engines. */
-    document.querySelectorAll("audio,video").forEach(media => {
-      if (media !== audio && !media.paused) {
-        try { media.pause(); } catch (_) {}
-      }
+  function boot() {
+    if (injectEngine()) return;
+    const observer = new MutationObserver((mutations, obs) => {
+      if (injectEngine()) obs.disconnect();
     });
+    observer.observe(document.body, { childList: true, subtree: true });
+    setTimeout(() => observer.disconnect(), 10000);
+  }
 
-    wantsPlayback = true;
-    try {
-      await openSocket(true);
-    } catch (error) {
-      console.warn("[Passport BR Tunnel] initial connection failed", error);
-      if (wantsPlayback) recover(1200);
-    }
-  });
-
-  audio.addEventListener("playing", () => {
-    wantsPlayback = true;
-    recovering = false;
-    clearRecovery();
-    startWatchdog();
-    play.textContent = "Ⅱ";
-    play.setAttribute("aria-label", "Pausar BR Tunnel");
-    setStatus("ON AIR · ROCK BRASILEIRO");
-  });
-
-  audio.addEventListener("pause", () => {
-    if (recovering) return;
-    if (wantsPlayback) return;
-    play.textContent = "▶";
-    play.setAttribute("aria-label", "Tocar BR Tunnel");
-  });
-
-  audio.addEventListener("waiting", () => {
-    if (wantsPlayback) setStatus("CONNECTING");
-  });
-  audio.addEventListener("error", () => {
-    if (wantsPlayback) recover(700);
-  });
-  audio.addEventListener("stalled", () => {
-    if (wantsPlayback) recover(1200);
-  });
-  audio.addEventListener("ended", () => {
-    if (wantsPlayback) recover(500);
-  });
-
-  window.addEventListener("online", () => {
-    if (wantsPlayback) recover(300);
-  });
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible" && wantsPlayback && (audio.paused || audio.ended || audio.networkState === HTMLMediaElement.NETWORK_NO_SOURCE)) recover(250);
-  });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();
