@@ -65,8 +65,28 @@
   async function agora() {
     let camps = [];
     try { const r = await fetch("/data/promocoes.json", { cache: "no-store" }); if (r.ok) camps = ((await r.json()).campaigns || []); } catch (e) {}
+    try {
+      const rs = await fetch("/data/store_inventory.json", { cache: "no-store" });
+      if (rs.ok) {
+        const inv = await rs.json();
+        const have = new Set(camps.map((c) => String(c.product_id || "")));
+        (inv.products || []).forEach((prod) => {
+          if (have.has(String(prod.id))) return;
+          camps.push({
+            id: "STORE-" + prod.id,
+            status: "A SEGUIR",
+            type: "STORE",
+            title: prod.name,
+            prize: prod.name,
+            prize_image: prod.image || "",
+            product_id: prod.id,
+            product_url: "loja.html?product=" + prod.id + "&sku=" + (prod.sku || prod.id)
+          });
+        });
+      }
+    } catch (e) {}
     if (!camps.length) return "";
-    const cards = camps.slice(0, 6).map((p) => {
+    const cards = camps.slice(0, 12).map((p) => {
       const im = p.prize_image ? imgBlock(p.prize_image, p.title) : `<div class="rv6-media" data-img="none"></div>`;
       const win = p.status === "RESULTADO" && p.winner ? `<div class="pp-winner">🏆 ${esc(p.winner)}</div>` : "";
       return `<a class="pp-agora-card" data-status="${esc(p.status)}" href="${href(p.detail_url || p.product_url || "promocoes.html")}">${im}<div class="pp-agora-card__b"><b>${esc(p.status)} · ${esc(p.type)}</b><strong>${esc(p.title)}</strong><span>${esc(p.prize || "")}</span>${win}</div><span class="pp-btn pp-btn--red">${p.status === "AGORA" ? "PARTICIPAR →" : p.status === "RESULTADO" ? "VER RESULTADO →" : "A SEGUIR →"}</span></a>`;
@@ -76,12 +96,24 @@
   /* LOJA band — produtos reais, preço e parcela legíveis */
   async function shop() {
     let prods = [];
-    try { const r = await fetch("/data/store_inventory.json", { cache: "no-store" }); if (r.ok) prods = ((await r.json()).products || []); } catch (e) {}
+    let cap = {};
+    try {
+      const r = await fetch("/data/store_inventory.json", { cache: "no-store" });
+      if (r.ok) {
+        const data = await r.json();
+        prods = data.products || [];
+        cap = data.technical_capacity || {};
+      }
+    } catch (e) {}
     if (!prods.length) return "";
-    const cards = prods.slice(0, 4).map((p) => {
+    const payBits = [];
+    if (cap.cartao_max_installments) payBits.push("Cartão até " + cap.cartao_max_installments + "x via Asaas");
+    if (cap.boleto_max_installments) payBits.push("Boleto até " + cap.boleto_max_installments + "x via Asaas");
+    const payLine = payBits.length ? payBits.join(" · ") : "Pagamento via Asaas · PIX, cartão e boleto";
+    const cards = prods.map((p) => {
       const has = !!p.image;
       const mono = esc((p.category || p.name || "PP").slice(0, 2).toUpperCase());
-      return `<a class="pp-product" ${has ? "" : 'data-img="none"'} data-mono="${mono}" href="loja.html?product=${esc(p.id)}&sku=${esc(p.sku || p.id)}">${has ? imgBlock(p.image, p.name) : `<div class="rv6-media"></div>`}<b>${esc(p.category || "LOJA")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-installments">em até 60x no cartão · Asaas</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a>`;
+      return `<a class="pp-product" ${has ? "" : 'data-img="none"'} data-mono="${mono}" href="loja.html?product=${esc(p.id)}&sku=${esc(p.sku || p.id)}">${has ? imgBlock(p.image, p.name) : `<div class="rv6-media"></div>`}<b>${esc(p.category || "LOJA")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-installments">${esc(payLine)}</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a>`;
     }).join("");
     return env("pp-env--loja", "PASSPORT STORE", "Comércio da casa.", "loja.html", "LOJA COMPLETA →", `<div class="pp-shop-grid">${cards}</div>`);
   }
