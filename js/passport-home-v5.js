@@ -7,9 +7,8 @@
   const $ = (s) => document.querySelector(s);
   const WA_OFFICIAL = "https://wa.me/message/NZS7ZW4QHQVBG1";
   const FOFONETE = {
-    fiscal: "/images/fofonete-home.jpg",
-    fechamento: "/images/grok_1788580833876.jpg",
-    bateu: "/images/grok_1788580845386.jpg"
+    art: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.art) || "/images/fofonete-home.jpg",
+    cta: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.cta) || "https://www.asaas.com/c/shpb8gbiswnw4t2n"
   };
 
   function onAir() {
@@ -62,7 +61,7 @@
     const existing = [...support.querySelectorAll("a")].find((a) => a.href.includes("asaas.com/c/shpb8gbiswnw4t2n"));
     const f = document.createElement("div");
     f.className = "v5-fofonete";
-    f.innerHTML = '<img class="v5-fofonete__img" src="' + FOFONETE.fiscal + '" alt="Fofonete Passport Radio — Snoopy e Woodstock fazendo as contas da rádio" loading="lazy"><div class="v5-fofonete__body"><b>EU FIZ AS CONTAS DE NOVO.</b><p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p><a class="v5-fofonete__cta" href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">APOIAR A PASSPORT →</a></div>';
+    f.innerHTML = '<img class="v5-fofonete__img" src="' + FOFONETE.art + '" style="object-position:center 42%" alt="Fofonete Passport Radio — Snoopy e Woodstock fazendo as contas da rádio" loading="lazy"><div class="v5-fofonete__body"><b>EU FIZ AS CONTAS DE NOVO.</b><p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p><a class="v5-fofonete__cta" href="' + FOFONETE.cta + '" target="_blank" rel="noopener">APOIAR A PASSPORT →</a></div>';
     const head = support.querySelector(".pp-box-head");
     head ? head.insertAdjacentElement("afterend", f) : support.prepend(f);
     if (existing) existing.style.display = "none";
