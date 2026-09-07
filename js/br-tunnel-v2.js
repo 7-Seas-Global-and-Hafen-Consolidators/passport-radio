@@ -11,15 +11,11 @@
   const stage = hub?.querySelector(".tunnel-stage-shell");
   if (!hub || !stage) return;
 
-  // Exact Rock Brazuca station route used by Online Radio Box.
-  // This keeps the Passport product decoupled from the station's underlying host URL.
-  const STREAM = "https://onlineradiobox.com/json/br/rockbrazuca/play?platform=web";
+  const PLAYLIST = "https://www.radios.com.br/play/playlist/289021/listen-radio.m3u";
   const ID = "passportBRv2";
 
-  // Remove any stale BR DOM left by older implementations
   hub.querySelectorAll("#passportBR, #passportBRv2").forEach(el => el.remove());
 
-  // Create the panel (visibility managed by orchestrator)
   const panel = document.createElement("section");
   panel.id = ID;
   panel.className = "passport-br-section";
@@ -55,6 +51,25 @@
 
   if (!audio || !play || !status) return;
 
+  let resolvedStream = "";
+
+  async function resolveStream() {
+    if (resolvedStream) return resolvedStream;
+
+    const response = await fetch(PLAYLIST, { cache: "no-store" });
+    if (!response.ok) throw new Error(`BR playlist HTTP ${response.status}`);
+
+    const text = await response.text();
+    const candidate = text
+      .split(/\r?\n/)
+      .map(line => line.trim())
+      .find(line => /^https?:\/\//i.test(line));
+
+    if (!candidate) throw new Error("BR playlist has no stream URL");
+    resolvedStream = candidate;
+    return resolvedStream;
+  }
+
   audio.addEventListener("playing", () => {
     play.textContent = "Ⅱ";
     play.setAttribute("aria-label", "Pausar BR Tunnel");
@@ -65,9 +80,7 @@
   audio.addEventListener("pause", () => {
     play.textContent = "▶";
     play.setAttribute("aria-label", "Tocar BR Tunnel");
-    if (status.textContent.startsWith("ON AIR")) {
-      status.textContent = "Pausado";
-    }
+    if (status.textContent.startsWith("ON AIR")) status.textContent = "Pausado";
     if (rowState) rowState.textContent = "24 HOURS";
   });
 
@@ -96,15 +109,14 @@
       }
     });
 
-    if (!audio.src) {
-      audio.src = STREAM;
-    }
-
     status.textContent = "Conectando…";
 
     try {
+      const stream = await resolveStream();
+      if (audio.src !== stream) audio.src = stream;
       await audio.play();
     } catch (error) {
+      console.warn("[Passport BR Tunnel] stream unavailable", error);
       status.textContent = "Sinal indisponível agora · tente novamente";
       play.textContent = "▶";
       play.setAttribute("aria-label", "Tocar BR Tunnel");
