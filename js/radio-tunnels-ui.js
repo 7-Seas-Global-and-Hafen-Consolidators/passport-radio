@@ -6,7 +6,7 @@
   "use strict";
   if (!document.body.classList.contains("live-page")) return;
   const hub=document.getElementById("passportTunnels"); if(!hub)return;
-  const panelIds=["passport80s","passportSoul","passportMPB","passportHits","passport5060","passportFlashHouse","passportBRv2"];
+  const panelIds=["passport80s","passportSoul","passportMPB","passportHits","passport5060","passportFlashHouse"];
   let activeId="",applying=false;
 
   function makeRow(target,number,title,format){
@@ -27,11 +27,7 @@
   function ensureFlashHouseDirectory(){
     const d=hub.querySelector(".tunnel-directory");if(!d||d.querySelector('[data-tunnel-target="passportFlashHouse"]'))return;
     d.appendChild(makeRow("passportFlashHouse","06","Flash House Tunnel™","Flash House · Eurodance · House · Italo · Hi-NRG · Freestyle"));
-    const intro=hub.querySelector(".tunnels-intro p");if(intro)intro.textContent="Sete ambientes musicais contínuos, organizados sem transformar a página numa parede de players. Abra um por vez; a engenharia dos canais permanece independente.";
-  }
-  function ensureBRDirectory(){
-    const d=hub.querySelector(".tunnel-directory");if(!d||d.querySelector('[data-tunnel-target="passportBRv2"]'))return;
-    d.appendChild(makeRow("passportBRv2","07","BR Tunnel™","Rock brasileiro · 80s · 90s · 2000 · versões ao vivo"));
+    const intro=hub.querySelector(".tunnels-intro p");if(intro)intro.textContent="Seis ambientes musicais contínuos, organizados sem transformar a página numa parede de players. Abra um por vez; a engenharia dos canais permanece independente.";
   }
   function ensurePopoutPilot(){
     const d=hub.querySelector(".tunnel-directory"),row=d&&d.querySelector('[data-tunnel-target="passport5060"]');if(!d||!row||d.querySelector("[data-passport-popout-pilot]"))return;
@@ -48,15 +44,14 @@
   function activate(id,o={}){const p=document.getElementById(id);if(!p)return false;if(activeId&&activeId!==id)pausePanel(document.getElementById(activeId));activeId=id;normalizePanels();if(o.scroll)requestAnimationFrame(()=>p.scrollIntoView({behavior:"smooth",block:"nearest"}));return true;}
   function collapse(id){if(activeId!==id)return;pausePanel(document.getElementById(id));activeId="";normalizePanels();}
 
-  ensureHitsDirectory();ensure5060Directory();ensureJovemGuardaDirectory();ensureFlashHouseDirectory();ensureBRDirectory();ensurePopoutPilot();
+  ensureHitsDirectory();ensure5060Directory();ensureJovemGuardaDirectory();ensureFlashHouseDirectory();ensurePopoutPilot();
   hub.querySelectorAll("[data-tunnel-target]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.tunnelTarget;if(activeId===id)collapse(id);else activate(id,{scroll:true});}));
-  document.addEventListener("play",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;document.querySelectorAll("audio").forEach(a=>{if(a!==t&&!a.paused)try{a.pause();}catch(_){}});const p=t.closest("[data-passport-tunnel-panel]")||t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse,#passportBRv2");if(p&&panelIds.includes(p.id)){activeId=p.id;normalizePanels();panelIds.forEach(id=>setButtonState(id,id===p.id?"ON AIR":"24 HOURS"));}if(t.id!=="passportAudio"){const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ")try{yt.click();}catch(_){}}},true);
-  document.addEventListener("pause",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;const p=t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse,#passportBRv2");if(p&&panelIds.includes(p.id))requestAnimationFrame(()=>{if(t.paused)setButtonState(p.id,"24 HOURS");});},true);
-  const bind=()=>{["tunnelPlay","tunnelPrev","tunnelNext","tunnelPrevPlaylist","tunnelNextPlaylist","tunnelPlaylistPrev","tunnelPlaylistNext","brPlay"].forEach(id=>{const b=document.getElementById(id);if(!b||b.dataset.passportExclusiveBound)return;b.dataset.passportExclusiveBound="1";b.addEventListener("click",()=>{const keep=id==="brPlay"?document.getElementById("brAudio"):null;document.querySelectorAll("audio").forEach(a=>{if(a!==keep&&!a.paused)try{a.pause();}catch(_){}});},{capture:true});});};
+  document.addEventListener("play",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;document.querySelectorAll("audio").forEach(a=>{if(a!==t&&!a.paused)try{a.pause();}catch(_){}});const p=t.closest("[data-passport-tunnel-panel]")||t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse");if(p&&panelIds.includes(p.id)){activeId=p.id;normalizePanels();panelIds.forEach(id=>setButtonState(id,id===p.id?"ON AIR":"24 HOURS"));}if(t.id!=="passportAudio"){const yt=document.getElementById("tunnelPlay");if(yt&&(yt.textContent||"").trim()==="Ⅱ")try{yt.click();}catch(_){}}},true);
+  document.addEventListener("pause",e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;const p=t.closest("#passport80s,#passportSoul,#passportMPB,#passportHits,#passport5060,#passportFlashHouse");if(p&&panelIds.includes(p.id))requestAnimationFrame(()=>{if(t.paused)setButtonState(p.id,"24 HOURS");});},true);
+  const bind=()=>{["tunnelPlay","tunnelPrev","tunnelNext","tunnelPrevPlaylist","tunnelNextPlaylist","tunnelPlaylistPrev","tunnelPlaylistNext"].forEach(id=>{const b=document.getElementById(id);if(!b||b.dataset.passportExclusiveBound)return;b.dataset.passportExclusiveBound="1";b.addEventListener("click",()=>document.querySelectorAll("audio").forEach(a=>{if(!a.paused)try{a.pause();}catch(_){}}),{capture:true});});};
   new MutationObserver(()=>{normalizePanels();bind();}).observe(document.body,{childList:true,subtree:true});normalizePanels();bind();
   loadScript("/js/passport-hits-tunnel.js?v=202608242208","data-passport-hits-tunnel");
   loadScript("/js/50s-60s-tunnel.js?v=202609020135","data-passport-5060-tunnel");
   loadScript("/js/flash-house-tunnel.js?v=202608291930","data-passport-flash-house-tunnel");
-  loadScript("/js/br-tunnel-v2.js?v=20260907d","data-passport-br-tunnel-v2");
   const hash=location.hash.replace("#","");if(panelIds.includes(hash)){const f=()=>activate(hash,{scroll:false});if(!f())setTimeout(f,900);}
 })();
