@@ -24,15 +24,22 @@
     if (!directory || directory.querySelector('[data-passport-novelas-directory]')) return;
     const row = document.createElement('button');
     row.type = 'button';
-    row.className = 'tunnel-directory-row';
+    row.className = 'tunnel-directory__row';
     row.dataset.passportNovelasDirectory = '1';
-    row.innerHTML = '<span class="tunnel-directory-number">09</span><span class="tunnel-directory-main"><strong>Novelas Tunnel™</strong><small>1970–1999 · trilhas nacionais + internacionais · salada mista</small></span><span class="tunnel-directory-state">24 HOURS</span>';
+    row.dataset.tunnelTarget = PANEL_ID;
+    row.setAttribute('aria-controls', PANEL_ID);
+    row.setAttribute('aria-expanded', 'false');
+    row.innerHTML = '<span class="tunnel-directory__number">09</span><strong class="tunnel-directory__title">Novelas Tunnel™</strong><span class="tunnel-directory__format">1970–1999 · trilhas nacionais + internacionais · salada mista</span><span class="tunnel-directory__state">24 HOURS</span><span class="tunnel-directory__action">Abrir sinal</span>';
     row.addEventListener('click', () => {
-      document.querySelectorAll('[data-passport-tunnel-panel="1"]').forEach((panel) => {
-        panel.hidden = panel.id !== PANEL_ID;
-      });
       const panel = document.getElementById(PANEL_ID);
-      if (panel) panel.hidden = !panel.hidden;
+      if (!panel) return;
+      const willOpen = panel.hidden;
+      document.querySelectorAll('[data-passport-tunnel-panel="1"]').forEach((other) => {
+        other.hidden = true;
+      });
+      panel.hidden = !willOpen;
+      row.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      if (willOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
     directory.appendChild(row);
   }
