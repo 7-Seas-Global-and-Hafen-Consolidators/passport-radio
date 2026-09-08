@@ -1,7 +1,7 @@
 {
-  "version": 3,
-  "updated_at": "2026-09-08T23:50:00-03:00",
-  "note": "Ordem da Home: Vol.2, The Mission, Festa PLOC, Dolly. RSS entra depois.",
+  "version": 4,
+  "updated_at": "2026-09-08T18:30:00-03:00",
+  "note": "Capa travada: 1 Vol.2, 2 Festa PLOC. Depois Nomad/arquivo por data. RSS por último.",
   "items": [
     {
       "title": "Anos 80 Vol. 2: músicas que o Brasil nunca esqueceu",
@@ -10,45 +10,8 @@
       "category": "anos_80",
       "format": "MR_NOMAD",
       "published_at": "2026-09-03T23:59:00-03:00",
-      "entities": [
-        "Anos 80",
-        "Men at Work",
-        "Whitney Houston",
-        "Marvin Gaye",
-        "Ritchie",
-        "Mr. Nomad"
-      ],
       "author": "Mr. Nomad",
-      "image": {
-        "src": "https://img.youtube.com/vi/HaMEzljVtA4/sddefault.jpg",
-        "alt": "Anos 80 Vol. 2 — memória musical brasileira",
-        "focalPoint": "50% 42%",
-        "credit": "Passport Radio",
-        "approved": true
-      }
-    },
-    {
-      "title": "The Mission: Wayne Hussey, Craig Adams e a banda que nasceu das cinzas do Sisters of Mercy",
-      "deck": "1985. Hussey e Adams saem do Sisters. Nomes reais, 12 cordas, Doktor Avalanche e dois PLAY ao vivo: Rockpalast e Elf99.",
-      "url": "/editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html?v=20260908-mission",
-      "category": "alternative_gothic",
-      "format": "MR_NOMAD",
-      "published_at": "2026-08-27T20:19:00-03:00",
-      "entities": [
-        "The Mission",
-        "Wayne Hussey",
-        "Craig Adams",
-        "Sisters of Mercy",
-        "Mr. Nomad"
-      ],
-      "author": "Mr. Nomad",
-      "image": {
-        "src": "https://img.youtube.com/vi/Rck7vZN5dRI/sddefault.jpg",
-        "alt": "The Mission ao vivo — Butterfly on a Wheel, Rockpalast",
-        "focalPoint": "50% 40%",
-        "credit": "Passport Radio · Rockpalast",
-        "approved": true
-      }
+      "image": {"src": "https://img.youtube.com/vi/HaMEzljVtA4/sddefault.jpg", "alt": "Anos 80 Vol. 2", "focalPoint": "50% 42%", "credit": "Passport Radio", "approved": true}
     },
     {
       "title": "Festa PLOC: você cresceu. A pista não recebeu o memorando.",
@@ -57,118 +20,71 @@
       "category": "festa_ploc",
       "format": "MR_NOMAD",
       "published_at": "2026-09-03T23:58:00-03:00",
-      "entities": [
-        "Festa PLOC",
-        "Anos 80",
-        "Patricia Marx",
-        "Ritchie",
-        "Mr. Nomad"
-      ],
       "author": "Mr. Nomad",
-      "image": {
-        "src": "https://img.youtube.com/vi/w_1jWR76qCY/sddefault.jpg",
-        "alt": "Festa PLOC — nostalgia e pista dos anos 80",
-        "focalPoint": "50% 40%",
-        "credit": "Passport Radio",
-        "approved": true
-      }
+      "image": {"src": "https://img.youtube.com/vi/w_1jWR76qCY/sddefault.jpg", "alt": "Festa PLOC", "focalPoint": "50% 40%", "credit": "Passport Radio", "approved": true}
+    },
+    {
+      "title": "The Mission: Wayne Hussey, Craig Adams e a banda que nasceu das cinzas do Sisters of Mercy",
+      "deck": "1985. Hussey e Adams saem do Sisters. Nomes reais, 12 cordas, Rockpalast e Elf99.",
+      "url": "/editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html?v=20260908-mission",
+      "category": "alternative_gothic",
+      "format": "MR_NOMAD",
+      "published_at": "2026-08-27T20:19:00-03:00",
+      "author": "Mr. Nomad",
+      "image": {"src": "https://img.youtube.com/vi/Rck7vZN5dRI/sddefault.jpg", "alt": "The Mission ao vivo", "focalPoint": "50% 40%", "credit": "Passport Radio", "approved": true}
     },
     {
       "title": "Dolly Parton se foi: a rainha que reescreveu o country para o mundo",
-      "deck": "A despedida de Dolly Parton fecha o trio da capa. História, voz e o país que ela redesenhou — por último, de propósito.",
       "url": "/editorial/2026/08/25/dolly-parton-se-foi-a-rainha-que-reescreveu-o-country-para-o-mundo.html",
       "category": "dolly_parton",
       "format": "MR_NOMAD",
       "published_at": "2026-08-25T12:00:00-03:00",
-      "entities": [
-        "Dolly Parton",
-        "Country",
-        "Mr. Nomad"
-      ],
       "author": "Mr. Nomad",
-      "image": {
-        "src": "/images/passport-radio-definitive.jpg",
-        "alt": "Dolly Parton — arquivo Passport Radio",
-        "focalPoint": "50% 35%",
-        "credit": "Passport Radio",
-        "approved": true
-      }
+      "image": {"src": "/images/passport-radio-definitive.jpg", "alt": "Dolly Parton", "approved": true, "focalPoint": "50% 35%"}
     },
     {
       "title": "1986: quando o rádio ainda podia mudar o seu dia",
-      "deck": "Rock, rádio, MTV, memória e performances ao vivo.",
       "url": "/1986-musicas-rock-radio-anos-80.html",
       "category": "anos_80",
       "format": "MR_NOMAD",
       "published_at": "2026-08-10T09:00:00-03:00",
       "author": "Mr. Nomad",
-      "image": {
-        "src": "/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp",
-        "alt": "1986 no rádio",
-        "focalPoint": "50% 45%",
-        "credit": "Passport Radio",
-        "approved": true
-      }
+      "image": {"src": "/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp", "alt": "1986 no rádio", "approved": true, "focalPoint": "50% 45%"}
     },
     {
       "title": "Rhapsody of Fire: quando o power metal virou cinema",
       "url": "/rhapsody-of-fire-symphonic-power-metal.html",
       "category": "metal",
       "published_at": "2026-08-20T12:00:00-03:00",
-      "image": {
-        "src": "/images/rhapsody-of-fire/Rhapsody-3-madrid.jpg",
-        "alt": "Rhapsody of Fire",
-        "approved": true,
-        "focalPoint": "50% 40%"
-      }
+      "image": {"src": "/images/rhapsody-of-fire/Rhapsody-3-madrid.jpg", "alt": "Rhapsody of Fire", "approved": true, "focalPoint": "50% 40%"}
     },
     {
       "title": "White Metal: isso é música cristã?",
       "url": "/white-metal-isso-e-musica-crista.html",
       "category": "metal",
       "published_at": "2026-08-18T12:00:00-03:00",
-      "image": {
-        "src": "/images/white-metal/Mortification.jpg",
-        "alt": "White Metal",
-        "approved": true,
-        "focalPoint": "50% 40%"
-      }
+      "image": {"src": "/images/white-metal/Mortification.jpg", "alt": "White Metal", "approved": true, "focalPoint": "50% 40%"}
     },
     {
       "title": "Ritchie Blackmore voltou ao Deep Purple.",
       "url": "/ritchie-blackmore-deep-purple-33-anos.html",
       "category": "rock",
       "published_at": "2026-08-16T12:00:00-03:00",
-      "image": {
-        "src": "/images/ritchie-blackmore-deep-purple-reunion-2026.webp",
-        "alt": "Ritchie Blackmore",
-        "approved": true,
-        "focalPoint": "50% 40%"
-      }
+      "image": {"src": "/images/ritchie-blackmore-deep-purple-reunion-2026.webp", "alt": "Ritchie Blackmore", "approved": true, "focalPoint": "50% 40%"}
     },
     {
       "title": "Thomas Youngblood ainda ama a estrada",
       "url": "/thomas-youngblood-kamelot-trinta-anos-estrada.html",
       "category": "metal",
       "published_at": "2026-08-15T12:00:00-03:00",
-      "image": {
-        "src": "/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp",
-        "alt": "Thomas Youngblood",
-        "approved": true,
-        "focalPoint": "50% 40%"
-      }
+      "image": {"src": "/images/kamelot-thomas-youngblood-2026/thomas-youngblood-kamelot-2026.webp", "alt": "Thomas Youngblood", "approved": true, "focalPoint": "50% 40%"}
     },
     {
       "title": "Scorpions cansou da Terra. Agora o furacão vira graphic novel.",
       "url": "/scorpions-hurricane-graphic-novel.html",
       "category": "rock",
       "published_at": "2026-08-14T12:00:00-03:00",
-      "image": {
-        "src": "/images/scorpions-hurricane-graphic-novel.webp",
-        "alt": "Scorpions Hurricane",
-        "approved": true,
-        "focalPoint": "50% 40%"
-      }
+      "image": {"src": "/images/scorpions-hurricane-graphic-novel.webp", "alt": "Scorpions Hurricane", "approved": true, "focalPoint": "50% 40%"}
     }
   ]
 }
