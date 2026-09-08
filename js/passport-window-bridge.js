@@ -66,4 +66,11 @@
     script.dataset.passportGloboOuro = "1";
     document.head.appendChild(script);
   }
+
+  if (document.body.classList.contains("live-page") && !document.querySelector("script[data-passport-novelas]")) {
+    const script = document.createElement("script");
+    script.src = "/js/novelas-tunnel.js?v=20260908birth";
+    script.dataset.passportNovelas = "1";
+    document.head.appendChild(script);
+  }
 })();
