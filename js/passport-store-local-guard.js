@@ -1,0 +1,1 @@
+(()=>{"use strict";const grid=document.getElementById("pp-store-grid");if(!grid)return;new MutationObserver(()=>{grid.querySelectorAll(".pp-product img").forEach(img=>{if(!(img.getAttribute("src")||"").startsWith("/images/"))img.closest(".pp-product")?.remove()})}).observe(grid,{childList:true,subtree:true})})();
