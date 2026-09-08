@@ -13,7 +13,10 @@
     const bits = [];
     if (n > 1) bits.push("Cartão em até " + n + "x via Asaas");
     else if (n === 1) bits.push("Cartão à vista via Asaas");
-    bits.push("PIX e boleto via Asaas");
+    if (p && Number.isFinite(Number(p.pix_price))) bits.push("PIX " + money(p.pix_price));
+    else bits.push("PIX via Asaas");
+    if (p && Number.isFinite(Number(p.boleto_price))) bits.push("Boleto " + money(p.boleto_price));
+    else bits.push("boleto via Asaas");
     return bits.join(" · ");
   }
 
@@ -30,7 +33,7 @@
     return `<section class="pp-product-detail" id="pp-detail" aria-label="${esc(name)}">
       ${has ? `<div class="rv6-media"><img src="${esc(p.image)}" alt="${esc(name)}" fetchpriority="high" onerror="this.parentNode.setAttribute('data-img','error')"></div>` : `<div class="rv6-media" data-img="none" data-mono="${esc(cat.slice(0, 2).toUpperCase())}"></div>`}
       <div><span class="pp-env__kicker" style="color:var(--pp-red)">PASSPORT STORE · ${esc(cat)}</span><h2>${esc(name)}</h2><span class="pp-price">${money(p.price)}</span><div class="pp-installments">${esc(payLine(p))}</div>
-      <ul><li>Produto oficial Passport Radio${p.sku ? ` · SKU ${esc(p.sku)}` : ""}</li><li>Estoque: ${p.in_stock ? "disponível" : "sob consulta"}</li><li>Pagamento processado por Asaas (PIX, cartão, boleto)</li></ul>
+      <ul><li>Produto da Passport Store${p.sku ? ` · SKU ${esc(p.sku)}` : ""}</li><li>Estoque: ${p.in_stock ? "disponível" : "sob consulta"}</li><li>Pagamento processado por Asaas (PIX, cartão, boleto)</li></ul>
       <div class="pp-store-ctas"><a class="pp-btn pp-btn--red" href="${ASAAS}" target="_blank" rel="noopener">COMPRAR / APOIAR →</a><a class="pp-btn pp-btn--ghost" href="${WA}" target="_blank" rel="noopener">PEDIR VIA WHATSAPP</a></div></div></section>`;
   }
 
