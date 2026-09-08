@@ -1,10 +1,135 @@
-/* PASSPORT · WORLD DIAL CONTAINMENT FIX — CSS only */
-.dial{grid-template-columns:minmax(0,1fr) 340px;align-items:start}
-#world-player,#world-player *{writing-mode:horizontal-tb!important;direction:ltr}
-#world-player [dir="rtl"],#world-player [lang]{direction:inherit}
-#world-player{position:sticky;top:76px;min-width:0;overflow:hidden;border:1px solid #35414d;max-width:340px}
-#world-controls{display:flex;gap:8px;flex-wrap:nowrap}
-#world-controls button{flex:1 1 0;min-width:0;white-space:nowrap}
-#world-embed[hidden]{display:none!important}
-#world-name{font-size:1.2rem;overflow-wrap:anywhere;word-break:break-word}
-@media(max-width:980px){.dial{grid-template-columns:1fr}#world-player{position:static;max-width:100%}}
+/* PASSPORT WORLD DIAL — containment. Load LAST.
+   Do not edit world-radio-player.js or streams. */
+
+.dial,
+section.dial,
+#world-stations,
+#world-player,
+#world-player *,
+#world-stations *,
+.station,
+.station *,
+.player,
+.player * {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  rotate: none !important;
+}
+
+.dial {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px) !important;
+  gap: 20px !important;
+  align-items: start !important;
+  width: min(1200px, calc(100% - 24px)) !important;
+  margin: 0 auto !important;
+}
+
+#world-stations,
+.stations {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+#world-stations .station,
+.stations .station,
+#world-stations button.station {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  min-height: 96px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding: 12px !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+}
+
+#world-stations .station + .station[data-id],
+#world-stations [data-id] + [data-id][data-id] {
+  /* keep all unique ids; kill only stacked clones without id */
+}
+
+#world-player,
+.player#world-player {
+  position: sticky !important;
+  top: 72px !important;
+  min-width: 0 !important;
+  max-width: 340px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  padding: 16px !important;
+}
+
+#world-name,
+#world-description,
+#world-status,
+#world-route,
+#world-lang,
+#world-source,
+#world-meta,
+.player__name,
+.player__meta,
+.player__lang,
+.player__route,
+.player__status {
+  display: block !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+  line-height: 1.3 !important;
+}
+
+#world-controls,
+.player__controls {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+#world-controls button,
+.player__controls button {
+  flex: 1 1 120px !important;
+  min-width: 96px !important;
+  white-space: nowrap !important;
+}
+
+#world-embed[hidden],
+.player__embed[hidden] {
+  display: none !important;
+}
+
+#world-audio {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* kill leftover duplicate player shells on the same page */
+.dial ~ .dial,
+#world-player ~ #world-player,
+.player + .player#world-player {
+  display: none !important;
+}
+
+@media (max-width: 980px) {
+  .dial {
+    grid-template-columns: 1fr !important;
+  }
+  #world-player,
+  .player#world-player {
+    position: static !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #world-stations,
+  .stations {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
