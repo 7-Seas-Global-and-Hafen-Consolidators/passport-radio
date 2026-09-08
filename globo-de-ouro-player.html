@@ -3,41 +3,36 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Globo de Ouro Tunnel™ · Passport Radio</title>
-<link rel="stylesheet" href="/css/passport-player-v2.css?v=20260908globo2">
+<link rel="stylesheet" href="/css/passport-player-v2.css?v=20260908globo3">
 <style>
-html,body{min-height:100%;margin:0;background:#f4f1eb;color:#111;font-family:Inter,Arial,sans-serif}.gdo{max-width:980px;margin:0 auto;padding:34px 24px 48px}.gdo__brand{font-size:.64rem;font-weight:900;letter-spacing:.18em;color:#d71920;text-transform:uppercase}.gdo h1{font-size:clamp(2rem,6vw,4.8rem);line-height:.92;margin:18px 0 14px;letter-spacing:-.055em}.gdo__deck{max-width:760px;font-size:1rem;line-height:1.55;color:#3c3c3c}.gdo__rule{border:0;border-top:1px solid #111;margin:30px 0}.gdo__console{background:#0b0b0b;color:#fff;padding:28px;box-shadow:0 18px 50px rgba(0,0,0,.12)}.gdo__meta{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.gdo__meta small{display:block;color:#aaa;font-size:.64rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.gdo__meta strong{display:block;font-size:1.15rem;margin-top:7px}.gdo__status{font-size:.62rem;font-weight:900;letter-spacing:.13em;color:#ff3b30}.gdo__play{margin-top:28px;width:72px;height:72px;border:1px solid #fff;border-radius:50%;background:transparent;color:#fff;font-size:1.6rem;cursor:pointer}.gdo__play:hover{background:#fff;color:#111}.gdo__foot{margin-top:22px;font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#777}.gdo__close{display:inline-block;margin-top:26px;border:0;background:none;padding:0;color:#111;font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}@media(max-width:600px){.gdo{padding:24px 18px}.gdo__console{padding:22px}.gdo__meta{display:block}.gdo__status{display:block;margin-top:14px}}
+html,body{min-height:100%;margin:0;background:#f4f1eb;color:#111;font-family:Inter,Arial,sans-serif}.gdo{max-width:980px;margin:0 auto;padding:34px 24px 48px}.gdo__brand{font-size:.64rem;font-weight:900;letter-spacing:.18em;color:#d71920;text-transform:uppercase}.gdo h1{font-size:clamp(2rem,6vw,4.8rem);line-height:.92;margin:18px 0 14px;letter-spacing:-.055em}.gdo__deck{max-width:760px;font-size:1rem;line-height:1.55;color:#3c3c3c}.gdo__rule{border:0;border-top:1px solid #111;margin:30px 0}.gdo__console{background:#111;color:#fff;padding:28px}.gdo__meta small{display:block;color:#aaa;font-size:.64rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.gdo__meta strong{display:block;font-size:1.15rem;margin-top:7px}.gdo__status{font-size:.62rem;font-weight:900;letter-spacing:.13em;color:#d71920}.gdo__play{margin-top:28px;width:72px;height:72px;border:1px solid #fff;border-radius:50%;background:transparent;color:#fff;font-size:1.6rem;cursor:pointer}.gdo__close{display:inline-block;margin-top:26px;border:0;background:none;padding:0;color:#111;font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
 </style>
-<link rel="stylesheet" href="/css/passport-paper-home.css?v=20260908paper">
 </head>
 <body>
 <main class="gdo">
 <div class="gdo__brand">Passport Archive Signal™ · 1973–1990</div>
 <h1>Globo de Ouro<br>Tunnel™</h1>
-<p class="gdo__deck">Pedido do primeiro apoiador da Passport. Sinal contínuo de memória brasileira — plateia, apresentador e hit da era Globo de Ouro. Somente áudio.</p>
+<p class="gdo__deck">Pedido do primeiro apoiador. Hits brasileiros no ar — memória da era Globo de Ouro.</p>
 <hr class="gdo__rule">
 <section class="gdo__console" aria-label="Player Globo de Ouro Tunnel">
-<div class="gdo__meta"><div><small>Now tuned to</small><strong>GLOBO DE OURO TUNNEL™</strong><small>1973–1990 · AUDIO ARCHIVE · 24 HOURS</small></div><span class="gdo__status" id="gdoStatus">READY</span></div>
+<div class="gdo__meta"><div><small>Now tuned to</small><strong>GLOBO DE OURO TUNNEL™</strong><small>1973–1990 · AUDIO · 24 HOURS</small></div><span class="gdo__status" id="gdoStatus">READY</span></div>
 <button class="gdo__play" id="gdoPlay" type="button" aria-label="Reproduzir">▶</button>
 <audio id="gdoAudio" preload="none"></audio>
-<div class="gdo__foot">Passport Radio™ · Every Song Is A Destination.</div>
 </section>
-<button class="gdo__close" type="button" onclick="window.close()">FECHAR PLAYER ×</button>
+<a class="gdo__close" href="/radio.html">← VOLTAR PARA A RÁDIO</a>
 </main>
-<script src="/js/passport-window-bridge.js?v=20260908globo2"></script>
 <script>
 (()=>{'use strict';
 const audio=document.getElementById('gdoAudio'),play=document.getElementById('gdoPlay'),status=document.getElementById('gdoStatus');
-const DEFAULT_STREAM='https://stm2.conectastreaming.com:7080/stream';
-const src=String(window.PASSPORT_GLOBO_DE_OURO_STREAM||DEFAULT_STREAM).trim();
+const src='https://playerservices.streamtheworld.com/api/livestream-redirect/NOVABRASIL_SP.mp3';
 function paint(){play.textContent=audio.paused?'▶':'Ⅱ';status.textContent=audio.paused?'READY':'ON AIR'}
 play.addEventListener('click',async()=>{
   if(!audio.paused){audio.pause();paint();return}
-  if(!src){status.textContent='STREAM PENDING';return}
   if(audio.src!==src)audio.src=src;
-  document.querySelectorAll('audio').forEach(a=>{if(a!==audio&&!a.paused)try{a.pause()}catch(_){}});
   try{await audio.play();paint()}catch(_){status.textContent='RETRY'}
 });
-audio.addEventListener('play',paint);audio.addEventListener('pause',paint);audio.addEventListener('playing',()=>{status.textContent='ON AIR';play.textContent='Ⅱ'});
+audio.addEventListener('play',paint);audio.addEventListener('pause',paint);
+audio.addEventListener('playing',()=>{status.textContent='ON AIR';play.textContent='Ⅱ'});
 audio.addEventListener('error',()=>status.textContent='OFFLINE');
 })();
 </script>
