@@ -5,10 +5,9 @@
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
-  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" }[c]));
   const safeHref = (v) => { const h = String(v == null ? "" : v).trim(); if (!h) return "#"; if (/^(?:[/?#.]|https?:|mailto:|tel:)/i.test(h)) return esc(h); return "#"; };
 
-  /* A ordem é editorial. O RSS continua inteiro, mas não manda sozinho na capa. */
   const FEEDS = ["/data/editorial-priority-feed.json", "/data/editorial-manual-feed.json", "/data/editorial-feed.json"];
 
   const LEGACY_IMG = [
@@ -62,7 +61,6 @@
   function leadHTML(it, img) { return `<article class="rv6-lead" ${img ? "" : 'data-img="none"'}>${media(img, "16/9", true)}${kicker(it.category)}<h2><a href="${safeHref(it.url)}">${esc(it.title)}</a></h2><p class="rv6-deck">${esc(it.deck || "")}</p>${meta(it)}${rel(it)}</article>`; }
   function duoHTML(it, img) { return `<a href="${safeHref(it.url)}" ${img ? "" : 'data-img="none"'}>${media(img)}${kicker(it.category)}<h3>${esc(it.title)}</h3><p>${esc((it.deck || "").slice(0, 120))}</p></a>`; }
   function rowHTML(it, img) { return `<a class="rv6-row" href="${safeHref(it.url)}" ${img ? "" : 'data-img="none"'}>${media(img)}<span>${kicker(it.category)}<h3>${esc(it.title)}</h3><p>${esc((it.deck || "").slice(0, 140))}</p>${meta(it)}</span></a>`; }
-  function listHTML(it) { return `<a href="${safeHref(it.url)}">${kicker(it.category)}<h4>${esc(it.title)}</h4>${meta(it)}</a>`; }
 
   async function loadFeed() {
     const merged = [], seen = new Set();
@@ -87,17 +85,8 @@
     h += leadHTML(items[i], resolveImage(items[i])); i += 1;
     if (items.length - i >= 2) { h += `<div class="rv6-duo">${duoHTML(items[i], resolveImage(items[i]))}${duoHTML(items[i + 1], resolveImage(items[i + 1]))}</div>`; i += 2; }
     h += `<div class="rv6-band" role="complementary" aria-label="Passport no ar"><i></i><b>PASSPORT ON AIR · 24H</b><span>Continuous Signals™ · Live & Rare™ · Tunnels™</span><a href="radio.html">OUVIR →</a></div>`;
-    const rows = items.slice(i, i + 4); i += rows.length;
-    h += rows.map((it) => rowHTML(it, resolveImage(it))).join("");
-    const cl = items.slice(i, i + 5); i += cl.length;
-    if (cl.length) {
-      const [m, ...side] = cl; const mi = resolveImage(m);
-      h += `<section class="rv6-cluster"><div class="rv6-cluster__head"><h2>Dossiê · ${esc(String(m.category || "especial").replace(/_/g, " "))}</h2><a href="destinos.html">ARQUIVO →</a></div><div class="rv6-cluster__grid"><a class="rv6-cluster__main" href="${safeHref(m.url)}" ${mi ? "" : 'data-img="none"'}>${media(mi)}<h3>${esc(m.title)}</h3>${meta(m)}</a><div class="rv6-cluster__side">${side.map((s) => `<a href="${safeHref(s.url)}">${esc(s.title)}</a>`).join("")}</div></div></section>`;
-    }
-    const rest = items.slice(i, i + 24); i += rest.length;
-    if (rest.length) h += `<div class="rv6-list">${rest.map(listHTML).join("")}</div>`;
-    const tail = items.slice(i);
-    h += tail.map((it, n) => (n % 5 === 0 ? rowHTML(it, resolveImage(it)) : listHTML(it))).join("");
+    const rest = items.slice(i);
+    h += rest.map((it) => rowHTML(it, resolveImage(it))).join("");
     host.innerHTML = h;
     const fill = (sel, arr) => { const el = $(sel); if (el) el.innerHTML = arr.map((it) => `<li><a href="${safeHref(it.url)}">${esc(it.title)}</a></li>`).join(""); };
     fill("#pp-reco", items.slice(0, 6)); fill("#pp-missed", items.slice(6, 12)); fill("#pp-today", items.slice(12, 18));
