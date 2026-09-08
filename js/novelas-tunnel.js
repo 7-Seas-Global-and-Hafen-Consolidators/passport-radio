@@ -1,21 +1,31 @@
 /* Passport Radio — Novelas Tunnel™
- * Stream: Web Radio Novelas (trilhas / memória) · https://free.rcast.net/64747
+ * Fonte: playlists YouTube escolhidas pelo Mr. Nomad / primeiro apoiador.
+ * NÃO raspa áudio. Toca no player oficial do YouTube.
  */
 (() => {
   'use strict';
 
   const PANEL_ID = 'passportNovelas';
-  const AUDIO_ID = 'passportNovelasAudio';
-  const PLAY_ID = 'passportNovelasPlay';
-  const STATUS_ID = 'passportNovelasStatus';
-  const DEFAULT_STREAM = 'https://free.rcast.net/64747';
+  const FRAME_ID = 'passportNovelasFrame';
 
-  const streamUrl = () => String(window.PASSPORT_NOVELAS_STREAM || DEFAULT_STREAM).trim();
+  const PLAYLISTS = [
+    { id: 'PL74FzgX6Wbls4sJiOZfPg5INFEiNJOmbb', label: '01 · Trilha 1' },
+    { id: 'PLmgkGSqOPCzuxlATw8oZmimIJzhKvykK0', label: '02 · Trilha 2' },
+    { id: 'PL7X8pld-Y43YMbL3HCFjnJeB4qFX9sjrN', label: '03 · Trilha 3' },
+    { id: 'PL32elvOIURf97NmdtWYgS4ewh8COdcYbp', label: '04 · Trilha 4' },
+    { id: 'PL7X8pld-Y43bCcopcIghZ9mYvGdLYrtbl', label: '05 · Trilha 5' },
+    { id: 'PL7X8pld-Y43Z4xUxmWFDJvg4R5gX5Sg20', label: '06 · Trilha 6' },
+    { id: 'PLBXBmZcJbX0yqCULtYkzVzoNRnWpiWA0-', label: '07 · Trilha 7' },
+    { id: 'PL4E403236D3CE379F', label: '08 · Trilha 8' },
+    { id: 'PL74FzgX6Wbltkk3UcFkDhqVb20MXIvek6', label: '09 · Trilha 9' }
+  ];
 
-  function stopOthers(audio) {
-    document.querySelectorAll('audio').forEach((other) => {
-      if (other !== audio && !other.paused) other.pause();
-    });
+  function embedSrc(listId) {
+    return 'https://www.youtube-nocookie.com/embed/videoseries?list=' + encodeURIComponent(listId) + '&rel=0';
+  }
+
+  function stopOthers() {
+    document.querySelectorAll('audio').forEach((a) => { if (!a.paused) try { a.pause(); } catch (_) {} });
   }
 
   function ensureDirectory() {
@@ -28,17 +38,15 @@
     row.dataset.tunnelTarget = PANEL_ID;
     row.setAttribute('aria-controls', PANEL_ID);
     row.setAttribute('aria-expanded', 'false');
-    row.innerHTML = '<span class="tunnel-directory__number">09</span><strong class="tunnel-directory__title">Novelas Tunnel™</strong><span class="tunnel-directory__format">1970–1999 · trilhas nacionais + internacionais · salada mista</span><span class="tunnel-directory__state">24 HOURS</span><span class="tunnel-directory__action">Abrir sinal</span>';
+    row.innerHTML = '<span class="tunnel-directory__number">09</span><strong class="tunnel-directory__title">Novelas Tunnel™</strong><span class="tunnel-directory__format">1970–1990 · playlists do primeiro apoiador</span><span class="tunnel-directory__state">24 HOURS</span><span class="tunnel-directory__action">Abrir sinal</span>';
     row.addEventListener('click', () => {
       const panel = document.getElementById(PANEL_ID);
       if (!panel) return;
       const willOpen = panel.hidden;
-      document.querySelectorAll('[data-passport-tunnel-panel="1"]').forEach((other) => {
-        other.hidden = true;
-      });
+      document.querySelectorAll('[data-passport-tunnel-panel="1"]').forEach((other) => { other.hidden = true; });
       panel.hidden = !willOpen;
       row.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-      if (willOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (willOpen) { stopOthers(); panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
     });
     directory.appendChild(row);
   }
@@ -51,50 +59,38 @@
     panel.hidden = true;
     panel.dataset.passportTunnelPanel = '1';
     panel.className = 'tunnel-panel';
-    panel.innerHTML = `
-      <div class="tunnel-panel-copy">
-        <span class="tunnel-eyebrow">PASSPORT MEMORY SIGNAL™ · 1970–1999</span>
-        <h3>Novelas Tunnel™</h3>
-        <p>As músicas dos discos de novelas — nacionais e internacionais — embaralhadas sem separar gênero, país ou década. Pedido do primeiro apoiador da Passport.</p>
-      </div>
-      <div class="tunnel-player">
-        <button id="${PLAY_ID}" type="button" aria-label="Tocar Novelas Tunnel">PLAY</button>
-        <div><strong>NOVELAS TUNNEL™</strong><small>1970–1999 · SOUNDTRACK MEMORY · 24 HOURS</small></div>
-        <span id="${STATUS_ID}">READY</span>
-        <audio id="${AUDIO_ID}" preload="none"></audio>
-      </div>`;
+    panel.innerHTML =
+      '<div class="tunnel-panel-copy">' +
+      '<span class="tunnel-eyebrow">PASSPORT MEMORY SIGNAL™ · PEDIDO DO PRIMEIRO APOIADOR</span>' +
+      '<h3>Novelas Tunnel™</h3>' +
+      '<p>As playlists que você passou. Década por década. Sem rádio aleatória. Sem oração alemã.</p>' +
+      '</div>' +
+      '<div id="novelasDeck" style="display:flex;flex-wrap:wrap;gap:6px;margin:12px 0"></div>' +
+      '<div style="position:relative;padding-top:56.25%;background:#111">' +
+      '<iframe id="' + FRAME_ID + '" title="Novelas Tunnel" src="' + embedSrc(PLAYLISTS[0].id) + '" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>' +
+      '</div>';
     host.appendChild(panel);
-
-    const audio = panel.querySelector('#' + AUDIO_ID);
-    const play = panel.querySelector('#' + PLAY_ID);
-    const status = panel.querySelector('#' + STATUS_ID);
-
-    play.addEventListener('click', async () => {
-      if (!audio.paused) { audio.pause(); status.textContent = 'READY'; play.textContent = 'PLAY'; return; }
-      const src = streamUrl();
-      if (!src) { status.textContent = 'STREAM PENDING'; return; }
-      if (audio.src !== src) audio.src = src;
-      stopOthers(audio);
-      try { await audio.play(); status.textContent = 'ON AIR'; play.textContent = 'PAUSE'; }
-      catch (_) { status.textContent = 'RETRY'; }
+    const deck = panel.querySelector('#novelasDeck');
+    PLAYLISTS.forEach((p, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = p.label;
+      b.style.cssText = 'font:700 .72rem Inter,sans-serif;letter-spacing:.06em;border:1px solid #111;background:' + (i === 0 ? '#111' : '#fff') + ';color:' + (i === 0 ? '#fff' : '#111') + ';padding:6px 8px;cursor:pointer';
+      b.addEventListener('click', () => {
+        const frame = document.getElementById(FRAME_ID);
+        if (frame) frame.src = embedSrc(p.id);
+        deck.querySelectorAll('button').forEach((x) => { x.style.background = '#fff'; x.style.color = '#111'; });
+        b.style.background = '#111'; b.style.color = '#fff';
+        stopOthers();
+      });
+      deck.appendChild(b);
     });
-    audio.addEventListener('playing', () => { status.textContent = 'ON AIR'; play.textContent = 'PAUSE'; });
-    audio.addEventListener('pause', () => { if (status.textContent === 'ON AIR') status.textContent = 'READY'; play.textContent = 'PLAY'; });
-    audio.addEventListener('error', () => { status.textContent = 'OFFLINE'; play.textContent = 'PLAY'; });
   }
 
   function boot() {
-    window.PASSPORT_NOVELAS_STREAM = window.PASSPORT_NOVELAS_STREAM || DEFAULT_STREAM;
     ensureDirectory();
     ensurePanel();
-    window.PassportNovelasTunnel = {
-      setStream(url) {
-        window.PASSPORT_NOVELAS_STREAM = String(url || DEFAULT_STREAM).trim();
-        const audio = document.getElementById(AUDIO_ID);
-        if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); }
-      },
-      stop() { const audio = document.getElementById(AUDIO_ID); if (audio) audio.pause(); }
-    };
+    window.PassportNovelasTunnel = { stop() {} };
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
