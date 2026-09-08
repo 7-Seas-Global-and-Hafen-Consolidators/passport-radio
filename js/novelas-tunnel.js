@@ -1,7 +1,5 @@
 /* Passport Radio — Novelas Tunnel™
- * Audio-only soundtrack signal. No video/iframe.
- * The identity is deliberate mixed-shuffle: Brazilian + international
- * songs that appeared on novela soundtrack albums, 1970–1999.
+ * Stream: Web Radio Novelas (trilhas / memória) · https://free.rcast.net/64747
  */
 (() => {
   'use strict';
@@ -10,8 +8,9 @@
   const AUDIO_ID = 'passportNovelasAudio';
   const PLAY_ID = 'passportNovelasPlay';
   const STATUS_ID = 'passportNovelasStatus';
+  const DEFAULT_STREAM = 'https://free.rcast.net/64747';
 
-  const streamUrl = () => String(window.PASSPORT_NOVELAS_STREAM || '').trim();
+  const streamUrl = () => String(window.PASSPORT_NOVELAS_STREAM || DEFAULT_STREAM).trim();
 
   function stopOthers(audio) {
     document.querySelectorAll('audio').forEach((other) => {
@@ -56,7 +55,7 @@
       <div class="tunnel-panel-copy">
         <span class="tunnel-eyebrow">PASSPORT MEMORY SIGNAL™ · 1970–1999</span>
         <h3>Novelas Tunnel™</h3>
-        <p>As músicas dos discos de novelas — nacionais e internacionais — embaralhadas sem separar gênero, país ou década. A próxima faixa pode lembrar uma vida inteira.</p>
+        <p>As músicas dos discos de novelas — nacionais e internacionais — embaralhadas sem separar gênero, país ou década. Pedido do primeiro apoiador da Passport.</p>
       </div>
       <div class="tunnel-player">
         <button id="${PLAY_ID}" type="button" aria-label="Tocar Novelas Tunnel">PLAY</button>
@@ -85,11 +84,12 @@
   }
 
   function boot() {
+    window.PASSPORT_NOVELAS_STREAM = window.PASSPORT_NOVELAS_STREAM || DEFAULT_STREAM;
     ensureDirectory();
     ensurePanel();
     window.PassportNovelasTunnel = {
       setStream(url) {
-        window.PASSPORT_NOVELAS_STREAM = String(url || '').trim();
+        window.PASSPORT_NOVELAS_STREAM = String(url || DEFAULT_STREAM).trim();
         const audio = document.getElementById(AUDIO_ID);
         if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); }
       },
