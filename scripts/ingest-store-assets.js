@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+/* PASSPORT STORE — INGEST DE ASSETS; mapas e fontes ficam em data/_private/ */
+const fs=require('fs'),path=require('path'),https=require('https');
+const P=path.join(__dirname,'../data/_private'),ROOT=path.join(__dirname,'..'),MAP=path.join(P,'source_map_private.json'),TEMPLATES=path.join(P,'product_templates.json');
+const DIRS={camiseta:'camisetas',lp_importado:'lps',vitrola:'vitrolas',tenis:'tenis'};
+function dl(url){return new Promise((ok,no)=>https.get(url,{headers:{'User-Agent':'PassportBot/1.0'}},r=>{if(r.statusCode>=300&&r.statusCode<400&&r.headers.location)return dl(r.headers.location).then(ok,no);if(r.statusCode!==200)return no(new Error('HTTP '+r.statusCode));const a=[];r.on('data',d=>a.push(d));r.on('end',()=>ok(Buffer.concat(a)));r.on('error',no)}).on('error',no))}
+const ext=u=>(u.match(/\.(webp|png|jpe?g)(?:\?|$)/i)||[,'webp'])[1].toLowerCase();
+(async()=>{if(!fs.existsSync(TEMPLATES)){console.error('❌ product_templates privado ausente');process.exit(1)}const map=fs.existsSync(MAP)?JSON.parse(fs.readFileSync(MAP,'utf8')):{},tm=JSON.parse(fs.readFileSync(TEMPLATES,'utf8'));for(const [sku,t] of Object.entries(tm)){const url=map[sku];if(!url||t.image)continue;try{const dir=DIRS[t.type]||'misc',out=path.join(ROOT,'images/store',dir);fs.mkdirSync(out,{recursive:true});const file=`${sku}.${ext(url)}`;fs.writeFileSync(path.join(out,file),await dl(url));t.image=`/images/store/${dir}/${file}`;console.log(`✅ ${sku} → ${t.image}`)}catch(e){console.error(`❌ ${sku}: ${e.message}`)}}fs.writeFileSync(TEMPLATES,JSON.stringify(tm,null,2));console.log('🎯 Rode node scripts/calculate-prices.js e depois validate-store.js')})();
