@@ -22,7 +22,7 @@
     "min_closing_chars": 100,
     "max_closing_chars": 280
   },
-  "source_firewall_max_chars": 7000,
+  "source_firewall_max_chars": 4000,
   "minimum_fact_pack_facts": 2,
   "format_word_range": 650,
   "quality_gate": {
