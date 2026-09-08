@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "updated_at": "2026-09-07",
+  "credit": "Passport Radio",
+  "policy": {
+    "editorial_credit": "Passport Radio",
+    "media_credit": "Passport Radio",
+    "rule": "Use only Passport Radio-owned/approved local artwork or explicitly curated embeds already preserved in the article. Never substitute an unrelated image merely because a file exists."
+  },
+  "priority_features": [
+    {"rank":1,"title":"Anos 80 — Volume 2","url":"/anos-80-volume-2-musicas-memoria-brasileira.html","type":"special","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"},
+    {"rank":2,"title":"Festa PLOC","url":"/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html","type":"special","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"},
+    {"rank":3,"title":"1986: quando o rádio ainda podia mudar o seu dia","url":"/1986-musicas-rock-radio-anos-80.html","type":"archive","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"},
+    {"rank":4,"title":"Anos 80 — Rock & New Wave","url":"/anos-80-bandas-musicas-rock-new-wave.html","type":"archive","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"},
+    {"rank":5,"title":"Rhapsody of Fire — Symphonic Power Metal","url":"/rhapsody-of-fire-symphonic-power-metal.html","type":"story","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"},
+    {"rank":6,"title":"White Metal: isso é música cristã?","url":"/white-metal-isso-e-musica-crista.html","type":"story","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"},
+    {"rank":7,"title":"Ritchie Blackmore voltou ao Deep Purple","url":"/ritchie-blackmore-deep-purple-33-anos.html","type":"story","preserve_article_media":true,"credit":"Passport Radio"},
+    {"rank":8,"title":"Thomas Youngblood ainda ama a estrada","url":"/thomas-youngblood-kamelot-trinta-anos-estrada.html","type":"story","preserve_article_media":true,"credit":"Passport Radio"},
+    {"rank":9,"title":"Scorpions cansou da Terra. Agora o furacão vai pro espaço.","url":"/scorpions-hurricane-graphic-novel.html","type":"story","preserve_article_media":true,"credit":"Passport Radio"},
+    {"rank":10,"title":"Frank Beard — ZZ Top","url":"/frank-beard-zz-top-1949-2026.html","type":"story","preserve_article_media":true,"preserve_curated_youtube":true,"credit":"Passport Radio"}
+  ]
+}
