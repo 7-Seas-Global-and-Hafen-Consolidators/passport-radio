@@ -1,6 +1,4 @@
 /* PASSPORT PORTAL v3.9 — writer ÚNICO de #pp-feed.
-   v3.9: prioridade editorial Passport + feed manual + RSS em uma fila deduplicada.
-   Fotografia segue contrato src/alt/focalPoint/credit/fit/srcset.
    Motor de rádio: NÃO TOCA. */
 (() => {
   "use strict";
@@ -9,8 +7,11 @@
   const safeHref = (v) => { const h = String(v == null ? "" : v).trim(); if (!h) return "#"; if (/^(?:[/?#.]|https?:|mailto:|tel:)/i.test(h)) return esc(h); return "#"; };
 
   const FEEDS = ["/data/editorial-priority-feed.json", "/data/editorial-manual-feed.json", "/data/editorial-feed.json"];
+  const MISSION_COVER = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjY6SH2hyyFKaVndenvIK7088r1hW1z8h8wuS3m0FSvw&s=10";
 
   const LEGACY_IMG = [
+    ["the-mission", MISSION_COVER],
+    ["sisters-of-mercy", MISSION_COVER],
     ["rhapsody-of-fire", "/images/rhapsody-of-fire/Rhapsody-3-madrid.jpg"],
     ["therion-miskolc", "/images/therion-miskolc/maxresdefault32.jpg"],
     ["1986-musicas", "/images/1986/attachment-social-image-366-2026-08-10-09-04-20.webp"],
@@ -21,6 +22,8 @@
     ["scorpions-hurricane", "/images/scorpions-hurricane-graphic-novel.webp"],
     ["polyphia", "/images/polyphia-be-not-afraid.jpg"],
     ["dolly-parton", "/images/dolly-parton-1946-2026.jpg"],
+    ["white-metal", "/images/white-metal/Mortification.jpg"],
+    ["live-aid", "/images/passport-radio-definitive.jpg"],
     ["secos-e-molhados", "/images/secos-e-molhados.jpg"],
     ["made-in-brazil", "/images/made-in-brazil.jpg"],
     ["joelho-de-porco", "/images/joelho-de-porco.jpg"],
@@ -73,9 +76,15 @@
           if (!key || seen.has(key)) continue;
           seen.add(key); merged.push(it);
         }
-      } catch (e) { /* um feed não derruba os outros */ }
+      } catch (e) {}
     }
     return merged;
+  }
+
+  function sideItem(it) {
+    const im = resolveImage(it);
+    const thumb = im ? `<img src="${esc(im.src)}" alt="" width="40" height="40">` : "";
+    return `<li><a href="${safeHref(it.url)}">${thumb}<span>${esc(it.title)}</span></a></li>`;
   }
 
   function render(items) {
@@ -85,10 +94,9 @@
     h += leadHTML(items[i], resolveImage(items[i])); i += 1;
     if (items.length - i >= 2) { h += `<div class="rv6-duo">${duoHTML(items[i], resolveImage(items[i]))}${duoHTML(items[i + 1], resolveImage(items[i + 1]))}</div>`; i += 2; }
     h += `<div class="rv6-band" role="complementary" aria-label="Passport no ar"><i></i><b>PASSPORT ON AIR · 24H</b><span>Continuous Signals™ · Live & Rare™ · Tunnels™</span><a href="radio.html">OUVIR →</a></div>`;
-    const rest = items.slice(i);
-    h += rest.map((it) => rowHTML(it, resolveImage(it))).join("");
+    h += items.slice(i).map((it) => rowHTML(it, resolveImage(it))).join("");
     host.innerHTML = h;
-    const fill = (sel, arr) => { const el = $(sel); if (el) el.innerHTML = arr.map((it) => `<li><a href="${safeHref(it.url)}">${esc(it.title)}</a></li>`).join(""); };
+    const fill = (sel, arr) => { const el = $(sel); if (el) el.innerHTML = arr.map(sideItem).join(""); };
     fill("#pp-reco", items.slice(0, 6)); fill("#pp-missed", items.slice(6, 12)); fill("#pp-today", items.slice(12, 18));
     const tags = $("#pp-assuntos");
     if (tags) {
