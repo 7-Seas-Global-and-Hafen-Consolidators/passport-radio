@@ -1,0 +1,51 @@
+/* Passport Paper — additive DOM-real visual layer. Motors untouched. */
+:root{
+  --ph-paper:#FAF9F6;--ph-paper-2:#F3F1EA;--ph-cream:#F4EFE4;
+  --ph-ink:#15161A;--ph-ink-2:#26272B;--ph-muted:#6E6B66;
+  --ph-rule:#E3E0D8;--ph-rule-2:#D3D0C7;
+  --ph-red:#D71920;--ph-red-deep:#9B0000;--ph-red-soft:#FBE9E9;
+  --ph-equip:#101114;--ph-equip-2:#17181C;--ph-equip-rule:#2A2C30;--ph-equip-txt:#E8EAEE;--ph-lamp:#FF3B30;
+  --f-mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,Consolas,monospace;
+}
+body.pp-body{
+  --ph-paper:#FAF9F6;--ph-paper-2:#F3F1EA;--ph-cream:#F4EFE4;--ph-ink:#15161A;--ph-ink-2:#26272B;--ph-muted:#6E6B66;--ph-rule:#E3E0D8;--ph-rule-2:#D3D0C7;--ph-red:#D71920;--ph-red-deep:#9B0000;--ph-red-soft:#FBE9E9;--ph-equip:#101114;--ph-equip-2:#17181C;--ph-equip-rule:#2A2C30;--ph-equip-txt:#E8EAEE;--ph-lamp:#FF3B30;--f-mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,Consolas,monospace;
+}
+html{background:var(--ph-paper)}
+body.pp-body,body.live-page,body{background:var(--ph-paper);color:var(--ph-ink)}
+a{color:inherit}.pp-topbar,.pp-nav,.pp-ticker{box-shadow:none}.pp-wrap{background:var(--ph-paper);align-items:start}.pp-box,.pp-feed-item,.pp-card{background:#fff;border-color:var(--ph-rule);box-shadow:none}.pp-box-head,.pp-feed-head{color:var(--ph-ink);border-color:var(--ph-rule)}
+/* REDAÇÃO — dense paper, not a black wall */
+.pp-col-left,.pp-col-center,.pp-col-right{background:transparent}.pp-feed-item,.pp-box{border-radius:0}.pp-feed-item{border-bottom:1px solid var(--ph-rule)}.pp-feed-item:hover{background:var(--ph-paper-2)}.pp-feed-item img{object-fit:cover}.pp-featured a{background:var(--ph-ink)!important}.pp-featured__lead,.pp-featured__side a{border-bottom:4px solid var(--ph-red)}
+/* Environments injected by passport-home-v6.js: preserve content, change silhouette */
+.pp-env{background:var(--ph-paper);color:var(--ph-ink);border-top:1px solid var(--ph-rule);border-bottom:1px solid var(--ph-rule);padding-block:clamp(34px,5vw,76px)}
+.pp-env__in{max-width:1440px;margin:auto;padding-inline:clamp(16px,3vw,44px)}
+.pp-env__kicker{font:800 .72rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ph-red)}
+.pp-env h2,.pp-env h3{color:var(--ph-ink);letter-spacing:-.035em}.pp-env p{color:var(--ph-muted)}
+/* ESTÚDIO — the only equipment-dark environment */
+.pp-env--studio,.pp-studio{background:var(--ph-equip);color:var(--ph-equip-txt);border-color:var(--ph-equip-rule)}
+.pp-env--studio h2,.pp-env--studio h3,.pp-env--studio p,.pp-studio h2,.pp-studio h3,.pp-studio p{color:var(--ph-equip-txt)}
+.pp-env--studio .pp-env__kicker,.pp-studio .pp-env__kicker{color:var(--ph-lamp)}
+.pp-env--studio button,.pp-studio button{font-family:var(--f-mono)}
+/* PALCO — paper + photography, no full-bleed funeral wall */
+.pp-env--stage,.pp-stage{background:#fff}.pp-env--stage img,.pp-stage img{width:100%;object-fit:cover}.pp-env--stage .pp-card,.pp-stage .pp-card{border-top:3px solid var(--ph-ink)}
+/* MR. NOMAD — dossier */
+.pp-env--nomad,.pp-nomad{background:var(--ph-cream)}.pp-env--nomad article,.pp-nomad article{border-left:4px solid var(--ph-red);padding-left:clamp(16px,3vw,36px)}
+/* ARQUIVO — doors of time */
+.pp-env--archive,.pp-archive{background:var(--ph-paper-2)}.pp-env--archive .pp-card,.pp-archive .pp-card{background:var(--ph-paper);border:1px solid var(--ph-rule-2);min-height:180px}
+/* PASSPORT AGORA — clean horizontal newsroom rail */
+.pp-env--now,.pp-now{background:#fff}.pp-env--now .pp-card,.pp-now .pp-card{border-left:1px solid var(--ph-rule);padding-left:18px}
+/* LOJA — premium light, product is hero */
+.pp-env--store,.pp-store,.pp-store-section{background:var(--ph-paper)}
+#pp-store-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}.pp-product{background:#fff;border:1px solid var(--ph-rule);color:var(--ph-ink);text-decoration:none;padding:12px}.pp-product .rv6-media{background:#fff;aspect-ratio:1/1}.pp-product .rv6-media img{width:100%;height:100%;object-fit:contain}.pp-product strong{display:block;line-height:1.2}.pp-price{font-weight:900;color:var(--ph-ink)}.pp-installments{color:var(--ph-muted)}.pp-store-bar{background:var(--ph-paper);border-block:1px solid var(--ph-rule)}.pp-chip{background:#fff;color:var(--ph-ink);border:1px solid var(--ph-rule)}.pp-chip[aria-pressed="true"]{background:var(--ph-ink);color:#fff}
+/* RECIRCULAÇÃO — editorial conclusion */
+.pp-env--recirc,.pp-recirculation{background:var(--ph-paper-2);border-top:5px solid var(--ph-ink)}
+/* RADIO / TUNNELS — shell changes only; audio IDs and engines untouched */
+body.live-page{background:var(--ph-paper)!important;color:var(--ph-ink)!important}.tunnel-directory__row{background:#fff!important;color:var(--ph-ink)!important;border:1px solid var(--ph-rule)!important;border-radius:0!important}.tunnel-directory__row:hover{border-color:var(--ph-ink)!important}.player-bar{background:var(--ph-equip)!important;color:var(--ph-equip-txt)!important;border-top:1px solid var(--ph-equip-rule)!important}.player-bar button{font-family:var(--f-mono)}
+/* PROMO / ANUNCIE — bare body pages */
+.promo-grid,.promocoes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.promo-card,.promocao-card{background:#fff;color:var(--ph-ink);border:1px solid var(--ph-rule);border-radius:0}.promo-card img,.promocao-card img{width:100%;object-fit:cover}
+/* WORLD DIAL — station grid only. #world-player geometry intentionally untouched. */
+#world-stations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}#world-stations>*{background:#fff;color:var(--ph-ink);border:1px solid var(--ph-rule)}#world-player{background:var(--ph-equip);color:var(--ph-equip-txt);border-color:var(--ph-equip-rule)}#world-play,#world-stop{font-family:var(--f-mono);border-color:var(--ph-equip-rule);color:inherit}
+/* Footer remains contrast, not the page identity */
+.pp-footer{background:var(--ph-ink);color:#fff}.passport-support-float{background:var(--ph-red);color:#fff}
+@media(max-width:1180px){#pp-store-grid{grid-template-columns:repeat(4,minmax(0,1fr))}#world-stations{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){#pp-store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#world-stations,.promo-grid,.promocoes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){#pp-store-grid,#world-stations,.promo-grid,.promocoes-grid{grid-template-columns:1fr}.pp-env{padding-block:32px}}
