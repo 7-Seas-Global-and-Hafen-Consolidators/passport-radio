@@ -1,5 +1,6 @@
 /* Passport Radio — Novelas Tunnel™
- * Stream: Web Radio Novelas (trilhas / memória) · https://free.rcast.net/64747
+ * Sinal: Antena 1 (ballads nacionais/internacionais — o som que novelas usavam)
+ * https://antenaone.crossradio.com.br/stream/1
  */
 (() => {
   'use strict';
@@ -8,7 +9,7 @@
   const AUDIO_ID = 'passportNovelasAudio';
   const PLAY_ID = 'passportNovelasPlay';
   const STATUS_ID = 'passportNovelasStatus';
-  const DEFAULT_STREAM = 'https://free.rcast.net/64747';
+  const DEFAULT_STREAM = 'https://antenaone.crossradio.com.br/stream/1';
 
   const streamUrl = () => String(window.PASSPORT_NOVELAS_STREAM || DEFAULT_STREAM).trim();
 
@@ -55,7 +56,7 @@
       <div class="tunnel-panel-copy">
         <span class="tunnel-eyebrow">PASSPORT MEMORY SIGNAL™ · 1970–1999</span>
         <h3>Novelas Tunnel™</h3>
-        <p>As músicas dos discos de novelas — nacionais e internacionais — embaralhadas sem separar gênero, país ou década. Pedido do primeiro apoiador da Passport.</p>
+        <p>O som das trilhas: ballad nacional e internacional. Pedido do primeiro apoiador da Passport.</p>
       </div>
       <div class="tunnel-player">
         <button id="${PLAY_ID}" type="button" aria-label="Tocar Novelas Tunnel">PLAY</button>
@@ -72,7 +73,6 @@
     play.addEventListener('click', async () => {
       if (!audio.paused) { audio.pause(); status.textContent = 'READY'; play.textContent = 'PLAY'; return; }
       const src = streamUrl();
-      if (!src) { status.textContent = 'STREAM PENDING'; return; }
       if (audio.src !== src) audio.src = src;
       stopOthers(audio);
       try { await audio.play(); status.textContent = 'ON AIR'; play.textContent = 'PAUSE'; }
@@ -84,7 +84,7 @@
   }
 
   function boot() {
-    window.PASSPORT_NOVELAS_STREAM = window.PASSPORT_NOVELAS_STREAM || DEFAULT_STREAM;
+    window.PASSPORT_NOVELAS_STREAM = DEFAULT_STREAM;
     ensureDirectory();
     ensurePanel();
     window.PassportNovelasTunnel = {
