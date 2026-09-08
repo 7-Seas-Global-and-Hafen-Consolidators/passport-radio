@@ -58,4 +58,12 @@
   }, true);
 
   window.PassportRadioBridge = Object.freeze({ pauseLocal, broadcastPlay });
+
+  /* New engines may bootstrap here without changing any existing tunnel implementation. */
+  if (document.body.classList.contains("live-page") && !document.querySelector("script[data-passport-globo-ouro]")) {
+    const script = document.createElement("script");
+    script.src = "/js/globo-de-ouro-tunnel.js?v=20260908birth";
+    script.dataset.passportGloboOuro = "1";
+    document.head.appendChild(script);
+  }
 })();
