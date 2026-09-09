@@ -1,0 +1,9 @@
+/* Cirurgia A — hosts técnicos. Não é visual da Home. */
+.ppv2-engine-bay .tunnel-stage-shell,
+.ppv2-engine-bay #passportTunnels,
+.ppv2-engine-bay #ppv2WorldHost{min-height:200px}
+.ppv2-engine-bay #ppv2GloboFrame{width:320px;height:200px;border:0}
+.ppv2-engine-bay{pointer-events:auto !important}
+#adapterLab{font-family:Inter,system-ui,sans-serif;background:#FAF9F6;color:#4A4038;padding:20px 20px 120px}
+#adapterLab button{margin:4px;padding:8px 10px;font-weight:800;border:1px solid #C8102E;background:#fff;color:#C8102E;cursor:pointer}
+#adapterLog{white-space:pre-wrap;border:1px solid #E8E0D6;padding:12px;background:#fff;min-height:160px}
