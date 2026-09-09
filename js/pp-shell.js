@@ -7,8 +7,9 @@
     VIEWS.forEach((k) => {
       const el = box(k);
       if (!el) return;
-      if (k === key) el.classList.remove("pp-view-off");
-      else el.classList.add("pp-view-off");
+      const on = k === key;
+      el.classList.toggle("pp-view-off", !on);
+      el.hidden = !on;
     });
     document.querySelectorAll("[data-pp-route]").forEach((a) => {
       a.setAttribute("aria-current", a.dataset.ppRoute === key ? "page" : "false");
