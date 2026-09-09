@@ -3,11 +3,18 @@
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
-  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" }[c]));
-  const safeHref = (v) => { const h = String(v == null ? "" : v).trim(); if (!h) return "#"; if (/^(?:[/?#.]|https?:|mailto:|tel:)/i.test(h)) return esc(h); return "#"; };
+  const AMP = String.fromCharCode(38);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({
+    "&": AMP + "amp;",
+    "<": AMP + "lt;",
+    ">": AMP + "gt;",
+    '"': AMP + "quot;",
+    "'": AMP + "#39;"
+  }[c]));
+  const safeHref = (v) => { const h = String(v == null ? "" : v).trim(); if (!h) return "#"; if (/^(?:[\/?#.]|https?:|mailto:|tel:)/i.test(h)) return esc(h); return "#"; };
 
   const FEEDS = ["/data/editorial-priority-feed.json", "/data/editorial-manual-feed.json", "/data/editorial-feed.json"];
-  const MISSION_COVER = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjY6SH2hyyFKaVndenvIK7088r1hW1z8h8wuS3m0FSvw&s=10";
+  const MISSION_COVER = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjY6SH2hyyFKaVndenvIK7088r1hW1z8h8wuS3m0FSvw";
 
   const LEGACY_IMG = [
     ["the-mission", MISSION_COVER],
@@ -54,7 +61,7 @@
     return `<div class="${cls}" style="${fpVars(img.fp)}" data-credit="${esc(img.credit || "Passport Radio")}"><img src="${esc(img.src)}" alt="${esc(img.alt)}" ${load} ${srcset} onerror="this.parentNode.setAttribute('data-img','error')">${credit}</div>`;
   }
   const kicker = (t) => `<span class="rv6-kicker">${esc(String(t || "").replace(/_/g, " "))}</span>`;
-  const stamp = (d) => { try { return new Date(d).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }); } catch (e) { return ""; } };
+  const stamp = (d) => { try { return new Date(d).toLocaleDateString("pt-BR", { day: "2-digit", month: "short" }); } catch (e) { return ""; } };
   const meta = (it) => `<span class="rv6-meta">${esc(stamp(it.published_at))}${it.author ? ` · <b>${esc(it.author)}</b>` : ""}</span>`;
   function rel(it) {
     const ents = Array.isArray(it.entities) ? it.entities.slice(0, 6) : [];
