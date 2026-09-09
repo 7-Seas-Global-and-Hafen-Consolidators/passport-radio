@@ -1,33 +1,22 @@
 /* PASSPORT RADIO · PLAYER V2 LAUNCHER
-   Not wired globally yet.
-   Safe launcher for future buttons/links using data-passport-player="channel".
+   Mobile: mesma aba. Nunca window.open("").
 */
 (() => {
   "use strict";
 
   const WINDOW_NAME = "passportPlayerV2";
   const CONTROL_CHANNEL = "passport-player-v2-control";
-  const HEARTBEAT_KEY = "passport-player-v2-heartbeat";
-  const HEARTBEAT_TTL = 3500;
 
   function normalize(channel){
     return String(channel || "5060").trim().toLowerCase();
   }
 
   function playerUrl(channel){
-    return `/passport-player-v2.html?channel=${encodeURIComponent(normalize(channel))}`;
+    return "/passport-player-v2.html?channel=" + encodeURIComponent(normalize(channel));
   }
 
-  function readHeartbeat(){
-    try {
-      const raw = localStorage.getItem(HEARTBEAT_KEY);
-      const beat = raw ? JSON.parse(raw) : null;
-      if (!beat || !Number.isFinite(Number(beat.at))) return null;
-      if (Date.now() - Number(beat.at) > HEARTBEAT_TTL) return null;
-      return beat;
-    } catch (_) {
-      return null;
-    }
+  function isMobile(){
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
   }
 
   function sendSelect(channel){
@@ -35,7 +24,7 @@
       if (!("BroadcastChannel" in window)) return false;
       const bus = new BroadcastChannel(CONTROL_CHANNEL);
       bus.postMessage({ type:"SELECT", channel:normalize(channel), at:Date.now() });
-      setTimeout(() => { try { bus.close(); } catch (_) {} }, 250);
+      setTimeout(function(){ try { bus.close(); } catch (_) {} }, 250);
       return true;
     } catch (_) {
       return false;
@@ -44,47 +33,27 @@
 
   function open(channel){
     const key = normalize(channel);
-    const heartbeat = readHeartbeat();
-
-    if (heartbeat) {
-      sendSelect(key);
-      try {
-        const existing = window.open("", WINDOW_NAME);
-        if (existing) {
-          existing.focus();
-          return existing;
-        }
-      } catch (_) {}
+    const url = playerUrl(key);
+    sendSelect(key);
+    if (isMobile()) {
+      window.location.assign(url);
+      return true;
     }
-
-    const features = [
-      "popup=yes",
-      "width=1040",
-      "height=760",
-      "resizable=yes",
-      "scrollbars=yes",
-      "noopener=no"
-    ].join(",");
-
-    const player = window.open(playerUrl(key), WINDOW_NAME, features);
+    const player = window.open(url, WINDOW_NAME, "noopener=yes,width=1040,height=760,resizable=yes,scrollbars=yes");
     if (player) {
       try { player.focus(); } catch (_) {}
       return player;
     }
-
-    /* Popup blocked: direct same-tab fallback is intentionally NOT forced.
-       Caller can keep a normal href to preserve user agency and mobile reliability. */
-    return null;
+    window.location.assign(url);
+    return true;
   }
 
-  document.addEventListener("click", event => {
+  document.addEventListener("click", function(event) {
     const trigger = event.target && event.target.closest && event.target.closest("[data-passport-player]");
     if (!trigger) return;
-
-    const channel = trigger.getAttribute("data-passport-player") || "5060";
-    const opened = open(channel);
-    if (opened) event.preventDefault();
+    event.preventDefault();
+    open(trigger.getAttribute("data-passport-player") || "5060");
   });
 
-  window.PassportPlayerV2 = Object.freeze({ open, playerUrl });
+  window.PassportPlayerV2 = Object.freeze({ open: open, playerUrl: playerUrl });
 })();
