@@ -71,46 +71,58 @@
   function leadHTML(it, img) { return `<article class="rv6-lead" ${img ? "" : 'data-img="none"'}>${media(img, "16/9", true)}${kicker(it.category)}<h2><a href="${safeHref(it.url)}">${esc(it.title)}</a></h2><p class="rv6-deck">${esc(it.deck || "")}</p>${meta(it)}${rel(it)}</article>`; }
   function duoHTML(it, img) { return `<a href="${safeHref(it.url)}" ${img ? "" : 'data-img="none"'}>${media(img)}${kicker(it.category)}<h3>${esc(it.title)}</h3><p>${esc((it.deck || "").slice(0, 120))}</p></a>`; }
   function rowHTML(it, img) { return `<a class="rv6-row" href="${safeHref(it.url)}" ${img ? "" : 'data-img="none"'}>${media(img)}<span>${kicker(it.category)}<h3>${esc(it.title)}</h3><p>${esc((it.deck || "").slice(0, 140))}</p>${meta(it)}</span></a>`; }
-
-  async function loadFeed() {
-    const merged = [], seen = new Set();
-    for (const u of FEEDS) {
-      try {
-        const r = await fetch(u, { cache: "no-store" }); if (!r.ok) continue;
-        const d = await r.json(); const items = Array.isArray(d) ? d : (d.items || []);
-        for (const it of items) {
-          const key = String(it.url || it.title || "").trim().toLowerCase();
-          if (!key || seen.has(key)) continue;
-          seen.add(key); merged.push(it);
-        }
-      } catch (e) {}
-    }
-    return merged;
-  }
-
   function sideItem(it) {
     const im = resolveImage(it);
     const thumb = im ? `<img src="${esc(im.src)}" alt="" width="40" height="40">` : "";
     return `<li><a href="${safeHref(it.url)}">${thumb}<span>${esc(it.title)}</span></a></li>`;
   }
 
+  async function loadFeed() {
+    const merged = [], seen = new Set();
+    for (let i = 0; i < FEEDS.length; i++) {
+      const u = FEEDS[i];
+      try {
+        const r = await fetch(u, { cache: "no-store" }); if (!r.ok) continue;
+        const d = await r.json(); const items = Array.isArray(d) ? d : (d.items || []);
+        for (const it of items) {
+          const key = String(it.url || it.title || "").trim().toLowerCase();
+          if (!key || seen.has(key)) continue;
+          seen.add(key);
+          it.__src = (i === 0) ? "casa" : "giro";
+          merged.push(it);
+        }
+      } catch (e) {}
+    }
+    return merged;
+  }
+
   function render(items) {
     const host = $("#pp-feed"); if (!host) return;
     if (!items.length) { host.innerHTML = `<p class="rv6-meta">O arquivo está acordando. Tente em instantes.</p>`; return; }
+    const casa = items.filter((it) => it.__src === "casa");
+    const giro = items.filter((it) => it.__src !== "casa");
+    const bloco1 = casa.length ? casa : items.slice(0, 8);
     let h = "", i = 0;
-    h += leadHTML(items[i], resolveImage(items[i])); i += 1;
-    if (items.length - i >= 2) { h += `<div class="rv6-duo">${duoHTML(items[i], resolveImage(items[i]))}${duoHTML(items[i + 1], resolveImage(items[i + 1]))}</div>`; i += 2; }
+    h += leadHTML(bloco1[i], resolveImage(bloco1[i])); i += 1;
+    if (bloco1.length - i >= 2) { h += `<div class="rv6-duo">${duoHTML(bloco1[i], resolveImage(bloco1[i]))}${duoHTML(bloco1[i + 1], resolveImage(bloco1[i + 1]))}</div>`; i += 2; }
     h += `<div class="rv6-band" role="complementary" aria-label="Passport no ar"><i></i><b>PASSPORT ON AIR · 24H</b><span>Continuous Signals™ · Live & Rare™ · Tunnels™</span><a href="radio.html">OUVIR →</a></div>`;
-    h += items.slice(i).map((it) => rowHTML(it, resolveImage(it))).join("");
+    h += bloco1.slice(i).map((it) => rowHTML(it, resolveImage(it))).join("");
+    if (giro.length) {
+      h += `<div class="rv6-band" role="complementary" aria-label="Giro do dia"><i></i><b>GIRO · FIO DO DIA</b><span>manual + editorial · fio contínuo da redação</span></div>`;
+      h += giro.map((it) => rowHTML(it, resolveImage(it))).join("");
+    }
     host.innerHTML = h;
     const fill = (sel, arr) => { const el = $(sel); if (el) el.innerHTML = arr.map(sideItem).join(""); };
-    fill("#pp-reco", items.slice(0, 6)); fill("#pp-missed", items.slice(6, 12)); fill("#pp-today", items.slice(12, 18));
+    fill("#pp-reco", casa.slice(0, 6));
+    fill("#pp-missed", giro.slice(0, 6));
+    fill("#pp-today", giro.slice(6, 12));
     const tags = $("#pp-assuntos");
     if (tags) {
       const c = {}; items.forEach((it) => { const k = it.category || "geral"; c[k] = (c[k] || 0) + 1; });
       tags.innerHTML = Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([k]) => `<a href="destinos.html?q=${encodeURIComponent(k)}">${esc(k.replace(/_/g, " "))}</a>`).join("");
     }
     window.PASSPORT_FEED_ITEMS = items;
+    console.info("[portal-v3] rio vivo:", items.length, "· casa:", casa.length, "· giro:", giro.length);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => loadFeed().then(render)); else loadFeed().then(render);
 })();
