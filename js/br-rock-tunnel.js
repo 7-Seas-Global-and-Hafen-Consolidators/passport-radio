@@ -1,10 +1,11 @@
 /* PASSPORT RADIO · ROCK BRASIL TUNNEL™
-   Cabine unificada · fonte HTTPS pública e saudável.
-   BR - The Classic Rock · Brasil · MP3.
+   Cabine unificada.
+   91 Rock Curitiba · FM brasileira de rock · MP3 Icecast + CORS.
+   O Zeno "classic rock" anterior tocava Eagles e ainda por cima voltou 401.
 */
 (()=>{
   "use strict";
-  const STREAM_URL="https://stream.zeno.fm/nbq1aq62gd0uv";
+  const STREAM_URL="https://servidor40.brlogic.com:8044/live";
   const host=document.getElementById("ppv2EngineBay")||document.getElementById("engineBay");
   if(!host)return;
   document.querySelectorAll("#passportBRRockAudio,#passportBRRockPlay,#passportBRRockStatus,[data-passport-brrock-engine]").forEach(n=>{if(n instanceof HTMLMediaElement){try{n.pause();n.removeAttribute("src");n.load()}catch(_){}}try{n.remove()}catch(_){}});
