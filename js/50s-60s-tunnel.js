@@ -4,7 +4,6 @@
 */
 (()=>{
   "use strict";
-  if(!document.body.classList.contains("live-page")) return;
   const host=document.getElementById("engineBay")||document.getElementById("ppv2EngineBay");
   if(!host) return;
   document.querySelectorAll("#passport5060,[data-passport-5060-engine]").forEach(n=>{n.querySelectorAll?.("audio").forEach(a=>{try{a.pause();a.removeAttribute("src");a.load()}catch(_){}});n.remove()});
