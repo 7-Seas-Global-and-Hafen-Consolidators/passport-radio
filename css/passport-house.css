@@ -1,0 +1,27 @@
+/* Scoped to standalone player houses; never loaded as global site CSS. */
+body.passport-house{margin:0;padding:18px;box-sizing:border-box;background:#faf9f6;color:#171717;font:15px/1.5 Inter,Arial,sans-serif}
+.passport-house *{box-sizing:border-box}
+.passport-house .house-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:2px solid #171717;padding-bottom:12px;margin-bottom:16px}
+.passport-house .house-head h1{font-size:1.4rem;line-height:1.15;margin:0}
+.passport-house .house-head a{font-size:.75rem;color:inherit}
+.passport-house .house-note{font-size:.8rem;color:#555}
+.passport-house button{cursor:pointer;min-height:44px;padding:8px 14px;border:1px solid #555;background:#fff;color:#111;border-radius:4px;font:700 .85rem/1.3 Arial,sans-serif}
+.passport-house button:focus-visible,.passport-house a:focus-visible{outline:3px solid #b71c32;outline-offset:3px}
+.passport-house button:disabled{cursor:wait;opacity:.6}
+.passport-house audio{max-width:100%;width:100%}
+.passport-house [data-passport-mpb-engine],.passport-house [data-passport-brrock-engine],.passport-house [data-passport-5060-engine]{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.passport-house [data-passport-mpb-engine] audio,.passport-house [data-passport-brrock-engine] audio,.passport-house [data-passport-5060-engine] audio{display:none}
+.passport-house .passport-live-channels,.passport-house .passport80s-picker{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.passport-house .passport-live-controls{display:flex;gap:16px;align-items:center;margin-top:16px}
+.passport-house .passport-live-channel.is-active{background:#171717;color:#fff}
+.passport-house .passport-soul-section,.passport-house .passport-hits-section{padding:12px 0!important;background:transparent!important}
+.passport-house .passport-soul-shell,.passport-house .passport-hits-shell{display:block!important;width:100%!important;margin:0!important}
+.passport-house .passport-soul-title,.passport-house .passport-hits-title{font-size:2rem!important}
+.passport-house .passport-soul-copy,.passport-house .passport-hits-copy{max-width:none!important}
+.passport-house .passport-soul-script,.passport-house .passport-hits-script{display:none!important}
+.passport-house .passport-soul-card,.passport-house .passport-hits-card{margin-top:14px}
+.passport-house .tunnel-directory{display:none}
+.passport-house .gdo{padding:0;max-width:none}
+.passport-house .house-tools{margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.passport-house .house-tools input{max-width:160px}
+@media(max-width:420px){body.passport-house{padding:12px}.passport-house .house-head{align-items:start;flex-direction:column}}

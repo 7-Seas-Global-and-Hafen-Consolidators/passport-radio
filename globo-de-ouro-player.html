@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Globo de Ouro Tunnel™ · Passport Radio</title>
+<title>Globo de Ouro™ · Passport Radio</title>
 <style>
 html,body{margin:0;background:#f4f1eb;color:#111;font-family:Inter,Arial,sans-serif}
 .gdo{max-width:720px;margin:0 auto;padding:32px 18px 64px}
@@ -14,33 +14,23 @@ h1{font-size:clamp(2rem,6vw,3.4rem);line-height:.95;margin:12px 0 16px}
 .gdo__close{font-size:.72rem;font-weight:900;letter-spacing:.1em;color:#111;text-decoration:none}
 #gdoHidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 </style>
+<link rel="stylesheet" href="/css/passport-house.css?v=20260910">
+<script src="/js/passport-bus.js?v=20260910"></script>
 </head>
-<body>
+<body class="passport-house" data-signal="globo">
 <main class="gdo">
 <div class="gdo__brand">PASSPORT ARCHIVE SIGNAL™ · ÁUDIO</div>
-<h1>Globo de Ouro Tunnel™</h1>
+<h1>Globo de Ouro™</h1>
 <p>O vídeo não aparece. Só o som dos programas que você mandou.</p>
 <div class="bar">
 <button id="gdoPlay" type="button" aria-label="Tocar">▶</button>
-<div><strong>GLOBO DE OURO TUNNEL™</strong><br><small>1973–1990 · ÁUDIO · 24H</small></div>
+<div><strong>GLOBO DE OURO™</strong><br><small>1973–1990 · ÁUDIO · 24H</small></div>
 <span id="gdoStatus">READY</span>
 </div>
 <div id="gdoHidden"></div>
-<a class="gdo__close" href="/radio.html">← VOLTAR PARA A RÁDIO</a>
+<a class="gdo__close" href="/#passport-casas" target="_top">← VOLTAR À HOME</a>
 </main>
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-let player, on=false;
-const LIST=['E5uyPR8Zb9A','zjxnOpUnRis','mgIl2h7rr7E','FwcHnyEPzEY','T-cindr--4c','lBBOTVtXftA'];
-function paint(){const p=document.getElementById('gdoPlay'),s=document.getElementById('gdoStatus');const playing=player&&player.getPlayerState&&player.getPlayerState()===1;p.textContent=playing?'Ⅱ':'▶';s.textContent=playing?'ON AIR':'READY'}
-window.onYouTubeIframeAPIReady=function(){
-  player=new YT.Player('gdoHidden',{width:1,height:1,videoId:LIST[0],playerVars:{autoplay:0,controls:0,rel:0,modestbranding:1,playsinline:1,playlist:LIST.join(',')},events:{onStateChange:paint}});
-};
-document.getElementById('gdoPlay').addEventListener('click',()=>{
-  if(!player||!player.playVideo)return;
-  if(player.getPlayerState()===1){player.pauseVideo();on=false}else{player.playVideo();on=true}
-  setTimeout(paint,200);
-});
-</script>
+<script src="/js/globo-de-ouro-player.js?v=20260910"></script>
+<script src="/js/passport-house.js?v=20260910"></script>
 </body>
 </html>
