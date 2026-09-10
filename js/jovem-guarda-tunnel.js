@@ -11,8 +11,7 @@
 
   const engine=document.createElement("div");
   engine.dataset.passportJovemGuardaEngine="current";
-  engine.hidden=true;
-  engine.innerHTML='<button id="passportJovemGuardaPlay" type="button">▶</button><strong id="passportJovemGuardaStatus">READY</strong><audio id="passportJovemGuardaAudio" preload="none"></audio>';
+  engine.innerHTML='<button id="passportJovemGuardaPlay" type="button" aria-label="Reproduzir ou pausar Jovem Guarda™">▶</button><strong id="passportJovemGuardaStatus">READY</strong><audio id="passportJovemGuardaAudio" preload="none"></audio>';
   host.appendChild(engine);
 
   const audio=document.getElementById("passportJovemGuardaAudio");
