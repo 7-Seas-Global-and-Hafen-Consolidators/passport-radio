@@ -22,7 +22,7 @@
           <article><span>MÍDIA PASSPORT</span><h2>Anuncie.</h2><p>Bandas, shows, festivais, lojas e marcas dentro de uma publicação musical viva.</p><a href="anuncie.html">VER FORMATOS →</a></article>
           <article><span>AJUDE A PASSPORT</span><h2>Mantenha a casa no ar.</h2><p>Histórias, arquivo, pesquisa e sinais independentes continuam porque alguém ajuda.</p><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">AJUDAR AGORA →</a></article>
         </section>
-        <section class="journey-continue"><span>CONTINUE VIAJANDO</span><nav>
+        <section class="journey-more"><span>MAIS PASSPORT</span><nav>
           <a href="editorial.html"><b>LEITURA</b>Editorial 24H</a>
           <a href="destinos.html"><b>MEMÓRIA</b>Arquivo completo</a>
           <a href="radio.html"><b>SINAL</b>Rádio 24H</a>
