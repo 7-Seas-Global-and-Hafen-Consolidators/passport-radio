@@ -3,53 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Passport Radio | Música tocando. História aberta.</title>
-<meta name="description" content="Passport Radio: uma cabine, um som, todos os sinais. Editorial 20/dia.">
-<link rel="stylesheet" href="css/passport-cabin-v7.css?v=20260910">
+<meta name="description" content="Passport Radio: música, histórias, notícias, shows, arquivos, rádio 24H e loja.">
+<meta name="theme-color" content="#FAF9F6">
+<title>Passport Radio | Música, histórias, notícias, shows e rádio 24H</title>
+<link rel="canonical" href="https://passportradio.online/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260909r">
+<link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260909r">
+<link rel="stylesheet" href="/css/passport-home-v6.css?v=20260909r">
+<link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260909r">
+<link rel="stylesheet" href="/css/fofonete-exit-intent.css?v=20260909r">
+<link rel="stylesheet" href="/css/passport-paper-home.css?v=20260909r">
 </head>
-<body>
-<header class="pp-top">
-  <span class="pp-logo">PASSPORT RADIO</span>
-  <nav><a href="index.html">HOME</a><a href="agenda.html">AGENDA</a><a href="loja.html">LOJA</a><a href="#apoie">APOIE</a></nav>
-  <button class="pp-ouvir" data-ouvir>🔴 OUVIR</button>
-</header>
-
-<section class="pp-cabin" id="cabine">
-  <div class="pp-cabin__row">
-    <span class="pp-cabin__name" id="pp-signal-name">PASSPORT RADIO</span>
-    <span class="pp-cabin__state" id="pp-state">STANDBY</span>
-    <div class="pp-cabin__acts">
-      <span id="pp-shortcuts" style="display:none"></span>
-      <button class="pp-chip" data-ouvir>≡ SINAIS</button>
-      <button class="pp-chip" id="pp-tocadas-btn" style="display:none">≡ TOCADAS</button>
-    </div>
-  </div>
-  <div class="pp-tocadas" id="pp-tocadas" style="display:none"><ul id="pp-tocadas-list"></ul></div>
+<body class="pp-body">
+<a class="pp-skip" href="#feed">Ir para o conteúdo</a>
+<header class="pp-topbar"><div class="pp-topbar-in">
+<a class="pp-brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="38" height="38"><span class="pp-brand-txt"><b>PASSPORT RADIO</b><small>Primeiro a história. Depois a música.</small></span></a>
+<form class="pp-search" action="destinos.html" method="get"><input type="search" name="q" placeholder="Buscar…" aria-label="Buscar"><button type="submit">BUSCAR</button></form>
+<nav class="pp-top-actions"><a href="minha-passport.html">MINHA PASSPORT</a><a href="https://www.youtube.com/@Passportradio.online" target="_blank" rel="noopener">YOUTUBE</a><a href="https://t.me/m/t6seeX61ZTlk" target="_blank" rel="noopener">TELEGRAM</a><a href="https://wa.me/message/NZS7ZW4QHQVBG1" target="_blank" rel="noopener">WHATSAPP</a><a class="pp-onair-btn" href="radio.html">ON AIR</a></nav>
+</div></header>
+<nav class="pp-nav"><div class="pp-nav-in"><a href="#feed" aria-current="page">NOTÍCIAS</a><a href="destinos.html">ARQUIVO</a><a href="bandas/">BANDAS & ARTISTAS</a><a href="promocoes.html">PROMOÇÕES</a><a href="radio.html">RÁDIO 24H</a><a href="loja.html">LOJA</a><a href="anuncie.html">ANUNCIE</a><a href="divulgar-bandas.html">ENVIAR PAUTA</a><a href="#apoie">APOIE</a></div></nav>
+<div class="pp-ticker"><span class="pp-ticker-label">AGORA</span><div class="pp-ticker-track" id="pp-ticker">Passport Radio · música, histórias e rádio 24 horas.</div><a class="pp-ticker-live" href="radio.html">OUVIR AO VIVO →</a></div>
+<div class="pp-fold-cta"><a class="pp-fold-cta__loja" href="loja.html">LOJA · VITRINE EM MONTAGEM</a><a class="pp-fold-cta__apoie" href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">APOIE A PASSPORT</a></div>
+<div class="pp-wrap">
+<aside class="pp-col pp-col-left">
+<section class="pp-box"><h2 class="pp-box-head">Destaques da Redação</h2><ol class="pp-reco" id="pp-reco"></ol></section>
+<section class="pp-box"><h2 class="pp-box-head">Clássicos da Casa</h2><ul class="pp-mini-list"><li><a href="white-metal-isso-e-musica-crista.html">White Metal</a></li><li><a href="historias/eye-of-the-tiger.html">Eye of the Tiger</a></li><li><a href="live-aid-momento-mais-marcante-rock.html">Live Aid</a></li><li><a href="frank-beard-zz-top-1949-2026.html">Frank Beard</a></li><li><a href="anos-80-volume-2-musicas-memoria-brasileira.html">Anos 80 Vol. 2</a></li></ul></section>
+<section class="pp-box"><h2 class="pp-box-head">Você Perdeu</h2><ul class="pp-mini-list" id="pp-missed"></ul></section>
+<section class="pp-box"><h2 class="pp-box-head">Arquivos</h2><ul class="pp-mini-list"><li><a href="anos-80-bandas-musicas-rock-new-wave.html">Anos 80</a></li><li><a href="1986-musicas-rock-radio-anos-80.html">1986</a></li><li><a href="editorial.html">Editorial 24H</a></li><li><a href="destinos.html">Todo o arquivo</a></li></ul></section>
+<section class="pp-box"><h2 class="pp-box-head">Explore</h2><ul class="pp-mini-list"><li><a href="bandas/">Bandas</a></li><li><a href="guitarristas/">Guitarristas</a></li><li><a href="bateristas/">Bateristas</a></li><li><a href="baixistas/">Baixistas</a></li><li><a href="vocalistas/">Vocalistas</a></li><li><a href="anos-70/">Anos 70</a></li><li><a href="anos-80/">Anos 80</a></li><li><a href="anos-90/">Anos 90</a></li></ul></section>
+</aside>
+<main class="pp-col pp-col-center" id="feed">
+<div class="pp-feed-head"><h1>Últimas notícias</h1><a href="editorial.html">ARQUIVO COMPLETO →</a></div>
+<section class="pp-featured">
+<a class="pp-featured__lead" href="anos-80-volume-2-musicas-memoria-brasileira.html"><img src="https://img.youtube.com/vi/HaMEzljVtA4/sddefault.jpg" alt="Anos 80 Vol. 2"><b>ANOS 80 · VOL. 2</b><strong>Músicas que o Brasil nunca esqueceu</strong><span>Mr. Nomad</span></a>
+<div class="pp-featured__side">
+<a href="editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html"><img src="https://img.youtube.com/vi/w_1jWR76qCY/sddefault.jpg" alt="Festa PLOC"><b>FESTA PLOC</b><strong>Você cresceu. A pista não recebeu o memorando.</strong></a>
+<a href="editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjY6SH2hyyFKaVndenvIK7088r1hW1z8h8wuS3m0FSvw" alt="The Mission e Sisters of Mercy"><b>THE MISSION · MR. NOMAD</b><strong>Wayne Hussey, Craig Adams e a banda que nasceu das cinzas do Sisters.</strong></a>
+</div>
 </section>
-
-<main class="pp-wrap" style="max-width:1080px;margin:0 auto;padding:0 16px">
-  <section id="pp-editorial"><p class="pp-door">Carregando redação… · <a href="editorial.html">VER EDITORIAL →</a></p></section>
-  <section style="margin:26px 0" >
-    <p class="pp-door">AGENDA · sem datas confirmadas agora · <a href="agenda.html">VER AGENDA →</a></p>
-    <p class="pp-door" style="margin-top:10px">LOJA · vitrine em montagem · <a href="loja.html">VER LOJA →</a></p>
-  </section>
-  <section id="apoie" style="margin:26px 0">
-    <p class="pp-door">MANTENHA A PASSPORT NO AR · PIX · boleto · cartão · <a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">APOIAR →</a></p>
-  </section>
+<div id="pp-feed"></div>
 </main>
-
-<div class="pp-drawer" id="pp-drawer">
-  <div class="pp-drawer__head"><strong>≡ SINAIS · TODOS OS BEBÊS</strong><button id="pp-drawer-close">✕</button></div>
-  <div style="padding:14px 18px"><div id="pp-sinais-list"></div></div>
+<aside class="pp-col pp-col-right">
+<section class="pp-box" id="world-dial"><h2 class="pp-box-head">World Dial™</h2><ul class="pp-mini-list"><li><a href="/radio-mundo-player.html?station=py">Paraguay</a></li><li><a href="/radio-korea.html">Korea</a></li><li><a href="/radio-romania.html">România</a></li><li><a href="radio-mundo.html">VER MAPA COMPLETO →</a></li></ul></section>
+<section class="pp-box"><h2 class="pp-box-head">Giro do Arquivo</h2><ul class="pp-mini-list" id="pp-today"></ul></section>
+<section class="pp-box"><h2 class="pp-box-head">Assuntos em Destaque</h2><div class="pp-tags" id="pp-assuntos"></div></section>
+<section class="pp-box"><h2 class="pp-box-head">Promoções</h2><ul class="pp-mini-list"><li><a href="promocoes.html">AGORA · A SEGUIR · RESULTADOS →</a></li></ul></section>
+<section class="pp-box pp-stick" id="apoie"><h2 class="pp-box-head">Apoiar a Passport</h2><p class="pp-onair-txt">Histórias independentes continuam porque alguém banca.</p><a class="pp-btn-red" href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">APOIAR A PASSPORT →</a></section>
+</aside>
 </div>
-
-<div class="pp-player">
-  <button id="pp-play" data-playing="0">▶</button>
-  <span id="pp-signal-name-bar" style="font-weight:800"></span>
+<footer class="pp-footer"><div class="pp-footer-in"><div class="pp-fcol"><img src="/images/passport-radio-definitive.jpg" alt="" width="48" height="48"><p>3...2...1... CLICK!</p></div><div class="pp-fcol"><strong>CONTEÚDO</strong><a href="#feed">Notícias</a><a href="editorial.html">Editorial</a></div><div class="pp-fcol"><strong>RÁDIO</strong><a href="radio.html">Ao vivo 24h</a><a href="radio-mundo.html">World Dial</a></div><div class="pp-fcol"><strong>PASSPORT</strong><a href="loja.html">Store</a><a href="promocoes.html">Promoções</a></div></div><div class="pp-footer-bottom">© Passport Radio · 1996–2026</div></footer>
+<a class="passport-support-float" href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener"><strong>APOIE A PASSPORT</strong></a>
+<div class="player" id="passport-player" style="position:fixed;left:0;right:0;bottom:0;z-index:99;height:56px;margin:0">
+<button id="prev" aria-label="Canal anterior">◀</button>
+<button class="play" id="play" aria-label="Tocar">▶</button>
+<button id="next" aria-label="Próximo canal">▶</button>
+<span class="player-copy"><strong id="track">METAL</strong><small id="meta">Continuous Signals™ · 24H</small></span>
+<span class="status"><i></i><span id="state">24H · PRONTO</span></span>
+<audio id="audio" preload="none"></audio>
 </div>
-
-<script src="js/passport-mutex-v7.js?v=20260910"></script>
-<script src="js/passport-adapter-v7.js?v=20260910"></script>
-<script src="js/passport-cabin-v7.js?v=20260910"></script>
+<script src="/js/passport-live.js?v=20260909r" defer></script>
+<script src="/js/continuous-signals-home.js?v=20260909r" defer></script>
+<script src="/js/passport-shell-v6.js?v=20260909r" defer></script>
+<script src="/js/passport-portal-v3.js?v=20260909r" defer></script>
+<script src="/js/passport-home-v6.js?v=20260909r" defer></script>
+<script src="/js/passport-listen-signal.js?v=20260909r" defer></script>
+<script src="/js/asaas-footer-trust.js?v=20260909r" defer></script>
+<script src="/js/fofonete-exit-intent.js?v=20260909r" defer></script>
 </body>
 </html>
