@@ -1,0 +1,39 @@
+{
+  "version": "7.0-recovery",
+  "updated": "2026-09-10",
+  "shortcuts": [],
+  "engineScripts": [
+    "js/passport-live.js",
+    "js/tunnel-player.js",
+    "js/181fm-tunnel.js",
+    "js/total-soul-tunnel.js",
+    "js/mpb-tunnel.js",
+    "js/passport-hits-tunnel.js",
+    "js/50s-60s-tunnel.js",
+    "js/br-rock-tunnel.js",
+    "js/flash-house-tunnel.js",
+    "js/globo-de-ouro-tunnel.js",
+    "js/novelas-tunnel.js"
+  ],
+  "signals": [
+    { "id": "metal",     "name": "METAL",          "group": "continuous", "hook": { "type": "channel", "chip": "metal" } },
+    { "id": "unplugged", "name": "UNPLUGGED",      "group": "continuous", "hook": { "type": "channel", "chip": "unplugged" } },
+    { "id": "livejam",   "name": "LIVE JAM",       "group": "continuous", "hook": { "type": "channel", "chip": "livejam" } },
+    { "id": "80s",       "name": "80s TUNNEL",     "group": "tuneis", "hook": { "type": "button", "id": "passport80sPlay", "autodiscover": "80s" }, "channels": 6 },
+    { "id": "soul",      "name": "SOUL TUNNEL",    "group": "tuneis", "hook": { "type": "button", "id": "passportSoulPlay", "autodiscover": "soul" } },
+    { "id": "mpb",       "name": "MPB TUNNEL",     "group": "tuneis", "hook": { "type": "button", "id": "passportMPBPlay", "autodiscover": "mpb" } },
+    { "id": "hits",      "name": "PASSPORT HITS",  "group": "tuneis", "hook": { "type": "button", "id": "passportHitsPlay", "autodiscover": "hits" } },
+    { "id": "5060",      "name": "50s & 60s",      "group": "tuneis", "hook": { "type": "button", "id": "passport5060Play", "autodiscover": "5060" } },
+    { "id": "jg",        "name": "JOVEM GUARDA",   "group": "tuneis", "hook": { "type": "autodiscover", "autodiscover": "jovem|jg" } },
+    { "id": "flash",     "name": "FLASH HOUSE",    "group": "tuneis", "hook": { "type": "button", "id": "passportFlashPlay", "autodiscover": "flash" } },
+    { "id": "brrock",    "name": "ROCK BRASIL",    "group": "tuneis", "hook": { "type": "button", "id": "passportBRRockPlay", "autodiscover": "brrock|br-rock" } },
+    { "id": "live-rare", "name": "LIVE & RARE",    "group": "arquivo", "hook": { "type": "button", "id": "tunnelPlay", "autodiscover": "tunnel" } },
+    { "id": "globo",     "name": "GLOBO DE OURO",  "group": "arquivo", "hook": { "type": "global", "global": "PassportGloboOuroTunnel.open", "autodiscover": "globo" } },
+    { "id": "novelas",   "name": "NOVELAS",        "group": "arquivo", "hook": { "type": "button", "id": "passportNovelasPlay", "autodiscover": "novelas" } }
+  ],
+  "world": {
+    "type": "iframe",
+    "url": "radio-mundo.html",
+    "note": "WORLD é modo da cabine: atlas com 18 estações roda dentro do bay. Nenhum parâmetro de estação inventado."
+  }
+}
