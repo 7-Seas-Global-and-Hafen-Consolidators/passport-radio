@@ -13,6 +13,14 @@
     card.innerHTML='<summary>Jovem Guarda™<span>Passport Radio · Jovem Guarda · ABRIR PLAYER</span></summary><div class="casa-actions"><a href="/radio-jovem-guarda.html" target="_blank" rel="noopener">Abrir Jovem Guarda™ em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div>';
     grid.appendChild(card);
   }
+  if(grid&&!grid.querySelector('[data-house="/radio-nostalgia-passport.html"]')){
+    const card=document.createElement("details");
+    card.className="casa";
+    card.dataset.house="/radio-nostalgia-passport.html";
+    card.dataset.name="Nostalgia Passport™";
+    card.innerHTML='<summary>Nostalgia Passport™<span>Passport Radio · Nostalgia Passport · ABRIR PLAYER</span></summary><div class="casa-actions"><a href="/radio-nostalgia-passport.html" target="_blank" rel="noopener">Abrir Nostalgia Passport™ em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div>';
+    grid.appendChild(card);
+  }
 
   root.querySelectorAll("details[data-house]").forEach(card=>{
     function mount() {
