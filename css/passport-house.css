@@ -9,8 +9,8 @@ body.passport-house{margin:0;padding:18px;box-sizing:border-box;background:#faf9
 .passport-house button:focus-visible,.passport-house a:focus-visible{outline:3px solid #b71c32;outline-offset:3px}
 .passport-house button:disabled{cursor:wait;opacity:.6}
 .passport-house audio{max-width:100%;width:100%}
-.passport-house [data-passport-mpb-engine],.passport-house [data-passport-brrock-engine],.passport-house [data-passport-5060-engine]{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.passport-house [data-passport-mpb-engine] audio,.passport-house [data-passport-brrock-engine] audio,.passport-house [data-passport-5060-engine] audio{display:none}
+.passport-house [data-passport-mpb-engine],.passport-house [data-passport-brrock-engine],.passport-house [data-passport5060-engine]{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.passport-house [data-passport-mpb-engine] audio,.passport-house [data-passport-brrock-engine] audio,.passport-house [data-passport5060-engine] audio{display:none}
 .passport-house .passport-live-channels,.passport-house .passport80s-picker{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .passport-house .passport-live-controls{display:flex;gap:16px;align-items:center;margin-top:16px}
 .passport-house .passport-live-channel.is-active{background:#171717;color:#fff}
