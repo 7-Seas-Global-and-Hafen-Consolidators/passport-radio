@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/passport-cabin.css?v=20260910home">
+<link rel="stylesheet" href="/css/passport-cabin.css?v=20260910bay">
 <link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260908z">
 <link rel="stylesheet" href="/css/fofonete-exit-intent.css?v=20260909g">
 </head>
@@ -80,6 +80,7 @@
       <button data-signal="continuous">METAL</button>
       <button data-signal="brrock">ROCK BR</button>
       <button data-signal="5060">50s & 60s</button>
+      <button data-signal="world">WORLD</button>
     </div>
     <div class="drawer" id="signalsDrawer" hidden></div>
     <div class="drawer played" id="playedDrawer" hidden>
@@ -95,6 +96,10 @@
   <div id="passport80s"></div>
   <div id="passport80sPlayer"></div>
   <div id="passport-live-radio"></div>
+  <button id="passportWorldPlay" type="button">▶</button>
+  <strong id="passportWorldStatus">READY</strong>
+  <span id="passportWorldNow">Rock & Pop 95.5 FM · Asunción</span>
+  <audio id="passportWorldAudio" preload="none"></audio>
 </div>
 
 <section class="news" id="feed">
@@ -163,8 +168,8 @@
 <script src="/js/passport-hits-tunnel.js?v=202608251040"></script>
 <script src="/js/50s-60s-tunnel.js?v=202608251040"></script>
 <script src="/js/passport-live.js?v=202608251040"></script>
-<script src="/js/br-rock-tunnel.js?v=20260907brrock"></script>
-<script src="/js/passport-cabin.js?v=20260910home"></script>
+<script src="/js/br-rock-tunnel.js?v=20260910brrock"></script>
+<script src="/js/passport-cabin.js?v=20260910world"></script>
 <script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
 <script src="/js/fofonete-exit-intent.js?v=20260909g" defer></script>
 </body>
