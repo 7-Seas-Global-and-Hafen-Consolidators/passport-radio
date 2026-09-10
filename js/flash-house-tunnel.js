@@ -17,15 +17,15 @@
   panel.innerHTML = `
     <div class="live-shell eighties-layout">
       <div class="passport80s-section__head">
-        <span class="live-kicker">PASSPORT RADIO™ · 24 HOURS · FM SIGNAL</span>
+        <span class="live-kicker">PASSPORT RADIO™ · 24 HOURS · FLASH HOUSE</span>
         <h2>Flash House<br>Tunnel™</h2>
         <p>Dancefloor 80s/90s · house · Eurodance · Italo · Hi-NRG · freestyle.</p>
         <span class="handwritten">the dancefloor never clocks out.</span>
       </div>
       <div class="live-now">
-        <small>Sinal principal · Bélgica</small>
-        <h2>TOPradio</h2>
-        <p>FM · dance &amp; house · programação principal</p>
+        <small>Passport Radio · Flash House™</small>
+        <h2>Passport Radio</h2>
+        <p>Passport Radio · dance &amp; house</p>
         <div class="audio-player">
           <audio id="passportFlashHouseAudio" preload="none" controls src="https://playerservices.streamtheworld.com/api/livestream-redirect/TOP_RADIO.mp3"></audio>
         </div>
