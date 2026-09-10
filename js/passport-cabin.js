@@ -1,184 +1,138 @@
 (()=>{
 "use strict";
 const CHANNELS={
-  "live-rare":{label:"LIVE & RARE™",playId:"tunnelPlay",nowId:"tunnelConsoleTitle",detailId:"tunnelConsoleMeta"},
-  "5060":{label:"50s & 60s TUNNEL™",playId:"passport5060Play",audioId:"passport5060Audio"},
-  "80s":{label:"80s TUNNEL™",playId:"passport80sPlay",audioId:"passport80sAudio",nowId:"passport80sTitle",detailId:"passport80sMeta"},
-  soul:{label:"SOUL TUNNEL™",playId:"passportSoulPlay",audioId:"passportSoulAudio"},
+  "live-rare":{label:"LIVE & RARE™",playId:"tunnelPlay",nowId:"tunnelConsoleTitle"},
+  "80s":{label:"80s TUNNEL™",audioId:"passport80sAudio",url:"https://listen.181fm.com/181-awesome80s_128k.mp3"},
+  soul:{label:"SOUL TUNNEL™",audioId:"passportSoulAudio",url:"https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F"},
   mpb:{label:"MPB TUNNEL™",playId:"passportMPBPlay",audioId:"passportMPBAudio"},
-  hits:{label:"PASSPORT HITS™",playId:"passportHitsPlay",audioId:"passportHitsAudio"},
-  continuous:{label:"CONTINUOUS SIGNALS™ · HEAVY METAL",playId:"passport-live-play",audioId:"passport-live-audio",nowId:"passport-live-channel-name"},
-  brrock:{label:"ROCK BRASIL TUNNEL™",playId:"passportBRRockPlay",audioId:"passportBRRockAudio"},
-  world:{label:"WORLD DIAL™",playId:"passportWorldPlay",audioId:"passportWorldAudio",nowId:"passportWorldNow"}
+  hits:{label:"PASSPORT HITS™",audioId:"passportHitsAudio",url:"https://listen.181fm.com/181-power_128k.mp3"},
+  continuous:{label:"HEAVY METAL",audioId:"passport-live-audio",url:"https://streaming.viphosting.cl/8012/stream"},
+  brrock:{label:"ROCK BRASIL TUNNEL™",audioId:"passportBRRockAudio",url:"https://ice1.cadena.com.br:25303/stream"},
+  "5060":{label:"50s & 60s TUNNEL™",audioId:"passport5060Audio",url:"https://listen.181fm.com/181-goodtime_128k.mp3"},
+  world:{label:"WORLD DIAL™",audioId:"passportWorldAudio",nowId:"passportWorldNow"}
 };
 const WORLD=[
-  {id:"py",name:"Paraguay",src:"Rock & Pop 95.5 FM · Asunción",url:"https://cp9.serverse.com/proxy/rockandpop/stream"},
-  {id:"fr",name:"France",src:"OÜI FM 102.3 · Paris",url:"https://ouifm.ice.infomaniak.ch/ouifm-high.mp3"},
+  {id:"py",name:"Paraguay",src:"Rock & Pop 95.5 · Asunción",url:"https://cp9.serverse.com/proxy/rockandpop/stream"},
+  {id:"fr",name:"France",src:"OÜI FM · Paris",url:"https://ouifm.ice.infomaniak.ch/ouifm-high.mp3"},
   {id:"ca",name:"Québec",src:"CIBM-FM 107.1",url:"https://stream.statsradio.com:8050/stream"},
-  {id:"kr",name:"Korea",src:"Big B Radio · Kpop",url:"https://antares.dribbcast.com/proxy/kpop?mp=/s"},
+  {id:"kr",name:"Korea",src:"Big B Radio · K-Pop",url:"https://antares.dribbcast.com/proxy/kpop?mp=/s"},
   {id:"tr",name:"Türkiye",src:"Türk Rock FM",url:"https://yayin5.radyohizmeti.com/8090/stream;"},
-  {id:"ua",name:"Ukraine",src:"Хіт FM",url:"https://tavr.tvstitch.com/HitFM?.mp3"},
-  {id:"ir",name:"Iran",src:"Radio AvazFarsi",url:"https://radio.avazfarsi.com:8000/radio.mp3"},
-  {id:"ve",name:"Venezuela",src:"La Mega 107.3 FM",url:"https://acp4.lorini.net:2050/stream"},
+  {id:"ua",name:"Ukraine",src:"Hit FM",url:"https://tavr.tvstitch.com/HitFM?.mp3"},
+  {id:"ve",name:"Venezuela",src:"La Mega 107.3",url:"https://acp4.lorini.net:2050/stream"},
   {id:"ea",name:"África",src:"Jacaranda FM",url:"https://edge.iono.fm/xice/jacarandafm_live_medium.aac"},
   {id:"ro",name:"România",src:"Rock FM",url:"https://live.rockfm.ro/rockfm.aacp"},
   {id:"cz",name:"Česko",src:"HEY Radio",url:"https://icecast3.play.cz/hey-radio128.mp3"},
   {id:"lt",name:"Lietuva",src:"ROCK FM",url:"https://stream2.rockfm.lt/crf128.mp3"},
   {id:"gr",name:"Ελλάδα",src:"RED 96.3",url:"https://stream.radiojar.com/redfm963"},
-  {id:"il",name:"ישראל",src:"גלגלצ",url:"https://glzwizzlv.bynetcdn.com/glglz_mp3"},
+  {id:"il",name:"ישראל",src:"Galgalatz",url:"https://glzwizzlv.bynetcdn.com/glglz_mp3"},
   {id:"it",name:"Italia",src:"Radio Company",url:"https://str01.fluidstream.net/company.mp3"}
 ];
 const $=id=>document.getElementById(id);
 let active="live-rare",worldId="py",started=0,timer=0,muted=false;
-function el(id){return $(id)}
-function control(k){return el(CHANNELS[k]?.playId)}
-function audio(k){return el(CHANNELS[k]?.audioId)}
-function ytPlaying(){const b=el("tunnelPlay");return!!b&&(b.textContent||"").trim()==="Ⅱ"}
-function playing(k){if(k==="live-rare")return ytPlaying();const a=audio(k);return!!a&&!a.paused}
+function bay(){return $("engineBay")||document.body}
+function ensureAudio(id){
+  let a=$(id);
+  if(a) return a;
+  a=document.createElement("audio");
+  a.id=id;a.preload="none";
+  bay().appendChild(a);
+  return a;
+}
+function audio(k){const id=CHANNELS[k]&&CHANNELS[k].audioId;return id?ensureAudio(id):null}
+function ytPlaying(){const b=$("tunnelPlay");return!!b&&(b.textContent||"").trim()==="Ⅱ"}
+function playing(k){
+  if(k==="live-rare") return ytPlaying();
+  const a=audio(k);return!!a&&!a.paused;
+}
 function stopOthers(k){
-  document.querySelectorAll("audio").forEach(a=>{if(a!==audio(k)&&!a.paused)try{a.pause()}catch(_){}});
-  if(k!=="live-rare"&&ytPlaying())try{el("tunnelPlay").click()}catch(_){}
+  const keep=audio(k);
+  document.querySelectorAll("audio").forEach(a=>{if(a!==keep&&!a.paused)try{a.pause()}catch(_){}});
+  if(k!=="live-rare"&&ytPlaying()) try{$("tunnelPlay").click()}catch(_){}
 }
 function stopAll(){
   document.querySelectorAll("audio").forEach(a=>{try{a.pause()}catch(_){}});
-  if(ytPlaying())try{el("tunnelPlay").click()}catch(_){}
+  if(ytPlaying()) try{$("tunnelPlay").click()}catch(_){}
 }
-function text(id){const n=id&&el(id);return n?(n.textContent||"").trim():""}
 function worldNow(){return WORLD.find(s=>s.id===worldId)||WORLD[0]}
 function paint(){
-  const c=CHANNELS[active];
-  if(!c||!el("signal"))return;
-  el("signal").textContent=c.label;
+  const c=CHANNELS[active];if(!c||!$("signal"))return;
+  $("signal").textContent=c.label;
   const on=playing(active);
-  el("status").textContent=on?"ON AIR":"CALADA";
-  el("status").className=on?"live":"";
-  el("ledOn").className="led"+(on?" on":"");
+  $("status").textContent=on?"ON AIR":"CALADA";
+  $("status").className=on?"live":"";
+  $("ledOn").className="led"+(on?" on":"");
   const w=worldNow();
-  const m=active==="world"?w.name+" · "+w.src:[text(c.nowId),text(c.detailId)].filter(Boolean).join(" · ");
-  el("meta").textContent=m||"—";
-  el("format").textContent="—";
-  el("bitrate").textContent="—";
-  el("source").textContent=on?"ATIVO":"—";
+  let meta="—";
+  if(active==="world") meta=w.name+" · "+w.src;
+  else if(c.nowId&&$(c.nowId)) meta=$(c.nowId).textContent.trim()||"—";
+  $("meta").textContent=meta;
+  $("source").textContent=on?"ATIVO":"—";
   document.querySelectorAll("[data-signal]").forEach(b=>b.classList.toggle("active",b.dataset.signal===active));
-  const box=el("worldCountries");
+  document.querySelectorAll("[data-world]").forEach(b=>b.classList.toggle("active",b.dataset.world===worldId));
+  const box=$("worldCountries");
   if(box) box.hidden=active!=="world";
   if(on&&!timer){
     started=Date.now();
     timer=setInterval(()=>{
       const s=Math.floor((Date.now()-started)/1000);
-      const h=String(Math.floor(s/3600)).padStart(2,"0");
-      const m=String(Math.floor(s%3600/60)).padStart(2,"0");
-      const x=String(s%60).padStart(2,"0");
-      el("airtime").textContent=h+":"+m+":"+x;
+      $("airtime").textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,"0")).join(":");
     },1000);
   }
-  if(!on&&timer){clearInterval(timer);timer=0;el("airtime").textContent="00:00:00"}
+  if(!on&&timer){clearInterval(timer);timer=0;$("airtime").textContent="00:00:00"}
 }
-function armMetal(){
-  const hw=document.querySelector('[data-live-channel="metalwarriors"]');
-  if(hw) hw.click();
+async function playUrl(a,url){
+  if(!a||!url)return;
+  try{a.pause()}catch(_){}
+  a.src=url;a.load();
+  try{await a.play()}catch(e){console.warn("[cabin]",url,e)}
 }
-function select(k,autoplay=true){
+async function select(k,autoplay=true){
   if(!CHANNELS[k])return;
   stopOthers(k);
   active=k;
   paint();
-  if(k==="continuous") armMetal();
-  if(autoplay){
-    const b=control(k);
-    if(b) try{b.click()}catch(_){}
-    if(k==="continuous") setTimeout(armMetal,80);
-    setTimeout(paint,120);
+  if(!autoplay)return;
+  const c=CHANNELS[k];
+  if(k==="world"){
+    await playUrl(audio("world"),worldNow().url);
+  }else if(c.url){
+    await playUrl(audio(k),c.url);
+  }else if(c.playId&&$(c.playId)){
+    try{$(c.playId).click()}catch(_){}
   }
+  setTimeout(paint,200);
 }
 function renderSignals(){
-  const drawer=el("signalsDrawer");
-  if(!drawer)return;
+  const drawer=$("signalsDrawer");if(!drawer)return;
   drawer.innerHTML=Object.entries(CHANNELS).map(([k,c])=>'<button type="button" data-all-signal="'+k+'">'+c.label+'</button>').join("");
-  drawer.addEventListener("click",e=>{
-    const b=e.target.closest("[data-all-signal]");
-    if(b) select(b.dataset.allSignal,true);
-  });
+  drawer.addEventListener("click",e=>{const b=e.target.closest("[data-all-signal]");if(b)select(b.dataset.allSignal,true)});
 }
 function renderWorld(){
-  let box=el("worldCountries");
+  let box=$("worldCountries");
   if(!box){
     box=document.createElement("div");
     box.id="worldCountries";
-    box.className="drawer";
-    const host=el("signalsDrawer");
-    if(host&&host.parentNode) host.parentNode.insertBefore(box,host.nextSibling);
+    box.className="quick";
+    const q=$("quick");
+    if(q&&q.parentNode) q.parentNode.insertBefore(box,q.nextSibling);
   }
-  box.hidden=true;
-  box.innerHTML=WORLD.map(s=>'<button type="button" data-world="'+s.id+'">'+s.name+'</button>').join("");
+  box.innerHTML='<span style="color:#888;font-size:.65rem;letter-spacing:.08em">PAÍSES</span> '+WORLD.map(s=>'<button type="button" data-world="'+s.id+'">'+s.name+'</button>').join("");
   box.addEventListener("click",e=>{
     const b=e.target.closest("[data-world]");
     if(!b)return;
     worldId=b.dataset.world;
-    const now=el("passportWorldNow");
-    const w=worldNow();
-    if(now) now.textContent=w.src;
-    active="world";
-    const a=el("passportWorldAudio");
-    if(a){
-      stopOthers("world");
-      a.src=w.url;
-      a.play().catch(err=>console.warn("[World Dial]",err));
-    }
-    paint();
+    const now=$("passportWorldNow");
+    if(now) now.textContent=worldNow().src;
+    select("world",true);
   });
 }
-const worldAudio=el("passportWorldAudio"),worldPlay=el("passportWorldPlay"),worldStatus=el("passportWorldStatus");
-if(worldAudio&&worldPlay){
-  worldPlay.addEventListener("click",async()=>{
-    if(!worldAudio.paused){
-      worldAudio.pause();
-      worldPlay.textContent="▶";
-      if(worldStatus) worldStatus.textContent="READY";
-      return;
-    }
-    stopOthers("world");
-    worldAudio.src=worldNow().url;
-    try{
-      await worldAudio.play();
-      worldPlay.textContent="Ⅱ";
-      if(worldStatus) worldStatus.textContent="ON AIR";
-    }catch(e){
-      worldAudio.removeAttribute("src");
-      worldAudio.load();
-      worldPlay.textContent="▶";
-      if(worldStatus) worldStatus.textContent="OFFLINE";
-      console.warn("[World Dial] play()",e);
-    }
-  });
-  worldAudio.addEventListener("playing",()=>{worldPlay.textContent="Ⅱ";if(worldStatus)worldStatus.textContent="ON AIR"});
-  worldAudio.addEventListener("pause",()=>{worldPlay.textContent="▶"});
-}
-el("quick").addEventListener("click",e=>{
-  const b=e.target.closest("[data-signal]");
-  if(b) select(b.dataset.signal,true);
-});
-el("signalsBtn").onclick=()=>{
-  const d=el("signalsDrawer");
-  d.hidden=!d.hidden;
-  if(!d.hidden) el("worldCountries").hidden=false;
-};
-el("playedBtn").onclick=()=>el("playedDrawer").hidden=!el("playedDrawer").hidden;
-el("play").onclick=()=>{
-  const b=control(active);
-  if(!b)return;
-  stopOthers(active);
-  if(active==="continuous") armMetal();
-  try{b.click()}catch(_){}
-  setTimeout(paint,100);
-};
-el("stop").onclick=()=>{stopAll();setTimeout(paint,50)};
-el("mute").onclick=()=>{
-  muted=!muted;
-  document.querySelectorAll("audio").forEach(a=>a.muted=muted);
-  el("mute").textContent=muted?"UNMUTE":"MUTE";
-};
-el("volume").oninput=e=>document.querySelectorAll("audio").forEach(a=>a.volume=Number(e.target.value));
+$("quick").addEventListener("click",e=>{const b=e.target.closest("[data-signal]");if(b)select(b.dataset.signal,true)});
+$("signalsBtn").onclick=()=>{$("signalsDrawer").hidden=!$("signalsDrawer").hidden};
+$("playedBtn").onclick=()=>$("playedDrawer").hidden=!$("playedDrawer").hidden;
+$("play").onclick=()=>select(active,true);
+$("stop").onclick=()=>{stopAll();setTimeout(paint,50)};
+$("mute").onclick=()=>{muted=!muted;document.querySelectorAll("audio").forEach(a=>a.muted=muted);$("mute").textContent=muted?"UNMUTE":"MUTE"};
+$("volume").oninput=e=>document.querySelectorAll("audio").forEach(a=>a.volume=Number(e.target.value));
 document.addEventListener("play",()=>setTimeout(paint,0),true);
 document.addEventListener("pause",()=>setTimeout(paint,0),true);
 renderSignals();
