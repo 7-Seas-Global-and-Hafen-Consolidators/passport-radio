@@ -21,6 +21,7 @@ const CHANNELS={
   hits:{label:"PASSPORT HITS™",audioId:"passportHitsAudio",url:"https://listen.181fm.com/181-power_128k.mp3"},
   continuous:{label:"CONTINUOUS SIGNALS™",audioId:"passport-live-audio"},
   brrock:{label:"ROCK BRASIL TUNNEL™",audioId:"passportBRRockAudio",urls:[
+    "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_KISSFM.mp3",
     "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_KISSFM_ADP.aac",
     "https://s03.svrdedicado.org:7298/stream"
   ]},
@@ -52,7 +53,6 @@ function ensureAudio(id){
   a=document.createElement("audio");
   a.id=id;
   a.preload="none";
-  a.crossOrigin="anonymous";
   bay().appendChild(a);
   return a;
 }
@@ -105,6 +105,7 @@ async function playUrl(a,url){
   for(const u of list){
     try{
       try{a.pause()}catch(_){}
+      a.removeAttribute("crossorigin");
       a.src=u;
       await a.play();
       if(!a.paused) return true;
@@ -127,26 +128,6 @@ async function select(k,autoplay=true){
   else if(c.urls||c.url) await playUrl(audio(k),c.urls||c.url);
   else if(c.playId&&$(c.playId)) try{$(c.playId).click()}catch(_){}
   setTimeout(paint,250);
-}
-function chipRow(id,items,attr,current,onPick){
-  let box=$(id);
-  if(!box){
-    box=document.createElement("div");
-    box.id=id;
-    box.className="quick";
-    const host=$("quick");
-    if(host&&host.parentNode) host.parentNode.insertBefore(box,host.nextSibling);
-  }
-  box.hidden=true;
-  box.innerHTML=items.map(s=>'<button type="button" '+attr+'="'+s.id+'">'+s.name+'</button>').join("");
-  box.addEventListener("click",e=>{
-    const b=e.target.closest("["+attr+"="]".replace("="]",""]"));
-    const btn=e.target.closest("button");
-    if(!btn)return;
-    const val=btn.getAttribute(attr.replace(/[^a-z-]/g,""))||btn.getAttribute(attr);
-    if(!val)return;
-    onPick(val);
-  });
 }
 function renderSubs(){
   let e80=$("eightiesSubs");
