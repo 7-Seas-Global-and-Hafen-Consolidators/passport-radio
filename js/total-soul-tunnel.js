@@ -58,24 +58,24 @@
       <div>
         <span class="passport-soul-kicker">PASSPORT RADIO™ · SOUL SIGNAL</span>
         <h2 class="passport-soul-title" id="passportSoulHeading">Soul<br>Tunnel™</h2>
-        <p class="passport-soul-copy">Soul dos anos 80 até agora, direto do Reino Unido. Um player Passport próprio, sem iframe externo.</p>
+        <p class="passport-soul-copy">Soul dos anos 80 até agora. Passport Radio · Soul Tunnel™.</p>
         <span class="passport-soul-script">where the groove remembers.</span>
       </div>
       <div class="passport-soul-card">
         <div class="passport-soul-cardhead">
-          <div><small>UK · DIRECT LIVE SIGNAL</small><strong>Total Soul</strong></div>
+          <div><small>PASSPORT RADIO · SOUL TUNNEL™</small><strong>Passport Radio</strong></div>
           <span class="passport-soul-status" id="passportSoulStatus">READY</span>
         </div>
         <div class="passport-soul-console">
-          <button class="passport-soul-play" id="passportSoulPlay" type="button" aria-label="Reproduzir Total Soul">▶</button>
+          <button class="passport-soul-play" id="passportSoulPlay" type="button" aria-label="Reproduzir Passport Radio · Soul Tunnel™">▶</button>
           <div class="passport-soul-now">
             <small>NOW · SOUL TUNNEL™</small>
-            <strong>Total Soul · UK</strong>
+            <strong>Passport Radio · Soul</strong>
             <span>Non-stop soul · 80s to now</span>
             <div class="passport-soul-line"></div>
           </div>
         </div>
-        <div class="passport-soul-note">Total Soul · sinal direto publicado pela própria estação para internet radio.</div>
+        <div class="passport-soul-note">Passport Radio · Soul Tunnel™ · transmissão contínua.</div>
         <audio id="passportSoulAudio" preload="none"></audio>
       </div>
     </div>`;

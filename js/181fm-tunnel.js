@@ -9,12 +9,12 @@
   if (!host || document.getElementById("passport80sTunnel")) return;
 
   const streams = [
-    { name: "Awesome 80's", url: "https://listen.181fm.com/181-awesome80s_128k.mp3" },
-    { name: "Lite 80's", url: "https://listen.181fm.com/181-lite80s_128k.mp3" },
-    { name: "80's Country", url: "https://listen.181fm.com/181-80scountry_128k.mp3" },
-    { name: "80's Lite RnB", url: "https://listen.181fm.com/181-80sliternb_128k.mp3" },
-    { name: "80's RnB", url: "https://listen.181fm.com/181-80srnb_128k.mp3" },
-    { name: "80's Hairband", url: "https://listen.181fm.com/181-hairband_128k.mp3" }
+    { name: "Passport Radio · Pop 80s", url: "https://listen.181fm.com/181-awesome80s_128k.mp3" },
+    { name: "Passport Radio · Soft 80s", url: "https://listen.181fm.com/181-lite80s_128k.mp3" },
+    { name: "Passport Radio · Country 80s", url: "https://listen.181fm.com/181-80scountry_128k.mp3" },
+    { name: "Passport Radio · Soft R&B 80s", url: "https://listen.181fm.com/181-80sliternb_128k.mp3" },
+    { name: "Passport Radio · R&B 80s", url: "https://listen.181fm.com/181-80srnb_128k.mp3" },
+    { name: "Passport Radio · Hair Metal 80s", url: "https://listen.181fm.com/181-hairband_128k.mp3" }
   ];
 
   const style = document.createElement("style");

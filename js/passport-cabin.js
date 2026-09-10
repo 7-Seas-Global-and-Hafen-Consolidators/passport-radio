@@ -5,34 +5,34 @@
 (()=>{
 "use strict";
 const WORLD=[
-{id:'py',name:'Radio Paraguay',source:'Rock & Pop 95.5 FM · Asunción',stream:'https://cp9.serverse.com/proxy/rockandpop/stream'},
-{id:'fr',name:'Radio France',source:'OÜI FM 102.3 · Paris',stream:'https://ouifm.ice.infomaniak.ch/ouifm-high.mp3'},
-{id:'ca',name:'Radio Québec',source:'CIBM-FM 107.1 · Rivière-du-Loup',stream:'https://stream.statsradio.com:8050/stream'},
-{id:'kr',name:'한국 음악 라디오',source:'Big B Radio · Kpop',stream:'https://antares.dribbcast.com/proxy/kpop?mp=/s'},
-{id:'tr',name:'Türkiye Müzik Radyosu',source:'Türk Rock FM',stream:'https://yayin5.radyohizmeti.com/8090/stream;'},
-{id:'cn',name:'中国音乐电台',source:'怀集音乐之声',stream:'https://lhttp.qingting.fm/live/4804/64k.mp3'},
-{id:'ua',name:'Українське музичне радіо',source:'Хіт FM Україна',stream:'https://tavr.tvstitch.com/HitFM?.mp3'},
-{id:'ir',name:'رادیو موسیقی ایران',source:'Radio AvazFarsi',stream:'https://radio.avazfarsi.com:8000/radio.mp3'},
-{id:'ve',name:'Radio Venezuela',source:'La Mega 107.3 FM · Caracas',stream:'https://acp4.lorini.net:2050/stream'},
-{id:'ea',name:'Rádio África',source:'Jacaranda FM · South Africa',stream:'https://edge.iono.fm/xice/jacarandafm_live_medium.aac'},
-{id:'pk',name:'پاکستانی موسیقی ریڈیو',source:'CityFM89',stream:'https://radio.cityfm89.com/stream'},
-{id:'ro',name:'Radio Muzică Românească',source:'Rock FM România',stream:'https://live.rockfm.ro/rockfm.aacp'},
-{id:'fi',name:'Suomalainen rockradio',source:'Radio Rock Finland',stream:'https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8'},
-{id:'cz',name:'České rockové rádio',source:'HEY Radio · Česká republika',stream:'https://icecast3.play.cz/hey-radio128.mp3'},
-{id:'lt',name:'Lietuvos roko radijas',source:'ROCK FM · Lietuva',stream:'https://stream2.rockfm.lt/crf128.mp3'},
-{id:'gr',name:'Ελληνικό ροκ ραδιόφωνο',source:'RED 96.3 · Αθήνα',stream:'https://stream.radiojar.com/redfm963'},
-{id:'il',name:'רדיו מוזיקה ישראלית',source:'גלגלצ · ישראל',stream:'https://glzwizzlv.bynetcdn.com/glglz_mp3'},
-{id:'it',name:'Radio Italia',source:'Radio Company · Italia',stream:'https://str01.fluidstream.net/company.mp3'}
+{id:'py',name:'Radio Paraguay',source:'Passport Radio',stream:'https://cp9.serverse.com/proxy/rockandpop/stream'},
+{id:'fr',name:'Radio France',source:'Passport Radio',stream:'https://ouifm.ice.infomaniak.ch/ouifm-high.mp3'},
+{id:'ca',name:'Radio Québec',source:'Passport Radio',stream:'https://stream.statsradio.com:8050/stream'},
+{id:'kr',name:'한국 음악 라디오',source:'Passport Radio',stream:'https://antares.dribbcast.com/proxy/kpop?mp=/s'},
+{id:'tr',name:'Türkiye Müzik Radyosu',source:'Passport Radio',stream:'https://yayin5.radyohizmeti.com/8090/stream;'},
+{id:'cn',name:'中国音乐电台',source:'Passport Radio',stream:'https://lhttp.qingting.fm/live/4804/64k.mp3'},
+{id:'ua',name:'Українське музичне радіо',source:'Passport Radio',stream:'https://tavr.tvstitch.com/HitFM?.mp3'},
+{id:'ir',name:'رادیو موسیقی ایران',source:'Passport Radio',stream:'https://radio.avazfarsi.com:8000/radio.mp3'},
+{id:'ve',name:'Radio Venezuela',source:'Passport Radio',stream:'https://acp4.lorini.net:2050/stream'},
+{id:'ea',name:'Rádio África',source:'Passport Radio',stream:'https://edge.iono.fm/xice/jacarandafm_live_medium.aac'},
+{id:'pk',name:'پاکستانی موسیقی ریڈیو',source:'Passport Radio',stream:'https://radio.cityfm89.com/stream'},
+{id:'ro',name:'Radio Muzică Românească',source:'Passport Radio',stream:'https://live.rockfm.ro/rockfm.aacp'},
+{id:'fi',name:'Suomalainen rockradio',source:'Passport Radio',stream:'https://aud-stream-radiorock.nm-elemental.nelonenmedia.fi/playlist.m3u8'},
+{id:'cz',name:'České rockové rádio',source:'Passport Radio',stream:'https://icecast3.play.cz/hey-radio128.mp3'},
+{id:'lt',name:'Lietuvos roko radijas',source:'Passport Radio',stream:'https://stream2.rockfm.lt/crf128.mp3'},
+{id:'gr',name:'Ελληνικό ροκ ραδιόφωνο',source:'Passport Radio',stream:'https://stream.radiojar.com/redfm963'},
+{id:'il',name:'רדיו מוזיקה ישראלית',source:'Passport Radio',stream:'https://glzwizzlv.bynetcdn.com/glglz_mp3'},
+{id:'it',name:'Radio Italia',source:'Passport Radio',stream:'https://str01.fluidstream.net/company.mp3'}
 ];
 const SIGNALS={
 'live-rare':{label:'LIVE & RARE™',meta:'Arquivo underground',playId:'tunnelPlay',yt:true},
-'80s':{label:'80s TUNNEL™',meta:'181.FM',playId:'passport80sPlay',audioId:'passport80sAudio'},
-soul:{label:'SOUL TUNNEL™',meta:'Total Soul',playId:'passportSoulPlay',audioId:'passportSoulAudio'},
-mpb:{label:'MPB TUNNEL™',meta:'Rádio Só MPB',playId:'passportMPBPlay',audioId:'passportMPBAudio'},
+'80s':{label:'80s TUNNEL™',meta:'Passport Radio',playId:'passport80sPlay',audioId:'passport80sAudio'},
+soul:{label:'SOUL TUNNEL™',meta:'Passport Radio',playId:'passportSoulPlay',audioId:'passportSoulAudio'},
+mpb:{label:'MPB TUNNEL™',meta:'Passport Radio',playId:'passportMPBPlay',audioId:'passportMPBAudio'},
 hits:{label:'PASSPORT HITS™',meta:'Pop · Top 40',playId:'passportHitsPlay',audioId:'passportHitsAudio'},
 continuous:{label:'CONTINUOUS SIGNALS™',meta:'Passport Live',playId:'passport-live-play',audioId:'passport-live-audio'},
-brrock:{label:'ROCK BRASIL TUNNEL™',meta:'91 Rock Curitiba',playId:'passportBRRockPlay',audioId:'passportBRRockAudio'},
-'5060':{label:'50s & 60s TUNNEL™',meta:'181.FM Good Time',playId:'passport5060Play',audioId:'passport5060Audio'},
+brrock:{label:'ROCK BRASIL TUNNEL™',meta:'Passport Radio',playId:'passportBRRockPlay',audioId:'passportBRRockAudio'},
+'5060':{label:'50s & 60s TUNNEL™',meta:'Passport Radio',playId:'passport5060Play',audioId:'passport5060Audio'},
 world:{label:'WORLD DIAL™',meta:'Atlas',audioId:'passportWorldAudio'}
 };
 const $=id=>document.getElementById(id);
