@@ -7,7 +7,10 @@ const CHANNELS={
   mpb:{label:"MPB TUNNEL™",playId:"passportMPBPlay",audioId:"passportMPBAudio"},
   hits:{label:"PASSPORT HITS™",audioId:"passportHitsAudio",url:"https://listen.181fm.com/181-power_128k.mp3"},
   continuous:{label:"HEAVY METAL",audioId:"passport-live-audio",url:"https://streaming.viphosting.cl/8012/stream"},
-  brrock:{label:"ROCK BRASIL TUNNEL™",audioId:"passportBRRockAudio",url:"https://ice1.cadena.com.br:25303/stream"},
+  brrock:{label:"ROCK BRASIL TUNNEL™",audioId:"passportBRRockAudio",urls:[
+    "https://s03.svrdedicado.org:7298/stream",
+    "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_KISSFM_ADP.aac"
+  ]},
   "5060":{label:"50s & 60s TUNNEL™",audioId:"passport5060Audio",url:"https://listen.181fm.com/181-goodtime_128k.mp3"},
   world:{label:"WORLD DIAL™",audioId:"passportWorldAudio",nowId:"passportWorldNow"}
 };
@@ -82,9 +85,18 @@ function paint(){
 }
 async function playUrl(a,url){
   if(!a||!url)return;
-  try{a.pause()}catch(_){}
-  a.src=url;a.load();
-  try{await a.play()}catch(e){console.warn("[cabin]",url,e)}
+  const list=Array.isArray(url)?url:[url];
+  for(const u of list){
+    try{
+      a.pause();
+      a.src=u;
+      a.load();
+      await a.play();
+      return;
+    }catch(e){
+      console.warn("[cabin] stream falhou",u,e);
+    }
+  }
 }
 async function select(k,autoplay=true){
   if(!CHANNELS[k])return;
@@ -95,8 +107,8 @@ async function select(k,autoplay=true){
   const c=CHANNELS[k];
   if(k==="world"){
     await playUrl(audio("world"),worldNow().url);
-  }else if(c.url){
-    await playUrl(audio(k),c.url);
+  }else if(c.urls||c.url){
+    await playUrl(audio(k),c.urls||c.url);
   }else if(c.playId&&$(c.playId)){
     try{$(c.playId).click()}catch(_){}
   }
