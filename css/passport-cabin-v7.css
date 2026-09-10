@@ -1,0 +1,31 @@
+/* Passport Radio · Cabine v7 · papel/branco/vermelho, sem preto dominante */
+:root{--pp-paper:#FAF9F6;--pp-white:#FFFFFF;--pp-red:#D0021B;--pp-red-dk:#A80016;--pp-ink:#330808;--pp-beige:#F4EEE3}
+body{margin:0;background:var(--pp-paper);color:var(--pp-ink);font-family:Inter,system-ui,sans-serif;padding-bottom:76px}
+#pp-bay{position:fixed;left:-9999px;top:-9999px;width:2px;height:2px;opacity:0;pointer-events:none;overflow:hidden}
+.pp-top{position:sticky;top:0;z-index:50;background:var(--pp-white);border-bottom:3px solid var(--pp-red);display:flex;align-items:center;gap:16px;padding:10px 18px}
+.pp-top .pp-logo{font-weight:900;letter-spacing:.06em}
+.pp-top nav{display:flex;gap:14px;margin-left:auto}
+.pp-top nav a{color:var(--pp-ink);font-weight:800;font-size:13px;text-decoration:none}
+.pp-ouvir{background:var(--pp-red);color:#fff;border:none;border-radius:999px;padding:10px 18px;font-weight:900;cursor:pointer}
+.pp-cabin{max-width:1080px;margin:22px auto;background:var(--pp-white);border:2px solid var(--pp-red);border-radius:14px;padding:18px}
+.pp-cabin__row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pp-cabin__name{font-size:26px;font-weight:900;letter-spacing:.04em}
+.pp-cabin__state{font-size:12px;font-weight:800;color:var(--pp-red)}
+.pp-cabin__acts{margin-left:auto;display:flex;gap:8px}
+.pp-chip{background:var(--pp-beige);border:1px solid var(--pp-red);border-radius:999px;padding:8px 14px;font-weight:800;cursor:pointer}
+.pp-drawer{position:fixed;inset:0;z-index:90;background:var(--pp-white);transform:translateY(102%);visibility:hidden;transition:.25s;overflow-y:auto}
+.pp-drawer.open{transform:none;visibility:visible}
+.pp-drawer__head{position:sticky;top:0;background:var(--pp-white);border-bottom:3px solid var(--pp-red);display:flex;justify-content:space-between;padding:14px 18px}
+.pp-drawer h4{color:var(--pp-red);font-size:12px;letter-spacing:.14em;margin:18px 0 8px}
+.pp-sig{display:flex;justify-content:space-between;width:100%;background:var(--pp-beige);border:1px solid var(--pp-red);border-radius:10px;padding:12px 14px;margin-bottom:6px;font-weight:800;cursor:pointer}
+.pp-tocadas{background:var(--pp-beige);border-radius:10px;padding:12px;margin-top:10px}
+.pp-tocadas ul{list-style:none;margin:6px 0 0;padding:0;font-size:12px}
+.pp-player{position:fixed;left:0;right:0;bottom:0;height:64px;background:var(--pp-white);border-top:3px solid var(--pp-red);display:flex;align-items:center;gap:12px;padding:0 16px;z-index:80}
+.pp-player button{background:var(--pp-red);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:16px;cursor:pointer}
+.pp-ed-lead{display:block;font-size:26px;font-weight:900;margin-bottom:14px;color:var(--pp-ink)}
+.pp-ed-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.pp-ed-4 a{display:block;background:var(--pp-white);border:1px solid var(--pp-red);border-radius:10px;padding:12px;font-weight:700;color:var(--pp-ink)}
+.pp-ed-15{columns:2;font-size:14px}
+.pp-ed-15 a{color:var(--pp-ink);font-weight:600}
+.pp-door{background:var(--pp-beige);border-radius:10px;padding:14px}
+@media(max-width:800px){.pp-ed-4{grid-template-columns:1fr 1fr}.pp-ed-15{columns:1}}
