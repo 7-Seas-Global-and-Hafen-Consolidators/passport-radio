@@ -3,6 +3,17 @@
   "use strict";
   const root=document.getElementById("passport-casas");
   if(!root)return;
+
+  const grid=root.querySelector(".casas-grid");
+  if(grid&&!grid.querySelector('[data-house="/radio-jovem-guarda.html"]')){
+    const card=document.createElement("details");
+    card.className="casa";
+    card.dataset.house="/radio-jovem-guarda.html";
+    card.dataset.name="Jovem Guarda™";
+    card.innerHTML='<summary>Jovem Guarda™<span>Passport Radio · Jovem Guarda · ABRIR PLAYER</span></summary><div class="casa-actions"><a href="/radio-jovem-guarda.html" target="_blank" rel="noopener">Abrir Jovem Guarda™ em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div>';
+    grid.appendChild(card);
+  }
+
   root.querySelectorAll("details[data-house]").forEach(card=>{
     function mount() {
       if(!card.open||card.querySelector("iframe"))return;
