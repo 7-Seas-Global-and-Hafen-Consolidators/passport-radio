@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
-  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&","<":"<",">":">",'"':""","'":"&#39;"}[c]));
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&","<":"<",">":">","\"":""","'":"&#39;"}[c]));
   const safeHref = (v) => /^(?:[/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
   const BRAND_LOGO = /passport-radio-definitive/i;
   const WM = "https://commons.wikimedia.org/wiki/Special:FilePath/";
@@ -25,17 +25,11 @@
     if (BRAND_LOGO.test(im.src)) return null;
     return im;
   }
-  function resolveYtSrc(src) {
-    if (!/img\.youtube\.com\/vi\//i.test(src)) return src;
-    const m = src.match(/\/vi\/([^/?]+)\//i);
-    return m ? "https://img.youtube.com/vi/" + m[1] + "/maxresdefault.jpg" : src;
-  }
   function picture(item, eager) {
     const im = usablePhoto(item);
     if (!im) return "";
     const load = eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
-    const src = resolveYtSrc(im.src);
-    return '<figure class="journey-media"><img src="' + esc(src) + '" alt="' + esc(im.alt || item.title || "") + '" ' + load + ' style="object-position:' + esc(im.focalPoint || "50% 40%") + '" onerror="this.src=this.src.replace(\'maxresdefault.jpg\',\'sddefault.jpg\').replace(\'sddefault.jpg\',\'hqdefault.jpg\');"></figure>';
+    return '<figure class="journey-media"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || item.title || "") + '" ' + load + ' style="object-position:' + esc(im.focalPoint || "50% 40%") + '"></figure>';
   }
   function verbete(item) {
     const cat = esc(String(item.category || item.format || "verbete").replace(/_/g, " "));
