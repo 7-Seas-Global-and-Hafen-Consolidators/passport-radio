@@ -26,9 +26,9 @@ function show(){
     <div class="fofonete-exit__copy">
       <span class="fofonete-exit__kicker">MANTENHA A PASSPORT NO AR</span>
       <h2>Eu fiz as contas de novo.</h2>
-      <p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p>
+      <p>A Passport fica no ar com quem lê, ouve, compra e ajuda.</p>
       <div class="fofonete-exit__countdown" aria-live="polite"><span id="fofonete-timer">${COUNTDOWN}</span></div>
-      <a class="fofonete-exit__cta fofonete-exit__cta--primary" href="${SUPPORT}" target="_blank" rel="noopener noreferrer">APOIAR A PASSPORT →</a>
+      <a class="fofonete-exit__cta fofonete-exit__cta--primary" href="${SUPPORT}" target="_blank" rel="noopener noreferrer">AJUDAR A PASSPORT →</a>
       <button class="fofonete-exit__later" type="button" disabled aria-live="polite">Liberando a escolha em ${COUNTDOWN}s…</button>
     </div></div>`;
   document.body.appendChild(overlay);
@@ -67,7 +67,7 @@ setTimeout(show,650);
     const d = document.createElement("button");
     d.id = DOCK_ID; d.type = "button"; d.className = "fofonete-dock";
     d.setAttribute("aria-label", "Abrir campanha Fofonete");
-    d.innerHTML = '<img src="' + IMAGE + '" alt="" width="44" height="44"><span>APOIE · FOFONETE</span>';
+    d.innerHTML = '<img src="' + IMAGE + '" alt="" width="44" height="44"><span>AJUDE · FOFONETE</span>';
     d.style.bottom = bottomSafe() + "px";
     d.addEventListener("click", openView);
     document.body.appendChild(d);
@@ -81,10 +81,22 @@ setTimeout(show,650);
       '<span class="fofonete-exit__kicker">PASSPORT RADIO · CAMPANHA</span>' +
       '<h2>A Passport fica no ar com você.</h2>' +
       '<p>Histórias, arquivo e rádio 24h. Quem banca é quem lê, ouve e compra.</p>' +
-      '<a class="fofonete-exit__cta--primary" href="' + SUPPORT + '" target="_blank" rel="noopener">APOIAR A PASSPORT →</a>' +
-      '<button type="button" class="fofonete-exit__later" data-fofonete-close>FECHAR ×</button></div></div>';
-    ov.querySelector("[data-fofonete-close]").addEventListener("click", () => { ov.remove(); dock(); });
-    ov.addEventListener("click", (e) => { if (e.target === ov) { ov.remove(); dock(); } });
+      '<div class="fofonete-exit__countdown" aria-live="polite"><span data-fofonete-timer>15</span></div>' +
+      '<a class="fofonete-exit__cta--primary" href="' + SUPPORT + '" target="_blank" rel="noopener">AJUDAR A PASSPORT →</a>' +
+      '<button type="button" class="fofonete-exit__later" data-fofonete-close disabled>Liberando a escolha em 15s…</button></div></div>';
+    const close = ov.querySelector("[data-fofonete-close]");
+    const timer = ov.querySelector("[data-fofonete-timer]");
+    let remaining = 15;
+    const interval = setInterval(() => {
+      remaining -= 1;
+      timer.textContent = String(Math.max(remaining, 0));
+      if (remaining <= 0) {
+        clearInterval(interval);
+        close.disabled = false;
+        close.textContent = "CONTINUAR NO SITE →";
+      } else close.textContent = "Liberando a escolha em " + remaining + "s…";
+    }, 1000);
+    close.addEventListener("click", () => { if (close.disabled) return; clearInterval(interval); ov.remove(); dock(); });
     document.body.appendChild(ov);
   }
   const mo = new MutationObserver(() => {

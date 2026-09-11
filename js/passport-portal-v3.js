@@ -45,12 +45,6 @@
     return `<section class="journey-wave ${cls}"><header class="journey-head"><span>PASSAPORTE EDITORIAL</span><h2>${esc(title)}</h2></header><div class="journey-wave__grid">${card(lead, "journey-story journey-story--wide")}<div class="journey-wave__list">${rest.map((item) => card(item, "journey-story journey-story--row")).join("")}</div></div></section>`;
   }
 
-  function boarding(item) {
-    const entities = (item && Array.isArray(item.entities) ? item.entities : []).filter((name) => !/^mr\.?\s*nomad$/i.test(name)).slice(0, 4);
-    if (entities.length < 3) return "";
-    return `<section class="journey-board" aria-label="Painel de Embarque Passport"><span>PAINEL DE EMBARQUE PASSPORT™</span><div>${entities.map((name) => `<a href="${safeHref(item.url)}">${esc(name)}</a>`).join("<i>→</i>")}</div></section>`;
-  }
-
   function territory(id, eyebrow, title, copy, house, archive) {
     return `<section class="journey-territory journey-territory--${id}"><div><span>${esc(eyebrow)}</span><h2>${esc(title)}</h2><p>${esc(copy)}</p><nav><a href="#passport-casas" data-open-existing-house="${esc(house)}">OUVIR NESTA PÁGINA →</a>${archive ? `<a href="${safeHref(archive)}">ABRIR ARQUIVO →</a>` : ""}</nav></div></section>`;
   }
@@ -69,7 +63,7 @@
 
   function counter(items) {
     const count = items.length;
-    return `<section class="journey-counter"><strong>${count}</strong><span>histórias nesta viagem</span><a href="editorial.html">ABRIR O ARQUIVO COMPLETO →</a></section>`;
+    return `<section class="journey-counter"><strong>${count}</strong><span>histórias publicadas e organizadas nesta Home</span><a href="editorial.html">ABRIR O ARQUIVO COMPLETO →</a></section>`;
   }
 
   function render(items) {
@@ -83,7 +77,6 @@
     const cover = pool.shift();
     const companions = pool.splice(0, 2);
     const first = pool.splice(0, 12);
-    const boardItem = [cover, ...companions, ...first].find((item) => Array.isArray(item.entities) && item.entities.length >= 3);
     const second = pool.splice(0, 14);
     const musicianIndexes = [];
     pool.forEach((item, index) => {
@@ -99,16 +92,15 @@
 
     root.innerHTML = `
       <section class="journey-cover">
-        <header><span>MR. NOMAD APRESENTA</span><h1>A Home não é o índice.<br>A Home é uma viagem.</h1></header>
+        <header><span>MR. NOMAD APRESENTA</span><h1>Música com história.<br>Rádio com memória.</h1></header>
         <div class="journey-cover__grid">${card(cover, "journey-story journey-story--cover")}<div>${companions.map((item) => card(item, "journey-story journey-story--companion")).join("")}</div></div>
       </section>
-      ${wave(first, "Agora, sem fila única.", "journey-wave--first")}
-      ${boarding(boardItem)}
-      ${wave(second, "História, notícia e memória circulando juntas.")}
+      ${wave(first, "Agora na Passport.", "journey-wave--first")}
+      ${wave(second, "História, notícia e memória.")}
       ${territory("80s", "TERRITÓRIO 80s™", "Você não lembrava dessa música. Até ela começar a tocar.", "Rádio, novela, TV, danceteria, cinema e palco.", "/radio-80s.html", "/anos-80-bandas-musicas-rock-new-wave.html")}
       ${musicians(musicianItems)}
       ${territory("live", "LIVE & RARE™", "O show acabou. O registro não.", "Performances, raridades e arquivos que ainda respiram.", "/radio-live-rare.html", "")}
-      ${wave(third, "A viagem muda de geometria outra vez.")}
+      ${wave(third, "Mais histórias para ouvir e ler.")}
       ${fofonetes()}
       ${territory("brasil", "DO BRASIL · ROCK BRASIL™", "Nomes, instrumentos e histórias que o Brasil não pode esquecer.", "Do palco brasileiro para o arquivo vivo da Passport.", "/radio-rock-brasil.html", "")}
       ${wave(brazil, "Do Brasil, com nome e instrumento.", "journey-wave--brazil")}
