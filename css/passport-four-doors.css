@@ -356,3 +356,11 @@ body.pp-home .mvd-item::before{content:"";position:absolute;left:50%;top:50%;tra
 body.pp-home .mold-vinyl{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
 body.pp-home .mold-vinyl::-webkit-scrollbar{display:none}
 body.pp-home .mold-vinyl .mv-item{scroll-snap-align:center;flex:0 0 auto}
+/* === ORDEM 15 · IDENTIDADE REDONDA: pílula por fora, lockup inteiro por dentro === */
+body.pp-home .fd-66,body.pp-home .mo-avatar,body.pp-home .mband-seal{border-radius:999px!important;background:url('/images/passport-radio-definitive.jpg') center/86% auto no-repeat #0b0b0b!important;box-shadow:0 0 0 1px rgba(196,165,116,.45),0 2px 12px rgba(0,0,0,.7)!important}
+body.pp-home .fd-66{width:46px!important;height:30px!important}
+body.pp-home .mo-avatar{width:108px!important;height:72px!important}
+body.pp-home .mband-seal{width:186px!important;height:124px!important}
+/* hero sem moldura: o escudo flutua no starfield com glow, como no concorrente */
+body.pp-home .mold-hero{border:0!important;background:transparent!important;box-shadow:none!important}
+body.pp-home .mold-hero img.mh-logo{filter:drop-shadow(0 0 26px rgba(196,165,116,.35)) drop-shadow(0 6px 18px rgba(0,0,0,.8))!important;max-width:min(620px,86%)!important}
