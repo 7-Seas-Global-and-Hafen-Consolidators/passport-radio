@@ -327,3 +327,8 @@ body.pp-home .fd-66,body.pp-home .mo-avatar,body.pp-home .mband-seal{background:
 body.pp-home .fd-66{width:36px!important;height:36px!important}
 body.pp-home .mo-avatar{width:78px!important;height:78px!important}
 body.pp-home .mband-seal{width:92px!important;height:92px!important}
+/* === ORDEM 9 · HERO SEM EMENDA === */
+body.pp-home .mold-hero{background-color:#000000!important;background-image:none!important;position:relative}
+body.pp-home .mold-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1px 1px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 68% 12%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 84% 42%,#ffe9b0 50%,transparent 51%),radial-gradient(1px 1px at 32% 62%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 52% 32%,#fff 50%,transparent 51%)}
+body.pp-home .mold-hero::after{content:none!important}
+body.pp-home .mold-hero img.mh-logo{mix-blend-mode:lighten!important;position:relative;z-index:1}
