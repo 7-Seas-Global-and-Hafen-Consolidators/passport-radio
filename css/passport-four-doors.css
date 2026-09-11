@@ -342,3 +342,10 @@ body.pp-home .fd-66,body.pp-home .mo-avatar,body.pp-home .mband-seal{border-radi
 body.pp-home .fd-66{width:44px!important;height:29px!important}
 body.pp-home .mo-avatar{width:99px!important;height:66px!important}
 body.pp-home .mband-seal{width:171px!important;height:114px!important}
+/* === ORDEM 13B · PASSPORT JUKEBOX STAGE === */
+body.pp-home .mold-jukebox{margin:14px 0 18px;display:block;background:#000;border-radius:28px;overflow:hidden;border:1px solid rgba(196,165,116,.16)}
+body.pp-home .mold-jukebox img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;background:#000}
+@media(max-width:860px){
+body.pp-home .mold-jukebox{border-radius:0;border-left:0;border-right:0;margin:10px 0 14px}
+body.pp-home .mold-jukebox img{height:150px;object-fit:cover;object-position:50% 50%}
+}
