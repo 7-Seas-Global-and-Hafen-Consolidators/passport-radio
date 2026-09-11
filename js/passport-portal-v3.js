@@ -1,4 +1,4 @@
-/* Home compositor. No audio. No RSS dump. Max 10 Nomad + 4 news teaser. */
+/* Home compositor. No audio. RSS stays off Home. Max 10 Nomad. */
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
@@ -41,28 +41,19 @@
   function territory() {
     return `<section class="fd-territory" data-open-existing-house="/radio-80s.html">
       <span class="fd-week__kicker">TERRITÓRIO</span>
+      <em class="fd-sign">a década como destino</em>
       <h2>Anos 80</h2>
-      <p>Rádio, novela, pista e palco — a década como destino musical. Ouve o sinal que já existe nesta página.</p>
+      <p>Rádio, novela, pista e palco. Ouve o sinal que já existe nesta página.</p>
       <button type="button" data-open-existing-house="/radio-80s.html">OUVIR 80s NESTA PÁGINA</button>
     </section>`;
   }
 
-  function newsTeaser(items) {
-    const four = items.slice(0, 4);
-    if (!four.length) return "";
-    return `<section class="fd-wire">
-      <header><span class="fd-week__kicker">CIRCULAÇÃO</span><h2>Quatro notícias</h2><a href="noticias.html">VER TODAS</a></header>
-      <div class="fd-wire__list">${four.map((x) => `<article><span>${esc(String(x.category || "Notícia").replace(/_/g," "))}</span><h3><a href="${safeHref(x.url)}">${esc(x.title)}</a></h3></article>`).join("")}</div>
-    </section>`;
-  }
-
   function balcony() {
-    return `<section class="fd-balcony">
-      <a href="editorial.html#loja"><b>Loja</b><span>Produto da casa</span></a>
-      <a href="promocoes.html#anuncie"><b>Anuncie</b><span>Mídia para marcas</span></a>
-      <a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener"><b>Ajude</b><span>PIX · boleto · cartão</span></a>
-    </section>
-    <nav class="fd-paths"><a href="editorial.html">Arquivo</a><a href="radio.html">Rádio 24H</a><a href="noticias.html">Notícias</a></nav>`;
+    return `<nav class="fd-paths" aria-label="Continuar">
+      <a href="noticias.html">Notícias</a>
+      <a href="editorial.html">Arquivo</a>
+      <a href="radio.html">Rádio 24H</a>
+    </nav>`;
   }
 
   function weekHtml(week) {
@@ -71,20 +62,23 @@
     const companions = week.slice(1, 3);
     const rest = week.slice(3);
     return `<section class="journey-cover fd-week">
-      <header><span class="fd-week__kicker">MR. NOMAD · ESTA SEMANA</span><h1>A edição autoral.</h1></header>
+      <header>
+        <span class="fd-week__kicker">MR. NOMAD · ESTA SEMANA</span>
+        <h1>A edição autoral.</h1>
+        <em class="fd-sign">Every Song Is A Destination</em>
+      </header>
       <div class="journey-cover__grid">${card(cover, "journey-story journey-story--cover", true)}
         <div class="journey-companions">${companions.map((item) => card(item, "journey-story journey-story--companion")).join("")}</div>
       </div>
     </section>
-    ${rest.length ? `<div class="journey-rest">${rest.map((item, i) => card(item, "journey-story" + (i === 0 ? " journey-story--wide" : ""))).join("")}</div>` : ""}
+    ${rest.length ? `<div class="journey-rest">${rest.map((item, i) => card(item, "journey-story" + (i % 3 === 0 ? " journey-story--wide" : ""))).join("")}</div>` : ""}
     ${territory()}`;
   }
 
   async function boot() {
-    const [priority, manual, rss] = await Promise.all([
+    const [priority, manual] = await Promise.all([
       readFeed("/data/editorial-priority-feed.json"),
-      readFeed("/data/editorial-manual-feed.json"),
-      readFeed("/data/editorial-feed.json")
+      readFeed("/data/editorial-manual-feed.json")
     ]);
     const pool = dedupe([...priority, ...manual]);
     const nomad = pool.filter(isNomad);
@@ -92,7 +86,7 @@
     const feed = $("#pp-feed");
     if (feed) feed.innerHTML = weekHtml(week);
     const after = $("#pp-after");
-    if (after) after.innerHTML = newsTeaser(dedupe(rss)) + balcony();
+    if (after) after.innerHTML = balcony();
     window.PASSPORT_FEED_ITEMS = week;
     document.dispatchEvent(new CustomEvent("passport:journey-ready", {detail: {count: week.length}}));
   }
