@@ -35,7 +35,7 @@
   const figure = (item) => {
     const im = usablePhoto(item);
     if (!im) return "";
-    return '<figure class="journey-media"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || item.title || "") + '" loading="lazy" decoding="async"></figure>';
+    return '<figure class="journey-media"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || item.title || "") + '" loading="lazy" decoding="async" onerror="this.remove()"></figure>';
   };
   const verbete = (item) =>
     '<div class="journey-media journey-media--verbete" aria-hidden="true"><span>' +
