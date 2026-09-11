@@ -12,7 +12,20 @@
   const safeHref = (v) => /^(?:[/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
   const BRAND_LOGO = /passport-radio-definitive/i;
   const YT_GENERIC = /img\.youtube\.com\/vi\/Rck7vZN5dRI/i;
+  const WM = "https://commons.wikimedia.org/wiki/Special:FilePath/";
+  const RECOVER = [
+    {re: /dolly\s*parton/i, src: WM + "Young-Dolly-Parton_(higher_quality_scan).jpg", alt: "Dolly Parton, 1977 — RCA / public domain", credit: "Wikimedia Commons · RCA publicity 1977 · PD-US"},
+    {re: /the\s*mission|wayne\s*hussey/i, src: WM + "The_mission_wayne_hussey.jpg", alt: "Wayne Hussey, The Mission — Mera Luna 2004", credit: "Wikimedia Commons · Stefan Füsers"},
+    {re: /ratos\s*de\s*por/i, src: WM + "W2603_Hellfest2016_RatosDePorao_8151.jpg", alt: "Ratos de Porão no Hellfest 2016", credit: "Wikimedia Commons · Llann Wé² · CC BY-SA 4.0"},
+    {re: /secos/i, src: WM + "Ney_Matogrosso_-_Singer_Composer_(3858541561).jpg", alt: "Ney Matogrosso, voz da formação clássica do Secos & Molhados", credit: "Wikimedia Commons · Carlos Ebert · CC BY 2.0"}
+  ];
+  function recover(item) {
+    const t = (item.title || "") + " " + ((item.entities || []).join(" "));
+    return RECOVER.find((row) => row.re.test(t)) || null;
+  }
   function usablePhoto(item) {
+    const rec = recover(item);
+    if (rec) return {src: rec.src, alt: rec.alt, focalPoint: "50% 32%", credit: rec.credit, approved: true};
     const im = item && item.image;
     if (!im || !im.src || im.approved === false) return null;
     if (BRAND_LOGO.test(im.src) || YT_GENERIC.test(im.src)) return null;
@@ -78,7 +91,7 @@
     const after = $("#pp-after");
     if (after) after.innerHTML = '<nav class="fd-paths" aria-label="Continuar"><a href="noticias.html">Not\u00edcias</a><a href="editorial.html">Arquivo</a><a href="radio.html">R\u00e1dio 24H</a></nav>';
     window.PASSPORT_FEED_ITEMS = week;
-    window.PASSPORT_HOME_PHOTO_GAPS = week.filter((x) => !usablePhoto(x)).map((x) => ({title: x.title, url: x.url, src: x.image && x.image.src}));
+    window.PASSPORT_HOME_PHOTO_GAPS = week.filter((x) => !usablePhoto(x)).map((x) => ({title: x.title, url: x.url}));
     document.dispatchEvent(new CustomEvent("passport:journey-ready", {detail: {count: week.length}}));
   }
   window.PassportPortal = {refresh: boot};
