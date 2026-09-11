@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arquivo e Loja | Passport Radio</title>
-<meta name="description" content="Memória autoral da Passport Radio e a loja da casa na mesma porta.">
-<link rel="canonical" href="https://passportradio.online/editorial.html">
+<title>Notícias | Passport Radio</title>
+<meta name="description" content="Notícias musicais da Passport Radio. Circulação diária a partir dos feeds existentes.">
+<link rel="canonical" href="https://passportradio.online/noticias.html">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
-<link rel="stylesheet" href="/css/passport-store-v6.css?v=20260908catalog">
 <link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260908z">
 <link rel="stylesheet" href="/css/fofonete-exit-intent.css?v=20260909g">
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260911fd">
@@ -21,29 +20,22 @@
 </div></header>
 <nav class="pp-nav" aria-label="Seções"><div class="pp-nav-in">
 <a href="index.html">HOME</a>
-<a href="noticias.html">NOTÍCIAS</a>
-<a href="editorial.html" aria-current="page">ARQUIVO</a>
+<a href="noticias.html" aria-current="page">NOTÍCIAS</a>
+<a href="editorial.html">ARQUIVO</a>
 <a href="promocoes.html">PROMOÇÕES</a>
 <a href="radio.html">OUVIR</a>
 <a href="#ajude">AJUDE</a>
 </div></nav>
 <main class="fd-page">
-  <span class="fd-week__kicker">MEMÓRIA AUTORAL</span>
-  <h1>Arquivo</h1>
-  <p>As matérias que saem da edição da semana vivem aqui. A Loja da casa está na mesma porta, abaixo.</p>
+  <span class="fd-week__kicker">WHIPLASH · CIRCULAÇÃO</span>
+  <h1>Notícias</h1>
+  <p>Toda a usina automática mora aqui. A Home não carrega este rio.</p>
   <div class="fd-tools">
-    <input id="archive-search" type="search" placeholder="Buscar no arquivo" aria-label="Buscar no arquivo">
-    <span id="archive-count"></span>
+    <input id="news-search" type="search" placeholder="Buscar notícias" aria-label="Buscar notícias">
+    <span id="news-count"></span>
   </div>
-  <div id="archive-grid" class="arch-grid"></div>
-  <p><button class="fd-more" id="archive-more" type="button">Carregar mais</button></p>
-  <section class="fd-split" id="loja">
-    <div class="fd-split__band">
-      <h2>Loja</h2>
-      <p>Produto da casa. Mesmo catálogo. Mesmo pagamento Asaas.</p>
-    </div>
-    <div class="pp-store-grid" id="pp-store-grid"></div>
-  </section>
+  <div id="news-grid" class="news-grid"></div>
+  <p><button class="fd-more" id="news-more" type="button">Carregar mais</button></p>
 </main>
 <footer class="pp-footer" id="ajude">
   <div class="pp-footer-in">
@@ -53,8 +45,7 @@
   </div>
   <div class="pp-footer-bottom">© Passport Radio · Every Song Is A Destination.</div>
 </footer>
-<script src="/js/passport-archive.js?v=20260911fd" defer></script>
-<script src="/js/passport-store-v6.js?v=20260908catalog" defer></script>
+<script src="/js/passport-news.js?v=20260911fd" defer></script>
 <script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
 <script src="/js/fofonete-exit-intent.js?v=20260909g" defer></script>
 </body>
