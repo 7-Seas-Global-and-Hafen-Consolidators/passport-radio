@@ -39,11 +39,12 @@ body.pp-body .pp-featured,
 body.pp-body .pp-feed-head,
 body.pp-body .pp-fold-cta,
 body.pp-body .pp-ticker,
-body.pp-body .pp-btn-red{display:none}
+body.pp-body .pp-btn-red,
+body.pp-body .journey-business,
+body.pp-body .journey-continue{display:none!important}
 body.pp-body .pp-wrap{display:block;max-width:1180px;margin:0 auto;padding:0 16px}
 body.pp-body .pp-col-center{width:100%}
 
-/* Highlander: same nodes, new dock. Audio untouched. */
 body.pp-body #passport-player{
   position:fixed!important;left:0;right:0;top:0;bottom:auto!important;
   height:44px!important;z-index:120;margin:0;
@@ -99,14 +100,14 @@ body.pp-body #passport-player{
 
 #passport-casas{
   width:calc(100% - 32px);max-width:1180px;margin:0 auto 20px;
-  padding:20px 14px 22px;background:var(--pp-ink);color:var(--pp-paper);
+  padding:20px 14px 22px;background:var(--pp-ink-deep);color:var(--pp-paper);
 }
-#passport-casas h2{font-family:var(--pp-display);margin:0;font-size:1.55rem}
+#passport-casas h2{font-family:var(--pp-display);margin:0;font-size:1.55rem;color:#fff}
 #passport-casas .casas-intro{font-family:var(--pp-body);color:#d5e0e6;margin:.25rem 0 12px}
 #passport-casas .casas-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 #passport-casas .casa{
-  min-width:0;border:1px solid rgba(243,234,216,.2);
-  background:rgba(255,250,241,.06);color:var(--pp-paper);
+  min-width:0;border:1px solid rgba(243,234,216,.28);
+  background:#1a3348;color:#fff;
 }
 #passport-casas .casa:nth-child(1){border-top:3px solid #c4a574}
 #passport-casas .casa:nth-child(2){border-top:3px solid #8b4a32}
@@ -121,12 +122,12 @@ body.pp-body #passport-player{
 #passport-casas .casa:nth-child(11){border-top:3px solid #d4a574}
 #passport-casas .casa:nth-child(12){border-top:3px solid #4f8f8a}
 #passport-casas summary{
-  font-family:var(--pp-title);font-size:.84rem;padding:10px 10px 8px;color:var(--pp-paper);
+  font-family:var(--pp-title);font-size:.88rem;padding:12px 10px 10px;color:#fff;
   list-style:none;cursor:pointer;
 }
 #passport-casas summary::-webkit-details-marker{display:none}
-#passport-casas summary span{display:block;font-family:var(--pp-body);font-size:.7rem;color:#c9d5dc;margin-top:3px}
-#passport-casas .casa[open]{background:rgba(255,250,241,.12)}
+#passport-casas summary span{display:block;font-family:var(--pp-body);font-size:.72rem;color:#d7e2ea;margin-top:3px}
+#passport-casas .casa[open]{background:#234056}
 @media(max-width:900px){#passport-casas .casas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){#passport-casas .casas-grid{grid-template-columns:1fr}}
 
