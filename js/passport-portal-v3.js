@@ -1,19 +1,33 @@
-/* Home compositor. No audio. RSS stays off Home. Max 10 Nomad. */
+/* Home compositor. RSS off Home. Max 10 Nomad. No audio. */
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const safeHref = (v) => /^(?:[/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
 
-  function picture(item, eager) {
+  const BRAND_LOGO = /passport-radio-definitive/i;
+  const YT_GENERIC = /img\.youtube\.com\/vi\/Rck7vZN5dRI/i;
+
+  function usablePhoto(item) {
     const im = item && item.image;
-    if (!im || !im.src || im.approved === false) return "";
+    if (!im || !im.src || im.approved === false) return null;
+    if (BRAND_LOGO.test(im.src) || YT_GENERIC.test(im.src)) return null;
+    return im;
+  }
+
+  function picture(item, eager) {
+    const im = usablePhoto(item);
+    if (!im) return "";
     const load = eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<figure class="journey-media"><img src="${esc(im.src)}" alt="${esc(im.alt || item.title || "")}" ${load} style="object-position:${esc(im.focalPoint || "50% 40%")}" onerror="this.closest('figure').remove()"></figure>`;
   }
   const kicker = (item) => `<span class="journey-kicker">${esc(String(item.category || item.format || "Mr. Nomad").replace(/_/g, " "))}</span>`;
   const meta = (item) => `<span class="journey-meta">${esc(String(item.published_at || "").slice(0, 10))}${item.author ? ` · <b>${esc(item.author)}</b>` : ""}</span>`;
-  const card = (item, cls, eager) => `<article class="${cls}">${picture(item, eager)}<div class="journey-story__copy">${kicker(item)}<h3><a href="${safeHref(item.url)}">${esc(item.title)}</a></h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ""}${meta(item)}</div></article>`;
+  function card(item, cls, eager) {
+    const photo = usablePhoto(item);
+    const extra = photo ? "" : " journey-story--nophoto";
+    return `<article class="${cls}${extra}">${picture(item, eager)}<div class="journey-story__copy">${kicker(item)}<h3><a href="${safeHref(item.url)}">${esc(item.title)}</a></h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ""}${meta(item)}</div></article>`;
+  }
 
   function isNomad(item) {
     return /nomad|MR_NOMAD|autoral/i.test(`${item.author || ""} ${item.format || ""} ${item.category || ""}`);
@@ -48,19 +62,12 @@
     </section>`;
   }
 
-  function balcony() {
-    return `<nav class="fd-paths" aria-label="Continuar">
-      <a href="noticias.html">Notícias</a>
-      <a href="editorial.html">Arquivo</a>
-      <a href="radio.html">Rádio 24H</a>
-    </nav>`;
-  }
-
   function weekHtml(week) {
     if (!week.length) return `<p class="journey-empty">A edição da semana está sendo composta.</p>`;
     const cover = week[0];
     const companions = week.slice(1, 3);
     const rest = week.slice(3);
+    const slots = ["journey-story s-band", "journey-story s-half", "journey-story s-half", "journey-story s-third", "journey-story s-third", "journey-story s-third", "journey-story s-text"];
     return `<section class="journey-cover fd-week">
       <header>
         <span class="fd-week__kicker">MR. NOMAD · ESTA SEMANA</span>
@@ -71,7 +78,7 @@
         <div class="journey-companions">${companions.map((item) => card(item, "journey-story journey-story--companion")).join("")}</div>
       </div>
     </section>
-    ${rest.length ? `<div class="journey-rest">${rest.map((item, i) => card(item, "journey-story" + (i % 3 === 0 ? " journey-story--wide" : ""))).join("")}</div>` : ""}
+    ${rest.length ? `<div class="journey-rest">${rest.map((item, i) => card(item, slots[i] || "journey-story s-third")).join("")}</div>` : ""}
     ${territory()}`;
   }
 
@@ -86,8 +93,9 @@
     const feed = $("#pp-feed");
     if (feed) feed.innerHTML = weekHtml(week);
     const after = $("#pp-after");
-    if (after) after.innerHTML = balcony();
+    if (after) after.innerHTML = `<nav class="fd-paths" aria-label="Continuar"><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="radio.html">Rádio 24H</a></nav>`;
     window.PASSPORT_FEED_ITEMS = week;
+    window.PASSPORT_HOME_PHOTO_GAPS = week.filter((x) => !usablePhoto(x)).map((x) => ({title: x.title, url: x.url, src: x.image && x.image.src}));
     document.dispatchEvent(new CustomEvent("passport:journey-ready", {detail: {count: week.length}}));
   }
   window.PassportPortal = {refresh: boot};
