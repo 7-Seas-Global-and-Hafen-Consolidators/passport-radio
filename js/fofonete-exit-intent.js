@@ -48,7 +48,8 @@ function show(){
     if(e.key==='Escape'&&!later.disabled){close();return}
   });
 }
-setTimeout(show,650);
+const IS_HOME = document.body.classList.contains('pp-home');
+if (IS_HOME) { setTimeout(show,650); }
 })();
 
 /* FOFONETE DOCK — apêndice. Motor acima intocado. */
