@@ -5,7 +5,7 @@
 (()=>{
   "use strict";
 
-  const STREAM="https://stream.rcast.net/281401";
+  const STREAM="https://centova2.euroti.com.br:20062/;";
   const host=document.getElementById("ppv2EngineBay")||document.getElementById("engineBay");
   if(!host)return;
 
