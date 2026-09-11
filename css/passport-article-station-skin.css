@@ -11,3 +11,7 @@ body{background:#0b0b0b!important;color:#e8e2d6!important}
 a{color:#c4a574}
 h1,h2,h3,h4{color:#f3ead8}
 ::selection{background:#c4a574;color:#0b0b0b}
+:root{--passport-paper:#0b0b0b;--passport-ink:#e8e2d6}
+html{background:#0b0b0b!important}
+html body{background:#0b0b0b!important;color:#e8e2d6!important}
+html:has(body){background:#0b0b0b!important}
