@@ -313,3 +313,10 @@ body.pp-home .mold-fofo a{background:transparent!important}
 body.pp-home .mold-ticker a{color:var(--mk-txt)!important}
 body.pp-home .mp-row span{color:var(--mk-txt)!important}
 body.pp-home .mv-item b{color:var(--pp-gold)!important}
+/* === ORDEM 7 · PEÇAS EDITORIAIS CHARCOAL, ZERO PAPEL NO #pp-feed === */
+body.pp-home #pp-feed article.piece{background:transparent!important;border:0!important;color:var(--mk-txt)!important}
+body.pp-home #pp-feed article.piece--capsule,
+body.pp-home #pp-feed article.piece--disc{background:var(--mk-panel)!important;border:1px solid var(--mk-line)!important}
+body.pp-home #pp-feed .p-copy{background:var(--mk-panel)!important;color:var(--mk-txt)!important}
+body.pp-home #pp-feed .journey-media--verbete{background:linear-gradient(160deg,#181818,#0d0d0d)!important;border:1px dashed rgba(196,165,116,.5)!important;color:var(--pp-gold)!important}
+body.pp-home #pp-feed a{background:transparent!important}
