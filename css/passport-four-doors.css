@@ -364,3 +364,14 @@ body.pp-home .mband-seal{width:186px!important;height:124px!important}
 /* hero sem moldura: o escudo flutua no starfield com glow, como no concorrente */
 body.pp-home .mold-hero{border:0!important;background:transparent!important;box-shadow:none!important}
 body.pp-home .mold-hero img.mh-logo{filter:drop-shadow(0 0 26px rgba(196,165,116,.35)) drop-shadow(0 6px 18px rgba(0,0,0,.8))!important;max-width:min(620px,86%)!important}
+/* === ORDEM 22 · HERO = LOGO SOBRE FAIXA-CONSOLE COM CAIXAS DE SOM === */
+body.pp-home .mold-hero{position:relative;overflow:visible;padding:34px 0 0;margin:0 0 12px;border:0;box-shadow:none;border-radius:0;background:radial-gradient(1px 1px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 68% 12%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 84% 42%,#ffe9b0 50%,transparent 51%),radial-gradient(1px 1px at 32% 62%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 52% 32%,#fff 50%,transparent 51%),linear-gradient(180deg,#000 0%,#0a0a0a 100%)}
+body.pp-home .mold-hero img.mh-logo{display:block;margin:0 auto -52px;max-width:min(500px,64%);height:auto;position:relative;z-index:2;filter:drop-shadow(0 0 26px rgba(196,165,116,.28)) drop-shadow(0 6px 18px rgba(0,0,0,.85))}
+body.pp-home .mold-hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:104px;z-index:1;border-top:1px solid #4b4b4b;border-bottom:1px solid #000;box-shadow:inset 0 2px 6px rgba(255,255,255,.06),inset 0 -10px 22px rgba(0,0,0,.75);background:linear-gradient(180deg,#2e2e2e,#101010 55%,#080808) left 0 top 0/96px 104px no-repeat,linear-gradient(180deg,#2e2e2e,#101010 55%,#080808) right 0 top 0/96px 104px no-repeat,linear-gradient(180deg,#3d3d3d 0%,#1c1c1c 30%,#0d0d0d 60%,#050505 100%) left 96px top 0/calc(100% - 192px) 104px no-repeat,#050505}
+body.pp-home .mold-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:104px;z-index:1;pointer-events:none;background:radial-gradient(circle at 48px 30px,#ffcf7a 0 4px,#f5a623 4px 9px,#8a5200 9px 13px,#101010 13px 15px,transparent 16px),radial-gradient(circle at 48px 74px,#ffcf7a 0 4px,#f5a623 4px 9px,#8a5200 9px 13px,#101010 13px 15px,transparent 16px),radial-gradient(circle at calc(100% - 48px) 30px,#ffcf7a 0 4px,#f5a623 4px 9px,#8a5200 9px 13px,#101010 13px 15px,transparent 16px),radial-gradient(circle at calc(100% - 48px) 74px,#ffcf7a 0 4px,#f5a623 4px 9px,#8a5200 9px 13px,#101010 13px 15px,transparent 16px)}
+@media(max-width:860px){
+body.pp-home .mold-hero{padding:22px 0 0}
+body.pp-home .mold-hero img.mh-logo{max-width:min(340px,82%);margin:0 auto -30px}
+body.pp-home .mold-hero::before{height:64px;background:linear-gradient(180deg,#3d3d3d 0%,#1c1c1c 30%,#0d0d0d 60%,#050505 100%)}
+body.pp-home .mold-hero::after{display:none}
+}
