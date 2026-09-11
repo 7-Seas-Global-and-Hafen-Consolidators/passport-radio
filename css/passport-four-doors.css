@@ -332,3 +332,8 @@ body.pp-home .mold-hero{background-color:#000000!important;background-image:none
 body.pp-home .mold-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1px 1px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 68% 12%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 84% 42%,#ffe9b0 50%,transparent 51%),radial-gradient(1px 1px at 32% 62%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 52% 32%,#fff 50%,transparent 51%)}
 body.pp-home .mold-hero::after{content:none!important}
 body.pp-home .mold-hero img.mh-logo{mix-blend-mode:lighten!important;position:relative;z-index:1}
+/* === ORDEM 10 · HERO = PLACA ARREDONDADA, STARFIELD INTEIRO, ZERO BANDA === */
+body.pp-home .mold-hero{border-radius:28px!important;overflow:hidden!important;border:1px solid rgba(196,165,116,.16)!important;background:#000!important;margin:10px 0 18px!important}
+body.pp-home .mold-hero::before{top:0!important;right:0!important;bottom:0!important;left:0!important;width:auto!important;height:auto!important}
+body.pp-home .mold-hero::after{content:none!important}
+body.pp-home .mh-logo{-webkit-mask-image:radial-gradient(ellipse 74% 64% at 50% 50%,#000 60%,transparent 100%)!important;mask-image:radial-gradient(ellipse 74% 64% at 50% 50%,#000 60%,transparent 100%)!important}
