@@ -1,133 +1,35 @@
-/* PASSPORT PORTAL v4 — único writer do rio editorial da Home. */
+/* PASSPORT HOME — compositor visual. Não controla áudio, player, stream ou Engine. */
 (() => {
   "use strict";
-  const $ = (s) => document.querySelector(s);
-  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const safeHref = (v) => /^(?:[/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
-  const FEEDS = ["/data/editorial-priority-feed.json", "/data/editorial-manual-feed.json", "/data/editorial-feed.json"];
-  const state = (v) => { document.documentElement.dataset.portalState = v; };
-
-  function picture(item, eager = false) {
-    const im = item && item.image;
-    if (!im || !im.src || im.approved === false) return "";
-    const load = eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
-    return `<figure class="journey-media"><img src="${esc(im.src)}" alt="${esc(im.alt || item.title || "")}" ${load} style="object-position:${esc(im.focalPoint || "50% 40%")}" onerror="this.closest('figure').remove()">${im.credit ? `<figcaption>${esc(im.credit)}</figcaption>` : ""}</figure>`;
+  const root = document.querySelector("#pp-feed");
+  const esc = (v="") => String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const safe = v => /^(?:[/?#.]|https?:)/i.test(String(v||"").trim()) ? esc(String(v).trim()) : "#";
+  const read = url => fetch(url,{cache:"no-store",credentials:"omit"}).then(r=>r.ok?r.json():({items:[]})).catch(()=>({items:[]}));
+  const items = data => Array.isArray(data?.items) ? data.items : Array.isArray(data) ? data : [];
+  const time = item => new Date(item?.published_at||0).getTime() || 0;
+  const date = item => { const d = new Date(item?.published_at||""); return Number.isNaN(d.getTime()) ? "" : new Intl.DateTimeFormat("pt-BR",{dateStyle:"medium"}).format(d); };
+  const nomad = item => /mr\.?\s*nomad/i.test(String(item?.author||"")) || /mr_?nomad/i.test(String(item?.format||""));
+  const week = item => { const d=new Date(item.published_at); if(Number.isNaN(d))return ""; const n=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())); const day=n.getUTCDay()||7;n.setUTCDate(n.getUTCDate()-day+1);return n.toISOString().slice(0,10); };
+  const unique = list => { const seen=new Set(); return list.filter(item=>item?.url&&!seen.has(item.url)&&(seen.add(item.url),true)); };
+  const pic = item => item?.image?.approved&&item.image.src ? '<div class="week-story__media"><img src="'+esc(item.image.src)+'" alt="'+esc(item.image.alt||item.title||"")+'" loading="lazy" decoding="async" style="object-position:'+esc(item.image.focalPoint||"50% 45%")+'"></div>' : "";
+  const story = (item,lead=false) => '<article class="week-story'+(lead?' week-story--lead':'')+'">'+pic(item)+'<div class="week-story__copy"><span class="pi-kicker">Mr. Nomad · esta semana</span><h'+(lead?'2':'3')+'><a href="'+safe(item.url)+'">'+esc(item.title)+'</a></h'+(lead?'2':'3')+'>'+ (item.deck?'<p>'+esc(item.deck)+'</p>':'') +'<span class="week-meta">'+esc(date(item))+'</span></div></article>';
+  const newsCard = item => '<article><span class="pi-kicker">'+esc(String(item.category||item.format||"Notícias").replace(/_/g," "))+'</span><h3><a href="'+safe(item.url)+'">'+esc(item.title)+'</a></h3>'+(item.deck?'<p>'+esc(item.deck)+'</p>':'')+'<span class="week-meta">'+esc(date(item))+'</span></article>';
+  async function render(){
+    if(!root)return;
+    const [priority,manual,rss]=await Promise.all(["/data/editorial-priority-feed.json","/data/editorial-manual-feed.json","/data/editorial-feed.json"].map(read));
+    const authored=unique([...items(priority),...items(manual)]).filter(nomad).sort((a,b)=>time(b)-time(a));
+    const newestWeek=week(authored[0]);
+    const selection=authored.filter(x=>week(x)===newestWeek).slice(0,10);
+    const weekly=selection.length?selection:authored.slice(0,10);
+    const news=unique(items(rss)).filter(x=>!nomad(x)).sort((a,b)=>time(b)-time(a)).slice(0,4);
+    if(!weekly.length){root.innerHTML='<p class="pi-copy">A seleção do Mr. Nomad está sendo organizada.</p>';return;}
+    const lead=weekly[0], side=weekly.slice(1,5), rest=weekly.slice(5);
+    root.innerHTML='<section class="home-week" aria-labelledby="home-week-title"><header class="home-section-head"><div><span class="pi-kicker">Curadoria humana</span><h1 id="home-week-title">Mr. Nomad · esta semana</h1></div><p>Histórias autorais escolhidas para ouvir e ler. O arquivo completo continua vivo, sem despejar o acervo na chegada.</p></header><div class="week-feature">'+story(lead,true)+'<div class="week-side">'+side.map(x=>story(x)).join("")+'</div></div>'+(rest.length?'<div class="week-grid">'+rest.map(x=>story(x)).join("")+'</div>':'')+'</section>';
+    const casas=document.querySelector("#passport-casas"); if(casas) root.after(casas);
+    const fof=document.createElement("section");fof.className="home-fofonete";fof.id="ajude";fof.innerHTML='<img src="/images/fofonete-home.jpg" alt="Fofonete da Passport Radio" loading="lazy"><div class="home-fofonete__copy"><span class="pi-kicker">Fofonetes™</span><h2>Tá gostando?<br>O boleto não.</h2><p>Ouvir que é bom você ouve. Agora ajuda a manter essa porra no ar.</p><a class="pi-button" href="ajude.html">Ajude a Passport →</a></div>';casas?.after(fof);
+    const section=document.createElement("section");section.className="home-news";section.innerHTML='<header class="home-section-head home-section-head--small"><div><span class="pi-kicker">Circulação</span><h2>Notícias</h2></div><p>O fluxo contínuo tem uma casa própria. Aqui, apenas uma amostra.</p></header><div class="news-sample">'+news.map(newsCard).join("")+'</div><div class="home-more"><a class="pi-button" href="noticias.html">Ver todas as notícias →</a></div>';fof.after(section);
+    const business=document.createElement("section");business.className="home-business";business.innerHTML='<a href="loja.html"><span>PASSAPORT STORE</span><h2>Loja</h2><p>Produtos oficiais e objetos da casa.</p></a><a href="anuncie.html"><span>MÍDIA PASSPORT</span><h2>Anuncie</h2><p>Formatos e conversa direta, sem números inventados.</p></a><a href="ajude.html"><span>MANTER NO AR</span><h2>Ajude</h2><p>Apoio direto para a rádio, a memória e as histórias.</p></a>';section.after(business);
+    document.documentElement.dataset.passportHome="ready";
   }
-  const kicker = (item) => `<span class="journey-kicker">${esc(String(item.category || item.format || "Passport").replace(/_/g, " "))}</span>`;
-  const meta = (item) => `<span class="journey-meta">${esc(String(item.published_at || "").slice(0, 10))}${item.author ? ` · <b>${esc(item.author)}</b>` : ""}</span>`;
-  const card = (item, cls = "journey-story") => `<article class="${cls}">${picture(item)}<div class="journey-story__copy">${kicker(item)}<h3><a href="${safeHref(item.url)}">${esc(item.title)}</a></h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ""}${meta(item)}</div></article>`;
-
-  async function loadAll() {
-    const out = []; const seen = new Set();
-    const results = await Promise.allSettled(FEEDS.map((url) => fetch(url, {cache:"no-store"}).then((r) => {
-      if (!r.ok) throw new Error(url + " -> " + r.status);
-      return r.json();
-    })));
-    results.forEach((result, index) => {
-      if (result.status !== "fulfilled") {
-        console.warn("[portal-v4] fonte:", FEEDS[index], result.reason);
-        return;
-      }
-      const data = result.value;
-      const items = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : []);
-      items.forEach((item) => {
-        const key = String(item.url || item.title || "").split("?")[0].trim();
-        if (!key || seen.has(key)) return;
-        seen.add(key); out.push(item);
-      });
-    });
-    return out;
-  }
-
-  function wave(items, title, cls = "") {
-    if (!items.length) return "";
-    const [lead, ...rest] = items;
-    return `<section class="journey-wave ${cls}"><header class="journey-head"><span>PASSAPORTE EDITORIAL</span><h2>${esc(title)}</h2></header><div class="journey-wave__grid">${card(lead, "journey-story journey-story--wide")}<div class="journey-wave__list">${rest.map((item) => card(item, "journey-story journey-story--row")).join("")}</div></div></section>`;
-  }
-
-  function boarding(item) {
-    const entities = (item && Array.isArray(item.entities) ? item.entities : []).filter((name) => !/^mr\.?\s*nomad$/i.test(name)).slice(0, 4);
-    if (entities.length < 3) return "";
-    return `<section class="journey-board" aria-label="Painel de Embarque Passport"><span>PAINEL DE EMBARQUE PASSPORT™</span><div>${entities.map((name) => `<a href="${safeHref(item.url)}">${esc(name)}</a>`).join("<i>→</i>")}</div></section>`;
-  }
-
-  function territory(id, eyebrow, title, copy, house, archive) {
-    return `<section class="journey-territory journey-territory--${id}"><div><span>${esc(eyebrow)}</span><h2>${esc(title)}</h2><p>${esc(copy)}</p><nav><a href="#passport-casas" data-open-existing-house="${esc(house)}">OUVIR NESTA PÁGINA →</a>${archive ? `<a href="${safeHref(archive)}">ABRIR ARQUIVO →</a>` : ""}</nav></div></section>`;
-  }
-
-  function musicians(items) {
-    if (!items.length) return "";
-    return `<section class="journey-musicians"><header class="journey-head"><span>QUEM ESTAVA TOCANDO?</span><h2>O caminho dos músicos.</h2></header><div>${items.map((item) => {
-      const names = (item.entities || []).filter((name) => !/^mr\.?\s*nomad$/i.test(name)).slice(0, 4);
-      return `<a href="${safeHref(item.url)}">${kicker(item)}<strong>${esc(item.title)}</strong><small>${esc(names.join(" · "))}</small></a>`;
-    }).join("")}</div></section>`;
-  }
-
-  function fofonetes() {
-    return `<section class="journey-fofonetes"><img src="/images/fofonete-home.jpg" alt="Fofonete da Passport Radio" loading="lazy"><div><span>FOFONETES™ · CAMPANHA DA CASA</span><h2>Eu fiz as contas de novo.</h2><p>A Passport fica no ar com quem lê, ouve, compra e ajuda.</p><button type="button" data-open-fofonete>CONHECER A FOFONETE →</button></div></section>`;
-  }
-
-  function counter(items) {
-    const count = items.length;
-    return `<section class="journey-counter"><strong>${count}</strong><span>histórias nesta viagem</span><a href="editorial.html">ABRIR O ARQUIVO COMPLETO →</a></section>`;
-  }
-
-  function render(items) {
-    const root = $("#pp-feed");
-    if (!root) return;
-    if (!items.length) {
-      state("empty"); root.innerHTML = '<p class="journey-empty">O arquivo está acordando…</p>'; return;
-    }
-    state("ok:" + items.length);
-    const pool = items.slice();
-    const cover = pool.shift();
-    const companions = pool.splice(0, 2);
-    const first = pool.splice(0, 12);
-    const boardItem = [cover, ...companions, ...first].find((item) => Array.isArray(item.entities) && item.entities.length >= 3);
-    const second = pool.splice(0, 14);
-    const musicianIndexes = [];
-    pool.forEach((item, index) => {
-      if (musicianIndexes.length < 6 && Array.isArray(item.entities) && item.entities.length >= 3) musicianIndexes.push(index);
-    });
-    const musicianSet = new Set(musicianIndexes);
-    const musicianItems = pool.filter((_, index) => musicianSet.has(index));
-    let remainder = pool.filter((_, index) => !musicianSet.has(index));
-    const third = remainder.splice(0, 14);
-    const brazil = remainder.filter((item) => /brasil|brazilian|mpb/i.test(String(item.category || ""))).slice(0, 8);
-    const brazilUrls = new Set(brazil.map((item) => item.url));
-    remainder = remainder.filter((item) => !brazilUrls.has(item.url));
-
-    root.innerHTML = `
-      <section class="journey-cover">
-        <header><span>MR. NOMAD APRESENTA</span><h1>A Home não é o índice.<br>A Home é uma viagem.</h1></header>
-        <div class="journey-cover__grid">${card(cover, "journey-story journey-story--cover")}<div>${companions.map((item) => card(item, "journey-story journey-story--companion")).join("")}</div></div>
-      </section>
-      ${wave(first, "Agora, sem fila única.", "journey-wave--first")}
-      ${boarding(boardItem)}
-      ${wave(second, "História, notícia e memória circulando juntas.")}
-      ${territory("80s", "TERRITÓRIO 80s™", "Você não lembrava dessa música. Até ela começar a tocar.", "Rádio, novela, TV, danceteria, cinema e palco.", "/radio-80s.html", "/anos-80-bandas-musicas-rock-new-wave.html")}
-      ${musicians(musicianItems)}
-      ${territory("live", "LIVE & RARE™", "O show acabou. O registro não.", "Performances, raridades e arquivos que ainda respiram.", "/radio-live-rare.html", "")}
-      ${wave(third, "A viagem muda de geometria outra vez.")}
-      ${fofonetes()}
-      ${territory("brasil", "DO BRASIL · ROCK BRASIL™", "Nomes, instrumentos e histórias que o Brasil não pode esquecer.", "Do palco brasileiro para o arquivo vivo da Passport.", "/radio-rock-brasil.html", "")}
-      ${wave(brazil, "Do Brasil, com nome e instrumento.", "journey-wave--brazil")}
-      ${wave(remainder, "Matérias e memória: o rio continua.", "journey-wave--archive")}
-      ${counter(items)}
-    `;
-    window.PASSPORT_FEED_ITEMS = items;
-    document.dispatchEvent(new CustomEvent("passport:journey-ready", {detail:{count:items.length}}));
-  }
-
-  async function boot() {
-    try { render(await loadAll()); }
-    catch (error) {
-      state("error");
-      const root = $("#pp-feed");
-      if (root) root.innerHTML = `<p class="journey-empty">Falha no rio: ${esc(error.message || error)}</p>`;
-    }
-  }
-  window.PassportPortal = {refresh:boot};
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, {once:true});
-  else boot();
+  render().catch(()=>{if(root)root.innerHTML='<p class="pi-copy">A curadoria está voltando ao ar.</p>';});
 })();
