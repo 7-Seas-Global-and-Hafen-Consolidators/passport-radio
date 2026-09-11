@@ -337,3 +337,8 @@ body.pp-home .mold-hero{border-radius:28px!important;overflow:hidden!important;b
 body.pp-home .mold-hero::before{top:0!important;right:0!important;bottom:0!important;left:0!important;width:auto!important;height:auto!important}
 body.pp-home .mold-hero::after{content:none!important}
 body.pp-home .mh-logo{-webkit-mask-image:radial-gradient(ellipse 74% 64% at 50% 50%,#000 60%,transparent 100%)!important;mask-image:radial-gradient(ellipse 74% 64% at 50% 50%,#000 60%,transparent 100%)!important}
+/* === ORDEM 13A · SELAS = LOCKUP OFICIAL CHEIO (nunca crop redondo) === */
+body.pp-home .fd-66,body.pp-home .mo-avatar,body.pp-home .mband-seal{border-radius:8px!important;background:url('/images/passport-radio-definitive.jpg') center/cover no-repeat!important;box-shadow:0 0 0 1px rgba(196,165,116,.4),0 2px 10px rgba(0,0,0,.6)!important}
+body.pp-home .fd-66{width:44px!important;height:29px!important}
+body.pp-home .mo-avatar{width:99px!important;height:66px!important}
+body.pp-home .mband-seal{width:171px!important;height:114px!important}
