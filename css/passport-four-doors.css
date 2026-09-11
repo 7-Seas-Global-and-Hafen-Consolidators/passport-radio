@@ -320,3 +320,10 @@ body.pp-home #pp-feed article.piece--disc{background:var(--mk-panel)!important;b
 body.pp-home #pp-feed .p-copy{background:var(--mk-panel)!important;color:var(--mk-txt)!important}
 body.pp-home #pp-feed .journey-media--verbete{background:linear-gradient(160deg,#181818,#0d0d0d)!important;border:1px dashed rgba(196,165,116,.5)!important;color:var(--pp-gold)!important}
 body.pp-home #pp-feed a{background:transparent!important}
+/* === ORDEM 8 · LOGO OFICIAL ROUTE 66 (definitive.jpg) NO HERO + SELOS === */
+body.pp-home .mold-hero img.mh-logo{display:block!important;mix-blend-mode:screen;filter:drop-shadow(0 0 18px rgba(196,165,116,.25));max-width:min(560px,80%);height:auto;border-radius:8px;margin:0 auto}
+body.pp-home .mold-hero{padding:34px 20px 30px}
+body.pp-home .fd-66,body.pp-home .mo-avatar,body.pp-home .mband-seal{background:url('/images/passport-radio-definitive.jpg') center/cover no-repeat!important;display:block!important}
+body.pp-home .fd-66{width:36px!important;height:36px!important}
+body.pp-home .mo-avatar{width:78px!important;height:78px!important}
+body.pp-home .mband-seal{width:92px!important;height:92px!important}
