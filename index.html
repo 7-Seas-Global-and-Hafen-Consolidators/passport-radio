@@ -1,1 +1,169 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Passport Radio: música, histórias, notícias, shows, arquivos, rádio 24H e loja. Every Song Is A Destination">
+<meta name="theme-color" content="#050505">
+<title>Passport Radio | Every Song Is A Destination</title>
+<link rel="canonical" href="https://passportradio.online/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;900&family=Great+Vibes&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260908z">
+<link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
+<link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260908z">
+<link rel="stylesheet" href="/css/fofonete-exit-intent.css?v=20260909g">
+<link rel="stylesheet" href="/css/passport-home-houses.css?v=20260910">
+<link rel="stylesheet" href="/css/passport-home-journey.css?v=20260910">
+<link rel="stylesheet" href="/css/passport-four-doors.css?v=20260911r10">
+<script src="/js/passport-bus.js?v=20260910"></script>
+</head>
+<body class="pp-body pp-home">
+<div class="player" id="passport-player" style="position:fixed;left:0;right:0;top:0;bottom:auto;z-index:200;height:56px;margin:0">
+  <span class="fd-66" aria-hidden="true">66</span>
+  <button id="prev" aria-label="Canal anterior">◀</button>
+  <button class="play" id="play" aria-label="Tocar">▶</button>
+  <button id="next" aria-label="Próximo canal">▶</button>
+  <span class="player-copy"><strong id="track">METAL</strong><small id="meta">Passport Radio · Continuous Signals™ · 24H</small></span>
+  <span class="status"><i></i><span id="state">24H · PRONTO</span></span>
+  <nav class="pp-doors" aria-label="Portas">
+    <a href="noticias.html" title="Notícias">☰</a>
+    <a href="editorial.html" title="Arquivo + Loja">▣</a>
+    <a href="promocoes.html" title="Promoções">★</a>
+    <a href="#ajude" title="Ajude">♥</a>
+  </nav>
+  <audio id="audio" preload="none"></audio>
+</div>
+<div class="pp-wrap mold-wrap">
+  <div class="mold-tagline"><span>PASSPORT RADIO — “EVERY SONG IS A DESTINATION”</span></div>
+  <section class="mold-hero" aria-label="Passport Radio">
+    <span class="mh-seal fd-seal-hero">66</span>
+    <span class="mh-word">PASSPORT<span class="mh-word-b">RADIO</span></span>
+    <span class="mh-sub">A CASA DO ROCK, DA MEMÓRIA & DO SINAL 24H</span>
+  </section>
+  <section class="mold-banner" aria-label="Destaques da casa">
+    <div class="mb-slide mb-s1"><strong>CONTINUOUS SIGNALS™</strong><small>Metal · Unplugged · Live Jam · 24H NO AR</small><i class="mb-led"></i></div>
+    <div class="mb-slide mb-s2"><strong>ANOS 80™</strong><small>Rádio, novela, pista e palco — a década como destino</small><i class="mb-led"></i></div>
+    <div class="mb-slide mb-s3"><strong>LIVE & RARE™</strong><small>Wacken · Live Archive · shows que viram memória</small><i class="mb-led"></i></div>
+  </section>
+  <section class="mold-ticker" aria-label="Últimas da edição">
+    <span class="mt-label">EDIÇÃO DA SEMANA</span>
+    <div class="mt-view"><div class="mt-track" id="pp-ticker"></div></div>
+  </section>
+  <section class="mold-onair">
+    <span class="mo-avatar" aria-hidden="true">66</span>
+    <div class="mo-copy">
+      <span class="mo-now">No ar agora</span>
+      <strong class="mo-track" id="pp-onair-track">Continuous Signals™</strong>
+      <small class="mo-sub" id="pp-onair-sub">Passport Radio · 24H</small>
+    </div>
+  </section>
+  <section class="mold-progs" aria-label="Programação da casa">
+    <article class="mp-current">
+      <span class="mp-disc" aria-hidden="true"></span>
+      <div>
+        <small>00:00 – 24:00</small>
+        <strong>Continuous Signals™</strong>
+        <span>Sinal-mãe · sem interrupção</span>
+      </div>
+    </article>
+    <div class="mp-list">
+      <a class="mp-row" href="#passport-casas" data-open-existing-house="/radio-live-rare.html"><span>Live & Rare™</span><small>Wacken · Live Archive</small></a>
+      <a class="mp-row" href="#passport-casas" data-open-existing-house="/radio-80s.html"><span>80s™</span><small>Pop · Soft · Hair Metal</small></a>
+      <a class="mp-row" href="#passport-casas" data-open-existing-house="/radio-mundo-player.html"><span>World Dial™</span><small>Estações do mundo</small></a>
+    </div>
+  </section>
+  <section class="mold-vinyl" id="pp-vinyl" aria-label="Discoteca da edição"></section>
+  <section class="mold-clock" aria-label="Hora">
+    <div class="mc-digits" id="mc-digits">00 : 00 : 00</div>
+    <div class="mc-pill"><span id="mc-wd">—</span><span id="mc-mo">—</span><span id="mc-dy">—</span><span id="mc-yr">—</span></div>
+  </section>
+  <section class="mold-radio" id="receiver" aria-label="Receptor Passport">
+    <div class="deck">
+      <div class="topline"></div>
+      <div class="brand">PASSPORT RADIO</div>
+      <div class="subtitle">EVERY SONG IS A DESTINATION</div>
+      <div class="led"></div>
+      <div class="window">
+        <div class="cassette">
+          <div class="label">PASSPORT • K-7 • 24H</div>
+          <div class="reel left"></div>
+          <div class="reel right"></div>
+          <div class="tape-line"></div>
+        </div>
+      </div>
+      <div class="vu-panel"><div class="vu"><div class="vu-fill"></div></div><div class="vu"><div class="vu-fill"></div></div></div>
+      <div class="buttons"><div class="btn"></div><div class="btn"></div><div class="btn"><span class="play"></span></div><div class="btn"></div><div class="btn"></div></div>
+      <div class="footer-deck">SELECIONE UM SINAL ABAIXO · <strong>O TÚNEL ABRE NA TELA</strong></div>
+    </div>
+    <div class="mold-vustrip" aria-hidden="true">
+      <div class="mvs-meter"><i class="mvs-needle"></i></div>
+      <div class="mvs-meter"><i class="mvs-needle n2"></i></div>
+    </div>
+    <section id="passport-casas" aria-labelledby="casas-title">
+      <header class="casas-heading"><h2 id="casas-title">Sinais</h2><p class="casas-intro">Nome, destino, abrir. O habitat continua o mesmo.</p></header>
+      <div class="casas-grid">
+        <details class="casa" data-house="/radio-continuous.html" data-name="Continuous Signals™"><summary>Continuous Signals™<span>Metal · Unplugged · Live Jam</span></summary><div class="casa-actions"><a href="/radio-continuous.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-live-rare.html" data-name="Live & Rare™"><summary>Live & Rare™<span>Wacken · Live Archive</span></summary><div class="casa-actions"><a href="/radio-live-rare.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-80s.html" data-name="80s™"><summary>80s™<span>Pop · Soft · Hair Metal</span></summary><div class="casa-actions"><a href="/radio-80s.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-soul.html" data-name="Soul™"><summary>Soul™<span>Soul</span></summary><div class="casa-actions"><a href="/radio-soul.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-mpb.html" data-name="MPB™"><summary>MPB™<span>MPB</span></summary><div class="casa-actions"><a href="/radio-mpb.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-hits.html" data-name="Passport Hits™"><summary>Passport Hits™<span>Pop · Top 40</span></summary><div class="casa-actions"><a href="/radio-hits.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-rock-brasil.html" data-name="Rock Brasil™"><summary>Rock Brasil™<span>Rock Brasil</span></summary><div class="casa-actions"><a href="/radio-rock-brasil.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-50s-60s.html" data-name="50s & 60s™"><summary>50s & 60s™<span>Golden Era</span></summary><div class="casa-actions"><a href="/radio-50s-60s.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-flash-house.html" data-name="Flash House™"><summary>Flash House™<span>Flash House</span></summary><div class="casa-actions"><a href="/radio-flash-house.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-novelas.html" data-name="Novelas™"><summary>Novelas™<span>Trilhas</span></summary><div class="casa-actions"><a href="/radio-novelas.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/globo-de-ouro-player.html" data-name="Globo de Ouro™"><summary>Globo de Ouro™<span>Arquivo</span></summary><div class="casa-actions"><a href="/globo-de-ouro-player.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa casa-world" data-house="/radio-mundo-player.html" data-name="World Dial™"><summary>World Dial™<span>Estações do mundo</span></summary><div class="casa-actions"><a href="/radio-mundo-player.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-jovem-guarda.html" data-name="Jovem Guarda™"><summary>Jovem Guarda™<span>Passport Radio · Jovem Guarda</span></summary><div class="casa-actions"><a href="/radio-jovem-guarda.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-nostalgia-passport.html" data-name="Nostalgia Passport™"><summary>Nostalgia Passport™<span>Passport Radio · Nostalgia</span></summary><div class="casa-actions"><a href="/radio-nostalgia-passport.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+      </div>
+    </section>
+  </section>
+  <section class="mold-videos" aria-label="Sessões da casa">
+    <article class="mvd-item">
+      <video controls preload="none" src="/images/1986/passport-radio-nomad-musicas-1986.mp4"></video>
+      <span>SESSÃO 1986 · Mr. Nomad</span>
+    </article>
+    <article class="mvd-item">
+      <video controls preload="none" src="/images/anos-80/passport-radio-nomad-anos-80-demonio.mp4"></video>
+      <span>SESSÃO ANOS 80 · o demônio da década</span>
+    </article>
+  </section>
+  <main id="feed"><div id="pp-feed"></div></main>
+  <section class="mold-fofo" id="ajude" aria-label="Fofonete">
+    <img src="/images/fofonete-caderninho.jpg" alt="Fofonete da Passport Radio com o caderninho de contas">
+    <div>
+      <span class="mf-kicker">FOFONETE · RECADOS DA CASA</span>
+      <em class="mf-sign">a casa no ar</em>
+      <h2>Eu fiz as contas de novo.</h2>
+      <p>Quem lê, ouve, compra e ajuda segura esta edição. PIX, boleto e cartão no rodapé.</p>
+      <a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">AJUDE A PASSPORT</a>
+    </div>
+  </section>
+  <section class="mold-band" aria-label="Passport Radio no ar">
+    <span class="mband-seal">66</span>
+    <span class="mband-onair"><i></i>NO AR</span>
+    <span class="mband-txt">EVERY SONG IS A DESTINATION</span>
+  </section>
+  <div id="pp-after"></div>
+</div>
+<footer class="pp-footer">
+  <div class="pp-footer-in">
+    <div class="pp-fcol"><p>Every Song Is A Destination</p></div>
+    <div class="pp-fcol"><a href="index.html">Home</a><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="loja.html">Loja</a><a href="promocoes.html">Promoções</a><a href="anuncie.html">Anuncie</a><a href="divulgar-bandas.html">Participe</a></div>
+    <div class="pp-fcol"><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">AJUDE · PIX · Boleto · Cartão</a></div>
+  </div>
+</footer>
+<script src="/js/passport-live.js?v=20260910passport" defer></script>
+<script src="/js/continuous-signals-home.js?v=20260908z" defer></script>
+<script src="/js/passport-shell-v6.js?v=20260909g" defer></script>
+<script src="/js/passport-portal-v3.js?v=20260911r10" defer></script>
+<script src="/js/passport-home-journey.js?v=20260910" defer></script>
+<script src="/js/editorial-home.js?v=20260910journey" defer></script>
+<script src="/js/passport-listen-signal.js?v=20260908z" defer></script>
+<script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
+<script src="/js/fofonete-exit-intent.js?v=20260909g" defer></script>
+<script src="/js/passport-home-houses.js?v=20260910" defer></script>
+</body>
+</html>
