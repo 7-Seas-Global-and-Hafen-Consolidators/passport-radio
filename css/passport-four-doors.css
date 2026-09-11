@@ -349,3 +349,10 @@ body.pp-home .mold-jukebox img{display:block;width:100%;height:auto;object-fit:c
 body.pp-home .mold-jukebox{border-radius:0;border-left:0;border-right:0;margin:10px 0 14px}
 body.pp-home .mold-jukebox img{height:150px;object-fit:cover;object-position:50% 50%}
 }
+/* === ORDEM 14 · PARIDADE MÓDULOS MÉDIA (CSS-only) === */
+body.pp-home .mvd-item{position:relative}
+body.pp-home .mvd-item::after{content:"";position:absolute;left:50%;top:50%;width:52px;height:52px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.85);box-shadow:0 0 0 4px rgba(0,0,0,.25);pointer-events:none}
+body.pp-home .mvd-item::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-46%,-50%);width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid rgba(255,255,255,.92);z-index:1;pointer-events:none}
+body.pp-home .mold-vinyl{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+body.pp-home .mold-vinyl::-webkit-scrollbar{display:none}
+body.pp-home .mold-vinyl .mv-item{scroll-snap-align:center;flex:0 0 auto}
