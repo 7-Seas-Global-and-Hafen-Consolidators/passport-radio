@@ -11,7 +11,7 @@ let shown=false,timer=null,scrollY0=0;
 function lockScroll(){scrollY0=window.scrollY;document.documentElement.classList.add('fofonete-exit-open');document.body.style.position='fixed';document.body.style.top=`-${scrollY0}px`;document.body.style.left='0';document.body.style.right='0'}
 function unlockScroll(){document.documentElement.classList.remove('fofonete-exit-open');document.body.style.position='';document.body.style.top='';document.body.style.left='';document.body.style.right='';window.scrollTo(0,scrollY0)}
 function show(){
-  if(shown||document.getElementById('fofonete-exit')||document.querySelector('[aria-modal="true"]'))return;
+  if(shown||document.getElementById('fofonete-exit')||document.querySelector('[aria-modal="true"]:not(#passport-listen-overlay)'))return;
   shown=true;
   try{sessionStorage.setItem(SEEN_KEY,'1')}catch(_){}
   lockScroll();
