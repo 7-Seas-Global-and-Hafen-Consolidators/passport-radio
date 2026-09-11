@@ -1,0 +1,36 @@
+/* PASSPORT INK SYSTEM — shell visual compartilhado. Sem áudio, streams ou dados editoriais. */
+:root{
+  --pi-paper:#fffdf9;--pi-paper-soft:#f7f5ef;--pi-paper-deep:#f1eee4;
+  --pi-ink:#102f4c;--pi-ink-strong:#0b3658;--pi-muted:#36566f;
+  --pi-action:#1d5b86;--pi-action-hover:#123b5d;--pi-rule:#cbd6de;
+  --pi-accent:#a86047;--pi-sage:#6f8174;--pi-white:#fff;
+  --pi-display:"Bodoni Moda",Georgia,serif;--pi-editorial:"Instrument Sans",Inter,Arial,sans-serif;
+  --pi-script:"Caveat",cursive;--pi-shell:min(1240px,calc(100% - 48px));
+}
+body.pp-body,.passport-page{background:var(--pi-paper);color:var(--pi-ink);font-family:var(--pi-editorial);line-height:1.55}
+body.pp-body a,.passport-page a{color:inherit}
+body.pp-body :focus-visible,.passport-page :focus-visible{outline:3px solid var(--pi-action);outline-offset:3px}
+.pp-topbar{background:var(--pi-paper)!important;border-bottom:1px solid var(--pi-rule)}
+.pp-topbar-in{max-width:var(--pi-shell)!important;min-height:72px!important}
+.pp-brand img{border-radius:0!important;border:1px solid var(--pi-rule)}
+.pp-brand-txt b{color:var(--pi-ink-strong)!important;font:700 .82rem/1 var(--pi-editorial)!important;letter-spacing:.12em!important}
+.pp-brand-txt small{color:var(--pi-muted)!important}
+.pp-search input{background:var(--pi-white)!important;color:var(--pi-ink)!important;border-color:var(--pi-rule)!important;border-radius:0!important}
+.pp-search button,.pp-onair-btn,.pp-btn--red{background:var(--pi-action)!important;color:#fff!important}
+.pp-top-actions a{color:var(--pi-muted)!important}
+.pp-top-actions a:hover{color:var(--pi-ink-strong)!important}
+.pp-nav{position:relative!important;top:auto!important;background:var(--pi-paper)!important;border-bottom:1px solid var(--pi-rule)}
+.pp-nav-in{max-width:var(--pi-shell)!important;justify-content:center}
+.pp-nav a{color:var(--pi-ink)!important;padding:13px 11px!important;font-size:.66rem!important;letter-spacing:.08em!important}
+.pp-nav a:hover,.pp-nav a[aria-current="page"]{background:var(--pi-paper-deep)!important;color:var(--pi-action)!important}
+.pp-ticker{max-width:var(--pi-shell)!important;border-bottom:1px solid var(--pi-rule)!important}
+.pp-ticker-label{background:var(--pi-ink-strong)!important}.pp-ticker-track{color:var(--pi-muted)!important}.pp-ticker-live{color:var(--pi-action)!important}
+.pp-footer{background:var(--pi-paper-soft)!important;color:var(--pi-muted)!important;border-top:1px solid var(--pi-rule);margin-top:0!important}
+.pp-footer-in{max-width:var(--pi-shell)!important}.pp-fcol strong{color:var(--pi-ink-strong)!important}.pp-fcol a{color:var(--pi-muted)!important}.pp-fcol a:hover{color:var(--pi-action)!important}.pp-footer-bottom,.pp-footer-legal{background:transparent!important;border-color:var(--pi-rule)!important;color:var(--pi-muted)!important}
+.passport-support-float{border-color:var(--pi-rule)!important;color:var(--pi-ink)!important;background:var(--pi-paper)!important;box-shadow:none!important}.passport-support-float::before{background:var(--pi-accent)!important;box-shadow:none!important}.passport-support-float small{color:var(--pi-muted)!important}
+.player{background:var(--pi-paper)!important;border-top:1px solid var(--pi-rule)!important;color:var(--pi-ink)!important}.player button{color:var(--pi-ink)!important;border-color:var(--pi-rule)!important;background:var(--pi-white)!important}.player button.play{background:var(--pi-action)!important;border-color:var(--pi-action)!important;color:#fff!important}.player .status,.player .status i{color:var(--pi-action)!important;background-color:var(--pi-action)!important}.player .pp-vu i{background:var(--pi-action)!important}
+.pi-kicker{display:block;color:var(--pi-action);font:700 .68rem/1.2 var(--pi-editorial);letter-spacing:.16em;text-transform:uppercase}
+.pi-title{color:var(--pi-ink-strong);font:600 clamp(2.4rem,6vw,5.8rem)/.92 var(--pi-display);letter-spacing:-.05em}
+.pi-copy{color:var(--pi-muted);max-width:62ch}
+.pi-button{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1rem;border:1px solid var(--pi-action);color:var(--pi-action);font:700 .68rem/1 var(--pi-editorial);letter-spacing:.09em;text-decoration:none;text-transform:uppercase}.pi-button:hover{background:var(--pi-action);color:#fff}
+@media(max-width:720px){:root{--pi-shell:min(100% - 28px,1240px)}.pp-topbar-in{min-height:auto!important}.pp-nav-in{justify-content:flex-start}.pp-nav a{padding:11px 9px!important}.pp-search{display:none!important}.player{height:auto!important;min-height:58px}.player .status{display:none!important}}
