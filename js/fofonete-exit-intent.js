@@ -48,8 +48,7 @@ function show(){
     if(e.key==='Escape'&&!later.disabled){close();return}
   });
 }
-const IS_HOME = document.body.classList.contains('pp-home');
-if (IS_HOME) { setTimeout(show,650); }
+if (document.body && document.body.classList.contains('pp-home')) { setTimeout(show,650); }
 })();
 
 /* FOFONETE DOCK — apêndice. Motor acima intocado. */
@@ -96,6 +95,8 @@ if (IS_HOME) { setTimeout(show,650); }
   });
   mo.observe(document.body, { childList: true, subtree: true });
   try {
-    if (sessionStorage.getItem(GATE) === "1" && !document.getElementById("fofonete-exit")) dock();
+    const gated = sessionStorage.getItem(GATE) === "1" && !document.getElementById("fofonete-exit");
+    const topNotHome = document.body && !document.body.classList.contains("pp-home") && window.self === window.top;
+    if (gated || topNotHome) dock();
   } catch (e) {}
 })();
