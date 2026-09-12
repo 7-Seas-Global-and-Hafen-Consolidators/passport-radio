@@ -123,7 +123,7 @@
   audio.addEventListener("waiting", () => {
     if (wantsPlayback) setStatus("BUFFERING");
   });
-  ["error", "stalled", "suspend", "ended"].forEach(eventName => {
+  ["error", "stalled", "ended"].forEach(eventName => {
     audio.addEventListener(eventName, () => {
       if (wantsPlayback && !recovering) recover(eventName === "ended" ? 500 : 1500);
     });
