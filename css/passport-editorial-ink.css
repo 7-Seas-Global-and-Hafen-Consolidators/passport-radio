@@ -70,3 +70,27 @@ body.pp-article .pr-rail p, body.pp-article .pr-card p {
   body.pp-article time, body.pp-article .meta, body.pp-article .byline, body.pp-article .credits,
   body.pp-article .date, body.pp-article figcaption, body.pp-article .caption { font-size:14px !important; }
 }
+
+/* PASSPORT ARTICLE HABITAT — scope: individual editorial pages only */
+body.pp-article{font-family:'Instrument Sans',system-ui,sans-serif!important;overflow-x:hidden}
+body.pp-article .pe-shell,body.pp-article .shell{width:min(calc(100% - 40px),1180px)!important;margin-inline:auto}
+body.pp-article .pe-prose,body.pp-article .article,body.pp-article article.article{width:min(calc(100% - 40px),760px)!important;max-width:760px!important;margin-inline:auto}
+body.pp-article h1,body.pp-article .pe-hero h1,body.pp-article .hero h1,body.pp-article .article h1,body.pp-article .wrap h1,
+body.pp-article .pe-prose h2,body.pp-article .article h2,body.pp-article .wrap h2,body.pp-article article h2,body.pp-article .prose h2{font-family:'Bodoni Moda',Georgia,serif!important;font-weight:700!important}
+body.pp-article p,body.pp-article li,body.pp-article .pe-prose p,body.pp-article .wrap p,body.pp-article .article p,body.pp-article article p,
+body.pp-article .lead,body.pp-article p.lead,body.pp-article .story-deck,body.pp-article .deck,body.pp-article .pe-deck{font-family:'Instrument Sans',system-ui,sans-serif!important}
+body.pp-article .pe-hero{padding:clamp(48px,8vw,104px) 0 clamp(32px,5vw,64px)!important;min-height:0!important}
+body.pp-article .pe-hero h1{max-width:18ch!important;font-size:clamp(2.6rem,5.8vw,5.4rem)!important;line-height:.98!important}
+body.pp-article .pe-prose{padding-block:clamp(38px,6vw,78px)!important}
+body.pp-article .hero{min-height:0!important;display:block!important;overflow:visible!important;padding:clamp(40px,6vw,76px) 0 clamp(34px,5vw,60px)!important;background:#0b0b0b!important}
+body.pp-article .hero>img{position:relative!important;inset:auto!important;display:block!important;width:auto!important;max-width:min(calc(100% - 40px),1040px)!important;height:auto!important;max-height:min(62vh,680px)!important;object-fit:contain!important;margin:0 auto clamp(26px,4vw,46px)!important;filter:none!important}
+body.pp-article .hero:after{display:none!important}
+body.pp-article .hero-copy{width:min(calc(100% - 40px),960px)!important;margin-inline:auto!important;padding:0!important;color:#f3ead8!important}
+body.pp-article .hero h1{max-width:17ch!important;font-size:clamp(2.65rem,6vw,5.75rem)!important;line-height:.97!important}
+body.pp-article .hero p{max-width:62ch!important}
+body.pp-article .chapter,body.pp-article .intro,body.pp-article .signature{padding-block:clamp(42px,6vw,76px)!important}
+body.pp-article .video,body.pp-article .video iframe,body.pp-article iframe{max-width:100%!important}
+body.pp-article .video{width:100%!important;aspect-ratio:16/9!important;overflow:hidden!important}
+body.pp-article .video iframe{width:100%!important;height:100%!important}
+body.pp-article img,body.pp-article figure{max-width:100%!important}
+@media(max-width:650px){body.pp-article .pe-shell,body.pp-article .shell,body.pp-article .pe-prose,body.pp-article .article,body.pp-article article.article,body.pp-article .hero-copy{width:calc(100% - 28px)!important}body.pp-article .hero>img{max-width:calc(100% - 28px)!important;max-height:50vh!important;margin-bottom:24px!important}body.pp-article .pe-hero h1,body.pp-article .hero h1{font-size:clamp(2.35rem,12vw,3.8rem)!important;max-width:15ch!important}}
