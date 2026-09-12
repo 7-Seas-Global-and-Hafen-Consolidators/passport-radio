@@ -1,0 +1,317 @@
+/* ============================================================
+   PASSPORT RADIO · LISTING HABITAT
+   Scope: body.pp-listing only (editorial.html + noticias.html).
+   Does not style Home, radio, players, Loja, article interiors.
+   CONTAINER → CARD → MEDIA SLOT → TEXT → NEXT MODULE
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+body.pp-listing{
+  --list-gold:#c4a574;
+  --list-ink:#f3ead8;
+  --list-mute:#9a938a;
+  --list-dim:#6f6a62;
+  --list-panel:#101010;
+  --list-line:#262626;
+  --list-void:#0c0b09;
+  --list-shell:1120px;
+  --list-sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --list-display:"Bodoni Moda","Times New Roman",serif;
+  background:#050505 !important;
+  color:#e8e2d6;
+  font-family:var(--list-sans);
+}
+
+body.pp-listing .pp-brand-txt b,
+body.pp-listing .pp-brand-txt small,
+body.pp-listing .pp-top-actions a,
+body.pp-listing .pp-nav a,
+body.pp-listing .pp-footer,
+body.pp-listing .pp-footer a{
+  font-family:var(--list-sans) !important;
+}
+body.pp-listing .pp-brand-txt b{
+  font-family:var(--list-display) !important;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+
+body.pp-listing main.fd-page{
+  width:min(calc(100% - 32px), var(--list-shell));
+  margin:0 auto;
+  padding:36px 0 80px;
+  background:transparent !important;
+}
+
+body.pp-listing .fd-week__kicker{
+  display:block;
+  margin:0 0 8px;
+  color:var(--list-gold);
+  font-family:var(--list-sans);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+body.pp-listing main.fd-page > h1{
+  margin:.1em 0 .35em;
+  color:var(--list-ink) !important;
+  font-family:var(--list-display) !important;
+  font-size:clamp(2.4rem, 6.4vw, 4.1rem);
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.04;
+}
+
+body.pp-listing main.fd-page > p{
+  max-width:62ch;
+  margin:0 0 28px;
+  color:var(--list-mute);
+  font-family:var(--list-sans);
+  font-size:1rem;
+  line-height:1.55;
+}
+
+body.pp-listing .fd-tools{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0 0 28px;
+}
+body.pp-listing .fd-tools input[type="search"]{
+  flex:1;
+  min-width:0;
+  height:42px;
+  padding:0 16px;
+  font-family:var(--list-sans);
+  font-size:.92rem;
+}
+body.pp-listing .fd-tools span{
+  flex:0 0 auto;
+  color:var(--list-gold);
+  font-family:var(--list-sans);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+body.pp-listing .news-grid,
+body.pp-listing .arch-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:28px 22px;
+  align-items:stretch;
+}
+
+body.pp-listing .list-card,
+body.pp-listing .news-grid article,
+body.pp-listing .arch-grid article{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  height:100%;
+  overflow:hidden;
+  background:var(--list-panel) !important;
+  border:1px solid var(--list-line) !important;
+  border-radius:8px !important;
+  color:#e8e2d6;
+}
+
+/* Media slot owns geometry. The file never dictates card size. */
+body.pp-listing .list-media{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:3 / 2;
+  margin:0;
+  overflow:hidden;
+  flex:0 0 auto;
+  background:
+    radial-gradient(120% 90% at 50% 36%, #1a1712 0%, var(--list-void) 72%);
+  box-shadow:inset 0 -1px 0 rgba(196,165,116,.16);
+}
+body.pp-listing .list-media.has-backdrop::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background-image:var(--list-photo);
+  background-size:cover;
+  background-position:center;
+  filter:blur(28px) saturate(1.12) brightness(.55);
+  transform:scale(1.18);
+  opacity:.75;
+}
+body.pp-listing .list-media img{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:center 18%;
+}
+/* Portraits and ultrawides stay intact over a blurred field — no hangar, no mutilation. */
+body.pp-listing .list-media img.is-portrait,
+body.pp-listing .list-media img.is-wide{
+  object-fit:contain;
+  object-position:center center;
+}
+
+body.pp-listing .list-media--verbete,
+body.pp-listing .list-media--empty{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+  gap:8px;
+  padding:18px 18px 16px;
+  background:
+    linear-gradient(165deg, #18140f 0%, #0e0c0a 100%);
+}
+body.pp-listing .list-media--verbete span,
+body.pp-listing .list-media--empty span{
+  color:var(--list-gold);
+  font-family:var(--list-sans);
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+body.pp-listing .list-media--verbete b,
+body.pp-listing .list-media--empty b{
+  max-width:28ch;
+  color:var(--list-ink);
+  font-family:var(--list-display);
+  font-size:1.15rem;
+  font-weight:600;
+  letter-spacing:.01em;
+  line-height:1.2;
+}
+
+body.pp-listing .list-copy{
+  display:flex;
+  flex-direction:column;
+  flex:1 1 auto;
+  gap:8px;
+  padding:16px 16px 18px;
+  min-width:0;
+}
+body.pp-listing .list-copy .journey-kicker,
+body.pp-listing .list-card .journey-kicker{
+  display:block;
+  color:var(--list-gold);
+  font-family:var(--list-sans);
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+body.pp-listing .list-card h2{
+  margin:0;
+  color:var(--list-ink) !important;
+  font-family:var(--list-display) !important;
+  font-size:clamp(1.18rem, 1.55vw, 1.42rem);
+  font-weight:600;
+  letter-spacing:-.015em;
+  line-height:1.18;
+}
+body.pp-listing .list-card h2 a{
+  color:var(--list-ink) !important;
+  text-decoration:none;
+}
+body.pp-listing .list-card h2 a:hover{
+  color:var(--list-gold) !important;
+}
+body.pp-listing .list-copy p{
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  margin:0;
+  color:var(--list-mute);
+  font-family:var(--list-sans);
+  font-size:.9rem;
+  line-height:1.5;
+}
+body.pp-listing .list-copy time{
+  margin-top:auto;
+  padding-top:10px;
+  color:var(--list-dim);
+  font-family:var(--list-sans);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.04em;
+}
+
+body.pp-listing .journey-empty{
+  grid-column:1 / -1;
+  margin:12px 0;
+  color:var(--list-mute);
+  font-family:var(--list-sans);
+}
+
+body.pp-listing main.fd-page > p:has(.fd-more){
+  margin:32px 0 0;
+  text-align:center;
+}
+body.pp-listing button.fd-more,
+body.pp-listing #news-more,
+body.pp-listing #archive-more{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 22px;
+  background:transparent !important;
+  border:1px solid var(--list-gold) !important;
+  border-radius:999px !important;
+  color:var(--list-gold) !important;
+  font-family:var(--list-sans) !important;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+body.pp-listing button.fd-more:hover,
+body.pp-listing #news-more:hover,
+body.pp-listing #archive-more:hover{
+  background:var(--list-gold) !important;
+  color:#0b0a08 !important;
+}
+
+@media (max-width: 960px){
+  body.pp-listing .news-grid,
+  body.pp-listing .arch-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:22px 16px;
+  }
+}
+
+@media (max-width: 560px){
+  body.pp-listing main.fd-page{
+    width:min(calc(100% - 24px), var(--list-shell));
+    padding:24px 0 64px;
+  }
+  body.pp-listing .news-grid,
+  body.pp-listing .arch-grid{
+    grid-template-columns:minmax(0, 1fr);
+    gap:18px;
+  }
+  body.pp-listing .fd-tools{
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  body.pp-listing .fd-tools span{ width:100%; }
+  body.pp-listing .list-card h2{ font-size:1.28rem; }
+}
+
+@media (max-width: 400px){
+  body.pp-listing{ overflow-x:hidden; }
+}

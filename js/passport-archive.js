@@ -7,19 +7,69 @@
   const more = document.querySelector("#archive-more");
   if (!grid) return;
   let all = [], shown = 0, term = "";
-  const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => {
+    if (c === "&") return "&" + "amp;";
+    if (c === "<") return "&" + "lt;";
+    if (c === ">") return "&" + "gt;";
+    if (c === '"') return "&" + "quot;";
+    return "&#39;";
+  });
   const safe = (v) => /^(?:[/?#.]|https?:)/i.test(String(v || "")) ? esc(v) : "#";
   const stamp = (v) => {
     const d = new Date(v);
     return Number.isNaN(d) ? "" : new Intl.DateTimeFormat("pt-BR", {dateStyle: "medium"}).format(d);
   };
+  const cssUrl = (src) => "url(\"" + String(src || "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"") + "\")";
+  const verbete = (item) =>
+    '<div class="list-media list-media--verbete" aria-hidden="true"><span>' +
+    esc(String(item.category || "Arquivo").replace(/_/g, " ")) +
+    " · verbete</span><b>" + esc((item.entities || []).slice(0, 3).join(" · ") || String(item.title || "").slice(0, 60)) +
+    "</b></div>";
+  const markFit = (root) => {
+    root.querySelectorAll(".list-media img").forEach((img) => {
+      const apply = () => {
+        const w = img.naturalWidth, h = img.naturalHeight;
+        if (!w || !h) return;
+        const ratio = w / h;
+        const portrait = ratio < 0.88;
+        const wide = ratio > 2.05;
+        img.classList.toggle("is-portrait", portrait);
+        img.classList.toggle("is-wide", wide);
+        img.classList.toggle("is-fill", !portrait && !wide);
+        const slot = img.closest(".list-media");
+        if (!slot) return;
+        if (portrait || wide) {
+          slot.style.setProperty("--list-photo", cssUrl(img.currentSrc || img.src));
+          slot.classList.add("has-backdrop");
+        } else {
+          slot.style.removeProperty("--list-photo");
+          slot.classList.remove("has-backdrop");
+        }
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener("load", apply, { once: true });
+      img.addEventListener("error", () => {
+        const slot = img.closest(".list-media");
+        img.remove();
+        if (!slot) return;
+        slot.classList.add("list-media--empty");
+        slot.classList.remove("has-backdrop");
+        if (!slot.querySelector("span")) {
+          slot.insertAdjacentHTML("beforeend", "<span>foto indisponível</span>");
+        }
+      }, { once: true });
+    });
+  };
   const paint = () => {
     const list = all.filter((x) => (x.title + " " + (x.deck || "") + " " + (x.category || "")).toLowerCase().includes(term));
     grid.innerHTML = list.slice(0, shown).map((x) => {
-      const im = x.image && x.image.src && x.image.approved !== false
-        ? `<figure class="journey-media"><img src="${esc(x.image.src)}" alt="${esc(x.image.alt || x.title)}" loading="lazy"></figure>` : "";
-      return `<article class="arch-card">${im}<span class="journey-kicker">${esc(String(x.category || "Arquivo").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<time>${esc(stamp(x.published_at))}</time></article>`;
+      const photo = x.image && x.image.src && x.image.approved !== false;
+      const im = photo
+        ? `<figure class="list-media"><img src="${esc(x.image.src)}" alt="${esc(x.image.alt || x.title)}" loading="lazy" decoding="async"></figure>`
+        : verbete(x);
+      return `<article class="arch-card list-card">${im}<div class="list-copy"><span class="journey-kicker">${esc(String(x.category || "Arquivo").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<time>${esc(stamp(x.published_at))}</time></div></article>`;
     }).join("");
+    markFit(grid);
     if (count) count.textContent = list.length + " história" + (list.length === 1 ? "" : "s");
     if (more) more.hidden = shown >= list.length;
   };
