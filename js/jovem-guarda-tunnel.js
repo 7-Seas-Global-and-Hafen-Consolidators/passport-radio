@@ -49,25 +49,28 @@
   }
 
   async function prepareStream(){
+    const HlsLib=await loadHls();
+    if(HlsLib&&HlsLib.isSupported()){
+      destroyHls();
+      await new Promise((resolve,reject)=>{
+        const instance=new HlsLib({enableWorker:true});
+        hls=instance;
+        let settled=false;
+        const finish=(fn,value)=>{if(settled)return;settled=true;fn(value)};
+        instance.on(HlsLib.Events.MEDIA_ATTACHED,()=>instance.loadSource(STREAM));
+        instance.on(HlsLib.Events.MANIFEST_PARSED,()=>finish(resolve));
+        instance.on(HlsLib.Events.ERROR,(_event,data)=>{
+          if(data&&data.fatal){destroyHls();finish(reject,new Error(data.details||"HLS fatal error"))}
+        });
+        instance.attachMedia(audio);
+      });
+      return;
+    }
     if(audio.canPlayType(HLS_MIME)){
       if(audio.src!==STREAM){audio.src=STREAM;audio.load()}
       return;
     }
-    const Hls=await loadHls();
-    if(!Hls.isSupported())throw new Error("HLS unsupported");
-    destroyHls();
-    await new Promise((resolve,reject)=>{
-      const instance=new Hls({enableWorker:true});
-      hls=instance;
-      let settled=false;
-      const finish=(fn,value)=>{if(settled)return;settled=true;fn(value)};
-      instance.on(Hls.Events.MEDIA_ATTACHED,()=>instance.loadSource(STREAM));
-      instance.on(Hls.Events.MANIFEST_PARSED,()=>finish(resolve));
-      instance.on(Hls.Events.ERROR,(_event,data)=>{
-        if(data&&data.fatal){destroyHls();finish(reject,new Error(data.details||"HLS fatal error"))}
-      });
-      instance.attachMedia(audio);
-    });
+    throw new Error("HLS unsupported");
   }
 
   async function start(){
@@ -76,8 +79,7 @@
     if(window.PassportBus&&typeof window.PassportBus.claim==="function")window.PassportBus.claim();
     status.textContent="CONNECTING";
     try{
-      if(!audio.canPlayType(HLS_MIME)&&!hls)await prepareStream();
-      else if(audio.canPlayType(HLS_MIME)&&audio.src!==STREAM)await prepareStream();
+      if(!hls)await prepareStream();
       await audio.play();
     }catch(_){
       wants=false;
