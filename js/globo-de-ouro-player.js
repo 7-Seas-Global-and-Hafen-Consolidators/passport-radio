@@ -21,7 +21,7 @@
     if (player) return;
     player = new YT.Player("gdoHidden", {
       width:1,height:1,videoId:LIST[0],
-      playerVars:{autoplay:0,controls:0,rel:0,playsinline:1,origin:location.origin,playlist:LIST.join(",")},
+      playerVars:{autoplay:0,controls:0,rel:0,playsinline:1,playlist:LIST.join(",")},
       events:{
         onReady() { ready=true; button.disabled=false; paint(); },
         onStateChange(event) {
