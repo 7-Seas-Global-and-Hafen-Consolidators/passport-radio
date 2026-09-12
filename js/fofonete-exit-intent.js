@@ -24,11 +24,11 @@ function show(){
   overlay.innerHTML=`<div class="fofonete-exit__card fofonete-exit__card--full">
     <div class="fofonete-exit__image"><img src="${IMAGE}" fetchpriority="high" alt="Fofonete da Passport Radio"></div>
     <div class="fofonete-exit__copy">
-      <span class="fofonete-exit__kicker">MANTENHA A PASSPORT NO AR</span>
+      <span class="fofonete-exit__kicker">DOE · PASSPORT RADIO</span>
       <h2>Eu fiz as contas de novo.</h2>
-      <p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p>
+      <p>A Fofonete cobra. A Passport Radio recebe.</p>
       <div class="fofonete-exit__countdown" aria-live="polite"><span id="fofonete-timer">${COUNTDOWN}</span></div>
-      <a class="fofonete-exit__cta fofonete-exit__cta--primary" href="${SUPPORT}" target="_blank" rel="noopener noreferrer">APOIAR A PASSPORT →</a>
+      <a class="fofonete-exit__cta fofonete-exit__cta--primary" href="${SUPPORT}" target="_blank" rel="noopener noreferrer">DOE AGORA →</a>
       <button class="fofonete-exit__later" type="button" disabled aria-live="polite">Liberando a escolha em ${COUNTDOWN}s…</button>
     </div></div>`;
   document.body.appendChild(overlay);
@@ -67,7 +67,7 @@ if (document.body && document.body.classList.contains('pp-home')) { setTimeout(s
     const d = document.createElement("button");
     d.id = DOCK_ID; d.type = "button"; d.className = "fofonete-dock";
     d.setAttribute("aria-label", "Abrir campanha Fofonete");
-    d.innerHTML = '<img src="' + IMAGE + '" alt="" width="44" height="44"><span>APOIE · FOFONETE</span>';
+    d.innerHTML = '<img src="' + IMAGE + '" alt="" width="44" height="44"><span>DOE · PASSPORT RADIO</span>';
     d.style.bottom = bottomSafe() + "px";
     d.addEventListener("click", openView);
     document.body.appendChild(d);
@@ -78,10 +78,10 @@ if (document.body && document.body.classList.contains('pp-home')) { setTimeout(s
     ov.className = "fofonete-exit--fullscreen fofonete-view";
     ov.innerHTML = '<div class="fofonete-exit__card--full"><div class="fofonete-exit__image"><img src="' + IMAGE +
       '" alt="Fofonete"></div><div class="fofonete-exit__copy">' +
-      '<span class="fofonete-exit__kicker">PASSPORT RADIO · CAMPANHA</span>' +
+      '<span class="fofonete-exit__kicker">DOE · PASSPORT RADIO</span>' +
       '<h2>A Passport fica no ar com você.</h2>' +
-      '<p>Histórias, arquivo e rádio 24h. Quem banca é quem lê, ouve e compra.</p>' +
-      '<a class="fofonete-exit__cta--primary" href="' + SUPPORT + '" target="_blank" rel="noopener">APOIAR A PASSPORT →</a>' +
+      '<p>A Fofonete chama. A doação é para a Passport Radio.</p>' +
+      '<a class="fofonete-exit__cta--primary" href="' + SUPPORT + '" target="_blank" rel="noopener">DOE AGORA →</a>' +
       '<button type="button" class="fofonete-exit__later" data-fofonete-close>FECHAR ×</button></div></div>';
     ov.querySelector("[data-fofonete-close]").addEventListener("click", () => { ov.remove(); dock(); });
     ov.addEventListener("click", (e) => { if (e.target === ov) { ov.remove(); dock(); } });

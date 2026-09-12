@@ -48,3 +48,4 @@ body.pp-body{background:var(--pp-shop)}
 @media(max-width:1180px){.pp-store-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:960px){.pp-store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pp-product-detail{grid-template-columns:1fr}.pp-promo-card{grid-template-columns:1fr}}
 @media(max-width:560px){.pp-store-grid{grid-template-columns:1fr}.pp-store-bar{top:var(--head-h)}.pp-store-main{padding-left:12px;padding-right:12px}.pp-product[data-img="none"] .rv6-media{max-height:120px}}
+#loja,.fd-split#loja{scroll-margin-top:180px}

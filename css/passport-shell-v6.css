@@ -28,7 +28,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 
 /* NAV */
 .pp-nav{position:sticky;top:var(--head-h);z-index:var(--z-nav);background:var(--pp-red);isolation:isolate}
-.pp-nav-in{max-width:var(--shell);margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.pp-nav-in{max-width:var(--shell);margin:0 auto;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
 .pp-nav-in::-webkit-scrollbar{display:none}
 .pp-nav a{color:#fff;font-size:.66rem;font-weight:900;letter-spacing:.05em;padding:11px 13px;white-space:nowrap}
 .pp-nav a:hover,.pp-nav a[aria-current="page"]{background:var(--pp-red-deep)}

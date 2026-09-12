@@ -47,7 +47,16 @@
         else document.getElementById("ajude")?.scrollIntoView({behavior:"smooth"});
       }
     });
+    reanchor();
   }
+  function reanchor() {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el) el.scrollIntoView({behavior: "auto", block: "start"});
+  }
+  document.addEventListener("passport:journey-ready", reanchor);
+  window.addEventListener("load", reanchor);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, {once:true});
   else boot();
 })();

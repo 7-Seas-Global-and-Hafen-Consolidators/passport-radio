@@ -9,7 +9,23 @@
     if (c === '"') return "&" + "quot;";
     return "&#39;";
   });
-  const safeHref = (v) => /^(?:[\/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
+  const safeHref = (v) => {
+    const s = String(v || "").trim();
+    if (!s) return "#";
+    if (/^(mailto:|tel:)/i.test(s)) return esc(s);
+    if (/^[\/?#.]/.test(s) && !/^\/\//.test(s) && !/^https?:/i.test(s)) return esc(s);
+    try {
+      const u = new URL(s);
+      if (!/^https?:$/i.test(u.protocol)) return "#";
+      const host = u.hostname.toLowerCase();
+      if (/^(localhost|127\.|10\.|192\.168\.|169\.254\.|0\.|::1)/i.test(host)) return "#";
+      if (/^172\.(1[6-9]|2\d|3[0-1])\./.test(host)) return "#";
+      if (!/\.[a-z]{2,}$/i.test(host)) return "#";
+      return esc(s);
+    } catch (_) {
+      return "#";
+    }
+  };
   const BRAND_LOGO = /passport-radio-definitive/i;
   const WM = "https://commons.wikimedia.org/wiki/Special:FilePath/";
   const RECOVER = [

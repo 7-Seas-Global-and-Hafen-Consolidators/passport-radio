@@ -1,0 +1,30 @@
+/* PASSPORT RADIO · ÁREA DOE — noite, arquivo, música. Sem gateway inventado. */
+.pp-doe{color:#e8e2d6;font-family:"Source Serif 4",Georgia,serif}
+.pp-doe__open{padding:8px 0 28px;border-bottom:1px solid #262626}
+.pp-doe__kicker{display:block;font-family:Cinzel,Georgia,serif;font-size:.62rem;letter-spacing:.18em;color:#c4a574;text-transform:uppercase;margin:0 0 10px}
+.pp-doe__title{font-family:"Cinzel Decorative",Cinzel,Georgia,serif;font-size:clamp(3.2rem,8vw,6.4rem);line-height:.85;color:#f3ead8;margin:0 0 12px;letter-spacing:.04em}
+.pp-doe__sub{font-size:1.15rem;color:#e8e2d6;margin:0 0 14px;max-width:36ch}
+.pp-doe__sign{display:block;font-family:"Great Vibes",cursive;font-style:normal;color:#c4a574;font-size:1.85rem;line-height:1}
+.pp-doe__call{display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px;align-items:center;margin:28px 0;padding:18px;background:#101010;border:1px solid #262626;border-radius:18px}
+.pp-doe__call img{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid #c4a574}
+.pp-doe__call p{margin:8px 0 0;color:#c9c3b8;font-size:.95rem}
+.pp-doe__why{margin:8px 0 28px}
+.pp-doe__why h2{font-family:Cinzel,Georgia,serif;color:#f3ead8;font-size:1.15rem;letter-spacing:.08em;margin:0 0 10px}
+.pp-doe__why p{margin:0;max-width:62ch;line-height:1.65;color:#d8d2c6}
+.pp-doe__uses{list-style:none;margin:0 0 32px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pp-doe__uses li{background:#101010;border:1px solid #262626;border-radius:14px;padding:18px 16px}
+.pp-doe__uses b{display:block;font-family:Cinzel,Georgia,serif;color:#c4a574;font-size:.78rem;letter-spacing:.08em;margin:0 0 6px}
+.pp-doe__uses span{color:#c9c3b8;font-size:.9rem;line-height:1.45}
+.pp-doe__flow{padding:22px 0 8px;border-top:1px solid #262626}
+.pp-doe__flow p{max-width:58ch;line-height:1.6;color:#d8d2c6;margin:0 0 18px}
+.pp-doe__cta{display:inline-block;background:#c4a574;color:#050505!important;font-family:Cinzel,Georgia,serif;font-weight:700;letter-spacing:.14em;font-size:.78rem;text-decoration:none;padding:14px 22px;border-radius:999px}
+.pp-doe__cta:hover{background:#f3ead8}
+.pp-doe__gate{display:block;margin-top:10px;font-size:.72rem;color:#9a938a;letter-spacing:.04em}
+@media(max-width:700px){
+  .pp-doe__uses{grid-template-columns:1fr}
+  .pp-doe__call{grid-template-columns:1fr;text-align:center}
+  .pp-doe__call img{margin:0 auto}
+}
+body.pp-home .pp-doe{grid-column:1/-1}
+body.pp-home .mold-fofo.pp-doe-shell{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px}
+body.pp-station .pp-doe-page{max-width:920px;margin:0 auto;padding:28px 16px 80px}
