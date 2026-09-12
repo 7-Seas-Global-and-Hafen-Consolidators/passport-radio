@@ -58,7 +58,7 @@
     return im;
   }
   const verbete = (item) =>
-    '<div class="journey-media journey-media--verbete" aria-hidden="true"><span>' +
+    '<div class="list-media list-media--verbete" aria-hidden="true"><span>' +
     esc(String(item.category || item.format || "verbete").replace(/_/g, " ")) +
     ' · verbete</span><b>' + esc((item.entities || []).slice(0, 3).join(" · ") || String(item.title).slice(0, 60)) +
     "</b></div>";
@@ -66,15 +66,33 @@
     const d = new Date(v);
     return Number.isNaN(d) ? "" : new Intl.DateTimeFormat("pt-BR", {dateStyle: "medium"}).format(d);
   };
+  const markFit = (root) => {
+    root.querySelectorAll(".list-media img").forEach((img) => {
+      const apply = () => {
+        const w = img.naturalWidth, h = img.naturalHeight;
+        if (!w || !h) return;
+        img.classList.toggle("is-portrait", h > w * 1.12);
+        img.classList.toggle("is-wide", w > h * 2.05);
+        img.classList.toggle("is-fill", !(h > w * 1.12) && !(w > h * 2.05));
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener("load", apply, { once: true });
+      img.addEventListener("error", () => {
+        img.hidden = true;
+        img.closest(".list-media")?.classList.add("list-media--empty");
+      }, { once: true });
+    });
+  };
   const paint = () => {
     const filtered = all.filter((x) => (x.title + " " + (x.deck || "") + " " + (x.category || "")).toLowerCase().includes(term));
     grid.innerHTML = filtered.slice(0, shown).map((x) => {
       const photo = usablePhoto(x);
       const im = photo
-        ? `<img src="${esc(photo.src)}" alt="${esc(photo.alt || "")}" loading="lazy">`
+        ? `<figure class="list-media"><img src="${esc(photo.src)}" alt="${esc(photo.alt || "")}" loading="lazy" decoding="async"></figure>`
         : verbete(x);
-      return `<article class="news-card">${im}<span class="journey-kicker">${esc(String(x.category || x.format || "Notícias").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<time>${esc(stamp(x.published_at))}</time></article>`;
+      return `<article class="news-card list-card">${im}<div class="list-copy"><span class="journey-kicker">${esc(String(x.category || x.format || "Notícias").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<time>${esc(stamp(x.published_at))}</time></div></article>`;
     }).join("");
+    markFit(grid);
     if (count) count.textContent = filtered.length + " notícia" + (filtered.length === 1 ? "" : "s");
     if (more) more.hidden = shown >= filtered.length;
   };
