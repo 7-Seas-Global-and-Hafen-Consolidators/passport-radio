@@ -21,5 +21,21 @@ body.pp-station table.an-table{background:#101010!important;border:1px solid #26
 body.pp-station table.an-table th{background:#14110c!important;color:#c4a574!important}
 body.pp-station table.an-table td{background:#101010!important;color:#e8e2d6!important;border-color:#262626!important}
 body.pp-station .pp-store-grid article{background:#101010!important;border:1px solid #262626!important;border-radius:14px!important}
+body.pp-station .promo-real-grid{background:transparent}
+body.pp-station .promo-real-card{
+  background:#101010!important;
+  border:1px solid #262626!important;
+  border-radius:14px!important;
+  color:#e8e2d6!important;
+  display:block;
+  padding:18px;
+}
+body.pp-station .promo-real-card h3{color:#f3ead8!important}
+body.pp-station .promo-real-card span{color:#c4a574!important}
+body.pp-station .news-card .journey-media--verbete{
+  min-height:88px;display:flex;flex-direction:column;justify-content:center;gap:6px;
+  padding:16px;background:#141414;color:#c4a574;letter-spacing:.08em;font-size:.7rem;
+}
+body.pp-station .news-card .journey-media--verbete b{color:#f3ead8;font-size:.95rem;letter-spacing:0}
 /* Asaas trust band permanece cream de propósito (faixa de confiança de pagamento) */
 body.pp-station [class*="asaas"]{background:#ead9be!important;color:#15161a!important}
