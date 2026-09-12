@@ -1,0 +1,72 @@
+/* PASSPORT RADIO — 31c — EDITORIAL INK & TYPOGRAPHY — scope: body.pp-article ONLY */
+body.pp-article { background:#0b0b0b !important; color:#e8e2d6 !important; }
+body.pp-article h1, body.pp-article .pe-hero h1, body.pp-article .pe-prose h1,
+body.pp-article .hero h1, body.pp-article .article h1, body.pp-article .wrap h1 {
+  font-family:'UnifrakturCook','Libre Baskerville',serif !important; color:#f3ead8 !important;
+  font-size:clamp(28px,5vw,52px) !important; line-height:1.18 !important;
+  letter-spacing:normal !important; text-transform:none !important; font-weight:700 !important;
+  overflow-wrap:break-word !important; margin:0 0 1.25rem 0 !important; }
+body.pp-article .pe-prose h2, body.pp-article .article h2, body.pp-article .wrap h2,
+body.pp-article article h2, body.pp-article .prose h2 {
+  font-family:'UnifrakturCook','Libre Baskerville',serif !important; color:#f3ead8 !important;
+  font-size:clamp(26px,3vw,36px) !important; line-height:1.28 !important;
+  letter-spacing:normal !important; text-transform:none !important; font-weight:700 !important;
+  overflow-wrap:break-word !important; margin:2.25rem 0 1rem 0 !important; }
+body.pp-article .pe-prose h3, body.pp-article .article h3, body.pp-article .wrap h3,
+body.pp-article article h3, body.pp-article .prose h3 {
+  font-family:'Cinzel','Times New Roman',serif !important; color:#f3ead8 !important;
+  font-size:clamp(21px,2.2vw,23px) !important; line-height:1.38 !important;
+  letter-spacing:0.04em !important; text-transform:uppercase !important;
+  font-weight:700 !important; margin:1.75rem 0 0.75rem 0 !important; }
+body.pp-article p {
+  font-family:'Source Serif 4','Libre Baskerville',Georgia,serif !important;
+  color:#e8e2d6 !important; font-size:19px !important; line-height:1.75 !important;
+  letter-spacing:normal !important; max-width:68ch !important; margin:0 0 1.25rem 0 !important; }
+body.pp-article li {
+  font-family:'Source Serif 4','Libre Baskerville',Georgia,serif !important;
+  color:#e8e2d6 !important; font-size:19px !important; line-height:1.75 !important;
+  letter-spacing:normal !important; max-width:68ch !important; margin:0 0 0.5rem 0 !important; }
+body.pp-article .pe-prose p, body.pp-article .wrap p, body.pp-article .article p, body.pp-article article p {
+  font-family:'Source Serif 4','Libre Baskerville',Georgia,serif !important;
+  color:#e8e2d6 !important; font-size:19px !important; line-height:1.75 !important; }
+body.pp-article strong, body.pp-article b { color:#f3ead8 !important; font-weight:700 !important; }
+body.pp-article .lead, body.pp-article p.lead, body.pp-article .story-deck,
+body.pp-article .deck, body.pp-article .pe-deck {
+  font-family:'Source Serif 4','Libre Baskerville',Georgia,serif !important;
+  color:#d8d2c6 !important; font-size:20px !important; line-height:1.6 !important;
+  max-width:68ch !important; margin:0 0 1.5rem 0 !important; }
+body.pp-article time, body.pp-article .meta, body.pp-article .pe-meta, body.pp-article .byline,
+body.pp-article .credits, body.pp-article .date, body.pp-article figcaption,
+body.pp-article .caption, body.pp-article .pe-caption {
+  font-family:'Inter','Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif !important;
+  color:#c9c3c8 !important; font-size:14.5px !important; line-height:1.5 !important;
+  letter-spacing:0.02em !important; text-transform:none !important; }
+body.pp-article p a, body.pp-article li a, body.pp-article blockquote a, body.pp-article .pe-prose a {
+  color:#f5ae34 !important; text-decoration:underline !important;
+  text-underline-offset:3px !important; text-decoration-thickness:1px !important; }
+body.pp-article p a:hover, body.pp-article li a:hover, body.pp-article blockquote a:hover,
+body.pp-article .pe-prose a:hover { color:#ffc46b !important; }
+body.pp-article blockquote {
+  font-family:'Source Serif 4','Libre Baskerville',Georgia,serif !important;
+  font-style:italic !important; color:#c9c3c8 !important;
+  border-left:3px solid #f5ae34 !important; padding:0.5rem 0 0.5rem 1.25rem !important;
+  margin:2rem 0 !important; max-width:68ch !important; }
+body.pp-article blockquote p { color:#c9c3c8 !important; }
+/* recirc/rails: tinta sim, gótico NÃO — bloco DEPOIS do gótico de propósito */
+body.pp-article .pr-rail h2, body.pp-article .pr-rail h3,
+body.pp-article .pr-card h3, body.pp-article .pr-card h4 {
+  font-family:'Inter','Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif !important;
+  color:#f3ead8 !important; font-size:16px !important; line-height:1.4 !important;
+  letter-spacing:0.01em !important; }
+body.pp-article .pr-rail p, body.pp-article .pr-card p {
+  font-family:'Inter','Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif !important;
+  color:#c9c3c8 !important; font-size:14px !important; line-height:1.5 !important;
+  max-width:none !important; }
+@media (max-width:768px) {
+  body.pp-article p, body.pp-article li, body.pp-article .pe-prose p, body.pp-article .wrap p,
+  body.pp-article .article p, body.pp-article article p { font-size:17px !important; line-height:1.7 !important; }
+  body.pp-article .lead, body.pp-article p.lead, body.pp-article .story-deck,
+  body.pp-article .deck, body.pp-article .pe-deck { font-size:18px !important; }
+  body.pp-article time, body.pp-article .meta, body.pp-article .byline, body.pp-article .credits,
+  body.pp-article .date, body.pp-article figcaption, body.pp-article .caption { font-size:14px !important; }
+}
