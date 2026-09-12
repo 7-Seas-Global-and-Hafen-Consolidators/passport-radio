@@ -1,133 +1,137 @@
-/* PASSPORT PORTAL v4 — único writer do rio editorial da Home. */
+/* PASSPORT HOME compositor r10-mold. 5 materias. RSS off Home. No audio. */
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
-  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const safeHref = (v) => /^(?:[/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
-  const FEEDS = ["/data/editorial-priority-feed.json", "/data/editorial-manual-feed.json", "/data/editorial-feed.json"];
-  const state = (v) => { document.documentElement.dataset.portalState = v; };
-
-  function picture(item, eager = false) {
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => {
+    if (c === "&") return "&" + "amp;";
+    if (c === "<") return "&" + "lt;";
+    if (c === ">") return "&" + "gt;";
+    if (c === '"') return "&" + "quot;";
+    return "&#39;";
+  });
+  const safeHref = (v) => /^(?:[\/?#.]|https?:|mailto:|tel:)/i.test(String(v || "").trim()) ? esc(String(v).trim()) : "#";
+  const BRAND_LOGO = /passport-radio-definitive/i;
+  const WM = "https://commons.wikimedia.org/wiki/Special:FilePath/";
+  const RECOVER = [
+    {re:/dolly\s*parton/i, src:WM+"Young-Dolly-Parton_(higher_quality_scan).jpg", alt:"Dolly Parton, 1977"},
+    {re:/the\s*mission|wayne\s*hussey/i, src:WM+"The_mission_wayne_hussey.jpg", alt:"Wayne Hussey, The Mission"},
+    {re:/ratos\s*de\s*por/i, src:WM+"W2603_Hellfest2016_RatosDePorao_8151.jpg", alt:"Ratos de Porao no Hellfest 2016"},
+    {re:/secos/i, src:WM+"Ney_Matogrosso_-_Singer_Composer_(3858541561).jpg", alt:"Ney Matogrosso"},
+    {re:/joelho\s*de\s*porco|tico\s*terpins/i, src:WM+"Tico_Terpins_and_Janete_Guper_wedding_(143716150).jpg", alt:"Tico Terpins"}
+  ];
+  const recover = (item) => {
+    const t = (item.title || "") + " " + ((item.entities || []).join(" "));
+    return RECOVER.find((r) => r.re.test(t)) || null;
+  };
+  function usablePhoto(item) {
+    const rec = recover(item);
+    if (rec) return {src:rec.src, alt:rec.alt, approved:true};
     const im = item && item.image;
-    if (!im || !im.src || im.approved === false) return "";
-    const load = eager ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
-    return `<figure class="journey-media"><img src="${esc(im.src)}" alt="${esc(im.alt || item.title || "")}" ${load} style="object-position:${esc(im.focalPoint || "50% 40%")}" onerror="this.closest('figure').remove()">${im.credit ? `<figcaption>${esc(im.credit)}</figcaption>` : ""}</figure>`;
+    if (!im || !im.src || im.approved === false) return null;
+    if (BRAND_LOGO.test(im.src)) return null;
+    if (/img\.youtube\.com\//i.test(im.src)) return null;
+    return im;
   }
-  const kicker = (item) => `<span class="journey-kicker">${esc(String(item.category || item.format || "Passport").replace(/_/g, " "))}</span>`;
-  const meta = (item) => `<span class="journey-meta">${esc(String(item.published_at || "").slice(0, 10))}${item.author ? ` · <b>${esc(item.author)}</b>` : ""}</span>`;
-  const card = (item, cls = "journey-story") => `<article class="${cls}">${picture(item)}<div class="journey-story__copy">${kicker(item)}<h3><a href="${safeHref(item.url)}">${esc(item.title)}</a></h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ""}${meta(item)}</div></article>`;
-
-  async function loadAll() {
-    const out = []; const seen = new Set();
-    const results = await Promise.allSettled(FEEDS.map((url) => fetch(url, {cache:"no-store"}).then((r) => {
-      if (!r.ok) throw new Error(url + " -> " + r.status);
-      return r.json();
-    })));
-    results.forEach((result, index) => {
-      if (result.status !== "fulfilled") {
-        console.warn("[portal-v4] fonte:", FEEDS[index], result.reason);
-        return;
-      }
-      const data = result.value;
-      const items = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : []);
-      items.forEach((item) => {
-        const key = String(item.url || item.title || "").split("?")[0].trim();
-        if (!key || seen.has(key)) return;
-        seen.add(key); out.push(item);
-      });
-    });
+  const figure = (item) => {
+    const im = usablePhoto(item);
+    if (!im) return "";
+    return '<figure class="journey-media"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || item.title || "") + '" loading="lazy" decoding="async" onerror="this.remove()"></figure>';
+  };
+  const verbete = (item) =>
+    '<div class="journey-media journey-media--verbete" aria-hidden="true"><span>' +
+    esc(String(item.category || item.format || "verbete").replace(/_/g, " ")) +
+    ' · verbete</span><b>' + esc((item.entities || []).slice(0,3).join(" · ") || String(item.title).slice(0,60)) +
+    '</b></div>';
+  const media = (item) => usablePhoto(item) ? figure(item) : verbete(item);
+  const kicker = (item) => '<span class="p-kicker">' + esc(String(item.category || item.format || "Mr. Nomad").replace(/_/g," ")) + '</span>';
+  const meta = (item) => '<span class="p-meta">' + esc(String(item.published_at || "").slice(0,10)) + (item.author ? " · " + esc(item.author) : "") + '</span>';
+  const copy = (item) => '<div class="p-copy">' + kicker(item) +
+    '<h3><a href="' + safeHref(item.url) + '">' + esc(item.title) + '</a></h3>' +
+    (item.deck ? '<p>' + esc(item.deck) + '</p>' : '') + meta(item) + '</div>';
+  const SHAPES = ["piece--capsule","piece--medal","piece--tower","piece--oval","piece--disc"];
+  const piece = (item, i) => {
+    const shape = SHAPES[i % SHAPES.length];
+    const mediaFirst = (i % 2 === 0);
+    const inner = (shape === "piece--capsule" || shape === "piece--disc")
+      ? media(item) + copy(item)
+      : (mediaFirst ? media(item) + copy(item) : copy(item) + media(item));
+    return '<article class="piece ' + shape + (usablePhoto(item) ? "" : " is-verbete") + '">' + inner + '</article>';
+  };
+  const isNomad = (item) => /nomad|MR_NOMAD|autoral/i.test((item.author||"")+" "+(item.format||"")+" "+(item.category||""));
+  async function readFeed(url) {
+    try { const r = await fetch(url, {cache:"no-store"}); if (!r.ok) return [];
+      const d = await r.json(); return Array.isArray(d) ? d : (d.items || []); } catch (e) { return []; }
+  }
+  function dedupe(items) {
+    const seen = new Set(); const out = [];
+    items.forEach((it) => { const k = String(it.url || it.title || "").split("?")[0].trim();
+      if (!k || seen.has(k)) return; seen.add(k); out.push(it); });
     return out;
   }
-
-  function wave(items, title, cls = "") {
-    if (!items.length) return "";
-    const [lead, ...rest] = items;
-    return `<section class="journey-wave ${cls}"><header class="journey-head"><span>PASSAPORTE EDITORIAL</span><h2>${esc(title)}</h2></header><div class="journey-wave__grid">${card(lead, "journey-story journey-story--wide")}<div class="journey-wave__list">${rest.map((item) => card(item, "journey-story journey-story--row")).join("")}</div></div></section>`;
+  function clock() {
+    const wd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"], mo = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+    const tick = () => {
+      const n = new Date(), p = (x) => String(x).padStart(2,"0");
+      const d = $("#mc-digits"); if (d) d.textContent = p(n.getHours()) + " : " + p(n.getMinutes()) + " : " + p(n.getSeconds());
+      const a = $("#mc-wd"), b = $("#mc-mo"), c = $("#mc-dy"), e = $("#mc-yr");
+      if (a) a.textContent = wd[n.getDay()]; if (b) b.textContent = mo[n.getMonth()];
+      if (c) c.textContent = p(n.getDate()); if (e) e.textContent = n.getFullYear();
+    };
+    tick(); setInterval(tick, 1000);
   }
-
-  function boarding(item) {
-    const entities = (item && Array.isArray(item.entities) ? item.entities : []).filter((name) => !/^mr\.?\s*nomad$/i.test(name)).slice(0, 4);
-    if (entities.length < 3) return "";
-    return `<section class="journey-board" aria-label="Painel de Embarque Passport"><span>PAINEL DE EMBARQUE PASSPORT™</span><div>${entities.map((name) => `<a href="${safeHref(item.url)}">${esc(name)}</a>`).join("<i>→</i>")}</div></section>`;
+  function mirror() {
+    setInterval(() => {
+      const t = $("#track"), m = $("#meta"), ot = $("#pp-onair-track"), os = $("#pp-onair-sub");
+      if (t && ot && t.textContent) ot.textContent = t.textContent;
+      if (m && os && m.textContent) os.textContent = m.textContent;
+    }, 1500);
   }
-
-  function territory(id, eyebrow, title, copy, house, archive) {
-    return `<section class="journey-territory journey-territory--${id}"><div><span>${esc(eyebrow)}</span><h2>${esc(title)}</h2><p>${esc(copy)}</p><nav><a href="#passport-casas" data-open-existing-house="${esc(house)}">OUVIR NESTA PÁGINA →</a>${archive ? `<a href="${safeHref(archive)}">ABRIR ARQUIVO →</a>` : ""}</nav></div></section>`;
-  }
-
-  function musicians(items) {
-    if (!items.length) return "";
-    return `<section class="journey-musicians"><header class="journey-head"><span>QUEM ESTAVA TOCANDO?</span><h2>O caminho dos músicos.</h2></header><div>${items.map((item) => {
-      const names = (item.entities || []).filter((name) => !/^mr\.?\s*nomad$/i.test(name)).slice(0, 4);
-      return `<a href="${safeHref(item.url)}">${kicker(item)}<strong>${esc(item.title)}</strong><small>${esc(names.join(" · "))}</small></a>`;
-    }).join("")}</div></section>`;
-  }
-
-  function fofonetes() {
-    return `<section class="journey-fofonetes"><img src="/images/fofonete-home.jpg" alt="Fofonete da Passport Radio" loading="lazy"><div><span>FOFONETES™ · CAMPANHA DA CASA</span><h2>Eu fiz as contas de novo.</h2><p>A Passport fica no ar com quem lê, ouve, compra e ajuda.</p><button type="button" data-open-fofonete>CONHECER A FOFONETE →</button></div></section>`;
-  }
-
-  function counter(items) {
-    const count = items.length;
-    return `<section class="journey-counter"><strong>${count}</strong><span>histórias nesta viagem</span><a href="editorial.html">ABRIR O ARQUIVO COMPLETO →</a></section>`;
-  }
-
-  function render(items) {
-    const root = $("#pp-feed");
-    if (!root) return;
-    if (!items.length) {
-      state("empty"); root.innerHTML = '<p class="journey-empty">O arquivo está acordando…</p>'; return;
+  document.addEventListener("error", (e) => {
+    const img = e.target;
+    if (!img || img.tagName !== "IMG") return;
+    const fig = img.closest("figure.journey-media");
+    if (fig) {
+      const art = fig.closest("article");
+      const title = art && art.querySelector("h3") ? art.querySelector("h3").textContent.slice(0,60) : "";
+      const cat = art && art.querySelector(".p-kicker") ? art.querySelector(".p-kicker").textContent : "verbete";
+      fig.outerHTML = '<div class="journey-media journey-media--verbete" aria-hidden="true"><span>' + esc(cat) + ' · verbete</span><b>' + esc(title) + '</b></div>';
+      if (art) art.classList.add("is-verbete"); return;
     }
-    state("ok:" + items.length);
-    const pool = items.slice();
-    const cover = pool.shift();
-    const companions = pool.splice(0, 2);
-    const first = pool.splice(0, 12);
-    const boardItem = [cover, ...companions, ...first].find((item) => Array.isArray(item.entities) && item.entities.length >= 3);
-    const second = pool.splice(0, 14);
-    const musicianIndexes = [];
-    pool.forEach((item, index) => {
-      if (musicianIndexes.length < 6 && Array.isArray(item.entities) && item.entities.length >= 3) musicianIndexes.push(index);
-    });
-    const musicianSet = new Set(musicianIndexes);
-    const musicianItems = pool.filter((_, index) => musicianSet.has(index));
-    let remainder = pool.filter((_, index) => !musicianSet.has(index));
-    const third = remainder.splice(0, 14);
-    const brazil = remainder.filter((item) => /brasil|brazilian|mpb/i.test(String(item.category || ""))).slice(0, 8);
-    const brazilUrls = new Set(brazil.map((item) => item.url));
-    remainder = remainder.filter((item) => !brazilUrls.has(item.url));
-
-    root.innerHTML = `
-      <section class="journey-cover">
-        <header><span>MR. NOMAD APRESENTA</span><h1>A Home não é o índice.<br>A Home é uma viagem.</h1></header>
-        <div class="journey-cover__grid">${card(cover, "journey-story journey-story--cover")}<div>${companions.map((item) => card(item, "journey-story journey-story--companion")).join("")}</div></div>
-      </section>
-      ${wave(first, "Agora, sem fila única.", "journey-wave--first")}
-      ${boarding(boardItem)}
-      ${wave(second, "História, notícia e memória circulando juntas.")}
-      ${territory("80s", "TERRITÓRIO 80s™", "Você não lembrava dessa música. Até ela começar a tocar.", "Rádio, novela, TV, danceteria, cinema e palco.", "/radio-80s.html", "/anos-80-bandas-musicas-rock-new-wave.html")}
-      ${musicians(musicianItems)}
-      ${territory("live", "LIVE & RARE™", "O show acabou. O registro não.", "Performances, raridades e arquivos que ainda respiram.", "/radio-live-rare.html", "")}
-      ${wave(third, "A viagem muda de geometria outra vez.")}
-      ${fofonetes()}
-      ${territory("brasil", "DO BRASIL · ROCK BRASIL™", "Nomes, instrumentos e histórias que o Brasil não pode esquecer.", "Do palco brasileiro para o arquivo vivo da Passport.", "/radio-rock-brasil.html", "")}
-      ${wave(brazil, "Do Brasil, com nome e instrumento.", "journey-wave--brazil")}
-      ${wave(remainder, "Matérias e memória: o rio continua.", "journey-wave--archive")}
-      ${counter(items)}
-    `;
-    window.PASSPORT_FEED_ITEMS = items;
-    document.dispatchEvent(new CustomEvent("passport:journey-ready", {detail:{count:items.length}}));
-  }
-
+    const av = img.closest(".mold-fofo"); if (av) img.style.display = "none";
+  }, true);
   async function boot() {
-    try { render(await loadAll()); }
-    catch (error) {
-      state("error");
-      const root = $("#pp-feed");
-      if (root) root.innerHTML = `<p class="journey-empty">Falha no rio: ${esc(error.message || error)}</p>`;
+    const packs = await Promise.all([
+      readFeed("/data/editorial-priority-feed.json"),
+      readFeed("/data/editorial-manual-feed.json")
+    ]);
+    const pool = dedupe(packs[0].concat(packs[1]));
+    const nomad = pool.filter(isNomad);
+    const week = (nomad.length ? nomad : pool).slice(0, 5);
+    const ticker = $("#pp-ticker");
+    if (ticker) {
+      const items = week.length ? week : [{title:"A edicao da semana esta sendo composta.", url:"#"}];
+      const half = items.map((it) => '<a href="' + safeHref(it.url) + '">' + esc(it.title) + '</a>').join("");
+      ticker.innerHTML = half + half;
     }
+    const vinyl = $("#pp-vinyl");
+    if (vinyl) {
+      vinyl.innerHTML = week.map((it) => {
+        const im = usablePhoto(it);
+        const disc = im
+          ? '<div class="mv-disc"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || it.title || "") + '" loading="lazy"></div>'
+          : '<div class="mv-disc mv-disc--verbete">' + esc((it.entities || [it.title])[0].slice(0,18)) + '</div>';
+        return '<a class="mv-item" href="' + safeHref(it.url) + '">' + disc + '<b>' + esc(String(it.title).slice(0,44)) + '</b><small>' + esc(String(it.published_at || "").slice(0,10)) + '</small></a>';
+      }).join("");
+    }
+    const feed = $("#pp-feed");
+    if (feed) feed.innerHTML = week.map(piece).join("") ||
+      '<p class="piece" style="text-align:center;color:#9a938a">A edicao da semana esta sendo composta.</p>';
+    window.PASSPORT_FEED_ITEMS = week;
+    window.PASSPORT_HOME_PHOTO_GAPS = week.filter((x) => !usablePhoto(x)).map((x) => ({title:x.title, url:x.url}));
+    document.dispatchEvent(new CustomEvent("passport:journey-ready", {detail:{count:week.length}}));
   }
-  window.PassportPortal = {refresh:boot};
+  clock(); mirror();
+  window.PassportPortal = {refresh: boot};
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, {once:true});
   else boot();
 })();

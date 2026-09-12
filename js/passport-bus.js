@@ -7,7 +7,7 @@
   let parentBus = null;
   try { if (parent !== window) parentBus = parent.PassportBus; } catch (_) {}
   function pauseMedia(keep) {
-    document.querySelectorAll("audio,video").forEach(media => {
+    document.querySelectorAll("audio").forEach(media => {
       if (media !== keep && !media.paused) try { media.pause(); } catch (_) {}
     });
   }
@@ -56,13 +56,13 @@
     if (event.target.closest(scope)) claim();
   }, true);
   document.addEventListener("play", event => {
-    if (!(event.target instanceof HTMLMediaElement)) return;
+    if (!(event.target instanceof HTMLAudioElement)) return;
     if (!enabled) { event.target.pause(); return; }
     pauseMedia(event.target);
   }, true);
   // A late retry in an inactive house must not start sound again.
   document.addEventListener("playing", event => {
-    if (event.target instanceof HTMLMediaElement && !enabled) event.target.pause();
+    if (event.target instanceof HTMLAudioElement && !enabled) event.target.pause();
   }, true);
   // YouTube state arrives asynchronously, outside HTMLMediaElement events.
   // Stop a late start after the listener selected another house.

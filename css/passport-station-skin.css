@@ -1,0 +1,25 @@
+/* === ORDEM 17 · STATION-SKIN (FASE B2) — portas shell na casa preta === */
+body.pp-station{background:#050505!important;color:#e8e2d6!important}
+body.pp-station .pp-topbar{background:#0b0a08!important;border-bottom:1px solid rgba(196,165,116,.35)!important;margin-top:0!important}
+body.pp-station .pp-nav{background:#14110c!important;border-top:1px solid rgba(196,165,116,.2)!important}
+body.pp-station .pp-nav a{color:#e8e2d6!important;background:transparent!important}
+body.pp-station .pp-nav a[aria-current="page"]{color:#c4a574!important;box-shadow:inset 0 -3px 0 #c4a574!important}
+body.pp-station .pp-footer{background:#0a0a0a!important;border-top:1px solid rgba(196,165,116,.25)!important}
+body.pp-station main.fd-page{background:transparent!important}
+body.pp-station h1,body.pp-station h2,body.pp-station h3{color:#f3ead8!important}
+body.pp-station a{color:#c4a574}
+body.pp-station input[type="search"],body.pp-station input[type="text"]{background:#141414!important;border:1px solid #2a2a2a!important;color:#e8e2d6!important;border-radius:999px!important}
+body.pp-station input:focus{border-color:#c4a574!important;outline:none}
+body.pp-station .news-grid article,body.pp-station .arch-grid article{background:#101010!important;border:1px solid #262626!important;border-radius:14px!important;overflow:hidden}
+body.pp-station .news-grid article h3 a,body.pp-station .arch-grid article h3 a{color:#f3ead8!important}
+body.pp-station .news-grid article h3 a:hover,body.pp-station .arch-grid article h3 a:hover{color:#c4a574!important}
+body.pp-station .fd-more button,body.pp-station #news-more button,body.pp-station #archive-more button{background:transparent!important;border:1px solid #c4a574!important;color:#c4a574!important;border-radius:999px!important}
+body.pp-station .promo-hero{background:#0b0a08!important;color:#e8e2d6!important}
+body.pp-station .listener-tabs button{background:#141414!important;color:#e8e2d6!important;border:1px solid #2a2a2a!important;border-radius:999px!important}
+body.pp-station .listener-tabs button[aria-selected="true"],body.pp-station .listener-tabs button.active{background:#c4a574!important;color:#0b0a08!important;border-color:#c4a574!important}
+body.pp-station table.an-table{background:#101010!important;border:1px solid #262626!important}
+body.pp-station table.an-table th{background:#14110c!important;color:#c4a574!important}
+body.pp-station table.an-table td{background:#101010!important;color:#e8e2d6!important;border-color:#262626!important}
+body.pp-station .pp-store-grid article{background:#101010!important;border:1px solid #262626!important;border-radius:14px!important}
+/* Asaas trust band permanece cream de propósito (faixa de confiança de pagamento) */
+body.pp-station [class*="asaas"]{background:#ead9be!important;color:#15161a!important}

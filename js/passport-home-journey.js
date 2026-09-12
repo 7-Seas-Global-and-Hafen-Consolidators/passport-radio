@@ -17,7 +17,7 @@
 
     if (wrap && !document.querySelector(".journey-business")) {
       wrap.insertAdjacentHTML("afterend", `
-        <section class="journey-business" id="ajude">
+        <section class="journey-business">
           <article class="journey-business__store"><span>PASSPORT STORE · ENCARTE</span><h2>Produto, história e identidade.</h2><p>Peças escolhidas pela casa, sem transformar a rádio num depósito de vitrines.</p><a href="loja.html">ABRIR A LOJA →</a></article>
           <article><span>MÍDIA PASSPORT</span><h2>Anuncie.</h2><p>Bandas, shows, festivais, lojas e marcas dentro de uma publicação musical viva.</p><a href="anuncie.html">VER FORMATOS →</a></article>
           <article><span>AJUDE A PASSPORT</span><h2>Mantenha a casa no ar.</h2><p>Histórias, arquivo, pesquisa e sinais independentes continuam porque alguém ajuda.</p><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">AJUDAR AGORA →</a></article>
