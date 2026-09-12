@@ -1,0 +1,83 @@
+/* PASSPORT RADIO · signal habitat (standalone pages of the 14).
+   iframe interiors stay on passport-house.css — Home visual frozen. */
+html.pp-signal-standalone{background:#f3ead8}
+html.pp-signal-standalone body.passport-house,
+html.pp-signal-standalone body.pp-body.wd-body{
+  background:#f3ead8!important;
+  color:#0e2744;
+  font-family:"Source Serif 4",Georgia,serif;
+  padding:0 0 64px;
+  margin:0;
+}
+html.pp-signal-standalone body.passport-house{padding:0 18px 64px}
+.pp-signal-chrome{
+  display:none;
+}
+html.pp-signal-standalone .pp-signal-chrome{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 18px;
+  margin:0 -18px 18px;
+  padding:12px 18px;
+  background:#0e2744;
+  color:#f3ead8;
+}
+html.pp-signal-standalone body.wd-body .pp-signal-chrome{
+  margin:0 0 0;
+}
+.pp-signal-brand{
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:#f3ead8;
+}
+.pp-signal-brand img{width:36px;height:36px;object-fit:cover;border-radius:4px}
+.pp-signal-brand b{display:block;font:700 .78rem/1.1 Cinzel,Georgia,serif;letter-spacing:.08em}
+.pp-signal-brand small{display:block;font:.7rem/1.2 "Great Vibes",cursive;color:#c4a574}
+.pp-signal-nav{display:flex;flex-wrap:wrap;gap:8px 12px}
+.pp-signal-nav a{
+  color:#f3ead8;text-decoration:none;font:600 .62rem/1 Cinzel,Georgia,serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.pp-signal-nav a:hover,.pp-signal-nav a[aria-current="page"]{color:#c4a574}
+html.pp-signal-standalone .house-head{
+  border-bottom:2px solid #163a5f;
+}
+html.pp-signal-standalone .house-head h1{
+  font-family:Cinzel,Georgia,serif;
+  color:#0e2744;
+}
+html.pp-signal-standalone .house-head a{color:#163a5f;font-weight:700}
+html.pp-signal-standalone .house-note{color:#2a4d73}
+html.pp-signal-standalone .pp-signal-foot{
+  margin:28px -18px 0;padding:18px;background:#0e2744;color:#f3ead8;
+  font:.78rem/1.4 Inter,Arial,sans-serif;
+}
+html.pp-signal-standalone .pp-signal-foot a{color:#c4a574}
+.pp-signal-frame-note{display:none}
+html.pp-signal-frame .pp-signal-frame-note{
+  display:block;margin:0 0 12px;padding:8px 10px;border:1px solid #c4a574;
+  background:#fffaf1;color:#0e2744;font:.72rem/1.4 Inter,Arial,sans-serif;
+}
+html.pp-signal-frame .pp-signal-chrome,
+html.pp-signal-frame .pp-signal-foot{display:none!important}
+/* World Dial in the house iframe: keep dial+player, drop nested portal chrome */
+html.pp-signal-frame.pp-world-dial .pp-topbar,
+html.pp-signal-frame.pp-world-dial .pp-nav,
+html.pp-signal-frame.pp-world-dial .pp-footer,
+html.pp-signal-frame.pp-world-dial .pp-skip,
+html.pp-signal-frame.pp-world-dial .passport-support-float{display:none!important}
+html.pp-signal-frame.pp-world-dial body.wd-body{padding:0;margin:0}
+html.pp-signal-standalone.pp-world-dial .pp-topbar,
+html.pp-signal-standalone.pp-world-dial .pp-nav,
+html.pp-signal-standalone.pp-world-dial .pp-footer,
+html.pp-signal-standalone.pp-world-dial .pp-skip{display:none!important}
+html.pp-signal-standalone.pp-world-dial .wd-head{padding-top:12px}
+body.passport-house[data-signal="novelas"] #passportNovelas{
+  display:block!important;visibility:visible!important;
+}
+body.passport-house[data-signal="novelas"] #passportNovelas[hidden]{
+  display:block!important;
+}
+@media(max-width:640px){
+  .pp-signal-nav{width:100%}
+  html.pp-signal-standalone .pp-signal-chrome{gap:8px}
+}

@@ -20,7 +20,9 @@ body.passport-house{margin:0;padding:18px;box-sizing:border-box;background:#faf9
 .passport-house .passport-soul-copy,.passport-house .passport-hits-copy{max-width:none!important}
 .passport-house .passport-soul-script,.passport-house .passport-hits-script{display:none!important}
 .passport-house .passport-soul-card,.passport-house .passport-hits-card{margin-top:14px}
-.passport-house .tunnel-directory{display:none}
+body.passport-house[data-signal="novelas"] #passportNovelas{display:block!important;visibility:visible!important}
+body.passport-house[data-signal="novelas"] #passportNovelas[hidden]{display:block!important}
+body.passport-house[data-signal="novelas"] .tunnel-directory{display:none}
 .passport-house .gdo{padding:0;max-width:none}
 .passport-house .house-tools{margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .passport-house .house-tools input{max-width:160px}

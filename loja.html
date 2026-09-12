@@ -2,10 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0;url=editorial.html#loja">
 <link rel="canonical" href="https://passportradio.online/editorial.html">
 <title>Loja | Passport Radio</title>
-<script>location.replace("editorial.html#loja");</script>
+<script>
+(function(){
+  var q = location.search || "";
+  location.replace("editorial.html" + q + "#loja");
+})();
+</script>
 </head>
 <body>
 <p><a href="editorial.html#loja">A Loja vive no Arquivo.</a></p>
