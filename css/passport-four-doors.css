@@ -432,3 +432,8 @@ body.pp-home .journey-media:not(:has(img))::before{
   color:#c4a574;font-family:var(--pp-title);font-size:.7rem;letter-spacing:.14em;
   background:linear-gradient(160deg,#181818,#0d0d0d)!important;
 }
+@media(max-width:400px){
+  body.pp-home .pp-wrap{overflow-x:hidden;max-width:100%}
+  body.pp-station nav.pp-nav{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  body.pp-station nav.pp-nav .pp-nav-in{max-width:100%}
+}
