@@ -57,3 +57,69 @@
   .promo-page .an-table th,.anuncie-page .an-table th,.promo-page .an-table td,.anuncie-page .an-table td{padding:13px 14px}
   .promo-page .pp-footer-in,.anuncie-page .pp-footer-in{grid-template-columns:1fr;gap:22px}
 }
+
+.promo-campaign-page .promo-top{
+  position:relative;top:auto;background:#0b0a08;border-bottom:1px solid var(--pc-line);
+}
+.promo-campaign-page .promo-top__row{
+  width:min(1080px,calc(100% - 40px));min-height:64px;margin:auto;display:flex;align-items:center;gap:24px;
+}
+.promo-campaign-page .promo-brand{
+  display:flex;align-items:center;gap:10px;color:var(--pc-text);font-family:"Instrument Sans",system-ui,sans-serif;text-decoration:none;
+}
+.promo-campaign-page .promo-brand img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.promo-campaign-page .promo-brand strong{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase}
+.promo-campaign-page .promo-brand small{display:block;margin-top:2px;color:var(--pc-muted);font-size:.62rem;letter-spacing:.03em}
+.promo-campaign-page .promo-nav{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2vw,24px)}
+.promo-campaign-page .promo-nav a{color:var(--pc-text);font-family:"Instrument Sans",system-ui,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}
+.promo-campaign-page .promo-nav a:hover{color:var(--pc-gold)}
+.promo-campaign-page .passport-campaign-detail{
+  width:min(920px,calc(100% - 40px));margin:auto;padding:clamp(44px,7vw,84px) 0 clamp(58px,9vw,104px);
+}
+.promo-campaign-page .campaign-header{padding:0 0 28px;border-top:0;border-bottom:1px solid var(--pc-line)}
+.promo-campaign-page .campaign-header .promo-kicker{color:var(--pc-gold);font-family:"Instrument Sans",system-ui,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em}
+.promo-campaign-page .campaign-header h1{
+  max-width:18ch;margin:12px 0 22px;color:var(--pc-text);font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(2.85rem,6vw,5.55rem);font-weight:700;letter-spacing:-.055em;line-height:.93;
+}
+.promo-campaign-page .campaign-dates{display:flex;gap:8px;flex-wrap:wrap}
+.promo-campaign-page .campaign-dates span{
+  padding:8px 10px;border:1px solid var(--pc-line);border-radius:999px;background:#101010;color:var(--pc-muted);font-family:"Instrument Sans",system-ui,sans-serif;font-size:.72rem;font-weight:600;
+}
+.promo-campaign-page .campaign-prize{
+  display:block;width:100%;max-height:min(52vh,500px);margin:30px 0;object-fit:contain;border:1px solid var(--pc-line);border-radius:12px;background:#101010;
+}
+.promo-campaign-page .campaign-copy{max-width:64ch;margin:0;color:var(--pc-text);font-family:"Instrument Sans",system-ui,sans-serif;font-size:1rem;line-height:1.65}
+.promo-campaign-page .passport-campaign-detail h2{
+  margin:42px 0 16px;color:var(--pc-text);font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(1.65rem,3vw,2.45rem);letter-spacing:-.025em;line-height:1;
+}
+.promo-campaign-page .passport-form{
+  display:grid;gap:15px;margin:0;padding:clamp(20px,4vw,32px);border:1px solid var(--pc-line);border-top:2px solid var(--pc-gold);border-radius:12px;background:var(--pc-panel);
+}
+.promo-campaign-page .passport-form label{display:grid;gap:7px;color:var(--pc-text);font-family:"Instrument Sans",system-ui,sans-serif;font-size:.78rem;font-weight:700}
+.promo-campaign-page .passport-form input[type=text],.promo-campaign-page .passport-form input[type=email]{
+  box-sizing:border-box;width:100%;min-height:46px;padding:10px 12px;border:1px solid rgba(196,165,116,.38);border-radius:6px;background:#090909;color:var(--pc-text);font:inherit;
+}
+.promo-campaign-page .passport-form .rules{display:flex;align-items:flex-start;gap:9px;color:var(--pc-muted);font-weight:500;line-height:1.45}
+.promo-campaign-page .passport-form .rules input{margin-top:3px;accent-color:var(--pc-gold)}
+.promo-campaign-page .passport-btn-red{
+  min-height:48px;padding:12px 18px;border:1px solid var(--pc-gold);border-radius:999px;background:var(--pc-gold);color:#0b0a08;font-family:"Instrument Sans",system-ui,sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.08em;cursor:pointer;
+}
+.promo-campaign-page .passport-btn-red:hover{background:#e1c489;border-color:#e1c489}
+.promo-campaign-page #promo-confirmation{padding:18px;border:1px solid var(--pc-gold);border-radius:8px;background:#101010;color:var(--pc-text);font-family:"Instrument Sans",system-ui,sans-serif;font-weight:600}
+.promo-campaign-page .campaign-rules{margin-top:42px;padding-top:26px;border-top:1px solid var(--pc-line)}
+.promo-campaign-page .campaign-rules p{max-width:64ch;color:var(--pc-muted);font-family:"Instrument Sans",system-ui,sans-serif;line-height:1.65}
+.promo-campaign-page .campaign-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.promo-campaign-page .campaign-links a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 15px;border:1px solid var(--pc-gold);border-radius:999px;color:var(--pc-gold);font-family:"Instrument Sans",system-ui,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-decoration:none;
+}
+.promo-campaign-page .campaign-links a:hover,.promo-campaign-page .campaign-links .support{background:var(--pc-gold);color:#0b0a08}
+@media(max-width:700px){
+  .promo-campaign-page .promo-top__row,.promo-campaign-page .passport-campaign-detail{width:calc(100% - 28px)}
+  .promo-campaign-page .promo-brand small{display:none}
+  .promo-campaign-page .promo-nav{gap:13px;overflow-x:auto;scrollbar-width:none}
+  .promo-campaign-page .promo-nav::-webkit-scrollbar{display:none}
+  .promo-campaign-page .promo-nav a{flex:0 0 auto;font-size:.62rem}
+  .promo-campaign-page .campaign-header h1{font-size:clamp(2.55rem,12vw,3.9rem)}
+  .promo-campaign-page .campaign-prize{max-height:42vh;margin:24px 0}
+  .promo-campaign-page .campaign-dates span{width:100%;border-radius:7px}
+}
