@@ -1,0 +1,30 @@
+/* PASSPORT RADIO · BLOG — isolated editorial surface */
+body.pp-blog{--blog-gold:#c4a574;--blog-ink:#f3ead8;--blog-mute:#9a938a;--blog-panel:#101010;--blog-line:#262626;background:#050505;color:#e8e2d6;font-family:"Instrument Sans",system-ui,sans-serif}
+body.pp-blog .blog-page{width:min(calc(100% - 32px),1120px);margin:0 auto;padding:42px 0 80px}
+body.pp-blog .blog-kicker{display:block;color:var(--blog-gold);font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+body.pp-blog .blog-page h1{margin:.18em 0 .3em;color:var(--blog-ink);font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(2.5rem,6.4vw,4.25rem);line-height:1.02}
+body.pp-blog .blog-intro{max-width:62ch;margin:0 0 32px;color:var(--blog-mute);line-height:1.6}
+body.pp-blog .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+body.pp-blog .blog-card{display:flex;min-width:0;min-height:290px;flex-direction:column;justify-content:flex-end;padding:22px;background:linear-gradient(160deg,#18140f,#0e0c0a);border:1px solid var(--blog-line);border-radius:8px;color:var(--blog-ink);text-decoration:none}
+body.pp-blog .blog-card:hover{border-color:var(--blog-gold)}
+body.pp-blog .blog-card__eyebrow,.passport-blog-showcase__eyebrow{color:var(--blog-gold);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+body.pp-blog .blog-card h2{margin:10px 0;color:var(--blog-ink);font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.08}
+body.pp-blog .blog-card p{margin:0;color:var(--blog-mute);line-height:1.5}
+body.pp-blog .blog-card__meta{margin-top:18px;color:#756e66;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+body.pp-blog .blog-discussion-note{margin-top:32px;padding:18px;border-left:2px solid var(--blog-gold);background:#0d0d0d;color:var(--blog-mute);font-size:.9rem;line-height:1.55}
+body.pp-blog .blog-discussion-note strong{display:block;margin-bottom:4px;color:var(--blog-ink);letter-spacing:.1em;font-size:.7rem;text-transform:uppercase}
+.passport-blog-showcase{margin:0;padding:52px 0;background:#0b0b0b;color:#e8e2d6}
+.passport-blog-showcase__in{width:min(calc(100% - 32px),1120px);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end}
+.passport-blog-showcase h2{max-width:16ch;margin:8px 0;color:#f3ead8;font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(2rem,4vw,3.6rem);line-height:1.02}
+.passport-blog-showcase p{max-width:60ch;margin:0;color:#9a938a;line-height:1.55}
+.passport-blog-showcase__cards{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.passport-blog-showcase__card{padding:18px;border:1px solid #262626;border-radius:8px;background:#101010;color:#f3ead8;text-decoration:none}
+.passport-blog-showcase__card:hover{border-color:#c4a574}
+.passport-blog-showcase__card span{display:block;color:#c4a574;font-size:.64rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.passport-blog-showcase__card strong{display:block;margin-top:9px;font-family:"Bodoni Moda",Georgia,serif;font-size:1.25rem;line-height:1.14}
+.passport-blog-showcase__cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 20px;border:1px solid #c4a574;border-radius:999px;color:#c4a574;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;white-space:nowrap}
+.passport-blog-showcase__cta:hover{background:#c4a574;color:#0b0b0b}
+body.pp-blog-article .passport-discussion{width:min(calc(100% - 40px),760px);margin:0 auto 72px;padding:22px;border:1px solid #333;background:#101010;color:#c9c3c8}
+body.pp-blog-article .passport-discussion h2{margin:0 0 8px;font-family:"Bodoni Moda",Georgia,serif;font-size:1.7rem}
+body.pp-blog-article .passport-discussion p{margin:0!important;font-family:"Instrument Sans",system-ui,sans-serif!important;font-size:.95rem!important;line-height:1.6!important}
+@media(max-width:760px){body.pp-blog .blog-page{width:min(calc(100% - 24px),1120px);padding:28px 0 64px}body.pp-blog .blog-grid,.passport-blog-showcase__cards{grid-template-columns:1fr}.passport-blog-showcase__in{width:min(calc(100% - 24px),1120px);display:block}.passport-blog-showcase__cta{margin-top:20px}.passport-blog-showcase h2{max-width:18ch}}
