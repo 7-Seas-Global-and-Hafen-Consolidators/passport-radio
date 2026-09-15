@@ -82,6 +82,11 @@
       function tryPlay() {
         try {
           if (mediaPlaying(doc, win)) return true;
+          if (house === "radio-world-tunnel-reggae.html") {
+            const audio = doc.getElementById("passportWorldTunnelReggaeAudio");
+            if (audio && audio.paused) audio.play().catch(function () {});
+            return !!(audio && audio.paused === false);
+          }
           if (house === "radio-world-disco-deutschland.html") {
             const audio = doc.getElementById("passportWorldDiscoDeutschlandAudio");
             if (audio && audio.paused) audio.play().catch(function () {});
