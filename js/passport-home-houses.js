@@ -101,6 +101,7 @@
           else if (house === "radio-mundo-player.html") playBtn = doc.getElementById("world-play");
           else if (house === "radio-jovem-guarda.html") playBtn = doc.getElementById("passportJovemGuardaPlay");
           else if (house === "radio-nostalgia-passport.html") playBtn = doc.getElementById("passportNostalgiaPlay");
+          else if (house === "radio-catalunya.html") playBtn = doc.getElementById("passportCatalunyaPlay");
           if (!playBtn) return false;
           const txt = playBtn.textContent.trim();
           if (playingLabel(txt)) return true;
