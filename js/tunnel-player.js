@@ -248,7 +248,7 @@
     try {
       direction > 0 ? yt.nextVideo() : yt.previousVideo();
     } catch (_) {
-      direction > 0 ? loadPlaylist(playlistIndex + 1, true) : loadPlaylist(rotatingPlaylistIndex(-1), true);
+      direction > 0 ? loadPlaylist(rotatingPlaylistIndex(1), true) : loadPlaylist(rotatingPlaylistIndex(-1), true);
     }
   }
 
