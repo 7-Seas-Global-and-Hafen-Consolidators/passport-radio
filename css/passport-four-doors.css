@@ -150,7 +150,7 @@ body.pp-home .pp-doors a{display:grid;place-items:center;width:30px;height:30px;
 .mvs-needle{position:absolute;left:50%;bottom:6%;width:2px;height:78%;background:#200;transform-origin:50% 100%;transform:rotate(-28deg);animation:mk-ndl 1.3s ease-in-out infinite alternate}
 .mvs-needle.n2{animation-duration:1.7s;animation-delay:.2s}
 @keyframes mk-ndl{from{transform:rotate(-32deg)}to{transform:rotate(30deg)}}
-/* sinais = pílulas coloridas; aberta = tela do receiver */
+/* sinais = pílulas coloridas; player ativo vive em #passport-casa-host */
 body.pp-home #passport-casas{background:transparent!important;color:var(--mk-txt)!important;margin:0!important;padding:0 0 10px!important;width:100%!important;max-width:none!important}
 body.pp-home #passport-casas h2{font-family:var(--pp-display)!important;color:var(--pp-gold)!important;font-size:1.3rem!important;margin:0;text-align:center}
 body.pp-home #passport-casas .casas-intro{color:var(--mk-dim)!important;text-align:center;font-size:.8rem!important;margin:.2rem 0 14px!important}
@@ -168,12 +168,13 @@ body.pp-home #passport-casas summary::-webkit-details-marker{display:none}
 body.pp-home #passport-casas summary::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hc,#888);box-shadow:0 0 8px var(--hc,#888)}
 body.pp-home #passport-casas summary::after{content:none!important}
 body.pp-home #passport-casas summary span{display:inline!important;margin:0!important;color:var(--mk-dim)!important;font-size:.62rem!important;font-family:var(--pp-body)!important}
-body.pp-home #passport-casas .casa[open]{flex:0 0 100%;order:-1;border-radius:28px!important;background:#0d0d0d;border:1px solid var(--hc,#333)!important;overflow:hidden}
-body.pp-home #passport-casas .casa[open] summary{border-radius:0;border:0;border-bottom:1px solid var(--mk-line);justify-content:flex-start}
-body.pp-home #passport-casas .casa-actions{display:flex;gap:10px;justify-content:flex-end;padding:8px 14px!important}
-body.pp-home #passport-casas .casa-actions a,body.pp-home #passport-casas .casa-actions button{color:var(--mk-dim);font-size:.64rem;font-family:var(--pp-title);letter-spacing:.08em;text-transform:uppercase}
-body.pp-home #passport-casas .casa-actions button{background:transparent;border:1px solid var(--mk-line);border-radius:999px;padding:5px 12px;cursor:pointer}
-body.pp-home #passport-casas .casa-stage{padding:6px 12px 14px}
+body.pp-home #passport-casas .casa[open]{flex:0 0 auto;order:0;border-radius:999px!important;background:transparent!important;border:0!important;overflow:visible}
+body.pp-home #passport-casas .casa[open] summary{border-radius:999px;border:1px solid var(--hc,#555);justify-content:flex-start}
+body.pp-home #passport-casas .casas-grid .casa-actions,body.pp-home #passport-casas .casa-stage{display:none!important}
+body.pp-home #passport-casa-host{margin:12px 0 0;border-radius:28px;border:1px solid var(--mk-line);background:#0d0d0d}
+body.pp-home #passport-casa-host .casa-host-bar{color:var(--mk-dim);font-family:var(--pp-title);letter-spacing:.08em;text-transform:uppercase}
+body.pp-home #passport-casa-host .casa-host-bar strong{color:var(--pp-gold);font-size:.72rem}
+body.pp-home #passport-casa-host .casa-host-bar a,body.pp-home #passport-casa-host .casa-host-bar button{color:var(--mk-dim);font-size:.64rem;font-family:var(--pp-title);letter-spacing:.08em;text-transform:uppercase;background:transparent;border:1px solid var(--mk-line);border-radius:999px;padding:5px 12px;text-decoration:none}
 /* 11 · vídeos */
 .mold-videos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}
 .mvd-item{background:var(--mk-panel);border:1px solid var(--mk-line);border-radius:32px;overflow:hidden}

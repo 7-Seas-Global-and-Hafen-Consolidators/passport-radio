@@ -5,7 +5,8 @@
     const house = document.querySelector(`#passport-casas details[data-house="${path}"]`);
     if (!house) return;
     house.open = true;
-    house.scrollIntoView({behavior:"smooth", block:"start"});
+    const host = document.getElementById("passport-casa-host");
+    (host || house).scrollIntoView({behavior:"smooth", block:"start"});
   }
   function boot() {
     const ticker = document.querySelector(".pp-ticker");

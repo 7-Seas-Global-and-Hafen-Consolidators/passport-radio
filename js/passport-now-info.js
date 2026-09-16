@@ -132,7 +132,10 @@
   function readHouse(card) {
     const name = clean(card.dataset.name) || "Passport Radio";
     const file = houseFile(card);
-    const frame = card.querySelector("iframe");
+    const host = document.getElementById("passport-casa-host");
+    const frame = card.querySelector("iframe") || (
+      host && host.dataset.house === card.dataset.house ? host.querySelector("iframe") : null
+    );
     if (!frame) return null;
     bindFrame(frame);
     const doc = frameDoc(frame);

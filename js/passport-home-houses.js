@@ -1,4 +1,4 @@
-/* Mount each original engine in its own document, inside the Home. */
+/* Mount each original engine in its own document, inside the Home host. */
 (() => {
   "use strict";
   const root=document.getElementById("passport-casas");
@@ -138,48 +138,129 @@
       }
     } catch (_) {}
   }
-  root.querySelectorAll("details[data-house]").forEach(card=>{
-    function mount() {
-      if(!card.open||card.querySelector("iframe"))return;
-      const frame=document.createElement("iframe");
-      frame.title=card.dataset.name+" · player";
-      frame.src=card.dataset.house;
-      frame.allow="autoplay; encrypted-media";
-      frame.addEventListener("load",()=>{
-        try{
-          const doc=frame.contentDocument;
-          if(!doc)return;
-          if(!frame.contentWindow.PassportBus){
-            const script=doc.createElement("script");
-            script.src="/js/passport-bus.js?v=20260910";
-            script.onload = () => triggerAutoplay(frame);
-            doc.head.appendChild(script);
-          } else {
-            triggerAutoplay(frame);
-          }
-        }catch(_){}
-      });
-      card.querySelector(".casa-stage").appendChild(frame);
-    }
-    function unmount() {
-      const frame=card.querySelector("iframe");
-      if(!frame)return;
+  function hostBox() {
+    return document.getElementById("passport-casa-host");
+  }
+  function hostStage() {
+    const box = hostBox();
+    return box ? box.querySelector(".casa-host-stage") : null;
+  }
+  function houseFrames() {
+    return document.querySelectorAll("#passport-casa-host iframe, #passport-casas .casa-stage iframe");
+  }
+  function variantFor(src) {
+    if ((src || "").indexOf("radio-mundo-player") !== -1) return "host--world";
+    if (/live-rare|novelas|globo-de-ouro/.test(src || "")) return "host--media";
+    return "host--simple";
+  }
+  function teardownFrame() {
+    houseFrames().forEach(frame => {
       try {
         frame.contentWindow.PassportBus?.silence();
         window.PassportBus.unregister(frame.contentWindow);
-      }catch(_){}
+      } catch (_) {}
       frame.remove();
-    }
-    card.addEventListener("toggle",()=>card.open?mount():unmount());
-    card.querySelector("[data-close-house]").addEventListener("click",()=>{
-      card.open=false;unmount();card.querySelector("summary").focus();
     });
-    mount();
+  }
+  function hideHost() {
+    const box = hostBox();
+    if (!box) return;
+    box.hidden = true;
+    box.classList.remove("is-active", "host--simple", "host--media", "host--world");
+    box.removeAttribute("data-house");
+    box.removeAttribute("data-name");
+    const title = document.getElementById("passport-casa-host-title");
+    if (title) title.textContent = "";
+  }
+  function paintHost(card) {
+    const box = hostBox();
+    const stage = hostStage();
+    if (!box || !stage) return null;
+    const src = card.dataset.house || "";
+    box.classList.remove("host--simple", "host--media", "host--world");
+    box.classList.add(variantFor(src), "is-active");
+    box.hidden = false;
+    box.dataset.house = src;
+    box.dataset.name = card.dataset.name || "";
+    const title = document.getElementById("passport-casa-host-title");
+    if (title) title.textContent = card.dataset.name || "";
+    const open = document.getElementById("passport-casa-host-open");
+    if (open) open.href = src;
+    return stage;
+  }
+  function createFrame(card) {
+    const stage = paintHost(card);
+    if (!stage) return;
+    const frame = document.createElement("iframe");
+    frame.title = (card.dataset.name || "Sinal") + " · player";
+    frame.src = card.dataset.house;
+    frame.allow = "autoplay; encrypted-media";
+    frame.addEventListener("load", () => {
+      if (!frame.isConnected) return;
+      try {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+        if (!doc.getElementById("pp-home-host-frame-style")) {
+          const style = doc.createElement("style");
+          style.id = "pp-home-host-frame-style";
+          style.textContent = "#fofonete-dock,.fofonete-dock{display:none!important}";
+          doc.head.appendChild(style);
+        }
+        if (!frame.contentWindow.PassportBus) {
+          const script = doc.createElement("script");
+          script.src = "/js/passport-bus.js?v=20260910";
+          script.onload = () => triggerAutoplay(frame);
+          doc.head.appendChild(script);
+        } else {
+          triggerAutoplay(frame);
+        }
+      } catch (_) {}
+    });
+    stage.appendChild(frame);
+  }
+  let gate = false;
+  let active = null;
+  function activate(card) {
+    if (active === card && hostStage() && hostStage().querySelector("iframe")) return;
+    gate = true;
+    root.querySelectorAll("details[data-house]").forEach(other => {
+      if (other !== card && other.open) other.open = false;
+    });
+    gate = false;
+    teardownFrame();
+    active = card;
+    gate = true;
+    if (!card.open) card.open = true;
+    gate = false;
+    createFrame(card);
+  }
+  function deactivate() {
+    teardownFrame();
+    const card = active;
+    active = null;
+    gate = true;
+    if (card && card.open) card.open = false;
+    gate = false;
+    hideHost();
+  }
+  root.querySelectorAll("details[data-house]").forEach(card => {
+    card.addEventListener("toggle", () => {
+      if (gate) return;
+      if (card.open) activate(card);
+      else if (active === card) deactivate();
+    });
+    const closeBtn = card.querySelector("[data-close-house]");
+    if (closeBtn) closeBtn.addEventListener("click", () => {
+      deactivate();
+      const summary = card.querySelector("summary");
+      if (summary) summary.focus();
+    });
   });
-  window.addEventListener("message",event=>{
-    if(event.origin!==location.origin||event.data?.type!=="passport-house-height")return;
-    const frame=[...root.querySelectorAll("iframe")].find(frame=>frame.contentWindow===event.source);
-    const height=Number(event.data.height);
-    if(frame&&Number.isFinite(height)&&height>0)frame.style.height=Math.min(1100,Math.max(300,height+12))+"px";
+  const hostClose = document.getElementById("passport-casa-host-close");
+  if (hostClose) hostClose.addEventListener("click", () => {
+    const card = active;
+    deactivate();
+    const summary = card && card.querySelector("summary");
+    if (summary) summary.focus();
   });
 })();
