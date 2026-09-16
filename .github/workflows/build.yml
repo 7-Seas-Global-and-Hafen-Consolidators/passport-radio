@@ -56,6 +56,8 @@ jobs:
           node --check js/global-signals-lib.js
           node --check js/world-radio-player.js
           node --check js/passport-now-info.js
+          node --check js/tunnel-playlists.js
+          node --check js/tunnel-player.js
 
       - name: Validate critical editorial surfaces
         shell: bash
@@ -231,3 +233,7 @@ jobs:
       - name: Validate Home now-info informational layer
         shell: bash
         run: python tests/test_now_info_layer.py
+
+      - name: Validate Live & Rare curated archive
+        shell: bash
+        run: python tests/test_live_rare_curation.py

@@ -80,11 +80,14 @@
   let errorGuard = false;
 
   function currentSource() { return catalog[playlistIndex] || catalog[0]; }
+  function isVideo(src) { return !!(src && src.type === "video"); }
   function getIndex() {
+    if (isVideo(currentSource())) return 0;
     const n = yt && yt.getPlaylistIndex ? Number(yt.getPlaylistIndex()) : NaN;
     return Number.isFinite(n) && n >= 0 ? n : lastKnownItemIndex;
   }
   function getSize() {
+    if (isVideo(currentSource())) return 1;
     const list = yt && yt.getPlaylist ? yt.getPlaylist() : [];
     if (Array.isArray(list) && list.length) playlistSize = list.length;
     return playlistSize;
@@ -135,7 +138,11 @@
     ui.consoleMeta.textContent = `${src.label || src.group || "Playlist"} · ${playlistIndex + 1}/${catalog.length} · carregando`;
     ui.diagnostic.textContent = `playlist ${playlistIndex + 1}/${catalog.length} · faixa ?/?`;
     try {
-      yt.cuePlaylist({ listType: "playlist", list: src.id, index: 0, startSeconds: 0, suggestedQuality: "default" });
+      if (isVideo(src)) {
+        yt.cueVideoById({ videoId: src.id, startSeconds: 0, suggestedQuality: "default" });
+      } else {
+        yt.cuePlaylist({ listType: "playlist", list: src.id, index: 0, startSeconds: 0, suggestedQuality: "default" });
+      }
     } catch (_) {
       if (my === loadToken) setTimeout(() => loadPlaylist(playlistIndex + 1, autoplay), 400);
       return;
@@ -179,12 +186,20 @@
     desiredPlay = true;
     const idx = getIndex();
     const size = getSize();
+    if (isVideo(currentSource())) {
+      loadPlaylist(playlistIndex + direction, true);
+      return;
+    }
     if (direction > 0 && size && idx >= size - 1) {
       loadPlaylist(playlistIndex + 1, true);
       return;
     }
     if (direction < 0 && idx <= 0) {
       const previous = (playlistIndex - 1 + catalog.length) % catalog.length;
+      if (isVideo(catalog[previous])) {
+        loadPlaylist(previous, true);
+        return;
+      }
       playlistIndex = previous;
       const my = ++loadToken;
       playlistSize = 0;
