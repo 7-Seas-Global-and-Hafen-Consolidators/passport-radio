@@ -219,8 +219,8 @@ jobs:
               raise SystemExit(f'World Dial station count regressed unexpectedly: {station_count}')
           if 'autoplay=' in player.lower():
               raise SystemExit('World Dial player must not enable autoplay')
-          if '/js/world-radio-player.js?v=10' not in page:
-              raise SystemExit('World Dial cache version is not v10')
+          if '/js/world-radio-player.js?v=11' not in page:
+              raise SystemExit('World Dial cache version is not v11')
 
           print('OK World Dial HLS compatibility contract')
           print('OK Finland terrestrial stream preserved')
