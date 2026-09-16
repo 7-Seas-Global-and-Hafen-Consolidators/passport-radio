@@ -55,6 +55,7 @@ jobs:
           node --check js/global-signal-page.js
           node --check js/global-signals-lib.js
           node --check js/world-radio-player.js
+          node --check js/passport-now-info.js
 
       - name: Validate critical editorial surfaces
         shell: bash
@@ -226,3 +227,7 @@ jobs:
           print('OK Finland terrestrial stream preserved')
           print(f'OK World Dial station count: {station_count}')
           PY
+
+      - name: Validate Home now-info informational layer
+        shell: bash
+        run: python tests/test_now_info_layer.py
