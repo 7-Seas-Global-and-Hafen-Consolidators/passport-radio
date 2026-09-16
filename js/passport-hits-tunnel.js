@@ -10,6 +10,15 @@
   const anchor = document.getElementById("passportMPB") || document.getElementById("passportSoul") || document.getElementById("passport80s");
   if (!anchor) return;
 
+  const previous = document.getElementById("passportHits");
+  if (previous) {
+    previous.querySelectorAll("audio").forEach(a => {
+      try { a.pause(); a.removeAttribute("src"); a.load(); } catch (_) {}
+    });
+    previous.remove();
+  }
+  document.querySelectorAll("style[data-passport-hits-style]").forEach(el => el.remove());
+
   const STREAM = "https://listen.181fm.com/181-power_128k.mp3";
 
   const style = document.createElement("style");
