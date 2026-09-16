@@ -39,6 +39,13 @@
 .wd-deck-lang:empty{display:none}
 .wd-deck-status{display:block;font-size:.68rem;font-weight:800;color:#8f8;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #world-audio{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+/* Official third-party attribution: compact viewport, complete iframe remains accessible. */
+#world-embed:not([hidden]){
+  flex:0 1 240px;width:min(240px,100%);align-self:center;
+}
+#world-embed:not([hidden]) iframe{
+  display:block;width:100%;height:112px;border:0;
+}
 .wd-deck-embed[hidden]{display:none!important}
 .wd-deck-controls{
   display:flex;flex-wrap:nowrap!important;flex:0 0 auto;gap:8px;
