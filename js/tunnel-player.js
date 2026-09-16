@@ -69,21 +69,10 @@
     progress: $("tunnelProgress"), diagnostic: $("tunnelDiagnostic")
   };
 
-  const sourceGroups = [...new Set(catalog.map(item => item.group || "LIVE ARCHIVE"))];
-  const sourceEntries = new Map(sourceGroups.map(group => [
-    group, catalog.map((item, index) => ({ item, index }))
-      .filter(entry => (entry.item.group || "LIVE ARCHIVE") === group)
-      .map(entry => entry.index)
-  ]));
-  const sourcePositions = new Map(sourceGroups.map(group => {
-    const entries = sourceEntries.get(group);
-    return [group, Math.floor(Math.random() * entries.length)];
-  }));
-  const initialGroup = sourceGroups[Math.floor(Math.random() * sourceGroups.length)];
   let yt = null;
   let ready = false;
   let desiredPlay = false;
-  let playlistIndex = sourceEntries.get(initialGroup)[sourcePositions.get(initialGroup)];
+  let playlistIndex = 0;
   let playlistSize = 0;
   let lastKnownItemIndex = 0;
   let progressTimer = null;
@@ -91,30 +80,14 @@
   let errorGuard = false;
 
   function currentSource() { return catalog[playlistIndex] || catalog[0]; }
-  function rememberSourcePosition(index) {
-    const source = catalog[index] || catalog[0];
-    const group = source.group || "LIVE ARCHIVE";
-    const entries = sourceEntries.get(group) || [];
-    const position = entries.indexOf(index);
-    if (position >= 0) sourcePositions.set(group, position);
-  }
-  function rotatingPlaylistIndex(direction) {
-    const activeGroup = currentSource().group || "LIVE ARCHIVE";
-    const start = sourceGroups.indexOf(activeGroup);
-    const nextGroup = sourceGroups[(start + direction + sourceGroups.length) % sourceGroups.length];
-    const entries = sourceEntries.get(nextGroup);
-    const current = sourcePositions.get(nextGroup) || 0;
-    const position = (current + direction + entries.length) % entries.length;
-    sourcePositions.set(nextGroup, position);
-    return entries[position];
-  }
+  function isVideo(src) { return !!(src && src.type === "video"); }
   function getIndex() {
-    if (currentSource().type === "video") return 0;
+    if (isVideo(currentSource())) return 0;
     const n = yt && yt.getPlaylistIndex ? Number(yt.getPlaylistIndex()) : NaN;
     return Number.isFinite(n) && n >= 0 ? n : lastKnownItemIndex;
   }
   function getSize() {
-    if (currentSource().type === "video") return 1;
+    if (isVideo(currentSource())) return 1;
     const list = yt && yt.getPlaylist ? yt.getPlaylist() : [];
     if (Array.isArray(list) && list.length) playlistSize = list.length;
     return playlistSize;
@@ -156,7 +129,6 @@
     if (!ready || !yt) return;
     const my = ++loadToken;
     playlistIndex = (n + catalog.length) % catalog.length;
-    rememberSourcePosition(playlistIndex);
     playlistSize = 0;
     lastKnownItemIndex = 0;
     errorGuard = false;
@@ -166,13 +138,13 @@
     ui.consoleMeta.textContent = `${src.label || src.group || "Playlist"} · ${playlistIndex + 1}/${catalog.length} · carregando`;
     ui.diagnostic.textContent = `playlist ${playlistIndex + 1}/${catalog.length} · faixa ?/?`;
     try {
-      if (src.type === "video") {
+      if (isVideo(src)) {
         yt.cueVideoById({ videoId: src.id, startSeconds: 0, suggestedQuality: "default" });
       } else {
         yt.cuePlaylist({ listType: "playlist", list: src.id, index: 0, startSeconds: 0, suggestedQuality: "default" });
       }
     } catch (_) {
-      if (my === loadToken) setTimeout(() => loadPlaylist(rotatingPlaylistIndex(1), autoplay), 400);
+      if (my === loadToken) setTimeout(() => loadPlaylist(playlistIndex + 1, autoplay), 400);
       return;
     }
     const started = Date.now();
@@ -192,7 +164,7 @@
         return;
       }
       if (Date.now() - started > 12000) {
-        loadPlaylist(rotatingPlaylistIndex(1), autoplay);
+        loadPlaylist(playlistIndex + 1, autoplay);
         return;
       }
       setTimeout(wait, 250);
@@ -205,7 +177,7 @@
     stopProgress();
     const shouldPlay = desiredPlay || (yt.getPlayerState && yt.getPlayerState() === YT.PlayerState.PLAYING);
     desiredPlay = shouldPlay;
-    loadPlaylist(rotatingPlaylistIndex(direction), shouldPlay);
+    loadPlaylist(playlistIndex + direction, shouldPlay);
   }
 
   function advance(direction) {
@@ -214,18 +186,21 @@
     desiredPlay = true;
     const idx = getIndex();
     const size = getSize();
-    if (currentSource().type === "video") {
-      loadPlaylist(rotatingPlaylistIndex(direction), true);
+    if (isVideo(currentSource())) {
+      loadPlaylist(playlistIndex + direction, true);
       return;
     }
     if (direction > 0 && size && idx >= size - 1) {
-      loadPlaylist(rotatingPlaylistIndex(1), true);
+      loadPlaylist(playlistIndex + 1, true);
       return;
     }
     if (direction < 0 && idx <= 0) {
-      const previous = rotatingPlaylistIndex(-1);
+      const previous = (playlistIndex - 1 + catalog.length) % catalog.length;
+      if (isVideo(catalog[previous])) {
+        loadPlaylist(previous, true);
+        return;
+      }
       playlistIndex = previous;
-      rememberSourcePosition(playlistIndex);
       const my = ++loadToken;
       playlistSize = 0;
       ui.status.textContent = "LOADING";
@@ -248,7 +223,7 @@
     try {
       direction > 0 ? yt.nextVideo() : yt.previousVideo();
     } catch (_) {
-      direction > 0 ? loadPlaylist(rotatingPlaylistIndex(1), true) : loadPlaylist(rotatingPlaylistIndex(-1), true);
+      direction > 0 ? loadPlaylist(playlistIndex + 1, true) : loadPlaylist(playlistIndex - 1, true);
     }
   }
 
@@ -270,7 +245,7 @@
       width: "480", height: "270",
       playerVars: { playsinline: 1, rel: 0, controls: 0, fs: 0, disablekb: 1, iv_load_policy: 3, autoplay: 0, origin: location.origin },
       events: {
-        onReady: () => { ready = true; loadPlaylist(playlistIndex, false); },
+        onReady: () => { ready = true; loadPlaylist(0, false); },
         onStateChange: e => {
           if (!ready) return;
           if (e.data === YT.PlayerState.CUED) {
