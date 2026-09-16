@@ -72,7 +72,7 @@
   let yt = null;
   let ready = false;
   let desiredPlay = false;
-  let playlistIndex = 0;
+  let playlistIndex = Math.floor(Math.random() * catalog.length);
   let playlistSize = 0;
   let lastKnownItemIndex = 0;
   let progressTimer = null;
@@ -81,10 +81,12 @@
 
   function currentSource() { return catalog[playlistIndex] || catalog[0]; }
   function getIndex() {
+    if (currentSource().type === "video") return 0;
     const n = yt && yt.getPlaylistIndex ? Number(yt.getPlaylistIndex()) : NaN;
     return Number.isFinite(n) && n >= 0 ? n : lastKnownItemIndex;
   }
   function getSize() {
+    if (currentSource().type === "video") return 1;
     const list = yt && yt.getPlaylist ? yt.getPlaylist() : [];
     if (Array.isArray(list) && list.length) playlistSize = list.length;
     return playlistSize;
@@ -135,7 +137,11 @@
     ui.consoleMeta.textContent = `${src.label || src.group || "Playlist"} · ${playlistIndex + 1}/${catalog.length} · carregando`;
     ui.diagnostic.textContent = `playlist ${playlistIndex + 1}/${catalog.length} · faixa ?/?`;
     try {
-      yt.cuePlaylist({ listType: "playlist", list: src.id, index: 0, startSeconds: 0, suggestedQuality: "default" });
+      if (src.type === "video") {
+        yt.cueVideoById({ videoId: src.id, startSeconds: 0, suggestedQuality: "default" });
+      } else {
+        yt.cuePlaylist({ listType: "playlist", list: src.id, index: 0, startSeconds: 0, suggestedQuality: "default" });
+      }
     } catch (_) {
       if (my === loadToken) setTimeout(() => loadPlaylist(playlistIndex + 1, autoplay), 400);
       return;
@@ -179,6 +185,10 @@
     desiredPlay = true;
     const idx = getIndex();
     const size = getSize();
+    if (currentSource().type === "video") {
+      loadPlaylist(playlistIndex + direction, true);
+      return;
+    }
     if (direction > 0 && size && idx >= size - 1) {
       loadPlaylist(playlistIndex + 1, true);
       return;
@@ -230,7 +240,7 @@
       width: "480", height: "270",
       playerVars: { playsinline: 1, rel: 0, controls: 0, fs: 0, disablekb: 1, iv_load_policy: 3, autoplay: 0, origin: location.origin },
       events: {
-        onReady: () => { ready = true; loadPlaylist(0, false); },
+        onReady: () => { ready = true; loadPlaylist(playlistIndex, false); },
         onStateChange: e => {
           if (!ready) return;
           if (e.data === YT.PlayerState.CUED) {
