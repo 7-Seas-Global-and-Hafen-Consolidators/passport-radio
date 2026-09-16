@@ -51,7 +51,6 @@
   section.className = "passport-hits-section";
   section.id = "passportHits";
   section.dataset.passportTunnelPanel = "1";
-  section.hidden = true;
   section.setAttribute("aria-labelledby", "passportHitsHeading");
   section.innerHTML = `
     <div class="passport-hits-shell">

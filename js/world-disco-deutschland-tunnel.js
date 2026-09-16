@@ -10,7 +10,6 @@
   panel.id = "passportWorldDiscoDeutschland";
   panel.className = "passport80s-section";
   panel.dataset.passportTunnelPanel = "1";
-  panel.hidden = true;
   panel.innerHTML = `
     <div class="live-shell eighties-layout">
       <div class="passport80s-section__head">
