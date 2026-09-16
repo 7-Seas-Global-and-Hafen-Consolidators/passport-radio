@@ -58,6 +58,7 @@ jobs:
           node --check js/passport-now-info.js
           node --check js/tunnel-playlists.js
           node --check js/tunnel-player.js
+          node --check js/passport-home-houses.js
 
       - name: Validate critical editorial surfaces
         shell: bash
@@ -237,3 +238,7 @@ jobs:
       - name: Validate Live & Rare curated archive
         shell: bash
         run: python tests/test_live_rare_curation.py
+
+      - name: Validate Home single-signal host
+        shell: bash
+        run: python tests/test_home_signal_host.py

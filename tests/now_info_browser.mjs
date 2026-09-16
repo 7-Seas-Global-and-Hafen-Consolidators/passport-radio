@@ -119,7 +119,7 @@ async function markPlaying(frame, house) {
 }
 
 async function confirmHouse(page, house, timeout = 5000) {
-  const sel = `#passport-casas details[data-house="/${house.file}"] iframe`;
+  const sel = `#passport-casa-host iframe`;
   const start = Date.now();
   let lastFrame = null;
   while (Date.now() - start < timeout) {
@@ -172,8 +172,8 @@ async function openHouse(page, file) {
   await page.locator(sel).scrollIntoViewIfNeeded();
   const open = await page.getAttribute(sel, "open");
   if (open === null) await page.locator(`${sel} > summary`).click({force: true});
-  await page.waitForSelector(`${sel} iframe`, {timeout: 8000});
-  const handle = await page.$(`${sel} iframe`);
+  await page.waitForSelector(`#passport-casa-host iframe`, {timeout: 8000});
+  const handle = await page.$(`#passport-casa-host iframe`);
   const frame = await handle.contentFrame();
   if (frame) {
     try { await frame.waitForLoadState("domcontentloaded"); } catch (_) {}
