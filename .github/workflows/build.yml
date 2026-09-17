@@ -246,3 +246,7 @@ jobs:
       - name: Validate Home embed compact presentation
         shell: bash
         run: python tests/test_home_embed_compact.py
+
+      - name: Validate Home SINAIS composition
+        shell: bash
+        run: python tests/test_home_sinais_composition.py
