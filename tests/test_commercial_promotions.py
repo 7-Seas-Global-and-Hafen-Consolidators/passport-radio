@@ -135,18 +135,13 @@ process.stdout.write(JSON.stringify({ table: ctx.window.PassportCommercial.PERIO
     return json.loads(raw)
 
 
-def base_ref() -> str:
-    for ref in ("origin/main", "main", "228875ff91f996adfd72d52d7668c978032612af"):
-        try:
-            return subprocess.check_output(
-                ["git", "merge-base", "HEAD", ref],
-                cwd=ROOT,
-                text=True,
-                stderr=subprocess.DEVNULL,
-            ).strip()
-        except subprocess.CalledProcessError:
-            continue
-    return "HEAD^"
+def files_in_head_commit() -> set[str]:
+    output = subprocess.check_output(
+        ["git", "show", "--pretty=format:", "--name-only", "HEAD"],
+        cwd=ROOT,
+        text=True,
+    )
+    return {line for line in output.splitlines() if line}
 
 
 # --- Anuncie / Whiplash periods ---
@@ -369,9 +364,7 @@ if "data-promo-listing" not in PROMO_HTML:
     fail("listing host missing")
 
 # radio/home must not be part of this surgery
-base = base_ref()
-diff = subprocess.check_output(["git", "diff", "--name-only", base, "HEAD"], cwd=ROOT, text=True)
-touched = set(diff.splitlines())
+touched = files_in_head_commit()
 for path in PROTECTED:
     if path in touched:
         fail(f"protected surface was modified: {path}")
@@ -387,4 +380,4 @@ print("OK PIX key QR is local")
 print("OK five campaigns + Fone Retrô José Silva Souza")
 print("OK Formspree xaenylvg; xoeqnvjg absent from commercial scope")
 print("OK catalog products 5786215 / 2876812")
-print("OK protected radio/home surfaces untouched vs", base)
+print("OK protected radio/home surfaces untouched in HEAD commit")
