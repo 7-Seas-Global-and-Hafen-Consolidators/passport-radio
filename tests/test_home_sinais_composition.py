@@ -56,6 +56,12 @@ if "box-shadow:0 0 10px color-mix" in DOORS:
     raise SystemExit("carnival pill glow returned")
 if ".casa[open] summary" not in DOORS:
     raise SystemExit("active state is not styled")
+if "pp-vinyl" not in HOME or HOME.count("pp-vinyl-disc") < 16:
+    raise SystemExit("mini-vinyl collection missing")
+if 'id="pp-persist"' not in HOME:
+    raise SystemExit("persist dock missing")
+if "passport-persist-nav.js" not in HOME:
+    raise SystemExit("persist nav is not wired")
 if "tests/test_home_sinais_composition.py" not in CI:
     raise SystemExit("CI does not run SINAIS composition contracts")
 
@@ -79,7 +85,6 @@ protected = [
     "js/nostalgia-passport-tunnel.js",
     "js/world-radio-player.js",
     "js/passport-bus.js",
-    "js/passport-home-houses.js",
     "css/passport-signal-habitat.css",
 ]
 

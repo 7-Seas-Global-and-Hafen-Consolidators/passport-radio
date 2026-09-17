@@ -59,6 +59,7 @@ jobs:
           node --check js/tunnel-playlists.js
           node --check js/tunnel-player.js
           node --check js/passport-home-houses.js
+          node --check js/passport-persist-nav.js
 
       - name: Validate critical editorial surfaces
         shell: bash
@@ -250,3 +251,7 @@ jobs:
       - name: Validate Home SINAIS composition
         shell: bash
         run: python tests/test_home_sinais_composition.py
+
+      - name: Validate Home vinyl persist contracts
+        shell: bash
+        run: python tests/test_home_vinyl_persist.py

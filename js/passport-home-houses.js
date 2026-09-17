@@ -195,6 +195,9 @@
     frame.title = (card.dataset.name || "Sinal") + " · player";
     frame.src = card.dataset.house;
     frame.allow = "autoplay; encrypted-media";
+    frame.dataset.ppBorn = String(Date.now());
+    frame.dataset.ppPersist = (window.__ppHouseToken = (window.__ppHouseToken || 0) + 1);
+    window.__ppHouseFrame = frame;
     frame.addEventListener("load", () => {
       if (!frame.isConnected) return;
       try {
@@ -203,16 +206,27 @@
         if (!doc.getElementById("pp-home-host-frame-style")) {
           const style = doc.createElement("style");
           style.id = "pp-home-host-frame-style";
-          style.textContent = "#fofonete-dock,.fofonete-dock{display:none!important}";
+          style.textContent = "#fofonete-dock,.fofonete-dock{display:none!important}"
+            + "html.pp-signal-frame .passport-live-channels,html.pp-signal-frame .passport80s-picker,html.pp-signal-frame #novelasDeck,html.pp-signal-frame #world-stations{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:8px 10px!important;grid-template-columns:none!important}"
+            + "html.pp-signal-frame .passport-live-channel,html.pp-signal-frame .passport80s-station,html.pp-signal-frame #novelasDeck button,html.pp-signal-frame #world-stations .station{width:64px!important;min-width:64px!important;max-width:76px!important;min-height:82px!important;padding:4px 2px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-end!important;background:transparent!important;border:0!important;color:#e8e2d6!important;border-radius:0!important;text-align:center!important;font-size:.5rem!important}"
+            + "html.pp-signal-frame .passport-live-channel::before,html.pp-signal-frame .passport80s-station::before,html.pp-signal-frame #novelasDeck button::before,html.pp-signal-frame #world-stations .station::before{content:\"\"!important;display:block!important;width:46px!important;height:46px!important;border-radius:50%!important;margin:0 auto 6px!important;background:repeating-radial-gradient(circle,#0a0a0a 0 2px,#161616 2px 3px)!important;box-shadow:0 0 0 1px #c4a574!important}"
+            + "html.pp-signal-frame #world-stations .station span{display:none!important}";
           doc.head.appendChild(style);
+        }
+        if (!doc.getElementById("pp-vinyl-internal")) {
+          const link = doc.createElement("link");
+          link.id = "pp-vinyl-internal";
+          link.rel = "stylesheet";
+          link.href = "/css/passport-vinyl-internal.css?v=20260917vinyl";
+          doc.head.appendChild(link);
         }
         if (!frame.contentWindow.PassportBus) {
           const script = doc.createElement("script");
           script.src = "/js/passport-bus.js?v=20260910";
-          script.onload = () => triggerAutoplay(frame);
+          script.onload = () => syncVinylState();
           doc.head.appendChild(script);
         } else {
-          triggerAutoplay(frame);
+          syncVinylState();
         }
       } catch (_) {}
     });
@@ -233,6 +247,11 @@
     if (!card.open) card.open = true;
     gate = false;
     createFrame(card);
+    syncVinylState();
+    if (!document.body.classList.contains("pp-nav-away")) {
+      const box = hostBox();
+      if (box) box.scrollIntoView({behavior: "auto", block: "nearest"});
+    }
   }
   function deactivate() {
     teardownFrame();
@@ -242,6 +261,98 @@
     if (card && card.open) card.open = false;
     gate = false;
     hideHost();
+    syncVinylState();
+  }
+  function playButton(doc, house) {
+    if (!doc) return null;
+    if (house === "radio-continuous.html") return doc.getElementById("passport-live-play");
+    if (house === "radio-live-rare.html") return doc.getElementById("tunnelPlay");
+    if (house === "radio-80s.html") return doc.getElementById("passport80sPlay");
+    if (house === "radio-soul.html") return doc.getElementById("passportSoulPlay");
+    if (house === "radio-mpb.html") return doc.getElementById("passportMPBPlay");
+    if (house === "radio-hits.html") return doc.getElementById("passportHitsPlay");
+    if (house === "radio-rock-brasil.html") return doc.getElementById("passportBRRockPlay");
+    if (house === "radio-50s-60s.html") return doc.getElementById("passport5060Play");
+    if (house === "radio-novelas.html") return doc.getElementById("novelasPlay");
+    if (house === "globo-de-ouro-player.html") return doc.getElementById("gdoPlay");
+    if (house === "radio-mundo-player.html") return doc.getElementById("world-play");
+    if (house === "radio-jovem-guarda.html") return doc.getElementById("passportJovemGuardaPlay");
+    if (house === "radio-nostalgia-passport.html") return doc.getElementById("passportNostalgiaPlay");
+    if (house === "radio-world-tunnel-reggae.html") return doc.getElementById("passportWorldTunnelReggaePlay");
+    if (house === "radio-world-disco-deutschland.html") return doc.getElementById("passportWorldDiscoDeutschlandPlay");
+    if (house === "radio-flash-house.html") return doc.getElementById("passportFlashHousePlay");
+    return null;
+  }
+  function currentFrame() {
+    const stage = hostStage();
+    return stage ? stage.querySelector("iframe") : null;
+  }
+  function isPlayingNow() {
+    const frame = currentFrame();
+    if (!frame) return false;
+    try { return mediaPlaying(frame.contentDocument, frame.contentWindow); } catch (_) { return false; }
+  }
+  function innerLabel() {
+    const frame = currentFrame();
+    if (!frame) return "";
+    try {
+      const doc = frame.contentDocument;
+      if (!doc) return "";
+      const ids = ["passport-live-channel-name","passport80sTitle","world-name","tunnelTitle","tunnelConsoleTitle","novelasStatus"];
+      for (let i = 0; i < ids.length; i++) {
+        const t = (doc.getElementById(ids[i]) && doc.getElementById(ids[i]).textContent || "").trim();
+        if (t && t.length < 80) return t;
+      }
+      const active = doc.querySelector(".passport-live-channel.is-active, .passport80s-station.is-active, .station.is-active");
+      if (active) return (active.textContent || "").trim();
+    } catch (_) {}
+    return "";
+  }
+  function syncVinylState() {
+    const box = hostBox();
+    const src = box && !box.hidden ? (box.dataset.house || "") : "";
+    const playing = !!(src && isPlayingNow());
+    root.querySelectorAll("details[data-house]").forEach((card) => {
+      const on = card.dataset.house === src;
+      card.classList.toggle("is-selected", on);
+      card.classList.toggle("is-playing", on && playing);
+    });
+    document.body.classList.toggle("pp-house-selected", !!src);
+    document.body.classList.toggle("pp-house-playing", playing);
+    const bar = document.getElementById("pp-persist-bar");
+    if (bar) {
+      const show = !!(src && document.body.classList.contains("pp-nav-away"));
+      if (show) bar.removeAttribute("hidden");
+      else bar.setAttribute("hidden", "");
+      bar.classList.toggle("is-playing", playing);
+      const name = document.getElementById("pp-persist-name");
+      const sub = document.getElementById("pp-persist-sub");
+      const pause = document.getElementById("pp-persist-pause");
+      if (name) name.textContent = (box && box.dataset.name) || "";
+      if (sub) sub.textContent = innerLabel() || (playing ? "NO AR" : (src ? "SELECIONADO" : ""));
+      if (pause) pause.textContent = playing ? "Pausar" : "Tocar";
+    }
+    const hostPlay = document.getElementById("passport-casa-host-play");
+    if (hostPlay) hostPlay.textContent = playing ? "Pausar" : "Tocar";
+  }
+  function togglePlay() {
+    const frame = currentFrame();
+    if (!frame) return;
+    try {
+      const doc = frame.contentDocument;
+      const win = frame.contentWindow;
+      const house = (frame.src || "").split("/").pop().split("?")[0];
+      if (win && win.PassportBus) win.PassportBus.claim(win);
+      const btn = playButton(doc, house);
+      if (btn) btn.click();
+      else triggerAutoplay(frame);
+    } catch (_) {}
+    setTimeout(syncVinylState, 80);
+  }
+  function goStage() {
+    if (window.PassportPersistNav) window.PassportPersistNav.home();
+    const box = hostBox();
+    if (box) box.scrollIntoView({behavior: "smooth", block: "start"});
   }
   root.querySelectorAll("details[data-house]").forEach(card => {
     card.addEventListener("toggle", () => {
@@ -263,4 +374,24 @@
     const summary = card && card.querySelector("summary");
     if (summary) summary.focus();
   });
+  const hostPlayBtn = document.getElementById("passport-casa-host-play");
+  if (hostPlayBtn) hostPlayBtn.addEventListener("click", () => togglePlay());
+  const persistPause = document.getElementById("pp-persist-pause");
+  if (persistPause) persistPause.addEventListener("click", () => togglePlay());
+  const persistStop = document.getElementById("pp-persist-stop");
+  if (persistStop) persistStop.addEventListener("click", () => {
+    deactivate();
+  });
+  const persistStage = document.getElementById("pp-persist-stage");
+  if (persistStage) persistStage.addEventListener("click", () => goStage());
+  setInterval(syncVinylState, 500);
+  window.PassportHouses = {
+    activate,
+    deactivate,
+    togglePlay,
+    sync: syncVinylState,
+    frame: currentFrame,
+    token() { return window.__ppHouseToken || 0; },
+    playing: isPlayingNow
+  };
 })();
