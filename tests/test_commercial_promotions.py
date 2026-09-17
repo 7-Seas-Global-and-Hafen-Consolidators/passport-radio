@@ -248,8 +248,12 @@ if uci["prize_image"] != "/images/promocoes/uci-cinemas.png":
     fail("UCI image not internalized")
 if uci["campaign_code_prefix"] != "PR-UCI":
     fail("UCI prefix changed")
-if not uci["registration_enabled"]:
-    fail("UCI must remain open")
+if uci["open_at"] != "2026-09-01T00:00:00-03:00" or uci["close_at"] != "2026-09-30T23:59:00-03:00":
+    fail("UCI open/close changed")
+if uci["draw_at"] != "2026-10-01T12:00:00-03:00" or uci["result_at"] != "2026-10-02T12:00:00-03:00":
+    fail("UCI draw/result not set")
+if uci.get("calendar_pending"):
+    fail("UCI calendar_pending returned")
 
 queen = campaigns["PR-0005"]
 sf = campaigns["PR-0004"]
@@ -259,8 +263,20 @@ if queen.get("winner") or sf.get("winner"):
     fail("future campaigns must not invent winners")
 if queen.get("premiere_at") != "2026-10-07" or sf.get("premiere_at") != "2026-10-15":
     fail("UCI exhibition dates for Queen/Street Fighter changed")
-if not queen.get("calendar_pending") or not sf.get("calendar_pending"):
-    fail("pending calendars were invented")
+if queen.get("calendar_pending") or sf.get("calendar_pending"):
+    fail("calendar_pending must be removed now that dates exist")
+if queen["open_at"] != "2026-09-18T00:00:00-03:00" or queen["close_at"] != "2026-10-03T23:59:00-03:00":
+    fail("Queen open/close mismatch")
+if queen["draw_at"] != "2026-10-04T12:00:00-03:00" or queen["result_at"] != "2026-10-05T12:00:00-03:00":
+    fail("Queen draw/result mismatch")
+if "QUAL MÚSICA DO QUEEN VOCÊ ESCOLHERIA" not in queen["question"]:
+    fail("Queen question missing")
+if sf["open_at"] != "2026-09-22T00:00:00-03:00" or sf["close_at"] != "2026-10-10T23:59:00-03:00":
+    fail("Street Fighter open/close mismatch")
+if sf["draw_at"] != "2026-10-11T12:00:00-03:00" or sf["result_at"] != "2026-10-12T12:00:00-03:00":
+    fail("Street Fighter draw/result mismatch")
+if "QUAL PERSONAGEM DE STREET FIGHTER" not in sf["question"]:
+    fail("Street Fighter question missing")
 
 caneca = campaigns["PR-0006"]
 camiseta = campaigns["PR-0007"]
@@ -272,12 +288,28 @@ if not caneca["requirements"]["whatsapp"] or not caneca["requirements"]["telegra
     fail("caneca requirements missing")
 if caneca["prize_image"].startswith("http"):
     fail("caneca image still hotlinked")
+if caneca["open_at"] != "2026-09-25T00:00:00-03:00" or caneca["close_at"] != "2026-10-15T23:59:00-03:00":
+    fail("caneca calendar mismatch")
+if caneca["draw_at"] != "2026-10-16T12:00:00-03:00" or caneca["result_at"] != "2026-10-17T12:00:00-03:00":
+    fail("caneca draw/result mismatch")
+if caneca.get("calendar_pending"):
+    fail("caneca calendar_pending returned")
+if caneca["requirements"].get("minimum_referrals") is not None:
+    fail("minimum_referrals was invented")
 if camiseta["product_id"] != "2876812" or camiseta.get("sku") != "1727018":
     fail("camiseta is not the real store product")
 if "QUAL BANDA VOCÊ CARREGARIA" not in camiseta["question"]:
     fail("camiseta question missing")
 if camiseta["prize_image"].startswith("http"):
     fail("camiseta image still hotlinked")
+if camiseta["open_at"] != "2026-10-01T00:00:00-03:00" or camiseta["close_at"] != "2026-10-22T23:59:00-03:00":
+    fail("camiseta calendar mismatch")
+if camiseta["draw_at"] != "2026-10-23T12:00:00-03:00" or camiseta["result_at"] != "2026-10-24T12:00:00-03:00":
+    fail("camiseta draw/result mismatch")
+if camiseta.get("calendar_pending"):
+    fail("camiseta calendar_pending returned")
+if camiseta["requirements"]["whatsapp"] or camiseta["requirements"]["telegram"] or camiseta["requirements"]["referral"]:
+    fail("camiseta social requirements were invented")
 
 fone = campaigns["PR-0001"]
 if fone.get("winner") != "JOSÉ SILVA SOUZA":
@@ -354,6 +386,95 @@ for name, slug in {
 if "data-promo-listing" not in PROMO_HTML:
     fail("listing host missing")
 
+if "calendar_pending" in json.dumps(CONFIG):
+    fail("calendar_pending still present in campaign config")
+if "statusFor" not in PROMO_JS or "registrationOpen" not in PROMO_JS:
+    fail("calendar status motor missing")
+if "INSCRIÇÕES ENCERRADAS" not in PROMO_JS or "AGUARDANDO SORTEIO" not in PROMO_JS:
+    fail("status labels missing from motor")
+
+status_script = r"""
+const fs = require("fs");
+const vm = require("vm");
+const payload = JSON.parse(process.argv[1]);
+const ctx = { window: {}, document: undefined, fetch: undefined, Intl };
+vm.runInNewContext(fs.readFileSync("js/promocoes.js", "utf8"), ctx);
+const api = ctx.window.PassportPromocoes;
+const config = JSON.parse(fs.readFileSync("data/promocoes.json", "utf8"));
+const byId = Object.fromEntries(config.campaigns.map((c) => [c.id, c]));
+const out = payload.cases.map((item) => ({
+  id: item.id,
+  at: item.at,
+  status: api.statusFor(byId[item.id], Date.parse(item.at)),
+  open: api.registrationOpen(byId[item.id], Date.parse(item.at)),
+}));
+process.stdout.write(JSON.stringify(out));
+"""
+
+status_cases = [
+    # UCI
+    {"id": "PR-0002", "at": "2026-08-31T12:00:00-03:00", "status": "EM BREVE", "open": False},
+    {"id": "PR-0002", "at": "2026-09-01T00:00:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0002", "at": "2026-09-17T16:00:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0002", "at": "2026-09-30T23:59:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0002", "at": "2026-10-01T00:00:00-03:00", "status": "INSCRIÇÕES ENCERRADAS", "open": False},
+    {"id": "PR-0002", "at": "2026-10-01T12:00:00-03:00", "status": "AGUARDANDO SORTEIO", "open": False},
+    {"id": "PR-0002", "at": "2026-10-02T12:00:00-03:00", "status": "AGUARDANDO RESULTADO", "open": False},
+    # Queen 18/09 → 03/10 → 04/10 → 05/10
+    {"id": "PR-0005", "at": "2026-09-17T23:59:00-03:00", "status": "EM BREVE", "open": False},
+    {"id": "PR-0005", "at": "2026-09-18T00:00:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0005", "at": "2026-10-03T23:59:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0005", "at": "2026-10-04T00:00:00-03:00", "status": "INSCRIÇÕES ENCERRADAS", "open": False},
+    {"id": "PR-0005", "at": "2026-10-04T12:00:00-03:00", "status": "AGUARDANDO SORTEIO", "open": False},
+    {"id": "PR-0005", "at": "2026-10-05T12:00:00-03:00", "status": "AGUARDANDO RESULTADO", "open": False},
+    # Street Fighter 22/09 → 10/10 → 11/10 → 12/10
+    {"id": "PR-0004", "at": "2026-09-21T12:00:00-03:00", "status": "EM BREVE", "open": False},
+    {"id": "PR-0004", "at": "2026-09-22T00:00:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0004", "at": "2026-10-10T23:59:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0004", "at": "2026-10-11T00:00:00-03:00", "status": "INSCRIÇÕES ENCERRADAS", "open": False},
+    {"id": "PR-0004", "at": "2026-10-11T12:00:00-03:00", "status": "AGUARDANDO SORTEIO", "open": False},
+    {"id": "PR-0004", "at": "2026-10-12T12:00:00-03:00", "status": "AGUARDANDO RESULTADO", "open": False},
+    # Caneca 25/09 → 15/10 → 16/10 → 17/10
+    {"id": "PR-0006", "at": "2026-09-24T12:00:00-03:00", "status": "EM BREVE", "open": False},
+    {"id": "PR-0006", "at": "2026-09-25T00:00:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0006", "at": "2026-10-15T23:59:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0006", "at": "2026-10-16T00:00:00-03:00", "status": "INSCRIÇÕES ENCERRADAS", "open": False},
+    {"id": "PR-0006", "at": "2026-10-16T12:00:00-03:00", "status": "AGUARDANDO SORTEIO", "open": False},
+    {"id": "PR-0006", "at": "2026-10-17T12:00:00-03:00", "status": "AGUARDANDO RESULTADO", "open": False},
+    # Camiseta 01/10 → 22/10 → 23/10 → 24/10
+    {"id": "PR-0007", "at": "2026-09-30T12:00:00-03:00", "status": "EM BREVE", "open": False},
+    {"id": "PR-0007", "at": "2026-10-01T00:00:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0007", "at": "2026-10-22T23:59:00-03:00", "status": "ATIVA", "open": True},
+    {"id": "PR-0007", "at": "2026-10-23T00:00:00-03:00", "status": "INSCRIÇÕES ENCERRADAS", "open": False},
+    {"id": "PR-0007", "at": "2026-10-23T12:00:00-03:00", "status": "AGUARDANDO SORTEIO", "open": False},
+    {"id": "PR-0007", "at": "2026-10-24T12:00:00-03:00", "status": "AGUARDANDO RESULTADO", "open": False},
+    # Fone Retrô published result
+    {"id": "PR-0001", "at": "2026-08-20T12:00:00-03:00", "status": "RESULTADO PUBLICADO", "open": False},
+    {"id": "PR-0001", "at": "2026-09-17T12:00:00-03:00", "status": "RESULTADO PUBLICADO", "open": False},
+]
+got_status = json.loads(subprocess.check_output(
+    ["node", "-e", status_script, json.dumps({"cases": status_cases})],
+    cwd=ROOT,
+    text=True,
+))
+for expected, actual in zip(status_cases, got_status):
+    if actual["status"] != expected["status"] or actual["open"] != expected["open"]:
+        fail(f"status {expected['id']} @ {expected['at']}: got {actual} expected {expected['status']} open={expected['open']}")
+
+# rules must carry calendar, not leftover "a confirmar" placeholders on dated campaigns
+for item in (uci, queen, sf, caneca, camiseta):
+    blob = " ".join(item.get("rules") or [])
+    if "Abertura das inscrições" not in blob or "Encerramento das inscrições" not in blob:
+        fail(f"{item['id']} regulation missing abertura/encerramento")
+    if "Sorteio:" not in blob or "Resultado:" not in blob:
+        fail(f"{item['id']} regulation missing sorteio/resultado")
+    if item.get("winner"):
+        continue
+if "Exibição UCI em 07/10/2026" not in " ".join(queen["rules"]):
+    fail("Queen exhibition missing from regulation")
+if "Exibição UCI em 15/10/2026" not in " ".join(sf["rules"]):
+    fail("Street Fighter exhibition missing from regulation")
+
 # radio/home must not be part of this surgery
 commercial_blob = "\n".join(path.read_text(encoding="utf-8") for path in COMMERCIAL_FILES)
 for token in (
@@ -381,3 +502,4 @@ print("OK five campaigns + Fone Retrô José Silva Souza")
 print("OK Formspree xaenylvg; xoeqnvjg absent from commercial scope")
 print("OK catalog products 5786215 / 2876812")
 print("OK commercial scope does not import radio motors")
+print("OK campaign calendars, questions and automatic status transitions")

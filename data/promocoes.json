@@ -15,7 +15,7 @@
       "prize_alt": "UCI Cinemas: pipoca e claquete",
       "open_at": "2026-09-01T00:00:00-03:00",
       "close_at": "2026-09-30T23:59:00-03:00",
-      "draw_at": null,
+      "draw_at": "2026-10-01T12:00:00-03:00",
       "result_at": "2026-10-02T12:00:00-03:00",
       "premiere_at": "2026-10-08",
       "campaign_code_prefix": "PR-UCI",
@@ -29,6 +29,10 @@
         "minimum_referrals": null
       },
       "rules": [
+        "Abertura das inscrições: 01/09/2026 00:00 (horário de Brasília).",
+        "Encerramento das inscrições: 30/09/2026 23:59 (horário de Brasília).",
+        "Sorteio: 01/10/2026 12:00 (horário de Brasília).",
+        "Resultado: 02/10/2026 12:00 (horário de Brasília).",
         "Uma inscrição por código gerado.",
         "Preencha os dados corretamente e responda à pergunta promocional.",
         "O horário da sessão não é requisito nesta campanha.",
@@ -46,15 +50,14 @@
       "prize": "1 par de ingressos UCI Cinemas",
       "prize_image": "/images/promocoes/uci-cinemas.png",
       "prize_alt": "UCI Cinemas: pipoca e claquete",
-      "open_at": null,
-      "close_at": null,
-      "draw_at": null,
-      "result_at": null,
+      "open_at": "2026-09-18T00:00:00-03:00",
+      "close_at": "2026-10-03T23:59:00-03:00",
+      "draw_at": "2026-10-04T12:00:00-03:00",
+      "result_at": "2026-10-05T12:00:00-03:00",
       "premiere_at": "2026-10-07",
       "campaign_code_prefix": "PR-QUEEN",
-      "registration_enabled": false,
-      "calendar_pending": true,
-      "question": "",
+      "registration_enabled": true,
+      "question": "QUAL MÚSICA DO QUEEN VOCÊ ESCOLHERIA PARA OUVIR NO VOLUME MÁXIMO DENTRO DE UM CINEMA?",
       "requirements": {
         "regulation": true,
         "whatsapp": false,
@@ -63,11 +66,16 @@
         "minimum_referrals": null
       },
       "rules": [
-        "Calendário e regulamento serão publicados antes da abertura da participação.",
+        "Abertura das inscrições: 18/09/2026 00:00 (horário de Brasília).",
+        "Encerramento das inscrições: 03/10/2026 23:59 (horário de Brasília).",
+        "Sorteio: 04/10/2026 12:00 (horário de Brasília).",
+        "Resultado: 05/10/2026 12:00 (horário de Brasília).",
+        "Exibição UCI em 07/10/2026. Horário de sessão e cinema específico não são requisitos publicados nesta campanha.",
         "O prêmio desta campanha é 1 par de ingressos UCI Cinemas.",
-        "Exibição UCI em 07/10/2026."
+        "Inscrição recebida não significa aptidão automática ao sorteio.",
+        "O resultado será publicado pela Passport Radio nesta página."
       ],
-      "share_text": "Acompanhe Queen Budapest na Passport Radio"
+      "share_text": "Participe da promoção Queen Budapest na Passport Radio"
     },
     {
       "id": "PR-0004",
@@ -78,15 +86,14 @@
       "prize": "1 par de ingressos UCI Cinemas",
       "prize_image": "/images/promocoes/uci-cinemas.png",
       "prize_alt": "UCI Cinemas: pipoca e claquete",
-      "open_at": null,
-      "close_at": null,
-      "draw_at": null,
-      "result_at": null,
+      "open_at": "2026-09-22T00:00:00-03:00",
+      "close_at": "2026-10-10T23:59:00-03:00",
+      "draw_at": "2026-10-11T12:00:00-03:00",
+      "result_at": "2026-10-12T12:00:00-03:00",
       "premiere_at": "2026-10-15",
       "campaign_code_prefix": "PR-EVENT",
-      "registration_enabled": false,
-      "calendar_pending": true,
-      "question": "",
+      "registration_enabled": true,
+      "question": "QUAL PERSONAGEM DE STREET FIGHTER VOCÊ ESCOLHERIA PARA ENTRAR NUMA LUTA VALENDO UM PAR DE INGRESSOS?",
       "requirements": {
         "regulation": true,
         "whatsapp": false,
@@ -95,11 +102,16 @@
         "minimum_referrals": null
       },
       "rules": [
-        "Calendário e regulamento serão publicados antes da abertura da participação.",
+        "Abertura das inscrições: 22/09/2026 00:00 (horário de Brasília).",
+        "Encerramento das inscrições: 10/10/2026 23:59 (horário de Brasília).",
+        "Sorteio: 11/10/2026 12:00 (horário de Brasília).",
+        "Resultado: 12/10/2026 12:00 (horário de Brasília).",
+        "Exibição UCI em 15/10/2026. Horário de sessão e cinema específico não são requisitos publicados nesta campanha.",
         "O prêmio desta campanha é 1 par de ingressos UCI Cinemas.",
-        "Exibição UCI em 15/10/2026."
+        "Inscrição recebida não significa aptidão automática ao sorteio.",
+        "O resultado será publicado pela Passport Radio nesta página."
       ],
-      "share_text": "Acompanhe Street Fighter na Passport Radio"
+      "share_text": "Participe da promoção Street Fighter na Passport Radio"
     },
     {
       "id": "PR-0006",
@@ -115,13 +127,12 @@
       "product_slug": "caneca-rush-fly-by-night",
       "product_url": "/loja.html?product=5786215",
       "catalog": "data/store_inventory_03.json",
-      "open_at": null,
-      "close_at": null,
-      "draw_at": null,
-      "result_at": null,
+      "open_at": "2026-09-25T00:00:00-03:00",
+      "close_at": "2026-10-15T23:59:00-03:00",
+      "draw_at": "2026-10-16T12:00:00-03:00",
+      "result_at": "2026-10-17T12:00:00-03:00",
       "campaign_code_prefix": "PR-CANECA",
-      "registration_enabled": false,
-      "calendar_pending": true,
+      "registration_enabled": true,
       "question": "QUAL MÚSICA NÃO PODERIA FALTAR NA SUA CANECA DE CAFÉ COM A PASSPORT TOCANDO?",
       "requirements": {
         "regulation": true,
@@ -131,12 +142,16 @@
         "minimum_referrals": null
       },
       "rules": [
-        "Requisitos de canais oficiais, indicação e calendário serão publicados no regulamento antes da abertura.",
-        "A declaração de WhatsApp e Telegram não é verificação automática de follow.",
-        "Indicação usa o parâmetro ?ref= no link da campanha.",
-        "Inscrição recebida não significa aptidão automática ao sorteio."
+        "Abertura das inscrições: 25/09/2026 00:00 (horário de Brasília).",
+        "Encerramento das inscrições: 15/10/2026 23:59 (horário de Brasília).",
+        "Sorteio: 16/10/2026 12:00 (horário de Brasília).",
+        "Resultado: 17/10/2026 12:00 (horário de Brasília).",
+        "WhatsApp e Telegram oficiais são requisitos por declaração, sem verificação automática de follow.",
+        "A indicação é requisito. A quantidade mínima de indicações ainda não foi definida; o formulário não exige um número inventado de amigos.",
+        "Inscrição recebida não significa aptidão automática ao sorteio.",
+        "O resultado será publicado pela Passport Radio nesta página."
       ],
-      "share_text": "Acompanhe a promoção Caneca Passport Radio"
+      "share_text": "Participe da promoção Caneca Passport Radio"
     },
     {
       "id": "PR-0007",
@@ -152,13 +167,12 @@
       "product_slug": "camiseta-metallica-black-album",
       "product_url": "/loja.html?product=2876812&sku=1727018",
       "catalog": "data/store_inventory_01.json",
-      "open_at": null,
-      "close_at": null,
-      "draw_at": null,
-      "result_at": null,
+      "open_at": "2026-10-01T00:00:00-03:00",
+      "close_at": "2026-10-22T23:59:00-03:00",
+      "draw_at": "2026-10-23T12:00:00-03:00",
+      "result_at": "2026-10-24T12:00:00-03:00",
       "campaign_code_prefix": "PR-CAMISETA",
-      "registration_enabled": false,
-      "calendar_pending": true,
+      "registration_enabled": true,
       "question": "QUAL BANDA VOCÊ CARREGARIA NO PEITO PELO RESTO DA VIDA?",
       "requirements": {
         "regulation": true,
@@ -168,10 +182,14 @@
         "minimum_referrals": null
       },
       "rules": [
-        "Calendário e regulamento serão publicados antes da abertura da participação.",
-        "Inscrição recebida não significa aptidão automática ao sorteio."
+        "Abertura das inscrições: 01/10/2026 00:00 (horário de Brasília).",
+        "Encerramento das inscrições: 22/10/2026 23:59 (horário de Brasília).",
+        "Sorteio: 23/10/2026 12:00 (horário de Brasília).",
+        "Resultado: 24/10/2026 12:00 (horário de Brasília).",
+        "Inscrição recebida não significa aptidão automática ao sorteio.",
+        "O resultado será publicado pela Passport Radio nesta página."
       ],
-      "share_text": "Acompanhe a promoção Camiseta Passport Radio"
+      "share_text": "Participe da promoção Camiseta Passport Radio"
     },
     {
       "id": "PR-0001",

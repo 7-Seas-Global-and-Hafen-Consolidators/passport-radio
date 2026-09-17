@@ -180,14 +180,62 @@ const money = (n) => Number(n).toFixed(2);
     const queen = await page.locator(".campaign-prize-detail").innerText();
     if (!queen.includes("1 par de ingressos UCI Cinemas")) fail("queen prize");
     if ((await page.locator("body").innerText()).includes("Experiência Queen Budapest")) fail("old queen prize returned");
+    const queenBody = await page.locator("body").innerText();
+    if (!queenBody.includes("QUAL MÚSICA DO QUEEN VOCÊ ESCOLHERIA")) fail("queen question");
+    for (const token of ["18/09/2026", "03/10/2026", "04/10/2026", "05/10/2026", "07/10/2026"]) {
+      if (!queenBody.includes(token)) fail(`queen calendar missing ${token}`);
+    }
+    const queenClock = await page.evaluate(() => {
+      const api = window.PassportPromocoes;
+      const campaign = {
+        open_at: "2026-09-18T00:00:00-03:00",
+        close_at: "2026-10-03T23:59:00-03:00",
+        draw_at: "2026-10-04T12:00:00-03:00",
+        result_at: "2026-10-05T12:00:00-03:00"
+      };
+      return {
+        before: api.statusFor(campaign, Date.parse("2026-09-17T12:00:00-03:00")),
+        during: api.statusFor(campaign, Date.parse("2026-09-20T12:00:00-03:00")),
+        afterClose: api.statusFor(campaign, Date.parse("2026-10-04T00:00:00-03:00")),
+        afterDraw: api.statusFor(campaign, Date.parse("2026-10-04T12:00:00-03:00")),
+        afterResult: api.statusFor(campaign, Date.parse("2026-10-05T12:00:00-03:00")),
+        formMatches: !!document.querySelector("#promo-entry-form") === api.registrationOpen(campaign)
+      };
+    });
+    if (queenClock.before !== "EM BREVE" || queenClock.during !== "ATIVA") fail(`queen clock ${JSON.stringify(queenClock)}`);
+    if (queenClock.afterClose !== "INSCRIÇÕES ENCERRADAS" || queenClock.afterDraw !== "AGUARDANDO SORTEIO") fail(`queen after ${JSON.stringify(queenClock)}`);
+    if (queenClock.afterResult !== "AGUARDANDO RESULTADO") fail(`queen result ${JSON.stringify(queenClock)}`);
+    if (!queenClock.formMatches) fail("queen form presence does not follow calendar");
 
     await page.goto(`http://127.0.0.1:${PORT}/promocao-street-fighter.html`, { waitUntil: "networkidle" });
     const street = await page.locator(".campaign-prize-detail").innerText();
     if (!street.includes("1 par de ingressos UCI Cinemas")) fail("street prize");
+    const sfBody = await page.locator("body").innerText();
+    if (!sfBody.includes("QUAL PERSONAGEM DE STREET FIGHTER")) fail("street question");
+    for (const token of ["22/09/2026", "10/10/2026", "11/10/2026", "12/10/2026", "15/10/2026"]) {
+      if (!sfBody.includes(token)) fail(`street calendar missing ${token}`);
+    }
+
+    await page.goto(`http://127.0.0.1:${PORT}/promocao-caneca-passport.html`, { waitUntil: "networkidle" });
+    const canecaCal = await page.locator("body").innerText();
+    for (const token of ["25/09/2026", "15/10/2026", "16/10/2026", "17/10/2026"]) {
+      if (!canecaCal.includes(token)) fail(`caneca calendar missing ${token}`);
+    }
+
+    await page.goto(`http://127.0.0.1:${PORT}/promocao-camiseta-passport.html`, { waitUntil: "networkidle" });
+    const shirtCal = await page.locator("body").innerText();
+    for (const token of ["01/10/2026", "22/10/2026", "23/10/2026", "24/10/2026"]) {
+      if (!shirtCal.includes(token)) fail(`camiseta calendar missing ${token}`);
+    }
+
+    await page.goto(`http://127.0.0.1:${PORT}/promocao-uci-cinema.html`, { waitUntil: "networkidle" });
+    const uciCal = await page.locator("body").innerText();
+    if (!uciCal.includes("01/10/2026") || !uciCal.includes("02/10/2026")) fail("UCI draw/result missing on page");
 
     console.log("OK commercial browser");
     console.log("OK 160 periods, FREE 5-day, extra 10%, local QR");
     console.log("OK campaigns, Formspree xaenylvg, referral, language");
+    console.log("OK calendars and automatic status transitions");
   } finally {
     await browser.close();
     server.close();
