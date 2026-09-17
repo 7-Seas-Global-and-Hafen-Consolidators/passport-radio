@@ -236,6 +236,15 @@
       attributeFilter: ["open", "src"]
     });
   }
+  const persistHost = document.getElementById("passport-casa-host");
+  if (persistHost) {
+    new MutationObserver(() => tick()).observe(persistHost, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["src", "data-house", "hidden", "class"]
+    });
+  }
   const track = document.getElementById("track");
   const meta = document.getElementById("meta");
   if (track || meta) {

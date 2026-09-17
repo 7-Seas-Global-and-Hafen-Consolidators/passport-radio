@@ -168,15 +168,11 @@ body.pp-home #passport-casas .casas-cluster + .casas-cluster{
 body.pp-home #passport-casas .casas-cluster--own{padding-top:6px;padding-bottom:18px}
 body.pp-home #passport-casas .casas-cluster--solo{padding-top:16px;padding-bottom:16px}
 body.pp-home #passport-casas .casas-cluster:has(.casa:nth-child(4):last-child){
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));justify-content:center;
-  max-width:560px;gap:8px 10px;align-items:stretch;
+  display:flex;flex-wrap:wrap;justify-content:center;
+  max-width:none;gap:14px 18px;align-items:flex-start;
 }
-body.pp-home #passport-casas .casas-cluster:has(.casa:nth-child(4):last-child) .casa{
-  display:flex;width:100%;
-}
-body.pp-home #passport-casas .casas-cluster:has(.casa:nth-child(4):last-child) summary{
-  width:100%;flex:1;text-align:center;line-height:1.25;letter-spacing:.08em;
-}
+body.pp-home #passport-casas .casas-cluster:has(.casa:nth-child(4):last-child) .casa,
+body.pp-home #passport-casas .casas-cluster:has(.casa:nth-child(4):last-child) summary{width:auto}
 body.pp-home #passport-casas .casa{flex:0 0 auto;border:0!important;border-radius:999px!important;overflow:visible;background:transparent!important}
 body.pp-home #passport-casas summary{
   display:flex;align-items:center;justify-content:center;gap:0;
@@ -189,7 +185,7 @@ body.pp-home #passport-casas summary{
 }
 body.pp-home #passport-casas summary::-webkit-details-marker{display:none}
 body.pp-home #passport-casas summary::before,body.pp-home #passport-casas summary::after{content:none!important}
-body.pp-home #passport-casas summary span{display:none!important}
+body.pp-home #passport-casas summary span:not(.pp-vinyl-disc):not(.pp-vinyl-name){display:none!important}
 body.pp-home #passport-casas summary:hover{border-color:rgba(196,165,116,.55);color:var(--pp-gold)!important}
 body.pp-home #passport-casas summary:focus-visible{outline:2px solid var(--pp-gold);outline-offset:3px}
 body.pp-home #passport-casas .casa[open]{flex:0 0 auto;order:0;border-radius:999px!important;background:transparent!important;border:0!important;overflow:visible}
