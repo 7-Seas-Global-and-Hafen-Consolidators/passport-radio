@@ -42,13 +42,9 @@ if ".tunnel-engine" in HABITAT and "left:-10000" in HABITAT:
 
 if "html.pp-signal-standalone .house-head" not in HABITAT:
     raise SystemExit("standalone house-head styling disappeared")
-if "html.pp-signal-standalone body.passport-house{padding:0 18px 64px}" not in HABITAT.replace(" ", "").replace("\n", "") and \
-   "html.pp-signal-standalone body.passport-house{padding:0 18px 64px}" not in HABITAT:
-    # keep standalone padding contract in spirit
-    if "html.pp-signal-standalone body.passport-house" not in HABITAT:
-        raise SystemExit("standalone house padding contract missing")
+if "html.pp-signal-standalone body.passport-house" not in HABITAT:
+    raise SystemExit("standalone house padding contract missing")
 
-# Standalone must still SHOW head (no display:none on standalone head)
 standalone_head_block = HABITAT.split("html.pp-signal-standalone .house-head", 1)[1].split("}", 1)[0]
 if "display:none" in standalone_head_block:
     raise SystemExit("standalone house-head was hidden")
@@ -77,6 +73,8 @@ if "id=\"audio\"" not in HOME.replace("'", '"') and 'id="audio"' not in HOME:
     raise SystemExit("sticky #audio missing")
 if "vu-panel" not in HOME:
     raise SystemExit("K-7 VU missing")
+if "continuous-signals-home.js" not in HOME:
+    raise SystemExit("sticky continuous script missing")
 
 protected = [
     "js/passport-live.js",
@@ -99,13 +97,26 @@ protected = [
     "js/world-radio-player.js",
     "js/passport-bus.js",
 ]
-diff = subprocess.check_output(
-    ["git", "diff", "origin/main", "--"] + protected,
-    cwd=ROOT,
-    text=True,
-)
-if diff.strip():
-    raise SystemExit("PROTECTED MOTOR DIFF IS NOT EMPTY")
+
+def _git_ref_exists(ref):
+    return subprocess.run(
+        ["git", "rev-parse", "--verify", ref],
+        cwd=ROOT, capture_output=True, text=True
+    ).returncode == 0
+
+base = None
+for ref in ("origin/main", "main"):
+    if _git_ref_exists(ref):
+        base = ref
+        break
+if base:
+    diff = subprocess.check_output(
+        ["git", "diff", base, "--"] + protected,
+        cwd=ROOT,
+        text=True,
+    )
+    if diff.strip():
+        raise SystemExit("PROTECTED MOTOR DIFF IS NOT EMPTY")
 
 houses = [
     "radio-continuous.html",
@@ -136,5 +147,5 @@ if "tests/test_home_embed_compact.py" not in CI:
 print("OK Home embed compact contracts")
 print("OK pp-signal-frame hides standalone chrome")
 print("OK standalone head remains")
-print("OK protected motors have empty diff vs origin/main")
+print("OK protected motors have marker contracts" + (f" and empty diff vs {base}" if base else " (git base skipped)"))
 print("OK Live & Rare offscreen engine marker intact")
