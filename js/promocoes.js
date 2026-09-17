@@ -1,1 +1,117 @@
-(()=>{const STORAGE_KEY='passportPromoEntriesV2',form=document.querySelector('#promo-entry-form'),codeField=document.querySelector('#participation-code'),confirmation=document.querySelector('#promo-confirmation'),entriesList=document.querySelector('#my-entries-list'),tabButtons=[...document.querySelectorAll('[data-listener-tab]')],panels={events:document.querySelector('#listener-events-panel'),results:document.querySelector('#listener-results-panel'),entries:document.querySelector('#listener-entries-panel')};const getEntries=()=>{try{const raw=localStorage.getItem(STORAGE_KEY),parsed=raw?JSON.parse(raw):[];return Array.isArray(parsed)?parsed:[]}catch(_){return[]}},saveEntries=e=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(e))}catch(_){}},generateCode=(prefix='PR-UCI')=>{const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let code=prefix+'-';for(let i=0;i<6;i++)code+=chars[Math.floor(Math.random()*chars.length)];return code},escapeHtml=(v='')=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');const renderEntries=()=>{if(!entriesList)return;const entries=getEntries();if(!entries.length){entriesList.innerHTML='<div class="account-empty"><strong>Nenhuma inscrição salva ainda.</strong><span>As inscrições confirmadas neste navegador aparecerão aqui.</span></div>';return}entriesList.innerHTML=entries.map(e=>`<article class="entry-card"><div class="entry-card__top"><span>${escapeHtml(e.campaign_name||e.campaign)}</span><b>CONFIRMADA</b></div><div class="entry-card__code">${escapeHtml(e.code)}</div><div class="entry-card__details"><span><small>Prêmio</small>${escapeHtml(e.prize||'—')}</span><span><small>Inscrição</small>${escapeHtml(e.date)}</span><span><small>Status</small>${escapeHtml(e.status||'Aguardando resultado')}</span><span><small>Resultado</small>${escapeHtml(e.result_date||'—')}</span></div></article>`).join('')};const selectListenerTab=tab=>{if(!panels[tab])tab='events';Object.entries(panels).forEach(([name,p])=>{if(!p)return;const active=name===tab;p.hidden=!active;p.classList.toggle('is-active',active)});tabButtons.forEach(b=>{const active=b.dataset.listenerTab===tab;b.classList.toggle('is-active',active);b.setAttribute('aria-selected',String(active))});if(tab==='entries')renderEntries()};tabButtons.forEach(b=>b.addEventListener('click',()=>selectListenerTab(b.dataset.listenerTab)));const requestedTab=new URLSearchParams(location.search).get('tab');if(requestedTab&&panels[requestedTab])selectListenerTab(requestedTab);if(form)form.addEventListener('submit',async event=>{event.preventDefault();const submit=form.querySelector('button[type="submit"]'),prefix=form.dataset.codePrefix||'PR-UCI',code=generateCode(prefix);codeField.value=code;submit.disabled=true;submit.textContent='Registrando...';confirmation.hidden=true;const now=new Date(),fd=new FormData(form);fd.set('participant_code',code);fd.set('submitted_at',now.toISOString());try{const response=await fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('formspree '+response.status);const entry={campaign_id:fd.get('campaign_id'),campaign_name:fd.get('campaign_name')||fd.get('campaign'),prize:fd.get('prize')||'1 par de ingressos UCI Cinemas',code,date:new Intl.DateTimeFormat('pt-BR',{dateStyle:'medium',timeStyle:'short'}).format(now),status:'Aguardando resultado',result_date:fd.get('result_date')||'02/10/2026'};const entries=getEntries();entries.unshift(entry);saveEntries(entries.slice(0,50));confirmation.innerHTML=`<span>INSCRIÇÃO CONFIRMADA</span><strong>Código: ${escapeHtml(code)}</strong><p>Obrigado pela participação. Guarde este código. Resultado em <strong>${escapeHtml(entry.result_date)}</strong>.</p><p>Continue acompanhando a programação e o site da Passport Radio.</p><button type="button" id="show-my-entry">Ver minhas inscrições</button>`;confirmation.hidden=false;form.reset();codeField.value='';document.querySelector('#show-my-entry')?.addEventListener('click',()=>location.href='promocoes.html?tab=entries#area-ouvinte');window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'promo_registration_success',campaign_id:entry.campaign_id,code})}catch(_){confirmation.innerHTML='<span>ERRO NO ENVIO</span><strong>A inscrição não foi enviada.</strong><p>Tente novamente em alguns instantes.</p>';confirmation.hidden=false;window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'promo_registration_failure',campaign_id:fd.get('campaign_id')})}finally{submit.disabled=false;submit.textContent='Quero participar'}});renderEntries()})();
+(() => {
+  "use strict";
+  const STORAGE_KEY = "passportPromoEntriesV2";
+  const form = document.querySelector("#promo-entry-form");
+  const codeField = document.querySelector("#participation-code");
+  const confirmation = document.querySelector("#promo-confirmation");
+  const entriesList = document.querySelector("#my-entries-list");
+  const tabButtons = [...document.querySelectorAll("[data-listener-tab]")];
+  const panels = {
+    events: document.querySelector("#listener-events-panel"),
+    results: document.querySelector("#listener-results-panel"),
+    entries: document.querySelector("#listener-entries-panel")
+  };
+
+  const getEntries = () => {
+    try {
+      const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      return Array.isArray(value) ? value : [];
+    } catch (_) {
+      return [];
+    }
+  };
+  const saveEntries = (entries) => {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(entries)); } catch (_) {}
+  };
+  const escapeHtml = (value) => String(value || "").replace(/[&<>"]/g, (char) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"
+  })[char]);
+  const generateCode = (prefix = "PR-UCI") => {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    return `${prefix}-${Array.from({ length: 6 }, () => chars[Math.floor(Math.random() * chars.length)]).join("")}`;
+  };
+
+  function renderEntries() {
+    if (!entriesList) return;
+    const entries = getEntries();
+    entriesList.innerHTML = entries.length
+      ? entries.map((entry) => `<article class="entry-card"><div class="entry-card__top"><span>${escapeHtml(entry.campaign_name)}</span><b>CONFIRMADA</b></div><div class="entry-card__code">${escapeHtml(entry.code)}</div><div class="entry-card__details"><span><small>Prêmio</small>${escapeHtml(entry.prize)}</span><span><small>Inscrição</small>${escapeHtml(entry.date)}</span><span><small>Status</small>${escapeHtml(entry.status)}</span><span><small>Resultado</small>${escapeHtml(entry.result_date)}</span></div></article>`).join("")
+      : "<div class=\"account-empty\"><strong>Nenhuma inscrição salva ainda.</strong><span>Inscrições confirmadas neste navegador aparecerão aqui.</span></div>";
+  }
+
+  function selectTab(tab) {
+    if (!panels[tab]) tab = "events";
+    Object.entries(panels).forEach(([name, panel]) => {
+      if (!panel) return;
+      const active = name === tab;
+      panel.hidden = !active;
+      panel.classList.toggle("is-active", active);
+    });
+    tabButtons.forEach((button) => {
+      const active = button.dataset.listenerTab === tab;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-selected", String(active));
+    });
+    if (tab === "entries") renderEntries();
+  }
+
+  tabButtons.forEach((button) => button.addEventListener("click", () => selectTab(button.dataset.listenerTab)));
+  const requestedTab = new URLSearchParams(location.search).get("tab");
+  if (requestedTab) selectTab(requestedTab);
+
+  function shareCampaign(code = "") {
+    const url = location.href;
+    const text = `Participe da promoção UCI da Passport Radio${code ? ` · meu código: ${code}` : ""}: ${url}`;
+    if (navigator.share) return navigator.share({ title: "Promoção UCI · Passport Radio", text, url });
+    if (navigator.clipboard) return navigator.clipboard.writeText(text);
+    return Promise.resolve();
+  }
+
+  document.querySelectorAll("[data-share-campaign]").forEach((button) => button.addEventListener("click", () => {
+    shareCampaign().then(() => {
+      button.textContent = "LINK COPIADO";
+      setTimeout(() => { button.textContent = "COMPARTILHAR PROMOÇÃO"; }, 1800);
+    }).catch(() => {});
+  }));
+
+  if (form) form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const submit = form.querySelector('button[type="submit"]');
+    const code = generateCode(form.dataset.codePrefix || "PR-UCI");
+    const now = new Date();
+    const data = new FormData(form);
+    codeField.value = code;
+    data.set("participant_code", code);
+    data.set("submitted_at", now.toISOString());
+    submit.disabled = true;
+    submit.textContent = "REGISTRANDO...";
+    confirmation.hidden = true;
+    try {
+      const response = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error(`formspree ${response.status}`);
+      const entry = {
+        campaign_id: data.get("campaign_id"), campaign_name: data.get("campaign_name"), prize: data.get("prize"), code,
+        date: new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeStyle: "short" }).format(now),
+        status: "Aguardando resultado", result_date: data.get("result_date")
+      };
+      saveEntries([entry, ...getEntries()].slice(0, 50));
+      confirmation.innerHTML = `<span>INSCRIÇÃO CONFIRMADA</span><strong>Código: ${escapeHtml(code)}</strong><p>Guarde este código. Resultado em <strong>${escapeHtml(entry.result_date)}</strong>.</p><div class="confirmation-actions"><button type="button" data-share-confirmation>COMPARTILHAR E INDICAR</button><a href="promocoes.html?tab=entries#area-ouvinte">VER MINHAS INSCRIÇÕES</a></div>`;
+      confirmation.hidden = false;
+      form.reset();
+      codeField.value = "";
+      confirmation.querySelector("[data-share-confirmation]")?.addEventListener("click", () => shareCampaign(code));
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "promo_registration_success", campaign_id: entry.campaign_id, code });
+    } catch (_) {
+      confirmation.innerHTML = "<span>ERRO NO ENVIO</span><strong>A inscrição não foi enviada.</strong><p>Tente novamente em alguns instantes.</p>";
+      confirmation.hidden = false;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "promo_registration_failure", campaign_id: data.get("campaign_id") });
+    } finally {
+      submit.disabled = false;
+      submit.textContent = "PARTICIPAR E GERAR CÓDIGO";
+    }
+  });
+
+  renderEntries();
+})();
