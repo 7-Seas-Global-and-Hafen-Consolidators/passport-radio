@@ -71,3 +71,11 @@
 
 .anuncie-page .commercial-pix-qr{width:118px;height:118px;padding:8px;border:1px solid var(--pc-line);border-radius:8px;background:#fff;object-fit:contain}
 @media(max-width:700px){.anuncie-page .commercial-pix-qr{width:128px;height:128px}}
+.anuncie-page .commercial-quote-lines{display:grid;gap:8px;margin:0 0 10px;padding:0}
+.anuncie-page .commercial-quote-lines>div{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.anuncie-page .commercial-quote-lines dt{margin:0;color:var(--pc-muted);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.anuncie-page .commercial-quote-lines dd{margin:0;color:var(--pc-text);font-size:.86rem;text-align:right}
+.anuncie-page .commercial-quote-lines [data-quote-free] dd{color:var(--pc-gold)}
+.promo-campaign-page .promo-official-channels,.promo-page .promo-official-channels{max-width:64ch;margin:16px 0 0;color:var(--pc-muted);line-height:1.55}
+.promo-campaign-page .promo-official-channels a,.promo-page .promo-official-channels a{color:var(--pc-gold);font-weight:800;text-decoration:none;margin-right:12px}
+.promo-campaign-page .form-note{margin:0;color:var(--pc-muted);font-size:.78rem;line-height:1.45}

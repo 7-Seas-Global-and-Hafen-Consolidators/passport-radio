@@ -1,12 +1,189 @@
 {
   "form_endpoint": "https://formspree.io/f/xaenylvg",
   "commercial_email": "passportradio.online@gmail.com",
+  "official_whatsapp": "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k",
+  "official_telegram": "https://t.me/+pXv3uwqOY8lkZGZk",
   "campaigns": [
-    {"id":"PR-0002","slug":"se-eu-fosse-voce-3-uci","detail_url":"/promocao-uci-cinema.html","title":"Se Eu Fosse Você 3","type":"UCI / CINEMA","prize":"1 par de ingressos UCI Cinemas","prize_image":"/images/promocoes/uci-cinemas.png","prize_alt":"UCI Cinemas: pipoca e claquete","open_at":"2026-09-01T00:00:00-03:00","close_at":"2026-09-30T23:59:00-03:00","draw_at":null,"result_at":"2026-10-02T12:00:00-03:00","premiere_at":"2026-10-08","campaign_code_prefix":"PR-UCI","registration_enabled":true,"question":"Quem você gostaria de convidar para pegar um cineminha com você?","requirements":{"regulation":true,"whatsapp":false,"telegram":false,"referral":false,"minimum_referrals":null},"rules":["Uma inscrição por código gerado.","Preencha os dados corretamente e responda à pergunta promocional.","O horário da sessão não é requisito nesta campanha.","O resultado será publicado pela Passport Radio nesta página."],"share_text":"Participe da promoção UCI da Passport Radio"},
-    {"id":"PR-0005","slug":"queen-budapest","detail_url":"/promocao-queen-budapest.html","title":"Queen Budapest","type":"MÚSICA / CINEMA","prize":"Experiência Queen Budapest","prize_image":"/images/passport-radio-definitive.jpg","prize_alt":"Passport Radio","open_at":null,"close_at":null,"draw_at":null,"result_at":null,"premiere_at":"2026-10-07","campaign_code_prefix":"PR-QUEEN","registration_enabled":false,"calendar_pending":true,"question":"","requirements":{"regulation":true,"whatsapp":false,"telegram":false,"referral":false,"minimum_referrals":null},"rules":["Calendário e regulamento serão publicados antes da abertura da participação."],"share_text":"Acompanhe Queen Budapest na Passport Radio"},
-    {"id":"PR-0004","slug":"street-fighter-premiere","detail_url":"/promocao-street-fighter.html","title":"Street Fighter","type":"CINEMA / EVENTO","prize":"Ingressos para pré-estreia","prize_image":"/images/street-fighter-promo.jpg","prize_alt":"Street Fighter","open_at":null,"close_at":null,"draw_at":null,"result_at":null,"premiere_at":"2026-10-15","campaign_code_prefix":"PR-EVENT","registration_enabled":false,"calendar_pending":true,"question":"","requirements":{"regulation":true,"whatsapp":false,"telegram":false,"referral":false,"minimum_referrals":null},"rules":["Calendário e regulamento serão publicados antes da abertura da participação."],"share_text":"Acompanhe Street Fighter na Passport Radio"},
-    {"id":"PR-0006","slug":"caneca-passport-radio","detail_url":"/promocao-caneca-passport.html","title":"Caneca Passport Radio","type":"PASSPORT STORE","prize":"Caneca Rush Fly By Night","prize_image":"https://stamp.jetassets.com.br/produto/CAN016_2026-05-13_16_08_46_0.jpeg","prize_alt":"Caneca Rush Fly By Night","product_id":"5786215","sku":"","product_slug":"caneca-rush-fly-by-night","product_url":"/loja.html?product=5786215","open_at":null,"close_at":null,"draw_at":null,"result_at":null,"campaign_code_prefix":"PR-CANECA","registration_enabled":false,"calendar_pending":true,"question":"","requirements":{"regulation":true,"whatsapp":true,"telegram":true,"referral":true,"minimum_referrals":null},"rules":["Requisitos de canais oficiais, indicação e calendário serão publicados no regulamento antes da abertura."],"share_text":"Acompanhe a promoção Caneca Passport Radio"},
-    {"id":"PR-0007","slug":"camiseta-passport-radio","detail_url":"/promocao-camiseta-passport.html","title":"Camiseta Passport Radio","type":"PASSPORT STORE","prize":"Camiseta Metallica Black Album","prize_image":"https://stamp.jetassets.com.br/produto/20231127095942_635999365_H.jpg","prize_alt":"Camiseta Metallica Black Album","product_id":"2876812","sku":"1727018","product_slug":"camiseta-metallica-black-album","product_url":"/loja.html?product=2876812&sku=1727018","open_at":null,"close_at":null,"draw_at":null,"result_at":null,"campaign_code_prefix":"PR-CAMISETA","registration_enabled":false,"calendar_pending":true,"question":"","requirements":{"regulation":true,"whatsapp":false,"telegram":false,"referral":false,"minimum_referrals":null},"rules":["Calendário e regulamento serão publicados antes da abertura da participação."],"share_text":"Acompanhe a promoção Camiseta Passport Radio"},
-    {"id":"PR-0001","slug":"resultado-fone-retro","title":"Sorteio Fone Retrô","type":"PASSPORT STORE","prize":"Fone de Ouvido Retrô Passport","prize_image":"/images/premio-fone-retro.jpg","result_at":"2026-08-20T12:00:00-03:00","winner":"JOSÉ SILVA SOUZA","winner_status":"PUBLICADO","registration_enabled":false}
+    {
+      "id": "PR-0002",
+      "slug": "se-eu-fosse-voce-3-uci",
+      "detail_url": "/promocao-uci-cinema.html",
+      "title": "Se Eu Fosse Você 3",
+      "type": "UCI / CINEMA",
+      "prize": "1 par de ingressos UCI Cinemas",
+      "prize_image": "/images/promocoes/uci-cinemas.png",
+      "prize_alt": "UCI Cinemas: pipoca e claquete",
+      "open_at": "2026-09-01T00:00:00-03:00",
+      "close_at": "2026-09-30T23:59:00-03:00",
+      "draw_at": null,
+      "result_at": "2026-10-02T12:00:00-03:00",
+      "premiere_at": "2026-10-08",
+      "campaign_code_prefix": "PR-UCI",
+      "registration_enabled": true,
+      "question": "Quem você gostaria de convidar para pegar um cineminha com você?",
+      "requirements": {
+        "regulation": true,
+        "whatsapp": false,
+        "telegram": false,
+        "referral": false,
+        "minimum_referrals": null
+      },
+      "rules": [
+        "Uma inscrição por código gerado.",
+        "Preencha os dados corretamente e responda à pergunta promocional.",
+        "O horário da sessão não é requisito nesta campanha.",
+        "Inscrição recebida não significa aptidão automática ao sorteio.",
+        "O resultado será publicado pela Passport Radio nesta página."
+      ],
+      "share_text": "Participe da promoção UCI da Passport Radio"
+    },
+    {
+      "id": "PR-0005",
+      "slug": "queen-budapest",
+      "detail_url": "/promocao-queen-budapest.html",
+      "title": "Queen Budapest",
+      "type": "MÚSICA / CINEMA",
+      "prize": "1 par de ingressos UCI Cinemas",
+      "prize_image": "/images/promocoes/uci-cinemas.png",
+      "prize_alt": "UCI Cinemas: pipoca e claquete",
+      "open_at": null,
+      "close_at": null,
+      "draw_at": null,
+      "result_at": null,
+      "premiere_at": "2026-10-07",
+      "campaign_code_prefix": "PR-QUEEN",
+      "registration_enabled": false,
+      "calendar_pending": true,
+      "question": "",
+      "requirements": {
+        "regulation": true,
+        "whatsapp": false,
+        "telegram": false,
+        "referral": false,
+        "minimum_referrals": null
+      },
+      "rules": [
+        "Calendário e regulamento serão publicados antes da abertura da participação.",
+        "O prêmio desta campanha é 1 par de ingressos UCI Cinemas.",
+        "Exibição UCI em 07/10/2026."
+      ],
+      "share_text": "Acompanhe Queen Budapest na Passport Radio"
+    },
+    {
+      "id": "PR-0004",
+      "slug": "street-fighter-premiere",
+      "detail_url": "/promocao-street-fighter.html",
+      "title": "Street Fighter",
+      "type": "CINEMA / EVENTO",
+      "prize": "1 par de ingressos UCI Cinemas",
+      "prize_image": "/images/promocoes/uci-cinemas.png",
+      "prize_alt": "UCI Cinemas: pipoca e claquete",
+      "open_at": null,
+      "close_at": null,
+      "draw_at": null,
+      "result_at": null,
+      "premiere_at": "2026-10-15",
+      "campaign_code_prefix": "PR-EVENT",
+      "registration_enabled": false,
+      "calendar_pending": true,
+      "question": "",
+      "requirements": {
+        "regulation": true,
+        "whatsapp": false,
+        "telegram": false,
+        "referral": false,
+        "minimum_referrals": null
+      },
+      "rules": [
+        "Calendário e regulamento serão publicados antes da abertura da participação.",
+        "O prêmio desta campanha é 1 par de ingressos UCI Cinemas.",
+        "Exibição UCI em 15/10/2026."
+      ],
+      "share_text": "Acompanhe Street Fighter na Passport Radio"
+    },
+    {
+      "id": "PR-0006",
+      "slug": "caneca-passport-radio",
+      "detail_url": "/promocao-caneca-passport.html",
+      "title": "Caneca Passport Radio",
+      "type": "PASSPORT STORE",
+      "prize": "Caneca Rush Fly By Night",
+      "prize_image": "/images/promocoes/caneca-rush-fly-by-night.webp",
+      "prize_alt": "Caneca Rush Fly By Night",
+      "product_id": "5786215",
+      "sku": "",
+      "product_slug": "caneca-rush-fly-by-night",
+      "product_url": "/loja.html?product=5786215",
+      "catalog": "data/store_inventory_03.json",
+      "open_at": null,
+      "close_at": null,
+      "draw_at": null,
+      "result_at": null,
+      "campaign_code_prefix": "PR-CANECA",
+      "registration_enabled": false,
+      "calendar_pending": true,
+      "question": "QUAL MÚSICA NÃO PODERIA FALTAR NA SUA CANECA DE CAFÉ COM A PASSPORT TOCANDO?",
+      "requirements": {
+        "regulation": true,
+        "whatsapp": true,
+        "telegram": true,
+        "referral": true,
+        "minimum_referrals": null
+      },
+      "rules": [
+        "Requisitos de canais oficiais, indicação e calendário serão publicados no regulamento antes da abertura.",
+        "A declaração de WhatsApp e Telegram não é verificação automática de follow.",
+        "Indicação usa o parâmetro ?ref= no link da campanha.",
+        "Inscrição recebida não significa aptidão automática ao sorteio."
+      ],
+      "share_text": "Acompanhe a promoção Caneca Passport Radio"
+    },
+    {
+      "id": "PR-0007",
+      "slug": "camiseta-passport-radio",
+      "detail_url": "/promocao-camiseta-passport.html",
+      "title": "Camiseta Passport Radio",
+      "type": "PASSPORT STORE",
+      "prize": "Camiseta Metallica Black Album",
+      "prize_image": "/images/promocoes/camiseta-metallica-black-album.jpg",
+      "prize_alt": "Camiseta Metallica Black Album",
+      "product_id": "2876812",
+      "sku": "1727018",
+      "product_slug": "camiseta-metallica-black-album",
+      "product_url": "/loja.html?product=2876812&sku=1727018",
+      "catalog": "data/store_inventory_01.json",
+      "open_at": null,
+      "close_at": null,
+      "draw_at": null,
+      "result_at": null,
+      "campaign_code_prefix": "PR-CAMISETA",
+      "registration_enabled": false,
+      "calendar_pending": true,
+      "question": "QUAL BANDA VOCÊ CARREGARIA NO PEITO PELO RESTO DA VIDA?",
+      "requirements": {
+        "regulation": true,
+        "whatsapp": false,
+        "telegram": false,
+        "referral": false,
+        "minimum_referrals": null
+      },
+      "rules": [
+        "Calendário e regulamento serão publicados antes da abertura da participação.",
+        "Inscrição recebida não significa aptidão automática ao sorteio."
+      ],
+      "share_text": "Acompanhe a promoção Camiseta Passport Radio"
+    },
+    {
+      "id": "PR-0001",
+      "slug": "resultado-fone-retro",
+      "title": "Sorteio Fone Retrô",
+      "type": "PASSPORT STORE",
+      "prize": "Fone de Ouvido Retrô Passport",
+      "prize_image": "/images/premio-fone-retro.jpg",
+      "result_at": "2026-08-20T12:00:00-03:00",
+      "winner": "JOSÉ SILVA SOUZA",
+      "winner_status": "PUBLICADO",
+      "registration_enabled": false
+    }
   ]
 }

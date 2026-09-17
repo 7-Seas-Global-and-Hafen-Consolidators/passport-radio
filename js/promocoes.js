@@ -1,7 +1,8 @@
 (() => {
   "use strict";
   const ENTRY_KEY = "passportPromoEntriesV3";
-  const escapeHtml = (value) => String(value ?? "").replace(/[&<>"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[char]));
+  const ENT = {"&": "\u0026amp;", "<": "\u0026lt;", ">": "\u0026gt;", '"': "\u0026quot;"};
+  const escapeHtml = (value) => String(value ?? "").replace(/[&<>"]/g, (char) => ENT[char]);
   const formatDate = (value) => value ? new Intl.DateTimeFormat("pt-BR", {dateStyle:"medium", timeZone:"America/Sao_Paulo"}).format(new Date(value)) : "a confirmar";
   const getEntries = () => { try { return JSON.parse(localStorage.getItem(ENTRY_KEY) || "[]"); } catch (_) { return []; } };
   const saveEntries = (entries) => { try { localStorage.setItem(ENTRY_KEY, JSON.stringify(entries)); } catch (_) {} };
@@ -23,11 +24,20 @@
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
     return `${prefix}-${Array.from({length:6}, () => chars[Math.floor(Math.random() * chars.length)]).join("")}`;
   };
+  const officialChannels = (campaign, config) => {
+    const requirements = campaign.requirements || {};
+    if (!requirements.whatsapp && !requirements.telegram) return "";
+    const links = [];
+    if (requirements.whatsapp && config.official_whatsapp) links.push(`<a href="${escapeHtml(config.official_whatsapp)}" target="_blank" rel="noopener">WhatsApp oficial</a>`);
+    if (requirements.telegram && config.official_telegram) links.push(`<a href="${escapeHtml(config.official_telegram)}" target="_blank" rel="noopener">Telegram oficial</a>`);
+    if (!links.length) return "";
+    return `<p class="promo-official-channels">Canais oficiais desta campanha. A declaração de cumprimento não é verificação automática de follow. ${links.join(" ")}</p>`;
+  };
   function share(campaign, referralCode = "") {
     const url = new URL(campaign.detail_url || location.pathname, location.origin);
     if (referralCode) url.searchParams.set("ref", referralCode);
     const text = `${campaign.share_text || campaign.title} · ${url}`;
-    if (navigator.share) return navigator.share({title:campaign.title, text, url});
+    if (navigator.share) return navigator.share({title:campaign.title, text, url: url.toString()});
     return navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.resolve();
   }
   function campaignCard(campaign) {
@@ -42,7 +52,7 @@
     const host = document.querySelector("#my-entries-list");
     if (!host) return;
     const entries = getEntries();
-    host.innerHTML = entries.length ? entries.map((entry) => `<article class="entry-card"><div class="entry-card__top"><span>${escapeHtml(entry.campaign)}</span><b>CONFIRMADA</b></div><div class="entry-card__code">${escapeHtml(entry.code)}</div><div class="entry-card__details"><span><small>Participante</small>${escapeHtml(entry.name)}</span><span><small>Inscrição</small>${escapeHtml(entry.date)}</span><span><small>Status</small>${escapeHtml(entry.status)}</span></div></article>`).join("") : "<div class=\"account-empty\"><strong>Nenhuma inscrição salva ainda.</strong><span>Inscrições confirmadas neste navegador aparecem aqui.</span></div>";
+    host.innerHTML = entries.length ? entries.map((entry) => `<article class="entry-card"><div class="entry-card__top"><span>${escapeHtml(entry.campaign)}</span><b>RECEBIDA</b></div><div class="entry-card__code">${escapeHtml(entry.code)}</div><div class="entry-card__details"><span><small>Participante</small>${escapeHtml(entry.name)}</span><span><small>Inscrição</small>${escapeHtml(entry.date)}</span><span><small>Status</small>${escapeHtml(entry.status)}</span></div></article>`).join("") : "<div class=\"account-empty\"><strong>Nenhuma inscrição salva ainda.</strong><span>Inscrições recebidas neste navegador aparecem aqui. Recebida não significa apta ao sorteio.</span></div>";
   }
   function bindTabs() {
     const buttons = [...document.querySelectorAll("[data-listener-tab]")];
@@ -55,45 +65,55 @@
     buttons.forEach((button) => button.addEventListener("click", () => select(button.dataset.listenerTab)));
     select(new URLSearchParams(location.search).get("tab") || "events");
   }
-  function campaignForm(campaign, endpoint) {
+  function campaignForm(campaign, endpoint, config) {
     const requirements = campaign.requirements || {};
-    const social = (requirements.whatsapp ? '<label class="rules"><input required type="checkbox" name="whatsapp_opt_in" value="true">Declaro que cumpro o requisito de WhatsApp desta campanha.</label>' : "") + (requirements.telegram ? '<label class="rules"><input required type="checkbox" name="telegram_opt_in" value="true">Declaro que cumpro o requisito de Telegram desta campanha.</label>' : "");
-    const referral = requirements.referral ? `<label>Código de indicação (se houver)<input name="referral_input" placeholder="${escapeHtml(campaign.campaign_code_prefix)}-XXXXXX"></label>${requirements.minimum_referrals ? `<p class="form-note">Mínimo: ${requirements.minimum_referrals} indicações.</p>` : ""}` : "";
+    const social = (requirements.whatsapp ? '<label class="rules"><input required type="checkbox" name="whatsapp_opt_in" value="true">Declaro que acompanho o canal oficial de WhatsApp desta campanha.</label>' : "") + (requirements.telegram ? '<label class="rules"><input required type="checkbox" name="telegram_opt_in" value="true">Declaro que acompanho o canal oficial de Telegram desta campanha.</label>' : "");
+    const referral = requirements.referral ? `<label>Código de indicação (se houver)<input name="referral_input" placeholder="${escapeHtml(campaign.campaign_code_prefix)}-XXXXXX"></label>${requirements.minimum_referrals ? `<p class="form-note">Mínimo informado no regulamento: ${requirements.minimum_referrals} indicações. Sem apuração automática de amigos.</p>` : `<p class="form-note">Se você chegou por indicação, o código da URL é capturado automaticamente.</p>`}` : "";
     return `<form id="promo-entry-form" class="pr-promo-form passport-form" action="${escapeHtml(endpoint)}" method="post">
       <input type="hidden" name="_subject" value="Inscrição ${escapeHtml(campaign.title)} — Passport Radio"><input type="hidden" name="campaign_id" value="${escapeHtml(campaign.id)}"><input type="hidden" name="campaign_name" value="${escapeHtml(campaign.title)}"><input type="hidden" name="prize" value="${escapeHtml(campaign.prize)}"><input type="hidden" name="result_date" value="${escapeHtml(formatDate(campaign.result_at))}"><input type="hidden" name="participant_code"><input type="hidden" name="referral_code"><input type="hidden" name="whatsapp_declared" value="false"><input type="hidden" name="telegram_declared" value="false">
       <label>Nome completo<input required name="name" autocomplete="name"></label><label>E-mail<input required type="email" name="email" autocomplete="email"></label><label>Instagram (opcional)<input name="instagram"></label>
-      ${campaign.question ? `<label>${escapeHtml(campaign.question)}<textarea required name="creative_answer" rows="4"></textarea></label>` : ""}${social}${referral}
-      <label class="rules"><input required type="checkbox" name="rules" value="accepted">Li e aceito o regulamento e autorizo contato sobre esta inscrição.</label><button type="submit" class="passport-btn-red">PARTICIPAR E GERAR CÓDIGO</button></form>`;
+      ${campaign.question ? `<label>${escapeHtml(campaign.question)}<textarea required name="creative_answer" rows="4"></textarea></label>` : ""}${officialChannels(campaign, config)}${social}${referral}
+      <label class="rules"><input required type="checkbox" name="rules" value="accepted">Li e aceito o regulamento e autorizo contato sobre esta inscrição. Participar não me torna automaticamente apto ao sorteio.</label><button type="submit" class="passport-btn-red">PARTICIPAR E GERAR CÓDIGO</button></form>`;
   }
-  function bindForm(campaign) {
+  function bindForm(campaign, config) {
     const form = document.querySelector("#promo-entry-form");
     if (!form) return;
-    form.elements.referral_code.value = new URLSearchParams(location.search).get("ref") || "";
+    const capturedRef = new URLSearchParams(location.search).get("ref") || "";
+    form.elements.referral_code.value = capturedRef;
+    if (capturedRef && form.elements.referral_input && !form.elements.referral_input.value) form.elements.referral_input.value = capturedRef;
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const submit = form.querySelector("button[type=submit]"), confirmation = document.querySelector("#promo-confirmation"), data = new FormData(form), participantCode = generateCode(campaign.campaign_code_prefix);
-      data.set("participant_code", participantCode); data.set("submitted_at", new Date().toISOString()); data.set("whatsapp_declared", String(!!data.get("whatsapp_opt_in"))); data.set("telegram_declared", String(!!data.get("telegram_opt_in")));
+      if (submit.disabled) return;
+      const typedRef = String(data.get("referral_input") || "").trim();
+      data.set("participant_code", participantCode);
+      data.set("submitted_at", new Date().toISOString());
+      data.set("referral_code", typedRef || capturedRef);
+      data.set("whatsapp_declared", String(!!data.get("whatsapp_opt_in")));
+      data.set("telegram_declared", String(!!data.get("telegram_opt_in")));
       submit.disabled = true; submit.textContent = "REGISTRANDO...";
       try {
         const response = await fetch(form.action, {method:"POST", body:data, headers:{Accept:"application/json"}});
         if (!response.ok) throw new Error(String(response.status));
-        const entry = {campaign:campaign.title, code:participantCode, name:data.get("name"), date:new Intl.DateTimeFormat("pt-BR", {dateStyle:"medium", timeStyle:"short"}).format(new Date()), status:"Aguardando resultado"};
+        const entry = {campaign:campaign.title, code:participantCode, name:data.get("name"), date:new Intl.DateTimeFormat("pt-BR", {dateStyle:"medium", timeStyle:"short"}).format(new Date()), status:"Inscrição recebida · aguardando resultado"};
         saveEntries([entry, ...getEntries()].slice(0,50));
-        confirmation.innerHTML = `<span>INSCRIÇÃO CONFIRMADA</span><strong>Código: ${escapeHtml(participantCode)}</strong><p>Guarde seu código e compartilhe a campanha.</p><div class="confirmation-actions"><button type="button">COMPARTILHAR E INDICAR</button><a href="promocoes.html?tab=entries#area-ouvinte">MINHAS INSCRIÇÕES</a></div>`;
-        confirmation.hidden = false; confirmation.querySelector("button").onclick = () => share(campaign, participantCode); form.reset(); window.dataLayer?.push({event:"promo_registration_success", campaign_id:campaign.id});
+        confirmation.innerHTML = `<span>INSCRIÇÃO RECEBIDA</span><strong>Código: ${escapeHtml(participantCode)}</strong><p>Participar não significa aptidão automática ao sorteio. Guarde o código e acompanhe o resultado nesta página.</p><div class="confirmation-actions"><button type="button">COMPARTILHAR E INDICAR</button><a href="promocoes.html?tab=entries#area-ouvinte">MINHAS INSCRIÇÕES</a></div>`;
+        confirmation.hidden = false; confirmation.querySelector("button").onclick = () => share(campaign, participantCode); form.reset(); form.elements.referral_code.value = capturedRef; submit.textContent = "INSCRIÇÃO ENVIADA"; window.dataLayer?.push({event:"promo_registration_success", campaign_id:campaign.id});
       } catch (_) {
-        confirmation.innerHTML = "<span>ERRO NO ENVIO</span><strong>A inscrição não foi enviada.</strong><p>Tente novamente em alguns instantes.</p>"; confirmation.hidden = false; window.dataLayer?.push({event:"promo_registration_failure", campaign_id:campaign.id});
-      } finally { submit.disabled = false; submit.textContent = "PARTICIPAR E GERAR CÓDIGO"; }
+        confirmation.innerHTML = "<span>ERRO NO ENVIO</span><strong>A inscrição não foi enviada.</strong><p>Nada foi gravado como inscrição recebida. Tente novamente em alguns instantes.</p>"; confirmation.hidden = false; submit.disabled = false; submit.textContent = "PARTICIPAR E GERAR CÓDIGO"; window.dataLayer?.push({event:"promo_registration_failure", campaign_id:campaign.id});
+      }
     });
   }
   function renderDetail(campaign, config) {
     const host = document.querySelector("[data-promo-detail]");
     if (!host) return;
     document.title = `${campaign.title} | Promoções Passport Radio`;
-    host.innerHTML = `<a class="campaign-back" href="promocoes.html">← TODAS AS PROMOÇÕES</a><header class="campaign-header"><span class="promo-kicker">${escapeHtml(campaign.id)} · ${statusFor(campaign)}</span><h1>${escapeHtml(campaign.title)}</h1><div class="campaign-dates">${datesFor(campaign).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div></header><img class="campaign-prize" src="${escapeHtml(campaign.prize_image || "/images/passport-radio-definitive.jpg")}" alt="${escapeHtml(campaign.prize_alt || campaign.prize)}"><div class="campaign-layout"><div><p class="campaign-copy">A Passport Radio apresenta esta campanha. Prêmio: <strong>${escapeHtml(campaign.prize)}</strong>. Acompanhe as datas e o resultado nesta página.</p><section class="campaign-prize-detail"><span>PRÊMIO</span><strong>${escapeHtml(campaign.prize)}</strong>${campaign.product_url ? `<a href="${escapeHtml(campaign.product_url)}">VER PRODUTO NA LOJA →</a>` : ""}</section><section class="campaign-rules" id="regulamento"><h2>REGULAMENTO</h2><ol>${(campaign.rules || []).map((rule) => `<li>${escapeHtml(rule)}</li>`).join("")}</ol></section></div><aside class="campaign-participation"><span>PARTICIPAÇÃO</span><h2>${campaign.registration_enabled ? "ENTRAR E PARTICIPAR" : "EM BREVE"}</h2>${campaign.registration_enabled ? campaignForm(campaign, config.form_endpoint) : "<p>Esta campanha terá participação liberada após a publicação do calendário e regulamento.</p>"}<div id="promo-confirmation" hidden aria-live="polite"></div></aside></div><section class="campaign-share"><span>COMPARTILHAR</span><h2>ESPALHE A CAMPANHA</h2><p>Compartilhe a página oficial da promoção.</p><div class="campaign-share__actions"><button type="button" data-share-campaign>COMPARTILHAR</button><a data-share-wa target="_blank" rel="noopener">WHATSAPP</a><a href="promocoes.html?tab=entries#area-ouvinte">MINHAS INSCRIÇÕES →</a></div></section><nav class="campaign-links"><a href="promocoes.html">VOLTAR ÀS PROMOÇÕES</a><a href="anuncie.html">PATROCINE UMA CAMPANHA →</a></nav>`;
+    const pendingQuestion = (!campaign.registration_enabled && campaign.question) ? `<p class="campaign-copy">Pergunta desta campanha: <strong>${escapeHtml(campaign.question)}</strong></p>` : "";
+    const product = campaign.product_url ? `<a href="${escapeHtml(campaign.product_url)}">VER PRODUTO NA LOJA →</a>` : "";
+    host.innerHTML = `<a class="campaign-back" href="promocoes.html">← TODAS AS PROMOÇÕES</a><header class="campaign-header"><span class="promo-kicker">${escapeHtml(campaign.id)} · ${statusFor(campaign)}</span><h1>${escapeHtml(campaign.title)}</h1><div class="campaign-dates">${datesFor(campaign).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div></header><img class="campaign-prize" src="${escapeHtml(campaign.prize_image || "/images/passport-radio-definitive.jpg")}" alt="${escapeHtml(campaign.prize_alt || campaign.prize)}"><div class="campaign-layout"><div><p class="campaign-copy">A Passport Radio apresenta esta campanha. Prêmio: <strong>${escapeHtml(campaign.prize)}</strong>. Acompanhe as datas e o resultado nesta página.</p>${pendingQuestion}<section class="campaign-prize-detail"><span>PRÊMIO</span><strong>${escapeHtml(campaign.prize)}</strong>${product}</section>${officialChannels(campaign, config)}<section class="campaign-rules" id="regulamento"><h2>REGULAMENTO</h2><ol>${(campaign.rules || []).map((rule) => `<li>${escapeHtml(rule)}</li>`).join("")}</ol></section></div><aside class="campaign-participation"><span>PARTICIPAÇÃO</span><h2>${campaign.registration_enabled ? "ENTRAR E PARTICIPAR" : "EM BREVE"}</h2>${campaign.registration_enabled ? campaignForm(campaign, config.form_endpoint, config) : "<p>Esta campanha terá participação liberada após a publicação do calendário e regulamento. Inscrição recebida, quando aberta, não significa aptidão automática ao sorteio.</p>"}<div id="promo-confirmation" hidden aria-live="polite"></div></aside></div><section class="campaign-share"><span>COMPARTILHAR</span><h2>ESPALHE A CAMPANHA</h2><p>Compartilhe a página oficial da promoção. O link de indicação usa <code>?ref=</code> após uma inscrição recebida.</p><div class="campaign-share__actions"><button type="button" data-share-campaign>COMPARTILHAR</button><a data-share-wa target="_blank" rel="noopener">WHATSAPP</a><a href="promocoes.html?tab=entries#area-ouvinte">MINHAS INSCRIÇÕES →</a></div></section><nav class="campaign-links"><a href="promocoes.html">VOLTAR ÀS PROMOÇÕES</a><a href="anuncie.html">PATROCINE UMA CAMPANHA →</a></nav>`;
     host.querySelector("[data-share-campaign]")?.addEventListener("click", () => share(campaign));
-    const whatsapp = host.querySelector("[data-share-wa]"); whatsapp.href = `https://wa.me/?text=${encodeURIComponent(`${campaign.share_text || campaign.title} · ${new URL(campaign.detail_url, location.origin)}`)}`;
-    bindForm(campaign);
+    const whatsapp = host.querySelector("[data-share-wa]"); if (whatsapp) whatsapp.href = `https://wa.me/?text=${encodeURIComponent(`${campaign.share_text || campaign.title} · ${new URL(campaign.detail_url, location.origin)}`)}`;
+    bindForm(campaign, config);
   }
   fetch("/data/promocoes.json", {cache:"no-store"}).then((response) => response.json()).then((config) => {
     const campaigns = config.campaigns || [], listing = document.querySelector("[data-promo-listing]");
