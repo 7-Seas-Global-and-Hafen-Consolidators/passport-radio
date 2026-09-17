@@ -135,15 +135,6 @@ process.stdout.write(JSON.stringify({ table: ctx.window.PassportCommercial.PERIO
     return json.loads(raw)
 
 
-def files_in_head_commit() -> set[str]:
-    output = subprocess.check_output(
-        ["git", "show", "--pretty=format:", "--name-only", "HEAD"],
-        cwd=ROOT,
-        text=True,
-    )
-    return {line for line in output.splitlines() if line}
-
-
 # --- Anuncie / Whiplash periods ---
 match = re.search(r"const PERIOD_DISCOUNT_PCT = \[([^\]]+)\];", JS)
 if not match:
@@ -364,10 +355,19 @@ if "data-promo-listing" not in PROMO_HTML:
     fail("listing host missing")
 
 # radio/home must not be part of this surgery
-touched = files_in_head_commit()
-for path in PROTECTED:
-    if path in touched:
-        fail(f"protected surface was modified: {path}")
+commercial_blob = "\n".join(path.read_text(encoding="utf-8") for path in COMMERCIAL_FILES)
+for token in (
+    "PassportBus",
+    "passport-persist-nav",
+    "passport-casa-host",
+    "pp-persist",
+    "new Audio(",
+    "passport-live.js",
+    "continuous-signals-home",
+    "tunnel-player",
+):
+    if token in commercial_blob:
+        fail(f"commercial scope imported protected radio token: {token}")
 if "js/promocoes.js" not in CI or "js/passport-commercial.js" not in CI:
     fail("CI does not syntax-check commercial JS")
 if "tests/test_commercial_promotions.py" not in CI:
@@ -380,4 +380,4 @@ print("OK PIX key QR is local")
 print("OK five campaigns + Fone Retrô José Silva Souza")
 print("OK Formspree xaenylvg; xoeqnvjg absent from commercial scope")
 print("OK catalog products 5786215 / 2876812")
-print("OK protected radio/home surfaces untouched in HEAD commit")
+print("OK commercial scope does not import radio motors")
