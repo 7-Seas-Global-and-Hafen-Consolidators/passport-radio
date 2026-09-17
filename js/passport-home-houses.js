@@ -150,7 +150,7 @@
   }
   function variantFor(src) {
     if ((src || "").indexOf("radio-mundo-player") !== -1) return "host--world";
-    if (/live-rare|novelas|globo-de-ouro/.test(src || "")) return "host--media";
+    if (/live-rare|novelas|radio-80s|radio-continuous|radio-soul|radio-hits/.test(src || "")) return "host--media";
     return "host--simple";
   }
   function teardownFrame() {

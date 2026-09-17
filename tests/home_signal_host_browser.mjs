@@ -23,19 +23,19 @@ const MIME = {
   ".woff2": "font/woff2"
 };
 const HOUSES = [
-  {file: "radio-continuous.html", name: "Continuous Signals™", variant: "host--simple"},
+  {file: "radio-continuous.html", name: "Continuous Signals™", variant: "host--media"},
   {file: "radio-live-rare.html", name: "Live & Rare™", variant: "host--media"},
-  {file: "radio-80s.html", name: "80s™", variant: "host--simple"},
-  {file: "radio-soul.html", name: "Soul™", variant: "host--simple"},
+  {file: "radio-80s.html", name: "80s™", variant: "host--media"},
+  {file: "radio-soul.html", name: "Soul™", variant: "host--media"},
   {file: "radio-mpb.html", name: "MPB™", variant: "host--simple"},
-  {file: "radio-hits.html", name: "Passport Hits™", variant: "host--simple"},
+  {file: "radio-hits.html", name: "Passport Hits™", variant: "host--media"},
   {file: "radio-rock-brasil.html", name: "Rock Brasil™", variant: "host--simple"},
   {file: "radio-50s-60s.html", name: "50s & 60s™", variant: "host--simple"},
   {file: "radio-flash-house.html", name: "Flash House™", variant: "host--simple"},
   {file: "radio-world-disco-deutschland.html", name: "WORLD DISCO DEUTSCHLAND™", variant: "host--simple"},
   {file: "radio-world-tunnel-reggae.html", name: "WORLD TUNNEL REGGAE™", variant: "host--simple"},
   {file: "radio-novelas.html", name: "Novelas™", variant: "host--media"},
-  {file: "globo-de-ouro-player.html", name: "Globo de Ouro™", variant: "host--media"},
+  {file: "globo-de-ouro-player.html", name: "Globo de Ouro™", variant: "host--simple"},
   {file: "radio-mundo-player.html", name: "World Dial™", variant: "host--world"},
   {file: "radio-jovem-guarda.html", name: "Jovem Guarda™", variant: "host--simple"},
   {file: "radio-nostalgia-passport.html", name: "Nostalgia Passport™", variant: "host--simple"}

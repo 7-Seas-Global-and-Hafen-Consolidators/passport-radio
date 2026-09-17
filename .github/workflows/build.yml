@@ -242,3 +242,7 @@ jobs:
       - name: Validate Home single-signal host
         shell: bash
         run: python tests/test_home_signal_host.py
+
+      - name: Validate Home embed compact presentation
+        shell: bash
+        run: python tests/test_home_embed_compact.py
