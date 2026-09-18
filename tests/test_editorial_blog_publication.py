@@ -244,7 +244,6 @@ def test_writer_kills_formula_and_professor() -> None:
 
 def test_slogan_dead_at_source() -> None:
     sources = [
-        "tools/editorial_engine.py",
         "tools/editorial_blog_tunnel.py",
         "js/mr-nomad-dossiers.js",
         "js/passport-signal-habitat.js",
@@ -257,12 +256,28 @@ def test_slogan_dead_at_source() -> None:
         text = (ROOT / rel).read_text("utf-8")
         if "Every Song Is A Destination" in text:
             fail(f"dead slogan still in {rel}")
-        if "pe-nomad-signature" in text and rel.endswith("editorial_engine.py"):
-            fail("mill still auto-signs Nomad")
-    engine = (ROOT / "tools/editorial_engine.py").read_text("utf-8")
-    if "— MR. NOMAD" in engine:
-        fail("mill template still auto-attributes Nomad")
-    print("OK slogan/authorship dead at mill source")
+        if "pe-nomad-signature" in text:
+            fail(f"blog mill auto-signs Nomad in {rel}")
+    blog_html = tunnel.render_blog_article(
+        {
+            "title": "Nightwish e o detalhe que os fãs ainda discutem",
+            "deck": "A banda reaparece no radar.",
+            "kicker": "PASSPORT RADIO · BLOG",
+            "meta_description": "Nightwish no Blog.",
+            "closing": "A Passport deixa Nightwish no mapa.",
+            "entities": ["Nightwish"],
+            "story_angle_id": "ANG_N",
+            "published_at": "2026-09-18T03:00:00",
+            "sections": [{"heading": "O episódio", "paragraphs": ["Um palco em 1998."]}],
+            "author": "Passport Radio",
+        },
+        "/blog/2026/09/18/nightwish.html",
+        [],
+        {"photos": [], "videos": []},
+    )
+    if "Every Song Is A Destination" in blog_html or "pe-nomad-signature" in blog_html:
+        fail("blog renderer still ships mill slogan/Nomad")
+    print("OK slogan/authorship dead on Blog surfaces")
 
 
 def test_discussion_and_submit_sql() -> None:
