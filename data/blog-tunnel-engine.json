@@ -1,0 +1,73 @@
+{
+  "version": 2,
+  "channel": "blog",
+  "destination": "blog",
+  "public_author": "Passport Radio",
+  "cover_mode": "human",
+  "cover_url": "/historias/contar-historias-que-dao-vontade-de-ouvir.html",
+  "daily_target": 10,
+  "daily_publish_cap": 10,
+  "max_batch": 4,
+  "generation_call_budget_per_run": 4,
+  "source_firewall_max_chars": 7000,
+  "minimum_fact_pack_facts": 2,
+  "format_word_range": 280,
+  "cooldown_days": 45,
+  "ledger_size": 100000,
+  "feed_size": 400,
+  "queue_size": 400,
+  "hot_window": 400,
+  "hot_live_share": 0.5,
+  "hot_published_tail": 200,
+  "model": "grok-4.5",
+  "max_output_tokens": 5000,
+  "api_timeout_seconds": 120,
+  "discovery": {
+    "mode": "continuous",
+    "max_age_hours": 168,
+    "workers": 2,
+    "continuous": {
+      "rss_pages": 12,
+      "rest_pages_per_type": 8,
+      "rest_per_page": 100,
+      "sitemap_files": 8,
+      "sitemap_urls_per_file": 500,
+      "html_index_pages": 3,
+      "max_items_per_source": 2500
+    },
+    "backfill": {
+      "rss_pages": 40,
+      "rest_pages_per_type": 25,
+      "rest_per_page": 100,
+      "sitemap_files": 40,
+      "sitemap_urls_per_file": 2000,
+      "html_index_pages": 12,
+      "max_items_per_source": 8000
+    }
+  },
+  "quality_gate": {
+    "mode": "enforce",
+    "require_fact_refs": true,
+    "require_ptbr": true,
+    "anti_copy_window_words": 40,
+    "max_paragraph_similarity": 0.60,
+    "min_words_for_similarity": 28
+  },
+  "minimum_words": {
+    "FLASH": 280,
+    "STORY": 360,
+    "MR_NOMAD": 850,
+    "LIVE_SIGNAL": 320
+  },
+  "public_forbidden_patterns": [
+    "segundo a ", "segundo o ", "de acordo com ", "fonte:", "fontes:",
+    "publicado originalmente", "publicada originalmente", "em entrevista ao ",
+    "em entrevista à ", "em entrevista para ", "according to ", "source:",
+    "metal-hammer.de", "whiplash.net",
+    "helen lindenmann", "mr. nomad", "mr nomad"
+  ],
+  "blocked_organic_patterns": [
+    "pancadão", "pancadao", "baile funk", "funk ostenta", "funk carioca",
+    "funk melody", "funk conscient", "batidão", "batidao"
+  ]
+}

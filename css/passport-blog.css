@@ -28,3 +28,20 @@ body.pp-blog-article .passport-discussion{width:min(calc(100% - 40px),760px);mar
 body.pp-blog-article .passport-discussion h2{margin:0 0 8px;font-family:"Bodoni Moda",Georgia,serif;font-size:1.7rem}
 body.pp-blog-article .passport-discussion p{margin:0!important;font-family:"Instrument Sans",system-ui,sans-serif!important;font-size:.95rem!important;line-height:1.6!important}
 @media(max-width:760px){body.pp-blog .blog-page{width:min(calc(100% - 24px),1120px);padding:28px 0 64px}body.pp-blog .blog-grid,.passport-blog-showcase__cards{grid-template-columns:1fr}.passport-blog-showcase__in{width:min(calc(100% - 24px),1120px);display:block}.passport-blog-showcase__cta{margin-top:20px}.passport-blog-showcase h2{max-width:18ch}}
+body.pp-blog .blog-archive{margin-top:48px}
+body.pp-blog .blog-archive__title{margin:0 0 8px;color:var(--blog-ink);font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(1.8rem,3.4vw,2.6rem)}
+body.pp-blog .blog-archive__lead{max-width:62ch;margin:0 0 22px;color:var(--blog-mute);line-height:1.55}
+body.pp-blog .blog-archive-empty{margin:12px 0 0;color:#756e66;font-size:.9rem}
+body.pp-blog-article .blog-listen{margin:28px 0 0}
+body.pp-blog-article .blog-listen a{display:inline-flex;align-items:center;min-height:42px;padding:0 20px;border:1px solid #c4a574;border-radius:999px;color:#c4a574;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-decoration:none;text-transform:uppercase}
+body.pp-blog-article .blog-listen a:hover{background:#c4a574;color:#0b0b0b}
+body.pp-blog-article .blog-related{width:min(calc(100% - 40px),760px);margin:0 auto 48px}
+body.pp-blog-article .blog-related span{display:block;margin-bottom:12px;color:#c4a574;font-size:.68rem;font-weight:600;letter-spacing:.16em}
+body.pp-blog-article .blog-related div{display:grid;gap:12px}
+body.pp-blog-article .blog-related__card{display:block;padding:14px 16px;border:1px solid #262626;background:#101010;color:#f3ead8;text-decoration:none}
+body.pp-blog-article .blog-related__card:hover{border-color:#c4a574}
+body.pp-blog-article .blog-embed{margin:0 0 28px}
+body.pp-blog-article .blog-embed iframe{width:100%;min-height:360px;border:0;background:#000}
+body.pp-blog-article .blog-photo{margin:0 0 28px}
+body.pp-blog-article .blog-photo img{width:100%;height:auto;display:block}
+body.pp-blog-article .blog-photo figcaption{margin-top:8px;color:#9a938a;font-size:.82rem}

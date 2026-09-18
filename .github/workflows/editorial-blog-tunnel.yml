@@ -1,0 +1,168 @@
+name: Passport Global Blog Tunnel™
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "continuous discovers the recent window; backfill walks the archive into the queue without dumping the site"
+        required: false
+        default: "continuous"
+        type: choice
+        options: [continuous, backfill]
+      max_generate:
+        description: "Publication cap for this run (0 = discover only)"
+        required: false
+        default: "2"
+      apply:
+        description: "Write Blog pages into the repo (never noticias/Home)"
+        required: false
+        default: false
+        type: boolean
+  pull_request:
+    paths:
+      - 'tools/editorial_blog_tunnel.py'
+      - 'tools/editorial_blog_discovery.py'
+      - 'tools/editorial_media_resolver.py'
+      - 'tools/editorial_fact_pack.py'
+      - 'data/editorial-sources-blog-v1.json'
+      - 'data/blog-tunnel-engine.json'
+      - 'tests/test_editorial_blog_tunnel.py'
+      - '.github/workflows/editorial-blog-tunnel.yml'
+      - 'js/passport-blog-archive.js'
+      - 'blog.html'
+  schedule:
+    - cron: '41 */2 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: passport-blog-tunnel
+  cancel-in-progress: false
+
+jobs:
+  blog-tunnel:
+    name: Discover entire sources · generate a cap into the Blog
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Compile mill + blog tunnel
+        run: |
+          python -m py_compile \
+            tools/editorial_blog_discovery.py \
+            tools/editorial_blog_tunnel.py \
+            tools/editorial_media_resolver.py \
+            tools/editorial_fact_pack.py \
+            tools/editorial_quality_gate.py \
+            tools/editorial_engine_constitution.py
+          python tests/test_editorial_blog_tunnel.py
+          node --check js/passport-blog-archive.js
+
+      - name: Guard protected surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          news = Path('noticias.html').read_text('utf-8')
+          home = Path('index.html').read_text('utf-8')
+          if 'blog-tunnel-queue.json' in news or 'editorial_blog_tunnel' in news:
+              raise SystemExit('noticias.html coupled to blog tunnel')
+          if 'blog-feed.json' in home:
+              raise SystemExit('Home coupled to blog feed')
+          print('OK protected surfaces')
+          PY
+
+      - name: Resolve run settings
+        id: settings
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          GEN="${{ github.event.inputs.max_generate }}"
+          APPLY="${{ github.event.inputs.apply }}"
+          if [ -z "$MODE" ]; then MODE="continuous"; fi
+          if [ -z "$GEN" ]; then GEN="2"; fi
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            APPLY="false"
+            GEN="0"
+          fi
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            APPLY="true"
+            GEN="2"
+            MODE="continuous"
+          fi
+          echo "MODE=$MODE" >> "$GITHUB_ENV"
+          echo "GEN=$GEN" >> "$GITHUB_ENV"
+          echo "APPLY=$APPLY" >> "$GITHUB_ENV"
+
+      - name: Discover entire sources into the queue
+        if: github.event_name != 'pull_request'
+        run: |
+          python tools/editorial_blog_tunnel.py discover \
+            --mode "$MODE" \
+            --max-age-hours 168 \
+            --workers 2 \
+            --output-dir build/blog-tunnel
+
+      - name: Generate capped Blog stories
+        if: github.event_name != 'pull_request' && env.GEN != '0'
+        run: |
+          APPLY_FLAG=""
+          if [ "$APPLY" = "true" ]; then APPLY_FLAG="--apply"; fi
+          python tools/editorial_blog_tunnel.py generate \
+            --max-generate "$GEN" \
+            --output-dir build/blog-tunnel \
+            $APPLY_FLAG
+
+      - name: Refuse noticias / Home / audio writes
+        if: always()
+        run: |
+          python - <<'PY'
+          import subprocess
+          out = subprocess.check_output(['git','status','--porcelain'], text=True)
+          forbidden = (
+              'noticias.html', 'index.html', 'radio.html',
+              'data/editorial-feed.json', 'js/editorial-home.js',
+              'js/passport-news.js', 'js/passport-live.js',
+              '.github/workflows/editorial-engine.yml',
+              '.github/workflows/editorial-tunnel.yml',
+          )
+          dirty = [line[3:].strip() for line in out.splitlines() if line.strip()]
+          hits = [p for p in dirty if p in forbidden or p.startswith('radio-')]
+          if hits:
+              raise SystemExit('blog tunnel touched protected files: ' + ', '.join(hits))
+          print('OK no protected writes')
+          print(out or 'clean')
+          PY
+
+      - name: Commit Blog queue / sample (never merge)
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: |
+          git config user.name "passport-blog-tunnel"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/blog-tunnel-queue.json data/blog-published.json data/blog-feed.json data/blog-media-library.json data/knowledge-graph.json blog.html sitemap.xml
+          git add blog || true
+          if git diff --cached --quiet; then
+            echo "No Blog publication in this run"
+            exit 0
+          fi
+          git commit -m "chore(blog-tunnel): continuous discover + capped Blog publish"
+          git push
+
+      - name: Upload private packet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: passport-blog-tunnel-${{ github.run_number }}
+          path: build/blog-tunnel/
+          retention-days: 7
+          if-no-files-found: warn
