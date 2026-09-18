@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import html
 import json
 import os
 import re
@@ -26,7 +27,7 @@ import ssl
 import sys
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,7 @@ import editorial_quality_gate as quality_gate
 from editorial_fact_pack import build_fact_pack, merge_fact_packs
 from editorial_media_resolver import library_payload, resolve_media, upsert_library
 from editorial_tunnel import title_similarity
+import editorial_blog_catalog as catalog
 
 SITE = "https://passportradio.online"
 CHANNEL = "blog"
@@ -622,48 +624,136 @@ def _media_html(media: dict[str, Any], title: str) -> str:
     return "".join(chunks)
 
 
-def render_blog_article(article: dict[str, Any], url_path: str, related: list[dict[str, Any]], media: dict[str, Any]) -> str:
+def _paragraphs_html(section: dict[str, Any], entities: list[str]) -> str:
+    chunks = []
+    for raw in section.get("paragraphs") or []:
+        text = raw.get("text") if isinstance(raw, dict) else str(raw or "")
+        chunks.append(f"<p>{_link_entities(base.esc(text), entities)}</p>")
+    return "\n".join(chunks)
+
+
+def _link_entities(escaped_text: str, entities: list[str]) -> str:
+    used: set[str] = set()
+    out = escaped_text
+    for name in entities:
+        name = base.clean(name)
+        if len(name) < 3 or name.lower() in catalog.ENTITY_STOP:
+            continue
+        key = name.lower()
+        if key in used:
+            continue
+        pattern = re.compile(re.escape(html.escape(name, quote=False)), re.I)
+        if not pattern.search(out):
+            continue
+        href = f"/blog/e/{catalog.slugify(name)}.html"
+        out, n = pattern.subn(f'<a class="blog-body-link" href="{href}">{html.escape(name)}</a>', out, count=1)
+        if n:
+            used.add(key)
+    return out
+
+
+def _share_html(canonical: str, title: str) -> str:
+    encoded = quote(canonical)
+    text = quote(f"{title} — {canonical}")
+    return (
+        '<aside class="blog-share"><span>Compartilhar</span>'
+        f'<a href="https://wa.me/?text={text}" target="_blank" rel="noopener">WhatsApp</a>'
+        f'<a href="https://t.me/share/url?url={encoded}&text={quote(title)}" target="_blank" rel="noopener">Telegram</a>'
+        f'<button type="button" data-copy-link="{base.esc(canonical)}">Copiar link</button>'
+        "</aside>"
+    )
+
+
+def render_blog_article(
+    article: dict[str, Any],
+    url_path: str,
+    related: list[dict[str, Any]],
+    media: dict[str, Any],
+    neighbors: dict[str, Any] | None = None,
+    catalog_item: dict[str, Any] | None = None,
+) -> str:
     public = constitution._public_article_copy(article)
     title = public["title"]
     desc = public.get("meta_description") or public["deck"]
     published = str(article.get("published_at") or "")[:10]
+    modified = str(article.get("modified_at") or article.get("published_at") or published)[:10]
     canonical = SITE + url_path
+    author = article.get("author") or PUBLIC_AUTHOR
+    entities = [base.clean(x) for x in (article.get("entities") or []) if base.clean(x)]
     sections = []
-    for section in public.get("sections") or []:
-        paragraphs = "\n".join(f"<p>{base.esc(p)}</p>" for p in section.get("paragraphs") or [])
-        sections.append(f"<h2>{base.esc(section.get('heading'))}</h2>\n{paragraphs}")
+    extras = list((media.get("photos") or [])[1:6])
+    videos = list((media.get("videos") or [])[1:3])
+    for idx, section in enumerate(public.get("sections") or []):
+        heading = base.esc(section.get("heading"))
+        body = _paragraphs_html(section, entities)
+        extra = ""
+        if idx == 1 and extras:
+            photo = extras[0]
+            extra = (
+                f'<figure class="blog-photo"><img src="{base.esc(photo.get("url"))}" alt="{base.esc(photo.get("alt") or title)}" loading="lazy" width="1200" height="675">'
+                f'<figcaption>{base.esc(photo.get("credit") or photo.get("alt") or "")}</figcaption></figure>'
+            )
+        if idx == 2 and videos:
+            vid = videos[0]
+            if vid.get("embed_url"):
+                extra += (
+                    f'<div class="blog-embed"><iframe src="{base.esc(vid["embed_url"])}" title="{base.esc(vid.get("title") or title)}" '
+                    'loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>'
+                )
+        sections.append(f"<h2>{heading}</h2>\n{body}{extra}")
     related_html = ""
     if related:
         cards = "".join(
-            f'<a class="blog-related__card" href="{base.esc(i.get("url"))}"><small>{base.esc(i.get("category") or "BLOG")}</small><strong>{base.esc(i.get("title"))}</strong></a>'
-            for i in related
+            f'<a class="blog-related__card" href="{base.esc(i.get("url"))}"><small>{base.esc(i.get("family") or i.get("category") or "BLOG")}</small><strong>{base.esc(i.get("title"))}</strong></a>'
+            for i in related if i.get("url") and i.get("url") != url_path
         )
-        related_html = f'<section class="blog-related"><span>CONTINUE NO BLOG</span><div>{cards}</div></section>'
-    about = [{"@type": "Thing", "name": n} for n in (article.get("entities") or [])[:8]]
+        related_html = f'<section class="blog-related"><span>Continue no acervo</span><div>{cards}</div></section>'
+    rail_cards = "".join(
+        f'<a class="blog-related__card" href="{base.esc(i.get("url"))}"><strong>{base.esc(i.get("title"))}</strong></a>'
+        for i in (related or [])[:4]
+    )
+    about = [{"@type": "Thing", "name": n} for n in entities[:8]]
     hero = (media.get("hero_photo") or {}).get("url") or ""
-    if str(hero).startswith("/"):
-        image = SITE + hero
-    elif hero:
-        image = hero
-    else:
-        image = SITE + "/images/passport-radio-definitive.jpg"
+    image = SITE + hero if str(hero).startswith("/") else (hero or SITE + "/images/passport-radio-definitive.jpg")
     schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": title,
         "description": desc,
         "image": image,
-        "author": {"@type": "Organization", "name": PUBLIC_AUTHOR},
+        "author": {"@type": "Person" if author == "Mr. Nomad" else "Organization", "name": author},
         "publisher": {"@type": "Organization", "name": "Passport Radio", "logo": {"@type": "ImageObject", "url": SITE + "/images/passport-radio-definitive.jpg"}},
         "mainEntityOfPage": canonical,
         "datePublished": published,
-        "dateModified": published,
+        "dateModified": modified,
         "inLanguage": "pt-BR",
         "about": about,
+        "isPartOf": {"@type": "Blog", "name": "Blog Passport Radio", "url": SITE + "/blog.html"},
     }
     stamp = dt.date.fromisoformat(published).strftime("%d %b %Y").upper() if published else ""
     media_html = _media_html(media, title)
-    story_id = base.clean(article.get("story_angle_id"))
+    story_id = base.clean(article.get("story_angle_id") or article.get("story_id"))
+    entity_chips = "".join(
+        f'<a href="/blog/e/{catalog.slugify(n)}.html">{base.esc(n)}</a>'
+        for n in entities[:10] if n.lower() not in catalog.ENTITY_STOP
+    )
+    nav = neighbors or {}
+    prev_item, next_item = nav.get("prev"), nav.get("next")
+    prevnext = '<nav class="blog-prevnext">'
+    if prev_item:
+        prevnext += f'<a rel="prev" href="{base.esc(prev_item.get("url"))}"><small>Anterior</small>{base.esc(prev_item.get("title"))}</a>'
+    else:
+        prevnext += "<span></span>"
+    if next_item:
+        prevnext += f'<a rel="next" href="{base.esc(next_item.get("url"))}"><small>Próxima</small>{base.esc(next_item.get("title"))}</a>'
+    prevnext += "</nav>"
+    crumbs = (
+        '<nav class="blog-crumbs" aria-label="Trilha">'
+        '<a href="/blog.html">Blog</a> · '
+        f'<a href="/blog/arquivo/">{base.esc((catalog_item or {}).get("family") or "arquivo")}</a> · '
+        f"<span>{base.esc(title)}</span></nav>"
+    )
+    fmt = base.esc(article.get("kicker") or "PASSPORT RADIO · BLOG")
     return f'''<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -676,36 +766,70 @@ def render_blog_article(article: dict[str, Any], url_path: str, related: list[di
 <meta property="og:type" content="article"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Passport Radio">
 <meta property="og:title" content="{base.esc(title)}"><meta property="og:description" content="{base.esc(desc)}">
 <meta property="og:url" content="{base.esc(canonical)}"><meta property="og:image" content="{base.esc(schema['image'])}">
-<meta property="article:published_time" content="{base.esc(published)}"><meta property="article:author" content="{PUBLIC_AUTHOR}">
+<meta property="article:published_time" content="{base.esc(published)}"><meta property="article:modified_time" content="{base.esc(modified)}">
+<meta property="article:author" content="{base.esc(author)}">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/editorial-engine.css?v=20260825">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918b">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918p">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-article pp-blog-article">
 <div class="pe-topbar">PASSPORT RADIO · BLOG</div>
-<header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/blog.html">BLOG</a><a href="/radio.html">OUVIR</a></nav></div></header>
-<main>
+<header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><strong>PASSPORT RADIO</strong></a>
+<form class="blog-search" role="search" method="get" action="/blog/busca.html">
+<label class="blog-search__label" for="blog-q">Buscar no Blog</label>
+<input id="blog-q" name="q" type="search" placeholder="Buscar no acervo" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<nav><a href="/">AGORA</a><a href="/blog.html">BLOG</a><a href="/radio.html">OUVIR</a></nav></div></header>
+<main class="blog-layout">
+<div>
+{crumbs}
 <section class="pe-hero"><div class="pe-shell">
-<span class="pe-kicker">{base.esc(article.get("kicker") or "PASSPORT RADIO · BLOG")}</span>
+<span class="pe-kicker">{fmt}</span>
 <h1>{base.esc(title)}</h1>
 <p>{base.esc(article.get("deck"))}</p>
-<div class="pe-stamp"><b>{PUBLIC_AUTHOR}</b><span>{base.esc(stamp)}</span></div>
+<div class="pe-stamp"><b>{base.esc(author)}</b><span>{base.esc(stamp)}</span></div>
 </div></section>
 <article class="pe-prose">
 {media_html}
 {''.join(sections)}
 <div class="pe-closing"><small>PASSPORT RADIO · BLOG</small><p>{base.esc(article.get("closing"))}</p></div>
+{_share_html(canonical, title)}
 <p class="blog-listen"><a href="/radio.html">OUVIR NA PASSPORT</a></p>
-<p><strong><a href="/blog.html">→ Voltar ao Blog Passport Radio</a></strong></p>
+{prevnext}
 </article>
-</main>
 {related_html}
-<section class="passport-discussion" hidden data-passport-discussion="reserved" aria-hidden="true"></section>
+<section class="passport-discussion" id="discussao" data-passport-discussion="live" data-story-url="{base.esc(url_path)}">
+<h2>Discussão</h2>
+<p class="blog-discussion__status">Carregando a conversa da Conta Passport…</p>
+</section>
+</div>
+<aside class="blog-rail" aria-label="Neste acervo">
+<span>Neste acervo</span>
+<div class="blog-entities">{entity_chips}</div>
+{rail_cards}
+<p><a href="/blog/arquivo/">Arquivo completo →</a></p>
+</aside>
+</main>
 <footer class="pp-footer"><div class="pp-footer-bottom">© 2026 Passport Radio · <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="/js/passport-blog-search.js?v=20260918p" defer></script>
+<script src="/js/passport-blog-discussion.js?v=20260918p" defer></script>
+<script>
+document.addEventListener("click", function (ev) {{
+  var btn = ev.target.closest("[data-copy-link]");
+  if (!btn || !navigator.clipboard) return;
+  navigator.clipboard.writeText(btn.getAttribute("data-copy-link")).then(function () {{
+    btn.textContent = "Link copiado";
+  }});
+}});
+</script>
 </body></html>
 '''
+
 
 
 def expand_knowledge_graph(graph: dict[str, Any], article: dict[str, Any], url_path: str, media: dict[str, Any]) -> dict[str, Any]:
@@ -913,13 +1037,25 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
             item["status"] = "published"
             item["published_url"] = url_path
             continue
-        related = [x for x in base.related_items(constitution._public_article_copy(article), feed) if x.get("url") != COVER_URL]
-        html_text = render_blog_article(article, url_path, related, media)
+        catalog_now = catalog.load_catalog()
+        related = catalog.related_rank(
+            {"url": url_path, "title": article["title"], "entities": article.get("entities") or [], "format": article.get("format"), "published_at": article["published_at"], "author": PUBLIC_AUTHOR},
+            catalog_now + feed,
+            limit=6,
+        )
+        related = [x for x in related if x.get("url") and x.get("url") not in {url_path, COVER_URL}]
+        neighbors = catalog.neighbors({"url": url_path, "published_at": article["published_at"]}, catalog_now + [{"url": url_path, "title": article["title"], "published_at": article["published_at"]}])
+        html_text = render_blog_article(article, url_path, related, media, neighbors)
         low_html = html_text.lower()
-        if "mr. nomad" in low_html or "<audio" in low_html:
+        if article.get("author") != "Mr. Nomad" and "mr. nomad" in low_html:
             item["status"] = "skipped"
             discovery.mark_archive_status(item.get("urls") or [], "skipped")
             report["skipped"].append({"title": article["title"], "reason": "renderer_contract"})
+            continue
+        if "<audio" in low_html:
+            item["status"] = "skipped"
+            discovery.mark_archive_status(item.get("urls") or [], "skipped")
+            report["skipped"].append({"title": article["title"], "reason": "audio_embed"})
             continue
         if "noticias.html" in html_text:
             item["status"] = "skipped"
@@ -948,6 +1084,15 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         }
         feed.insert(0, public_item)
         feed = feed[: int(config.get("feed_size", 400))]
+        catalog.upsert_catalog({
+            **public_item,
+            "image_alt": (media.get("hero_photo") or {}).get("alt") or article["title"],
+            "image_credit": (media.get("hero_photo") or {}).get("credit") or "",
+            "has_video": bool(media.get("hero_video")),
+            "has_image": bool(public_item.get("image")),
+            "body_excerpt": article.get("deck") or "",
+            "format_hint": item.get("format_hint") or "",
+        })
         entry = {
             "title": article["title"],
             "url": url_path,
@@ -1024,6 +1169,10 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         save_json(feed_path, next_feed)
         save_json(media_path, library)
         save_json(graph_path, graph)
+        surfaces = catalog.write_surfaces()
+        report["catalog"] = surfaces
+        ping = catalog.ping_indexnow(new_paths)
+        report["indexnow"] = ping
         if "/blog.html" not in new_paths:
             new_paths.append("/blog.html")
         base.update_sitemap(ROOT, new_paths, day)
@@ -1034,7 +1183,7 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Passport Global Blog Tunnel™ V1")
-    ap.add_argument("command", choices=["discover", "generate", "run", "archive-stats"], nargs="?", default="run")
+    ap.add_argument("command", choices=["discover", "generate", "run", "archive-stats", "surfaces"], nargs="?", default="run")
     ap.add_argument("--sources", default=str(ROOT / "data/editorial-sources-blog-v1.json"))
     ap.add_argument("--output-dir", default=str(ROOT / "build/blog-tunnel"))
     ap.add_argument("--mode", choices=["continuous", "backfill"], default="continuous")
@@ -1047,6 +1196,10 @@ def main() -> int:
     config = load_json(ROOT / "data/blog-tunnel-engine.json", {})
     if args.command == "archive-stats":
         print(json.dumps(discovery.archive_stats(), ensure_ascii=False, indent=2))
+        return 0
+    if args.command == "surfaces":
+        catalog.seed_from_feed()
+        print(json.dumps(catalog.write_surfaces(), ensure_ascii=False, indent=2))
         return 0
     if args.command in {"discover", "run"}:
         discover(Path(args.sources), out / "discovery", args.mode, args.max_age_hours, args.workers, config)
