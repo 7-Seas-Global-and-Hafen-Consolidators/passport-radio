@@ -1,1 +1,794 @@
-{"version":2,"entity_types":["artist","band","member","instrument","album","song","show","festival","city","country","decade","genre","subgenre","label","producer","venue","article","author","station"],"entities":[{"id":"author:mr-nomad","type":"author","name":"Mr. Nomad","aliases":["Mr Nomad"]},{"id":"decade:1970","type":"decade","name":"Anos 70"},{"id":"decade:1980","type":"decade","name":"Anos 80"},{"id":"decade:1990","type":"decade","name":"Anos 90"},{"id":"genre:rock","type":"genre","name":"Rock"},{"id":"genre:metal","type":"genre","name":"Metal","aliases":["Heavy Metal"]},{"id":"genre:pop","type":"genre","name":"Pop"},{"id":"genre:new-wave","type":"genre","name":"New Wave"},{"id":"band:iron-maiden","type":"band","name":"Iron Maiden"},{"id":"band:metallica","type":"band","name":"Metallica"},{"id":"band:led-zeppelin","type":"band","name":"Led Zeppelin"},{"id":"band:black-sabbath","type":"band","name":"Black Sabbath"},{"id":"band:pink-floyd","type":"band","name":"Pink Floyd"},{"id":"band:deep-purple","type":"band","name":"Deep Purple"},{"id":"band:queen","type":"band","name":"Queen"},{"id":"band:ramones","type":"band","name":"Ramones"},{"id":"band:rhapsody-of-fire","type":"band","name":"Rhapsody of Fire"},{"id":"band:therion","type":"band","name":"Therion"},{"id":"band:within-temptation","type":"band","name":"Within Temptation"},{"id":"artist:bruce-dickinson","type":"artist","name":"Bruce Dickinson"},{"id":"artist:james-hetfield","type":"artist","name":"James Hetfield"},{"id":"artist:robert-plant","type":"artist","name":"Robert Plant"},{"id":"artist:tony-iommi","type":"artist","name":"Tony Iommi"},{"id":"artist:david-gilmour","type":"artist","name":"David Gilmour"},{"id":"artist:ritchie-blackmore","type":"artist","name":"Ritchie Blackmore"},{"id":"artist:sharon-den-adel","type":"artist","name":"Sharon Den Adel"},{"id":"artist:roger-taylor","type":"artist","name":"Roger Taylor"},{"id":"artist:freddie-mercury","type":"artist","name":"Freddie Mercury"},{"id":"instrument:guitarra","type":"instrument","name":"Guitarra"},{"id":"instrument:bateria","type":"instrument","name":"Bateria"},{"id":"instrument:baixo","type":"instrument","name":"Baixo"},{"id":"festival:live-aid","type":"festival","name":"Live Aid"},{"id":"festival:wacken","type":"festival","name":"Wacken Open Air"},{"id":"city:budapest","type":"city","name":"Budapeste","aliases":["Budapest"]},{"id":"station:passport-live","type":"station","name":"Passport Live 24H"}],"relations":[{"type":"member_of","from":"artist:bruce-dickinson","to":"band:iron-maiden"},{"type":"member_of","from":"artist:james-hetfield","to":"band:metallica"},{"type":"member_of","from":"artist:robert-plant","to":"band:led-zeppelin"},{"type":"member_of","from":"artist:tony-iommi","to":"band:black-sabbath"},{"type":"member_of","from":"artist:david-gilmour","to":"band:pink-floyd"},{"type":"member_of","from":"artist:ritchie-blackmore","to":"band:deep-purple"},{"type":"member_of","from":"artist:sharon-den-adel","to":"band:within-temptation"},{"type":"member_of","from":"artist:roger-taylor","to":"band:queen"},{"type":"member_of","from":"artist:freddie-mercury","to":"band:queen"},{"type":"plays","from":"artist:james-hetfield","to":"instrument:guitarra"},{"type":"plays","from":"artist:tony-iommi","to":"instrument:guitarra"},{"type":"plays","from":"artist:david-gilmour","to":"instrument:guitarra"},{"type":"performed_at","from":"band:queen","to":"festival:live-aid"},{"type":"performed_at","from":"band:led-zeppelin","to":"festival:live-aid"},{"type":"happened_in","from":"festival:live-aid","to":"decade:1980"}]}
+{
+  "version": 2,
+  "entity_types": [
+    "artist",
+    "band",
+    "member",
+    "instrument",
+    "album",
+    "song",
+    "show",
+    "festival",
+    "city",
+    "country",
+    "decade",
+    "genre",
+    "subgenre",
+    "label",
+    "producer",
+    "venue",
+    "article",
+    "author",
+    "station",
+    "photo",
+    "video"
+  ],
+  "entities": [
+    {
+      "id": "author:mr-nomad",
+      "type": "author",
+      "name": "Mr. Nomad",
+      "aliases": [
+        "Mr Nomad"
+      ]
+    },
+    {
+      "id": "decade:1970",
+      "type": "decade",
+      "name": "Anos 70"
+    },
+    {
+      "id": "decade:1980",
+      "type": "decade",
+      "name": "Anos 80"
+    },
+    {
+      "id": "decade:1990",
+      "type": "decade",
+      "name": "Anos 90"
+    },
+    {
+      "id": "genre:rock",
+      "type": "genre",
+      "name": "Rock"
+    },
+    {
+      "id": "genre:metal",
+      "type": "genre",
+      "name": "Metal",
+      "aliases": [
+        "Heavy Metal"
+      ]
+    },
+    {
+      "id": "genre:pop",
+      "type": "genre",
+      "name": "Pop"
+    },
+    {
+      "id": "genre:new-wave",
+      "type": "genre",
+      "name": "New Wave"
+    },
+    {
+      "id": "band:iron-maiden",
+      "type": "band",
+      "name": "Iron Maiden"
+    },
+    {
+      "id": "band:metallica",
+      "type": "band",
+      "name": "Metallica"
+    },
+    {
+      "id": "band:led-zeppelin",
+      "type": "band",
+      "name": "Led Zeppelin"
+    },
+    {
+      "id": "band:black-sabbath",
+      "type": "band",
+      "name": "Black Sabbath"
+    },
+    {
+      "id": "band:pink-floyd",
+      "type": "band",
+      "name": "Pink Floyd"
+    },
+    {
+      "id": "band:deep-purple",
+      "type": "band",
+      "name": "Deep Purple"
+    },
+    {
+      "id": "band:queen",
+      "type": "band",
+      "name": "Queen"
+    },
+    {
+      "id": "band:ramones",
+      "type": "band",
+      "name": "Ramones"
+    },
+    {
+      "id": "band:rhapsody-of-fire",
+      "type": "band",
+      "name": "Rhapsody of Fire"
+    },
+    {
+      "id": "band:therion",
+      "type": "band",
+      "name": "Therion"
+    },
+    {
+      "id": "band:within-temptation",
+      "type": "band",
+      "name": "Within Temptation"
+    },
+    {
+      "id": "artist:bruce-dickinson",
+      "type": "artist",
+      "name": "Bruce Dickinson"
+    },
+    {
+      "id": "artist:james-hetfield",
+      "type": "artist",
+      "name": "James Hetfield"
+    },
+    {
+      "id": "artist:robert-plant",
+      "type": "artist",
+      "name": "Robert Plant"
+    },
+    {
+      "id": "artist:tony-iommi",
+      "type": "artist",
+      "name": "Tony Iommi"
+    },
+    {
+      "id": "artist:david-gilmour",
+      "type": "artist",
+      "name": "David Gilmour"
+    },
+    {
+      "id": "artist:ritchie-blackmore",
+      "type": "artist",
+      "name": "Ritchie Blackmore"
+    },
+    {
+      "id": "artist:sharon-den-adel",
+      "type": "artist",
+      "name": "Sharon Den Adel"
+    },
+    {
+      "id": "artist:roger-taylor",
+      "type": "artist",
+      "name": "Roger Taylor"
+    },
+    {
+      "id": "artist:freddie-mercury",
+      "type": "artist",
+      "name": "Freddie Mercury"
+    },
+    {
+      "id": "instrument:guitarra",
+      "type": "instrument",
+      "name": "Guitarra"
+    },
+    {
+      "id": "instrument:bateria",
+      "type": "instrument",
+      "name": "Bateria"
+    },
+    {
+      "id": "instrument:baixo",
+      "type": "instrument",
+      "name": "Baixo"
+    },
+    {
+      "id": "festival:live-aid",
+      "type": "festival",
+      "name": "Live Aid"
+    },
+    {
+      "id": "festival:wacken",
+      "type": "festival",
+      "name": "Wacken Open Air"
+    },
+    {
+      "id": "city:budapest",
+      "type": "city",
+      "name": "Budapeste",
+      "aliases": [
+        "Budapest"
+      ]
+    },
+    {
+      "id": "station:passport-live",
+      "type": "station",
+      "name": "Passport Live 24H"
+    },
+    {
+      "id": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "type": "article",
+      "name": "Kai Hansen no microfone: o metal reorganiza o tabuleiro em um só giro",
+      "aliases": [],
+      "url": "/blog/2026/09/18/kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:kai-hansen",
+      "type": "band",
+      "name": "Kai Hansen",
+      "aliases": []
+    },
+    {
+      "id": "band:born-with-a-hammer",
+      "type": "band",
+      "name": "Born With a Hammer",
+      "aliases": []
+    },
+    {
+      "id": "band:metal-hammer-podcast",
+      "type": "band",
+      "name": "Metal Hammer Podcast",
+      "aliases": []
+    },
+    {
+      "id": "band:linkin-park",
+      "type": "band",
+      "name": "Linkin Park",
+      "aliases": []
+    },
+    {
+      "id": "band:linkin-park-unshatter",
+      "type": "band",
+      "name": "Linkin Park: Unshatter",
+      "aliases": []
+    },
+    {
+      "id": "band:slipknot",
+      "type": "band",
+      "name": "Slipknot",
+      "aliases": []
+    },
+    {
+      "id": "band:arsenal",
+      "type": "band",
+      "name": "Arsenal",
+      "aliases": []
+    },
+    {
+      "id": "band:mastodon",
+      "type": "band",
+      "name": "Mastodon",
+      "aliases": []
+    },
+    {
+      "id": "band:brent-hinds",
+      "type": "band",
+      "name": "Brent Hinds",
+      "aliases": []
+    },
+    {
+      "id": "band:sepultura",
+      "type": "band",
+      "name": "Sepultura",
+      "aliases": []
+    },
+    {
+      "id": "band:moonspell",
+      "type": "band",
+      "name": "Moonspell",
+      "aliases": []
+    },
+    {
+      "id": "band:anthrax",
+      "type": "band",
+      "name": "Anthrax",
+      "aliases": []
+    },
+    {
+      "id": "band:steve-harris",
+      "type": "band",
+      "name": "Steve Harris",
+      "aliases": []
+    },
+    {
+      "id": "band:oli-sykes",
+      "type": "band",
+      "name": "Oli Sykes",
+      "aliases": []
+    },
+    {
+      "id": "band:courtney-laplante",
+      "type": "band",
+      "name": "Courtney LaPlante",
+      "aliases": []
+    },
+    {
+      "id": "photo:91b83db332d6d064",
+      "type": "photo",
+      "name": "METAL HAMMER Podcast Folge 151 mit Kai Hansen",
+      "aliases": [],
+      "url": "https://www.metal-hammer.de/wp-content/uploads/2026/09/17/15/podcast-151-fb.webp"
+    },
+    {
+      "id": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "type": "article",
+      "name": "O que Filme deixa no ar agora",
+      "aliases": [],
+      "url": "/blog/2026/09/18/o-que-filme-deixa-no-ar-agora.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:filme",
+      "type": "band",
+      "name": "Filme",
+      "aliases": []
+    },
+    {
+      "id": "band:ada-wong",
+      "type": "band",
+      "name": "Ada Wong",
+      "aliases": []
+    },
+    {
+      "id": "band:horror",
+      "type": "band",
+      "name": "Horror",
+      "aliases": []
+    },
+    {
+      "id": "band:leon-kennedy",
+      "type": "band",
+      "name": "Leon Kennedy",
+      "aliases": []
+    },
+    {
+      "id": "band:playstation",
+      "type": "band",
+      "name": "PlayStation",
+      "aliases": []
+    },
+    {
+      "id": "band:raccoon-city",
+      "type": "band",
+      "name": "Raccoon City",
+      "aliases": []
+    },
+    {
+      "id": "band:resident-evil",
+      "type": "band",
+      "name": "Resident Evil",
+      "aliases": []
+    },
+    {
+      "id": "band:resident-evil-4",
+      "type": "band",
+      "name": "Resident Evil 4",
+      "aliases": []
+    },
+    {
+      "id": "band:videospielverfilmung",
+      "type": "band",
+      "name": "Videospielverfilmung",
+      "aliases": []
+    },
+    {
+      "id": "band:weapons",
+      "type": "band",
+      "name": "Weapons",
+      "aliases": []
+    },
+    {
+      "id": "photo:96d11445a73ac9c2",
+      "type": "photo",
+      "name": "Review: RESIDENT EVIL (2026)",
+      "aliases": [],
+      "url": "https://www.metal-hammer.de/wp-content/uploads/2026/09/17/11/30168-scaled.webp"
+    },
+    {
+      "id": "article:blog-o-que-oasis-deixa-no-ar-agora",
+      "type": "article",
+      "name": "O que Oasis deixa no ar agora",
+      "aliases": [],
+      "url": "/blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:oasis",
+      "type": "band",
+      "name": "Oasis",
+      "aliases": []
+    },
+    {
+      "id": "band:noel-gallagher",
+      "type": "band",
+      "name": "Noel Gallagher",
+      "aliases": []
+    },
+    {
+      "id": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "type": "article",
+      "name": "O que Ada Wong deixa no ar agora",
+      "aliases": [],
+      "url": "/blog/2026/09/18/o-que-ada-wong-deixa-no-ar-agora.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:zach-cregger",
+      "type": "band",
+      "name": "Zach Cregger",
+      "aliases": []
+    },
+    {
+      "id": "article:blog-o-que-yes-deixa-no-ar-agora",
+      "type": "article",
+      "name": "O que Yes deixa no ar agora",
+      "aliases": [],
+      "url": "/blog/2026/09/18/o-que-yes-deixa-no-ar-agora.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:yes",
+      "type": "band",
+      "name": "Yes",
+      "aliases": []
+    },
+    {
+      "id": "band:dream-theater",
+      "type": "band",
+      "name": "Dream Theater",
+      "aliases": []
+    },
+    {
+      "id": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
+      "type": "article",
+      "name": "O que Pink Floyd deixa no ar agora",
+      "aliases": [],
+      "url": "/blog/2026/09/18/o-que-pink-floyd-deixa-no-ar-agora.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:roger-waters",
+      "type": "band",
+      "name": "Roger Waters",
+      "aliases": []
+    },
+    {
+      "id": "band:pinkfloyd",
+      "type": "band",
+      "name": "Pinkfloyd",
+      "aliases": []
+    },
+    {
+      "id": "band:nunca",
+      "type": "band",
+      "name": "Nunca",
+      "aliases": []
+    }
+  ],
+  "relations": [
+    {
+      "type": "member_of",
+      "from": "artist:bruce-dickinson",
+      "to": "band:iron-maiden"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:james-hetfield",
+      "to": "band:metallica"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:robert-plant",
+      "to": "band:led-zeppelin"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:tony-iommi",
+      "to": "band:black-sabbath"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:david-gilmour",
+      "to": "band:pink-floyd"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:ritchie-blackmore",
+      "to": "band:deep-purple"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:sharon-den-adel",
+      "to": "band:within-temptation"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:roger-taylor",
+      "to": "band:queen"
+    },
+    {
+      "type": "member_of",
+      "from": "artist:freddie-mercury",
+      "to": "band:queen"
+    },
+    {
+      "type": "plays",
+      "from": "artist:james-hetfield",
+      "to": "instrument:guitarra"
+    },
+    {
+      "type": "plays",
+      "from": "artist:tony-iommi",
+      "to": "instrument:guitarra"
+    },
+    {
+      "type": "plays",
+      "from": "artist:david-gilmour",
+      "to": "instrument:guitarra"
+    },
+    {
+      "type": "performed_at",
+      "from": "band:queen",
+      "to": "festival:live-aid"
+    },
+    {
+      "type": "performed_at",
+      "from": "band:led-zeppelin",
+      "to": "festival:live-aid"
+    },
+    {
+      "type": "happened_in",
+      "from": "festival:live-aid",
+      "to": "decade:1980"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:kai-hansen"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:born-with-a-hammer"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:metal-hammer-podcast"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:linkin-park"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:linkin-park-unshatter"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:slipknot"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:arsenal"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:mastodon"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:brent-hinds"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:sepultura"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:moonspell"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:anthrax"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:steve-harris"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:iron-maiden"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:oli-sykes"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro",
+      "to": "band:courtney-laplante"
+    },
+    {
+      "type": "depicts",
+      "from": "photo:91b83db332d6d064",
+      "to": "article:blog-kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:filme"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:ada-wong"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:horror"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:leon-kennedy"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:playstation"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:raccoon-city"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:resident-evil"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:resident-evil-4"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:videospielverfilmung"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-filme-deixa-no-ar-agora",
+      "to": "band:weapons"
+    },
+    {
+      "type": "depicts",
+      "from": "photo:96d11445a73ac9c2",
+      "to": "article:blog-o-que-filme-deixa-no-ar-agora"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-oasis-deixa-no-ar-agora",
+      "to": "band:oasis"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-oasis-deixa-no-ar-agora",
+      "to": "band:noel-gallagher"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:ada-wong"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:horror"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:leon-kennedy"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:playstation"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:raccoon-city"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:resident-evil"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:resident-evil-4"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:videospielverfilmung"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:weapons"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-ada-wong-deixa-no-ar-agora",
+      "to": "band:zach-cregger"
+    },
+    {
+      "type": "depicts",
+      "from": "photo:96d11445a73ac9c2",
+      "to": "article:blog-o-que-ada-wong-deixa-no-ar-agora"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-yes-deixa-no-ar-agora",
+      "to": "band:yes"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-yes-deixa-no-ar-agora",
+      "to": "band:dream-theater"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-yes-deixa-no-ar-agora",
+      "to": "band:sepultura"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
+      "to": "band:pink-floyd"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
+      "to": "band:roger-waters"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
+      "to": "artist:david-gilmour"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
+      "to": "band:pinkfloyd"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
+      "to": "band:nunca"
+    }
+  ]
+}

@@ -40,14 +40,15 @@ MONTHS = {
     "february":2,"feb":2,"fevereiro":2,
     "march":3,"mar":3,"março":3,"marco":3,
     "april":4,"apr":4,"abril":4,
-    "may":5,"maio":5,
-    "june":6,"jun":6,"junho":6,
-    "july":7,"jul":7,"julho":7,
+    "may":5,"maio":5,"mai":5,
+    "june":6,"jun":6,"junho":6,"juni":6,
+    "july":7,"jul":7,"julho":7,"juli":7,
     "august":8,"aug":8,"agosto":8,
     "september":9,"sep":9,"setembro":9,
-    "october":10,"oct":10,"outubro":10,
+    "october":10,"oct":10,"outubro":10,"oktober":10,
     "november":11,"nov":11,"novembro":11,
-    "december":12,"dec":12,"dezembro":12,
+    "december":12,"dec":12,"dezembro":12,"dezember":12,
+    "januar":1,"februar":2,"marz":3,"märz":3,
 }
 
 def clean(value: Any) -> str:
@@ -192,6 +193,19 @@ def _extract_date_facts(text: str, sid: str) -> list[dict[str, Any]]:
             continue
         raw = m.group(0)
         facts.append(_fact("date", raw, raw, [sid], critical=True))
+    for m in re.finditer(rf"\b([0-3]?\d)\.\s*({month_pat})(?:\s+((?:19|20)\d{{2}}))?\b", norm_ascii(text), flags=re.I):
+        day = int(m.group(1))
+        month = MONTHS[norm_ascii(m.group(2))]
+        year = int(m.group(3)) if m.group(3) else 2000
+        try:
+            dt.date(year, month, day)
+        except ValueError:
+            continue
+        raw = m.group(0)
+        facts.append(_fact("date", raw, raw, [sid], critical=True))
+    for m in re.finditer(r"\b(\d{1,3}(?:[.\s]\d{3})+)\b", text):
+        raw = m.group(1)
+        facts.append(_fact("quantity", raw, raw, [sid], critical=False))
     return facts
 
 def build_fact_pack(candidate: dict[str, Any], source_text: str, editorial_day: str,
@@ -287,3 +301,78 @@ def generation_view(fact_pack: dict[str, Any]) -> dict[str, Any]:
 
 def dump_generation_view(fact_pack: dict[str, Any]) -> str:
     return json.dumps(generation_view(fact_pack), ensure_ascii=False, separators=(",", ":"))
+
+
+def merge_fact_packs(packs: list[dict[str, Any]]) -> dict[str, Any]:
+    """Merge multi-source Fact Packs for one story cluster.
+
+    Keeps the first pack's event identity as canonical and unions facts,
+    provenance and firewall flags. Duplicate fact_ids are not repeated.
+    """
+    usable = [p for p in packs if isinstance(p, dict) and p.get("event_id")]
+    if not usable:
+        return {
+            "version": 1,
+            "editorial_day": "",
+            "event_id": "EVT_UNKNOWN",
+            "story_angle_id": "ANG_UNKNOWN",
+            "primary_category": "music",
+            "recommended_format": "STORY",
+            "source_count": 0,
+            "origin_count": 0,
+            "scores": {},
+            "firewall_flags": [],
+            "facts": [],
+            "provenance": [],
+            "merged_event_ids": [],
+        }
+    primary = dict(usable[0])
+    facts: list[dict[str, Any]] = []
+    seen_facts: set[str] = set()
+    provenance: list[dict[str, Any]] = []
+    seen_sids: set[str] = set()
+    flags: list[str] = []
+    alt_ids: list[str] = []
+    origin_count = 0
+    scores = {
+        "trend": 0,
+        "passport": 0,
+        "archive": 0,
+        "total": 0,
+    }
+    for pack in usable:
+        alt_ids.append(str(pack.get("event_id") or ""))
+        origin_count += int(pack.get("origin_count") or 0)
+        for key in scores:
+            try:
+                scores[key] = max(scores[key], int((pack.get("scores") or {}).get(key) or 0))
+            except Exception:
+                pass
+        for fact in pack.get("facts") or []:
+            if not isinstance(fact, dict):
+                continue
+            fid = str(fact.get("fact_id") or "")
+            if not fid or fid in seen_facts:
+                continue
+            seen_facts.add(fid)
+            facts.append(fact)
+        for row in pack.get("provenance") or []:
+            if not isinstance(row, dict):
+                continue
+            sid = str(row.get("source_id") or "")
+            if not sid or sid in seen_sids:
+                continue
+            seen_sids.add(sid)
+            provenance.append(row)
+        for flag in pack.get("firewall_flags") or []:
+            text = str(flag)
+            if text and text not in flags:
+                flags.append(text)
+    primary["facts"] = facts
+    primary["provenance"] = provenance
+    primary["firewall_flags"] = flags
+    primary["source_count"] = len(provenance)
+    primary["origin_count"] = max(origin_count, len(provenance))
+    primary["scores"] = scores
+    primary["merged_event_ids"] = [x for x in dict.fromkeys(alt_ids) if x]
+    return primary

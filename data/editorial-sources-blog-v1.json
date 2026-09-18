@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "channel": "blog",
+  "notes": "V1 Global Blog Tunnel™ source map. Entire editorial surfaces of Whiplash.Net and Metal Hammer Germany. Discovery inputs only. Public pages never name these outlets. Backfill uses the same map with --mode backfill.",
+  "sources": [
+    {
+      "name": "Whiplash.Net",
+      "url": "https://whiplash.net/",
+      "domain": "whiplash.net",
+      "language": "pt-BR",
+      "priority": 94,
+      "categories": ["metal", "classic_rock", "brasil", "music"],
+      "feed_urls": [
+        "https://whiplash.net/feeds/news.xml"
+      ],
+      "rss_pagination": "",
+      "sitemaps": [
+        "https://whiplash.net/sitemap_ultimas.xml",
+        "https://whiplash.net/sitemap.xml",
+        "https://whiplash.net/sitemap_195.xml"
+      ],
+      "rest_urls": [],
+      "index_urls": [
+        "https://whiplash.net/ultimas.html",
+        "https://whiplash.net/temas/n/noticias.html",
+        "https://whiplash.net/temas/c/cds.html",
+        "https://whiplash.net/temas/d/dvds.html",
+        "https://whiplash.net/temas/e/entrevistas.html",
+        "https://whiplash.net/temas/s/shows.html",
+        "https://whiplash.net/temas/c/curiosidades.html"
+      ],
+      "article_path_prefixes": ["/materias/"]
+    },
+    {
+      "name": "Metal Hammer Germany",
+      "url": "https://www.metal-hammer.de/",
+      "domain": "metal-hammer.de",
+      "language": "de",
+      "priority": 93,
+      "categories": ["metal", "classic_rock", "continental_europe", "music"],
+      "feed_urls": [
+        "https://www.metal-hammer.de/feed/",
+        "https://www.metal-hammer.de/news/feed/",
+        "https://www.metal-hammer.de/reviews/feed/"
+      ],
+      "rss_pagination": "paged",
+      "sitemaps": [
+        "https://www.metal-hammer.de/sitemap_index.xml"
+      ],
+      "rest_urls": [
+        "https://www.metal-hammer.de/wp-json/wp/v2/posts",
+        "https://www.metal-hammer.de/wp-json/wp/v2/reviews"
+      ],
+      "index_urls": [
+        "https://www.metal-hammer.de/news/",
+        "https://www.metal-hammer.de/reviews/"
+      ],
+      "article_path_prefixes": ["/", "/reviews/", "/konzerte/"]
+    }
+  ]
+}
