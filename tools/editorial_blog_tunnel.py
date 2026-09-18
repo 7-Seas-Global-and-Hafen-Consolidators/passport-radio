@@ -110,7 +110,7 @@ def _candidate_urls(item: dict[str, Any]) -> list[str]:
     return clean
 
 
-def persist_queue(radar_items: list[dict[str, Any]], queue_path: Path, generated_at: str, queue_size: int = 100000) -> dict[str, Any]:
+def persist_queue(radar_items: list[dict[str, Any]], queue_path: Path, generated_at: str, queue_size: int = 400) -> dict[str, Any]:
     queue = load_json(queue_path, {"version": 1, "channel": CHANNEL, "items": []})
     items: list[dict[str, Any]] = list(queue.get("items") or [])
     by_url: dict[str, dict[str, Any]] = {}
@@ -194,10 +194,6 @@ def persist_queue(radar_items: list[dict[str, Any]], queue_path: Path, generated
                 if ent not in hints:
                     hints.append(ent)
             existing["entities_hint"] = hints[:16]
-    if len(items) > queue_size:
-        published = [x for x in items if x.get("status") == "published"]
-        rest = [x for x in items if x.get("status") != "published"]
-        items = published[-max(1000, queue_size // 5):] + rest[-(queue_size - len(published[-max(1000, queue_size // 5):])):]
     queue["version"] = 1
     queue["channel"] = CHANNEL
     queue["updated_at"] = generated_at
@@ -211,7 +207,42 @@ def persist_queue(radar_items: list[dict[str, Any]], queue_path: Path, generated
         "queued": sum(1 for x in items if x.get("status") == "queued"),
         "published": sum(1 for x in items if x.get("status") == "published"),
         "rejected_scope": sum(1 for x in items if x.get("status") == "rejected_scope"),
+        "truncated": 0,
     }
+
+
+def _hot_window(config: dict[str, Any]) -> int:
+    window = int(config.get("hot_window") or 400)
+    return max(1, min(window, 5000))
+
+
+def sync_hot_queue(queue: dict[str, Any], config: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Replenish the hot working window from the durable archive. Never drops unread archive rows."""
+    cursor_path = ROOT / "data/blog-tunnel-cursor.json"
+    cursor_payload = load_json(cursor_path, {"version": 1, "channel": CHANNEL, "offsets": {}})
+    cursor = {str(k): int(v) for k, v in (cursor_payload.get("offsets") or {}).items()}
+    items, cursor, drain = discovery.replenish_hot_queue(
+        list(queue.get("items") or []),
+        cursor,
+        window=_hot_window(config),
+        live_share=float(config.get("hot_live_share", 0.5)),
+        published_tail=int(config.get("hot_published_tail", 200)),
+    )
+    stamp = now_sp().isoformat()
+    queue["version"] = 1
+    queue["channel"] = CHANNEL
+    queue["updated_at"] = stamp
+    queue["hot_window"] = _hot_window(config)
+    queue["items"] = items
+    save_json(cursor_path, {
+        "version": 1,
+        "channel": CHANNEL,
+        "updated_at": stamp,
+        "offsets": cursor,
+        "drain": {k: v for k, v in drain.items() if k != "cursor"},
+    })
+    return queue, drain
+
 
 
 def discover(sources: Path, output_dir: Path, mode: str, max_age_hours: int, workers: int, config: dict[str, Any]) -> dict[str, Any]:
@@ -231,9 +262,13 @@ def discover(sources: Path, output_dir: Path, mode: str, max_age_hours: int, wor
         list(packet.get("items") or []),
         ROOT / "data/blog-tunnel-queue.json",
         packet.get("generated_at") or now_sp().isoformat(),
-        queue_size=int(config.get("queue_size", 100000)),
+        queue_size=_hot_window(config),
     )
     archive = discovery.upsert_archive(list(packet.get("items") or []), packet.get("generated_at") or "")
+    queue_path = ROOT / "data/blog-tunnel-queue.json"
+    queue = load_json(queue_path, {"version": 1, "channel": CHANNEL, "items": []})
+    queue, drain = sync_hot_queue(queue, config)
+    save_json(queue_path, queue)
     archive_overview = discovery.archive_stats()
     health = packet.get("source_health") or []
     healthy = [h for h in health if h.get("ok")]
@@ -249,6 +284,12 @@ def discover(sources: Path, output_dir: Path, mode: str, max_age_hours: int, wor
         "queue": stats,
         "archive": archive_overview,
         "archive_upsert": archive,
+        "drain": drain,
+        "hot_queue": {
+            "size": len(queue.get("items") or []),
+            "queued": sum(1 for x in (queue.get("items") or []) if x.get("status") == "queued"),
+            "window": _hot_window(config),
+        },
     }
     save_json(output_dir / "blog-discover-report.json", summary)
     if not packet.get("items") and not healthy:
@@ -497,7 +538,6 @@ def write_from_fact_pack(candidate: dict[str, Any], pack: dict[str, Any], graph:
     p3 = (
         "No fim, a Passport guarda o fato e devolve o ouvinte para a música. "
         f"Quem chegou por {subject} pode sair por um disco, uma faixa ao vivo ou um nome ao lado. "
-        "Every Song Is A Destination: primeiro a história, depois o play. "
         "A casa não simula urgência de feed; ela registra o que importa o bastante para ser relido. "
         "Há leitores que entram pelo acontecimento e saem por uma canção que já conheciam. "
         "Há quem faça o caminho inverso. Os dois movimentos valem, desde que a página não se feche em si mesma. "
@@ -662,7 +702,7 @@ def render_blog_article(article: dict[str, Any], url_path: str, related: list[di
 </article>
 </main>
 {related_html}
-<section class="passport-discussion" aria-label="Discussão futura" data-passport-discussion="reserved"><h2>Discussão</h2><p>Esta história reservará espaço para participação de contas Passport autenticadas. Nenhum comentário, contagem ou perfil é simulado nesta página.</p></section>
+<section class="passport-discussion" hidden data-passport-discussion="reserved" aria-hidden="true"></section>
 <footer class="pp-footer"><div class="pp-footer-bottom">© 2026 Passport Radio · <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a></div></footer>
 </body></html>
 '''
@@ -754,6 +794,7 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
     feed_payload = load_json(feed_path, {"items": []})
     library = load_json(media_path, {"items": []})
     graph = load_json(graph_path, {"entities": [], "relations": []})
+    queue, drain_before = sync_hot_queue(queue, config)
     ledger: list[dict[str, Any]] = list(state.get("ledger") or [])
     feed: list[dict[str, Any]] = list(feed_payload.get("items") or [])
     known_urls = {str(x.get("url")) for x in ledger if x.get("url")}
@@ -777,6 +818,7 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         "skipped": [],
         "idempotent_hits": [],
         "source_failures": [],
+        "drain": drain_before,
     }
     new_paths: list[str] = []
 
@@ -798,10 +840,12 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
             continue
         if any(str(x).startswith("injection_pattern:") for x in pack.get("firewall_flags") or []):
             item["status"] = "skipped"
+            discovery.mark_archive_status(item.get("urls") or [], "skipped")
             report["skipped"].append({"title": title, "reason": "source_firewall_injection"})
             continue
         if len(pack.get("facts") or []) < int(config.get("minimum_fact_pack_facts", 2)):
             item["status"] = "skipped"
+            discovery.mark_archive_status(item.get("urls") or [], "skipped")
             report["skipped"].append({"title": title, "reason": "insufficient_evidence"})
             continue
         if pack.get("story_angle_id") in known_stories:
@@ -828,6 +872,8 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         article["editorial_day"] = day
         article["author"] = PUBLIC_AUTHOR
         if "mr. nomad" in base.norm_ascii(constitution.public_text(article)):
+            item["status"] = "skipped"
+            discovery.mark_archive_status(item.get("urls") or [], "skipped")
             report["skipped"].append({"title": title, "reason": "nomad_signature_blocked"})
             continue
         if base.too_similar(article["title"], article["event_key"], ledger, int(config.get("cooldown_days", 45))):
@@ -855,6 +901,8 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
                     "reason": "; ".join(production_errors or gate.get("reasons") or ["unknown"]),
                     "decision": gate.get("decision"),
                 })
+                item["status"] = "skipped"
+                discovery.mark_archive_status(item.get("urls") or [], "skipped")
                 continue
         stamp = now_sp()
         article["published_at"] = stamp.isoformat()
@@ -869,9 +917,13 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         html_text = render_blog_article(article, url_path, related, media)
         low_html = html_text.lower()
         if "mr. nomad" in low_html or "<audio" in low_html:
+            item["status"] = "skipped"
+            discovery.mark_archive_status(item.get("urls") or [], "skipped")
             report["skipped"].append({"title": article["title"], "reason": "renderer_contract"})
             continue
         if "noticias.html" in html_text:
+            item["status"] = "skipped"
+            discovery.mark_archive_status(item.get("urls") or [], "skipped")
             report["skipped"].append({"title": article["title"], "reason": "noticias_leak"})
             continue
         rel = Path(url_path.lstrip("/"))
@@ -941,7 +993,10 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         save_json(output_dir / f"fact-pack-{base.slugify(article['title'])[:40]}.json", pack)
 
     leftover_count = sum(1 for x in queue.get("items") or [] if x.get("status") == "queued")
+    queue, drain_after = sync_hot_queue(queue, config)
+    leftover_count = sum(1 for x in queue.get("items") or [] if x.get("status") == "queued")
     report["left_in_queue"] = leftover_count
+    report["drain"] = drain_after
     report["published_total"] = len(report["generated"])
     next_state = {
         "version": 1,

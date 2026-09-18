@@ -807,14 +807,14 @@ ARCHIVE_FORMAT_TO_HINT = {
 }
 
 
-def archive_path(domain: str) -> Path:
+def archive_path(domain: str, root: Path | None = None) -> Path:
     domain = (domain or "").lower().removeprefix("www.")
     name = ARCHIVE_FILES.get(domain, f"{domain}.jsonl.gz")
-    return ARCHIVE_DIR / name
+    return (Path(root) if root is not None else ARCHIVE_DIR) / name
 
 
-def iter_archive(domain: str):
-    path = archive_path(domain)
+def iter_archive(domain: str, root: Path | None = None):
+    path = archive_path(domain, root)
     if not path.exists():
         return
     opener = gzip.open if path.suffix == ".gz" or path.name.endswith(".jsonl.gz") else open
@@ -831,13 +831,14 @@ def iter_archive(domain: str):
                 yield row
 
 
-def load_archive(domain: str) -> list[dict[str, Any]]:
-    return list(iter_archive(domain))
+def load_archive(domain: str, root: Path | None = None) -> list[dict[str, Any]]:
+    return list(iter_archive(domain, root))
 
 
-def save_archive(domain: str, rows: list[dict[str, Any]]) -> Path:
-    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-    path = archive_path(domain)
+def save_archive(domain: str, rows: list[dict[str, Any]], root: Path | None = None) -> Path:
+    base = Path(root) if root is not None else ARCHIVE_DIR
+    base.mkdir(parents=True, exist_ok=True)
+    path = archive_path(domain, root)
     with gzip.open(path, "wt", encoding="utf-8", compresslevel=9) as handle:
         for row in rows:
             compact = {k: v for k, v in row.items() if v not in ("", None, [], {})}
@@ -880,7 +881,7 @@ def archive_record_from_item(item: dict[str, Any], generated_at: str = "") -> di
     }
 
 
-def upsert_archive(items: list[dict[str, Any]], generated_at: str = "") -> dict[str, Any]:
+def upsert_archive(items: list[dict[str, Any]], generated_at: str = "", root: Path | None = None) -> dict[str, Any]:
     """Merge discovered items into the gzipped per-source archive. Never publishes."""
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in items:
@@ -890,7 +891,7 @@ def upsert_archive(items: list[dict[str, Any]], generated_at: str = "") -> dict[
         grouped.setdefault(rec["domain"], []).append(rec)
     stats = {"domains": {}, "new": 0, "merged": 0, "total": 0}
     for domain, incoming in grouped.items():
-        existing = load_archive(domain)
+        existing = load_archive(domain, root)
         by_url: dict[str, dict[str, Any]] = {}
         rows: list[dict[str, Any]] = []
         for row in existing:
@@ -924,33 +925,36 @@ def upsert_archive(items: list[dict[str, Any]], generated_at: str = "") -> dict[
                 hit["description"] = rec["description"]
             if rec.get("artist") and not hit.get("artist"):
                 hit["artist"] = rec["artist"]
-            if rec.get("status") == "published":
-                hit["status"] = "published"
-                hit["published_url"] = rec.get("published_url") or hit.get("published_url")
+            if rec.get("status") in {"published", "skipped", "rejected_scope"}:
+                hit["status"] = rec["status"]
+                if rec.get("published_url"):
+                    hit["published_url"] = rec.get("published_url")
         if new or merged:
-            save_archive(domain, rows)
+            save_archive(domain, rows, root)
         stats["domains"][domain] = {"rows": len(rows), "new": new, "merged": merged}
         stats["new"] += new
         stats["merged"] += merged
         stats["total"] += len(rows)
     for domain in ARCHIVE_FILES:
         if domain not in stats["domains"]:
-            rows = load_archive(domain)
+            rows = load_archive(domain, root)
             stats["domains"][domain] = {"rows": len(rows), "new": 0, "merged": 0}
             stats["total"] += len(rows)
     return stats
 
 
-def archive_stats() -> dict[str, Any]:
+def archive_stats(root: Path | None = None) -> dict[str, Any]:
     out: dict[str, Any] = {"channel": "blog", "domains": {}, "total": 0, "articles": 0, "hubs": 0}
     formats: dict[str, int] = {}
+    base = Path(root) if root is not None else ARCHIVE_DIR
     for domain in ARCHIVE_FILES:
-        rows = load_archive(domain)
+        rows = load_archive(domain, root)
         fmt_count: dict[str, int] = {}
         articles = 0
         hubs = 0
         queued = 0
         published = 0
+        skipped = 0
         for row in rows:
             fmt = str(row.get("format") or "?")
             fmt_count[fmt] = fmt_count.get(fmt, 0) + 1
@@ -959,18 +963,28 @@ def archive_stats() -> dict[str, Any]:
                 hubs += 1
             else:
                 articles += 1
-            if row.get("status") == "published":
+            status = str(row.get("status") or "queued")
+            if status == "published":
                 published += 1
-            elif row.get("status") in {"queued", None, ""}:
+            elif status in {"skipped", "rejected_scope"}:
+                skipped += 1
+            elif status in {"queued", ""}:
                 queued += 1
+        path = archive_path(domain, root)
+        rel = str(path)
+        try:
+            rel = str(path.relative_to(base.parent.parent if root is None else base))
+        except ValueError:
+            pass
         out["domains"][domain] = {
             "rows": len(rows),
             "articles": articles,
             "hubs": hubs,
             "queued": queued,
             "published": published,
+            "skipped": skipped,
             "formats": fmt_count,
-            "path": str(archive_path(domain).relative_to(ARCHIVE_DIR.parent.parent) if archive_path(domain).exists() else archive_path(domain)),
+            "path": rel,
         }
         out["total"] += len(rows)
         out["articles"] += articles
@@ -979,20 +993,226 @@ def archive_stats() -> dict[str, Any]:
     return out
 
 
-def mark_archive_published(urls: list[str], published_url: str, title: str = "") -> None:
+def mark_archive_status(urls: list[str], status: str, extra: dict[str, Any] | None = None, root: Path | None = None) -> int:
     wanted = {normalize_url(u) for u in urls if u}
     if not wanted:
-        return
+        return 0
+    patched = 0
     for domain in ARCHIVE_FILES:
-        rows = load_archive(domain)
+        rows = load_archive(domain, root)
         changed = False
         for row in rows:
             row_urls = {normalize_url(u) for u in (row.get("urls") or [])}
             if row_urls & wanted:
-                row["status"] = "published"
-                row["published_url"] = published_url
-                if title:
-                    row["title"] = title
+                row["status"] = status
+                if extra:
+                    row.update({k: v for k, v in extra.items() if v not in ("", None)})
                 changed = True
+                patched += 1
         if changed:
-            save_archive(domain, rows)
+            save_archive(domain, rows, root)
+    return patched
+
+
+def mark_archive_published(urls: list[str], published_url: str, title: str = "", root: Path | None = None) -> None:
+    mark_archive_status(urls, "published", {"published_url": published_url, "title": title}, root)
+
+
+TERMINAL_ARCHIVE = {"published", "skipped", "rejected_scope"}
+
+
+def is_archive_article(row: dict[str, Any]) -> bool:
+    if not row:
+        return False
+    if row.get("kind") == "hub" or str(row.get("format") or "") == "HUB":
+        return False
+    urls = [u for u in (row.get("urls") or []) if u]
+    return bool(urls)
+
+
+def archive_row_to_queue_item(row: dict[str, Any], index: int = 0) -> dict[str, Any]:
+    urls = [normalize_url(str(u)) for u in (row.get("urls") or []) if u]
+    urls = [u for u in dict.fromkeys(urls) if u]
+    hint = ARCHIVE_FORMAT_TO_HINT.get(str(row.get("format") or "STORY"), "story")
+    artist = str(row.get("artist") or "").strip()
+    origins = [{"url": u, "method": row.get("surface") or "archive"} for u in urls]
+    return {
+        "cluster_id": row.get("cluster_id") or cluster_id_for(urls, str(row.get("title") or "")),
+        "status": "queued",
+        "title": clean(row.get("title")),
+        "urls": urls,
+        "origins": origins,
+        "candidate": {
+            "url": urls[0] if urls else "",
+            "title": clean(row.get("title")),
+            "description": clean(row.get("description")),
+            "published": str(row.get("date") or ""),
+            "format_hint": hint,
+            "entities": [artist] if artist else [],
+            "origins": origins,
+        },
+        "discovered_at": str(row.get("discovered_at") or row.get("date") or ""),
+        "published_url": None,
+        "format_hint": hint,
+        "entities_hint": [artist] if artist else [],
+        "archive_domain": row.get("domain"),
+        "archive_index": index,
+    }
+
+
+def _hot_url_set(items: list[dict[str, Any]]) -> set[str]:
+    seen: set[str] = set()
+    for row in items:
+        for url in row.get("urls") or []:
+            if url:
+                seen.add(normalize_url(str(url)))
+    return seen
+
+
+def drain_from_archives(
+    archives: dict[str, list[dict[str, Any]]],
+    hot_items: list[dict[str, Any]],
+    cursor: dict[str, int],
+    window: int,
+    live_share: float = 0.5,
+    published_tail: int = 50,
+) -> tuple[list[dict[str, Any]], dict[str, int], dict[str, Any]]:
+    """Fill the hot working window from the durable archive without dropping unread rows.
+
+    Cursor only advances past hubs, terminal rows, rows already in the hot
+    window, and rows successfully copied into the window. If the window is
+    full, remaining archive articles stay queued in the archive for the
+    next run.
+    """
+    window = max(1, int(window))
+    queued = [x for x in hot_items if x.get("status") == "queued"]
+    published = [x for x in hot_items if x.get("status") == "published"][-max(0, int(published_tail)):]
+    terminal_hot = [x for x in hot_items if x.get("status") in TERMINAL_ARCHIVE and x.get("status") != "published"]
+    in_hot = _hot_url_set(queued)
+    slots = max(0, window - len(queued))
+    live_slots = int(round(slots * max(0.0, min(1.0, live_share)))) if slots else 0
+    if slots and live_slots == 0 and live_share > 0:
+        live_slots = 1
+    hist_slots = max(0, slots - live_slots)
+    live_added: list[dict[str, Any]] = []
+    hist_added: list[dict[str, Any]] = []
+    new_cursor = {str(k): int(v) for k, v in (cursor or {}).items()}
+    skipped_terminal = 0
+    skipped_hub = 0
+
+    domains = [d for d in ARCHIVE_FILES if d in archives] or list(archives.keys())
+
+    def take(row: dict[str, Any], index: int) -> dict[str, Any] | None:
+        if not is_archive_article(row):
+            return None
+        if str(row.get("status") or "queued") in TERMINAL_ARCHIVE:
+            return None
+        urls = [normalize_url(str(u)) for u in (row.get("urls") or []) if u]
+        if any(u in in_hot for u in urls):
+            return None
+        item = archive_row_to_queue_item(row, index)
+        for url in item.get("urls") or []:
+            in_hot.add(url)
+        return item
+
+    for domain in domains:
+        rows = list(archives.get(domain) or [])
+        i = max(0, int(new_cursor.get(domain, 0)))
+        while i < len(rows) and len(hist_added) < hist_slots:
+            row = rows[i]
+            if not is_archive_article(row):
+                skipped_hub += 1
+                i += 1
+                continue
+            if str(row.get("status") or "queued") in TERMINAL_ARCHIVE:
+                skipped_terminal += 1
+                i += 1
+                continue
+            urls = [normalize_url(str(u)) for u in (row.get("urls") or []) if u]
+            if any(u in in_hot for u in urls):
+                i += 1
+                continue
+            item = archive_row_to_queue_item(row, i)
+            hist_added.append(item)
+            for url in item.get("urls") or []:
+                in_hot.add(url)
+            i += 1
+        new_cursor[domain] = i
+
+    if len(hist_added) < hist_slots:
+        for domain in domains:
+            rows = list(archives.get(domain) or [])
+            end = min(len(rows), max(0, int(new_cursor.get(domain, 0))))
+            i = 0
+            while i < end and len(hist_added) < hist_slots:
+                row = rows[i]
+                i += 1
+                if not is_archive_article(row):
+                    continue
+                if str(row.get("status") or "queued") in TERMINAL_ARCHIVE:
+                    continue
+                urls = [normalize_url(str(u)) for u in (row.get("urls") or []) if u]
+                if any(u in in_hot for u in urls):
+                    continue
+                item = archive_row_to_queue_item(row, i - 1)
+                hist_added.append(item)
+                for url in item.get("urls") or []:
+                    in_hot.add(url)
+
+    live_candidates: list[tuple[str, str, int, dict[str, Any]]] = []
+    for domain, rows in archives.items():
+        for idx, row in enumerate(rows):
+            if not is_archive_article(row):
+                continue
+            if str(row.get("status") or "queued") in TERMINAL_ARCHIVE:
+                continue
+            urls = [normalize_url(str(u)) for u in (row.get("urls") or []) if u]
+            if any(u in in_hot for u in urls):
+                continue
+            stamp = str(row.get("date") or row.get("discovered_at") or "")
+            live_candidates.append((stamp, str(domain), idx, row))
+    live_candidates.sort(key=lambda x: x[0], reverse=True)
+    for _, domain, idx, row in live_candidates:
+        if len(live_added) >= live_slots:
+            break
+        item = take(row, idx)
+        if item is None:
+            continue
+        live_added.append(item)
+
+    next_items = live_added + queued + hist_added + published + terminal_hot[-20:]
+    remaining = 0
+    for domain, rows in archives.items():
+        start = int(new_cursor.get(domain, 0))
+        for row in rows[start:]:
+            if is_archive_article(row) and str(row.get("status") or "queued") not in TERMINAL_ARCHIVE:
+                remaining += 1
+        for row in rows[:start]:
+            if is_archive_article(row) and str(row.get("status") or "queued") not in TERMINAL_ARCHIVE:
+                urls = [normalize_url(str(u)) for u in (row.get("urls") or []) if u]
+                if not any(u in in_hot for u in urls):
+                    remaining += 1
+    stats = {
+        "window": window,
+        "queued_hot": sum(1 for x in next_items if x.get("status") == "queued"),
+        "added_live": len(live_added),
+        "added_historical": len(hist_added),
+        "cursor": new_cursor,
+        "remaining_in_archive": remaining,
+        "skipped_hub": skipped_hub,
+        "skipped_terminal": skipped_terminal,
+        "exhausted": remaining == 0 and not live_added and not hist_added,
+    }
+    return next_items, new_cursor, stats
+
+
+def replenish_hot_queue(
+    hot_items: list[dict[str, Any]],
+    cursor: dict[str, int],
+    window: int,
+    live_share: float = 0.5,
+    published_tail: int = 50,
+    root: Path | None = None,
+) -> tuple[list[dict[str, Any]], dict[str, int], dict[str, Any]]:
+    archives = {domain: load_archive(domain, root) for domain in ARCHIVE_FILES}
+    return drain_from_archives(archives, hot_items, cursor, window, live_share, published_tail)

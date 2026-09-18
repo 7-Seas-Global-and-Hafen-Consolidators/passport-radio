@@ -251,6 +251,8 @@ def test_writer_is_generic_and_ptbr() -> None:
             fail(f"writer leaked {leak}")
     if article["format"] not in {"STORY", "FLASH", "LIVE_SIGNAL"}:
         fail(f"unexpected format {article['format']}")
+    if "every song is a destination" in public:
+        fail("dead slogan leaked into fallback writer")
     print("OK generic PT-BR writer")
 
 
@@ -280,6 +282,12 @@ def test_renderer_contracts() -> None:
         fail("missing BlogPosting schema")
     if 'passport:channel" content="blog"' not in html:
         fail("missing channel meta")
+    if "reservará espaço" in html or "Nenhum comentário" in html:
+        fail("public discussion scaffolding leaked")
+    if 'data-passport-discussion="reserved"' not in html:
+        fail("discussion hook missing")
+    if "every song is a destination" in html.lower():
+        fail("dead slogan in renderer")
     print("OK renderer contracts")
 
 
@@ -389,6 +397,148 @@ def test_full_archive_inventory() -> None:
     )
 
 
+def test_archive_drains_beyond_hot_window() -> None:
+    archives = {
+        "metal-hammer.de": [],
+        "whiplash.net": [],
+    }
+    for i in range(8):
+        archives["metal-hammer.de"].append({
+            "cluster_id": f"CLU_MH_{i:02d}",
+            "status": "queued",
+            "title": f"Metal story {i}",
+            "urls": [f"https://www.metal-hammer.de/story-{i}-100{i}"],
+            "format": "STORY" if i % 2 == 0 else "DISCO",
+            "domain": "metal-hammer.de",
+            "kind": "article",
+            "date": f"2026-01-{i+1:02d}T00:00:00",
+        })
+    archives["metal-hammer.de"].append({
+        "cluster_id": "CLU_MH_HUB",
+        "status": "queued",
+        "title": "Reviews hub",
+        "urls": ["https://www.metal-hammer.de/reviews/"],
+        "format": "HUB",
+        "domain": "metal-hammer.de",
+        "kind": "hub",
+    })
+    for i in range(5):
+        archives["whiplash.net"].append({
+            "cluster_id": f"CLU_WH_{i:02d}",
+            "status": "queued",
+            "title": f"Whiplash story {i}",
+            "urls": [f"https://whiplash.net/materias/news_667/38000{i}-band.html"],
+            "format": "ENTREVISTA" if i == 0 else "STORY",
+            "domain": "whiplash.net",
+            "kind": "article",
+            "date": f"2026-02-{i+1:02d}T00:00:00",
+        })
+    eligible = [
+        u
+        for rows in archives.values()
+        for row in rows
+        for u in (row.get("urls") or [])
+        if row.get("kind") != "hub" and row.get("format") != "HUB"
+    ]
+    if len(eligible) != 13:
+        fail(f"fixture size {len(eligible)}")
+    hot: list[dict] = []
+    cursor: dict[str, int] = {}
+    seen: list[str] = []
+    window = 3
+    for _round in range(40):
+        hot, cursor, stats = discovery.drain_from_archives(archives, hot, cursor, window=window, live_share=0.5)
+        queued = [x for x in hot if x.get("status") == "queued"]
+        if not queued:
+            if stats.get("remaining_in_archive"):
+                fail(f"empty hot window with remaining={stats.get('remaining_in_archive')} cursor={cursor}")
+            break
+        item = queued[0]
+        url = (item.get("urls") or [""])[0]
+        if url in seen:
+            fail(f"duplicate drain {url}")
+        seen.append(url)
+        item["status"] = "published"
+        for rows in archives.values():
+            for row in rows:
+                if url in (row.get("urls") or []):
+                    row["status"] = "published"
+    if set(seen) != set(eligible):
+        fail(f"lost or extra items. seen={len(seen)} eligible={len(eligible)} missing={set(eligible)-set(seen)}")
+    hot, cursor, stats = discovery.drain_from_archives(archives, hot, cursor, window=window)
+    if any(x.get("status") == "queued" for x in hot) or stats.get("added_live") or stats.get("added_historical"):
+        fail(f"published items returned: {stats}")
+    archives["whiplash.net"].append({
+        "cluster_id": "CLU_WH_NEW",
+        "status": "queued",
+        "title": "Whiplash new",
+        "urls": ["https://whiplash.net/materias/news_667/389999-new.html"],
+        "format": "STORY",
+        "domain": "whiplash.net",
+        "kind": "article",
+        "date": "2026-09-18T00:00:00",
+    })
+    hot, cursor, stats = discovery.drain_from_archives(archives, hot, cursor, window=window)
+    queued_urls = [u for x in hot if x.get("status") == "queued" for u in (x.get("urls") or [])]
+    if "https://whiplash.net/materias/news_667/389999-new.html" not in queued_urls:
+        fail(f"continuous item not absorbed after archive exhausted: {queued_urls} {stats}")
+    names = [
+        "Oasis confirma caixa inédita de Manchester",
+        "Sepultura abre arquivo de Belo Horizonte",
+        "Lordi anuncia palco em Helsinque",
+        "Mastodon estreia faixa ao vivo em Atlanta",
+        "Yes relê Close to the Edge em estúdio",
+        "Pink Floyd libera fita de Pompeia",
+        "Kai Hansen fala do próximo ciclo",
+        "Anthrax escolhe álbum da semana",
+        "Moonspell registra o pit em Lisboa",
+        "Slipknot recusa biografia oficial",
+    ]
+    payload = {"version": 1, "channel": "blog", "items": []}
+    tmp = ROOT / "build" / "blog-tunnel-drain-test-queue.json"
+    tmp.parent.mkdir(parents=True, exist_ok=True)
+    tunnel.save_json(tmp, payload)
+    for i, name in enumerate(names):
+        radar = [{
+            "url": f"https://whiplash.net/materias/news_667/3700{i}-cap.html",
+            "title": name,
+            "description": "ok",
+            "format_hint": "news",
+            "origins": [{"url": f"https://whiplash.net/materias/news_667/3700{i}-cap.html", "method": "rss"}],
+        }]
+        tunnel.persist_queue(radar, tmp, "2026-09-18T00:00:00Z", queue_size=3)
+    saved = tunnel.load_json(tmp, {"items": []})
+    queued_n = len([x for x in saved.get("items") or [] if x.get("status") == "queued"])
+    if queued_n < 10:
+        fail(f"persist_queue still drops queued items against the hot window ({queued_n})")
+    tmp.unlink(missing_ok=True)
+    print("OK archive drains in batches without loss or duplication")
+
+
+def test_dead_slogan_and_discussion_copy_removed() -> None:
+    blog = (ROOT / "blog.html").read_text("utf-8")
+    if "every song is a destination" in blog.lower():
+        fail("dead slogan still on blog.html")
+    if "reservará espaço" in blog or "comentários fictícios" in blog.lower():
+        fail("discussion scaffolding still on blog.html")
+    src = (ROOT / "tools/editorial_blog_tunnel.py").read_text("utf-8")
+    if "Every Song Is A Destination" in src:
+        fail("dead slogan still in tunnel writer")
+    if "reservará espaço" in src:
+        fail("discussion scaffolding still in renderer")
+    oasis = (ROOT / "blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html").read_text("utf-8")
+    kai = (ROOT / "blog/2026/09/18/kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro.html").read_text("utf-8")
+    for html in (oasis, kai):
+        if "every song is a destination" in html.lower():
+            fail("dead slogan still in published sample")
+        if "reservará espaço" in html:
+            fail("discussion scaffolding still in published sample")
+        if 'data-passport-discussion="reserved"' not in html:
+            fail("discussion hook stripped from published sample")
+    print("OK slogan + public discussion scaffolding removed")
+
+
+
 def main() -> int:
     import tempfile
     test_format_classifier()
@@ -404,6 +554,8 @@ def main() -> int:
     test_sabbath_is_not_a_gate()
     test_backfill_is_same_machine()
     test_full_archive_inventory()
+    test_archive_drains_beyond_hot_window()
+    test_dead_slogan_and_discussion_copy_removed()
     print("editorial_blog_tunnel: PASS")
     return 0
 

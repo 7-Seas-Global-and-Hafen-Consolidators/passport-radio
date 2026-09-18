@@ -11,8 +11,12 @@ Black Sabbath / Back to the Beginning é **caso de teste**, não allowlist.
 
 ## Duas camadas de fila
 
-1. `data/blog-queue/*.jsonl.gz` — acervo completo (Whiplash + Metal Hammer). Descoberta escreve aqui. Geração **não** despeja o acervo no site.
-2. `data/blog-tunnel-queue.json` — janela quente (recente + clusters em drenagem). `--max-generate` só olha essa janela.
+1. `data/blog-queue/*.jsonl.gz` — acervo completo (Whiplash + Metal Hammer). Sem teto de 100.000. Descoberta escreve aqui.
+2. `data/blog-tunnel-queue.json` — janela quente (`hot_window`, default 400). `generate` só olha essa janela.
+3. `data/blog-tunnel-cursor.json` — checkpoint da drenagem histórica.
+
+`discover` e `generate` reabastecem a janela a partir do acervo. O cursor só avança o que já está na janela, foi publicado/rejeitado/skipped, ou é hub. O que não couber permanece no acervo e entra no run seguinte. Publicação continua capped (`--max-generate`).
+
 
 ## Pipeline
 
