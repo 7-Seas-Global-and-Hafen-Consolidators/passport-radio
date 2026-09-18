@@ -32,13 +32,19 @@
   }
 
   function scoreItem(item, tokens) {
-    const hay = item.norm || fold([item.title, item.deck, (item.entities || []).join(" "), item.country, item.year, item.decade].join(" "));
+    const hay = item.norm || fold([item.title, item.deck, item.body, item.author, (item.entities || []).join(" "), item.country, item.year, item.decade, item.historical_period, (item.event_years || []).join(" "), (item.decades_covered || []).join(" ")].join(" "));
     const title = fold(item.title);
     const ents = fold((item.entities || []).join(" "));
+    const author = fold(item.author);
+    const country = fold(item.country);
+    const hist = fold([item.historical_period, (item.event_years || []).join(" "), (item.decades_covered || []).join(" ")].join(" "));
     let score = 0;
     for (const token of tokens) {
       if (title.includes(token)) score += 8;
       else if (ents.includes(token)) score += 6;
+      else if (author.includes(token)) score += 6;
+      else if (country.includes(token)) score += 6;
+      else if (hist.includes(token)) score += 5;
       else if (hay.includes(token)) score += 3;
       else return 0;
     }

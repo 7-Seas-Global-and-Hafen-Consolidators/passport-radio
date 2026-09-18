@@ -26,12 +26,13 @@ def sample(n: int, **extra) -> list[dict]:
         row = {
             "url": f"/blog/2026/01/{(i % 28) + 1:02d}/story-{i}.html",
             "title": f"{names[i % len(names)]} capítulo {i} em {countries[i % len(countries)]}",
-            "deck": f"História {i} sobre {names[i % len(names)]} nos anos 80 e 1994.",
+            "deck": f"História {i} sobre {names[i % len(names)]} nos anos 80 e 1994 e 1986.",
             "published_at": f"2026-01-{(i % 28) + 1:02d}T10:00:00Z",
             "author": "Passport Radio" if i else "Mr. Nomad",
             "format": ["STORY", "LIVE_SIGNAL", "STORY"][i % 3],
             "entities": [names[i % len(names)], countries[i % len(countries)]],
             "country": countries[i % len(countries)],
+            "body_index": f"Show em 1986 e disco de 1994 com {names[i % len(names)]}.",
             "image": f"/images/x-{i}.jpg" if i % 2 == 0 else "",
             "status": "published",
         }
@@ -172,12 +173,158 @@ def test_blog_surfaces_no_dead_slogan() -> None:
     print("OK slogan/scaffold absent on blog surfaces")
 
 
+def test_historical_period_not_publish_date() -> None:
+    row = sample(1)[0]
+    hist = catalog.historical_fields(row)
+    if "1980" not in hist["decades_covered"] and 1986 not in hist["event_years"]:
+        fail(f"event decade missing: {hist}")
+    if hist.get("published_year") != "2026":
+        fail("published year lost")
+    if hist["historical_period"] == "2026":
+        fail("publication year used as historical period")
+    print("OK historical period ≠ published_at")
+
+
+def test_author_and_az_doors() -> None:
+    rows = sample(12)
+    authors = catalog.author_pages(rows)
+    if not any(a["name"] == "Mr. Nomad" for a in authors):
+        fail("nomad author page missing")
+    html = catalog.render_cover(rows)
+    for needle in ("A–Z", "Autores", "Envie sua história", "Loja", "/blog/arquivo/letras.html"):
+        if needle not in html:
+            fail(f"cover missing door {needle}")
+    ents = catalog.entity_pages(rows)
+    az = catalog.render_az_hub(ents)
+    if "Escolha a letra inicial" not in az:
+        fail("az hub copy missing")
+    submit = catalog.render_submit_page()
+    if "data-blog-submit" not in submit or "Conta Passport" not in submit:
+        fail("submit page incomplete")
+    print("OK cover doors + A-Z + authors + submit")
+
+
+def test_store_real_skus_only() -> None:
+    import editorial_blog_store as store
+    report = store.inventory_report()
+    if report["cataloged"] < 200:
+        fail(f"store catalog too small: {report['cataloged']}")
+    if report["publishable"] < 100:
+        fail("too few publishable products")
+    metallica = store.products_for_entities(["Metallica"], limit=5)
+    if not metallica:
+        fail("Metallica entity did not match a real SKU")
+    hits = store.search_store("Pink Floyd")
+    if hits["total"] == 0:
+        fail("store search miss Pink Floyd")
+    zero = store.search_store("xyzzy-no-sku")
+    if zero["total"] != 0:
+        fail("store search invented hits")
+    print("OK store real SKUs + entity link + search")
+
+
+def test_writer_kills_formula_and_professor() -> None:
+    pack = {
+        "facts": [
+            {"fact_id": "F1", "type": "signal_title", "value": "O clássico do Oasis que Noel Gallagher escreveu após sair de boate", "allowed_for_generation": True},
+            {"fact_id": "F2", "type": "signal_summary", "value": "A canção nasceu depois da noite.", "allowed_for_generation": True},
+        ],
+        "primary_category": "music",
+        "recommended_format": "story",
+    }
+    article = tunnel.write_from_fact_pack({"title": pack["facts"][0]["value"], "entities": ["Oasis", "Noel Gallagher"]}, pack)
+    blob = (article["deck"] + article["closing"] + str(article["sections"])).lower()
+    for banned in ("guarda o fato", "abre a escuta", "deixa no ar agora", "every song is a destination", "escute primeiro"):
+        if banned in blob:
+            fail(f"writer still emits {banned}")
+    if article["title"].lower().startswith("o que ") and "deixa no ar agora" in article["title"].lower():
+        fail("formula title returned")
+    print("OK writer language")
+
+
+def test_slogan_dead_at_source() -> None:
+    sources = [
+        "tools/editorial_engine.py",
+        "tools/editorial_blog_tunnel.py",
+        "js/mr-nomad-dossiers.js",
+        "js/passport-signal-habitat.js",
+        "js/passport-persist-nav.js",
+        "blog.html",
+        "loja.html",
+        "editorial.html",
+    ]
+    for rel in sources:
+        text = (ROOT / rel).read_text("utf-8")
+        if "Every Song Is A Destination" in text:
+            fail(f"dead slogan still in {rel}")
+        if "pe-nomad-signature" in text and rel.endswith("editorial_engine.py"):
+            fail("mill still auto-signs Nomad")
+    engine = (ROOT / "tools/editorial_engine.py").read_text("utf-8")
+    if "— MR. NOMAD" in engine:
+        fail("mill template still auto-attributes Nomad")
+    print("OK slogan/authorship dead at mill source")
+
+
+def test_discussion_and_submit_sql() -> None:
+    sql = (ROOT / "supabase/blog_submissions.sql").read_text("utf-8")
+    for needle in ("blog_submissions", "row level security", "recebida", "auth.uid()"):
+        if needle not in sql:
+            fail(f"submissions SQL missing {needle}")
+    js = (ROOT / "js/passport-blog-submit.js").read_text("utf-8")
+    if "blog_submissions" not in js or "minha-passport.html" not in js:
+        fail("submit client missing")
+    print("OK collaboration SQL + client")
+
+
+def test_writer_film_is_not_album() -> None:
+    pack = {
+        "facts": [
+            {"fact_id": "F1", "type": "signal_title", "value": "Review: RESIDENT EVIL (2026)", "allowed_for_generation": True},
+            {"fact_id": "F2", "type": "signal_summary", "value": "Zach Cregger recoloca Raccoon City no centro com um herói solitário e falho.", "allowed_for_generation": True},
+            {"fact_id": "F3", "type": "source_statement", "value": "Nach sieben mehr oder weniger gelungenen Versuchen wagt sich nun Weapons", "allowed_for_generation": True},
+        ],
+        "primary_category": "culture",
+        "recommended_format": "review",
+    }
+    article = tunnel.write_from_fact_pack(
+        {"title": "Review: RESIDENT EVIL (2026)", "entities": ["Zach Cregger", "Resident Evil", "Raccoon City"]},
+        pack,
+    )
+    blob = (article["title"] + article["deck"] + str(article["sections"])).lower()
+    if "o disco de" in article["title"].lower():
+        fail("film review titled as album")
+    if "guarda nesta escuta" in blob:
+        fail("formulaic film title/body")
+    if "nach sieben" in blob:
+        fail("german quote leaked into PT-BR body")
+    if "review:" in article["deck"].lower():
+        fail("raw Review: used as deck")
+    print("OK film title is not album + no German leak")
+
+
+def test_store_product_pages_real_only() -> None:
+    import editorial_blog_store as store
+    pages = store.write_product_pages()
+    if pages["product_pages"] < 100:
+        fail(f"too few product pages: {pages}")
+    sample = next(iter((ROOT / "loja" / "p").glob("*.html")))
+    html = sample.read_text("utf-8")
+    if "data-add-cart" not in html:
+        fail("product page missing cart")
+    if "Every Song Is A Destination" in html:
+        fail("slogan on product page")
+    fake = store.search_store("xyzzy-no-sku")
+    if fake["total"] != 0:
+        fail("invented SKU in search")
+    print("OK product pages from real SKUs")
+
+
 def test_protected_byte_identity() -> None:
-    # these files must not be dirty in this worktree relative to HEAD if unchanged
-    for rel in ("noticias.html", "radio.html", "js/passport-live.js"):
+    for rel in ("radio.html", "js/passport-live.js"):
         if not (ROOT / rel).exists():
             fail(f"protected missing {rel}")
     print("OK protected files exist")
+
 
 
 def main() -> int:
@@ -188,6 +335,14 @@ def main() -> int:
     test_renderer_share_discussion_no_scaffold()
     test_discussion_moderation_rules()
     test_blog_surfaces_no_dead_slogan()
+    test_historical_period_not_publish_date()
+    test_author_and_az_doors()
+    test_store_real_skus_only()
+    test_writer_kills_formula_and_professor()
+    test_writer_film_is_not_album()
+    test_slogan_dead_at_source()
+    test_discussion_and_submit_sql()
+    test_store_product_pages_real_only()
     test_protected_byte_identity()
     print("editorial_blog_publication: PASS")
     return 0

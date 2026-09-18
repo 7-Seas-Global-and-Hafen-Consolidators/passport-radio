@@ -64,15 +64,17 @@ jobs:
             tools/editorial_blog_discovery.py \
             tools/editorial_blog_tunnel.py \
             tools/editorial_blog_catalog.py \
+            tools/editorial_blog_store.py \
             tools/editorial_media_resolver.py \
             tools/editorial_fact_pack.py \
             tools/editorial_quality_gate.py \
             tools/editorial_engine_constitution.py
           python tests/test_editorial_blog_tunnel.py
           python tests/test_editorial_blog_publication.py
-          node --check js/passport-blog-archive.js
           node --check js/passport-blog-search.js
           node --check js/passport-blog-discussion.js
+          node --check js/passport-blog-submit.js
+          node --check js/passport-store-search.js
 
       - name: Guard protected surfaces
         run: |

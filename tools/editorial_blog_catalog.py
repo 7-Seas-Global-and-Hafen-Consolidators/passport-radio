@@ -106,6 +106,155 @@ def decade_of(date: str) -> str:
     return ""
 
 
+YEAR_RE = re.compile(r"\b((?:19|20)\d{2})\b")
+DECADE_WORD_RE = re.compile(r"anos\s+(\d0)", re.I)
+
+COUNTRY_FOLDS = {
+    "brasil", "brazil", "finlandia", "finland", "eua", "usa", "estados unidos",
+    "reino unido", "inglaterra", "uk", "alemanha", "germany", "suecia", "sweden",
+    "noruega", "japao", "japan", "franca", "italia", "argentina", "mexico",
+    "canada", "australia", "irlanda", "gales", "pais de gales", "escocia",
+    "portugal", "espanha", "holanda", "belgica", "dinamarca", "chile", "peru",
+}
+GENRE_FOLDS = {
+    "metal", "heavy metal", "thrash", "thrash metal", "rock", "punk", "hardcore",
+    "gothic", "gotico", "gótico", "jazz", "blues", "mpb", "samba", "soul",
+    "prog", "progressivo", "grunge", "industrial", "hip hop", "rap",
+}
+BAND_FOLDS = {
+    "pink floyd", "iron maiden", "led zeppelin", "rolling stones", "the rolling stones",
+    "machine head", "dream theater", "guns n roses", "black sabbath", "ac dc",
+    "kid abelha", "sepultura", "metallica", "mastodon", "nightwish", "oasis", "yes",
+}
+PERSON_HINTS = {
+    "keith richards", "john bonham", "kai hansen", "noel gallagher", "zach cregger",
+    "james hetfield", "robb flynn", "roger waters", "floor jansen", "steve harris",
+    "david gilmour", "paula toller", "leoni", "regis tadeu",
+}
+
+
+def years_from_text(*parts: Any) -> list[int]:
+    blob = " ".join(str(p or "") for p in parts)
+    found = {int(y) for y in YEAR_RE.findall(blob)}
+    for match in DECADE_WORD_RE.findall(blob):
+        decade = int(match)
+        found.add(2000 if decade == 0 else 1900 + decade)
+    # normalize 60 → 1960 already handled; 00s stay 2000
+    cleaned = []
+    for year in sorted(found):
+        if 1920 <= year <= 2026:
+            cleaned.append(year)
+    return cleaned
+
+
+def historical_fields(item: dict[str, Any]) -> dict[str, Any]:
+    pub = str(item.get("published_at") or "")
+    pub_year = int(pub[:4]) if pub[:4].isdigit() else None
+    years = years_from_text(
+        item.get("title"), item.get("deck"), item.get("body_excerpt"),
+        item.get("body_index"), " ".join(item.get("topics") or []),
+        item.get("historical_period"),
+        " ".join(str(y) for y in (item.get("event_years") or [])),
+    )
+    if item.get("event_years"):
+        extra = []
+        for raw in item.get("event_years") or []:
+            try:
+                extra.append(int(str(raw)[:4]))
+            except ValueError:
+                continue
+        years = sorted(set(years) | set(extra))
+    event_years = [y for y in years if pub_year is None or y != pub_year or len(years) == 1]
+    if not event_years and years:
+        event_years = years
+    decades = sorted({str((y // 10) * 10) for y in event_years})
+    if event_years:
+        lo, hi = min(event_years), max(event_years)
+        period = str(lo) if lo == hi else f"{lo}–{hi}"
+    else:
+        period = str(item.get("historical_period") or "")
+    return {
+        "event_years": event_years,
+        "decades_covered": decades,
+        "historical_period": period,
+        "year": str(event_years[0] if event_years else (pub[:4] if pub else "")),
+        "decade": decades[0] if decades else decade_of(pub),
+        "published_year": pub[:4] if pub else "",
+    }
+
+
+def entity_kind(name: str, item: dict[str, Any] | None = None) -> str:
+    folded = fold(name)
+    if not folded:
+        return "tema"
+    if folded in COUNTRY_FOLDS or (item and fold(item.get("country") or "") == folded):
+        return "country"
+    if folded in GENRE_FOLDS or (item and fold(item.get("genre") or "") == folded):
+        return "genre"
+    if item and fold(item.get("author") or "") == folded:
+        return "author"
+    if any(token in folded for token in ("resident evil", "raccoon")):
+        return "film"
+    if folded in PERSON_HINTS:
+        return "person"
+    if folded in BAND_FOLDS:
+        return "band"
+    words = [w for w in str(name).split() if w]
+    if len(words) >= 2 and all(w[:1].isupper() for w in words if w[:1].isalpha()):
+        if any(w.lower() in {"the", "and", "&"} for w in words):
+            return "band"
+        return "person"
+    if folded.isdigit() and len(folded) == 4:
+        return "year"
+    return "band"
+
+
+def letter_of(name: str) -> str:
+    folded = fold(name)
+    if not folded:
+        return "#"
+    ch = folded[0]
+    return ch if ch.isalpha() else "#"
+
+
+def collab_cta(item: dict[str, Any]) -> dict[str, str]:
+    ents = [x for x in (item.get("entities") or []) if x]
+    subject = ents[0] if ents else "esta história"
+    family = item.get("family") or family_of(item)
+    period = item.get("historical_period") or ""
+    if family == "shows":
+        line = f"Você estava lá? Viu {subject} nesse palco? Tem fotos, flyers, ingressos ou um relato?"
+    elif family == "discos":
+        line = f"Tocou, gravou ou conviveu com {subject} nessa época? Tem capa, ficha, foto de estúdio?"
+    elif family == "cultura":
+        line = f"Tem um documento, still ou memória sobre {subject} que falta nesta página?"
+    else:
+        line = f"Você tocou com {subject}, viu um show, tem fotos, flyers, ingressos ou uma informação que falta?"
+    if period:
+        line += f" Esta história atravessa {period}."
+    line += " Ajude a completar o acervo."
+    return {
+        "text": line,
+        "href": f"/blog/envie-sua-historia.html?entity={quote(subject)}&format={quote(family)}",
+        "label": "Envie sua história",
+    }
+
+
+def author_pages(catalog: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    buckets: dict[str, dict[str, Any]] = {}
+    for item in catalog:
+        name = clean(item.get("author") or "Passport Radio")
+        key = fold(name) or "passport-radio"
+        slot = buckets.get(key)
+        if slot is None:
+            slot = {"name": name, "slug": slugify(name), "kind": "author", "items": []}
+            buckets[key] = slot
+        slot["items"].append(item)
+    pages = list(buckets.values())
+    pages.sort(key=lambda x: (-len(x["items"]), x["name"]))
+    return pages
+
+
 def family_of(item: dict[str, Any]) -> str:
     hint = str(item.get("format_hint") or "")
     fmt = str(item.get("format") or "")
@@ -176,6 +325,7 @@ def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, 
         "title": clean(item.get("title")),
         "deck": clean(item.get("deck")),
         "body_excerpt": clean(item.get("body_excerpt") or item.get("deck"))[:400],
+        "body_index": clean(item.get("body_index") or item.get("body_excerpt") or item.get("deck"))[:1200],
         "published_at": str(item.get("published_at") or "")[:32],
         "modified_at": str(item.get("modified_at") or item.get("published_at") or "")[:32],
         "author": clean(item.get("author") or "Passport Radio"),
@@ -192,20 +342,26 @@ def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, 
         "country": clean(item.get("country") or ""),
         "region": clean(item.get("region") or ""),
         "city": clean(item.get("city") or ""),
-        "year": str(item.get("published_at") or "")[:4],
-        "decade": decade_of(str(item.get("published_at") or "")),
         "story_id": str(item.get("story_id") or item.get("story_angle_id") or ""),
         "channel": CHANNEL,
         "status": "published",
         "has_video": bool(item.get("has_video")),
         "has_image": bool(item.get("image") or item.get("has_image")),
+        "has_mid_image": bool(item.get("has_mid_image")),
         "norm": "",
     }
+    hist = historical_fields({**item, **row})
+    row.update(hist)
+    row["entity_kinds"] = {name: entity_kind(name, row) for name in row["entities"]}
     hay = " ".join([
-        row["title"], row["deck"], row["body_excerpt"], row["author"],
+        row["title"], row["deck"], row["body_excerpt"], row["body_index"], row["author"],
         row["format"], row["family"], row["genre"], row["country"],
         row["region"], row["city"], row["year"], row["decade"],
+        row.get("historical_period") or "", row.get("published_year") or "",
+        " ".join(str(y) for y in (row.get("event_years") or [])),
+        " ".join(row.get("decades_covered") or []),
         " ".join(row["entities"]), " ".join(row["topics"]),
+        " ".join(row.get("entity_kinds") or {}),
     ])
     row["norm"] = fold(hay)
     existing = load_catalog(target)
@@ -272,6 +428,10 @@ def related_rank(seed: dict[str, Any], catalog: list[dict[str, Any]], limit: int
             score += 3
         if seed_year and str(item.get("year") or "") == seed_year:
             score += 2
+        seed_hist = set(str(x) for x in (seed.get("decades_covered") or []))
+        item_hist = set(str(x) for x in (item.get("decades_covered") or []))
+        if seed_hist and seed_hist & item_hist:
+            score += 4
         if seed_country and fold(item.get("country") or "") == seed_country:
             score += 3
         if seed_genre and fold(item.get("genre") or "") == seed_genre:
@@ -315,11 +475,23 @@ def search_catalog(query: str, catalog: list[dict[str, Any]], page: int = 1, per
     scored: list[tuple[int, dict[str, Any]]] = []
     for item in catalog:
         hay = str(item.get("norm") or fold(" ".join([
-            item.get("title") or "", item.get("deck") or "",
+            item.get("title") or "", item.get("deck") or "", item.get("body_index") or "",
+            item.get("body_excerpt") or "", item.get("author") or "",
+            item.get("country") or "", item.get("historical_period") or "",
+            " ".join(str(y) for y in (item.get("event_years") or [])),
+            " ".join(item.get("decades_covered") or []),
             " ".join(item.get("entities") or []),
         ])))
         title = fold(item.get("title") or "")
         ents = " ".join(fold(x) for x in (item.get("entities") or []))
+        author = fold(item.get("author") or "")
+        country = fold(item.get("country") or "")
+        hist = fold(" ".join([
+            item.get("historical_period") or "",
+            " ".join(str(y) for y in (item.get("event_years") or [])),
+            " ".join(item.get("decades_covered") or []),
+        ]))
+        body = fold(item.get("body_index") or item.get("body_excerpt") or "")
         score = 0
         miss = False
         for token in tokens:
@@ -327,6 +499,14 @@ def search_catalog(query: str, catalog: list[dict[str, Any]], page: int = 1, per
                 score += 8 if title.startswith(token) or f" {token}" in f" {title}" else 5
             elif token in ents:
                 score += 6
+            elif token in author:
+                score += 6
+            elif token in country:
+                score += 6
+            elif token in hist:
+                score += 5
+            elif token in body:
+                score += 4
             elif token in hay:
                 score += 3
             else:
@@ -368,6 +548,10 @@ def build_search_shards(catalog: list[dict[str, Any]], dest: Path | None = None,
             "year": item.get("year") or "",
             "decade": item.get("decade") or "",
             "country": item.get("country") or "",
+            "historical_period": item.get("historical_period") or "",
+            "event_years": item.get("event_years") or [],
+            "decades_covered": item.get("decades_covered") or [],
+            "body": (item.get("body_index") or item.get("body_excerpt") or "")[:280],
             "norm": item.get("norm") or "",
         })
     shards = []
@@ -406,7 +590,7 @@ def entity_pages(catalog: list[dict[str, Any]]) -> list[dict[str, Any]]:
             slot = buckets.get(key)
             if slot is None:
                 display = name if " " in name or name[:1].isupper() else name
-                slot = {"name": display if " " in display else name, "slug": slugify(name if " " in name else name), "items": []}
+                slot = {"name": display if " " in display else name, "slug": slugify(name if " " in name else name), "kind": entity_kind(name, item), "items": []}
                 buckets[key] = slot
             if " " in name and len(name) > len(slot["name"]):
                 slot["name"] = name
@@ -471,7 +655,7 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 <link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
 <link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918q">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918r">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-body fd-body pp-station pp-blog">
@@ -484,15 +668,28 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 <nav class="pp-top-actions"><a href="/radio.html">OUVIR</a></nav></div></header>
 <nav class="pp-nav" aria-label="Seções"><div class="pp-nav-in">
 <a href="/index.html">HOME</a><a href="/noticias.html">NOTÍCIAS</a><a href="/editorial.html">ARQUIVO</a>
-<a href="/blog.html" aria-current="page">BLOG</a><a href="/radio.html">OUVIR</a>
+<a href="/blog.html" aria-current="page">BLOG</a><a href="/blog/arquivo/">ACERVO</a>
+<a href="/radio.html">OUVIR</a>
 <a href="/loja.html">LOJA</a><a href="/promocoes.html">PROMOÇÕES</a><a href="/anuncie.html">ANUNCIE</a><a href="/doe.html">DOE</a>
 </div></nav>
+<nav class="blog-doors" aria-label="Portas do Blog">
+<a href="/blog.html">Capa</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/blog/arquivo/">Arquivo</a>
+<a href="/blog/arquivo/letras.html">A–Z</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/arquivo/paises.html">Países</a>
+<a href="/blog/arquivo/formatos.html">Formatos</a>
+<a href="/blog/arquivo/epocas.html">Épocas</a>
+<a href="/blog/envie-sua-historia.html">Envie sua história</a>
+<a href="/loja.html">Loja</a>
+</nav>
 '''
 
 
 def _footer() -> str:
     return '''<footer class="pp-footer" id="ajude"><div class="pp-footer-in"><div class="pp-fcol"><p>Passport Radio</p></div>
-<div class="pp-fcol"><a href="/index.html">Home</a><a href="/noticias.html">Notícias</a><a href="/editorial.html">Arquivo</a><a href="/blog.html">Blog</a><a href="/blog/arquivo/">Arquivo do Blog</a><a href="/loja.html">Loja</a></div>
+<div class="pp-fcol"><a href="/index.html">Home</a><a href="/noticias.html">Notícias</a><a href="/editorial.html">Arquivo</a><a href="/blog.html">Blog</a><a href="/blog/arquivo/">Arquivo do Blog</a><a href="/blog/envie-sua-historia.html">Envie sua história</a><a href="/loja.html">Loja</a></div>
 <div class="pp-fcol"><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div>
 <div class="pp-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
 </body></html>
@@ -538,14 +735,27 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
     entities = entity_pages(items)[:16]
     decades: dict[str, int] = {}
     for item in items:
-        dec = item.get("decade") or decade_of(str(item.get("published_at") or ""))
-        if dec:
-            decades[dec] = decades.get(dec, 0) + 1
+        for dec in (item.get("decades_covered") or [item.get("decade") or ""]):
+            if dec:
+                decades[str(dec)] = decades.get(str(dec), 0) + 1
     parts = [_chrome("Blog | Passport Radio", "Histórias musicais da Passport Radio. Busca, arquivo, artistas e discussão.", SITE + "/blog.html")]
     parts.append('<main class="blog-page">')
     parts.append('<span class="blog-kicker">PASSPORT RADIO · PUBLICAÇÃO</span>')
     parts.append("<h1>Blog</h1>")
     parts.append('<p class="blog-intro">Contar histórias que dão vontade de ouvir. Bastidores, discos, shows, artistas e as decisões que deixaram marcas na música.</p>')
+    authors = author_pages(items)
+    countries = sorted({clean(x.get("country")) for x in items if clean(x.get("country"))})
+    letters = sorted({letter_of(ent["name"]) for ent in entity_pages(items) if letter_of(ent["name"]) != "#"})
+    parts.append('<section class="blog-doors-panel" aria-label="Portas editoriais">')
+    parts.append('<a href="/blog/arquivo/"><strong>Arquivo</strong><span>O acervo não some da capa</span></a>')
+    parts.append('<a href="/blog/arquivo/letras.html"><strong>A–Z</strong><span>Artistas e bandas por letra</span></a>')
+    parts.append('<a href="/blog/arquivo/autores.html"><strong>Autores</strong><span>Quem assina o acervo</span></a>')
+    parts.append('<a href="/blog/arquivo/epocas.html"><strong>Épocas</strong><span>Década do acontecimento, não da publicação</span></a>')
+    parts.append('<a href="/blog/arquivo/paises.html"><strong>Países</strong><span>Cenas e origens</span></a>')
+    parts.append('<a href="/blog/arquivo/formatos.html"><strong>Formatos</strong><span>Histórias, discos, shows, entrevistas</span></a>')
+    parts.append('<a href="/blog/envie-sua-historia.html"><strong>Envie sua história</strong><span>Testemunha vira acervo</span></a>')
+    parts.append('<a href="/loja.html"><strong>Loja</strong><span>Produto da casa, quando houver relação</span></a>')
+    parts.append("</section>")
     if hero:
         parts.append('<section class="blog-hero-split" aria-label="Destaque">')
         parts.append(_card(hero, "blog-card--hero"))
@@ -578,22 +788,43 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
         parts.append('<section class="blog-section" id="artistas"><h2>Artistas & bandas</h2><div class="blog-entity-cloud">')
         for ent in entities:
             parts.append(f'<a href="/blog/e/{esc(ent["slug"])}.html">{esc(ent["name"])} <small>{len(ent["items"])}</small></a>')
+        parts.append("</div>")
+        if letters:
+            parts.append('<p class="blog-az">')
+            for ch in "abcdefghijklmnopqrstuvwxyz":
+                cls = "" if ch in letters else " class=\"is-empty\""
+                parts.append(f'<a href="/blog/arquivo/letra-{ch}.html"{cls}>{ch.upper()}</a>')
+            parts.append("</p></section>")
+        else:
+            parts.append("</section>")
+    if authors:
+        parts.append('<section class="blog-section" id="autores"><h2>Autores</h2><div class="blog-entity-cloud">')
+        for author in authors[:12]:
+            parts.append(f'<a href="/blog/a/{esc(author["slug"])}.html">{esc(author["name"])} <small>{len(author["items"])}</small></a>')
+        parts.append('</div><p class="blog-section__more"><a href="/blog/arquivo/autores.html">Lista completa de autores →</a></p></section>')
+    if countries:
+        parts.append('<section class="blog-section" id="paises"><h2>Países</h2><div class="blog-entity-cloud">')
+        for name in countries:
+            parts.append(f'<a href="/blog/arquivo/?pais={esc(slugify(name))}">{esc(name)}</a>')
         parts.append("</div></section>")
     if decades:
-        parts.append('<section class="blog-section" id="decadas"><h2>Décadas</h2><div class="blog-entity-cloud">')
+        parts.append('<section class="blog-section" id="decadas"><h2>Épocas da história</h2><div class="blog-entity-cloud">')
         for dec in sorted(decades, reverse=True):
             parts.append(f'<a href="/blog/arquivo/?dec={esc(dec)}">{esc(dec)}s <small>{decades[dec]}</small></a>')
-        parts.append("</div></section>")
+        parts.append('<p class="blog-section__more">A data de publicação não é a época do acontecimento.</p></div></section>')
     inaugural = next((x for x in items if x.get("url") == COVER_URL), None)
     if inaugural:
         parts.append('<section class="blog-section blog-section--quiet" id="inaugural"><h2>Patrimônio</h2>')
         parts.append(_card(inaugural, "blog-card--compact"))
         parts.append("</section>")
+    parts.append('<section class="blog-collab-strip" id="colabore"><h2>Você estava lá?</h2>')
+    parts.append('<p>A publicação encontra leitores. As histórias encontram testemunhas. Testemunhas alimentam o acervo.</p>')
+    parts.append('<p><a href="/blog/envie-sua-historia.html">Envie sua história →</a> <a href="/minha-passport.html?returnTo=/blog/envie-sua-historia.html">Conta Passport</a></p></section>')
     parts.append('<section class="blog-section" id="arquivo"><h2>Arquivo completo</h2>')
     parts.append(f'<p class="blog-archive__lead">{len(items)} históri{"a" if len(items)==1 else "as"} publicadas. O que sai da capa continua aqui.</p>')
     parts.append('<p class="blog-section__more"><a href="/blog/arquivo/">Abrir o arquivo →</a></p></section>')
     parts.append("</main>")
-    parts.append('<script src="/js/passport-blog-search.js?v=20260918q" defer></script>')
+    parts.append('<script src="/js/passport-blog-search.js?v=20260918r" defer></script>')
     parts.append(_footer())
     return "".join(parts)
 
@@ -605,7 +836,7 @@ def render_search_page() -> str:
     html_out.append('<p class="blog-intro">Pesquise o acervo publicado. Título, artista, país, década, formato.</p>')
     html_out.append('<div id="blog-search-results" class="blog-search-results" data-search-root="1"></div>')
     html_out.append("</main>")
-    html_out.append('<script src="/js/passport-blog-search.js?v=20260918q" defer></script>')
+    html_out.append('<script src="/js/passport-blog-search.js?v=20260918r" defer></script>')
     html_out.append(_footer())
     return "".join(html_out)
 
@@ -651,13 +882,29 @@ def render_archive_page(catalog: list[dict[str, Any]], page: int = 1, family: st
 def render_entity_page(slot: dict[str, Any]) -> str:
     name = slot["name"]
     items = slot["items"]
+    kind = slot.get("kind") or entity_kind(name, items[0] if items else None)
     canonical = SITE + f"/blog/e/{slot['slug']}.html"
     extra = {"@type": "CollectionPage", "name": name, "url": canonical, "hasPart": [{"@type": "BlogPosting", "headline": i.get("title"), "url": SITE + i.get("url")} for i in items[:30]]}
     body = [_chrome(f"{name} | Blog Passport Radio", f"Histórias da Passport sobre {name}.", canonical, extra)]
     body.append('<main class="blog-page">')
     body.append('<nav class="blog-crumbs" aria-label="Trilha"><a href="/blog.html">Blog</a> · <a href="/blog/arquivo/">Arquivo</a> · <span>{0}</span></nav>'.format(esc(name)))
-    body.append(f'<span class="blog-kicker">ENTIDADE</span><h1>{esc(name)}</h1>')
+    body.append(f'<span class="blog-kicker">{esc(kind.upper())}</span><h1>{esc(name)}</h1>')
     body.append(f'<p class="blog-intro">{len(items)} históri{"a" if len(items)==1 else "as"} neste acervo.</p>')
+    try:
+        from editorial_blog_store import products_for_entities
+        products = products_for_entities([name], limit=3)
+    except Exception:
+        products = []
+    if products:
+        body.append('<section class="blog-store-rail"><span>Na Loja Passport</span><div>')
+        for prod in products:
+            body.append(
+                f'<a href="{esc(prod["url"])}"><img src="{esc(prod["image"])}" alt="{esc(prod["name"])}" width="120" height="120" loading="lazy">'
+                f'<strong>{esc(prod["name"])}</strong></a>'
+            )
+        body.append('</div><p>A matéria não é vitrine. O produto só aparece quando a entidade coincide com o catálogo real.</p></section>')
+    cta = collab_cta({"entities": [name], "family": (items[0].get("family") if items else ""), "historical_period": (items[0].get("historical_period") if items else "")})
+    body.append(f'<section class="blog-collab-strip"><h2>Você estava lá?</h2><p>{esc(cta["text"])}</p><p><a href="{esc(cta["href"])}">{esc(cta["label"])} →</a></p></section>')
     body.append('<div class="blog-grid">')
     body.append("".join(_card(x) for x in items))
     body.append("</div></main>")
@@ -665,13 +912,110 @@ def render_entity_page(slot: dict[str, Any]) -> str:
     return "".join(body)
 
 
+def render_author_page(slot: dict[str, Any]) -> str:
+    name = slot["name"]
+    items = slot["items"]
+    canonical = SITE + f"/blog/a/{slot['slug']}.html"
+    extra = {"@type": "ProfilePage", "name": name, "url": canonical}
+    body = [_chrome(f"{name} | Autores Passport Radio", f"Matérias assinadas por {name}.", canonical, extra)]
+    body.append('<main class="blog-page">')
+    body.append(f'<nav class="blog-crumbs"><a href="/blog.html">Blog</a> · <a href="/blog/arquivo/autores.html">Autores</a> · <span>{esc(name)}</span></nav>')
+    body.append(f'<span class="blog-kicker">AUTOR</span><h1>{esc(name)}</h1>')
+    body.append(f'<p class="blog-intro">{len(items)} históri{"a" if len(items)==1 else "as"} publicadas neste acervo. Mr. Nomad só assina o que é de Mr. Nomad. O tunnel assina Passport Radio.</p>')
+    body.append('<div class="blog-grid">')
+    body.append("".join(_card(x) for x in items))
+    body.append("</div></main>")
+    body.append(_footer())
+    return "".join(body)
+
+
+def render_index_list(title: str, kicker: str, intro: str, links: list[tuple[str, str, str]], canonical_path: str) -> str:
+    body = [_chrome(f"{title} | Blog Passport Radio", intro, SITE + canonical_path)]
+    body.append('<main class="blog-page">')
+    body.append(f'<span class="blog-kicker">{esc(kicker)}</span><h1>{esc(title)}</h1>')
+    body.append(f'<p class="blog-intro">{esc(intro)}</p>')
+    body.append('<div class="blog-entity-cloud">')
+    for href, label, count in links:
+        extra = f" <small>{esc(count)}</small>" if count else ""
+        body.append(f'<a href="{esc(href)}">{esc(label)}{extra}</a>')
+    body.append("</div></main>")
+    body.append(_footer())
+    return "".join(body)
+
+
+def render_az_hub(entities: list[dict[str, Any]]) -> str:
+    groups: dict[str, list] = {}
+    for ent in entities:
+        groups.setdefault(letter_of(ent["name"]), []).append(ent)
+    body = [_chrome("A–Z | Blog Passport Radio", "Índice alfabético de artistas, bandas e pessoas no acervo.", SITE + "/blog/arquivo/letras.html")]
+    body.append('<main class="blog-page"><span class="blog-kicker">ACERVO · A–Z</span><h1>Escolha a letra inicial</h1>')
+    body.append('<p class="blog-intro">Porta enciclopédica do acervo publicado. Cada letra abre entidades reais, não categorias vazias.</p>')
+    body.append('<p class="blog-az">')
+    for ch in "abcdefghijklmnopqrstuvwxyz":
+        cls = "" if ch in groups else ' class="is-empty"'
+        body.append(f'<a href="/blog/arquivo/letra-{ch}.html"{cls}>{ch.upper()}</a>')
+    body.append("</p>")
+    for ch in sorted(groups):
+        body.append(f'<section class="blog-section" id="letra-{esc(ch)}"><h2>{esc(ch.upper())}</h2><div class="blog-entity-cloud">')
+        for ent in sorted(groups[ch], key=lambda x: fold(x["name"])):
+            body.append(f'<a href="/blog/e/{esc(ent["slug"])}.html">{esc(ent["name"])} <small>{len(ent["items"])}</small></a>')
+        body.append("</div></section>")
+    body.append("</main>")
+    body.append(_footer())
+    return "".join(body)
+
+
+def render_letter_page(letter: str, entities: list[dict[str, Any]]) -> str:
+    rows = [e for e in entities if letter_of(e["name"]) == letter]
+    body = [_chrome(f"Letra {letter.upper()} | Blog Passport Radio", f"Entidades com a letra {letter.upper()}.", SITE + f"/blog/arquivo/letra-{letter}.html")]
+    body.append(f'<main class="blog-page"><span class="blog-kicker">A–Z</span><h1>Letra {esc(letter.upper())}</h1>')
+    if not rows:
+        body.append('<p class="blog-empty">Ainda não há entidades publicadas nesta letra.</p>')
+    else:
+        body.append('<div class="blog-entity-cloud">')
+        for ent in sorted(rows, key=lambda x: fold(x["name"])):
+            body.append(f'<a href="/blog/e/{esc(ent["slug"])}.html">{esc(ent["name"])} <small>{len(ent["items"])}</small></a>')
+        body.append("</div>")
+    body.append("</main>")
+    body.append(_footer())
+    return "".join(body)
+
+
+def render_submit_page() -> str:
+    body = [_chrome("Envie sua história | Passport Radio", "Leitor vira testemunha. Testemunha vira acervo. Conta Passport obrigatória para enviar.", SITE + "/blog/envie-sua-historia.html")]
+    body.append('''<main class="blog-page blog-submit-page">
+<span class="blog-kicker">COMUNIDADE · ACERVO</span>
+<h1>Envie sua história</h1>
+<p class="blog-intro">Não começamos caçando autores. Começamos capturando testemunhas. Você estava num show, tocou numa banda, tem um flyer, uma fita, uma foto, um nome que falta? A redação decide o destino. Envio não garante publicação.</p>
+<section class="blog-submit" data-blog-submit="1">
+<p class="blog-discussion__status">Carregando a Conta Passport…</p>
+</section>
+<p class="blog-submit-note">Pauta comercial e anúncio continuam em <a href="/anuncie.html">Anuncie</a> e <a href="/divulgar-bandas.html">Envie sua pauta</a>. Aqui o caminho é editorial: testemunha → colaborador → autor.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="/js/passport-blog-submit.js?v=20260918r" defer></script>
+''')
+    body.append(_footer())
+    return "".join(body)
+
+
+def render_entity_page_placeholder_keep() -> None:
+    return None
+
+
 def write_surfaces(catalog: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     items = catalog if catalog is not None else load_catalog()
     build_search_shards(items)
+    try:
+        from editorial_blog_store import write_store_index
+        store_meta = write_store_index()
+    except Exception as exc:
+        store_meta = {"error": f"{type(exc).__name__}: {exc}"}
     (ROOT / "blog.html").write_text(render_cover(items), "utf-8")
     busca = ROOT / "blog" / "busca.html"
     busca.parent.mkdir(parents=True, exist_ok=True)
     busca.write_text(render_search_page(), "utf-8")
+    (ROOT / "blog" / "envie-sua-historia.html").write_text(render_submit_page(), "utf-8")
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
     page1, pages = render_archive_page(items, 1)
     (ARCHIVE_DIR / "index.html").write_text(page1, "utf-8")
@@ -692,28 +1036,92 @@ def write_surfaces(catalog: list[dict[str, Any]] | None = None) -> dict[str, Any
     for stale in ENTITY_DIR.glob("*.html"):
         if stale.name not in wanted:
             stale.unlink()
-    write_blog_sitemaps(items, entity_slots, pages)
+    author_dir = ROOT / "blog" / "a"
+    author_dir.mkdir(parents=True, exist_ok=True)
+    author_slots = author_pages(items)
+    wanted_authors = set()
+    for slot in author_slots:
+        path = author_dir / f"{slot['slug']}.html"
+        path.write_text(render_author_page(slot), "utf-8")
+        wanted_authors.add(path.name)
+    for stale in author_dir.glob("*.html"):
+        if stale.name not in wanted_authors:
+            stale.unlink()
+    (ARCHIVE_DIR / "letras.html").write_text(render_az_hub(entity_slots), "utf-8")
+    for ch in "abcdefghijklmnopqrstuvwxyz":
+        (ARCHIVE_DIR / f"letra-{ch}.html").write_text(render_letter_page(ch, entity_slots), "utf-8")
+    (ARCHIVE_DIR / "autores.html").write_text(render_index_list(
+        "Autores", "ACERVO · AUTORES",
+        "Quem assina o acervo publicado. Mr. Nomad só aparece no que é de Mr. Nomad.",
+        [(f"/blog/a/{a['slug']}.html", a["name"], str(len(a["items"]))) for a in author_slots],
+        "/blog/arquivo/autores.html",
+    ), "utf-8")
+    country_counts: dict[str, int] = {}
+    for item in items:
+        name = clean(item.get("country") or "")
+        if name:
+            country_counts[name] = country_counts.get(name, 0) + 1
+    (ARCHIVE_DIR / "paises.html").write_text(render_index_list(
+        "Países", "ACERVO · PAÍSES",
+        "Cenas e origens quando a matéria carrega o dado.",
+        [(f"/blog/arquivo/?pais={slugify(n)}", n, str(c)) for n, c in sorted(country_counts.items())],
+        "/blog/arquivo/paises.html",
+    ), "utf-8")
+    family_counts: dict[str, int] = {}
+    for item in items:
+        fam = item.get("family") or family_of(item)
+        family_counts[fam] = family_counts.get(fam, 0) + 1
+    (ARCHIVE_DIR / "formatos.html").write_text(render_index_list(
+        "Formatos", "ACERVO · FORMATOS",
+        "Histórias, discos, shows, entrevistas, cultura. Sem categoria vazia.",
+        [(f"/blog/arquivo/?fam={k}", FAMILY_LABEL.get(k, k), str(v)) for k, v in family_counts.items() if v],
+        "/blog/arquivo/formatos.html",
+    ), "utf-8")
+    decade_counts: dict[str, int] = {}
+    for item in items:
+        for dec in (item.get("decades_covered") or [item.get("decade") or ""]):
+            if dec:
+                decade_counts[str(dec)] = decade_counts.get(str(dec), 0) + 1
+    (ARCHIVE_DIR / "epocas.html").write_text(render_index_list(
+        "Épocas", "ACERVO · ÉPOCAS",
+        "Década do acontecimento, não da data de publicação.",
+        [(f"/blog/arquivo/?dec={d}", f"{d}s", str(c)) for d, c in sorted(decade_counts.items(), reverse=True)],
+        "/blog/arquivo/epocas.html",
+    ), "utf-8")
+    write_blog_sitemaps(items, entity_slots, pages, author_slots)
     return {
         "catalog": len(items),
         "archive_pages": pages,
         "entities": len(entity_slots),
+        "authors": len(author_slots),
         "search_shards": max(1, math.ceil(len(items) / SHARD_SIZE) if items else 1),
+        "store": store_meta,
     }
 
 
-def write_blog_sitemaps(catalog: list[dict[str, Any]], entities: list[dict[str, Any]], archive_pages: int) -> None:
+def write_blog_sitemaps(catalog: list[dict[str, Any]], entities: list[dict[str, Any]], archive_pages: int, authors: list[dict[str, Any]] | None = None) -> None:
     dest = ROOT / "sitemap-blog.xml"
     urls = [
         ("/blog.html", "daily", "1.0"),
         ("/blog/busca.html", "daily", "0.6"),
         ("/blog/arquivo/", "daily", "0.7"),
+        ("/blog/arquivo/letras.html", "weekly", "0.6"),
+        ("/blog/arquivo/autores.html", "weekly", "0.6"),
+        ("/blog/arquivo/paises.html", "weekly", "0.5"),
+        ("/blog/arquivo/formatos.html", "weekly", "0.5"),
+        ("/blog/arquivo/epocas.html", "weekly", "0.5"),
+        ("/blog/envie-sua-historia.html", "weekly", "0.7"),
     ]
     for n in range(2, archive_pages + 1):
         urls.append((f"/blog/arquivo/p{n}.html", "weekly", "0.5"))
+    for ch in "abcdefghijklmnopqrstuvwxyz":
+        urls.append((f"/blog/arquivo/letra-{ch}.html", "weekly", "0.4"))
     for item in catalog:
         urls.append((item["url"], "weekly", "0.8"))
     for slot in entities:
         urls.append((f"/blog/e/{slot['slug']}.html", "weekly", "0.5"))
+    for slot in authors or []:
+        urls.append((f"/blog/a/{slot['slug']}.html", "weekly", "0.5"))
     chunks = [urls[i:i + 40000] for i in range(0, len(urls), 40000)] or [[]]
     if len(chunks) == 1:
         dest.write_text(_urlset(chunks[0]), "utf-8")

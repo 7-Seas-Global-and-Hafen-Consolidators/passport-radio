@@ -119,7 +119,7 @@
     if (navigating) return;
     if (isHome(url)) {
       if (push) history.pushState({ppNav: 1, href: url.href}, "", url.href);
-      document.title = "Passport Radio | Every Song Is A Destination";
+      document.title = "Passport Radio | Contar histórias que dão vontade de ouvir";
       setAway(false);
       return;
     }
