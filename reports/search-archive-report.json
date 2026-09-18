@@ -1,0 +1,18 @@
+{
+  "search": {
+    "index": "data/blog-search/manifest.json",
+    "shard_size": 4000,
+    "queries_contract": ["Nightwish", "Floor Jansen", "Brasil", "1994", "gótico", "The Mission", "cinema", "Metallica", "1986"]
+  },
+  "archive_doors": [
+    "/blog/arquivo/",
+    "/blog/arquivo/letras.html",
+    "/blog/arquivo/autores.html",
+    "/blog/arquivo/paises.html",
+    "/blog/arquivo/formatos.html",
+    "/blog/arquivo/epocas.html",
+    "/blog/arquivo/temas.html",
+    "/blog/arquivo/agenda.html"
+  ],
+  "scale": "Shards hold compact records. Client never loads 100k full documents."
+}

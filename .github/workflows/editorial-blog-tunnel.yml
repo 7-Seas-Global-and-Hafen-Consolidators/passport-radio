@@ -27,6 +27,11 @@ on:
       - 'data/editorial-sources-blog-v1.json'
       - 'data/blog-tunnel-engine.json'
       - 'tests/test_editorial_blog_tunnel.py'
+      - 'tests/test_editorial_blog_publication.py'
+      - 'tests/test_store_stamp_pricing.py'
+      - 'tools/passport_store_pricing.py'
+      - 'tools/passport_circulation.py'
+      - 'tools/editorial_blog_store.py'
       - '.github/workflows/editorial-blog-tunnel.yml'
       - 'js/passport-blog-archive.js'
       - 'blog.html'
@@ -68,9 +73,14 @@ jobs:
             tools/editorial_media_resolver.py \
             tools/editorial_fact_pack.py \
             tools/editorial_quality_gate.py \
-            tools/editorial_engine_constitution.py
+            tools/editorial_engine_constitution.py \
+            tools/passport_store_pricing.py \
+            tools/passport_circulation.py \
+            tools/stamp_source_crawl.py \
+            tools/stamp_passport_reconcile.py
           python tests/test_editorial_blog_tunnel.py
           python tests/test_editorial_blog_publication.py
+          python tests/test_store_stamp_pricing.py
           node --check js/passport-blog-search.js
           node --check js/passport-blog-discussion.js
           node --check js/passport-blog-submit.js

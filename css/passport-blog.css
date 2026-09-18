@@ -72,6 +72,30 @@ body.pp-blog-article .blog-entities{display:flex;flex-wrap:wrap;gap:8px;margin:1
 body.pp-blog-article .blog-entities a{color:#f3ead8;border:1px solid #333;border-radius:999px;padding:6px 10px;text-decoration:none;font-size:.85rem}
 body.pp-blog-article .blog-share{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 28px}
 body.pp-blog-article .blog-share a,body.pp-blog-article .blog-share button{min-height:38px;padding:0 12px;border:1px solid #c4a574;border-radius:999px;background:transparent;color:#c4a574;text-decoration:none;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+body.pp-blog .blog-follow, body.pp-blog-article .blog-follow{
+  margin:18px 0 32px;padding:18px 20px;border:1px solid #333;background:#101010;color:#e8e2d6;
+}
+body.pp-blog .blog-follow span, body.pp-blog-article .blog-follow span{
+  display:block;margin:0 0 8px;color:#c4a574;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+}
+body.pp-blog .blog-follow p, body.pp-blog-article .blog-follow p{color:#e8e2d6;margin:0 0 10px;line-height:1.5}
+body.pp-blog .blog-follow__row, body.pp-blog-article .blog-follow__row{display:flex;flex-wrap:wrap;gap:8px}
+body.pp-blog .blog-follow a, body.pp-blog-article .blog-follow a{
+  min-height:38px;padding:0 12px;border:1px solid #c4a574;border-radius:999px;color:#c4a574;text-decoration:none;
+  font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;
+}
+body.pp-blog-article .blog-doc-strip{margin:28px 0}
+body.pp-blog-article .blog-doc-strip > span{display:block;margin:0 0 12px;color:#c4a574;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+body.pp-blog-article .blog-doc-strip > div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+body.pp-blog-article .blog-doc-cell{margin:0;background:#101010;border:1px solid #262626}
+body.pp-blog-article .blog-doc-cell img{width:100%;height:140px;object-fit:cover;display:block}
+body.pp-blog-article .blog-doc-cell figcaption{padding:8px;color:#cfc6b8;font-size:.75rem}
+.pp-pix{color:#c4a574;font-weight:600}
+.pp-product-page .pp-price{font-size:1.8rem;color:#f3ead8}
+@media(max-width:760px){
+  body.pp-blog-article .blog-doc-strip > div{grid-template-columns:1fr 1fr}
+}
+
 body.pp-blog-article .blog-prevnext{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}
 body.pp-blog-article .blog-prevnext a{display:block;padding:14px;border:1px solid #262626;color:#f3ead8;text-decoration:none}
 body.pp-blog-article .blog-prevnext small{display:block;color:#c4a574;margin-bottom:6px}

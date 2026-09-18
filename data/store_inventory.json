@@ -1,1 +1,27 @@
-{"store_id":"passport-radio-official","brand":"Passport Radio","payment_gateway":"asaas","payment_methods":["pix","cartao","boleto"],"technical_capacity":{"cartao_max_installments":10,"boleto_max_installments":1},"pricing_rule":"mixed_catalog_rules","chunks":["/data/store_inventory_01.json","/data/store_inventory_02.json","/data/store_inventory_03.json","/data/store_inventory_04.json","/data/store_inventory_05.json","/data/store_inventory_06_tenis_p1.json","/data/store_inventory_07_historic_tenis.json"],"product_count":247}
+{
+  "store_id": "passport-radio-official",
+  "brand": "Passport Radio",
+  "payment_gateway": "asaas",
+  "payment_methods": [
+    "pix",
+    "cartao",
+    "boleto"
+  ],
+  "technical_capacity": {
+    "cartao_max_installments": 10,
+    "boleto_max_installments": 1
+  },
+  "pricing_rule": "stamp_public_x_0.80_pix_5_card_6x",
+  "chunks": [
+    "/data/store_inventory_01.json",
+    "/data/store_inventory_02.json",
+    "/data/store_inventory_03.json",
+    "/data/store_inventory_04.json",
+    "/data/store_inventory_05.json",
+    "/data/store_inventory_06_tenis_p1.json",
+    "/data/store_inventory_07_historic_tenis.json",
+    "/data/store_inventory_09_stamp_live.json"
+  ],
+  "product_count": 933,
+  "stamp_source_crawled_at": "2026-09-18T21:03:43.578201+00:00"
+}

@@ -10,9 +10,10 @@ from __future__ import annotations
 import json
 import re
 import unicodedata
+import html as html_lib
 from pathlib import Path
 from typing import Any
-import html as html_lib
+from passport_store_pricing import CARD_INSTALLMENTS, conditions_from_passport_price, from_stamp_public
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "store_inventory.json"
@@ -51,6 +52,24 @@ ARTIST_ALIASES = {
     "nightwish": "Nightwish",
     "angra": "Angra",
     "kid abelha": "Kid Abelha",
+    "gojira": "Gojira",
+    "ghost": "Ghost",
+    "tool": "Tool",
+    "the cure": "The Cure",
+    "joy division": "Joy Division",
+    "foo fighters": "Foo Fighters",
+    "green day": "Green Day",
+    "system of a down": "System Of A Down",
+    "judas priest": "Judas Priest",
+    "motorhead": "Motörhead",
+    "motörhead": "Motörhead",
+    "deep purple": "Deep Purple",
+    "scorpions": "Scorpions",
+    "pantera": "Pantera",
+    "the doors": "The Doors",
+    "the who": "The Who",
+    "bob marley": "Bob Marley",
+    "david bowie": "David Bowie",
 }
 
 
@@ -145,28 +164,70 @@ def classify(product: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def lineage_of(product: dict[str, Any]) -> str:
+    explicit = str(product.get("lineage") or "")
+    if explicit:
+        return explicit
+    pid = str(product.get("id") or "")
+    if pid.startswith("tenis-p1"):
+        return "passport_ten_p1"
+    if pid.startswith("shoe-size"):
+        return "passport_historical_tenis"
+    image = str(product.get("image") or "")
+    if "stamp.jetassets" in image or product.get("stamp_url"):
+        return "stamp"
+    return "passport"
+
+
+def apply_pricing(product: dict[str, Any]) -> dict[str, Any]:
+    """Compute Passport/Pix/boleto/card from the correct base. Never invent Stamp prices."""
+    lin = lineage_of(product)
+    if lin in {"stamp", "stamp_preexisting"} and product.get("stamp_price"):
+        priced = from_stamp_public(product.get("stamp_price"))
+        if priced:
+            return priced
+    if lin in {"stamp", "stamp_preexisting"} and product.get("price") and not product.get("stamp_price"):
+        # preexisting Passport row that already stored a Passport price, no live Stamp
+        return conditions_from_passport_price(product.get("price")) or {}
+    return conditions_from_passport_price(product.get("price")) or {}
+
+
 def enrich(product: dict[str, Any]) -> dict[str, Any]:
     extra = classify(product)
     image = str(product.get("image") or "")
+    lin = lineage_of(product)
+    priced = apply_pricing(product)
+    price = priced.get("price", product.get("price"))
+    pix = priced.get("pix_price", product.get("pix_price"))
+    boleto = priced.get("boleto_price", product.get("boleto_price"))
+    inst = priced.get("max_installments") or CARD_INSTALLMENTS
     row = {
         "id": str(product.get("id") or ""),
         "sku": str(product.get("sku") or product.get("id") or ""),
         "name": str(product.get("name") or ""),
         "category": str(product.get("category") or ""),
         "type": extra["kind"],
-        "gender": extra["gender"],
+        "gender": extra["gender"] or product.get("gender") or "",
         "artist": extra["artist"],
-        "price": product.get("price"),
-        "pix_price": product.get("pix_price"),
-        "boleto_price": product.get("boleto_price"),
-        "regular_price": product.get("regular_price") or product.get("price"),
+        "price": price,
+        "pix_price": pix,
+        "boleto_price": boleto,
+        "regular_price": product.get("regular_price") or product.get("stamp_list_price") or product.get("stamp_price") or price,
+        "stamp_price": product.get("stamp_price"),
+        "stamp_url": product.get("stamp_url") or "",
+        "card_installment": priced.get("card_installment"),
         "image": image,
         "in_stock": bool(product.get("in_stock", True)),
-        "max_installments": product.get("max_installments") or 8,
+        "max_installments": inst,
         "variant": product.get("variant") or "",
         "url": f"/loja/p/{product.get('id')}.html",
-        "publishable": extra["publishable"],
-        "source": "stamp.jetassets" if "stamp.jetassets" in image else ("passport-local" if image.startswith("/images/") else "passport"),
+        "publishable": extra["publishable"] and lin != "passport_ten_p1",
+        "lineage": lin,
+        "pricing_rule": priced.get("pricing_rule") or product.get("pricing_rule") or "",
+        "source": (
+            "stamp.jetassets" if "stamp.jetassets" in image else
+            ("passport-local" if image.startswith("/images/") else "passport")
+        ),
         "norm": fold(" ".join([
             str(product.get("name") or ""),
             str(product.get("category") or ""),
@@ -174,6 +235,7 @@ def enrich(product: dict[str, Any]) -> dict[str, Any]:
             extra["kind"],
             str(product.get("sku") or ""),
             extra["gender"],
+            lin,
         ])),
     }
     return row
@@ -182,8 +244,10 @@ def enrich(product: dict[str, Any]) -> dict[str, Any]:
 _CACHE: list[dict[str, Any]] | None = None
 
 
-def catalog() -> list[dict[str, Any]]:
+def catalog(refresh: bool = False) -> list[dict[str, Any]]:
     global _CACHE
+    if refresh:
+        _CACHE = None
     if _CACHE is None:
         _CACHE = [enrich(p) for p in load_products()]
     return _CACHE
@@ -280,6 +344,15 @@ def inventory_report() -> dict[str, Any]:
         "with_valid_image": sum(1 for x in rows if x["image"]),
         "stamp_cdn_images": sum(1 for x in rows if x["source"] == "stamp.jetassets"),
         "local_images": sum(1 for x in rows if x["source"] == "passport-local"),
+        "lineage": {
+            "stamp": sum(1 for x in rows if x.get("lineage") == "stamp"),
+            "stamp_preexisting": sum(1 for x in rows if x.get("lineage") == "stamp_preexisting"),
+            "passport_ten_p1": sum(1 for x in rows if x.get("lineage") == "passport_ten_p1"),
+            "passport_historical_tenis": sum(1 for x in rows if x.get("lineage") == "passport_historical_tenis"),
+            "passport": sum(1 for x in rows if x.get("lineage") == "passport"),
+        },
+        "ten_p1_unpublished": sum(1 for x in rows if x.get("lineage") == "passport_ten_p1"),
+        "historical_tenis_with_local_images": sum(1 for x in rows if x.get("lineage") == "passport_historical_tenis" and x.get("source") == "passport-local"),
         "categories": cats,
         "types": kinds,
         "artists_linked": artists,
@@ -289,11 +362,19 @@ def inventory_report() -> dict[str, Any]:
             "raveo-harmony", "raveo-turner", "soundcore-p20i", "strinberg-sb240c",
             "tagima-millenium-6", "thomaz-teg340",
         ],
+        "pricing": {
+            "stamp_public_times": 0.80,
+            "pix_off_passport": 0.05,
+            "boleto": "passport_at_sight",
+            "card_installments": CARD_INSTALLMENTS,
+            "example_stamp_100": from_stamp_public(100),
+        },
         "stamp_note": (
-            "O catálogo Stamp já estava materializado nos chunks da Loja Passport "
-            "(camisetas, copos, bandeiras, tênis) com preço e imagem observados. "
-            "Nenhum SKU Stamp novo foi inventado nesta missão. "
-            "48 tênis do chunk 06 ficam catalogados mas não publicáveis por falta de imagem."
+            "STAMP_SOURCE is the live crawl of stamp.com.br. "
+            "TEN-P1 (48) are Passport historical without image — not Stamp pending. "
+            "43 recovered tennis keep local images. "
+            "New Stamp SKUs enter only with observed photo + public price. "
+            "Passport price = Stamp public × 0.80; Pix = 5% off Passport; boleto = Passport; card up to 6x."
         ),
     }
 
@@ -319,13 +400,27 @@ def _esc(value: Any) -> str:
     return html_lib.escape(str(value or ""), quote=True)
 
 
+def _money_br(value: Any) -> str:
+    try:
+        return f"R$ {float(value):.2f}".replace(".", ",")
+    except (TypeError, ValueError):
+        return ""
+
+
 def render_product_page(product: dict[str, Any]) -> str:
     name = product["name"]
     price = product.get("price") or 0
-    money = f"R$ {float(price):.2f}".replace(".", ",")
+    money = _money_br(price)
     pix = product.get("pix_price")
-    pix_line = f"PIX R$ {float(pix):.2f}".replace(".", ",") if pix else "PIX no checkout Asaas"
-    inst = int(product.get("max_installments") or 8)
+    pix_line = _money_br(pix) if pix else ""
+    boleto = product.get("boleto_price") or price
+    inst = int(product.get("max_installments") or CARD_INSTALLMENTS)
+    installment = product.get("card_installment")
+    if installment is None and price:
+        try:
+            installment = round(float(price) / inst, 2)
+        except (TypeError, ValueError, ZeroDivisionError):
+            installment = None
     artist = product.get("artist") or ""
     artist_html = ""
     if artist:
@@ -337,7 +432,7 @@ def render_product_page(product: dict[str, Any]) -> str:
     related = related_products(product)
     rel_html = "".join(
         f'<a class="pp-product" href="{_esc(r["url"])}"><img src="{_esc(r["image"])}" alt="{_esc(r["name"])}" width="160" height="160" loading="lazy">'
-        f'<strong>{_esc(r["name"])}</strong></a>'
+        f'<strong>{_esc(r["name"])}</strong><span>{_esc(_money_br(r.get("price")))}</span></a>'
         for r in related
     )
     stock = "disponível" if product.get("in_stock") else "sob consulta"
@@ -358,17 +453,22 @@ def render_product_page(product: dict[str, Any]) -> str:
         },
     }
     import json as _json
+    pix_html = f"<p class=\"pp-pix\">Pix {_esc(pix_line)} <small>5% off o preço Passport</small></p>" if pix_line else ""
+    inst_html = (
+        f"<p class=\"pp-installments\">Cartão em até {inst}x de {_esc(_money_br(installment))} sem inventar juros nesta página. "
+        f"Boleto à vista {_esc(_money_br(boleto))}.</p>"
+    )
     return f'''<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{_esc(name)} | Loja Passport Radio</title>
-<meta name="description" content="{_esc(name)} na Loja Passport. Preço observado no catálogo real.">
+<meta name="description" content="{_esc(name)} na Loja Passport. Pix, boleto e cartão em até {inst}x.">
 <link rel="canonical" href="{SITE}{product["url"]}">
 <link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-store-v6.css?v=20260918r">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918r">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918s">
 <script type="application/ld+json">{_json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-body pp-station">
@@ -384,21 +484,22 @@ def render_product_page(product: dict[str, Any]) -> str:
 <span class="pp-env__kicker">PASSPORT STORE · {_esc(product.get("category") or "")}</span>
 <h1>{_esc(name)}</h1>
 <p class="pp-price">{_esc(money)}</p>
-<p class="pp-installments">{_esc(pix_line)} · cartão em até {inst}x via Asaas · estoque: {_esc(stock)}</p>
-<p>SKU {_esc(sku)}. Preço e imagem saem do catálogo observado. Nada inventado nesta página.</p>
+{pix_html}
+{inst_html}
+<p>SKU {_esc(sku)}. Estoque: {_esc(stock)}. Preço e imagem saem do catálogo observado.</p>
 {artist_html}
 <p>
-<button type="button" class="pp-btn pp-btn--ink" data-add-cart="{_esc(product["id"])}" data-sku="{_esc(sku)}" data-name="{_esc(name)}" data-price="{_esc(price)}">Adicionar ao carrinho</button>
+<button type="button" class="pp-btn pp-btn--ink" data-add-cart="{_esc(product["id"])}" data-sku="{_esc(sku)}" data-name="{_esc(name)}" data-price="{_esc(price)}" data-pix="{_esc(pix or "")}">Adicionar ao carrinho</button>
 <a class="pp-btn pp-btn--red" href="{ASAAS}" target="_blank" rel="noopener">Checkout Asaas</a>
 <a class="pp-btn pp-btn--ghost" href="{WA}" target="_blank" rel="noopener">Pedir via WhatsApp</a>
 </p>
-<p class="pp-cart-note">O Asaas desta casa não recebe SKU automaticamente. O carrinho local monta o pedido; WhatsApp leva os itens.</p>
+<p class="pp-cart-note">O Asaas desta casa não recebe SKU automaticamente. O carrinho local monta o pedido; WhatsApp leva os itens escolhidos.</p>
 </div>
 </article>
 <section id="pp-store-cart" class="pp-store-cart" aria-label="Carrinho"></section>
 <section class="pp-related-store"><h2>Na mesma prateleira</h2><div class="pp-store-grid">{rel_html}</div></section>
 </main>
-<script src="/js/passport-store-search.js?v=20260918r" defer></script>
+<script src="/js/passport-store-search.js?v=20260918s" defer></script>
 </body></html>
 '''
 
@@ -431,13 +532,16 @@ def write_product_pages(rows: list[dict[str, Any]] | None = None) -> dict[str, A
 
 
 def write_store_index() -> dict[str, Any]:
-    rows = catalog()
+    rows = catalog(refresh=True)
     SEARCH_DIR.mkdir(parents=True, exist_ok=True)
     compact = [{
         "id": x["id"], "sku": x["sku"], "name": x["name"], "category": x["category"],
-        "type": x["type"], "artist": x["artist"], "price": x["price"], "image": x["image"],
-        "url": x["url"], "publishable": x["publishable"], "in_stock": x["in_stock"],
-        "gender": x["gender"], "norm": x["norm"],
+        "type": x["type"], "artist": x["artist"], "price": x["price"],
+        "pix_price": x.get("pix_price"), "boleto_price": x.get("boleto_price"),
+        "max_installments": x.get("max_installments"),
+        "image": x["image"], "url": x["url"], "publishable": x["publishable"],
+        "in_stock": x["in_stock"], "gender": x["gender"], "norm": x["norm"],
+        "lineage": x.get("lineage"),
     } for x in rows]
     (SEARCH_DIR / "index.json").write_text(
         json.dumps({"items": compact, "count": len(compact)}, ensure_ascii=False) + "\n",

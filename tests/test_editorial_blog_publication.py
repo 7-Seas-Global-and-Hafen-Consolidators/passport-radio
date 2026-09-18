@@ -245,6 +245,7 @@ def test_writer_kills_formula_and_professor() -> None:
 def test_slogan_dead_at_source() -> None:
     sources = [
         "tools/editorial_blog_tunnel.py",
+        "tools/editorial_engine.py",
         "js/mr-nomad-dossiers.js",
         "js/passport-signal-habitat.js",
         "js/passport-persist-nav.js",
@@ -277,6 +278,10 @@ def test_slogan_dead_at_source() -> None:
     )
     if "Every Song Is A Destination" in blog_html or "pe-nomad-signature" in blog_html:
         fail("blog renderer still ships mill slogan/Nomad")
+    if "t.me/+pXv3uwqOY8lkZGZk" not in blog_html:
+        fail("official Telegram missing from matter")
+    if "wa.me/?text=" not in blog_html or "t.me/share/url" not in blog_html:
+        fail("share WhatsApp/Telegram missing")
     print("OK slogan/authorship dead on Blog surfaces")
 
 

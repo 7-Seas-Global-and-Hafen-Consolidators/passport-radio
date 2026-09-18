@@ -1,0 +1,9 @@
+{
+  "rule": "If the story crosses time, media should cross time. Hero alone is not a documentary.",
+  "resolver": "tools/editorial_media_resolver.py",
+  "renderer": "tools/editorial_blog_tunnel.py _media_html + inline photos by section + blog-doc-strip",
+  "published_stories_audited": 12,
+  "finding": "Current gated stories carry at most a hero image from the source page. Extra chronological photos/videos are rendered when the resolver actually finds them (credit, caption, phase/year). The mill does not invent documentary stills.",
+  "the_mission_reference": "The Mission dossier later received real live performance media; that remains the desired richness when source HTML contains it.",
+  "kid_abelha": "Readable cream+ink; professor-of-listening closer removed; chapter 03 rewritten as history."
+}

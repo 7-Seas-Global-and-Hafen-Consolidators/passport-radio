@@ -1,0 +1,30 @@
+{
+  "source": "https://whiplash.net/",
+  "audited_at": "2026-09-18",
+  "surfaces_opened": [
+    "https://whiplash.net/",
+    "https://whiplash.net/indices/bandas.html",
+    "https://whiplash.net/materias/whiplash/051632.html",
+    "https://whiplash.net/temas/a/agenda.html",
+    "https://whiplash.net/materias/whiplash/069494.html",
+    "https://whiplash.net/materias/whiplash/000766.html",
+    "https://whiplash.net/materias/whiplash/027002.html",
+    "https://whiplash.net/materias/whiplash/217719.html"
+  ],
+  "functions": [
+    {"fn": "Home", "evidence": "https://whiplash.net/", "problem": "distributes the archive", "passport": "/blog.html", "gap": "none"},
+    {"fn": "Busca", "evidence": "header search", "problem": "find a name inside 100k pages", "passport": "/blog/busca.html", "gap": "none"},
+    {"fn": "A-Z / letras / bandas", "evidence": "https://whiplash.net/indices/bandas.html", "problem": "open the city by letter", "passport": "/blog/arquivo/letras.html", "gap": "none"},
+    {"fn": "Autores", "evidence": "byline + author index", "problem": "who wrote this", "passport": "/blog/arquivo/autores.html + /blog/a/", "gap": "none"},
+    {"fn": "Temas / assuntos", "evidence": "tema index", "problem": "subject shelves", "passport": "/blog/arquivo/temas.html", "gap": "closed this mission"},
+    {"fn": "Agenda / Hoje no Rock", "evidence": "https://whiplash.net/temas/a/agenda.html", "problem": "time as a door", "passport": "/blog/arquivo/agenda.html + epocas.html", "gap": "Passport agenda is historical years of the story, not a live concert calendar we do not have"},
+    {"fn": "Matéria", "evidence": "051632 and neighbors", "problem": "immersion", "passport": "/blog/YYYY/MM/DD/*.html", "gap": "none"},
+    {"fn": "Relacionadas", "evidence": "article footer", "problem": "one story opens another", "passport": "related_rank", "gap": "none"},
+    {"fn": "Anterior / próxima", "evidence": "article nav", "problem": "walk the shelf", "passport": "blog-prevnext", "gap": "none"},
+    {"fn": "Compartilhar WhatsApp/Telegram", "evidence": "share buttons", "problem": "circulate then return", "passport": "share + official channels", "gap": "closed this mission"},
+    {"fn": "Colaboração / envio", "evidence": "069494 / 000766", "problem": "reader becomes archive", "passport": "/blog/envie-sua-historia.html + Conta Passport", "gap": "SQL versioned, remote apply pending"},
+    {"fn": "Comentários", "evidence": "article comments", "problem": "retain after reading", "passport": "js/passport-blog-discussion.js", "gap": "migrations versioned"},
+    {"fn": "Publicidade", "evidence": "ad slots", "problem": "fund the house", "passport": "/anuncie.html contextual only", "gap": "do not redesign Anuncie"},
+    {"fn": "Loja / comercial", "evidence": "product mentions", "problem": "entity to SKU", "passport": "entity store rail + /loja/p/", "gap": "closed this mission without inventing SKU"}
+  ]
+}

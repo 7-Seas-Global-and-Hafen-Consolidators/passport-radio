@@ -789,16 +789,33 @@ def _media_html(media: dict[str, Any], title: str) -> str:
     if video.get("embed_url") and video.get("platform") in {"youtube", "vimeo"}:
         label = base.esc(video.get("title") or title)
         live = ' data-live="1"' if video.get("live_performance") else ""
+        phase = video.get("phase") or video.get("year") or ""
+        cap = f"<figcaption>{base.esc(phase + ' · ' if phase else '')}{base.esc(video.get('credit') or 'Performance')}</figcaption>"
         chunks.append(
             f'<div class="blog-embed"{live}><iframe src="{base.esc(video["embed_url"])}" title="{label}" '
-            f'loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'
+            f'loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>{cap}</div>'
         )
     if photo.get("url"):
         credit = photo.get("credit") or ""
-        cap = f"<figcaption>{base.esc(credit)}</figcaption>" if credit else ""
+        phase = photo.get("phase") or photo.get("year") or ""
+        cap_txt = " · ".join(x for x in (phase, credit) if x)
+        cap = f"<figcaption>{base.esc(cap_txt)}</figcaption>" if cap_txt else ""
         chunks.append(
             f'<figure class="blog-photo"><img src="{base.esc(photo["url"])}" alt="{base.esc(photo.get("alt") or title)}" loading="eager">{cap}</figure>'
         )
+    timeline = media.get("timeline") or []
+    if len(timeline) >= 2:
+        cells = []
+        for shot in timeline[:8]:
+            if not shot.get("url"):
+                continue
+            label = " · ".join(x for x in (shot.get("phase"), shot.get("year"), shot.get("credit")) if x)
+            cells.append(
+                f'<figure class="blog-doc-cell"><img src="{base.esc(shot["url"])}" alt="{base.esc(shot.get("alt") or title)}" loading="lazy">'
+                f'<figcaption>{base.esc(label)}</figcaption></figure>'
+            )
+        if cells:
+            chunks.append('<section class="blog-doc-strip" aria-label="Mídia no tempo da história"><span>A mídia também atravessa o tempo</span><div>' + "".join(cells) + "</div></section>")
     return "".join(chunks)
 
 
@@ -831,15 +848,8 @@ def _link_entities(escaped_text: str, entities: list[str]) -> str:
 
 
 def _share_html(canonical: str, title: str) -> str:
-    encoded = quote(canonical)
-    text = quote(f"{title} — {canonical}")
-    return (
-        '<aside class="blog-share"><span>Compartilhar</span>'
-        f'<a href="https://wa.me/?text={text}" target="_blank" rel="noopener">WhatsApp</a>'
-        f'<a href="https://t.me/share/url?url={encoded}&text={quote(title)}" target="_blank" rel="noopener">Telegram</a>'
-        f'<button type="button" data-copy-link="{base.esc(canonical)}">Copiar link</button>'
-        "</aside>"
-    )
+    from passport_circulation import follow_html, share_html
+    return share_html(canonical, title) + follow_html()
 
 
 def _collab_html(article: dict[str, Any], catalog_item: dict[str, Any] | None) -> str:
@@ -894,11 +904,15 @@ def render_blog_article(
         heading = base.esc(section.get("heading"))
         body = _paragraphs_html(section, entities)
         extra = ""
-        if idx == 1 and extras:
-            photo = extras[0]
+        extras_idx = idx
+        if extras and extras_idx < len(extras):
+            photo = extras[extras_idx]
+            phase = photo.get("phase") or photo.get("year") or ""
+            credit = photo.get("credit") or photo.get("alt") or ""
+            cap = " · ".join(x for x in (phase, credit) if x)
             extra = (
-                f'<figure class="blog-photo"><img src="{base.esc(photo.get("url"))}" alt="{base.esc(photo.get("alt") or title)}" loading="lazy" width="1200" height="675">'
-                f'<figcaption>{base.esc(photo.get("credit") or photo.get("alt") or "")}</figcaption></figure>'
+                f'<figure class="blog-photo blog-photo--inline"><img src="{base.esc(photo.get("url"))}" alt="{base.esc(photo.get("alt") or title)}" loading="lazy" width="1200" height="675">'
+                f'<figcaption>{base.esc(cap)}</figcaption></figure>'
             )
         if idx == 2 and videos:
             vid = videos[0]
@@ -981,7 +995,7 @@ def render_blog_article(
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/editorial-engine.css?v=20260825">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918r">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918s">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-article pp-blog-article">

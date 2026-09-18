@@ -1,0 +1,17 @@
+{
+  "discussion": {
+    "client": "js/passport-blog-discussion.js",
+    "auth": "js/passport-auth.js Conta Passport",
+    "tables": ["blog_comments", "blog_comment_supports", "blog_comment_reports"],
+    "sql": "supabase/blog_comments.sql",
+    "remote_apply": "NOT applied in this mission (no service role). Versioned in repo."
+  },
+  "contribution": {
+    "cta": "contextual inside the matter",
+    "page": "/blog/envie-sua-historia.html",
+    "client": "js/passport-blog-submit.js",
+    "sql": "supabase/blog_submissions.sql",
+    "states": ["recebida", "em análise", "ajustes solicitados", "aprovada", "publicada", "não publicada"],
+    "remote_apply": "NOT applied in this mission (no service role)."
+  }
+}

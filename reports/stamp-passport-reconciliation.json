@@ -1,0 +1,25 @@
+{
+  "reconciled_at": "2026-09-18T21:10:55.407334+00:00",
+  "stamp_source_total": 944,
+  "stamp_source_parsed": 938,
+  "stamp_source_eligible": 822,
+  "stamp_source_variants": 4407,
+  "stamp_source_categories": 157,
+  "passport_preexisting_total": 247,
+  "stamp_already_present_in_passport": 136,
+  "stamp_newly_imported": 686,
+  "passport_ten_p1": 48,
+  "passport_historical_tenis": 43,
+  "passport_historical_only": 91,
+  "passport_final_total": 933,
+  "example_100": {
+    "stamp_price": 100.0,
+    "price": 80.0,
+    "pix_price": 76.0,
+    "boleto_price": 80.0,
+    "max_installments": 6,
+    "card_installment": 13.33,
+    "pricing_rule": "stamp_public_x_0.80"
+  },
+  "note": "TEN-P1 (48) remain Passport historical without image and are not Stamp pending. 43 recovered tennis keep local images. New Stamp SKUs entered only with observed photo+price."
+}

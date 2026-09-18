@@ -191,11 +191,12 @@ jobs:
           sample={'title':'Teste Passport','meta_description':'Teste','deck':'Teste','published_at':'2026-08-27T12:00:00-03:00','category':'rock','format':'STORY','kicker':'PASSPORT RADIO · ROCK · 27/08/2026','sections':[{'heading':'Teste','paragraphs':[{'text':'Parágrafo editorial de teste suficientemente longo para renderização.','fact_refs':['FTEST']}]}],'closing':'Fecho editorial.','story_angle_id':'ANG_TEST','batch_id':'batch-test'}
           rendered=engine.render_article(sample, '/editorial/teste.html', [])
           assert '<html lang="pt-BR">' in rendered
-          assert 'pe-nomad-signature' in rendered
-          assert 'MR. NOMAD' in rendered
+          assert 'pe-nomad-signature' not in rendered
+          assert 'Every Song Is A Destination.' not in rendered
+          assert 'Contar histórias que dão vontade de ouvir.' in rendered
+          assert 'PASSPORT RADIO' in rendered
           assert 'passport:story-id' in rendered
           assert 'passport:batch-id' in rendered
-          assert 'Every Song Is A Destination.' in rendered
 
           for lang in ('es','fr','de','it','ja','ko','zh-CN','ar','tr','ru'):
               assert lang in engine.GLOBAL_ACCEPT_LANGUAGE, lang

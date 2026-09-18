@@ -655,7 +655,7 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 <link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
 <link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918r">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918s">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-body fd-body pp-station pp-blog">
@@ -681,6 +681,8 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 <a href="/blog/arquivo/paises.html">Países</a>
 <a href="/blog/arquivo/formatos.html">Formatos</a>
 <a href="/blog/arquivo/epocas.html">Épocas</a>
+<a href="/blog/arquivo/temas.html">Temas</a>
+<a href="/blog/arquivo/agenda.html">Agenda do acervo</a>
 <a href="/blog/envie-sua-historia.html">Envie sua história</a>
 <a href="/loja.html">Loja</a>
 </nav>
@@ -688,12 +690,18 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 
 
 def _footer() -> str:
-    return '''<footer class="pp-footer" id="ajude"><div class="pp-footer-in"><div class="pp-fcol"><p>Passport Radio</p></div>
+    from passport_circulation import TELEGRAM_OFFICIAL, WHATSAPP_OFFICIAL, follow_html
+    return (
+        follow_html(compact=True)
+        + '''<footer class="pp-footer" id="ajude"><div class="pp-footer-in"><div class="pp-fcol"><p>Passport Radio</p></div>
 <div class="pp-fcol"><a href="/index.html">Home</a><a href="/noticias.html">Notícias</a><a href="/editorial.html">Arquivo</a><a href="/blog.html">Blog</a><a href="/blog/arquivo/">Arquivo do Blog</a><a href="/blog/envie-sua-historia.html">Envie sua história</a><a href="/loja.html">Loja</a></div>
-<div class="pp-fcol"><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div>
+<div class="pp-fcol"><a href="''' + TELEGRAM_OFFICIAL + '''" target="_blank" rel="noopener">Telegram oficial</a>
+<a href="''' + WHATSAPP_OFFICIAL + '''" target="_blank" rel="noopener">WhatsApp oficial</a>
+<a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div>
 <div class="pp-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
 </body></html>
 '''
+    )
 
 
 def render_cover(catalog: list[dict[str, Any]]) -> str:
@@ -753,6 +761,8 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
     parts.append('<a href="/blog/arquivo/epocas.html"><strong>Épocas</strong><span>Década do acontecimento, não da publicação</span></a>')
     parts.append('<a href="/blog/arquivo/paises.html"><strong>Países</strong><span>Cenas e origens</span></a>')
     parts.append('<a href="/blog/arquivo/formatos.html"><strong>Formatos</strong><span>Histórias, discos, shows, entrevistas</span></a>')
+    parts.append('<a href="/blog/arquivo/temas.html"><strong>Temas</strong><span>Entidades e assuntos do acervo</span></a>')
+    parts.append('<a href="/blog/arquivo/agenda.html"><strong>Agenda do acervo</strong><span>O tempo da história, não só da publicação</span></a>')
     parts.append('<a href="/blog/envie-sua-historia.html"><strong>Envie sua história</strong><span>Testemunha vira acervo</span></a>')
     parts.append('<a href="/loja.html"><strong>Loja</strong><span>Produto da casa, quando houver relação</span></a>')
     parts.append("</section>")
@@ -1088,6 +1098,25 @@ def write_surfaces(catalog: list[dict[str, Any]] | None = None) -> dict[str, Any
         [(f"/blog/arquivo/?dec={d}", f"{d}s", str(c)) for d, c in sorted(decade_counts.items(), reverse=True)],
         "/blog/arquivo/epocas.html",
     ), "utf-8")
+    (ARCHIVE_DIR / "temas.html").write_text(render_index_list(
+        "Temas", "ACERVO · TEMAS",
+        "Assuntos, artistas e obras que abrem outras matérias.",
+        [(f"/blog/e/{s['slug']}.html", s["name"], str(len(s["items"]))) for s in entity_slots],
+        "/blog/arquivo/temas.html",
+    ), "utf-8")
+    year_counts: dict[str, int] = {}
+    for item in items:
+        for year in item.get("event_years") or []:
+            year_counts[str(year)] = year_counts.get(str(year), 0) + 1
+        pub = str(item.get("published_at") or "")[:4]
+        if pub.isdigit() and pub not in year_counts:
+            year_counts[pub] = year_counts.get(pub, 0)
+    (ARCHIVE_DIR / "agenda.html").write_text(render_index_list(
+        "Agenda do acervo", "ACERVO · TEMPO",
+        "Anos do acontecimento quando a matéria carrega o dado. Não é calendário de shows inventado.",
+        [(f"/blog/arquivo/?ano={y}", y, str(c)) for y, c in sorted(year_counts.items(), reverse=True) if c],
+        "/blog/arquivo/agenda.html",
+    ), "utf-8")
     write_blog_sitemaps(items, entity_slots, pages, author_slots)
     return {
         "catalog": len(items),
@@ -1110,6 +1139,8 @@ def write_blog_sitemaps(catalog: list[dict[str, Any]], entities: list[dict[str, 
         ("/blog/arquivo/paises.html", "weekly", "0.5"),
         ("/blog/arquivo/formatos.html", "weekly", "0.5"),
         ("/blog/arquivo/epocas.html", "weekly", "0.5"),
+        ("/blog/arquivo/temas.html", "weekly", "0.5"),
+        ("/blog/arquivo/agenda.html", "weekly", "0.5"),
         ("/blog/envie-sua-historia.html", "weekly", "0.7"),
     ]
     for n in range(2, archive_pages + 1):

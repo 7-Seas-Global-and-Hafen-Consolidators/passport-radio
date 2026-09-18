@@ -52,6 +52,11 @@
       return;
     }
     const total = items.reduce((n, i) => n + Number(i.price || 0) * Number(i.qty || 1), 0);
+    const pixTotal = items.reduce((n, i) => {
+      const unit = i.pix != null && i.pix !== "" ? Number(i.pix) : Number(i.price || 0) * 0.95;
+      return n + unit * Number(i.qty || 1);
+    }, 0);
+    const cardEach = total / 6;
     slot.innerHTML = `
       <h2>Carrinho</h2>
       <ul>${items.map((i) => `<li data-id="${esc(i.id)}"><strong>${esc(i.name)}</strong> · ${money(i.price)} ×
@@ -60,9 +65,12 @@
         <button type="button" data-qty="1" aria-label="aumentar">+</button>
         <button type="button" data-remove="1">Remover</button></li>`).join("")}</ul>
       <p>Subtotal ${money(total)}</p>
-      <p class="pp-cart-note">O Asaas desta casa é o checkout atual. Ele não recebe SKU automaticamente. WhatsApp leva o pedido com os itens.</p>
+      <p>Pix ${money(pixTotal)} <small>5% off o preço Passport</small></p>
+      <p>Boleto à vista ${money(total)}</p>
+      <p>Cartão em até 6x de ${money(cardEach)}</p>
+      <p class="pp-cart-note">O Asaas desta casa é o checkout atual. Ele não recebe SKU automaticamente. WhatsApp leva o pedido com os itens escolhidos.</p>
       <p><a class="pp-btn pp-btn--red" href="${ASAAS}" target="_blank" rel="noopener">Checkout Asaas</a>
-         <a class="pp-btn pp-btn--ghost" href="${WA}?text=${encodeURIComponent("Pedido Passport Store: " + items.map((i) => i.qty + "× " + i.name).join(", "))}" target="_blank" rel="noopener">Pedir via WhatsApp</a></p>
+         <a class="pp-btn pp-btn--ghost" href="${WA}?text=${encodeURIComponent("Pedido Passport Store: " + items.map((i) => i.qty + "× " + i.name + " " + money(i.price)).join(", ") + " | Pix " + money(pixTotal))}" target="_blank" rel="noopener">Pedir via WhatsApp</a></p>
     `;
     slot.onclick = (ev) => {
       const li = ev.target.closest("li[data-id]");
@@ -83,7 +91,7 @@
     const items = cart();
     const found = items.find((x) => String(x.id) === String(product.id));
     if (found) found.qty = Number(found.qty || 1) + 1;
-    else items.push({ id: product.id, sku: product.sku, name: product.name, price: product.price, qty: 1 });
+    else items.push({ id: product.id, sku: product.sku, name: product.name, price: product.price, pix: product.pix, qty: 1 });
     saveCart(items);
     emit("add_to_cart", { id: product.id });
   }
@@ -158,7 +166,8 @@
         id: btn.getAttribute("data-add-cart"),
         sku: btn.getAttribute("data-sku"),
         name: btn.getAttribute("data-name"),
-        price: Number(btn.getAttribute("data-price") || 0)
+        price: Number(btn.getAttribute("data-price") || 0),
+        pix: btn.getAttribute("data-pix") ? Number(btn.getAttribute("data-pix")) : undefined
       });
     });
     let items = [];
