@@ -44,7 +44,7 @@
       foot.setAttribute("data-pp-signal-foot", "1");
       foot.innerHTML =
         '<a href="/" target="_top">Home</a> · <a href="/radio.html" target="_top">Ouvir</a> · ' +
-        '<a href="/loja.html" target="_top">Loja</a> · <a href="' + SUPPORT + '" target="_blank" rel="noopener">Ajude</a>' +
+        '<a href="/loja.html" target="_top">Loja</a> · <a href="/privacidade.html" target="_top">Privacidade e Cookies</a> · <a href="' + SUPPORT + '" target="_blank" rel="noopener">Ajude</a>' +
         "<p>Passport Radio™ · Every Song Is A Destination.</p>";
       document.body.appendChild(foot);
     }
@@ -89,12 +89,22 @@
     }
   }
 
+  function loadCookieNotice() {
+    if (document.querySelector('script[data-passport-cookie-foundation]')) return;
+    const s = document.createElement("script");
+    s.src = "/js/passport-site-foundation.js?v=20260918a";
+    s.defer = true;
+    s.dataset.passportCookieFoundation = "1";
+    document.head.appendChild(s);
+  }
+
   function boot() {
     markWorld();
     injectChrome();
     frameNote();
     revealNovelas();
     loadFofonete();
+    loadCookieNotice();
     if (document.body && document.body.getAttribute("data-signal") === "novelas") {
       new MutationObserver(revealNovelas).observe(document.body, { childList: true, subtree: true });
     }
