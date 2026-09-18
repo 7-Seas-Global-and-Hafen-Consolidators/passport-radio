@@ -1,12 +1,32 @@
 {
   "version": 1,
-  "updated_at": "2026-09-18T20:18:28.760816+00:00",
-  "count": 12,
+  "updated_at": "2026-09-18T23:15:29.090227+00:00",
+  "count": 21933,
   "shard_size": 4000,
   "shards": [
     {
       "file": "/data/blog-search/shard-00.json",
-      "count": 12
+      "count": 4000
+    },
+    {
+      "file": "/data/blog-search/shard-01.json",
+      "count": 4000
+    },
+    {
+      "file": "/data/blog-search/shard-02.json",
+      "count": 4000
+    },
+    {
+      "file": "/data/blog-search/shard-03.json",
+      "count": 4000
+    },
+    {
+      "file": "/data/blog-search/shard-04.json",
+      "count": 4000
+    },
+    {
+      "file": "/data/blog-search/shard-05.json",
+      "count": 1933
     }
   ]
 }

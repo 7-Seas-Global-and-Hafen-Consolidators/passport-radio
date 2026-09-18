@@ -32,6 +32,9 @@ COVER_URL = "/historias/contar-historias-que-dao-vontade-de-ouvir.html"
 SHARD_SIZE = 4000
 ARCHIVE_PAGE_SIZE = 24
 ENTITY_MIN_STORIES = 1
+ENTITY_PAGE_SIZE = 24
+AUTHOR_PAGE_SIZE = 24
+
 
 ENTITY_STOP = {
     "passport", "radio", "blog", "music", "música", "musica", "metal", "rock",
@@ -307,13 +310,20 @@ def load_catalog(path: Path | None = None) -> list[dict[str, Any]]:
             if str(row.get("status") or "published") != "published":
                 continue
             rows.append(row)
-    rows.sort(key=lambda r: str(r.get("published_at") or ""), reverse=True)
+    rows.sort(key=_catalog_sort_key, reverse=True)
     return rows
 
 
-def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, Any]:
-    target = path or CATALOG_PATH
-    target.parent.mkdir(parents=True, exist_ok=True)
+def _catalog_sort_key(row: dict[str, Any]) -> tuple:
+    archive = 0 if str(row.get("generation") or "") == "archive_mill" else 1
+    return (
+        archive,
+        str(row.get("published_at") or ""),
+        str(row.get("origin_id") or "").zfill(8),
+    )
+
+
+def make_catalog_row(item: dict[str, Any]) -> dict[str, Any]:
     url = str(item.get("url") or "").strip()
     if not url:
         raise ValueError("catalog row needs url")
@@ -348,6 +358,9 @@ def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, 
         "has_video": bool(item.get("has_video")),
         "has_image": bool(item.get("image") or item.get("has_image")),
         "has_mid_image": bool(item.get("has_mid_image")),
+        "generation": str(item.get("generation") or ""),
+        "origin_id": str(item.get("origin_id") or ""),
+        "origin_cluster": str(item.get("origin_cluster") or item.get("cluster_id") or ""),
         "norm": "",
     }
     hist = historical_fields({**item, **row})
@@ -364,10 +377,23 @@ def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, 
         " ".join(row.get("entity_kinds") or {}),
     ])
     row["norm"] = fold(hay)
-    existing = load_catalog(target)
-    by_url = {str(x.get("url")): x for x in existing}
-    by_url[url] = row
-    ordered = sorted(by_url.values(), key=lambda r: str(r.get("published_at") or ""), reverse=True)
+    return row
+
+
+def write_catalog(items: list[dict[str, Any]], path: Path | None = None, merge: bool = True) -> list[dict[str, Any]]:
+    """Batch write. One pass over disk. Does not truncate unrelated rows when merge=True."""
+    target = path or CATALOG_PATH
+    target.parent.mkdir(parents=True, exist_ok=True)
+    by_url: dict[str, dict[str, Any]] = {}
+    if merge and target.exists():
+        for existing in load_catalog(target):
+            url = str(existing.get("url") or "")
+            if url:
+                by_url[url] = existing
+    for item in items:
+        row = make_catalog_row(item) if "norm" not in item or not item.get("url") else make_catalog_row(item)
+        by_url[row["url"]] = row
+    ordered = sorted(by_url.values(), key=_catalog_sort_key, reverse=True)
     with target.open("w", encoding="utf-8") as handle:
         for rec in ordered:
             handle.write(json.dumps(rec, ensure_ascii=False, separators=(",", ":")) + "\n")
@@ -379,6 +405,12 @@ def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, 
         "path": str(target.relative_to(ROOT)) if target.is_relative_to(ROOT) else str(target),
     }
     save_json(META_PATH if path is None else path.with_suffix(".meta.json"), meta)
+    return ordered
+
+
+def upsert_catalog(item: dict[str, Any], path: Path | None = None) -> dict[str, Any]:
+    row = make_catalog_row(item)
+    write_catalog([row], path=path, merge=True)
     return row
 
 
@@ -455,17 +487,72 @@ def related_rank(seed: dict[str, Any], catalog: list[dict[str, Any]], limit: int
     return out
 
 
+def build_related_index(catalog_rows: list[dict[str, Any]]) -> dict[str, Any]:
+    by_ent: dict[str, list[int]] = {}
+    by_url: dict[str, int] = {}
+    for idx, item in enumerate(catalog_rows):
+        url = str(item.get("url") or "")
+        if url:
+            by_url[url] = idx
+        for name in item.get("entities") or []:
+            key = fold(name)
+            if not key:
+                continue
+            by_ent.setdefault(key, []).append(idx)
+    return {"by_ent": by_ent, "by_url": by_url, "items": catalog_rows}
+
+
+def related_from_index(seed: dict[str, Any], index: dict[str, Any], limit: int = 6) -> list[dict[str, Any]]:
+    items: list[dict[str, Any]] = index.get("items") or []
+    seed_url = str(seed.get("url") or "")
+    scores: dict[int, int] = {}
+    for name in seed.get("entities") or []:
+        for idx in (index.get("by_ent") or {}).get(fold(name), []):
+            other = items[idx]
+            url = str(other.get("url") or "")
+            if not url or url == seed_url:
+                continue
+            scores[idx] = scores.get(idx, 0) + 12
+    if not scores:
+        return related_rank(seed, items, limit=limit)
+    ranked = sorted(
+        scores.items(),
+        key=lambda kv: (kv[1], str(items[kv[0]].get("origin_id") or items[kv[0]].get("published_at") or "")),
+        reverse=True,
+    )
+    out: list[dict[str, Any]] = []
+    used_ents: set[str] = set()
+    for idx, _score in ranked:
+        item = items[idx]
+        primary = fold((item.get("entities") or [item.get("title")])[0] if item.get("entities") else item.get("title"))
+        if primary in used_ents and len(out) >= 2:
+            continue
+        used_ents.add(primary)
+        out.append(item)
+        if len(out) >= limit:
+            break
+    return out
+
+
 def neighbors(seed: dict[str, Any], catalog: list[dict[str, Any]]) -> dict[str, dict[str, Any] | None]:
-    ordered = sorted(catalog, key=lambda r: str(r.get("published_at") or ""))
-    urls = [str(x.get("url")) for x in ordered]
-    try:
-        idx = urls.index(str(seed.get("url")))
-    except ValueError:
-        return {"prev": None, "next": None}
-    return {
-        "prev": ordered[idx - 1] if idx > 0 else None,
-        "next": ordered[idx + 1] if idx + 1 < len(ordered) else None,
-    }
+    ordered = sorted(catalog, key=_catalog_sort_key)
+    return neighbors_from_ordered(seed, ordered)
+
+
+def neighbors_from_ordered(seed: dict[str, Any], ordered: list[dict[str, Any]]) -> dict[str, dict[str, Any] | None]:
+    seed_url = str(seed.get("url") or "")
+    for idx, item in enumerate(ordered):
+        if str(item.get("url") or "") == seed_url:
+            return {
+                "prev": ordered[idx - 1] if idx > 0 else None,
+                "next": ordered[idx + 1] if idx + 1 < len(ordered) else None,
+            }
+    return {"prev": None, "next": None}
+
+
+def vitrine_items(catalog_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    featured = [x for x in catalog_rows if str(x.get("generation") or "") != "archive_mill"]
+    return featured if featured else catalog_rows
 
 
 def search_catalog(query: str, catalog: list[dict[str, Any]], page: int = 1, per_page: int = 20) -> dict[str, Any]:
@@ -551,8 +638,22 @@ def build_search_shards(catalog: list[dict[str, Any]], dest: Path | None = None,
             "historical_period": item.get("historical_period") or "",
             "event_years": item.get("event_years") or [],
             "decades_covered": item.get("decades_covered") or [],
-            "body": (item.get("body_index") or item.get("body_excerpt") or "")[:280],
-            "norm": item.get("norm") or "",
+            "body": (item.get("deck") or item.get("body_excerpt") or "")[:180],
+            "norm": fold(" ".join([
+                str(item.get("title") or ""),
+                str(item.get("deck") or ""),
+                str(item.get("author") or ""),
+                str(item.get("family") or ""),
+                str(item.get("format") or ""),
+                str(item.get("genre") or ""),
+                str(item.get("country") or ""),
+                str(item.get("historical_period") or ""),
+                " ".join(str(y) for y in (item.get("event_years") or [])),
+                " ".join(item.get("decades_covered") or []),
+                " ".join(item.get("entities") or []),
+                " ".join(item.get("topics") or []),
+                str(item.get("body_index") or "")[:220],
+            ])),
         })
     shards = []
     size = max(200, int(shard_size))
@@ -683,6 +784,7 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 <a href="/blog/arquivo/epocas.html">Épocas</a>
 <a href="/blog/arquivo/temas.html">Temas</a>
 <a href="/blog/arquivo/agenda.html">Agenda do acervo</a>
+<a href="/blog/arquivo/hoje.html">Hoje no acervo</a>
 <a href="/blog/envie-sua-historia.html">Envie sua história</a>
 <a href="/loja.html">Loja</a>
 </nav>
@@ -706,6 +808,7 @@ def _footer() -> str:
 
 def render_cover(catalog: list[dict[str, Any]]) -> str:
     items = [x for x in catalog if x.get("url")]
+    vitrine = vitrine_items(items)
     def hero_score(item: dict[str, Any]) -> tuple:
         score = 0
         if item.get("url") != COVER_URL:
@@ -716,7 +819,7 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
         if not title.startswith("O que ") and "deixa no ar agora" not in title:
             score += 6
         return (score, str(item.get("published_at") or ""))
-    ranked = sorted(items, key=hero_score, reverse=True)
+    ranked = sorted(vitrine, key=hero_score, reverse=True)
     shown: set[str] = set()
 
     def take(rows: list[dict[str, Any]], n: int) -> list[dict[str, Any]]:
@@ -731,14 +834,14 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
                 break
         return out
 
-    hero = next((x for x in ranked if x.get("url") != COVER_URL), items[0] if items else None)
+    hero = next((x for x in ranked if x.get("url") != COVER_URL), vitrine[0] if vitrine else (items[0] if items else None))
     if hero:
         shown.add(str(hero.get("url")))
     rest = [x for x in ranked if hero and x.get("url") != hero.get("url")]
     secondary = take(rest, 3)
-    recent = take(items, 8)
+    recent = take(vitrine, 8)
     families: dict[str, list] = {}
-    for item in items:
+    for item in vitrine:
         families.setdefault(item.get("family") or family_of(item), []).append(item)
     entities = entity_pages(items)[:16]
     decades: dict[str, int] = {}
@@ -889,17 +992,22 @@ def render_archive_page(catalog: list[dict[str, Any]], page: int = 1, family: st
     return "".join(body), pages
 
 
-def render_entity_page(slot: dict[str, Any]) -> str:
+def render_entity_page(slot: dict[str, Any], page: int = 1) -> tuple[str, int]:
     name = slot["name"]
     items = slot["items"]
+    total = len(items)
+    pages = max(1, math.ceil(total / ENTITY_PAGE_SIZE)) if total else 1
+    page = max(1, min(page, pages))
+    chunk = items[(page - 1) * ENTITY_PAGE_SIZE: page * ENTITY_PAGE_SIZE]
     kind = slot.get("kind") or entity_kind(name, items[0] if items else None)
-    canonical = SITE + f"/blog/e/{slot['slug']}.html"
-    extra = {"@type": "CollectionPage", "name": name, "url": canonical, "hasPart": [{"@type": "BlogPosting", "headline": i.get("title"), "url": SITE + i.get("url")} for i in items[:30]]}
+    suffix = f"-p{page}" if page > 1 else ""
+    canonical = SITE + f"/blog/e/{slot['slug']}{suffix}.html"
+    extra = {"@type": "CollectionPage", "name": name, "url": canonical, "hasPart": [{"@type": "BlogPosting", "headline": i.get("title"), "url": SITE + i.get("url")} for i in chunk[:30]]}
     body = [_chrome(f"{name} | Blog Passport Radio", f"Histórias da Passport sobre {name}.", canonical, extra)]
     body.append('<main class="blog-page">')
     body.append('<nav class="blog-crumbs" aria-label="Trilha"><a href="/blog.html">Blog</a> · <a href="/blog/arquivo/">Arquivo</a> · <span>{0}</span></nav>'.format(esc(name)))
     body.append(f'<span class="blog-kicker">{esc(kind.upper())}</span><h1>{esc(name)}</h1>')
-    body.append(f'<p class="blog-intro">{len(items)} históri{"a" if len(items)==1 else "as"} neste acervo.</p>')
+    body.append(f'<p class="blog-intro">{total} históri{"a" if total==1 else "as"} neste acervo.</p>')
     try:
         from editorial_blog_store import products_for_entities
         products = products_for_entities([name], limit=3)
@@ -916,27 +1024,56 @@ def render_entity_page(slot: dict[str, Any]) -> str:
     cta = collab_cta({"entities": [name], "family": (items[0].get("family") if items else ""), "historical_period": (items[0].get("historical_period") if items else "")})
     body.append(f'<section class="blog-collab-strip"><h2>Você estava lá?</h2><p>{esc(cta["text"])}</p><p><a href="{esc(cta["href"])}">{esc(cta["label"])} →</a></p></section>')
     body.append('<div class="blog-grid">')
-    body.append("".join(_card(x) for x in items))
-    body.append("</div></main>")
+    body.append("".join(_card(x) for x in chunk))
+    body.append("</div>")
+    if pages > 1:
+        body.append('<nav class="blog-pager" aria-label="Paginação da entidade">')
+        if page > 1:
+            prev = f"/blog/e/{slot['slug']}.html" if page == 2 else f"/blog/e/{slot['slug']}-p{page-1}.html"
+            body.append(f'<a rel="prev" href="{prev}">Anterior</a>')
+        body.append(f"<span>{page} / {pages}</span>")
+        if page < pages:
+            body.append(f'<a rel="next" href="/blog/e/{slot["slug"]}-p{page+1}.html">Próxima</a>')
+        body.append("</nav>")
+    body.append("</main>")
     body.append(_footer())
-    return "".join(body)
+    return "".join(body), pages
 
 
-def render_author_page(slot: dict[str, Any]) -> str:
+def render_author_page(slot: dict[str, Any], page: int = 1) -> tuple[str, int]:
     name = slot["name"]
     items = slot["items"]
-    canonical = SITE + f"/blog/a/{slot['slug']}.html"
+    total = len(items)
+    pages = max(1, math.ceil(total / AUTHOR_PAGE_SIZE)) if total else 1
+    pages_written = min(pages, 8)
+    page = max(1, min(page, pages_written))
+    chunk = items[(page - 1) * AUTHOR_PAGE_SIZE: page * AUTHOR_PAGE_SIZE]
+
+    suffix = f"-p{page}" if page > 1 else ""
+    canonical = SITE + f"/blog/a/{slot['slug']}{suffix}.html"
     extra = {"@type": "ProfilePage", "name": name, "url": canonical}
     body = [_chrome(f"{name} | Autores Passport Radio", f"Matérias assinadas por {name}.", canonical, extra)]
     body.append('<main class="blog-page">')
     body.append(f'<nav class="blog-crumbs"><a href="/blog.html">Blog</a> · <a href="/blog/arquivo/autores.html">Autores</a> · <span>{esc(name)}</span></nav>')
     body.append(f'<span class="blog-kicker">AUTOR</span><h1>{esc(name)}</h1>')
-    body.append(f'<p class="blog-intro">{len(items)} históri{"a" if len(items)==1 else "as"} publicadas neste acervo. Mr. Nomad só assina o que é de Mr. Nomad. O tunnel assina Passport Radio.</p>')
+    body.append(f'<p class="blog-intro">{total} históri{"a" if total==1 else "as"} publicadas neste acervo. Mr. Nomad só assina o que é de Mr. Nomad. O tunnel assina Passport Radio.</p>')
     body.append('<div class="blog-grid">')
-    body.append("".join(_card(x) for x in items))
-    body.append("</div></main>")
+    body.append("".join(_card(x) for x in chunk))
+    body.append("</div>")
+    if pages_written > 1:
+        body.append('<nav class="blog-pager" aria-label="Paginação do autor">')
+        if page > 1:
+            prev = f"/blog/a/{slot['slug']}.html" if page == 2 else f"/blog/a/{slot['slug']}-p{page-1}.html"
+            body.append(f'<a rel="prev" href="{prev}">Anterior</a>')
+        body.append(f"<span>{page} / {pages_written}</span>")
+        if page < pages_written:
+            body.append(f'<a rel="next" href="/blog/a/{slot["slug"]}-p{page+1}.html">Próxima</a>')
+        body.append("</nav>")
+    if total > AUTHOR_PAGE_SIZE:
+        body.append('<p class="blog-section__more"><a href="/blog/arquivo/">O acervo completo continua no arquivo →</a></p>')
+    body.append("</main>")
     body.append(_footer())
-    return "".join(body)
+    return "".join(body), pages
 
 
 def render_index_list(title: str, kicker: str, intro: str, links: list[tuple[str, str, str]], canonical_path: str) -> str:
@@ -1040,9 +1177,15 @@ def write_surfaces(catalog: list[dict[str, Any]] | None = None) -> dict[str, Any
     wanted = set()
     entity_slots = entity_pages(items)
     for slot in entity_slots:
+        html_page, pages_ent = render_entity_page(slot, 1)
         path = ENTITY_DIR / f"{slot['slug']}.html"
-        path.write_text(render_entity_page(slot), "utf-8")
+        path.write_text(html_page, "utf-8")
         wanted.add(path.name)
+        for n in range(2, pages_ent + 1):
+            html_page, _ = render_entity_page(slot, n)
+            extra = ENTITY_DIR / f"{slot['slug']}-p{n}.html"
+            extra.write_text(html_page, "utf-8")
+            wanted.add(extra.name)
     for stale in ENTITY_DIR.glob("*.html"):
         if stale.name not in wanted:
             stale.unlink()
@@ -1051,9 +1194,15 @@ def write_surfaces(catalog: list[dict[str, Any]] | None = None) -> dict[str, Any
     author_slots = author_pages(items)
     wanted_authors = set()
     for slot in author_slots:
+        html_page, pages_auth = render_author_page(slot, 1)
         path = author_dir / f"{slot['slug']}.html"
-        path.write_text(render_author_page(slot), "utf-8")
+        path.write_text(html_page, "utf-8")
         wanted_authors.add(path.name)
+        for n in range(2, min(pages_auth, 8) + 1):
+            html_page, _ = render_author_page(slot, n)
+            extra = author_dir / f"{slot['slug']}-p{n}.html"
+            extra.write_text(html_page, "utf-8")
+            wanted_authors.add(extra.name)
     for stale in author_dir.glob("*.html"):
         if stale.name not in wanted_authors:
             stale.unlink()
@@ -1117,6 +1266,13 @@ def write_surfaces(catalog: list[dict[str, Any]] | None = None) -> dict[str, Any
         [(f"/blog/arquivo/?ano={y}", y, str(c)) for y, c in sorted(year_counts.items(), reverse=True) if c],
         "/blog/arquivo/agenda.html",
     ), "utf-8")
+    (ARCHIVE_DIR / "hoje.html").write_text(render_index_list(
+        "Hoje no acervo", "ACERVO · TEMPO",
+        "Equivalente Passport de um calendário do dia: épocas e anos que o pacote de fatos sustenta. Sem nascimentos, mortes ou setlists copiados de outra redação.",
+        [(f"/blog/arquivo/?dec={d}", f"{d}s", str(c)) for d, c in sorted(decade_counts.items(), reverse=True)]
+        + [(f"/blog/arquivo/?ano={y}", y, str(c)) for y, c in sorted(year_counts.items(), reverse=True) if c],
+        "/blog/arquivo/hoje.html",
+    ), "utf-8")
     write_blog_sitemaps(items, entity_slots, pages, author_slots)
     return {
         "catalog": len(items),
@@ -1141,6 +1297,7 @@ def write_blog_sitemaps(catalog: list[dict[str, Any]], entities: list[dict[str, 
         ("/blog/arquivo/epocas.html", "weekly", "0.5"),
         ("/blog/arquivo/temas.html", "weekly", "0.5"),
         ("/blog/arquivo/agenda.html", "weekly", "0.5"),
+        ("/blog/arquivo/hoje.html", "weekly", "0.5"),
         ("/blog/envie-sua-historia.html", "weekly", "0.7"),
     ]
     for n in range(2, archive_pages + 1):
