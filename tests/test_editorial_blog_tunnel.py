@@ -365,6 +365,30 @@ def test_backfill_is_same_machine() -> None:
     print("OK backfill flag + dedicated discovery")
 
 
+def test_full_archive_inventory() -> None:
+    stats = discovery.archive_stats()
+    mh = (stats.get("domains") or {}).get("metal-hammer.de") or {}
+    wh = (stats.get("domains") or {}).get("whiplash.net") or {}
+    if int(mh.get("articles") or 0) < 80000:
+        fail(f"Metal Hammer archive too small: {mh}")
+    if int(wh.get("articles") or 0) < 15000:
+        fail(f"Whiplash archive too small: {wh}")
+    formats = stats.get("formats") or {}
+    for needed in ("STORY", "DISCO", "SHOW", "ENTREVISTA"):
+        if int(formats.get(needed) or 0) < 300:
+            fail(f"archive missing format {needed}: {formats}")
+    # Sabbath may exist as one artist among thousands — never as the whole inventory.
+    if stats.get("total", 0) < 100000:
+        fail(f"combined archive too small: {stats.get('total')}")
+    print(
+        "OK full archive",
+        stats.get("total"),
+        "MH", mh.get("articles"),
+        "WH", wh.get("articles"),
+        "formats", formats,
+    )
+
+
 def main() -> int:
     import tempfile
     test_format_classifier()
@@ -379,6 +403,7 @@ def main() -> int:
     test_protected_surfaces_untouched()
     test_sabbath_is_not_a_gate()
     test_backfill_is_same_machine()
+    test_full_archive_inventory()
     print("editorial_blog_tunnel: PASS")
     return 0
 

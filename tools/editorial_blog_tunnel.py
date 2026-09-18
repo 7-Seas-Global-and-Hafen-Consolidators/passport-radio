@@ -233,6 +233,8 @@ def discover(sources: Path, output_dir: Path, mode: str, max_age_hours: int, wor
         packet.get("generated_at") or now_sp().isoformat(),
         queue_size=int(config.get("queue_size", 100000)),
     )
+    archive = discovery.upsert_archive(list(packet.get("items") or []), packet.get("generated_at") or "")
+    archive_overview = discovery.archive_stats()
     health = packet.get("source_health") or []
     healthy = [h for h in health if h.get("ok")]
     failed = [h for h in health if not h.get("ok")]
@@ -245,6 +247,8 @@ def discover(sources: Path, output_dir: Path, mode: str, max_age_hours: int, wor
         "source_health": health,
         "discovered_urls": packet.get("discovered_url_count", 0),
         "queue": stats,
+        "archive": archive_overview,
+        "archive_upsert": archive,
     }
     save_json(output_dir / "blog-discover-report.json", summary)
     if not packet.get("items") and not healthy:
@@ -919,6 +923,7 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
         item["status"] = "published"
         item["published_url"] = url_path
         item["story_angle_id"] = pack.get("story_angle_id")
+        discovery.mark_archive_published(item.get("urls") or [], url_path, article["title"])
         new_paths.append(url_path)
         library = upsert_library(library, library_payload(media), article.get("entities") or [])
         graph = expand_knowledge_graph(graph, article, url_path, media)
@@ -974,7 +979,7 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Passport Global Blog Tunnel™ V1")
-    ap.add_argument("command", choices=["discover", "generate", "run"], nargs="?", default="run")
+    ap.add_argument("command", choices=["discover", "generate", "run", "archive-stats"], nargs="?", default="run")
     ap.add_argument("--sources", default=str(ROOT / "data/editorial-sources-blog-v1.json"))
     ap.add_argument("--output-dir", default=str(ROOT / "build/blog-tunnel"))
     ap.add_argument("--mode", choices=["continuous", "backfill"], default="continuous")
@@ -985,6 +990,9 @@ def main() -> int:
     args = ap.parse_args()
     out = Path(args.output_dir)
     config = load_json(ROOT / "data/blog-tunnel-engine.json", {})
+    if args.command == "archive-stats":
+        print(json.dumps(discovery.archive_stats(), ensure_ascii=False, indent=2))
+        return 0
     if args.command in {"discover", "run"}:
         discover(Path(args.sources), out / "discovery", args.mode, args.max_age_hours, args.workers, config)
     if args.command in {"generate", "run"}:

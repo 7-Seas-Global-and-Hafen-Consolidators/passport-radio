@@ -17,6 +17,7 @@ This module never writes noticias.html, Home, radio, or the old editorial feed.
 from __future__ import annotations
 
 import datetime as dt
+import gzip
 import hashlib
 import html
 import json
@@ -26,6 +27,7 @@ import time
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
+from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
@@ -775,3 +777,222 @@ def discover_sources(
         "discovered_url_count": len(merged),
         "items": merged,
     }
+
+
+ARCHIVE_DIR = Path(__file__).resolve().parents[1] / "data" / "blog-queue"
+ARCHIVE_FILES = {
+    "metal-hammer.de": "metal-hammer.de.jsonl.gz",
+    "whiplash.net": "whiplash.net.jsonl.gz",
+}
+HINT_TO_ARCHIVE_FORMAT = {
+    "news": "STORY",
+    "story": "STORY",
+    "special": "CURIOSIDADE",
+    "curiosity": "CURIOSIDADE",
+    "interview": "ENTREVISTA",
+    "review": "DISCO",
+    "show": "SHOW",
+    "festival": "SHOW",
+    "tour": "SHOW",
+    "video": "STORY",
+}
+ARCHIVE_FORMAT_TO_HINT = {
+    "STORY": "story",
+    "DISCO": "review",
+    "SHOW": "show",
+    "ENTREVISTA": "interview",
+    "CURIOSIDADE": "special",
+    "CULTURA": "story",
+    "HUB": "hub",
+}
+
+
+def archive_path(domain: str) -> Path:
+    domain = (domain or "").lower().removeprefix("www.")
+    name = ARCHIVE_FILES.get(domain, f"{domain}.jsonl.gz")
+    return ARCHIVE_DIR / name
+
+
+def iter_archive(domain: str):
+    path = archive_path(domain)
+    if not path.exists():
+        return
+    opener = gzip.open if path.suffix == ".gz" or path.name.endswith(".jsonl.gz") else open
+    with opener(path, "rt", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(row, dict):
+                yield row
+
+
+def load_archive(domain: str) -> list[dict[str, Any]]:
+    return list(iter_archive(domain))
+
+
+def save_archive(domain: str, rows: list[dict[str, Any]]) -> Path:
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    path = archive_path(domain)
+    with gzip.open(path, "wt", encoding="utf-8", compresslevel=9) as handle:
+        for row in rows:
+            compact = {k: v for k, v in row.items() if v not in ("", None, [], {})}
+            handle.write(json.dumps(compact, ensure_ascii=False, separators=(",", ":")) + "\n")
+    return path
+
+
+def archive_record_from_item(item: dict[str, Any], generated_at: str = "") -> dict[str, Any] | None:
+    urls = []
+    if item.get("url"):
+        urls.append(normalize_url(str(item.get("url"))))
+    for origin in item.get("origins") or []:
+        if isinstance(origin, dict) and origin.get("url"):
+            urls.append(normalize_url(str(origin.get("url"))))
+    urls = [u for u in dict.fromkeys(urls) if u and allowed_url(u)]
+    if not urls:
+        return None
+    domain = domain_of(urls[0])
+    hint = str(item.get("format_hint") or classify_format(urls[0], str(item.get("title") or "")))
+    fmt = HINT_TO_ARCHIVE_FORMAT.get(hint, str(item.get("format") or "STORY")).upper()
+    surface = ""
+    for origin in item.get("origins") or []:
+        if isinstance(origin, dict) and origin.get("method"):
+            surface = str(origin.get("method"))
+            break
+    entities = [str(x) for x in (item.get("entities") or []) if str(x).strip()]
+    return {
+        "cluster_id": item.get("cluster_id") or cluster_id_for(urls, str(item.get("title") or "")),
+        "status": item.get("status") or "queued",
+        "title": clean(item.get("title")),
+        "urls": urls,
+        "format": fmt,
+        "domain": domain,
+        "surface": surface,
+        "date": str(item.get("published") or item.get("date") or ""),
+        "artist": entities[0] if entities else str(item.get("artist") or ""),
+        "kind": "hub" if hint == "hub" or fmt == "HUB" else "article",
+        "description": clean(item.get("description"))[:400],
+        "discovered_at": generated_at or str(item.get("discovered_at") or ""),
+    }
+
+
+def upsert_archive(items: list[dict[str, Any]], generated_at: str = "") -> dict[str, Any]:
+    """Merge discovered items into the gzipped per-source archive. Never publishes."""
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in items:
+        rec = archive_record_from_item(item, generated_at)
+        if rec is None:
+            continue
+        grouped.setdefault(rec["domain"], []).append(rec)
+    stats = {"domains": {}, "new": 0, "merged": 0, "total": 0}
+    for domain, incoming in grouped.items():
+        existing = load_archive(domain)
+        by_url: dict[str, dict[str, Any]] = {}
+        rows: list[dict[str, Any]] = []
+        for row in existing:
+            rows.append(row)
+            for url in row.get("urls") or []:
+                by_url[str(url)] = row
+        new = 0
+        merged = 0
+        for rec in incoming:
+            hit = None
+            for url in rec.get("urls") or []:
+                if url in by_url:
+                    hit = by_url[url]
+                    break
+            if hit is None:
+                rows.append(rec)
+                for url in rec.get("urls") or []:
+                    by_url[url] = rec
+                new += 1
+                continue
+            merged += 1
+            urls = list(hit.get("urls") or [])
+            for url in rec.get("urls") or []:
+                if url not in urls:
+                    urls.append(url)
+                    by_url[url] = hit
+            hit["urls"] = urls
+            if rec.get("title") and (not hit.get("title") or len(rec["title"]) > len(str(hit.get("title") or ""))):
+                hit["title"] = rec["title"]
+            if rec.get("description") and not hit.get("description"):
+                hit["description"] = rec["description"]
+            if rec.get("artist") and not hit.get("artist"):
+                hit["artist"] = rec["artist"]
+            if rec.get("status") == "published":
+                hit["status"] = "published"
+                hit["published_url"] = rec.get("published_url") or hit.get("published_url")
+        if new or merged:
+            save_archive(domain, rows)
+        stats["domains"][domain] = {"rows": len(rows), "new": new, "merged": merged}
+        stats["new"] += new
+        stats["merged"] += merged
+        stats["total"] += len(rows)
+    for domain in ARCHIVE_FILES:
+        if domain not in stats["domains"]:
+            rows = load_archive(domain)
+            stats["domains"][domain] = {"rows": len(rows), "new": 0, "merged": 0}
+            stats["total"] += len(rows)
+    return stats
+
+
+def archive_stats() -> dict[str, Any]:
+    out: dict[str, Any] = {"channel": "blog", "domains": {}, "total": 0, "articles": 0, "hubs": 0}
+    formats: dict[str, int] = {}
+    for domain in ARCHIVE_FILES:
+        rows = load_archive(domain)
+        fmt_count: dict[str, int] = {}
+        articles = 0
+        hubs = 0
+        queued = 0
+        published = 0
+        for row in rows:
+            fmt = str(row.get("format") or "?")
+            fmt_count[fmt] = fmt_count.get(fmt, 0) + 1
+            formats[fmt] = formats.get(fmt, 0) + 1
+            if row.get("kind") == "hub" or fmt == "HUB":
+                hubs += 1
+            else:
+                articles += 1
+            if row.get("status") == "published":
+                published += 1
+            elif row.get("status") in {"queued", None, ""}:
+                queued += 1
+        out["domains"][domain] = {
+            "rows": len(rows),
+            "articles": articles,
+            "hubs": hubs,
+            "queued": queued,
+            "published": published,
+            "formats": fmt_count,
+            "path": str(archive_path(domain).relative_to(ARCHIVE_DIR.parent.parent) if archive_path(domain).exists() else archive_path(domain)),
+        }
+        out["total"] += len(rows)
+        out["articles"] += articles
+        out["hubs"] += hubs
+    out["formats"] = formats
+    return out
+
+
+def mark_archive_published(urls: list[str], published_url: str, title: str = "") -> None:
+    wanted = {normalize_url(u) for u in urls if u}
+    if not wanted:
+        return
+    for domain in ARCHIVE_FILES:
+        rows = load_archive(domain)
+        changed = False
+        for row in rows:
+            row_urls = {normalize_url(u) for u in (row.get("urls") or [])}
+            if row_urls & wanted:
+                row["status"] = "published"
+                row["published_url"] = published_url
+                if title:
+                    row["title"] = title
+                changed = True
+        if changed:
+            save_archive(domain, rows)

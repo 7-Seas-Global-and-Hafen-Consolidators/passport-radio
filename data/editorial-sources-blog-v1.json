@@ -15,9 +15,14 @@
       ],
       "rss_pagination": "",
       "sitemaps": [
-        "https://whiplash.net/sitemap_ultimas.xml",
         "https://whiplash.net/sitemap.xml",
-        "https://whiplash.net/sitemap_195.xml"
+        "https://whiplash.net/sitemap_ultimas.xml",
+        "https://whiplash.net/sitemap_00.xml",
+        "https://whiplash.net/sitemap_37.xml",
+        "https://whiplash.net/sitemap_38.xml",
+        "https://whiplash.net/sitemap_codigos_cds.xml",
+        "https://whiplash.net/sitemap_codigos_shows.xml",
+        "https://whiplash.net/sitemap_indices.xml"
       ],
       "rest_urls": [],
       "index_urls": [
