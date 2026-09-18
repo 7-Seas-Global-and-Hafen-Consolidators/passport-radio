@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-18T16:34:24.049290+00:00",
-  "count": 8,
+  "updated_at": "2026-09-18T17:10:35.364006+00:00",
+  "count": 12,
   "shard_size": 4000,
   "shards": [
     {
       "file": "/data/blog-search/shard-00.json",
-      "count": 8
+      "count": 12
     }
   ]
 }

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -242,6 +243,10 @@ def test_writer_is_generic_and_ptbr() -> None:
         fail("generic writer ignored the actual entity")
     if article["title"].lower() == candidate["title"].lower():
         fail("writer copied source title")
+    if re.search(r"^o que .+ deixa no ar agora", article["title"], re.I):
+        fail("formulaic fallback title")
+    if "reaparece no radar da Passport por um movimento concreto" in article["deck"]:
+        fail("formulaic fallback deck")
     public = " ".join([
         article["title"], article["deck"], article["closing"],
         *[p["text"] for s in article["sections"] for p in s["paragraphs"]],

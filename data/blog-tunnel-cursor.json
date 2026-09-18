@@ -1,19 +1,19 @@
 {
   "version": 1,
   "channel": "blog",
-  "updated_at": "2026-09-18T13:25:29.156053-03:00",
+  "updated_at": "2026-09-18T14:07:11.333927-03:00",
   "offsets": {
-    "metal-hammer.de": 149,
+    "metal-hammer.de": 215,
     "whiplash.net": 0
   },
   "drain": {
     "window": 400,
-    "queued_hot": 400,
-    "added_live": 30,
-    "added_historical": 29,
-    "remaining_in_archive": 122599,
+    "queued_hot": 403,
+    "added_live": 0,
+    "added_historical": 0,
+    "remaining_in_archive": 122581,
     "skipped_hub": 0,
-    "skipped_terminal": 1,
+    "skipped_terminal": 0,
     "exhausted": false
   }
 }

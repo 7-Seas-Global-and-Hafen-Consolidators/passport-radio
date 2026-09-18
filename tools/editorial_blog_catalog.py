@@ -39,12 +39,16 @@ ENTITY_STOP = {
     "album", "álbum", "the", "and", "und", "der", "die", "das", "von", "mit",
     "new", "nova", "novo", "entrevista", "review", "hammer", "whiplash",
     "passport radio", "metal hammer podcast", "nunca", "filme",
+    "bryan", "ada", "leon", "ada wong", "leon kennedy", "weapons",
+    "folge", "woche",
 }
 
 FORMAT_FAMILY = {
     "STORY": "historias",
     "FLASH": "historias",
     "MR_NOMAD": "historias",
+    "news": "historias",
+    "story": "historias",
     "DISCO": "discos",
     "review": "discos",
     "ENTREVISTA": "entrevistas",
@@ -53,9 +57,12 @@ FORMAT_FAMILY = {
     "SHOW": "shows",
     "show": "shows",
     "festival": "shows",
+    "tour": "shows",
     "CULTURA": "cultura",
     "CURIOSIDADE": "cultura",
     "special": "cultura",
+    "curiosity": "cultura",
+    "video": "cultura",
 }
 
 FAMILY_LABEL = {
@@ -100,8 +107,16 @@ def decade_of(date: str) -> str:
 
 
 def family_of(item: dict[str, Any]) -> str:
-    fmt = str(item.get("format") or "")
     hint = str(item.get("format_hint") or "")
+    fmt = str(item.get("format") or "")
+    title_hay = fold(item.get("title") or "")
+    ent_hay = fold(" ".join(item.get("entities") or []))
+    if any(token in title_hay or token in ent_hay for token in (
+        "resident evil", "raccoon", "anime", "manga",
+    )):
+        return "cultura"
+    if hint in {"review", "interview", "show", "festival", "tour", "special", "curiosity", "video"}:
+        return FORMAT_FAMILY.get(hint) or "historias"
     return FORMAT_FAMILY.get(fmt) or FORMAT_FAMILY.get(hint) or "historias"
 
 
@@ -456,7 +471,7 @@ def _chrome(title: str, desc: str, canonical: str, extra_schema: dict | None = N
 <link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
 <link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918p">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918q">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-body fd-body pp-station pp-blog">
@@ -497,14 +512,30 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
             score += 6
         return (score, str(item.get("published_at") or ""))
     ranked = sorted(items, key=hero_score, reverse=True)
+    shown: set[str] = set()
+
+    def take(rows: list[dict[str, Any]], n: int) -> list[dict[str, Any]]:
+        out: list[dict[str, Any]] = []
+        for item in rows:
+            url = str(item.get("url") or "")
+            if not url or url in shown:
+                continue
+            shown.add(url)
+            out.append(item)
+            if len(out) >= n:
+                break
+        return out
+
     hero = next((x for x in ranked if x.get("url") != COVER_URL), items[0] if items else None)
-    rest = [x for x in items if hero and x.get("url") != hero.get("url")]
-    secondary = rest[:3]
-    recent = items[:12]
+    if hero:
+        shown.add(str(hero.get("url")))
+    rest = [x for x in ranked if hero and x.get("url") != hero.get("url")]
+    secondary = take(rest, 3)
+    recent = take(items, 8)
     families: dict[str, list] = {}
     for item in items:
         families.setdefault(item.get("family") or family_of(item), []).append(item)
-    entities = entity_pages(items)[:12]
+    entities = entity_pages(items)[:16]
     decades: dict[str, int] = {}
     for item in items:
         dec = item.get("decade") or decade_of(str(item.get("published_at") or ""))
@@ -525,14 +556,23 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
         parts.append("</section>")
     if recent:
         parts.append('<section class="blog-section" id="agora"><h2>Agora no Blog</h2><div class="blog-grid">')
-        parts.append("".join(_card(x) for x in recent[:9]))
+        parts.append("".join(_card(x) for x in recent))
         parts.append("</div></section>")
-    for key in ("historias", "discos", "shows", "entrevistas", "cultura"):
+    for key in ("discos", "shows", "entrevistas", "cultura"):
         rows = families.get(key) or []
-        if len(rows) < 1:
+        unique = [x for x in rows if str(x.get("url") or "") not in shown]
+        pool = unique if len(unique) >= 2 else (rows if len(rows) >= 2 else [])
+        if len(pool) < 2:
             continue
+        chosen = []
+        for item in pool:
+            url = str(item.get("url") or "")
+            if url and url not in {c.get("url") for c in chosen}:
+                chosen.append(item)
+            if len(chosen) >= 6:
+                break
         parts.append(f'<section class="blog-section" id="{key}"><h2>{esc(FAMILY_LABEL[key])}</h2><div class="blog-grid">')
-        parts.append("".join(_card(x) for x in rows[:6]))
+        parts.append("".join(_card(x) for x in chosen[:6]))
         parts.append(f'</div><p class="blog-section__more"><a href="/blog/arquivo/?fam={key}">Ver {esc(FAMILY_LABEL[key]).lower()} no arquivo →</a></p></section>')
     if entities:
         parts.append('<section class="blog-section" id="artistas"><h2>Artistas & bandas</h2><div class="blog-entity-cloud">')
@@ -553,7 +593,7 @@ def render_cover(catalog: list[dict[str, Any]]) -> str:
     parts.append(f'<p class="blog-archive__lead">{len(items)} históri{"a" if len(items)==1 else "as"} publicadas. O que sai da capa continua aqui.</p>')
     parts.append('<p class="blog-section__more"><a href="/blog/arquivo/">Abrir o arquivo →</a></p></section>')
     parts.append("</main>")
-    parts.append('<script src="/js/passport-blog-search.js?v=20260918p" defer></script>')
+    parts.append('<script src="/js/passport-blog-search.js?v=20260918q" defer></script>')
     parts.append(_footer())
     return "".join(parts)
 
@@ -565,7 +605,7 @@ def render_search_page() -> str:
     html_out.append('<p class="blog-intro">Pesquise o acervo publicado. Título, artista, país, década, formato.</p>')
     html_out.append('<div id="blog-search-results" class="blog-search-results" data-search-root="1"></div>')
     html_out.append("</main>")
-    html_out.append('<script src="/js/passport-blog-search.js?v=20260918p" defer></script>')
+    html_out.append('<script src="/js/passport-blog-search.js?v=20260918q" defer></script>')
     html_out.append(_footer())
     return "".join(html_out)
 

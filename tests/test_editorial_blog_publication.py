@@ -118,7 +118,7 @@ def test_related_and_neighbors() -> None:
 
 def test_renderer_share_discussion_no_scaffold() -> None:
     article = {
-        "title": "O que Nightwish deixa no ar agora",
+        "title": "Nightwish e o detalhe que os fãs ainda discutem",
         "deck": "A banda reaparece no radar.",
         "kicker": "PASSPORT RADIO · BLOG",
         "meta_description": "Nightwish no Blog.",
@@ -163,6 +163,12 @@ def test_blog_surfaces_no_dead_slogan() -> None:
             fail(f"dead slogan in {rel}")
         if "reservará espaço" in text:
             fail(f"scaffold in {rel}")
+    css = (ROOT / "css/passport-blog.css").read_text("utf-8")
+    if "blog-page" not in css or "blog-grid" not in css or "--blog-gold" not in css:
+        fail("blog CSS lost base identity")
+    html = (ROOT / "blog.html").read_text("utf-8")
+    if html.count("/blog/2026/") > 40:
+        fail("cover dumps the same stories in too many cards")
     print("OK slogan/scaffold absent on blog surfaces")
 
 

@@ -449,8 +449,11 @@ GENERIC_ENTITY = {
     "disco", "show", "live", "podcast", "folge", "woche", "konzert", "festival",
     "new", "nova", "novo", "the", "and", "und", "der", "die", "das", "mit", "von",
     "im", "ist", "ein", "eine", "review", "interview", "especial", "curiosidade",
-    "video", "hammer", "whiplash",
+    "video", "hammer", "whiplash", "bryan", "ada", "leon", "nunca", "weapons",
+    "pinkfloyd", "ironmaiden",
 }
+SHORT_BANDS = {"yes", "tool", "rush", "kiss", "can", "free", "cream", "war", "a-ha"}
+FORMULA_TITLE = re.compile(r"^o que .+ deixa no ar agora\.?$", re.I)
 
 
 def entity_guess(pack: dict[str, Any], candidate: dict[str, Any], graph: dict[str, Any] | None = None) -> list[str]:
@@ -460,11 +463,15 @@ def entity_guess(pack: dict[str, Any], candidate: dict[str, Any], graph: dict[st
         value = base.clean(value)
         if not value or len(value) < 3:
             return
-        if value.lower() in GENERIC_ENTITY:
+        low = value.lower()
+        if low in GENERIC_ENTITY or low in catalog.ENTITY_STOP:
+            return
+        if fold_name(value) in catalog.ENTITY_STOP:
             return
         if value not in names:
             names.append(value)
 
+    known = {base.clean(x).lower() for x in list(candidate.get("entities") or []) + list(candidate.get("entities_hint") or []) if x}
     for raw in candidate.get("entities") or []:
         add(str(raw))
     for raw in candidate.get("entities_hint") or []:
@@ -481,13 +488,112 @@ def entity_guess(pack: dict[str, Any], candidate: dict[str, Any], graph: dict[st
         slug = re.sub(r"^\d+-", "", slug)
         slug = re.sub(r"-\d+$", "", slug)
         slug = slug.replace(".html", "").replace("-", " ")
-        if slug and len(slug) > 3:
+        if slug and len(slug) > 3 and (" " in slug or slug.lower() in known or slug.lower() in SHORT_BANDS):
             add(slug.title())
     titled = re.findall(r"\b([A-ZÁÉÍÓÚÀÃÕÄÖÜ][\wÁÉÍÓÚÀÃÕÄÖÜäöüß'’.-]+(?:\s+[A-ZÁÉÍÓÚÀÃÕÄÖÜ][\wÁÉÍÓÚÀÃÕÄÖÜäöüß'’.-]+){0,3})\b", str(candidate.get("title") or ""))
     for token in titled:
+        first = token.split()[0].lower()
+        if first in {"die", "der", "das", "und", "im", "ein", "eine"}:
+            continue
+        if " " not in token and token.lower() not in known and token.lower() not in SHORT_BANDS:
+            continue
         if token.lower() not in GENERIC_ENTITY:
             add(token)
     return names[:10]
+
+
+def fold_name(value: str) -> str:
+    return catalog.fold(value)
+
+
+def _is_german(text: str) -> bool:
+    low = f" {str(text or '').lower()} "
+    marks = (" der ", " die ", " das ", " und ", " mit ", " von ", " für ", " nicht ", " ein ", " eine ", " im ", " auf ", " den ", " dem ", " folge ", " zur ", " zum ")
+    return sum(1 for m in marks if m in low) >= 2 or any(ch in str(text or "").lower() for ch in "äöüß")
+
+
+def _is_ptbr(text: str) -> bool:
+    low = f" {str(text or '').lower()} "
+    marks = (" que ", " do ", " da ", " de ", " para ", " com ", " uma ", " não ", " no ", " na ", " os ", " as ", " pelo ", " pela ")
+    return sum(1 for m in marks if m in low) >= 2 and not _is_german(text)
+
+
+def _pt_public(text: str) -> str:
+    text = base.clean(text)
+    if not text or _is_german(text):
+        return ""
+    if not _is_ptbr(text) and re.search(r"[äöüß]", text.lower()):
+        return ""
+    text = re.sub(r"(?i)\s*clique e entenda\.?$", "", text).strip()
+    return text
+
+
+def _passport_title(subject: str, signal: str, summary: str, source_title: str) -> str:
+    signal = base.clean(signal)
+    summary = base.clean(summary)
+    source_title = base.clean(source_title)
+
+    def ok(title: str) -> bool:
+        title = base.clean(title)
+        if not title or len(title) < 12:
+            return False
+        if FORMULA_TITLE.match(title):
+            return False
+        if _is_german(title):
+            return False
+        if base.SequenceMatcher(None, base.norm_ascii(title), base.norm_ascii(source_title)).ratio() > 0.72:
+            return False
+        if base.SequenceMatcher(None, base.norm_ascii(title), base.norm_ascii(signal)).ratio() > 0.78:
+            return False
+        return True
+
+    low = f"{signal} {summary} {source_title}".lower()
+    names = re.findall(r"\b([A-ZÁÉÍÓÚ][\w'’.-]+(?:\s+[A-ZÁÉÍÓÚ][\w'’.-]+){0,2})\b", f"{signal} {source_title}")
+    who = next((n for n in names if n.lower() != subject.lower() and n.lower() not in GENERIC_ENTITY), "")
+
+    candidates: list[str] = []
+    if "parceria" in low or "compusemos" in low:
+        candidates.append(f"{subject} e a parceria que o próprio autor descreve")
+    if "escreveu" in low or "compôs" in low or "compos" in catalog.fold(low):
+        candidates.append(f"{who or subject} e a canção de {subject} que nasceu depois da noite" if who else f"{subject} e a canção que nasceu depois da noite")
+    if "inspira" in low:
+        candidates.append(f"{subject} e a faixa que atravessou outras bandas")
+    if "emociona" in low:
+        candidates.append(f"{subject} e a canção que ainda pega o próprio autor")
+    if "preferid" in low:
+        candidates.append(f"As faixas de {subject} que outro músico guarda")
+    if "show que mudou" in low or "mudou para sempre" in low:
+        candidates.append(f"O palco que reorganizou a vida em torno de {subject}")
+    if "mensagem" in low or "escondida" in low:
+        candidates.append(f"O detalhe escondido no clássico de {subject}")
+    if "anos 60" in low or "anos 70" in low or "anos 80" in low or "modelo" in low:
+        candidates.append(f"{who or subject} e a faixa de época que modelou {subject}")
+    if "gravou" in low or "trilha" in low:
+        candidates.append(f"{subject} e a faixa que entrou em outra história")
+    if "relembr" in low or "onipresente" in low:
+        candidates.append(f"{subject} e a memória que os músicos ainda carregam")
+    if "explica" in low or "detalhe" in low:
+        candidates.append(f"{subject} e o detalhe que os fãs ainda discutem")
+    if "entrevista" in low or "interview" in low or "podcast" in low or "microfone" in low:
+        candidates.append(f"{subject} no microfone e o que essa conversa ainda move")
+    if "review" in low or "resenha" in low or "album" in low or "álbum" in low:
+        candidates.append(f"O disco de {subject} que a Passport guarda nesta escuta")
+    if "resident evil" in low or "raccoon" in low:
+        candidates.append(f"{subject} recoloca Raccoon City no centro com um herói falho")
+    if signal and _is_ptbr(signal) and not _is_german(signal):
+        rest = re.sub(re.escape(subject), "", signal, flags=re.I)
+        rest = re.sub(r"\s+", " ", rest).strip(" -–—:,.")
+        if rest and len(rest) > 18:
+            rest = rest[0].lower() + rest[1:] if rest[:1].isupper() and (len(rest) < 2 or rest[1:2].islower()) else rest
+            candidates.append(f"{subject}: {rest}")
+    candidates.append(f"{subject} e o giro que recoloca o nome no mapa")
+    candidates.append(f"A história de {subject} que a Passport escolheu guardar")
+    for cand in candidates:
+        cand = re.sub(r"\s+", " ", cand).strip()[:110]
+        if ok(cand):
+            return cand
+    fallback = f"A história de {subject} que a Passport escolheu guardar"
+    return fallback[:110]
 
 
 def write_from_fact_pack(candidate: dict[str, Any], pack: dict[str, Any], graph: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -505,31 +611,57 @@ def write_from_fact_pack(candidate: dict[str, Any], pack: dict[str, Any], graph:
     fmt_hint = str(candidate.get("format_hint") or pack.get("recommended_format") or "story")
     passport_fmt = FORMAT_TO_PASSPORT.get(fmt_hint, "STORY")
     date_hint = ""
-    if date_facts:
-        date_hint = base.clean(date_facts[0].get("value") or date_facts[0].get("evidence") or "")
-    title = f"O que {subject} deixa no ar agora"
-    if base.SequenceMatcher(None, base.norm_ascii(title), base.norm_ascii(original_title)).ratio() > 0.72:
-        title = f"Uma nova dobra na história de {subject}"
+    signal_raw = base.clean((title_fact or {}).get("value") or original_title)
+    summary_raw = base.clean((summary_fact or {}).get("value") or "")
+    public_signal = _pt_public(signal_raw)
+    public_summary = _pt_public(summary_raw)
+    public_quote = ""
+    for stmt in statements:
+        piece = re.sub(r'[“”"«»]', "", _pt_public(stmt.get("value") or "")).strip()
+        if piece and len(piece) > 24:
+            public_quote = piece[:220]
+            break
+    if not public_quote and public_summary:
+        stripped = re.sub(r'[“”"«»]', "", public_summary).strip()
+        if stripped and _is_ptbr(stripped):
+            public_quote = stripped[:220]
+    title = _passport_title(subject, signal_raw, summary_raw, original_title)
+    if FORMULA_TITLE.match(title):
+        title = f"A história de {subject} que a Passport escolheu guardar"
+    event = ""
+    if public_signal:
+        event = f"O fio desta página é concreto: {public_signal.rstrip('.')}."
+    elif public_summary:
+        event = f"O que se pode cravar cabe em poucas linhas: {public_summary[:220].rstrip('.')}."
     deck = (
-        f"{subject} reaparece no radar da Passport por um movimento concreto. "
-        "A casa conta o que se pode cravar e devolve o resto para a escuta."
+        f"{subject} entra no Blog por um fato que se pode cravar"
+        f"{(', com ' + cast) if others else ''}. "
+        "A Passport conta a história e devolve o resto para a escuta."
     )
+    if public_signal and len(public_signal) < 140:
+        deck = f"{public_signal.rstrip('.')} — a Passport guarda o fato e abre a escuta."
     heading_a = "O que se pode cravar"
     heading_b = "Quem atravessa essa história"
     heading_c = "Por que isso pede uma escuta"
     p1 = (
         f"{subject} não chega aqui como nota solta. "
-        f"Há um acontecimento recente que recoloca o nome no mapa"
-        f"{(' em ' + date_hint) if date_hint and len(date_hint) < 24 else ''}. "
+        f"{event + ' ' if event else ''}"
+        "Há um acontecimento que recoloca o nome no mapa. "
         "A Passport trata o episódio como história: o que mudou, quem está no meio e o que isso pede do ouvinte. "
         "Sem inflar biografia, sem inventar palco que não aconteceu, sem copiar o recorte de agência. "
         "O texto segura só o que o pacote de fatos deixa cravar e larga o resto. "
         "Quando a pauta é um giro de notícia, a casa pergunta o que permanece depois do clique. "
-        "Quando é disco, pergunta o que a escuta ganha. Quando é palco, pergunta quem estava lá e o que o palco ainda deve."
+        "Quando é disco, pergunta o que a escuta ganha. Quando é palco, pergunta quem estava lá e o que o palco ainda deve. "
+        "A matéria não compete com o feed: ela escolhe o que merece relida."
+    )
+    quote_bit = (
+        f"Uma fala que o pacote sustenta permanece no ar: {public_quote.rstrip('.')} "
+        if public_quote else
+        "As falas só entram quando o pacote de fatos as segura; o resto fica fora."
     )
     p2 = (
-        f"No centro estão {subject} e {cast}. "
-        "Os nomes, as relações e as datas que o pacote de fatos sustenta ficam no texto; o que não se sustenta some. "
+        f"No centro estão {subject} e {cast}. {quote_bit}"
+        " Os nomes, as relações e as datas que o pacote de fatos sustenta ficam no texto; o que não se sustenta some. "
         "Se a pauta é disco, o disco é a porta. Se é show, o palco. Se é fala, a fala vira contexto, não transcrição. "
         "A matéria existe para abrir caminho, não para substituir o catálogo de outra redação. "
         "A Passport não precisa do tom de urgente para reconhecer importância. "
@@ -543,13 +675,14 @@ def write_from_fact_pack(candidate: dict[str, Any], pack: dict[str, Any], graph:
         "A casa não simula urgência de feed; ela registra o que importa o bastante para ser relido. "
         "Há leitores que entram pelo acontecimento e saem por uma canção que já conheciam. "
         "Há quem faça o caminho inverso. Os dois movimentos valem, desde que a página não se feche em si mesma. "
-        "O Blog existe para essa travessia: da frase à escuta, do nome ao disco, do fato à vontade de ouvir de novo."
+        "O Blog existe para essa travessia: da frase à escuta, do nome ao disco, do fato à vontade de ouvir de novo. "
+        "Por isso a publicação não apaga a matéria quando ela sai da capa: o acervo continua encontrável."
     )
     closing = (
         f"A Passport deixa {subject} no mapa do Blog e espera o ouvinte do outro lado da frase, "
         "com o rádio aberto e sem pressa de transformar memória em pauta descartável."
     )
-    refs1 = [f["fact_id"] for f in (title_fact, summary_fact) if f][:8]
+    refs1 = [f["fact_id"] for f in (title_fact, summary_fact, *date_facts[:2], *statements[:2]) if f][:8]
     refs2 = [f["fact_id"] for f in (*date_facts[:3], *statements[:3]) if f]
     refs3 = [f["fact_id"] for f in (title_fact, *statements[:4]) if f]
     refs1 = [x for x in refs1 if x] or ([facts[0]["fact_id"]] if facts else [])
@@ -772,7 +905,7 @@ def render_blog_article(
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/editorial-engine.css?v=20260825">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918p">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918q">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body class="pp-article pp-blog-article">
@@ -816,8 +949,8 @@ def render_blog_article(
 </main>
 <footer class="pp-footer"><div class="pp-footer-bottom">© 2026 Passport Radio · <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-<script src="/js/passport-blog-search.js?v=20260918p" defer></script>
-<script src="/js/passport-blog-discussion.js?v=20260918p" defer></script>
+<script src="/js/passport-blog-search.js?v=20260918q" defer></script>
+<script src="/js/passport-blog-discussion.js?v=20260918q" defer></script>
 <script>
 document.addEventListener("click", function (ev) {{
   var btn = ev.target.closest("[data-copy-link]");
@@ -1025,8 +1158,7 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
                     "reason": "; ".join(production_errors or gate.get("reasons") or ["unknown"]),
                     "decision": gate.get("decision"),
                 })
-                item["status"] = "skipped"
-                discovery.mark_archive_status(item.get("urls") or [], "skipped")
+                item["status"] = "queued"
                 continue
         stamp = now_sp()
         article["published_at"] = stamp.isoformat()
@@ -1181,9 +1313,106 @@ def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]
     return report
 
 
+def rewrite_formulaic_published() -> dict[str, Any]:
+    """Keep canonical URLs; replace formulaic titles/bodies from stored fact packs."""
+    packs: dict[str, dict[str, Any]] = {}
+    for path in (ROOT / "build" / "blog-tunnel").glob("fact-pack-*.json"):
+        pack = load_json(path, {})
+        angle = str(pack.get("story_angle_id") or "")
+        if angle:
+            packs[angle] = pack
+    ledger_path = ROOT / "data/blog-published.json"
+    feed_path = ROOT / "data/blog-feed.json"
+    queue_path = ROOT / "data/blog-tunnel-queue.json"
+    state = load_json(ledger_path, {"ledger": []})
+    feed_payload = load_json(feed_path, {"items": []})
+    queue = load_json(queue_path, {"items": []})
+    catalog_now = catalog.load_catalog()
+    by_url = {str(x.get("url")): x for x in catalog_now}
+    rewritten = []
+    provenance_urls: set[str] = set()
+    for entry in state.get("ledger") or []:
+        title = str(entry.get("title") or "")
+        url_path = str(entry.get("url") or "")
+        angle = str(entry.get("story_angle_id") or "")
+        if not url_path or not angle or angle not in packs:
+            continue
+        generic = (
+            FORMULA_TITLE.match(title)
+            or "o-que-" in url_path
+            or "giro que recoloca o nome no mapa" in title.lower()
+            or "reaparece no radar da Passport por um movimento concreto" in str((by_url.get(url_path) or {}).get("deck") or "")
+        )
+        if not generic:
+            continue
+        pack = packs[angle]
+        for prov in pack.get("provenance") or []:
+            if prov.get("url"):
+                provenance_urls.add(str(prov["url"]))
+        signal = next((f.get("value") for f in pack.get("facts") or [] if f.get("type") == "signal_title"), title)
+        summary = next((f.get("value") for f in pack.get("facts") or [] if f.get("type") == "signal_summary"), "")
+        row = by_url.get(url_path) or {}
+        candidate = {
+            "title": signal,
+            "description": summary,
+            "format_hint": row.get("format_hint") or "news",
+            "entities": [x for x in (entry.get("entities") or row.get("entities") or []) if str(x).lower() not in catalog.ENTITY_STOP],
+            "url": next((p.get("url") for p in pack.get("provenance") or [] if p.get("url")), ""),
+            "primary_category": pack.get("primary_category") or "music",
+        }
+        article = constitution.safe_article(write_from_fact_pack(candidate, pack), candidate)
+        article["author"] = PUBLIC_AUTHOR
+        article["published_at"] = entry.get("published_at") or article.get("published_at")
+        article["story_angle_id"] = angle
+        article["entities"] = candidate["entities"] or article.get("entities") or []
+        media = {
+            "photos": [{"url": row.get("image"), "alt": article["title"], "credit": row.get("image_credit")}] if row.get("image") else [],
+            "videos": [],
+            "hero_photo": {"url": row.get("image"), "alt": article["title"], "credit": row.get("image_credit")} if row.get("image") else {},
+            "hero_video": {},
+        }
+        related = catalog.related_rank({"url": url_path, **article}, catalog_now, limit=6)
+        neighbors = catalog.neighbors({"url": url_path, "published_at": article["published_at"]}, catalog_now)
+        html_text = render_blog_article(article, url_path, related, media, neighbors, row)
+        target = ROOT / url_path.lstrip("/")
+        if target.exists():
+            target.write_text(html_text, "utf-8")
+        catalog.upsert_catalog({
+            **row,
+            "title": article["title"],
+            "deck": article["deck"],
+            "entities": article.get("entities") or [],
+            "body_excerpt": article.get("deck") or "",
+            "format_hint": candidate.get("format_hint") or row.get("format_hint") or "",
+            "family": catalog.family_of({**row, "title": article["title"], "format_hint": candidate.get("format_hint")}),
+        })
+        entry["title"] = article["title"]
+        entry["entities"] = article.get("entities") or []
+        for item in feed_payload.get("items") or []:
+            if item.get("url") == url_path:
+                item["title"] = article["title"]
+                item["deck"] = article["deck"]
+                item["entities"] = article.get("entities") or []
+        rewritten.append({"url": url_path, "title": article["title"]})
+    for item in queue.get("items") or []:
+        urls = set(item.get("urls") or [])
+        if urls & provenance_urls or item.get("story_angle_id") in packs:
+            if item.get("published_url") or (urls & provenance_urls):
+                item["status"] = "published"
+                if not item.get("published_url"):
+                    match = next((e.get("url") for e in state.get("ledger") or [] if e.get("story_angle_id") == item.get("story_angle_id")), "")
+                    if match:
+                        item["published_url"] = match
+    save_json(ledger_path, state)
+    save_json(feed_path, feed_payload)
+    save_json(queue_path, queue)
+    surfaces = catalog.write_surfaces()
+    return {"rewritten": rewritten, "surfaces": surfaces}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Passport Global Blog Tunnel™ V1")
-    ap.add_argument("command", choices=["discover", "generate", "run", "archive-stats", "surfaces"], nargs="?", default="run")
+    ap.add_argument("command", choices=["discover", "generate", "run", "archive-stats", "surfaces", "rewrite-formulaic"], nargs="?", default="run")
     ap.add_argument("--sources", default=str(ROOT / "data/editorial-sources-blog-v1.json"))
     ap.add_argument("--output-dir", default=str(ROOT / "build/blog-tunnel"))
     ap.add_argument("--mode", choices=["continuous", "backfill"], default="continuous")
@@ -1196,6 +1425,9 @@ def main() -> int:
     config = load_json(ROOT / "data/blog-tunnel-engine.json", {})
     if args.command == "archive-stats":
         print(json.dumps(discovery.archive_stats(), ensure_ascii=False, indent=2))
+        return 0
+    if args.command == "rewrite-formulaic":
+        print(json.dumps(rewrite_formulaic_published(), ensure_ascii=False, indent=2))
         return 0
     if args.command == "surfaces":
         catalog.seed_from_feed()

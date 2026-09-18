@@ -1,10 +1,10 @@
 {
   "version": 1,
   "channel": "blog",
-  "updated_at": "2026-09-18T16:40:00-03:00",
+  "updated_at": "2026-09-18T14:07:11.334667-03:00",
   "ledger": [
     {
-      "title": "O que Pink Floyd deixa no ar agora",
+      "title": "Pink Floyd e a parceria que o próprio autor descreve",
       "url": "/blog/2026/09/18/o-que-pink-floyd-deixa-no-ar-agora.html",
       "published_at": "2026-09-18T12:00:00-03:00",
       "status": "PUBLISHED",
@@ -14,14 +14,12 @@
       "entities": [
         "Pink Floyd",
         "Roger Waters",
-        "David Gilmour",
-        "Nunca",
-        "Pinkfloyd"
+        "David Gilmour"
       ],
       "format": "STORY"
     },
     {
-      "title": "O que Iron Maiden deixa no ar agora",
+      "title": "Iron Maiden e o detalhe que os fãs ainda discutem",
       "url": "/blog/2026/09/18/o-que-iron-maiden-deixa-no-ar-agora.html",
       "published_at": "2026-09-18T12:00:00-03:00",
       "status": "PUBLISHED",
@@ -31,13 +29,12 @@
       "entities": [
         "Iron Maiden",
         "Regis Tadeu",
-        "Steve Harris",
-        "Ironmaiden"
+        "Steve Harris"
       ],
       "format": "STORY"
     },
     {
-      "title": "O que Metallica deixa no ar agora",
+      "title": "Metallica e a canção que ainda pega o próprio autor",
       "url": "/blog/2026/09/18/o-que-metallica-deixa-no-ar-agora.html",
       "published_at": "2026-09-18T12:00:00-03:00",
       "status": "PUBLISHED",
@@ -51,7 +48,7 @@
       "format": "STORY"
     },
     {
-      "title": "O que Yes deixa no ar agora",
+      "title": "Yes e a faixa que atravessou outras bandas",
       "url": "/blog/2026/09/18/o-que-yes-deixa-no-ar-agora.html",
       "published_at": "2026-09-18T12:00:00-03:00",
       "status": "PUBLISHED",
@@ -84,7 +81,7 @@
       "format": "STORY"
     },
     {
-      "title": "O que Oasis deixa no ar agora",
+      "title": "Noel Gallagher e a canção de Oasis que nasceu depois da noite",
       "url": "/blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html",
       "published_at": "2026-09-18T12:00:00-03:00",
       "status": "PUBLISHED",
@@ -92,7 +89,6 @@
       "channel": "blog",
       "story_angle_id": "ANG_1eba1aa00b24a5ea5949",
       "entities": [
-        "Passport Radio",
         "Oasis",
         "Noel Gallagher"
       ],
@@ -116,6 +112,107 @@
         "Slipknot"
       ],
       "format": "STORY"
+    },
+    {
+      "title": "John Bonham e a faixa de época que modelou Led Zeppelin",
+      "url": "/blog/2026/09/18/led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "published_at": "2026-09-18T14:04:23.660837-03:00",
+      "editorial_day": "2026-09-18",
+      "category": "music",
+      "format": "STORY",
+      "entities": [
+        "Led Zeppelin",
+        "Kinks",
+        "John Bonham"
+      ],
+      "event_key": "EVT_54fe192a6b33fb0ea36c",
+      "event_id": "EVT_54fe192a6b33fb0ea36c",
+      "story_angle_id": "ANG_0d87f4d91e04d6edb580",
+      "cluster_id": "CLU_313F87EB0369B1AF3F37",
+      "fingerprint": "dbfb005b1bf0efed2ae7aecb",
+      "source_hash": "313f87eb0369b1af3f378763",
+      "source_hashes": [
+        "313f87eb0369b1af3f378763"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "status": "PUBLISHED"
+    },
+    {
+      "title": "O palco que reorganizou a vida em torno de Machine Head",
+      "url": "/blog/2026/09/18/o-palco-que-reorganizou-a-vida-em-torno-de-machine-head.html",
+      "published_at": "2026-09-18T14:05:03.347689-03:00",
+      "editorial_day": "2026-09-18",
+      "category": "music",
+      "format": "STORY",
+      "entities": [
+        "Machine Head",
+        "Exciter",
+        "Robb Flynn"
+      ],
+      "event_key": "EVT_8f3e146a7cba441524b7",
+      "event_id": "EVT_8f3e146a7cba441524b7",
+      "story_angle_id": "ANG_7cd09fddee8a304f0a4c",
+      "cluster_id": "CLU_42D6B150FF4B99478200",
+      "fingerprint": "2cf4ae82678677daafd7f3d5",
+      "source_hash": "42d6b150ff4b99478200a574",
+      "source_hashes": [
+        "42d6b150ff4b99478200a574"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "status": "PUBLISHED"
+    },
+    {
+      "title": "Mastodon e a memória que os músicos ainda carregam",
+      "url": "/blog/2026/09/18/mastodon-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "published_at": "2026-09-18T14:06:36.619415-03:00",
+      "editorial_day": "2026-09-18",
+      "category": "music",
+      "format": "STORY",
+      "entities": [
+        "Mastodon",
+        "Brent Hinds",
+        "Bill Kelliher",
+        "Brann Dailor"
+      ],
+      "event_key": "EVT_3ceebd7bca6a8aac6926",
+      "event_id": "EVT_3ceebd7bca6a8aac6926",
+      "story_angle_id": "ANG_d75e544e2530bdb83c33",
+      "cluster_id": "CLU_6F7333E28396CCDA809F",
+      "fingerprint": "99ac311e7e365b9bc7061299",
+      "source_hash": "6f7333e28396ccda809f0772",
+      "source_hashes": [
+        "6f7333e28396ccda809f0772"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "status": "PUBLISHED"
+    },
+    {
+      "title": "Keith Richards e a faixa que entrou em outra história",
+      "url": "/blog/2026/09/18/keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "published_at": "2026-09-18T14:07:05.077397-03:00",
+      "editorial_day": "2026-09-18",
+      "category": "music",
+      "format": "STORY",
+      "entities": [
+        "Keith Richards",
+        "Rolling Stones",
+        "Grand Theft Auto VI"
+      ],
+      "event_key": "EVT_fe6ba3a11cf75275c59f",
+      "event_id": "EVT_fe6ba3a11cf75275c59f",
+      "story_angle_id": "ANG_3e414ad4a271a22253dc",
+      "cluster_id": "CLU_4DAF3BEC056AB4082842",
+      "fingerprint": "a14d3ca4f31987b49c1bee16",
+      "source_hash": "4daf3bec056ab4082842bcd0",
+      "source_hashes": [
+        "4daf3bec056ab4082842bcd0"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "status": "PUBLISHED"
     }
   ]
 }
