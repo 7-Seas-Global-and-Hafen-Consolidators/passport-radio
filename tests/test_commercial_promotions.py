@@ -57,7 +57,7 @@ WHIPLASH_PERIOD_PCT = [
 IMMUTABLE = {"top": 84.5, "rectangle": 64.5, "strip": 49.5, "sponsored": 1399.5}
 EMAIL = "passportradio.online@gmail.com"
 WA = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
-TG = "https://t.me/+pXv3uwqOY8lkZGZk"
+TG = "https://t.me/+FKto2N185cs4OGU0"
 
 
 def fail(msg: str) -> None:

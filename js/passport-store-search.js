@@ -4,7 +4,7 @@
   const CART_KEY = "passport-store-cart-v1";
   const INDEX = "/data/store-search/index.json";
   const ASAAS = "https://www.asaas.com/c/shpb8gbiswnw4t2n";
-  const WA = "https://wa.me/message/NZS7ZW4QHQVBG1";
+  const WA = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k";
 
   const fold = (value) => String(value || "")
     .normalize("NFD")

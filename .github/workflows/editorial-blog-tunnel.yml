@@ -18,11 +18,6 @@ on:
         required: false
         default: false
         type: boolean
-  push:
-    branches: [main]
-    paths:
-      - 'blog/w/**'
-      - 'data/blog-catalog.jsonl'
   pull_request:
     paths:
       - 'tools/editorial_blog_tunnel.py'
@@ -102,7 +97,6 @@ jobs:
           python tests/test_editorial_blog_publication.py
           python tests/test_store_stamp_pricing.py
           python tests/test_circulation_publishers.py
-          python tools/migrate_whatsapp_channel.py
           python - <<'PY'
           from pathlib import Path
           old='https://wa.me/message/NZS7ZW4QHQVBG1'
@@ -145,11 +139,6 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
             APPLY="true"
             GEN="2"
-            MODE="continuous"
-          fi
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            APPLY="true"
-            GEN="0"
             MODE="continuous"
           fi
           if [ "$GITHUB_EVENT_NAME" = "push" ]; then

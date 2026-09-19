@@ -278,7 +278,7 @@ def test_slogan_dead_at_source() -> None:
     )
     if "Every Song Is A Destination" in blog_html or "pe-nomad-signature" in blog_html:
         fail("blog renderer still ships mill slogan/Nomad")
-    if "t.me/+pXv3uwqOY8lkZGZk" not in blog_html:
+    if "t.me/+FKto2N185cs4OGU0" not in blog_html:
         fail("official Telegram missing from matter")
     if "wa.me/?text=" not in blog_html or "t.me/share/url" not in blog_html:
         fail("share WhatsApp/Telegram missing")

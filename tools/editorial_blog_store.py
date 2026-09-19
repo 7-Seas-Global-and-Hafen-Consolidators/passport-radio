@@ -22,7 +22,7 @@ ENTITY_MAP = ROOT / "data" / "store-entity-map.json"
 PRODUCT_DIR = ROOT / "loja" / "p"
 SITE = "https://passportradio.online"
 ASAAS = "https://www.asaas.com/c/shpb8gbiswnw4t2n"
-WA = "https://wa.me/message/NZS7ZW4QHQVBG1"
+WA = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
 
 ARTIST_ALIASES = {
     "ac/dc": "AC/DC", "acdc": "AC/DC",
@@ -491,9 +491,9 @@ def render_product_page(product: dict[str, Any]) -> str:
 <p>
 <button type="button" class="pp-btn pp-btn--ink" data-add-cart="{_esc(product["id"])}" data-sku="{_esc(sku)}" data-name="{_esc(name)}" data-price="{_esc(price)}" data-pix="{_esc(pix or "")}">Adicionar ao carrinho</button>
 <a class="pp-btn pp-btn--red" href="{ASAAS}" target="_blank" rel="noopener">Checkout Asaas</a>
-<a class="pp-btn pp-btn--ghost" href="{WA}" target="_blank" rel="noopener">Pedir via WhatsApp</a>
+<a class="pp-btn pp-btn--ghost" href="{WA}" target="_blank" rel="noopener">Passport Radio Channel</a>
 </p>
-<p class="pp-cart-note">O Asaas desta casa não recebe SKU automaticamente. O carrinho local monta o pedido; WhatsApp leva os itens escolhidos.</p>
+<p class="pp-cart-note">O Asaas desta casa não recebe SKU automaticamente. O carrinho local monta o pedido; O canal oficial mantém o público conectado à Passport Radio.</p>
 </div>
 </article>
 <section id="pp-store-cart" class="pp-store-cart" aria-label="Carrinho"></section>
