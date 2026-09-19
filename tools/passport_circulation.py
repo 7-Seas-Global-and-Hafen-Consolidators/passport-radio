@@ -6,7 +6,7 @@ import html as html_lib
 from urllib.parse import quote
 
 TELEGRAM_OFFICIAL = "https://t.me/+pXv3uwqOY8lkZGZk"
-WHATSAPP_OFFICIAL = "https://wa.me/message/NZS7ZW4QHQVBG1"
+WHATSAPP_OFFICIAL = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
 SITE = "https://passportradio.online"
 
 
