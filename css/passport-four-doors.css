@@ -255,6 +255,26 @@ body.pp-home #passport-casa-host .casa-host-bar a:hover,body.pp-home #passport-c
 .piece .journey-media--verbete{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:18px;background:linear-gradient(160deg,#181818,#0d0d0d);border:1px dashed rgba(196,165,116,.5);height:100%}
 .piece .journey-media--verbete span{color:var(--pp-gold);font-family:var(--pp-title);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase}
 .piece .journey-media--verbete b{color:#fff;font-family:var(--pp-title);font-weight:900;font-size:1rem;line-height:1.25}
+/* HOME · legibilidade editorial + enquadramento consistente */
+body.pp-home #pp-feed .piece .p-copy{background:#f4efe6!important;color:#000!important}
+body.pp-home #pp-feed .piece h3,
+body.pp-home #pp-feed .piece h3 a,
+body.pp-home #pp-feed .piece p,
+body.pp-home #pp-feed .piece .p-meta{color:#000!important}
+body.pp-home #pp-feed .piece .p-kicker{color:#5b421d!important}
+body.pp-home #pp-feed .piece h3 a:hover{color:#000!important;text-decoration:underline}
+body.pp-home #pp-feed .piece .journey-media{box-sizing:border-box;aspect-ratio:16/10!important;width:100%!important;height:auto!important;min-height:0!important;border-radius:24px!important;margin:0!important;padding:0!important;background:#111!important}
+body.pp-home #pp-feed .piece .journey-media img{display:block!important;width:100%!important;height:100%!important;aspect-ratio:16/10!important;object-fit:cover!important;object-position:center!important;border-radius:24px!important;padding:0!important}
+body.pp-home #pp-feed .piece--capsule,
+body.pp-home #pp-feed .piece--medal,
+body.pp-home #pp-feed .piece--tower,
+body.pp-home #pp-feed .piece--oval,
+body.pp-home #pp-feed .piece--disc{grid-template-columns:minmax(260px,38%) minmax(0,1fr)!important;gap:22px!important;align-items:center!important;background:#f4efe6!important;border:1px solid #d2c8b8!important;border-radius:28px!important;padding:18px!important}
+body.pp-home #pp-feed .piece--medal .p-copy,
+body.pp-home #pp-feed .piece--tower .p-copy,
+body.pp-home #pp-feed .piece--oval .p-copy{margin:0!important;padding:20px!important;border:0!important;border-radius:18px!important}
+body.pp-home #pp-feed .piece--disc .journey-media img{border-radius:24px!important}
+@media(max-width:860px){body.pp-home #pp-feed .piece--capsule,body.pp-home #pp-feed .piece--medal,body.pp-home #pp-feed .piece--tower,body.pp-home #pp-feed .piece--oval,body.pp-home #pp-feed .piece--disc{grid-template-columns:1fr!important;text-align:left!important;border-radius:24px!important}body.pp-home #pp-feed .piece .journey-media{aspect-ratio:16/9!important}body.pp-home #pp-feed .piece .journey-media img{aspect-ratio:16/9!important}}
 /* 13 · fofonete */
 .mold-fofo{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;align-items:center;background:var(--mk-panel);border:1px solid var(--mk-line);border-radius:40px;padding:22px 30px;margin:0 0 26px}
 .mold-fofo img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid var(--pp-gold)}
