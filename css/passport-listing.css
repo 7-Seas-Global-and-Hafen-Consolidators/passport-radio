@@ -315,3 +315,11 @@ body.pp-listing #archive-more:hover{
 @media (max-width: 400px){
   body.pp-listing{ overflow-x:hidden; }
 }
+
+/* PHOTO EMERGENCY · no black fake-media slabs */
+body.pp-listing .list-media--verbete,body.pp-listing .list-media--empty{display:none!important}
+body.pp-listing .list-card{background:#f4efe6!important;color:#000!important}
+body.pp-listing .list-copy .journey-kicker,body.pp-listing .list-card .journey-kicker{color:#7b5a25!important}
+body.pp-listing .list-card h2,body.pp-listing .list-card h2 a,body.pp-listing .list-copy p,body.pp-listing .list-copy time{color:#000!important}
+body.pp-listing .list-media{aspect-ratio:16/9!important;background:#111}
+body.pp-listing .list-media img{object-position:center!important}
