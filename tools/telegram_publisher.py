@@ -38,7 +38,8 @@ def main() -> int:
     ap=argparse.ArgumentParser()
     ap.add_argument("command", choices=["publish-new"])
     ap.add_argument("--catalog", required=True)
-    ap.add_argument("--state", required=True)\n    ap.add_argument("--git-range", required=True)
+    ap.add_argument("--state", required=True)
+    ap.add_argument("--git-range", required=True)
     args=ap.parse_args()
     token=os.environ.get("TELEGRAM_BOT_TOKEN","").strip()
     chat=os.environ.get("TELEGRAM_CHAT_ID","").strip()
@@ -46,6 +47,8 @@ def main() -> int:
         print("Telegram credentials absent; publisher armed but not firing.", file=sys.stderr)
         return 0
     state_path=Path(args.state); done=load_state(state_path)
+    out=subprocess.check_output(["git","diff","--name-only",args.git_range,"--","blog/w/*.html"], text=True)
+    changed={Path(x).stem for x in out.splitlines() if x.strip()}
     fresh=[]
     for row in rows(Path(args.catalog)):
         slug=str(row.get("slug") or row.get("id") or "").strip()
