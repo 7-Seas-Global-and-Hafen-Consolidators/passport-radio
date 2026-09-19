@@ -105,6 +105,8 @@ def test_circulation() -> None:
         fail("official Telegram missing")
     if WHATSAPP_OFFICIAL not in html:
         fail("official WhatsApp missing")
+    if WHATSAPP_OFFICIAL != "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k":
+        fail("official WhatsApp must point to Passport Channel, not Business chat")
     if "data-copy-link" not in html:
         fail("copy link missing")
     mill = (ROOT / "tools" / "editorial_engine.py").read_text("utf-8")
