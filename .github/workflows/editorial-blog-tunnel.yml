@@ -78,6 +78,7 @@ jobs:
             tools/editorial_engine_constitution.py \
             tools/passport_store_pricing.py \
             tools/passport_circulation.py \
+            tools/migrate_whatsapp_channel.py \
             tools/telegram_publisher.py \
             tools/stamp_source_crawl.py \
             tools/stamp_passport_reconcile.py
@@ -145,6 +146,10 @@ jobs:
             --max-generate "$GEN" \
             --output-dir build/blog-tunnel \
             $APPLY_FLAG
+
+      - name: Normalize official WhatsApp Channel in Blog
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: python tools/migrate_whatsapp_channel.py
 
       - name: Refuse noticias / Home / audio writes
         if: always()
