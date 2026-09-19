@@ -90,6 +90,15 @@ jobs:
           python tests/test_editorial_blog_tunnel.py
           python tests/test_editorial_blog_publication.py
           python tests/test_store_stamp_pricing.py
+          python tools/migrate_whatsapp_channel.py
+          python - <<'PY'
+          from pathlib import Path
+          old='https://wa.me/message/NZS7ZW4QHQVBG1'
+          hits=[str(p) for p in Path('blog').rglob('*.html') if old in p.read_text('utf-8')]
+          if Path('blog.html').exists() and old in Path('blog.html').read_text('utf-8'): hits.append('blog.html')
+          if hits: raise SystemExit('legacy WhatsApp link remains: '+', '.join(hits[:20]))
+          print('OK legacy WhatsApp Business/message URL = 0')
+          PY
           node --check js/passport-blog-search.js
           node --check js/passport-blog-discussion.js
           node --check js/passport-blog-submit.js
