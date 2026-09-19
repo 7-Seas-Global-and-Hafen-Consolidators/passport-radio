@@ -39,7 +39,7 @@ def main() -> int:
     ap.add_argument("command", choices=["publish-new"])
     ap.add_argument("--catalog", required=True)
     ap.add_argument("--state", required=True)
-    ap.add_argument("--git-range", required=True)
+    ap.add_argument("--delta", required=True)
     args=ap.parse_args()
     token=os.environ.get("TELEGRAM_BOT_TOKEN","").strip()
     chat=os.environ.get("TELEGRAM_CHAT_ID","").strip()
@@ -47,17 +47,19 @@ def main() -> int:
         print("Telegram credentials absent; publisher armed but not firing.", file=sys.stderr)
         return 0
     state_path=Path(args.state); done=load_state(state_path)
-    out=subprocess.check_output(["git","diff","--name-only",args.git_range,"--","blog/w/*.html"], text=True)
-    changed={Path(x).stem for x in out.splitlines() if x.strip()}
+    delta=json.loads(Path(args.delta).read_text("utf-8"))
+    revisions={str(x["slug"]):str(x["revision"]) for x in delta.get("items",[])}
     fresh=[]
     for row in rows(Path(args.catalog)):
         slug=str(row.get("slug") or row.get("id") or "").strip()
         title=str(row.get("title") or "").strip()
         raw_url=str(row.get("url") or "").strip()
-        if not slug or not title or slug in done or slug not in changed: continue
+        revision=revisions.get(slug)
+        key=f"{slug}@{revision}" if revision else ""
+        if not slug or not title or not key or key in done: continue
         url=raw_url if raw_url.startswith("http") else SITE + (raw_url if raw_url.startswith("/") else "/blog/w/"+slug+".html")
         send(token, chat, title, url)
-        done.add(slug); fresh.append(slug)
+        done.add(key); fresh.append(key)
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.write_text(json.dumps({"published":sorted(done)},ensure_ascii=False,indent=2)+"\n","utf-8")
     print(f"Telegram published: {len(fresh)}")
