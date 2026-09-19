@@ -58,7 +58,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -78,6 +78,7 @@ jobs:
             tools/editorial_engine_constitution.py \
             tools/passport_store_pricing.py \
             tools/passport_circulation.py \
+            tools/migrate_whatsapp_channel.py \
             tools/telegram_publisher.py \
             tools/stamp_source_crawl.py \
             tools/stamp_passport_reconcile.py
@@ -132,7 +133,7 @@ jobs:
             --workers 2 \
             --output-dir build/blog-tunnel
 
-      - name: Snapshot Blog head before generation
+      - name: Snapshot Blog head before editorial work
         if: github.event_name != 'pull_request'
         run: echo "BLOG_BEFORE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
@@ -145,6 +146,10 @@ jobs:
             --max-generate "$GEN" \
             --output-dir build/blog-tunnel \
             $APPLY_FLAG
+
+      - name: Normalize official WhatsApp Channel in Blog
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: python tools/migrate_whatsapp_channel.py
 
       - name: Refuse noticias / Home / audio writes
         if: always()
@@ -181,7 +186,7 @@ jobs:
           git commit -m "chore(blog-tunnel): continuous discover + capped Blog publish"
           git push
 
-      - name: Publish new Blog stories to Telegram
+      - name: Publish new and revitalized Blog stories to Telegram
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
           BEFORE_SHA="$BLOG_BEFORE_SHA"

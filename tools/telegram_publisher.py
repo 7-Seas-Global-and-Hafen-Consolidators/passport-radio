@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Publish newly materialized Passport Blog stories to the official Telegram channel."""
 from __future__ import annotations
-import argparse, json, os, subprocess, sys, urllib.parse, urllib.request
+import argparse, html, json, os, subprocess, sys, urllib.parse, urllib.request
 from pathlib import Path
 
 SITE = "https://passportradio.online"
@@ -23,7 +23,7 @@ def send(token: str, chat_id: str, title: str, url: str) -> None:
     tracked=url + ("&" if "?" in url else "?") + urllib.parse.urlencode({
         "utm_source":"telegram","utm_medium":"channel","utm_campaign":"editorial"
     })
-    text=f"<b>{title}</b>\n\n{tracked}"
+    text=f"<b>{html.escape(title)}</b>\n\n{html.escape(tracked)}"
     data=urllib.parse.urlencode({
         "chat_id":chat_id,"text":text,"parse_mode":"HTML",
         "disable_web_page_preview":"false"
