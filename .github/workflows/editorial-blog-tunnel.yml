@@ -180,7 +180,7 @@ jobs:
       - name: Publish new Blog stories to Telegram
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
-          BEFORE_SHA="${{ github.event.before }}"
+          BEFORE_SHA="$(git rev-parse HEAD)"
           AFTER_SHA="$(git rev-parse HEAD)"
           python tools/telegram_publisher.py publish-new \
             --catalog data/blog-catalog.jsonl \
