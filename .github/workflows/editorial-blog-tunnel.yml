@@ -22,10 +22,6 @@ on:
     branches: [main]
     paths:
       - 'blog/w/**'
-  push:
-    branches: [main]
-    paths:
-      - 'blog/w/**'
       - 'data/blog-catalog.jsonl'
   pull_request:
     paths:
@@ -151,17 +147,12 @@ jobs:
             GEN="0"
             MODE="continuous"
           fi
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            APPLY="true"
-            GEN="0"
-            MODE="continuous"
-          fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "GEN=$GEN" >> "$GITHUB_ENV"
           echo "APPLY=$APPLY" >> "$GITHUB_ENV"
 
       - name: Discover entire sources into the queue
-        if: github.event_name != 'pull_request' && github.event_name != 'push' && github.event_name != 'push'
+        if: github.event_name != 'pull_request' && github.event_name != 'push'
         run: |
           python tools/editorial_blog_tunnel.py discover \
             --mode "$MODE" \
