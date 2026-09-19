@@ -35,7 +35,7 @@ jobs:
             'https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!' \
             'https://t.me/+pXv3uwqOY8lkZGZk' \
             'https://t.me/+447594716370'; do
-            if git grep -F "$OLD" -- . ':!tools/migrate_whatsapp_channel.py'; then
+            if git grep -F "$OLD" -- . ':!tools/migrate_whatsapp_channel.py' ':!.github/workflows/**'; then
               echo "FATAL: retired channel link survived: $OLD"
               exit 1
             fi
