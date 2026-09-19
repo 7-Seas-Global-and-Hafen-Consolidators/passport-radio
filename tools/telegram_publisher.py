@@ -46,6 +46,8 @@ def main() -> int:
         print("Telegram credentials absent; publisher armed but not firing.", file=sys.stderr)
         return 0
     state_path=Path(args.state); done=load_state(state_path)
+    out=subprocess.check_output(["git","diff","--name-only",args.git_range,"--","blog/w/*.html"], text=True)
+    changed={Path(x).stem for x in out.splitlines() if x.strip()}
     fresh=[]
     for row in rows(Path(args.catalog)):
         slug=str(row.get("slug") or row.get("id") or "").strip()
