@@ -58,7 +58,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -133,7 +133,7 @@ jobs:
             --workers 2 \
             --output-dir build/blog-tunnel
 
-      - name: Snapshot Blog head before generation
+      - name: Snapshot Blog head before editorial work
         if: github.event_name != 'pull_request'
         run: echo "BLOG_BEFORE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
@@ -186,7 +186,7 @@ jobs:
           git commit -m "chore(blog-tunnel): continuous discover + capped Blog publish"
           git push
 
-      - name: Publish new Blog stories to Telegram
+      - name: Publish new and revitalized Blog stories to Telegram
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
           BEFORE_SHA="$BLOG_BEFORE_SHA"
