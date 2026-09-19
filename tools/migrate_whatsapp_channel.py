@@ -16,7 +16,7 @@ def targets():
     for p in Path(".").rglob("*"):
         if not p.is_file() or p.suffix.lower() not in TEXT_EXT or any(part in SKIP for part in p.parts):
             continue
-        # Workflow source is maintained explicitly through GitHub; a workflow run
+        # Workflow source is maintained explicitly through GitHub; this materializer
         # must never rewrite workflow files and then fail its own authenticated push.
         if p.parts[:2] == (".github", "workflows"):
             continue
