@@ -44,8 +44,8 @@ def main() -> int:
     token=os.environ.get("TELEGRAM_BOT_TOKEN","").strip()
     chat=os.environ.get("TELEGRAM_CHAT_ID","").strip()
     if not token or not chat:
-        print("Telegram credentials absent; publisher armed but not firing.", file=sys.stderr)
-        return 0
+        print("FATAL: TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID absent; refusing false-green publication.", file=sys.stderr)
+        return 2
     state_path=Path(args.state); done=load_state(state_path)
     delta=json.loads(Path(args.delta).read_text("utf-8"))
     revisions={str(x["slug"]):str(x["revision"]) for x in delta.get("items",[])}

@@ -18,6 +18,10 @@ on:
         required: false
         default: false
         type: boolean
+  push:
+    branches: [main]
+    paths:
+      - 'blog/w/**'
   pull_request:
     paths:
       - 'tools/editorial_blog_tunnel.py'
@@ -29,6 +33,7 @@ on:
       - 'tests/test_editorial_blog_tunnel.py'
       - 'tests/test_editorial_blog_publication.py'
       - 'tests/test_store_stamp_pricing.py'
+      - 'tests/test_circulation_publishers.py'
       - 'tools/passport_store_pricing.py'
       - 'tools/passport_circulation.py'
       - 'tools/whatsapp_channel_outbox.py'
@@ -90,6 +95,7 @@ jobs:
           python tests/test_editorial_blog_tunnel.py
           python tests/test_editorial_blog_publication.py
           python tests/test_store_stamp_pricing.py
+          python tests/test_circulation_publishers.py
           python tools/migrate_whatsapp_channel.py
           python - <<'PY'
           from pathlib import Path
@@ -135,12 +141,17 @@ jobs:
             GEN="2"
             MODE="continuous"
           fi
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            APPLY="true"
+            GEN="0"
+            MODE="continuous"
+          fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "GEN=$GEN" >> "$GITHUB_ENV"
           echo "APPLY=$APPLY" >> "$GITHUB_ENV"
 
       - name: Discover entire sources into the queue
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.event_name != 'push'
         run: |
           python tools/editorial_blog_tunnel.py discover \
             --mode "$MODE" \
