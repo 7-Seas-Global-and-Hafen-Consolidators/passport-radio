@@ -31,6 +31,8 @@ on:
       - 'tests/test_store_stamp_pricing.py'
       - 'tools/passport_store_pricing.py'
       - 'tools/passport_circulation.py'
+      - 'tools/whatsapp_channel_outbox.py'
+      - 'tools/whatsapp_channel_bridge.mjs'
       - 'tools/editorial_blog_store.py'
       - '.github/workflows/editorial-blog-tunnel.yml'
       - 'js/passport-blog-archive.js'
@@ -90,6 +92,7 @@ jobs:
           node --check js/passport-blog-discussion.js
           node --check js/passport-blog-submit.js
           node --check js/passport-store-search.js
+          node --check tools/whatsapp_channel_bridge.mjs
 
       - name: Guard protected surfaces
         run: |
