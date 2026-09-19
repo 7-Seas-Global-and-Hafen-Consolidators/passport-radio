@@ -5,7 +5,7 @@ from __future__ import annotations
 import html as html_lib
 from urllib.parse import quote
 
-TELEGRAM_OFFICIAL = "https://t.me/+pXv3uwqOY8lkZGZk"
+TELEGRAM_OFFICIAL = "https://t.me/+FKto2N185cs4OGU0"
 WHATSAPP_OFFICIAL = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
 SITE = "https://passportradio.online"
 
