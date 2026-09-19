@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Queue new/revitalized Passport Blog stories for the local WhatsApp Channel bridge.
-
-The GitHub runner does not hold a WhatsApp Web session. It materializes a durable
-outbox that a linked local bridge can consume with the Passport Radio Business
-account. No WhatsApp credentials/session material belong in this repository.
-"""
+"""Queue new/revitalized Passport Blog stories for the local WhatsApp Channel bridge."""
 from __future__ import annotations
 import argparse, json, urllib.parse
 from pathlib import Path
@@ -26,17 +21,26 @@ def main() -> int:
     ap.add_argument("--delta", required=True)
     args=ap.parse_args()
 
-    out=subprocess.check_output(
-        ["git","diff","--name-only",args.git_range,"--","blog/w/*.html"], text=True
-    )
-    changed={Path(x).stem for x in out.splitlines() if x.strip()}
+    delta=json.loads(Path(args.delta).read_text("utf-8"))
+    revisions={
+        str(item.get("slug") or "").strip(): str(item.get("revision") or "").strip()
+        for item in delta.get("items", [])
+        if str(item.get("slug") or "").strip() and str(item.get("revision") or "").strip()
+    }
+
     catalog={}
     for row in rows(Path(args.catalog)):
         slug=str(row.get("slug") or row.get("id") or "").strip()
         if slug:
             catalog[slug]=row
 
-    queued=[]
+    path=Path(args.outbox)
+    try:
+        existing=json.loads(path.read_text("utf-8")).get("items", [])
+    except Exception:
+        existing=[]
+    by_id={str(item.get("id")):item for item in existing if item.get("id")}
+
     for slug in sorted(revisions):
         row=catalog.get(slug)
         if not row:
@@ -53,18 +57,19 @@ def main() -> int:
             "utm_medium":"channel",
             "utm_campaign":"editorial",
         })
-        queued.append({
-            "id": f"{slug}@{revisions[slug]}",
-            "title": title,
-            "url": tracked,
-            "text": f"{title}\n\n{tracked}",
-            "source": "blog-change",
-        })
+        item_id=f"{slug}@{revisions[slug]}"
+        by_id[item_id]={
+            "id":item_id,
+            "title":title,
+            "url":tracked,
+            "text":f"{title}\n\n{tracked}",
+            "source":"blog-change",
+        }
 
-    path=Path(args.outbox)
+    queued=list(by_id.values())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({"version":1,"items":queued},ensure_ascii=False,indent=2)+"\n","utf-8")
-    print(f"WhatsApp Channel queued: {len(queued)}")
+    print(f"WhatsApp Channel outbox: {len(queued)} durable items ({len(revisions)} revisions in delta)")
     return 0
 
 if __name__ == "__main__":
