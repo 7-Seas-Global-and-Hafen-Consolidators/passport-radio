@@ -31,6 +31,8 @@ on:
       - 'tests/test_store_stamp_pricing.py'
       - 'tools/passport_store_pricing.py'
       - 'tools/passport_circulation.py'
+      - 'tools/whatsapp_channel_outbox.py'
+      - 'tools/whatsapp_channel_bridge.mjs'
       - 'tools/editorial_blog_store.py'
       - '.github/workflows/editorial-blog-tunnel.yml'
       - 'js/passport-blog-archive.js'
@@ -79,6 +81,7 @@ jobs:
             tools/passport_store_pricing.py \
             tools/passport_circulation.py \
             tools/migrate_whatsapp_channel.py \
+            tools/whatsapp_channel_outbox.py \
             tools/telegram_publisher.py \
             tools/stamp_source_crawl.py \
             tools/stamp_passport_reconcile.py
@@ -89,6 +92,7 @@ jobs:
           node --check js/passport-blog-discussion.js
           node --check js/passport-blog-submit.js
           node --check js/passport-store-search.js
+          node --check tools/whatsapp_channel_bridge.mjs
 
       - name: Guard protected surfaces
         run: |
@@ -186,6 +190,16 @@ jobs:
           git commit -m "chore(blog-tunnel): continuous discover + capped Blog publish"
           git push
 
+      - name: Queue new and revitalized Blog stories for WhatsApp Channel
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: |
+          BEFORE_SHA="$BLOG_BEFORE_SHA"
+          AFTER_SHA="$(git rev-parse HEAD)"
+          python tools/whatsapp_channel_outbox.py queue-changed \
+            --catalog data/blog-catalog.jsonl \
+            --outbox data/whatsapp-channel-outbox.json \
+            --git-range "$BEFORE_SHA..$AFTER_SHA"
+
       - name: Publish new and revitalized Blog stories to Telegram
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
@@ -195,6 +209,20 @@ jobs:
             --catalog data/blog-catalog.jsonl \
             --state data/telegram-published.json \
             --git-range "$BEFORE_SHA..$AFTER_SHA"
+
+      - name: Persist WhatsApp Channel outbox
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: |
+          if [ ! -f data/whatsapp-channel-outbox.json ]; then
+            exit 0
+          fi
+          git add data/whatsapp-channel-outbox.json
+          if git diff --cached --quiet; then
+            echo "No WhatsApp Channel outbox change"
+            exit 0
+          fi
+          git commit -m "chore(circulation): queue WhatsApp Channel updates"
+          git push
 
       - name: Persist Telegram circulation state
         if: github.event_name != 'pull_request' && env.APPLY == 'true'

@@ -6,3 +6,5 @@ mp3-report.json
 # Blog Tunnel raw archive dumps (the committed form is *.jsonl.gz)
 data/blog-queue/*.jsonl
 !data/blog-queue/*.jsonl.gz
+.passport-wa-auth/
+data/whatsapp-channel-local-state.json
