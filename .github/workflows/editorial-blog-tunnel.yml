@@ -43,6 +43,11 @@ on:
       - '.github/workflows/editorial-blog-tunnel.yml'
       - 'js/passport-blog-archive.js'
       - 'blog.html'
+  push:
+    branches: [main]
+    paths:
+      - 'blog/w/**.html'
+      - 'data/blog-catalog.jsonl'
   schedule:
     - cron: '41 */2 * * *'
 
@@ -139,6 +144,11 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
             APPLY="true"
             GEN="2"
+            MODE="continuous"
+          fi
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            APPLY="true"
+            GEN="0"
             MODE="continuous"
           fi
           if [ "$GITHUB_EVENT_NAME" = "push" ]; then
