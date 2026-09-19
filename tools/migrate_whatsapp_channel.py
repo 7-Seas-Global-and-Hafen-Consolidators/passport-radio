@@ -14,8 +14,13 @@ SKIP = {".git","node_modules",".passport-wa-auth"}
 
 def targets():
     for p in Path(".").rglob("*"):
-        if p.is_file() and p.suffix.lower() in TEXT_EXT and not any(part in SKIP for part in p.parts):
-            yield p
+        if not p.is_file() or p.suffix.lower() not in TEXT_EXT or any(part in SKIP for part in p.parts):
+            continue
+        # Workflow source is maintained explicitly through GitHub; a workflow run
+        # must never rewrite workflow files and then fail its own authenticated push.
+        if p.parts[:2] == (".github", "workflows"):
+            continue
+        yield p
 
 changed=0
 for path in targets():
