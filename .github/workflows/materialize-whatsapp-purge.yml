@@ -1,12 +1,13 @@
-name: Materialize legacy WhatsApp purge
+name: Materialize official Passport channels
 
 on:
   pull_request:
     branches: [main]
     paths:
       - '.github/workflows/materialize-whatsapp-purge.yml'
-      - 'blog/**'
-      - 'blog.html'
+      - '**/*.html'
+      - '**/*.js'
+      - '**/*.py'
       - 'tools/migrate_whatsapp_channel.py'
 
 permissions:
@@ -29,21 +30,28 @@ jobs:
         run: |
           set -euo pipefail
           python tools/migrate_whatsapp_channel.py
-          OLD='https://wa.me/message/NZS7ZW4QHQVBG1'
-          if grep -RIl --include='*.html' "$OLD" blog blog.html 2>/dev/null | head -1 | grep -q .; then
-            echo 'FATAL: legacy WhatsApp link survived'
-            exit 1
-          fi
-          echo 'VERIFIED: legacy WhatsApp link = ZERO'
+          for OLD in \
+            'https://wa.me/message/NZS7ZW4QHQVBG1' \
+            'https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!' \
+            'https://t.me/+pXv3uwqOY8lkZGZk' \
+            'https://t.me/+447594716370'; do
+            if git grep -F "$OLD" -- . ':!tools/migrate_whatsapp_channel.py'; then
+              echo "FATAL: retired channel link survived: $OLD"
+              exit 1
+            fi
+          done
+          git grep -F 'https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k' -- . >/dev/null
+          git grep -F 'https://t.me/+FKto2N185cs4OGU0' -- . >/dev/null
+          echo 'VERIFIED: official Passport channel links canonical'
       - name: Commit materialized HTML to this PR
         run: |
           set -euo pipefail
           git config user.name 'Passport Radio Automation'
           git config user.email 'actions@users.noreply.github.com'
-          git add blog blog.html
+          git add -A
           if git diff --cached --quiet; then
             echo 'Materialized purge already complete'
             exit 0
           fi
-          git commit -m 'fix(blog): materialize WhatsApp Channel across full acervo'
+          git commit -m 'fix(channels): materialize official Passport channels repo-wide'
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
