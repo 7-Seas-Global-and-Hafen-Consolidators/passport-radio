@@ -6,7 +6,7 @@ outbox that a linked local bridge can consume with the Passport Radio Business
 account. No WhatsApp credentials/session material belong in this repository.
 """
 from __future__ import annotations
-import argparse, json, subprocess, urllib.parse
+import argparse, json, urllib.parse
 from pathlib import Path
 
 SITE = "https://passportradio.online"
@@ -23,7 +23,7 @@ def main() -> int:
     ap.add_argument("command", choices=["queue-changed"])
     ap.add_argument("--catalog", required=True)
     ap.add_argument("--outbox", required=True)
-    ap.add_argument("--git-range", required=True)
+    ap.add_argument("--delta", required=True)
     args=ap.parse_args()
 
     out=subprocess.check_output(
@@ -37,7 +37,7 @@ def main() -> int:
             catalog[slug]=row
 
     queued=[]
-    for slug in sorted(changed):
+    for slug in sorted(revisions):
         row=catalog.get(slug)
         if not row:
             continue
@@ -54,7 +54,7 @@ def main() -> int:
             "utm_campaign":"editorial",
         })
         queued.append({
-            "id": slug,
+            "id": f"{slug}@{revisions[slug]}",
             "title": title,
             "url": tracked,
             "text": f"{title}\n\n{tracked}",
