@@ -220,10 +220,3 @@ body.pp-blog-article .pp-footer{background:#050505;color:#9a938a}
   body.pp-blog-article .blog-related div{grid-template-columns:1fr}
 }
 
-
-/* PHOTO EMERGENCY · cards with no image do not reserve a fake black photo */
-body.pp-blog .blog-card{background:#f4efe6;color:#000;border-color:#d2c8b8}
-body.pp-blog .blog-card h2,body.pp-blog .blog-card p,body.pp-blog .blog-card__meta{color:#000}
-body.pp-blog .blog-card__eyebrow{color:#7b5a25}
-body.pp-blog .blog-card__media{aspect-ratio:16/9;background:#111}
-body.pp-blog .blog-card__media img{object-position:center}
