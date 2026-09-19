@@ -57,12 +57,6 @@
     if (DIRTY_IMG.test(im.src)) return null;
     return im;
   }
-  const cssUrl = (src) => "url(\"" + String(src || "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"") + "\")";
-  const verbete = (item) =>
-    '<div class="list-media list-media--verbete" aria-hidden="true"><span>' +
-    esc(String(item.category || item.format || "verbete").replace(/_/g, " ")) +
-    ' · verbete</span><b>' + esc((item.entities || []).slice(0, 3).join(" · ") || String(item.title).slice(0, 60)) +
-    "</b></div>";
   const stamp = (v) => {
     const d = new Date(v);
     return Number.isNaN(d) ? "" : new Intl.DateTimeFormat("pt-BR", {dateStyle: "medium"}).format(d);
@@ -108,10 +102,9 @@
       const photo = usablePhoto(x);
       const im = photo
         ? `<figure class="list-media"><img src="${esc(photo.src)}" alt="${esc(photo.alt || "")}" loading="lazy" decoding="async"></figure>`
-        : verbete(x);
+        : "";
       return `<article class="news-card list-card">${im}<div class="list-copy"><span class="journey-kicker">${esc(String(x.category || x.format || "Notícias").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<time>${esc(stamp(x.published_at))}</time></div></article>`;
     }).join("");
-    markFit(grid);
     if (count) count.textContent = filtered.length + " notícia" + (filtered.length === 1 ? "" : "s");
     if (more) more.hidden = shown >= filtered.length;
   };
