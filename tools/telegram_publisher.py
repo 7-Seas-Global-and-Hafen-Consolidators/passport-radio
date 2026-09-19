@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Publish newly materialized Passport Blog stories to the official Telegram channel."""
 from __future__ import annotations
-import argparse, json, os, sys, urllib.parse, urllib.request
+import argparse, json, os, subprocess, sys, urllib.parse, urllib.request
 from pathlib import Path
 
 SITE = "https://passportradio.online"
@@ -38,7 +38,7 @@ def main() -> int:
     ap=argparse.ArgumentParser()
     ap.add_argument("command", choices=["publish-new"])
     ap.add_argument("--catalog", required=True)
-    ap.add_argument("--state", required=True)
+    ap.add_argument("--state", required=True)\n    ap.add_argument("--git-range", required=True)
     args=ap.parse_args()
     token=os.environ.get("TELEGRAM_BOT_TOKEN","").strip()
     chat=os.environ.get("TELEGRAM_CHAT_ID","").strip()
@@ -51,7 +51,7 @@ def main() -> int:
         slug=str(row.get("slug") or row.get("id") or "").strip()
         title=str(row.get("title") or "").strip()
         raw_url=str(row.get("url") or "").strip()
-        if not slug or not title or slug in done: continue
+        if not slug or not title or slug in done or slug not in changed: continue
         url=raw_url if raw_url.startswith("http") else SITE + (raw_url if raw_url.startswith("/") else "/blog/w/"+slug+".html")
         send(token, chat, title, url)
         done.add(slug); fresh.append(slug)
