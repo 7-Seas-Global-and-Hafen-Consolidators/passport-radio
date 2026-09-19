@@ -22,6 +22,11 @@ on:
     branches: [main]
     paths:
       - 'blog/w/**'
+  push:
+    branches: [main]
+    paths:
+      - 'blog/w/**'
+      - 'data/blog-catalog.jsonl'
   pull_request:
     paths:
       - 'tools/editorial_blog_tunnel.py'
@@ -146,12 +151,17 @@ jobs:
             GEN="0"
             MODE="continuous"
           fi
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            APPLY="true"
+            GEN="0"
+            MODE="continuous"
+          fi
           echo "MODE=$MODE" >> "$GITHUB_ENV"
           echo "GEN=$GEN" >> "$GITHUB_ENV"
           echo "APPLY=$APPLY" >> "$GITHUB_ENV"
 
       - name: Discover entire sources into the queue
-        if: github.event_name != 'pull_request' && github.event_name != 'push'
+        if: github.event_name != 'pull_request' && github.event_name != 'push' && github.event_name != 'push'
         run: |
           python tools/editorial_blog_tunnel.py discover \
             --mode "$MODE" \
@@ -164,7 +174,7 @@ jobs:
         run: echo "BLOG_BEFORE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: Generate capped Blog stories
-        if: github.event_name != 'pull_request' && env.GEN != '0'
+        if: github.event_name != 'pull_request' && github.event_name != 'push' && env.GEN != '0'
         run: |
           APPLY_FLAG=""
           if [ "$APPLY" = "true" ]; then APPLY_FLAG="--apply"; fi
@@ -262,6 +272,12 @@ jobs:
           fi
           git commit -m "chore(circulation): persist Telegram publication state"
           git push
+
+      - name: Verify circulation publishers did not silently skip
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: |
+          test -f data/telegram-published.json || { echo 'FATAL: Telegram publication state absent'; exit 1; }
+          test -f data/whatsapp-channel-outbox.json || { echo 'FATAL: WhatsApp Channel outbox absent'; exit 1; }
 
       - name: Advance circulation cursor
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
