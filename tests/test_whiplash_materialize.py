@@ -191,6 +191,41 @@ def test_cover_vitrine_does_not_dump_archive() -> None:
     print("OK cover vitrine vs archive")
 
 
+def test_verified_documentary_media_is_phase_aware() -> None:
+    payload = {
+        "items": [
+            {
+                "status": "verified", "kind": "video", "entities": ["The Kinks"],
+                "event_years": [1964], "phase": "The Kinks · 1964",
+                "url": "https://www.youtube.com/watch?v=YCXPydl1p6A",
+                "title": "You Really Got Me — Live at The Playhouse Theatre, 1964",
+                "source_page": "https://www.youtube.com/watch?v=YCXPydl1p6A",
+                "live_performance": True,
+            },
+            {
+                "status": "verified", "kind": "video", "entities": ["The Kinks"],
+                "event_years": [1979], "phase": "wrong phase",
+                "url": "https://www.youtube.com/watch?v=AAAAAAAAAAA",
+                "title": "wrong phase", "source_page": "https://example.invalid/",
+                "live_performance": True,
+            },
+        ]
+    }
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "verified.json"
+        path.write_text(json.dumps(payload), "utf-8")
+        media = mill.verified_documentary_media(
+            {"entities": ["The Kinks"], "event_years": [1964]}, path
+        )
+    if len(media["videos"]) != 1:
+        fail("verified phase media mismatch")
+    if media["videos"][0].get("phase") != "The Kinks · 1964":
+        fail("phase metadata lost")
+    if not media["videos"][0].get("live_performance"):
+        fail("live performance flag lost")
+    print("OK verified documentary media follows event phase")
+
+
 def main() -> None:
     test_pretty_artist()
     test_origin_not_numeric_artist()
@@ -198,6 +233,7 @@ def main() -> None:
     test_write_catalog_batch_not_quadratic()
     test_related_index_scale()
     test_cover_vitrine_does_not_dump_archive()
+    test_verified_documentary_media_is_phase_aware()
     print("OK whiplash materialize tests")
 
 

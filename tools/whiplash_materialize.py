@@ -30,6 +30,7 @@ import editorial_engine as base
 import editorial_engine_constitution as constitution
 import editorial_fact_pack as fact_pack
 import editorial_quality_gate as quality_gate
+import editorial_media_resolver as media_resolver
 
 ARCHIVE = ROOT / "data" / "blog-queue" / "whiplash.net.jsonl.gz"
 CONFIG_PATH = ROOT / "data" / "blog-tunnel-engine.json"
@@ -37,6 +38,7 @@ LEDGER_PATH = ROOT / "data" / "blog-published.json"
 REPORT_PATH = ROOT / "reports" / "whiplash-materialize-closure.json"
 PASSPORT_STAMP = "2026-09-18T12:00:00-03:00"
 PUBLIC_AUTHOR = "Passport Radio"
+VERIFIED_MEDIA_PATH = ROOT / "data" / "blog-verified-documentary-media.json"
 ORIGIN_RE = re.compile(r"/materias/([^/]+)/(\d+)(?:-([a-z0-9_-]+))?\.html", re.I)
 BANNED_PUBLIC = ("whiplash.net", "metal-hammer.de", "every song is a destination", "mr. nomad")
 
@@ -441,6 +443,55 @@ def build_pack(row: dict[str, Any], origin: dict[str, Any], config: dict[str, An
     return pack, candidate
 
 
+def verified_documentary_media(item: dict[str, Any], path: Path | None = None) -> dict[str, Any]:
+    """Return only human-verified media whose entity and historical phase fit this story.
+
+    The archive mill must never attach one generic artist photo to every era.
+    Research lands in a small registry with explicit event years/phases; the
+    materializer consumes it. Unknown or unverified media stays out.
+    """
+    payload = load_json(path or VERIFIED_MEDIA_PATH, {"items": []})
+    item_entities = {catalog.fold(x) for x in (item.get("entities") or []) if catalog.fold(x)}
+    item_years = {int(y) for y in (item.get("event_years") or []) if str(y).isdigit()}
+    photos: list[dict[str, Any]] = []
+    videos: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for rec in payload.get("items") or []:
+        if str(rec.get("status") or "") != "verified":
+            continue
+        rec_entities = {catalog.fold(x) for x in (rec.get("entities") or []) if catalog.fold(x)}
+        if item_entities and rec_entities and not (item_entities & rec_entities):
+            continue
+        rec_years = {int(y) for y in (rec.get("event_years") or []) if str(y).isdigit()}
+        if item_years and rec_years and not (item_years & rec_years):
+            continue
+        url = str(rec.get("url") or "")
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        row = dict(rec)
+        row.setdefault("phase", str(rec.get("phase") or ""))
+        if rec.get("kind") == "video":
+            built = media_resolver._video_record(url, str(rec.get("title") or ""), str(rec.get("source_page") or ""))
+            if not built:
+                continue
+            built.update({k: v for k, v in row.items() if v not in (None, "")})
+            built["live_performance"] = bool(rec.get("live_performance"))
+            videos.append(built)
+        elif rec.get("kind") == "photo":
+            photos.append(row)
+    photos.sort(key=lambda x: min(x.get("event_years") or [9999]))
+    videos.sort(key=lambda x: (not bool(x.get("live_performance")), min(x.get("event_years") or [9999])))
+    timeline = [x for x in photos if x.get("event_years") or x.get("phase")]
+    return {
+        "photos": photos[:8],
+        "videos": videos[:4],
+        "hero_photo": photos[0] if photos else None,
+        "hero_video": videos[0] if videos else None,
+        "timeline": timeline[:8],
+    }
+
+
 def public_ok(html_text: str, article: dict[str, Any]) -> str:
     low = html_text.lower()
     if "whiplash.net" in low or "metal-hammer.de" in low:
@@ -636,6 +687,12 @@ def materialize(limit: int = 0, apply: bool = True) -> dict[str, Any]:
             "_article": article,
             "_pack": pack,
         }
+        media = verified_documentary_media(item)
+        item["_media"] = media
+        item["image"] = (media.get("hero_photo") or {}).get("url") or ""
+        item["has_image"] = bool(item["image"])
+        item["has_video"] = bool(media.get("hero_video"))
+        item["has_mid_image"] = len(media.get("photos") or []) > 1
         prepared.append(item)
         seen_origin.add(origin_id)
         seen_clusters.add(cluster_id)
@@ -659,8 +716,9 @@ def materialize(limit: int = 0, apply: bool = True) -> dict[str, Any]:
         article = item["_article"]
         related = catalog.related_from_index(item, rel_index, limit=6)
         neighbors = catalog.neighbors_from_ordered(item, ordered)
+        media = item.get("_media") or {"photos": [], "videos": []}
         html_text = tunnel.render_blog_article(
-            article, item["url"], related, {"photos": [], "videos": []}, neighbors, item,
+            article, item["url"], related, media, neighbors, item,
         )
         leak = public_ok(html_text, article)
         if leak:
