@@ -45,7 +45,7 @@ def follow_html(compact: bool = False) -> str:
         f"<p>{lead}</p>"
         '<p class="blog-follow__row">'
         f'<a class="blog-follow__tg" href="{TELEGRAM_OFFICIAL}" target="_blank" rel="noopener">Telegram oficial</a>'
-        f'<a class="blog-follow__wa" href="{WHATSAPP_OFFICIAL}" target="_blank" rel="noopener">WhatsApp oficial</a>'
+        f'<a class="blog-follow__wa" href="{WHATSAPP_OFFICIAL}" target="_blank" rel="noopener">Passport Radio Channel</a>'
         '<a class="blog-follow__radio" href="/radio.html">Ouvir na Passport</a>'
         "</p>"
         "</aside>"
