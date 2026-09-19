@@ -132,6 +132,10 @@ jobs:
             --workers 2 \
             --output-dir build/blog-tunnel
 
+      - name: Snapshot Blog head before generation
+        if: github.event_name != 'pull_request'
+        run: echo "BLOG_BEFORE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
       - name: Generate capped Blog stories
         if: github.event_name != 'pull_request' && env.GEN != '0'
         run: |
@@ -180,7 +184,7 @@ jobs:
       - name: Publish new Blog stories to Telegram
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
-          BEFORE_SHA="$(git rev-parse HEAD)"
+          BEFORE_SHA="$BLOG_BEFORE_SHA"
           AFTER_SHA="$(git rev-parse HEAD)"
           python tools/telegram_publisher.py publish-new \
             --catalog data/blog-catalog.jsonl \
