@@ -1,0 +1,17 @@
+{
+  "snapshot": "before_stamp_live_import",
+  "passport_preexisting_total": 247,
+  "chunks": [
+    "store_inventory_01.json",
+    "store_inventory_02.json",
+    "store_inventory_03.json",
+    "store_inventory_04.json",
+    "store_inventory_05.json",
+    "store_inventory_06_tenis_p1.json",
+    "store_inventory_07_historic_tenis.json"
+  ],
+  "ten_p1": 48,
+  "historical_tennis_with_local_images": 43,
+  "stamp_cdn_in_preexisting_chunks": 156,
+  "note": "247 was the Passport catalog before this mission imported live Stamp SKUs. TEN-P1 and historic tennis are Passport genealogies, not Stamp pending coverage."
+}

@@ -9,26 +9,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
-<link rel="stylesheet" href="/css/passport-store-v6.css?v=20260908catalog">
+<link rel="stylesheet" href="/css/passport-store-v6.css?v=20260918s">
 <link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260908z">
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
 <link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
+<link rel="stylesheet" href="/css/passport-blog.css?v=20260918s">
 </head>
 <body class="pp-body fd-body pp-station">
 <header class="pp-topbar"><div class="pp-topbar-in">
-<a class="pp-brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="38" height="38"><span class="pp-brand-txt"><b>PASSPORT RADIO</b><small>Every Song Is A Destination</small></span></a>
-<nav class="pp-top-actions"><a href="radio.html">OUVIR</a></nav>
+<a class="pp-brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="38" height="38"><span class="pp-brand-txt"><b>PASSPORT RADIO</b></span></a>
+<form class="pp-store-search" role="search" method="get" action="/loja.html">
+<label class="blog-search__label" for="store-q">Buscar na Loja</label>
+<input id="store-q" name="q" type="search" placeholder="Buscar produto, banda, tipo, SKU…" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<nav class="pp-top-actions"><a href="blog.html">BLOG</a><a href="radio.html">OUVIR</a><a href="#pp-store-cart">Carrinho</a></nav>
 </div></header>
 <nav class="pp-nav" aria-label="Seções"><div class="pp-nav-in">
-<a href="index.html">HOME</a><a href="noticias.html">NOTÍCIAS</a><a href="editorial.html">ARQUIVO</a><a href="radio.html">OUVIR</a><a href="loja.html" aria-current="page">LOJA</a><a href="promocoes.html">PROMOÇÕES</a><a href="anuncie.html">ANUNCIE</a><a href="doe.html">DOE</a>
+<a href="index.html">HOME</a><a href="noticias.html">NOTÍCIAS</a><a href="editorial.html">ARQUIVO</a><a href="blog.html">BLOG</a><a href="radio.html">OUVIR</a><a href="loja.html" aria-current="page">LOJA</a><a href="promocoes.html">PROMOÇÕES</a><a href="anuncie.html">ANUNCIE</a><a href="doe.html">DOE</a>
 </div></nav>
 <main>
-  <section class="pp-store-hero"><div class="pp-store-hero__in"><span class="pp-env__kicker">PASSPORT STORE</span><h1>Loja</h1><p>Produto da casa. Mesmo catálogo. Mesmo pagamento Asaas.</p></div></section>
+  <section class="pp-store-hero"><div class="pp-store-hero__in"><span class="pp-env__kicker">PASSPORT STORE</span><h1>Loja</h1><p>Catálogo real da casa. Preço Passport 20% abaixo da referência pública observada. Pix com 5% off. Boleto à vista. Cartão em até 6x. Pagamento Asaas; WhatsApp leva o pedido com os itens.</p></div></section>
+  <div id="pp-store-doors"></div>
   <div id="pp-store-bar-slot"></div>
+  <div id="pp-store-search-results"></div>
   <section class="pp-store-main" aria-label="Catálogo da Passport Store"><div id="pp-store-grid" class="pp-store-grid"></div></section>
+  <section id="pp-store-cart" class="pp-store-cart" aria-label="Carrinho"></section>
+  <form id="pp-store-cep" class="pp-store-cep"><label for="cep">CEP<input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"></label><button type="submit">Calcular frete</button><p id="pp-store-cep-out"></p></form>
 </main>
-<footer class="pp-footer" id="ajude"><div class="pp-footer-in"><div class="pp-fcol"><p>Every Song Is A Destination</p></div><div class="pp-fcol"><a href="index.html">Home</a><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="loja.html">Loja</a><a href="promocoes.html">Promoções</a><a href="anuncie.html">Anuncie</a></div><div class="pp-fcol"><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div><div class="pp-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
-<script src="/js/passport-store-v6.js?v=20260908catalog" defer></script>
+<footer class="pp-footer" id="ajude"><div class="pp-footer-in"><div class="pp-fcol"><p>Passport Radio</p></div><div class="pp-fcol"><a href="index.html">Home</a><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="blog.html">Blog</a><a href="loja.html">Loja</a><a href="promocoes.html">Promoções</a><a href="anuncie.html">Anuncie</a></div><div class="pp-fcol"><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div><div class="pp-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
+<script src="/js/passport-store-v6.js?v=20260918s" defer></script>
+<script src="/js/passport-store-search.js?v=20260918s" defer></script>
 <script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
 </body>
 </html>

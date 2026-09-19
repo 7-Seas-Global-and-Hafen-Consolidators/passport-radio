@@ -1,0 +1,31 @@
+{
+  "frontend_implemented": true,
+  "files": [
+    "js/passport-blog-discussion.js",
+    "js/passport-blog-submit.js",
+    "js/passport-auth.js"
+  ],
+  "sql_versioned": [
+    "supabase/blog_discussion.sql",
+    "supabase/blog_submissions.sql"
+  ],
+  "supabase_url": "https://kmrnnudmujezriomimwn.supabase.co",
+  "remote_probe": {
+    "dns_from_sandbox": "failed (could not resolve host)",
+    "browse_page": "HTTP 503",
+    "tables_confirmed_live": false,
+    "block": "network from this environment cannot reach the Supabase REST endpoint"
+  },
+  "migration_applied": false,
+  "flow_really_operational": false,
+  "needed_to_apply": "Run supabase/blog_discussion.sql and supabase/blog_submissions.sql on the Conta Passport project with service role / SQL editor.",
+  "client_ready": true,
+  "states_collaboration": [
+    "recebida",
+    "em análise",
+    "ajustes solicitados",
+    "aprovada",
+    "publicada",
+    "não publicada"
+  ]
+}

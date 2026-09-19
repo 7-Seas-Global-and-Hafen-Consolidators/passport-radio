@@ -1,520 +1,1197 @@
 {
   "version": 1,
   "channel": "blog",
-  "updated_at": "2026-09-18T06:25:08.666026+00:00",
+  "updated_at": "2026-09-18T14:07:11.333927-03:00",
   "items": [
     {
-      "cluster_id": "CLU_7D025ADEA5C0AAAC31AA",
-      "status": "published",
-      "title": "O clássico do Oasis que Noel Gallagher escreveu após sair de boate de strip-tease",
+      "cluster_id": "CLU_0EBFC54E1C48B6794D86",
+      "status": "queued",
+      "title": "Wesley the boys live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383025-oasis.html"
+        "https://www.metal-hammer.de/tour/wesley-the-boys-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383025-oasis.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 22:57:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/wesley-the-boys-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "O clássico do Oasis que Noel Gallagher escreveu após sair de boate de strip-tease",
-        "description": "\"Começou como uma canção de desafio [...]. Depois, se tornou uma canção de celebração. E agora, é como um hino.\"",
-        "url": "https://whiplash.net/materias/news_667/383025-oasis.html",
-        "published": "Thu, 17 Sep 2026 22:57:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Oasis",
-          "Noel Gallagher"
-        ],
+        "url": "https://www.metal-hammer.de/tour/wesley-the-boys-live-on-tour",
+        "title": "Wesley the boys live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:07+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383025-oasis.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 22:57:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/wesley-the-boys-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
-      "published_url": "/blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html",
-      "format_hint": "news",
-      "entities_hint": [
-        "Oasis",
-        "Noel Gallagher"
-      ],
-      "story_angle_id": "ANG_1eba1aa00b24a5ea5949"
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95779
     },
     {
-      "cluster_id": "CLU_95F4D3D05817118E23F9",
+      "cluster_id": "CLU_8DEB248CC0FE4E052604",
       "status": "queued",
-      "title": "A música do Yes que serviu de inspiração para Dream Theater e Sepultura",
+      "title": "Wednesday 13 live on tour 2",
       "urls": [
-        "https://whiplash.net/materias/news_667/383024-yes.html"
+        "https://www.metal-hammer.de/tour/wednesday-13-live-on-tour-2"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383024-yes.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:51:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/wednesday-13-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "A música do Yes que serviu de inspiração para Dream Theater e Sepultura",
-        "description": "\"É engraçado, quando começamos não existia uma cena de prog metal, então nós meio que combinamos metal e prog\", comentou John Petrucci.",
-        "url": "https://whiplash.net/materias/news_667/383024-yes.html",
-        "published": "Thu, 17 Sep 2026 18:51:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Yes",
-          "Dream Theater",
-          "Sepultura"
-        ],
+        "url": "https://www.metal-hammer.de/tour/wednesday-13-live-on-tour-2",
+        "title": "Wednesday 13 live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:05+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383024-yes.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:51:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/wednesday-13-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Yes",
-        "Dream Theater",
-        "Sepultura"
-      ],
-      "story_angle_id": "ANG_760f79c74745c39bf2d9"
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95778
     },
     {
-      "cluster_id": "CLU_8B55C616AEE5F3293D48",
+      "cluster_id": "CLU_490DD9EB4CB2855C7422",
       "status": "queued",
-      "title": "\"Nunca compusemos juntos\" - Roger Waters explica sua parceria com David Gilmour no Pink Floyd",
+      "title": "Waves like walls live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383023-pinkfloyd.html"
+        "https://www.metal-hammer.de/tour/waves-like-walls-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383023-pinkfloyd.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:49:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/waves-like-walls-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap.xml"
         }
       ],
       "candidate": {
-        "title": "\"Nunca compusemos juntos\" - Roger Waters explica sua parceria com David Gilmour no Pink Floyd",
-        "description": "\"Às vezes, ele trazia uma sequência de acordes e eu transformava aquilo em uma música. Ou trazia um riff de guitarra e eu fazia uma música a partir dele...\"",
-        "url": "https://whiplash.net/materias/news_667/383023-pinkfloyd.html",
-        "published": "Thu, 17 Sep 2026 18:49:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Pink Floyd",
-          "Roger Waters",
-          "David Gilmour"
-        ],
+        "url": "https://www.metal-hammer.de/tour/waves-like-walls-live-on-tour",
+        "title": "Waves like walls live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:04+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383023-pinkfloyd.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:49:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/waves-like-walls-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:26Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Pink Floyd",
-        "Roger Waters",
-        "David Gilmour"
-      ],
-      "story_angle_id": "ANG_08de12b9a241a9063637"
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95777
     },
     {
-      "cluster_id": "CLU_0844EE70738EE7600680",
+      "cluster_id": "CLU_B16C9D957900E9223616",
       "status": "queued",
-      "title": "Regis Tadeu finalmente explica detalhe do Iron Maiden que fãs discutem há 20 anos",
+      "title": "Water damage live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383022-ironmaiden.html"
+        "https://www.metal-hammer.de/tour/water-damage-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383022-ironmaiden.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:43:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/water-damage-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap.xml"
         }
       ],
       "candidate": {
-        "title": "Regis Tadeu finalmente explica detalhe do Iron Maiden que fãs discutem há 20 anos",
-        "description": "Álbum saiu sem masterização por causa de uma sacanagem do produtor com Steve Harris. Clique e entenda.",
-        "url": "https://whiplash.net/materias/news_667/383022-ironmaiden.html",
-        "published": "Thu, 17 Sep 2026 18:43:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Iron Maiden",
-          "Regis Tadeu"
-        ],
+        "url": "https://www.metal-hammer.de/tour/water-damage-live-on-tour",
+        "title": "Water damage live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:02+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383022-ironmaiden.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:43:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/water-damage-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:26Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Iron Maiden",
-        "Regis Tadeu"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95776
     },
     {
-      "cluster_id": "CLU_9AC3263B1E5C5EB25738",
+      "cluster_id": "CLU_1168FC7501762292D111",
       "status": "queued",
-      "title": "A canção do Metallica que ainda emociona James Hetfield toda vez que ele a escuta",
+      "title": "Wilt live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383021-metallica.html"
+        "https://www.metal-hammer.de/tour/wilt-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383021-metallica.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:40:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/wilt-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "A canção do Metallica que ainda emociona James Hetfield toda vez que ele a escuta",
-        "description": "Houve quem classificasse a música como \"brega\" ou \"fofa\", enquanto outros discutiam o arranjo e a proposta.",
-        "url": "https://whiplash.net/materias/news_667/383021-metallica.html",
-        "published": "Thu, 17 Sep 2026 18:40:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Metallica",
-          "James Hetfield"
-        ],
+        "url": "https://www.metal-hammer.de/tour/wilt-live-on-tour",
+        "title": "Wilt live on tour",
+        "description": "",
+        "published": "2026-09-18T05:55:03+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383021-metallica.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:40:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/wilt-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Metallica",
-        "James Hetfield"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95810
     },
     {
-      "cluster_id": "CLU_9C6F076EEFCCC70EED74",
+      "cluster_id": "CLU_2D0FBD2BD7BF3551983F",
       "status": "queued",
-      "title": "As 10 músicas de Elton John que são as preferidas de Zakk Wylde",
+      "title": "Sace6 live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383020-eltonjohn.html"
+        "https://www.metal-hammer.de/tour/sace6-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383020-eltonjohn.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:31:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/sace6-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "As 10 músicas de Elton John que são as preferidas de Zakk Wylde",
-        "description": "Na ativa desde o fim dos anos 1960, o cantor e pianista britânico construiu uma trajetória repleta de sucessos.",
-        "url": "https://whiplash.net/materias/news_667/383020-eltonjohn.html",
-        "published": "Thu, 17 Sep 2026 18:31:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Elton John",
-          "Zakk Wylde",
-          "Black Label Society",
-          "Ozzy Osbourne"
-        ],
+        "url": "https://www.metal-hammer.de/tour/sace6-live-on-tour",
+        "title": "Sace6 live on tour",
+        "description": "",
+        "published": "2026-09-18T05:55:01+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383020-eltonjohn.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:31:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/sace6-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Elton John",
-        "Zakk Wylde",
-        "Black Label Society",
-        "Ozzy Osbourne"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95809
     },
     {
-      "cluster_id": "CLU_313F87EB0369B1AF3F37",
+      "cluster_id": "CLU_F247745453FE7CFCA91E",
       "status": "queued",
-      "title": "A canção dos anos 60 que John Bonham via como uma espécie de modelo para o Led Zeppelin",
+      "title": "Lots of hands live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383019-ledzeppelin.html"
+        "https://www.metal-hammer.de/tour/lots-of-hands-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383019-ledzeppelin.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:28:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/lots-of-hands-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "A canção dos anos 60 que John Bonham via como uma espécie de modelo para o Led Zeppelin",
-        "description": "Ela impressionou Jimmy Page ainda antes do Zeppelin e, anos depois, John Bonham resumiu de forma curiosa a influência da faixa.",
-        "url": "https://whiplash.net/materias/news_667/383019-ledzeppelin.html",
-        "published": "Thu, 17 Sep 2026 18:28:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Led Zeppelin",
-          "Kinks"
-        ],
+        "url": "https://www.metal-hammer.de/tour/lots-of-hands-live-on-tour",
+        "title": "Lots of hands live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:59+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383019-ledzeppelin.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:28:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/lots-of-hands-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Led Zeppelin",
-        "Kinks"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95808
     },
     {
-      "cluster_id": "CLU_42D6B150FF4B99478200",
+      "cluster_id": "CLU_28668AE3FDF03717AD0F",
       "status": "queued",
-      "title": "O show que mudou para sempre a vida de Robb Flynn, vocalista do Machine Head",
+      "title": "Aurorawave live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383018-machinehead.html"
+        "https://www.metal-hammer.de/tour/aurorawave-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383018-machinehead.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:26:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/aurorawave-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "O show que mudou para sempre a vida de Robb Flynn, vocalista do Machine Head",
-        "description": "\"Eu e meu amigo Jim fomos direto para a frente do palco e ficamos batendo cabeça o show inteiro.\"",
-        "url": "https://whiplash.net/materias/news_667/383018-machinehead.html",
-        "published": "Thu, 17 Sep 2026 18:26:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Machine Head",
-          "Exciter"
-        ],
+        "url": "https://www.metal-hammer.de/tour/aurorawave-live-on-tour",
+        "title": "Aurorawave live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:57+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383018-machinehead.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:26:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/aurorawave-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Machine Head",
-        "Exciter"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95807
     },
     {
-      "cluster_id": "CLU_F7735ACBFFCF879ABCCC",
+      "cluster_id": "CLU_5101FC0269F10061CFA8",
       "status": "queued",
-      "title": "A mensagem escondida na intro de \"Hell Awaits\", clássico do Slayer",
+      "title": "Zoon phonanta live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383017-slayer.html"
+        "https://www.metal-hammer.de/tour/zoon-phonanta-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383017-slayer.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 18:20:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/zoon-phonanta-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "A mensagem escondida na intro de \"Hell Awaits\", clássico do Slayer",
-        "description": "Mais sombrio e agressivo que o antecessor \"Show No Mercy\" (1983), \"Hell Awaits\" flerta com o death metal, estilo que ainda dava seus primeiros passos.",
-        "url": "https://whiplash.net/materias/news_667/383017-slayer.html",
-        "published": "Thu, 17 Sep 2026 18:20:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Slayer"
-        ],
+        "url": "https://www.metal-hammer.de/tour/zoon-phonanta-live-on-tour",
+        "title": "Zoon phonanta live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:56+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383017-slayer.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 18:20:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/zoon-phonanta-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Slayer"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95806
     },
     {
-      "cluster_id": "CLU_6F7333E28396CCDA809F",
+      "cluster_id": "CLU_9193BDD7211461ED2330",
       "status": "queued",
-      "title": "Bill Kelliher e Brann Dailor relembram Brent Hinds; \"Ele era onipresente na minha vida\"",
+      "title": "The zipheads live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383016-mastodon.html"
+        "https://www.metal-hammer.de/tour/the-zipheads-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383016-mastodon.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 16:46:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/the-zipheads-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "Bill Kelliher e Brann Dailor relembram Brent Hinds; \"Ele era onipresente na minha vida\"",
-        "description": "\"Sempre achei que ele viveria mais do que todos nós, porque tinha nove vidas e sempre se safava de tudo.\"",
-        "url": "https://whiplash.net/materias/news_667/383016-mastodon.html",
-        "published": "Thu, 17 Sep 2026 16:46:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Mastodon"
-        ],
+        "url": "https://www.metal-hammer.de/tour/the-zipheads-live-on-tour",
+        "title": "The zipheads live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:54+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383016-mastodon.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 16:46:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/the-zipheads-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Mastodon"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95805
     },
     {
-      "cluster_id": "CLU_4DAF3BEC056AB4082842",
+      "cluster_id": "CLU_79C1C0DD4A93A392A41B",
       "status": "queued",
-      "title": "Ouça música que Keith Richards gravou para trilha de \"Grand Theft Auto VI\"",
+      "title": "Zerre live on tour",
       "urls": [
-        "https://whiplash.net/materias/news_667/383015-keithrichards.html"
+        "https://www.metal-hammer.de/tour/zerre-live-on-tour"
       ],
       "origins": [
         {
-          "url": "https://whiplash.net/materias/news_667/383015-keithrichards.html",
-          "source": "Whiplash.Net",
-          "method": "rss",
-          "format": "news",
-          "published": "Thu, 17 Sep 2026 16:45:00 -0300"
+          "url": "https://www.metal-hammer.de/tour/zerre-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
         }
       ],
       "candidate": {
-        "title": "Ouça música que Keith Richards gravou para trilha de \"Grand Theft Auto VI\"",
-        "description": "Guitarrista dos Rolling Stones registrou versão para \"Bright Lights, Big City\", de Jimmy Reed.",
-        "url": "https://whiplash.net/materias/news_667/383015-keithrichards.html",
-        "published": "Thu, 17 Sep 2026 16:45:00 -0300",
-        "primary_category": "music",
-        "format_hint": "news",
-        "entities": [
-          "Keith Richards",
-          "Rolling Stones"
-        ],
+        "url": "https://www.metal-hammer.de/tour/zerre-live-on-tour",
+        "title": "Zerre live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:52+02:00",
+        "format_hint": "show",
+        "entities": [],
         "origins": [
           {
-            "url": "https://whiplash.net/materias/news_667/383015-keithrichards.html",
-            "source": "Whiplash.Net",
-            "method": "rss",
-            "format": "news",
-            "published": "Thu, 17 Sep 2026 16:45:00 -0300"
+            "url": "https://www.metal-hammer.de/tour/zerre-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
           }
-        ],
-        "total_score": 10
+        ]
       },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "discovered_at": "2026-09-18T05:29:28Z",
       "published_url": null,
-      "format_hint": "news",
-      "entities_hint": [
-        "Keith Richards",
-        "Rolling Stones"
-      ]
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95804
+    },
+    {
+      "cluster_id": "CLU_2175C2F15C8236CC6136",
+      "status": "queued",
+      "title": "Zeke deux live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/zeke-deux-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/zeke-deux-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/zeke-deux-live-on-tour",
+        "title": "Zeke deux live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:50+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/zeke-deux-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95803
+    },
+    {
+      "cluster_id": "CLU_B929B55A0748B80BD53B",
+      "status": "queued",
+      "title": "Zebrahead live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/zebrahead-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/zebrahead-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/zebrahead-live-on-tour-2",
+        "title": "Zebrahead live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:48+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/zebrahead-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95802
+    },
+    {
+      "cluster_id": "CLU_C0DC4FF99B480D09D65A",
+      "status": "queued",
+      "title": "Zeal ardor live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/zeal-ardor-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/zeal-ardor-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/zeal-ardor-live-on-tour-2",
+        "title": "Zeal ardor live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:46+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/zeal-ardor-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95801
+    },
+    {
+      "cluster_id": "CLU_AD35D90083AD07998FC7",
+      "status": "queued",
+      "title": "Youth of today live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/youth-of-today-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/youth-of-today-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/youth-of-today-live-on-tour",
+        "title": "Youth of today live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:44+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/youth-of-today-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95800
+    },
+    {
+      "cluster_id": "CLU_41FAC73D7BDB2A538AE7",
+      "status": "queued",
+      "title": "Young widows live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/young-widows-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/young-widows-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/young-widows-live-on-tour",
+        "title": "Young widows live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:43+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/young-widows-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95799
+    },
+    {
+      "cluster_id": "CLU_BB91334D4DDDE58F644F",
+      "status": "queued",
+      "title": "Young gun silver fox live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/young-gun-silver-fox-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/young-gun-silver-fox-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/young-gun-silver-fox-live-on-tour",
+        "title": "Young gun silver fox live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:41+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/young-gun-silver-fox-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95798
+    },
+    {
+      "cluster_id": "CLU_ABAA6C5A06A298EA07ED",
+      "status": "queued",
+      "title": "Cem yildiz live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/cem-yildiz-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/cem-yildiz-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/cem-yildiz-live-on-tour",
+        "title": "Cem yildiz live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:39+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/cem-yildiz-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95797
+    },
+    {
+      "cluster_id": "CLU_CBA7BA08318029CAB8C5",
+      "status": "queued",
+      "title": "Les yeux dla tete live on tour 4",
+      "urls": [
+        "https://www.metal-hammer.de/tour/les-yeux-dla-tete-live-on-tour-4"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/les-yeux-dla-tete-live-on-tour-4",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/les-yeux-dla-tete-live-on-tour-4",
+        "title": "Les yeux dla tete live on tour 4",
+        "description": "",
+        "published": "2026-09-18T05:54:37+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/les-yeux-dla-tete-live-on-tour-4",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95796
+    },
+    {
+      "cluster_id": "CLU_05CE3FEFDEC7FE38C265",
+      "status": "queued",
+      "title": "Yeast machine live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/yeast-machine-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/yeast-machine-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/yeast-machine-live-on-tour",
+        "title": "Yeast machine live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:35+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/yeast-machine-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95795
+    },
+    {
+      "cluster_id": "CLU_EEBA74FF3FA5D12CDCD1",
+      "status": "queued",
+      "title": "Yaris live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/yaris-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/yaris-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/yaris-live-on-tour-2",
+        "title": "Yaris live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:33+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/yaris-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95794
+    },
+    {
+      "cluster_id": "CLU_23EE6C213E2C236250D6",
+      "status": "queued",
+      "title": "Xaon live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/xaon-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/xaon-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/xaon-live-on-tour",
+        "title": "Xaon live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:32+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/xaon-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95793
+    },
+    {
+      "cluster_id": "CLU_772E5A3B4BAC6993AA33",
+      "status": "queued",
+      "title": "Wyatt e live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wyatt-e-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wyatt-e-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wyatt-e-live-on-tour",
+        "title": "Wyatt e live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:30+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wyatt-e-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95792
+    },
+    {
+      "cluster_id": "CLU_8DFACC51AB46562B6ABF",
+      "status": "queued",
+      "title": "Wucan live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wucan-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wucan-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wucan-live-on-tour-2",
+        "title": "Wucan live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:29+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wucan-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95791
+    },
+    {
+      "cluster_id": "CLU_4AC4A1C0B82E2F0D46AF",
+      "status": "queued",
+      "title": "The world is a beautiful place and i am no longer afraid to die live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/the-world-is-a-beautiful-place-and-i-am-no-longer-afraid-to-die-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/the-world-is-a-beautiful-place-and-i-am-no-longer-afraid-to-die-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/the-world-is-a-beautiful-place-and-i-am-no-longer-afraid-to-die-live-on-tour",
+        "title": "The world is a beautiful place and i am no longer afraid to die live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:27+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/the-world-is-a-beautiful-place-and-i-am-no-longer-afraid-to-die-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95790
+    },
+    {
+      "cluster_id": "CLU_90BE2D0F28B54E667781",
+      "status": "queued",
+      "title": "Wonk unit live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wonk-unit-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wonk-unit-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wonk-unit-live-on-tour-2",
+        "title": "Wonk unit live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:25+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wonk-unit-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95789
+    },
+    {
+      "cluster_id": "CLU_FC9BB594A2188AE2C276",
+      "status": "queued",
+      "title": "Wolvennest live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wolvennest-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wolvennest-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wolvennest-live-on-tour",
+        "title": "Wolvennest live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:23+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wolvennest-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95788
+    },
+    {
+      "cluster_id": "CLU_C88E9C70535E0D6CE059",
+      "status": "queued",
+      "title": "Chelsea wolfe live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/chelsea-wolfe-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/chelsea-wolfe-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/chelsea-wolfe-live-on-tour",
+        "title": "Chelsea wolfe live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:21+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/chelsea-wolfe-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95787
+    },
+    {
+      "cluster_id": "CLU_2844DF917DA9F7F598DD",
+      "status": "queued",
+      "title": "Wolf eyes live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wolf-eyes-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wolf-eyes-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wolf-eyes-live-on-tour",
+        "title": "Wolf eyes live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:20+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wolf-eyes-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95786
+    },
+    {
+      "cluster_id": "CLU_E915E3C9A64C2882BBB1",
+      "status": "queued",
+      "title": "Wishbone ash live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wishbone-ash-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wishbone-ash-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wishbone-ash-live-on-tour-2",
+        "title": "Wishbone ash live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:18+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wishbone-ash-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95785
+    },
+    {
+      "cluster_id": "CLU_6E416EF3B5A93FCE538A",
+      "status": "queued",
+      "title": "William the conqueror live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/william-the-conqueror-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/william-the-conqueror-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/william-the-conqueror-live-on-tour-2",
+        "title": "William the conqueror live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:16+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/william-the-conqueror-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95784
+    },
+    {
+      "cluster_id": "CLU_D262DE9739B365A88C49",
+      "status": "queued",
+      "title": "Kim wilde live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/kim-wilde-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/kim-wilde-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/kim-wilde-live-on-tour-2",
+        "title": "Kim wilde live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:14+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/kim-wilde-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95783
+    },
+    {
+      "cluster_id": "CLU_576B184CCF79BA5CE185",
+      "status": "queued",
+      "title": "Wick bambix live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/wick-bambix-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/wick-bambix-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/wick-bambix-live-on-tour",
+        "title": "Wick bambix live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:12+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/wick-bambix-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95782
+    },
+    {
+      "cluster_id": "CLU_9B615711E005079922D8",
+      "status": "queued",
+      "title": "Whitechapel live on tour 2",
+      "urls": [
+        "https://www.metal-hammer.de/tour/whitechapel-live-on-tour-2"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/whitechapel-live-on-tour-2",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/whitechapel-live-on-tour-2",
+        "title": "Whitechapel live on tour 2",
+        "description": "",
+        "published": "2026-09-18T05:54:11+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/whitechapel-live-on-tour-2",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95781
+    },
+    {
+      "cluster_id": "CLU_003091DCBAD7B734F475",
+      "status": "queued",
+      "title": "Whippets live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/whippets-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/whippets-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/whippets-live-on-tour",
+        "title": "Whippets live on tour",
+        "description": "",
+        "published": "2026-09-18T05:54:09+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/whippets-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95780
     },
     {
       "cluster_id": "CLU_87B95B5205CA92BE3C7A",
@@ -4603,94 +5280,6 @@
       ]
     },
     {
-      "cluster_id": "CLU_7DFC8C9C2C9A4195D976",
-      "status": "published",
-      "title": "METAL HAMMER Podcast Folge 151 mit Kai Hansen",
-      "urls": [
-        "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603"
-      ],
-      "origins": [
-        {
-          "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
-          "source": "Metal Hammer Germany",
-          "method": "rss",
-          "format": "story",
-          "published": "Fri, 18 Sep 2026 04:00:57 +0000"
-        }
-      ],
-      "candidate": {
-        "title": "METAL HAMMER Podcast Folge 151 mit Kai Hansen",
-        "description": "Linkin Park-Verlosung zum Filmstart! Neues von Slipknot, Mastodon und Sepultura. Kai Hansen im Interview! Im Pit bei Moonspell. Album der Woche von Anthrax u.a. Live To Win – die Verlosung Gewinnt 2x Linkin Park-Vinyl zum Start des Kinofilms ‘Linkin Park: Unshatter’, bereitgestellt von Black Rabbit PR! Back In Black – das Metal-Update Slipknot-Fans hassen den neuen Song ‘Arsenal’ Mastodon haben eine Klage von Brent Hinds’ Erben am Hals Sepultura müssen zum Abschied kleinere Brötchen backen Caught In A Mosh...",
-        "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
-        "published": "Fri, 18 Sep 2026 04:00:57 +0000",
-        "primary_category": "music",
-        "format_hint": "story",
-        "entities": [
-          "Audio",
-          "Meldungen",
-          "News",
-          "Podcast",
-          "Video & Audio",
-          "anthrax",
-          "Kai Hansen",
-          "Katrin Riedl",
-          "Linkin Park",
-          "Mastodon",
-          "Metal Hammer",
-          "METAL HAMMER Podcast"
-        ],
-        "origins": [
-          {
-            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
-            "source": "Metal Hammer Germany",
-            "method": "rss",
-            "format": "story",
-            "published": "Fri, 18 Sep 2026 04:00:57 +0000"
-          },
-          {
-            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
-            "source": "Metal Hammer Germany",
-            "method": "rest",
-            "format": "story",
-            "published": "2026-09-18T04:00:57"
-          },
-          {
-            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
-            "source": "Metal Hammer Germany",
-            "method": "sitemap",
-            "format": "story",
-            "published": "2026-09-18T06:00:57+02:00"
-          },
-          {
-            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
-            "source": "Metal Hammer Germany",
-            "method": "html_index",
-            "format": "interview",
-            "published": ""
-          }
-        ],
-        "total_score": 10
-      },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
-      "published_url": "/blog/2026/09/18/kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro.html",
-      "format_hint": "story",
-      "entities_hint": [
-        "Audio",
-        "Meldungen",
-        "News",
-        "Podcast",
-        "Video & Audio",
-        "anthrax",
-        "Kai Hansen",
-        "Katrin Riedl",
-        "Linkin Park",
-        "Mastodon",
-        "Metal Hammer",
-        "METAL HAMMER Podcast"
-      ],
-      "story_angle_id": "ANG_297d37e3d438f1848e33"
-    },
-    {
       "cluster_id": "CLU_BC3AF14227C719AD9478",
       "status": "queued",
       "title": "Steve Harris vermisst mit Iron Maiden die kleinen Clubs",
@@ -5104,85 +5693,6 @@
         "Ozzy Osbourne",
         "Premiere"
       ]
-    },
-    {
-      "cluster_id": "CLU_5E13FB1D4D06770BDA3E",
-      "status": "queued",
-      "title": "Review: RESIDENT EVIL (2026)",
-      "urls": [
-        "https://www.metal-hammer.de/reviews/resident-evil-2026"
-      ],
-      "origins": [
-        {
-          "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
-          "source": "Metal Hammer Germany",
-          "method": "rss",
-          "format": "review",
-          "published": "Thu, 17 Sep 2026 11:01:44 +0000"
-        }
-      ],
-      "candidate": {
-        "title": "Review: RESIDENT EVIL (2026)",
-        "description": "Der Horror aus Raccoon City kriecht erneut aus der Dunkelheit und auf die große Leinwand. Nach sieben mehr oder weniger gelungenen Versuchen wagt sich nun ‘Weapons’-Regisseur Zach Cregger an eine neue Live-Action-Adaption von Resident Evil. Das Ergebnis ist überraschend: Statt sich ausschließlich auf Schockmomente und Gore zu verlassen – von beidem gibt es reichlich –, […] Der Horror aus Raccoon City kriecht erneut aus der Dunkelheit und auf die große Leinwand. Nach sieben mehr oder weniger gelungenen Versuchen wagt sich nun ‘Weapons’-Regisseur Zach Cregger an eine neue Live-Action-Adaption von Resident Evil. Das Ergebnis ist überraschend: Statt sich ausschließlich auf Schockmomente und Gore",
-        "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
-        "published": "Thu, 17 Sep 2026 11:01:44 +0000",
-        "primary_category": "music",
-        "format_hint": "review",
-        "entities": [
-          "Filme",
-          "Ada Wong",
-          "Horror",
-          "Leon Kennedy",
-          "PlayStation",
-          "Raccoon City",
-          "Resident Evil",
-          "Resident Evil 4",
-          "Videospielverfilmung",
-          "Weapons",
-          "Zach Cregger"
-        ],
-        "origins": [
-          {
-            "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
-            "source": "Metal Hammer Germany",
-            "method": "rss",
-            "format": "review",
-            "published": "Thu, 17 Sep 2026 11:01:44 +0000"
-          },
-          {
-            "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
-            "source": "Metal Hammer Germany",
-            "method": "rest",
-            "format": "review",
-            "published": "2026-09-17T11:01:44"
-          },
-          {
-            "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
-            "source": "Metal Hammer Germany",
-            "method": "html_index",
-            "format": "review",
-            "published": ""
-          }
-        ],
-        "total_score": 10
-      },
-      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
-      "published_url": null,
-      "format_hint": "review",
-      "entities_hint": [
-        "Filme",
-        "Ada Wong",
-        "Horror",
-        "Leon Kennedy",
-        "PlayStation",
-        "Raccoon City",
-        "Resident Evil",
-        "Resident Evil 4",
-        "Videospielverfilmung",
-        "Weapons",
-        "Zach Cregger"
-      ],
-      "story_angle_id": "ANG_d0fdf0b5ce997bb4c23f"
     },
     {
       "cluster_id": "CLU_86A8B62AB7723413DCF3",
@@ -16777,6 +17287,1915 @@
       "published_url": null,
       "format_hint": "review",
       "entities_hint": []
+    },
+    {
+      "cluster_id": "CLU_6DB16610AE90628A0BF4",
+      "status": "queued",
+      "title": "METAL HAMMER PARADISE 2026: Alle Infos zum Festival",
+      "urls": [
+        "https://www.metal-hammer.de/metal-hammer-paradise-2026-alle-informationen-headliner-tickets-preise-lineup-bands-wettervorhersage-livestream-internet-tv-spielplan-timetable-anreise-766553"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/metal-hammer-paradise-2026-alle-informationen-headliner-tickets-preise-lineup-bands-wettervorhersage-livestream-internet-tv-spielplan-timetable-anreise-766553",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/metal-hammer-paradise-2026-alle-informationen-headliner-tickets-preise-lineup-bands-wettervorhersage-livestream-internet-tv-spielplan-timetable-anreise-766553",
+        "title": "METAL HAMMER PARADISE 2026: Alle Infos zum Festival",
+        "description": "Das METAL HAMMER Paradise findet auch 2026 wieder am Weissenhäuser Strand statt. Alle Infos zum Indoor-Festival hier.",
+        "published": "2026-08-27T13:00:44",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/metal-hammer-paradise-2026-alle-informationen-headliner-tickets-preise-lineup-bands-wettervorhersage-livestream-internet-tv-spielplan-timetable-anreise-766553",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 180
+    },
+    {
+      "cluster_id": "CLU_8C4EB577974EFEA66C80",
+      "status": "queued",
+      "title": "Accept: Eiserne Ehrerbietung",
+      "urls": [
+        "https://www.metal-hammer.de/accept-eiserne-ehrerbietung-2541457"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/accept-eiserne-ehrerbietung-2541457",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/accept-eiserne-ehrerbietung-2541457",
+        "title": "Accept: Eiserne Ehrerbietung",
+        "description": "Auf TEUTONIC TITANS 1976-2026 interpretieren die Solinger Metal-Urgesteine Accept ganze 19 Songs aus ihrer langen Historie neu.",
+        "published": "2026-08-27T13:00:34",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/accept-eiserne-ehrerbietung-2541457",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 181
+    },
+    {
+      "cluster_id": "CLU_4F03A163BEDF381AD977",
+      "status": "queued",
+      "title": "Hatebreed veröffentlichen neuen Song ‘Fatal Paradox’",
+      "urls": [
+        "https://www.metal-hammer.de/hatebreed-veroeffentlichen-neuen-song-fatal-paradox-2541527"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/hatebreed-veroeffentlichen-neuen-song-fatal-paradox-2541527",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/hatebreed-veroeffentlichen-neuen-song-fatal-paradox-2541527",
+        "title": "Hatebreed veröffentlichen neuen Song ‘Fatal Paradox’",
+        "description": "Hatebreed veröffentlichen neuen Song ‘Fatal Paradox’ aus ihrem kommenden Album und gibt die Tracklist bekannt.",
+        "published": "2026-08-27T11:50:30",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/hatebreed-veroeffentlichen-neuen-song-fatal-paradox-2541527",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 182
+    },
+    {
+      "cluster_id": "CLU_773F4B65EC7F1BB10682",
+      "status": "queued",
+      "title": "Destruction: 25 Jahre THE ANTICHRIST",
+      "urls": [
+        "https://www.metal-hammer.de/destruction-25-jahre-the-antichrist-2541485"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/destruction-25-jahre-the-antichrist-2541485",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/destruction-25-jahre-the-antichrist-2541485",
+        "title": "Destruction: 25 Jahre THE ANTICHRIST",
+        "description": "Vor 25 Jahren erschien THE ANTICHRIST von Destruction, wieder mit Schmier am Mikrofon. Wir blicken zurück.",
+        "published": "2026-08-27T11:29:00",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/destruction-25-jahre-the-antichrist-2541485",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 183
+    },
+    {
+      "cluster_id": "CLU_E899E47D3B9829690BBB",
+      "status": "queued",
+      "title": "Wikinger im Wilden Westen: Amon Amarth zeigen neues Musikvideo",
+      "urls": [
+        "https://www.metal-hammer.de/wikinger-im-wilden-westen-amon-amarth-zeigen-neues-musikvideo-2541491"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/wikinger-im-wilden-westen-amon-amarth-zeigen-neues-musikvideo-2541491",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/wikinger-im-wilden-westen-amon-amarth-zeigen-neues-musikvideo-2541491",
+        "title": "Wikinger im Wilden Westen: Amon Amarth zeigen neues Musikvideo",
+        "description": "Im Musikvideo zu ‘Eight Legs Of Thunder’ verschlägt es die Viking Metaller Amon Amarth in den Wilden Westen.",
+        "published": "2026-08-27T10:52:42",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/wikinger-im-wilden-westen-amon-amarth-zeigen-neues-musikvideo-2541491",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 184
+    },
+    {
+      "cluster_id": "CLU_7B370BAC05A81C06162E",
+      "status": "queued",
+      "title": "Five Finger Death Punch kündigen kostenlosen Livestream an",
+      "urls": [
+        "https://www.metal-hammer.de/five-finger-death-punch-kuendigen-kostenlosen-livestream-an-2541455"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/five-finger-death-punch-kuendigen-kostenlosen-livestream-an-2541455",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/five-finger-death-punch-kuendigen-kostenlosen-livestream-an-2541455",
+        "title": "Five Finger Death Punch kündigen kostenlosen Livestream an",
+        "description": "Five Finger Death Punch streamen in Kürze eines ihre Jubiläumskonzerte kostenlos. Europäische Fans müssen dafür allerdings früh aufstehen.",
+        "published": "2026-08-27T09:47:35",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/five-finger-death-punch-kuendigen-kostenlosen-livestream-an-2541455",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 185
+    },
+    {
+      "cluster_id": "CLU_C5ED4155E14ABDF28FDF",
+      "status": "queued",
+      "title": "Dolly Parton: Rock-Musiker ehren sie mit bewegenden Hommagen",
+      "urls": [
+        "https://www.metal-hammer.de/dolly-parton-rock-musiker-ehren-sie-mit-bewegenden-hommagen-2541313"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/dolly-parton-rock-musiker-ehren-sie-mit-bewegenden-hommagen-2541313",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/dolly-parton-rock-musiker-ehren-sie-mit-bewegenden-hommagen-2541313",
+        "title": "Dolly Parton: Rock-Musiker ehren sie mit bewegenden Hommagen",
+        "description": "Country-Legende Dolly Parton ist im Alter von 80 Jahren verstorben. Die Rock-und Metal-Szene würdigt die legendäre Sängerin und Songwriterin.",
+        "published": "2026-08-26T17:43:00",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/dolly-parton-rock-musiker-ehren-sie-mit-bewegenden-hommagen-2541313",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 186
+    },
+    {
+      "cluster_id": "CLU_A3FC46623912C0BCDE11",
+      "status": "queued",
+      "title": "Hollywood Vampires, Nürnberg, Arena, 25.08.2026",
+      "urls": [
+        "https://www.metal-hammer.de/hollywood-vampires-nuernberg-arena-25-08-2026-2541319"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/hollywood-vampires-nuernberg-arena-25-08-2026-2541319",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/hollywood-vampires-nuernberg-arena-25-08-2026-2541319",
+        "title": "Hollywood Vampires, Nürnberg, Arena, 25.08.2026",
+        "description": "Seht hier die besten Bilder vom Konzert der Hollywood Vampires in der Nürnberger Arena am 25.08.2026.",
+        "published": "2026-08-26T16:40:22",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/hollywood-vampires-nuernberg-arena-25-08-2026-2541319",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 187
+    },
+    {
+      "cluster_id": "CLU_D0FD842F9B2DD0BFE3B1",
+      "status": "queued",
+      "title": "Bruce Dickinson nimmt neue Musikvideos auf",
+      "urls": [
+        "https://www.metal-hammer.de/bruce-dickinson-nimmt-neue-musikvideos-auf-2541269"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/bruce-dickinson-nimmt-neue-musikvideos-auf-2541269",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/bruce-dickinson-nimmt-neue-musikvideos-auf-2541269",
+        "title": "Bruce Dickinson nimmt neue Musikvideos auf",
+        "description": "Bruce Dickinson filmt ein neues Musikvideo mit der Horrorfilm-Legende Bill Moseley. Der Schauspieler teilte einen Moment mit Dickinson.",
+        "published": "2026-08-26T14:36:51",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/bruce-dickinson-nimmt-neue-musikvideos-auf-2541269",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 188
+    },
+    {
+      "cluster_id": "CLU_73C4465C84289FA7599E",
+      "status": "queued",
+      "title": "Ozzy Osbourne: Themenspukhaus in den Universal Studios",
+      "urls": [
+        "https://www.metal-hammer.de/ozzy-osbourne-themenspukhaus-in-den-universal-studios-2541295"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/ozzy-osbourne-themenspukhaus-in-den-universal-studios-2541295",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/ozzy-osbourne-themenspukhaus-in-den-universal-studios-2541295",
+        "title": "Ozzy Osbourne: Themenspukhaus in den Universal Studios",
+        "description": "Ozzy Osbourne als Halloween-Attraktion: In den Universal Studios sind zwei Spukhäuser dem verstorbenen „Prince Of Darkness“ gewidmet.",
+        "published": "2026-08-26T13:57:59",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/ozzy-osbourne-themenspukhaus-in-den-universal-studios-2541295",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 189
+    },
+    {
+      "cluster_id": "CLU_02D35D0017524B47FF46",
+      "status": "queued",
+      "title": "Airbourne: Blockbuster-Rock",
+      "urls": [
+        "https://www.metal-hammer.de/airbourne-blockbuster-rock-2541237"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/airbourne-blockbuster-rock-2541237",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/airbourne-blockbuster-rock-2541237",
+        "title": "Airbourne: Blockbuster-Rock",
+        "description": "Nach siebenjähriger Pause wollen es die Australier Airbourne mit ihrem sechsten Studioalbum richtig wissen.",
+        "published": "2026-08-26T13:00:13",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/airbourne-blockbuster-rock-2541237",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 190
+    },
+    {
+      "cluster_id": "CLU_B50A5DF9EA7F5E995760",
+      "status": "queued",
+      "title": "Nightwish: Tuomas Holopainen arbeitet an neuen Songs",
+      "urls": [
+        "https://www.metal-hammer.de/nightwish-tuomas-holopainen-arbeitet-an-neuen-songs-2541239"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/nightwish-tuomas-holopainen-arbeitet-an-neuen-songs-2541239",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/nightwish-tuomas-holopainen-arbeitet-an-neuen-songs-2541239",
+        "title": "Nightwish: Tuomas Holopainen arbeitet an neuen Songs",
+        "description": "Tuomas Holopainen arbeitet an neuem Material für Nightwish – jedoch scheinbar ohne dass seine Mitstreiter davon wissen.",
+        "published": "2026-08-26T10:30:36",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/nightwish-tuomas-holopainen-arbeitet-an-neuen-songs-2541239",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 191
+    },
+    {
+      "cluster_id": "CLU_2091E26F96D32E4DDF04",
+      "status": "queued",
+      "title": "Hollywood Vampires: Dokumentation feiert Weltpremiere",
+      "urls": [
+        "https://www.metal-hammer.de/hollywood-vampires-dokumentation-feiert-weltpremiere-2541213"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/hollywood-vampires-dokumentation-feiert-weltpremiere-2541213",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/hollywood-vampires-dokumentation-feiert-weltpremiere-2541213",
+        "title": "Hollywood Vampires: Dokumentation feiert Weltpremiere",
+        "description": "Lange war unklar, wann die Dokumentation über Hollywood Vampires veröffentlicht wird. Jetzt gibt es Gewissheit.",
+        "published": "2026-08-26T09:06:21",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/hollywood-vampires-dokumentation-feiert-weltpremiere-2541213",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 192
+    },
+    {
+      "cluster_id": "CLU_998BFE1D3BF4C8830288",
+      "status": "queued",
+      "title": "Hole dir die aktuelle METAL HAMMER-Ausgabe als PDF-Download",
+      "urls": [
+        "https://www.metal-hammer.de/hole-dir-die-aktuelle-metal-hammer-ausgabe-als-pdf-download-1446087"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/hole-dir-die-aktuelle-metal-hammer-ausgabe-als-pdf-download-1446087",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/hole-dir-die-aktuelle-metal-hammer-ausgabe-als-pdf-download-1446087",
+        "title": "Hole dir die aktuelle METAL HAMMER-Ausgabe als PDF-Download",
+        "description": "Jetzt kannst du dir den Weg zum Kiosk sparen: Die aktuelle METAL HAMMER-Ausgabe gibt es monatlich neu zum Herunterladen als PDF.",
+        "published": "2026-08-26T08:30:13",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/hole-dir-die-aktuelle-metal-hammer-ausgabe-als-pdf-download-1446087",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 193
+    },
+    {
+      "cluster_id": "CLU_0CD2E7992053B964D85F",
+      "status": "queued",
+      "title": "Tom Morello: Sohn Roman schreibt Riffs für neues Album",
+      "urls": [
+        "https://www.metal-hammer.de/tom-morello-sohn-roman-schreibt-riffs-fuer-neues-album-2541171"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tom-morello-sohn-roman-schreibt-riffs-fuer-neues-album-2541171",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tom-morello-sohn-roman-schreibt-riffs-fuer-neues-album-2541171",
+        "title": "Tom Morello: Sohn Roman schreibt Riffs für neues Album",
+        "description": "Tom Morello veröffentlicht sein erstes Solo-Rock-Album und verrät Details zu den prominenten Gastauftritten – darunter sein Sohn Roman.",
+        "published": "2026-08-25T17:13:12",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tom-morello-sohn-roman-schreibt-riffs-fuer-neues-album-2541171",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 194
+    },
+    {
+      "cluster_id": "CLU_589BEA4D8F7355D73CF9",
+      "status": "queued",
+      "title": "In Extremo kündigen neues Akustikalbum an",
+      "urls": [
+        "https://www.metal-hammer.de/in-extremo-kuendigen-neues-akustikalbum-an-2541149"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/in-extremo-kuendigen-neues-akustikalbum-an-2541149",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/in-extremo-kuendigen-neues-akustikalbum-an-2541149",
+        "title": "In Extremo kündigen neues Akustikalbum an",
+        "description": "Akustisch und sternhagelvoller: In Extremo überraschen mit der Ankündigung des neuen Albums TRANQUILO II.",
+        "published": "2026-08-25T15:37:04",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/in-extremo-kuendigen-neues-akustikalbum-an-2541149",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 195
+    },
+    {
+      "cluster_id": "CLU_956F232A2D6742B238E1",
+      "status": "queued",
+      "title": "Rob Halford: Ein Rückblick zum 75. Geburtstag",
+      "urls": [
+        "https://www.metal-hammer.de/rob-halford-ein-rueckblick-zum-75-geburtstag-2259107"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/rob-halford-ein-rueckblick-zum-75-geburtstag-2259107",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/rob-halford-ein-rueckblick-zum-75-geburtstag-2259107",
+        "title": "Rob Halford: Ein Rückblick zum 75. Geburtstag",
+        "description": "Judas Priest-Frontmann Rob Halford feiert heute seinen 75. Geburtstag. METAL HAMMER sendet viele Glückwünsche und wirft einen Blick auf die Vergangenheit der Heavy Metal-Legende.",
+        "published": "2026-08-25T15:25:31",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/rob-halford-ein-rueckblick-zum-75-geburtstag-2259107",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 196
+    },
+    {
+      "cluster_id": "CLU_18933A39ED388477532E",
+      "status": "queued",
+      "title": "Queens Of The Stone Age: Neues Album hat ein Datum",
+      "urls": [
+        "https://www.metal-hammer.de/queens-of-the-stone-age-neues-album-hat-ein-datum-2541071"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/queens-of-the-stone-age-neues-album-hat-ein-datum-2541071",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/queens-of-the-stone-age-neues-album-hat-ein-datum-2541071",
+        "title": "Queens Of The Stone Age: Neues Album hat ein Datum",
+        "description": "Es ist offiziell: Das neue Album von Queens Of The Stone Age hat ein Veröffentlichungsdatum. Mit der Ankündigung kommt eine weitere Single.",
+        "published": "2026-08-25T15:00:30",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/queens-of-the-stone-age-neues-album-hat-ein-datum-2541071",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 197
+    },
+    {
+      "cluster_id": "CLU_C09293DD39A6A4BCF910",
+      "status": "queued",
+      "title": "Ghost kündigen ‘2 Big To Rig’-Soundtrack an",
+      "urls": [
+        "https://www.metal-hammer.de/ghost-kuendigen-2-big-to-rig-soundtrack-an-2541101"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/ghost-kuendigen-2-big-to-rig-soundtrack-an-2541101",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/ghost-kuendigen-2-big-to-rig-soundtrack-an-2541101",
+        "title": "Ghost kündigen ‘2 Big To Rig’-Soundtrack an",
+        "description": "Ghost kündigen den Soundtrack zu ihrem Konzertfilm ‚2 Big To Rig’ an. Tobias Forge erzählt von seinem Krankheitsausfall und gibt die Tracklist bekannt.",
+        "published": "2026-08-25T13:54:59",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/ghost-kuendigen-2-big-to-rig-soundtrack-an-2541101",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 198
+    },
+    {
+      "cluster_id": "CLU_DF17707F6860FFB84B8F",
+      "status": "queued",
+      "title": "Flotsam And Jetsam: Eric Knutson gibt Grunge Schuld an Misserfolgen",
+      "urls": [
+        "https://www.metal-hammer.de/flotsam-and-jetsam-eric-knutson-gibt-grunge-schuld-an-misserfolgen-2541085"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/flotsam-and-jetsam-eric-knutson-gibt-grunge-schuld-an-misserfolgen-2541085",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/flotsam-and-jetsam-eric-knutson-gibt-grunge-schuld-an-misserfolgen-2541085",
+        "title": "Flotsam And Jetsam: Eric Knutson gibt Grunge Schuld an Misserfolgen",
+        "description": "Sänger Eric „A.K.“ Knutson erklärt im Interview, womit Flotsam And Jetsam in den Neunzigern zu kämpfen hatten.",
+        "published": "2026-08-25T11:52:46",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/flotsam-and-jetsam-eric-knutson-gibt-grunge-schuld-an-misserfolgen-2541085",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:06Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 199
+    },
+    {
+      "cluster_id": "CLU_5A856C6EBEEC1904D1C5",
+      "status": "queued",
+      "title": "METAL HAMMER präsentiert: In Flames + Trivium",
+      "urls": [
+        "https://www.metal-hammer.de/metal-hammer-praesentiert-in-flames-trivium-2541099"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/metal-hammer-praesentiert-in-flames-trivium-2541099",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/metal-hammer-praesentiert-in-flames-trivium-2541099",
+        "title": "METAL HAMMER präsentiert: In Flames + Trivium",
+        "description": "In Flames und Trivium kündigen Co-Headline-Tour für April 2027 an. Special Guests sind Paleface Swiss und Vola.",
+        "published": "2026-08-25T11:29:41",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/metal-hammer-praesentiert-in-flames-trivium-2541099",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 200
+    },
+    {
+      "cluster_id": "CLU_96146537073586FB0C22",
+      "status": "queued",
+      "title": "Body Count stellen neues Album in Aussicht",
+      "urls": [
+        "https://www.metal-hammer.de/body-count-stellen-neues-album-in-aussicht-2541061"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/body-count-stellen-neues-album-in-aussicht-2541061",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/body-count-stellen-neues-album-in-aussicht-2541061",
+        "title": "Body Count stellen neues Album in Aussicht",
+        "description": "Nachdem Ice-T gerade ein Rap-Album veröffentlicht hat, geht es nun wieder mit den Kollegen von Body Count ans Songwriting.",
+        "published": "2026-08-25T09:27:53",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/body-count-stellen-neues-album-in-aussicht-2541061",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 201
+    },
+    {
+      "cluster_id": "CLU_A6AE1D1DD43340C707A9",
+      "status": "queued",
+      "title": "In Flames überraschen mit besonderen Gastauftritten",
+      "urls": [
+        "https://www.metal-hammer.de/in-flames-ueberraschen-mit-besonderen-gastauftritten-2541013"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/in-flames-ueberraschen-mit-besonderen-gastauftritten-2541013",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/in-flames-ueberraschen-mit-besonderen-gastauftritten-2541013",
+        "title": "In Flames überraschen mit besonderen Gastauftritten",
+        "description": "In Flames überraschten beim Göteborg Brinner mit Gastauftritten von Dark Tranquillity und Trivium-Mitgliedern.",
+        "published": "2026-08-24T16:31:49",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/in-flames-ueberraschen-mit-besonderen-gastauftritten-2541013",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 202
+    },
+    {
+      "cluster_id": "CLU_AA8639E3A7C19F621277",
+      "status": "queued",
+      "title": "Bret Michaels nimmt sich eine längere Auszeit",
+      "urls": [
+        "https://www.metal-hammer.de/bret-michaels-nimmt-sich-eine-laengere-auszeit-2540975"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/bret-michaels-nimmt-sich-eine-laengere-auszeit-2540975",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/bret-michaels-nimmt-sich-eine-laengere-auszeit-2540975",
+        "title": "Bret Michaels nimmt sich eine längere Auszeit",
+        "description": "Nachdem sich Bret Michaels vor Kurzem einer Operation unterziehen musste, stand er nun schon wieder auf der Bühne – zu früh, wie es scheint.",
+        "published": "2026-08-24T12:23:56",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/bret-michaels-nimmt-sich-eine-laengere-auszeit-2540975",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 203
+    },
+    {
+      "cluster_id": "CLU_D9FF908B07FA04E74343",
+      "status": "queued",
+      "title": "Accept-Sänger Mark Tornillo über seine Gesangsübungen",
+      "urls": [
+        "https://www.metal-hammer.de/accept-saenger-mark-tornillo-ueber-seine-gesangsuebungen-2540965"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/accept-saenger-mark-tornillo-ueber-seine-gesangsuebungen-2540965",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/accept-saenger-mark-tornillo-ueber-seine-gesangsuebungen-2540965",
+        "title": "Accept-Sänger Mark Tornillo über seine Gesangsübungen",
+        "description": "Accept-Sänger Mark Tornillo macht seit 15 Jahren dieselben Aufwärmübungen und betont, wie wichtig sie sind.",
+        "published": "2026-08-24T11:29:54",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/accept-saenger-mark-tornillo-ueber-seine-gesangsuebungen-2540965",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 204
+    },
+    {
+      "cluster_id": "CLU_104A15368FF86DA4CE1B",
+      "status": "queued",
+      "title": "Chris Holmes gibt Krebs-Update und bittet erneut um Hilfe",
+      "urls": [
+        "https://www.metal-hammer.de/chris-holmes-gibt-krebs-update-und-bittet-erneut-um-hilfe-2540963"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/chris-holmes-gibt-krebs-update-und-bittet-erneut-um-hilfe-2540963",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/chris-holmes-gibt-krebs-update-und-bittet-erneut-um-hilfe-2540963",
+        "title": "Chris Holmes gibt Krebs-Update und bittet erneut um Hilfe",
+        "description": "Erst kürzlich wurde bekannt, dass Chris Holmes erneut an Krebs erkrankt ist. Nun wandte sich der Ex-W.A.S.P.-Gitarrist erneut an seine Fans.",
+        "published": "2026-08-24T10:35:49",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/chris-holmes-gibt-krebs-update-und-bittet-erneut-um-hilfe-2540963",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 205
+    },
+    {
+      "cluster_id": "CLU_09C79A238B98A8307128",
+      "status": "queued",
+      "title": "Chris Slade (ex-AC/DC) verkündet seinen Ruhestand",
+      "urls": [
+        "https://www.metal-hammer.de/chris-slade-ex-acdc-verkuendet-seinen-ruhestand-2540945"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/chris-slade-ex-acdc-verkuendet-seinen-ruhestand-2540945",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/chris-slade-ex-acdc-verkuendet-seinen-ruhestand-2540945",
+        "title": "Chris Slade (ex-AC/DC) verkündet seinen Ruhestand",
+        "description": "Der ehemalige AC/DC-Schlagzeuger Chris Slade hat beschlossen, den Ruhestand anzutreten. Eine Sache will der 79-Jährige aber noch angehen.",
+        "published": "2026-08-24T09:27:00",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/chris-slade-ex-acdc-verkuendet-seinen-ruhestand-2540945",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 206
+    },
+    {
+      "cluster_id": "CLU_5B999D4B5E6C98A74EC6",
+      "status": "queued",
+      "title": "Airbourne AIRBOURNE + 12 Ausgaben METAL HAMMER frei Haus",
+      "urls": [
+        "https://www.metal-hammer.de/airbourne-airbourne-12-ausgaben-metal-hammer-frei-haus-2540427"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/airbourne-airbourne-12-ausgaben-metal-hammer-frei-haus-2540427",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/airbourne-airbourne-12-ausgaben-metal-hammer-frei-haus-2540427",
+        "title": "Airbourne AIRBOURNE + 12 Ausgaben METAL HAMMER frei Haus",
+        "description": "Im Maximum Abo (1 Jahr METAL HAMMER frei Haus) spart ihr nicht nur, sondern bekommt außerdem noch ein Geschenk obendrauf.",
+        "published": "2026-08-23T13:00:28",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/airbourne-airbourne-12-ausgaben-metal-hammer-frei-haus-2540427",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 207
+    },
+    {
+      "cluster_id": "CLU_978ADC04108471CB3908",
+      "status": "queued",
+      "title": "Editorial METAL HAMMER 09/2026",
+      "urls": [
+        "https://www.metal-hammer.de/editorial-metal-hammer-092026-2540397"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/editorial-metal-hammer-092026-2540397",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/editorial-metal-hammer-092026-2540397",
+        "title": "Editorial METAL HAMMER 09/2026",
+        "description": "Das Vorwort der METAL HAMMER-Ausgabe 09/2026 von Chefredakteur Sebastian Kessler über die Titel-Story und weitere große Themen.",
+        "published": "2026-08-22T13:00:55",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/editorial-metal-hammer-092026-2540397",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 208
+    },
+    {
+      "cluster_id": "CLU_34531CB2A1C259AC188C",
+      "status": "queued",
+      "title": "Cliff Burtons Schwester Connie ist gestorben",
+      "urls": [
+        "https://www.metal-hammer.de/cliff-burton-schwester-leidet-an-fieser-krankheit-2528625"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/cliff-burton-schwester-leidet-an-fieser-krankheit-2528625",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/cliff-burton-schwester-leidet-an-fieser-krankheit-2528625",
+        "title": "Cliff Burtons Schwester Connie ist gestorben",
+        "description": "Nach einer schweren Krankheit ist Connie, die Schwester von Cliff Burton, am 19. August 2027 verstorben. Ruhe in Frieden.",
+        "published": "2026-08-21T14:40:18",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/cliff-burton-schwester-leidet-an-fieser-krankheit-2528625",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 209
+    },
+    {
+      "cluster_id": "CLU_53B9D7430DA248F59099",
+      "status": "queued",
+      "title": "Die Videos der Woche vom 21.08. mit Bruce Dickinson, Floor Jansen u.v.m.",
+      "urls": [
+        "https://www.metal-hammer.de/die-videos-der-woche-vom-21-08-mit-bruce-dickinson-floor-jansen-u-v-m-2540487"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/die-videos-der-woche-vom-21-08-mit-bruce-dickinson-floor-jansen-u-v-m-2540487",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/die-videos-der-woche-vom-21-08-mit-bruce-dickinson-floor-jansen-u-v-m-2540487",
+        "title": "Die Videos der Woche vom 21.08. mit Bruce Dickinson, Floor Jansen u.v.m.",
+        "description": "Brandaktuelles Videomaterial gibt es auch diese Woche – von unter anderem Down, Schandmaul, Enslaved sowie einigen weiteren.",
+        "published": "2026-08-21T14:33:55",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/die-videos-der-woche-vom-21-08-mit-bruce-dickinson-floor-jansen-u-v-m-2540487",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 210
+    },
+    {
+      "cluster_id": "CLU_43DF95FAA89D99191081",
+      "status": "queued",
+      "title": "Snot kehren nach fast 30 Jahren mit neuer Musik zurück",
+      "urls": [
+        "https://www.metal-hammer.de/snot-kehren-nach-fast-30-jahren-mit-neuer-musik-zurueck-2540475"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/snot-kehren-nach-fast-30-jahren-mit-neuer-musik-zurueck-2540475",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/snot-kehren-nach-fast-30-jahren-mit-neuer-musik-zurueck-2540475",
+        "title": "Snot kehren nach fast 30 Jahren mit neuer Musik zurück",
+        "description": "Snot arbeiten an einem neuen Album für 2027, das zum 30. Jubiläum von GET SOME erscheint und eine neue Ära der Band einläutet.",
+        "published": "2026-08-21T14:06:37",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/snot-kehren-nach-fast-30-jahren-mit-neuer-musik-zurueck-2540475",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 211
+    },
+    {
+      "cluster_id": "CLU_FBF52034BAB2F73C8BF0",
+      "status": "queued",
+      "title": "Nita Strauss: Bühnenrückkehr nach Baby-Pause",
+      "urls": [
+        "https://www.metal-hammer.de/nita-strauss-buehnenrueckkehr-nach-baby-pause-2540521"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/nita-strauss-buehnenrueckkehr-nach-baby-pause-2540521",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/nita-strauss-buehnenrueckkehr-nach-baby-pause-2540521",
+        "title": "Nita Strauss: Bühnenrückkehr nach Baby-Pause",
+        "description": "Gitarrenwirbelwind Nita Strauss hat in Kürze ihren ersten Auftritt nach der Geburt ihres Sohnes. Ehemann Josh Villalta ist ebenfalls dabei.",
+        "published": "2026-08-21T13:31:11",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/nita-strauss-buehnenrueckkehr-nach-baby-pause-2540521",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 212
+    },
+    {
+      "cluster_id": "CLU_652E9E7CE24CB1DBCE7C",
+      "status": "queued",
+      "title": "Sushi: Maynard James Keenan eröffnet Restaurant",
+      "urls": [
+        "https://www.metal-hammer.de/sushi-maynard-james-keenan-eroeffnet-restaurant-2540517"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/sushi-maynard-james-keenan-eroeffnet-restaurant-2540517",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/sushi-maynard-james-keenan-eroeffnet-restaurant-2540517",
+        "title": "Sushi: Maynard James Keenan eröffnet Restaurant",
+        "description": "Tool-Frontmann Maynard James Keenan liebt Sushi — und diese Leidenschaft lebt er künftig mit einem Restaurant aus.",
+        "published": "2026-08-21T13:23:34",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/sushi-maynard-james-keenan-eroeffnet-restaurant-2540517",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 213
+    },
+    {
+      "cluster_id": "CLU_00E8435E437FFCEEB8A1",
+      "status": "queued",
+      "title": "Skindred-Frontmann Benji Webbe hat 18 Enkel",
+      "urls": [
+        "https://www.metal-hammer.de/skindred-frontmann-benji-webbe-hat-18-enkel-2540413"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/skindred-frontmann-benji-webbe-hat-18-enkel-2540413",
+          "method": "rest:posts"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/skindred-frontmann-benji-webbe-hat-18-enkel-2540413",
+        "title": "Skindred-Frontmann Benji Webbe hat 18 Enkel",
+        "description": "Skindred-Frontderwisch Benji Webbe hat sich für seine insgesamt 18 Enkelkinder eine spezielle Herangehensweise zurechtgelegt.",
+        "published": "2026-08-21T12:11:59",
+        "format_hint": "story",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/skindred-frontmann-benji-webbe-hat-18-enkel-2540413",
+            "method": "rest:posts"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T04:58:08Z",
+      "published_url": null,
+      "format_hint": "story",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 214
+    },
+    {
+      "cluster_id": "CLU_A791DB85831BEBAC4B48",
+      "status": "queued",
+      "title": "Die aerzte live on tour",
+      "urls": [
+        "https://www.metal-hammer.de/tour/die-aerzte-live-on-tour"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/tour/die-aerzte-live-on-tour",
+          "method": "sitemap:asmb_tour-sitemap2.xml"
+        }
+      ],
+      "candidate": {
+        "url": "https://www.metal-hammer.de/tour/die-aerzte-live-on-tour",
+        "title": "Die aerzte live on tour",
+        "description": "",
+        "published": "2026-09-18T05:55:05+02:00",
+        "format_hint": "show",
+        "entities": [],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/tour/die-aerzte-live-on-tour",
+            "method": "sitemap:asmb_tour-sitemap2.xml"
+          }
+        ]
+      },
+      "discovered_at": "2026-09-18T05:29:28Z",
+      "published_url": null,
+      "format_hint": "show",
+      "entities_hint": [],
+      "archive_domain": "metal-hammer.de",
+      "archive_index": 95811
+    },
+    {
+      "cluster_id": "CLU_9C6F076EEFCCC70EED74",
+      "status": "queued",
+      "title": "As 10 músicas de Elton John que são as preferidas de Zakk Wylde",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383020-eltonjohn.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383020-eltonjohn.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:31:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "As 10 músicas de Elton John que são as preferidas de Zakk Wylde",
+        "description": "Na ativa desde o fim dos anos 1960, o cantor e pianista britânico construiu uma trajetória repleta de sucessos.",
+        "url": "https://whiplash.net/materias/news_667/383020-eltonjohn.html",
+        "published": "Thu, 17 Sep 2026 18:31:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Elton John",
+          "Zakk Wylde",
+          "Black Label Society",
+          "Ozzy Osbourne"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383020-eltonjohn.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:31:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": null,
+      "format_hint": "news",
+      "entities_hint": [
+        "Elton John",
+        "Zakk Wylde",
+        "Black Label Society",
+        "Ozzy Osbourne"
+      ]
+    },
+    {
+      "cluster_id": "CLU_F7735ACBFFCF879ABCCC",
+      "status": "queued",
+      "title": "A mensagem escondida na intro de \"Hell Awaits\", clássico do Slayer",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383017-slayer.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383017-slayer.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:20:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "A mensagem escondida na intro de \"Hell Awaits\", clássico do Slayer",
+        "description": "Mais sombrio e agressivo que o antecessor \"Show No Mercy\" (1983), \"Hell Awaits\" flerta com o death metal, estilo que ainda dava seus primeiros passos.",
+        "url": "https://whiplash.net/materias/news_667/383017-slayer.html",
+        "published": "Thu, 17 Sep 2026 18:20:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Slayer"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383017-slayer.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:20:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": null,
+      "format_hint": "news",
+      "entities_hint": [
+        "Slayer"
+      ]
+    },
+    {
+      "cluster_id": "CLU_313F87EB0369B1AF3F37",
+      "status": "published",
+      "title": "A canção dos anos 60 que John Bonham via como uma espécie de modelo para o Led Zeppelin",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383019-ledzeppelin.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383019-ledzeppelin.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:28:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "A canção dos anos 60 que John Bonham via como uma espécie de modelo para o Led Zeppelin",
+        "description": "Ela impressionou Jimmy Page ainda antes do Zeppelin e, anos depois, John Bonham resumiu de forma curiosa a influência da faixa.",
+        "url": "https://whiplash.net/materias/news_667/383019-ledzeppelin.html",
+        "published": "Thu, 17 Sep 2026 18:28:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Led Zeppelin",
+          "Kinks"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383019-ledzeppelin.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:28:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Led Zeppelin",
+        "Kinks"
+      ],
+      "story_angle_id": "ANG_0d87f4d91e04d6edb580"
+    },
+    {
+      "cluster_id": "CLU_42D6B150FF4B99478200",
+      "status": "published",
+      "title": "O show que mudou para sempre a vida de Robb Flynn, vocalista do Machine Head",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383018-machinehead.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383018-machinehead.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:26:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "O show que mudou para sempre a vida de Robb Flynn, vocalista do Machine Head",
+        "description": "\"Eu e meu amigo Jim fomos direto para a frente do palco e ficamos batendo cabeça o show inteiro.\"",
+        "url": "https://whiplash.net/materias/news_667/383018-machinehead.html",
+        "published": "Thu, 17 Sep 2026 18:26:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Machine Head",
+          "Exciter"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383018-machinehead.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:26:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/o-palco-que-reorganizou-a-vida-em-torno-de-machine-head.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Machine Head",
+        "Exciter"
+      ],
+      "story_angle_id": "ANG_7cd09fddee8a304f0a4c"
+    },
+    {
+      "cluster_id": "CLU_6F7333E28396CCDA809F",
+      "status": "published",
+      "title": "Bill Kelliher e Brann Dailor relembram Brent Hinds; \"Ele era onipresente na minha vida\"",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383016-mastodon.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383016-mastodon.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 16:46:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "Bill Kelliher e Brann Dailor relembram Brent Hinds; \"Ele era onipresente na minha vida\"",
+        "description": "\"Sempre achei que ele viveria mais do que todos nós, porque tinha nove vidas e sempre se safava de tudo.\"",
+        "url": "https://whiplash.net/materias/news_667/383016-mastodon.html",
+        "published": "Thu, 17 Sep 2026 16:46:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Mastodon"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383016-mastodon.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 16:46:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/mastodon-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Mastodon"
+      ],
+      "story_angle_id": "ANG_d75e544e2530bdb83c33"
+    },
+    {
+      "cluster_id": "CLU_4DAF3BEC056AB4082842",
+      "status": "published",
+      "title": "Ouça música que Keith Richards gravou para trilha de \"Grand Theft Auto VI\"",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383015-keithrichards.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383015-keithrichards.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 16:45:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "Ouça música que Keith Richards gravou para trilha de \"Grand Theft Auto VI\"",
+        "description": "Guitarrista dos Rolling Stones registrou versão para \"Bright Lights, Big City\", de Jimmy Reed.",
+        "url": "https://whiplash.net/materias/news_667/383015-keithrichards.html",
+        "published": "Thu, 17 Sep 2026 16:45:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Keith Richards",
+          "Rolling Stones"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383015-keithrichards.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 16:45:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Keith Richards",
+        "Rolling Stones"
+      ],
+      "story_angle_id": "ANG_3e414ad4a271a22253dc"
+    },
+    {
+      "cluster_id": "CLU_5E13FB1D4D06770BDA3E",
+      "status": "published",
+      "title": "Review: RESIDENT EVIL (2026)",
+      "urls": [
+        "https://www.metal-hammer.de/reviews/resident-evil-2026"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
+          "source": "Metal Hammer Germany",
+          "method": "rss",
+          "format": "review",
+          "published": "Thu, 17 Sep 2026 11:01:44 +0000"
+        }
+      ],
+      "candidate": {
+        "title": "Review: RESIDENT EVIL (2026)",
+        "description": "Der Horror aus Raccoon City kriecht erneut aus der Dunkelheit und auf die große Leinwand. Nach sieben mehr oder weniger gelungenen Versuchen wagt sich nun ‘Weapons’-Regisseur Zach Cregger an eine neue Live-Action-Adaption von Resident Evil. Das Ergebnis ist überraschend: Statt sich ausschließlich auf Schockmomente und Gore zu verlassen – von beidem gibt es reichlich –, […] Der Horror aus Raccoon City kriecht erneut aus der Dunkelheit und auf die große Leinwand. Nach sieben mehr oder weniger gelungenen Versuchen wagt sich nun ‘Weapons’-Regisseur Zach Cregger an eine neue Live-Action-Adaption von Resident Evil. Das Ergebnis ist überraschend: Statt sich ausschließlich auf Schockmomente und Gore",
+        "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
+        "published": "Thu, 17 Sep 2026 11:01:44 +0000",
+        "primary_category": "music",
+        "format_hint": "review",
+        "entities": [
+          "Filme",
+          "Ada Wong",
+          "Horror",
+          "Leon Kennedy",
+          "PlayStation",
+          "Raccoon City",
+          "Resident Evil",
+          "Resident Evil 4",
+          "Videospielverfilmung",
+          "Weapons",
+          "Zach Cregger"
+        ],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
+            "source": "Metal Hammer Germany",
+            "method": "rss",
+            "format": "review",
+            "published": "Thu, 17 Sep 2026 11:01:44 +0000"
+          },
+          {
+            "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
+            "source": "Metal Hammer Germany",
+            "method": "rest",
+            "format": "review",
+            "published": "2026-09-17T11:01:44"
+          },
+          {
+            "url": "https://www.metal-hammer.de/reviews/resident-evil-2026",
+            "source": "Metal Hammer Germany",
+            "method": "html_index",
+            "format": "review",
+            "published": ""
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/zach-cregger-recoloca-raccoon-city-no-centro-com-um-heroi-solitario-e-falho.html",
+      "format_hint": "review",
+      "entities_hint": [
+        "Filme",
+        "Ada Wong",
+        "Horror",
+        "Leon Kennedy",
+        "PlayStation",
+        "Raccoon City",
+        "Resident Evil",
+        "Resident Evil 4",
+        "Videospielverfilmung",
+        "Weapons",
+        "Zach Cregger"
+      ],
+      "story_angle_id": "ANG_d0fdf0b5ce997bb4c23f"
+    },
+    {
+      "cluster_id": "CLU_7D025ADEA5C0AAAC31AA",
+      "status": "published",
+      "title": "O clássico do Oasis que Noel Gallagher escreveu após sair de boate de strip-tease",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383025-oasis.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383025-oasis.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 22:57:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "O clássico do Oasis que Noel Gallagher escreveu após sair de boate de strip-tease",
+        "description": "\"Começou como uma canção de desafio [...]. Depois, se tornou uma canção de celebração. E agora, é como um hino.\"",
+        "url": "https://whiplash.net/materias/news_667/383025-oasis.html",
+        "published": "Thu, 17 Sep 2026 22:57:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Oasis",
+          "Noel Gallagher"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383025-oasis.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 22:57:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Oasis",
+        "Noel Gallagher"
+      ],
+      "story_angle_id": "ANG_1eba1aa00b24a5ea5949"
+    },
+    {
+      "cluster_id": "CLU_95F4D3D05817118E23F9",
+      "status": "published",
+      "title": "A música do Yes que serviu de inspiração para Dream Theater e Sepultura",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383024-yes.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383024-yes.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:51:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "A música do Yes que serviu de inspiração para Dream Theater e Sepultura",
+        "description": "\"É engraçado, quando começamos não existia uma cena de prog metal, então nós meio que combinamos metal e prog\", comentou John Petrucci.",
+        "url": "https://whiplash.net/materias/news_667/383024-yes.html",
+        "published": "Thu, 17 Sep 2026 18:51:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Yes",
+          "Dream Theater",
+          "Sepultura"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383024-yes.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:51:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/o-que-yes-deixa-no-ar-agora.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Yes",
+        "Dream Theater",
+        "Sepultura"
+      ],
+      "story_angle_id": "ANG_760f79c74745c39bf2d9"
+    },
+    {
+      "cluster_id": "CLU_8B55C616AEE5F3293D48",
+      "status": "published",
+      "title": "\"Nunca compusemos juntos\" - Roger Waters explica sua parceria com David Gilmour no Pink Floyd",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383023-pinkfloyd.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383023-pinkfloyd.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:49:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "\"Nunca compusemos juntos\" - Roger Waters explica sua parceria com David Gilmour no Pink Floyd",
+        "description": "\"Às vezes, ele trazia uma sequência de acordes e eu transformava aquilo em uma música. Ou trazia um riff de guitarra e eu fazia uma música a partir dele...\"",
+        "url": "https://whiplash.net/materias/news_667/383023-pinkfloyd.html",
+        "published": "Thu, 17 Sep 2026 18:49:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Pink Floyd",
+          "Roger Waters",
+          "David Gilmour"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383023-pinkfloyd.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:49:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/o-que-pink-floyd-deixa-no-ar-agora.html",
+      "format_hint": "news",
+      "entities_hint": [
+        "Pink Floyd",
+        "Roger Waters",
+        "David Gilmour"
+      ],
+      "story_angle_id": "ANG_08de12b9a241a9063637"
+    },
+    {
+      "cluster_id": "CLU_0844EE70738EE7600680",
+      "status": "published",
+      "title": "Regis Tadeu finalmente explica detalhe do Iron Maiden que fãs discutem há 20 anos",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383022-ironmaiden.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383022-ironmaiden.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:43:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "Regis Tadeu finalmente explica detalhe do Iron Maiden que fãs discutem há 20 anos",
+        "description": "Álbum saiu sem masterização por causa de uma sacanagem do produtor com Steve Harris. Clique e entenda.",
+        "url": "https://whiplash.net/materias/news_667/383022-ironmaiden.html",
+        "published": "Thu, 17 Sep 2026 18:43:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Iron Maiden",
+          "Regis Tadeu"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383022-ironmaiden.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:43:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": null,
+      "format_hint": "news",
+      "entities_hint": [
+        "Iron Maiden",
+        "Regis Tadeu"
+      ]
+    },
+    {
+      "cluster_id": "CLU_9AC3263B1E5C5EB25738",
+      "status": "published",
+      "title": "A canção do Metallica que ainda emociona James Hetfield toda vez que ele a escuta",
+      "urls": [
+        "https://whiplash.net/materias/news_667/383021-metallica.html"
+      ],
+      "origins": [
+        {
+          "url": "https://whiplash.net/materias/news_667/383021-metallica.html",
+          "source": "Whiplash.Net",
+          "method": "rss",
+          "format": "news",
+          "published": "Thu, 17 Sep 2026 18:40:00 -0300"
+        }
+      ],
+      "candidate": {
+        "title": "A canção do Metallica que ainda emociona James Hetfield toda vez que ele a escuta",
+        "description": "Houve quem classificasse a música como \"brega\" ou \"fofa\", enquanto outros discutiam o arranjo e a proposta.",
+        "url": "https://whiplash.net/materias/news_667/383021-metallica.html",
+        "published": "Thu, 17 Sep 2026 18:40:00 -0300",
+        "primary_category": "music",
+        "format_hint": "news",
+        "entities": [
+          "Metallica",
+          "James Hetfield"
+        ],
+        "origins": [
+          {
+            "url": "https://whiplash.net/materias/news_667/383021-metallica.html",
+            "source": "Whiplash.Net",
+            "method": "rss",
+            "format": "news",
+            "published": "Thu, 17 Sep 2026 18:40:00 -0300"
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": null,
+      "format_hint": "news",
+      "entities_hint": [
+        "Metallica",
+        "James Hetfield"
+      ]
+    },
+    {
+      "cluster_id": "CLU_7DFC8C9C2C9A4195D976",
+      "status": "published",
+      "title": "METAL HAMMER Podcast Folge 151 mit Kai Hansen",
+      "urls": [
+        "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603"
+      ],
+      "origins": [
+        {
+          "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
+          "source": "Metal Hammer Germany",
+          "method": "rss",
+          "format": "story",
+          "published": "Fri, 18 Sep 2026 04:00:57 +0000"
+        }
+      ],
+      "candidate": {
+        "title": "METAL HAMMER Podcast Folge 151 mit Kai Hansen",
+        "description": "Linkin Park-Verlosung zum Filmstart! Neues von Slipknot, Mastodon und Sepultura. Kai Hansen im Interview! Im Pit bei Moonspell. Album der Woche von Anthrax u.a. Live To Win – die Verlosung Gewinnt 2x Linkin Park-Vinyl zum Start des Kinofilms ‘Linkin Park: Unshatter’, bereitgestellt von Black Rabbit PR! Back In Black – das Metal-Update Slipknot-Fans hassen den neuen Song ‘Arsenal’ Mastodon haben eine Klage von Brent Hinds’ Erben am Hals Sepultura müssen zum Abschied kleinere Brötchen backen Caught In A Mosh...",
+        "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
+        "published": "Fri, 18 Sep 2026 04:00:57 +0000",
+        "primary_category": "music",
+        "format_hint": "story",
+        "entities": [
+          "Audio",
+          "Meldungen",
+          "News",
+          "Podcast",
+          "Video & Audio",
+          "anthrax",
+          "Kai Hansen",
+          "Katrin Riedl",
+          "Linkin Park",
+          "Mastodon",
+          "Metal Hammer",
+          "METAL HAMMER Podcast"
+        ],
+        "origins": [
+          {
+            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
+            "source": "Metal Hammer Germany",
+            "method": "rss",
+            "format": "story",
+            "published": "Fri, 18 Sep 2026 04:00:57 +0000"
+          },
+          {
+            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
+            "source": "Metal Hammer Germany",
+            "method": "rest",
+            "format": "story",
+            "published": "2026-09-18T04:00:57"
+          },
+          {
+            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
+            "source": "Metal Hammer Germany",
+            "method": "sitemap",
+            "format": "story",
+            "published": "2026-09-18T06:00:57+02:00"
+          },
+          {
+            "url": "https://www.metal-hammer.de/metal-hammer-podcast-folge-151-mit-kai-hansen-2546603",
+            "source": "Metal Hammer Germany",
+            "method": "html_index",
+            "format": "interview",
+            "published": ""
+          }
+        ],
+        "total_score": 10
+      },
+      "discovered_at": "2026-09-18T06:21:39.110570+00:00",
+      "published_url": "/blog/2026/09/18/kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro.html",
+      "format_hint": "story",
+      "entities_hint": [
+        "Audio",
+        "Meldungen",
+        "News",
+        "Podcast",
+        "Video & Audio",
+        "anthrax",
+        "Kai Hansen",
+        "Katrin Riedl",
+        "Linkin Park",
+        "Mastodon",
+        "Metal Hammer",
+        "METAL HAMMER Podcast"
+      ],
+      "story_angle_id": "ANG_297d37e3d438f1848e33"
     }
-  ]
+  ],
+  "hot_window": 400
 }

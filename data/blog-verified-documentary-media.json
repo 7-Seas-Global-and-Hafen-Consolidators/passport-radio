@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "rule": "SE A MATÉRIA ATRAVESSA O TEMPO, A MÍDIA TAMBÉM ATRAVESSA O TEMPO.",
+  "policy": "Only verified records with explicit entity + event phase are eligible. A generic artist image is never sprayed across eras.",
+  "items": [
+    {
+      "status": "verified",
+      "kind": "video",
+      "entities": [
+        "The Kinks",
+        "John Bonham",
+        "Led Zeppelin"
+      ],
+      "event_years": [
+        1964
+      ],
+      "phase": "The Kinks · 1964",
+      "url": "https://www.youtube.com/watch?v=YCXPydl1p6A",
+      "title": "The Kinks — You Really Got Me · Live at The Playhouse Theatre, 1964",
+      "source_page": "https://www.youtube.com/watch?v=YCXPydl1p6A",
+      "credit": "The Kinks / BBC archive",
+      "live_performance": true
+    },
+    {
+      "status": "verified",
+      "kind": "video",
+      "entities": [
+        "Led Zeppelin",
+        "John Bonham"
+      ],
+      "event_years": [
+        1969
+      ],
+      "phase": "Led Zeppelin · 1969",
+      "url": "https://www.youtube.com/watch?v=XX8YsJ0TbMc",
+      "title": "Led Zeppelin — Communication Breakdown · filmed performance, 1969",
+      "source_page": "https://www.youtube.com/watch?v=XX8YsJ0TbMc",
+      "credit": "Led Zeppelin official",
+      "live_performance": true
+    }
+  ]
+}

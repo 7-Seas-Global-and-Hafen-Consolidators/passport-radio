@@ -40,6 +40,37 @@ SCHEMA_ECHOES = (
 GENERIC_SECTION_HEADINGS = {
     "subtitulo", "titulo", "heading", "section", "secao", "paragrafo", "texto"
 }
+FORMULAIC_DECKS = (
+    "guarda o fato e abre a escuta",
+    "guarda o fato e devolve o ouvinte",
+    "deixa no ar agora",
+    "reaparece no radar da passport",
+    "every song is a destination",
+    "guarda nesta escuta",
+    "nao chega aqui como nota solta",
+    "não chega aqui como nota solta",
+)
+PROFESSOR_LISTEN = (
+    r"\bescute primeiro\b",
+    r"\bagora escute\b",
+    r"\bagora ouça\b",
+    r"\bobserve o baixo\b",
+    r"\bobserve a bateria\b",
+    r"\bobserve o groove\b",
+    r"\brepare na bateria\b",
+    r"\bpreste aten[cç][aã]o (?:n[ao]|em) (?:baixo|bateria|guitarra|voz|sax|teclado)\b",
+    r"\buse fones para\b",
+    r"\bcom fones\b.{0,40}\buma vez para\b",
+    r"\bna quarta vez\b",
+    r"\bna quarta,\s*escute\b",
+    r"\bdepois a guitarra\b",
+    r"\btire os olhos d[eo]\b",
+    r"\bdepois scott\b",
+    r"\bagora re[uú]na tudo\b",
+    r"\bouça uma vez para cada instrumento\b",
+    r"\bescolha um instrumento e siga apenas ele\b",
+    r"\bsiga apenas (?:o|a) (?:baixo|bateria|guitarra|voz)\b",
+)
 PTBR_FALSE_ACCEPT_PATTERNS = (
     r"\bcontrolos?\b",
     r"\bseleccoes?\b",
@@ -270,6 +301,24 @@ def evaluate(article: dict[str, Any], fact_pack: dict[str, Any], config: dict[st
 
     if any(norm(marker) in low for marker in SCHEMA_ECHOES):
         reprocess.append("schema_placeholder_echo")
+
+    for phrase in FORMULAIC_DECKS:
+        if phrase in low:
+            reprocess.append(f"formulaic_phrase:{phrase}")
+            break
+    for pattern in PROFESSOR_LISTEN:
+        if re.search(pattern, low, flags=re.I):
+            reprocess.append("professor_de_escuta")
+            break
+    title_low = norm(str(article.get("title") or ""))
+    if title_low.startswith("o que ") and "deixa no ar agora" in title_low:
+        reject.append("formulaic_title")
+    if "guarda nesta escuta" in title_low:
+        reject.append("formulaic_title")
+    if title_low.startswith("o disco de ") and any(x in low for x in ("filme", "resident", "raccoon", "cinema")):
+        reject.append("formulaic_title")
+    if "mr. nomad" in norm(str(article.get("author") or "")) and str(article.get("format") or "") not in {"MR_NOMAD"}:
+        reprocess.append("automatic_nomad_byline")
 
     generic_headings = 0
     for section in article.get("sections") or []:

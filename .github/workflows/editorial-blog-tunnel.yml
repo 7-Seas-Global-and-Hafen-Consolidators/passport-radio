@@ -27,6 +27,11 @@ on:
       - 'data/editorial-sources-blog-v1.json'
       - 'data/blog-tunnel-engine.json'
       - 'tests/test_editorial_blog_tunnel.py'
+      - 'tests/test_editorial_blog_publication.py'
+      - 'tests/test_store_stamp_pricing.py'
+      - 'tools/passport_store_pricing.py'
+      - 'tools/passport_circulation.py'
+      - 'tools/editorial_blog_store.py'
       - '.github/workflows/editorial-blog-tunnel.yml'
       - 'js/passport-blog-archive.js'
       - 'blog.html'
@@ -63,12 +68,23 @@ jobs:
           python -m py_compile \
             tools/editorial_blog_discovery.py \
             tools/editorial_blog_tunnel.py \
+            tools/editorial_blog_catalog.py \
+            tools/editorial_blog_store.py \
             tools/editorial_media_resolver.py \
             tools/editorial_fact_pack.py \
             tools/editorial_quality_gate.py \
-            tools/editorial_engine_constitution.py
+            tools/editorial_engine_constitution.py \
+            tools/passport_store_pricing.py \
+            tools/passport_circulation.py \
+            tools/stamp_source_crawl.py \
+            tools/stamp_passport_reconcile.py
           python tests/test_editorial_blog_tunnel.py
-          node --check js/passport-blog-archive.js
+          python tests/test_editorial_blog_publication.py
+          python tests/test_store_stamp_pricing.py
+          node --check js/passport-blog-search.js
+          node --check js/passport-blog-discussion.js
+          node --check js/passport-blog-submit.js
+          node --check js/passport-store-search.js
 
       - name: Guard protected surfaces
         run: |
@@ -149,7 +165,7 @@ jobs:
         run: |
           git config user.name "passport-blog-tunnel"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/blog-tunnel-queue.json data/blog-published.json data/blog-feed.json data/blog-media-library.json data/knowledge-graph.json blog.html sitemap.xml
+          git add data/blog-tunnel-queue.json data/blog-published.json data/blog-feed.json data/blog-media-library.json data/knowledge-graph.json data/blog-catalog.jsonl data/blog-catalog-meta.json data/blog-search data/blog-tunnel-cursor.json blog.html sitemap.xml sitemap-blog.xml robots.txt
           git add blog || true
           if git diff --cached --quiet; then
             echo "No Blog publication in this run"

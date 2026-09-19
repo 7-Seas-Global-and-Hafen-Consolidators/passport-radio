@@ -1,0 +1,227 @@
+{
+  "rule": "If the story crosses time, media should cross time. Hero alone is not a documentary. The mill does not invent stills.",
+  "resolver": "tools/editorial_media_resolver.py",
+  "renderer": "tools/editorial_blog_tunnel.py _media_html + blog-doc-strip",
+  "catalog_size": 21933,
+  "temporal_detected": 586,
+  "temporal_with_hero": 3,
+  "temporal_with_inline_photos": 0,
+  "temporal_with_video": 0,
+  "temporal_without_factual_media": 19651,
+  "origin_html_403": true,
+  "archive_mill_photos": "not invented; gzip rows have no photo payload",
+  "media_library_items": 6,
+  "editorial_dossiers_audited": [
+    {
+      "file": "editorial/2026/08/27/thin-lizzy-historia-integrantes-phil-lynott-guitarras.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 2045
+    },
+    {
+      "file": "editorial/2026/08/27/angra-historia-integrantes-andre-matos-kiko-loureiro.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 2005
+    },
+    {
+      "file": "editorial/2026/08/27/budgie-historia-integrantes-burke-shelley-tony-bourge.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1943
+    },
+    {
+      "file": "editorial/2026/08/27/kid-abelha-historia-integrantes-paula-toller-leoni.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 2043
+    },
+    {
+      "file": "editorial/2026/08/27/secos-e-molhados-historia-integrantes-instrumentos.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 2643
+    },
+    {
+      "file": "editorial/2026/08/27/nightwish-seis-musicas-proximo-album.html",
+      "images": 1,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 7436
+    },
+    {
+      "file": "editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html",
+      "images": 1,
+      "figures": 0,
+      "iframes": 2,
+      "phase_signals": 3,
+      "bytes": 12356
+    },
+    {
+      "file": "editorial/2026/08/27/marillion-historia-integrantes-fish-steve-hogarth.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 2003
+    },
+    {
+      "file": "editorial/2026/08/27/humble-pie-historia-integrantes-steve-marriott-frampton.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1970
+    },
+    {
+      "file": "editorial/2026/08/27/joelho-de-porco-historia-integrantes-tico-terpins-ze-rodrix.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1978
+    },
+    {
+      "file": "editorial/2026/08/27/faith-no-more-historia-integrantes-mike-patton-billy-gould.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 2014
+    },
+    {
+      "file": "editorial/2026/08/27/floor-jansen-hytress-bring-me-silence.html",
+      "images": 1,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 6975
+    },
+    {
+      "file": "editorial/2026/08/27/colera-banda-punk-historia-integrantes-redson-pierre.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 1984
+    },
+    {
+      "file": "editorial/2026/08/27/golpe-de-estado-banda-historia-integrantes-helcio-aguirra.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1992
+    },
+    {
+      "file": "editorial/2026/08/27/living-colour-historia-integrantes-vernon-reid-corey-glover.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1964
+    },
+    {
+      "file": "editorial/2026/08/27/temple-of-the-dog-historia-integrantes-chris-cornell-eddie-vedder.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 2063
+    },
+    {
+      "file": "editorial/2026/08/27/floor-jansen-nothing-else-matters-marinha.html",
+      "images": 1,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 6999
+    },
+    {
+      "file": "editorial/2026/08/27/ratos-de-porao-historia-integrantes-joao-gordo.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1972
+    },
+    {
+      "file": "editorial/2026/08/27/floor-jansen-nightwish-pausa-temporaria.html",
+      "images": 1,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 6856
+    },
+    {
+      "file": "editorial/2026/08/27/anette-olzon-nightwish-era-europa-2026.html",
+      "images": 1,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 3,
+      "bytes": 7310
+    },
+    {
+      "file": "editorial/2026/08/27/leo-jaime-historia-nome-verdadeiro-rock-brasileiro.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 0,
+      "bytes": 1995
+    },
+    {
+      "file": "editorial/2026/08/27/made-in-brazil-historia-integrantes-rock-brasileiro.html",
+      "images": 0,
+      "figures": 0,
+      "iframes": 0,
+      "phase_signals": 1,
+      "bytes": 2009
+    },
+    {
+      "file": "editorial/2026/08/27/dolly-parton-1946-2026-vida-cancoes-legado.html",
+      "images": 3,
+      "figures": 2,
+      "iframes": 0,
+      "phase_signals": 4,
+      "bytes": 19998
+    }
+  ],
+  "kid_abelha": {
+    "path": "editorial/2026/08/27/kid-abelha-historia-integrantes-paula-toller-leoni.html",
+    "images": 0,
+    "cream_on_cream": false,
+    "professor_listen": false
+  },
+  "listed_sample_coverage": {
+    "kid-abelha": true,
+    "the-mission": true,
+    "angra": true,
+    "budgie": true,
+    "colera": true,
+    "faith-no-more": true,
+    "golpe-de-estado": true,
+    "humble-pie": true,
+    "joelho-de-porco": true,
+    "leo-jaime": true,
+    "living-colour": true,
+    "made-in-brazil": true,
+    "marillion": true,
+    "ratos-de-porao": true,
+    "secos": true,
+    "temple-of-the-dog": true,
+    "thin-lizzy": true
+  },
+  "temporal_definition": "event_years or decades spanning more than one value, or format_hint=special (biografias)",
+  "note": "Archive mill pages have no invented stills. Origin HTML 403. Editorial career dossiers remain in /editorial/ and were not dumped into Blog."
+}

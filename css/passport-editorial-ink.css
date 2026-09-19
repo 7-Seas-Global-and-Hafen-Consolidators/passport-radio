@@ -94,3 +94,26 @@ body.pp-article .video{width:100%!important;aspect-ratio:16/9!important;overflow
 body.pp-article .video iframe{width:100%!important;height:100%!important}
 body.pp-article img,body.pp-article figure{max-width:100%!important}
 @media(max-width:650px){body.pp-article .pe-shell,body.pp-article .shell,body.pp-article .pe-prose,body.pp-article .article,body.pp-article article.article,body.pp-article .hero-copy{width:calc(100% - 28px)!important}body.pp-article .hero>img{max-width:calc(100% - 28px)!important;max-height:50vh!important;margin-bottom:24px!important}body.pp-article .pe-hero h1,body.pp-article .hero h1{font-size:clamp(2.35rem,12vw,3.8rem)!important;max-width:15ch!important}}
+
+/* Dossier family (Kid Abelha and siblings): cream paper, readable dark ink. Never cream-on-cream. */
+body.pp-article:has(#mr-nomad-dossier),
+body.pp-article:has(.mn-prose){
+  background:#f6f2e9 !important;
+  color:#101010 !important;
+}
+body.pp-article:has(.mn-prose) .mn-prose,
+body.pp-article:has(.mn-prose) .mn-prose p,
+body.pp-article:has(.mn-prose) .mn-prose h2,
+body.pp-article:has(.mn-prose) .mn-lead,
+body.pp-article:has(.mn-prose) .mn-roster-row,
+body.pp-article:has(.mn-prose) .mn-roster-row span,
+body.pp-article:has(.mn-prose) .mn-roster-row strong,
+body.pp-article:has(.mn-prose) .mn-nomad p{
+  color:#101010 !important;
+}
+body.pp-article:has(.mn-prose) .mn-hero,
+body.pp-article:has(.mn-prose) .mn-hero h1,
+body.pp-article:has(.mn-prose) .mn-deck{
+  color:#f3ead8 !important;
+}
+body.pp-article:has(.mn-prose) .mn-deck{color:#d8d2c6 !important;}

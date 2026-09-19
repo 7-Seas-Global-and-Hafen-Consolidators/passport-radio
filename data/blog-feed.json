@@ -1,18 +1,171 @@
 {
   "version": 1,
   "channel": "blog",
-  "updated_at": "2026-09-18T03:35:00.523943-03:00",
+  "updated_at": "2026-09-18T14:07:11.334678-03:00",
   "author": "Passport Radio",
   "cover_mode": "human",
   "cover_url": "/historias/contar-historias-que-dao-vontade-de-ouvir.html",
   "items": [
     {
-      "title": "O que Oasis deixa no ar agora",
-      "deck": "Oasis reaparece no radar da Passport por um movimento concreto. A casa conta o que se pode cravar e devolve o resto para a escuta.",
+      "title": "Keith Richards e a faixa que entrou em outra história",
+      "deck": "Ouça música que Keith Richards gravou para trilha de Grand Theft Auto VI.",
+      "url": "/blog/2026/09/18/keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T14:07:05.077397-03:00",
+      "entities": [
+        "Keith Richards",
+        "Rolling Stones",
+        "Grand Theft Auto VI"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_3e414ad4a271a22253dc",
+      "image": ""
+    },
+    {
+      "title": "Mastodon e a memória que os músicos ainda carregam",
+      "deck": "Bill Kelliher e Brann Dailor relembram Brent Hinds; Ele era onipresente na minha vida.",
+      "url": "/blog/2026/09/18/mastodon-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T14:06:36.619415-03:00",
+      "entities": [
+        "Mastodon",
+        "Brent Hinds",
+        "Bill Kelliher",
+        "Brann Dailor"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_d75e544e2530bdb83c33",
+      "image": ""
+    },
+    {
+      "title": "O palco que reorganizou a vida em torno de Machine Head",
+      "deck": "O show que mudou para sempre a vida de Robb Flynn, vocalista do Machine Head.",
+      "url": "/blog/2026/09/18/o-palco-que-reorganizou-a-vida-em-torno-de-machine-head.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T14:05:03.347689-03:00",
+      "entities": [
+        "Machine Head",
+        "Exciter",
+        "Robb Flynn"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_7cd09fddee8a304f0a4c",
+      "image": ""
+    },
+    {
+      "title": "John Bonham e a faixa de época que modelou Led Zeppelin",
+      "deck": "A canção dos anos 60 que John Bonham via como uma espécie de modelo para o Led Zeppelin.",
+      "url": "/blog/2026/09/18/led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T14:04:23.660837-03:00",
+      "entities": [
+        "Led Zeppelin",
+        "Kinks",
+        "John Bonham"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_0d87f4d91e04d6edb580",
+      "image": ""
+    },
+    {
+      "title": "Pink Floyd e a parceria que o próprio autor descreve",
+      "deck": "Nunca compusemos juntos - Roger Waters explica sua parceria com David Gilmour no Pink Floyd.",
+      "url": "/blog/2026/09/18/o-que-pink-floyd-deixa-no-ar-agora.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T12:00:00-03:00",
+      "entities": [
+        "Pink Floyd",
+        "Roger Waters",
+        "David Gilmour"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_08de12b9a241a9063637",
+      "image": ""
+    },
+    {
+      "title": "Iron Maiden e o detalhe que os fãs ainda discutem",
+      "deck": "Regis Tadeu finalmente explica detalhe do Iron Maiden que fãs discutem há 20 anos.",
+      "url": "/blog/2026/09/18/o-que-iron-maiden-deixa-no-ar-agora.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T12:00:00-03:00",
+      "entities": [
+        "Iron Maiden",
+        "Regis Tadeu",
+        "Steve Harris"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_640f07215c0f00fd55f1",
+      "image": ""
+    },
+    {
+      "title": "Metallica e a canção que ainda pega o próprio autor",
+      "deck": "A canção do Metallica que ainda emociona James Hetfield toda vez que ele a escuta.",
+      "url": "/blog/2026/09/18/o-que-metallica-deixa-no-ar-agora.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T12:00:00-03:00",
+      "entities": [
+        "Metallica",
+        "James Hetfield"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_8cfa7f5af1e7ad743879",
+      "image": ""
+    },
+    {
+      "title": "Yes e a faixa que atravessou outras bandas",
+      "deck": "A música do Yes que serviu de inspiração para Dream Theater e Sepultura.",
+      "url": "/blog/2026/09/18/o-que-yes-deixa-no-ar-agora.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T12:00:00-03:00",
+      "entities": [
+        "Yes",
+        "Dream Theater",
+        "Sepultura"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_760f79c74745c39bf2d9",
+      "image": ""
+    },
+    {
+      "title": "Zach Cregger recoloca Raccoon City no centro com um herói falho",
+      "deck": "Zach Cregger recoloca Raccoon City no centro com um herói falho.",
+      "url": "/blog/2026/09/18/zach-cregger-recoloca-raccoon-city-no-centro-com-um-heroi-solitario-e-falho.html",
+      "category": "music",
+      "format": "STORY",
+      "published_at": "2026-09-18T12:00:00-03:00",
+      "entities": [
+        "Zach Cregger",
+        "Resident Evil",
+        "Raccoon City"
+      ],
+      "author": "Passport Radio",
+      "channel": "blog",
+      "story_id": "ANG_d0fdf0b5ce997bb4c23f",
+      "image": "https://www.metal-hammer.de/wp-content/uploads/2026/09/17/11/30168-scaled.webp"
+    },
+    {
+      "title": "Noel Gallagher e a canção de Oasis que nasceu depois da noite",
+      "deck": "O clássico do Oasis que Noel Gallagher escreveu após sair de boate de strip-tease.",
       "url": "/blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html",
       "category": "music",
       "format": "STORY",
-      "published_at": "2026-09-18T03:31:09.265799-03:00",
+      "published_at": "2026-09-18T12:00:00-03:00",
       "entities": [
         "Oasis",
         "Noel Gallagher"
@@ -23,29 +176,18 @@
       "image": ""
     },
     {
-      "title": "Kai Hansen no microfone: o metal reorganiza o tabuleiro em um só giro",
-      "deck": "A edição 151 coloca o guitarrista em entrevista no lançamento de Born With a Hammer e varre notícias quentes de Slipknot a Sepultura, com sorteio ligado ao cinema.",
+      "title": "Kai Hansen no microfone e o que essa conversa ainda move",
+      "deck": "Kai Hansen, com Born With a Hammer, Linkin Park, Linkin Park: Unshatter, Slipknot, Metal Hammer Podcast Folge 151 Mit Kai Hansen.",
       "url": "/blog/2026/09/18/kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro.html",
       "category": "music",
       "format": "STORY",
-      "published_at": "2026-09-18T03:27:24.156936-03:00",
+      "published_at": "2026-09-18T12:00:00-03:00",
       "entities": [
         "Kai Hansen",
         "Born With a Hammer",
-        "Metal Hammer Podcast",
         "Linkin Park",
         "Linkin Park: Unshatter",
-        "Slipknot",
-        "Arsenal",
-        "Mastodon",
-        "Brent Hinds",
-        "Sepultura",
-        "Moonspell",
-        "Anthrax",
-        "Steve Harris",
-        "Iron Maiden",
-        "Oli Sykes",
-        "Courtney LaPlante"
+        "Slipknot"
       ],
       "author": "Passport Radio",
       "channel": "blog",

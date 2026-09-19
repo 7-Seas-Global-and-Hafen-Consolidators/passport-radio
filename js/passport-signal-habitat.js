@@ -26,7 +26,7 @@
     header.innerHTML =
       '<a class="pp-signal-brand" href="/" target="_top">' +
       '<img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="36" height="36">' +
-      "<span><b>PASSPORT RADIO</b><small>Every Song Is A Destination</small></span></a>" +
+      "<span><b>PASSPORT RADIO</b><small>Contar histórias que dão vontade de ouvir</small></span></a>" +
       '<nav class="pp-signal-nav" aria-label="Portas da Passport">' +
       '<a href="/" target="_top">Home</a>' +
       '<a href="/noticias.html" target="_top">Notícias</a>' +
@@ -45,7 +45,7 @@
       foot.innerHTML =
         '<a href="/" target="_top">Home</a> · <a href="/radio.html" target="_top">Ouvir</a> · ' +
         '<a href="/loja.html" target="_top">Loja</a> · <a href="/privacidade.html" target="_top">Privacidade e Cookies</a> · <a href="' + SUPPORT + '" target="_blank" rel="noopener">Ajude</a>' +
-        "<p>Passport Radio™ · Every Song Is A Destination.</p>";
+        "<p>Passport Radio™ · Contar histórias que dão vontade de ouvir.</p>";
       document.body.appendChild(foot);
     }
   }

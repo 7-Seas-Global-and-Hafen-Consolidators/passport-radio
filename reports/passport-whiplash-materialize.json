@@ -1,0 +1,35 @@
+{
+  "catalog_before": 12,
+  "new_materialized": 21921,
+  "catalog_final": 21933,
+  "html_article_pages": 21921,
+  "search_indexed": 21933,
+  "search_shards": 6,
+  "sitemap_urls": 25653,
+  "entities": 2767,
+  "archive_pages": 914,
+  "authors": {
+    "Passport Radio": 21932,
+    "Mr. Nomad": 1
+  },
+  "families": {
+    "historias": 16655,
+    "cultura": 677,
+    "discos": 3709,
+    "shows": 503,
+    "entrevistas": 389
+  },
+  "formats": {
+    "STORY": 21337,
+    "MR_NOMAD": 1,
+    "LIVE_SIGNAL": 503,
+    "FLASH": 92
+  },
+  "generation": {
+    "vitrine": 12,
+    "archive_mill": 21921
+  },
+  "related": "inverted entity index, 6 per story",
+  "cover_is_vitrine": true,
+  "archive_is_acervo": true
+}

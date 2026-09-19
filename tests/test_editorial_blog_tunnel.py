@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -242,6 +243,10 @@ def test_writer_is_generic_and_ptbr() -> None:
         fail("generic writer ignored the actual entity")
     if article["title"].lower() == candidate["title"].lower():
         fail("writer copied source title")
+    if re.search(r"^o que .+ deixa no ar agora", article["title"], re.I):
+        fail("formulaic fallback title")
+    if "reaparece no radar da Passport por um movimento concreto" in article["deck"]:
+        fail("formulaic fallback deck")
     public = " ".join([
         article["title"], article["deck"], article["closing"],
         *[p["text"] for s in article["sections"] for p in s["paragraphs"]],
@@ -284,10 +289,12 @@ def test_renderer_contracts() -> None:
         fail("missing channel meta")
     if "reservará espaço" in html or "Nenhum comentário" in html:
         fail("public discussion scaffolding leaked")
-    if 'data-passport-discussion="reserved"' not in html:
+    if 'data-passport-discussion="live"' not in html:
         fail("discussion hook missing")
     if "every song is a destination" in html.lower():
         fail("dead slogan in renderer")
+    if "Copiar link" not in html or "WhatsApp" not in html:
+        fail("share controls missing")
     print("OK renderer contracts")
 
 
@@ -332,8 +339,8 @@ def test_destination_and_isolation() -> None:
     blog = (ROOT / "blog.html").read_text("utf-8")
     if "contar-historias-que-dao-vontade-de-ouvir.html" not in blog:
         fail("human cover was removed from blog.html")
-    if "passport-blog-archive.js" not in blog:
-        fail("archive script not wired")
+    if "passport-blog-search.js" not in blog and 'form class="blog-search"' not in blog:
+        fail("search not wired on blog cover")
     news = (ROOT / "noticias.html").read_text("utf-8")
     if "blog-feed.json" in news or "editorial_blog_tunnel" in news:
         fail("noticias.html was coupled to the blog tunnel")
@@ -533,7 +540,7 @@ def test_dead_slogan_and_discussion_copy_removed() -> None:
             fail("dead slogan still in published sample")
         if "reservará espaço" in html:
             fail("discussion scaffolding still in published sample")
-        if 'data-passport-discussion="reserved"' not in html:
+        if 'data-passport-discussion="live"' not in html and 'data-passport-discussion="reserved"' not in html:
             fail("discussion hook stripped from published sample")
     print("OK slogan + public discussion scaffolding removed")
 

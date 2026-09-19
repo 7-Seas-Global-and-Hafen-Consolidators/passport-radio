@@ -1,0 +1,198 @@
+{
+  "source": "https://whiplash.net/",
+  "autopsy": {
+    "discovered_clusters": 23267,
+    "editorial_articles": 21932,
+    "hubs": 1335,
+    "queued_before": 21921,
+    "already_published_in_gzip": 9,
+    "already_skipped_in_gzip": 2,
+    "path_families_source": {
+      "STORY": 16963,
+      "DISCO": 3710,
+      "SHOW": 503,
+      "CURIOSIDADE": 367,
+      "ENTREVISTA": 389
+    },
+    "hubs_classified": {
+      "counts": {
+        "indices": 326,
+        "bandas": 983,
+        "temas": 17,
+        "assuntos": 9
+      },
+      "samples": {
+        "indices": [
+          "https://whiplash.net/indices/bandas.html",
+          "https://whiplash.net/indices/mais_lidas.html",
+          "https://whiplash.net/indices/mais_lidas_ano.html",
+          "https://whiplash.net/indices/mais_lidas_mes.html",
+          "https://whiplash.net/indices/mais_lidas_semana.html"
+        ],
+        "bandas": [
+          "https://whiplash.net/bandas/z/zztop-cds.html",
+          "https://whiplash.net/bandas/y/yngwiemalmsteen-cds.html",
+          "https://whiplash.net/bandas/y/yes-cds.html",
+          "https://whiplash.net/bandas/w/who-cds.html",
+          "https://whiplash.net/bandas/w/whitesnake-cds.html"
+        ],
+        "temas": [
+          "https://whiplash.net/temas/r/rockinrio-cds.html",
+          "https://whiplash.net/temas/c/covers-cds.html",
+          "https://whiplash.net/temas/h/heavymetal-cds.html",
+          "https://whiplash.net/temas/t/thrashmetal-cds.html",
+          "https://whiplash.net/temas/g/grunge-cds.html"
+        ],
+        "assuntos": [
+          "https://whiplash.net/assuntos/r/rockinrio2022-shows.html",
+          "https://whiplash.net/assuntos/s/summerbreezebrasil-shows.html",
+          "https://whiplash.net/assuntos/m/monstersofrockbrasil2025-shows.html",
+          "https://whiplash.net/assuntos/b/bangersopenair2025-shows.html",
+          "https://whiplash.net/assuntos/r/rockinrio2011-shows.html"
+        ]
+      }
+    }
+  },
+  "classification": {
+    "editorial_content": 21932,
+    "entities_from_articles": 2766,
+    "index_navigation_hubs": 1335,
+    "relations_related_index": "entity inverted index"
+  },
+  "materialized": {
+    "new_stories": 21921,
+    "html_written": 21921,
+    "html_failed": 0,
+    "formats": {
+      "STORY": 21321,
+      "LIVE_SIGNAL": 503,
+      "FLASH": 92
+    },
+    "families": {
+      "historias": 16816,
+      "cultura": 499,
+      "discos": 3709,
+      "shows": 503,
+      "entrevistas": 389
+    },
+    "path_sections": {
+      "news": 16636,
+      "opinioes": 106,
+      "cds": 3279,
+      "shows": 503,
+      "melhores": 430,
+      "biografias": 176,
+      "curiosidades": 69,
+      "entrevistas": 389,
+      "livros": 3,
+      "imagens": 17,
+      "humor": 6,
+      "whiplash": 4,
+      "traducoes": 298
+    },
+    "authors": {
+      "Passport Radio": 21927,
+      "Mr. Nomad": 1
+    }
+  },
+  "catalog": {
+    "before": 12,
+    "new": 21921,
+    "final": 21933
+  },
+  "failures": {
+    "count": 0,
+    "by_stage": {
+      "quality_gate_retried": 5
+    },
+    "sample": [
+      {
+        "id": "377433",
+        "stage": "quality_gate",
+        "error": "unverified_quantities:p4:2026:record_count",
+        "retry": true,
+        "decision": "WOULD_REPROCESS"
+      },
+      {
+        "id": "379242",
+        "stage": "quality_gate",
+        "error": "unverified_quantities:p4:5:page_count",
+        "retry": true,
+        "decision": "WOULD_REPROCESS"
+      },
+      {
+        "id": "004338",
+        "stage": "quality_gate",
+        "error": "unverified_quantities:p4:13:page_count",
+        "retry": true,
+        "decision": "WOULD_REPROCESS"
+      },
+      {
+        "id": "006634",
+        "stage": "quality_gate",
+        "error": "unverified_quantities:p4:9:page_count",
+        "retry": true,
+        "decision": "WOULD_REPROCESS"
+      },
+      {
+        "id": "007510",
+        "stage": "quality_gate",
+        "error": "unverified_quantities:p4:9:page_count",
+        "retry": true,
+        "decision": "WOULD_REPROCESS"
+      }
+    ],
+    "retried_successfully": 5,
+    "remaining": 0
+  },
+  "math": {
+    "WHIPLASH_SOURCE_TOTAL": 23267,
+    "ARTICLES": 21932,
+    "HUBS": 1335,
+    "PRESENT_ALREADY": 9,
+    "NEW_MATERIALIZED": 21921,
+    "TECHNICAL_FAILURES": 0,
+    "SKIPPED_SOURCE": 2,
+    "HUBS_AS_INDEX_NOT_STORY": 1335,
+    "equation_articles": "21932 = 9 present + 21921 new + 0 remaining failures + 2 skipped",
+    "TECHNICAL_FAILURES_RETRIED": 5
+  },
+  "surfaces": {
+    "catalog": 21933,
+    "archive_pages": 914,
+    "entities": 2766,
+    "authors": 2,
+    "search_shards": 6,
+    "store": {
+      "indexed": 933,
+      "artists": 33,
+      "publishable": 882,
+      "product_pages": 882
+    }
+  },
+  "live_html_fetch": {
+    "status": "technical_failure",
+    "error": "HTTP 403 from origin in this environment; browse_page works for samples only",
+    "retry": true,
+    "impact": "Bodies written from gzip facts (artist, format, origin id, RSS title/summary when present). No invented stills, quotes or event years."
+  },
+  "identity": {
+    "public_author": "Passport Radio",
+    "whiplash_public_brand": false,
+    "urls": "/blog/w/{origin_id}-{artist}.html"
+  },
+  "doors_not_in_gzip": [
+    {
+      "url": "https://whiplash.net/materias/whiplash/051632.html",
+      "note": "not in sitemap snapshot; Kid Abelha exists as editorial dossier + /blog/e/kid-abelha.html"
+    },
+    {
+      "url": "https://whiplash.net/materias/whiplash/069494.html",
+      "note": "collab door; Passport equivalent /blog/envie-sua-historia.html"
+    },
+    {
+      "url": "https://whiplash.net/materias/whiplash/000766.html",
+      "note": "in gzip, materialized /blog/w/000766-a-cena.html; collab lives at envie-sua-historia"
+    }
+  ]
+}

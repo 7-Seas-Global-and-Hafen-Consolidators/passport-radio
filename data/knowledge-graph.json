@@ -467,6 +467,98 @@
       "type": "band",
       "name": "Nunca",
       "aliases": []
+    },
+    {
+      "id": "article:blog-led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "type": "article",
+      "name": "Led Zeppelin e o giro que recoloca o nome no mapa",
+      "aliases": [],
+      "url": "/blog/2026/09/18/led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:kinks",
+      "type": "band",
+      "name": "Kinks",
+      "aliases": []
+    },
+    {
+      "id": "band:john-bonham",
+      "type": "band",
+      "name": "John Bonham",
+      "aliases": []
+    },
+    {
+      "id": "article:blog-o-palco-que-reorganizou-a-vida-em-torno-de-machine-head",
+      "type": "article",
+      "name": "O palco que reorganizou a vida em torno de Machine Head",
+      "aliases": [],
+      "url": "/blog/2026/09/18/o-palco-que-reorganizou-a-vida-em-torno-de-machine-head.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:machine-head",
+      "type": "band",
+      "name": "Machine Head",
+      "aliases": []
+    },
+    {
+      "id": "band:exciter",
+      "type": "band",
+      "name": "Exciter",
+      "aliases": []
+    },
+    {
+      "id": "band:robb-flynn",
+      "type": "band",
+      "name": "Robb Flynn",
+      "aliases": []
+    },
+    {
+      "id": "article:blog-mastodon-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "type": "article",
+      "name": "Mastodon e o giro que recoloca o nome no mapa",
+      "aliases": [],
+      "url": "/blog/2026/09/18/mastodon-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:bill-kelliher",
+      "type": "band",
+      "name": "Bill Kelliher",
+      "aliases": []
+    },
+    {
+      "id": "band:brann-dailor",
+      "type": "band",
+      "name": "Brann Dailor",
+      "aliases": []
+    },
+    {
+      "id": "article:blog-keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "type": "article",
+      "name": "Keith Richards e o giro que recoloca o nome no mapa",
+      "aliases": [],
+      "url": "/blog/2026/09/18/keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa.html",
+      "author": "Passport Radio"
+    },
+    {
+      "id": "band:keith-richards",
+      "type": "band",
+      "name": "Keith Richards",
+      "aliases": []
+    },
+    {
+      "id": "band:rolling-stones",
+      "type": "band",
+      "name": "Rolling Stones",
+      "aliases": []
+    },
+    {
+      "id": "band:grand-theft-auto-vi",
+      "type": "band",
+      "name": "Grand Theft Auto VI",
+      "aliases": []
     }
   ],
   "relations": [
@@ -789,6 +881,71 @@
       "type": "about",
       "from": "article:blog-o-que-pink-floyd-deixa-no-ar-agora",
       "to": "band:nunca"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:led-zeppelin"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:kinks"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:john-bonham"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-palco-que-reorganizou-a-vida-em-torno-de-machine-head",
+      "to": "band:machine-head"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-palco-que-reorganizou-a-vida-em-torno-de-machine-head",
+      "to": "band:exciter"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-o-palco-que-reorganizou-a-vida-em-torno-de-machine-head",
+      "to": "band:robb-flynn"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-mastodon-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:mastodon"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-mastodon-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:brent-hinds"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-mastodon-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:bill-kelliher"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-mastodon-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:brann-dailor"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:keith-richards"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:rolling-stones"
+    },
+    {
+      "type": "about",
+      "from": "article:blog-keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa",
+      "to": "band:grand-theft-auto-vi"
     }
   ]
 }
