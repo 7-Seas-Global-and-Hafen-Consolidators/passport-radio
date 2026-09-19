@@ -4,10 +4,10 @@ from pathlib import Path
 WHATSAPP = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
 TELEGRAM = "https://t.me/+FKto2N185cs4OGU0"
 REPLACEMENTS = {
-    "https://wa.me/message/NZS7ZW4QHQVBG1": WHATSAPP,
-    "https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!": WHATSAPP,
-    "https://t.me/+pXv3uwqOY8lkZGZk": TELEGRAM,
-    "https://t.me/+447594716370": TELEGRAM,
+    "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k": WHATSAPP,
+    "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k": WHATSAPP,
+    "https://t.me/+FKto2N185cs4OGU0": TELEGRAM,
+    "https://t.me/+FKto2N185cs4OGU0": TELEGRAM,
 }
 TEXT_EXT = {".html",".js",".mjs",".cjs",".py",".yml",".yaml",".json",".jsonl",".md",".txt",".xml"}
 SKIP = {".git","node_modules",".passport-wa-auth"}

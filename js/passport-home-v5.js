@@ -5,7 +5,7 @@
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
-  const WA_OFFICIAL = "https://wa.me/message/NZS7ZW4QHQVBG1";
+  const WA_OFFICIAL = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k";
   const FOFONETE = {
     art: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.art) || "/images/fofonete-home.jpg",
     cta: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.cta) || "https://www.asaas.com/c/shpb8gbiswnw4t2n"

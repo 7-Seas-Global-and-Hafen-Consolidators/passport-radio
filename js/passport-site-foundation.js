@@ -2,8 +2,8 @@
   "use strict";
   const KEY = "passport_cookie_consent_v2";
   const PASSPORT = {
-    whatsapp: "https://wa.me/48732099369?text=Ol%C3%A1%20Passport%20Radio!",
-    telegram: "https://t.me/+447594716370",
+    whatsapp: "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k",
+    telegram: "https://t.me/+FKto2N185cs4OGU0",
     email: "passport@passportradio.online"
   };
   const hasConsent = () => { try { return localStorage.getItem(KEY) === "accepted"; } catch (_) { return false; } };
