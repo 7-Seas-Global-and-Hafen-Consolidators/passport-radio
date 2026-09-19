@@ -32,6 +32,7 @@ on:
       - 'tools/passport_store_pricing.py'
       - 'tools/passport_circulation.py'
       - 'tools/whatsapp_channel_outbox.py'
+      - 'tools/circulation_delta.py'
       - 'tools/whatsapp_channel_bridge.mjs'
       - 'tools/editorial_blog_store.py'
       - '.github/workflows/editorial-blog-tunnel.yml'
@@ -81,6 +82,7 @@ jobs:
             tools/passport_store_pricing.py \
             tools/passport_circulation.py \
             tools/migrate_whatsapp_channel.py \
+            tools/circulation_delta.py \
             tools/whatsapp_channel_outbox.py \
             tools/telegram_publisher.py \
             tools/stamp_source_crawl.py \
@@ -190,25 +192,28 @@ jobs:
           git commit -m "chore(blog-tunnel): continuous discover + capped Blog publish"
           git push
 
+      - name: Build complete circulation delta
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: |
+          python tools/circulation_delta.py \
+            --state data/circulation-state.json \
+            --output build/circulation-delta.json
+
       - name: Queue new and revitalized Blog stories for WhatsApp Channel
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
-          BEFORE_SHA="$BLOG_BEFORE_SHA"
-          AFTER_SHA="$(git rev-parse HEAD)"
           python tools/whatsapp_channel_outbox.py queue-changed \
             --catalog data/blog-catalog.jsonl \
             --outbox data/whatsapp-channel-outbox.json \
-            --git-range "$BEFORE_SHA..$AFTER_SHA"
+            --delta build/circulation-delta.json
 
       - name: Publish new and revitalized Blog stories to Telegram
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
         run: |
-          BEFORE_SHA="$BLOG_BEFORE_SHA"
-          AFTER_SHA="$(git rev-parse HEAD)"
           python tools/telegram_publisher.py publish-new \
             --catalog data/blog-catalog.jsonl \
             --state data/telegram-published.json \
-            --git-range "$BEFORE_SHA..$AFTER_SHA"
+            --delta build/circulation-delta.json
 
       - name: Persist WhatsApp Channel outbox
         if: github.event_name != 'pull_request' && env.APPLY == 'true'
@@ -236,6 +241,23 @@ jobs:
             exit 0
           fi
           git commit -m "chore(circulation): persist Telegram publication state"
+          git push
+
+      - name: Advance circulation cursor
+        if: github.event_name != 'pull_request' && env.APPLY == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('build/circulation-delta.json').read_text('utf-8'))
+          Path('data/circulation-state.json').write_text(json.dumps({'cursor':d['to']},indent=2)+'\n','utf-8')
+          PY
+          git add data/circulation-state.json
+          if git diff --cached --quiet; then
+            echo "Circulation cursor unchanged"
+            exit 0
+          fi
+          git commit -m "chore(circulation): advance Blog circulation cursor"
           git push
 
       - name: Upload private packet
