@@ -7,10 +7,6 @@ on:
         description: "Committed deterministic canary manifest (safety cap: 5)"
         required: false
         default: "ops/canary/canary-003.json"
-  workflow_run:
-    workflows: ["Passport Editorial Engine — Constitution / Zero-Cost Multiprovider"]
-    types: [completed]
-
 permissions:
   contents: write
 

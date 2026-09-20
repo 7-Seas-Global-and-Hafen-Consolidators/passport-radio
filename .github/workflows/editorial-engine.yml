@@ -17,21 +17,7 @@ on:
         description: "Manual generation budget override (-1 uses pacing; 0-12 overrides)"
         required: false
         default: "-1"
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/editorial-engine.yml'
-      - 'tools/editorial_engine_free.py'
-      - 'tools/editorial_engine_quality_router.py'
-      - 'tools/editorial_engine_constitution.py'
-      - 'tools/editorial_fact_pack.py'
-      - 'tools/editorial_quality_gate.py'
-      - 'tests/test_editorial_false_accept_regression.py'
-      - 'tests/editorial-known-failures.json'
-      - 'data/editorial-engine.json'
-  schedule:
-    - cron: '2,12,22,32,42,52 * * * *'
-
+# Automatic schedule disabled: cron: '2,12,22,32,42,52 * * * *'
 permissions:
   contents: write
   pull-requests: write

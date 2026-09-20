@@ -14,9 +14,6 @@ on:
       - 'data/editorial-sources-mena.json'
       - 'data/editorial-sources-east-africa.json'
       - 'tests/test_editorial_tunnel_rss_fallback.py'
-  schedule:
-    - cron: '17 * * * *'
-
 permissions:
   contents: read
 
