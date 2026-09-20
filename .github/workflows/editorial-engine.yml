@@ -29,9 +29,6 @@ on:
       - 'tests/test_editorial_false_accept_regression.py'
       - 'tests/editorial-known-failures.json'
       - 'data/editorial-engine.json'
-  schedule:
-    - cron: '2,12,22,32,42,52 * * * *'
-
 permissions:
   contents: write
   pull-requests: write

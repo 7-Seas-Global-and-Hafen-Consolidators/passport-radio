@@ -44,9 +44,6 @@ on:
     paths:
       - 'blog/w/**.html'
       - 'data/blog-catalog.jsonl'
-  schedule:
-    - cron: '41 */2 * * *'
-
 permissions:
   contents: write
 
