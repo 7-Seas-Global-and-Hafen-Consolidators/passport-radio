@@ -17,6 +17,7 @@ on:
         description: "Manual generation budget override (-1 uses pacing; 0-12 overrides)"
         required: false
         default: "-1"
+# Automatic schedule disabled: cron: '2,12,22,32,42,52 * * * *'
 permissions:
   contents: write
   pull-requests: write
