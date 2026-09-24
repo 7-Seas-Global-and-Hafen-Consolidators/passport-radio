@@ -48,7 +48,6 @@ function show(){
     if(e.key==='Escape'&&!later.disabled){close();return}
   });
 }
-if (document.body && document.body.classList.contains('pp-home')) { setTimeout(show,650); }
 })();
 
 /* FOFONETE DOCK — apêndice. Motor acima intocado. */
@@ -97,6 +96,7 @@ if (document.body && document.body.classList.contains('pp-home')) { setTimeout(s
   try {
     const gated = sessionStorage.getItem(GATE) === "1" && !document.getElementById("fofonete-exit");
     const topNotHome = document.body && !document.body.classList.contains("pp-home") && window.self === window.top;
-    if (gated || topNotHome) dock();
+    const home = document.body && document.body.classList.contains("pp-home");
+    if (gated || topNotHome || home) dock();
   } catch (e) {}
 })();

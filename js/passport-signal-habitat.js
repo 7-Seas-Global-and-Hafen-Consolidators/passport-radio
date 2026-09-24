@@ -28,14 +28,14 @@
       '<img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="36" height="36">' +
       "<span><b>PASSPORT RADIO</b><small>Contar histórias que dão vontade de ouvir</small></span></a>" +
       '<nav class="pp-signal-nav" aria-label="Portas da Passport">' +
-      '<a href="/" target="_top">Home</a>' +
-      '<a href="/noticias.html" target="_top">Notícias</a>' +
-      '<a href="/editorial.html" target="_top">Arquivo</a>' +
       '<a href="/radio.html" target="_top">Ouvir</a>' +
+      '<a href="/noticias.html" target="_top">Notícias</a>' +
+      '<a href="/blog.html" target="_top">Histórias</a>' +
+      '<a href="/editorial.html" target="_top">Arquivo</a>' +
+      '<a href="/blog/arquivo/letras.html" target="_top">Bandas & Artistas</a>' +
+      '<a href="/participe.html" target="_top">Participe</a>' +
       '<a href="/loja.html" target="_top">Loja</a>' +
-      '<a href="/promocoes.html" target="_top">Promoções</a>' +
       '<a href="/anuncie.html" target="_top">Anuncie</a>' +
-      '<a href="' + SUPPORT + '" target="_blank" rel="noopener">Ajude</a>' +
       "</nav>";
     document.body.insertBefore(header, document.body.firstChild);
     if (!document.querySelector("[data-pp-signal-foot]")) {

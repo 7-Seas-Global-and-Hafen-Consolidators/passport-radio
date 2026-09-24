@@ -4,244 +4,201 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Passport Radio: música, histórias, notícias, shows, arquivos, rádio 24H e loja. Contar histórias que dão vontade de ouvir">
-<meta name="theme-color" content="#050505">
+<meta name="theme-color" content="#faf9f6">
 <meta name="google-adsense-account" content="ca-pub-7728480662290062">
 <title>Passport Radio | Contar histórias que dão vontade de ouvir</title>
 <link rel="canonical" href="https://passportradio.online/">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;900&family=Great+Vibes&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260908z">
-<link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
+<link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260924gen">
 <link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260908z">
 <link rel="stylesheet" href="/css/fofonete-exit-intent.css?v=20260909g">
-<link rel="stylesheet" href="/css/passport-home-houses.css?v=20260916embed">
-<link rel="stylesheet" href="/css/passport-home-journey.css?v=20260910">
-<link rel="stylesheet" href="/css/passport-four-doors.css?v=20260917vinyl">
-<link rel="stylesheet" href="/css/passport-vinyl.css?v=20260917vinyl">
-<link rel="stylesheet" href="/css/passport-player-nav.css?v=20260912sig">
-<link rel="stylesheet" href="/css/passport-doe.css?v=20260912doe"><link rel="stylesheet" href="/css/passport-whatsapp-channel.css?v=20260914a"><link rel="stylesheet" href="/css/passport-telegram-channel.css?v=20260914a"><link rel="stylesheet" href="/css/passport-blog.css?v=20260915a">
 <script src="/js/passport-bus.js?v=20260910"></script>
 </head>
 <body class="pp-body pp-home">
-<div class="player" id="passport-player" style="position:fixed;left:0;right:0;top:0;bottom:auto;z-index:200;height:56px;margin:0">
-  <span class="fd-66" aria-hidden="true">66</span>
-  <button id="prev" aria-label="Canal anterior">◀</button>
-  <button class="play" id="play" aria-label="Tocar">▶</button>
-  <button id="next" aria-label="Próximo canal">▶</button>
+<header class="pp-topbar"><div class="pp-topbar-in">
+<a class="pp-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="48" height="48"><span class="pp-brand-txt"><b>Passport Radio</b></span></a>
+<form class="pg-nav-search" action="/blog/busca.html" method="get" role="search">
+<label class="pg-sr" for="home-q">Buscar</label>
+<input id="home-q" type="search" name="q" placeholder="Buscar histórias, artistas, discos">
+<button type="submit">Buscar</button>
+</form>
+<a class="pg-header-listen" href="/radio.html">Ouvir</a>
+</div></header>
+<nav class="pp-nav" aria-label="Seções"><div class="pp-nav-in">
+<a href="/radio.html">Ouvir</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/blog.html">Histórias</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas & Artistas</a>
+<a href="/participe.html">Participe</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+</div></nav>
+
+<div class="player" id="passport-player">
+  <button id="prev" type="button" aria-label="Canal anterior">◀</button>
+  <button class="play" id="play" type="button" aria-label="Tocar ou pausar">▶</button>
+  <button id="next" type="button" aria-label="Próximo canal">▶</button>
   <span class="player-copy"><strong id="track">METAL</strong><small id="meta">Passport Radio · Continuous Signals™ · 24H</small></span>
   <span class="status"><i></i><span id="state">24H · PRONTO</span></span>
-  <nav class="pp-doors" aria-label="Portas da Passport">
-    <a class="pp-door" href="index.html">Home</a>
-    <a class="pp-door" href="noticias.html">Notícias</a>
-    <a class="pp-door" href="editorial.html">Arquivo</a>
-    <a class="pp-door" href="blog.html">Blog</a>
-    <a class="pp-door" href="radio.html">Ouvir</a>
-    <a class="pp-door" href="loja.html">Loja</a>
-    <a class="pp-door" href="promocoes.html">Promoções</a>
-    <a class="pp-door" href="anuncie.html">Anuncie</a>
-    <a class="pp-door" href="#ajude">Doe</a>
-    <details class="pp-doors-more">
-      <summary>Menu</summary>
-      <div class="pp-doors-panel">
-        <a href="index.html">Home</a>
-        <a href="noticias.html">Notícias</a>
-        <a href="editorial.html">Arquivo</a>
-        <a href="blog.html">Blog</a>
-        <a href="radio.html">Ouvir</a>
-        <a href="loja.html">Loja</a>
-        <a href="promocoes.html">Promoções</a>
-        <a href="anuncie.html">Anuncie</a>
-        <a href="#ajude">Doe</a>
-      </div>
-    </details>
-  </nav>
+  <label class="pg-vol">Volume <input id="pg-home-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+  <a class="pg-player-more" href="/radio.html">Trocar sinal</a>
   <audio id="audio" preload="none"></audio>
 </div>
-<div class="pp-wrap mold-wrap">
-  <div class="mold-tagline"><span>PASSPORT RADIO — Contar histórias que dão vontade de ouvir.</span></div>
-  <section class="mold-hero" aria-label="Passport Radio">
-    <img class="mh-logo" src="/images/passport-radio-definitive.jpg" alt="Passport Radio">
-  </section>
-  <div class="mold-jukebox"><img src="/images/passport-jukebox-stage.jpg" alt="Passport Radio Jukebox"></div>
-  <section class="mold-banner" aria-label="Destaques da casa">
-    <div class="mb-slide mb-s1"><strong>CONTINUOUS SIGNALS™</strong><small>Metal · Unplugged · Live Jam · 24H NO AR</small><i class="mb-led"></i></div>
-    <div class="mb-slide mb-s2"><strong>ANOS 80™</strong><small>Rádio, novela, pista e palco — a década como destino</small><i class="mb-led"></i></div>
-    <div class="mb-slide mb-s3"><strong>LIVE & RARE™</strong><small>Wacken · Live Archive · shows que viram memória</small><i class="mb-led"></i></div>
-  </section>
-  <section class="mold-ticker" aria-label="Últimas da edição">
-    <span class="mt-label">EDIÇÃO DA SEMANA</span>
-    <div class="mt-view"><div class="mt-track" id="pp-ticker"></div></div>
-  </section>
-  <section class="mold-onair">
-    <span class="mo-avatar" aria-hidden="true">66</span>
-    <div class="mo-copy">
-      <span class="mo-now">No ar agora</span>
-      <strong class="mo-track" id="pp-onair-track">Continuous Signals™</strong>
-      <small class="mo-sub" id="pp-onair-sub">Passport Radio · 24H</small>
+
+<div class="pp-wrap">
+  <section class="pg-fold" aria-label="Capa">
+    <div class="pg-rail">
+      <span class="pg-kicker">Últimas</span>
+      <a href="/blog/2026/09/18/kai-hansen-no-microfone-o-metal-reorganiza-o-tabuleiro-em-um-so-giro.html"><h2>Kai Hansen no microfone</h2><p>O que essa conversa ainda move.</p></a>
+      <a href="/blog/2026/09/18/keith-richards-e-o-giro-que-recoloca-o-nome-no-mapa.html"><h2>Keith Richards</h2><p>A faixa que entrou em outra história.</p></a>
+      <a href="/blog/2026/09/18/mastodon-e-o-giro-que-recoloca-o-nome-no-mapa.html"><h2>Mastodon</h2><p>A memória que os músicos ainda carregam.</p></a>
+      <a href="/blog/2026/09/18/o-que-oasis-deixa-no-ar-agora.html"><h2>Oasis</h2><p>A canção que nasceu depois da noite.</p></a>
+      <a href="/noticias.html"><h2>Notícias</h2><p>A circulação diária, fora da capa.</p></a>
     </div>
-  </section>
-  <section class="mold-progs" aria-label="Programação da casa">
-    <article class="mp-current">
-      <span class="mp-disc" aria-hidden="true"></span>
-      <div>
-        <small>00:00 – 24:00</small>
-        <strong>Continuous Signals™</strong>
-        <span>Sinal-mãe · sem interrupção</span>
-      </div>
+    <article class="pg-hero">
+      <a href="/blog/2026/09/18/zach-cregger-recoloca-raccoon-city-no-centro-com-um-heroi-solitario-e-falho.html">
+        <span class="pg-kicker">Cultura</span>
+        <img src="https://www.metal-hammer.de/wp-content/uploads/2026/09/17/11/30168-scaled.webp" alt="Zach Cregger recoloca Raccoon City no centro com um herói falho">
+        <h1>Zach Cregger recoloca Raccoon City no centro com um herói falho</h1>
+        <p>História já publicada. A fotografia é a da própria matéria.</p>
+      </a>
     </article>
-    <div class="mp-list">
-      <a class="mp-row" href="#passport-casas" data-open-existing-house="/radio-live-rare.html"><span>Live & Rare™</span><small>Wacken · Live Archive</small></a>
-      <a class="mp-row" href="#passport-casas" data-open-existing-house="/radio-80s.html"><span>80s™</span><small>Pop · Soft · Hair Metal</small></a>
-      <a class="mp-row" href="#passport-casas" data-open-existing-house="/radio-mundo-player.html"><span>World Dial™</span><small>Estações do mundo</small></a>
-    </div>
+    <aside class="pg-side">
+      <span class="pg-kicker">Na capa</span>
+      <a href="/blog/2026/09/18/o-que-iron-maiden-deixa-no-ar-agora.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt=""><h2>Iron Maiden</h2><p>O detalhe que os fãs ainda discutem.</p></a>
+      <a href="/blog/2026/09/18/led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa.html"><img src="/images/led-zeppelin-a-cancao-rockprogressiva.png" alt=""><h2>Led Zeppelin</h2><p>John Bonham e a faixa de época.</p></a>
+      <a href="/live-aid-momento-mais-marcante-rock.html"><img src="/images/live-aid-1985.png" alt=""><h2>Live Aid</h2><p>O momento mais marcante do rock?</p></a>
+    </aside>
   </section>
-  <section class="mold-vinyl" id="pp-vinyl" aria-label="Discoteca da edição"></section>
-  <section class="mold-clock" aria-label="Hora">
-    <div class="mc-digits" id="mc-digits">00 : 00 : 00</div>
-    <div class="mc-pill"><span id="mc-wd">—</span><span id="mc-mo">—</span><span id="mc-dy">—</span><span id="mc-yr">—</span></div>
-  </section>
-  <section class="mold-radio" id="receiver" aria-label="Receptor Passport">
-    <div class="deck">
-      <div class="topline"></div>
-      <div class="brand">PASSPORT RADIO</div>
-      <div class="subtitle">Contar histórias que dão vontade de ouvir.</div>
-      <div class="led"></div>
-      <div class="window">
-        <div class="cassette">
-          <div class="label">PASSPORT • K-7 • 24H</div>
-          <div class="reel left"></div>
-          <div class="reel right"></div>
-          <div class="tape-line"></div>
+
+  <section class="pg-section" aria-labelledby="ultimas-title">
+    <div class="pg-split">
+      <div>
+        <h2 id="ultimas-title">Últimas</h2>
+        <div class="pg-list">
+          <a href="/blog/2026/09/18/o-palco-que-reorganizou-a-vida-em-torno-de-machine-head.html"><strong>O palco que reorganizou a vida em torno de Machine Head</strong><span>Histórias · Passport Radio</span></a>
+          <a href="/blog/2026/09/18/o-que-pink-floyd-deixa-no-ar-agora.html"><strong>Pink Floyd e a parceria que o próprio autor descreve</strong><span>Histórias · Passport Radio</span></a>
+          <a href="/blog/2026/09/18/o-que-yes-deixa-no-ar-agora.html"><strong>Yes e a faixa que atravessou outras bandas</strong><span>Histórias · Passport Radio</span></a>
+          <a href="/blog/2026/09/18/o-que-metallica-deixa-no-ar-agora.html"><strong>Metallica</strong><span>A canção que ainda pega o próprio autor.</span></a>
+          <a href="/frank-beard-zz-top-1949-2026.html"><img src="/images/frank-beard-zz-top-01.jpg" alt=""><strong>Frank Beard, o pulso do ZZ Top</strong><span>1949–2026</span></a>
+          <a href="/blog.html"><strong>Abrir a capa do Blog</strong><span>O acervo publicado, com busca e arquivo.</span></a>
         </div>
       </div>
-      <div class="vu-panel"><div class="vu"><div class="vu-fill"></div></div><div class="vu"><div class="vu-fill"></div></div></div>
-      <div class="buttons"><div class="btn"></div><div class="btn"></div><div class="btn"><span class="play"></span></div><div class="btn"></div><div class="btn"></div></div>
-      <div class="footer-deck">SELECIONE UM SINAL ABAIXO · <strong>O TÚNEL ABRE NA TELA</strong></div>
+      <div>
+        <h2>Recomendadas</h2>
+        <div class="pg-list" style="grid-template-columns:1fr">
+          <a href="/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html"><strong>Festa PLOC: você cresceu. A pista não recebeu o memorando.</strong><span>Editorial · anos 80</span></a>
+          <a href="/editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html"><img src="/images/the-mission-uk.png" alt=""><strong>The Mission</strong><span>Wayne Hussey, Craig Adams e as cinzas do Sisters.</span></a>
+          <a href="/white-metal-isso-e-musica-crista.html"><img src="/images/white-metal/Stryper%20band.jpg" alt=""><strong>White Metal: isso é música cristã?</strong><span>Rótulo, fé, mercado e metal.</span></a>
+          <a href="/historias/eye-of-the-tiger.html"><img src="/images/rocky_3_metro_goldwyn_mayer.webp" alt=""><strong>Eye of the Tiger</strong><span>O “não” que virou hino.</span></a>
+          <a href="/historias/contar-historias-que-dao-vontade-de-ouvir.html"><strong>O compromisso da casa</strong><span>Contar histórias que dão vontade de ouvir.</span></a>
+        </div>
+        <p class="pg-note">Não há ranking de audiência auditado. Nada aqui se chama “mais lidas”. São histórias já publicadas.</p>
+      </div>
     </div>
-    <div class="mold-vustrip" aria-hidden="true">
-      <div class="mvs-meter"><i class="mvs-needle"></i></div>
-      <div class="mvs-meter"><i class="mvs-needle n2"></i></div>
+  </section>
+
+  <section class="pg-section" aria-labelledby="assuntos-title">
+    <h2 id="assuntos-title">Assuntos</h2>
+    <p class="pg-note">Portas reais do acervo. A busca abre o que já foi publicado. Não é uma lista de acessos.</p>
+    <div class="pg-assuntos">
+      <a href="/blog/busca.html?q=Iron%20Maiden">Iron Maiden</a>
+      <a href="/blog/busca.html?q=Metallica">Metallica</a>
+      <a href="/blog/busca.html?q=Black%20Sabbath">Black Sabbath</a>
+      <a href="/blog/busca.html?q=Led%20Zeppelin">Led Zeppelin</a>
+      <a href="/blog/busca.html?q=Sepultura">Sepultura</a>
+      <a href="/blog/busca.html?q=Pink%20Floyd">Pink Floyd</a>
+      <a href="/blog/busca.html?q=Oasis">Oasis</a>
+      <a href="/blog/busca.html?q=Kiss">Kiss</a>
+      <a href="/blog/arquivo/letras.html">A–Z</a>
+      <a href="/blog/arquivo/autores.html">Autores</a>
+      <a href="/blog/arquivo/epocas.html">Épocas</a>
+      <a href="/blog/arquivo/formatos.html">Formatos</a>
+      <a href="/editorial.html">Arquivo</a>
     </div>
+  </section>
+
+  <section class="pg-section" id="ouca" aria-labelledby="ouca-title">
+    <h2 id="ouca-title">Ouça a Passport</h2>
+    <p>Uma seleção dos sinais da casa. Um de cada vez. A página de cada rádio abre o aparelho completo.</p>
     <section id="passport-casas" aria-labelledby="casas-title">
-      <header class="casas-heading"><h2 id="casas-title">Sinais</h2><p class="casas-intro">Um de cada vez. O palco abre abaixo.</p></header>
+      <header class="casas-heading"><h2 id="casas-title">Rádios Passport</h2><p class="casas-intro">O palco abaixo é o mesmo motor de sempre. Para a página da rádio, use Abrir a rádio.</p></header>
       <div class="casas-grid">
-        <div class="casas-cluster casas-cluster--own">
-          <details class="casa pp-vinyl" data-house="/radio-continuous.html" data-name="Continuous Signals™" data-seal="continuous"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Continuous Signals™</span></summary><div class="casa-actions"><a href="/radio-continuous.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-live-rare.html" data-name="Live & Rare™" data-seal="live-rare"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Live & Rare™</span></summary><div class="casa-actions"><a href="/radio-live-rare.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa casa-world pp-vinyl" data-house="/radio-mundo-player.html" data-name="World Dial™" data-seal="world"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">World Dial™</span></summary><div class="casa-actions"><a href="/radio-mundo-player.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-continuous.html" data-name="Continuous Signals™" data-seal="continuous"><summary><span class="pg-card-art">24H</span><b>Casa</b>Continuous Signals™<span>Sinal-mãe · 24H</span><a class="pg-play" href="/radio-continuous.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-continuous.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-live-rare.html" data-name="Live & Rare™" data-seal="live-rare"><summary><span class="pg-card-art">Ao vivo</span><b>Casa</b>Live & Rare™<span>Wacken · Live Archive</span><a class="pg-play" href="/radio-live-rare.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-live-rare.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-mundo-player.html" data-name="World Dial™" data-seal="world"><summary><span class="pg-card-art">Mundo</span><b>Casa</b>World Dial™<span>Estações do mundo</span><a class="pg-play" href="/radio-mundo-player.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-mundo-player.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-mpb.html" data-name="MPB™" data-seal="mpb"><summary><span class="pg-card-art">MPB</span><b>Casa</b>MPB™<span>Passport Radio</span><a class="pg-play" href="/radio-mpb.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-mpb.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-80s.html" data-name="80s™" data-seal="eighties"><summary><span class="pg-card-art">80s</span><b>Casa</b>80s™<span>Pop · Soft · Hair Metal</span><a class="pg-play" href="/radio-80s.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-80s.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-rock-brasil.html" data-name="Rock Brasil™" data-seal="rockbr"><summary><span class="pg-card-art">Brasil</span><b>Casa</b>Rock Brasil™<span>Passport Radio</span><a class="pg-play" href="/radio-rock-brasil.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-rock-brasil.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-jovem-guarda.html" data-name="Jovem Guarda™" data-seal="jovem"><summary>Jovem Guarda™<a href="/radio-jovem-guarda.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-jovem-guarda.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-hits.html" data-name="Passport Hits™" data-seal="hits"><summary>Passport Hits™<a href="/radio-hits.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-hits.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-soul.html" data-name="Soul™" data-seal="soul"><summary>Soul™<a href="/radio-soul.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-soul.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-flash-house.html" data-name="Flash House™" data-seal="flash"><summary>Flash House™<a href="/radio-flash-house.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-flash-house.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-world-disco-deutschland.html" data-name="WORLD DISCO DEUTSCHLAND™" data-seal="disco"><summary>Disco™<a href="/radio-world-disco-deutschland.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-world-disco-deutschland.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-world-tunnel-reggae.html" data-name="WORLD TUNNEL REGGAE™" data-seal="reggae"><summary>World Tunnel Reggae™<a href="/radio-world-tunnel-reggae.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-world-tunnel-reggae.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-nostalgia-passport.html" data-name="Nostalgia Passport™" data-seal="nostalgia"><summary>Nostalgia Passport™<a href="/radio-nostalgia-passport.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-nostalgia-passport.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-50s-60s.html" data-name="50s & 60s™" data-seal="golden"><summary>50s & 60s™<a href="/radio-50s-60s.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-50s-60s.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/radio-novelas.html" data-name="Novelas™" data-seal="novelas"><summary>Novelas™<a href="/radio-novelas.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-novelas.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <details class="casa" data-house="/globo-de-ouro-player.html" data-name="Globo de Ouro™" data-seal="globo"><summary>Globo de Ouro™<a href="/globo-de-ouro-player.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/globo-de-ouro-player.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+      </div>
+      <div id="pp-persist">
+        <div id="pp-persist-bar" hidden>
+          <span class="pp-persist-led" aria-hidden="true"></span>
+          <strong id="pp-persist-name"></strong>
+          <small id="pp-persist-sub"></small>
+          <button type="button" id="pp-persist-pause">Pausar</button>
+          <button type="button" id="pp-persist-stop">Parar</button>
+          <button type="button" id="pp-persist-stage">Detalhe</button>
         </div>
-        <div class="casas-cluster">
-          <details class="casa pp-vinyl" data-house="/radio-mpb.html" data-name="MPB™" data-seal="mpb"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">MPB™</span></summary><div class="casa-actions"><a href="/radio-mpb.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-jovem-guarda.html" data-name="Jovem Guarda™" data-seal="jovem"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Jovem Guarda™</span></summary><div class="casa-actions"><a href="/radio-jovem-guarda.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-rock-brasil.html" data-name="Rock Brasil™" data-seal="rockbr"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Rock Brasil™</span></summary><div class="casa-actions"><a href="/radio-rock-brasil.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-        </div>
-        <div class="casas-cluster">
-          <details class="casa pp-vinyl" data-house="/radio-hits.html" data-name="Passport Hits™" data-seal="hits"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Passport Hits™</span></summary><div class="casa-actions"><a href="/radio-hits.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-world-disco-deutschland.html" data-name="WORLD DISCO DEUTSCHLAND™" data-seal="disco"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Disco™</span></summary><div class="casa-actions"><a href="/radio-world-disco-deutschland.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-soul.html" data-name="Soul™" data-seal="soul"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Soul™</span></summary><div class="casa-actions"><a href="/radio-soul.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-flash-house.html" data-name="Flash House™" data-seal="flash"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Flash House™</span></summary><div class="casa-actions"><a href="/radio-flash-house.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-        </div>
-        <div class="casas-cluster casas-cluster--solo">
-          <details class="casa pp-vinyl" data-house="/radio-world-tunnel-reggae.html" data-name="WORLD TUNNEL REGGAE™" data-seal="reggae"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">WORLD TUNNEL REGGAE™</span></summary><div class="casa-actions"><a href="/radio-world-tunnel-reggae.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-        </div>
-        <div class="casas-cluster">
-          <details class="casa pp-vinyl" data-house="/radio-nostalgia-passport.html" data-name="Nostalgia Passport™" data-seal="nostalgia"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Nostalgia Passport™</span></summary><div class="casa-actions"><a href="/radio-nostalgia-passport.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-80s.html" data-name="80s™" data-seal="eighties"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">80s™</span></summary><div class="casa-actions"><a href="/radio-80s.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/radio-50s-60s.html" data-name="50s & 60s™" data-seal="golden"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">50s & 60s™</span></summary><div class="casa-actions"><a href="/radio-50s-60s.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-        </div>
-        <div class="casas-cluster">
-          <details class="casa pp-vinyl" data-house="/radio-novelas.html" data-name="Novelas™" data-seal="novelas"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Novelas™</span></summary><div class="casa-actions"><a href="/radio-novelas.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-          <details class="casa pp-vinyl" data-house="/globo-de-ouro-player.html" data-name="Globo de Ouro™" data-seal="globo"><summary><span class="pp-vinyl-disc" aria-hidden="true"><i class="pp-vinyl-grooves"></i><i class="pp-vinyl-label"></i><i class="pp-vinyl-led"></i></span><span class="pp-vinyl-name">Globo de Ouro™</span></summary><div class="casa-actions"><a href="/globo-de-ouro-player.html" target="_blank" rel="noopener">Abrir em outra página</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+        <div id="passport-casa-host" hidden>
+          <div class="casa-host-bar">
+            <strong id="passport-casa-host-title"></strong>
+            <a id="passport-casa-host-open" href="#" target="_blank" rel="noopener">Abrir em outra página</a>
+            <button type="button" id="passport-casa-host-play">Tocar</button>
+            <button type="button" id="passport-casa-host-close" data-close-house>Fechar e parar</button>
+          </div>
+          <div class="casa-host-stage"></div>
         </div>
       </div>
-        <div id="pp-persist">
-          <div id="pp-persist-bar" hidden>
-            <span class="pp-persist-led" aria-hidden="true"></span>
-            <strong id="pp-persist-name"></strong>
-            <small id="pp-persist-sub"></small>
-            <button type="button" id="pp-persist-pause">Pausar</button>
-            <button type="button" id="pp-persist-stop">Parar</button>
-            <button type="button" id="pp-persist-stage">Palco</button>
-          </div>
-          <div id="passport-casa-host" hidden>
-            <div class="casa-host-bar">
-              <strong id="passport-casa-host-title"></strong>
-              <a id="passport-casa-host-open" href="#" target="_blank" rel="noopener">Abrir em outra página</a>
-              <button type="button" id="passport-casa-host-play">Tocar</button>
-              <button type="button" id="passport-casa-host-close" data-close-house>Fechar e parar</button>
-            </div>
-            <div class="casa-host-stage"></div>
-          </div>
-        </div>
     </section>
+    <a class="pg-more" href="/radio.html#radios">Ver todas as rádios</a>
   </section>
-  <section class="mold-videos" aria-label="Sessões da casa">
-    <article class="mvd-item">
-      <video controls preload="none" src="/images/1986/passport-radio-nomad-musicas-1986.mp4"></video>
-      <span>SESSÃO 1986 · Mr. Nomad</span>
-    </article>
+
+  <section class="pg-section" aria-labelledby="mundo-title">
+    <h2 id="mundo-title">Rádios do Mundo</h2>
+    <div class="pg-radios">
+      <a class="pg-radio" href="/radio-bolivia.html"><span class="pg-card-art">Bolívia</span><b>Bolívia</b><strong>Radio Bolivia</strong><p>Rock, cumbia, folklore, Aymara e Quechua.</p><span class="pg-play">▶ Ouvir</span></a>
+      <a class="pg-radio" href="/radio-korea.html"><span class="pg-card-art">Coreia</span><b>Coreia</b><strong>한국 음악 라디오</strong><p>Drama OST, K-Rock, indie, K-Pop, R&B.</p><span class="pg-play">▶ Ouvir</span></a>
+      <a class="pg-radio" href="/radio-turkiye.html"><span class="pg-card-art">Türkiye</span><b>Türkiye</b><strong>Türkiye Müzik Radyosu</strong><p>Dizi müzikleri, Anadolu rock, Türkçe pop.</p><span class="pg-play">▶ Ouvir</span></a>
+      <a class="pg-radio" href="/radio-ukraine.html"><span class="pg-card-art">Ucrânia</span><b>Ucrânia</b><strong>Українське музичне радіо</strong><p>Rock, post-punk, alternativa, folk.</p><span class="pg-play">▶ Ouvir</span></a>
+    </div>
+    <a class="pg-more" href="/radio-mundo.html">Ver todas</a>
   </section>
-  <main id="feed"><div id="pp-feed"></div></main>
-  <section class="passport-blog-showcase" aria-labelledby="passport-blog-title">
-    <div class="passport-blog-showcase__in">
-      <div><span class="passport-blog-showcase__eyebrow">BLOG PASSPORT RADIO</span><h2 id="passport-blog-title">Histórias que dão vontade de ouvir.</h2><p>Bastidores, discos, shows, artistas e decisões que ficaram na música.</p></div>
-      <a class="passport-blog-showcase__cta" href="/blog.html">VER TODAS AS HISTÓRIAS</a>
-      <div class="passport-blog-showcase__cards"><a class="passport-blog-showcase__card" href="/historias/contar-historias-que-dao-vontade-de-ouvir.html"><span>Blog Passport Radio</span><strong>Contar histórias que dão vontade de ouvir.</strong></a></div>
+
+  <section class="pg-section" aria-labelledby="arquivo-home">
+    <h2 id="arquivo-home">Arquivo e participação</h2>
+    <div class="pg-radios">
+      <a class="pg-radio" href="/editorial.html"><span class="pg-card-art">Arquivo</span><b>Arquivo</b><strong>A memória que saiu da capa</strong><p>Busca, artistas, autores, épocas e formatos.</p><span class="pg-play">Abrir</span></a>
+      <a class="pg-radio" href="/participe.html"><span class="pg-card-art">Envie</span><b>Participe</b><strong>Envio não é publicação</strong><p>A redação lê. Nada entra no ar sozinho.</p><span class="pg-play">Abrir</span></a>
+      <a class="pg-radio" href="/loja.html"><span class="pg-card-art">Loja</span><b>Loja</b><strong>Catálogo real</strong><p>Preço, Pix, boleto e cartão continuam os da casa.</p><span class="pg-play">Ver</span></a>
     </div>
   </section>
-  <section class="passport-whatsapp-channel" aria-label="Canal da Passport Radio no WhatsApp">
-    <div class="passport-whatsapp-channel__in">
-      <div>
-        <p class="passport-whatsapp-channel__eyebrow"><img class="passport-whatsapp-channel__mark" src="/images/whatsapp-channel-mark.svg" alt="WhatsApp"> PASSPORT RADIO + WHATSAPP</p>
-        <h2>A MÚSICA NÃO TERMINA QUANDO VOCÊ FECHA O SITE.</h2>
-        <p>Siga nosso canal no WhatsApp e continue perto da música: programação, matérias, raridades, histórias, novidades, pedidos de música e as maluquices musicais da Passport Radio.</p>
-      </div>
-      <a class="passport-whatsapp-channel__cta" href="https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k" target="_blank" rel="noopener noreferrer">ENTRAR NO CANAL DA PASSPORT RADIO →</a>
-    </div>
-  </section>
-  <section class="passport-telegram-channel" aria-label="Canal da Passport Radio no Telegram">
-    <div class="passport-telegram-channel__in">
-      <div>
-        <p class="passport-telegram-channel__eyebrow"><img class="passport-telegram-channel__mark" src="/images/telegram-channel-mark.svg" alt="Telegram"> PASSPORT RADIO + TELEGRAM</p>
-        <h2>AUMENTE O VOLUME. O RESTO A GENTE DESCOBRE JUNTO.</h2>
-        <p>Rock, metal, blues, soul, pop, prog, punk, new wave, synthpop, psicodélico e muito além. Beatles, Black Sabbath, Pink Floyd, Iron Maiden, Depeche Mode, Debbie Gibson, Gino Vannelli, B.B. King, clássicos, raridades, histórias e aquela música esquecida que você reconhece em três segundos.</p>
-      </div>
-      <a class="passport-telegram-channel__cta" href="https://t.me/+FKto2N185cs4OGU0" target="_blank" rel="noopener noreferrer">ENTRAR NO TELEGRAM DA PASSPORT RADIO →</a>
-    </div>
-  </section>
-  <section class="mold-fofo pp-doe-shell" id="ajude" aria-label="DOE Passport Radio">
-    <img src="/images/fofonete-caderninho.jpg" alt="Fofonete da Passport Radio com o caderninho de contas">
-    <div>
-      <span class="mf-kicker">FOFONETE PEDE · PASSPORT RECEBE</span>
-      <em class="mf-sign">Passport Radio</em>
-      <h2>Eu fiz as contas de novo.</h2>
-      <p>A Fofonete chama. A doação é para a Passport Radio.</p>
-      <a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA</a>
-    </div>
-    <div id="pp-doe" class="pp-doe" data-doe="home"></div>
-  </section>
-  <section class="mold-band" aria-label="Passport Radio no ar">
-    <span class="mband-seal">66</span>
-    <span class="mband-onair"><i></i>NO AR</span>
-    <span class="mband-txt">Contar histórias que dão vontade de ouvir.</span>
-  </section>
-  <div id="pp-after"></div>
 </div>
-<footer class="pp-footer">
+
+<footer class="pp-footer" id="ajude">
   <div class="pp-footer-in">
-    <div class="pp-fcol"><p>Contar histórias que dão vontade de ouvir</p></div>
-    <div class="pp-fcol"><a href="index.html">Home</a><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="loja.html">Loja</a><a href="promocoes.html">Promoções</a><a href="anuncie.html">Anuncie</a><a href="divulgar-bandas.html">Participe</a></div>
-    <div class="pp-fcol"><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div>
+    <div class="pp-fcol"><p>Contar histórias que dão vontade de ouvir.</p><p><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">Apoie a Passport · Pix, boleto, cartão</a></p></div>
+    <div class="pp-fcol"><a href="/noticias.html">Notícias</a><a href="/blog.html">Histórias</a><a href="/editorial.html">Arquivo</a><a href="/radio.html">Ouvir</a><a href="/loja.html">Loja</a><a href="/anuncie.html">Anuncie</a><a href="/participe.html">Participe</a></div>
+    <div class="pp-fcol"><a href="https://t.me/+FKto2N185cs4OGU0" target="_blank" rel="noopener">Telegram oficial</a><a href="https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k" target="_blank" rel="noopener">Canal oficial no WhatsApp</a><a href="/privacidade.html">Privacidade</a><a href="/contato.html">Contato</a></div>
   </div>
-<div class="pp-footer-bottom">
-  © 2026 Passport Radio · Todos os direitos reservados.
-  <a href="/privacidade.html">Política de Privacidade</a> ·
-  <a href="/termos.html">Termos de Uso</a> ·
-  <a href="/cookies.html">Política de Cookies</a> ·
-  <a href="/contato.html">Contato</a>
-</div>
+  <div class="pp-footer-bottom">© 2026 Passport Radio · <a href="/termos.html">Termos</a> · <a href="/cookies.html">Cookies</a></div>
 </footer>
-<div id="pp-nav-page" hidden></div>
+<script>
+document.getElementById("pg-home-volume").addEventListener("input", function (e) {
+  var a = document.getElementById("audio");
+  if (a) a.volume = Number(e.target.value);
+});
+</script>
 <script src="/js/passport-live.js?v=20260910passport" defer></script>
 <script src="/js/continuous-signals-home.js?v=20260908z" defer></script>
 <script src="/js/passport-shell-v6.js?v=20260909g" defer></script>
@@ -252,7 +209,7 @@
 <script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
 <script src="/js/fofonete-exit-intent.js?v=20260912p" defer></script>
 <script src="/js/passport-doe.js?v=20260912doe" defer></script>
-<script src="/js/passport-home-houses.js?v=20260917vinyl" defer></script>
+<script src="/js/passport-home-houses.js?v=20260924gen" defer></script>
 <script src="/js/passport-persist-nav.js?v=20260917vinyl" defer></script>
 <script src="/js/passport-now-info.js?v=20260917vinyl" defer></script>
 <script src="/js/passport-site-foundation.js?v=20260918a" defer></script>
