@@ -421,10 +421,10 @@ body.live-page:not(.passport-house) #continuous { position: absolute; width: 1px
 .services b { display: block; font-family: var(--pg-serif); font-size: 28px; }
 
 /* Casas standalone e faixas */
-body.passport-house { display: flex; flex-direction: column; padding: 8px var(--pg-pad) 56px; max-width: 1080px; margin: 0 auto; }
-body.passport-house > .house-tools { order: 2; }
-body.passport-house > #passportTunnels { order: 3; }
-body.passport-house > .pp-signal-foot { order: 8; }
+html.pp-signal-standalone body.passport-house { display: flex; flex-direction: column; padding: 8px var(--pg-pad) 56px; max-width: 1080px; margin: 0 auto; background: var(--pg-paper) !important; color: var(--pg-ink); font-family: var(--pg-sans); }
+html.pp-signal-standalone body.passport-house > .house-tools { order: 2; }
+html.pp-signal-standalone body.passport-house > #passportTunnels { order: 3; }
+html.pp-signal-standalone body.passport-house > .pp-signal-foot { order: 8; }
 .passport-house .house-tools { display: flex; gap: 12px; align-items: center; margin: 0 0 18px; padding: 12px 18px; background: #fff; border: 1px solid var(--pg-ink); border-top: 0; }
 .passport-house .house-tools button {
   width: auto !important;
@@ -436,7 +436,7 @@ body.passport-house > .pp-signal-foot { order: 8; }
   font-weight: 700 !important;
   text-align: center !important;
 }
-.passport-house .house-head {
+html.pp-signal-standalone .passport-house .house-head {
   display: grid;
   grid-template-columns: minmax(200px, 320px) minmax(0, 1fr);
   grid-template-areas: "art title" "art back";
@@ -448,16 +448,16 @@ body.passport-house > .pp-signal-foot { order: 8; }
   margin: 18px 0 0;
   min-height: 300px;
 }
-.passport-house .house-head::before {
+html.pp-signal-standalone .passport-house .house-head::before {
   content: "";
   grid-area: art;
   display: block;
   min-height: 260px;
   background: #1a2744 url("/images/passport-radio-definitive.jpg") center/cover no-repeat;
 }
-.passport-house .house-head h1 { grid-area: title; font-size: clamp(36px, 5vw, 52px); margin: 0; align-self: end; }
-.passport-house .house-head a { grid-area: back; align-self: start; justify-self: start; font-weight: 700; text-decoration: none; color: var(--pg-blue); }
-.passport-house .house-note { margin: 0; padding: 4px 18px 0; background: #fff; border-left: 1px solid var(--pg-ink); border-right: 1px solid var(--pg-ink); }
+html.pp-signal-standalone .passport-house .house-head h1 { grid-area: title; font-size: clamp(36px, 5vw, 52px); margin: 0; align-self: end; }
+html.pp-signal-standalone .passport-house .house-head a { grid-area: back; align-self: start; justify-self: start; font-weight: 700; text-decoration: none; color: var(--pg-blue); }
+html.pp-signal-standalone .passport-house .house-note { margin: 0; padding: 4px 18px 0; background: #fff; border-left: 1px solid var(--pg-ink); border-right: 1px solid var(--pg-ink); }
 .gdo, .gdo p, .gdo h1 { font-family: var(--pg-sans); color: var(--pg-ink); }
 .gdo { max-width: 1040px; padding-top: 20px; }
 .gdo h1 { font-family: var(--pg-serif); font-size: clamp(40px, 5vw, 60px); }
