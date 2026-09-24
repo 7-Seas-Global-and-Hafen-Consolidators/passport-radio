@@ -1,2 +1,4 @@
 @import url("passport-generation.css");
 /* Regime visual anterior retirado. A geração nova é a única autoridade visual deste arquivo. */
+/* Identidade do Blog na geração: .blog-page .blog-grid . O dourado não pinta superfície: --blog-gold mapeado ao vermelho editorial. */
+:root { --blog-gold: #c4312e; }

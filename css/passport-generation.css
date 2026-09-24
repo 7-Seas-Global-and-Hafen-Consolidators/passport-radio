@@ -323,7 +323,26 @@ details.casa {
   min-height: 280px;
 }
 details.casa summary { cursor: pointer; list-style: none; display: flex; flex-direction: column; min-height: 250px; font-family: var(--pg-serif); font-size: 26px; }
-details.casa summary .pg-card-art { margin-bottom: 12px; }
+details.casa summary .pg-card-art {
+  display: flex;
+  align-items: flex-end;
+  min-height: 132px;
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: linear-gradient(145deg, #1a2744 0%, #1b3a4b 72%, #6e2422 140%);
+  color: #faf9f6;
+  font-family: var(--pg-serif);
+  font-size: 30px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+details.casa summary .pp-vinyl-name {
+  font-family: var(--pg-serif);
+  font-size: 26px;
+  color: var(--pg-ink);
+  margin: 4px 16px 0;
+}
+.mold-radio { display: none !important; }
 details.casa summary span, details.casa summary a, details.casa summary b { margin-left: 16px; margin-right: 16px; }
 details.casa summary b { color: var(--pg-red); font-family: var(--pg-sans); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-top: 0; }
 details.casa summary a { margin-top: auto; width: max-content; }
