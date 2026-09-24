@@ -4,13 +4,13 @@
    Substitui o regime preto/dourado/vinil. Não é uma camada em cima dele. */
 
 :root {
-  --pg-paper: #faf9f6;
+  --pg-paper: #ffffff;
   --pg-white: #ffffff;
   --pg-ink: #1a2744;
-  --pg-ink-soft: #3d4a63;
-  --pg-muted: #5c6578;
-  --pg-line: #e4e1da;
-  --pg-line-strong: #d5d0c6;
+  --pg-ink-soft: #1a2744;
+  --pg-muted: #1a2744;
+  --pg-line: #1a2744;
+  --pg-line-strong: #1a2744;
   --pg-red: #c4312e;
   --pg-red-ink: #8e1d1b;
   --pg-blue: #1b3a4b;
@@ -675,3 +675,250 @@ details.casa summary a { display: inline-flex; margin-top: 14px; }
   .face { display: none; }
   .pp-brand-txt b, .pe-brand strong { font-size: 20px; }
 }
+
+/* Corretiva da geração: branco, sem cinza, sem cabine pintada, player de verdade. */
+html, body, body.pp-body, body.pp-home, body.live-page, body.passport-house, body.pp-station, body.pp-listing, body.pp-blog {
+  background: #fff !important;
+  color: #1a2744 !important;
+}
+.pg-card-art, .pp-vinyl-disc, .pp-vinyl-grooves, .pp-vinyl-label, .pp-vinyl-led, .fd-66, .face, .mold-radio {
+  display: none !important;
+}
+.pg-radio, .pg-participe a, details.casa, .news-card, .list-card, .pp-product {
+  background: #fff !important;
+  box-shadow: none !important;
+}
+.pg-radios { display: block !important; }
+.pg-radio {
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 8px 16px !important;
+  padding: 14px 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+}
+.pg-radio p { grid-column: 1 / -1; margin: 0 !important; }
+.pg-radio .pg-play { margin: 0 !important; }
+.pg-participe { display: block !important; }
+.pg-participe a { min-height: 0 !important; border: 0 !important; border-bottom: 1px solid #1a2744 !important; padding: 16px 0 !important; }
+
+body.pp-home #passport-casas details.casa { display: block !important; }
+body.pp-home #passport-casas .casas-grid { display: block !important; }
+body.pp-home details.casa { min-height: 0 !important; border: 0 !important; border-bottom: 1px solid #1a2744 !important; padding: 0 !important; }
+body.pp-home details.casa summary {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 12px !important;
+  min-height: 48px !important;
+  padding: 10px 0 !important;
+  font-size: 22px !important;
+}
+body.pp-home details.casa summary b,
+body.pp-home details.casa .pg-card-art { display: none !important; }
+body.pp-home details.casa summary .pp-vinyl-name { margin: 0 !important; font-size: 22px !important; color: #1a2744 !important; }
+body.pp-home details.casa summary .pg-play { margin-left: auto !important; }
+
+#passport-player.player {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  background: #fff !important;
+  color: #1a2744 !important;
+  border-top: 1px solid #1a2744 !important;
+  box-shadow: none !important;
+}
+#passport-player.player.is-open { height: auto !important; min-height: 56px; align-items: center; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+#passport-player #play {
+  width: 44px; height: 44px; min-width: 44px; min-height: 44px;
+  border-radius: 50%;
+  background: #c4312e !important;
+  color: #fff !important;
+  border: 0 !important;
+  font-size: 16px;
+}
+#passport-player #prev,
+#passport-player #next {
+  width: auto; min-width: 0; min-height: 44px;
+  border: 0 !important;
+  background: transparent !important;
+  color: #1a2744 !important;
+  font-size: 15px; font-weight: 700;
+}
+#passport-player .pg-expand {
+  margin-left: auto;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: #1a2744;
+  font-weight: 700;
+  cursor: pointer;
+}
+#passport-player .pg-player-drawer {
+  flex: 1 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  padding: 8px 0 4px;
+  border-top: 1px solid #1a2744;
+}
+#passport-player .pg-player-drawer[hidden] { display: none !important; }
+#passport-player .pg-player-drawer p { flex: 1 0 100%; margin: 0; font-size: 14px; }
+#passport-player .status { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+#pp-nav-page {
+  position: fixed;
+  z-index: 70;
+  inset: 0 0 56px 0;
+  overflow: auto;
+  background: #fff;
+}
+#pp-nav-page[hidden] { display: none !important; }
+body.pp-nav-away #passport-player { z-index: 90; }
+
+html.pp-signal-standalone .passport-house .house-head::before { content: none !important; display: none !important; }
+html.pp-signal-standalone .passport-house .house-head {
+  display: block !important;
+  min-height: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  padding: 8px 0 12px !important;
+  margin: 12px 0 0 !important;
+}
+html.pp-signal-standalone .passport-house .house-note {
+  background: #fff !important;
+  border: 0 !important;
+  padding: 8px 0 0 !important;
+  margin: 0 !important;
+}
+
+html.pp-signal-standalone .passport80s-stage,
+html.pp-signal-standalone .passport80s-head,
+html.pp-signal-standalone .passport-live-panel,
+html.pp-signal-standalone .passport-live-head {
+  background: #fff !important;
+  color: #1a2744 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+html.pp-signal-standalone .passport80s-picker,
+html.pp-signal-standalone .passport-live-channels {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 0 !important;
+}
+html.pp-signal-standalone .passport80s-station,
+html.pp-signal-standalone .passport-live-channel,
+html.pp-signal-standalone #novelasDeck button {
+  background: #fff !important;
+  color: #1a2744 !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  border-radius: 0 !important;
+  min-height: 56px !important;
+  width: 100% !important;
+  text-align: left !important;
+  font: 600 18px/1.3 "Newsreader", Georgia, serif !important;
+  padding: 12px 0 !important;
+}
+html.pp-signal-standalone .passport80s-station.is-active,
+html.pp-signal-standalone .passport-live-channel.is-active,
+html.pp-signal-standalone #novelasDeck button.is-on,
+html.pp-signal-standalone #novelasDeck button[aria-pressed="true"] {
+  background: #1a2744 !important;
+  color: #fff !important;
+}
+html.pp-signal-standalone .passport80s-btn,
+html.pp-signal-standalone #passport80sPrev,
+html.pp-signal-standalone #passport80sNext {
+  background: transparent !important;
+  color: #1a2744 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  min-height: 44px !important;
+}
+html.pp-signal-standalone .passport80s-btn--play,
+html.pp-signal-standalone #passport-live-play,
+html.pp-signal-standalone #gdoPlay {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: #c4312e !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+html.pp-signal-standalone .passport80s-meta,
+html.pp-signal-standalone .passport80s-kicker,
+html.pp-signal-standalone .passport80s-status { color: #1a2744 !important; }
+body.live-page:not(.passport-house) .cab {
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  padding: 12px 0 !important;
+  margin-top: 8px !important;
+}
+body.live-page:not(.passport-house) .cab-top,
+body.live-page:not(.passport-house) .telemetry,
+body.live-page:not(.passport-house) .face { display: none !important; }
+body.live-page:not(.passport-house) #play {
+  width: 52px; height: 52px; border-radius: 50%; border: 0; background: #c4312e; color: #fff;
+}
+.list-media, .blog-card__media { background: #fff !important; }
+.pp-topbar-in, header.mast, .pe-header .pe-shell { min-height: 64px; }
+@media (max-width: 720px) {
+  .pp-nav-in, .pe-header nav, header.top nav.nav, header.mast nav {
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+  }
+  #passport-player.is-open #prev,
+  #passport-player.is-open #next { display: inline-flex !important; }
+  #passport-player.player { height: 52px; }
+  #passport-player.player.is-open { height: auto !important; }
+}
+html.pp-signal-standalone .pp-signal-chrome,
+html.pp-signal-standalone .pp-signal-foot {
+  background: #fff !important;
+  color: #1a2744 !important;
+  border-bottom: 1px solid #1a2744 !important;
+}
+html.pp-signal-standalone .pp-signal-nav a,
+html.pp-signal-standalone .pp-signal-brand,
+html.pp-signal-standalone .pp-signal-brand b,
+html.pp-signal-standalone .pp-signal-foot a { color: #1a2744 !important; }
+html.pp-signal-standalone #passport80sPrev,
+html.pp-signal-standalone #passport80sNext {
+  font-size: 0 !important;
+  width: auto !important;
+  min-width: 72px !important;
+  color: transparent !important;
+  background: transparent !important;
+}
+html.pp-signal-standalone #passport80sPrev::after { content: "Anterior"; font-size: 15px; color: #1a2744; font-weight: 700; }
+html.pp-signal-standalone #passport80sNext::after { content: "Próximo"; font-size: 15px; color: #1a2744; font-weight: 700; }
+html.pp-signal-standalone .passport-live-head small,
+html.pp-signal-standalone .passport-live-head strong { display: block !important; }
+html.pp-signal-standalone .passport-live-head strong { font: 600 32px/1 "Newsreader", Georgia, serif !important; }
+#passport-player #meta { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+body.live-page:not(.passport-house) #quick { display: block !important; }
+body.live-page:not(.passport-house) #quick button {
+  width: 100% !important;
+  min-height: 52px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  background: #fff !important;
+  text-align: left !important;
+}
+body.live-page:not(.passport-house) .display-head { display: flex; gap: 8px; }
+#fofonete-dock { bottom: 72px !important; z-index: 60 !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+

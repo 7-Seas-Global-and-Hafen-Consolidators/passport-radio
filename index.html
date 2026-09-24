@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Passport Radio: música, histórias, notícias, shows, arquivos, rádio 24H e loja. Contar histórias que dão vontade de ouvir">
-<meta name="theme-color" content="#faf9f6">
+<meta name="theme-color" content="#ffffff">
 <meta name="google-adsense-account" content="ca-pub-7728480662290062">
 <title>Passport Radio | Contar histórias que dão vontade de ouvir</title>
 <link rel="canonical" href="https://passportradio.online/">
@@ -35,14 +35,18 @@
 <a href="/anuncie.html">Anuncie</a>
 </div></nav>
 
-<div class="player" id="passport-player" style="height:56px">
-  <button id="prev" type="button" aria-label="Canal anterior">◀</button>
+<div class="player pg-now" id="passport-player" style="height:56px">
   <button class="play" id="play" type="button" aria-label="Tocar ou pausar">▶</button>
-  <button id="next" type="button" aria-label="Próximo canal">▶</button>
-  <span class="player-copy"><strong id="track">METAL</strong><small id="meta">Passport Radio · Continuous Signals™ · 24H</small></span>
+  <span class="player-copy"><strong id="track">METAL</strong><small id="meta">Metal · 24 horas</small></span>
   <span class="status"><i></i><span id="state">24H · PRONTO</span></span>
-  <label class="pg-vol">Volume <input id="pg-home-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
-  <a class="pg-player-more" href="/radio.html">Trocar sinal</a>
+  <button type="button" class="pg-expand" id="pg-expand" aria-expanded="false" aria-controls="pg-player-drawer">Opções</button>
+  <div id="pg-player-drawer" class="pg-player-drawer" hidden>
+    <button id="prev" type="button">Anterior</button>
+    <button id="next" type="button">Próximo</button>
+    <label class="pg-vol">Volume <input id="pg-home-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+    <a href="/radio.html">Todas as rádios</a>
+    <p>Anterior e próximo trocam Metal, Unplugged e Live Jam. Transmissão contínua: não há progresso para arrastar.</p>
+  </div>
   <audio id="audio" preload="none"></audio>
 </div>
 
@@ -120,15 +124,15 @@
   </section>
 
   <section class="pg-section" id="ouca" aria-labelledby="ouca-title">
-    <h2 id="ouca-title">Ouça a Passport</h2>
-    <p>Uma seleção dos sinais da casa. Um de cada vez. A página de cada rádio abre o aparelho completo.</p>
+    <h2 id="ouca-title">No ar</h2>
+    <p>Metal toca nesta página. As outras casas abrem o próprio sinal. Um de cada vez.</p>
     <section id="passport-casas" aria-labelledby="casas-title">
-      <header class="casas-heading"><h2 id="casas-title">Rádios Passport</h2><p class="casas-intro">O palco abaixo é o mesmo motor de sempre. Para a página da rádio, use Abrir a rádio.</p></header>
+      <header class="casas-heading"><h2 id="casas-title">Rádios</h2><p class="casas-intro">Escolha uma. O palco abre aqui ou na página da rádio.</p></header>
       <div class="casas-grid">
 <div class="casas-cluster casas-cluster--own">
-<details class="casa pp-vinyl" data-house="/radio-continuous.html" data-name="Continuous Signals™" data-seal="continuous"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">24H</span><b>Casa</b><span class="pp-vinyl-name">Continuous Signals™</span><span>Sinal-mãe · 24H</span><a class="pg-play" href="/radio-continuous.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-continuous.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+<details class="casa pp-vinyl" data-house="/radio-continuous.html" data-name="Metal" data-seal="continuous"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">24H</span><b>Casa</b><span class="pp-vinyl-name">Metal</span><span>24 horas</span><a class="pg-play" href="/radio-continuous.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-continuous.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
 <details class="casa pp-vinyl" data-house="/radio-live-rare.html" data-name="Live & Rare™" data-seal="live-rare"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Ao vivo</span><b>Casa</b><span class="pp-vinyl-name">Live & Rare™</span><span>Wacken · Live Archive</span><a class="pg-play" href="/radio-live-rare.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-live-rare.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-<details class="casa pp-vinyl" data-house="/radio-mundo-player.html" data-name="World Dial™" data-seal="world"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Mundo</span><b>Casa</b><span class="pp-vinyl-name">World Dial™</span><span>Estações do mundo</span><a class="pg-play" href="/radio-mundo-player.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-mundo-player.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+<details class="casa pp-vinyl" data-house="/radio-mundo-player.html" data-name="Rádios do Mundo" data-seal="world"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Mundo</span><b>Casa</b><span class="pp-vinyl-name">Rádios do Mundo</span><span>Estações do mundo</span><a class="pg-play" href="/radio-mundo-player.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-mundo-player.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
 </div>
 <div class="casas-cluster">
 <details class="casa pp-vinyl" data-house="/radio-mpb.html" data-name="MPB™" data-seal="mpb"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">MPB</span><b>Casa</b><span class="pp-vinyl-name">MPB™</span><span>Passport Radio</span><a class="pg-play" href="/radio-mpb.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-mpb.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
@@ -137,12 +141,12 @@
 </div>
 <div class="casas-cluster">
 <details class="casa pp-vinyl" data-house="/radio-hits.html" data-name="Passport Hits™" data-seal="hits"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Hits</span><b>Casa</b><span class="pp-vinyl-name">Passport Hits™</span><span>Passport Radio</span><a class="pg-play" href="/radio-hits.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-hits.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
-<details class="casa pp-vinyl" data-house="/radio-world-disco-deutschland.html" data-name="WORLD DISCO DEUTSCHLAND™" data-seal="disco"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Disco</span><b>Casa</b><span class="pp-vinyl-name">WORLD DISCO DEUTSCHLAND™</span><span>Passport Radio</span><a class="pg-play" href="/radio-world-disco-deutschland.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-world-disco-deutschland.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+<details class="casa pp-vinyl" data-house="/radio-world-disco-deutschland.html" data-name="Passport Disco" data-seal="disco"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Disco</span><b>Casa</b><span class="pp-vinyl-name">Passport Disco</span><span>Passport Radio</span><a class="pg-play" href="/radio-world-disco-deutschland.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-world-disco-deutschland.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
 <details class="casa pp-vinyl" data-house="/radio-soul.html" data-name="Soul™" data-seal="soul"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Soul</span><b>Casa</b><span class="pp-vinyl-name">Soul™</span><span>Passport Radio</span><a class="pg-play" href="/radio-soul.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-soul.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
 <details class="casa pp-vinyl" data-house="/radio-flash-house.html" data-name="Flash House™" data-seal="flash"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Flash</span><b>Casa</b><span class="pp-vinyl-name">Flash House™</span><span>Passport Radio</span><a class="pg-play" href="/radio-flash-house.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-flash-house.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
 </div>
 <div class="casas-cluster casas-cluster--solo">
-<details class="casa pp-vinyl" data-house="/radio-world-tunnel-reggae.html" data-name="WORLD TUNNEL REGGAE™" data-seal="reggae"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Reggae</span><b>Casa</b><span class="pp-vinyl-name">WORLD TUNNEL REGGAE™</span><span>Passport Radio</span><a class="pg-play" href="/radio-world-tunnel-reggae.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-world-tunnel-reggae.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
+<details class="casa pp-vinyl" data-house="/radio-world-tunnel-reggae.html" data-name="Passport Reggae" data-seal="reggae"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Reggae</span><b>Casa</b><span class="pp-vinyl-name">Passport Reggae</span><span>Passport Radio</span><a class="pg-play" href="/radio-world-tunnel-reggae.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-world-tunnel-reggae.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
 </div>
 <div class="casas-cluster">
 <details class="casa pp-vinyl" data-house="/radio-nostalgia-passport.html" data-name="Nostalgia Passport™" data-seal="nostalgia"><summary><span class="pp-vinyl-disc" aria-hidden="true"></span><span class="pg-card-art">Nostalgia</span><b>Casa</b><span class="pp-vinyl-name">Nostalgia Passport™</span><span>Passport Radio</span><a class="pg-play" href="/radio-nostalgia-passport.html">▶ Ouvir</a></summary><div class="casa-actions"><a href="/radio-nostalgia-passport.html">▶ Ouvir</a><button type="button" data-close-house>Fechar e parar</button></div><div class="casa-stage"></div></details>
@@ -209,6 +213,13 @@
 <section class="mold-radio" id="receiver" hidden aria-hidden="true"><div class="deck"><div class="cassette"><div class="label">PASSPORT • K-7 • 24H</div></div><div class="vu-panel"><div class="vu"><div class="vu-fill"></div></div></div></div></section>
 <div id="pp-nav-page" hidden></div>
 <script>
+document.getElementById("pg-expand").addEventListener("click", function () {
+  var drawer = document.getElementById("pg-player-drawer");
+  var open = drawer.hidden;
+  drawer.hidden = !open;
+  this.setAttribute("aria-expanded", open ? "true" : "false");
+  document.getElementById("passport-player").classList.toggle("is-open", open);
+});
 document.getElementById("pg-home-volume").addEventListener("input", function (e) {
   var a = document.getElementById("audio");
   if (a) a.volume = Number(e.target.value);
