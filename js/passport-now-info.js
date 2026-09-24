@@ -7,7 +7,7 @@
   if (location.pathname !== "/" && location.pathname !== "/index.html") return;
   if (window.PassportNowInfo) return;
 
-  const STICKY_META = "Passport Radio · Continuous Signals™ · 24H";
+  const STICKY_META = "24 horas";
   const STICKY_SIGNALS = [
     {key: "metal", label: "METAL", stream: "https://mediaserv68.live-streams.nl:18012/OnlyLive"},
     {key: "unplugged", label: "UNPLUGGED", stream: "https://streams.radio7.de/unplugged/mp3-192/web/"},
@@ -24,7 +24,7 @@
     token: 0,
     source: "sticky",
     house: "",
-    name: "Continuous Signals™",
+    name: "Metal",
     title: "METAL",
     detail: STICKY_META,
     k7: "METAL · 24H",
@@ -190,9 +190,9 @@
       token: t,
       source: "sticky",
       house: "",
-      name: "Continuous Signals™",
+      name: signal.label,
       title: signal.label,
-      detail: STICKY_META,
+      detail: "24 horas",
       k7: signal.label + " · 24H",
       playing: stickyPlaying()
     };
@@ -204,6 +204,8 @@
     if (el.textContent !== value) el.textContent = value;
   }
   function paint(next) {
+    const audio = document.getElementById("audio");
+    if (audio && audio.dataset.pgDoor === "1") return;
     if (!next || next.token !== token) return;
     state = next;
     setText("track", next.title);

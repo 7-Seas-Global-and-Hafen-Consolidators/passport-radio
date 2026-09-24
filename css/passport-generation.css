@@ -743,12 +743,13 @@ body.pp-home details.casa summary .pg-play { margin-left: auto !important; }
 }
 #passport-player #prev,
 #passport-player #next {
-  width: auto; min-width: 0; min-height: 44px;
-  border: 0 !important;
-  background: transparent !important;
-  color: #1a2744 !important;
-  font-size: 15px; font-weight: 700;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
+body.pp-home .pg-engine-keep { display: none !important; }
 #passport-player .pg-expand {
   margin-left: auto;
   min-height: 44px;
@@ -921,4 +922,293 @@ body.live-page:not(.passport-house) .display-head { display: flex; gap: 8px; }
   html { scroll-behavior: auto; }
 }
 
+/* Fechamento da corretiva — mesma casa, sem carroceria antiga na experiência. */
 
+html.pp-signal-standalone #passport80sPrev,
+html.pp-signal-standalone #passport80sNext {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+html.pp-signal-standalone #passport80sPrev::after,
+html.pp-signal-standalone #passport80sNext::after { content: none !important; display: none !important; }
+
+body.passport-house[data-signal="novelas"] .tunnel-panel-copy,
+body.passport-house[data-signal="novelas"] .tunnel-directory,
+body.passport-house[data-signal="novelas"] .tunnel-player strong,
+body.passport-house[data-signal="novelas"] .tunnel-player small { display: none !important; }
+body.passport-house[data-signal="novelas"] #passportNovelas { display: block !important; visibility: visible !important; }
+body.passport-house[data-signal="novelas"] #novelasDeck {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin: 0 !important;
+}
+body.passport-house[data-signal="novelas"] #novelasDeck button {
+  width: 100% !important;
+  min-height: 52px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  color: #1a2744 !important;
+  text-align: left !important;
+  padding: 12px 0 !important;
+}
+body.passport-house[data-signal="novelas"] #novelasDeck button[aria-pressed="true"] {
+  background: #1a2744 !important;
+  color: #fff !important;
+}
+
+.ouv-doors {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 0 48px;
+  margin: 8px 0 12px;
+  border-top: 3px solid #1a2744;
+}
+.ouv-doors a { display: block; text-decoration: none; padding: 16px 0 18px; border-bottom: 1px solid #1a2744; }
+.ouv-doors a small { color: #c4312e; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; }
+.ouv-doors a strong { display: block; font-family: var(--pg-serif); font-size: clamp(32px, 4vw, 48px); font-weight: 600; line-height: 1; margin: 4px 0; }
+.ouv-doors a span { display: block; max-width: 42ch; }
+.ouv-index { list-style: none; margin: 0 0 8px; padding: 0; }
+.ouv-index li { border-bottom: 1px solid #1a2744; }
+.ouv-index a {
+  display: grid;
+  grid-template-columns: minmax(96px, 160px) minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: baseline;
+  text-decoration: none;
+  padding: 11px 0;
+  min-height: 48px;
+}
+.ouv-index strong { font-family: var(--pg-serif); font-size: 22px; font-weight: 600; }
+.ouv-index em { font-style: normal; font-size: 15px; grid-column: 1 / -1; }
+.ouv-index i { font-style: normal; font-weight: 700; color: #c4312e; }
+body.live-page:not(.passport-house) .services { display: block; }
+body.live-page:not(.passport-house) .services a { border: 0; border-bottom: 1px solid #1a2744; padding: 14px 0; background: #fff; }
+@media (max-width: 800px) {
+  .ouv-doors { grid-template-columns: 1fr; }
+  .ouv-index a { grid-template-columns: minmax(0, 1fr) auto; }
+  .ouv-index em, .ouv-index span { grid-column: 1 / -1; }
+}
+
+body.pp-listing #archive-grid.arch-grid,
+body.pp-listing .news-grid,
+#archive-grid.arch-grid { display: block !important; }
+#archive-grid .arch-card,
+#archive-grid .list-card,
+body.pp-listing .news-grid .list-card,
+body.pp-listing .news-grid .news-card {
+  display: grid !important;
+  grid-template-columns: 92px minmax(0, 1fr) !important;
+  gap: 8px 16px !important;
+  align-items: start !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  background: #fff !important;
+  min-height: 0 !important;
+  padding: 12px 0 !important;
+  box-shadow: none !important;
+}
+#archive-grid .list-card:not(:has(img)),
+body.pp-listing .news-grid .list-card:not(:has(img)),
+body.pp-listing .news-grid .news-card:not(:has(img)) { grid-template-columns: minmax(0, 1fr) !important; }
+#archive-grid .list-media,
+body.pp-listing .news-grid .list-media { width: 92px; aspect-ratio: 1; margin: 0; }
+#archive-grid .list-copy,
+body.pp-listing .news-grid .list-copy { padding: 0 !important; }
+#archive-grid .list-copy h2,
+body.pp-listing .news-grid .list-copy h2 { font-size: 22px !important; margin: 0 !important; }
+#archive-grid .list-copy p,
+body.pp-listing .news-grid .list-copy p { margin: 4px 0 0 !important; font-size: 15px; }
+.pg-assuntos a, .blog-doors a, .blog-az a { border: 0; background: transparent; padding: 8px 0; }
+.pg-assuntos a:hover, .blog-doors a:hover { background: transparent; color: #c4312e; }
+.blog-page .blog-entity-cloud { display: block; }
+.blog-page .blog-entity-cloud a {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid #1a2744 !important;
+  padding: 10px 0 !important;
+  background: #fff !important;
+}
+
+.pg-store-filters {
+  width: min(var(--pg-shell), calc(100% - var(--pg-pad) * 2));
+  margin: 4px auto 18px;
+  border-bottom: 1px solid #1a2744;
+}
+.pg-store-filters summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
+
+.wd-main, .wd-dial, .wd-head { background: #fff; color: #1a2744; }
+.wd-main { max-width: 1200px; margin: 0 auto; padding: 8px 0 48px; }
+#world-filter {
+  display: block; width: min(560px, 100%); min-height: 48px; margin: 12px 0 8px;
+  border: 1px solid #1a2744; background: #fff; color: #1a2744; padding: 0 12px; font-size: 16px;
+}
+#world-stations { display: flex; flex-direction: column; max-height: none !important; overflow: visible !important; }
+#world-stations .station {
+  display: grid; width: 100%; text-align: left; background: #fff; color: #1a2744;
+  border: 0; border-bottom: 1px solid #1a2744; border-radius: 0; min-height: 64px; padding: 12px 0; cursor: pointer; box-shadow: none;
+}
+#world-stations .station strong { font-family: var(--pg-serif); font-size: 22px; font-weight: 600; }
+#world-stations .station span { font-size: 14px; }
+#world-stations .station.is-active { background: #1a2744; color: #fff; }
+#world-stations .station[hidden] { display: none !important; }
+.wd-deck, #world-player {
+  position: static !important; max-height: none !important; overflow: visible !important;
+  background: #fff !important; color: #1a2744 !important; border: 0 !important; border-top: 1px solid #1a2744 !important; box-shadow: none !important;
+}
+#world-play, #world-stop { min-height: 44px; min-width: 44px; border: 0; background: #c4312e; color: #fff; font-weight: 700; cursor: pointer; }
+#world-stop { background: #1a2744; }
+
+#fofonete-dock, .fofonete-dock {
+  left: auto !important;
+  right: 16px !important;
+  top: auto !important;
+  bottom: 132px !important;
+  z-index: 35 !important;
+  border-radius: 0 !important;
+  border: 1px solid #1a2744 !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  color: #1a2744 !important;
+}
+.pg-participe a { border: 0 !important; border-bottom: 1px solid #1a2744 !important; background: #fff !important; }
+
+body.live-page:not(.passport-house) #player,
+body.live-page:not(.passport-house) #engineBay,
+body.live-page:not(.passport-house) #passportTunnels,
+body.live-page:not(.passport-house) #continuous {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+}
+
+html.pp-signal-standalone,
+html.pp-signal-standalone body.passport-house,
+html.pp-signal-standalone body.pp-body.wd-body {
+  background: #fff !important;
+  color: #1a2744 !important;
+}
+html.pp-signal-standalone body.passport-house,
+html.pp-signal-standalone body.pp-body.wd-body,
+body.pp-home,
+body.pp-listing,
+body.live-page {
+  padding-bottom: 160px !important;
+}
+html.pp-signal-standalone .pp-signal-chrome,
+html.pp-signal-standalone body.wd-body .pp-signal-chrome,
+html.pp-signal-standalone .pp-signal-foot {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background: #fff !important;
+  color: #1a2744 !important;
+}
+html.pp-signal-standalone .pp-signal-brand,
+html.pp-signal-standalone .pp-signal-brand b,
+html.pp-signal-standalone .pp-signal-brand small,
+html.pp-signal-standalone .pp-signal-nav a,
+html.pp-signal-standalone .pp-signal-foot,
+html.pp-signal-standalone .pp-signal-foot a { color: #1a2744 !important; }
+html.pp-signal-standalone .tunnel-visual,
+html.pp-signal-standalone .tunnel-stage,
+html.pp-signal-standalone .tunnel-engine,
+html.pp-signal-standalone .tunnel-meta {
+  background: #fff !important;
+  color: #1a2744 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+html.pp-signal-standalone .tunnel-btn {
+  background: transparent !important;
+  color: #1a2744 !important;
+  border: 0 !important;
+  min-width: 44px;
+  min-height: 44px;
+}
+html.pp-signal-standalone .house-tools {
+  border: 0 !important;
+  background: #fff !important;
+  padding: 8px 0 0 !important;
+}
+html.pp-signal-standalone #tunnelPlay {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: #c4312e !important;
+  color: #fff !important;
+}
+
+/* Porta musical: a escolha fica no topo. O player continua sendo um só. */
+.pg-porta { background:#fff; color:#1a2744; border-bottom:1px solid #1a2744; }
+.pg-porta-row { width:min(1200px, calc(100% - 32px)); margin:0 auto; display:flex; gap:2px 16px; align-items:center; min-height:48px; overflow-x:auto; flex-wrap:nowrap; padding:6px 0; }
+.pg-porta-row button, .pg-porta-row a { flex:0 0 auto; border:0; background:transparent; color:#1a2744; font:700 15px/1 "Source Sans 3",sans-serif; padding:10px 0; cursor:pointer; text-decoration:none; }
+.pg-porta-row button[aria-pressed="true"] { color:#c4312e; box-shadow:inset 0 -2px 0 #c4312e; }
+.pg-porta-panel { width:min(1200px, calc(100% - 32px)); margin:0 auto; padding:0 0 14px; }
+.pg-porta-panel[hidden] { display:none !important; }
+.pg-porta-note { margin:0 0 8px; font-size:15px; }
+.pg-porta-choices { display:flex; flex-direction:column; }
+.pg-porta-choices button, .pg-porta-panel > button { display:flex; justify-content:space-between; gap:12px; width:100%; text-align:left; background:#fff; color:#1a2744; border:0; border-bottom:1px solid #1a2744; min-height:48px; padding:10px 0; cursor:pointer; font:600 18px/1.3 "Newsreader",Georgia,serif; }
+.pg-porta-choices button span { font:500 14px/1.3 "Source Sans 3",sans-serif; }
+#pg-world-q { display:block; width:min(520px,100%); min-height:44px; margin:0 0 8px; border:1px solid #1a2744; background:#fff; padding:0 12px; font-size:16px; }
+#pg-porta-player, #pg-porta-player.player {
+  position:fixed; left:0; right:0; bottom:0; z-index:80; display:flex; align-items:center; gap:14px;
+  min-height:56px; height:auto; max-height:88px; padding:6px 16px; background:#fff !important; color:#1a2744 !important;
+  border-top:1px solid #1a2744; box-shadow:none;
+}
+#pg-porta-player.is-open { max-height:none; flex-wrap:wrap; }
+#pg-porta-player #pg-porta-play { width:44px; height:44px; min-width:44px; border-radius:50%; border:0; background:#c4312e; color:#fff; font-size:16px; cursor:pointer; }
+#pg-porta-player .pg-expand { margin-left:auto; border:0; background:transparent; color:#1a2744; font-weight:700; min-height:44px; cursor:pointer; }
+#pg-porta-player .player-copy { display:flex; flex-direction:column; min-width:0; }
+#pg-porta-player strong { font-family:"Newsreader",Georgia,serif; font-size:18px; }
+#pg-porta-player small, #pg-porta-player #pg-porta-state { font-size:13px; }
+#passport-player.player:not(.is-open) { height:auto !important; min-height:56px; max-height:84px; }
+#passport-player #meta { position:static !important; width:auto !important; height:auto !important; overflow:visible !important; clip:auto !important; }
+.pg-play, .ouv-index i { display:none !important; }
+.ouv-index button, .ouv-doors button { display:block; width:100%; text-align:left; background:#fff; color:#1a2744; border:0; cursor:pointer; font:inherit; }
+.ouv-doors button { padding:18px 0; border-bottom:1px solid #1a2744; }
+.ouv-doors button strong { display:block; font-family:"Newsreader",Georgia,serif; font-size:clamp(28px,4vw,44px); font-weight:600; }
+.ouv-doors button small { color:#c4312e; font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
+.ouv-index button { display:grid; grid-template-columns:minmax(96px,150px) minmax(0,1.4fr); gap:8px 16px; align-items:baseline; padding:12px 0; border-bottom:1px solid #1a2744; }
+.ouv-index button strong { font-family:"Newsreader",Georgia,serif; font-size:22px; font-weight:600; }
+body.live-page #cabine {
+  display: none !important;
+}
+@media (max-width: 759px) {
+  #pg-porta-more { display: inline-flex !important; }
+  #pg-porta-row { display: none !important; }
+  #pg-porta.is-open #pg-porta-row {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    z-index: 50;
+    border-bottom: 1px solid #1a2744;
+    padding: 4px 16px 12px;
+  }
+}
+body.wd-body .wd-deck { position:absolute !important; width:1px !important; height:1px !important; overflow:hidden !important; clip:rect(0,0,0,0) !important; }
+#fofonete-dock, .fofonete-dock { position:static !important; left:auto !important; right:auto !important; top:auto !important; bottom:auto !important; z-index:1 !important; margin:16px !important; }
+@media (min-width:1100px) {
+  .pg-porta-row { flex-wrap:wrap; overflow:visible; }
+}

@@ -9,7 +9,7 @@
 <title>Passport Radio | Contar histórias que dão vontade de ouvir</title>
 <link rel="canonical" href="https://passportradio.online/">
 <link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260924gen">
-<link rel="stylesheet" href="/css/passport-vinyl.css?v=20260924gen">
+<link rel="stylesheet" href="/css/passport-vinyl.css?v=20260924close">
 <link rel="stylesheet" href="/css/asaas-footer-trust.css?v=20260908z">
 <link rel="stylesheet" href="/css/fofonete-exit-intent.css?v=20260909g">
 <script src="/js/passport-bus.js?v=20260910"></script>
@@ -37,7 +37,7 @@
 
 <div class="player pg-now" id="passport-player" style="height:56px">
   <button class="play" id="play" type="button" aria-label="Tocar ou pausar">▶</button>
-  <span class="player-copy"><strong id="track">METAL</strong><small id="meta">Metal · 24 horas</small></span>
+  <span class="player-copy"><strong id="track">METAL</strong><small id="meta">24 horas</small></span>
   <span class="status"><i></i><span id="state">24H · PRONTO</span></span>
   <button type="button" class="pg-expand" id="pg-expand" aria-expanded="false" aria-controls="pg-player-drawer">Opções</button>
   <div id="pg-player-drawer" class="pg-player-drawer" hidden>
@@ -45,7 +45,7 @@
     <button id="next" type="button">Próximo</button>
     <label class="pg-vol">Volume <input id="pg-home-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
     <a href="/radio.html">Todas as rádios</a>
-    <p>Anterior e próximo trocam Metal, Unplugged e Live Jam. Transmissão contínua: não há progresso para arrastar.</p>
+    <p>A escolha das rádios está no topo. Volume só muda esta transmissão. Não há progresso para arrastar.</p>
   </div>
   <audio id="audio" preload="none"></audio>
 </div>
@@ -123,7 +123,37 @@
     </div>
   </section>
 
-  <section class="pg-section" id="ouca" aria-labelledby="ouca-title">
+  <section class="pg-section" aria-labelledby="mais-title">
+    <h2 id="mais-title">Mais histórias</h2>
+    <div class="pg-list">
+      <a href="/blog/2026/09/18/o-que-iron-maiden-deixa-no-ar-agora.html"><img src="/images/ironmaiden_future_past_tour_2024.webp" alt=""><strong>Iron Maiden</strong><span>O que ainda fica no ar.</span></a>
+      <a href="/blog/2026/09/18/led-zeppelin-e-o-giro-que-recoloca-o-nome-no-mapa.html"><img src="/images/led-zeppelin-a-cancao-rockprogressiva.png" alt=""><strong>Led Zeppelin</strong><span>A faixa que recoloca o nome.</span></a>
+      <a href="/white-metal-isso-e-musica-crista.html"><img src="/images/white-metal/Stryper%20band.jpg" alt=""><strong>White Metal</strong><span>Isso é música cristã?</span></a>
+      <a href="/historias/cannibal-corpse.html"><strong>Cannibal Corpse</strong><span>História já publicada.</span></a>
+      <a href="/rhapsody-of-fire-symphonic-power-metal.html"><strong>Rhapsody of Fire</strong><span>Power metal sinfônico.</span></a>
+      <a href="/sharon-den-adel-within-temptation-30-anos.html"><strong>Sharon den Adel</strong><span>Trinta anos de Within Temptation.</span></a>
+      <a href="/tony-iommi-karl-brazil.html"><strong>Tony Iommi</strong><span>A conversa com Karl Brazil.</span></a>
+      <a href="/blog/arquivo/letras.html"><strong>Bandas e artistas</strong><span>O índice de A a Z.</span></a>
+    </div>
+  </section>
+
+  <section class="pg-section" aria-labelledby="portas-title">
+    <h2 id="portas-title">Arquivo, bandas, participação</h2>
+    <div class="pg-assuntos">
+      <a href="/editorial.html">Arquivo</a>
+      <a href="/blog/arquivo/autores.html">Autores</a>
+      <a href="/blog/arquivo/epocas.html">Épocas</a>
+      <a href="/blog/arquivo/formatos.html">Formatos</a>
+      <a href="/blog/arquivo/temas.html">Assuntos</a>
+      <a href="/participe.html">Participe</a>
+      <a href="/loja.html">Loja</a>
+      <a href="/anuncie.html">Anuncie</a>
+      <a href="/promocoes.html">Promoções</a>
+      <a href="/noticias.html">Notícias</a>
+    </div>
+  </section>
+
+  <section class="pg-section pg-engine-keep" id="ouca" aria-labelledby="ouca-title" hidden inert>
     <h2 id="ouca-title">No ar</h2>
     <p>Metal toca nesta página. As outras casas abrem o próprio sinal. Um de cada vez.</p>
     <section id="passport-casas" aria-labelledby="casas-title">
@@ -181,7 +211,7 @@
     <a class="pg-more" href="/radio.html#radios">Ver todas as rádios</a>
   </section>
 
-  <section class="pg-section" aria-labelledby="mundo-title">
+  <section class="pg-section pg-engine-keep" id="pg-mundo-wall" aria-labelledby="mundo-title" hidden inert>
     <h2 id="mundo-title">Rádios do Mundo</h2>
     <div class="pg-radios">
       <a class="pg-radio" href="/radio-bolivia.html"><span class="pg-card-art">Bolívia</span><b>Bolívia</b><strong>Radio Bolivia</strong><p>Rock, cumbia, folklore, Aymara e Quechua.</p><span class="pg-play">▶ Ouvir</span></a>
@@ -227,6 +257,7 @@ document.getElementById("pg-home-volume").addEventListener("input", function (e)
 </script>
 <script src="/js/passport-live.js?v=20260910passport" defer></script>
 <script src="/js/continuous-signals-home.js?v=20260908z" defer></script>
+<script src="/js/passport-musical-door.js?v=20260924casa" defer></script>
 <script src="/js/passport-shell-v6.js?v=20260909g" defer></script>
 <script src="/js/passport-portal-v3.js?v=20260911r10" defer></script>
 <script src="/js/passport-home-journey.js?v=20260916host" defer></script>
@@ -238,6 +269,6 @@ document.getElementById("pg-home-volume").addEventListener("input", function (e)
 <script src="/js/passport-home-houses.js?v=20260924gen" defer></script>
 <script src="/js/passport-persist-nav.js?v=20260917vinyl" defer></script>
 <script src="/js/passport-now-info.js?v=20260917vinyl" defer></script>
-<script src="/js/passport-site-foundation.js?v=20260918a" defer></script>
+<script src="/js/passport-site-foundation.js?v=20260924close" defer></script>
 </body>
 </html>

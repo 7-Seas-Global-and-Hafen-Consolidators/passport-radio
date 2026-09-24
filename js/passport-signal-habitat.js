@@ -92,7 +92,7 @@
   function loadCookieNotice() {
     if (document.querySelector('script[data-passport-cookie-foundation]')) return;
     const s = document.createElement("script");
-    s.src = "/js/passport-site-foundation.js?v=20260918a";
+    s.src = "/js/passport-site-foundation.js?v=20260924close";
     s.defer = true;
     s.dataset.passportCookieFoundation = "1";
     document.head.appendChild(s);
@@ -112,3 +112,5 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, { once: true });
   else boot();
 })();
+
+;(()=>{if(window.PassportPorta||document.querySelector('script[data-pg-porta]'))return;const s=document.createElement('script');s.src='/js/passport-musical-door.js?v=20260924casa';s.defer=true;s.dataset.pgPorta='1';document.head.appendChild(s);})();

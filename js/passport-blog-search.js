@@ -113,3 +113,5 @@
     if (root) renderResults(root, state.q, state.p);
   });
 })();
+
+;(()=>{if(window.PassportPorta||document.querySelector('script[data-pg-porta]'))return;const s=document.createElement('script');s.src='/js/passport-musical-door.js?v=20260924casa';s.defer=true;s.dataset.pgPorta='1';document.head.appendChild(s);})();
