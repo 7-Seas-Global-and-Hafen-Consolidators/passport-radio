@@ -90,7 +90,7 @@
   fetch("/data/bandas-artistas.json", { credentials: "same-origin" })
     .then((res) => res.json())
     .then((data) => {
-      rows = data.entities || [];
+      rows = (data.entities || []).filter((row) => String(row.displayName || row.canonicalName || "").trim().toLowerCase() !== "a cena");
       const hash = decodeURIComponent((location.hash || "").replace("#", ""));
       if (letters.indexOf(hash) !== -1) letter = hash;
       drawLetters();

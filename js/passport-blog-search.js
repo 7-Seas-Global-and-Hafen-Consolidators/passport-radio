@@ -78,10 +78,6 @@
     ["R&B", "/radio-80s.html"],
     ["Hair Metal", "/radio-80s.html"],
     ["Live & Rare", "/radio-live-rare.html"],
-    ["WackenTV", "/radio-live-rare.html"],
-    ["BBC Music", "/radio-live-rare.html"],
-    ["The Midnight Special", "/radio-live-rare.html"],
-    ["Live Aid", "/radio-live-rare.html"],
     ["Rádios do Mundo", "/radio-mundo.html"],
     ["Radio Paraguay", "/radio-mundo.html"],
     ["Radio Québec", "/radio-mundo.html"],
@@ -156,12 +152,16 @@
       const ranked = items.map((item) => ({ item, score: scoreItem(item, tokens) }))
         .filter((row) => row.score > 0)
         .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)));
-      const total = ranked.length;
+      const stories = ranked.filter((row) => String(row.item.url || "").indexOf("/blog/w/") === -1);
+      const fichas = ranked.filter((row) => String(row.item.url || "").indexOf("/blog/w/") !== -1);
+      const total = stories.length;
       const pages = Math.max(1, Math.ceil(total / PER_PAGE) || 1);
       const safePage = Math.min(page, pages);
-      const slice = ranked.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
+      const slice = stories.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
       const phrase = tokens.join(" ");
       const artistRows = bands.filter((row) => {
+        const name = fold(row.displayName || "");
+        if (name === "a cena") return false;
         const hay = fold((row.displayName || "") + " " + (row.slug || ""));
         return tokens.every((token) => hay.includes(token));
       }).slice(0, 12).map((row) =>
@@ -181,7 +181,14 @@
       const storyBlock = total
         ? `<section class="typed-block"><h2>Matérias</h2><p class="blog-search-count">${total} matéria${total === 1 ? "" : "s"} para “${esc(query)}”</p><div class="blog-grid">${slice.map((row) => card(row.item)).join("")}</div>${pager}</section>`
         : "";
-      const html = typedList("Artistas", artistRows) + storyBlock + typedList("Rádios", radioRows) + typedList("Produtos", productRows);
+      const fichaSlice = fichas.filter((row) => {
+        const title = fold(row.item.title || "");
+        return title === phrase || title.includes(phrase);
+      }).slice(0, 5);
+      const fichaBlock = fichaSlice.length
+        ? `<section class="typed-block"><h2>Fichas</h2><ul class="hub-list">${fichaSlice.map((row) => `<li><a href="${esc(row.item.url)}">${esc(row.item.title)} <span>Ficha</span></a></li>`).join("")}</ul></section>`
+        : "";
+      const html = typedList("Artistas", artistRows) + storyBlock + typedList("Rádios", radioRows) + typedList("Produtos", productRows) + fichaBlock;
       root.innerHTML = html || `<p class="blog-empty">Nada publicado para “${esc(query)}”.</p>`;
       if (phrase && !html) return;
     }).catch(() => {
@@ -202,14 +209,16 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function boot() {
     bindForms();
     const root = document.querySelector("[data-search-root]");
     const state = params();
-    const input = document.getElementById("blog-q");
-    if (input && state.q) input.value = state.q;
+    const input = document.getElementById("blog-q") || document.getElementById("pr-q");
+    if (input && state.q && document.activeElement !== input) input.value = state.q;
     if (root) renderResults(root, state.q, state.p);
-  });
-})();
+  }
 
-;(()=>{if(window.PassportPorta||document.querySelector('script[data-pg-porta]'))return;const s=document.createElement('script');s.src='/js/passport-musical-door.js?v=20260924casa';s.defer=true;s.dataset.pgPorta='1';document.head.appendChild(s);})();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  document.addEventListener("pr:page", boot);
+})();

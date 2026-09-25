@@ -11,7 +11,44 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Iron Maiden no Brasil em 2026: por que ainda soa como Maiden depois de 50 anos?","description":"Iron Maiden toca hoje em Montreal com Megadeth e Anthrax e chega ao Brasil em outubro. Mr. Nomad abre o Music DNA da banda.","image":"https://www.correiodopovo.com.br/image/contentid/policy%3A1.1674567%3A1772281273/1-2025-v3-0-IRON-MAIDEN-F2TB-BUDAPEST-27th-May-2025-1883.jpg?%24p%24f%24q%24w=655246c&f=4x3&q=0.9&w=900","author":{"@type":"Person","name":"Mr. Nomad"},"publisher":{"@type":"Organization","name":"Passport Radio"},"mainEntityOfPage":"https://www.passportradio.online/editorial/2026/09/03/iron-maiden-brasil-2026-por-que-ainda-soa-como-maiden.html","datePublished":"2026-09-03","dateModified":"2026-09-03","inLanguage":"pt-BR","about":[{"@type":"MusicGroup","name":"Iron Maiden"},{"@type":"Person","name":"Steve Harris"},{"@type":"Person","name":"Bruce Dickinson"},{"@type":"Person","name":"Dave Murray"},{"@type":"Person","name":"Adrian Smith"},{"@type":"Person","name":"Janick Gers"},{"@type":"Person","name":"Simon Dawson"}]}</script>
 <style>.pe-story-image{margin:38px 0}.pe-story-image img{display:block;width:100%;height:auto}.pe-story-image figcaption{margin-top:9px;font-size:.72rem;letter-spacing:.06em;opacity:.65}.pe-live{margin:46px 0}.pe-live iframe{width:100%;aspect-ratio:16/9;border:0;background:#000}.pe-live small{display:block;margin-bottom:12px;font-weight:900;letter-spacing:.12em;opacity:.65}.pe-answer{margin:34px 0;padding:24px 26px;border-left:4px solid currentColor;background:rgba(0,0,0,.035)}.nomad-hit{font-size:1.25em;font-weight:900;line-height:1.45}</style><link rel="stylesheet" href="/css/passport-editorial-fonts.css?v=31c">
 <link rel="stylesheet" href="/css/passport-editorial-ink.css?v=31c">
-</head><body class="pp-article">
+<meta name="passport:class" content="real">
+<link rel="stylesheet" href="/css/passport-doc.css?v=20260925doc">
+</head><body class="pp-article pr-doc">
+<div id="pr-house">
+<a class="pr-brand" href="/"><span>Passport</span><span>Radio</span></a>
+<form class="pr-search" action="/blog/busca.html" method="get" role="search">
+<label class="pr-sr" for="pr-q">Buscar</label>
+<input id="pr-q" name="q" type="search" placeholder="Matérias, artistas, autores, rádios, agenda, loja" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<div class="pr-player" id="pr-player">
+<button type="button" id="pr-play" aria-label="Tocar">▶</button>
+<p class="pr-now"><strong id="pr-name">Escolha uma rádio</strong> <span id="pr-state"></span></p>
+<label class="pr-vol">Volume <input id="pr-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+<audio id="pr-audio" preload="none"></audio>
+<div class="pr-yt" aria-hidden="true"><div id="pr-yt"></div></div>
+</div>
+<nav class="pr-babies" id="pr-babies" aria-label="Rádios">
+<div class="pr-group"><h2>Música</h2><div class="pr-units"><button type="button" data-pr="metal:metal" aria-pressed="false">Metal</button><button type="button" data-pr="metal:unplugged" aria-pressed="false">Unplugged</button><button type="button" data-pr="metal:regenbogen" aria-pressed="false">Unplugged II</button><button type="button" data-pr="metal:metalwarriors" aria-pressed="false">Heavy Metal</button><button type="button" data-pr="metal:gothic" aria-pressed="false">Gothic Passport</button><button type="button" data-pr="metal:livejam" aria-pressed="false">Live Jam</button></div></div><div class="pr-group"><h2>80s</h2><div class="pr-units"><button type="button" data-pr="80s:Pop" aria-pressed="false">Pop</button><button type="button" data-pr="80s:Soft" aria-pressed="false">Soft</button><button type="button" data-pr="80s:Country" aria-pressed="false">Country</button><button type="button" data-pr="80s:Soft R&amp;B" aria-pressed="false">Soft R&amp;B</button><button type="button" data-pr="80s:R&amp;B" aria-pressed="false">R&amp;B</button><button type="button" data-pr="80s:Hair Metal" aria-pressed="false">Hair Metal</button></div></div><div class="pr-group"><h2>Rádios</h2><div class="pr-units"><button type="button" data-pr="mpb" aria-pressed="false">MPB</button><button type="button" data-pr="rock" aria-pressed="false">Rock Brasil</button><button type="button" data-pr="soul" aria-pressed="false">Soul</button><button type="button" data-pr="disco" aria-pressed="false">Disco</button><button type="button" data-pr="reggae" aria-pressed="false">Reggae</button><button type="button" data-pr="jovem" aria-pressed="false">Jovem Guarda</button><button type="button" data-pr="hits" aria-pressed="false">Hits</button><button type="button" data-pr="oldies" aria-pressed="false">50s &amp; 60s</button><button type="button" data-pr="flash" aria-pressed="false">Flash House</button><button type="button" data-pr="nostalgia" aria-pressed="false">Nostalgia</button><button type="button" data-pr="novela:0" aria-pressed="false">Novelas 01</button><button type="button" data-pr="novela:1" aria-pressed="false">Novelas 02</button><button type="button" data-pr="novela:2" aria-pressed="false">Novelas 03</button><button type="button" data-pr="novela:3" aria-pressed="false">Novelas 04</button><button type="button" data-pr="novela:4" aria-pressed="false">Novelas 05</button><button type="button" data-pr="novela:5" aria-pressed="false">Novelas 06</button><button type="button" data-pr="novela:6" aria-pressed="false">Novelas 07</button><button type="button" data-pr="novela:7" aria-pressed="false">Novelas 08</button><button type="button" data-pr="novela:8" aria-pressed="false">Novelas 09</button><button type="button" data-pr="globo:0" aria-pressed="false">Globo de Ouro 01</button><button type="button" data-pr="globo:1" aria-pressed="false">Globo de Ouro 02</button><button type="button" data-pr="globo:2" aria-pressed="false">Globo de Ouro 03</button><button type="button" data-pr="globo:3" aria-pressed="false">Globo de Ouro 04</button><button type="button" data-pr="globo:4" aria-pressed="false">Globo de Ouro 05</button><button type="button" data-pr="globo:5" aria-pressed="false">Globo de Ouro 06</button><button type="button" data-pr="liverare" aria-pressed="false">Live &amp; Rare</button></div></div><div class="pr-group"><h2>Américas</h2><div class="pr-units"><button type="button" data-pr="world:py" aria-pressed="false">Radio Paraguay</button><button type="button" data-pr="world:ca" aria-pressed="false">Radio Québec</button><button type="button" data-pr="world:ve" aria-pressed="false">Radio Venezuela</button><button type="button" data-pr="world:mx" aria-pressed="false">PASSPORT MÉXICO</button></div></div><div class="pr-group"><h2>Europa</h2><div class="pr-units"><button type="button" data-pr="world:fr" aria-pressed="false">Radio France</button><button type="button" data-pr="world:ua" aria-pressed="false">Українське музичне радіо</button><button type="button" data-pr="world:ro" aria-pressed="false">Radio Muzică Românească</button><button type="button" data-pr="world:fi" aria-pressed="false">Suomalainen rockradio</button><button type="button" data-pr="world:cz" aria-pressed="false">České rockové rádio</button><button type="button" data-pr="world:lt" aria-pressed="false">Lietuvos roko radijas</button><button type="button" data-pr="world:gr" aria-pressed="false">Ελληνικό ροκ ραδιόφωνο</button><button type="button" data-pr="world:it" aria-pressed="false">Radio Italia</button><button type="button" data-pr="world:catalunya" aria-pressed="false">PASSPORT CATALUNYA</button><button type="button" data-pr="world:tr" aria-pressed="false">Türkiye Müzik Radyosu</button></div></div><div class="pr-group"><h2>África</h2><div class="pr-units"><button type="button" data-pr="world:ea" aria-pressed="false">Rádio África</button></div></div><div class="pr-group"><h2>Ásia</h2><div class="pr-units"><button type="button" data-pr="world:kr" aria-pressed="false">한국 음악 라디오</button><button type="button" data-pr="world:cn" aria-pressed="false">中国音乐电台</button><button type="button" data-pr="world:jp" aria-pressed="false">パスポート日本</button><button type="button" data-pr="world:th" aria-pressed="false">พาสปอร์ตประเทศไทย</button><button type="button" data-pr="world:kz" aria-pressed="false">ПАСПОРТ ҚАЗАҚСТАН</button><button type="button" data-pr="world:pk" aria-pressed="false">پاکستانی موسیقی ریڈیو</button><button type="button" data-pr="world:ir" aria-pressed="false">رادیو موسیقی ایران</button><button type="button" data-pr="world:il" aria-pressed="false">רדיו מוזיקה ישראלית</button></div></div>
+</nav>
+<nav class="pr-sections" id="pr-sections" aria-label="Seções">
+<a href="/">Capa</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/radio.html">Ouvir</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+</nav>
+</div>
+<div id="pr-main">
+
 <div class="pe-topbar">PASSPORT RADIO · MR. NOMAD · MUSIC DNA</div><header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
 <main><section class="pe-hero"><div class="pe-shell"><span class="pe-kicker">PASSPORT RADIO · IRON MAIDEN · 03/09/2026</span><h1>Iron Maiden chega ao Brasil em 2026. Antes de olhar para Eddie, escute quem faz essa máquina soar como Maiden.</h1><p>Hoje, 3 de setembro, Iron Maiden, Megadeth e Anthrax dividem o Parc Jean-Drapeau, em Montreal. Em outubro, a Run For Your Lives chega a São Paulo e Curitiba. A notícia é o show. A história é outra: por que bastam poucos segundos para você saber que aquilo é Iron Maiden?</p><div class="pe-stamp"><b>MR. NOMAD · MUSIC DNA</b><span>2026-09-03</span></div></div></section>
 <div class="pe-shell pe-layout"><article class="pe-prose">
@@ -27,5 +64,27 @@
 <span class="chapter">07 · MUSIC DNA</span><h2>Então qual é o DNA do Iron Maiden?</h2><p>Não é Eddie.</p><p>Não é apenas o galope.</p><p>Não é apenas Bruce.</p><p>Não são apenas as guitarras harmonizadas.</p><p>É a relação.</p><p>Steve Harris empurra. A bateria organiza esse impulso. As guitarras transformam movimento em melodia e tensão. Dickinson encontra uma linha humana no meio da arquitetura. E o palco amplia tudo até aquilo parecer maior do que seis pessoas.</p><p>Bandas não são logotipos.</p><p>Bandas são relações entre músicos.</p><p>E talvez seja por isso que, cinquenta anos depois, você ainda precisa de poucos segundos.</p><p>Não para reconhecer Eddie.</p><p>Para reconhecer o som.</p>
 <section class="pe-nomad"><span>MR. NOMAD</span><h2>Tire os olhos de Eddie.</h2><p>Nômades, em outubro o Brasil vai cantar cada palavra. Vai fotografar o palco. Vai procurar Eddie. Vai esperar Bruce correr.</p><p>Façam tudo isso.</p><p>Mas me deem quatro minutos.</p><p>Procurem Steve Harris.</p><p>Depois Simon Dawson.</p><p>Depois Murray, Smith e Gers.</p><p>Depois Bruce.</p><p>E finalmente deixem os seis voltarem para dentro da mesma música.</p><p>Porque a pergunta nunca foi apenas quem está no Iron Maiden.</p><p><strong>A pergunta é: quem está fazendo essa música soar exatamente assim?</strong></p><strong>Mr. Nomad</strong><p>3... 2... 1...</p><p><strong>CLICK!</strong></p></section>
 </article><aside class="pe-side"><div class="pe-sidebox"><b>IRON MAIDEN · BRASIL 2026</b><p>25/10 · São Paulo · Nubank Parque</p><p>27/10 · São Paulo · Nubank Parque</p><p>28/10 · Curitiba · Arena da Baixada</p><p>Convidado: Alter Bridge</p></div><div class="pe-sidebox"><b>MUSIC DNA</b><p>Steve Harris · baixo</p><p>Bruce Dickinson · voz</p><p>Dave Murray · guitarra</p><p>Adrian Smith · guitarra</p><p>Janick Gers · guitarra</p><p>Simon Dawson · bateria</p></div></aside></div></main>
-<script src="/js/passport-legal-footer.js?v=202608241345" defer></script><script src="/js/passport-mast.js?v=20260925house" defer></script>
+<script src="/js/passport-legal-footer.js?v=202608241345" defer></script>
+</div>
+<footer id="pr-foot">
+<nav aria-label="Rodapé">
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+<a href="/privacidade.html">Privacidade</a>
+<a href="/termos.html">Termos</a>
+<a href="/cookies.html">Cookies</a>
+</nav>
+<p>Contar histórias que dão vontade de ouvir. A Passport Radio iniciou suas atividades em 1998. Após um período de interrupção, retomou suas operações em 2026.</p>
+</footer>
+
+<script src="/js/passport-doc.js?v=20260925doc" defer></script>
 </body></html>

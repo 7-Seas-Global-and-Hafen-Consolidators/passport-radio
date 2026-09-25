@@ -1,5 +1,6 @@
 /* Cabeçalho único. A marca abre a casa. Depois a navegação. Depois o produto. */
 (function () {
+  if (document.getElementById("pr-house")) return;
   if (!document.querySelector('link[href*="passport-house.css"]')) {
     var link = document.createElement("link");
     link.rel = "stylesheet";

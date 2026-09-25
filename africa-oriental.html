@@ -7,7 +7,43 @@
 <link rel="canonical" href="https://www.passportradio.online/africa-oriental.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>body{margin:0;background:#02060b;color:#f3f0e8;font-family:Inter,Arial,sans-serif}a{color:inherit}.shell{max-width:1120px;margin:auto;padding:0 24px}.top{border-bottom:1px solid #27303a;padding:18px 0}.top .shell{display:flex;justify-content:space-between;gap:20px;align-items:center}.top a{text-decoration:none;font-weight:800}.nav{display:flex;gap:18px;flex-wrap:wrap;font-size:12px}.translate{border-bottom:1px solid #27303a;background:#081522}.translate .shell{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.translate strong{font-size:11px;letter-spacing:.12em;color:#d4af37}.translate a{font-size:12px;text-decoration:none;border:1px solid #39434e;padding:8px 11px}.translate a:hover,.translate a:focus{border-color:#d4af37}.hero{padding:90px 0 70px;background:linear-gradient(135deg,#02060b,#081522)}.eyebrow{color:#d4af37;font-size:12px;font-weight:800;letter-spacing:.15em}.hero h1{font-family:'Libre Baskerville',serif;font-size:clamp(42px,8vw,88px);line-height:.98;max-width:900px;margin:18px 0 24px}.hero p{max-width:800px;font-size:19px;line-height:1.7;color:#d5d7da}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:50px 0}.card{border:1px solid #27303a;padding:26px;min-height:180px;background:#081522}.card small{color:#d4af37;text-transform:uppercase;letter-spacing:.1em}.card h2{font-family:'Libre Baskerville',serif}.card p{color:#c6cbd0;line-height:1.6}.mission{border-top:1px solid #27303a;padding:50px 0 80px}.mission h2{font-family:'Libre Baskerville',serif;font-size:36px}.mission p{max-width:820px;color:#c6cbd0;line-height:1.8}.foot{border-top:1px solid #27303a;padding:28px 0;color:#9fa6ad;font-size:12px}</style>
-</head><body>
+<link rel="stylesheet" href="/css/passport-doc.css?v=20260925doc">
+</head><body class="pr-doc">
+<div id="pr-house">
+<a class="pr-brand" href="/"><span>Passport</span><span>Radio</span></a>
+<form class="pr-search" action="/blog/busca.html" method="get" role="search">
+<label class="pr-sr" for="pr-q">Buscar</label>
+<input id="pr-q" name="q" type="search" placeholder="Matérias, artistas, autores, rádios, agenda, loja" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<div class="pr-player" id="pr-player">
+<button type="button" id="pr-play" aria-label="Tocar">▶</button>
+<p class="pr-now"><strong id="pr-name">Escolha uma rádio</strong> <span id="pr-state"></span></p>
+<label class="pr-vol">Volume <input id="pr-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+<audio id="pr-audio" preload="none"></audio>
+<div class="pr-yt" aria-hidden="true"><div id="pr-yt"></div></div>
+</div>
+<nav class="pr-babies" id="pr-babies" aria-label="Rádios">
+<div class="pr-group"><h2>Música</h2><div class="pr-units"><button type="button" data-pr="metal:metal" aria-pressed="false">Metal</button><button type="button" data-pr="metal:unplugged" aria-pressed="false">Unplugged</button><button type="button" data-pr="metal:regenbogen" aria-pressed="false">Unplugged II</button><button type="button" data-pr="metal:metalwarriors" aria-pressed="false">Heavy Metal</button><button type="button" data-pr="metal:gothic" aria-pressed="false">Gothic Passport</button><button type="button" data-pr="metal:livejam" aria-pressed="false">Live Jam</button></div></div><div class="pr-group"><h2>80s</h2><div class="pr-units"><button type="button" data-pr="80s:Pop" aria-pressed="false">Pop</button><button type="button" data-pr="80s:Soft" aria-pressed="false">Soft</button><button type="button" data-pr="80s:Country" aria-pressed="false">Country</button><button type="button" data-pr="80s:Soft R&amp;B" aria-pressed="false">Soft R&amp;B</button><button type="button" data-pr="80s:R&amp;B" aria-pressed="false">R&amp;B</button><button type="button" data-pr="80s:Hair Metal" aria-pressed="false">Hair Metal</button></div></div><div class="pr-group"><h2>Rádios</h2><div class="pr-units"><button type="button" data-pr="mpb" aria-pressed="false">MPB</button><button type="button" data-pr="rock" aria-pressed="false">Rock Brasil</button><button type="button" data-pr="soul" aria-pressed="false">Soul</button><button type="button" data-pr="disco" aria-pressed="false">Disco</button><button type="button" data-pr="reggae" aria-pressed="false">Reggae</button><button type="button" data-pr="jovem" aria-pressed="false">Jovem Guarda</button><button type="button" data-pr="hits" aria-pressed="false">Hits</button><button type="button" data-pr="oldies" aria-pressed="false">50s &amp; 60s</button><button type="button" data-pr="flash" aria-pressed="false">Flash House</button><button type="button" data-pr="nostalgia" aria-pressed="false">Nostalgia</button><button type="button" data-pr="novela:0" aria-pressed="false">Novelas 01</button><button type="button" data-pr="novela:1" aria-pressed="false">Novelas 02</button><button type="button" data-pr="novela:2" aria-pressed="false">Novelas 03</button><button type="button" data-pr="novela:3" aria-pressed="false">Novelas 04</button><button type="button" data-pr="novela:4" aria-pressed="false">Novelas 05</button><button type="button" data-pr="novela:5" aria-pressed="false">Novelas 06</button><button type="button" data-pr="novela:6" aria-pressed="false">Novelas 07</button><button type="button" data-pr="novela:7" aria-pressed="false">Novelas 08</button><button type="button" data-pr="novela:8" aria-pressed="false">Novelas 09</button><button type="button" data-pr="globo:0" aria-pressed="false">Globo de Ouro 01</button><button type="button" data-pr="globo:1" aria-pressed="false">Globo de Ouro 02</button><button type="button" data-pr="globo:2" aria-pressed="false">Globo de Ouro 03</button><button type="button" data-pr="globo:3" aria-pressed="false">Globo de Ouro 04</button><button type="button" data-pr="globo:4" aria-pressed="false">Globo de Ouro 05</button><button type="button" data-pr="globo:5" aria-pressed="false">Globo de Ouro 06</button><button type="button" data-pr="liverare" aria-pressed="false">Live &amp; Rare</button></div></div><div class="pr-group"><h2>Américas</h2><div class="pr-units"><button type="button" data-pr="world:py" aria-pressed="false">Radio Paraguay</button><button type="button" data-pr="world:ca" aria-pressed="false">Radio Québec</button><button type="button" data-pr="world:ve" aria-pressed="false">Radio Venezuela</button><button type="button" data-pr="world:mx" aria-pressed="false">PASSPORT MÉXICO</button></div></div><div class="pr-group"><h2>Europa</h2><div class="pr-units"><button type="button" data-pr="world:fr" aria-pressed="false">Radio France</button><button type="button" data-pr="world:ua" aria-pressed="false">Українське музичне радіо</button><button type="button" data-pr="world:ro" aria-pressed="false">Radio Muzică Românească</button><button type="button" data-pr="world:fi" aria-pressed="false">Suomalainen rockradio</button><button type="button" data-pr="world:cz" aria-pressed="false">České rockové rádio</button><button type="button" data-pr="world:lt" aria-pressed="false">Lietuvos roko radijas</button><button type="button" data-pr="world:gr" aria-pressed="false">Ελληνικό ροκ ραδιόφωνο</button><button type="button" data-pr="world:it" aria-pressed="false">Radio Italia</button><button type="button" data-pr="world:catalunya" aria-pressed="false">PASSPORT CATALUNYA</button><button type="button" data-pr="world:tr" aria-pressed="false">Türkiye Müzik Radyosu</button></div></div><div class="pr-group"><h2>África</h2><div class="pr-units"><button type="button" data-pr="world:ea" aria-pressed="false">Rádio África</button></div></div><div class="pr-group"><h2>Ásia</h2><div class="pr-units"><button type="button" data-pr="world:kr" aria-pressed="false">한국 음악 라디오</button><button type="button" data-pr="world:cn" aria-pressed="false">中国音乐电台</button><button type="button" data-pr="world:jp" aria-pressed="false">パスポート日本</button><button type="button" data-pr="world:th" aria-pressed="false">พาสปอร์ตประเทศไทย</button><button type="button" data-pr="world:kz" aria-pressed="false">ПАСПОРТ ҚАЗАҚСТАН</button><button type="button" data-pr="world:pk" aria-pressed="false">پاکستانی موسیقی ریڈیو</button><button type="button" data-pr="world:ir" aria-pressed="false">رادیو موسیقی ایران</button><button type="button" data-pr="world:il" aria-pressed="false">רדיו מוזיקה ישראלית</button></div></div>
+</nav>
+<nav class="pr-sections" id="pr-sections" aria-label="Seções">
+<a href="/">Capa</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/radio.html">Ouvir</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+</nav>
+</div>
+<div id="pr-main">
+
 <header class="top"><div class="shell"><a href="/">PASSPORT RADIO</a><nav class="nav"><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/oriente-medio.html">ORIENTE MÉDIO</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a></nav></div></header>
 <div class="translate"><div class="shell"><strong>LER EM</strong><a href="/africa-oriental.html" lang="pt-BR">PORTUGUÊS</a><a data-lang="en" href="#">ENGLISH</a><a data-lang="ar" href="#">العربية</a><a data-lang="am" href="#">አማርኛ</a><a data-lang="sw" href="#">KISWAHILI</a><a data-lang="so" href="#">SOOMAALI</a><a data-lang="fr" href="#">FRANÇAIS</a></div></div>
 <main><section class="hero"><div class="shell"><div class="eyebrow">PASSPORT RADIO · ÁFRICA ORIENTAL · CHIFRE DA ÁFRICA · DIÁSPORAS</div><h1>O som atravessa fronteiras.</h1><p>Um ponto de descoberta para artistas e cenas do Sudão, Sudão do Sul, Uganda, Etiópia, Eritreia, Somália e diásporas. Jazz, hip-hop, rap, eletrônico, rock, metal, afro-fusion, folk, pop, reggae e experimentação — música primeiro, contexto sempre.</p></div></section>
@@ -15,5 +51,27 @@
 <section class="mission"><div class="shell"><small class="eyebrow">Contar histórias que dão vontade de ouvir.</small><h2>Artistas são artistas.</h2><p>Esta área existe para descobrir música e documentar cenas. Deslocamento, exílio, migração e reconstrução entram quando fazem parte da trajetória artística — nunca como rótulo que substitui a obra. A Passport acompanha o som, as pessoas, as cidades e as conexões que a música cria.</p><p><a href="/editorial.html">ENTRAR NO EDITORIAL 24H →</a></p></div></section></main>
 <footer class="foot"><div class="shell">PASSPORT RADIO · Primeiro a história. Depois a música.</div></footer>
 <script>(()=>{const page=location.href.split('#')[0];document.querySelectorAll('[data-lang]').forEach(a=>{const lang=a.dataset.lang;a.href='https://translate.google.com/translate?sl=auto&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(page);a.target='_blank';a.rel='noopener noreferrer';});})();</script>
-<script src="/js/passport-mast.js?v=20260925house" defer></script>
+
+</div>
+<footer id="pr-foot">
+<nav aria-label="Rodapé">
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+<a href="/privacidade.html">Privacidade</a>
+<a href="/termos.html">Termos</a>
+<a href="/cookies.html">Cookies</a>
+</nav>
+<p>Contar histórias que dão vontade de ouvir. A Passport Radio iniciou suas atividades em 1998. Após um período de interrupção, retomou suas operações em 2026.</p>
+</footer>
+
+<script src="/js/passport-doc.js?v=20260925doc" defer></script>
 </body></html>

@@ -11,6 +11,7 @@
 (() => {
   "use strict";
   if (window.PassportPorta) return;
+  if (document.getElementById("pr-house")) return;
 
   const METAL = [
     { id: "metal", name: "Metal", url: "https://mediaserv68.live-streams.nl:18012/OnlyLive" },
