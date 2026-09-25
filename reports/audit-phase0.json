@@ -1,0 +1,49 @@
+{
+  "mode": "dry-run-sample",
+  "mutated": false,
+  "deleted": false,
+  "blog_w_files": 21921,
+  "blog_e_files": 3292,
+  "examined": 600,
+  "by_class_in_sample": {
+    "POSSIBLY_CONTAMINATED": 569,
+    "REAL_ARTICLE": 9,
+    "UNKNOWN": 22
+  },
+  "sample_paths": {
+    "REAL_ARTICLE": [
+      "blog/w/378936-winger.html",
+      "blog/e/sao-paulo.html",
+      "blog/e/cristianrigon.html",
+      "blog/e/como.html",
+      "blog/e/bill-kelliher.html",
+      "blog/e/stones-our.html",
+      "blog/e/carry-on.html",
+      "blog/e/roll.html"
+    ],
+    "ENTITY_HUB": [],
+    "INDEX": [],
+    "SYNTHETIC_BOILERPLATE": [],
+    "POSSIBLY_CONTAMINATED": [
+      "blog/w/001177-pitty.html",
+      "blog/w/009711-michaelmonroe.html",
+      "blog/w/006477-the-who.html",
+      "blog/w/381919-metallica.html",
+      "blog/w/371847-jethrotull.html",
+      "blog/w/376071-e-agles.html",
+      "blog/w/378475-iron-maiden.html",
+      "blog/w/007880-pink-cream69.html"
+    ],
+    "UNKNOWN": [
+      "blog/e/hadesalmighty.html",
+      "blog/e/roughcutt.html",
+      "blog/e/soulspell.html",
+      "blog/e/garyhughes.html",
+      "blog/e/gnidrolog.html",
+      "blog/e/karirueslatten.html",
+      "blog/e/tuomas.html",
+      "blog/e/oratory.html"
+    ]
+  },
+  "note": "UNKNOWN e POSSIBLY_CONTAMINATED não são lixo. Nenhuma URL foi removida."
+}

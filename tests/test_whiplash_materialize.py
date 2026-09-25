@@ -74,28 +74,25 @@ def test_writer_gate_and_identity() -> None:
     article = constitution.safe_article(draft, candidate)
     article["author"] = "Passport Radio"
     errors = constitution.validate_article(article, candidate, config)
-    if any(e.startswith("too short") for e in errors) and article.get("sections"):
-        article["sections"][-1]["paragraphs"].append({
-            "text": (
-                "Sepultura permanece neste acervo para ser relido, buscado e discutido. "
-                "A capa é vitrine e o arquivo é a cidade. A Passport não esconde a matéria "
-                "e não inventa o que o pacote não carrega. Quem chegou por este nome pode sair por outra história."
-            ),
-            "fact_refs": [f["fact_id"] for f in pack["facts"][:4]],
-        })
-        article = constitution.safe_article(article, candidate)
-        article["author"] = "Passport Radio"
-        errors = constitution.validate_article(article, candidate, config)
-    gate = quality_gate.evaluate(article, pack, config)
     blob = (article["title"] + article["deck"] + str(article["sections"])).lower()
-    if "whiplash.net" in blob:
-        fail("public whiplash brand in body")
-    if "every song is a destination" in blob or "escute primeiro" in blob:
-        fail("slogan/professor")
-    if errors:
-        fail("validate " + "; ".join(errors))
-    if gate.get("decision") != "WOULD_PUBLISH":
-        fail("gate " + str(gate.get("reasons")))
+    forbidden = (
+        "a capa é vitrine",
+        "o arquivo é a cidade",
+        "url estável",
+        "json invisível",
+        "o pacote sustenta",
+        "sem biografia inflada",
+        "a cena",
+    )
+    for phrase in forbidden:
+        if phrase in blob:
+            fail("mill boilerplate: " + phrase)
+    if not any(e.startswith("too short") for e in errors):
+        fail("texto curto do mill tem de ser recusado, não esticado: " + "; ".join(errors))
+    gate = quality_gate.evaluate(article, pack, config)
+    would_publish = (not errors) and gate.get("decision") == "WOULD_PUBLISH"
+    if would_publish:
+        fail("rascunho curto não pode ser publicado")
     html = __import__("editorial_blog_tunnel").render_blog_article(
         article, f"/blog/w/{origin['origin_id']}-sepultura.html", [], {"photos": [], "videos": []}, None, {"family": "discos", "entities": ["Sepultura"]}
     )
@@ -106,7 +103,7 @@ def test_writer_gate_and_identity() -> None:
         fail("slogan in html")
     if 'data-passport-discussion="live"' not in html:
         fail("discussion missing")
-    if "t.me/+pXv3uwqOY8lkZGZk" not in html:
+    if "t.me/+FKto2N185cs4OGU0" not in html:
         fail("telegram missing")
     print("OK writer + gate + identity")
 

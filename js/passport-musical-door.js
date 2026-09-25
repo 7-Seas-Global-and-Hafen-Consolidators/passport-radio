@@ -177,7 +177,7 @@
     if (ui.track && name) ui.track.textContent = name;
     if (ui.meta) ui.meta.textContent = note || "";
     if (ui.state && status) ui.state.textContent = status;
-    const on = status === "NO AR";
+    const on = status === "TOCANDO";
     if (ui.play) ui.play.textContent = on ? "Ⅱ" : "▶";
     const nowName = $("pg-porta-now-name");
     const nowNote = $("pg-porta-now-note");
@@ -228,11 +228,19 @@
       if (media !== keep && !media.paused) {
         try { media.pause(); } catch (_) {}
       }
+      if (media !== keep && media.id === "passport-live-audio") {
+        try { media.pause(); } catch (_) {}
+      }
     });
-    if (!owned || owned.kind === "url" || owned.kind === "motor") {
-      const frame = $("pg-embed-frame");
-      if (frame) frame.src = "about:blank";
-    }
+    const youtube = owned && (owned.kind === "novela" || owned.kind === "live" || owned.kind === "globo");
+    qsa("iframe").forEach((frame) => {
+      if (frame.id === "pg-embed-frame" && youtube) return;
+      const src = frame.getAttribute("src") || "";
+      if (!src || src === "about:blank") return;
+      if (/youtube\.com|youtu\.be|onlineradiobox\.com/i.test(src)) {
+        frame.setAttribute("src", "about:blank");
+      }
+    });
   }
 
   function hookMotor() {
@@ -307,7 +315,7 @@
       url: item.url,
       hls: !!item.hls,
       media: audio,
-      live: true
+      live: false
     };
     audio.dataset.pgDoor = "1";
     if (ui.home && motor && motor.audio === audio) {
@@ -316,18 +324,18 @@
     stopOthers(audio);
     audio.pause();
     paint(item.name, item.note, "CONECTANDO");
-    remember({ live: true });
+    remember({ live: false });
     const startNative = () => {
       audio.src = item.url;
       const volume = $("pg-home-volume") || $("pg-porta-volume");
       if (volume) audio.volume = Number(volume.value);
-      audio.play().then(() => {
-        paint(item.name, item.note, "NO AR");
-        remember({ live: true });
-      }).catch(() => {
-        paint(item.name, item.note, "TOQUE PARA CONTINUAR");
-        remember({ live: false });
-      });
+      const attempt = audio.play();
+      if (attempt && attempt.catch) {
+        attempt.catch(() => {
+          paint(item.name, item.note, "TOQUE PARA CONTINUAR");
+          remember({ live: false });
+        });
+      }
     };
     const bar = $("pg-porta");
     if (bar) bar.classList.remove("is-open");
@@ -338,7 +346,10 @@
       hls.loadSource(item.url);
       hls.attachMedia(audio);
       hls.on(window.Hls.Events.MANIFEST_PARSED, () => {
-        audio.play().then(() => paint(item.name, item.note, "NO AR")).catch(() => paint(item.name, item.note, "TOQUE PARA CONTINUAR"));
+        const attempt = audio.play();
+        if (attempt && attempt.catch) {
+          attempt.catch(() => paint(item.name, item.note, "TOQUE PARA CONTINUAR"));
+        }
       });
     };
     if (window.Hls) bootHls();
@@ -365,8 +376,9 @@
     stopOthers(null);
     owned = { kind: kind, chooseId: chooseId, name: name, note: note, url: url, live: true };
     frame.src = url;
-    paint(name, note, "NO AR");
-    remember({ live: true });
+    /* Iframe não confirma playback. Não marcar TOCANDO. */
+    paint(name, note, "ABERTO");
+    remember({ live: false });
   }
 
   function toggle() {
@@ -381,7 +393,7 @@
     }
     if (owned.kind === "url" && owned.media) {
       const media = owned.media;
-      if (media.paused) media.play().then(() => { paint(owned.name, owned.note, "NO AR"); remember({ live: true }); }).catch(() => paint(owned.name, owned.note, "TOQUE PARA CONTINUAR"));
+      if (media.paused) media.play().then(() => { /* TOCANDO só no evento playing */ }).catch(() => paint(owned.name, owned.note, "TOQUE PARA CONTINUAR"));
       else { media.pause(); paint(owned.name, owned.note, "PAUSADO"); remember({ live: false }); }
       return;
     }
@@ -487,10 +499,20 @@
       const play = $("passport-live-play");
       const media = $("passport-live-audio");
       if (play && media && media.paused) play.click();
-      owned = { kind: "external", chooseId: "metal", name: "Metal", note: item.name, external: media, live: true };
+      owned = { kind: "external", chooseId: "metal", name: "Metal", note: item.name, external: media, media: media, live: false };
       stopOthers(media);
-      paint("Metal", item.name, "NO AR");
-      remember({ live: true });
+      paint("Metal", item.name, "CONECTANDO");
+      remember({ live: false });
+      media.addEventListener("playing", () => {
+        if (!owned || owned.media !== media) return;
+        paint("Metal", item.name, "TOCANDO");
+        remember({ live: true });
+      });
+      media.addEventListener("pause", () => {
+        if (!owned || owned.media !== media) return;
+        paint("Metal", item.name, "PAUSADO");
+        remember({ live: false });
+      });
       closePanel();
       return;
     }
@@ -630,20 +652,23 @@
     const item = saved();
     if (!item || !item.name) return;
     mark(item.id);
-    if (item.kind === "url" && item.url) {
-      const ui = nodes();
+    const ui = nodes();
+    owned = {
+      kind: item.kind || "url",
+      chooseId: item.id,
+      name: item.name,
+      note: item.note,
+      url: item.url,
+      hls: !!item.hls,
+      live: false
+    };
+    /* A seleção sobrevive ao reload. O elemento de áudio, não. */
+    if ((item.kind === "url" || !item.kind) && item.url && ui.audio && !item.hls) {
       ui.audio.dataset.pgDoor = "1";
-      owned = { kind: "url", chooseId: item.id, name: item.name, note: item.note, url: item.url, hls: item.hls, media: ui.audio, live: false };
-      paint(item.name, item.note, item.live ? "CONECTANDO" : "PAUSADO");
-      if (!item.live) {
-        ui.audio.src = item.url;
-        return;
-      }
-      playUrl({ chooseId: item.id, name: item.name, note: item.note, url: item.url, hls: item.hls });
-      return;
+      owned.media = ui.audio;
+      try { ui.audio.src = item.url; } catch (_) {}
     }
     paint(item.name, item.note, "TOQUE PARA CONTINUAR");
-    owned = { kind: item.kind, chooseId: item.id, name: item.name, note: item.note, url: item.url, live: false };
   }
 
   document.addEventListener("click", (event) => {
@@ -689,6 +714,24 @@
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenus();
   });
+
+  document.addEventListener("playing", (event) => {
+    const media = event.target;
+    if (!(media instanceof HTMLMediaElement) || !owned) return;
+    if (owned.media === media || owned.external === media) {
+      paint(owned.name, owned.note, "TOCANDO");
+      remember({ live: true });
+    }
+  }, true);
+
+  document.addEventListener("pause", (event) => {
+    const media = event.target;
+    if (!(media instanceof HTMLMediaElement) || !owned) return;
+    if ((owned.media === media || owned.external === media) && media.paused) {
+      paint(owned.name, owned.note, "PAUSADO");
+      remember({ live: false });
+    }
+  }, true);
 
   document.addEventListener("play", (event) => {
     const media = event.target;
