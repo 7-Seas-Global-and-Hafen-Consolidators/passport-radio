@@ -93,7 +93,12 @@
   let hls = null;
   let worldCache = null;
   let liveCache = null;
+  let arming = 0;
   const $ = (id) => document.getElementById(id);
+
+  function claimBus() {
+    if (window.PassportBus && window.PassportBus.claim) window.PassportBus.claim();
+  }
 
   function qs(sel) { return document.querySelector(sel); }
   function qsa(sel) { return [...document.querySelectorAll(sel)]; }
@@ -102,74 +107,29 @@
     if ($("pg-porta-css")) return;
     const style = document.createElement("style");
     style.id = "pg-porta-css";
-    style.textContent = [
-      "#pg-porta{background:#fff;color:#1a2744;border-bottom:1px solid #1a2744;position:relative;z-index:40}",
-      "#pg-porta-bar{width:min(1180px,calc(100% - 28px));margin:0 auto;display:flex;align-items:center;gap:8px 18px;min-height:52px}",
-      "#pg-porta-now{display:flex;align-items:center;gap:8px;border:0;background:#fff;color:#1a2744;padding:8px 0;cursor:pointer;text-align:left;min-height:44px}",
-      "#pg-porta-now i{width:8px;height:8px;border-radius:50%;background:#1a2744;display:block;flex:0 0 auto}",
-      "#pg-porta.is-live #pg-porta-now i{background:#c4312e}",
-      "#pg-porta-now strong{display:block;font:700 15px/1.1 Georgia,'Newsreader',serif}",
-      "#pg-porta-now small{display:block;font:500 12px/1.2 'Source Sans 3',sans-serif}",
-      "#pg-porta-more{display:none;margin-left:auto;border:0;background:#fff;color:#1a2744;font:700 15px/1 'Source Sans 3',sans-serif;min-height:44px;padding:0 2px;cursor:pointer}",
-      "#pg-porta-row{display:flex;flex-wrap:wrap;gap:0 16px;align-items:center;min-width:0}",
-      "#pg-porta-row button,#pg-porta-row a{border:0;background:transparent;color:#1a2744;font:700 15px/1 'Source Sans 3',sans-serif;padding:12px 0;cursor:pointer;text-decoration:none;min-height:44px}",
-      "#pg-porta-row button[aria-pressed='true']{color:#c4312e;box-shadow:inset 0 -2px 0 #c4312e}",
-      "#pg-porta-row button:focus-visible,#pg-porta-now:focus-visible,#pg-porta-more:focus-visible,#pg-porta-panel button:focus-visible,#pg-porta-panel a:focus-visible,#pg-porta-panel input:focus-visible{outline:2px solid #c4312e;outline-offset:2px}",
-      "#pg-porta-panel{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:0 0 16px}",
-      "#pg-porta-panel[hidden]{display:none!important}",
-      "#pg-porta-panel p{margin:0 0 8px;font:500 15px/1.4 'Source Sans 3',sans-serif}",
-      ".pg-porta-choices{display:flex;flex-direction:column}",
-      ".pg-porta-choices button,.pg-porta-choices a{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;background:#fff;color:#1a2744;border:0;border-bottom:1px solid #1a2744;min-height:48px;padding:10px 0;cursor:pointer;font:600 18px/1.3 Georgia,'Newsreader',serif;text-decoration:none}",
-      ".pg-porta-choices button span,.pg-porta-choices a span{font:500 14px/1.3 'Source Sans 3',sans-serif}",
-      ".pg-reg{margin:12px 0 0;font:700 12px/1 'Source Sans 3',sans-serif;letter-spacing:.08em;text-transform:uppercase}",
-      "#pg-world-q,#pg-live-q{display:block;width:min(520px,100%);min-height:44px;margin:0 0 8px;border:0;border-bottom:1px solid #1a2744;background:#fff;padding:0 2px;font-size:16px;color:#1a2744}",
-      "#pg-porta-player{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:center;gap:12px;min-height:64px;padding:8px 16px;background:#fff;color:#1a2744;border-top:1px solid #1a2744}",
-      "body:has(#pg-porta-player){padding-bottom:76px}",
-      "#pg-porta-player img{width:44px;height:44px;object-fit:cover;flex:0 0 auto}",
-      "#pg-porta-play{width:44px;height:44px;border-radius:50%;border:0;background:#c4312e;color:#fff;font-size:16px;cursor:pointer}",
-      "#pg-porta-player .player-copy{display:flex;flex-direction:column;min-width:0}",
-      "#pg-porta-player strong{font:600 18px/1.2 Georgia,'Newsreader',serif}",
-      "#pg-porta-player small{font-size:13px}",
-      "#pg-porta-expand{margin-left:auto;border:0;background:transparent;color:#1a2744;font-weight:700;min-height:44px;cursor:pointer}",
-      "#pg-porta-player.is-open{flex-wrap:wrap}",
-      "#pg-porta-drawer{flex:1 0 100%;padding-top:8px}",
-      "#pg-porta-drawer[hidden]{display:none!important}",
-      "@media (max-width:759px){#pg-porta-more{display:inline-flex!important}#pg-porta-row{display:none!important;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #1a2744;padding:4px 16px 10px;flex-direction:column;align-items:stretch;z-index:45}#pg-porta.is-open #pg-porta-row{display:flex!important}#pg-porta-bar{position:relative}}"
-    ].join("");
+    style.textContent = "#pg-porta-player{display:none!important}";
     document.head.appendChild(style);
   }
 
   function nodes() {
-    if ($("passport-player") && $("audio") && $("play")) {
-      return { root: $("passport-player"), play: $("play"), track: $("track"), meta: $("meta"), state: $("state"), audio: $("audio"), home: true };
+    const homeAudio = $("audio");
+    const home = !!($("passport-player") && homeAudio && $("play"));
+    let audio = home ? homeAudio : $("pg-porta-audio");
+    if (!audio) {
+      audio = document.createElement("audio");
+      audio.id = "pg-porta-audio";
+      audio.preload = "none";
+      document.body.appendChild(audio);
     }
-    let root = $("pg-porta-player");
-    if (!root) {
-      root = document.createElement("div");
-      root.id = "pg-porta-player";
-      root.className = "player pg-now";
-      root.innerHTML = '<img src="/images/passport-radio-definitive.jpg" alt="" width="44" height="44">'
-        + '<button type="button" id="pg-porta-play" aria-label="Tocar ou pausar">▶</button>'
-        + '<span class="player-copy"><strong id="pg-porta-track">Passport Radio</strong><small id="pg-porta-meta">Escolha uma rádio no topo</small></span>'
-        + '<span class="status"><span id="pg-porta-state">PRONTO</span></span>'
-        + '<button type="button" id="pg-porta-expand" aria-expanded="false">Volume</button>'
-        + '<div id="pg-porta-drawer" hidden><label>Volume <input id="pg-porta-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label></div>'
-        + '<audio id="pg-porta-audio" preload="none"></audio>';
-      document.body.appendChild(root);
-      $("pg-porta-play").addEventListener("click", toggle);
-      $("pg-porta-expand").addEventListener("click", () => {
-        const drawer = $("pg-porta-drawer");
-        const open = drawer.hasAttribute("hidden");
-        if (open) drawer.removeAttribute("hidden"); else drawer.setAttribute("hidden", "");
-        root.classList.toggle("is-open", open);
-        $("pg-porta-expand").setAttribute("aria-expanded", open ? "true" : "false");
-      });
-      $("pg-porta-volume").addEventListener("input", (event) => {
-        const audio = $("pg-porta-audio");
-        if (audio) audio.volume = Number(event.target.value);
-      });
-    }
-    return { root, play: $("pg-porta-play"), track: $("pg-porta-track"), meta: $("pg-porta-meta"), state: $("pg-porta-state"), audio: $("pg-porta-audio"), home: false };
+    return {
+      root: $("pg-porta") || $("passport-player"),
+      play: $("pg-porta-play") || $("play"),
+      track: $("pg-porta-track") || $("track"),
+      meta: $("pg-porta-meta") || $("meta"),
+      state: $("pg-porta-state") || $("state"),
+      audio: audio,
+      home: home
+    };
   }
 
   function paint(name, note, status) {
@@ -178,11 +138,16 @@
     if (ui.meta) ui.meta.textContent = note || "";
     if (ui.state && status) ui.state.textContent = status;
     const on = status === "TOCANDO";
-    if (ui.play) ui.play.textContent = on ? "Ⅱ" : "▶";
-    const nowName = $("pg-porta-now-name");
-    const nowNote = $("pg-porta-now-note");
-    if (nowName && name) nowName.textContent = name;
-    if (nowNote) nowNote.textContent = note || "";
+    if (ui.play) ui.play.textContent = on ? "Pausar" : "Tocar";
+    const human = {
+      TOCANDO: "No ar",
+      PAUSADO: "Pausado",
+      CONECTANDO: "Conectando",
+      "SINAL INDISPONÍVEL": "Sinal indisponível",
+      "TOQUE PARA CONTINUAR": "Toque para continuar",
+      ABERTO: "Aberto"
+    };
+    if (ui.state && status) ui.state.textContent = human[status] || "";
     const bar = $("pg-porta");
     if (bar) bar.classList.toggle("is-live", on);
     scrub();
@@ -303,6 +268,7 @@
   }
 
   function playUrl(item) {
+    claimBus();
     const ui = nodes();
     hookMotor();
     if (hls) { try { hls.destroy(); } catch (_) {} hls = null; }
@@ -323,6 +289,7 @@
     }
     stopOthers(audio);
     audio.pause();
+    arming = Date.now();
     paint(item.name, item.note, "CONECTANDO");
     remember({ live: false });
     const startNative = () => {
@@ -357,6 +324,7 @@
   }
 
   function embed(url, name, note, chooseId, kind) {
+    claimBus();
     let frame = $("pg-embed-frame");
     if (!frame) {
       frame = document.createElement("iframe");
@@ -393,8 +361,10 @@
     }
     if (owned.kind === "url" && owned.media) {
       const media = owned.media;
-      if (media.paused) media.play().then(() => { /* TOCANDO só no evento playing */ }).catch(() => paint(owned.name, owned.note, "TOQUE PARA CONTINUAR"));
-      else { media.pause(); paint(owned.name, owned.note, "PAUSADO"); remember({ live: false }); }
+      if (media.paused) {
+        claimBus();
+        media.play().then(() => { /* TOCANDO só no evento playing */ }).catch(() => paint(owned.name, owned.note, "TOQUE PARA CONTINUAR"));
+      } else { media.pause(); paint(owned.name, owned.note, "PAUSADO"); remember({ live: false }); }
       return;
     }
     if (owned.kind === "novela" || owned.kind === "live" || owned.kind === "globo") {
@@ -443,38 +413,7 @@
 
   function choose(id) {
     mark(id);
-    if (id === "metal") {
-      openPanel("<p>Metal. Seis sinais reais. A página fica onde está.</p>" + choices(
-        METAL.map((item) => '<button type="button" data-pg-metal="' + item.id + '">' + item.name + "</button>").join("")
-      ));
-      return;
-    }
-    if (id === "80s") {
-      openPanel("<p>80s. Seis estações. Sem anterior e próximo.</p>" + choices(
-        EIGHTIES.map((item) => '<button type="button" data-pg-80s="' + item.name + '">' + item.name + "</button>").join("")
-      ));
-      return;
-    }
-    if (id === "novelas") {
-      openPanel("<p>Novelas. Nove playlists do acervo. O arquivo só publica o número, não o nome da novela.</p>" + choices(
-        NOVELAS.map((item, index) => '<button type="button" data-pg-novela="' + index + '"><strong>' + String(index + 1).padStart(2, "0") + "</strong><span>playlist</span></button>").join("")
-      ));
-      return;
-    }
-    if (id === "globo") {
-      openPanel("<p>Globo de Ouro. Seis programas do acervo. O motor não publica título além da ordem.</p>" + choices(
-        GLOBO.map((vid, index) => '<button type="button" data-pg-globo="' + index + '"><strong>' + String(index + 1).padStart(2, "0") + "</strong><span>programa</span></button>").join("")
-      ));
-      return;
-    }
-    if (id === "world") {
-      openPanel('<p>Rádios do Mundo. Só estações com transmissão nesta lista. A página não muda.</p><input id="pg-world-q" type="search" placeholder="Buscar país ou rádio" aria-label="Buscar país ou rádio"><div id="pg-world-list"></div>');
-      loadWorld();
-      return;
-    }
-    if (id === "liverare") {
-      openPanel('<p>Live & Rare é acervo de performances, não uma rádio contínua.</p><input id="pg-live-q" type="search" placeholder="Buscar artista" aria-label="Buscar no acervo"><div id="pg-live-list" class="pg-porta-choices"></div>');
-      loadLive();
+    if (id === "metal" || id === "80s" || id === "novelas" || id === "globo" || id === "world" || id === "liverare") {
       return;
     }
     closePanel();
@@ -555,14 +494,19 @@
       if (!list || !liveCache) return;
       const q = (query || "").trim().toLowerCase();
       const rows = liveCache.filter((item) => !q || (item.label + " " + item.group).toLowerCase().indexOf(q) !== -1);
-      const shown = q ? rows.slice(0, 40) : rows.slice(0, 12);
-      list.innerHTML = shown.map((item) => '<button type="button" data-pg-live="' + item.index + '"><strong>' + item.label + "</strong><span>" + item.group + "</span></button>").join("")
-        || "<p>Nenhum artista com esse texto.</p>";
-      if (!q && rows.length > shown.length) {
-        const more = document.createElement("p");
-        more.textContent = shown.length + " de " + rows.length + " no acervo. A busca encontra o resto.";
-        list.appendChild(more);
-      }
+      const groups = [];
+      rows.forEach((item) => {
+        let bucket = groups.find((entry) => entry.name === item.group);
+        if (!bucket) { bucket = { name: item.group, items: [] }; groups.push(bucket); }
+        bucket.items.push(item);
+      });
+      const slug = { "WackenTV": "wackentv", "BBC Music": "bbc-music", "The Midnight Special": "midnight-special", "Live Aid": "live-aid" };
+      list.innerHTML = groups.map((bucket) => {
+        const id = slug[bucket.name] || "";
+        return '<h3 id="' + id + '">' + bucket.name + '</h3><div class="pg-names">' +
+          bucket.items.map((item) => '<button type="button" data-pg-live="' + item.index + '" aria-pressed="false">' + item.label + "</button>").join("") +
+          "</div>";
+      }).join("") || "<p>Nenhum artista com esse texto.</p>";
     };
     if (liveCache) { draw($("pg-live-q") && $("pg-live-q").value); return; }
     loadScript("/js/tunnel-playlists.js?v=20260916d").then(() => {
@@ -581,8 +525,7 @@
   }
 
   function worldButton(station) {
-    const place = PLACE[station.id] ? PLACE[station.id][1] : "";
-    return '<button type="button" data-pg-world="' + station.id + '"><strong>' + (place || station.name.replace(/™/g, "")) + "</strong><span>" + station.name.replace(/™/g, "") + "</span></button>";
+    return '<button type="button" data-pg-world="' + station.id + '" aria-pressed="false">' + station.name.replace(/™/g, "") + "</button>";
   }
 
   function paintWorld(query) {
@@ -595,18 +538,16 @@
     });
     if (!rows.length) { list.innerHTML = "<p>Nenhuma estação com esse texto.</p>"; return; }
     if (q) {
-      list.innerHTML = choices(rows.map(worldButton).join(""));
+      list.innerHTML = '<div class="pg-names">' + rows.map(worldButton).join("") + "</div>";
       return;
     }
     const grouped = REGION_ORDER.map((region) => {
       const group = rows.filter((station) => PLACE[station.id] && PLACE[station.id][0] === region);
       if (!group.length) return "";
-      return '<h3 class="pg-reg">' + region + "</h3>" + choices(group.map(worldButton).join(""));
+      return '<h3 class="pg-reg">' + region + '</h3><div class="pg-names">' + group.map(worldButton).join("") + "</div>";
     }).join("");
     const loose = rows.filter((station) => !PLACE[station.id]);
-    list.innerHTML = grouped + (loose.length ? '<h3 class="pg-reg">Outras</h3>' + choices(loose.map(worldButton).join("")) : "") + '<h3 class="pg-reg">Páginas sem transmissão nesta lista</h3>' + choices(
-      '<a href="/radio-bolivia.html">Bolívia<span>página editorial</span></a><a href="/radio-afghanistan.html">Afeganistão<span>página editorial</span></a>'
-    );
+    list.innerHTML = grouped + (loose.length ? '<h3 class="pg-reg">Outras</h3><div class="pg-names">' + loose.map(worldButton).join("") + "</div>" : "");
   }
 
   function loadWorld() {
@@ -624,28 +565,56 @@
     });
   }
 
+  function stationButton(attrs, label) {
+    return '<button type="button" ' + attrs + ' aria-pressed="false">' + label + "</button>";
+  }
+  function gradeRow(title, inner) {
+    return "<h3>" + title + "</h3><div class=\"pg-names\">" + inner + "</div>";
+  }
   function mount() {
     if ($("pg-porta")) return;
     ensureCss();
-    const nav = qs("nav.pp-nav, nav.pg-nav, nav[aria-label='Seções'], nav.pp-signal-nav");
     const bar = document.createElement("div");
     bar.id = "pg-porta";
     bar.className = "pg-porta";
-    const button = (id, label) => '<button type="button" data-pg-choose="' + id + '" aria-pressed="false">' + label + "</button>";
-    bar.innerHTML = '<div id="pg-porta-bar"><button type="button" id="pg-porta-now" aria-label="Tocar ou pausar a seleção"><i aria-hidden="true"></i><span><strong id="pg-porta-now-name">Escolha</strong><small id="pg-porta-now-note">uma rádio</small></span></button><button type="button" id="pg-porta-more" aria-expanded="false" aria-controls="pg-porta-row">Rádios</button><div id="pg-porta-row" role="group" aria-label="Rádios da Passport">'
-      + PRIMARY.map(([id, label]) => button(id, label)).join("")
-      + MORE.map(([id, label]) => button(id, label)).join("")
-      + '<a href="/radio.html">Todas</a></div></div><div id="pg-porta-panel" class="pg-porta-panel" hidden></div>';
-    if (nav && nav.parentNode) nav.insertAdjacentElement("afterend", bar);
+    const directOrder = [
+      ["mpb", "MPB"], ["rock", "Rock Brasil"], ["soul", "Soul"], ["disco", "Disco"], ["reggae", "Reggae"],
+      ["jovem", "Jovem Guarda"], ["hits", "Hits"], ["oldies", "50s & 60s"], ["flash", "Flash House"], ["nostalgia", "Nostalgia"]
+    ];
+    const showLive = /(\/radio(?:-live-rare)?\.html|\/radio\/?)$/.test(location.pathname);
+    bar.innerHTML =
+      '<div class="pg-dial">' +
+        '<button type="button" id="pg-porta-play" aria-label="Tocar ou pausar">Tocar</button>' +
+        '<span class="pg-nowcopy"><strong id="pg-porta-track">Passport Radio</strong><small id="pg-porta-meta"></small></span>' +
+        '<label class="pg-vol">Volume <input id="pg-porta-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>' +
+        '<span id="pg-porta-state" class="pg-state"></span>' +
+      "</div>" +
+      '<div class="pg-grade" id="pg-porta-grade">' +
+        gradeRow("Música", METAL.map((item) => stationButton('data-pg-metal="' + item.id + '"', item.name)).join("")) +
+        gradeRow("80s", EIGHTIES.map((item) => stationButton('data-pg-80s="' + item.name + '"', item.name)).join("")) +
+        gradeRow("Outras rádios", directOrder.map(([id, label]) => stationButton('data-pg-choose="' + id + '"', label)).join("")) +
+        gradeRow("Novelas", NOVELAS.map((_, index) => stationButton('data-pg-novela="' + index + '"', String(index + 1).padStart(2, "0"))).join("")) +
+        gradeRow("Globo de Ouro", GLOBO.map((_, index) => stationButton('data-pg-globo="' + index + '"', String(index + 1).padStart(2, "0"))).join("")) +
+        gradeRow("Live & Rare",
+          '<a class="pg-st" href="/radio.html#wackentv">WackenTV</a>' +
+          '<a class="pg-st" href="/radio.html#bbc-music">BBC Music</a>' +
+          '<a class="pg-st" href="/radio.html#midnight-special">The Midnight Special</a>' +
+          '<a class="pg-st" href="/radio.html#live-aid">Live Aid</a>') +
+        "<h3>Rádios do Mundo</h3><div class=\"pg-world\" id=\"pg-world-list\"></div>" +
+        (showLive
+          ? '<div class="pg-live-find"><input id="pg-live-q" type="search" placeholder="Buscar no Live & Rare" aria-label="Buscar no Live & Rare"></div><div id="pg-live-list"></div>'
+          : "") +
+      "</div>";
+    const mast = $("pr-mast");
+    if (mast && mast.parentNode) mast.insertAdjacentElement("afterend", bar);
     else document.body.insertBefore(bar, document.body.firstChild);
-    $("pg-porta-now").addEventListener("click", toggle);
-    $("pg-porta-more").addEventListener("click", () => {
-      const open = !bar.classList.contains("is-open");
-      bar.classList.toggle("is-open", open);
-      $("pg-porta-more").setAttribute("aria-expanded", open ? "true" : "false");
-      if (!open) closePanel();
+    $("pg-porta-play").addEventListener("click", toggle);
+    $("pg-porta-volume").addEventListener("input", (event) => {
+      const value = Number(event.target.value);
+      qsa("audio").forEach((audio) => { audio.volume = value; });
     });
-    nodes();
+    loadWorld();
+    if (showLive) loadLive();
   }
 
   function resume() {
@@ -697,18 +666,17 @@
       closeMenus();
       return;
     }
+    const pressed = event.target.closest("#pg-porta button[data-pg-metal], #pg-porta button[data-pg-80s], #pg-porta button[data-pg-choose], #pg-porta button[data-pg-novela], #pg-porta button[data-pg-globo], #pg-porta button[data-pg-world], #pg-porta button[data-pg-live]");
+    if (pressed) {
+      qsa("#pg-porta button[aria-pressed='true']").forEach((el) => el.setAttribute("aria-pressed", "false"));
+      pressed.setAttribute("aria-pressed", "true");
+    }
     if (event.target.closest("#pg-porta, #pg-porta-player, #passport-player")) return;
   });
 
   document.addEventListener("input", (event) => {
     if (event.target.id === "pg-world-q") paintWorld(event.target.value);
-    if (event.target.id === "pg-live-q") {
-      const q = event.target.value;
-      const list = $("pg-live-list");
-      if (!list || !liveCache) return;
-      const rows = liveCache.filter((item) => (item.label + " " + item.group).toLowerCase().indexOf(q.trim().toLowerCase()) !== -1).slice(0, 40);
-      list.innerHTML = rows.map((item) => '<button type="button" data-pg-live="' + item.index + '"><strong>' + item.label + "</strong><span>" + item.group + "</span></button>").join("") || "<p>Nenhum artista com esse texto.</p>";
-    }
+    if (event.target.id === "pg-live-q") loadLive();
   });
 
   document.addEventListener("keydown", (event) => {
@@ -728,6 +696,7 @@
     const media = event.target;
     if (!(media instanceof HTMLMediaElement) || !owned) return;
     if ((owned.media === media || owned.external === media) && media.paused) {
+      if (Date.now() - arming < 700) return;
       paint(owned.name, owned.note, "PAUSADO");
       remember({ live: false });
     }

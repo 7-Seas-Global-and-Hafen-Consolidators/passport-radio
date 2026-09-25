@@ -47,7 +47,7 @@
     const storyUrl = root.getAttribute("data-story-url") || location.pathname;
     root.removeAttribute("hidden");
     root.setAttribute("aria-hidden", "false");
-    root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">Carregando a conversa…</p>`;
+    root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">Comentários desta matéria.</p>`;
 
     if (!window.supabase) {
       root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">A discussão usa a Conta Passport. Não foi possível carregar o serviço agora.</p><p><a href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + "#discussao")}">Entrar na Conta Passport</a></p>`;
