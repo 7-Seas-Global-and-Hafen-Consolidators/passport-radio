@@ -518,6 +518,14 @@ def classify_hubs(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def materialize(limit: int = 0, apply: bool = True) -> dict[str, Any]:
     config = load_json(CONFIG_PATH, {})
+    if config.get("automatic_publication") is False:
+        return {
+            "mill": "off",
+            "autopsy": {"discovered_clusters": 0, "editorial_articles": 0},
+            "materialized": {"new_stories": 0, "html_written": 0},
+            "failures": {"count": 0},
+            "catalog": {"final": 0},
+        }
     config.setdefault("minimum_words", {"FLASH": 280, "STORY": 360, "MR_NOMAD": 850, "LIVE_SIGNAL": 320})
     config.setdefault("quality_gate", {"mode": "enforce", "require_fact_refs": True, "require_ptbr": True})
     day = constitution.editorial_day()

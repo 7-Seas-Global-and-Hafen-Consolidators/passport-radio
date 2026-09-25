@@ -1134,6 +1134,14 @@ def _priority(item: dict[str, Any]) -> int:
 
 def generate(max_generate: int, apply: bool, output_dir: Path) -> dict[str, Any]:
     config = load_json(ROOT / "data/blog-tunnel-engine.json", {})
+    if config.get("automatic_publication") is False:
+        return {
+            "channel": CHANNEL,
+            "mill": "off",
+            "generated": [],
+            "skipped": ["automatic_publication is false"],
+            "generation_budget": 0,
+        }
     queue_path = ROOT / "data/blog-tunnel-queue.json"
     ledger_path = ROOT / "data/blog-published.json"
     feed_path = ROOT / "data/blog-feed.json"
