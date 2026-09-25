@@ -14,8 +14,10 @@
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
 <link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
 <link rel="stylesheet" href="/css/passport-listing.css?v=20260912b">
+<link rel="stylesheet" href="/css/passport-generation.css?v=20260925az">
+<link rel="stylesheet" href="/css/passport-archive-ia.css?v=20260925az">
 </head>
-<body class="pp-body fd-body pp-station pp-listing">
+<body class="pp-body az-body pp-listing">
 <header class="pp-topbar"><div class="pp-topbar-in">
 <a class="pp-brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="38" height="38"><span class="pp-brand-txt"><b>PASSPORT RADIO</b><small>Contar histórias que dão vontade de ouvir</small></span></a>
 <form class="pg-nav-search" action="/blog/busca.html" method="get" role="search">
@@ -26,26 +28,39 @@
 <nav class="pp-top-actions"><a href="radio.html">OUVIR</a></nav>
 </div></header>
 <nav class="pp-nav pg-nav" aria-label="Seções"><div class="pp-nav-in"><a href="/radio.html">Ouvir</a><a href="/noticias.html">Notícias</a><a href="/blog.html">Histórias</a><a href="/editorial.html">Arquivo</a><a href="/blog/arquivo/letras.html">Bandas & Artistas</a><a href="/participe.html">Participe</a><a href="/loja.html">Loja</a><a href="/anuncie.html">Anuncie</a></div></nav>
-<main class="fd-page">
-  <span class="fd-week__kicker">MEMÓRIA AUTORAL</span>
-  <h1>Arquivo</h1>
-  <p>As matérias que saem da edição da semana vivem aqui. O acervo maior abre pelas portas abaixo — artistas, autores, épocas, formatos — sem despejar o catálogo inteiro nesta página.</p>
-  <div class="pg-assuntos">
-    <a href="/blog/arquivo/">Acervo</a>
-    <a href="/blog/arquivo/letras.html">Bandas e artistas</a>
-    <a href="/blog/arquivo/autores.html">Autores</a>
-    <a href="/blog/arquivo/epocas.html">Épocas</a>
-    <a href="/blog/arquivo/formatos.html">Formatos</a>
-    <a href="/blog/arquivo/temas.html">Temas</a>
-    <a href="/blog/arquivo/paises.html">Países</a>
-    <a href="/blog/busca.html">Busca</a>
-  </div>
-  <div class="fd-tools">
-    <input id="archive-search" type="search" placeholder="Buscar no arquivo" aria-label="Buscar no arquivo">
-    <span id="archive-count"></span>
-  </div>
-  <div id="archive-grid" class="arch-grid"></div>
-  <p><button class="fd-more" id="archive-more" type="button">Carregar mais</button></p>
+<main class="az-shell">
+<nav class="az-crumbs" aria-label="Trilha"><a href="/">Home</a> · Arquivo</nav>
+<div class="az-layout">
+<aside class="az-side" aria-label="Circulação">
+<h2>Portas</h2>
+<a href="/blog/arquivo/">Acervo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/arquivo/epocas.html">Épocas</a>
+<a href="/blog/arquivo/formatos.html">Formatos</a>
+<a href="/blog/arquivo/temas.html">Temas</a>
+<a href="/blog/arquivo/paises.html">Países</a>
+<a href="/blog/busca.html">Busca</a>
+</aside>
+<div>
+<span class="az-kicker">Memória</span>
+<h1>Arquivo</h1>
+<p class="az-lead">Busca, artistas, autores, épocas e formatos. A lista abaixo é o que já está publicado, em ordem. Não é um cemitério.</p>
+<div class="fd-tools">
+<input id="archive-search" type="search" placeholder="Buscar no arquivo" aria-label="Buscar no arquivo">
+<span id="archive-count"></span>
+</div>
+<div id="archive-grid" class="arch-grid"></div>
+<p><button class="fd-more" id="archive-more" type="button">Carregar mais</button></p>
+</div>
+<aside class="az-context" aria-label="Participação">
+<h2>Complete</h2>
+<p>O que falta no arquivo entra como envio. Não publica direto.</p>
+<a href="/participe.html">Participe</a>
+<a href="/blog/envie-sua-historia.html">Conte uma história</a>
+<a href="/loja.html">Loja</a>
+</aside>
+</div>
 </main>
 <footer class="pp-footer" id="ajude">
   <div class="pp-footer-in">
@@ -64,5 +79,6 @@
 <script src="/js/passport-archive.js?v=20260912b" defer></script>
 <script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
 <script src="/js/fofonete-exit-intent.js?v=20260912p" defer></script>
+<script src="/js/passport-musical-door.js?v=20260925az" defer></script>
 </body>
 </html>

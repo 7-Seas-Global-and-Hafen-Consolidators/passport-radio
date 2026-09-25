@@ -14,9 +14,10 @@
 <link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
 <link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
 <link rel="stylesheet" href="/css/passport-listing.css?v=20260912b">
-<link rel="stylesheet" href="/css/passport-generation.css?v=20260924close">
+<link rel="stylesheet" href="/css/passport-generation.css?v=20260925az">
+<link rel="stylesheet" href="/css/passport-archive-ia.css?v=20260925az">
 </head>
-<body class="pp-body fd-body pp-station pp-listing">
+<body class="pp-body az-body pp-listing">
 <header class="pp-topbar"><div class="pp-topbar-in">
 <a class="pp-brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="38" height="38"><span class="pp-brand-txt"><b>PASSPORT RADIO</b><small>Contar histórias que dão vontade de ouvir</small></span></a>
 <form class="pg-nav-search" action="/blog/busca.html" method="get" role="search">
@@ -27,16 +28,36 @@
 <nav class="pp-top-actions"><a href="radio.html">OUVIR</a></nav>
 </div></header>
 <nav class="pp-nav pg-nav" aria-label="Seções"><div class="pp-nav-in"><a href="/radio.html">Ouvir</a><a href="/noticias.html">Notícias</a><a href="/blog.html">Histórias</a><a href="/editorial.html">Arquivo</a><a href="/blog/arquivo/letras.html">Bandas & Artistas</a><a href="/participe.html">Participe</a><a href="/loja.html">Loja</a><a href="/anuncie.html">Anuncie</a></div></nav>
-<main class="fd-page">
-  <span class="fd-week__kicker">PASSPORT · CIRCULAÇÃO</span>
-  <h1>Notícias</h1>
-  <p>Circulação do dia. O que a redação coloca no ar fica aqui, separado da capa.</p>
-  <div class="fd-tools">
-    <input id="news-search" type="search" placeholder="Buscar notícias" aria-label="Buscar notícias">
-    <span id="news-count"></span>
-  </div>
-  <div id="news-grid" class="news-grid"></div>
-  <p><button class="fd-more" id="news-more" type="button">Carregar mais</button></p>
+<main class="az-shell">
+<nav class="az-crumbs" aria-label="Trilha"><a href="/">Home</a> · Notícias</nav>
+<div class="az-layout">
+<aside class="az-side" aria-label="Circulação">
+<h2>Acervo</h2>
+<a href="/blog/arquivo/letras.html">Bandas & Artistas</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog.html">Histórias</a>
+<a href="/participe.html">Participe</a>
+<a href="/loja.html">Loja</a>
+</aside>
+<div>
+<span class="az-kicker">Circulação</span>
+<h1>Notícias</h1>
+<p class="az-lead">O que a redação coloca no ar. Separado da capa. Sem ranking inventado.</p>
+<div class="fd-tools">
+<input id="news-search" type="search" placeholder="Buscar notícias" aria-label="Buscar notícias">
+<span id="news-count"></span>
+</div>
+<div id="news-grid" class="news-grid"></div>
+<p><button class="fd-more" id="news-more" type="button">Carregar mais</button></p>
+</div>
+<aside class="az-context" aria-label="Participação">
+<h2>Envie</h2>
+<p>Uma notícia enviada não publica sozinha.</p>
+<a href="/participe.html">Participe</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="mailto:passportradio.online@gmail.com">E-mail da redação. Abre o seu e-mail.</a>
+</aside>
+</div>
 </main>
 <footer class="pp-footer" id="ajude">
   <div class="pp-footer-in">
@@ -55,5 +76,6 @@
 <script src="/js/passport-news.js?v=20260912b" defer></script>
 <script src="/js/asaas-footer-trust.js?v=20260908z" defer></script>
 <script src="/js/fofonete-exit-intent.js?v=20260912p" defer></script>
+<script src="/js/passport-musical-door.js?v=20260925az" defer></script>
 </body>
 </html>

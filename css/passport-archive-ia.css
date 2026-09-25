@@ -1,0 +1,74 @@
+/* Máquina de acervo: densidade do índice, apresentação branca. Sem superfície cinza. */
+body.az-body {
+  margin: 0;
+  background: #fff;
+  color: #1a2744;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+.az-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 88px; }
+.az-crumbs { font-size: 14px; margin: 0 0 14px; }
+.az-crumbs a { color: #1a2744; }
+.az-kicker { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.az-shell h1, .hub-name {
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 650;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: .95;
+  margin: 6px 0 10px;
+}
+.az-lead { max-width: 42rem; font-size: 18px; line-height: 1.45; margin: 0 0 16px; }
+.az-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr) 220px; gap: 32px; align-items: start; }
+.az-side h2, .az-context h2 {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+.az-side a, .az-context a { display: block; color: #1a2744; padding: 6px 0; border-bottom: 1px solid #1a2744; text-decoration: none; font-weight: 650; }
+.az-side a span, .az-context p { font-weight: 500; font-size: 14px; }
+.az-search { display: flex; gap: 8px; margin: 0 0 12px; }
+.az-search input {
+  flex: 1;
+  min-height: 44px;
+  border: 0;
+  border-bottom: 1px solid #1a2744;
+  background: #fff;
+  color: #1a2744;
+  font-size: 16px;
+}
+.az-search button, .az-letters a, .az-letters button {
+  min-height: 44px;
+  border: 0;
+  background: #fff;
+  color: #1a2744;
+  font-weight: 700;
+  cursor: pointer;
+}
+.az-letters { display: flex; flex-wrap: wrap; gap: 2px 10px; margin: 0 0 12px; }
+.az-letters a[aria-current="page"] { color: #c4312e; box-shadow: inset 0 -2px 0 #c4312e; }
+.az-count { font-size: 14px; margin: 0 0 8px; }
+.az-table { width: 100%; border-collapse: collapse; background: #fff; table-layout: fixed; }
+.az-table a, .hub-list a { overflow-wrap: anywhere; }
+body.az-body { overflow-x: hidden; }
+.typed-block { margin: 0 0 28px; }
+.typed-block h2 { font-family: "Newsreader", Georgia, serif; font-size: 28px; margin: 0 0 8px; }
+.hub-list span { font-family: "Source Sans 3", sans-serif; font-size: 14px; font-weight: 700; }
+.az-table th {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1a2744;
+  padding: 8px 0;
+}
+.az-table td { border-bottom: 1px solid #1a2744; padding: 9px 8px 9px 0; vertical-align: baseline; }
+.az-table a { color: #1a2744; font-family: "Newsreader", Georgia, serif; font-size: 20px; font-weight: 650; text-decoration: none; }
+.az-table .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.az-table tr.is-review a { font-weight: 550; }
+.hub-list { list-style: none; padding: 0; margin: 18px 0; }
+.hub-list a { display: block; color: #1a2744; text-decoration: none; border-bottom: 1px solid #1a2744; padding: 12px 0; font-family: "Newsreader", Georgia, serif; font-size: 22px; font-weight: 650; }
+.hub-note { font-size: 16px; max-width: 40rem; }
+.hub-products a { font-family: "Source Sans 3", sans-serif; font-size: 16px; font-weight: 650; }
+@media (max-width: 900px) {
+  .az-layout { grid-template-columns: 1fr; gap: 22px; }
+  .az-table a { font-size: 18px; }
+}
