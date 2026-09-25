@@ -35,7 +35,7 @@
   const RETURN_TO=returnToFromUrl || returnToFromStorage || '';
   if(RETURN_TO) sessionStorage.setItem('passport_return_to',RETURN_TO);
 
-  if(!window.supabase){show('Não foi possível carregar o serviço de conta. Tente novamente.',true);return;}
+  if(!window.supabase){show('O acesso não carregou agora. Você continua lendo o site. Para falar com a redação, escreva para passportradio.online@gmail.com.',true);return;}
 
   const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 
@@ -148,7 +148,7 @@
     const displayName=$('signup-name').value.trim();const email=$('signup-email').value.trim();const password=$('signup-password').value;
     const redirectUrl=ACCOUNT_URL+'?bemvindo=1'+(RETURN_TO?'&returnTo='+encodeURIComponent(RETURN_TO):'');
     const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:redirectUrl}});setBusy(signupForm,false);
-    if(error){show(error.message || 'Não foi possível criar a conta.',true);return;}
+    if(error){show('Não foi possível criar a conta. Confira o e-mail ou escreva para passportradio.online@gmail.com.',true);return;}
     if(data.session){goAfterAuth();return;}else show('Conta criada. Confira seu e-mail. O link de confirmação leva direto para sua Passport.',false,true);
   });
 

@@ -47,10 +47,10 @@
     const storyUrl = root.getAttribute("data-story-url") || location.pathname;
     root.removeAttribute("hidden");
     root.setAttribute("aria-hidden", "false");
-    root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">Carregando a conversa…</p>`;
+    root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">Comentários desta matéria.</p>`;
 
     if (!window.supabase) {
-      root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">A discussão usa a Conta Passport. Não foi possível carregar o serviço agora.</p><p><a href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + "#discussao")}">Entrar na Conta Passport</a></p>`;
+      root.innerHTML = `<h2>Discussão</h2><p class="blog-discussion__status">A discussão não carregou agora.</p><p><a href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + "#discussao")}">Entrar para comentar</a></p>`;
       return;
     }
 
@@ -121,8 +121,8 @@
             <button type="submit">Publicar</button>
           </form>`
         : live
-          ? `<p class="blog-discussion__status">Entre na <a href="${login}">Conta Passport</a> para comentar, apoiar ou denunciar.</p>`
-          : `<p class="blog-discussion__status">Discussão indisponível neste preview: o serviço da Conta Passport não respondeu. Nenhum comentário foi inventado.</p>`;
+          ? `<p class="blog-discussion__status"><a href="${login}">Entre para comentar, apoiar ou denunciar.</a></p>`
+          : `<p class="blog-discussion__status">A discussão não carregou agora. A matéria continua no ar. Para falar sobre ela, escreva para passportradio.online@gmail.com.</p>`;
       const thread = live
         ? (rows.length ? tree(rows) : "<p class=\"blog-discussion__status\">Nenhum comentário ainda. Seja o primeiro.</p>")
         : "";

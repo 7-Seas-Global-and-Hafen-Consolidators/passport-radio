@@ -1,0 +1,24 @@
+{
+  "html": 27325,
+  "written": 25247,
+  "link_files": 21957,
+  "classes": {
+    "CONTAMINATED": 21,
+    "OTHER": 1119,
+    "INDEX": 949,
+    "SYNTHETIC": 13360,
+    "HUB": 3205,
+    "HUB_EXCLUDED": 99,
+    "REAL": 8572
+  },
+  "titles": 21932,
+  "search_items": 21933,
+  "search_updated": 21923,
+  "note": "SYNTHETIC = blog/w or blog/2026 whose HTML contained mill fingerprints before this pass. Pages were not deleted. Bodies that were only mill copy became a one-line archive stub using the name already on the page. REAL = story files without those fingerprints and with long text. CONTAMINATED = professor or mill voice outside the story family, voice removed where the sentence matched, facts kept. UNKNOWN = short story files without the mill fingerprints. HUB_EXCLUDED = public hubs for names the extractor already refuses as bands. Segunda passagem: 427 hrefs quebrados pelo linker (âncora dentro de atributo) reparados; o linker em tools/editorial_blog_tunnel.py agora só liga texto fora de tag e fora de âncora. 198 parágrafos de 'Conta Passport' removidos. 18 blocos de laboratório de escuta (BISTURI / listen / pe-listen) removidos sem apagar a matéria. 8 norms de busca perderam a cauda 'a passport segura o pacote'. Páginas não foram apagadas.",
+  "second_pass": {
+    "href_repaired": 427,
+    "mill_paragraphs_removed": 198,
+    "listen_labs_removed": 18,
+    "search_norms_cut": 8
+  }
+}

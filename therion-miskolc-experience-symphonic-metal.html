@@ -371,9 +371,45 @@
   <link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
 <link rel="stylesheet" href="/css/passport-editorial-fonts.css?v=31c">
 <link rel="stylesheet" href="/css/passport-editorial-ink.css?v=31c">
+<link rel="stylesheet" href="/css/passport-doc.css?v=20260925doc">
 </head>
 
-<body class="pp-article">
+<body class="pp-article pr-doc">
+<div id="pr-house">
+<a class="pr-brand" href="/"><span>Passport</span><span>Radio</span></a>
+<form class="pr-search" action="/blog/busca.html" method="get" role="search">
+<label class="pr-sr" for="pr-q">Buscar</label>
+<input id="pr-q" name="q" type="search" placeholder="Matérias, artistas, autores, rádios, agenda, loja" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<div class="pr-player" id="pr-player">
+<button type="button" id="pr-play" aria-label="Tocar">▶</button>
+<p class="pr-now"><strong id="pr-name">Escolha uma rádio</strong> <span id="pr-state"></span></p>
+<label class="pr-vol">Volume <input id="pr-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+<audio id="pr-audio" preload="none"></audio>
+<div class="pr-yt" aria-hidden="true"><div id="pr-yt"></div></div>
+</div>
+<nav class="pr-babies" id="pr-babies" aria-label="Rádios">
+<div class="pr-group"><h2>Música</h2><div class="pr-units"><button type="button" data-pr="metal:metal" aria-pressed="false">Metal</button><button type="button" data-pr="metal:unplugged" aria-pressed="false">Unplugged</button><button type="button" data-pr="metal:regenbogen" aria-pressed="false">Unplugged II</button><button type="button" data-pr="metal:metalwarriors" aria-pressed="false">Heavy Metal</button><button type="button" data-pr="metal:gothic" aria-pressed="false">Gothic Passport</button><button type="button" data-pr="metal:livejam" aria-pressed="false">Live Jam</button></div></div><div class="pr-group"><h2>80s</h2><div class="pr-units"><button type="button" data-pr="80s:Pop" aria-pressed="false">Pop</button><button type="button" data-pr="80s:Soft" aria-pressed="false">Soft</button><button type="button" data-pr="80s:Country" aria-pressed="false">Country</button><button type="button" data-pr="80s:Soft R&amp;B" aria-pressed="false">Soft R&amp;B</button><button type="button" data-pr="80s:R&amp;B" aria-pressed="false">R&amp;B</button><button type="button" data-pr="80s:Hair Metal" aria-pressed="false">Hair Metal</button></div></div><div class="pr-group"><h2>Rádios</h2><div class="pr-units"><button type="button" data-pr="mpb" aria-pressed="false">MPB</button><button type="button" data-pr="rock" aria-pressed="false">Rock Brasil</button><button type="button" data-pr="soul" aria-pressed="false">Soul</button><button type="button" data-pr="disco" aria-pressed="false">Disco</button><button type="button" data-pr="reggae" aria-pressed="false">Reggae</button><button type="button" data-pr="jovem" aria-pressed="false">Jovem Guarda</button><button type="button" data-pr="hits" aria-pressed="false">Hits</button><button type="button" data-pr="oldies" aria-pressed="false">50s &amp; 60s</button><button type="button" data-pr="flash" aria-pressed="false">Flash House</button><button type="button" data-pr="nostalgia" aria-pressed="false">Nostalgia</button><button type="button" data-pr="novela:0" aria-pressed="false">Novelas 01</button><button type="button" data-pr="novela:1" aria-pressed="false">Novelas 02</button><button type="button" data-pr="novela:2" aria-pressed="false">Novelas 03</button><button type="button" data-pr="novela:3" aria-pressed="false">Novelas 04</button><button type="button" data-pr="novela:4" aria-pressed="false">Novelas 05</button><button type="button" data-pr="novela:5" aria-pressed="false">Novelas 06</button><button type="button" data-pr="novela:6" aria-pressed="false">Novelas 07</button><button type="button" data-pr="novela:7" aria-pressed="false">Novelas 08</button><button type="button" data-pr="novela:8" aria-pressed="false">Novelas 09</button><button type="button" data-pr="globo:0" aria-pressed="false">Globo de Ouro 01</button><button type="button" data-pr="globo:1" aria-pressed="false">Globo de Ouro 02</button><button type="button" data-pr="globo:2" aria-pressed="false">Globo de Ouro 03</button><button type="button" data-pr="globo:3" aria-pressed="false">Globo de Ouro 04</button><button type="button" data-pr="globo:4" aria-pressed="false">Globo de Ouro 05</button><button type="button" data-pr="globo:5" aria-pressed="false">Globo de Ouro 06</button><button type="button" data-pr="liverare" aria-pressed="false">Live &amp; Rare</button></div></div><div class="pr-group"><h2>Américas</h2><div class="pr-units"><button type="button" data-pr="world:py" aria-pressed="false">Radio Paraguay</button><button type="button" data-pr="world:ca" aria-pressed="false">Radio Québec</button><button type="button" data-pr="world:ve" aria-pressed="false">Radio Venezuela</button><button type="button" data-pr="world:mx" aria-pressed="false">PASSPORT MÉXICO</button></div></div><div class="pr-group"><h2>Europa</h2><div class="pr-units"><button type="button" data-pr="world:fr" aria-pressed="false">Radio France</button><button type="button" data-pr="world:ua" aria-pressed="false">Українське музичне радіо</button><button type="button" data-pr="world:ro" aria-pressed="false">Radio Muzică Românească</button><button type="button" data-pr="world:fi" aria-pressed="false">Suomalainen rockradio</button><button type="button" data-pr="world:cz" aria-pressed="false">České rockové rádio</button><button type="button" data-pr="world:lt" aria-pressed="false">Lietuvos roko radijas</button><button type="button" data-pr="world:gr" aria-pressed="false">Ελληνικό ροκ ραδιόφωνο</button><button type="button" data-pr="world:it" aria-pressed="false">Radio Italia</button><button type="button" data-pr="world:catalunya" aria-pressed="false">PASSPORT CATALUNYA</button><button type="button" data-pr="world:tr" aria-pressed="false">Türkiye Müzik Radyosu</button></div></div><div class="pr-group"><h2>África</h2><div class="pr-units"><button type="button" data-pr="world:ea" aria-pressed="false">Rádio África</button></div></div><div class="pr-group"><h2>Ásia</h2><div class="pr-units"><button type="button" data-pr="world:kr" aria-pressed="false">한국 음악 라디오</button><button type="button" data-pr="world:cn" aria-pressed="false">中国音乐电台</button><button type="button" data-pr="world:jp" aria-pressed="false">パスポート日本</button><button type="button" data-pr="world:th" aria-pressed="false">พาสปอร์ตประเทศไทย</button><button type="button" data-pr="world:kz" aria-pressed="false">ПАСПОРТ ҚАЗАҚСТАН</button><button type="button" data-pr="world:pk" aria-pressed="false">پاکستانی موسیقی ریڈیو</button><button type="button" data-pr="world:ir" aria-pressed="false">رادیو موسیقی ایران</button><button type="button" data-pr="world:il" aria-pressed="false">רדיו מוזיקה ישראלית</button></div></div>
+</nav>
+<nav class="pr-sections" id="pr-sections" aria-label="Seções">
+<a href="/">Capa</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/radio.html">Ouvir</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+</nav>
+</div>
+<div id="pr-main">
+
 
 <header class="topbar">
   <div class="shell topbar__inner">
@@ -481,42 +517,10 @@
             “você está numa banda de metal”.
           </p>
 
-          <p>
-            Primeiro escute o outro mundo.
-          </p>
+          
 
 
-          <div class="listen">
-            <strong>Preste atenção nisso</strong>
-
-            Cordas.
-
-            Violinos.
-
-            Violas.
-
-            Cellos.
-
-            Contrabaixos.
-
-            Madeiras.
-
-            Metais.
-
-            Percussão.
-
-            Coro.
-
-            Respiração.
-
-            Dinâmica.
-
-            Espaço.
-
-            Guarde esse som.
-
-            Vamos precisar dele daqui a pouco.
-          </div>
+          
 
 
           <div class="video">
@@ -591,31 +595,7 @@
             </div>
           </div>
 
-          <div class="listen">
-            <strong>Agora escute por camadas</strong>
-
-            Primeiro a bateria.
-
-            Depois procure a percussão orquestral.
-
-            Volte.
-
-            Agora siga o baixo.
-
-            Depois os contrabaixos.
-
-            Volte outra vez.
-
-            Pegue a guitarra.
-
-            Agora as cordas.
-
-            Escute o vocalista.
-
-            Depois escute o coro respondendo.
-
-            Só então devolva tudo ao mesmo tempo.
-          </div>
+          
 
 
           <div class="video">
@@ -703,23 +683,7 @@
             </div>
           </div>
 
-          <div class="listen">
-            <strong>Não olhe apenas para a guitarra</strong>
-
-            Observe quando ela entra.
-
-            Observe principalmente quando ela não entra.
-
-            Em um arranjo desse tamanho, tocar também significa saber deixar espaço.
-
-            Há momentos em que a guitarra precisa ocupar o primeiro plano.
-
-            Em outros, precisa permitir que cordas, metais, coro ou voz carreguem a narrativa.
-
-            Isso não é ausência.
-
-            É arranjo.
-          </div>
+          
 
 
           <h3>
@@ -983,39 +947,7 @@
             a banda recua porque a música precisa de espaço.
           </p>
 
-          <div class="listen">
-            <strong>Faça o teste</strong>
-
-            Volte ao vídeo.
-
-            Escolha apenas vinte segundos.
-
-            Não tente ouvir tudo.
-
-            Escolha UMA coisa.
-
-            Bateria.
-
-            Guitarra.
-
-            Baixo.
-
-            Cordas.
-
-            Metais.
-
-            Coro.
-
-            Voz.
-
-            Depois repita os mesmos vinte segundos seguindo outra camada.
-
-            Quando terminar, escute tudo novamente.
-
-            A música será a mesma.
-
-            Sua percepção dela provavelmente não.
-          </div>
+          
 
         </section>
 
@@ -1136,35 +1068,7 @@
             Então faça exatamente o contrário.
           </p>
 
-          <div class="listen">
-            <strong>Mr. Nomad · exercício número dois</strong>
-
-            Olhe para o baterista.
-
-            Conte mentalmente.
-
-            Agora procure o baixo.
-
-            Veja como ele conversa com o bumbo.
-
-            Passe para a guitarra.
-
-            Depois procure os teclados.
-
-            Agora abandone a banda inteira.
-
-            Vá para a orquestra.
-
-            Procure os violinos.
-
-            Desça para cellos e contrabaixos.
-
-            Volte para os metais.
-
-            Escute o coro.
-
-            Só então volte para a voz principal.
-          </div>
+          
 
           <p>
             Se você fizer isso, existe uma boa chance de descobrir que passou
@@ -1280,9 +1184,7 @@
             09 · Volte ao começo
           </span>
 
-          <h2>
-            Agora escute novamente.
-          </h2>
+          
 
           <p class="lead">
             Os vídeos não mudaram.
@@ -1308,29 +1210,7 @@
             Só que agora você já sabe o que procurar.
           </p>
 
-          <div class="listen">
-            <strong>Última passagem</strong>
-
-            Não procure virtuosismo.
-
-            Não procure velocidade.
-
-            Não procure quem está tocando mais alto.
-
-            Procure decisões.
-
-            Quem entra.
-
-            Quem sai.
-
-            Quem sustenta.
-
-            Quem responde.
-
-            Quem ocupa o espaço.
-
-            E quem deliberadamente deixa esse espaço vazio.
-          </div>
+          
 
           <p>
             É aí que um arranjo deixa de ser uma pilha de instrumentos.
@@ -1598,5 +1478,28 @@
 
 
 <script src="/js/passport-amazon-affiliate.js?v=202608251849" defer></script>
+
+</div>
+<footer id="pr-foot">
+<nav aria-label="Rodapé">
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+<a href="/privacidade.html">Privacidade</a>
+<a href="/termos.html">Termos</a>
+<a href="/cookies.html">Cookies</a>
+</nav>
+<p>Contar histórias que dão vontade de ouvir. A Passport Radio iniciou suas atividades em 1998. Após um período de interrupção, retomou suas operações em 2026.</p>
+</footer>
+
+<script src="/js/passport-doc.js?v=20260925doc" defer></script>
 </body>
 </html>

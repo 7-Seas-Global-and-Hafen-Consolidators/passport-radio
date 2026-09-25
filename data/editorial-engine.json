@@ -1,7 +1,7 @@
 {
   "version": 16,
   "daily_target": 500,
-  "daily_publish_cap": 500,
+  "daily_publish_cap": 0,
   "daily_capacity": 700,
   "daily_evaluation_cap": 1200,
   "max_batch": 12,

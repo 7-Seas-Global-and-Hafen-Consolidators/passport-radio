@@ -26,8 +26,44 @@
   <link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
 <link rel="stylesheet" href="/css/passport-editorial-fonts.css?v=31c">
 <link rel="stylesheet" href="/css/passport-editorial-ink.css?v=31c">
+<link rel="stylesheet" href="/css/passport-doc.css?v=20260925doc">
 </head>
-<body class="pp-article">
+<body class="pp-article pr-doc">
+<div id="pr-house">
+<a class="pr-brand" href="/"><span>Passport</span><span>Radio</span></a>
+<form class="pr-search" action="/blog/busca.html" method="get" role="search">
+<label class="pr-sr" for="pr-q">Buscar</label>
+<input id="pr-q" name="q" type="search" placeholder="Matérias, artistas, autores, rádios, agenda, loja" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<div class="pr-player" id="pr-player">
+<button type="button" id="pr-play" aria-label="Tocar">▶</button>
+<p class="pr-now"><strong id="pr-name">Escolha uma rádio</strong> <span id="pr-state"></span></p>
+<label class="pr-vol">Volume <input id="pr-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+<audio id="pr-audio" preload="none"></audio>
+<div class="pr-yt" aria-hidden="true"><div id="pr-yt"></div></div>
+</div>
+<nav class="pr-babies" id="pr-babies" aria-label="Rádios">
+<div class="pr-group"><h2>Música</h2><div class="pr-units"><button type="button" data-pr="metal:metal" aria-pressed="false">Metal</button><button type="button" data-pr="metal:unplugged" aria-pressed="false">Unplugged</button><button type="button" data-pr="metal:regenbogen" aria-pressed="false">Unplugged II</button><button type="button" data-pr="metal:metalwarriors" aria-pressed="false">Heavy Metal</button><button type="button" data-pr="metal:gothic" aria-pressed="false">Gothic Passport</button><button type="button" data-pr="metal:livejam" aria-pressed="false">Live Jam</button></div></div><div class="pr-group"><h2>80s</h2><div class="pr-units"><button type="button" data-pr="80s:Pop" aria-pressed="false">Pop</button><button type="button" data-pr="80s:Soft" aria-pressed="false">Soft</button><button type="button" data-pr="80s:Country" aria-pressed="false">Country</button><button type="button" data-pr="80s:Soft R&amp;B" aria-pressed="false">Soft R&amp;B</button><button type="button" data-pr="80s:R&amp;B" aria-pressed="false">R&amp;B</button><button type="button" data-pr="80s:Hair Metal" aria-pressed="false">Hair Metal</button></div></div><div class="pr-group"><h2>Rádios</h2><div class="pr-units"><button type="button" data-pr="mpb" aria-pressed="false">MPB</button><button type="button" data-pr="rock" aria-pressed="false">Rock Brasil</button><button type="button" data-pr="soul" aria-pressed="false">Soul</button><button type="button" data-pr="disco" aria-pressed="false">Disco</button><button type="button" data-pr="reggae" aria-pressed="false">Reggae</button><button type="button" data-pr="jovem" aria-pressed="false">Jovem Guarda</button><button type="button" data-pr="hits" aria-pressed="false">Hits</button><button type="button" data-pr="oldies" aria-pressed="false">50s &amp; 60s</button><button type="button" data-pr="flash" aria-pressed="false">Flash House</button><button type="button" data-pr="nostalgia" aria-pressed="false">Nostalgia</button><button type="button" data-pr="novela:0" aria-pressed="false">Novelas 01</button><button type="button" data-pr="novela:1" aria-pressed="false">Novelas 02</button><button type="button" data-pr="novela:2" aria-pressed="false">Novelas 03</button><button type="button" data-pr="novela:3" aria-pressed="false">Novelas 04</button><button type="button" data-pr="novela:4" aria-pressed="false">Novelas 05</button><button type="button" data-pr="novela:5" aria-pressed="false">Novelas 06</button><button type="button" data-pr="novela:6" aria-pressed="false">Novelas 07</button><button type="button" data-pr="novela:7" aria-pressed="false">Novelas 08</button><button type="button" data-pr="novela:8" aria-pressed="false">Novelas 09</button><button type="button" data-pr="globo:0" aria-pressed="false">Globo de Ouro 01</button><button type="button" data-pr="globo:1" aria-pressed="false">Globo de Ouro 02</button><button type="button" data-pr="globo:2" aria-pressed="false">Globo de Ouro 03</button><button type="button" data-pr="globo:3" aria-pressed="false">Globo de Ouro 04</button><button type="button" data-pr="globo:4" aria-pressed="false">Globo de Ouro 05</button><button type="button" data-pr="globo:5" aria-pressed="false">Globo de Ouro 06</button><button type="button" data-pr="liverare" aria-pressed="false">Live &amp; Rare</button></div></div><div class="pr-group"><h2>Américas</h2><div class="pr-units"><button type="button" data-pr="world:py" aria-pressed="false">Radio Paraguay</button><button type="button" data-pr="world:ca" aria-pressed="false">Radio Québec</button><button type="button" data-pr="world:ve" aria-pressed="false">Radio Venezuela</button><button type="button" data-pr="world:mx" aria-pressed="false">PASSPORT MÉXICO</button></div></div><div class="pr-group"><h2>Europa</h2><div class="pr-units"><button type="button" data-pr="world:fr" aria-pressed="false">Radio France</button><button type="button" data-pr="world:ua" aria-pressed="false">Українське музичне радіо</button><button type="button" data-pr="world:ro" aria-pressed="false">Radio Muzică Românească</button><button type="button" data-pr="world:fi" aria-pressed="false">Suomalainen rockradio</button><button type="button" data-pr="world:cz" aria-pressed="false">České rockové rádio</button><button type="button" data-pr="world:lt" aria-pressed="false">Lietuvos roko radijas</button><button type="button" data-pr="world:gr" aria-pressed="false">Ελληνικό ροκ ραδιόφωνο</button><button type="button" data-pr="world:it" aria-pressed="false">Radio Italia</button><button type="button" data-pr="world:catalunya" aria-pressed="false">PASSPORT CATALUNYA</button><button type="button" data-pr="world:tr" aria-pressed="false">Türkiye Müzik Radyosu</button></div></div><div class="pr-group"><h2>África</h2><div class="pr-units"><button type="button" data-pr="world:ea" aria-pressed="false">Rádio África</button></div></div><div class="pr-group"><h2>Ásia</h2><div class="pr-units"><button type="button" data-pr="world:kr" aria-pressed="false">한국 음악 라디오</button><button type="button" data-pr="world:cn" aria-pressed="false">中国音乐电台</button><button type="button" data-pr="world:jp" aria-pressed="false">パスポート日本</button><button type="button" data-pr="world:th" aria-pressed="false">พาสปอร์ตประเทศไทย</button><button type="button" data-pr="world:kz" aria-pressed="false">ПАСПОРТ ҚАЗАҚСТАН</button><button type="button" data-pr="world:pk" aria-pressed="false">پاکستانی موسیقی ریڈیو</button><button type="button" data-pr="world:ir" aria-pressed="false">رادیو موسیقی ایران</button><button type="button" data-pr="world:il" aria-pressed="false">רדיו מוזיקה ישראלית</button></div></div>
+</nav>
+<nav class="pr-sections" id="pr-sections" aria-label="Seções">
+<a href="/">Capa</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/radio.html">Ouvir</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+</nav>
+</div>
+<div id="pr-main">
+
 <div class="topbar">PASSPORT RADIO · MR. NOMAD · FEATURE</div>
 <header><div class="shell header"><a class="brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="index.html">AGORA</a><a href="index.html#noticias">NOTÍCIAS</a><a href="radio.html">AO VIVO</a><a href="destinos.html">ARQUIVOS</a><a href="loja.html">LOJA</a></nav></div></header>
 <main>
@@ -44,7 +80,7 @@
 <span class="chapter">08 · GARY MOORE</span><h2>Quatro dias. Depois, Japão.</h2><p>No fim dos anos 1980, <strong>Gary Moore</strong> precisava de um baterista. Slade teve apenas <strong>quatro dias</strong> para aprender o set. Pouco depois já estava na estrada, incluindo Japão. Ele próprio lembraria aquilo como uma das provas mais difíceis da carreira.</p><p>Durante essa fase, Malcolm Young apareceu num show. Bob Daisley apresentou os dois quase casualmente: <strong>“Slade, este é Mal.”</strong></p><p>Mal. Malcolm Young. AC/DC.</p><div class="punch">Em Belfast, 1989, “Blood of Emeralds” registra essa fase com Chris Slade na bateria. O show está confirmado; o embed só entra quando o ID exato estiver verificado.</div>
 <span class="chapter">09 · AC/DC</span><h2>Cerca de cem bateristas.</h2><p>A busca do AC/DC havia passado por aproximadamente <strong>cem bateristas</strong>. Alguns já pertenciam a bandas conhecidas. Slade chegou praticamente no fim daquela fila.</p><p>Sentou diante do kit. Angus e Malcolm ficaram a poucos metros do bumbo, observando. <strong>Back in Black.</strong> Depois material novo: <strong>Rock Your Heart Out.</strong></p><p>Terminou. Guardou as coisas. Entrou no carro. E concluiu que tinha feito uma merda.</p>
 <span class="chapter">10 · A VOLTA PARA CASA</span><h2>A pior audição da vida.</h2><p>Chris dirigia reconstruindo mentalmente tudo que achava ter feito errado. Ligou para a esposa e anunciou o desastre. E conseguiu uma façanha: <strong>se perdeu voltando para a própria casa.</strong></p><p>Quando finalmente chegou, ela tinha uma notícia.</p><div class="punch">AC/DC havia telefonado. A vaga era dele.</div><p>A banda tomou a decisão antes mesmo de Chris conseguir encontrar o caminho de casa.</p>
-<span class="chapter">11 · THE RAZORS EDGE</span><h2>Thunder.</h2><p>Em 1990 chegou <em>The Razors Edge</em>. A primeira faixa começava com uma guitarra que dispensava apresentação: <strong>Thunderstruck</strong>.</p><p>Escute a bateria separadamente. Não há desperdício. Não há tentativa de transformar a música numa clínica. Há força, espaço e precisão. A função era fazer aquela máquina parecer inevitável.</p>
+<span class="chapter">11 · THE RAZORS EDGE</span><h2>Thunder.</h2><p>Em 1990 chegou <em>The Razors Edge</em>. A primeira faixa começava com uma guitarra que dispensava apresentação: <strong>Thunderstruck</strong>.</p><p>Não há desperdício. Não há tentativa de transformar a música numa clínica. Há força, espaço e precisão. A função era fazer aquela máquina parecer inevitável.</p>
 <span class="chapter">12 · DONINGTON</span><h2>17 de agosto de 1991.</h2><p>Castle Donington. Monsters of Rock. Canhões. Sinos. Brian Johnson. Malcolm. Angus. Uma massa humana interminável. E atrás deles: <strong>Chris Slade.</strong></p><p>A apresentação seria eternizada como <em>Live at Donington</em>. Para uma geração inteira, quando alguém diz “AC/DC ao vivo”, é aquela imagem que aparece primeiro.</p><div class="video"><div class="video-label">PASSPORT LIVE ARCHIVE · DONINGTON 1991</div><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Af0P6XEkI7Y" title="AC/DC - Thunderstruck - Live at Donington 1991" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="video-note">AC/DC · “Thunderstruck” · Live at Donington · 17 August 1991.</p></div>
 <span class="chapter">13 · SEM CLICK</span><h2>A banda precisava respirar.</h2><p>Slade não queria um click track martelando no ouvido. Preferia uma referência visual de andamento. Uma luz pulsava o tempo, ele absorvia, contava a entrada e a banda seguia organicamente.</p><p>Quando alguém dizia que as músicas aceleravam, sua resposta era simples: os tempos eram definidos por Angus e Malcolm. Ele fazia a máquina andar.</p>
 <span class="chapter">14 · PHIL RUDD</span><h2>Não era fracasso.</h2><p>Em 1994, AC/DC quis experimentar novamente com <strong>Phil Rudd</strong>. Phil pertencia ao DNA histórico da banda. Slade saiu.</p><p>Depois de uma vida praticamente inteira tocando, passou um período longe da bateria. Arte. Desenho. Escultura. Depois de décadas de amplificadores, silêncio.</p>
@@ -59,4 +95,27 @@
 <section class="silence"><div><small>THE DRUMS STOP. THE RECORD DOESN'T.</small><h2>3... 2... 1...<br>CLICK!</h2></div></section>
 </main><footer class="footer"><div class="shell"><strong>PASSPORT RADIO</strong> · Contar histórias que dão vontade de ouvir. · MR. NOMAD</div></footer>
 <script src="/js/passport-amazon-affiliate.js?v=202608251849" defer></script>
+
+</div>
+<footer id="pr-foot">
+<nav aria-label="Rodapé">
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+<a href="/privacidade.html">Privacidade</a>
+<a href="/termos.html">Termos</a>
+<a href="/cookies.html">Cookies</a>
+</nav>
+<p>Contar histórias que dão vontade de ouvir. A Passport Radio iniciou suas atividades em 1998. Após um período de interrupção, retomou suas operações em 2026.</p>
+</footer>
+
+<script src="/js/passport-doc.js?v=20260925doc" defer></script>
 </body></html>

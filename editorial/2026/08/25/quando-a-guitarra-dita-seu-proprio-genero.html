@@ -9,7 +9,44 @@
 <link rel="stylesheet" href="/css/editorial-engine.css?v=20260825"><link rel="stylesheet" href="/css/passport-legal-footer.css?v=20260912i">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Quando a guitarra dita seu próprio gênero", "description": "Gusttavo Lima toca 'For the Love of God' de Steve Vai e prova que mestria transcende gênero musical. Kiko Loureiro e Maurício Alabama aplaudem.", "image": "https://www.passportradio.online/images/passport-radio-definitive.jpg", "author": {"@type": "Organization", "name": "Passport Radio"}, "publisher": {"@type": "Organization", "name": "Passport Radio"}, "mainEntityOfPage": "https://www.passportradio.online/editorial/2026/08/25/quando-a-guitarra-dita-seu-proprio-genero.html", "datePublished": "2026-08-25", "dateModified": "2026-08-25", "inLanguage": "pt-BR"}</script><link rel="stylesheet" href="/css/passport-editorial-fonts.css?v=31c">
 <link rel="stylesheet" href="/css/passport-editorial-ink.css?v=31c">
-</head><body class="pp-article">
+<meta name="passport:class" content="real">
+<link rel="stylesheet" href="/css/passport-doc.css?v=20260925doc">
+</head><body class="pp-article pr-doc">
+<div id="pr-house">
+<a class="pr-brand" href="/"><span>Passport</span><span>Radio</span></a>
+<form class="pr-search" action="/blog/busca.html" method="get" role="search">
+<label class="pr-sr" for="pr-q">Buscar</label>
+<input id="pr-q" name="q" type="search" placeholder="Matérias, artistas, autores, rádios, agenda, loja" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<div class="pr-player" id="pr-player">
+<button type="button" id="pr-play" aria-label="Tocar">▶</button>
+<p class="pr-now"><strong id="pr-name">Escolha uma rádio</strong> <span id="pr-state"></span></p>
+<label class="pr-vol">Volume <input id="pr-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+<audio id="pr-audio" preload="none"></audio>
+<div class="pr-yt" aria-hidden="true"><div id="pr-yt"></div></div>
+</div>
+<nav class="pr-babies" id="pr-babies" aria-label="Rádios">
+<div class="pr-group"><h2>Música</h2><div class="pr-units"><button type="button" data-pr="metal:metal" aria-pressed="false">Metal</button><button type="button" data-pr="metal:unplugged" aria-pressed="false">Unplugged</button><button type="button" data-pr="metal:regenbogen" aria-pressed="false">Unplugged II</button><button type="button" data-pr="metal:metalwarriors" aria-pressed="false">Heavy Metal</button><button type="button" data-pr="metal:gothic" aria-pressed="false">Gothic Passport</button><button type="button" data-pr="metal:livejam" aria-pressed="false">Live Jam</button></div></div><div class="pr-group"><h2>80s</h2><div class="pr-units"><button type="button" data-pr="80s:Pop" aria-pressed="false">Pop</button><button type="button" data-pr="80s:Soft" aria-pressed="false">Soft</button><button type="button" data-pr="80s:Country" aria-pressed="false">Country</button><button type="button" data-pr="80s:Soft R&amp;B" aria-pressed="false">Soft R&amp;B</button><button type="button" data-pr="80s:R&amp;B" aria-pressed="false">R&amp;B</button><button type="button" data-pr="80s:Hair Metal" aria-pressed="false">Hair Metal</button></div></div><div class="pr-group"><h2>Rádios</h2><div class="pr-units"><button type="button" data-pr="mpb" aria-pressed="false">MPB</button><button type="button" data-pr="rock" aria-pressed="false">Rock Brasil</button><button type="button" data-pr="soul" aria-pressed="false">Soul</button><button type="button" data-pr="disco" aria-pressed="false">Disco</button><button type="button" data-pr="reggae" aria-pressed="false">Reggae</button><button type="button" data-pr="jovem" aria-pressed="false">Jovem Guarda</button><button type="button" data-pr="hits" aria-pressed="false">Hits</button><button type="button" data-pr="oldies" aria-pressed="false">50s &amp; 60s</button><button type="button" data-pr="flash" aria-pressed="false">Flash House</button><button type="button" data-pr="nostalgia" aria-pressed="false">Nostalgia</button><button type="button" data-pr="novela:0" aria-pressed="false">Novelas 01</button><button type="button" data-pr="novela:1" aria-pressed="false">Novelas 02</button><button type="button" data-pr="novela:2" aria-pressed="false">Novelas 03</button><button type="button" data-pr="novela:3" aria-pressed="false">Novelas 04</button><button type="button" data-pr="novela:4" aria-pressed="false">Novelas 05</button><button type="button" data-pr="novela:5" aria-pressed="false">Novelas 06</button><button type="button" data-pr="novela:6" aria-pressed="false">Novelas 07</button><button type="button" data-pr="novela:7" aria-pressed="false">Novelas 08</button><button type="button" data-pr="novela:8" aria-pressed="false">Novelas 09</button><button type="button" data-pr="globo:0" aria-pressed="false">Globo de Ouro 01</button><button type="button" data-pr="globo:1" aria-pressed="false">Globo de Ouro 02</button><button type="button" data-pr="globo:2" aria-pressed="false">Globo de Ouro 03</button><button type="button" data-pr="globo:3" aria-pressed="false">Globo de Ouro 04</button><button type="button" data-pr="globo:4" aria-pressed="false">Globo de Ouro 05</button><button type="button" data-pr="globo:5" aria-pressed="false">Globo de Ouro 06</button><button type="button" data-pr="liverare" aria-pressed="false">Live &amp; Rare</button></div></div><div class="pr-group"><h2>Américas</h2><div class="pr-units"><button type="button" data-pr="world:py" aria-pressed="false">Radio Paraguay</button><button type="button" data-pr="world:ca" aria-pressed="false">Radio Québec</button><button type="button" data-pr="world:ve" aria-pressed="false">Radio Venezuela</button><button type="button" data-pr="world:mx" aria-pressed="false">PASSPORT MÉXICO</button></div></div><div class="pr-group"><h2>Europa</h2><div class="pr-units"><button type="button" data-pr="world:fr" aria-pressed="false">Radio France</button><button type="button" data-pr="world:ua" aria-pressed="false">Українське музичне радіо</button><button type="button" data-pr="world:ro" aria-pressed="false">Radio Muzică Românească</button><button type="button" data-pr="world:fi" aria-pressed="false">Suomalainen rockradio</button><button type="button" data-pr="world:cz" aria-pressed="false">České rockové rádio</button><button type="button" data-pr="world:lt" aria-pressed="false">Lietuvos roko radijas</button><button type="button" data-pr="world:gr" aria-pressed="false">Ελληνικό ροκ ραδιόφωνο</button><button type="button" data-pr="world:it" aria-pressed="false">Radio Italia</button><button type="button" data-pr="world:catalunya" aria-pressed="false">PASSPORT CATALUNYA</button><button type="button" data-pr="world:tr" aria-pressed="false">Türkiye Müzik Radyosu</button></div></div><div class="pr-group"><h2>África</h2><div class="pr-units"><button type="button" data-pr="world:ea" aria-pressed="false">Rádio África</button></div></div><div class="pr-group"><h2>Ásia</h2><div class="pr-units"><button type="button" data-pr="world:kr" aria-pressed="false">한국 음악 라디오</button><button type="button" data-pr="world:cn" aria-pressed="false">中国音乐电台</button><button type="button" data-pr="world:jp" aria-pressed="false">パスポート日本</button><button type="button" data-pr="world:th" aria-pressed="false">พาสปอร์ตประเทศไทย</button><button type="button" data-pr="world:kz" aria-pressed="false">ПАСПОРТ ҚАЗАҚСТАН</button><button type="button" data-pr="world:pk" aria-pressed="false">پاکستانی موسیقی ریڈیو</button><button type="button" data-pr="world:ir" aria-pressed="false">رادیو موسیقی ایران</button><button type="button" data-pr="world:il" aria-pressed="false">רדיו מוזיקה ישראלית</button></div></div>
+</nav>
+<nav class="pr-sections" id="pr-sections" aria-label="Seções">
+<a href="/">Capa</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/radio.html">Ouvir</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+</nav>
+</div>
+<div id="pr-main">
+
 <div class="pe-topbar">PASSPORT RADIO · FLASH · instruments</div>
 <header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
 <main><section class="pe-hero"><div class="pe-shell"><span class="pe-kicker">PASSPORT RADIO · INSTRUMENTS · 25/08/2026</span><h1>Quando a guitarra dita seu próprio gênero</h1><p>Gusttavo Lima desafia as fronteiras do sertanejo ao dominar o virtuosismo de Steve Vai. A performance coloca uma questão essencial: o grande artista existe dentro ou além do rótulo?</p><div class="pe-stamp"><b>PASSPORT RADIO</b><span>2026-08-25</span></div></div></section>
@@ -17,4 +54,27 @@
 <p>A humildade é sinal de quem sabe o que está tentando. Vai é virtuose entre virtuoses, inventor de linguagem guitarra que exigiu décadas de refinação. Lima não fingiu completude. E justamente por isso, a execução ganhou credibilidade. Guitarristas brasileiros de alcance reconheceram o feito sem hesitação. Kiko Loureiro, que circunscreveu sua carreira entre Angra e Megadeth, parabenizou publicamente e pediu mais guitarra. Maurício Alabama, que detém audiência considerável no YouTube, chamou a performance de sensacional.</p><span class="chapter">02 · Heresia de gênero com equipamento apropriado</span><h2>Heresia de gênero com equipamento apropriado</h2><p>Lima executou seu virtuosismo na Ibanez JEMJR, modelo que é assinatura de ninguém menos que Steve Vai. O instrumento não foi acaso. Ele estava sintonizado com a reverência genuína que a performance exigiu. Não é seu primeiro diálogo com o rock de elite. Em 2015, no Festival Planeta Atlântida, Lima começou &#x27;Sweet Child O&#x27; Mine&#x27;, dos Guns N&#x27; Roses, antes de fazer transição para seu repertório. Em abril deste ano, na ExpoLondrina, retornou à mesma faixa com versão mais expandida, desta vez dividindo vocais com um de seus cantores de apoio enquanto sustentava a guitarra.</p>
 <p>Existe um padrão aqui que transcende nostalgia ou flerte superficial. Lima não toca clássicos de rock para parecer maior que si mesmo. Parece fazê-lo porque precisa honrar uma linguagem que, em sua origem virtuosa, não pertence exclusivamente a gênero algum. A guitarra é ferramenta, o rock é idioma. Mas ambos são, fundamentalmente, linguagem aberta. Ele reconhece isso cada vez que sua mão toca as cordas.</p><div class="pe-closing"><small>PASSPORT RADIO · EDITORIAL</small><p>Quando a técnica fala, o rótulo fica em silêncio.</p></div></article><aside class="pe-side"><div><small>PASSPORT RADIO</small><strong>Primeiro a história.<br>Depois a música.</strong><a href="/radio.html">ENTRAR NO AR →</a></div></aside></div><section class="related"><span>CONTINUE NA PASSPORT</span><div><a href="/editorial/2026/08/25/o-riff-que-virou-iconico-como-jolene-transformou-dolly-parton-e-atravessou-generos.html"><small>instruments</small><strong>O riff que virou icônico: como &#x27;Jolene&#x27; transformou Dolly Parton e atravessou gêneros</strong></a><a href="/editorial/2026/08/25/quando-o-cemiterio-nao-consegue-cumprir-seu-oficio-o-show-que-migrou.html"><small>instruments</small><strong>Quando o cemitério não consegue cumprir seu ofício: o show que migrou</strong></a><a href="/editorial/2026/08/25/amplificacao-em-roxo-marshall-amplia-tributo-hendrix-com-tres-edicoes-de-60-anos.html"><small>instruments</small><strong>Amplificação em Roxo: Marshall amplia tributo Hendrix com três edições de 60 anos</strong></a><a href="/editorial/2026/08/25/dany-villarreal-desenha-seu-proprio-instrumento-a-astryx-e-mais-do-que-uma-guitarra-sign.html"><small>instruments</small><strong>Dany Villarreal desenha seu próprio instrumento: a Astryx é mais do que uma guitarra signature</strong></a><a href="/editorial/2026/08/25/sessenta-anos-buscando-um-som-que-ainda-nao-existe-marshall-reimagina-o-legado-hendrix-p.html"><small>instruments</small><strong>Sessenta anos buscando um som que ainda não existe: Marshall reimagina o legado Hendrix para a geração agora</strong></a></div></section></main>
 <footer class="pe-footer"><div class="pe-shell"><strong>PASSPORT RADIO</strong><span>Contar histórias que dão vontade de ouvir.</span></div></footer><script src="/js/passport-legal-footer.js?v=202608241345" defer></script><script src="/js/passport-amazon-affiliate.js?v=202608251849" defer></script>
+
+</div>
+<footer id="pr-foot">
+<nav aria-label="Rodapé">
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+<a href="/privacidade.html">Privacidade</a>
+<a href="/termos.html">Termos</a>
+<a href="/cookies.html">Cookies</a>
+</nav>
+<p>Contar histórias que dão vontade de ouvir. A Passport Radio iniciou suas atividades em 1998. Após um período de interrupção, retomou suas operações em 2026.</p>
+</footer>
+
+<script src="/js/passport-doc.js?v=20260925doc" defer></script>
 </body></html>

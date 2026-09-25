@@ -39,7 +39,7 @@
   async function boot(root) {
     const pre = params();
     if (!window.supabase) {
-      root.innerHTML = `<p>A colaboração usa a Conta Passport. <a href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + location.search)}">Entrar</a></p>`;
+      root.innerHTML = `<p>Para enviar um relato, entre. <a href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + location.search)}">Entrar</a></p>`;
       return;
     }
     const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
@@ -48,7 +48,7 @@
     const { data } = await client.auth.getSession();
     const user = data.session && data.session.user;
     if (!user) {
-      root.innerHTML = `<p>Entre na Conta Passport para enviar um relato, foto, flyer ou informação que complete uma história.</p><p><a class="blog-submit-login" href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + location.search)}">Entrar na Conta Passport</a></p>`;
+      root.innerHTML = `<p>Entre para enviar um relato, foto, flyer ou informação que complete uma história.</p><p><a class="blog-submit-login" href="${ACCOUNT}?returnTo=${encodeURIComponent(location.pathname + location.search)}">Entrar</a></p>`;
       return;
     }
     const name = user.user_metadata && (user.user_metadata.display_name || user.user_metadata.full_name) || user.email || "Colaborador Passport";

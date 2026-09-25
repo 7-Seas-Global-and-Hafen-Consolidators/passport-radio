@@ -64,30 +64,135 @@
     return cache;
   }
 
+  const RADIOS = [
+    ["Metal", "/radio-continuous.html"],
+    ["Unplugged", "/radio-continuous.html"],
+    ["Unplugged II", "/radio-continuous.html"],
+    ["Heavy Metal", "/radio-continuous.html"],
+    ["Gothic Passport", "/radio-continuous.html"],
+    ["Live Jam", "/radio-continuous.html"],
+    ["Pop", "/radio-80s.html"],
+    ["Soft", "/radio-80s.html"],
+    ["Country", "/radio-80s.html"],
+    ["Soft R&B", "/radio-80s.html"],
+    ["R&B", "/radio-80s.html"],
+    ["Hair Metal", "/radio-80s.html"],
+    ["Live & Rare", "/radio-live-rare.html"],
+    ["Rádios do Mundo", "/radio-mundo.html"],
+    ["Radio Paraguay", "/radio-mundo.html"],
+    ["Radio Québec", "/radio-mundo.html"],
+    ["Radio Venezuela", "/radio-mundo.html"],
+    ["PASSPORT MÉXICO", "/radio-mundo.html"],
+    ["Radio France", "/radio-mundo.html"],
+    ["Türkiye Müzik Radyosu", "/radio-mundo.html"],
+    ["Українське музичне радіо", "/radio-mundo.html"],
+    ["Radio Muzică Românească", "/radio-mundo.html"],
+    ["Suomalainen rockradio", "/radio-mundo.html"],
+    ["České rockové rádio", "/radio-mundo.html"],
+    ["Lietuvos roko radijas", "/radio-mundo.html"],
+    ["Ελληνικό ροκ ραδιόφωνο", "/radio-mundo.html"],
+    ["Radio Italia", "/radio-mundo.html"],
+    ["PASSPORT CATALUNYA", "/radio-mundo.html"],
+    ["Rádio África", "/radio-mundo.html"],
+    ["한국 음악 라디오", "/radio-mundo.html"],
+    ["中国音乐电台", "/radio-mundo.html"],
+    ["رادیو موسیقی ایران", "/radio-mundo.html"],
+    ["پاکستانی موسیقی ریڈیو", "/radio-mundo.html"],
+    ["רדיו מוזיקה ישראלית", "/radio-mundo.html"],
+    ["パスポート日本", "/radio-mundo.html"],
+    ["พาสปอร์ตประเทศไทย", "/radio-mundo.html"],
+    ["ПАСПОРТ ҚАЗАҚСТАН", "/radio-mundo.html"],
+    ["MPB", "/radio-mpb.html"],
+    ["Jovem Guarda", "/radio-jovem-guarda.html"],
+    ["Rock Brasil", "/radio-rock-brasil.html"],
+    ["Hits", "/radio-hits.html"],
+    ["Disco", "/radio-world-disco-deutschland.html"],
+    ["Soul", "/radio-soul.html"],
+    ["Flash House", "/radio-flash-house.html"],
+    ["Reggae", "/radio-world-tunnel-reggae.html"],
+    ["Nostalgia", "/radio-nostalgia-passport.html"],
+    ["80s", "/radio-80s.html"],
+    ["50s & 60s", "/radio-50s-60s.html"],
+    ["Novelas", "/radio-novelas.html"],
+    ["Novela 01", "/radio-novelas.html"],
+    ["Novela 02", "/radio-novelas.html"],
+    ["Novela 03", "/radio-novelas.html"],
+    ["Novela 04", "/radio-novelas.html"],
+    ["Novela 05", "/radio-novelas.html"],
+    ["Novela 06", "/radio-novelas.html"],
+    ["Novela 07", "/radio-novelas.html"],
+    ["Novela 08", "/radio-novelas.html"],
+    ["Novela 09", "/radio-novelas.html"],
+    ["Globo de Ouro", "/globo-de-ouro-player.html"],
+    ["Globo 01", "/globo-de-ouro-player.html"],
+    ["Globo 02", "/globo-de-ouro-player.html"],
+    ["Globo 03", "/globo-de-ouro-player.html"],
+    ["Globo 04", "/globo-de-ouro-player.html"],
+    ["Globo 05", "/globo-de-ouro-player.html"],
+    ["Globo 06", "/globo-de-ouro-player.html"]
+  ];
+
+  function typedList(title, rows) {
+    if (!rows.length) return "";
+    return `<section class="typed-block"><h2>${esc(title)}</h2><ul class="hub-list">${rows.join("")}</ul></section>`;
+  }
+
   function renderResults(root, query, page) {
     const tokens = fold(query).split(" ").filter(Boolean);
     if (!tokens.length) {
-      root.innerHTML = '<p class="blog-empty">Digite um artista, disco, país, década ou tema.</p>';
+      root.innerHTML = '<p class="blog-empty">Digite um artista, uma matéria, uma rádio ou um produto.</p>';
       return;
     }
-    loadIndex().then((items) => {
+    const storiesPromise = loadIndex().catch(() => []);
+    const bandsPromise = fetch("/data/bandas-artistas.json", { credentials: "same-origin" })
+      .then((r) => r.json()).then((data) => data.entities || []).catch(() => []);
+    const storePromise = fetch("/data/store-search/index.json", { credentials: "same-origin" })
+      .then((r) => r.json()).then((data) => data.items || []).catch(() => []);
+    Promise.all([storiesPromise, bandsPromise, storePromise]).then(([items, bands, products]) => {
       const ranked = items.map((item) => ({ item, score: scoreItem(item, tokens) }))
         .filter((row) => row.score > 0)
         .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)));
-      const total = ranked.length;
-      const pages = Math.max(1, Math.ceil(total / PER_PAGE));
+      const stories = ranked.filter((row) => String(row.item.url || "").indexOf("/blog/w/") === -1);
+      const fichas = ranked.filter((row) => String(row.item.url || "").indexOf("/blog/w/") !== -1);
+      const total = stories.length;
+      const pages = Math.max(1, Math.ceil(total / PER_PAGE) || 1);
       const safePage = Math.min(page, pages);
-      const slice = ranked.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
-      if (!total) {
-        root.innerHTML = `<p class="blog-empty">Nenhuma história encontrada para “${esc(query)}”.</p>`;
-        return;
-      }
-      const pager = pages > 1
+      const slice = stories.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
+      const phrase = tokens.join(" ");
+      const artistRows = bands.filter((row) => {
+        const name = fold(row.displayName || "");
+        if (name === "a cena") return false;
+        const hay = fold((row.displayName || "") + " " + (row.slug || ""));
+        return tokens.every((token) => hay.includes(token));
+      }).slice(0, 12).map((row) =>
+        `<li><a href="${esc(row.href)}">${esc(row.displayName)} <span>${esc(row.articleCount)} matérias</span></a></li>`
+      );
+      const radioRows = RADIOS.filter((row) => tokens.every((token) => fold(row[0]).includes(token) || fold(row[1]).includes(token)))
+        .map((row) => `<li><a href="${esc(row[1])}">${esc(row[0])}</a></li>`);
+      const productRows = products.filter((item) => item && item.publishable && item.url).filter((item) => {
+        const hay = item.norm || fold([item.name, item.artist, item.category, item.type].join(" "));
+        return tokens.every((token) => hay.includes(token));
+      }).slice(0, 6).map((item) =>
+        `<li><a href="${esc(item.url)}">${esc(item.name)}</a></li>`
+      );
+      const pager = pages > 1 && total
         ? `<nav class="blog-pager" aria-label="Paginação da busca">${safePage > 1 ? `<a href="/blog/busca.html?q=${encodeURIComponent(query)}&p=${safePage - 1}">Anterior</a>` : ""}<span>${safePage} / ${pages}</span>${safePage < pages ? `<a href="/blog/busca.html?q=${encodeURIComponent(query)}&p=${safePage + 1}">Próxima</a>` : ""}</nav>`
         : "";
-      root.innerHTML = `<p class="blog-search-count">${total} resultado${total === 1 ? "" : "s"} para “${esc(query)}”</p><div class="blog-grid">${slice.map((row) => card(row.item)).join("")}</div>${pager}`;
+      const storyBlock = total
+        ? `<section class="typed-block"><h2>Matérias</h2><p class="blog-search-count">${total} matéria${total === 1 ? "" : "s"} para “${esc(query)}”</p><div class="blog-grid">${slice.map((row) => card(row.item)).join("")}</div>${pager}</section>`
+        : "";
+      const fichaSlice = fichas.filter((row) => {
+        const title = fold(row.item.title || "");
+        return title === phrase || title.includes(phrase);
+      }).slice(0, 5);
+      const fichaBlock = fichaSlice.length
+        ? `<section class="typed-block"><h2>Fichas</h2><ul class="hub-list">${fichaSlice.map((row) => `<li><a href="${esc(row.item.url)}">${esc(row.item.title)} <span>Ficha</span></a></li>`).join("")}</ul></section>`
+        : "";
+      const html = typedList("Artistas", artistRows) + storyBlock + typedList("Rádios", radioRows) + typedList("Produtos", productRows) + fichaBlock;
+      root.innerHTML = html || `<p class="blog-empty">Nada publicado para “${esc(query)}”.</p>`;
+      if (phrase && !html) return;
     }).catch(() => {
-      root.innerHTML = '<p class="blog-empty">Não foi possível carregar o índice de busca agora.</p>';
+      root.innerHTML = '<p class="blog-empty">A busca não carregou agora. O acervo continua nas outras portas.</p>';
     });
   }
 
@@ -104,12 +209,16 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function boot() {
     bindForms();
     const root = document.querySelector("[data-search-root]");
     const state = params();
-    const input = document.getElementById("blog-q");
-    if (input && state.q) input.value = state.q;
+    const input = document.getElementById("blog-q") || document.getElementById("pr-q");
+    if (input && state.q && document.activeElement !== input) input.value = state.q;
     if (root) renderResults(root, state.q, state.p);
-  });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  document.addEventListener("pr:page", boot);
 })();

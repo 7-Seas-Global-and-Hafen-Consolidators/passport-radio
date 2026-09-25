@@ -39,8 +39,45 @@ a.back{font-family:Inter,sans-serif;font-size:.78rem;font-weight:800;color:#111}
 <link rel="stylesheet" href="/css/passport-legal-footer.css?v=20260912i">
 <link rel="stylesheet" href="/css/passport-editorial-fonts.css?v=31c">
 <link rel="stylesheet" href="/css/passport-editorial-ink.css?v=31c">
+<meta name="passport:class" content="real">
+<link rel="stylesheet" href="/css/passport-doc.css?v=20260925doc">
 </head>
-<body class="pp-article">
+<body class="pp-article pr-doc">
+<div id="pr-house">
+<a class="pr-brand" href="/"><span>Passport</span><span>Radio</span></a>
+<form class="pr-search" action="/blog/busca.html" method="get" role="search">
+<label class="pr-sr" for="pr-q">Buscar</label>
+<input id="pr-q" name="q" type="search" placeholder="Matérias, artistas, autores, rádios, agenda, loja" autocomplete="off">
+<button type="submit">Buscar</button>
+</form>
+<div class="pr-player" id="pr-player">
+<button type="button" id="pr-play" aria-label="Tocar">▶</button>
+<p class="pr-now"><strong id="pr-name">Escolha uma rádio</strong> <span id="pr-state"></span></p>
+<label class="pr-vol">Volume <input id="pr-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
+<audio id="pr-audio" preload="none"></audio>
+<div class="pr-yt" aria-hidden="true"><div id="pr-yt"></div></div>
+</div>
+<nav class="pr-babies" id="pr-babies" aria-label="Rádios">
+<div class="pr-group"><h2>Música</h2><div class="pr-units"><button type="button" data-pr="metal:metal" aria-pressed="false">Metal</button><button type="button" data-pr="metal:unplugged" aria-pressed="false">Unplugged</button><button type="button" data-pr="metal:regenbogen" aria-pressed="false">Unplugged II</button><button type="button" data-pr="metal:metalwarriors" aria-pressed="false">Heavy Metal</button><button type="button" data-pr="metal:gothic" aria-pressed="false">Gothic Passport</button><button type="button" data-pr="metal:livejam" aria-pressed="false">Live Jam</button></div></div><div class="pr-group"><h2>80s</h2><div class="pr-units"><button type="button" data-pr="80s:Pop" aria-pressed="false">Pop</button><button type="button" data-pr="80s:Soft" aria-pressed="false">Soft</button><button type="button" data-pr="80s:Country" aria-pressed="false">Country</button><button type="button" data-pr="80s:Soft R&amp;B" aria-pressed="false">Soft R&amp;B</button><button type="button" data-pr="80s:R&amp;B" aria-pressed="false">R&amp;B</button><button type="button" data-pr="80s:Hair Metal" aria-pressed="false">Hair Metal</button></div></div><div class="pr-group"><h2>Rádios</h2><div class="pr-units"><button type="button" data-pr="mpb" aria-pressed="false">MPB</button><button type="button" data-pr="rock" aria-pressed="false">Rock Brasil</button><button type="button" data-pr="soul" aria-pressed="false">Soul</button><button type="button" data-pr="disco" aria-pressed="false">Disco</button><button type="button" data-pr="reggae" aria-pressed="false">Reggae</button><button type="button" data-pr="jovem" aria-pressed="false">Jovem Guarda</button><button type="button" data-pr="hits" aria-pressed="false">Hits</button><button type="button" data-pr="oldies" aria-pressed="false">50s &amp; 60s</button><button type="button" data-pr="flash" aria-pressed="false">Flash House</button><button type="button" data-pr="nostalgia" aria-pressed="false">Nostalgia</button><button type="button" data-pr="novela:0" aria-pressed="false">Novelas 01</button><button type="button" data-pr="novela:1" aria-pressed="false">Novelas 02</button><button type="button" data-pr="novela:2" aria-pressed="false">Novelas 03</button><button type="button" data-pr="novela:3" aria-pressed="false">Novelas 04</button><button type="button" data-pr="novela:4" aria-pressed="false">Novelas 05</button><button type="button" data-pr="novela:5" aria-pressed="false">Novelas 06</button><button type="button" data-pr="novela:6" aria-pressed="false">Novelas 07</button><button type="button" data-pr="novela:7" aria-pressed="false">Novelas 08</button><button type="button" data-pr="novela:8" aria-pressed="false">Novelas 09</button><button type="button" data-pr="globo:0" aria-pressed="false">Globo de Ouro 01</button><button type="button" data-pr="globo:1" aria-pressed="false">Globo de Ouro 02</button><button type="button" data-pr="globo:2" aria-pressed="false">Globo de Ouro 03</button><button type="button" data-pr="globo:3" aria-pressed="false">Globo de Ouro 04</button><button type="button" data-pr="globo:4" aria-pressed="false">Globo de Ouro 05</button><button type="button" data-pr="globo:5" aria-pressed="false">Globo de Ouro 06</button><button type="button" data-pr="liverare" aria-pressed="false">Live &amp; Rare</button></div></div><div class="pr-group"><h2>Américas</h2><div class="pr-units"><button type="button" data-pr="world:py" aria-pressed="false">Radio Paraguay</button><button type="button" data-pr="world:ca" aria-pressed="false">Radio Québec</button><button type="button" data-pr="world:ve" aria-pressed="false">Radio Venezuela</button><button type="button" data-pr="world:mx" aria-pressed="false">PASSPORT MÉXICO</button></div></div><div class="pr-group"><h2>Europa</h2><div class="pr-units"><button type="button" data-pr="world:fr" aria-pressed="false">Radio France</button><button type="button" data-pr="world:ua" aria-pressed="false">Українське музичне радіо</button><button type="button" data-pr="world:ro" aria-pressed="false">Radio Muzică Românească</button><button type="button" data-pr="world:fi" aria-pressed="false">Suomalainen rockradio</button><button type="button" data-pr="world:cz" aria-pressed="false">České rockové rádio</button><button type="button" data-pr="world:lt" aria-pressed="false">Lietuvos roko radijas</button><button type="button" data-pr="world:gr" aria-pressed="false">Ελληνικό ροκ ραδιόφωνο</button><button type="button" data-pr="world:it" aria-pressed="false">Radio Italia</button><button type="button" data-pr="world:catalunya" aria-pressed="false">PASSPORT CATALUNYA</button><button type="button" data-pr="world:tr" aria-pressed="false">Türkiye Müzik Radyosu</button></div></div><div class="pr-group"><h2>África</h2><div class="pr-units"><button type="button" data-pr="world:ea" aria-pressed="false">Rádio África</button></div></div><div class="pr-group"><h2>Ásia</h2><div class="pr-units"><button type="button" data-pr="world:kr" aria-pressed="false">한국 음악 라디오</button><button type="button" data-pr="world:cn" aria-pressed="false">中国音乐电台</button><button type="button" data-pr="world:jp" aria-pressed="false">パスポート日本</button><button type="button" data-pr="world:th" aria-pressed="false">พาสปอร์ตประเทศไทย</button><button type="button" data-pr="world:kz" aria-pressed="false">ПАСПОРТ ҚАЗАҚСТАН</button><button type="button" data-pr="world:pk" aria-pressed="false">پاکستانی موسیقی ریڈیو</button><button type="button" data-pr="world:ir" aria-pressed="false">رادیو موسیقی ایران</button><button type="button" data-pr="world:il" aria-pressed="false">רדיו מוזיקה ישראלית</button></div></div>
+</nav>
+<nav class="pr-sections" id="pr-sections" aria-label="Seções">
+<a href="/">Capa</a>
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/radio.html">Ouvir</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+</nav>
+</div>
+<div id="pr-main">
+
 <article class="wrap">
 <p class="kicker">MR. NOMAD · THE MISSION · SISTERS OF MERCY · MUSIC DNA</p>
 <h1>The Mission nasceu no corredor de saída do Sisters of Mercy.</h1>
@@ -69,7 +106,7 @@ a.back{font-family:Inter,sans-serif;font-size:.78rem;font-weight:800;color:#111}
 <p>Jerry Wayne Hussey. Esse é o nome no documento. No palco ele é Wayne. Canta e toca guitarra — muitas vezes a de doze cordas, essa coisa brilhante que o pós-punk seco costuma recusar.</p>
 <p>Craig David Adams. Baixo. Grave que não pede licença. No Sisters ele já fazia o chão. No Mission o chão ganhou sala maior.</p>
 <p>Os dois não saíram para copiar Eldritch com outro cantor. Saíram para construir uma banda em que a voz pudesse respirar no meio das camadas, não por cima de uma sentença.</p>
-<p class="tool"><b>🔬 BISTURI</b> Quando o Mission entrar, não comece pelo refrão. Fique dois minutos só no baixo do Craig. Depois só nas doze cordas do Wayne. Só no terceiro PLAY junte os dois.</p>
+
 
 <h2><span class="tag">03 · A FORMAÇÃO QUE VIRA ENDEREÇO</span>Mission clássico: quatro corpos, um clima.</h2>
 <table class="roster">
@@ -90,19 +127,7 @@ a.back{font-family:Inter,sans-serif;font-size:.78rem;font-weight:800;color:#111}
 <p>Não é o clipe. Não é a faixa de estúdio que a rádio brasileira grudou na virada dos anos 90. É palco. Philipshalle. Banda inteira.</p>
 <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Rck7vZN5dRI" title="The Mission — Butterfly on a Wheel, Rockpalast" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
 <p class="cap">MIG Music · Live at Rockpalast · 1990.</p>
-<p class="tool"><b>🔎 LUPA</b> No começo, ignore a letra que você já sabe. Siga a 12 cordas. Depois o baixo. Repare o espaço que a voz ganha porque ninguém está brigando por volume. “Love breaks the wings of a butterfly on a wheel” só explode quando a sala inteira já está montada.</p>
-<p>Se a música parecer “bonita demais” para gótico, ótimo. Esse é o ponto. Mission nunca pediu desculpa por ter brilho. A camada é o método.</p>
 
-<h2><span class="tag">05 · DO OUTRO LADO DA PORTA</span>Sisters of Mercy não é nota de rodapé.</h2>
-<p>Andrew Eldritch continua Andrew William Harvey Taylor. A voz é uma sentença. O Doktor Avalanche continua o baterista que não pisca.</p>
-<p>Em 1993, quando sai <em>Under the Gun</em>, o single novo no meio de uma coletânea, quem está na guitarra é Adam Pearson. No disco, Terri Nunn (Berlin) divide o vocal. Na televisão alemã Elf99, 26 de novembro de 1993 — a última TV da banda —, quem assume a parte dela é Jovanka Wilsdorf, também nos teclados.</p>
-<p>Wayne e Craig já não estão ali. Faz oito anos. Mesmo assim a música ainda carrega a pergunta da ruptura: o que uma banda vira quando o fundador decide que a máquina e a voz bastam?</p>
-
-<h2><span class="tag">06 · PLAY 2</span>Sisters of Mercy · Under the Gun · Elf99 · 26/11/1993.</h2>
-<p>Você pediu esse. É esse.</p>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/lHqGACxmjaY" title="Sisters of Mercy — Under the Gun, Elf99 1993" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-<p class="cap">Elf99 · 26 de novembro de 1993 · última performance televisiva do Sisters.</p>
-<p class="tool"><b>🔬 BISTURI</b> Não olhe só para o Eldritch. Ache o pulso da máquina. Ache o espaço da segunda voz. Compare com o Rockpalast de cinco minutos atrás: lá a bateria sua; aqui o Doktor marca o chão sem pedir ar. As duas bandas saíram da mesma casa. Não saíram com a mesma mobiliária.</p>
 
 <h2><span class="tag">07 · O ROSTER QUE A RUPTURA ESPALHOU</span>Para não perder o fio.</h2>
 <table class="roster">
@@ -131,5 +156,28 @@ a.back{font-family:Inter,sans-serif;font-size:.78rem;font-weight:800;color:#111}
 <p class="click">3... 2... 1... CLICK.</p>
 <p><a class="back" href="/">← Passport Radio</a> · <a class="back" href="/editorial.html">Arquivo</a></p>
 </article>
+
+</div>
+<footer id="pr-foot">
+<nav aria-label="Rodapé">
+<a href="/noticias.html">Notícias</a>
+<a href="/agenda.html">Agenda</a>
+<a href="/editorial.html">Arquivo</a>
+<a href="/blog/arquivo/letras.html">Bandas e artistas</a>
+<a href="/blog/arquivo/autores.html">Autores</a>
+<a href="/blog/busca.html">Busca</a>
+<a href="/participe.html">Participar</a>
+<a href="/loja.html">Loja</a>
+<a href="/anuncie.html">Anuncie</a>
+<a href="/doe.html">Apoie</a>
+<a href="/contato.html">Contato</a>
+<a href="/privacidade.html">Privacidade</a>
+<a href="/termos.html">Termos</a>
+<a href="/cookies.html">Cookies</a>
+</nav>
+<p>Contar histórias que dão vontade de ouvir. A Passport Radio iniciou suas atividades em 1998. Após um período de interrupção, retomou suas operações em 2026.</p>
+</footer>
+
+<script src="/js/passport-doc.js?v=20260925doc" defer></script>
 </body>
 </html>

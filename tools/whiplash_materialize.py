@@ -272,35 +272,35 @@ def write_archive_article(artist: str, noun: str, fmt: str, family: str, hint: s
         return fid[:6]
 
     family_line = {
-        "discos": f"{artist} entra por um disco. A Passport não inventa faixa, capa, selo nem ano de lançamento que o pacote não carrega. O que fica é o nome, o recorte de obra e a decisão de não deixar o disco sumir quando a capa do Blog muda.",
-        "shows": f"{artist} entra por um palco. A Passport não inventa setlist, estádio, cidade nem data de show que o pacote não sustenta. O que fica é o nome, o recorte de palco e a rota para outras histórias do mesmo acervo.",
-        "entrevistas": f"{artist} entra por uma conversa. A Passport não inventa citações. Fala literal só entra quando o pacote de fatos a segura; o resto vira contexto de arquivo, não teatro de entrevista.",
-        "cultura": f"{artist} entra por um recorte de cultura. A Passport não trata isso como nota solta nem como aula. Guarda o nome e a porta, e deixa o leitor seguir para o arquivo, a busca e as entidades.",
-    }.get(family, f"{artist} entra por uma história. A Passport segura o que o pacote deixa cravar: o nome, o formato e a decisão de manter {artist} encontrável. Sem inflar biografia e sem copiar o recorte de outra redação.")
+        "discos": f"{artist} entra por um disco. Esta página não inventa faixa, capa, selo nem ano que os fatos não trazem. O que fica é o nome e o recorte da obra.",
+        "shows": f"{artist} entra por um palco. Esta página não inventa setlist, estádio, cidade nem data que os fatos não trazem. O que fica é o nome e o recorte do palco.",
+        "entrevistas": f"{artist} entra por uma conversa. Citação literal só entra quando o fato a segura. O resto fica como contexto, não como teatro.",
+        "cultura": f"{artist} entra por um recorte de cultura. A página guarda o nome e aponta o arquivo, a busca e as histórias ligadas.",
+    }.get(family, f"{artist} entra por uma história. A página segura o nome e o formato. Sem biografia inventada e sem copiar o texto de outra redação.")
 
     p1_opts = (
         f"{family_line} Esta página não simula urgência de feed. Ela registra o bastante para ser relida, discutida e reencontrada por quem chegou por um nome e quer sair por um disco, um palco ou outra matéria.",
         f"{family_line} Quem abre esta página encontra {artist} no centro, o {noun} como porta e o acervo da Passport como casa. Nada aqui pede que o leitor invente o restante da carreira.",
         f"{family_line} O Blog da Passport existe para contar histórias que dão vontade de ouvir, não para empilhar notas descartáveis. {artist} fica no mapa porque o nome ainda abre caminho.",
-        f"{family_line} A redação não usa volume como desculpa nem como qualidade. Se o pacote é curto, o texto permanece curto de fato e longo de arquivo: situa, nomeia e aponta a próxima porta.",
+        f"{family_line} A redação não usa volume como desculpa nem como qualidade. Se o fato é curto, o texto permanece curto: situa, nomeia e aponta a próxima história.",
     )
     p2_opts = (
-        f"No centro está {artist}. Os nomes que o pacote sustenta permanecem; o que não se sustenta some. Não há aqui professor de escuta, nem pedido para o leitor acompanhar um instrumento, nem slogan de campanha. Há um {noun}, um nome e uma casa que continua depois da capa.",
-        f"{artist} não vira categoria vazia. A matéria liga o nome à entidade, a entidade ao arquivo, o arquivo à busca. Se a Loja tiver produto real deste artista, a grade comercial aparece como trilho — nunca como vitrine colada no texto.",
-        f"A Passport assina esta página como casa, não como pessoa. O tunnel editorial assina o nome da casa. {artist} é o assunto, não a marca de outra redação.",
-        f"Relacionadas, anterior e próxima, discussão e envio de história existem para que {artist} não morra depois da leitura. Quem estava lá pode completar. Quem chegou agora pode seguir. O acervo é a feature.",
+        f"No centro está {artist}. Os nomes que os fatos sustentam permanecem. Não há professor de escuta nem slogan. Há um {noun}, um nome e a casa.",
+        f"{artist} não vira categoria vazia. A matéria liga o nome às histórias do mesmo assunto. Produto da Loja só aparece quando o catálogo tiver esse artista de verdade.",
+        f"A Passport assina esta página como casa. {artist} é o assunto, não a marca de outra redação.",
+        f"Quem estava lá pode completar {artist}. Quem chegou agora pode seguir para outra história do mesmo nome.",
     )
     p3_opts = (
-        f"Esta página existe para que {artist} continue encontrável quando o giro do dia passar. Busca, A–Z, épocas, formatos e a página da entidade abrem o mesmo nome por outro ângulo. A casa não apaga a matéria quando ela sai da capa.",
-        f"O arquivo da Passport não é uma fila esperando. É a cidade já dentro da casa: {artist} em {noun}, ligado a outras histórias do mesmo nome, sem transformar índice em matéria e sem transformar matéria em catálogo de loja.",
-        f"Se falta foto, flyer, ingresso, fita ou um nome nesta história de {artist}, o caminho é a Conta Passport e o envio de história. Correção também entra por ali. A publicação decide o destino. Envio não garante capa.",
-        f"Circulação desta página é retorno: WhatsApp e Telegram levam a pessoa de volta para a Passport, não para um recorte alheio. De {artist} o leitor pode ir ao rádio, à discussão, à colaboração ou à Loja quando a relação for real.",
+        f"Esta página existe para que {artist} continue encontrável quando o dia passar. Busca, A–Z e a página do nome abrem o mesmo assunto por outro ângulo.",
+        f"{artist} está em {noun}, ligado a outras histórias do mesmo nome. Índice não é matéria. Matéria não é vitrine de loja.",
+        f"Se falta foto, ingresso ou um nome nesta história de {artist}, o caminho é escrever para a redação. Envio não publica sozinho.",
+        f"De {artist} o leitor pode ir ao rádio, à discussão ou à Loja quando a relação for real.",
     )
     p4_opts = (
-        f"O que permanece é simples e suficiente. {artist} está no Blog. O {noun} está classificado. A URL é estável. A busca encontra o nome. A entidade agrega o acervo. Sem número inventado, sem citação fabricada, sem marca alheia no rodapé.",
-        f"Leitura, então arquivo, então outra matéria. {artist} não é um card órfão. A Passport deixa o {noun} no mapa para que a história continue encontrável, com o rádio aberto e sem pressa de transformar memória em pauta descartável.",
-        f"Quem chegou por {artist} pode sair por um disco, um palco, um país quando o dado existir, uma época quando o pacote trouxer o ano, ou outra história do mesmo acervo. A cidade cabe. O volume não é motivo de descarte.",
-        f"A Passport não precisa inflar o que o pacote não carrega. Para {artist}, esta página cumpre o ofício: nomear, situar, ligar e guardar. O resto — foto antiga, setlist, declaração — só entra quando houver fato.",
+        f"O que permanece é o nome. {artist} está no Blog. O {noun} está classificado. A busca encontra o nome. Sem número inventado, sem citação fabricada, sem marca alheia.",
+        f"{artist} não é um card órfão. A Passport deixa o {noun} para a história continuar encontrável, com o rádio aberto.",
+        f"Quem chegou por {artist} pode sair por outra história do mesmo acervo quando o fato existir. Volume não é motivo para inventar texto.",
+        f"Para {artist}, esta página nomeia, situa e guarda. Foto, setlist e declaração só entram quando houver fato.",
     )
     p1 = mix(n, p1_opts, 7)
     p2 = mix(n, p2_opts, 11)
@@ -308,7 +308,7 @@ def write_archive_article(artist: str, noun: str, fmt: str, family: str, hint: s
     p4 = mix(n, p4_opts, 17)
     if signal and " " in signal and len(signal) > 20:
         p1 = (
-            f"{artist} volta a esta página por um recorte que o pacote nomeia sem copiar o texto alheio. "
+            f"{artist} volta a esta página por um recorte nomeado sem copiar o texto alheio. "
             f"{family_line} A Passport reescreve o sinal em voz própria e larga o que não se sustenta."
         )
     headings = {
@@ -340,19 +340,6 @@ def write_archive_article(artist: str, noun: str, fmt: str, family: str, hint: s
         "author": PUBLIC_AUTHOR,
         "_writer": "archive_mill",
     }
-    extra_needed = 0
-    cfg_min = {"STORY": 360, "FLASH": 280, "LIVE_SIGNAL": 320, "MR_NOMAD": 850}
-    minimum = cfg_min.get(article["format"], 360)
-    extras = (
-        f"O acervo publicado é a memória da casa. {artist} permanece ligado à busca, ao A–Z, "
-        "às relacionadas e à discussão da Conta Passport. Nenhuma matéria boa deve morrer depois de sair da capa. "
-        "Esta página cumpre essa regra com os fatos que existem e recusa os que não existem.",
-        f"Quem procura {artist} neste Blog encontra uma URL estável, um formato classificado e portas para o arquivo. "
-        "A capa é vitrine. O arquivo é a cidade. A Passport não esconde o acervo num JSON invisível ao público.",
-    )
-    while word_count(article) < minimum + 20 and extra_needed < len(extras):
-        article["sections"][-1]["paragraphs"].append({"text": extras[extra_needed], "fact_refs": refs()})
-        extra_needed += 1
     return article
 
 
@@ -391,7 +378,7 @@ def extract_origin(row: dict[str, Any]) -> dict[str, Any]:
         elif slug:
             artist = pretty_artist(slug.replace("-", " "))
         else:
-            artist = "A cena"
+            artist = ""
     entities = [artist]
     for name in title_names:
         if name not in entities and catalog.fold(name) != catalog.fold(artist):
@@ -531,6 +518,14 @@ def classify_hubs(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def materialize(limit: int = 0, apply: bool = True) -> dict[str, Any]:
     config = load_json(CONFIG_PATH, {})
+    if config.get("automatic_publication") is False:
+        return {
+            "mill": "off",
+            "autopsy": {"discovered_clusters": 0, "editorial_articles": 0},
+            "materialized": {"new_stories": 0, "html_written": 0},
+            "failures": {"count": 0},
+            "catalog": {"final": 0},
+        }
     config.setdefault("minimum_words", {"FLASH": 280, "STORY": 360, "MR_NOMAD": 850, "LIVE_SIGNAL": 320})
     config.setdefault("quality_gate", {"mode": "enforce", "require_fact_refs": True, "require_ptbr": True})
     day = constitution.editorial_day()
@@ -594,11 +589,9 @@ def materialize(limit: int = 0, apply: bool = True) -> dict[str, Any]:
         if origin_id in seen_origin or cluster_id in seen_clusters or any(h in known_hashes for h in hashes):
             already_published += 1
             continue
-        if origin["artist"].isdigit() or origin["artist"] == origin_id:
-            origin["artist"] = (origin.get("entities") or ["A cena"])[0]
-            if origin["artist"].isdigit():
-                origin["artist"] = "A cena"
-                origin["entities"] = ["A cena"]
+        if not origin["artist"] or origin["artist"].isdigit() or origin["artist"] == origin_id or origin["artist"] == "A cena":
+            failures.append({"id": origin_id, "stage": "classify", "error": "missing_artist", "retry": False})
+            continue
         if any(tok in catalog.fold(origin["artist"]) for tok in ("pancadao", "pancadão", "baile funk")):
 
             failures.append({"id": origin_id, "stage": "classify", "error": "blocked_organic", "retry": False})
@@ -623,20 +616,6 @@ def materialize(limit: int = 0, apply: bool = True) -> dict[str, Any]:
         article["story_angle_id"] = pack.get("story_angle_id")
         article["entities"] = origin.get("entities") or [origin["artist"]]
         errors = constitution.validate_article(article, candidate, config)
-        if any(e.startswith("too short") for e in errors):
-            pad = (
-                f"{origin['artist']} permanece neste acervo para ser relido, buscado e discutido. "
-                "A capa é vitrine e o arquivo é a cidade. A Passport não esconde a matéria num índice invisível "
-                "e não inventa o que o pacote de fatos não carrega. Quem chegou por este nome pode sair por outra "
-                "história, pela entidade, pelo rádio quando fizer sentido, ou pela Loja quando o produto for real."
-            )
-            refs_pad = [f.get("fact_id") for f in (pack.get("facts") or []) if f.get("fact_id")][:6]
-            if article.get("sections") and refs_pad:
-                article["sections"][-1]["paragraphs"].append({"text": pad, "fact_refs": refs_pad})
-            article = constitution.safe_article(article, candidate)
-            article["author"] = PUBLIC_AUTHOR
-            article["entities"] = origin.get("entities") or [origin["artist"]]
-            errors = constitution.validate_article(article, candidate, config)
         gate = quality_gate.evaluate(article, pack, config)
         if errors or gate.get("decision") != "WOULD_PUBLISH":
             failures.append({

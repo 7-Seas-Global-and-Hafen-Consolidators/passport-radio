@@ -21,15 +21,15 @@
         <section class="journey-business">
           <article class="journey-business__store"><span>PASSPORT STORE · ENCARTE</span><h2>Produto, história e identidade.</h2><p>Peças escolhidas pela casa, sem transformar a rádio num depósito de vitrines.</p><a href="loja.html">ABRIR A LOJA →</a></article>
           <article><span>MÍDIA PASSPORT</span><h2>Anuncie.</h2><p>Bandas, shows, festivais, lojas e marcas dentro de uma publicação musical viva.</p><a href="anuncie.html">VER FORMATOS →</a></article>
-          <article><span>AJUDE A PASSPORT</span><h2>Mantenha a casa no ar.</h2><p>Histórias, arquivo, pesquisa e sinais independentes continuam porque alguém ajuda.</p><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">AJUDAR AGORA →</a></article>
+          <article><span>AJUDE A PASSPORT</span><h2>Mantenha a casa no ar.</h2><p>Histórias, arquivo, pesquisa e rádio independente continuam porque alguém ajuda.</p><a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">AJUDAR AGORA →</a></article>
         </section>
-        <section class="journey-continue"><span>CONTINUE VIAJANDO</span><nav>
-          <a href="editorial.html"><b>LEITURA</b>Editorial 24H</a>
-          <a href="destinos.html"><b>MEMÓRIA</b>Arquivo completo</a>
-          <a href="radio.html"><b>SINAL</b>Rádio 24H</a>
-          <a href="radio-mundo.html"><b>MUNDO</b>World Dial™</a>
-          <a href="promocoes.html"><b>AGORA</b>Promoções</a>
-          <a href="minha-passport.html"><b>CASA</b>Minha Passport</a>
+        <section class="journey-continue"><span>OUTRAS PORTAS</span><nav>
+          <a href="editorial.html"><b>ARQUIVO</b>Histórias fora da capa</a>
+          <a href="blog/arquivo/letras.html"><b>BANDAS</b>Artistas de A a Z</a>
+          <a href="participe.html"><b>PARTICIPE</b>Envio não publica</a>
+          <a href="loja.html"><b>LOJA</b>Catálogo real</a>
+          <a href="anuncie.html"><b>ANUNCIE</b>Formatos e preços</a>
+          <a href="minha-passport.html"><b>CONTA</b>Minha Passport</a>
         </nav></section>
       `);
     }

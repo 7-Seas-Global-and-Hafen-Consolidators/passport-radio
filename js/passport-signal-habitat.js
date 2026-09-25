@@ -28,14 +28,14 @@
       '<img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="36" height="36">' +
       "<span><b>PASSPORT RADIO</b><small>Contar histórias que dão vontade de ouvir</small></span></a>" +
       '<nav class="pp-signal-nav" aria-label="Portas da Passport">' +
-      '<a href="/" target="_top">Home</a>' +
-      '<a href="/noticias.html" target="_top">Notícias</a>' +
-      '<a href="/editorial.html" target="_top">Arquivo</a>' +
       '<a href="/radio.html" target="_top">Ouvir</a>' +
+      '<a href="/noticias.html" target="_top">Notícias</a>' +
+      '<a href="/blog.html" target="_top">Histórias</a>' +
+      '<a href="/editorial.html" target="_top">Arquivo</a>' +
+      '<a href="/blog/arquivo/letras.html" target="_top">Bandas & Artistas</a>' +
+      '<a href="/participe.html" target="_top">Participe</a>' +
       '<a href="/loja.html" target="_top">Loja</a>' +
-      '<a href="/promocoes.html" target="_top">Promoções</a>' +
       '<a href="/anuncie.html" target="_top">Anuncie</a>' +
-      '<a href="' + SUPPORT + '" target="_blank" rel="noopener">Ajude</a>' +
       "</nav>";
     document.body.insertBefore(header, document.body.firstChild);
     if (!document.querySelector("[data-pp-signal-foot]")) {
@@ -92,7 +92,7 @@
   function loadCookieNotice() {
     if (document.querySelector('script[data-passport-cookie-foundation]')) return;
     const s = document.createElement("script");
-    s.src = "/js/passport-site-foundation.js?v=20260918a";
+    s.src = "/js/passport-site-foundation.js?v=20260924close";
     s.defer = true;
     s.dataset.passportCookieFoundation = "1";
     document.head.appendChild(s);
@@ -112,3 +112,5 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, { once: true });
   else boot();
 })();
+
+;(()=>{if(window.PassportPorta||document.querySelector('script[data-pg-porta]'))return;const s=document.createElement('script');s.src='/js/passport-musical-door.js?v=20260924casa';s.defer=true;s.dataset.pgPorta='1';document.head.appendChild(s);})();
