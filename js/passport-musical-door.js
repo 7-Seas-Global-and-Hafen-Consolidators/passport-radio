@@ -359,6 +359,19 @@
       }
       return;
     }
+    if (owned.kind === "external" && (owned.media || owned.external)) {
+      const media = owned.media || owned.external;
+      if (media.paused) {
+        claimBus();
+        const attempt = media.play();
+        if (attempt && attempt.catch) attempt.catch(() => paint(owned.name, owned.note, "TOQUE PARA CONTINUAR"));
+      } else {
+        media.pause();
+        paint(owned.name, owned.note, "PAUSADO");
+        remember({ live: false });
+      }
+      return;
+    }
     if (owned.kind === "url" && owned.media) {
       const media = owned.media;
       if (media.paused) {
@@ -577,43 +590,59 @@
     const bar = document.createElement("div");
     bar.id = "pg-porta";
     bar.className = "pg-porta";
+    const path = location.pathname;
+    const home = path === "/" || path === "/index.html";
+    const radioPage = /^\/radio(?:-|\.|$)/.test(path) || path === "/globo-de-ouro-player.html";
+    const full = home || radioPage;
     const directOrder = [
       ["mpb", "MPB"], ["rock", "Rock Brasil"], ["soul", "Soul"], ["disco", "Disco"], ["reggae", "Reggae"],
       ["jovem", "Jovem Guarda"], ["hits", "Hits"], ["oldies", "50s & 60s"], ["flash", "Flash House"], ["nostalgia", "Nostalgia"]
     ];
-    const showLive = /(\/radio(?:-live-rare)?\.html|\/radio\/?)$/.test(location.pathname);
+    const showLive = /(\/radio(?:-live-rare)?\.html|\/radio\/?)$/.test(path);
+    const grade = full
+      ? '<div class="pg-grade" id="pg-porta-grade">' +
+        gradeRow("Música", METAL.map((item) => stationButton('data-pg-metal="' + item.id + '"', item.name)).join("")) +
+        gradeRow("80s", EIGHTIES.map((item) => stationButton('data-pg-80s="' + item.name + '"', item.name)).join("")) +
+        gradeRow("Outras rádios", directOrder.map(([id, label]) => stationButton('data-pg-choose="' + id + '"', label)).join("")) +
+        gradeRow("Novelas", NOVELAS.map((_, index) => stationButton('data-pg-novela="' + index + '"', "Novela " + String(index + 1).padStart(2, "0"))).join("")) +
+        gradeRow("Globo de Ouro", GLOBO.map((_, index) => stationButton('data-pg-globo="' + index + '"', "Globo " + String(index + 1).padStart(2, "0"))).join("")) +
+        gradeRow("Live & Rare",
+          '<a class="pg-st" href="/radio-live-rare.html#wackentv">WackenTV</a>' +
+          '<a class="pg-st" href="/radio-live-rare.html#bbc-music">BBC Music</a>' +
+          '<a class="pg-st" href="/radio-live-rare.html#midnight-special">The Midnight Special</a>' +
+          '<a class="pg-st" href="/radio-live-rare.html#live-aid">Live Aid</a>') +
+        '<h3>Rádios do Mundo</h3><div class="pg-world" id="pg-world-list"></div>' +
+        (showLive
+          ? '<div class="pg-live-find"><input id="pg-live-q" type="search" placeholder="Buscar no Live & Rare" aria-label="Buscar no Live & Rare"></div><div id="pg-live-list"></div>'
+          : "") +
+        "</div>"
+      : "";
     bar.innerHTML =
       '<div class="pg-dial">' +
         '<button type="button" id="pg-porta-play" aria-label="Tocar ou pausar">Tocar</button>' +
         '<span class="pg-nowcopy"><strong id="pg-porta-track">Passport Radio</strong><small id="pg-porta-meta"></small></span>' +
         '<label class="pg-vol">Volume <input id="pg-porta-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>' +
         '<span id="pg-porta-state" class="pg-state"></span>' +
+        (full ? "" : '<a class="pg-all" href="/radio.html">Todas as rádios</a>') +
       "</div>" +
-      '<div class="pg-grade" id="pg-porta-grade">' +
-        gradeRow("Música", METAL.map((item) => stationButton('data-pg-metal="' + item.id + '"', item.name)).join("")) +
-        gradeRow("80s", EIGHTIES.map((item) => stationButton('data-pg-80s="' + item.name + '"', item.name)).join("")) +
-        gradeRow("Outras rádios", directOrder.map(([id, label]) => stationButton('data-pg-choose="' + id + '"', label)).join("")) +
-        gradeRow("Novelas", NOVELAS.map((_, index) => stationButton('data-pg-novela="' + index + '"', String(index + 1).padStart(2, "0"))).join("")) +
-        gradeRow("Globo de Ouro", GLOBO.map((_, index) => stationButton('data-pg-globo="' + index + '"', String(index + 1).padStart(2, "0"))).join("")) +
-        gradeRow("Live & Rare",
-          '<a class="pg-st" href="/radio.html#wackentv">WackenTV</a>' +
-          '<a class="pg-st" href="/radio.html#bbc-music">BBC Music</a>' +
-          '<a class="pg-st" href="/radio.html#midnight-special">The Midnight Special</a>' +
-          '<a class="pg-st" href="/radio.html#live-aid">Live Aid</a>') +
-        "<h3>Rádios do Mundo</h3><div class=\"pg-world\" id=\"pg-world-list\"></div>" +
-        (showLive
-          ? '<div class="pg-live-find"><input id="pg-live-q" type="search" placeholder="Buscar no Live & Rare" aria-label="Buscar no Live & Rare"></div><div id="pg-live-list"></div>'
-          : "") +
-      "</div>";
+      (home ? "" : grade);
     const mast = $("pr-mast");
     if (mast && mast.parentNode) mast.insertAdjacentElement("afterend", bar);
     else document.body.insertBefore(bar, document.body.firstChild);
+    if (home && grade) {
+      const fold = document.querySelector(".pg-fold");
+      const holder = document.createElement("div");
+      holder.className = "pg-home-grade";
+      holder.innerHTML = grade;
+      if (fold && fold.parentNode) fold.insertAdjacentElement("afterend", holder);
+      else bar.insertAdjacentElement("afterend", holder);
+    }
     $("pg-porta-play").addEventListener("click", toggle);
     $("pg-porta-volume").addEventListener("input", (event) => {
       const value = Number(event.target.value);
       qsa("audio").forEach((audio) => { audio.volume = value; });
     });
-    loadWorld();
+    if (full) loadWorld();
     if (showLive) loadLive();
   }
 
@@ -642,7 +671,7 @@
 
   document.addEventListener("click", (event) => {
     const chooseButton = event.target.closest("[data-pg-choose]");
-    if (chooseButton && (chooseButton.closest("#pg-porta") || chooseButton.closest(".ouv-doors"))) {
+    if (chooseButton && (chooseButton.closest("#pg-porta") || chooseButton.closest(".pg-grade") || chooseButton.closest(".ouv-doors"))) {
       event.preventDefault();
       choose(chooseButton.getAttribute("data-pg-choose"));
       return;

@@ -453,7 +453,7 @@ html.pp-signal-standalone .passport-house .house-head::before {
   grid-area: art;
   display: block;
   min-height: 260px;
-  background: #1a2744 url("/images/passport-radio-definitive.jpg") center/cover no-repeat;
+  background: #fff url("/images/passport-radio-definitive.jpg") center/cover no-repeat;
 }
 html.pp-signal-standalone .passport-house .house-head h1 { grid-area: title; font-size: clamp(36px, 5vw, 52px); margin: 0; align-self: end; }
 html.pp-signal-standalone .passport-house .house-head a { grid-area: back; align-self: start; justify-self: start; font-weight: 700; text-decoration: none; color: var(--pg-blue); }
@@ -833,8 +833,8 @@ html.pp-signal-standalone .passport80s-station.is-active,
 html.pp-signal-standalone .passport-live-channel.is-active,
 html.pp-signal-standalone #novelasDeck button.is-on,
 html.pp-signal-standalone #novelasDeck button[aria-pressed="true"] {
-  background: #1a2744 !important;
-  color: #fff !important;
+  background: #fff !important;
+  color: #e10600 !important;
 }
 html.pp-signal-standalone .passport80s-btn,
 html.pp-signal-standalone #passport80sPrev,
@@ -965,8 +965,8 @@ body.passport-house[data-signal="novelas"] #novelasDeck button {
   padding: 12px 0 !important;
 }
 body.passport-house[data-signal="novelas"] #novelasDeck button[aria-pressed="true"] {
-  background: #1a2744 !important;
-  color: #fff !important;
+  background: #fff !important;
+  color: #e10600 !important;
 }
 
 .ouv-doors {
@@ -1065,14 +1065,14 @@ body.pp-listing .news-grid .list-copy p { margin: 4px 0 0 !important; font-size:
 }
 #world-stations .station strong { font-family: var(--pg-serif); font-size: 22px; font-weight: 600; }
 #world-stations .station span { font-size: 14px; }
-#world-stations .station.is-active { background: #1a2744; color: #fff; }
+#world-stations .station.is-active { background: #fff; color: #e10600; }
 #world-stations .station[hidden] { display: none !important; }
 .wd-deck, #world-player {
   position: static !important; max-height: none !important; overflow: visible !important;
   background: #fff !important; color: #1a2744 !important; border: 0 !important; border-top: 1px solid #1a2744 !important; box-shadow: none !important;
 }
 #world-play, #world-stop { min-height: 44px; min-width: 44px; border: 0; background: #c4312e; color: #fff; font-weight: 700; cursor: pointer; }
-#world-stop { background: #1a2744; }
+#world-stop { background: #fff; color: #111; border: 1px solid #111; }
 
 #fofonete-dock, .fofonete-dock {
   left: auto !important;

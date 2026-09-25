@@ -40,14 +40,13 @@
 <div class="player pg-now" id="passport-player" style="height:56px">
   <button class="play" id="play" type="button" aria-label="Tocar ou pausar">▶</button>
   <span class="player-copy"><strong id="track">METAL</strong><small id="meta">24 horas</small></span>
-  <span class="status"><i></i><span id="state">24H · PRONTO</span></span>
+  <span class="status"><i></i><span id="state"></span></span>
   <button type="button" class="pg-expand" id="pg-expand" aria-expanded="false" aria-controls="pg-player-drawer">Opções</button>
   <div id="pg-player-drawer" class="pg-player-drawer" hidden>
     <button id="prev" type="button">Anterior</button>
     <button id="next" type="button">Próximo</button>
     <label class="pg-vol">Volume <input id="pg-home-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume"></label>
     <a href="/radio.html">Todas as rádios</a>
-    <p>A escolha das rádios está no topo. Volume só muda esta transmissão. Não há progresso para arrastar.</p>
   </div>
   <audio id="audio" preload="none"></audio>
 </div>

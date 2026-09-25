@@ -1,14 +1,14 @@
-/* Cabeçalho único. Branco, marca, busca, seções. Não mexe em preço, SKU nem stream. */
+/* Cabeçalho único. A marca abre a casa. Depois a navegação. Depois o produto. */
 (function () {
   if (!document.querySelector('link[href*="passport-house.css"]')) {
     var link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "/css/passport-house.css?v=20260925rs";
+    link.href = "/css/passport-house.css?v=20260925c";
     document.head.appendChild(link);
   }
   if (!document.querySelector('script[src*="passport-musical-door.js"]')) {
     var door = document.createElement("script");
-    door.src = "/js/passport-musical-door.js?v=20260925rs";
+    door.src = "/js/passport-musical-door.js?v=20260925c";
     door.defer = true;
     document.body.appendChild(door);
   }
@@ -25,6 +25,9 @@
   var mast = document.createElement("div");
   mast.id = "pr-mast";
   mast.innerHTML =
+    '<div class="pr-brandline">' +
+      '<a class="pr-word" href="/"><span>Passport</span><span>Radio</span></a>' +
+    "</div>" +
     '<div class="pr-util">' +
       '<a href="/historias/contar-historias-que-dao-vontade-de-ouvir.html">Sobre</a>' +
       '<a href="/anuncie.html">Anunciar</a>' +
@@ -36,7 +39,6 @@
       '<a href="https://t.me/+FKto2N185cs4OGU0">Telegram</a>' +
     "</div>" +
     '<div class="pr-head">' +
-      '<a class="pr-word" href="/">Passport<small>Radio</small></a>' +
       '<button class="pr-menu-btn" type="button" aria-expanded="false" aria-controls="pr-red">Menu</button>' +
       '<nav class="pr-sections" id="pr-red" aria-label="Seções">' +
         '<a href="/noticias.html"' + current("/noticias.html") + ">Notícias</a>" +
@@ -62,5 +64,24 @@
       var open = nav.classList.toggle("is-open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
+  }
+
+  if (!document.querySelector(".pr-circ")) {
+    var circ = document.createElement("nav");
+    circ.className = "pr-circ";
+    circ.setAttribute("aria-label", "Circulação");
+    circ.innerHTML =
+      '<a href="/noticias.html">Notícias</a>' +
+      '<a href="/agenda.html">Agenda</a>' +
+      '<a href="/editorial.html">Arquivo</a>' +
+      '<a href="/blog/arquivo/letras.html">Bandas e artistas</a>' +
+      '<a href="/blog/busca.html">Busca</a>' +
+      '<a href="/participe.html">Participe</a>' +
+      '<a href="/radio.html">Ouvir</a>' +
+      '<a href="/loja.html">Loja</a>' +
+      '<a href="/contato.html">Contato</a>' +
+      '<a href="/anuncie.html">Anuncie</a>' +
+      '<a href="/doe.html">Apoie</a>';
+    document.body.appendChild(circ);
   }
 })();

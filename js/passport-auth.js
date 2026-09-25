@@ -35,7 +35,7 @@
   const RETURN_TO=returnToFromUrl || returnToFromStorage || '';
   if(RETURN_TO) sessionStorage.setItem('passport_return_to',RETURN_TO);
 
-  if(!window.supabase){show('A Conta Passport não carregou agora. Você continua lendo o site. Para falar com a redação, escreva para passportradio.online@gmail.com.',true);return;}
+  if(!window.supabase){show('O acesso não carregou agora. Você continua lendo o site. Para falar com a redação, escreva para passportradio.online@gmail.com.',true);return;}
 
   const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 

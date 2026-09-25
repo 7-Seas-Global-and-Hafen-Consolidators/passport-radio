@@ -828,22 +828,39 @@ def _paragraphs_html(section: dict[str, Any], entities: list[str]) -> str:
 
 
 def _link_entities(escaped_text: str, entities: list[str]) -> str:
-    used: set[str] = set()
-    out = escaped_text
-    for name in entities:
-        name = base.clean(name)
+    """Link the first visible mention of each entity. Never rewrite inside a tag or an existing anchor."""
+    names: list[str] = []
+    seen: set[str] = set()
+    for raw in sorted(entities, key=lambda item: len(base.clean(item)), reverse=True):
+        name = base.clean(raw)
         if len(name) < 3 or name.lower() in catalog.ENTITY_STOP:
             continue
         key = name.lower()
-        if key in used:
+        if key in seen:
             continue
+        seen.add(key)
+        names.append(name)
+    if not names:
+        return escaped_text
+    out = escaped_text
+    for name in names:
         pattern = re.compile(re.escape(html.escape(name, quote=False)), re.I)
-        if not pattern.search(out):
-            continue
-        href = f"/blog/e/{catalog.slugify(name)}.html"
-        out, n = pattern.subn(f'<a class="blog-body-link" href="{href}">{html.escape(name)}</a>', out, count=1)
-        if n:
-            used.add(key)
+        placed = False
+
+        def outside(match: re.Match[str], current: str = out, label: str = name) -> str:
+            nonlocal placed
+            if placed:
+                return match.group(0)
+            prefix = current[: match.start()]
+            if prefix.rfind("<") > prefix.rfind(">"):
+                return match.group(0)
+            if len(re.findall(r"<a\b", prefix, re.I)) > len(re.findall(r"</a>", prefix, re.I)):
+                return match.group(0)
+            placed = True
+            href = f"/blog/e/{catalog.slugify(label)}.html"
+            return f'<a class="blog-body-link" href="{href}">{html.escape(match.group(0))}</a>'
+
+        out = pattern.sub(lambda match, current=out, label=name: outside(match, current, label), out)
     return out
 
 
