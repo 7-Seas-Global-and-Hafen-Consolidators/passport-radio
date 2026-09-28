@@ -42,30 +42,11 @@
     return body;
   }
 
-  function stylesheetHrefs(doc) {
-    return [...doc.querySelectorAll('link[rel="stylesheet"][href]')]
-      .map(x => x.getAttribute("href"))
-      .filter(Boolean)
-      .filter(h => !/fofonete|passport-tokens|passport-portal|passport-legal-footer|passport-paper-home/.test(h));
-  }
-
   function scriptSrcs(doc) {
     return [...doc.querySelectorAll("script[src]")]
       .map(x => x.getAttribute("src"))
       .filter(Boolean)
       .filter(s => !/passport-bus\.js|fofonete-exit-intent|passport-signal-habitat|passport-house\.js|passport-legal-footer/.test(s));
-  }
-
-  function ensureScopedStyles(doc) {
-    stylesheetHrefs(doc).forEach(href => {
-      const key = "pp-native-style-" + btoa(unescape(encodeURIComponent(href))).replace(/[^a-z0-9]/gi,"");
-      if (document.getElementById(key)) return;
-      const link = document.createElement("link");
-      link.id = key;
-      link.rel = "stylesheet";
-      link.href = href;
-      document.head.appendChild(link);
-    });
   }
 
   function loadScripts(srcs) {
@@ -91,7 +72,6 @@
       const html = await res.text();
       if (active !== card) return;
       const doc = new DOMParser().parseFromString(html, "text/html");
-      ensureScopedStyles(doc);
       const fragment = cleanFragment(doc);
       stage.replaceChildren(...fragment.childNodes);
       await loadScripts(scriptSrcs(doc));
