@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TESTE · Home Qwen + bebês reais · Passport Radio</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/passport-home-pele.css?v=20260928b">
+<script src="/js/passport-bus.js?v=20260910"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js" defer></script>
+<style>
+#qwen-parents,#qwen-kids{display:flex;flex-wrap:wrap;gap:.4rem .7rem;justify-content:center;padding:.6rem 1rem}
+#qwen-parents button,#qwen-kids button{background:none;border:0;font:600 12px/1.2 "Source Sans 3",sans-serif;letter-spacing:.04em;cursor:pointer;color:#111}
+#qwen-parents button.is-on,#qwen-kids button.is-on{color:#c41e3a;text-decoration:underline;text-underline-offset:4px}
+#qwen-vol{width:90px;accent-color:#c41e3a}
+#qwen-yt{width:0;height:0;overflow:hidden}
+.qwen-note{text-align:center;font:12px/1.4 "Source Sans 3",sans-serif;color:#666;padding:0 1rem 1rem}
+</style>
+</head>
+<body class="pp-body pp-home">
+<header class="pele-mast">
+  <div></div>
+  <h1 class="pele-wordmark">Passport<br><em>Radio</em><small class="pele-mark">1998 · 2026</small></h1>
+  <div class="pele-social" aria-label="Redes">
+    <a href="#" title="Instagram">ig</a>
+    <a href="#" title="Facebook">f</a>
+    <a href="#" title="X">x</a>
+    <a href="#" title="YouTube">▶</a>
+  </div>
+</header>
+<div class="pele-rules" aria-hidden="true"><i></i><i></i></div>
+<div class="player" id="passport-player">
+  <button id="prev" aria-label="Canal anterior" hidden>◀</button>
+  <button class="play" id="play" aria-label="Tocar">▶</button>
+  <button id="next" aria-label="Próximo canal" hidden>▶</button>
+  <span class="player-copy"><strong id="track">Metal</strong><small id="meta">Passport Radio · Continuous Signals™</small></span>
+  <span class="status"><i></i><span id="state">PRONTO</span></span>
+  <label class="qwen-vol-lab">vol <input id="qwen-vol" type="range" min="0" max="1" step="0.01" value="0.9"></label>
+  <audio id="audio" preload="none"></audio>
+</div>
+<p class="qwen-note">PÁGINA DE TESTE. Não é a Home viva. Clique pai → bebê → PLAY. Um sinal por vez.</p>
+<nav id="qwen-parents" aria-label="Pais"></nav>
+<nav id="qwen-kids" aria-label="Bebês"></nav>
+<div id="qwen-yt"></div>
+<section class="pele-edition" aria-label="Edição">
+  <div class="pele-cover">
+    <aside class="pele-rail">
+      <p class="pele-sec">Elenco</p>
+      <article><span class="pele-kicker">Chegou ao fim</span><h4>Sepultura se despede do Rock in Rio.</h4></article>
+    </aside>
+    <article class="pele-hero">
+      <span class="pele-badge">Capa</span>
+      <h2>Anos 80 Vol. 2: músicas que o Brasil nunca esqueceu</h2>
+      <p class="pele-lede">Rádio, novela, TV, danceteria, cinema e shows.</p>
+      <p class="pele-by">2026-09-03 · Mr. Nomad</p>
+    </article>
+    <aside class="pele-side">
+      <article class="pele-spot">
+        <span class="pele-kicker">Apoie</span>
+        <h4>Pix, boleto, cartão. A porta da Passport não fecha.</h4>
+      </article>
+    </aside>
+  </div>
+</section>
+<script src="/js/qwen-home-babies-adapter.js?v=20260928t1" defer></script>
+</body>
+</html>
