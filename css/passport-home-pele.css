@@ -237,3 +237,71 @@ body.pp-home .mold-videos{max-width:var(--max);margin:16px auto;padding:0 18px}
   .pele-cover{grid-template-columns:1fr}
   .pele-rail{border-right:0;padding-right:0;border-bottom:1px solid var(--ink);padding-bottom:12px}
 }
+
+
+/* Native house stage — Pele B. Never imports the old house theatre. */
+body.pp-home #passport-casa-host .casa-host-stage{padding:16px!important;max-height:none!important;overflow:visible!important}
+body.pp-home #passport-casa-host .casa-host-stage iframe{display:none!important}
+body.pp-home #passport-casa-host .casa-host-stage .house-note,
+body.pp-home #passport-casa-host .casa-host-stage main,
+body.pp-home #passport-casa-host .casa-host-stage .wd-main,
+body.pp-home #passport-casa-host .casa-host-stage .gdo,
+body.pp-home #passport-casa-host .casa-host-stage #passportTunnels,
+body.pp-home #passport-casa-host .casa-host-stage #passport80sPlayer{
+  max-width:none!important;margin:0!important;padding:0!important;background:#fff!important;color:#111!important;
+}
+body.pp-home #passport-casa-host .casa-host-stage button{
+  border:1px solid #111!important;background:#fff!important;color:#111!important;border-radius:0!important;
+  min-height:34px;padding:7px 12px;font:600 13px "Source Sans 3",Arial,sans-serif!important;
+}
+body.pp-home #passport-casa-host .casa-host-stage button:hover,
+body.pp-home #passport-casa-host .casa-host-stage button.is-active,
+body.pp-home #passport-casa-host .casa-host-stage .is-active button{
+  border-color:#c41e3a!important;color:#c41e3a!important;
+}
+body.pp-home #passport-casa-host .casa-host-stage [class*="picker"],
+body.pp-home #passport-casa-host .casa-host-stage [class*="channels"],
+body.pp-home #passport-casa-host .casa-host-stage #world-stations,
+body.pp-home #passport-casa-host .casa-host-stage .tunnel-directory{
+  display:flex!important;flex-wrap:wrap!important;gap:8px!important;background:#fff!important;color:#111!important;
+}
+body.pp-home #passport-casa-host .casa-host-stage .wd-deck,
+body.pp-home #passport-casa-host .casa-host-stage [class*="player"],
+body.pp-home #passport-casa-host .casa-host-stage [class*="deck"],
+body.pp-home #passport-casa-host .casa-host-stage [class*="console"]{
+  background:#fff!important;color:#111!important;border-color:#111!important;box-shadow:none!important;
+}
+body.pp-home #passport-casa-host .casa-host-stage h1,
+body.pp-home #passport-casa-host .casa-host-stage h2,
+body.pp-home #passport-casa-host .casa-host-stage h3,
+body.pp-home #passport-casa-host .casa-host-stage strong{color:#111!important}
+body.pp-home #passport-casa-host .casa-host-stage a{color:#111!important}
+body.pp-home #passport-casa-host .casa-host-stage a:hover{color:#c41e3a!important}
+
+/* Finish the Home as the same magazine instead of letting legacy blocks repaint it. */
+body.pp-home #feed:empty,body.pp-home #pp-feed:empty{display:none}
+body.pp-home .passport-blog-showcase,
+body.pp-home .mold-fofo.pp-doe-shell,
+body.pp-home .pp-footer{
+  box-sizing:border-box;background:#fff!important;color:#111!important;border-radius:0!important;box-shadow:none!important;
+  max-width:1120px!important;margin:0 auto!important;padding:24px 18px!important;
+  font-family:"Source Sans 3",Arial,sans-serif!important;
+}
+body.pp-home .passport-blog-showcase h2,
+body.pp-home .mold-fofo h2{
+  color:#111!important;font-family:"Playfair Display",Georgia,serif!important;
+}
+body.pp-home .passport-blog-showcase a,
+body.pp-home .mold-fofo a,
+body.pp-home .pp-footer a{color:#111!important}
+body.pp-home .passport-blog-showcase a:hover,
+body.pp-home .mold-fofo a:hover,
+body.pp-home .pp-footer a:hover{color:#c41e3a!important}
+body.pp-home .mold-fofo.pp-doe-shell{border-top:1px solid #111!important}
+body.pp-home .mold-fofo.pp-doe-shell>div:first-child{
+  background:#c41e3a!important;color:#fff!important;padding:18px!important;max-width:320px;
+}
+body.pp-home .mold-fofo.pp-doe-shell>div:first-child h2,
+body.pp-home .mold-fofo.pp-doe-shell>div:first-child p,
+body.pp-home .mold-fofo.pp-doe-shell>div:first-child a{color:#fff!important}
+body.pp-home .pp-footer{border-top:4px solid #111!important}
