@@ -1,69 +1,42 @@
 #!/usr/bin/env python3
-"""Static contracts: Home SINAIS composition by proximity. Motors untouched."""
+"""Static contracts for the Qwen v9 Home signal composition."""
 from pathlib import Path
-import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 HOME = (ROOT / "index.html").read_text(encoding="utf-8")
-DOORS = (ROOT / "css/passport-four-doors.css").read_text(encoding="utf-8")
-CI = (ROOT / ".github/workflows/build.yml").read_text(encoding="utf-8")
+APP = (ROOT / "assets/index-DgBCruM8.js").read_text(encoding="utf-8")
+CSS = (ROOT / "assets/index-CcTsvlNy.css").read_text(encoding="utf-8")
 
-ORDER = [
-    "/radio-continuous.html",
-    "/radio-live-rare.html",
-    "/radio-mundo-player.html",
-    "/radio-mpb.html",
-    "/radio-jovem-guarda.html",
-    "/radio-rock-brasil.html",
-    "/radio-hits.html",
-    "/radio-world-disco-deutschland.html",
-    "/radio-soul.html",
-    "/radio-flash-house.html",
-    "/radio-world-tunnel-reggae.html",
-    "/radio-nostalgia-passport.html",
-    "/radio-80s.html",
-    "/radio-50s-60s.html",
-    "/radio-novelas.html",
-    "/globo-de-ouro-player.html",
-]
+if 'src="/assets/index-DgBCruM8.js"' not in HOME:
+    raise SystemExit("Qwen v9 Home bundle missing")
 
-houses = re.findall(r'data-house="([^"]+)"', HOME)
-if houses != ORDER:
-    raise SystemExit(f"SINAIS order drifted:\n{houses}\n!=\n{ORDER}")
+PARENTS = (
+    'continuous:"Continuous Signals"',
+    '"live-rare":"Live & Rare"',
+    'world:"World Dial"',
+    '"80s":"80s"',
+    'novelas:"Novelas"',
+    'globo:"Globo de Ouro"',
+)
+INDIVIDUALS = (
+    'label:"MPB"', 'label:"Jovem Guarda"', 'label:"Rock Brasil"',
+    'label:"Hits"', 'label:"Disco"', 'label:"Soul"',
+    'label:"Flash House"', 'label:"Reggae"', 'label:"Nostalgia"',
+    'label:"50s & 60s"',
+)
+for group, tokens in (("parent", PARENTS), ("individual", INDIVIDUALS)):
+    positions = [APP.find(token) for token in tokens]
+    if -1 in positions or positions != sorted(positions):
+        raise SystemExit(f"Qwen v9 {group} order/composition changed")
 
-clusters = HOME.count('<div class="casas-cluster')
-if clusters != 6:
-    raise SystemExit(f"expected 6 visual clusters, got {clusters}")
-if "casas-cluster--own" not in HOME:
-    raise SystemExit("independent experiences cluster missing")
-if "casas-cluster--solo" not in HOME:
-    raise SystemExit("reggae breath cluster missing")
-if HOME.count('id="passport-casa-host"') != 1:
-    raise SystemExit("host must remain a single node")
-block = HOME.split('id="passport-casas"', 1)[-1].split("passport-casa-host", 1)[0]
-for label in ("INTERNACIONAL", "RETRO", "ESPECIAIS", "GRUPO 1", "GRUPO 2", ">BRASIL<"):
-    if label in block:
-        raise SystemExit(f"visible category label is forbidden: {label}")
-if "<h3" in block:
-    raise SystemExit("cluster titles must not appear as headings")
-
-if ":nth-child(1){--hc:" in DOORS.replace(" ", ""):
-    raise SystemExit("rainbow nth-child pill colors returned")
-if "casas-cluster" not in DOORS:
-    raise SystemExit("four-doors does not compose clusters")
-if "box-shadow:0 0 10px color-mix" in DOORS:
-    raise SystemExit("carnival pill glow returned")
-if ".casa[open] summary" not in DOORS:
-    raise SystemExit("active state is not styled")
-if "pp-vinyl" not in HOME or HOME.count("pp-vinyl-disc") < 16:
-    raise SystemExit("mini-vinyl collection missing")
-if 'id="pp-persist"' not in HOME:
-    raise SystemExit("persist dock missing")
-if "passport-persist-nav.js" not in HOME:
-    raise SystemExit("persist nav is not wired")
-if "tests/test_home_sinais_composition.py" not in CI:
-    raise SystemExit("CI does not run SINAIS composition contracts")
+for token in ('className:"pb-door__groups"', 'className:"pb-door__subs"',
+              'Object.entries(td).map', 'nd.map(T=>', 'dn.children("world")',
+              'dn.select(v,T,Ne.indexOf(T))'):
+    if token not in APP:
+        raise SystemExit(f"Qwen v9 signal composition missing: {token}")
+if '@media(max-width:480px){.pb-door{max-height:416px}}' not in CSS:
+    raise SystemExit("Approved mobile signal block rule changed")
 
 protected = [
     "js/passport-live.js",
@@ -107,9 +80,7 @@ if base:
     if diff.strip():
         raise SystemExit("PROTECTED MOTOR/HOST DIFF IS NOT EMPTY")
 
-print("OK SINAIS composition contracts")
-print("OK order:", " → ".join(Path(h).stem for h in houses))
-print("OK 6 clusters, 1 host, no category titles")
-print("OK rainbow pills removed")
+print("OK Qwen v9 SINAIS composition: six parents and ten individuals in visual order")
+print("OK contextual children and dynamic World Dial")
 if base:
-    print(f"OK protected files empty vs {base}")
+    print(f"OK protected motor/host files empty vs {base}")

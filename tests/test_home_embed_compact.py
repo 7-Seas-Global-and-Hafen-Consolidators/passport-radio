@@ -16,6 +16,7 @@ DISCO = (ROOT / "js/world-disco-deutschland-tunnel.js").read_text(encoding="utf-
 LIVE = (ROOT / "js/passport-live.js").read_text(encoding="utf-8")
 STICKY = (ROOT / "js/continuous-signals-home.js").read_text(encoding="utf-8")
 HOME = (ROOT / "index.html").read_text(encoding="utf-8")
+APP = (ROOT / "assets/index-DgBCruM8.js").read_text(encoding="utf-8")
 
 if "html.pp-signal-frame .house-head" not in HABITAT:
     raise SystemExit("embed compact does not hide .house-head")
@@ -69,12 +70,10 @@ if "0n-disco.radionetz.de" not in DISCO:
     raise SystemExit("World Disco stream was disturbed")
 if "GOTHIC PASSPORT" not in LIVE:
     raise SystemExit("Continuous 6-channel motor was disturbed")
-if "id=\"audio\"" not in HOME.replace("'", '"') and 'id="audio"' not in HOME:
-    raise SystemExit("sticky #audio missing")
-if "vu-panel" not in HOME:
-    raise SystemExit("K-7 VU missing")
-if "continuous-signals-home.js" not in HOME:
-    raise SystemExit("sticky continuous script missing")
+if 'src="/assets/index-DgBCruM8.js"' not in HOME:
+    raise SystemExit("Qwen v9 Home bundle is not loaded")
+if 'id:"audio"' not in APP or 'x.id="qwen-engine-bay"' not in APP:
+    raise SystemExit("Qwen v9 audio/hidden engine host missing")
 
 protected = [
     "js/passport-live.js",

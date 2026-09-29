@@ -1,36 +1,24 @@
 #!/usr/bin/env python3
-"""Static contracts: mini-vinyls + persist shell. Motors stay original."""
+"""Qwen v9 Home controls plus unchanged internal vinyl/navigation contracts."""
 from pathlib import Path
 import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 HOME = (ROOT / "index.html").read_text(encoding="utf-8")
-HOUSES = (ROOT / "js/passport-home-houses.js").read_text(encoding="utf-8")
+APP = (ROOT / "assets/index-DgBCruM8.js").read_text(encoding="utf-8")
 NAV = (ROOT / "js/passport-persist-nav.js").read_text(encoding="utf-8")
 VINYL = (ROOT / "css/passport-vinyl.css").read_text(encoding="utf-8")
 INTERNAL = (ROOT / "css/passport-vinyl-internal.css").read_text(encoding="utf-8")
 CI = (ROOT / ".github/workflows/build.yml").read_text(encoding="utf-8")
 
-if HOME.count("pp-vinyl-disc") != 16:
-    raise SystemExit("expected 16 mini-vinyl discs")
-if HOME.count("id=\"passport-casa-host\"") != 1:
-    raise SystemExit("host must remain a single node")
-if 'id="pp-persist"' not in HOME or 'id="pp-persist-bar"' not in HOME:
-    raise SystemExit("persist dock/bar missing")
-if 'id="pp-nav-page"' not in HOME:
-    raise SystemExit("navigable overlay missing")
-if "passport-persist-nav.js" not in HOME or "passport-vinyl.css" not in HOME:
-    raise SystemExit("vinyl/persist assets not wired on Home")
-if "stage.appendChild(frame)" not in HOUSES:
-    raise SystemExit("iframe must still be born on the host stage")
-if "teardownFrame();" not in HOUSES.split("function activate(card)", 1)[-1].split("function deactivate", 1)[0]:
-    raise SystemExit("activate must still teardown before create")
-load_block = HOUSES.split('frame.addEventListener("load"', 1)[-1].split("stage.appendChild", 1)[0]
-if "triggerAutoplay" in load_block:
-    raise SystemExit("select must not autoplay the house motor")
-if 'id="passport-casa-host-play"' not in HOME:
-    raise SystemExit("compact host is missing Tocar")
+if 'src="/assets/index-DgBCruM8.js"' not in HOME:
+    raise SystemExit("Qwen v9 Home application missing")
+for token in ('className:"player-bar"', 'className:"pb-door__groups"',
+              'className:"pb-door__subs"', 'onClick:()=>ur(-1)',
+              'onClick:()=>ur(1)', 'dn.select(Ie.key,Ie.name,Ie.index)'):
+    if token not in APP:
+        raise SystemExit(f"Qwen v9 Home signal/navigation missing: {token}")
 if re.search(r"\blocalStorage\b|\bsessionStorage\b", NAV):
     raise SystemExit("persist nav must not fake playback with storage")
 if "history.pushState" not in NAV:
@@ -90,7 +78,6 @@ if base:
     if diff.strip():
         raise SystemExit("PROTECTED MOTOR/HABITAT DIFF IS NOT EMPTY")
 
-print("OK vinyl persist contracts")
-print("OK 16 discs, 1 host, persist dock, history fetch")
+print("OK Qwen v9 Home signal navigation, internal vinyl and persist script contracts")
 if base:
     print(f"OK protected motors empty vs {base}")
