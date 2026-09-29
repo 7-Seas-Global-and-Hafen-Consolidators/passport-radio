@@ -1,7 +1,7 @@
 /* PASSPORT RADIO · área DOE — Fofonete pede, Passport recebe, Asaas converte. */
 (() => {
   "use strict";
-  const ASAAS = "https://www.asaas.com/c/shpb8gbiswnw4t2n";
+  const ASAAS = "https://link.mercadopago.com.br/passportradio";
   const root = document.getElementById("pp-doe");
   if (!root) return;
   const home = root.getAttribute("data-doe") === "home";
@@ -31,8 +31,8 @@
       <li><b>Preservação e expansão do acervo</b><span>Memória musical que não cabe em um feed de passagem.</span></li>
     </ul>
     <div class="pp-doe__flow">
-      <p>A Passport explica. A Fofonete chama. DOE AGORA converte. O Asaas recebe — PIX, boleto ou cartão. A Passport não fixa o valor: no checkout você escolhe a contribuição.</p>
+      <p>A Passport explica. A Fofonete chama. DOE AGORA converte. O Mercado Pago recebe — PIX, boleto ou cartão. A Passport não fixa o valor: no checkout você escolhe a contribuição.</p>
       <a class="pp-doe__cta" href="${ASAAS}" target="_blank" rel="noopener">DOE AGORA</a>
-      <span class="pp-doe__gate">Pagamento processado por Asaas · Passport Radio</span>
+      <span class="pp-doe__gate">Pagamento processado por Mercado Pago · Passport Radio</span>
     </div>`;
 })();
