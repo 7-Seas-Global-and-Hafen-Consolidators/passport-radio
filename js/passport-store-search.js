@@ -3,7 +3,7 @@
 
   const CART_KEY = "passport-store-cart-v1";
   const INDEX = "/data/store-search/index.json";
-  const ASAAS = "https://www.asaas.com/c/shpb8gbiswnw4t2n";
+  const MERCADO_PAGO = "https://link.mercadopago.com.br/passportradio";
   const WA = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k";
 
   const fold = (value) => String(value || "")
@@ -68,8 +68,8 @@
       <p>Pix ${money(pixTotal)} <small>5% off o preço Passport</small></p>
       <p>Boleto à vista ${money(total)}</p>
       <p>Cartão em até 6x de ${money(cardEach)}</p>
-      <p class="pp-cart-note">O Asaas desta casa é o checkout atual. Ele não recebe SKU automaticamente. WhatsApp leva o pedido com os itens escolhidos.</p>
-      <p><a class="pp-btn pp-btn--red" href="${ASAAS}" target="_blank" rel="noopener">Checkout Asaas</a>
+      <p class="pp-cart-note">O Mercado Pago é o checkout atual. WhatsApp leva o pedido com os itens escolhidos.</p>
+      <p><a class="pp-btn pp-btn--red" href="${MERCADO_PAGO}" target="_blank" rel="noopener">Checkout Mercado Pago</a>
          <a class="pp-btn pp-btn--ghost" href="${WA}?text=${encodeURIComponent("Pedido Passport Store: " + items.map((i) => i.qty + "× " + i.name + " " + money(i.price)).join(", ") + " | Pix " + money(pixTotal))}" target="_blank" rel="noopener">Pedir via WhatsApp</a></p>
     `;
     slot.onclick = (ev) => {
@@ -193,7 +193,7 @@
       cep.addEventListener("submit", (ev) => {
         ev.preventDefault();
         const out = document.getElementById("pp-store-cep-out");
-        if (out) out.textContent = "Frete e prazo saem do checkout Asaas / WhatsApp. Esta página não inventa transportadora.";
+        if (out) out.textContent = "Frete e prazo saem do checkout Mercado Pago / WhatsApp. Esta página não inventa transportadora.";
       });
     }
   }
