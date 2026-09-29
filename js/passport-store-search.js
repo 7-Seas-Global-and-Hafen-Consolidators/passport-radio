@@ -48,7 +48,7 @@
     if (!slot) return;
     const items = cart();
     if (!items.length) {
-      slot.innerHTML = '<p class="pp-cart-empty">Carrinho vazio. A Loja usa o checkout Asaas da casa; o pedido detalhado também pode ir pelo WhatsApp.</p>';
+      slot.innerHTML = '<p class="pp-cart-empty">Carrinho vazio. A Loja usa o checkout Mercado Pago; o pedido detalhado também pode ir pelo WhatsApp.</p>';
       return;
     }
     const total = items.reduce((n, i) => n + Number(i.price || 0) * Number(i.qty || 1), 0);
