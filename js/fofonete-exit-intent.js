@@ -1,7 +1,7 @@
 /* PASSPORT RADIO · FOFONETE EXIT-INTENT · OWNER ÚNICO DA CAMPANHA DA HOME */
 (()=>{'use strict';
 const IMAGE='/images/fofonete-home.jpg';
-const SUPPORT='https://www.asaas.com/c/shpb8gbiswnw4t2n';
+const SUPPORT='https://link.mercadopago.com.br/passportradio';
 const SEEN_KEY='passport_fofonete_gate_v5';
 const COUNTDOWN=15;
 window.PASSPORT_FOFONETE={art:IMAGE,cta:SUPPORT};
@@ -55,7 +55,7 @@ if (document.body && document.body.classList.contains('pp-home')) { setTimeout(s
 (() => {
   "use strict";
   const IMAGE = (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.art) || "/images/fofonete-home.jpg";
-  const SUPPORT = (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.cta) || "https://www.asaas.com/c/shpb8gbiswnw4t2n";
+  const SUPPORT = (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.cta) || "https://link.mercadopago.com.br/passportradio";
   const DOCK_ID = "fofonete-dock";
   const GATE = "passport_fofonete_gate_v5";
   function bottomSafe() {
