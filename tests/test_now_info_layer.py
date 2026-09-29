@@ -47,7 +47,7 @@ for token in (
 
 for token in (
     '@media(max-width:480px){.pb-door{max-height:416px}}',
-    '.asaas-footer-trust__flags',
+    '.payment-footer-trust__flags',
 ):
     if token not in CSS:
         raise SystemExit(f"Qwen Home style contract missing: {token}")

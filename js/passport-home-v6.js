@@ -67,7 +67,7 @@
     let prods = []; let cap = {};
     try { const r = await fetch("/data/store_inventory.json", { cache: "no-store" }); if (r.ok) { const data = await r.json(); prods = data.products || []; cap = data.technical_capacity || {}; } } catch (e) {}
     if (!prods.length) return "";
-    const payLine = cap.cartao_max_installments ? ("Cartão até " + cap.cartao_max_installments + "x via Asaas") : "PIX, cartão e boleto via Asaas";
+    const payLine = cap.cartao_max_installments ? ("Cartão até " + cap.cartao_max_installments + "x via Mercado Pago") : "PIX, cartão e boleto via Mercado Pago";
     const cards = prods.slice(0, 10).map((p) => `<a class="pp-product" href="loja.html?product=${esc(p.id)}&sku=${esc(p.sku || p.id)}">${p.image ? imgBlock(p.image, p.name) : `<div class="rv6-media" data-img="none"></div>`}<b>${esc(p.category || "LOJA")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-installments">${esc(payLine)}</span></a>`).join("");
     return env("pp-env--loja", "PASSPORT STORE", "Comércio da casa.", "loja.html", "LOJA COMPLETA →", `<div class="pp-shop-grid">${cards}</div>`);
   }

@@ -1,7 +1,7 @@
 {
   "store_id": "passport-radio-official",
   "brand": "Passport Radio",
-  "payment_gateway": "asaas",
+  "payment_gateway": "mercado_pago",
   "payment_methods": [
     "pix",
     "cartao",

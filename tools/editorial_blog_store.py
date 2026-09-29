@@ -21,7 +21,7 @@ SEARCH_DIR = ROOT / "data" / "store-search"
 ENTITY_MAP = ROOT / "data" / "store-entity-map.json"
 PRODUCT_DIR = ROOT / "loja" / "p"
 SITE = "https://passportradio.online"
-ASAAS = "https://www.asaas.com/c/shpb8gbiswnw4t2n"
+MERCADO_PAGO = "https://link.mercadopago.com.br/passportradio"
 WA = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
 
 ARTIST_ALIASES = {
@@ -490,10 +490,10 @@ def render_product_page(product: dict[str, Any]) -> str:
 {artist_html}
 <p>
 <button type="button" class="pp-btn pp-btn--ink" data-add-cart="{_esc(product["id"])}" data-sku="{_esc(sku)}" data-name="{_esc(name)}" data-price="{_esc(price)}" data-pix="{_esc(pix or "")}">Adicionar ao carrinho</button>
-<a class="pp-btn pp-btn--red" href="{ASAAS}" target="_blank" rel="noopener">Checkout Asaas</a>
+<a class="pp-btn pp-btn--red" href="{MERCADO_PAGO}" target="_blank" rel="noopener">Checkout Mercado Pago</a>
 <a class="pp-btn pp-btn--ghost" href="{WA}" target="_blank" rel="noopener">Passport Radio Channel</a>
 </p>
-<p class="pp-cart-note">O Asaas desta casa não recebe SKU automaticamente. O carrinho local monta o pedido; O canal oficial mantém o público conectado à Passport Radio.</p>
+<p class="pp-cart-note">O checkout do Mercado Pago não recebe SKU automaticamente. O carrinho local monta o pedido; O canal oficial mantém o público conectado à Passport Radio.</p>
 </div>
 </article>
 <section id="pp-store-cart" class="pp-store-cart" aria-label="Carrinho"></section>

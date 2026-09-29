@@ -799,7 +799,7 @@ def _footer() -> str:
 <div class="pp-fcol"><a href="/index.html">Home</a><a href="/noticias.html">Notícias</a><a href="/editorial.html">Arquivo</a><a href="/blog.html">Blog</a><a href="/blog/arquivo/">Arquivo do Blog</a><a href="/blog/envie-sua-historia.html">Envie sua história</a><a href="/loja.html">Loja</a></div>
 <div class="pp-fcol"><a href="''' + TELEGRAM_OFFICIAL + '''" target="_blank" rel="noopener">Telegram oficial</a>
 <a href="''' + WHATSAPP_OFFICIAL + '''" target="_blank" rel="noopener">WhatsApp oficial</a>
-<a href="https://www.asaas.com/c/shpb8gbiswnw4t2n" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div>
+<a href="https://link.mercadopago.com.br/passportradio" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div>
 <div class="pp-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
 </body></html>
 '''

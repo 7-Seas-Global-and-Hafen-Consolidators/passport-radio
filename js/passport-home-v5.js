@@ -8,7 +8,7 @@
   const WA_OFFICIAL = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k";
   const FOFONETE = {
     art: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.art) || "/images/fofonete-home.jpg",
-    cta: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.cta) || "https://www.asaas.com/c/shpb8gbiswnw4t2n"
+    cta: (window.PASSPORT_FOFONETE && window.PASSPORT_FOFONETE.cta) || "https://link.mercadopago.com.br/passportradio"
   };
 
   function onAir() {
@@ -58,7 +58,7 @@
 
   function fofoneteSupport(support) {
     if (!support || support.querySelector(".v5-fofonete")) return;
-    const existing = [...support.querySelectorAll("a")].find((a) => a.href.includes("asaas.com/c/shpb8gbiswnw4t2n"));
+    const existing = [...support.querySelectorAll("a")].find((a) => a.href.includes("link.mercadopago.com.br/passportradio"));
     const f = document.createElement("div");
     f.className = "v5-fofonete";
     f.innerHTML = '<img class="v5-fofonete__img" src="' + FOFONETE.art + '" style="object-position:center 42%" alt="Fofonete Passport Radio — Snoopy e Woodstock fazendo as contas da rádio" loading="lazy"><div class="v5-fofonete__body"><b>EU FIZ AS CONTAS DE NOVO.</b><p>A Passport fica no ar com quem lê, ouve, compra e apoia.</p><a class="v5-fofonete__cta" href="' + FOFONETE.cta + '" target="_blank" rel="noopener">APOIAR A PASSPORT →</a></div>';

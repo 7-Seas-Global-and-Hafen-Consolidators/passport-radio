@@ -7,7 +7,7 @@
   const root = document.documentElement;
   root.classList.add(framed ? "pp-signal-frame" : "pp-signal-standalone");
 
-  const SUPPORT = "https://www.asaas.com/c/shpb8gbiswnw4t2n";
+  const SUPPORT = "https://link.mercadopago.com.br/passportradio";
   const YT_SIGNALS = { novelas: 1, globo: 1, "live-rare": 1, brrock: 1 };
 
   function markWorld() {
