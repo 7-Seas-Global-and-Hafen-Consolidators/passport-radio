@@ -5,7 +5,7 @@
 (()=>{
   "use strict";
 
-  const STREAM="https://centova2.euroti.com.br:20062/;";
+  const STREAM="https://centova.euroti.com.br:20062/1/stream.mp3";
   const host=document.getElementById("ppv2EngineBay")||document.getElementById("engineBay");
   if(!host)return;
 
