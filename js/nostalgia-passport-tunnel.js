@@ -1,11 +1,12 @@
 /* PASSPORT RADIO · NOSTALGIA PASSPORT TUNNEL™
-   Sinal da Rádio Nostalgia FM - anos 70, 80 e 90.
+   Fonte substituta: Rádio Studio Flashback via player oficial OnlineRadioBox.
    Sem alterações de outros players, túneis ou layout.
 */
 (()=>{
   "use strict";
 
-  const STREAM="https://stream.rcast.net/281401";
+  const ORB_API="https://onlineradiobox.com";
+  const ORB_ALIAS="studioflashback";
   const host=document.getElementById("ppv2EngineBay")||document.getElementById("engineBay");
   if(!host)return;
 
@@ -30,9 +31,16 @@
     pauseOthers();
     if(window.PassportBus&&typeof window.PassportBus.claim==="function")window.PassportBus.claim();
     status.textContent="CONNECTING";
-    if(audio.src!==STREAM){audio.src=STREAM;audio.load()}
-    try{await audio.play()}
-    catch(_){wants=false;status.textContent="OFFLINE";play.textContent="▶"}
+    try{
+      const r=await fetch(`${ORB_API}/json/br/${ORB_ALIAS}/play?stream=1`,{credentials:"omit"});
+      if(!r.ok)throw new Error("ORB");
+      const d=await r.json();
+      const src=d.url||d.stream||d.src||(Array.isArray(d)?d[0]:null);
+      const url=typeof src==="string"?src:(src&&typeof src==="object"?(src.url||src.stream||src.src):null);
+      if(!url)throw new Error("ORB_STREAM");
+      if(audio.src!==url){audio.src=url;audio.load()}
+      await audio.play()
+    }catch(_){wants=false;status.textContent="OFFLINE";play.textContent="▶"}
   }
 
   function stop(){
