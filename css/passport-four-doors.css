@@ -30,8 +30,8 @@ body.pp-body{background:var(--pp-paper);color:var(--pp-ink-deep);font-family:var
 .pp-onair-btn{background:var(--pp-teal)!important;color:var(--pp-paper)!important;border:0!important}
 .pp-footer{background:var(--pp-ink-deep);color:var(--pp-paper)}
 .pp-footer a{color:var(--pp-gold)}
-body.pp-body [class*="asaas"]{background:var(--pp-cream)!important;color:var(--pp-ink-deep)!important}
-body.pp-body [class*="asaas"] strong,body.pp-body [class*="asaas"] a{color:var(--pp-ink)!important}
+body.pp-body [class*="payment-footer-trust"]{background:var(--pp-cream)!important;color:var(--pp-ink-deep)!important}
+body.pp-body [class*="payment-footer-trust"] strong,body.pp-body [class*="payment-footer-trust"] a{color:var(--pp-ink)!important}
 /* ══════════ MOLDE PRETO (só body.pp-home) ══════════ */
 body.pp-home{background:var(--mk-bg);color:var(--mk-txt)}
 body.pp-home .pp-wrap{max-width:1120px;margin:0 auto;padding:70px 16px 0}

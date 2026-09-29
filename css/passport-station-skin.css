@@ -37,5 +37,5 @@ body.pp-station .news-card .journey-media--verbete{
   padding:16px;background:#141414;color:#c4a574;letter-spacing:.08em;font-size:.7rem;
 }
 body.pp-station .news-card .journey-media--verbete b{color:#f3ead8;font-size:.95rem;letter-spacing:0}
-/* Asaas trust band permanece cream de propósito (faixa de confiança de pagamento) */
-body.pp-station [class*="asaas"]{background:#ead9be!important;color:#15161a!important}
+/* Mercado Pago trust band permanece cream de propósito (faixa de confiança de pagamento) */
+body.pp-station [class*="payment-footer-trust"]{background:#ead9be!important;color:#15161a!important}

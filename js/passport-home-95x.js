@@ -10,7 +10,7 @@
     { hat: "MUNDO", t: "World Dial", href: "/radio-mundo.html" },
     { hat: "CASA", t: "Anuncie na Passport", href: "/anuncie.html" },
     { hat: "LOJA", t: "Vitrine", href: "/loja.html" },
-    { hat: "APOIO", t: "Asaas / banca", href: "https://www.asaas.com/c/shpb8gbiswnw4t2n" },
+    { hat: "APOIO", t: "Mercado Pago / banca", href: "https://link.mercadopago.com.br/passportradio" },
     { hat: "HOME", t: "Home em operação", href: "/index-95x.html" }
   ];
 
