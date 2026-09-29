@@ -72,7 +72,7 @@ if "GOTHIC PASSPORT" not in LIVE:
     raise SystemExit("Continuous 6-channel motor was disturbed")
 if 'src="/assets/index-DgBCruM8.js"' not in HOME:
     raise SystemExit("Qwen v9 Home bundle is not loaded")
-if 'id:"audio"' not in APP or 'id:"qwen-engine-bay"' not in APP:
+if 'id:"audio"' not in APP or 'x.id="qwen-engine-bay"' not in APP:
     raise SystemExit("Qwen v9 audio/hidden engine host missing")
 
 protected = [
