@@ -1,0 +1,93 @@
+/* Notícias only. Presentation values read from main a6f7536 Home.
+   The feed renderer, shared styles, payments and radio files are untouched. */
+body.passport-news-paper {
+  --news-paper: #fff;
+  --news-ink: #111;
+  --news-soft: #444;
+  --news-red: #d0021b;
+  --news-warm: #f6f3ec;
+  --news-display: "Bodoni Moda", Georgia, serif;
+  --news-sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
+  --news-body: "Source Serif 4", Georgia, serif;
+  margin: 0;
+  background: var(--news-paper);
+  color: var(--news-ink);
+  font: 400 16px/1.5 var(--news-sans);
+  -webkit-font-smoothing: antialiased;
+}
+.passport-news-paper *, .passport-news-paper *::before, .passport-news-paper *::after { box-sizing: border-box; }
+.passport-news-paper a { color: inherit; text-decoration: none; }
+.passport-news-paper a:hover { color: var(--news-red); }
+.passport-news-paper :is(a, button, input):focus-visible { outline: 2px solid var(--news-red); outline-offset: 4px; }
+.passport-news-paper [hidden] { display: none !important; }
+.passport-news-paper .news-skip { position: absolute; left: -10000px; }
+.passport-news-paper .news-skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px; z-index: 10; }
+.passport-news-paper .news-mast { text-align: center; padding: 34px 16px 18px; }
+.passport-news-paper .news-mast__logo { display: inline-block; margin: 0; font: 700 clamp(44px,8vw,84px)/.95 var(--news-display); color: var(--news-red); letter-spacing: -.01em; }
+.passport-news-paper .news-mast__logo em { display: block; font-style: italic; }
+.passport-news-paper .news-mast__years { font: 600 11px/1 var(--news-sans); letter-spacing: .35em; margin-top: 10px; }
+.passport-news-paper .news-rule-double { border-top: 3px solid #111; border-bottom: 1px solid #111; height: 4px; }
+.passport-news-paper .news-nav { border-bottom: 1px solid #111; }
+.passport-news-paper .news-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 26px; max-width: 1200px; margin: 0 auto; padding: 0 16px; list-style: none; }
+.passport-news-paper .news-nav a { display: block; padding: 12px 2px; font: 700 12px/1 var(--news-sans); letter-spacing: .12em; text-transform: uppercase; }
+.passport-news-paper .news-nav a[aria-current="page"] { color: var(--news-red); box-shadow: inset 0 -2px 0 var(--news-red); }
+.passport-news-paper .fd-page { max-width: 1200px; margin: 0 auto; padding: 38px 16px 64px; }
+.passport-news-paper .fd-week__kicker { display: inline-block; padding-bottom: 6px; border-bottom: 2px solid #111; font: 700 10px/1 var(--news-sans); letter-spacing: .18em; }
+.passport-news-paper h1 { margin: 16px 0 12px; font: 700 clamp(36px,4.4vw,52px)/1.05 var(--news-display); }
+.passport-news-paper .fd-page > p { max-width: 62ch; margin: 0 0 28px; color: var(--news-soft); font: 400 16px/1.55 var(--news-body); }
+.passport-news-paper .fd-tools { display: flex; align-items: center; gap: 20px; padding: 20px 0; margin-bottom: 28px; border-top: 1px solid #111; border-bottom: 1px solid #111; }
+.passport-news-paper #news-search { min-width: 0; flex: 1; max-width: 640px; height: 44px; padding: 10px 12px; border: 1px solid #111; border-radius: 0; background: #fff; color: #111; font: 400 15px/1.4 var(--news-sans); }
+.passport-news-paper #news-search::placeholder { color: #666; }
+.passport-news-paper #news-count { margin-left: auto; font: 500 12px/1.4 var(--news-sans); color: var(--news-soft); white-space: nowrap; }
+.passport-news-paper .news-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 34px 28px; }
+.passport-news-paper .list-card { display: flex; flex-direction: column; min-width: 0; padding-bottom: 22px; border-bottom: 1px solid #111; background: #fff; }
+.passport-news-paper .list-media { position: relative; width: 100%; aspect-ratio: 3/2; margin: 0 0 18px; overflow: hidden; background: var(--news-warm); }
+.passport-news-paper .list-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.passport-news-paper .list-media img:is(.is-portrait,.is-wide) { object-fit: contain; object-position: center; }
+.passport-news-paper .list-media--verbete, .passport-news-paper .list-media--empty { display: flex; flex-direction: column; justify-content: center; aspect-ratio: auto; min-height: 120px; gap: 12px; padding: 24px; background: #fff; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+.passport-news-paper .list-media--verbete span, .passport-news-paper .list-media--empty span { color: var(--news-soft); font: 600 10px/1.4 var(--news-sans); letter-spacing: .1em; text-transform: uppercase; }
+.passport-news-paper .list-media--verbete b { font: 700 24px/1.2 var(--news-display); overflow-wrap: anywhere; }
+.passport-news-paper .list-copy { display: flex; flex-direction: column; flex: 1; gap: 10px; min-width: 0; }
+.passport-news-paper .journey-kicker { color: var(--news-red); font: 700 10px/1.4 var(--news-sans); letter-spacing: .14em; text-transform: uppercase; }
+.passport-news-paper h2 { margin: 0; font: 700 clamp(22px,2vw,28px)/1.15 var(--news-display); overflow-wrap: anywhere; }
+.passport-news-paper .list-copy p { margin: 0; color: var(--news-soft); font: 400 15px/1.55 var(--news-body); }
+.passport-news-paper .list-copy time { margin-top: auto; padding-top: 6px; color: var(--news-soft); font: 400 11px/1.4 var(--news-sans); letter-spacing: .05em; }
+.passport-news-paper .journey-empty { grid-column: 1/-1; }
+.passport-news-paper .fd-page > p:has(#news-more) { max-width: none; text-align: center; margin: 36px 0 0; }
+.passport-news-paper #news-more { min-height: 44px; padding: 12px 24px; border: 1px solid #111; border-radius: 0; background: #fff; color: #111; font: 700 12px/1 var(--news-sans); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.passport-news-paper #news-more:hover { background: var(--news-red); border-color: var(--news-red); color: #fff; }
+.passport-news-paper .news-footer { border-top: 3px solid #111; padding: 30px 16px 20px; background: #fff; }
+.passport-news-paper .pp-footer-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; max-width: 1200px; margin: 0 auto; }
+.passport-news-paper .news-footer__brand { font: 700 24px/1 var(--news-display); color: var(--news-red); }
+.passport-news-paper .pp-fcol p { margin: 8px 0 0; font-size: 13px; color: var(--news-soft); }
+.passport-news-paper .pp-fcol:nth-child(2) { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 14px 20px; }
+.passport-news-paper .pp-fcol:not(:first-child) { font: 500 13px/1.5 var(--news-sans); }
+.passport-news-paper .pp-footer-bottom { max-width: 1200px; margin: 20px auto 0; padding-top: 16px; border-top: 1px solid #e0e0e0; text-align: center; font: 400 12px/1.8 var(--news-sans); color: var(--news-soft); }
+/* Existing payment-footer-trust.js still mounts the original methods and links. */
+.passport-news-paper .payment-footer-trust { background: var(--news-warm); border-top: 1px solid #111; padding: 20px 16px; }
+.passport-news-paper .payment-footer-trust__inner { display: flex; flex-direction: column; align-items: center; gap: 14px; max-width: 1200px; margin: 0 auto; }
+.passport-news-paper .payment-footer-trust__methods { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; font: 700 12px/1.4 var(--news-sans); letter-spacing: .1em; }
+.passport-news-paper .payment-footer-trust__methods strong { display: flex; align-items: center; gap: 6px; }
+.passport-news-paper .payment-footer-trust__methods i { display: none; }
+.passport-news-paper .payment-footer-trust__brands { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.passport-news-paper .payment-footer-trust__brands img { object-fit: contain; width: auto; max-width: 56px; height: 28px; padding: 2px 6px; background: #fff; border: 1px solid #e0e0e0; border-radius: 3px; }
+.passport-news-paper .payment-footer-trust__logo { display: block; width: 70px; height: auto; }
+/* Foundation injects its own legacy CSS after load; page specificity isolates this presentation. */
+body.passport-news-paper #passport-cookie-notice { background: #fff; color: #111; border: 1px solid #111; border-radius: 0; box-shadow: 0 4px 16px #0001; }
+body.passport-news-paper #passport-cookie-notice a { color: var(--news-red); }
+body.passport-news-paper #passport-cookie-notice button { background: var(--news-red); color: #fff; border-color: var(--news-red); border-radius: 0; }
+@media (max-width:900px) {
+  .passport-news-paper .news-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .passport-news-paper .pp-footer-in { flex-direction: column; align-items: center; text-align: center; }
+  .passport-news-paper .pp-fcol:nth-child(2) { justify-content: center; }
+}
+@media (max-width:560px) {
+  .passport-news-paper .news-nav ul { gap: 0 18px; }
+  .passport-news-paper .news-nav a { font-size: 11px; padding: 12px 0; }
+  .passport-news-paper .fd-page { padding-top: 28px; }
+  .passport-news-paper .fd-tools { flex-wrap: wrap; gap: 12px; }
+  .passport-news-paper #news-search { flex-basis: 100%; }
+  .passport-news-paper #news-count { margin-left: 0; }
+  .passport-news-paper .news-grid { grid-template-columns: minmax(0,1fr); }
+  .passport-news-paper h2 { font-size: 26px; }
+}
