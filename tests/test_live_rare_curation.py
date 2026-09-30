@@ -12,6 +12,7 @@ PLAYLISTS = (ROOT / "js/tunnel-playlists.js").read_text(encoding="utf-8")
 PLAYER = (ROOT / "js/tunnel-player.js").read_text(encoding="utf-8")
 HOUSE = (ROOT / "radio-live-rare.html").read_text(encoding="utf-8")
 RADIO = (ROOT / "radio.html").read_text(encoding="utf-8")
+HOME = (ROOT / "assets/index-DgBCruM8.js").read_text(encoding="utf-8")
 CI = (ROOT / ".github/workflows/build.yml").read_text(encoding="utf-8")
 CACHE = "20260916d"
 
@@ -173,24 +174,22 @@ if f"/js/tunnel-playlists.js?v={CACHE}" not in HOUSE:
     raise SystemExit("radio-live-rare.html cache tag is stale")
 if f"/js/tunnel-player.js?v={CACHE}" not in HOUSE:
     raise SystemExit("radio-live-rare.html player cache tag is stale")
-if f"/js/tunnel-playlists.js?v={CACHE}" not in RADIO:
-    raise SystemExit("radio.html cache tag is stale")
-if f"/js/tunnel-player.js?v={CACHE}" not in RADIO:
-    raise SystemExit("radio.html player cache tag is stale")
-
-other_tunnels = [
-    "181fm-tunnel.js?v=20260910passport",
-    "total-soul-tunnel.js?v=20260910passport",
-    "mpb-tunnel.js?v=202609062230",
-    "passport-hits-tunnel.js?v=202608251040",
-    "50s-60s-tunnel.js?v=20260910clean",
-    "passport-live.js?v=20260910passport",
-    "br-rock-tunnel.js?v=20260910healthy",
-    "passport-cabin.js?v=20260910passport",
+# The former Ouvir cabin no longer hosts these engines. Protect their actual
+# Home loader and the dedicated Live & Rare house instead of obsolete radio DOM.
+shared_motors = [
+    "tunnel-playlists", "tunnel-player", "181fm-tunnel", "total-soul-tunnel",
+    "mpb-tunnel", "passport-hits-tunnel", "50s-60s-tunnel", "passport-live",
+    "br-rock-tunnel",
 ]
-for token in other_tunnels:
-    if token not in RADIO:
-        raise SystemExit(f"radio.html lost untouched tunnel: {token}")
+for motor in shared_motors:
+    if f'"{motor}"' not in HOME:
+        raise SystemExit(f"Home lost shared motor loader: {motor}")
+    if not (ROOT / f"js/{motor}.js").is_file():
+        raise SystemExit(f"Shared motor source is missing: {motor}")
+if not (ROOT / "js/passport-cabin.js").is_file():
+    raise SystemExit("Retired cabin source must remain in the repository")
+if "/js/passport-cabin.js" in RADIO:
+    raise SystemExit("Podcast & Broadcast must not restore the retired cabin")
 
 if "node --check js/tunnel-playlists.js" not in CI:
     raise SystemExit("CI does not syntax-check tunnel-playlists.js")
@@ -211,3 +210,4 @@ print("OK sequential motor: rotation policy removed, cueVideoById kept")
 print("OK cache", CACHE)
 print("OK CI wired")
 print("distribution", dict(counts))
+
