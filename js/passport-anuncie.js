@@ -21,6 +21,24 @@
     audio.addEventListener('error', () => { paint(); status.textContent = 'Áudio indisponível. Tente novamente.'; });
     paint();
   }
+  const copy=document.getElementById('copy-pix');
+  const copyStatus=document.getElementById('pix-copy-status');
+  const pixKey='passportradio.online@gmail.com';
+  function fallbackCopy() {
+    const field=document.createElement('textarea');field.value=pixKey;
+    field.setAttribute('readonly','');field.style.position='fixed';field.style.left='-9999px';
+    document.body.append(field);field.select();
+    let copied=false;
+    try { copied=document.execCommand('copy'); } finally { field.remove();copy.focus({preventScroll:true}); }
+    if(!copied) throw new Error('Copy unavailable');
+  }
+  copy?.addEventListener('click',async()=>{
+    try {
+      try { if(!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(pixKey); }
+      catch (_) { fallbackCopy(); }
+      copy.textContent='CHAVE COPIADA';copyStatus.textContent='CHAVE COPIADA';
+    } catch (_) { copyStatus.textContent='Selecione a chave para copiar.'; }
+  });
   const choose = (format, days) => {
     const select = document.getElementById('ad-format');
     if (format) select.value = format;

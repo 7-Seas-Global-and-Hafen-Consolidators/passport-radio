@@ -16,10 +16,25 @@ test('all four authorized prices, all 160 periods, all advertiser categories',()
 test('period discounts retained byte for byte from main fixture',()=>{
   const baseline=JSON.parse(fs.readFileSync('tests/fixtures/anuncie-period-discounts.json','utf8'));assert.deepEqual(C.PERIOD_DISCOUNT_PCT,baseline);
 });
-test('temporal movement: minutes, reload, new tab/session, no local storage',()=>{
-  const t=Date.parse(M.config.baseTimestamp);assert.equal(M.valueAt(t),28000000);assert.equal(M.valueAt(t+600000),28000210);assert.equal(M.valueAt(t-10000),28000000);
-  const contexts=[];for(let i=0;i<3;i++){const ctx={};vm.runInNewContext(fs.readFileSync('js/passport-movement.js','utf8'),ctx);contexts.push(ctx.PassportMovement.valueAt(t+600000));}assert.deepEqual(contexts,[28000210,28000210,28000210]);
-  assert.ok(!fs.readFileSync('js/passport-movement.js','utf8').includes('localStorage'));
+test('daily movement is deterministic across instances, reloads and São Paulo midnight',()=>{
+  const before=Date.parse('2026-09-30T23:59:59-03:00'),midnight=before+1000;
+  assert.equal(M.stateAt(before).date,'2026-09-30');assert.equal(M.stateAt(midnight).date,'2026-10-01');assert.equal(M.valueAt(midnight),0);assert.ok(M.valueAt(before)>100000);
+  const t=Date.parse('2026-09-30T18:00:00-03:00');const values=[];
+  for(let i=0;i<3;i++){const ctx={};vm.runInNewContext(fs.readFileSync('js/passport-movement.js','utf8'),ctx);values.push(ctx.PassportMovement.valueAt(t));}assert.deepEqual(values,[M.valueAt(t),M.valueAt(t),M.valueAt(t)]);
+  const source=fs.readFileSync('js/passport-movement.js','utf8');for(const token of ['localStorage','fetch(','supabase','PassportMeasurement'])assert.ok(!source.includes(token));
+});
+test('daily variation has distinct curves and closings below, inside and above the reference, without clamp',()=>{
+  const dates=['2026-09-11','2026-09-01','2026-09-03'];
+  const profiles=dates.map(d=>M.profileFor(d));assert.deepEqual(profiles.map(p=>p.closing),[81586,114219,254251]);
+  assert.ok(profiles[0].closing<M.config.referenceLow);assert.ok(profiles[1].closing>M.config.referenceLow&&profiles[1].closing<M.config.referenceHigh);assert.ok(profiles[2].closing>M.config.referenceHigh);
+  const curves=profiles.map(p=>[6,12,18].map(h=>M.valueAt(Date.parse(`${p.date}T${String(h).padStart(2,'0')}:00:00-03:00`))/p.closing));assert.notDeepEqual(curves[0],curves[1]);assert.notDeepEqual(curves[1],curves[2]);
+  const closings=Array.from({length:365},(_,i)=>{const d=new Date(Date.UTC(2026,0,1+i)).toISOString().slice(0,10);return M.profileFor(d).closing;});assert.ok(new Set(closings).size>350);assert.ok(closings.every((n,i)=>i===0||n!==closings[i-1]));assert.ok(Math.max(...closings)<1000000);assert.ok(Math.min(...closings)>30000);
+});
+test('hourly curve is nonlinear, monotonic within a day and has varied increments',()=>{
+ const base=Date.parse('2026-09-30T00:00:00-03:00');let previous=-1;const hourly=[];const increments=new Set();
+ for(let second=0;second<86400;second+=5){const value=M.valueAt(base+second*1000);assert.ok(value>=previous);if(previous>=0)increments.add(value-previous);previous=value;}
+ for(let h=0;h<24;h++)hourly.push(M.valueAt(base+(h+1)*3600000-1)-M.valueAt(base+h*3600000));
+ assert.ok(Math.max(...hourly)>Math.min(...hourly)*3);assert.ok(increments.size>5);
 });
 test('real report: thirty dates, valid zeroes, absent retrospective history',()=>{
   const report=K.normalize({startedAt:'2026-09-30T17:35:39Z',days:[],audience:{}},new Date('2026-09-30T18:00:00Z'));assert.equal(report.days.length,30);assert.equal(report.days.filter(r=>r.views===null).length,29);assert.equal(report.today,0);assert.equal(report.total,0);assert.deepEqual(report.audience.device,[]);

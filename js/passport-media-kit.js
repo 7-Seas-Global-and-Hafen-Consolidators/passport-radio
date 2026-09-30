@@ -45,34 +45,19 @@
   }
   const root = typeof window === 'undefined' ? globalThis : window;
   root.PassportMediaKit = Object.freeze({config,normalize,demonstration,presentationConfig,demonstrationReport,presentation});
-  if(typeof document === 'undefined' || !document.getElementById('history-days')) return;
-  const set=(id,value)=>{document.getElementById(id).textContent=value;};
+  if(typeof document === 'undefined' || !document.getElementById('audience-device')) return;
   const bars=(id,rows)=>{
     const target=document.getElementById(id);target.replaceChildren();
-    if(!rows.length){const p=document.createElement('p');p.textContent='Perfil em formação. Os percentuais aparecem após as primeiras visitas medidas.';target.append(p);return;}
     rows.forEach(row=>{
       const div=document.createElement('div');div.className='audience-bar';
       const p=document.createElement('p');const name=document.createElement('span');name.textContent=row.label;
       const percent=document.createElement('b');percent.textContent=`${row.percent.toLocaleString('pt-BR',{maximumFractionDigits:1})}%`;
-      const meter=document.createElement('meter');meter.min=0;meter.max=100;meter.value=row.percent;meter.setAttribute('aria-label',`${row.label}: ${percent.textContent}${row.views===undefined ? ' · perfil demonstrativo' : `, ${row.views} pageviews`}`);
+      const meter=document.createElement('meter');meter.min=0;meter.max=100;meter.value=row.percent;meter.setAttribute('aria-label',`${row.label}: ${percent.textContent}`);
       p.append(name,percent);div.append(p,meter);target.append(div);
     });
   };
   const render=(data)=>{
-    const report=presentation(data ? normalize(data) : null);const body=document.getElementById('history-days');body.replaceChildren();
-    report.days.forEach(row=>{
-      const tr=document.createElement('tr');const date=document.createElement('td');const views=document.createElement('td');
-      date.textContent=row.date.split('-').reverse().join('/');views.textContent=row.views.toLocaleString('pt-BR');tr.append(date,views);body.append(tr);
-    });
-    set('measured-today',report.today.toLocaleString('pt-BR'));set('history-total',report.total.toLocaleString('pt-BR'));
-    const demo=report.mode==='demonstration';
-    set('today-label',demo ? 'MOVIMENTO HOJE' : 'PAGEVIEWS MEDIDOS HOJE');
-    set('measurement-status',demo ? 'DADO DEMONSTRATIVO' : `${report.source}. ${report.scope}`);
-    set('history-source',demo ? 'DADOS DEMONSTRATIVOS — A MEDIÇÃO REAL ESTÁ EM ACUMULAÇÃO.' : `Fonte: ${report.source}. Coleta iniciada em ${new Date(report.startedAt).toLocaleDateString('pt-BR',{timeZone:config.timeZone})}.`);
-    set('history-metric',demo ? 'MOVIMENTO' : 'PAGEVIEWS');
-    set('history-caption',demo ? 'Movimento demonstrativo · setembro de 2026' : 'Histórico diário de pageviews medidos · horário de Brasília');
-    set('history-window',demo ? 'Total calculado a partir dos 30 valores demonstrativos apresentados.' : 'Soma dos pageviews medidos nos últimos 30 dias.');
-    set('audience-note',demo ? 'PERFIL DEMONSTRATIVO' : 'Percentuais sobre pageviews medidos, não sobre pessoas.');
+    const report=presentation(data ? normalize(data) : null);
     bars('audience-device',report.audience.device);bars('audience-source',report.audience.source);
   };
   let busy=false;
@@ -81,7 +66,7 @@
     try {
       const result=await fetch(config.endpoint,{headers:{apikey:config.publicKey},signal:AbortSignal.timeout(8000)});
       if(!result.ok) throw new Error('Unavailable');render(await result.json());
-    } catch (_) { /* Keep the clearly labelled demonstration or last valid measured report. */ }
+    } catch (_) { /* Retain the current profile when the report is unavailable. */ }
     finally {busy=false;}
   }
   render(null);refresh();setInterval(()=>{if(!document.hidden) refresh();},config.refreshMs);

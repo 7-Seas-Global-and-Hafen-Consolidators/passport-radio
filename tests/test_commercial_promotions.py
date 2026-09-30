@@ -159,12 +159,13 @@ if "api.qrserver.com" in ANUNCIE:
     fail("external QR dependency still on Anuncie")
 if EMAIL not in ANUNCIE or "passport.radio@gmail.com" in ANUNCIE:
     fail("commercial email contract broken on Anuncie")
-if "/images/anuncie/pix-chave-email.png" not in ANUNCIE:
+if "/images/anuncie/pix-qr-original.png" not in ANUNCIE:
     fail("local PIX QR asset not wired")
-if f'data-pix-payload="{EMAIL}"' not in ANUNCIE:
+PIX_PAYLOAD = '00020126520014br.gov.bcb.pix0130passportradio.online@gmail.com5204000053039865802BR5924PASSPORT RADIO INOVA SIM6009Sao Paulo62240520daqr372408545063307463048DDA'
+if f'data-pix-payload="{PIX_PAYLOAD}"' not in ANUNCIE:
     fail("PIX payload attribute missing")
 
-qr_path = ROOT / "images/anuncie/pix-chave-email.png"
+qr_path = ROOT / "images/anuncie/pix-qr-original.png"
 png_idat_ok(qr_path)
 try:
     import cv2
@@ -173,8 +174,8 @@ try:
 
     arr = np.array(Image.open(qr_path).convert("RGB"))
     value, _, _ = cv2.QRCodeDetector().detectAndDecode(arr)
-    if value != EMAIL:
-        fail(f"QR decoded to {value!r}, expected {EMAIL}")
+    if value != PIX_PAYLOAD:
+        fail(f"QR decoded to {value!r}, expected {PIX_PAYLOAD}")
 except Exception as exc:
     # CI has no OpenCV; local run must still have a decodable PNG stream.
     if "cv2" not in str(exc) and "No module" not in str(type(exc)):
@@ -330,7 +331,7 @@ for rel in (
     "images/promocoes/uci-cinemas.png",
     "images/promocoes/caneca-rush-fly-by-night.webp",
     "images/promocoes/camiseta-metallica-black-album.jpg",
-    "images/anuncie/pix-chave-email.png",
+    "images/anuncie/pix-qr-original.png",
 ):
     path = ROOT / rel
     if not path.is_file() or path.stat().st_size < 800:
