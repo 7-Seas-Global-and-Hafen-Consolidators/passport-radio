@@ -1,7 +1,25 @@
 (() => {
   'use strict';
   const config = Object.freeze({endpoint:'https://kmrnnudmujezriomimwn.supabase.co/functions/v1/passport-media-kit', publicKey:'sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y', refreshMs:60000, timeZone:'America/Sao_Paulo'});
-  const labels = {desktop:'Desktop',mobile:'Mobile',tablet:'Tablet',direct:'Direto',search:'Busca',social:'Redes sociais',internal:'Dentro da Passport',referral:'Outros sites'};
+  const labels = {desktop:'Desktop',mobile:'Mobile',tablet:'Tablet',direct:'Direto',search:'Busca',social:'Social',internal:'Interno',referral:'Outros sites'};
+  // Demonstration is presentation-only. Never passed to the measurement collector.
+  const demonstration = Object.freeze({
+    today: 96842,
+    values: Object.freeze([91284, 94731, 96408, 93562, 101347, 104821, 98615, 95774, 97308, 102416, 105239, 108674, 103581, 99427, 101963, 104286, 107531, 110248, 106794, 112365, 109817, 105642, 108953, 111426, 114782, 117305, 113648, 109536, 103927, 96842]),
+    audience: Object.freeze({
+      device: Object.freeze([{label:'Mobile',percent:68},{label:'Desktop',percent:27},{label:'Tablet',percent:5}]),
+      source: Object.freeze([{label:'Busca',percent:41},{label:'Direto',percent:29},{label:'Social',percent:18},{label:'Interno',percent:8},{label:'Outros sites',percent:4}])
+    })
+  });
+  const presentationConfig = Object.freeze({minimumRealDays:30,minimumRealPageviews:1000});
+  function demonstrationReport() {
+    const days=demonstration.values.map((views,index)=>({date:`2026-09-${String(index+1).padStart(2,'0')}`,views}));
+    return {mode:'demonstration',today:demonstration.today,days,total:days.reduce((sum,day)=>sum+day.views,0),audience:demonstration.audience};
+  }
+  function presentation(real) {
+    const sufficient=real && real.days.filter(day=>day.views!==null).length>=presentationConfig.minimumRealDays && real.days.every(day=>day.views>0) && real.total>=presentationConfig.minimumRealPageviews && real.today>0 && real.audience.device.length>0 && real.audience.source.length>0;
+    return sufficient ? {...real,mode:'measured'} : demonstrationReport();
+  }
   const dayAt = (date) => new Intl.DateTimeFormat('en-CA',{timeZone:config.timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).format(date);
   function normalize(data, now = new Date()) {
     if (!data || !Array.isArray(data.days) || !data.startedAt || !Number.isFinite(Date.parse(data.startedAt))) throw new Error('Invalid report');
@@ -26,7 +44,7 @@
     return {days,total:days.reduce((a,d)=>a+(d.views||0),0),today:values.get(today)||0,audience,source:String(data.source||'Coleta Passport'),scope:String(data.scope||''),startedAt:data.startedAt,updatedAt:data.updatedAt};
   }
   const root = typeof window === 'undefined' ? globalThis : window;
-  root.PassportMediaKit = Object.freeze({config,normalize});
+  root.PassportMediaKit = Object.freeze({config,normalize,demonstration,presentationConfig,demonstrationReport,presentation});
   if(typeof document === 'undefined' || !document.getElementById('history-days')) return;
   const set=(id,value)=>{document.getElementById(id).textContent=value;};
   const bars=(id,rows)=>{
@@ -36,20 +54,25 @@
       const div=document.createElement('div');div.className='audience-bar';
       const p=document.createElement('p');const name=document.createElement('span');name.textContent=row.label;
       const percent=document.createElement('b');percent.textContent=`${row.percent.toLocaleString('pt-BR',{maximumFractionDigits:1})}%`;
-      const meter=document.createElement('meter');meter.min=0;meter.max=100;meter.value=row.percent;meter.setAttribute('aria-label',`${row.label}: ${percent.textContent}, ${row.views} pageviews`);
+      const meter=document.createElement('meter');meter.min=0;meter.max=100;meter.value=row.percent;meter.setAttribute('aria-label',`${row.label}: ${percent.textContent}${row.views===undefined ? ' · perfil demonstrativo' : `, ${row.views} pageviews`}`);
       p.append(name,percent);div.append(p,meter);target.append(div);
     });
   };
   const render=(data)=>{
-    const report=normalize(data);const body=document.getElementById('history-days');body.replaceChildren();
+    const report=presentation(data ? normalize(data) : null);const body=document.getElementById('history-days');body.replaceChildren();
     report.days.forEach(row=>{
       const tr=document.createElement('tr');const date=document.createElement('td');const views=document.createElement('td');
-      date.textContent=row.date.split('-').reverse().join('/');views.textContent=row.views===null ? 'Antes da coleta' : row.views.toLocaleString('pt-BR');tr.append(date,views);body.append(tr);
+      date.textContent=row.date.split('-').reverse().join('/');views.textContent=row.views.toLocaleString('pt-BR');tr.append(date,views);body.append(tr);
     });
     set('measured-today',report.today.toLocaleString('pt-BR'));set('history-total',report.total.toLocaleString('pt-BR'));
-    set('measurement-status',`${report.source}. ${report.scope}`);
-    set('history-source',`Fonte: ${report.source}. Coleta iniciada em ${new Date(report.startedAt).toLocaleDateString('pt-BR',{timeZone:config.timeZone})}.`);
-    set('history-window','Soma dos pageviews medidos nos últimos 30 dias. Datas anteriores à coleta aparecem identificadas.');
+    const demo=report.mode==='demonstration';
+    set('today-label',demo ? 'MOVIMENTO HOJE' : 'PAGEVIEWS MEDIDOS HOJE');
+    set('measurement-status',demo ? 'DADO DEMONSTRATIVO' : `${report.source}. ${report.scope}`);
+    set('history-source',demo ? 'DADOS DEMONSTRATIVOS — A MEDIÇÃO REAL ESTÁ EM ACUMULAÇÃO.' : `Fonte: ${report.source}. Coleta iniciada em ${new Date(report.startedAt).toLocaleDateString('pt-BR',{timeZone:config.timeZone})}.`);
+    set('history-metric',demo ? 'MOVIMENTO' : 'PAGEVIEWS');
+    set('history-caption',demo ? 'Movimento demonstrativo · setembro de 2026' : 'Histórico diário de pageviews medidos · horário de Brasília');
+    set('history-window',demo ? 'Total calculado a partir dos 30 valores demonstrativos apresentados.' : 'Soma dos pageviews medidos nos últimos 30 dias.');
+    set('audience-note',demo ? 'PERFIL DEMONSTRATIVO' : 'Percentuais sobre pageviews medidos, não sobre pessoas.');
     bars('audience-device',report.audience.device);bars('audience-source',report.audience.source);
   };
   let busy=false;
@@ -58,8 +81,8 @@
     try {
       const result=await fetch(config.endpoint,{headers:{apikey:config.publicKey},signal:AbortSignal.timeout(8000)});
       if(!result.ok) throw new Error('Unavailable');render(await result.json());
-    } catch (_) {set('measurement-status','Medição temporariamente indisponível. O índice temporal continua independente.');}
+    } catch (_) { /* Keep the clearly labelled demonstration or last valid measured report. */ }
     finally {busy=false;}
   }
-  refresh();setInterval(()=>{if(!document.hidden) refresh();},config.refreshMs);
+  render(null);refresh();setInterval(()=>{if(!document.hidden) refresh();},config.refreshMs);
 })();

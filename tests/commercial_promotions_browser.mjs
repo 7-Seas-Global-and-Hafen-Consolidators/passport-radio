@@ -166,7 +166,7 @@ const money = (n) => Number(n).toFixed(2);
     const caneca = await page.content();
     if (!caneca.includes("QUAL MÚSICA NÃO PODERIA FALTAR")) fail("caneca question missing on page");
     if (!caneca.includes("whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k")) fail("caneca WhatsApp link missing");
-    if (!caneca.includes("t.me/+pXv3uwqOY8lkZGZk")) fail("caneca Telegram link missing");
+    if (!caneca.includes("t.me/+FKto2N185cs4OGU0")) fail("caneca Telegram link missing");
     if (!caneca.includes("/images/promocoes/caneca-rush-fly-by-night.webp")) fail("caneca image not local");
     if (caneca.includes("R$") && /caneca/i.test(caneca) && /R\$\s*\d/.test(caneca)) {
       const prizeBlock = await page.locator(".campaign-prize-detail").innerText();

@@ -36,7 +36,7 @@ const server=http.createServer((req,res)=>{const file=path.join(ROOT,decodeURICo
   await page.reload();assert.ok(Number((await page.locator('#movement-index').innerText()).replaceAll('.',''))>=Number(second.replaceAll('.','')));
   const tab=await ctx.newPage();await tab.goto('http://127.0.0.1:8781/anuncie.html');assert.ok(Math.abs(await page.evaluate(()=>PassportMovement.valueAt())-await tab.evaluate(()=>PassportMovement.valueAt()))<2);await tab.close();
   await page.waitForFunction(()=>document.querySelector('#history-days tr').children.length===2,null,{timeout:15000});assert.equal(await page.locator('#history-days tr').count(),30);
-  console.log('counter and history passed');assert.equal(await page.locator('#recado-audio').evaluate(a=>a.paused&&a.currentTime===0),true);
+  assert.equal(await page.locator('#measured-today').innerText(),'96.842');assert.equal(await page.locator('#history-total').innerText(),'3.128.252');assert.equal(await page.locator('#audience-note').innerText(),'PERFIL DEMONSTRATIVO');assert.ok(!(await page.locator('body').innerText()).includes('Antes da coleta'));console.log('counter and demonstration passed');assert.equal(await page.locator('#recado-audio').evaluate(a=>a.paused&&a.currentTime===0),true);
   await page.locator('#recado-toggle').focus();await page.keyboard.press('Enter');await page.waitForFunction(()=>!document.querySelector('#recado-audio').paused);await page.waitForTimeout(400);
   assert.equal(await page.locator('#recado-toggle').getAttribute('aria-pressed'),'true');
   await page.click('#recado-toggle');assert.equal(await page.locator('#recado-audio').evaluate(a=>a.paused),true);
@@ -54,7 +54,7 @@ const server=http.createServer((req,res)=>{const file=path.join(ROOT,decodeURICo
   }
   await page.emulateMedia({reducedMotion:'reduce'});await page.reload();assert.ok(await page.locator('#movement-index').innerText()!=='—');
   // Empty/error source must preserve the configurator and produce no JS errors.
-  await page.route('**/functions/v1/passport-media-kit',route=>route.fulfill({status:503,body:'{}'}));await page.reload();await page.waitForTimeout(300);assert.match(await page.locator('#measurement-status').innerText(),/indisponível/);assert.equal(await page.locator('#ad-total').getAttribute('data-value'),'8.45');
+  await page.route('**/functions/v1/passport-media-kit',route=>route.fulfill({status:503,body:'{}'}));await page.reload();await page.waitForTimeout(300);assert.equal(await page.locator('#measurement-status').innerText(),'DADO DEMONSTRATIVO');assert.equal(await page.locator('#ad-total').getAttribute('data-value'),'8.45');
   assert.deepEqual(errors,[]);console.log('PASS desktop/mobile 320/375/390/768/1440; 30-day source; empty/error source; counter/reload/tab/reduced motion; audio play/pause/stop/end/replay/keyboard; calculator; all images; no overflow; no JS errors');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

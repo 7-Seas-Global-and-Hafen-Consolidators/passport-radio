@@ -31,3 +31,13 @@ test('real report sums only window, percentages, safely ignores malformed rows',
 test('Anuncie imports only independent modules, preserves original audio',()=>{
   const html=fs.readFileSync('anuncie.html','utf8');assert.equal((html.match(/<audio /g)||[]).length,1);assert.match(html,/preload="none"/);assert.ok(!html.includes('autoplay'));for(const token of ['PassportBus','mutex','interlock','passport-live','radio-','Route 66','SEM NÚMEROS FANTASMAS'])assert.ok(!html.includes(token));
 });
+
+test('exact demonstration, calculated total and prescribed audience',()=>{
+ const expected=[91284,94731,96408,93562,101347,104821,98615,95774,97308,102416,105239,108674,103581,99427,101963,104286,107531,110248,106794,112365,109817,105642,108953,111426,114782,117305,113648,109536,103927,96842];
+ const d=K.demonstrationReport();assert.deepEqual(d.days.map(x=>x.views),expected);assert.equal(d.today,96842);assert.equal(d.total,expected.reduce((a,b)=>a+b,0));assert.equal(d.total,3128252);assert.equal(d.days[0].date,'2026-09-01');assert.equal(d.days[29].date,'2026-09-30');assert.deepEqual(d.audience.device.map(x=>x.percent),[68,27,5]);assert.deepEqual(d.audience.source.map(x=>x.percent),[41,29,18,8,4]);
+});
+test('demonstration stays separate from real readings and collector',()=>{
+ const real=K.normalize({startedAt:'2026-09-30T17:35:39Z',days:[],audience:{}},new Date('2026-09-30T18:00:00Z'));const before=JSON.stringify(real);assert.equal(K.presentation(real).mode,'demonstration');assert.equal(JSON.stringify(real),before);assert.equal(K.presentation(null).total,3128252);
+ const full={...real,days:Array.from({length:30},(_,i)=>({date:`2026-09-${String(i+1).padStart(2,'0')}`,views:100})),today:100,total:3000,audience:{device:[{label:'Mobile',percent:100,views:3000}],source:[{label:'Direto',percent:100,views:3000}]}};assert.equal(K.presentation(full).mode,'measured');assert.equal(K.presentation(full).total,3000);assert.equal(K.presentation({...full,today:0}).mode,'demonstration');
+ const collector=fs.readFileSync('js/passport-measurement.js','utf8');assert.ok(!collector.includes('demonstration'));assert.ok(!collector.includes('96842'));
+});
