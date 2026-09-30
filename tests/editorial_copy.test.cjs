@@ -22,7 +22,7 @@ function fixture(options = {}) {
       options.og ? { getAttribute: () => options.og } : null,
     addEventListener: (name, fn) => { assert.equal(name, 'copy'); handler = fn; installed++; }
   };
-  const context = { document, window: { getSelection: () => selection }, location: { pathname: path }, URL };
+  const context = { document, window: { getSelection: () => selection }, location: { pathname: options.pathname || path }, URL };
   vm.runInNewContext(source, context);
   vm.runInNewContext(source, context);
   const event = {
@@ -43,6 +43,10 @@ test('preserves selected text including its trailing newline, appends exact stor
 });
 test('valid equivalent og:url is used only if canonical is unusable and matches this story', () => {
   assert.equal(fixture({canonical: 'https://www.passportradio.online/', og: canonical}).copied.endsWith(canonical), true);
+});
+test('audited Eye of the Tiger alias retains its real canonical story destination', () => {
+  const url = 'https://www.passportradio.online/historias/eye-of-the-tiger.html';
+  assert.equal(fixture({pathname:'/eye-of-the-tiger.html', canonical:url}).copied.endsWith(url), true);
 });
 for (const url of ['https://www.passportradio.online/', 'https://www.passportradio.online/noticias.html', 'https://evil.example' + path, 'javascript:alert(1)', 'https://user:secret@www.passportradio.online' + path, 'https://www.passportradio.online:444' + path, canonical + '#player', '']) {
   test('rejects incorrect canonical: ' + url, () => assert.equal(fixture({canonical:url}).prevented, false));

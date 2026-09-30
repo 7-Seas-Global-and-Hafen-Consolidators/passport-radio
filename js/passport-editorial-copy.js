@@ -10,6 +10,9 @@
   const element = node => node && (node.nodeType === 1 ? node : node.parentElement);
 
   function storyURL() {
+    // Existing alias: both documents have identical main content and the same canonical.
+    const aliases = { "/eye-of-the-tiger.html": "/historias/eye-of-the-tiger.html" };
+    const expectedPath = aliases[location.pathname] || location.pathname;
     const candidates = [document.querySelector('link[rel="canonical"]')?.getAttribute("href"),
       document.querySelector('meta[property="og:url"]')?.getAttribute("content")];
     for (const candidate of candidates) {
@@ -18,7 +21,7 @@
         const url = new URL(candidate);
         if (url.protocol === "https:" && /^(www\.)?passportradio\.online$/.test(url.hostname) &&
             !url.username && !url.password && !url.port && !url.hash &&
-            url.pathname !== "/" && url.pathname === location.pathname) return url.href;
+            url.pathname !== "/" && url.pathname === expectedPath) return url.href;
       } catch (_) { /* Missing or invalid metadata leaves normal copy untouched. */ }
     }
     return null;
