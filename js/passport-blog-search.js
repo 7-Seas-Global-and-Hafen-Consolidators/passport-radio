@@ -113,3 +113,17 @@
     if (root) renderResults(root, state.q, state.p);
   });
 })();
+
+/* Editorial copy: a single shared implementation; non-article surfaces are excluded. */
+(() => {
+  const install = () => {
+    if (!document.querySelector('.pe-prose') && !document.body.classList.contains('pp-article')) return;
+    if (document.querySelector('script[data-passport-editorial-copy]')) return;
+    const script = document.createElement('script');
+    script.src = '/js/passport-editorial-copy.js?v=20260930';
+    script.dataset.passportEditorialCopy = '1';
+    document.head.appendChild(script);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install, {once:true});
+  else install();
+})();

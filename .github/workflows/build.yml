@@ -91,6 +91,16 @@ jobs:
               print('OK HTML: oriente-medio.html')
           PY
 
+      - name: Validate editorial copy boundaries
+        shell: bash
+        run: |
+          node --check js/passport-participe.js
+          node --check js/passport-editorial-copy.js
+          node --check js/passport-blog-search.js
+          node --check js/passport-legal-footer.js
+          node --check js/passport-amazon-affiliate.js
+          node --test tests/editorial_copy.test.cjs
+
       - name: Validate Phase 1 discovery contracts
         shell: bash
         run: |
@@ -273,4 +283,3 @@ jobs:
           python -m py_compile tools/editorial_blog_discovery.py tools/editorial_blog_tunnel.py tools/editorial_media_resolver.py
           python tests/test_editorial_blog_tunnel.py
           node --check js/passport-blog-archive.js
-
