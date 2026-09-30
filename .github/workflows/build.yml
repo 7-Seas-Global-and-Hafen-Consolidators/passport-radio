@@ -115,9 +115,14 @@ jobs:
               if token not in discovery:
                   raise SystemExit(f'Missing Phase 1 discovery contract: {token}')
 
-          for anchor in ['id="player"', 'id="passportTunnels"', 'id="continuous"']:
-              if anchor not in radio:
-                  raise SystemExit(f'Broken Phase 1 radio deep-link target: {anchor}')
+          # radio.html is now Podcast & Broadcast; the former cabin DOM was retired.
+          for token in ['id="passport-podcast"', 'id="passport-broadcast"',
+                        'id="passport-podcast-audio"', 'id="passport-podcast-catalog"',
+                        '/js/passport-podcast-player.js']:
+              if token not in radio:
+                  raise SystemExit(f'Broken Podcast & Broadcast contract: {token}')
+          if '/js/passport-cabin.js' in radio:
+              raise SystemExit('Retired Ouvir cabin returned to radio.html')
 
           if 'passportFlashHouse' not in tunnels:
               raise SystemExit('Broken Phase 1 Flash House deep-link contract')
@@ -268,3 +273,4 @@ jobs:
           python -m py_compile tools/editorial_blog_discovery.py tools/editorial_blog_tunnel.py tools/editorial_media_resolver.py
           python tests/test_editorial_blog_tunnel.py
           node --check js/passport-blog-archive.js
+

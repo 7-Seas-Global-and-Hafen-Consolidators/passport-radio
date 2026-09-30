@@ -52,12 +52,13 @@
     });
     byId('podcast-listened').hidden = index < 0 || !listened.has(episodes[index].id);
   }
-  function renderCover(episode) {
+  function renderCover(episode = {}) {
     const image = byId('podcast-cover'), empty = byId('podcast-cover-empty');
     const cover = safeURL(episode.cover) || safeURL(catalog.podcast?.cover);
-    image.hidden = !cover; empty.hidden = !!cover;
+    image.hidden = true; empty.hidden = false;
+    image.onload = () => { image.hidden = false; empty.hidden = true; };
     image.onerror = () => { image.hidden = true; empty.hidden = false; };
-    if (cover) { image.alt = episode.coverAlt || catalog.podcast?.coverAlt || episode.title; image.src = cover; }
+    if (cover) { image.alt = episode.coverAlt || catalog.podcast?.coverAlt || episode.title || 'Podcast Passport Radio'; image.src = cover; }
     else { image.removeAttribute('src'); image.alt = ''; }
   }
   function select(i) {
@@ -104,5 +105,6 @@
   window.addEventListener('pagehide', () => { generation++; audio.pause(); });
   text('podcast-catalog-count', episodes.length + (episodes.length === 1 ? ' episódio' : ' episódios'));
   byId('podcast-catalog-empty').hidden = episodes.length > 0;
+  renderCover();
   if (episodes.length) select(0);
 })();
