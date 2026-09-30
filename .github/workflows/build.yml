@@ -275,7 +275,13 @@ jobs:
 
       - name: Validate commercial promotions contracts
         shell: bash
-        run: python tests/test_commercial_promotions.py
+        run: |
+          python tests/test_commercial_promotions.py
+          node --test tests/anuncie_media_kit.test.cjs
+          node --check js/passport-movement.js
+          node --check js/passport-media-kit.js
+          node --check js/passport-measurement.js
+          node --check js/passport-anuncie.js
 
       - name: Validate Global Blog Tunnel contracts
         shell: bash

@@ -54,7 +54,7 @@ WHIPLASH_PERIOD_PCT = [
     19.25,19.32,19.39,19.46,19.52,19.59,19.65,19.71,19.76,19.82,19.87,19.93,19.98,20,
 ] + [20] * 70
 
-IMMUTABLE = {"top": 84.5, "rectangle": 64.5, "strip": 49.5, "sponsored": 1399.5}
+PRICES = {"top": 8.45, "rectangle": 6.45, "strip": 4.95, "sponsored": 55.98}
 EMAIL = "passportradio.online@gmail.com"
 WA = "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k"
 TG = "https://t.me/+FKto2N185cs4OGU0"
@@ -149,22 +149,23 @@ if re.search(r'option value="7".*option value="15".*option value="30"', ANUNCIE,
 if "id=\"ad-days\"" not in ANUNCIE:
     fail("period select missing")
 if "id=\"ad-advertiser\"" not in ANUNCIE:
-    fail("extra 10% advertiser select missing")
-if "teste de 5 dias grátis" not in ANUNCIE.lower() and "teste de 5 dias grátis" not in ANUNCIE:
-    if "5 dias grátis" not in ANUNCIE:
-        fail("5-day free test is not disclosed on Anuncie")
+    fail("advertiser select missing")
+if "teste de 10 dias grátis" not in ANUNCIE.lower() and "teste de 10 dias grátis" not in ANUNCIE:
+    if "10 dias grátis" not in ANUNCIE:
+        fail("10-day free test is not disclosed on Anuncie")
 if "após confirmação do atendimento" in ANUNCIE:
     fail("copy still delays discount until atendimento")
 if "api.qrserver.com" in ANUNCIE:
     fail("external QR dependency still on Anuncie")
 if EMAIL not in ANUNCIE or "passport.radio@gmail.com" in ANUNCIE:
     fail("commercial email contract broken on Anuncie")
-if "/images/anuncie/pix-chave-email.png" not in ANUNCIE:
+if "/images/anuncie/pix-qr-original.png" not in ANUNCIE:
     fail("local PIX QR asset not wired")
-if f'data-pix-payload="{EMAIL}"' not in ANUNCIE:
+PIX_PAYLOAD = '00020126520014br.gov.bcb.pix0130passportradio.online@gmail.com5204000053039865802BR5924PASSPORT RADIO INOVA SIM6009Sao Paulo62240520daqr372408545063307463048DDA'
+if f'data-pix-payload="{PIX_PAYLOAD}"' not in ANUNCIE:
     fail("PIX payload attribute missing")
 
-qr_path = ROOT / "images/anuncie/pix-chave-email.png"
+qr_path = ROOT / "images/anuncie/pix-qr-original.png"
 png_idat_ok(qr_path)
 try:
     import cv2
@@ -173,8 +174,8 @@ try:
 
     arr = np.array(Image.open(qr_path).convert("RGB"))
     value, _, _ = cv2.QRCodeDetector().detectAndDecode(arr)
-    if value != EMAIL:
-        fail(f"QR decoded to {value!r}, expected {EMAIL}")
+    if value != PIX_PAYLOAD:
+        fail(f"QR decoded to {value!r}, expected {PIX_PAYLOAD}")
 except Exception as exc:
     # CI has no OpenCV; local run must still have a decodable PNG stream.
     if "cv2" not in str(exc) and "No module" not in str(type(exc)):
@@ -183,48 +184,49 @@ except Exception as exc:
             fail(f"QR decode failed: {exc}")
 
 cases = [
-    {"format": "top", "days": 1, "advertiser": "none", "free": False, "fixed": False, "daily": 84.5},
-    {"format": "top", "days": 5, "advertiser": "none", "free": True, "fixed": False, "daily": 84.5},
-    {"format": "rectangle", "days": 5, "advertiser": "none", "free": True, "fixed": False, "daily": 64.5},
-    {"format": "strip", "days": 5, "advertiser": "none", "free": True, "fixed": False, "daily": 49.5},
-    {"format": "sponsored", "days": 5, "advertiser": "none", "free": False, "fixed": True, "daily": 1399.5},
-    {"format": "top", "days": 7, "advertiser": "none", "free": False, "fixed": False, "daily": 84.5},
-    {"format": "top", "days": 15, "advertiser": "none", "free": False, "fixed": False, "daily": 84.5},
-    {"format": "top", "days": 30, "advertiser": "none", "free": False, "fixed": False, "daily": 84.5},
-    {"format": "top", "days": 30, "advertiser": "banda", "free": False, "fixed": False, "daily": 84.5},
-    {"format": "top", "days": 90, "advertiser": "none", "free": False, "fixed": False, "daily": 84.5},
-    {"format": "top", "days": 5, "advertiser": "banda", "free": True, "fixed": False, "daily": 84.5},
+    {"format": "top", "days": 1, "advertiser": "none", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 10, "advertiser": "none", "free": True, "fixed": False, "daily": 8.45},
+    {"format": "rectangle", "days": 10, "advertiser": "none", "free": True, "fixed": False, "daily": 6.45},
+    {"format": "strip", "days": 10, "advertiser": "none", "free": True, "fixed": False, "daily": 4.95},
+    {"format": "sponsored", "days": 10, "advertiser": "none", "free": False, "fixed": True, "daily": 55.98},
+    {"format": "top", "days": 7, "advertiser": "none", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 15, "advertiser": "none", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 30, "advertiser": "none", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 30, "advertiser": "banda", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 30, "advertiser": "antigo", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 90, "advertiser": "none", "free": False, "fixed": False, "daily": 8.45},
+    {"format": "top", "days": 10, "advertiser": "banda", "free": True, "fixed": False, "daily": 8.45},
 ]
 payload = node_quotes(cases)
 if payload["table"] != [float(x) for x in WHIPLASH_PERIOD_PCT]:
     fail("runtime period table diverged")
 for item, row in zip(cases, payload["out"]):
     got = row["result"]
-    exp = expected_quote(item["daily"], item["days"], 10 if item["advertiser"] != "none" else 0, item["free"], item["fixed"])
+    exp = expected_quote(item["daily"], item["days"], 12.5 if item["advertiser"] == "banda" else 10 if item["advertiser"] == "antigo" else 0, item["free"], item["fixed"])
     for key in ("normal", "periodPct", "periodDiscount", "extraDiscount", "freeDiscount", "total", "economia"):
         if abs(float(got[key]) - float(exp[key])) > 0.009:
             fail(f"quote mismatch {item}: {key} got {got[key]} expected {exp[key]}")
 
-# 5-day FREE published accounts
-free_map = {row["format"]: row["result"] for row in payload["out"] if row["days"] == 5 and row["advertiser"] == "none"}
-if free_map["top"]["normal"] != 422.5 or free_map["top"]["total"] != 0:
-    fail(f"banner 5-day FREE broken: {free_map['top']}")
-if free_map["rectangle"]["normal"] != 322.5 or free_map["rectangle"]["total"] != 0:
-    fail(f"rectangle 5-day FREE broken: {free_map['rectangle']}")
-if free_map["strip"]["normal"] != 247.5 or free_map["strip"]["total"] != 0:
-    fail(f"strip 5-day FREE broken: {free_map['strip']}")
-if free_map["sponsored"]["total"] != 1399.5 or free_map["sponsored"]["freeEligible"]:
+# 10-day FREE published accounts
+free_map = {row["format"]: row["result"] for row in payload["out"] if row["days"] == 10 and row["advertiser"] == "none"}
+if free_map["top"]["normal"] != 84.5 or free_map["top"]["total"] != 0:
+    fail(f"banner 10-day FREE broken: {free_map['top']}")
+if free_map["rectangle"]["normal"] != 64.5 or free_map["rectangle"]["total"] != 0:
+    fail(f"rectangle 10-day FREE broken: {free_map['rectangle']}")
+if free_map["strip"]["normal"] != 49.5 or free_map["strip"]["total"] != 0:
+    fail(f"strip 10-day FREE broken: {free_map['strip']}")
+if free_map["sponsored"]["total"] != 55.98 or free_map["sponsored"]["freeEligible"]:
     fail("publieditorial must stay out of automatic FREE test")
 
 prices = payload["out"][0]["prices"]
-if prices != IMMUTABLE:
-    fail(f"immutable Passport prices changed: {prices}")
+if prices != PRICES:
+    fail(f"Passport prices mismatch: {prices}")
 # 55% structural reduction is NOT reapplied to the four Passport prices.
 if abs(135 * 0.45 - 60.75) > 1e-9:
     fail("Whiplash 55% matrix arithmetic changed")
-if IMMUTABLE["top"] == 60.75:
+if PRICES["top"] == 60.75:
     fail("banner was overwritten with 55% of Whiplash TAMANHO 3")
-if IMMUTABLE["sponsored"] == 900:
+if PRICES["sponsored"] == 900:
     fail("publieditorial was overwritten with 55% of Whiplash R$2000 package")
 
 # --- Promoções ---
@@ -329,7 +331,7 @@ for rel in (
     "images/promocoes/uci-cinemas.png",
     "images/promocoes/caneca-rush-fly-by-night.webp",
     "images/promocoes/camiseta-metallica-black-album.jpg",
-    "images/anuncie/pix-chave-email.png",
+    "images/anuncie/pix-qr-original.png",
 ):
     path = ROOT / rel
     if not path.is_file() or path.stat().st_size < 800:
@@ -495,8 +497,8 @@ if "tests/test_commercial_promotions.py" not in CI:
     fail("CI does not run commercial contracts")
 
 print("OK commercial periods 1-160 match Whiplash")
-print("OK 5-day FREE: 422.50/322.50/247.50 → 0; publieditorial excluded")
-print("OK immutable Passport prices; 55% not reapplied")
+print("OK 10-day FREE: 84.50/64.50/49.50 → 0; publieditorial excluded")
+print("OK authorized Passport prices; 55% not reapplied")
 print("OK PIX key QR is local")
 print("OK five campaigns + Fone Retrô José Silva Souza")
 print("OK Formspree xaenylvg; xoeqnvjg absent from commercial scope")

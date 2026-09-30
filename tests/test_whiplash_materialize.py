@@ -106,7 +106,7 @@ def test_writer_gate_and_identity() -> None:
         fail("slogan in html")
     if 'data-passport-discussion="live"' not in html:
         fail("discussion missing")
-    if "t.me/+pXv3uwqOY8lkZGZk" not in html:
+    if "t.me/+FKto2N185cs4OGU0" not in html:
         fail("telegram missing")
     print("OK writer + gate + identity")
 

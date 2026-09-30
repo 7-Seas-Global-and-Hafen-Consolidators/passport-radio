@@ -3,18 +3,18 @@
 
   const PIX_KEY = "passportradio.online@gmail.com";
   const COMMERCIAL_EMAIL = "passportradio.online@gmail.com";
-  const FREE_TEST_DAYS = 5;
+  const FREE_TEST_DAYS = 10;
   const FREE_FORMATS = ["top", "rectangle", "strip"];
   const PERIOD_DISCOUNT_PCT = [0,0,0,0,0,0,3.41,3.92,4.42,4.91,5.38,5.84,6.28,6.72,7.14,7.55,7.95,8.33,8.71,9.07,9.43,9.78,10.11,10.44,10.75,11.06,11.36,11.65,11.94,12.21,12.48,12.74,12.99,13.24,13.48,13.71,13.94,14.15,14.37,14.57,14.78,14.97,15.16,15.35,15.53,15.7,15.87,16.04,16.2,16.35,16.5,16.65,16.8,16.93,17.07,17.2,17.33,17.45,17.57,17.69,17.81,17.92,18.02,18.13,18.23,18.33,18.43,18.52,18.61,18.7,18.79,18.87,18.95,19.03,19.11,19.18,19.25,19.32,19.39,19.46,19.52,19.59,19.65,19.71,19.76,19.82,19.87,19.93,19.98,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20];
   const FORMATS = {
-    top: { name: "Banner topo · 728×90", price: 84.5, place: "Circulação", fixed: false },
-    rectangle: { name: "Retângulo · 300×250", price: 64.5, place: "Leitura", fixed: false },
-    strip: { name: "Strip no rio", price: 49.5, place: "Entre matérias", fixed: false },
-    sponsored: { name: "Publieditorial", price: 1399.5, place: "Peça identificada", fixed: true }
+    top: { name: "Banner topo · 728×90", price: 8.45, place: "Circulação", fixed: false },
+    rectangle: { name: "Retângulo · 300×250", price: 6.45, place: "Leitura", fixed: false },
+    strip: { name: "Strip no rio", price: 4.95, place: "Entre matérias", fixed: false },
+    sponsored: { name: "Publieditorial", price: 55.98, place: "Peça identificada", fixed: true }
   };
   const ADVERTISERS = {
     none: { extraPct: 0, label: "Anunciante sem desconto extra" },
-    banda: { extraPct: 10, label: "Banda nacional (desconto extra 10%)" },
+    banda: { extraPct: 12.5, label: "Banda nacional (desconto extra 12,5%)" },
     antigo: { extraPct: 10, label: "Anunciante constante (desconto extra 10%)" }
   };
 
@@ -33,13 +33,17 @@
     const periodPct = item.fixed ? 0 : periodPctFor(period);
     const freeEligible = !item.fixed && FREE_FORMATS.includes(formatKey) && period === FREE_TEST_DAYS;
     const extraPct = freeEligible ? 0 : advertiser.extraPct;
-    const normal = round2(item.fixed ? item.price : item.price * period);
-    const periodDiscount = round2(normal * (periodPct / 100));
-    const afterPeriod = round2(normal - periodDiscount);
-    const extraDiscount = round2(afterPeriod * (extraPct / 100));
-    const afterExtra = round2(afterPeriod - extraDiscount);
-    const freeDiscount = freeEligible ? afterExtra : 0;
-    const total = freeEligible ? 0 : afterExtra;
+    // Integer centavos: half-cent discounts round up once at each existing step.
+    const normalCents = Math.round(item.price * 100) * period;
+    const periodCents = Math.floor((normalCents * Math.round(periodPct * 100) + 5000) / 10000);
+    const afterPeriodCents = normalCents - periodCents;
+    const extraCents = Math.floor((afterPeriodCents * Math.round(extraPct * 100) + 5000) / 10000);
+    const afterExtraCents = afterPeriodCents - extraCents;
+    const normal = normalCents / 100;
+    const periodDiscount = periodCents / 100;
+    const extraDiscount = extraCents / 100;
+    const freeDiscount = freeEligible ? afterExtraCents / 100 : 0;
+    const total = freeEligible ? 0 : afterExtraCents / 100;
     return {
       formatKey,
       name: item.name,
