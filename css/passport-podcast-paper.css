@@ -1,0 +1,94 @@
+/* Scoped Podcast & Broadcast skin. Typography and proportions follow #483;
+   the closed palette follows the current Arquivo. Payment artwork is unchanged. */
+body.passport-podcast-paper { --pod-paper:#FFFFFF; --pod-ink:#111111; --pod-red:#C41E3A; --pod-display:"Bodoni Moda",Georgia,serif; --pod-sans:"Instrument Sans",system-ui,-apple-system,sans-serif; --pod-body:"Source Serif 4",Georgia,serif; margin:0; background:var(--pod-paper); color:var(--pod-ink); font:400 16px/1.5 var(--pod-sans); -webkit-font-smoothing:antialiased; }
+.passport-podcast-paper *, .passport-podcast-paper *::before, .passport-podcast-paper *::after { box-sizing:border-box; }
+.passport-podcast-paper [hidden] { display:none !important; }
+.passport-podcast-paper a { color:inherit; text-decoration:none; }
+.passport-podcast-paper a:hover { color:var(--pod-red); }
+.passport-podcast-paper :is(a,button,input,select):focus-visible { outline:2px solid var(--pod-red); outline-offset:4px; }
+.passport-podcast-paper .podcast-skip { position:absolute; left:-10000px; }
+.passport-podcast-paper .podcast-skip:focus { left:12px; top:12px; padding:10px; background:var(--pod-paper); z-index:10; }
+.passport-podcast-paper .podcast-mast { text-align:center; padding:34px 16px 18px; }
+.passport-podcast-paper .podcast-mast__logo { display:inline-block; font:700 clamp(44px,8vw,84px)/.95 var(--pod-display); color:var(--pod-red); letter-spacing:-.01em; }
+.passport-podcast-paper .podcast-mast__logo em { display:block; font-style:italic; }
+.passport-podcast-paper .podcast-mast__years { margin-top:10px; font:600 11px/1 var(--pod-sans); letter-spacing:.35em; }
+.passport-podcast-paper .podcast-rule-double { border-top:3px solid var(--pod-ink); border-bottom:1px solid var(--pod-ink); height:4px; }
+.passport-podcast-paper .podcast-nav { border-bottom:1px solid var(--pod-ink); }
+.passport-podcast-paper .podcast-nav ul { display:flex; flex-wrap:wrap; justify-content:center; gap:0 26px; max-width:1200px; margin:0 auto; padding:0 16px; list-style:none; }
+.passport-podcast-paper .podcast-nav a { display:flex; align-items:center; min-height:44px; padding:12px 2px; font:700 12px/1 var(--pod-sans); letter-spacing:.12em; text-transform:uppercase; }
+.passport-podcast-paper .podcast-nav a[aria-current="page"] { color:var(--pod-red); box-shadow:inset 0 -2px 0 var(--pod-red); }
+.passport-podcast-paper .podcast-page { max-width:1200px; margin:0 auto; padding:38px 16px 64px; }
+.passport-podcast-paper .podcast-opening { margin-bottom:40px; }
+.passport-podcast-paper .podcast-kicker { display:inline-block; margin:0; font:700 10px/1.4 var(--pod-sans); letter-spacing:.18em; text-transform:uppercase; }
+.passport-podcast-paper .podcast-opening > .podcast-kicker { padding-bottom:6px; border-bottom:2px solid var(--pod-ink); }
+.passport-podcast-paper h1 { margin:16px 0 12px; font:700 clamp(36px,4.4vw,52px)/1.05 var(--pod-display); overflow-wrap:anywhere; }
+.passport-podcast-paper .podcast-section { border-top:3px solid var(--pod-ink); }
+.passport-podcast-paper .podcast-section-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; padding:16px 0 24px; }
+.passport-podcast-paper .podcast-section-head h2 { margin:0; font:700 clamp(28px,3vw,36px)/1.1 var(--pod-display); }
+.passport-podcast-paper .podcast-section-head > span { font:600 10px/1.4 var(--pod-sans); letter-spacing:.1em; text-transform:uppercase; }
+.passport-podcast-paper .podcast-feature { display:grid; grid-template-columns:220px minmax(0,1fr); gap:32px; align-items:center; }
+.passport-podcast-paper .podcast-art { display:flex; align-items:center; justify-content:center; width:100%; aspect-ratio:1; border:1px solid var(--pod-ink); text-align:center; }
+.passport-podcast-paper .podcast-art img { display:block; width:100%; height:100%; object-fit:contain; }
+.passport-podcast-paper .podcast-art > span { padding:16px; font:500 12px/1.6 var(--pod-sans); }
+.passport-podcast-paper .podcast-copy { min-width:0; }
+.passport-podcast-paper .podcast-copy .podcast-kicker { color:var(--pod-red); }
+.passport-podcast-paper .podcast-copy h3 { margin:10px 0 12px; font:700 clamp(24px,3vw,36px)/1.15 var(--pod-display); overflow-wrap:anywhere; }
+.passport-podcast-paper .podcast-copy > p:not(.podcast-kicker,.podcast-meta) { max-width:62ch; margin:0; font:400 16px/1.55 var(--pod-body); }
+.passport-podcast-paper .podcast-meta { display:flex; flex-wrap:wrap; gap:8px 16px; margin:16px 0 0; font:400 12px/1.5 var(--pod-sans); }
+.passport-podcast-paper #podcast-listened { color:var(--pod-red); }
+.passport-podcast-paper .podcast-player { padding:24px 0; margin-top:28px; border-top:1px solid var(--pod-ink); border-bottom:1px solid var(--pod-ink); }
+.passport-podcast-paper .podcast-transport { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.passport-podcast-paper .podcast-transport button { min-width:52px; min-height:48px; padding:10px 14px; background:var(--pod-paper); color:var(--pod-ink); border:1px solid var(--pod-ink); border-radius:0; font:700 17px/1 var(--pod-sans); cursor:pointer; }
+.passport-podcast-paper .podcast-transport button span { font-size:12px; }
+.passport-podcast-paper .podcast-transport .podcast-play { min-width:96px; background:var(--pod-red); border-color:var(--pod-red); color:var(--pod-paper); font-size:14px; }
+.passport-podcast-paper button:disabled { cursor:not-allowed; border-style:dashed; }
+.passport-podcast-paper .podcast-transport .podcast-play:disabled { background:var(--pod-paper); color:var(--pod-ink); border-color:var(--pod-ink); }
+.passport-podcast-paper .podcast-transport button:not(:disabled):hover { background:var(--pod-red); border-color:var(--pod-red); color:var(--pod-paper); }
+.passport-podcast-paper .podcast-timeline { display:grid; grid-template-columns:48px minmax(0,1fr) 48px; align-items:center; gap:12px; margin:18px 0 12px; font:500 12px/1.4 var(--pod-sans); font-variant-numeric:tabular-nums; }
+.passport-podcast-paper .podcast-timeline > span:last-child { text-align:right; }
+.passport-podcast-paper input[type="range"] { min-width:0; width:100%; min-height:44px; margin:0; appearance:none; -webkit-appearance:none; background:var(--pod-paper); cursor:pointer; }
+.passport-podcast-paper input[type="range"]::-webkit-slider-runnable-track { height:2px; background:var(--pod-ink); }
+.passport-podcast-paper input[type="range"]::-moz-range-track { height:2px; background:var(--pod-ink); }
+.passport-podcast-paper input[type="range"]::-webkit-slider-thumb { appearance:none; -webkit-appearance:none; width:14px; height:14px; margin-top:-6px; border:1px solid var(--pod-red); border-radius:50%; background:var(--pod-red); }
+.passport-podcast-paper input[type="range"]::-moz-range-thumb { width:14px; height:14px; border:1px solid var(--pod-red); border-radius:50%; background:var(--pod-red); }
+.passport-podcast-paper input[type="range"]:disabled { cursor:not-allowed; }
+.passport-podcast-paper input[type="range"]:disabled::-webkit-slider-thumb { background:var(--pod-paper); border-color:var(--pod-ink); }
+.passport-podcast-paper input[type="range"]:disabled::-moz-range-thumb { background:var(--pod-paper); border-color:var(--pod-ink); }
+.passport-podcast-paper .podcast-adjustments { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 28px; }
+.passport-podcast-paper .podcast-adjustments label { display:flex; align-items:center; gap:12px; min-width:0; font:500 12px/1.4 var(--pod-sans); }
+.passport-podcast-paper #podcast-volume { width:140px; }
+.passport-podcast-paper #podcast-speed { min-height:44px; padding:8px; border:1px solid var(--pod-ink); border-radius:0; background:var(--pod-paper); color:var(--pod-ink); font:500 13px/1 var(--pod-sans); opacity:1; }
+.passport-podcast-paper .podcast-status { margin:16px 0 0; font:400 13px/1.5 var(--pod-body); }
+.passport-podcast-paper .podcast-catalog { padding:24px 0 40px; }
+.passport-podcast-paper .podcast-catalog h3 { margin:0 0 14px; font:700 24px/1.2 var(--pod-display); }
+.passport-podcast-paper .podcast-catalog > p { margin:0; font:400 15px/1.55 var(--pod-body); }
+.passport-podcast-paper #podcast-episodes { list-style:none; padding:0; margin:0; }
+.passport-podcast-paper #podcast-episodes li { border-bottom:1px solid var(--pod-ink); }
+.passport-podcast-paper #podcast-episodes button { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; width:100%; min-height:56px; padding:16px 0; border:0; border-radius:0; background:var(--pod-paper); color:var(--pod-ink); text-align:left; cursor:pointer; font:500 15px/1.5 var(--pod-sans); }
+.passport-podcast-paper #podcast-episodes button[aria-current="true"] { color:var(--pod-red); }
+.passport-podcast-paper #podcast-episodes button > span { font-size:12px; }
+.passport-podcast-paper .broadcast-stage { margin-top:24px; padding:24px 0; border-top:1px solid var(--pod-ink); border-bottom:1px solid var(--pod-ink); font:400 15px/1.55 var(--pod-body); }
+.passport-podcast-paper .broadcast-stage p { margin:0; }
+.passport-podcast-paper .broadcast-stage iframe { display:block; width:100%; aspect-ratio:16/9; border:0; }
+.passport-podcast-paper .podcast-support { max-width:1200px; margin:0 auto; padding:28px 16px 20px; border-top:1px solid var(--pod-ink); text-align:center; }
+.passport-podcast-paper .podcast-support h2 { margin:0; font:700 12px/1.4 var(--pod-sans); letter-spacing:.1em; }
+.passport-podcast-paper .podcast-support p { margin:12px auto; max-width:62ch; font:400 16px/1.55 var(--pod-body); }
+.passport-podcast-paper .podcast-support > a { display:inline-flex; align-items:center; min-height:44px; color:var(--pod-red); font:700 12px/1.4 var(--pod-sans); }
+.passport-podcast-paper .podcast-footer { border-top:3px solid var(--pod-ink); padding:30px 16px 20px; background:var(--pod-paper); }
+.passport-podcast-paper .podcast-footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; max-width:1200px; margin:0 auto; }
+.passport-podcast-paper .podcast-footer-brand { font:700 24px/1 var(--pod-display); color:var(--pod-red); }
+.passport-podcast-paper .podcast-footer nav { display:flex; flex-wrap:wrap; gap:14px 20px; font:500 13px/1.5 var(--pod-sans); }
+.passport-podcast-paper .podcast-footer-bottom { max-width:1200px; margin:20px auto 0; padding-top:16px; border-top:1px solid var(--pod-ink); text-align:center; font:400 12px/1.8 var(--pod-sans); }
+.passport-podcast-paper .payment-footer-trust { background:var(--pod-paper); padding:0 16px 24px; }
+.passport-podcast-paper .payment-footer-trust__inner { display:flex; flex-direction:column; align-items:center; gap:14px; max-width:1200px; margin:0 auto; }
+.passport-podcast-paper .payment-footer-trust__methods { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px; font:700 12px/1.4 var(--pod-sans); letter-spacing:.1em; }
+.passport-podcast-paper .payment-footer-trust__methods strong { display:flex; align-items:center; gap:6px; }
+.passport-podcast-paper .payment-footer-trust__methods i { display:none; }
+.passport-podcast-paper .payment-footer-trust__brands { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; }
+.passport-podcast-paper .payment-footer-trust__brands img { object-fit:contain; width:auto; max-width:56px; height:28px; padding:2px 6px; background:var(--pod-paper); border:1px solid var(--pod-ink); border-radius:3px; }
+.passport-podcast-paper .payment-footer-trust__logo { display:block; width:70px; height:auto; }
+body.passport-podcast-paper #passport-cookie-notice { background:var(--pod-paper); color:var(--pod-ink); border:1px solid var(--pod-ink); border-radius:0; box-shadow:none; }
+body.passport-podcast-paper #passport-cookie-notice a { color:var(--pod-red); }
+body.passport-podcast-paper #passport-cookie-notice button { background:var(--pod-red); color:var(--pod-paper); border-color:var(--pod-red); border-radius:0; }
+@media(max-width:900px) { .passport-podcast-paper .podcast-footer-inner { flex-direction:column; align-items:center; text-align:center; } .passport-podcast-paper .podcast-footer nav { justify-content:center; } }
+@media(max-width:560px) { .passport-podcast-paper .podcast-nav ul { gap:0 18px; } .passport-podcast-paper .podcast-nav a { font-size:11px; } .passport-podcast-paper .podcast-page { padding-top:28px; } .passport-podcast-paper .podcast-feature { grid-template-columns:minmax(0,1fr); gap:20px; } .passport-podcast-paper .podcast-art { max-width:220px; } .passport-podcast-paper .podcast-transport { gap:6px; } .passport-podcast-paper .podcast-transport button { min-width:44px; padding:10px; } .passport-podcast-paper .podcast-transport .podcast-play { min-width:76px; } .passport-podcast-paper .podcast-adjustments { gap:8px 16px; } }
