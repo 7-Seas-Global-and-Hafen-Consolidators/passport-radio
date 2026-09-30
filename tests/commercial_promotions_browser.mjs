@@ -53,6 +53,8 @@ const money = (n) => Number(n).toFixed(2);
     const qr = page.locator("img.commercial-pix-qr");
     if (await qr.getAttribute("src") !== "/images/anuncie/pix-chave-email.png") fail("QR is not local");
     if ((await qr.getAttribute("data-pix-payload")) !== "passportradio.online@gmail.com") fail("QR payload attr");
+    await qr.scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => document.querySelector("img.commercial-pix-qr").naturalWidth > 0);
     if ((await page.locator("img.commercial-pix-qr").evaluate((img) => img.naturalWidth)) < 32) fail("QR did not render");
 
     const read = async () => page.evaluate(() => ({
@@ -74,31 +76,31 @@ const money = (n) => Number(n).toFixed(2);
     };
 
     let q = await setQuote("top", 1, "none");
-    if (q.total !== "84.50") fail(`1 day banner ${q.total}`);
+    if (q.total !== "8.45") fail(`1 day banner ${q.total}`);
 
-    q = await setQuote("top", 5, "none");
-    if (q.normal !== "422.50" || q.total !== "0.00" || !q.freeShown) fail(`FREE banner ${JSON.stringify(q)}`);
+    q = await setQuote("top", 10, "none");
+    if (q.normal !== "84.50" || q.total !== "0.00" || !q.freeShown) fail(`FREE banner ${JSON.stringify(q)}`);
 
-    q = await setQuote("rectangle", 5, "none");
-    if (q.normal !== "322.50" || q.total !== "0.00") fail(`FREE rectangle ${JSON.stringify(q)}`);
+    q = await setQuote("rectangle", 10, "none");
+    if (q.normal !== "64.50" || q.total !== "0.00") fail(`FREE rectangle ${JSON.stringify(q)}`);
 
-    q = await setQuote("strip", 5, "none");
-    if (q.normal !== "247.50" || q.total !== "0.00") fail(`FREE strip ${JSON.stringify(q)}`);
+    q = await setQuote("strip", 10, "none");
+    if (q.normal !== "49.50" || q.total !== "0.00") fail(`FREE strip ${JSON.stringify(q)}`);
 
-    q = await setQuote("sponsored", 5, "none");
-    if (q.total !== "1399.50" || q.freeShown) fail(`publieditorial FREE leak ${JSON.stringify(q)}`);
+    q = await setQuote("sponsored", 10, "none");
+    if (q.total !== "55.98" || q.freeShown) fail(`publieditorial FREE leak ${JSON.stringify(q)}`);
 
     q = await setQuote("top", 7, "none");
-    if (q.total !== "571.33") fail(`7-day auto discount ${q.total}`);
+    if (q.total !== "57.13") fail(`7-day auto discount ${q.total}`);
 
     q = await setQuote("top", 30, "none");
-    if (q.total !== "2225.48") fail(`30-day auto discount ${q.total}`);
+    if (q.total !== "222.55") fail(`30-day auto discount ${q.total}`);
 
     q = await setQuote("top", 30, "banda");
-    if (q.total !== "2002.93") fail(`extra 10% ${q.total}`);
+    if (q.total !== "194.73") fail(`extra 12.5% ${q.total}`);
 
     q = await setQuote("top", 90, "none");
-    if (q.total !== "6084.00") fail(`90-day cap ${q.total}`);
+    if (q.total !== "608.40") fail(`90-day cap ${q.total}`);
 
     await page.screenshot({ path: path.join(shotDir, "anuncie-quote.png"), fullPage: true });
 
@@ -233,7 +235,7 @@ const money = (n) => Number(n).toFixed(2);
     if (!uciCal.includes("01/10/2026") || !uciCal.includes("02/10/2026")) fail("UCI draw/result missing on page");
 
     console.log("OK commercial browser");
-    console.log("OK 160 periods, FREE 5-day, extra 10%, local QR");
+    console.log("OK 160 periods, FREE 10-day, extra 12.5%, local QR");
     console.log("OK campaigns, Formspree xaenylvg, referral, language");
     console.log("OK calendars and automatic status transitions");
   } finally {
