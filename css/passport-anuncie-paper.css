@@ -36,15 +36,6 @@
 .audio-row button:disabled{opacity:1;cursor:default}
 .audio-row span{font-size:12px}
 .section-head{border-top:1px solid var(--ink);padding-top:16px}
-.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.audience-grid article{border-top:1px solid var(--ink)}
-.audience-bar{margin:10px 0}
-.audience-bar p{display:flex;justify-content:space-between;gap:15px;margin:0 0 6px;font-size:13px}
-.audience-bar b{font-size:14px}
-.audience-bar meter{width:100%;height:5px;display:block;appearance:none;background:var(--paper);border:1px solid var(--ink)}
-.audience-bar meter::-webkit-meter-bar{background:var(--paper);border:0;border-radius:0;box-shadow:none}
-.audience-bar meter::-webkit-meter-optimum-value{background:var(--red)}
-.audience-bar meter::-moz-meter-bar{background:var(--red)}
 .turn{background:var(--red);color:var(--paper);padding:24px!important;margin:24px 0 0}
 .turn .action{background:var(--paper);color:var(--red)!important}
 .turn .action:hover{color:var(--ink)!important}
@@ -98,7 +89,7 @@
 .audio-row{gap:8px}
 .audio-row button{font-size:11px;padding:12px}
 .audio-row span{width:100%}
-.audience-grid,.special,.commercial-calculator{grid-template-columns:1fr;gap:22px}
+.special,.commercial-calculator{grid-template-columns:1fr;gap:22px}
 .turn{padding:26px 20px!important}
 .format-grid{grid-template-columns:1fr 1fr;gap:22px 18px}
 .format-grid strong{font-size:19px}

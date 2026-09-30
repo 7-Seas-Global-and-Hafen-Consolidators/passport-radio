@@ -38,10 +38,11 @@ const server=http.createServer((req,res)=>{const file=path.join(ROOT,decodeURICo
   await page.reload();assert.ok(Number((await page.locator('#movement-index').innerText()).replaceAll('.',''))>=Number(second.replaceAll('.','')));
   const tab=await ctx.newPage();await tab.goto('http://127.0.0.1:8781/anuncie.html');assert.ok(Math.abs(await page.evaluate(()=>PassportMovement.valueAt())-await tab.evaluate(()=>PassportMovement.valueAt()))<2);await tab.close();
   assert.equal(await page.locator('#history-days').count(),0);assert.equal(await page.locator('.commercial-explanations > article').count(),4);
-  const profile=await page.locator('.audience-bar b').allTextContents();assert.deepEqual(profile,['68%','27%','5%','41%','29%','18%','8%','4%']);
-  assert.equal(await page.locator('.audience').isVisible(),true);assert.equal(await page.locator('.commercial-explanations .audience').count(),0);
+  assert.equal(await page.locator('.audience,.audience-grid,.audience-bar,meter,#audience-device,#audience-source').count(),0);
+  assert.ok(!(await page.locator('body').innerText()).includes('QUEM ESTÁ AQUI'));
+  assert.equal(await page.locator('.commercial-explanations').evaluate(el=>el.nextElementSibling.classList.contains('turn')),true);
   const text=await page.locator('body').innerText();for(const token of ['DEMONSTRATIVO','DEMONSTRATIVOS','Antes da coleta','MEDIÇÃO REAL EM ACUMULAÇÃO'])assert.ok(!text.includes(token));
-  console.log('counter and compact audience passed');assert.equal(await page.locator('#recado-audio').evaluate(a=>a.paused&&a.currentTime===0),true);
+  console.log('counter and audience removal passed');assert.equal(await page.locator('#recado-audio').evaluate(a=>a.paused&&a.currentTime===0),true);
   await page.locator('#recado-toggle').focus();await page.keyboard.press('Enter');await page.waitForFunction(()=>!document.querySelector('#recado-audio').paused);await page.waitForTimeout(400);
   assert.equal(await page.locator('#recado-toggle').getAttribute('aria-pressed'),'true');
   await page.click('#recado-toggle');assert.equal(await page.locator('#recado-audio').evaluate(a=>a.paused),true);
@@ -64,6 +65,7 @@ const server=http.createServer((req,res)=>{const file=path.join(ROOT,decodeURICo
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`overflow ${width}`);
    assert.deepEqual(await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src)),[]);
    const img=page.locator('.campaign img');const box=await img.boundingBox();const ratio=await img.evaluate(i=>i.naturalWidth/i.naturalHeight);assert.ok(Math.abs(box.width/box.height-ratio)<.01);
+   const flow=await page.locator('.commercial-explanations').evaluate(el=>({gap:el.nextElementSibling.getBoundingClientRect().top-el.getBoundingClientRect().bottom,margin:parseFloat(getComputedStyle(el.nextElementSibling).marginTop)}));assert.equal(flow.gap,flow.margin);assert.equal(flow.gap,24);
    const counter=await page.locator('.movement-line').evaluate(el=>{const c=getComputedStyle(el),n=getComputedStyle(el.querySelector('strong'));return {font:parseFloat(c.fontSize),line:parseFloat(c.lineHeight),top:parseFloat(c.marginTop),bottom:parseFloat(c.marginBottom),weight:n.fontWeight,color:n.color,tag:el.tagName,height:el.getBoundingClientRect().height};});
    assert.equal(counter.font,width<=750?15:16);assert.ok(Math.abs(counter.line/counter.font-1.4)<.001);assert.ok(counter.top<=8&&counter.bottom<=8);assert.equal(counter.weight,'700');assert.equal(counter.color,'rgb(196, 30, 58)');assert.equal(counter.tag,'P');if(width>=390)assert.ok(counter.height<=counter.line+1);
    const qr=page.locator('.commercial-pix-qr');const qrBox=await qr.boundingBox();assert.equal(qrBox.width,180);assert.equal(qrBox.height,180);
@@ -75,13 +77,13 @@ const server=http.createServer((req,res)=>{const file=path.join(ROOT,decodeURICo
   }
   await page.emulateMedia({reducedMotion:'reduce'});await page.reload();assert.ok(await page.locator('#movement-index').innerText()!=='—');
   // Empty/error source must preserve the configurator and produce no JS errors.
-  await page.route('**/functions/v1/passport-media-kit',route=>route.fulfill({status:503,body:'{}'}));await page.reload();await page.waitForTimeout(300);assert.deepEqual(await page.locator('.audience-bar b').allTextContents(),profile);assert.equal(await page.locator('#ad-total').getAttribute('data-value'),'8.45');
+  await page.route('**/functions/v1/passport-media-kit',route=>route.fulfill({status:503,body:'{}'}));await page.reload();await page.waitForTimeout(300);assert.equal(await page.locator('.audience-bar').count(),0);assert.equal(await page.locator('#ad-total').getAttribute('data-value'),'8.45');
   // Live page crosses São Paulo midnight without a reload or collection POST.
   const clockContext=await browser.newContext({ignoreHTTPSErrors:true});const clockPage=await clockContext.newPage();const posts=[];
   await clockPage.route('**/functions/v1/passport-media-kit',route=>{if(route.request().method()==='POST')posts.push(route.request().postData());return route.fulfill({status:503,body:'{}'});});
   await clockPage.clock.install({time:new Date('2026-09-30T23:59:58-03:00')});await clockPage.goto('http://127.0.0.1:8781/anuncie.html');
   assert.equal(await clockPage.locator('#movement-index').getAttribute('data-day'),'2026-09-30');await clockPage.clock.runFor(2000);
   assert.equal(await clockPage.locator('#movement-index').getAttribute('data-day'),'2026-10-01');assert.equal(await clockPage.locator('#movement-index').innerText(),'0');await clockPage.clock.runFor(15000);assert.ok(await clockPage.evaluate(()=>PassportMovement.valueAt())>0);assert.deepEqual(posts,[]);await clockPage.close();
-  assert.deepEqual(errors,[]);console.log('PASS PIX decoded original/rendered 180px desktop/mobile, both copy paths, exact counter CSS, independent audience, São Paulo live midnight and zero counter POSTs');console.log('PASS desktop/mobile 320/375/390/768/1440; compact profile; error source; counter/reload/tab/reduced motion; audio play/pause/stop/end/replay/keyboard; calculator; all images; no overflow; no JS errors');
+  assert.deepEqual(errors,[]);console.log('PASS PIX decoded original/rendered 180px desktop/mobile, both copy paths, exact counter CSS, audience removed without gap, São Paulo live midnight and zero counter POSTs');console.log('PASS desktop/mobile 320/375/390/768/1440; audience removal; error source; counter/reload/tab/reduced motion; audio play/pause/stop/end/replay/keyboard; calculator; all images; no overflow; no JS errors');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});
