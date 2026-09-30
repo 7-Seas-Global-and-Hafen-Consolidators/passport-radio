@@ -1,0 +1,101 @@
+/* Scoped Promoções skin, using the approved Noticias/Arquivo/Podcast typography. */
+body.passport-promocoes-paper { --pr-paper:#FFFFFF; --pr-ink:#111111; --pr-red:#C41E3A; --pr-display:"Bodoni Moda",Georgia,serif; --pr-sans:"Instrument Sans",system-ui,-apple-system,sans-serif; --pr-body:"Source Serif 4",Georgia,serif; margin:0; background:var(--pr-paper); color:var(--pr-ink); font:400 16px/1.5 var(--pr-sans); -webkit-font-smoothing:antialiased; }
+.passport-promocoes-paper *, .passport-promocoes-paper *::before, .passport-promocoes-paper *::after { box-sizing:border-box; }
+.passport-promocoes-paper [hidden] { display:none !important; }
+.passport-promocoes-paper a { color:inherit; text-decoration:none; }
+.passport-promocoes-paper a:hover { color:var(--pr-red); }
+.passport-promocoes-paper :is(a,button,input,select):focus-visible { outline:2px solid var(--pr-red); outline-offset:4px; }
+.passport-promocoes-paper .promo-paper-skip { position:absolute; left:-10000px; }
+.passport-promocoes-paper .promo-paper-skip:focus { left:12px; top:12px; padding:10px; background:var(--pr-paper); z-index:10; }
+.passport-promocoes-paper .promo-paper-mast { text-align:center; padding:34px 16px 18px; }
+.passport-promocoes-paper .promo-paper-mast__logo { display:inline-block; font:700 clamp(44px,8vw,84px)/.95 var(--pr-display); color:var(--pr-red); letter-spacing:-.01em; }
+.passport-promocoes-paper .promo-paper-mast__logo em { display:block; font-style:italic; }
+.passport-promocoes-paper .promo-paper-mast__years { margin-top:10px; font:600 11px/1 var(--pr-sans); letter-spacing:.35em; }
+.passport-promocoes-paper .promo-paper-rule-double { border-top:3px solid var(--pr-ink); border-bottom:1px solid var(--pr-ink); height:4px; }
+.passport-promocoes-paper .promo-paper-nav { border-bottom:1px solid var(--pr-ink); }
+.passport-promocoes-paper .promo-paper-nav ul { display:flex; flex-wrap:wrap; justify-content:center; gap:0 26px; max-width:1200px; margin:0 auto; padding:0 16px; list-style:none; }
+.passport-promocoes-paper .promo-paper-nav a { display:flex; align-items:center; min-height:44px; padding:12px 2px; font:700 12px/1 var(--pr-sans); letter-spacing:.12em; text-transform:uppercase; }
+.passport-promocoes-paper .promo-paper-nav a[aria-current="page"] { color:var(--pr-red); box-shadow:inset 0 -2px 0 var(--pr-red); }
+.passport-promocoes-paper .promo-paper-kicker { display:inline-block; margin:0; font:700 10px/1.4 var(--pr-sans); letter-spacing:.18em; text-transform:uppercase; }
+.passport-promocoes-paper h1 { margin:16px 0 12px; font:700 clamp(36px,4.4vw,52px)/1.05 var(--pr-display); overflow-wrap:anywhere; }
+.passport-promocoes-paper button:disabled { cursor:not-allowed; border-style:dashed; }
+.passport-promocoes-paper .promo-paper-support { max-width:1200px; margin:0 auto; padding:28px 16px 20px; border-top:1px solid var(--pr-ink); text-align:center; }
+.passport-promocoes-paper .promo-paper-support h2 { margin:0; font:700 12px/1.4 var(--pr-sans); letter-spacing:.1em; }
+.passport-promocoes-paper .promo-paper-support p { margin:12px auto; max-width:62ch; font:400 16px/1.55 var(--pr-body); }
+.passport-promocoes-paper .promo-paper-support > a { display:inline-flex; align-items:center; min-height:44px; color:var(--pr-red); font:700 12px/1.4 var(--pr-sans); }
+.passport-promocoes-paper .promo-paper-footer { border-top:3px solid var(--pr-ink); padding:30px 16px 20px; background:var(--pr-paper); }
+.passport-promocoes-paper .promo-paper-footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; max-width:1200px; margin:0 auto; }
+.passport-promocoes-paper .promo-paper-footer-brand { font:700 24px/1 var(--pr-display); color:var(--pr-red); }
+.passport-promocoes-paper .promo-paper-footer nav { display:flex; flex-wrap:wrap; gap:14px 20px; font:500 13px/1.5 var(--pr-sans); }
+.passport-promocoes-paper .promo-paper-footer-bottom { max-width:1200px; margin:20px auto 0; padding-top:16px; border-top:1px solid var(--pr-ink); text-align:center; font:400 12px/1.8 var(--pr-sans); }
+.passport-promocoes-paper .payment-footer-trust { background:var(--pr-paper); padding:0 16px 24px; }
+.passport-promocoes-paper .payment-footer-trust__inner { display:flex; flex-direction:column; align-items:center; gap:14px; max-width:1200px; margin:0 auto; }
+.passport-promocoes-paper .payment-footer-trust__methods { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px; font:700 12px/1.4 var(--pr-sans); letter-spacing:.1em; }
+.passport-promocoes-paper .payment-footer-trust__methods strong { display:flex; align-items:center; gap:6px; }
+.passport-promocoes-paper .payment-footer-trust__methods i { display:none; }
+.passport-promocoes-paper .payment-footer-trust__brands { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; }
+.passport-promocoes-paper .payment-footer-trust__brands img { object-fit:contain; width:auto; max-width:56px; height:28px; padding:2px 6px; background:var(--pr-paper); border:1px solid var(--pr-ink); border-radius:3px; }
+.passport-promocoes-paper .payment-footer-trust__logo { display:block; width:70px; height:auto; }
+body.passport-promocoes-paper #passport-cookie-notice { background:var(--pr-paper); color:var(--pr-ink); border:1px solid var(--pr-ink); border-radius:0; box-shadow:none; }
+body.passport-promocoes-paper #passport-cookie-notice a { color:var(--pr-red); }
+body.passport-promocoes-paper #passport-cookie-notice button { background:var(--pr-red); color:var(--pr-paper); border-color:var(--pr-red); border-radius:0; }
+/* Page-local editorial presentation; generated campaign markup and data stay unchanged. */
+.passport-promocoes-paper .promo-shell { max-width:1200px; margin:0 auto; padding:0 16px; }
+.passport-promocoes-paper .promo-hero { padding:38px 0 32px; }
+.passport-promocoes-paper .promo-kicker { display:inline-block; margin:0; padding-bottom:6px; border-bottom:2px solid var(--pr-ink); font:700 10px/1.4 var(--pr-sans); letter-spacing:.18em; text-transform:uppercase; }
+.passport-promocoes-paper .promo-intro { max-width:62ch; margin:16px 0 0; font:400 16px/1.55 var(--pr-body); }
+.passport-promocoes-paper .listener-zone { padding-bottom:64px; }
+.passport-promocoes-paper .listener-tabs { display:flex; flex-wrap:wrap; gap:0 28px; border-top:3px solid var(--pr-ink); border-bottom:1px solid var(--pr-ink); }
+.passport-promocoes-paper .listener-tabs button { min-height:48px; padding:14px 0; border:0; border-radius:0; background:var(--pr-paper); color:var(--pr-ink); font:700 12px/1.4 var(--pr-sans); letter-spacing:.1em; cursor:pointer; }
+.passport-promocoes-paper .listener-tabs button.is-active { color:var(--pr-red); box-shadow:inset 0 -2px 0 var(--pr-red); }
+.passport-promocoes-paper .listener-tabs button:hover { color:var(--pr-red); }
+.passport-promocoes-paper .listener-panel { padding-top:28px; }
+.passport-promocoes-paper .promo-campaign-grid { display:grid; gap:32px; }
+.passport-promocoes-paper .promo-campaign-card { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:32px; padding-bottom:32px; border-bottom:1px solid var(--pr-ink); }
+.passport-promocoes-paper .promo-campaign-card__media { display:flex; align-items:center; justify-content:center; min-width:0; aspect-ratio:4/3; }
+.passport-promocoes-paper .promo-campaign-card__media img { display:block; width:100%; height:100%; object-fit:contain; }
+.passport-promocoes-paper .promo-campaign-card__body { display:grid; align-content:center; gap:14px; min-width:0; }
+.passport-promocoes-paper .promo-status { color:var(--pr-red); font:700 10px/1.4 var(--pr-sans); letter-spacing:.12em; }
+.passport-promocoes-paper .promo-campaign-card__body .promo-campaign-card__type { margin:0; font:600 11px/1.4 var(--pr-sans); letter-spacing:.1em; }
+.passport-promocoes-paper .promo-campaign-card__body h2 { margin:0; font:700 clamp(28px,3vw,36px)/1.12 var(--pr-display); }
+.passport-promocoes-paper .promo-campaign-card__body p { margin:0; font:400 16px/1.55 var(--pr-body); }
+.passport-promocoes-paper .promo-campaign-card__facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px 16px; font:400 12px/1.5 var(--pr-sans); }
+.passport-promocoes-paper .promo-action { display:inline-flex; align-items:center; justify-self:start; min-height:44px; padding:10px 0; color:var(--pr-red); border-bottom:1px solid var(--pr-red); font:700 12px/1.4 var(--pr-sans); letter-spacing:.06em; }
+.passport-promocoes-paper .promo-action:hover { color:var(--pr-ink); border-color:var(--pr-ink); }
+.passport-promocoes-paper .promo-commercial-bridge { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:24px 40px; padding:32px 0 0; }
+.passport-promocoes-paper .promo-commercial-bridge > div { min-width:0; }
+.passport-promocoes-paper .promo-commercial-bridge span, .passport-promocoes-paper .promo-result-card > span, .passport-promocoes-paper .entries-head > span { color:var(--pr-red); font:700 10px/1.4 var(--pr-sans); letter-spacing:.12em; }
+.passport-promocoes-paper .promo-commercial-bridge h2 { max-width:40ch; margin:10px 0 12px; font:700 clamp(24px,2.4vw,32px)/1.15 var(--pr-display); }
+.passport-promocoes-paper .promo-commercial-bridge p { max-width:62ch; margin:0; font:400 16px/1.55 var(--pr-body); }
+.passport-promocoes-paper .promo-commercial-bridge > a { display:inline-flex; align-items:center; min-height:44px; padding:10px 0; color:var(--pr-red); border-bottom:1px solid var(--pr-red); font:700 12px/1.4 var(--pr-sans); letter-spacing:.06em; }
+.passport-promocoes-paper .promo-result-card { padding:0 0 24px; border-bottom:1px solid var(--pr-ink); }
+.passport-promocoes-paper .promo-result-card h2, .passport-promocoes-paper .entries-head h2 { margin:12px 0; font:700 clamp(28px,3vw,36px)/1.12 var(--pr-display); }
+.passport-promocoes-paper .promo-result-card p, .passport-promocoes-paper .entries-head p { max-width:62ch; margin:0; font:400 16px/1.55 var(--pr-body); }
+.passport-promocoes-paper .entries-head { margin-bottom:24px; }
+.passport-promocoes-paper .my-entries { display:grid; gap:24px; }
+.passport-promocoes-paper .account-empty { display:grid; gap:8px; padding:24px 0; border-top:1px solid var(--pr-ink); border-bottom:1px solid var(--pr-ink); font:400 16px/1.55 var(--pr-body); }
+.passport-promocoes-paper .entry-card { padding:24px 0; border-bottom:1px solid var(--pr-ink); }
+.passport-promocoes-paper .entry-card__top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font:600 12px/1.5 var(--pr-sans); }
+.passport-promocoes-paper .entry-card__top b { color:var(--pr-red); }
+.passport-promocoes-paper .entry-card__code { margin:16px 0; font:700 clamp(20px,3vw,28px)/1.3 var(--pr-sans); letter-spacing:.08em; overflow-wrap:anywhere; }
+.passport-promocoes-paper .entry-card__details { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; font:400 14px/1.5 var(--pr-sans); }
+.passport-promocoes-paper .entry-card__details span { min-width:0; overflow-wrap:anywhere; }
+.passport-promocoes-paper .entry-card__details small { display:block; margin-bottom:6px; font:600 10px/1.4 var(--pr-sans); letter-spacing:.1em; text-transform:uppercase; }
+@media(max-width:900px) {
+ .passport-promocoes-paper .promo-paper-footer-inner { flex-direction:column; align-items:center; text-align:center; }
+ .passport-promocoes-paper .promo-paper-footer nav { justify-content:center; }
+}
+@media(max-width:700px) {
+ .passport-promocoes-paper .promo-campaign-card { grid-template-columns:minmax(0,1fr); gap:20px; }
+ .passport-promocoes-paper .promo-commercial-bridge { grid-template-columns:minmax(0,1fr); gap:16px; }
+ .passport-promocoes-paper .promo-commercial-bridge > a { justify-self:start; }
+ .passport-promocoes-paper .entry-card__details { grid-template-columns:minmax(0,1fr); }
+}
+@media(max-width:560px) {
+ .passport-promocoes-paper .promo-paper-nav ul { gap:0 18px; }
+ .passport-promocoes-paper .promo-paper-nav a { font-size:11px; }
+ .passport-promocoes-paper .promo-hero { padding-top:28px; }
+ .passport-promocoes-paper .listener-tabs { gap:0 20px; }
+ .passport-promocoes-paper .listener-tabs button { font-size:11px; letter-spacing:.04em; }
+ .passport-promocoes-paper .promo-campaign-card__facts { grid-template-columns:minmax(0,1fr); }
+}
