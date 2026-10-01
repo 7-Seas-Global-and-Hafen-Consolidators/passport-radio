@@ -1,0 +1,62 @@
+/* Loja only. Approved shared masthead/footer and commercial data remain owned by their existing files. */
+body.passport-store-paper{--pp-red:#C41E3A;--pp-ink:#111111;--pp-rule:#111111}
+.passport-store-paper .store-paper-content{max-width:1200px;margin:0 auto;padding:38px 16px 48px}
+.passport-store-paper .pp-store-hero{padding:0 0 28px;border-bottom:3px solid var(--pr-ink)}
+.passport-store-paper .pp-env__kicker{font:700 10px/1.4 var(--pr-sans);letter-spacing:.18em;color:var(--pr-red)}
+.passport-store-paper .pp-store-hero h1{font-size:clamp(38px,5vw,64px);margin:16px 0}
+.passport-store-paper .pp-store-hero p{max-width:72ch;margin:0}
+.passport-store-paper .pp-store-search{display:flex;flex-wrap:wrap;gap:10px;padding:24px 0}
+.passport-store-paper .pp-store-search label{width:100%;font:700 12px/1.4 var(--pr-sans);text-transform:uppercase;letter-spacing:.08em}
+.passport-store-paper .pp-store-search input{flex:1;min-width:0;border:1px solid var(--pr-ink);border-radius:0;background:var(--pr-paper);color:var(--pr-ink);padding:12px;font:400 16px/1.4 var(--pr-sans)}
+.passport-store-paper button{font-family:var(--pr-sans);cursor:pointer;border-radius:0}
+.passport-store-paper .pp-store-search button,.passport-store-paper .pp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;background:var(--pr-red);color:var(--pr-paper);border:1px solid var(--pr-red);font:700 12px/1.4 var(--pr-sans);letter-spacing:.04em;text-decoration:none}
+.passport-store-paper .pp-store-search button:hover,.passport-store-paper .pp-btn:hover{background:var(--pr-ink);border-color:var(--pr-ink);color:var(--pr-paper)}
+.passport-store-paper .pp-store-doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.passport-store-paper .pp-store-doors details{border-top:1px solid var(--pr-ink);border-bottom:1px solid var(--pr-ink);padding:12px 0;min-width:0;align-self:start}
+.passport-store-paper .pp-store-doors summary{cursor:pointer;min-height:24px;font:700 12px/1.5 var(--pr-sans)}
+.passport-store-paper .pp-store-doors a{display:inline-flex;gap:5px;align-items:center;min-height:44px;padding:8px 10px;margin:8px 6px 0 0;border:1px solid var(--pr-ink);font:500 12px/1.4 var(--pr-sans);overflow-wrap:anywhere}
+.passport-store-paper .pp-store-doors small{font:inherit}
+.passport-store-paper .pp-store-bar{border-bottom:1px solid var(--pr-ink);padding-bottom:20px}
+.passport-store-paper .pp-store-bar__in{display:flex;flex-wrap:wrap;gap:8px}
+.passport-store-paper .pp-chip{min-height:44px;padding:9px 12px;border:1px solid var(--pr-ink);background:var(--pr-paper);color:var(--pr-ink);font:700 11px/1.4 var(--pr-sans);letter-spacing:.03em}
+.passport-store-paper .pp-chip[aria-pressed="true"],.passport-store-paper .pp-chip:hover{background:var(--pr-red);color:var(--pr-paper);border-color:var(--pr-red)}
+.passport-store-paper .pp-store-main{padding:20px 0 32px}
+.passport-store-paper #pp-store-page-status{margin:0 0 20px;font:500 12px/1.5 var(--pr-sans)}
+.passport-store-paper #pp-store-grid{scroll-margin-top:16px}
+.passport-store-paper .pp-store-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 20px;align-items:stretch}
+.passport-store-paper .pp-product{display:flex;flex-direction:column;min-width:0;padding:0 0 16px;border-bottom:1px solid var(--pr-ink);color:var(--pr-ink);text-decoration:none}
+.passport-store-paper .rv6-media{display:flex;align-items:center;justify-content:center;aspect-ratio:1;width:100%;overflow:hidden;margin-bottom:14px;background:var(--pr-paper)}
+.passport-store-paper .rv6-media img{display:block;width:100%;height:100%;object-fit:contain}
+.passport-store-paper .rv6-media img[hidden]{display:none}
+.passport-store-paper .rv6-media[data-img="error"]:after{content:"IMAGEM INDISPONÍVEL";font:700 10px/1.4 var(--pr-sans);letter-spacing:.06em;text-align:center}
+.passport-store-paper .pp-product>b{font:700 10px/1.4 var(--pr-sans);letter-spacing:.08em;color:var(--pr-red);text-transform:uppercase;margin-bottom:6px}
+.passport-store-paper .pp-product>strong{font:700 17px/1.25 var(--pr-display);overflow-wrap:anywhere;margin-bottom:10px}
+.passport-store-paper .pp-product>.pp-price{font:700 18px/1.3 var(--pr-sans);margin-bottom:8px}
+.passport-store-paper .pp-installments{font:400 12px/1.5 var(--pr-sans);margin-bottom:12px;overflow-wrap:anywhere}
+.passport-store-paper .pp-product>.pp-btn{margin-top:auto;align-self:flex-start;font-size:10px;padding:10px 12px}
+.passport-store-paper #pp-store-pagination{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-top:28px}
+.passport-store-paper #pp-store-pagination button{min-width:44px;min-height:44px;padding:8px 12px;border:1px solid var(--pr-ink);background:var(--pr-paper);color:var(--pr-ink);font:700 12px/1.4 var(--pr-sans)}
+.passport-store-paper #pp-store-pagination button[aria-current="page"],.passport-store-paper #pp-store-pagination button:hover:enabled{background:var(--pr-red);border-color:var(--pr-red);color:var(--pr-paper)}
+.passport-store-paper #pp-store-pagination button:disabled{opacity:.45;cursor:default;border-style:solid}
+.passport-store-paper .pp-page-gap{padding:0 4px}
+.passport-store-paper .pp-store-cart,.passport-store-paper .pp-store-cep{border-top:1px solid var(--pr-ink);padding:24px 0;scroll-margin-top:16px}
+.passport-store-paper .pp-store-cart h2{font-size:30px}
+.passport-store-paper .pp-store-cart ul{list-style:none;padding:0}
+.passport-store-paper .pp-store-cart li{padding:12px 0;border-bottom:1px solid var(--pr-ink);font:400 14px/1.5 var(--pr-sans);overflow-wrap:anywhere}
+.passport-store-paper .pp-store-cart button,.passport-store-paper .pp-store-cep button{border:1px solid var(--pr-ink);background:var(--pr-paper);color:var(--pr-ink);min-height:44px;padding:10px 12px;font:700 12px/1.4 var(--pr-sans);margin:4px}
+.passport-store-paper .pp-cart-note,.passport-store-paper .pp-cart-empty{font:400 14px/1.5 var(--pr-sans)}
+.passport-store-paper .pp-store-cep{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px 20px}
+.passport-store-paper .pp-store-cep label{font:700 12px/1.5 var(--pr-sans)}
+.passport-store-paper .pp-store-cep input{display:block;margin-top:8px;min-height:44px;max-width:100%;padding:10px;border:1px solid var(--pr-ink);border-radius:0;background:var(--pr-paper);color:var(--pr-ink);font:400 16px/1.4 var(--pr-sans)}
+.passport-store-paper #pp-store-cep-out{width:100%;font:400 14px/1.5 var(--pr-sans);margin:0}
+.passport-store-paper .pp-product-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding:24px 0;border-bottom:1px solid var(--pr-ink);margin-bottom:24px}
+.passport-store-paper .pp-product-detail .pp-price{font:700 28px/1.4 var(--pr-sans)}
+.passport-store-paper .pp-product-detail ul{padding-left:20px}
+.passport-store-paper .pp-store-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.passport-store-paper .store-footer-support{max-width:1200px;margin:20px auto 0;font:600 12px/1.5 var(--pr-sans);color:var(--pr-red)}
+@media(max-width:1000px){.passport-store-paper .pp-store-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.passport-store-paper .pp-store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.passport-store-paper .pp-product-detail{grid-template-columns:minmax(0,1fr)}.passport-store-paper .pp-store-doors{grid-template-columns:minmax(0,1fr);gap:8px}}
+@media(max-width:560px){.passport-store-paper .store-paper-content{padding-top:28px}.passport-store-paper .pp-store-grid{gap:24px 12px}.passport-store-paper .pp-product>strong{font-size:16px}.passport-store-paper .pp-product>.pp-price{font-size:16px}.passport-store-paper .pp-installments{font-size:11px}.passport-store-paper .pp-chip{font-size:10px;padding:8px}.passport-store-paper .pp-page-label,.passport-store-paper .pp-page-gap,.passport-store-paper .pp-page-number[data-near="false"]{display:none}.passport-store-paper #pp-store-pagination{gap:6px}}
+@media(max-width:340px){.passport-store-paper .pp-store-grid{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.passport-store-paper *{scroll-behavior:auto!important}}
+.passport-store-paper #pp-store-pagination[hidden]{display:none}
