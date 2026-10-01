@@ -1,0 +1,28 @@
+/* Support and optional guide only. Shared approved Participe skin stays intact. */
+.passport-apoio-paper .apoio-content{max-width:1200px;margin:0 auto;padding:38px 16px 48px}
+.passport-apoio-paper .apoio-opening{padding-bottom:28px}
+.passport-apoio-paper .apoio-opening h1{font-size:clamp(38px,5vw,64px)}
+.passport-apoio-paper p{max-width:72ch}
+.passport-apoio-paper h2{overflow-wrap:anywhere}
+.passport-apoio-paper .apoio-lead{font:700 18px/1.4 var(--pr-sans)}
+.apoio-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.passport-apoio-paper .apoio-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--pr-red);background:var(--pr-red);color:var(--pr-paper);padding:12px 20px;font:700 12px/1.4 var(--pr-sans);letter-spacing:.06em;cursor:pointer}
+.passport-apoio-paper .apoio-button:hover{background:var(--pr-ink);border-color:var(--pr-ink);color:var(--pr-paper)}
+.apoio-person{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:32px;align-items:center;border-top:3px solid var(--pr-ink);padding:28px 0}
+.apoio-person figure{margin:0}.apoio-person img{display:block;width:100%;height:auto}.apoio-person figcaption{margin-top:10px;font:400 12px/1.4 var(--pr-sans)}
+.apoio-section{border-top:1px solid var(--pr-ink);padding:28px 0}
+.apoio-uses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:24px}
+.apoio-uses article{border-top:1px solid var(--pr-ink);padding-top:16px}.apoio-uses p{font-size:15px;margin:0}
+.apoio-zero{border-top:3px solid var(--pr-ink);padding:28px 0;scroll-margin-top:20px}
+.passport-apoio-paper .apoio-call{font:700 clamp(25px,2.4vw,32px)/1.12 var(--pr-display);color:var(--pr-red)}
+.apoio-zero h3{margin-top:28px}.passport-apoio-paper .apoio-emphasis{font:700 14px/1.4 var(--pr-sans)}
+.apoio-payment{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin:24px 0}
+.apoio-payment article{border-top:1px solid var(--pr-ink);padding-top:18px;min-width:0}
+.apoio-pix{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.apoio-pix img{width:180px;height:180px;object-fit:contain}
+.passport-apoio-paper .apoio-key-label{font:700 11px/1.4 var(--pr-sans);margin:0 0 6px}.apoio-key{display:block;font:600 14px/1.4 var(--pr-sans);overflow-wrap:anywhere;margin-bottom:14px}
+.passport-apoio-paper .apoio-small-button{border:1px solid var(--pr-ink);background:var(--pr-paper);color:var(--pr-ink);min-height:44px;padding:10px 12px;font:700 11px/1.4 var(--pr-sans);cursor:pointer}
+.passport-apoio-paper .apoio-feedback,.passport-apoio-paper .apoio-payment-note{font:400 12px/1.5 var(--pr-sans)}
+.apoio-guide-link{margin-left:24px}.apoio-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+@media(max-width:760px){.apoio-person,.apoio-payment,.apoio-guide-grid{grid-template-columns:minmax(0,1fr)}.apoio-uses{grid-template-columns:repeat(2,minmax(0,1fr))}.apoio-person{gap:20px}.apoio-guide-link{margin:12px 0 0;display:flex}}
+@media(max-width:560px){.passport-apoio-paper .apoio-content{padding-top:28px}.apoio-uses{grid-template-columns:minmax(0,1fr)}.apoio-pix{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.passport-apoio-paper *{scroll-behavior:auto!important}}
