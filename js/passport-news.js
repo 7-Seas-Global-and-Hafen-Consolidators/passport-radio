@@ -48,6 +48,7 @@
     return RECOVER.find((r) => r.re.test(t)) || null;
   };
   function usablePhoto(item) {
+    if (String(item?.url || "").split("?")[0] === "/editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html") return item.image;
     const rec = recover(item);
     if (rec) return {src: rec.src, alt: rec.alt, approved: true};
     const im = item && item.image;
