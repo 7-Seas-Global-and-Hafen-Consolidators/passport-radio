@@ -260,3 +260,59 @@ html body.pp-article.pp-article :is(.essential,.full-bleed-copy) small { color:#
 
 html body.pp-article.pp-article .mn-hero-media { background:#FFFFFF !important; color:#111111 !important; border-color:#111111 !important; }
 html body.pp-article.pp-article .mn-hero-media img { height:auto !important; object-fit:contain !important; }
+
+/* Existing editorial information boxes, including the Polyphia local style. */
+html body.pp-article.pp-article .pe-listen { background:#FFFFFF !important; color:#111111 !important; border-color:#111111 !important; }
+html body.pp-article.pp-article .pe-listen :is(small,strong) { color:#111111 !important; -webkit-text-fill-color:currentColor !important; font-family:var(--pr-sans) !important; }
+/* Standalone reading sections use the same column as their introductions. */
+html body.pp-article.pp-article .wrap :is(.intro,section.chapter,.signature) { width:100% !important; max-width:760px !important; margin-inline:auto !important; }
+
+/* Legacy light-system rails carry a cream gradient above the white base. */
+html body.pp-article.pp-article :is(.sidebar,.sidebar-box,.portal-side) {
+  background-image:none !important;
+  background-color:#FFFFFF !important;
+}
+/* Legacy image/copy heroes: the photograph stays intact, copy follows on paper. */
+html body.pp-article.pp-article .hero:has(> .hero-media) > .hero-copy {
+  margin-top:0 !important;
+  padding:28px 0 !important;
+  background:#FFFFFF !important;
+}
+html body.pp-article.pp-article .hero:has(> .hero-media) > .hero-copy::before {
+  background:none !important;
+}
+html body.pp-article.pp-article .hero > .hero-media {
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+/* Editorial verdict, continuation and roster panels retain their content on paper. */
+html body.pp-article.pp-article :is(.verdict,.next-route,.who-block) {
+  background:#FFFFFF !important;
+  color:#111111 !important;
+  border-color:#111111 !important;
+  border-radius:0 !important;
+}
+/* Legacy ranking templates keep their data, with paper tokens and readable panels. */
+html body.pp-article.pp-article:has(.ranking,.rank-entry) {
+  --black:#FFFFFF; --navy:#FFFFFF; --gold-light:#C41E3A; --cream:#111111;
+  --text:#111111; --muted:#111111; --line:#111111; --shadow:none;
+  --b:#FFFFFF; --n:#FFFFFF; --g:#C41E3A; --gl:#C41E3A;
+  --c:#111111; --t:#111111; --m:#111111; --l:#111111;
+}
+html body.pp-article.pp-article .ranking li {
+  background:#FFFFFF !important; border-color:#111111 !important; border-radius:0 !important;
+}
+html body.pp-article.pp-article :is(.ranking-number,.ritual,.rank-entry__number) {
+  font-family:var(--pr-display) !important; color:#C41E3A !important;
+  -webkit-text-stroke:0 !important;
+}
+html body.pp-article.pp-article .hero:has(> img.hero__image) > .hero__veil {
+  background:none !important;
+}
+html body.pp-article.pp-article .hero:has(> img.hero__image) > img.hero__image {
+  filter:none !important;
+}
+html body.pp-article.pp-article .hero:has(> img.hero__image) > .hero__content {
+  width:min(calc(100% - 32px),760px) !important; padding:0 !important;
+  background:#FFFFFF !important;
+}

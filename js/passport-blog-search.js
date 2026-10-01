@@ -127,3 +127,16 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install, {once:true});
   else install();
 })();
+
+/* Current paper chrome: individual articles only; existing behavior is unchanged. */
+(() => {
+  const install = () => {
+    if (!document.body.classList.contains('pp-article') || document.body.classList.contains('passport-participe-paper')) return;
+    if ([...document.scripts].some(script => script.src.includes('/js/passport-editorial-paper-chrome.js'))) return;
+    const script = document.createElement('script');
+    script.src = '/js/passport-editorial-paper-chrome.js?v=20261001';
+    document.head.appendChild(script);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install, {once:true});
+  else install();
+})();
