@@ -285,6 +285,14 @@ jobs:
           node --check js/passport-measurement.js
           node --check js/passport-anuncie.js
 
+      - name: Validate Loja catalogue preservation and pagination
+        shell: bash
+        run: |
+          node --check js/passport-store-v6.js
+          node --check js/passport-store-search.js
+          node --test tests/store_pagination.test.cjs
+          python tests/test_store_stamp_pricing.py
+
       - name: Validate Global Blog Tunnel contracts
         shell: bash
         run: |

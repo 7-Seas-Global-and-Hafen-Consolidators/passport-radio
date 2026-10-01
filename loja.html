@@ -6,40 +6,32 @@
 <title>Loja | Passport Radio</title>
 <meta name="description" content="Catálogo da Passport Store: produtos, preços e pagamento via Mercado Pago.">
 <link rel="canonical" href="https://passportradio.online/loja.html">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/passport-tokens-v6.css?v=20260908z">
-<link rel="stylesheet" href="/css/passport-shell-v6.css?v=20260908z">
-<link rel="stylesheet" href="/css/passport-store-v6.css?v=20260918s">
-<link rel="stylesheet" href="/css/payment-footer-trust.css?v=20260908z">
-<link rel="stylesheet" href="/css/passport-four-doors.css?v=20260912f">
-<link rel="stylesheet" href="/css/passport-station-skin.css?v=20260912g">
-<link rel="stylesheet" href="/css/passport-blog.css?v=20260918s">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/passport-participe-paper.css?v=20260930">
+<link rel="stylesheet" href="/css/passport-store-paper.css?v=20260930">
 </head>
-<body class="pp-body fd-body pp-station">
-<header class="pp-topbar"><div class="pp-topbar-in">
-<a class="pp-brand" href="index.html"><img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="38" height="38"><span class="pp-brand-txt"><b>PASSPORT RADIO</b></span></a>
-<form class="pp-store-search" role="search" method="get" action="/loja.html">
+<body class="passport-participe-paper passport-store-paper">
+<a class="participe-paper-skip" href="#store-main">Ir para o conteúdo</a>
+<header class="participe-paper-mast"><a class="participe-paper-mast__logo" href="index.html" aria-label="Passport Radio — Home">Passport<em>Radio</em></a><div class="participe-paper-mast__years">1 9 9 8 · 2 0 2 6</div></header>
+<div class="participe-paper-rule-double" aria-hidden="true"></div>
+<nav class="participe-paper-nav" aria-label="Seções"><ul><li><a href="index.html">HOME</a></li><li><a href="noticias.html">NOTÍCIAS</a></li><li><a href="editorial.html">ARQUIVO</a></li><li><a href="blog.html">BLOG</a></li><li><a href="radio.html">OUVIR</a></li><li><a href="loja.html" aria-current="page">LOJA</a></li><li><a href="promocoes.html">PROMOÇÕES</a></li><li><a href="anuncie.html">ANUNCIE</a></li><li><a href="doe.html">APOIE</a></li><li><a href="#pp-store-cart">Carrinho</a></li></ul></nav>
+<main id="store-main" class="store-paper-content">
+  <section class="pp-store-hero"><div class="pp-store-hero__in"><span class="pp-env__kicker">PASSPORT STORE</span><h1>LOJA</h1><p>Catálogo real da casa. Preço Passport 20% abaixo da referência pública observada. Pix com 5% off. Boleto à vista. Cartão em até 6x. Pagamento Mercado Pago; WhatsApp leva o pedido com os itens.</p></div></section>
+  <form class="pp-store-search" role="search" method="get" action="/loja.html">
 <label class="blog-search__label" for="store-q">Buscar na Loja</label>
 <input id="store-q" name="q" type="search" placeholder="Buscar produto, banda, tipo, SKU…" autocomplete="off">
 <button type="submit">Buscar</button>
 </form>
-<nav class="pp-top-actions"><a href="blog.html">BLOG</a><a href="radio.html">OUVIR</a><a href="#pp-store-cart">Carrinho</a></nav>
-</div></header>
-<nav class="pp-nav" aria-label="Seções"><div class="pp-nav-in">
-<a href="index.html">HOME</a><a href="noticias.html">NOTÍCIAS</a><a href="editorial.html">ARQUIVO</a><a href="blog.html">BLOG</a><a href="radio.html">OUVIR</a><a href="loja.html" aria-current="page">LOJA</a><a href="promocoes.html">PROMOÇÕES</a><a href="anuncie.html">ANUNCIE</a><a href="doe.html">APOIE</a>
-</div></nav>
-<main>
-  <section class="pp-store-hero"><div class="pp-store-hero__in"><span class="pp-env__kicker">PASSPORT STORE</span><h1>Loja</h1><p>Catálogo real da casa. Preço Passport 20% abaixo da referência pública observada. Pix com 5% off. Boleto à vista. Cartão em até 6x. Pagamento Mercado Pago; WhatsApp leva o pedido com os itens.</p></div></section>
   <div id="pp-store-doors"></div>
   <div id="pp-store-bar-slot"></div>
   <div id="pp-store-search-results"></div>
-  <section class="pp-store-main" aria-label="Catálogo da Passport Store"><div id="pp-store-grid" class="pp-store-grid"></div></section>
+  <section class="pp-store-main" aria-label="Catálogo da Passport Store"><p id="pp-store-page-status" role="status" aria-live="polite"></p><div id="pp-store-grid" class="pp-store-grid" tabindex="-1"></div><nav id="pp-store-pagination" aria-label="Páginas de produtos" hidden></nav></section>
   <section id="pp-store-cart" class="pp-store-cart" aria-label="Carrinho"></section>
   <form id="pp-store-cep" class="pp-store-cep"><label for="cep">CEP<input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"></label><button type="submit">Calcular frete</button><p id="pp-store-cep-out"></p></form>
 </main>
-<footer class="pp-footer" id="ajude"><div class="pp-footer-in"><div class="pp-fcol"><p>Passport Radio</p></div><div class="pp-fcol"><a href="index.html">Home</a><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="blog.html">Blog</a><a href="loja.html">Loja</a><a href="promocoes.html">Promoções</a><a href="anuncie.html">Anuncie</a></div><div class="pp-fcol"><a href="https://link.mercadopago.com.br/passportradio" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div></div><div class="pp-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
-<script src="/js/passport-store-v6.js?v=20260918s" defer></script>
-<script src="/js/passport-store-search.js?v=20260918s" defer></script>
+<footer class="participe-paper-footer" id="ajude"><div class="participe-paper-footer-inner"><a class="participe-paper-footer-brand" href="index.html">Passport <em>Radio</em></a><nav aria-label="Links do rodapé"><a href="index.html">Home</a><a href="noticias.html">Notícias</a><a href="editorial.html">Arquivo</a><a href="blog.html">Blog</a><a href="loja.html">Loja</a><a href="promocoes.html">Promoções</a><a href="anuncie.html">Anuncie</a></nav></div><div class="store-footer-support"><a href="https://link.mercadopago.com.br/passportradio" target="_blank" rel="noopener">DOE AGORA · PIX · Boleto · Cartão</a></div><div class="participe-paper-footer-bottom">© 2026 Passport Radio · Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a> · <a href="/cookies.html">Política de Cookies</a> · <a href="/contato.html">Contato</a></div></footer>
+<script src="/js/passport-store-v6.js?v=20260930" defer></script>
+<script src="/js/passport-store-search.js?v=20260930" defer></script>
 <script src="/js/payment-footer-trust.js?v=20260908z" defer></script>
 </body>
 </html>

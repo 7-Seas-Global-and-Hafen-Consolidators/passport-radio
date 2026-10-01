@@ -114,16 +114,9 @@
     });
   }
 
-  function paintResults(items, state, allItems) {
+  function paintResults(items, state) {
     const host = document.getElementById("pp-store-search-results");
     if (!host) return;
-    if (document.body.classList.contains("passport-store-paper") && window.passportStoreView) {
-      const active = state.q || state.entity || state.cat || state.type || state.gender;
-      host.innerHTML = active && !items.length ? `<p class="pp-store-empty">Nenhum produto publicável para “${esc(state.q || state.entity || state.type)}”. O catálogo Stamp/Passport não inventa SKU para preencher buraco.</p>` : "";
-      const render = (p) => `<a class="pp-product" data-id="${esc(p.id)}" href="${esc(p.url || ("/loja/p/" + p.id + ".html"))}"><div class="rv6-media"><img src="${esc(p.image || "")}" alt="${esc(p.name)}" width="220" height="220" loading="lazy" onerror="this.hidden=true;this.closest('.rv6-media').dataset.img='error';"></div><b>${esc(p.category || "")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a>`;
-      window.passportStoreView.search(active ? (cat) => filterItems(allItems, { ...state, cat }) : null, render, state);
-      return;
-    }
     if (!state.q && !state.entity && !state.type && !state.gender) {
       host.innerHTML = "";
       return;
@@ -155,15 +148,6 @@
         <div><span>Artista no catálogo real</span>${Object.keys(artists).sort().slice(0, 24).map((k) => link("/loja.html?entity=" + encodeURIComponent(k), k, artists[k])).join("")}</div>
         <div><span>Categoria</span>${Object.keys(cats).sort().map((k) => link("/loja.html?cat=" + encodeURIComponent(k), k, cats[k])).join("")}</div>
       </nav>`;
-    if (document.body.classList.contains("passport-store-paper")) {
-      slot.querySelectorAll(".pp-store-doors > div").forEach((group) => {
-        const details = document.createElement("details"), summary = document.createElement("summary");
-        summary.textContent = group.querySelector("span").textContent;
-        details.append(summary);
-        group.querySelectorAll("a").forEach((link) => details.append(link));
-        group.replaceWith(details);
-      });
-    }
   }
 
   async function boot() {
@@ -192,7 +176,7 @@
       items = payload.items || [];
     } catch (e) { items = []; }
     doors(items);
-    paintResults(filterItems(items, state), state, items);
+    paintResults(filterItems(items, state), state);
     const q = new URLSearchParams(location.search);
     const pid = q.get("product") || (location.pathname.match(/\/loja\/p\/([^/.]+)/) || [])[1];
     if (pid && document.getElementById("pp-store-grid")) {
