@@ -455,3 +455,28 @@ html body.pp-blog-article.pp-blog-article :is(.essential,.full-bleed-copy) small
 
 html body.pp-blog-article.pp-blog-article .mn-hero-media { background:#FFFFFF !important; color:#111111 !important; border-color:#111111 !important; }
 html body.pp-blog-article.pp-blog-article .mn-hero-media img { height:auto !important; object-fit:contain !important; }
+
+/* Paper skin for the legacy pp-blog hubs only. Article and approved paper surfaces are excluded. */
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) { --blog-gold:#C41E3A; --blog-ink:#111111; --blog-mute:#111111; --blog-panel:#FFFFFF; --blog-line:#111111; background:#FFFFFF !important; color:#111111 !important; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.pp-topbar,.pp-nav,.pp-footer,.pp-footer-bottom,.pp-footer-legal) { background:#FFFFFF !important; color:#111111; border-color:#111111 !important; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-card,.blog-doors-panel a,.blog-az a,.blog-follow,.blog-collab-strip) { background:#FFFFFF; color:#111111; border-color:#111111; border-radius:0; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-card__media) { background:#FFFFFF; border-radius:0; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-intro,.blog-card p,.blog-card__meta,.blog-archive-empty,.blog-doors-panel span,.blog-follow p,.blog-submit-form label,.blog-submit-list,.pp-footer-bottom,.pp-fcol a) { color:#111111; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-card p,.blog-intro,.blog-archive__lead) { font-family:"Source Serif 4",Georgia,serif; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-card__eyebrow,.blog-doors a,.blog-follow span,.blog-follow a,.blog-collab-strip a,.blog-store-rail a) { color:#C41E3A; border-color:#C41E3A; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .blog-collab-strip h2 { color:#111111; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-search input,.blog-submit-form input,.blog-submit-form textarea) { background:#FFFFFF !important; color:#111111 !important; border-color:#111111 !important; border-radius:0 !important; font-family:"Instrument Sans",system-ui,sans-serif; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .blog-search input::placeholder { color:#111111; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.blog-search button,.blog-submit-form button,.blog-submit-login) { background:#FFFFFF; color:#C41E3A; border-color:#C41E3A; border-radius:0; font-family:"Instrument Sans",system-ui,sans-serif; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .blog-search button:hover { background:#C41E3A; color:#FFFFFF; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.pp-top-actions a,.pp-nav a) { color:#111111 !important; font-family:"Instrument Sans",system-ui,sans-serif; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.pp-top-actions a,.pp-nav a):hover { background:#FFFFFF !important; color:#C41E3A !important; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .pp-nav a[aria-current="page"] { background:#FFFFFF !important; color:#C41E3A !important; border-color:#C41E3A !important; box-shadow:inset 0 -3px 0 #C41E3A !important; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .pp-brand img { display:none; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(.pp-brand,.pp-brand-txt,.pp-brand-txt b) { color:#C41E3A; font:700 24px/1 "Bodoni Moda",Georgia,serif; letter-spacing:normal; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .pp-fcol > p { color:#C41E3A; font:700 24px/1 "Bodoni Moda",Georgia,serif; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .pp-fcol a:hover { color:#C41E3A; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(a,button,input,textarea):focus-visible { outline-color:#C41E3A; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) :is(h1,h2,h3) { color:#111111 !important; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .pp-footer-bottom a { color:#111111; }
+html body.pp-blog:not(.pp-blog-article):not(.pp-article):not(.passport-participe-paper) .blog-search input:focus-visible { border-color:#C41E3A !important; outline:2px solid #C41E3A; outline-offset:3px; }
