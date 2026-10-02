@@ -69,6 +69,12 @@ body.passport-podcast-paper { --pod-paper:#FFFFFF; --pod-ink:#111111; --pod-red:
 .passport-podcast-paper #podcast-episodes button > span { font-size:12px; }
 .passport-podcast-paper .broadcast-stage { margin-top:24px; padding:24px 0; border-top:1px solid var(--pod-ink); border-bottom:1px solid var(--pod-ink); font:400 15px/1.55 var(--pod-body); }
 .passport-podcast-paper .broadcast-stage p { margin:0; }
+.passport-podcast-paper .podcast-meta a { color:var(--pod-red); text-decoration:underline; text-underline-offset:3px; }
+.passport-podcast-paper #broadcast-items { list-style:none; padding:0; margin:0; }
+.passport-podcast-paper #broadcast-items li { border-bottom:1px solid var(--pod-ink); }
+.passport-podcast-paper #broadcast-items button { width:100%; min-height:56px; padding:16px 0; border:0; background:var(--pod-paper); color:var(--pod-ink); text-align:left; cursor:pointer; font:500 15px/1.5 var(--pod-sans); }
+.passport-podcast-paper #broadcast-items button[aria-current="true"] { color:var(--pod-red); }
+.passport-podcast-paper .broadcast-load { min-height:44px; padding:12px 18px; border:1px solid var(--pod-red); background:var(--pod-red); color:var(--pod-paper); cursor:pointer; font:700 12px/1.4 var(--pod-sans); }
 .passport-podcast-paper .broadcast-stage iframe { display:block; width:100%; aspect-ratio:16/9; border:0; }
 .passport-podcast-paper .podcast-support { max-width:1200px; margin:0 auto; padding:28px 16px 20px; border-top:1px solid var(--pod-ink); text-align:center; }
 .passport-podcast-paper .podcast-support h2 { margin:0; font:700 12px/1.4 var(--pod-sans); letter-spacing:.1em; }
