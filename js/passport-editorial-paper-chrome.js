@@ -57,3 +57,8 @@
     observer.observe(document.querySelector('#mr-nomad-dossier'),{childList:true,subtree:true});
   }
 })();
+
+/* Shared document continuity and discreet privacy link. No catalog or page content is changed. */
+(() => { if (document.querySelector('script[data-passport-continuity]')) return;
+  const script=document.createElement('script');script.src='/js/passport-audio-continuity.js';script.defer=true;script.dataset.passportContinuity='1';document.head.appendChild(script);
+})();
