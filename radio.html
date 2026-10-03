@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/passport-podcast-paper.css?v=20261003">
-  <script src="/js/passport-podcast-player.js?v=20261003" defer></script>
-  <script src="/js/passport-broadcast-catalog.js?v=20261003" defer></script>
+  <script src="/js/passport-podcast-player.js?v=20261003-public" defer></script>
+  <script src="/js/passport-broadcast-catalog.js?v=20261003-public" defer></script>
   <script src="/js/payment-footer-trust.js?v=20260908z" defer></script>
 </head>
 <body class="passport-podcast-paper">
@@ -34,14 +34,13 @@
   <main id="podcast-main" class="podcast-page">
     <div class="podcast-opening"><span class="podcast-kicker">PASSPORT RADIO</span><h1>PODCAST &amp; BROADCAST</h1></div>
     <section id="passport-podcast" class="podcast-section" aria-labelledby="podcast-section-title">
-      <div class="podcast-section-head"><h2 id="podcast-section-title">Podcast</h2><span id="podcast-catalog-count">0 episódios</span></div>
+      <div class="podcast-section-head"><h2 id="podcast-section-title">Podcast</h2></div>
       <div class="podcast-feature">
         <div class="podcast-art"><img id="podcast-cover" alt="" hidden><span id="podcast-cover-empty">Capa do podcast<br>Quando disponível</span></div>
         <div class="podcast-copy">
-          <p class="podcast-kicker" id="podcast-name">PODCAST PASSPORT RADIO</p>
           <h3 id="podcast-episode-title">Nenhum episódio publicado</h3>
           <p id="podcast-description">Os episódios aparecerão aqui quando o catálogo estiver disponível.</p>
-          <p class="podcast-meta"><time id="podcast-date" hidden></time><span id="podcast-episode-duration" hidden></span><span id="podcast-listened" hidden>Episódio ouvido</span><a id="podcast-official" hidden target="_blank" rel="noopener noreferrer">EPISÓDIO OFICIAL</a><a id="podcast-feed" hidden target="_blank" rel="noopener noreferrer">RSS OFICIAL</a></p>
+          <p class="podcast-meta"><time id="podcast-date" hidden></time><span id="podcast-episode-duration" hidden></span><span id="podcast-listened" hidden>Episódio ouvido</span></p>
         </div>
       </div>
       <div class="podcast-player" aria-label="Player de podcast Passport Radio">
@@ -64,10 +63,10 @@
       <noscript><p>Ative o JavaScript para utilizar o player e o catálogo de episódios.</p></noscript>
     </section>
     <section id="passport-broadcast" class="podcast-section broadcast-section" aria-labelledby="broadcast-section-title">
-      <div class="podcast-section-head"><h2 id="broadcast-section-title">Broadcast</h2><span id="broadcast-count">11 vídeos</span></div>
+      <div class="podcast-section-head"><h2 id="broadcast-section-title">Broadcast</h2></div>
       <div class="podcast-feature">
         <div class="podcast-art"><img id="broadcast-cover" alt="" hidden><span id="broadcast-cover-empty">Capa do vídeo<br>Quando disponível</span></div>
-        <div class="podcast-copy"><p class="podcast-kicker" id="broadcast-name">NPR MUSIC · TINY DESK</p><h3 id="broadcast-title">Selecione uma apresentação</h3><p id="broadcast-description">Apresentações oficiais NPR Music.</p><p class="podcast-meta"><a id="broadcast-official" target="_blank" rel="noopener noreferrer">VÍDEO OFICIAL</a></p></div>
+        <div class="podcast-copy"><h3 id="broadcast-title">Selecione uma apresentação</h3><p id="broadcast-description">Apresentações.</p></div>
       </div>
       <div id="passport-broadcast-stage" class="broadcast-stage" aria-label="Área de vídeo"></div>
       <div class="podcast-catalog"><h3>Vídeos</h3><ol id="broadcast-items" aria-label="Catálogo de vídeos"></ol></div>

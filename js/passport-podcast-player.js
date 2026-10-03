@@ -32,13 +32,6 @@
   const clock = n => { const t = Math.floor(seconds(n)), h = Math.floor(t / 3600); return (h ? h + ':' : '') + String(Math.floor(t / 60) % 60).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0'); };
   const duration = () => Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 0;
   const text = (id, value) => { byId(id).textContent = typeof value === 'string' ? value : ''; };
-  function officialLink(id, value) {
-    const link = byId(id);
-    if (!link) return;
-    const url = safeURL(value);
-    link.hidden = !url;
-    if (url) link.href = url; else link.removeAttribute('href');
-  }
   const renderPlay = () => { const playing = !audio.paused; play.textContent = playing ? 'Pause' : 'Play'; play.setAttribute('aria-label', playing ? 'Pausar episódio' : 'Reproduzir episódio'); };
   function renderTimeline() {
     const total = duration(), elapsed = seconds(audio.currentTime);
@@ -65,7 +58,7 @@
     image.hidden = true; empty.hidden = false;
     image.onload = () => { image.hidden = false; empty.hidden = true; };
     image.onerror = () => { image.hidden = true; empty.hidden = false; };
-    if (cover) { image.alt = episode.coverAlt || catalog.podcast?.coverAlt || episode.title || 'Podcast Passport Radio'; image.src = cover; }
+    if (cover) { image.alt = episode.title || 'Podcast Passport Radio'; image.src = cover; }
     else { image.removeAttribute('src'); image.alt = ''; }
   }
   function select(i) {
@@ -73,10 +66,7 @@
     generation++; audio.pause(); index = i;
     audio.src = safeURL(episodes[i].src); audio.load();
     audio.volume = Number(volume.value); audio.playbackRate = Number(speed.value);
-    text('podcast-name', episodes[i].program || catalog.podcast?.name || 'PODCAST PASSPORT RADIO');
-    officialLink('podcast-official', episodes[i].officialUrl);
-    officialLink('podcast-feed', episodes[i].feed);
-    text('podcast-episode-title', episodes[i].title); text('podcast-description', episodes[i].description || '');
+    text('podcast-episode-title', episodes[i].title); text('podcast-description', (episodes[i].description || '').replace(/\s+no (?:Sodajerker|Music Makes Us|Song Exploder)\./g, '.'));
     const date = byId('podcast-date'); date.textContent = episodes[i].date || ''; date.hidden = !episodes[i].date;
     if (episodes[i].date) date.setAttribute('datetime', episodes[i].date); else date.removeAttribute('datetime');
     const hint = Number.isFinite(episodes[i].duration) && episodes[i].duration > 0 ? episodes[i].duration : 0;
@@ -112,7 +102,6 @@
   });
   audio.addEventListener('error', () => { if (index >= 0) { status.textContent = 'Áudio indisponível. Tente novamente ou selecione outro episódio.'; renderPlay(); } });
   window.addEventListener('pagehide', () => { generation++; audio.pause(); });
-  text('podcast-catalog-count', episodes.length + (episodes.length === 1 ? ' episódio' : ' episódios'));
   byId('podcast-catalog-empty').hidden = episodes.length > 0;
   renderCover();
   if (episodes.length) select(0);

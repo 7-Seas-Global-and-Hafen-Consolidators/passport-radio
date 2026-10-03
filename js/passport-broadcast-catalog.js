@@ -17,27 +17,26 @@
     seen.add(item.id); return true;
   });
   const stage = get('passport-broadcast-stage'), list = get('broadcast-items');
+  const publicTitle = item => item.title.replace(/(?:NPR Music|Tiny Desk) /g, '');
   function select(index) {
     const item = entries[index];
     if (!item) return;
     stage.replaceChildren();
-    get('broadcast-name').textContent = item.source;
-    get('broadcast-title').textContent = item.title;
-    get('broadcast-description').textContent = item.artist + ' · apresentação oficial NPR Music.';
-    get('broadcast-official').href = item.officialUrl;
+    get('broadcast-title').textContent = publicTitle(item);
+    get('broadcast-description').textContent = item.artist + ' · apresentação.';
     const image = get('broadcast-cover'), empty = get('broadcast-cover-empty');
     image.hidden = true; empty.hidden = false;
     image.onload = () => { image.hidden = false; empty.hidden = true; };
     image.onerror = () => { image.hidden = true; empty.hidden = false; };
     if (typeof item.cover === 'string' && item.cover.startsWith('/assets/podcast-broadcast/')) {
-      image.src = item.cover; image.alt = item.coverAlt || item.title;
+      image.src = item.cover; image.alt = publicTitle(item);
     } else { image.removeAttribute('src'); }
     const button = document.createElement('button');
     button.type = 'button'; button.className = 'broadcast-load'; button.textContent = 'REPRODUZIR VÍDEO';
     button.addEventListener('click', () => {
       const frame = document.createElement('iframe');
       frame.src = 'https://www.youtube-nocookie.com/embed/' + item.id + '?autoplay=0';
-      frame.title = item.title; frame.allow = 'encrypted-media; fullscreen; picture-in-picture';
+      frame.title = publicTitle(item); frame.allow = 'encrypted-media; fullscreen; picture-in-picture';
       frame.allowFullscreen = true; frame.referrerPolicy = 'strict-origin-when-cross-origin';
       stage.replaceChildren(frame);
     });
@@ -48,9 +47,8 @@
   }
   entries.forEach((item, index) => {
     const li = document.createElement('li'), button = document.createElement('button');
-    button.type = 'button'; button.textContent = item.title;
+    button.type = 'button'; button.textContent = publicTitle(item);
     button.addEventListener('click', () => select(index)); li.appendChild(button); list.appendChild(li);
   });
-  get('broadcast-count').textContent = entries.length + (entries.length === 1 ? ' vídeo' : ' vídeos');
   if (entries.length) select(0);
 })();
