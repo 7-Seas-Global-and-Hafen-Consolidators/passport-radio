@@ -51,3 +51,6 @@
       if (empty) empty.hidden = false;
     });
 })();
+
+/* Principal-navigation link only. */
+(() => {if(document.querySelector('script[src="/js/passport-games-navigation.js"]'))return;const s=document.createElement('script');s.src='/js/passport-games-navigation.js';s.defer=true;document.head.append(s);})();

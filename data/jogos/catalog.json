@@ -1,0 +1,2872 @@
+{
+  "version": 1,
+  "media": {
+    "freddie": {
+      "src": "/assets/jogos/freddie.webp",
+      "alt": "Freddie Mercury",
+      "width": 900,
+      "height": 886,
+      "fit": "contain",
+      "source": "https://queenphotos.files.wordpress.com/2016/05/freddie-mercury-in-1987.jpg?w=1254"
+    },
+    "bowie": {
+      "src": "/assets/jogos/bowie.webp",
+      "alt": "David Bowie",
+      "width": 887,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://www.bowiewonderworld.com/images/photos/24/dbkevindaviesexhibition.jpg"
+    },
+    "rita": {
+      "src": "/assets/jogos/rita.webp",
+      "alt": "Rita Lee",
+      "width": 900,
+      "height": 600,
+      "fit": "contain",
+      "source": "https://storage.lacapitalmdp.com/2023/05/Rita-Lee.jpg"
+    },
+    "sabrina": {
+      "src": "/assets/jogos/sabrina.webp",
+      "alt": "Sabrina Carpenter",
+      "width": 600,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://images.entertainment.ie/person/kAQVOilguwlXtYWQ1lzYumWS0c6.jpg"
+    },
+    "sumetal": {
+      "src": "/assets/jogos/sumetal.webp",
+      "alt": "SU-METAL",
+      "width": 500,
+      "height": 750,
+      "fit": "contain",
+      "source": "https://image.tmdb.org/t/p/w500/nkjThB7Tj58LMr2kRtZWD67929M.jpg"
+    },
+    "liniker": {
+      "src": "/assets/jogos/liniker.webp",
+      "alt": "Liniker",
+      "width": 506,
+      "height": 506,
+      "fit": "contain",
+      "source": "https://conteudo.imguol.com.br/c/entretenimento/c5/2024/08/16/liniker-lanca-seu-segundo-disco-solo-caju-1723821769598_v2_1x1.png"
+    },
+    "marina": {
+      "src": "/assets/jogos/marina.webp",
+      "alt": "Marina Sena",
+      "width": 900,
+      "height": 506,
+      "fit": "contain",
+      "source": "https://imagem.natelinha.uol.com.br/original/marina-sena-se-assusta-com-comentarios-sobre-sua-aparencia-aconselhada-a-processar_9677.jpeg"
+    },
+    "tim": {
+      "src": "/assets/jogos/tim.webp",
+      "alt": "Tim Maia",
+      "width": 683,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://i0.wp.com/sodwee.com/blog/wp-content/uploads/2012/10/Tim-Maia-2-1.jpg?ssl=1"
+    },
+    "chappell": {
+      "src": "/assets/jogos/chappell.webp",
+      "alt": "Chappell Roan",
+      "width": 900,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://assets.teenvogue.com/photos/66c472ff27dea498e3d2e25c/1%3A1/w_3004%2Ch_3004%2Cc_limit/2151564485"
+    },
+    "billie": {
+      "src": "/assets/jogos/billie.webp",
+      "alt": "Billie Eilish",
+      "width": 900,
+      "height": 595,
+      "fit": "contain",
+      "source": "https://yosmusic.com/wp-content/uploads/2021/07/Billie-Eilish-amazon-2021-billboard-1548-1622747239-compressed.jpg"
+    },
+    "ney": {
+      "src": "/assets/jogos/ney.webp",
+      "alt": "Ney Matogrosso",
+      "width": 800,
+      "height": 450,
+      "fit": "contain",
+      "source": "https://heloisatolipan.com.br/imagens/2018/08/20180809-fit_85_k47a8952-e1504195045700-copia.jpg"
+    },
+    "gaahl": {
+      "src": "/assets/jogos/gaahl.webp",
+      "alt": "Gaahl",
+      "width": 550,
+      "height": 498,
+      "fit": "contain",
+      "source": "https://thequietus.com/app/uploads/2024/03/Gaahl_1369834444.jpg"
+    },
+    "aretha": {
+      "src": "/assets/jogos/aretha.webp",
+      "alt": "Aretha Franklin",
+      "width": 764,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://4columns.org/img/column/Aretha2.jpg"
+    },
+    "elvis": {
+      "src": "/assets/jogos/elvis.webp",
+      "alt": "Elvis Presley",
+      "width": 600,
+      "height": 750,
+      "fit": "contain",
+      "source": "https://cdn10.bigcommerce.com/s-o6vy9cv/products/186832/images/182265/65cce666-a923-5471-aaa1-531f3f1d0824__47844.1700510099.1280.1280.jpg?c=2"
+    },
+    "bob": {
+      "src": "/assets/jogos/bob.webp",
+      "alt": "Bob Marley",
+      "width": 900,
+      "height": 716,
+      "fit": "contain",
+      "source": "https://cdn-s-www.leprogres.fr/images/9319295F-B566-450F-945E-7848B83235F1/NW_raw/le-chanteur-bob-marley-mort-en-1981-photo-dr-1508773962.jpg"
+    },
+    "rob": {
+      "src": "/assets/jogos/rob.webp",
+      "alt": "Rob Halford",
+      "width": 900,
+      "height": 506,
+      "fit": "contain",
+      "source": "https://files.kerrang.com/production/images/Judas-Priest-Rob-Halford-solo-header-2024-credit-Stu-Garneys.jpg?auto=compress&fit=max&w=3840"
+    },
+    "tarja": {
+      "src": "/assets/jogos/tarja.webp",
+      "alt": "Tarja Turunen",
+      "width": 600,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://tarjaturunen.com/media/high_MG_1412.jpg"
+    },
+    "infernus": {
+      "src": "/assets/jogos/infernus.webp",
+      "alt": "Infernus",
+      "width": 400,
+      "height": 600,
+      "fit": "contain",
+      "source": "https://images.equipboard.com/uploads/source/image/82342/gorgoroth-gorogoroth-auf-dem-summer-breeze-2010-infernus-111191.jpg"
+    },
+    "depeche": {
+      "src": "/assets/jogos/depeche.webp",
+      "alt": "Depeche Mode",
+      "width": 900,
+      "height": 658,
+      "fit": "contain",
+      "source": "https://www.sirerecords.com/sites/g/files/g2000014316/files/2022-04/8x10---Carl-Studna-6-88---2_master-copy.jpg"
+    },
+    "cannibal": {
+      "src": "/assets/jogos/cannibal.webp",
+      "alt": "Cannibal Corpse",
+      "width": 600,
+      "height": 400,
+      "fit": "contain",
+      "source": "https://www.metalblade.com/us/photos/cannibal-corpse_photo05.jpg"
+    },
+    "nightwish": {
+      "src": "/assets/jogos/nightwish.webp",
+      "alt": "Nightwish",
+      "width": 741,
+      "height": 741,
+      "fit": "contain",
+      "source": "https://assets-global.website-files.com/5e77b28abc62624fd38a51b0/5f3d8dad03f5a8277371c715_Nightwish2020p.jpg"
+    },
+    "sepultura": {
+      "src": "/assets/jogos/sepultura.webp",
+      "alt": "Sepultura",
+      "width": 900,
+      "height": 600,
+      "fit": "contain",
+      "source": "https://townsquare.media/site/366/files/2018/06/Sepultura-Work-With-Brazilian-Tribe-on-Roots.jpg?q=75&w=980"
+    },
+    "slayer": {
+      "src": "/assets/jogos/slayer.webp",
+      "alt": "Slayer",
+      "width": 900,
+      "height": 506,
+      "fit": "contain",
+      "source": "https://media.revolvermag.com/smaecrmuhw/styles/article-hero-full-16_9/2021/07/02/slayer1988.jpg.webp?t=f4b845f8.webp"
+    },
+    "queen": {
+      "src": "/assets/jogos/queen.webp",
+      "alt": "Queen",
+      "width": 900,
+      "height": 731,
+      "fit": "contain",
+      "source": "https://images.unian.net/photos/2018_12/thumb_files/1200_0_1544497817-1317.jpg"
+    },
+    "atarashii": {
+      "src": "/assets/jogos/atarashii.webp",
+      "alt": "ATARASHII GAKKO!",
+      "width": 720,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://images.squarespace-cdn.com/content/v1/57825361440243db4a4b7830/33c188c2-a3f5-48b6-ae8d-2f8c8f9880e2/the-girl-group-that-is-changing-japans-idol-culture-meet-the-japan-leaders-atarashii-gakko-2-sabukaru.jpg?format=1500w"
+    },
+    "judas": {
+      "src": "/assets/jogos/judas.webp",
+      "alt": "Judas Priest",
+      "width": 600,
+      "height": 400,
+      "fit": "contain",
+      "source": "https://loudwire.com/files/2015/07/Judas-Priest-1982.jpg?a=t&h=0&q=89&s=0&w=600&zc=1"
+    },
+    "abba": {
+      "src": "/assets/jogos/abba.webp",
+      "alt": "ABBA",
+      "width": 800,
+      "height": 528,
+      "fit": "contain",
+      "source": "https://d2bq4ntp986cty.cloudfront.net/2021/35/58fbku/die-band-abba-im-jahr-1977.7pat7l.jke2w7.im.lg.jpg"
+    },
+    "carpenters": {
+      "src": "/assets/jogos/carpenters.webp",
+      "alt": "Carpenters",
+      "width": 600,
+      "height": 600,
+      "fit": "contain",
+      "source": "https://image-cdn.nct.vn/singer/avatar/2016/01/25/4/1/1/7/1453716202468_600.jpg"
+    },
+    "dream": {
+      "src": "/assets/jogos/dream.webp",
+      "alt": "Dream Theater",
+      "width": 900,
+      "height": 600,
+      "fit": "contain",
+      "source": "https://cdn.cspt.io/dreamtheater.net/uploads/2024/10/04141405/dream-theater-band-2013-promo.jpg"
+    },
+    "mayhem": {
+      "src": "/assets/jogos/mayhem.webp",
+      "alt": "Mayhem",
+      "width": 900,
+      "height": 599,
+      "fit": "contain",
+      "source": "https://2.bp.blogspot.com/-D41tYsS2qNE/WVPyyitu2EI/AAAAAAAAWzw/wYamMY4DMRE9u5FRYsGKcyp_fygGI7kdQCK4BGAYYCw/s1600/unnamed%25281%2529.jpg"
+    },
+    "kraftwerk": {
+      "src": "/assets/jogos/kraftwerk.webp",
+      "alt": "Kraftwerk",
+      "width": 722,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://imagenes.elpais.com/resizer/v2/TXWQ7HOJ75GGPHEAB6KZJ5K5WI.jpg?auth=e641ec8636a8a7f47e5f18832a190caa92148f3065211328163bbf2ea69c2804&width=980"
+    },
+    "beatles": {
+      "src": "/assets/jogos/beatles.webp",
+      "alt": "The Beatles",
+      "width": 900,
+      "height": 891,
+      "fit": "contain",
+      "source": "https://proudgalleries.com/cdn/shop/products/TheBeatles_PaulMcCartney_JohnLennon_RingoStarr_GeorgeHarrison_FarringdonStudio_No.III_RobertWhitakeratProudGalleries_London.jpg?v=1628254549"
+    },
+    "sade": {
+      "src": "/assets/jogos/sade.webp",
+      "alt": "Sade",
+      "width": 838,
+      "height": 634,
+      "fit": "contain",
+      "source": "https://miro.medium.com/v2/resize:fit:1400/1*vxTgzvthwkjb7O3ciwPUyw.png"
+    },
+    "mutantes": {
+      "src": "/assets/jogos/mutantes.webp",
+      "alt": "Os Mutantes",
+      "width": 900,
+      "height": 506,
+      "fit": "contain",
+      "source": "https://conteudo.imguol.com.br/c/tab/38/2023/06/05/formacao-original-de-os-mutantes-arnaldo-batista-rita-lee-e-sergio-dias-no-3-festival-de-musica-popular-brasileira-da-record-em-1967-1686001562874_v2_900x506.jpg"
+    },
+    "sarcofago": {
+      "src": "/assets/jogos/sarcofago.webp",
+      "alt": "Sarcófago",
+      "width": 560,
+      "height": 500,
+      "fit": "contain",
+      "source": "https://www.nocleansinging.com/wp-content/uploads/2015/12/Sarcofago-3-e1449986075138.jpg"
+    },
+    "babymetal": {
+      "src": "/assets/jogos/babymetal.webp",
+      "alt": "BABYMETAL",
+      "width": 900,
+      "height": 506,
+      "fit": "contain",
+      "source": "https://cdn.mos.cms.futurecdn.net/NjGxjvZjwspgicieTzRDjL-1200-80.jpg"
+    },
+    "inri": {
+      "src": "/assets/jogos/inri.webp",
+      "alt": "Capa do álbum I.N.R.I. — Sarcófago",
+      "width": 500,
+      "height": 500,
+      "fit": "contain",
+      "source": "https://endofanear.com/cdn/shop/files/2273319_1.jpg?v=1719251316"
+    },
+    "violator": {
+      "src": "/assets/jogos/violator.webp",
+      "alt": "Capa do álbum Violator — Depeche Mode",
+      "width": 900,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5c/0e/66/5c0e66c0-d383-5641-3ec0-4bdb629c49ad/886445705119.jpg/900x900bb.jpg"
+    },
+    "fruto": {
+      "src": "/assets/jogos/fruto.webp",
+      "alt": "Capa do álbum Fruto Proibido — Rita Lee & Tutti Frutti",
+      "width": 900,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/7f/a7/d97fa7ff-fac9-e0df-b218-740cd6961a02/13UABIM50287.rgb.jpg/900x900bb.jpg"
+    },
+    "short": {
+      "src": "/assets/jogos/short.webp",
+      "alt": "Capa do álbum Short n’ Sweet — Sabrina Carpenter",
+      "width": 900,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a1/1c/ca/a11ccab6-7d4c-e041-d028-998bcebeb709/24UMGIM61704.rgb.jpg/900x900bb.jpg"
+    },
+    "caju": {
+      "src": "/assets/jogos/caju.webp",
+      "alt": "Capa do álbum Caju — Liniker",
+      "width": 900,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://assets.crownnote.com/s3fs-public/2024-08/Liniker%20-%20Caju.jpeg"
+    },
+    "paranoid": {
+      "src": "/assets/jogos/paranoid.webp",
+      "alt": "Capa do álbum Paranoid — Black Sabbath",
+      "width": 900,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/b4/ed/dd/b4eddd6f-49da-66e0-bb9e-e51a1c523af0/0602537422654.jpg/900x900bb.jpg"
+    },
+    "brian": {
+      "src": "/assets/jogos/brian.webp",
+      "alt": "Brian May",
+      "width": 652,
+      "height": 408,
+      "fit": "contain",
+      "source": "https://i0.statig.com.br/bancodeimagens/15/7d/dz/157ddz984dx0we2vk9zifcmmd.jpg"
+    },
+    "gadd": {
+      "src": "/assets/jogos/gadd.webp",
+      "alt": "Steve Gadd",
+      "width": 400,
+      "height": 515,
+      "fit": "contain",
+      "source": "https://pas.org/wp-content/uploads/2024/02/Steve-Gadd-3-1.jpg"
+    },
+    "carol": {
+      "src": "/assets/jogos/carol.webp",
+      "alt": "Carol Kaye",
+      "width": 675,
+      "height": 900,
+      "fit": "contain",
+      "source": "https://res.cloudinary.com/ddkk0kppc/image/upload/v1732879928/CarolKaye_JazzFlatWound_GeorgeBenson3-4_h3000px_hoch_khqe33.jpg"
+    },
+    "levin": {
+      "src": "/assets/jogos/levin.webp",
+      "alt": "Tony Levin",
+      "width": 600,
+      "height": 528,
+      "fit": "contain",
+      "source": "https://s3.eu-west-1.amazonaws.com/www.dgmlive.com/uploads/articles/8624/9f3a7f0010e7ad4d7a7473c5c9a3d577.jpg"
+    }
+  },
+  "games": [
+    {
+      "id": "salada",
+      "version": 1,
+      "title": "A SALADA",
+      "deck": "Nenhuma tribo, década ou ordem garantida. A próxima posição pode mudar tudo.",
+      "roundSize": 16,
+      "questions": [
+        {
+          "id": "salada-sabrina",
+          "prompt": "Quem lançou Espresso em 2024?",
+          "answer": "Sabrina Carpenter",
+          "options": [
+            "Sabrina Carpenter",
+            "Freddie Mercury",
+            "David Bowie",
+            "Rita Lee"
+          ],
+          "media": "sabrina",
+          "label": "Sabrina Carpenter",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sabrina_Carpenter"
+          ],
+          "difficulty": "média",
+          "kind": "single"
+        },
+        {
+          "id": "salada-cannibal",
+          "prompt": "Em que ano o Cannibal Corpse lançou seu primeiro álbum, Eaten Back to Life?",
+          "answer": "1990",
+          "options": [
+            "1990",
+            "1984",
+            "1987",
+            "1991"
+          ],
+          "media": "cannibal",
+          "label": "Cannibal Corpse",
+          "scene": "death",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cannibal_Corpse"
+          ],
+          "difficulty": "difícil",
+          "kind": "ano"
+        },
+        {
+          "id": "salada-rita",
+          "prompt": "Qual artista brasileiro foi integrante de Os Mutantes e liderou trabalhos com Tutti Frutti?",
+          "answer": "Rita Lee",
+          "options": [
+            "Rita Lee",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "rita",
+          "label": "Rita Lee",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rita_Lee"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "salada-sade",
+          "prompt": "Qual banda lançou seu álbum de estreia Diamond Life em 1984?",
+          "answer": "Sade",
+          "options": [
+            "Sade",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "sade",
+          "label": "Sade",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sade_(band)"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-judas",
+          "prompt": "Qual banda gravou Breaking the Law, lançada em British Steel?",
+          "answer": "Judas Priest",
+          "options": [
+            "Judas Priest",
+            "SU-METAL",
+            "Liniker",
+            "Marina Sena"
+          ],
+          "media": "judas",
+          "label": "Judas Priest",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Judas_Priest"
+          ],
+          "difficulty": "média",
+          "kind": "música"
+        },
+        {
+          "id": "salada-atarashii",
+          "prompt": "Qual grupo japonês canta Otonablue?",
+          "answer": "ATARASHII GAKKO!",
+          "options": [
+            "ATARASHII GAKKO!",
+            "Liniker",
+            "Marina Sena",
+            "Tim Maia"
+          ],
+          "media": "atarashii",
+          "label": "ATARASHII GAKKO!",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Atarashii_Gakko!"
+          ],
+          "difficulty": "média",
+          "kind": "música"
+        },
+        {
+          "id": "salada-sarcofago",
+          "prompt": "Qual banda brasileira lançou The Laws of Scourge em 1991?",
+          "answer": "Sarcófago",
+          "options": [
+            "Sarcófago",
+            "Marina Sena",
+            "Tim Maia",
+            "Chappell Roan"
+          ],
+          "media": "sarcofago",
+          "label": "Sarcófago",
+          "scene": "br-extremo",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sarc%C3%B3fago"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-aretha",
+          "prompt": "Quem tornou Respect um marco do soul com a gravação de 1967?",
+          "answer": "Aretha Franklin",
+          "options": [
+            "Aretha Franklin",
+            "Tim Maia",
+            "Chappell Roan",
+            "Billie Eilish"
+          ],
+          "media": "aretha",
+          "label": "Aretha Franklin",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Aretha_Franklin"
+          ],
+          "difficulty": "média",
+          "kind": "versão"
+        },
+        {
+          "id": "salada-dream",
+          "prompt": "Qual era o nome original do Dream Theater?",
+          "answer": "Majesty",
+          "options": [
+            "Majesty",
+            "Queen",
+            "Maroon 5",
+            "Renaissance"
+          ],
+          "media": "dream",
+          "label": "Dream Theater",
+          "scene": "prog-metal",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dream_Theater"
+          ],
+          "difficulty": "média",
+          "kind": "nome"
+        },
+        {
+          "id": "salada-tim",
+          "prompt": "Qual artista brasileiro liderava a banda de apoio Vitória Régia?",
+          "answer": "Tim Maia",
+          "options": [
+            "Tim Maia",
+            "Ney Matogrosso",
+            "Gaahl",
+            "Aretha Franklin"
+          ],
+          "media": "tim",
+          "label": "Tim Maia",
+          "scene": "soul-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tim_Maia"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "salada-nightwish",
+          "prompt": "Em qual década foi formado o Nightwish, em 1996?",
+          "answer": "Anos 90",
+          "options": [
+            "Anos 90",
+            "Anos 50",
+            "Anos 60",
+            "Anos 70"
+          ],
+          "media": "nightwish",
+          "label": "Nightwish",
+          "scene": "symphonic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Nightwish"
+          ],
+          "difficulty": "média",
+          "kind": "década"
+        },
+        {
+          "id": "salada-freddie",
+          "prompt": "Quem compôs Bohemian Rhapsody?",
+          "answer": "Freddie Mercury",
+          "options": [
+            "Freddie Mercury",
+            "Aretha Franklin",
+            "Elvis Presley",
+            "Bob Marley"
+          ],
+          "media": "freddie",
+          "label": "Freddie Mercury",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Freddie_Mercury"
+          ],
+          "difficulty": "média",
+          "kind": "compositor"
+        },
+        {
+          "id": "salada-sepultura",
+          "prompt": "Qual banda lançou Roots em 1996?",
+          "answer": "Sepultura",
+          "options": [
+            "Sepultura",
+            "Aretha Franklin",
+            "Elvis Presley",
+            "Bob Marley"
+          ],
+          "media": "sepultura",
+          "label": "Sepultura",
+          "scene": "br-thrash",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sepultura"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-abba",
+          "prompt": "Qual grupo venceu o Eurovision de 1974 com Waterloo?",
+          "answer": "ABBA",
+          "options": [
+            "ABBA",
+            "Elvis Presley",
+            "Bob Marley",
+            "Rob Halford"
+          ],
+          "media": "abba",
+          "label": "ABBA",
+          "scene": "disco-pop",
+          "sources": [
+            "https://en.wikipedia.org/wiki/ABBA"
+          ],
+          "difficulty": "média",
+          "kind": "show"
+        },
+        {
+          "id": "salada-mayhem",
+          "prompt": "Em qual ano foi lançado o EP Deathcrush, do Mayhem?",
+          "answer": "1987",
+          "options": [
+            "1987",
+            "1975",
+            "1984",
+            "1990"
+          ],
+          "media": "mayhem",
+          "label": "Mayhem",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mayhem_(band)"
+          ],
+          "difficulty": "difícil",
+          "kind": "ano"
+        },
+        {
+          "id": "salada-marina",
+          "prompt": "Quem canta Por Supuesto, faixa de De Primeira?",
+          "answer": "Marina Sena",
+          "options": [
+            "Marina Sena",
+            "Tarja Turunen",
+            "Infernus",
+            "Depeche Mode"
+          ],
+          "media": "marina",
+          "label": "Marina Sena",
+          "scene": "pop-br-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Marina_Sena"
+          ],
+          "difficulty": "média",
+          "kind": "música"
+        },
+        {
+          "id": "salada-babymetal",
+          "prompt": "Qual grupo reúne SU-METAL, MOAMETAL e MOMOMETAL na formação oficial desde 2023?",
+          "answer": "BABYMETAL",
+          "options": [
+            "BABYMETAL",
+            "Tarja Turunen",
+            "Infernus",
+            "Depeche Mode"
+          ],
+          "media": "babymetal",
+          "label": "BABYMETAL",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Babymetal"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "salada-carpenters",
+          "prompt": "Qual dupla de irmãos gravou Close to You em 1970?",
+          "answer": "Carpenters",
+          "options": [
+            "Carpenters",
+            "Infernus",
+            "Depeche Mode",
+            "Cannibal Corpse"
+          ],
+          "media": "carpenters",
+          "label": "Carpenters",
+          "scene": "pop-70",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Carpenters"
+          ],
+          "difficulty": "média",
+          "kind": "gravação"
+        },
+        {
+          "id": "salada-slayer",
+          "prompt": "Qual banda gravou Raining Blood, de 1986?",
+          "answer": "Slayer",
+          "options": [
+            "Slayer",
+            "Depeche Mode",
+            "Cannibal Corpse",
+            "Nightwish"
+          ],
+          "media": "slayer",
+          "label": "Slayer",
+          "scene": "thrash",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Slayer"
+          ],
+          "difficulty": "média",
+          "kind": "música"
+        },
+        {
+          "id": "salada-chappell",
+          "prompt": "Quem lançou Good Luck, Babe! em 2024?",
+          "answer": "Chappell Roan",
+          "options": [
+            "Chappell Roan",
+            "Nightwish",
+            "Sepultura",
+            "Slayer"
+          ],
+          "media": "chappell",
+          "label": "Chappell Roan",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chappell_Roan"
+          ],
+          "difficulty": "média",
+          "kind": "single"
+        },
+        {
+          "id": "salada-kraftwerk",
+          "prompt": "Qual banda alemã lançou Autobahn em 1974?",
+          "answer": "Kraftwerk",
+          "options": [
+            "Kraftwerk",
+            "Nightwish",
+            "Sepultura",
+            "Slayer"
+          ],
+          "media": "kraftwerk",
+          "label": "Kraftwerk",
+          "scene": "eletronica",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Kraftwerk"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-bob",
+          "prompt": "Qual cantor jamaicano liderou os Wailers?",
+          "answer": "Bob Marley",
+          "options": [
+            "Bob Marley",
+            "Slayer",
+            "Queen",
+            "ATARASHII GAKKO!"
+          ],
+          "media": "bob",
+          "label": "Bob Marley",
+          "scene": "reggae",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Bob_Marley"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "salada-mutantes",
+          "prompt": "Qual banda brasileira reuniu Rita Lee, Arnaldo Baptista e Sérgio Dias em sua formação original?",
+          "answer": "Os Mutantes",
+          "options": [
+            "Os Mutantes",
+            "Slayer",
+            "Queen",
+            "ATARASHII GAKKO!"
+          ],
+          "media": "mutantes",
+          "label": "Os Mutantes",
+          "scene": "psicodelico-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Os_Mutantes"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "salada-bowie",
+          "prompt": "Quem lançou Space Oddity como single em 1969?",
+          "answer": "David Bowie",
+          "options": [
+            "David Bowie",
+            "ATARASHII GAKKO!",
+            "Judas Priest",
+            "ABBA"
+          ],
+          "media": "bowie",
+          "label": "David Bowie",
+          "scene": "glam",
+          "sources": [
+            "https://en.wikipedia.org/wiki/David_Bowie"
+          ],
+          "difficulty": "média",
+          "kind": "single"
+        },
+        {
+          "id": "salada-infernus",
+          "prompt": "Quem usa o pseudônimo Infernus?",
+          "answer": "Roger Tiegs",
+          "options": [
+            "Roger Tiegs",
+            "Kristian Eivind Espedal",
+            "David Robert Jones",
+            "Robert Nesta Marley"
+          ],
+          "media": "infernus",
+          "label": "Infernus",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infernus"
+          ],
+          "difficulty": "difícil",
+          "kind": "nome civil"
+        },
+        {
+          "id": "salada-elvis",
+          "prompt": "Em qual década Elvis lançou Heartbreak Hotel, em 1956?",
+          "answer": "Anos 50",
+          "options": [
+            "Anos 50",
+            "Anos 60",
+            "Anos 70",
+            "Anos 80"
+          ],
+          "media": "elvis",
+          "label": "Elvis Presley",
+          "scene": "50s",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Elvis_Presley"
+          ],
+          "difficulty": "média",
+          "kind": "década"
+        },
+        {
+          "id": "salada-depeche",
+          "prompt": "Qual grupo inglês gravou Enjoy the Silence?",
+          "answer": "Depeche Mode",
+          "options": [
+            "Depeche Mode",
+            "Carpenters",
+            "Dream Theater",
+            "Mayhem"
+          ],
+          "media": "depeche",
+          "label": "Depeche Mode",
+          "scene": "new-wave",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Depeche_Mode"
+          ],
+          "difficulty": "média",
+          "kind": "música"
+        },
+        {
+          "id": "salada-liniker",
+          "prompt": "Quem liderou Liniker e os Caramelows antes da carreira solo?",
+          "answer": "Liniker",
+          "options": [
+            "Liniker",
+            "Dream Theater",
+            "Mayhem",
+            "Kraftwerk"
+          ],
+          "media": "liniker",
+          "label": "Liniker",
+          "scene": "soul-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Liniker"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "salada-gaahl",
+          "prompt": "Qual pseudônimo é usado pelo vocalista Kristian Eivind Espedal?",
+          "answer": "Gaahl",
+          "options": [
+            "Gaahl",
+            "Mayhem",
+            "Kraftwerk",
+            "The Beatles"
+          ],
+          "media": "gaahl",
+          "label": "Gaahl",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Gaahl"
+          ],
+          "difficulty": "média",
+          "kind": "nome artístico"
+        },
+        {
+          "id": "salada-billie",
+          "prompt": "Qual cantora compôs e gravou What Was I Made For? com Finneas?",
+          "answer": "Billie Eilish",
+          "options": [
+            "Billie Eilish",
+            "Kraftwerk",
+            "The Beatles",
+            "Sade"
+          ],
+          "media": "billie",
+          "label": "Billie Eilish",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Billie_Eilish"
+          ],
+          "difficulty": "média",
+          "kind": "colaboração"
+        },
+        {
+          "id": "salada-queen",
+          "prompt": "Qual banda tocou Bohemian Rhapsody no Live Aid em 1985?",
+          "answer": "Queen",
+          "options": [
+            "Queen",
+            "The Beatles",
+            "Sade",
+            "Os Mutantes"
+          ],
+          "media": "queen",
+          "label": "Queen",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Queen_(band)"
+          ],
+          "difficulty": "média",
+          "kind": "show"
+        },
+        {
+          "id": "salada-sumetal",
+          "prompt": "Qual vocalista do BABYMETAL nasceu como Suzuka Nakamoto?",
+          "answer": "SU-METAL",
+          "options": [
+            "SU-METAL",
+            "Sade",
+            "Os Mutantes",
+            "Sarcófago"
+          ],
+          "media": "sumetal",
+          "label": "SU-METAL",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Suzuka_Nakamoto"
+          ],
+          "difficulty": "média",
+          "kind": "nome artístico"
+        },
+        {
+          "id": "salada-ney",
+          "prompt": "Quem foi vocalista de Secos & Molhados na formação dos discos de 1973 e 1974?",
+          "answer": "Ney Matogrosso",
+          "options": [
+            "Ney Matogrosso",
+            "Os Mutantes",
+            "Sarcófago",
+            "BABYMETAL"
+          ],
+          "media": "ney",
+          "label": "Ney Matogrosso",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ney_Matogrosso"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "salada-tarja",
+          "prompt": "Quem foi a vocalista do Nightwish no álbum Angels Fall First?",
+          "answer": "Tarja Turunen",
+          "options": [
+            "Tarja Turunen",
+            "Sarcófago",
+            "BABYMETAL",
+            "Freddie Mercury"
+          ],
+          "media": "tarja",
+          "label": "Tarja Turunen",
+          "scene": "symphonic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tarja_Turunen"
+          ],
+          "difficulty": "média",
+          "kind": "gravação"
+        },
+        {
+          "id": "salada-beatles",
+          "prompt": "Qual banda gravou o álbum Abbey Road em 1969?",
+          "answer": "The Beatles",
+          "options": [
+            "The Beatles",
+            "BABYMETAL",
+            "Freddie Mercury",
+            "David Bowie"
+          ],
+          "media": "beatles",
+          "label": "The Beatles",
+          "scene": "60s",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Beatles"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-rob",
+          "prompt": "Qual vocalista do Judas Priest fundou o Fight?",
+          "answer": "Rob Halford",
+          "options": [
+            "Rob Halford",
+            "Freddie Mercury",
+            "David Bowie",
+            "Rita Lee"
+          ],
+          "media": "rob",
+          "label": "Rob Halford",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rob_Halford"
+          ],
+          "difficulty": "difícil",
+          "kind": "projeto"
+        },
+        {
+          "id": "salada-inri",
+          "prompt": "Qual é o álbum de estreia do Sarcófago, lançado em 1987?",
+          "answer": "I.N.R.I.",
+          "options": [
+            "I.N.R.I.",
+            "Violator",
+            "Fruto Proibido",
+            "Short n’ Sweet"
+          ],
+          "media": "inri",
+          "label": "I.N.R.I.",
+          "scene": "br-extremo",
+          "sources": [
+            "https://en.wikipedia.org/wiki/INRI_(album)"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-violator",
+          "prompt": "Qual álbum do Depeche Mode, lançado em 1990, reúne Personal Jesus e Enjoy the Silence?",
+          "answer": "Violator",
+          "options": [
+            "Violator",
+            "Fruto Proibido",
+            "Short n’ Sweet",
+            "Caju"
+          ],
+          "media": "violator",
+          "label": "Violator",
+          "scene": "new-wave",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Violator_(album)"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-fruto",
+          "prompt": "Qual álbum de Rita Lee & Tutti Frutti, lançado em 1975, reúne Agora Só Falta Você e Ovelha Negra?",
+          "answer": "Fruto Proibido",
+          "options": [
+            "Fruto Proibido",
+            "Short n’ Sweet",
+            "Caju",
+            "Paranoid"
+          ],
+          "media": "fruto",
+          "label": "Fruto Proibido",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Fruto_Proibido"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-short",
+          "prompt": "Qual álbum de Sabrina Carpenter, lançado em 2024, inclui Espresso e Please Please Please?",
+          "answer": "Short n’ Sweet",
+          "options": [
+            "Short n’ Sweet",
+            "Caju",
+            "Paranoid",
+            "I.N.R.I."
+          ],
+          "media": "short",
+          "label": "Short n’ Sweet",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Short_n%27_Sweet"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-caju",
+          "prompt": "Qual álbum solo de Liniker foi lançado em 2024, depois de Indigo Borboleta Anil?",
+          "answer": "Caju",
+          "options": [
+            "Caju",
+            "Paranoid",
+            "I.N.R.I.",
+            "Violator"
+          ],
+          "media": "caju",
+          "label": "Caju",
+          "scene": "soul-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Caju_(album)"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-paranoid",
+          "prompt": "Qual álbum do Black Sabbath, lançado em 1970, inclui Iron Man e War Pigs?",
+          "answer": "Paranoid",
+          "options": [
+            "Paranoid",
+            "I.N.R.I.",
+            "Violator",
+            "Fruto Proibido"
+          ],
+          "media": "paranoid",
+          "label": "Paranoid",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Paranoid_(album)"
+          ],
+          "difficulty": "média",
+          "kind": "álbum"
+        },
+        {
+          "id": "salada-brian",
+          "prompt": "Quem compôs We Will Rock You, do Queen?",
+          "answer": "Brian May",
+          "options": [
+            "Brian May",
+            "Freddie Mercury",
+            "David Bowie",
+            "Rita Lee"
+          ],
+          "media": "brian",
+          "label": "Brian May",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Brian_May"
+          ],
+          "difficulty": "difícil",
+          "kind": "gravação"
+        },
+        {
+          "id": "salada-gadd",
+          "prompt": "Quem tocou bateria na gravação de 50 Ways to Leave Your Lover, de Paul Simon?",
+          "answer": "Steve Gadd",
+          "options": [
+            "Steve Gadd",
+            "David Bowie",
+            "Rita Lee",
+            "Sabrina Carpenter"
+          ],
+          "media": "gadd",
+          "label": "Steve Gadd",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Steve_Gadd"
+          ],
+          "difficulty": "difícil",
+          "kind": "gravação"
+        },
+        {
+          "id": "salada-carol",
+          "prompt": "Qual instrumentista tocou guitarra rítmica na gravação de La Bamba de Ritchie Valens, em 1958?",
+          "answer": "Carol Kaye",
+          "options": [
+            "Carol Kaye",
+            "Rita Lee",
+            "Sabrina Carpenter",
+            "SU-METAL"
+          ],
+          "media": "carol",
+          "label": "Carol Kaye",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Carol_Kaye"
+          ],
+          "difficulty": "difícil",
+          "kind": "gravação"
+        },
+        {
+          "id": "salada-levin",
+          "prompt": "Qual baixista tocou na gravação de Sledgehammer, de Peter Gabriel?",
+          "answer": "Tony Levin",
+          "options": [
+            "Tony Levin",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "levin",
+          "label": "Tony Levin",
+          "scene": "prog",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tony_Levin"
+          ],
+          "difficulty": "difícil",
+          "kind": "gravação"
+        }
+      ]
+    },
+    {
+      "id": "quem",
+      "version": 1,
+      "title": "QUEM É QUEM?",
+      "deck": "Vozes, integrantes, pseudônimos e gente que fez a música acontecer.",
+      "roundSize": 16,
+      "questions": [
+        {
+          "id": "quem-freddie-1",
+          "prompt": "Qual foi o nome de nascimento de Freddie Mercury?",
+          "answer": "Farrokh Bulsara",
+          "options": [
+            "Farrokh Bulsara",
+            "David Robert Jones",
+            "Rita Lee Jones",
+            "Sabrina Annlynn Carpenter"
+          ],
+          "media": "freddie",
+          "label": "Freddie Mercury",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Freddie_Mercury"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-freddie-2",
+          "prompt": "Quem foi o vocalista do Queen na apresentação do Live Aid de 1985?",
+          "answer": "Freddie Mercury",
+          "options": [
+            "Freddie Mercury",
+            "Liniker",
+            "Marina Sena",
+            "Tim Maia"
+          ],
+          "media": "freddie",
+          "label": "Freddie Mercury",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Freddie_Mercury"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-bowie-1",
+          "prompt": "Qual era o nome de nascimento de David Bowie?",
+          "answer": "David Robert Jones",
+          "options": [
+            "David Robert Jones",
+            "Rita Lee Jones",
+            "Sabrina Annlynn Carpenter",
+            "Suzuka Nakamoto"
+          ],
+          "media": "bowie",
+          "label": "David Bowie",
+          "scene": "glam",
+          "sources": [
+            "https://en.wikipedia.org/wiki/David_Bowie"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-bowie-2",
+          "prompt": "Quem criou o personagem Ziggy Stardust?",
+          "answer": "David Bowie",
+          "options": [
+            "David Bowie",
+            "Marina Sena",
+            "Tim Maia",
+            "Chappell Roan"
+          ],
+          "media": "bowie",
+          "label": "David Bowie",
+          "scene": "glam",
+          "sources": [
+            "https://en.wikipedia.org/wiki/David_Bowie"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-rita-1",
+          "prompt": "Quem integrou Os Mutantes e depois gravou com Tutti Frutti?",
+          "answer": "Rita Lee",
+          "options": [
+            "Rita Lee",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "rita",
+          "label": "Rita Lee",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rita_Lee"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-rita-2",
+          "prompt": "Quem lançou Reza em 2012 e escreveu a autobiografia publicada em 2016?",
+          "answer": "Rita Lee",
+          "options": [
+            "Rita Lee",
+            "Tim Maia",
+            "Chappell Roan",
+            "Billie Eilish"
+          ],
+          "media": "rita",
+          "label": "Rita Lee",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rita_Lee"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-sabrina-1",
+          "prompt": "Quem canta Espresso, single lançado em 2024?",
+          "answer": "Sabrina Carpenter",
+          "options": [
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker",
+            "Marina Sena"
+          ],
+          "media": "sabrina",
+          "label": "Sabrina Carpenter",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sabrina_Carpenter"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-sabrina-2",
+          "prompt": "Quem interpretou Maya Hart em Girl Meets World?",
+          "answer": "Sabrina Carpenter",
+          "options": [
+            "Sabrina Carpenter",
+            "Chappell Roan",
+            "Billie Eilish",
+            "Ney Matogrosso"
+          ],
+          "media": "sabrina",
+          "label": "Sabrina Carpenter",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sabrina_Carpenter"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-sumetal-1",
+          "prompt": "Qual é o nome de SU-METAL, vocalista do BABYMETAL?",
+          "answer": "Suzuka Nakamoto",
+          "options": [
+            "Suzuka Nakamoto",
+            "Liniker de Barros Ferreira Campos",
+            "Marina de Oliveira Sena",
+            "Sebastião Rodrigues Maia"
+          ],
+          "media": "sumetal",
+          "label": "SU-METAL",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Suzuka_Nakamoto"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-sumetal-2",
+          "prompt": "Quem foi integrante de Sakura Gakuin e passou a liderar os vocais do BABYMETAL?",
+          "answer": "SU-METAL",
+          "options": [
+            "SU-METAL",
+            "Billie Eilish",
+            "Ney Matogrosso",
+            "Gaahl"
+          ],
+          "media": "sumetal",
+          "label": "SU-METAL",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Suzuka_Nakamoto"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-liniker-1",
+          "prompt": "Quem liderou a banda Liniker e os Caramelows?",
+          "answer": "Liniker",
+          "options": [
+            "Liniker",
+            "Marina Sena",
+            "Tim Maia",
+            "Chappell Roan"
+          ],
+          "media": "liniker",
+          "label": "Liniker",
+          "scene": "soul-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Liniker"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-liniker-2",
+          "prompt": "Quem lançou Indigo Borboleta Anil em 2021?",
+          "answer": "Liniker",
+          "options": [
+            "Liniker",
+            "Ney Matogrosso",
+            "Gaahl",
+            "Aretha Franklin"
+          ],
+          "media": "liniker",
+          "label": "Liniker",
+          "scene": "soul-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Liniker"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-marina-1",
+          "prompt": "Quem foi vocalista de A Outra Banda da Lua antes da carreira solo?",
+          "answer": "Marina Sena",
+          "options": [
+            "Marina Sena",
+            "Tim Maia",
+            "Chappell Roan",
+            "Billie Eilish"
+          ],
+          "media": "marina",
+          "label": "Marina Sena",
+          "scene": "pop-br-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Marina_Sena"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-marina-2",
+          "prompt": "Quem lançou o álbum solo De Primeira em 2021?",
+          "answer": "Marina Sena",
+          "options": [
+            "Marina Sena",
+            "Gaahl",
+            "Aretha Franklin",
+            "Elvis Presley"
+          ],
+          "media": "marina",
+          "label": "Marina Sena",
+          "scene": "pop-br-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Marina_Sena"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-tim-1",
+          "prompt": "Qual é o nome de nascimento de Tim Maia?",
+          "answer": "Sebastião Rodrigues Maia",
+          "options": [
+            "Sebastião Rodrigues Maia",
+            "Kayleigh Rose Amstutz",
+            "Billie Eilish Pirate Baird O’Connell",
+            "Ney de Sousa Pereira"
+          ],
+          "media": "tim",
+          "label": "Tim Maia",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tim_Maia"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-tim-2",
+          "prompt": "Quem foi cantor e fundador da banda de apoio Vitória Régia?",
+          "answer": "Tim Maia",
+          "options": [
+            "Tim Maia",
+            "Aretha Franklin",
+            "Elvis Presley",
+            "Bob Marley"
+          ],
+          "media": "tim",
+          "label": "Tim Maia",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tim_Maia"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-chappell-1",
+          "prompt": "Qual é o nome de nascimento de Chappell Roan?",
+          "answer": "Kayleigh Rose Amstutz",
+          "options": [
+            "Kayleigh Rose Amstutz",
+            "Billie Eilish Pirate Baird O’Connell",
+            "Ney de Sousa Pereira",
+            "Kristian Eivind Espedal"
+          ],
+          "media": "chappell",
+          "label": "Chappell Roan",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chappell_Roan"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-chappell-2",
+          "prompt": "Quem lançou The Rise and Fall of a Midwest Princess em 2023?",
+          "answer": "Chappell Roan",
+          "options": [
+            "Chappell Roan",
+            "Elvis Presley",
+            "Bob Marley",
+            "Rob Halford"
+          ],
+          "media": "chappell",
+          "label": "Chappell Roan",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chappell_Roan"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-billie-1",
+          "prompt": "Quem é a irmã e parceira musical de Finneas O’Connell?",
+          "answer": "Billie Eilish",
+          "options": [
+            "Billie Eilish",
+            "Ney Matogrosso",
+            "Gaahl",
+            "Aretha Franklin"
+          ],
+          "media": "billie",
+          "label": "Billie Eilish",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Billie_Eilish"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-billie-2",
+          "prompt": "Quem cantou What Was I Made For? para o filme Barbie?",
+          "answer": "Billie Eilish",
+          "options": [
+            "Billie Eilish",
+            "Bob Marley",
+            "Rob Halford",
+            "Tarja Turunen"
+          ],
+          "media": "billie",
+          "label": "Billie Eilish",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Billie_Eilish"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-ney-1",
+          "prompt": "Quem foi vocalista de Secos & Molhados nos dois primeiros álbuns?",
+          "answer": "Ney Matogrosso",
+          "options": [
+            "Ney Matogrosso",
+            "Gaahl",
+            "Aretha Franklin",
+            "Elvis Presley"
+          ],
+          "media": "ney",
+          "label": "Ney Matogrosso",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ney_Matogrosso"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-ney-2",
+          "prompt": "Qual artista nasceu como Ney de Sousa Pereira?",
+          "answer": "Ney Matogrosso",
+          "options": [
+            "Ney Matogrosso",
+            "Rob Halford",
+            "Tarja Turunen",
+            "Infernus"
+          ],
+          "media": "ney",
+          "label": "Ney Matogrosso",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ney_Matogrosso"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-gaahl-1",
+          "prompt": "Qual é o nome de nascimento de Gaahl?",
+          "answer": "Kristian Eivind Espedal",
+          "options": [
+            "Kristian Eivind Espedal",
+            "Aretha Louise Franklin",
+            "Elvis Aaron Presley",
+            "Robert Nesta Marley"
+          ],
+          "media": "gaahl",
+          "label": "Gaahl",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Gaahl"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-gaahl-2",
+          "prompt": "Qual ex-vocalista do Gorgoroth fundou o Trelldom?",
+          "answer": "Gaahl",
+          "options": [
+            "Gaahl",
+            "Tarja Turunen",
+            "Infernus",
+            "Freddie Mercury"
+          ],
+          "media": "gaahl",
+          "label": "Gaahl",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Gaahl"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-aretha-1",
+          "prompt": "Quem imortalizou Respect em sua gravação de 1967?",
+          "answer": "Aretha Franklin",
+          "options": [
+            "Aretha Franklin",
+            "Elvis Presley",
+            "Bob Marley",
+            "Rob Halford"
+          ],
+          "media": "aretha",
+          "label": "Aretha Franklin",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Aretha_Franklin"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-aretha-2",
+          "prompt": "Qual cantora é conhecida como Queen of Soul?",
+          "answer": "Aretha Franklin",
+          "options": [
+            "Aretha Franklin",
+            "Infernus",
+            "Freddie Mercury",
+            "David Bowie"
+          ],
+          "media": "aretha",
+          "label": "Aretha Franklin",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Aretha_Franklin"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-elvis-1",
+          "prompt": "Qual cantor interpretou o protagonista de Jailhouse Rock, filme de 1957?",
+          "answer": "Elvis Presley",
+          "options": [
+            "Elvis Presley",
+            "Bob Marley",
+            "Rob Halford",
+            "Tarja Turunen"
+          ],
+          "media": "elvis",
+          "label": "Elvis Presley",
+          "scene": "50s",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Elvis_Presley"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-elvis-2",
+          "prompt": "Quem recebeu o apelido de Rei do Rock?",
+          "answer": "Elvis Presley",
+          "options": [
+            "Elvis Presley",
+            "Freddie Mercury",
+            "David Bowie",
+            "Rita Lee"
+          ],
+          "media": "elvis",
+          "label": "Elvis Presley",
+          "scene": "50s",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Elvis_Presley"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-bob-1",
+          "prompt": "Qual cantor nasceu como Robert Nesta Marley?",
+          "answer": "Bob Marley",
+          "options": [
+            "Bob Marley",
+            "Rob Halford",
+            "Tarja Turunen",
+            "Infernus"
+          ],
+          "media": "bob",
+          "label": "Bob Marley",
+          "scene": "reggae",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Bob_Marley"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-bob-2",
+          "prompt": "Quem liderou o grupo Bob Marley and the Wailers?",
+          "answer": "Bob Marley",
+          "options": [
+            "Bob Marley",
+            "David Bowie",
+            "Rita Lee",
+            "Sabrina Carpenter"
+          ],
+          "media": "bob",
+          "label": "Bob Marley",
+          "scene": "reggae",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Bob_Marley"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-rob-1",
+          "prompt": "Quem é o vocalista conhecido como Metal God?",
+          "answer": "Rob Halford",
+          "options": [
+            "Rob Halford",
+            "Tarja Turunen",
+            "Infernus",
+            "Freddie Mercury"
+          ],
+          "media": "rob",
+          "label": "Rob Halford",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rob_Halford"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-rob-2",
+          "prompt": "Qual vocalista saiu do Judas Priest em 1992 e fundou o Fight?",
+          "answer": "Rob Halford",
+          "options": [
+            "Rob Halford",
+            "Rita Lee",
+            "Sabrina Carpenter",
+            "SU-METAL"
+          ],
+          "media": "rob",
+          "label": "Rob Halford",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rob_Halford"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-tarja-1",
+          "prompt": "Quem foi a vocalista original do Nightwish?",
+          "answer": "Tarja Turunen",
+          "options": [
+            "Tarja Turunen",
+            "Infernus",
+            "Freddie Mercury",
+            "David Bowie"
+          ],
+          "media": "tarja",
+          "label": "Tarja Turunen",
+          "scene": "symphonic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tarja_Turunen"
+          ],
+          "difficulty": "média",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-tarja-2",
+          "prompt": "Qual ex-vocalista do Nightwish lançou My Winter Storm em 2007?",
+          "answer": "Tarja Turunen",
+          "options": [
+            "Tarja Turunen",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "tarja",
+          "label": "Tarja Turunen",
+          "scene": "symphonic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tarja_Turunen"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-infernus-1",
+          "prompt": "Qual músico usa o pseudônimo Infernus?",
+          "answer": "Roger Tiegs",
+          "options": [
+            "Roger Tiegs",
+            "Farrokh Bulsara",
+            "David Robert Jones",
+            "Rita Lee Jones"
+          ],
+          "media": "infernus",
+          "label": "Infernus",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infernus"
+          ],
+          "difficulty": "média",
+          "kind": "identidade"
+        },
+        {
+          "id": "quem-infernus-2",
+          "prompt": "Qual guitarrista foi fundador do Gorgoroth em 1992?",
+          "answer": "Infernus",
+          "options": [
+            "Infernus",
+            "SU-METAL",
+            "Liniker",
+            "Marina Sena"
+          ],
+          "media": "infernus",
+          "label": "Infernus",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infernus"
+          ],
+          "difficulty": "média",
+          "kind": "carreira"
+        },
+        {
+          "id": "quem-brian-1",
+          "prompt": "Quem compôs We Will Rock You, do Queen?",
+          "answer": "Brian May",
+          "options": [
+            "Brian May",
+            "Freddie Mercury",
+            "David Bowie",
+            "Rita Lee"
+          ],
+          "media": "brian",
+          "label": "Brian May",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Brian_May"
+          ],
+          "difficulty": "difícil",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-brian-2",
+          "prompt": "Qual guitarrista do Queen também obteve doutorado em astrofísica?",
+          "answer": "Brian May",
+          "options": [
+            "Brian May",
+            "Freddie Mercury",
+            "David Bowie",
+            "Rita Lee"
+          ],
+          "media": "brian",
+          "label": "Brian May",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Brian_May"
+          ],
+          "difficulty": "difícil",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-gadd-1",
+          "prompt": "Quem tocou bateria na gravação de 50 Ways to Leave Your Lover, de Paul Simon?",
+          "answer": "Steve Gadd",
+          "options": [
+            "Steve Gadd",
+            "David Bowie",
+            "Rita Lee",
+            "Sabrina Carpenter"
+          ],
+          "media": "gadd",
+          "label": "Steve Gadd",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Steve_Gadd"
+          ],
+          "difficulty": "difícil",
+          "kind": "músico de sessão"
+        },
+        {
+          "id": "quem-gadd-2",
+          "prompt": "Qual baterista tocou na faixa Aja, do Steely Dan?",
+          "answer": "Steve Gadd",
+          "options": [
+            "Steve Gadd",
+            "David Bowie",
+            "Rita Lee",
+            "Sabrina Carpenter"
+          ],
+          "media": "gadd",
+          "label": "Steve Gadd",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Steve_Gadd"
+          ],
+          "difficulty": "difícil",
+          "kind": "músico de sessão"
+        },
+        {
+          "id": "quem-carol-1",
+          "prompt": "Qual instrumentista tocou guitarra rítmica na gravação de La Bamba de Ritchie Valens, em 1958?",
+          "answer": "Carol Kaye",
+          "options": [
+            "Carol Kaye",
+            "Rita Lee",
+            "Sabrina Carpenter",
+            "SU-METAL"
+          ],
+          "media": "carol",
+          "label": "Carol Kaye",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Carol_Kaye"
+          ],
+          "difficulty": "difícil",
+          "kind": "músico de sessão"
+        },
+        {
+          "id": "quem-carol-2",
+          "prompt": "Qual baixista de estúdio participou das sessões dos Beach Boys conhecidas pelo grupo de músicos Wrecking Crew?",
+          "answer": "Carol Kaye",
+          "options": [
+            "Carol Kaye",
+            "Rita Lee",
+            "Sabrina Carpenter",
+            "SU-METAL"
+          ],
+          "media": "carol",
+          "label": "Carol Kaye",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Carol_Kaye"
+          ],
+          "difficulty": "difícil",
+          "kind": "músico de sessão"
+        },
+        {
+          "id": "quem-levin-1",
+          "prompt": "Qual baixista tocou na gravação de Sledgehammer, de Peter Gabriel?",
+          "answer": "Tony Levin",
+          "options": [
+            "Tony Levin",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "levin",
+          "label": "Tony Levin",
+          "scene": "prog",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tony_Levin"
+          ],
+          "difficulty": "difícil",
+          "kind": "integrante"
+        },
+        {
+          "id": "quem-levin-2",
+          "prompt": "Qual baixista integrou a formação do King Crimson do álbum Discipline, em 1981?",
+          "answer": "Tony Levin",
+          "options": [
+            "Tony Levin",
+            "Sabrina Carpenter",
+            "SU-METAL",
+            "Liniker"
+          ],
+          "media": "levin",
+          "label": "Tony Levin",
+          "scene": "prog",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tony_Levin"
+          ],
+          "difficulty": "difícil",
+          "kind": "integrante"
+        }
+      ]
+    },
+    {
+      "id": "onde",
+      "version": 1,
+      "title": "DE ONDE VEIO?",
+      "deck": "Nascimento de artistas e formação de bandas. A pergunta diz qual dos dois.",
+      "roundSize": 16,
+      "questions": [
+        {
+          "id": "onde-freddie",
+          "prompt": "Em qual cidade nasceu Freddie Mercury?",
+          "answer": "Stone Town, Zanzibar",
+          "options": [
+            "Stone Town, Zanzibar",
+            "São Paulo",
+            "Rio de Janeiro",
+            "Hiroshima"
+          ],
+          "media": "freddie",
+          "label": "Freddie Mercury",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Freddie_Mercury"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-bowie",
+          "prompt": "Em qual cidade nasceu David Bowie?",
+          "answer": "Londres",
+          "options": [
+            "Londres",
+            "Rio de Janeiro",
+            "Hiroshima",
+            "Liverpool"
+          ],
+          "media": "bowie",
+          "label": "David Bowie",
+          "scene": "glam",
+          "sources": [
+            "https://en.wikipedia.org/wiki/David_Bowie"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-rita",
+          "prompt": "Em qual cidade nasceu Rita Lee?",
+          "answer": "São Paulo",
+          "options": [
+            "São Paulo",
+            "Londres",
+            "Liverpool",
+            "Memphis"
+          ],
+          "media": "rita",
+          "label": "Rita Lee",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rita_Lee"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-sabrina",
+          "prompt": "Em qual cidade nasceu Sabrina Carpenter?",
+          "answer": "Quakertown",
+          "options": [
+            "Quakertown",
+            "Londres",
+            "Liverpool",
+            "Memphis"
+          ],
+          "media": "sabrina",
+          "label": "Sabrina Carpenter",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sabrina_Carpenter"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-sumetal",
+          "prompt": "Em qual cidade nasceu SU-METAL (não onde a banda foi formada)?",
+          "answer": "Hiroshima",
+          "options": [
+            "Hiroshima",
+            "Memphis",
+            "Boston",
+            "Bela Vista"
+          ],
+          "media": "sumetal",
+          "label": "SU-METAL",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Suzuka_Nakamoto"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-liniker",
+          "prompt": "Em qual cidade nasceu Liniker?",
+          "answer": "Araraquara",
+          "options": [
+            "Araraquara",
+            "Memphis",
+            "Boston",
+            "Bela Vista"
+          ],
+          "media": "liniker",
+          "label": "Liniker",
+          "scene": "soul-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Liniker"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-marina",
+          "prompt": "Em qual cidade nasceu Marina Sena?",
+          "answer": "Taiobeiras",
+          "options": [
+            "Taiobeiras",
+            "Boston",
+            "Bela Vista",
+            "Quakertown"
+          ],
+          "media": "marina",
+          "label": "Marina Sena",
+          "scene": "pop-br-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Marina_Sena"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-tim",
+          "prompt": "Em qual cidade nasceu Tim Maia?",
+          "answer": "Rio de Janeiro",
+          "options": [
+            "Rio de Janeiro",
+            "Quakertown",
+            "Araraquara",
+            "Taiobeiras"
+          ],
+          "media": "tim",
+          "label": "Tim Maia",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tim_Maia"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-chappell",
+          "prompt": "Em qual cidade nasceu Chappell Roan?",
+          "answer": "Willard",
+          "options": [
+            "Willard",
+            "Quakertown",
+            "Araraquara",
+            "Taiobeiras"
+          ],
+          "media": "chappell",
+          "label": "Chappell Roan",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chappell_Roan"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-billie",
+          "prompt": "Em qual cidade nasceu Billie Eilish?",
+          "answer": "Los Angeles",
+          "options": [
+            "Los Angeles",
+            "Araraquara",
+            "Taiobeiras",
+            "Kitee"
+          ],
+          "media": "billie",
+          "label": "Billie Eilish",
+          "scene": "pop-atual",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Billie_Eilish"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-ney",
+          "prompt": "Em qual cidade nasceu Ney Matogrosso?",
+          "answer": "Bela Vista",
+          "options": [
+            "Bela Vista",
+            "Los Angeles",
+            "Kitee",
+            "Tupelo"
+          ],
+          "media": "ney",
+          "label": "Ney Matogrosso",
+          "scene": "br-rock",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ney_Matogrosso"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-gaahl",
+          "prompt": "Em qual país nasceu Gaahl?",
+          "answer": "Noruega",
+          "options": [
+            "Noruega",
+            "Finlândia",
+            "Brasil",
+            "Japão"
+          ],
+          "media": "gaahl",
+          "label": "Gaahl",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Gaahl"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-aretha",
+          "prompt": "Em qual cidade nasceu Aretha Franklin?",
+          "answer": "Memphis",
+          "options": [
+            "Memphis",
+            "Tupelo",
+            "Nine Mile",
+            "Willard"
+          ],
+          "media": "aretha",
+          "label": "Aretha Franklin",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Aretha_Franklin"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-elvis",
+          "prompt": "Em qual cidade nasceu Elvis Presley?",
+          "answer": "Tupelo",
+          "options": [
+            "Tupelo",
+            "Nine Mile",
+            "Willard",
+            "Sutton Coldfield"
+          ],
+          "media": "elvis",
+          "label": "Elvis Presley",
+          "scene": "50s",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Elvis_Presley"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-bob",
+          "prompt": "Em qual cidade nasceu Bob Marley?",
+          "answer": "Nine Mile",
+          "options": [
+            "Nine Mile",
+            "Willard",
+            "Sutton Coldfield",
+            "Stone Town, Zanzibar"
+          ],
+          "media": "bob",
+          "label": "Bob Marley",
+          "scene": "reggae",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Bob_Marley"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-rob",
+          "prompt": "Em qual cidade nasceu Rob Halford?",
+          "answer": "Sutton Coldfield",
+          "options": [
+            "Sutton Coldfield",
+            "Willard",
+            "Stone Town, Zanzibar",
+            "São Paulo"
+          ],
+          "media": "rob",
+          "label": "Rob Halford",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Rob_Halford"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-tarja",
+          "prompt": "Em qual cidade nasceu Tarja Turunen?",
+          "answer": "Kitee",
+          "options": [
+            "Kitee",
+            "Stone Town, Zanzibar",
+            "São Paulo",
+            "Rio de Janeiro"
+          ],
+          "media": "tarja",
+          "label": "Tarja Turunen",
+          "scene": "symphonic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tarja_Turunen"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-infernus",
+          "prompt": "Em qual país nasceu Infernus?",
+          "answer": "Noruega",
+          "options": [
+            "Noruega",
+            "Finlândia",
+            "Brasil",
+            "Japão"
+          ],
+          "media": "infernus",
+          "label": "Infernus",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infernus"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-depeche",
+          "prompt": "Em qual cidade foi formado o grupo Depeche Mode?",
+          "answer": "Basildon",
+          "options": [
+            "Basildon",
+            "Buffalo",
+            "Kitee",
+            "Belo Horizonte"
+          ],
+          "media": "depeche",
+          "label": "Depeche Mode",
+          "scene": "new-wave",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Depeche_Mode"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-cannibal",
+          "prompt": "Em qual cidade foi formado o grupo Cannibal Corpse?",
+          "answer": "Buffalo",
+          "options": [
+            "Buffalo",
+            "Kitee",
+            "Belo Horizonte",
+            "Huntington Park"
+          ],
+          "media": "cannibal",
+          "label": "Cannibal Corpse",
+          "scene": "death",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cannibal_Corpse"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-nightwish",
+          "prompt": "Em qual cidade foi formado o grupo Nightwish?",
+          "answer": "Kitee",
+          "options": [
+            "Kitee",
+            "Belo Horizonte",
+            "Huntington Park",
+            "Londres"
+          ],
+          "media": "nightwish",
+          "label": "Nightwish",
+          "scene": "symphonic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Nightwish"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-sepultura",
+          "prompt": "Em qual cidade foi formado o grupo Sepultura?",
+          "answer": "Belo Horizonte",
+          "options": [
+            "Belo Horizonte",
+            "Huntington Park",
+            "Londres",
+            "Birmingham"
+          ],
+          "media": "sepultura",
+          "label": "Sepultura",
+          "scene": "br-thrash",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sepultura"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-slayer",
+          "prompt": "Em qual cidade foi formado o grupo Slayer?",
+          "answer": "Huntington Park",
+          "options": [
+            "Huntington Park",
+            "Londres",
+            "Birmingham",
+            "Estocolmo"
+          ],
+          "media": "slayer",
+          "label": "Slayer",
+          "scene": "thrash",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Slayer"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-queen",
+          "prompt": "Em qual cidade foi formado o grupo Queen?",
+          "answer": "Londres",
+          "options": [
+            "Londres",
+            "Birmingham",
+            "Estocolmo",
+            "Downey"
+          ],
+          "media": "queen",
+          "label": "Queen",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Queen_(band)"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-atarashii",
+          "prompt": "Em qual país foi formado o grupo ATARASHII GAKKO!?",
+          "answer": "Japão",
+          "options": [
+            "Japão",
+            "Noruega",
+            "Alemanha",
+            "Brasil"
+          ],
+          "media": "atarashii",
+          "label": "ATARASHII GAKKO!",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Atarashii_Gakko!"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-judas",
+          "prompt": "Em qual cidade foi formado o grupo Judas Priest?",
+          "answer": "Birmingham",
+          "options": [
+            "Birmingham",
+            "Downey",
+            "Boston",
+            "Oslo"
+          ],
+          "media": "judas",
+          "label": "Judas Priest",
+          "scene": "heavy",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Judas_Priest"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-abba",
+          "prompt": "Em qual cidade foi formado o grupo ABBA?",
+          "answer": "Estocolmo",
+          "options": [
+            "Estocolmo",
+            "Boston",
+            "Oslo",
+            "Düsseldorf"
+          ],
+          "media": "abba",
+          "label": "ABBA",
+          "scene": "disco-pop",
+          "sources": [
+            "https://en.wikipedia.org/wiki/ABBA"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-carpenters",
+          "prompt": "Em qual cidade foi formado o grupo Carpenters?",
+          "answer": "Downey",
+          "options": [
+            "Downey",
+            "Oslo",
+            "Düsseldorf",
+            "Liverpool"
+          ],
+          "media": "carpenters",
+          "label": "Carpenters",
+          "scene": "pop-70",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Carpenters"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-dream",
+          "prompt": "Em qual cidade foi formado o grupo Dream Theater?",
+          "answer": "Boston",
+          "options": [
+            "Boston",
+            "Düsseldorf",
+            "Liverpool",
+            "São Paulo"
+          ],
+          "media": "dream",
+          "label": "Dream Theater",
+          "scene": "prog-metal",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dream_Theater"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-mayhem",
+          "prompt": "Em qual cidade foi formado o grupo Mayhem?",
+          "answer": "Oslo",
+          "options": [
+            "Oslo",
+            "Liverpool",
+            "São Paulo",
+            "Basildon"
+          ],
+          "media": "mayhem",
+          "label": "Mayhem",
+          "scene": "black",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mayhem_(band)"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-kraftwerk",
+          "prompt": "Em qual cidade foi formado o grupo Kraftwerk?",
+          "answer": "Düsseldorf",
+          "options": [
+            "Düsseldorf",
+            "São Paulo",
+            "Basildon",
+            "Buffalo"
+          ],
+          "media": "kraftwerk",
+          "label": "Kraftwerk",
+          "scene": "eletronica",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Kraftwerk"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-beatles",
+          "prompt": "Em qual cidade foi formado o grupo The Beatles?",
+          "answer": "Liverpool",
+          "options": [
+            "Liverpool",
+            "Basildon",
+            "Buffalo",
+            "Kitee"
+          ],
+          "media": "beatles",
+          "label": "The Beatles",
+          "scene": "60s",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Beatles"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-sade",
+          "prompt": "Em qual cidade foi formado o grupo Sade?",
+          "answer": "Londres",
+          "options": [
+            "Londres",
+            "Buffalo",
+            "Kitee",
+            "Belo Horizonte"
+          ],
+          "media": "sade",
+          "label": "Sade",
+          "scene": "soul",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sade_(band)"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-mutantes",
+          "prompt": "Em qual cidade foi formado o grupo Os Mutantes?",
+          "answer": "São Paulo",
+          "options": [
+            "São Paulo",
+            "Kitee",
+            "Belo Horizonte",
+            "Huntington Park"
+          ],
+          "media": "mutantes",
+          "label": "Os Mutantes",
+          "scene": "psicodelico-br",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Os_Mutantes"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-sarcofago",
+          "prompt": "Em qual cidade foi formado o grupo Sarcófago?",
+          "answer": "Belo Horizonte",
+          "options": [
+            "Belo Horizonte",
+            "Huntington Park",
+            "Londres",
+            "Birmingham"
+          ],
+          "media": "sarcofago",
+          "label": "Sarcófago",
+          "scene": "br-extremo",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sarc%C3%B3fago"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-babymetal",
+          "prompt": "Em qual país foi formado o grupo BABYMETAL?",
+          "answer": "Japão",
+          "options": [
+            "Japão",
+            "Finlândia",
+            "Noruega",
+            "Alemanha"
+          ],
+          "media": "babymetal",
+          "label": "BABYMETAL",
+          "scene": "japao",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Babymetal"
+          ],
+          "difficulty": "média",
+          "kind": "formação"
+        },
+        {
+          "id": "onde-brian",
+          "prompt": "Em qual cidade nasceu Brian May?",
+          "answer": "Hampton Hill",
+          "options": [
+            "Hampton Hill",
+            "Rochester",
+            "Everett",
+            "Boston"
+          ],
+          "media": "brian",
+          "label": "Brian May",
+          "scene": "classic",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Brian_May"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-gadd",
+          "prompt": "Em qual cidade nasceu Steve Gadd?",
+          "answer": "Rochester",
+          "options": [
+            "Rochester",
+            "Everett",
+            "Boston",
+            "Londres"
+          ],
+          "media": "gadd",
+          "label": "Steve Gadd",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Steve_Gadd"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-carol",
+          "prompt": "Em qual cidade nasceu Carol Kaye?",
+          "answer": "Everett",
+          "options": [
+            "Everett",
+            "Boston",
+            "Londres",
+            "Nova York"
+          ],
+          "media": "carol",
+          "label": "Carol Kaye",
+          "scene": "studio",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Carol_Kaye"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        },
+        {
+          "id": "onde-levin",
+          "prompt": "Em qual cidade nasceu Tony Levin?",
+          "answer": "Boston",
+          "options": [
+            "Boston",
+            "Londres",
+            "Nova York",
+            "Hampton Hill"
+          ],
+          "media": "levin",
+          "label": "Tony Levin",
+          "scene": "prog",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tony_Levin"
+          ],
+          "difficulty": "média",
+          "kind": "nascimento"
+        }
+      ]
+    }
+  ]
+}
