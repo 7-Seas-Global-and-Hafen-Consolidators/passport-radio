@@ -35,7 +35,7 @@
       nav.className = 'editorial-paper-nav';
       nav.setAttribute('aria-label','Seções');
       // Routes already present in the approved paper masthead. No existing href is changed.
-      const links = [['/','Home'],['/noticias.html','Notícias'],['/agenda.html','Agenda'],['/editorial.html','Arquivo'],['/bandas/index.html','Bandas'],['/blog.html','Blog'],['/radio.html','Podcast & Broadcast'],['/loja.html','Loja'],['/divulgar-bandas.html','Participe'],['/promocoes.html','Promoções'],['/anuncie.html','Anuncie'],['/doe.html','Apoie']];
+      const links = [['/','Home'],['/noticias.html','Notícias'],['/agenda.html','Agenda'],['/editorial.html','Arquivo'],['/bandas/index.html','Bandas'],['/blog.html','Blog'],['/jogos.html','Jogos'],['/radio.html','Podcast & Broadcast'],['/loja.html','Loja'],['/divulgar-bandas.html','Participe'],['/promocoes.html','Promoções'],['/anuncie.html','Anuncie'],['/doe.html','Apoie']];
       links.forEach(([href,text]) => {const a=document.createElement('a');a.href=href;a.textContent=text;nav.appendChild(a)});
       header.appendChild(nav);
     }
@@ -62,3 +62,6 @@
 (() => { if (document.querySelector('script[data-passport-continuity]')) return;
   const script=document.createElement('script');script.src='/js/passport-audio-continuity.js';script.defer=true;script.dataset.passportContinuity='1';document.head.appendChild(script);
 })();
+
+/* Principal navigation destination only; keep existing routes and order. */
+(() => { if(document.querySelector('script[src="/js/passport-games-navigation.js"]')) return;const s=document.createElement('script');s.src='/js/passport-games-navigation.js';s.defer=true;document.head.append(s);})();

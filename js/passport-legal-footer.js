@@ -18,3 +18,6 @@
 (() => { if (document.querySelector('script[data-passport-continuity]')) return;
   const script=document.createElement('script');script.src='/js/passport-audio-continuity.js';script.defer=true;script.dataset.passportContinuity='1';document.head.appendChild(script);
 })();
+
+/* Principal navigation destination only; keep existing routes and order. */
+(() => { if(document.querySelector('script[src="/js/passport-games-navigation.js"]')) return;const s=document.createElement('script');s.src='/js/passport-games-navigation.js';s.defer=true;document.head.append(s);})();
