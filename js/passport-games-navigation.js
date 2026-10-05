@@ -1,19 +1,25 @@
-/* Adds only the Jogos destination to existing principal navigation. */
+/* Adds only Jogos and Vídeos destinations to existing principal navigation. */
 (() => {
   const install = () => {
     document.querySelectorAll('nav').forEach(nav => {
-      if (nav.closest('footer') || nav.querySelector('a[href="/jogos.html"]')) return;
+      if (nav.closest('footer')) return;
       const links = [...nav.querySelectorAll('a[href]')];
       const path = a => new URL(a.href, location.href).pathname;
       const blog = links.find(a => path(a) === '/blog.html');
       const store = links.find(a => path(a) === '/loja.html');
       if (!blog || !store || !links.some(a => ['/','/index.html','/noticias.html'].includes(path(a)))) return;
-      const a = document.createElement('a'); a.href = '/jogos.html'; a.textContent = 'Jogos';
-      a.className = blog.className;
-      const item = blog.closest('li');
-      if (item && item.parentElement.closest('nav') === nav) {
-        const li = document.createElement('li'); li.append(a); item.after(li);
-      } else blog.after(a);
+      let anchor = links.find(a => path(a) === '/jogos.html') || blog;
+      for (const [href,label] of [['/jogos.html','Jogos'],['/videos.html','Vídeos']]) {
+        const existing = [...nav.querySelectorAll('a[href]')].find(a => path(a) === href);
+        if (existing) { anchor = existing; continue; }
+        const a = document.createElement('a'); a.href = href; a.textContent = label;
+        a.className = blog.className;
+        const item = anchor.closest('li');
+        if (item && item.parentElement.closest('nav') === nav) {
+          const li = document.createElement('li'); li.append(a); item.after(li);
+        } else anchor.after(a);
+        anchor = a;
+      }
     });
   };
   install();

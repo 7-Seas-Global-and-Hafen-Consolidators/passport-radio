@@ -1,0 +1,1303 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "selection",
+      "label": "Seleção"
+    },
+    {
+      "id": "marillion",
+      "label": "Marillion e convidados"
+    },
+    {
+      "id": "smashing",
+      "label": "The Smashing Pumpkins"
+    },
+    {
+      "id": "babymetal",
+      "label": "BABYMETAL ao vivo"
+    }
+  ],
+  "videos": [
+    {
+      "id": "3Fx4i6MkcxU",
+      "artist": "The Sisters of Mercy",
+      "showDate": "2024-10-06",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "NbdRLyixJpc",
+      "artist": "Miley Cyrus",
+      "showDate": "2020",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "TbLwsxflK-c",
+      "artist": "The Cult",
+      "showDate": "2010",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "RT8KDRgooZA",
+      "artist": "Duran Duran",
+      "showDate": "2025",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "9hhecKCdGR0",
+      "artist": "The Cure",
+      "showDate": "2024",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "AlwF-ECfW5Y",
+      "artist": "Draconian",
+      "showDate": "2022",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "YCPI-bWP1_4",
+      "artist": "The Sisters of Mercy",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "hCe507-eO_Y",
+      "artist": "The Mission",
+      "showDate": "2004-04-13",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "TvjTYDlRgGc",
+      "artist": "The Sisters of Mercy",
+      "showDate": null,
+      "type": "music-video",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "iGLOWTsY32g",
+      "artist": "Therion",
+      "showDate": "2024",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "KG_fqkyJ-wo",
+      "artist": "BABYMETAL + Rob Halford",
+      "showDate": "2016",
+      "type": "performance",
+      "collections": [
+        "selection",
+        "babymetal"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "XXbK7ypyB4k",
+      "artist": "Arch Enemy",
+      "showDate": "2017-07-08",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "p5etfIwlRbg",
+      "artist": "Arch Enemy",
+      "showDate": "2016",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "UNPKGyYzPCo",
+      "artist": "Arch Enemy",
+      "showDate": "2016",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "XzIdUyV1q7s",
+      "artist": "Tarja + Alissa White-Gluz",
+      "showDate": "2016",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "lHqGACxmjaY",
+      "artist": "The Sisters of Mercy",
+      "showDate": "1993-11-26",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "zQUTKHKZFC8",
+      "artist": "The Mission",
+      "showDate": "1995",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "-_P4GmzRuKc",
+      "artist": "Simple Minds",
+      "showDate": "2025-06-18",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "6FsYtV3P4S0",
+      "artist": "New Order",
+      "showDate": "2018",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "MlPr8Zt4StQ",
+      "artist": "New Order",
+      "showDate": "2018",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "T-dRPKC_7-Y",
+      "artist": "Simple Minds",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "Z9J6OFaA7VY",
+      "artist": "Elton John",
+      "showDate": "2005",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "cOqaUtMBB-s",
+      "artist": "Def Leppard + Taylor Swift",
+      "showDate": "2008",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "G4AeGPUYSAA",
+      "artist": "Def Leppard + Taylor Swift",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "6AfKSdGGqx0",
+      "artist": "David Gilmour",
+      "showDate": "2016",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "Aqm2k55xo1E",
+      "artist": "The Warning",
+      "showDate": "2025-06-22",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "xweRJNcDfOY",
+      "artist": "The Cranberries",
+      "showDate": "1999",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "NFi_BMYgaPQ",
+      "artist": "Marillion",
+      "showDate": "2007",
+      "type": "performance",
+      "collections": [
+        "selection",
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 9
+      }
+    },
+    {
+      "id": "jfsj214FQIs",
+      "artist": "Genesis",
+      "showDate": "2007-07-14",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "tkya2wUEaUY",
+      "artist": "Eurythmics",
+      "showDate": "1987-02-14",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "4BSiqFVsyAs",
+      "artist": "Taylor Swift",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "n-5-CtkBjDk",
+      "artist": "Megadeth",
+      "showDate": "2026",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "7yh2Yjlghf0",
+      "artist": "Metallica",
+      "showDate": "2024",
+      "type": "compilation",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "dMWIK44xJuI",
+      "artist": "Aerosmith",
+      "showDate": "2016-10-27",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "N8FcJ6f3xJ4",
+      "artist": "Chicago",
+      "showDate": "1993",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": false,
+      "collectionOrder": {}
+    },
+    {
+      "id": "-b0lTmum1rA",
+      "artist": "Christopher Cross",
+      "showDate": "2024-04-27",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "Y93j14DhxwA",
+      "artist": "Biquini",
+      "showDate": null,
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "18cFvSXaIY0",
+      "artist": "Bruno Mars",
+      "showDate": "2026",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "i6aLFbDl_F4",
+      "artist": "Billie Eilish",
+      "showDate": "2022",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "CxGfbr5NuPU",
+      "artist": "Olivia Rodrigo",
+      "showDate": "2025",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "lNIc0aj37M0",
+      "artist": "Sabrina Carpenter",
+      "showDate": "2026",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "SDDC-QdOR14",
+      "artist": "Michael Jackson",
+      "showDate": "1997",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "dVUjkBmrMZI",
+      "artist": "Dire Straits",
+      "showDate": "1985",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "0-6lLZbm0jg",
+      "artist": "Queen",
+      "showDate": "1986",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "8frZbYDjIoQ",
+      "artist": "Extreme",
+      "showDate": "2024-06-15",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "gAh9NRGNhUU",
+      "artist": "Lordi",
+      "showDate": "2006",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "IfRZ-dy3Fqc",
+      "artist": "Alphaville + Sandra + Opus + Bananarama + Rick Astley",
+      "showDate": "2014",
+      "type": "performance",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "OowsCb2QPrw",
+      "artist": "Men at Work",
+      "showDate": "2024",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "iIQOQVg0umw",
+      "artist": "Olivia Newton-John",
+      "showDate": "2017",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "tAdmhVPQ0DA",
+      "artist": "Maná",
+      "showDate": "2024",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    },
+    {
+      "id": "NbZuwolEM_A",
+      "artist": "Marillion",
+      "showDate": "2023",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 0
+      }
+    },
+    {
+      "id": "YniDyNUFF-E",
+      "artist": "Marillion",
+      "showDate": "2017",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 1
+      }
+    },
+    {
+      "id": "l3NhNz9-EOA",
+      "artist": "Marillion",
+      "showDate": "2009",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 2
+      }
+    },
+    {
+      "id": "nzimPCMbXvQ",
+      "artist": "Marillion",
+      "showDate": "2015",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 3
+      }
+    },
+    {
+      "id": "vMZ-n16kVGo",
+      "artist": "Marillion",
+      "showDate": "2013",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 4
+      }
+    },
+    {
+      "id": "8MY_iFtRee8",
+      "artist": "Marillion",
+      "showDate": "2017",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 5
+      }
+    },
+    {
+      "id": "OPLW8QhuPRA",
+      "artist": "Marillion",
+      "showDate": "2013-03-10",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 6
+      }
+    },
+    {
+      "id": "5uSSMa6YSlU",
+      "artist": "Marillion",
+      "showDate": "2013-04-12",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 7
+      }
+    },
+    {
+      "id": "mJZYbtekhfI",
+      "artist": "Marillion",
+      "showDate": "2017-10-13",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 8
+      }
+    },
+    {
+      "id": "9HxFKOBaL-s",
+      "artist": "Marillion",
+      "showDate": "2023",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 10
+      }
+    },
+    {
+      "id": "mP8YV3JQmPI",
+      "artist": "Marillion",
+      "showDate": "2011",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 11
+      }
+    },
+    {
+      "id": "QXbVYsXPZfc",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 12
+      }
+    },
+    {
+      "id": "8ypkV1XRwAM",
+      "artist": "Marillion",
+      "showDate": "2019",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 13
+      }
+    },
+    {
+      "id": "MUGSzhczAFY",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 14
+      }
+    },
+    {
+      "id": "YfrhaOG2qpQ",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 15
+      }
+    },
+    {
+      "id": "85W4IL5Zil0",
+      "artist": "Marillion",
+      "showDate": "2013",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 16
+      }
+    },
+    {
+      "id": "aw7AJkS-x5g",
+      "artist": "Marillion",
+      "showDate": "2017-10-13",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 17
+      }
+    },
+    {
+      "id": "XgWz55phFKQ",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "music-video",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 18
+      }
+    },
+    {
+      "id": "k3dwSj5HQWk",
+      "artist": "Marillion",
+      "showDate": "2013",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 19
+      }
+    },
+    {
+      "id": "c1UEHTMHkxM",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "music-video",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 20
+      }
+    },
+    {
+      "id": "s9GEuFDGSYg",
+      "artist": "Marillion",
+      "showDate": "2013",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 21
+      }
+    },
+    {
+      "id": "5bawDvb6nBo",
+      "artist": "Marillion",
+      "showDate": "2008-11-26",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 22
+      }
+    },
+    {
+      "id": "ACRRRnoN6nQ",
+      "artist": "Marillion",
+      "showDate": "2011",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 23
+      }
+    },
+    {
+      "id": "r4ApKGYNzTs",
+      "artist": "Marillion",
+      "showDate": "2019-04-26",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 24
+      }
+    },
+    {
+      "id": "RA7Dl7TTrOQ",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "audio",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 25
+      }
+    },
+    {
+      "id": "3Iu1JOVT0jQ",
+      "artist": "Marillion",
+      "showDate": "2011",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 26
+      }
+    },
+    {
+      "id": "v4VfrnTvm9Y",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "audio",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 27
+      }
+    },
+    {
+      "id": "nnX6DGvq1oI",
+      "artist": "Marillion",
+      "showDate": "2009",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 28
+      }
+    },
+    {
+      "id": "nlfohq66LFI",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 29
+      }
+    },
+    {
+      "id": "-GcAL0k7wYI",
+      "artist": "Marillion",
+      "showDate": "1985",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 30
+      }
+    },
+    {
+      "id": "HnSsqbsKxMA",
+      "artist": "Marillion",
+      "showDate": "2003-03-14",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 31
+      }
+    },
+    {
+      "id": "Ajz7FAYbclA",
+      "artist": "Marillion",
+      "showDate": "2009",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 32
+      }
+    },
+    {
+      "id": "XARMudgrp_Q",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 33
+      }
+    },
+    {
+      "id": "IJu6LF-WnNc",
+      "artist": "Marillion",
+      "showDate": "2010-07-23",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 34
+      }
+    },
+    {
+      "id": "tNTdkTPA7IM",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 35
+      }
+    },
+    {
+      "id": "XYNMRXxeqvk",
+      "artist": "Marillion",
+      "showDate": "2017-10-13",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 36
+      }
+    },
+    {
+      "id": "eXua5ptZPiA",
+      "artist": "Marillion",
+      "showDate": "2023",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 37
+      }
+    },
+    {
+      "id": "8SvLC4X_SdY",
+      "artist": "Marillion",
+      "showDate": "2011",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 38
+      }
+    },
+    {
+      "id": "MtrnrBZjj7g",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 39
+      }
+    },
+    {
+      "id": "ZpKHQIqMeH4",
+      "artist": "Marillion",
+      "showDate": "2019",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 40
+      }
+    },
+    {
+      "id": "pQ74CwXcliM",
+      "artist": "Marillion",
+      "showDate": "2013",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 41
+      }
+    },
+    {
+      "id": "9Sh9YyEvIIg",
+      "artist": "Marillion",
+      "showDate": "1987",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 42
+      }
+    },
+    {
+      "id": "HgjLshrC_X0",
+      "artist": "Marillion",
+      "showDate": "1983",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": false,
+      "collectionOrder": {
+        "marillion": 43
+      }
+    },
+    {
+      "id": "OduaEucBQ-E",
+      "artist": "Fleesh",
+      "showDate": null,
+      "type": "music-video",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 44
+      }
+    },
+    {
+      "id": "epXnW0fnDGA",
+      "artist": "Fleesh",
+      "showDate": null,
+      "type": "music-video",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 45
+      }
+    },
+    {
+      "id": "P4WZQY4XBgA",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "interview",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 46
+      }
+    },
+    {
+      "id": "OIASJN57KlM",
+      "artist": "Steve Hackett + Steve Rothery",
+      "showDate": null,
+      "type": "music-video",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 50
+      }
+    },
+    {
+      "id": "iSEbRGDi720",
+      "artist": "Marillion",
+      "showDate": "2015",
+      "type": "performance",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 51
+      }
+    },
+    {
+      "id": "eyhTWlyy1Eg",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "trailer",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 53
+      }
+    },
+    {
+      "id": "2IkXFx9LJDQ",
+      "artist": "Marillion",
+      "showDate": null,
+      "type": "trailer",
+      "collections": [
+        "marillion"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "marillion": 54
+      }
+    },
+    {
+      "id": "TLKHenk8p1M",
+      "artist": "The Smashing Pumpkins",
+      "showDate": "2010",
+      "type": "performance",
+      "collections": [
+        "smashing"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "smashing": 0
+      }
+    },
+    {
+      "id": "KCrIp3x1e2M",
+      "artist": "The Smashing Pumpkins",
+      "showDate": "2010",
+      "type": "performance",
+      "collections": [
+        "smashing"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "smashing": 1
+      }
+    },
+    {
+      "id": "ej1z_TxKQQM",
+      "artist": "The Smashing Pumpkins",
+      "showDate": "2010",
+      "type": "performance",
+      "collections": [
+        "smashing"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "smashing": 2
+      }
+    },
+    {
+      "id": "nkodQuLgONc",
+      "artist": "The Smashing Pumpkins",
+      "showDate": "2010",
+      "type": "performance",
+      "collections": [
+        "smashing"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "smashing": 3
+      }
+    },
+    {
+      "id": "eDWBFevKSZc",
+      "artist": "The Smashing Pumpkins",
+      "showDate": "2010",
+      "type": "performance",
+      "collections": [
+        "smashing"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {
+        "smashing": 4
+      }
+    },
+    {
+      "id": "zTEYUFgLveY",
+      "artist": "BABYMETAL",
+      "showDate": null,
+      "type": "performance",
+      "collections": [
+        "babymetal"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {}
+    }
+  ]
+}
