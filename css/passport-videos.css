@@ -8,23 +8,23 @@ body.passport-videos { --news-red: #C41E3A; }
 .passport-videos button:hover:not(:disabled),.passport-videos button[aria-current="page"] { background:#C41E3A; border-color:#C41E3A; color:#fff; }
 .passport-videos button:disabled { opacity:.45; cursor:default; }
 .passport-videos .videos-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
-.passport-videos .videos-card { text-align:left; padding:18px 0 22px; border:0; border-top:1px solid #111; background:#fff; }
-.passport-videos .videos-card:hover:not(:disabled) { background:#fff; color:#C41E3A; border-color:#111; }
-.passport-videos .videos-card strong { display:block; font:700 clamp(22px,2vw,28px)/1.2 var(--news-display); overflow-wrap:anywhere; }
-.passport-videos .videos-card time { display:block; margin-top:12px; font:500 12px/1.4 var(--news-sans); letter-spacing:.08em; }
+.passport-videos .videos-card { min-width:0; padding:0 0 20px; border-bottom:1px solid #111; background:#fff; }
+.passport-videos .videos-media { width:100%; aspect-ratio:16/9; background:#111; overflow:hidden; margin-bottom:14px; }
+.passport-videos .videos-preview { position:relative; display:block; width:100%; height:100%; border:0; padding:0; background:#111; }
+.passport-videos .videos-preview img { display:block; width:100%; height:100%; object-fit:cover; }
+.passport-videos .videos-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:grid; place-items:center; width:44px; height:44px; background:#C41E3A; color:#fff; font-size:20px; }
+.passport-videos .videos-media iframe { width:100%; height:100%; border:0; display:block; }
+.passport-videos .videos-card h2 { font:700 24px/1.15 var(--news-display); margin:0 0 8px; overflow-wrap:anywhere; }
+.passport-videos .videos-title { margin:0; font:400 16px/1.4 var(--news-body); overflow-wrap:anywhere; }
+.passport-videos .videos-card time { display:block; margin-top:10px; font:500 12px/1.4 var(--news-sans); letter-spacing:.08em; }
+.passport-videos .videos-player-status { margin:12px 0 0; font:400 14px/1.4 var(--news-body); }
+.passport-videos .videos-player-status:empty { display:none; }
+.passport-videos .videos-card-actions { display:flex; gap:8px; margin-top:12px; }
 .passport-videos .videos-pagination { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; border-top:1px solid #111; margin-top:32px; padding-top:24px; }
-.passport-videos .videos-player-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px; }
-.passport-videos #videos-player-section { border-bottom:1px solid #111; padding-bottom:24px; margin-bottom:32px; }
-.passport-videos #videos-player-mount { width:100%; max-width:960px; aspect-ratio:16/9; background:#111; margin-bottom:16px; }
-.passport-videos #videos-player-mount iframe { width:100%; height:100%; display:block; border:0; }
-.passport-videos #videos-player-status { font:400 16px/1.5 var(--news-body); }
 .passport-videos #videos-status:empty { display:none; }
-@media(max-width:640px) {
- .passport-videos .videos-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 16px; }
+@media(max-width:1100px) { .passport-videos .videos-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:760px) {
+ .passport-videos .videos-grid { grid-template-columns:minmax(0,1fr); gap:24px; }
  .passport-videos .videos-tools { gap:16px; }
  .passport-videos .videos-tools label { flex:1 1 140px; }
- .passport-videos .videos-card strong { font-size:22px; }
- .passport-videos .videos-player-heading { align-items:flex-start; }
- .passport-videos #videos-player-mount { min-height:200px; aspect-ratio:auto; }
- .passport-videos #videos-player-mount iframe { min-height:200px; }
 }

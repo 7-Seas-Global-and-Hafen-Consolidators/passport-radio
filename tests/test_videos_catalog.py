@@ -41,7 +41,7 @@ class VideosCatalogue(unittest.TestCase):
         self.assertIn('Sacramento', self.audit['playlists']['smashing']['source'])
 
     def test_public_projection_never_contains_source_fields(self):
-        allowed = {'id','artist','showDate','type','collections','embedAllowed','collectionOrder'}
+        allowed = {'id','artist','showDate','type','collections','embedAllowed','collectionOrder','title','thumbnail'}
         for v in self.videos:
             self.assertFalse(set(v) - allowed)
             self.assertRegex(v['id'], r'^[A-Za-z0-9_-]{11}$')
@@ -58,6 +58,22 @@ class VideosCatalogue(unittest.TestCase):
         official = next(r for r in self.audit['records'] if r['id']=='zTEYUFgLveY')
         self.assertEqual(official['uploader'], 'BABYMETAL')
         self.assertIn('Saitama', official['liveEvidence'])
+
+    def test_visual_projection_preserves_every_existing_catalogue_field(self):
+        import hashlib
+        projected = json.loads(json.dumps(self.catalogue))
+        for v in projected['videos']:
+            v.pop('title', None)
+            v.pop('thumbnail', None)
+        digest = hashlib.sha256(json.dumps(projected, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()).hexdigest()
+        self.assertEqual(digest, 'f7b8388bd5035785f32e92c5d5cef2b3c185bab748d5db721082c0eb71c0d99b')
+        self.assertEqual(hashlib.sha256((ROOT / 'data/passport-videos-audit.json').read_bytes()).hexdigest(), '044490b512d9802bfa822d1706bafd1a1e62e664e0a5d05a570c8c5873ea3147')
+
+    def test_titles_and_previews_identify_the_existing_video(self):
+        for v in self.videos:
+            self.assertTrue(v['title'].strip())
+            self.assertNotRegex(v['title'], r'(?i)BBC|WackenTV|ARTE Concert|Radio 94\.7|YouTube|Napalm Records|b-light\.tv|Grunf')
+            self.assertEqual(v['thumbnail'], 'https://img.youtube.com/vi/' + v['id'] + '/hqdefault.jpg')
 
     def test_embed_denial_retained_without_swapping(self):
         chicago = next(v for v in self.videos if v['id']=='N8FcJ6f3xJ4')

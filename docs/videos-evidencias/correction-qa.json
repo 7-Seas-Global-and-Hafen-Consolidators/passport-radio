@@ -1,0 +1,65 @@
+{
+  "base": "3deecd8bd6c6e990de8c08dd0efe68ef562c614c",
+  "views": [
+    {
+      "width": 1440,
+      "cards": 106,
+      "columns": "370.656px 370.672px 370.656px",
+      "style": {
+        "overflow": false,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "red": "rgb(196, 30, 58)",
+        "columns": "370.656px 370.672px 370.656px",
+        "brokenImages": 0
+      },
+      "errors": [],
+      "result": "PASS preview/title/date, all pages, search/filter, one inline player, explicit play and existing Bus revocation, Chicago unchanged",
+      "iframeSize": {
+        "x": 136,
+        "y": 395.484375,
+        "width": 370.65625,
+        "height": 208.484375
+      },
+      "thumbnailEvidence": "Thumb do mesmo ID adquirido, endpoint img.youtube.com verificado; bytes reais em cache somente para transporte do QA."
+    },
+    {
+      "width": 390,
+      "cards": 106,
+      "columns": "358px",
+      "style": {
+        "overflow": false,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "red": "rgb(196, 30, 58)",
+        "columns": "358px",
+        "brokenImages": 0
+      },
+      "errors": [],
+      "result": "PASS preview/title/date, all pages, search/filter, one inline player, explicit play and existing Bus revocation, Chicago unchanged",
+      "iframeSize": {
+        "x": 16,
+        "y": -0.015625,
+        "width": 358,
+        "height": 201.375
+      },
+      "thumbnailEvidence": "Thumb do mesmo ID adquirido, endpoint img.youtube.com verificado; bytes reais em cache somente para transporte do QA."
+    }
+  ],
+  "continuity": [
+    {
+      "result": "PASS original native engine, filters/pages preserve audio, intentional inline play pauses radio, radio resume pauses video",
+      "before": {
+        "paused": false,
+        "src": "https://streams.radiobob.de/powermetal/mp3-192/",
+        "time": 0.012016
+      },
+      "after": {
+        "paused": false,
+        "src": "https://streams.radiobob.de/powermetal/mp3-192/",
+        "time": 0.111096
+      },
+      "transport": "Original engine + native audio; WAV and video API substituted only in QA."
+    }
+  ]
+}
