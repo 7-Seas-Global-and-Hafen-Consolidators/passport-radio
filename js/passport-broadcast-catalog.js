@@ -17,10 +17,14 @@
     seen.add(item.id); return true;
   });
   const stage = get('passport-broadcast-stage'), list = get('broadcast-items');
+  let selected = 0, page = 0;
+  const pageSize = 6;
+  const pages = document.createElement('nav'); pages.className = 'collection-pages'; pages.setAttribute('aria-label', 'Páginas de Broadcast'); list.after(pages);
   const publicTitle = item => item.title.replace(/(?:NPR Music|Tiny Desk) /g, '');
   function select(index) {
     const item = entries[index];
     if (!item) return;
+    selected = index; page = Math.floor(index / pageSize);
     stage.replaceChildren();
     get('broadcast-title').textContent = publicTitle(item);
     get('broadcast-description').textContent = item.artist + ' · apresentação.';
@@ -41,14 +45,29 @@
       stage.replaceChildren(frame);
     });
     stage.appendChild(button);
-    list.querySelectorAll('button').forEach((button, i) => {
-      if (i === index) button.setAttribute('aria-current', 'true'); else button.removeAttribute('aria-current');
-    });
+    renderList();
   }
-  entries.forEach((item, index) => {
-    const li = document.createElement('li'), button = document.createElement('button');
-    button.type = 'button'; button.textContent = publicTitle(item);
-    button.addEventListener('click', () => select(index)); li.appendChild(button); list.appendChild(li);
-  });
+  function renderList() {
+    list.replaceChildren();
+    entries.slice(page * pageSize, (page + 1) * pageSize).forEach((item, offset) => {
+      const index = page * pageSize + offset;
+      const li = document.createElement('li'), button = document.createElement('button');
+      button.type = 'button';
+      const image = document.createElement('img'); image.src = item.cover; image.alt = ''; image.loading = 'lazy';
+      const title = document.createElement('strong'); title.textContent = publicTitle(item); button.append(image, title);
+      if (index === selected) button.setAttribute('aria-current', 'true');
+      button.addEventListener('click', () => select(index)); li.appendChild(button); list.appendChild(li);
+    });
+    pages.replaceChildren();
+    const total = Math.ceil(entries.length / pageSize);
+    const control = (label, target, disabled = false) => {
+      const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.disabled = disabled;
+      if (target === page && !disabled) button.setAttribute('aria-current', 'page');
+      button.addEventListener('click', () => { page = target; renderList(); list.scrollIntoView({block: 'start'}); }); pages.append(button);
+    };
+    control('← ANTERIOR', page - 1, page === 0);
+    for (let n = 0; n < total; n++) control(String(n + 1), n);
+    control('PRÓXIMA →', page + 1, page === total - 1);
+  }
   if (entries.length) select(0);
 })();

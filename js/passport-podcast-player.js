@@ -15,7 +15,11 @@
   const progress = byId('podcast-progress'), volume = byId('podcast-volume'), speed = byId('podcast-speed');
   const status = byId('podcast-status'), list = byId('podcast-episodes');
   const storageKey = 'passport_podcast_listened_v1';
-  let catalog, index = -1, generation = 0;
+  let catalog, index = -1, generation = 0, page = 0;
+  const pageSize = 12;
+  const pages = document.createElement('nav');
+  pages.className = 'collection-pages'; pages.setAttribute('aria-label', 'Páginas de episódios');
+  list.after(pages);
   const listened = new Set();
   try { const saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); if (Array.isArray(saved)) saved.filter(id => typeof id === 'string').forEach(id => listened.add(id)); } catch (_) { /* Storage can be unavailable. Playback remains independent. */ }
   try { catalog = JSON.parse(config.textContent); } catch (_) { status.textContent = 'Catálogo indisponível. Nenhum áudio foi carregado.'; return; }
@@ -43,13 +47,28 @@
   }
   function renderList() {
     list.replaceChildren();
-    episodes.forEach((episode, i) => {
+    episodes.slice(page * pageSize, (page + 1) * pageSize).forEach((episode, offset) => {
+      const i = page * pageSize + offset;
       const item = document.createElement('li'), button = document.createElement('button');
-      button.type = 'button'; button.textContent = episode.title;
+      button.type = 'button';
+      const image = document.createElement('img'); image.src = safeURL(episode.cover) || safeURL(catalog.podcast?.cover) || ''; image.alt = ''; image.loading = 'lazy';
+      const title = document.createElement('strong'); title.textContent = episode.title;
+      button.append(image, title);
+      if (episode.date) { const date = document.createElement('time'); date.dateTime = episode.date; date.textContent = episode.date; button.append(date); }
       if (i === index) button.setAttribute('aria-current', 'true');
       if (listened.has(episode.id)) { const marker = document.createElement('span'); marker.textContent = 'Ouvido'; button.appendChild(marker); }
       button.addEventListener('click', () => select(i)); item.appendChild(button); list.appendChild(item);
     });
+    pages.replaceChildren();
+    const total = Math.ceil(episodes.length / pageSize);
+    const control = (label, target, disabled = false) => {
+      const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.disabled = disabled;
+      if (target === page && !disabled) button.setAttribute('aria-current', 'page');
+      button.addEventListener('click', () => { page = target; renderList(); list.scrollIntoView({block: 'start'}); }); pages.append(button);
+    };
+    control('← ANTERIOR', page - 1, page === 0);
+    for (let n = 0; n < total; n++) control(String(n + 1), n);
+    control('PRÓXIMA →', page + 1, page === total - 1);
     byId('podcast-listened').hidden = index < 0 || !listened.has(episodes[index].id);
   }
   function renderCover(episode = {}) {
@@ -63,7 +82,7 @@
   }
   function select(i) {
     if (!episodes[i]) return;
-    generation++; audio.pause(); index = i;
+    generation++; audio.pause(); index = i; page = Math.floor(i / pageSize);
     audio.src = safeURL(episodes[i].src); audio.load();
     audio.volume = Number(volume.value); audio.playbackRate = Number(speed.value);
     text('podcast-episode-title', episodes[i].title); text('podcast-description', (episodes[i].description || '').replace(/\s+no (?:Sodajerker|Music Makes Us|Song Exploder)\./g, '.'));
