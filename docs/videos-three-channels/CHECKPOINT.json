@@ -1,0 +1,28 @@
+{
+  "branch": "feat/videos-three-channels-20261005",
+  "baseHead": "72c76dbbbf32e1d3b63a6dc0f84f4c463a3c3fc7",
+  "wackentv": {
+    "status": "complete",
+    "playlists": 127,
+    "availableUniqueSourceIds": 2957,
+    "eligible": 1508,
+    "excluded": 1449
+  },
+  "midnight": {
+    "status": "complete",
+    "playlists": 52,
+    "availableUniqueSourceIds": 1422,
+    "eligible": 1301,
+    "excluded": 121
+  },
+  "bbc": {
+    "status": "interrupted",
+    "playlistsComplete": 44,
+    "videosTabTraversed": 6444,
+    "interruptedAt": "Shorts page 4",
+    "consolidatedDraftSaved": false
+  },
+  "playlistsCompleted": 223,
+  "catalogueBaselineCount": 106,
+  "recovery": "WackenTV and Midnight Special were fully consolidated from the uploaded checkpoint locally. BBC cannot be truthfully consolidated from the package because its 6,444-entry channel JSON was not flushed before interruption. Do not restart completed Wacken/Midnight acquisition; reacquire only genuinely missing BBC state when access returns."
+}
