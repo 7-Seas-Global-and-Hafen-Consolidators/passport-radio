@@ -1,0 +1,59 @@
+{
+  "views": [
+    {
+      "width": 1440,
+      "episodes": 47,
+      "videos": 11,
+      "selections": "58/58",
+      "sourceText": "ZERO in page-owned interface/alt/title",
+      "sourceLinks": 0,
+      "counterElements": 0,
+      "controls": "PASS controlled DOM",
+      "style": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "red": "rgb(196, 30, 58)",
+        "fonts": [
+          "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+          "\"Bodoni Moda\", Georgia, serif"
+        ],
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "episodes": 47,
+      "videos": 11,
+      "selections": "58/58",
+      "sourceText": "ZERO in page-owned interface/alt/title",
+      "sourceLinks": 0,
+      "counterElements": 0,
+      "controls": "PASS controlled DOM",
+      "style": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(17, 17, 17)",
+        "red": "rgb(196, 30, 58)",
+        "fonts": [
+          "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+          "\"Bodoni Moda\", Georgia, serif"
+        ],
+        "overflow": false
+      },
+      "errors": []
+    }
+  ],
+  "audio": [
+    {
+      "width": 1440,
+      "result": "PASS native existing player with WAV transport fixture",
+      "realExternalStreaming": "not claimed"
+    },
+    {
+      "width": 390,
+      "result": "PASS native existing player with WAV transport fixture",
+      "realExternalStreaming": "not claimed"
+    }
+  ],
+  "video": []
+}
