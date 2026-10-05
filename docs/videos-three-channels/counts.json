@@ -1,0 +1,45 @@
+{
+  "baseHead": "72c76dbbbf32e1d3b63a6dc0f84f4c463a3c3fc7",
+  "baselineCount": 106,
+  "finalCount": 7117,
+  "sources": {
+    "wackentv": {
+      "traversed": 2957,
+      "eligible": 1508,
+      "alreadyExisting": 0,
+      "added": 1508,
+      "excluded": 1449,
+      "duplicatesAvoided": 0
+    },
+    "midnight": {
+      "traversed": 1422,
+      "eligible": 1301,
+      "alreadyExisting": 0,
+      "added": 1301,
+      "excluded": 121,
+      "duplicatesAvoided": 0
+    },
+    "bbc": {
+      "traversed": 4394,
+      "eligible": 4202,
+      "alreadyExisting": 0,
+      "added": 4202,
+      "excluded": 192,
+      "duplicatesAvoided": 0
+    }
+  },
+  "playlistsCompleted": 223,
+  "bbcRecovery": {
+    "playlistRecordsRecovered": 4031,
+    "shortsListed": 479,
+    "recoverableDistinctIds": 4394,
+    "shortsTraversalComplete": true,
+    "videosTraversedBeforeInterruption": 6444,
+    "unsavedVideosTabRecovered": false,
+    "scopeLimitation": "Missing standalone Videos-tab records cannot be reconstructed from the surviving checkpoints. Videos tab was not traversed again. Catalogue contains all classified recoverable records, not a claim of complete historical BBC-channel coverage."
+  },
+  "limits": [
+    "Actual provider playback is subject to availability; no global guarantee inferred from metadata.",
+    "Items with insufficient identity remain internal, with the exclusion reason."
+  ]
+}

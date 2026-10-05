@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "initialCards": 24,
+    "totalPages": 297,
+    "search": "PASS",
+    "collectionFilters": "PASS",
+    "typeFilter": "PASS",
+    "pagination": "PASS",
+    "originalInterfaceUnmodified": true,
+    "overflow": false,
+    "jsErrors": [],
+    "browsingDoesNotClaimAudio": true,
+    "existingPlayerIntegration": "PASS with controlled YouTube API/Bus doubles",
+    "realProviderPlayback": "not certified by mocked integration test"
+  },
+  {
+    "width": 390,
+    "initialCards": 24,
+    "totalPages": 297,
+    "search": "PASS",
+    "collectionFilters": "PASS",
+    "typeFilter": "PASS",
+    "pagination": "PASS",
+    "originalInterfaceUnmodified": true,
+    "overflow": false,
+    "jsErrors": [],
+    "browsingDoesNotClaimAudio": true,
+    "existingPlayerIntegration": "PASS with controlled YouTube API/Bus doubles",
+    "realProviderPlayback": "not certified by mocked integration test"
+  }
+]
