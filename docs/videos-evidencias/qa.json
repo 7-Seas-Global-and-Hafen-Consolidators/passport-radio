@@ -1,0 +1,47 @@
+{
+  "views": [
+    {
+      "width": 1440,
+      "style": {
+        "overflow": false,
+        "background": "rgb(255, 255, 255)",
+        "text": "rgb(17, 17, 17)",
+        "red": "rgb(196, 30, 58)",
+        "display": "\"Bodoni Moda\", Georgia, serif",
+        "body": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "brokenImages": 0
+      },
+      "errors": [],
+      "result": "PASS catalogue, all public cards, search, collections, formats, pagination, endpoints, single lazy iframe, mocked API controls and Bus ownership"
+    },
+    {
+      "width": 390,
+      "style": {
+        "overflow": false,
+        "background": "rgb(255, 255, 255)",
+        "text": "rgb(17, 17, 17)",
+        "red": "rgb(196, 30, 58)",
+        "display": "\"Bodoni Moda\", Georgia, serif",
+        "body": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "brokenImages": 0
+      },
+      "errors": [],
+      "result": "PASS catalogue, all public cards, search, collections, formats, pagination, endpoints, single lazy iframe, mocked API controls and Bus ownership"
+    }
+  ],
+  "checks": [],
+  "live": [
+    {
+      "artist": "BABYMETAL",
+      "result": "EXTERNAL BLOCK",
+      "error": "page.waitForFunction: Timeout 22000ms exceeded.",
+      "status": "Não foi possível carregar a reprodução. Selecione o vídeo novamente para tentar."
+    },
+    {
+      "artist": "The Smashing Pumpkins",
+      "result": "EXTERNAL BLOCK",
+      "error": "page.waitForFunction: Timeout 22000ms exceeded.",
+      "status": "Não foi possível carregar a reprodução. Selecione o vídeo novamente para tentar."
+    }
+  ]
+}

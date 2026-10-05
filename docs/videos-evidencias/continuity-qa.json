@@ -1,0 +1,492 @@
+{
+  "transport": "Native browser audio through untouched real radio/continuity code; external media requests substituted by local WAV only in QA, not repository.",
+  "tests": [
+    {
+      "name": "Entry + artist search + collection + pagination + selecting/cueing video",
+      "result": "PASS native audio stays playing, same endpoint and volume",
+      "before": {
+        "paused": false,
+        "time": 0.003276,
+        "src": "https://streams.radiobob.de/powermetal/mp3-192/",
+        "volume": 0.35
+      },
+      "after": {
+        "paused": false,
+        "time": 0.445847,
+        "src": "https://streams.radiobob.de/powermetal/mp3-192/",
+        "volume": 0.35
+      }
+    },
+    {
+      "name": "Intentional start video",
+      "result": "PASS existing Continuity.pause and Bus ownership stop native radio"
+    },
+    {
+      "name": "Resume radio",
+      "result": "PASS existing Bus pauses video peer and original baby resumes"
+    },
+    {
+      "name": "Late video playing event after radio resume",
+      "result": "PASS video remains revoked"
+    },
+    {
+      "name": "Reload",
+      "result": "PASS original family/index/volume restore; transport reconnect is existing architecture, not gapless proof"
+    },
+    {
+      "name": "Marillion collection",
+      "result": "PASS 51 public entries follow all 55 audited playlist positions, excluding only specified four"
+    }
+  ],
+  "navigation": [
+    {
+      "file": "index.html",
+      "result": "PASS real principal nav, existing link list recorded",
+      "links": [
+        [
+          {
+            "text": "Notícias",
+            "path": "/noticias.html"
+          },
+          {
+            "text": "Agenda",
+            "path": "/agenda.html"
+          },
+          {
+            "text": "Arquivo",
+            "path": "/editorial.html"
+          },
+          {
+            "text": "Bandas",
+            "path": "/bandas/index.html"
+          },
+          {
+            "text": "Blog",
+            "path": "/blog.html"
+          },
+          {
+            "text": "Jogos",
+            "path": "/jogos.html"
+          },
+          {
+            "text": "Vídeos",
+            "path": "/videos.html"
+          },
+          {
+            "text": "Loja",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Participe",
+            "path": "/divulgar-bandas.html"
+          },
+          {
+            "text": "Anuncie",
+            "path": "/anuncie.html"
+          },
+          {
+            "text": "Apoie",
+            "path": "/doe.html"
+          }
+        ]
+      ]
+    },
+    {
+      "file": "jogos.html",
+      "result": "PASS real principal nav, existing link list recorded",
+      "links": [
+        [
+          {
+            "text": "Notícias",
+            "path": "/noticias.html"
+          },
+          {
+            "text": "Agenda",
+            "path": "/agenda.html"
+          },
+          {
+            "text": "Arquivo",
+            "path": "/editorial.html"
+          },
+          {
+            "text": "Bandas",
+            "path": "/bandas/index.html"
+          },
+          {
+            "text": "Blog",
+            "path": "/blog.html"
+          },
+          {
+            "text": "Jogos",
+            "path": "/jogos.html"
+          },
+          {
+            "text": "Vídeos",
+            "path": "/videos.html"
+          },
+          {
+            "text": "Loja",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Participe",
+            "path": "/divulgar-bandas.html"
+          },
+          {
+            "text": "Anuncie",
+            "path": "/anuncie.html"
+          },
+          {
+            "text": "Apoie",
+            "path": "/doe.html"
+          }
+        ]
+      ]
+    },
+    {
+      "file": "noticias.html",
+      "result": "PASS real principal nav, existing link list recorded",
+      "links": [
+        [
+          {
+            "text": "Home",
+            "path": "/"
+          },
+          {
+            "text": "Notícias",
+            "path": "/noticias.html"
+          },
+          {
+            "text": "Agenda",
+            "path": "/agenda.html"
+          },
+          {
+            "text": "Arquivo",
+            "path": "/editorial.html"
+          },
+          {
+            "text": "Bandas",
+            "path": "/bandas/index.html"
+          },
+          {
+            "text": "Blog",
+            "path": "/blog.html"
+          },
+          {
+            "text": "Jogos",
+            "path": "/jogos.html"
+          },
+          {
+            "text": "Vídeos",
+            "path": "/videos.html"
+          },
+          {
+            "text": "Loja",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Participe",
+            "path": "/divulgar-bandas.html"
+          },
+          {
+            "text": "Promoções",
+            "path": "/promocoes.html"
+          },
+          {
+            "text": "Anuncie",
+            "path": "/anuncie.html"
+          },
+          {
+            "text": "Apoie",
+            "path": "/doe.html"
+          }
+        ]
+      ]
+    },
+    {
+      "file": "editorial.html",
+      "result": "PASS real principal nav, existing link list recorded",
+      "links": [
+        [
+          {
+            "text": "Home",
+            "path": "/"
+          },
+          {
+            "text": "Notícias",
+            "path": "/noticias.html"
+          },
+          {
+            "text": "Agenda",
+            "path": "/agenda.html"
+          },
+          {
+            "text": "Arquivo",
+            "path": "/editorial.html"
+          },
+          {
+            "text": "Bandas",
+            "path": "/bandas/index.html"
+          },
+          {
+            "text": "Blog",
+            "path": "/blog.html"
+          },
+          {
+            "text": "Jogos",
+            "path": "/jogos.html"
+          },
+          {
+            "text": "Vídeos",
+            "path": "/videos.html"
+          },
+          {
+            "text": "PODCAST & BROADCAST",
+            "path": "/radio.html"
+          },
+          {
+            "text": "Loja",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Participe",
+            "path": "/divulgar-bandas.html"
+          },
+          {
+            "text": "Promoções",
+            "path": "/promocoes.html"
+          },
+          {
+            "text": "Anuncie",
+            "path": "/anuncie.html"
+          },
+          {
+            "text": "Apoie",
+            "path": "/doe.html"
+          }
+        ]
+      ]
+    },
+    {
+      "file": "loja.html",
+      "result": "PASS real principal nav, existing link list recorded",
+      "links": [
+        [
+          {
+            "text": "HOME",
+            "path": "/index.html"
+          },
+          {
+            "text": "NOTÍCIAS",
+            "path": "/noticias.html"
+          },
+          {
+            "text": "ARQUIVO",
+            "path": "/editorial.html"
+          },
+          {
+            "text": "BLOG",
+            "path": "/blog.html"
+          },
+          {
+            "text": "Jogos",
+            "path": "/jogos.html"
+          },
+          {
+            "text": "Vídeos",
+            "path": "/videos.html"
+          },
+          {
+            "text": "OUVIR",
+            "path": "/radio.html"
+          },
+          {
+            "text": "LOJA",
+            "path": "/loja.html"
+          },
+          {
+            "text": "PROMOÇÕES",
+            "path": "/promocoes.html"
+          },
+          {
+            "text": "ANUNCIE",
+            "path": "/anuncie.html"
+          },
+          {
+            "text": "APOIE",
+            "path": "/doe.html"
+          },
+          {
+            "text": "Carrinho",
+            "path": "/loja.html"
+          }
+        ],
+        [
+          {
+            "text": "acessorio 96",
+            "path": "/loja.html"
+          },
+          {
+            "text": "bandeira 24",
+            "path": "/loja.html"
+          },
+          {
+            "text": "camiseta 691",
+            "path": "/loja.html"
+          },
+          {
+            "text": "copo 28",
+            "path": "/loja.html"
+          },
+          {
+            "text": "tenis 43",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Black Sabbath 36",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Bob Marley 5",
+            "path": "/loja.html"
+          },
+          {
+            "text": "David Bowie 11",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Deep Purple 3",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Foo Fighters 16",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Ghost 5",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Gojira 4",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Green Day 14",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Guns N' Roses 46",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Iron Maiden 92",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Joy Division 4",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Judas Priest 8",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Kiss 3",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Machine Head 1",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Megadeth 3",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Metallica 92",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Motörhead 17",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Nirvana 29",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Ozzy Osbourne 5",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Pantera 3",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Pink Floyd 46",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Queen 3",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Ramones 32",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Rolling Stones 19",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Acessório 85",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Bandeira 24",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Boné 11",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Camiseta 652",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Camiseta Especial 15",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Camiseta Tie Dye 24",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Caneca 1",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Copo 27",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Tênis · Cano alto 34",
+            "path": "/loja.html"
+          },
+          {
+            "text": "Tênis · Cano baixo 9",
+            "path": "/loja.html"
+          }
+        ],
+        []
+      ]
+    }
+  ],
+  "errors": [],
+  "endpointsRequested": [
+    "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+    "https://listen.181fm.com/181-awesome80s_128k.mp3",
+    "https://streams.radiobob.de/powermetal/mp3-192/"
+  ]
+}
