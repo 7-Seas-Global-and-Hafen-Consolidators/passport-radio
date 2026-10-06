@@ -1,203 +1,112 @@
-/* PASSPORT PERSIST NAV · shell stays; content swaps. Playback is the live iframe.
-   History API + in-memory Map cache. Does not fake playback with storage. */
+/* Shared editorial navigation. Keep the current document and its opaque radio
+   hosts alive; the reader gets the original editorial document, CSS and scripts. */
 (() => {
-  "use strict";
+  'use strict';
   if (window.PassportPersistNav) return;
+  // A reader frame belongs to its existing outer navigation, never another shell.
+  try { if (window !== top && top.PassportPersistNav?.owns(window)) return; } catch (_) {}
 
-  const HOUSE_PAGE = /\/(radio-[^/]+\.html|globo-de-ouro-player\.html|radio\.html|passport-player[^/]*|adapter-lab\.html)$/i;
-  const SKIP_SRC = /passport-persist-nav|passport-home-houses|passport-now-info|passport-bus|passport-live\.js|continuous-signals-home|passport-shell|passport-portal|fofonete-exit-intent/;
-  const cache = new Map();
-  let navigating = false;
+  const originHome = /^(\/|\/index\.html)$/.test(location.pathname);
+  if (!originHome && !/^\/(?:noticias|editorial|blog)\.html$/.test(location.pathname) &&
+      !document.querySelector('body.pp-article,.pe-prose,.mn-prose,article.prose,main.story')) return;
+  const originURL = location.href;
+  const originTitle = document.title;
+  const excluded = /\/(?:radio[^/]*|globo-de-ouro-player|passport-player[^/]*|adapter-lab)\.html$/i;
+  let frame, currentURL, savedOverflow, pending = 0;
+  const urlOf = href => { try { return new URL(href, location.href); } catch (_) { return null; } };
+  const home = url => /^(\/|\/index\.html)$/.test(url.pathname);
+  const compatible = url => url && url.origin === location.origin && !excluded.test(url.pathname) &&
+    (home(url) || /\.html$/i.test(url.pathname));
+  const knownEditorial = url => /^\/(?:editorial|historias)\//.test(url.pathname) ||
+    /^\/(?:noticias|editorial|blog)\.html$/.test(url.pathname);
 
-  function abs(href, base) {
-    try { return new URL(href, base || location.href); } catch (_) { return null; }
+  async function editorial(url) {
+    if (knownEditorial(url)) return true;
+    // Legacy root-level articles use the same editorial families.
+    const response = await fetch(url.href, {credentials:'same-origin'});
+    if (!response.ok || !(response.headers.get('content-type') || '').includes('html')) return false;
+    const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
+    return !!doc.querySelector('body.pp-article,.pe-prose,.mn-prose,article.prose,main.story');
   }
-  function isHome(url) {
-    const p = (url.pathname || "/").replace(/\/+$/, "") || "/";
-    return p === "/" || p === "/index.html";
+  function attach(doc) {
+    doc.addEventListener('click', click, true);
   }
-  function isCompat(url) {
-    if (!url || url.origin !== location.origin) return false;
-    if (HOUSE_PAGE.test(url.pathname)) return false;
-    if (/\.(mp3|mp4|pdf|zip|png|jpe?g|webp|svg|json)$/i.test(url.pathname)) return false;
-    if (url.pathname !== "/" && !/\.html$/i.test(url.pathname)) return false;
-    return true;
-  }
-  function pageRoot() {
-    let el = document.getElementById("pp-nav-page");
-    if (!el) {
-      el = document.createElement("div");
-      el.id = "pp-nav-page";
-      el.hidden = true;
-      document.body.appendChild(el);
-    }
-    return el;
-  }
-  function adoptSheets(doc) {
-    doc.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
-      const href = link.getAttribute("href");
-      if (!href) return;
-      const absHref = abs(href, location.href);
-      if (!absHref) return;
-      if ([...document.querySelectorAll("link[rel=stylesheet]")].some((l) => l.href === absHref.href)) return;
-      const l = document.createElement("link");
-      l.rel = "stylesheet";
-      l.href = absHref.href;
-      document.head.appendChild(l);
+  function reader() {
+    if (frame) return frame;
+    frame = document.createElement('iframe');
+    frame.id = 'pp-nav-page';
+    frame.title = 'Matéria — Passport Radio';
+    frame.hidden = true;
+    // Isolate the existing editorial CSS from the live Home; no layout rewrite.
+    frame.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff;z-index:2147483000';
+    frame.addEventListener('load', () => {
+      const doc = frame.contentDocument;
+      if (!doc || !currentURL || frame.contentWindow.location.href !== currentURL.href) return;
+      attach(doc);
+      document.title = doc.title;
+      window.PassportContinuity?.attachControls(doc);
+      frame.focus();
     });
-  }
-  function skipNode(n) {
-    if (!n || n.nodeType !== 1) return false;
-    const id = n.id || "";
-    if (id === "passport-player" || id === "pp-persist" || id === "pp-nav-page") return true;
-    const cls = n.classList;
-    if (!cls) return false;
-    if (cls.contains("player") && id === "passport-player") return true;
-    if (cls.contains("pp-topbar") || cls.contains("pp-nav") || cls.contains("pp-footer")) return true;
-    return false;
-  }
-  function runScripts(root) {
-    root.querySelectorAll("script").forEach((old) => {
-      const src = old.getAttribute("src") || "";
-      if (SKIP_SRC.test(src)) {
-        old.remove();
-        return;
-      }
-      const s = document.createElement("script");
-      [...old.attributes].forEach((a) => s.setAttribute(a.name, a.value));
-      if (!old.src) s.textContent = old.textContent;
-      old.replaceWith(s);
-    });
-  }
-  function fillPage(doc) {
-    const wrap = document.createElement("div");
-    wrap.className = "pp-nav-page-in";
-    const main = doc.querySelector("main") || doc.querySelector(".fd-page") || doc.querySelector(".blog-page");
-    if (main) wrap.appendChild(document.importNode(main, true));
-    else {
-      [...doc.body.childNodes].forEach((n) => {
-        if (n.nodeType === 3) wrap.appendChild(document.importNode(n, true));
-        if (skipNode(n)) return;
-        if (n.nodeType === 1 && n.tagName === "SCRIPT") return;
-        if (n.nodeType === 1) wrap.appendChild(document.importNode(n, true));
-      });
-    }
-    doc.body.querySelectorAll("script").forEach((old) => {
-      if (main && main.contains(old)) return;
-      const src = old.getAttribute("src") || "";
-      if (SKIP_SRC.test(src)) return;
-      wrap.appendChild(document.importNode(old, true));
-    });
-    return wrap;
-  }
-  function keepHomeClass() {
-    if (!document.body.classList.contains("pp-home")) document.body.classList.add("pp-home");
-    if (!document.body.classList.contains("pp-body")) document.body.classList.add("pp-body");
-  }
-  function setAway(on) {
-    document.body.classList.toggle("pp-nav-away", on);
-    keepHomeClass();
-    const page = pageRoot();
-    if (on) {
-      page.hidden = false;
-      document.body.style.overflow = "hidden";
-    } else {
-      page.hidden = true;
-      page.replaceChildren();
-      document.body.style.overflow = "";
-      document.body.className = document.body.className
-        .replace(/\bfd-body\b/g, "")
-        .replace(/\bpp-station\b/g, "")
-        .replace(/\bpp-listing\b/g, "")
-        .replace(/\bpp-blog\b/g, "")
-        .trim();
-      keepHomeClass();
-    }
-    if (window.PassportHouses) window.PassportHouses.sync();
+    document.body.append(frame);
+    return frame;
   }
   async function load(url, push) {
-    if (navigating) return;
-    if (isHome(url)) {
-      if (push) history.pushState({ppNav: 1, href: url.href}, "", url.href);
-      document.title = "Passport Radio | Contar histórias que dão vontade de ouvir";
-      setAway(false);
+    const token = ++pending;
+    if (home(url)) {
+      if (!originHome) { location.assign(url.href); return; }
+      currentURL = null;
+      if (frame) { frame.hidden = true; frame.contentWindow.location.replace('about:blank'); }
+      document.body.style.overflow = savedOverflow ?? document.body.style.overflow;
+      window.PassportContinuity?.detachControls();
+      document.title = originTitle;
+      if (push) history.pushState({ppNav:1}, '', url.href);
       return;
     }
-    navigating = true;
     try {
-      let html = cache.get(url.pathname + url.search);
-      if (!html) {
-        const res = await fetch(url.href, {credentials: "same-origin"});
-        const type = res.headers.get("content-type") || "";
-        if (!res.ok || type.indexOf("html") === -1) {
-          location.href = url.href;
-          return;
-        }
-        html = await res.text();
-        cache.set(url.pathname + url.search, html);
-      }
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      adoptSheets(doc);
-      const page = pageRoot();
-      page.replaceChildren();
-      page.appendChild(fillPage(doc));
-      document.title = doc.title || document.title;
-      const bodyClass = (doc.body.getAttribute("class") || "").replace(/\bpp-home\b/g, "").trim();
-      document.body.className = ("pp-body pp-home pp-nav-away pp-persist-ready " + bodyClass).trim();
-      if (document.getElementById("passport-casa-host") && document.getElementById("passport-casa-host").dataset.house) {
-        document.body.classList.add("pp-house-selected");
-      }
-      page.hidden = false;
-      document.body.style.overflow = "hidden";
-      runScripts(page);
-      page.scrollTop = 0;
-      if (push) history.pushState({ppNav: 1, href: url.href}, "", url.href);
-      if (window.PassportHouses) window.PassportHouses.sync();
-    } catch (_) {
-      location.href = url.href;
-    } finally {
-      navigating = false;
-    }
+      if (!await editorial(url)) { location.assign(url.href); return; }
+      if (token !== pending) return;
+      const view = reader();
+      if (view.hidden) savedOverflow = document.body.style.overflow;
+      currentURL = url;
+      view.hidden = false;
+      document.body.style.overflow = 'hidden';
+      // Only the reader document changes. No engine, media node or source calls.
+      view.contentWindow.location.replace(url.href);
+      if (push) history.pushState({ppNav:1}, '', url.href);
+    } catch (_) { if (token === pending) location.assign(url.href); }
   }
-
-  document.addEventListener("click", (event) => {
-    if (event.defaultPrevented || event.button !== 0) return;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const a = event.target.closest("a[href]");
-    if (!a) return;
-    if (a.target && a.target !== "_self") return;
-    if (a.hasAttribute("download")) return;
-    if (a.closest("#passport-casas")) return;
-    if (a.hasAttribute("data-open-existing-house")) return;
-    const url = abs(a.getAttribute("href"));
-    if (!url || !isCompat(url)) return;
-    if (url.href.split("#")[0] === location.href.split("#")[0] && url.hash) return;
+  function click(event) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const a = event.target.closest?.('a[href]');
+    if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+    const url = new URL(a.href, a.ownerDocument.URL);
+    if (url.hash && url.href.split('#')[0] === a.ownerDocument.URL.split('#')[0]) return;
+    if (!compatible(url)) {
+      if (a.ownerDocument !== document && /^https?:$/.test(url.protocol)) {
+        event.preventDefault(); location.assign(url.href);
+      }
+      return;
+    }
     event.preventDefault();
     load(url, true);
-  }, true);
-
-  window.addEventListener("popstate", () => {
-    const url = abs(location.href);
-    if (!url) return;
-    if (!isCompat(url)) {
-      location.reload();
-      return;
-    }
-    load(url, false);
+  }
+  attach(document);
+  window.addEventListener('popstate', () => {
+    const url = urlOf(location.href);
+    if (url.href === originURL && !originHome) {
+      currentURL = null;
+      if (frame) {frame.hidden=true;frame.contentWindow.location.replace('about:blank');}
+      document.body.style.overflow = savedOverflow ?? '';
+      window.PassportContinuity?.detachControls();
+      document.title = originTitle;
+    } else if (compatible(url)) load(url, false);
+    else location.reload();
   });
-
-  window.PassportPersistNav = {
-    go(href) {
-      const url = abs(href);
-      if (!url) return;
-      if (!isCompat(url)) { location.href = href; return; }
-      load(url, true);
-    },
-    home() { load(abs("/index.html"), true); },
-    isAway() { return document.body.classList.contains("pp-nav-away"); },
-    isCompat: (href) => {
-      const url = abs(href);
-      return !!(url && isCompat(url));
-    }
-  };
+  window.PassportPersistNav = Object.freeze({
+    owns: child => !!frame && frame.contentWindow === child,
+    go: href => { const url=urlOf(href); if(compatible(url)) return load(url,true); location.assign(href); },
+    home: () => load(urlOf('/'),true),
+    isAway: () => !!frame && !frame.hidden,
+    isCompat: href => compatible(urlOf(href))
+  });
 })();

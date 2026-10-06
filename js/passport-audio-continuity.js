@@ -2,6 +2,13 @@
 (() => {
   'use strict';
   if (window.PassportContinuity) return;
+  // The editorial reader shares the outer live transport; never restore another.
+  try {
+    if (window !== top && top.PassportPersistNav?.owns(window)) {
+      window.PassportContinuity = top.PassportContinuity;
+      return;
+    }
+  } catch (_) {}
   const KEY = 'passport.audio.continuity.v1';
   const HOME = location.pathname === '/' || location.pathname === '/index.html';
   let state = null, runtime = null, ready = false, restoring = false, unloading = false, leavingExternal = false;
@@ -59,15 +66,17 @@
     }
     notify(true);
   };
+  let readerDocument = null;
   const mountControls = () => {
-    if (HOME || !state || controls) return;
-    const footer = [...document.querySelectorAll('footer')].find(f => !f.closest('article,.player')) || document.querySelector('main');
+    if ((HOME && !readerDocument) || !state || controls) return;
+    const doc = readerDocument || document;
+    const footer = [...doc.querySelectorAll('footer')].find(f => !f.closest('article,.player')) || doc.querySelector('main');
     if (!footer) return;
-    controls = document.createElement('div'); controls.className = 'passport-continuity-controls';
+    controls = doc.createElement('div'); controls.className = 'passport-continuity-controls';
     controls.setAttribute('aria-label', 'Rádio selecionada');
-    status = document.createElement('span'); status.setAttribute('aria-live','polite');
-    toggle = document.createElement('button'); toggle.type = 'button';
-    volume = document.createElement('input'); volume.type = 'range'; volume.min = '0'; volume.max = '1'; volume.step = '.05';
+    status = doc.createElement('span'); status.setAttribute('aria-live','polite');
+    toggle = doc.createElement('button'); toggle.type = 'button';
+    volume = doc.createElement('input'); volume.type = 'range'; volume.min = '0'; volume.max = '1'; volume.step = '.05';
     volume.setAttribute('aria-label','Volume da rádio');
     toggle.addEventListener('click', () => state.playing ? suspend() : (state.playing = true, save(), restore()));
     volume.addEventListener('input', () => runtime.engine.volume(Number(volume.value)));
@@ -104,17 +113,20 @@
     if (HOME && runtime.ready) { ready=true;restore();notify(); }
     if (!HOME) engine.init(() => {}).catch(() => { if (state) { state.playing = false; save(); } notify(); });
   };
-  const footers = () => {
-    document.querySelectorAll('footer a[href="/privacidade.html"]').forEach(a=>{a.href='/politica-de-privacidade.html';});
-    const candidates = [...document.querySelectorAll('footer .pb-footer__bottom,footer .pp-footer-bottom,footer .participe-paper-footer-bottom,footer .apoio-paper-footer-bottom,footer .anuncie-footer-bottom,footer small,footer p,footer div,footer span')];
+  const footers = (doc = document) => {
+    doc.querySelectorAll('footer a[href="/privacidade.html"]').forEach(a=>{a.href='/politica-de-privacidade.html';});
+    const candidates = [...doc.querySelectorAll('footer .pb-footer__bottom,footer .pp-footer-bottom,footer .participe-paper-footer-bottom,footer .apoio-paper-footer-bottom,footer .anuncie-footer-bottom,footer small,footer p,footer div,footer span')];
     const line = candidates.find(e => /©|Todos os direitos reservados/.test(e.textContent) && !e.querySelector('div,p,small'));
     if (!line || line.closest('footer').querySelector('a[href="/politica-de-privacidade.html"]')) return;
-    const a = document.createElement('a'); a.href = '/politica-de-privacidade.html'; a.textContent = 'Política de Privacidade';
+    const a = doc.createElement('a'); a.href = '/politica-de-privacidade.html'; a.textContent = 'Política de Privacidade';
     a.style.color='inherit'; a.style.fontSize='inherit'; line.append(' · ',a);
   };
   const start = () => {
     const css = document.createElement('link'); css.rel='stylesheet'; css.href='/css/passport-audio-continuity.css'; document.head.append(css);
     footers();
+    // Activate the existing shared navigation on the current Home and editorials.
+    const nav = document.createElement('script'); nav.src='/js/passport-persist-nav.js';
+    document.head.append(nav);
     const observer = new MutationObserver(() => { footers(); mountControls(); });
     observer.observe(document.body,{childList:true,subtree:true});
     if (HOME) connect();
@@ -146,6 +158,16 @@
       state.playing=false;save();
     }
   },true);
-  window.PassportContinuity = Object.freeze({key:KEY,getState:() => state ? {...state} : null,pause:suspend});
+  window.PassportContinuity = Object.freeze({key:KEY,getState:() => state ? {...state} : null,pause:suspend,
+    attachControls: doc => {
+      controls?.remove(); controls=null; readerDocument=doc;
+      if (!doc.querySelector('link[data-passport-reader-continuity]')) {
+        const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-audio-continuity.css';
+        css.dataset.passportReaderContinuity='1';doc.head.append(css);
+      }
+      footers(doc);mountControls();notify();
+    },
+    detachControls: () => {controls?.remove();controls=null;readerDocument=null;mountControls();}
+  });
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();

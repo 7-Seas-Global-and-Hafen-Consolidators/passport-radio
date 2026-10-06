@@ -1,0 +1,26 @@
+{
+  "text": "PASS exact normalized rendered text",
+  "text_sha256": "5ab76ea94e91714ff13210a081a52103326975d9f819c62186ce06448fd54d9b",
+  "photos": [
+    {
+      "attachment": "qWDFr(1).jpg",
+      "asset": "paralamas-qWDFr.jpg",
+      "bytes": 182313,
+      "sha256": "ce7fc2b56f5a7f9ce3f5de65e5636891cf0f884a3c8f17f9947f121d94561a1b",
+      "result": "PASS byte identical"
+    },
+    {
+      "attachment": "LkVae(1).jpg",
+      "asset": "camisa-de-venus-LkVae.jpg",
+      "bytes": 331745,
+      "sha256": "7b4126de850fc9090302da435c397470e8c6bf667373cdc35e9341f8c14a4270",
+      "result": "PASS byte identical"
+    }
+  ],
+  "videos": [
+    "4-9S-aN3eqA",
+    "vadNGQ3pMdo"
+  ],
+  "feed": "PASS previous entries identical",
+  "previousArticles": "PASS no change to Brian May / Bon Jovi files or assets"
+}
