@@ -1,0 +1,846 @@
+ORDEM DIRETA — NOVO LOTE EDITORIAL PASSPORT RADIO
+OASIS + TAYLOR SWIFT + OLIVIA RODRIGO + MICHAEL JACKSON + ARIANA GRANDE
+PARTIR DA MAIN ATUAL — PR #519 JÁ FOI MERGEADA
+
+ATENÇÃO ANTES DE QUALQUER OPERAÇÃO:
+
+A PR #519 JÁ FOI MERGEADA.
+
+NÃO trabalhe na antiga branch da #519.
+NÃO tente reabrir a #519.
+NÃO trate Brian May, Bon Jovi ou Marcelo Nova × Paralamas como trabalho pendente.
+NÃO recrie trabalho já publicado.
+
+1. Atualize e confira a `main` ATUAL do repositório.
+2. Confirme que o conteúdo proveniente da PR #519 está presente.
+3. Crie UMA NOVA BRANCH a partir dessa `main` atual.
+4. Todo o lote desta ordem será realizado nessa nova branch.
+5. Ao final: testes → evidências → commit → push → UMA NOVA PR.
+6. NÃO FAÇA MERGE.
+
+============================================================
+ESTADO JÁ PUBLICADO — PRESERVAÇÃO ABSOLUTA
+============================================================
+
+As três matérias abaixo vieram da #519 e JÁ ESTÃO RESOLVIDAS/PUBLICADAS:
+
+- Brian May
+- Bon Jovi
+- Marcelo Nova × Paralamas / “Rock de Bermudas”
+
+PRESERVE-AS INTEGRALMENTE.
+
+NÃO reescreva.
+NÃO altere título.
+NÃO altere texto.
+NÃO altere fotografia.
+NÃO altere vídeo.
+NÃO altere autoria.
+NÃO mexa nas rotas.
+NÃO faça “melhorias”.
+NÃO reformate por iniciativa própria.
+
+A continuidade da rádio corrigida na #519 também JÁ EXISTE.
+
+PRESERVE A SOLUÇÃO EXISTENTE.
+
+Não invente outra arquitetura para resolver novamente um problema já resolvido.
+
+============================================================
+REGRA CRÍTICA — OS “BEBÊS” E A CONTINUIDADE DA RÁDIO
+============================================================
+
+“BEBÊ” = cada rádio/estação que existe na Passport Radio.
+
+O LEITOR escolhe qual bebê quer ouvir.
+
+Essa escolha pertence ao leitor.
+
+A matéria NÃO determina qual rádio toca.
+
+O comportamento obrigatório é:
+
+1. O leitor escolhe QUALQUER bebê da Passport Radio.
+2. A rádio começa a tocar.
+3. O leitor abre uma matéria editorial.
+4. O MESMO bebê escolhido continua tocando.
+5. A reprodução continua avançando.
+6. NÃO reinicia.
+7. NÃO recarrega.
+8. NÃO reconecta.
+9. NÃO pausa.
+10. NÃO troca de estação.
+11. NÃO cria nova conexão de áudio.
+12. NÃO cria uma segunda reprodução.
+13. NÃO interfere no estado escolhido pelo leitor.
+14. O leitor pode navegar de matéria para matéria e a reprodução continua.
+
+Exemplo:
+
+Bebê A tocando
+→ abre Oasis
+→ continua tocando.
+
+Oasis
+→ abre Taylor Swift
+→ continua tocando.
+
+Taylor
+→ abre Olivia Rodrigo
+→ continua tocando.
+
+Olivia
+→ abre Michael Jackson
+→ continua tocando.
+
+Michael
+→ abre Ariana Grande
+→ continua tocando.
+
+E isso vale para QUALQUER bebê escolhido pelo leitor.
+
+Não teste apenas uma estação e conclua que a lógica depende daquela estação.
+
+O mecanismo deve ser o MESMO mecanismo de continuidade já mergeado e aprovado na #519.
+
+PRESERVE:
+- passport-persist-nav.js
+- passport-audio-continuity.js
+- arquitetura já mergeada de documento persistente/continuidade editorial.
+
+NÃO SUBSTITUA ESSA SOLUÇÃO.
+
+NÃO refatore por estética.
+NÃO crie implementação paralela.
+NÃO reverta.
+NÃO simplifique.
+NÃO “melhore” algo que já passou.
+
+SISTEMAS RADIOATIVOS:
+
+NÃO alterar:
+- players;
+- engines;
+- streams;
+- URLs de stream;
+- Bus;
+- mutex;
+- interlock;
+- catálogo das rádios;
+- motores das rádios;
+- autoplay;
+- comportamento individual dos bebês;
+- qualquer outra infraestrutura de áudio.
+
+As novas matérias devem simplesmente PARTICIPAR CORRETAMENTE do mecanismo editorial de continuidade que já existe.
+
+============================================================
+REGRA EDITORIAL GERAL PARA AS CINCO MATÉRIAS
+============================================================
+
+AUTORIA DE TODAS:
+
+Mr. Nomad
+
+Não substituir por nome civil.
+Não inventar coautor.
+Não atribuir autoria à fonte original.
+Não atribuir autoria à IA.
+
+Os textos já foram HUMANIZADOS E APROVADOS pelo proprietário.
+
+USE OS TEXTOS APROVADOS.
+
+NÃO pegue novamente o texto-base engessado e faça outra versão.
+
+NÃO volte para linguagem de assessoria.
+NÃO transforme em release.
+NÃO resuma por conta própria.
+NÃO neutralize piadas.
+NÃO retire ironia.
+NÃO retire acidez onde ela foi aprovada.
+NÃO acrescente frases genéricas de IA.
+NÃO invente fatos.
+NÃO invente declarações.
+NÃO invente aspas.
+NÃO mude números fornecidos.
+
+A Passport Radio agora está explicitamente abrindo o editorial para música além de rock/metal.
+
+NÃO peça desculpas por isso.
+NÃO tente enquadrar Taylor, Olivia ou Ariana artificialmente como rock.
+NÃO transforme a expansão editorial em texto institucional engessado.
+
+A lógica é simples:
+
+PRIMEIRO A HISTÓRIA.
+DEPOIS A MÚSICA.
+
+============================================================
+FOTOGRAFIAS — REGRA ABSOLUTA
+============================================================
+
+Mr. Nomad fornecerá/anexará as fotografias destinadas às matérias.
+
+USE EXATAMENTE ESSAS FOTOS.
+
+Não faça busca para substituí-las.
+Não escolha “foto melhor”.
+Não gere foto por IA.
+Não troque enquadramento arbitrariamente.
+Não substitua por thumbnail de YouTube.
+Não substitua por imagem da fonte.
+Não invente imagem ausente.
+
+Preserve os arquivos fornecidos tanto quanto tecnicamente possível.
+
+Utilize as fotografias na matéria conforme o padrão editorial existente:
+- capa;
+- imagens internas quando houver mais de uma foto destinada à matéria.
+
+NÃO crie bloco de créditos no final.
+
+NÃO coloque:
+“Créditos”
+“Foto:”
+“Imagem:”
+“Fonte da foto:”
+ou qualquer outro penduricalho que Mr. Nomad NÃO pediu.
+
+Não acrescente legenda explicativa inútil.
+
+============================================================
+VÍDEOS — REGRA ABSOLUTA
+============================================================
+
+Os vídeos abaixo foram escolhidos pelo proprietário.
+
+USE EXATAMENTE ESSES VÍDEOS.
+
+NÃO substitua por videoclipe oficial.
+NÃO procure versão “melhor”.
+NÃO altere ID.
+NÃO altere URL.
+NÃO troque apresentação.
+NÃO transforme em outro vídeo por disponibilidade presumida.
+
+Use embed seguindo exatamente o padrão editorial funcional já existente.
+
+O vídeo entra na narrativa e pronto.
+
+NÃO acrescente:
+“Crédito do vídeo”
+“Fonte”
+“Assista no canal”
+ou explicações editoriais não solicitadas.
+
+============================================================
+MATÉRIA 1 — OASIS / WONDERWALL
+============================================================
+
+Tema:
+
+Liam Gallagher achava “Wonderwall” uma “merda”.
+
+Esta matéria precisa ser OASIS SENDO OASIS.
+
+Usar a versão HUMANIZADA E APROVADA anteriormente.
+
+Tom:
+- ácido;
+- engraçado;
+- provocador;
+- cheio das farpas naturais da história dos irmãos Gallagher.
+
+Pode usar organicamente:
+- merda;
+- inferno;
+- mandar à merda;
+- mandar para aquele lugar.
+
+NÃO usar no texto publicado palavrões xulos como:
+- porra;
+- caralho;
+- equivalentes.
+
+A graça é a acidez, não palavrão gratuito.
+
+Preservar na narrativa:
+
+- “Wonderwall”;
+- álbum `(What's the Story) Morning Glory?`;
+- título original “Wishing Stone”;
+- história do encontro de Noel com a garota e a pedra;
+- “Wonderwall Music”, de George Harrison;
+- ligação beatle;
+- Liam inicialmente achando a música uma merda;
+- Liam recusando-se inicialmente a cantar;
+- resposta de Noel;
+- ironia de depois a música virar um dos maiores símbolos do Oasis;
+- dimensão posterior de “Wonderwall”.
+
+E reforçar o elemento humano dos irmãos:
+
+Oasis é Oasis.
+
+São os dois sujeitos capazes de trocar farpas, discutir e, quando der vontade, praticamente mandar o outro à merda — inclusive num ambiente em que qualquer outra banda tentaria fingir harmonia.
+
+Não higienize isso.
+
+VÍDEO EXATO:
+
+https://www.youtube.com/watch?v=4Fe-LlU6Xz0
+
+Título fornecido:
+
+Oasis - Wonderwall (LIVE 25)
+
+Usar as fotos que Mr. Nomad fornecer para Oasis.
+
+============================================================
+MATÉRIA 2 — TAYLOR SWIFT / PATIENT ZERO
+============================================================
+
+Esta matéria representa a PRIMEIRA abertura explícita da Passport para uma matéria atual fora do eixo tradicional rock/metal.
+
+Trate isso naturalmente.
+
+NÃO escreva como pedido de licença.
+
+Taylor entra porque existe história musical para contar.
+
+Usar a versão HUMANIZADA E APROVADA anteriormente.
+
+Preservar os dados fornecidos:
+
+- “Patient Zero”;
+- estreia em #35 no Hot 100 da Billboard Brasil;
+- “The Fate of Ophelia” em #92;
+- versão deluxe de `The Life of a Showgirl`;
+- `The Life of a Showgirl: The Encore`;
+- lançamento em 25 de setembro;
+- faixas adicionais “Babylon”, “Pink Clouding” e “Cleveland!”;
+- contexto do desempenho do álbum;
+- colaboração com Max Martin e Shellback;
+- contexto dos números 1;
+- relação histórica do trio;
+- demais informações aprovadas na versão humanizada.
+
+NÃO transforme a matéria numa tabela de números.
+
+A história é Taylor chegando também ao público brasileiro com material novo e a Passport registrando essa abertura editorial.
+
+VÍDEO EXATO:
+
+https://youtu.be/_flQSL65xqY?si=w7ylejHI_1xnUyQ4
+
+Identificação fornecida:
+
+Live Easy Channel
+
+Usar as fotos fornecidas por Mr. Nomad para Taylor Swift.
+
+============================================================
+MATÉRIA 3 — OLIVIA RODRIGO / THE UNRAVELED TOUR
+============================================================
+
+Esta é uma MATÉRIA GRANDE.
+
+NÃO reduza.
+NÃO transforme em nota.
+NÃO faça resumo preguiçoso.
+NÃO transforme toda a narrativa numa lista seca de cinco itens.
+
+Use a versão LONGA, HUMANIZADA E APROVADA.
+
+A sensação deve ser de alguém contando para outra pessoa como foi aquela noite — palco, público, flores, chuva, emoção, humor e música.
+
+Preservar:
+
+- estreia da `The Unraveled Tour`;
+- 25 de setembro;
+- Hartford, Connecticut;
+- PeoplesBank Arena;
+- flores cor-de-rosa e brancas;
+- cenário;
+- Olivia surgindo do campo de flores;
+- “Drop Dead”;
+- arena esgotada;
+- público;
+- Wolf Alice abrindo;
+- comentário sobre Wolf Alice;
+- piano-pop;
+- lado rock das apresentações;
+- “Drivers License”;
+- “Expectations”;
+- “All-American Bitch”;
+- material dos três álbuns;
+- estrutura do set;
+- palco principal;
+- palco B;
+- minipalco;
+- proximidade física com fãs;
+- interações na grade;
+- “Less”;
+- aniversário da mãe;
+- “Happy Birthday”;
+- Jenny;
+- emoção;
+- “Cigarette Smoke”;
+- “Honeybee”;
+- “Favorite Crime”;
+- “The Cure”;
+- chuva;
+- vestido se desfazendo;
+- body vermelho;
+- catarse;
+- transformação visual;
+- ausência de “What’s Wrong With Me”;
+- referência a Robert Smith dentro do contexto já aprovado;
+- fechamento com “Expectations”;
+- ausência de bis;
+- todos os demais detalhes preservados na versão aprovada.
+
+NÃO mate o humor e as observações humanas.
+
+VÍDEO EXATO:
+
+https://www.youtube.com/watch?v=Iaa6jwzFi6s
+
+Título fornecido:
+
+Olivia Rodrigo - expectations (The Unraveled Tour live in Hartford, CT)
+
+Usar as fotos fornecidas por Mr. Nomad para Olivia Rodrigo.
+
+============================================================
+MATÉRIA 4 — MICHAEL JACKSON / THRILLER
+============================================================
+
+PRIMEIRA MATÉRIA DE MICHAEL JACKSON NA PASSPORT.
+
+CAPRICHE.
+
+É matéria histórica e longa.
+
+NÃO transforme esse material numa nota de cinco parágrafos.
+
+A pergunta central é:
+
+COMO `THRILLER` MUDOU A INDÚSTRIA DA MÚSICA?
+
+A narrativa precisa mostrar que Thriller não foi apenas “um disco que vendeu muito”.
+
+Ele mudou:
+- promoção;
+- rádio;
+- estratégia de singles;
+- lançamento mundial;
+- videoclipe;
+- MTV;
+- marketing;
+- escala industrial;
+- expectativas comerciais;
+- fronteiras entre gêneros;
+- espaço de artistas negros na televisão musical.
+
+Use a versão HUMANIZADA E APROVADA.
+
+Preservar a história e os elementos relevantes do material-base:
+
+- lançamento em 30 de novembro de 1982;
+- Epic Records;
+- CBS;
+- caminhões/marketing;
+- ritmo gigantesco de vendas;
+- certificações;
+- vendas internacionais;
+- crise anterior da indústria fonográfica;
+- “Sexta-Feira Negra” da CBS em 1982;
+- demissões;
+- recuperação comercial;
+- impacto sobre a Epic;
+- Cyndi Lauper;
+- Culture Club;
+- REO Speedwagon;
+- Flashdance;
+- The Police;
+- Jackson 5;
+- saída da Motown;
+- Epic;
+- `Destiny`;
+- `Off the Wall`;
+- estratégia para furar compartimentos raciais de marketing;
+- “Don’t Stop ’Til You Get Enough”;
+- “Rock With You”;
+- preparação do terreno para Thriller;
+- Quincy Jones;
+- `The Wiz`;
+- disciplina de Michael;
+- Paul McCartney;
+- “The Girl Is Mine”;
+- início das sessões;
+- Michael como compositor;
+- Rod Temperton;
+- “Starlight Love” tornando-se “Thriller”;
+- descoberta de “Human Nature”;
+- mais de 700 demos;
+- seleção de nove faixas;
+- substituições;
+- `The Lady in My Life`;
+- `PYT`;
+- `Human Nature`;
+- `Beat It`;
+- equilíbrio entre R&B, pop, disco, rock, funk e baladas;
+- Eddie Van Halen;
+- intenção de atravessar gêneros;
+- limitações do vinil;
+- redução de duração;
+- cortes;
+- remix do álbum inteiro;
+- vazamento para rádios;
+- antecipação do lançamento;
+- lançamento simultâneo mundial;
+- mudança de padrão da indústria;
+- Billboard 200;
+- 37 semanas não consecutivas em #1;
+- “The Girl Is Mine”;
+- “Billie Jean”;
+- “Beat It”;
+- estratégia de dois singles;
+- rádio rock;
+- abertura do AOR;
+- MTV;
+- “Billie Jean”;
+- versões conflitantes sobre a negociação/pressão para a MTV exibir o vídeo DEVEM SER APRESENTADAS COMO VERSÕES DIFERENTES, sem inventar certeza;
+- impacto racial;
+- Prince;
+- Billy Ocean;
+- Eddy Grant;
+- Motown 25;
+- moonwalk;
+- Fred Astaire;
+- demanda industrial;
+- videoclipe `Thriller`;
+- John Landis;
+- orçamento;
+- disputa por exibição;
+- MTV;
+- audiência;
+- `Making Michael Jackson’s Thriller`;
+- mercado comercial de vídeos;
+- sete singles;
+- todos Top 10;
+- `Say Say Say`;
+- 122 semanas na Billboard 200;
+- influência posterior;
+- Bruce Springsteen / `Born in the USA`;
+- Prince / `Purple Rain`;
+- Def Leppard / `Hysteria`;
+- transformação do modelo de blockbuster musical.
+
+A matéria precisa respirar.
+
+Não despeje fatos como enciclopédia.
+Conte a história.
+
+VÍDEOS EXATOS — OS TRÊS DEVEM ENTRAR:
+
+1.
+https://www.youtube.com/watch?v=hlJp0etLDcM
+
+Michael Jackson - Beat It (Live HIStory Tour In Munich)
+
+2.
+https://www.youtube.com/watch?v=CauNjt2j-BM
+
+Michael Jackson - Billie Jean (Motown 25 Performance)
+
+3.
+https://www.youtube.com/watch?v=7DOzITFjq70
+
+Michael Jackson - Thriller - Live Munich 1997
+
+Use as fotos fornecidas por Mr. Nomad para Michael Jackson.
+
+============================================================
+MATÉRIA 5 — ARIANA GRANDE / ETERNAL SUNSHINE TOUR
+============================================================
+
+ATENÇÃO:
+
+A VERSÃO FINAL DESTA MATÉRIA JÁ FOI ESCRITA E APROVADA POR MR. NOMAD.
+
+USE ESSA VERSÃO EXATAMENTE COMO APROVADA.
+
+NÃO reescreva.
+NÃO retire a alfinetada.
+NÃO transforme em release.
+NÃO volte ao texto-base da Billboard.
+
+TÍTULO APROVADO:
+
+Ariana Grande volta à estrada depois de sete anos — e fatura R$ 550 milhões em 41 shows
+
+SUBTÍTULO APROVADO:
+
+638 mil ingressos depois, a “Eternal Sunshine Tour” termina mostrando que sete anos longe das turnês não fizeram exatamente o público esquecer onde Ariana Grande estava
+
+A abertura aprovada começa:
+
+“Aham.
+
+Achou que a Passport Radio ia abrir a porta para Taylor Swift, publicar Michael Jackson e depois correr de volta para o rock e o metal como se nada tivesse acontecido?
+
+Achou errado.”
+
+PRESERVE ESSA ABERTURA.
+
+Preserve também a brincadeira de que:
+
+- a porta abriu;
+- Ariana chega com aproximadamente R$ 550 milhões;
+- foram 638 mil ingressos;
+- aproximadamente R$ 13 milhões por apresentação;
+- cerca de 15,6 mil pessoas por show;
+- sete anos longe das turnês;
+- crescimento aproximado de 74% na receita média;
+- crescimento de aproximadamente 14% no público médio;
+- a turnê foi relativamente enxuta;
+- foram 41 shows;
+- aproximadamente três meses;
+- `Petal`;
+- a discussão sobre público real versus números;
+- 638 mil pessoas não compraram “uma estatística”;
+- comentário sobre sete anos numa indústria dominada por algoritmo/TikTok;
+- mudança da indústria pop;
+- abertura editorial da Passport;
+- Taylor;
+- Olivia;
+- Michael;
+- Ariana;
+- rock permanecendo na casa;
+- a casa ficando maior.
+
+PRESERVE O FECHAMENTO APROVADO:
+
+“A Passport não ficou menor.
+
+A casa ficou maior.
+
+E Ariana Grande acabou de entrar nela carregando uma turnê de R$ 550 milhões.
+
+Pode deixar passar.
+
+Ela claramente consegue pagar a entrada.”
+
+NÃO MEXA NESSE FECHAMENTO.
+
+VÍDEO EXATO:
+
+https://www.youtube.com/watch?v=_qMm7VwQ734
+
+Título fornecido:
+
+Ariana Grande presents PETAL (Live From Eternal Sunshine tour)
+
+Use as fotos fornecidas por Mr. Nomad para Ariana Grande.
+
+============================================================
+TEMPLATE / IDENTIDADE VISUAL
+============================================================
+
+As cinco matérias devem seguir o template editorial REAL e ATUAL da Passport Radio.
+
+Use como referência o padrão editorial que já está funcionando após a #519.
+
+Preservar identidade oficial:
+
+BRANCO #FFFFFF
+PRETO #111111
+VERMELHO #C41E3A
+
+Tipografia real:
+- Bodoni Moda
+- Instrument Sans
+- Source Serif 4
+
+NÃO introduzir:
+- dourado;
+- cobre;
+- cinza institucional;
+- azul decorativo;
+- preto dominante;
+- Route 66;
+- jukebox;
+- cassete;
+- estética de viagem.
+
+NÃO reformar header/footer.
+NÃO mexer no restante do site.
+
+As matérias devem integrar corretamente:
+- feed editorial existente;
+- listagens onde as matérias atuais entram pelo mecanismo existente;
+- navegação editorial existente;
+- SEO/canonical/metadados seguindo exatamente o padrão real atual.
+
+NÃO criar mecanismo paralelo de feed.
+
+============================================================
+NÃO FAZER
+============================================================
+
+NÃO mexer na Loja.
+NÃO mexer no Anuncie.
+NÃO mexer na Agenda.
+NÃO mexer em Podcasts/Broadcasts.
+NÃO mexer em PR antiga.
+NÃO mexer em workflows.
+NÃO religar automação editorial.
+NÃO alterar rádios.
+NÃO alterar streams.
+NÃO alterar players.
+NÃO alterar Bus.
+NÃO alterar mutex.
+NÃO alterar interlock.
+NÃO alterar engines.
+NÃO alterar produtos.
+NÃO fazer limpeza geral.
+NÃO atualizar dependências.
+NÃO aproveitar para refatorar.
+NÃO alterar arquivos fora do necessário para estas cinco matérias e sua integração editorial normal.
+
+============================================================
+TESTES — FAZER UMA VEZ, DIREITO
+============================================================
+
+Não torre execução repetindo testes idênticos sem motivo.
+
+Depois de implementar TODO O LOTE, faça a bateria final.
+
+TESTAR AS CINCO MATÉRIAS:
+
+1. Oasis
+2. Taylor Swift
+3. Olivia Rodrigo
+4. Michael Jackson
+5. Ariana Grande
+
+Para cada uma verificar:
+
+- página abre;
+- desktop;
+- mobile;
+- título;
+- subtítulo;
+- autoria Mr. Nomad;
+- foto de capa correta;
+- fotos internas corretas;
+- nenhuma imagem quebrada;
+- vídeos corretos;
+- IDs corretos;
+- embeds funcionais;
+- texto integral aprovado;
+- nenhum crédito inventado;
+- nenhum texto engessado substituindo o aprovado;
+- canonical correto;
+- integração ao feed/listagem;
+- nenhum `noindex` acidental.
+
+CONTINUIDADE:
+
+Faça teste controlado partindo de rádio em reprodução.
+
+Confirme:
+
+- bebê escolhido permanece o mesmo;
+- mesmo elemento/host conforme arquitetura já aprovada;
+- tempo continua avançando;
+- zero pausa;
+- zero reload;
+- zero reconexão;
+- zero nova conexão;
+- zero troca de stream.
+
+Teste também:
+
+Rádio → Oasis → Taylor → Olivia → Michael → Ariana
+
+e
+
+Ariana → Michael → Olivia → Taylor → Oasis
+
+A rádio escolhida pelo leitor deve permanecer tocando durante a navegação.
+
+Também teste rádio PAUSADA:
+ela deve permanecer pausada.
+NÃO iniciar reprodução sozinha.
+
+NÃO certifique reprodução externa do provedor quando isso não fizer parte do que é controlável pelo projeto.
+Certifique o comportamento da Passport.
+
+============================================================
+EVIDÊNCIA E ENTREGA
+============================================================
+
+Ao terminar:
+
+1. Liste exatamente os arquivos criados.
+2. Liste exatamente os arquivos existentes alterados.
+3. Informe as cinco rotas propostas.
+4. Informe os cinco resultados de QA desktop/mobile.
+5. Informe o resultado da continuidade.
+6. Informe que os sistemas radioativos permaneceram intactos.
+7. Informe branch criada.
+8. Informe commit SHA.
+9. Faça push.
+10. Abra UMA NOVA PR.
+11. Deixe OPEN / DRAFT.
+12. NÃO MERGE.
+
+NÃO volte apenas dizendo:
+“não consegui”
+“workspace”
+“faltou isso”
+“preciso que você faça aquilo”
+depois de consumir a execução inteira.
+
+Se surgir um problema técnico recuperável durante a execução:
+- preserve imediatamente tudo que já estiver concluído;
+- resolva dentro do ambiente quando houver caminho disponível;
+- não reinicie trabalho concluído;
+- não repita aquisição;
+- não repita processamento de fotos já concluído;
+- não descarte progresso;
+- registre checkpoint antes de qualquer tentativa que possa perder trabalho.
+
+Se existir um bloqueio REAL e incontornável do ambiente, persista TODO o trabalho recuperável na branch antes de encerrar e informe EXATAMENTE:
+- o que foi concluído;
+- o que foi persistido;
+- o que falta;
+- qual operação específica bloqueou;
+- último commit/checkpoint recuperável.
+
+OBJETIVO FINAL DESTA EXECUÇÃO:
+
+UMA NOVA PR contendo, completas:
+
+OASIS
+TAYLOR SWIFT
+OLIVIA RODRIGO
+MICHAEL JACKSON
+ARIANA GRANDE
+
+com as fotos fornecidas por Mr. Nomad,
+textos humanizados já aprovados,
+vídeos exatos determinados,
+autoria Mr. Nomad,
+template editorial atual,
+feed integrado,
+e a rádio escolhida pelo leitor CONTINUANDO A TOCAR durante toda a navegação editorial, exatamente como a solução já mergeada da #519.
+
+SEM MERGE.
+SEM CILEIDICE.
+SEM REFAZER O QUE JÁ ESTÁ PRONTO.
+SEM INVENTAR NADA.

@@ -1,0 +1,164 @@
+{
+  "status": "BLOCKED_MISSING_APPROVED_FULL_TEXTS",
+  "base_branch": "main",
+  "base_head": "d471b487fc08b7c405972e6de1dc5966d988972b",
+  "branch": "feat/editorial-pop-five-20261006",
+  "previous_pr": 519,
+  "previous_pr_merged": true,
+  "protected": [
+    {
+      "path": "editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+      "sha256": "9b7be3a7cc0eae9e1615feb29fe1d28d48c76e095ed081cae6dc54236f303887"
+    },
+    {
+      "path": "editorial/2026/10/06/bon-jovi-slippery-when-wet-guns-n-roses.html",
+      "sha256": "252e6912a61688f19576085933092a56fa7c0e0919c44f79c74fd4e2e031bc08"
+    },
+    {
+      "path": "editorial/2026/10/06/rock-de-bermudas-marcelo-nova-paralamas.html",
+      "sha256": "759f6783bc2af76c978c65704e268b9c7b5062db6f64b15d2f0caecd6ce77234"
+    },
+    {
+      "path": "js/passport-persist-nav.js",
+      "sha256": "e092fbc2b3ba85f05e48e40a6e9c40420cc9a77e9708823038beac8d4367750c"
+    },
+    {
+      "path": "js/passport-audio-continuity.js",
+      "sha256": "c92d0adbff9f174f8de1f53723d07a25e80e9cd427efd04084d25689eddefc5e"
+    },
+    {
+      "path": "data/editorial-manual-feed.json",
+      "sha256": "8622a98044e6fa0b5e205a27311a8694e12de348c0ccd4592806763436e8dc6e"
+    }
+  ],
+  "assets": [
+    {
+      "artist": "oasis",
+      "attachment": "OASIS(1).jpg",
+      "path": "images/editorial/2026-10-06-pop/oasis/OASIS.jpg",
+      "bytes": 16974,
+      "sha256": "9432826c5caf5617b68afb27c34cddf0184a63188bd47a2f3531031603248cf9",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "taylor-swift",
+      "attachment": "Taylor-Swift-Reproducao_Instagram-1024x538(1).webp",
+      "path": "images/editorial/2026-10-06-pop/taylor-swift/Taylor-Swift-Reproducao_Instagram-1024x538.webp",
+      "bytes": 12482,
+      "sha256": "244aeba71de61c7a05930454e04cb31dc6a0cd9777cb05066ea3f66a9014bdb5",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "taylor-swift",
+      "attachment": "Taylor-Swift-Reproducao_Instagram-1(1).webp",
+      "path": "images/editorial/2026-10-06-pop/taylor-swift/Taylor-Swift-Reproducao_Instagram-1.webp",
+      "bytes": 54782,
+      "sha256": "b6200181554f77bd584a2d416f4572457a6eafd6be56ce9f3e563b7c8512783b",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "taylor-swift",
+      "attachment": "vma-4-1024x538(1).jpg",
+      "path": "images/editorial/2026-10-06-pop/taylor-swift/vma-4-1024x538.jpg",
+      "bytes": 45318,
+      "sha256": "115aefc86bac88387ff5cb587d08a06388c15ed7122768f1ca7cf8a41a956be1",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "olivia-rodrigo",
+      "attachment": "olivia-rodrigo-1(1).webp",
+      "path": "images/editorial/2026-10-06-pop/olivia-rodrigo/olivia-rodrigo-1.webp",
+      "bytes": 24106,
+      "sha256": "eeed5667e4c37f376d7ae4eadb8a11622b3a86f427827edab0f27e74d5a3b5e1",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "olivia-rodrigo",
+      "attachment": "Olivia-Rodrigo-Christopher-Polk_-Billboard-1-1024x538(1).webp",
+      "path": "images/editorial/2026-10-06-pop/olivia-rodrigo/Olivia-Rodrigo-Christopher-Polk_-Billboard-1-1024x538.webp",
+      "bytes": 34064,
+      "sha256": "2961bb59999a492acbc5fc3b93ef2dcba0cff07d85aa3e1aa9abfc57b22b1584",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "olivia-rodrigo",
+      "attachment": "Olivia-Rodrigo-Christopher-Polk_-Billboard-2-1024x538(1).webp",
+      "path": "images/editorial/2026-10-06-pop/olivia-rodrigo/Olivia-Rodrigo-Christopher-Polk_-Billboard-2-1024x538.webp",
+      "bytes": 37304,
+      "sha256": "0844a9cb6e43485d9bcb3baf00b697a722d977df07712ae5ee13d7cf84e31809",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "olivia-rodrigo",
+      "attachment": "Olivia-Rodrigo-Christopher-Polk_-Billboard-1024x538(1).webp",
+      "path": "images/editorial/2026-10-06-pop/olivia-rodrigo/Olivia-Rodrigo-Christopher-Polk_-Billboard-1024x538.webp",
+      "bytes": 48002,
+      "sha256": "c105f181f765c1815c53a36a731f152e874edb113c21849cde1d63ea7af4bd00",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "michael-jackson",
+      "attachment": "Michael-Jackson-Reproducao_X-1024x538(1).webp",
+      "path": "images/editorial/2026-10-06-pop/michael-jackson/Michael-Jackson-Reproducao_X-1024x538.webp",
+      "bytes": 28848,
+      "sha256": "633f128153ff87f219b357ca22e23b62b50025c0ac7ee13e8004f9a22ecbc003",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    },
+    {
+      "artist": "ariana-grande",
+      "attachment": "Ariana-Grande-no-ultimo-show-da-Eternal-Sunshine-Tour-Divulgacao-1024x538(1).webp",
+      "path": "images/editorial/2026-10-06-pop/ariana-grande/Ariana-Grande-no-ultimo-show-da-Eternal-Sunshine-Tour-Divulgacao-1024x538.webp",
+      "bytes": 20148,
+      "sha256": "d0ac9ba3fec1e33c6dc5702de60ac48f99c442d1f2fab96d8d7eb4ac54013515",
+      "state": "PERSISTED_BYTE_IDENTICAL"
+    }
+  ],
+  "video_ids": {
+    "oasis": [
+      "4Fe-LlU6Xz0"
+    ],
+    "taylor-swift": [
+      "_flQSL65xqY"
+    ],
+    "olivia-rodrigo": [
+      "Iaa6jwzFi6s"
+    ],
+    "michael-jackson": [
+      "hlJp0etLDcM",
+      "CauNjt2j-BM",
+      "7DOzITFjq70"
+    ],
+    "ariana-grande": [
+      "_qMm7VwQ734"
+    ]
+  },
+  "completed": [
+    "main verified at merged PR519 commit",
+    "all three prior editorial pages present",
+    "shared continuity files preserved",
+    "ten provided photos copied byte-identically",
+    "original order preserved"
+  ],
+  "blocked_operation": "Create five literal editorial bodies: attachment supplies topics and excerpts, not full approved texts; personal-context retrieval returned no full bodies for any of the five. Do not reconstruct or draft replacements.",
+  "pending": [
+    "recover exact approved full texts, titles and subtitles for all five",
+    "create pages from existing template",
+    "insert five records in existing feed",
+    "one final desktop/mobile/embed/metadata/feed QA",
+    "controlled continuity across multiple chosen stations and forward/reverse article sequences; paused stays paused"
+  ],
+  "qa": {
+    "photos": "PASS byte identical",
+    "previous_pages_and_continuity": "present and unmodified",
+    "new_editorial_pages": "NOT_CREATED",
+    "desktop_mobile": "NOT_RUN pending exact content",
+    "continuity": "NOT_RUN existing mechanism preserved"
+  },
+  "resume_rules": [
+    "Reuse these assets; do not recopy/re-encode/re-upload unless new contents are explicitly supplied",
+    "Do not modify protected files",
+    "Continue this branch and draft PR",
+    "No merge",
+    "Do not mark articles or tests complete until actually executed"
+  ]
+}
