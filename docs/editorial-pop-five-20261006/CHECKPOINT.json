@@ -1,5 +1,5 @@
 {
-  "status": "BLOCKED_MISSING_APPROVED_FULL_TEXTS",
+  "status": "FOUR_QA_COMPLETE_BLOCKED_OASIS_FULL_TEXT",
   "base_branch": "main",
   "base_head": "d471b487fc08b7c405972e6de1dc5966d988972b",
   "branch": "feat/editorial-pop-five-20261006",
@@ -137,28 +137,86 @@
     "all three prior editorial pages present",
     "shared continuity files preserved",
     "ten provided photos copied byte-identically",
-    "original order preserved"
+    "original order preserved",
+    "four approved full bodies integrated literally into current template",
+    "four feed records integrated; all previous records identical",
+    "four pages desktop1440/mobile390 QA PASS",
+    "rendered Notícias and Arquivo listing links PASS",
+    "MPB and Passport Hits forward/reverse transport continuity PASS",
+    "MPB and Passport Hits paused navigation PASS",
+    "all ten saved asset hashes unchanged; nine used in four pages"
   ],
-  "blocked_operation": "Create five literal editorial bodies: attachment supplies topics and excerpts, not full approved texts; personal-context retrieval returned no full bodies for any of the five. Do not reconstruct or draft replacements.",
+  "blocked_operation": "Oasis: full approved body missing; do not recreate from topic list. Four other supplied full bodies have been implemented literally.",
   "pending": [
-    "recover exact approved full texts, titles and subtitles for all five",
-    "create pages from existing template",
-    "insert five records in existing feed",
-    "one final desktop/mobile/embed/metadata/feed QA",
-    "controlled continuity across multiple chosen stations and forward/reverse article sequences; paused stays paused"
+    "recover the exact full approved Oasis body; latest attachment still supplies only instructions for Oasis",
+    "create Oasis page and fifth feed entry",
+    "test forward/reverse five-page sequences including Oasis without repeating unchanged article QA"
   ],
   "qa": {
-    "photos": "PASS byte identical",
-    "previous_pages_and_continuity": "present and unmodified",
-    "new_editorial_pages": "NOT_CREATED",
-    "desktop_mobile": "NOT_RUN pending exact content",
-    "continuity": "NOT_RUN existing mechanism preserved"
+    "photos": "PASS ten asset hashes unchanged; nine integrated, Oasis image ready",
+    "literal_content": "PASS four full bodies normalized rendered comparison",
+    "previous_pages_and_continuity": "PASS unchanged original SHA256 hashes",
+    "desktop_mobile": "PASS Taylor, Olivia, Michael, Ariana at1440 and390",
+    "listing": "PASS actual Notícias and Arquivo links",
+    "continuity": "PASS MPB and Passport Hits: current document/runtime/host/audio/source survive, time advances, zero media requests or playback calls/events during active navigation; paused remains paused",
+    "external_providers": "NOT_CERTIFIED; media/YouTube network fixtures used",
+    "jg_attempt": "NOT_CERTIFIED; browser precondition wait timed out30s; no engine changes",
+    "oasis": "NOT_CREATED missing full approved body",
+    "lot": "INCOMPLETE 4of5"
   },
   "resume_rules": [
-    "Reuse these assets; do not recopy/re-encode/re-upload unless new contents are explicitly supplied",
-    "Do not modify protected files",
-    "Continue this branch and draft PR",
+    "Reuse all saved photographs and four completed articles; do not recopy, regenerate, re-upload or repeat passed unchanged-page QA",
+    "Read article-manifest.json and approved-order-20261006.md for supplied full bodies",
+    "Do not alter prior articles or shared continuity scripts",
+    "Preserve all existing manual feed items when adding Oasis",
+    "Continue same branch and PR520",
     "No merge",
-    "Do not mark articles or tests complete until actually executed"
+    "Do not mark Oasis or five-page sequences complete before body supplied and tests executed"
+  ],
+  "approved_source": {
+    "path": "docs/editorial-pop-five-20261006/approved-order-20261006.md",
+    "sha256": "ce19c5e1112eb60f94b8c8fbea15150f05f4014b7c95de504d0c133bb33b62c3",
+    "completeBodies": [
+      "taylor-swift",
+      "olivia-rodrigo",
+      "michael-jackson",
+      "ariana-grande"
+    ],
+    "oasis": "No full body in attachment/checkpoint; previous messages referenced by search but literal paragraphs not returned"
+  },
+  "articles": [
+    {
+      "artist": "taylor-swift",
+      "path": "editorial/2026/10/06/taylor-swift-patient-zero-brasil.html",
+      "status": "IMPLEMENTED_FEED_INTEGRATED_QA_PASS",
+      "title": "Taylor Swift estreia “Patient Zero” entre as músicas mais ouvidas do Brasil",
+      "source_body_sha256": "654259c87b256f3ef9f93a90dabc6c47b4e7587ace1b171e7b4bd4d2667c369b"
+    },
+    {
+      "artist": "olivia-rodrigo",
+      "path": "editorial/2026/10/06/olivia-rodrigo-unraveled-tour-hartford.html",
+      "status": "IMPLEMENTED_FEED_INTEGRATED_QA_PASS",
+      "title": "Olivia Rodrigo abre a “Unraveled Tour” entre flores, chuva, lágrimas e um vestido que literalmente se desfaz",
+      "source_body_sha256": "06e2727bd94666291aa27eae705d0601ba141b0a75bc42cefe0ab7a00f074386"
+    },
+    {
+      "artist": "michael-jackson",
+      "path": "editorial/2026/10/06/michael-jackson-thriller-industria-musica.html",
+      "status": "IMPLEMENTED_FEED_INTEGRATED_QA_PASS",
+      "title": "“Thriller” não foi apenas um disco: foi quando Michael Jackson obrigou a indústria da música a mudar",
+      "source_body_sha256": "9238bc3e66b02b2840ced9e8175a0fe93f08f31bda548ee333cefd2679a6ee18"
+    },
+    {
+      "artist": "ariana-grande",
+      "path": "editorial/2026/10/06/ariana-grande-eternal-sunshine-tour.html",
+      "status": "IMPLEMENTED_FEED_INTEGRATED_QA_PASS",
+      "title": "Ariana Grande volta à estrada depois de sete anos — e fatura R$ 550 milhões em 41 shows",
+      "source_body_sha256": "a109526454f7c76d0c6d43a3e6887700718f6a4e67272b4192d9f29ae674e093"
+    }
+  ],
+  "evidence": [
+    "docs/editorial-pop-five-20261006/structural-qa.json",
+    "docs/editorial-pop-five-20261006/browser-qa.json",
+    "docs/editorial-pop-five-20261006/browser-qa.cjs"
   ]
 }

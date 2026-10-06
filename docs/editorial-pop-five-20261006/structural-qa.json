@@ -1,0 +1,51 @@
+{
+  "pages": [
+    {
+      "artist": "taylor-swift",
+      "text": "PASS literal rendered text against supplied full body",
+      "normalized_text_sha256": "33ac3a547bfa2708f52b8ae3dc40321b2fb148bd7e2457d6ffa2163d2b5cb248",
+      "video_ids": [
+        "_flQSL65xqY"
+      ],
+      "image_count": 3,
+      "result": "PASS"
+    },
+    {
+      "artist": "olivia-rodrigo",
+      "text": "PASS literal rendered text against supplied full body",
+      "normalized_text_sha256": "f4caa574980dbe336591ab955bcdeba5a8e93029a0b9f0c6b7e34d4bcea16114",
+      "video_ids": [
+        "Iaa6jwzFi6s"
+      ],
+      "image_count": 4,
+      "result": "PASS"
+    },
+    {
+      "artist": "michael-jackson",
+      "text": "PASS literal rendered text against supplied full body",
+      "normalized_text_sha256": "226776ba94c5a3b4c657a36100b15ed0e92c88f2080f0fec61a827a9ef5989ef",
+      "video_ids": [
+        "hlJp0etLDcM",
+        "CauNjt2j-BM",
+        "7DOzITFjq70"
+      ],
+      "image_count": 1,
+      "result": "PASS"
+    },
+    {
+      "artist": "ariana-grande",
+      "text": "PASS literal rendered text against supplied full body",
+      "normalized_text_sha256": "d9389b602be9a930e9b44123e9b5ff2bfe6fbd4e0fe50e55f88d62199c195af7",
+      "video_ids": [
+        "_qMm7VwQ734"
+      ],
+      "image_count": 1,
+      "result": "PASS"
+    }
+  ],
+  "assets": "PASS all ten saved assets unchanged; nine used in four pages; Oasis image remains ready",
+  "previous_articles_and_shared_continuity": "PASS unchanged baseline hashes",
+  "feed": "PASS all previous items identical",
+  "oasis": "BLOCKED no full approved body",
+  "result": "PASS for four implemented pages; five-page lot incomplete"
+}
