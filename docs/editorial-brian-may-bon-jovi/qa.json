@@ -1,0 +1,142 @@
+{
+  "structural": "PASS texto literal, fotos byte a byte, IDs exatos, índice anterior preservado",
+  "realRadioAttempt": {
+    "family": "mpb",
+    "playing": false,
+    "error": 4,
+    "result": "BLOCKED: stream não reproduziu no navegador isolado"
+  },
+  "pages": [
+    {
+      "path": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+      "width": 1440,
+      "http": 200,
+      "title": "Aos 79 anos, Brian May encerra vida de turnês: “Talvez 50 anos na estrada tenham sido suficientes”",
+      "cover": 612,
+      "overflow": false,
+      "iframes": [
+        "https://www.youtube-nocookie.com/embed/vZLZVeZV43Y"
+      ],
+      "author": "Mr. Nomad",
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/bon-jovi-slippery-when-wet-guns-n-roses.html",
+      "width": 1440,
+      "http": 200,
+      "title": "O Bon Jovi quase chamou Slippery When Wet de… Guns N’ Roses",
+      "cover": 888,
+      "overflow": false,
+      "iframes": [
+        "https://www.youtube-nocookie.com/embed/iWIF8_DqW44"
+      ],
+      "author": "Mr. Nomad",
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+      "width": 390,
+      "http": 200,
+      "title": "Aos 79 anos, Brian May encerra vida de turnês: “Talvez 50 anos na estrada tenham sido suficientes”",
+      "cover": 612,
+      "overflow": false,
+      "iframes": [
+        "https://www.youtube-nocookie.com/embed/vZLZVeZV43Y"
+      ],
+      "author": "Mr. Nomad",
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/bon-jovi-slippery-when-wet-guns-n-roses.html",
+      "width": 390,
+      "http": 200,
+      "title": "O Bon Jovi quase chamou Slippery When Wet de… Guns N’ Roses",
+      "cover": 888,
+      "overflow": false,
+      "iframes": [
+        "https://www.youtube-nocookie.com/embed/iWIF8_DqW44"
+      ],
+      "author": "Mr. Nomad",
+      "errors": [],
+      "result": "PASS"
+    }
+  ],
+  "continuity": [
+    {
+      "path": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+      "method": "áudio WAV controlado na resposta de rede; player/URL originais inalterados",
+      "before": {
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "src": "https://srv1.braudio.com.br:7008/;?t=1791290539934",
+        "time": 2.375001,
+        "marker": "home"
+      },
+      "after": {
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "src": "https://srv1.braudio.com.br:7008/;?t=1791290542747",
+        "time": 1.731324,
+        "marker": null,
+        "continuity": {
+          "version": 1,
+          "family": "mpb",
+          "index": null,
+          "playing": true,
+          "volume": 0.8,
+          "archive": null
+        }
+      },
+      "sameFamily": true,
+      "sameDocument": false,
+      "gapless": false,
+      "result": "FAIL requisito sem recarga: mecanismo existente reconecta em outro documento"
+    },
+    {
+      "path": "/editorial/2026/10/06/bon-jovi-slippery-when-wet-guns-n-roses.html",
+      "method": "áudio WAV controlado na resposta de rede; player/URL originais inalterados",
+      "before": {
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "src": "https://srv1.braudio.com.br:7008/;?t=1791290544912",
+        "time": 2.365786,
+        "marker": "home"
+      },
+      "after": {
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "src": "https://srv1.braudio.com.br:7008/;?t=1791290547739",
+        "time": 1.704549,
+        "marker": null,
+        "continuity": {
+          "version": 1,
+          "family": "mpb",
+          "index": null,
+          "playing": true,
+          "volume": 0.8,
+          "archive": null
+        }
+      },
+      "sameFamily": true,
+      "sameDocument": false,
+      "gapless": false,
+      "result": "FAIL requisito sem recarga: mecanismo existente reconecta em outro documento"
+    }
+  ],
+  "protectedFiles": "No changes"
+}
