@@ -1,5 +1,5 @@
 {
-  "status": "FOUR_QA_COMPLETE_BLOCKED_OASIS_FULL_TEXT",
+  "status": "COMPLETE_FIVE_ARTICLES_QA_PASS",
   "base_branch": "main",
   "base_head": "d471b487fc08b7c405972e6de1dc5966d988972b",
   "branch": "feat/editorial-pop-five-20261006",
@@ -144,25 +144,25 @@
     "rendered Notícias and Arquivo listing links PASS",
     "MPB and Passport Hits forward/reverse transport continuity PASS",
     "MPB and Passport Hits paused navigation PASS",
-    "all ten saved asset hashes unchanged; nine used in four pages"
+    "all ten saved asset hashes unchanged; nine used in four pages",
+    "Oasis supplied full body persisted and integrated literally",
+    "Oasis desktop1440/mobile390 and both rendered feed links PASS",
+    "five-page MPB/Hits forward/reverse/paused28 hops PASS",
+    "prior four articles, three older articles, continuity scripts and ten image hashes preserved"
   ],
-  "blocked_operation": "Oasis: full approved body missing; do not recreate from topic list. Four other supplied full bodies have been implemented literally.",
-  "pending": [
-    "recover the exact full approved Oasis body; latest attachment still supplies only instructions for Oasis",
-    "create Oasis page and fifth feed entry",
-    "test forward/reverse five-page sequences including Oasis without repeating unchanged article QA"
-  ],
+  "blocked_operation": null,
+  "pending": [],
   "qa": {
-    "photos": "PASS ten asset hashes unchanged; nine integrated, Oasis image ready",
-    "literal_content": "PASS four full bodies normalized rendered comparison",
+    "photos": "PASS ten assets byte-identical; all ten used; zero new uploads",
+    "literal_content": "PASS previous four evidence reused; Oasis literal rendered comparison PASS",
     "previous_pages_and_continuity": "PASS unchanged original SHA256 hashes",
-    "desktop_mobile": "PASS Taylor, Olivia, Michael, Ariana at1440 and390",
-    "listing": "PASS actual Notícias and Arquivo links",
-    "continuity": "PASS MPB and Passport Hits: current document/runtime/host/audio/source survive, time advances, zero media requests or playback calls/events during active navigation; paused remains paused",
+    "desktop_mobile": "PASS five articles1440/390; previous four checks reused",
+    "listing": "PASS Oasis actual Notícias and Arquivo links; existing records preserved",
+    "continuity": "PASS MPB and Hits five forward/four reverse/five paused hops each: same document/runtime/host/audio/source; zero new media requests or playback calls/events",
     "external_providers": "NOT_CERTIFIED; media/YouTube network fixtures used",
     "jg_attempt": "NOT_CERTIFIED; browser precondition wait timed out30s; no engine changes",
-    "oasis": "NOT_CREATED missing full approved body",
-    "lot": "INCOMPLETE 4of5"
+    "oasis": "PASS supplied literal body, existing image and exact video4Fe-LlU6Xz0",
+    "lot": "COMPLETE 5of5"
   },
   "resume_rules": [
     "Reuse all saved photographs and four completed articles; do not recopy, regenerate, re-upload or repeat passed unchanged-page QA",
@@ -177,14 +177,22 @@
     "path": "docs/editorial-pop-five-20261006/approved-order-20261006.md",
     "sha256": "ce19c5e1112eb60f94b8c8fbea15150f05f4014b7c95de504d0c133bb33b62c3",
     "completeBodies": [
+      "oasis",
       "taylor-swift",
       "olivia-rodrigo",
       "michael-jackson",
       "ariana-grande"
     ],
-    "oasis": "No full body in attachment/checkpoint; previous messages referenced by search but literal paragraphs not returned"
+    "oasis": "oasis-approved.md"
   },
   "articles": [
+    {
+      "artist": "oasis",
+      "path": "editorial/2026/10/06/oasis-wonderwall-liam-gallagher.html",
+      "status": "IMPLEMENTED_FEED_INTEGRATED_QA_PASS",
+      "title": "Liam Gallagher achava “Wonderwall” uma merda. Depois foi lá e cantou mesmo assim",
+      "source_body_sha256": "baf0aad16c278c76b1a0013d5bdfbdef8a5e6f034ef6d0b679206b26831de0f6"
+    },
     {
       "artist": "taylor-swift",
       "path": "editorial/2026/10/06/taylor-swift-patient-zero-brasil.html",
@@ -217,6 +225,9 @@
   "evidence": [
     "docs/editorial-pop-five-20261006/structural-qa.json",
     "docs/editorial-pop-five-20261006/browser-qa.json",
-    "docs/editorial-pop-five-20261006/browser-qa.cjs"
+    "docs/editorial-pop-five-20261006/browser-qa.cjs",
+    "docs/editorial-pop-five-20261006/oasis-structural-qa.json",
+    "docs/editorial-pop-five-20261006/oasis-final-qa.json",
+    "docs/editorial-pop-five-20261006/oasis-final-qa.cjs"
   ]
 }
