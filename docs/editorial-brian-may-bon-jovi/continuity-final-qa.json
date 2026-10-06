@@ -1,0 +1,459 @@
+{
+  "method": "Browser real engine/URLs; media HTTP response replaced with 120s WAV. No engine/stream mutation. External provider playback not certified.",
+  "continuity": [
+    {
+      "path": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 0.690972,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 1.194009,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "newMediaRequests": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/bon-jovi-slippery-when-wet-guns-n-roses.html",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 1.274443,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 1.774052,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "newMediaRequests": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/rock-de-bermudas-marcelo-nova-paralamas.html",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 1.840985,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 2.30355,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "newMediaRequests": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 2.375346,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 2.856332,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "newMediaRequests": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/bon-jovi-slippery-when-wet-guns-n-roses.html",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 2.857799,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 3.354425,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "newMediaRequests": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "/editorial/2026/10/06/rock-de-bermudas-marcelo-nova-paralamas.html",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 3.355953,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 3.837759,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      },
+      "newMediaRequests": 0,
+      "result": "PASS"
+    }
+  ],
+  "pages": [
+    {
+      "width": 1440,
+      "http": 200,
+      "title": "“Rock de Bermudas”: quando Marcelo Nova resolveu implicar com os Paralamas e o rock carioca",
+      "images": [
+        {
+          "src": "/images/editorial/2026-10-06/paralamas-qWDFr.jpg",
+          "width": 1600,
+          "fit": "contain"
+        },
+        {
+          "src": "/images/editorial/2026-10-06/camisa-de-venus-LkVae.jpg",
+          "width": 1597,
+          "fit": "contain"
+        }
+      ],
+      "videos": [
+        "https://www.youtube-nocookie.com/embed/4-9S-aN3eqA",
+        "https://www.youtube-nocookie.com/embed/vadNGQ3pMdo"
+      ],
+      "overflow": false,
+      "author": "Mr. Nomad",
+      "radioHost": false,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "http": 200,
+      "title": "“Rock de Bermudas”: quando Marcelo Nova resolveu implicar com os Paralamas e o rock carioca",
+      "images": [
+        {
+          "src": "/images/editorial/2026-10-06/paralamas-qWDFr.jpg",
+          "width": 1600,
+          "fit": "contain"
+        },
+        {
+          "src": "/images/editorial/2026-10-06/camisa-de-venus-LkVae.jpg",
+          "width": 1597,
+          "fit": "contain"
+        }
+      ],
+      "videos": [
+        "https://www.youtube-nocookie.com/embed/4-9S-aN3eqA",
+        "https://www.youtube-nocookie.com/embed/vadNGQ3pMdo"
+      ],
+      "overflow": false,
+      "author": "Mr. Nomad",
+      "radioHost": false,
+      "errors": []
+    }
+  ],
+  "regressions": [
+    {
+      "test": "Back",
+      "snapshot": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 4.076121,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      }
+    },
+    {
+      "test": "Forward",
+      "snapshot": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 4.093995,
+        "paused": false,
+        "state": {
+          "family": "mpb",
+          "volume": 0.8,
+          "playing": true
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 0,
+          "playPause": 0
+        },
+        "events": [],
+        "marker": true,
+        "engineFrames": []
+      }
+    },
+    {
+      "test": "Paused signal stays paused; volume control reaches original runtime",
+      "before": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 4.21615,
+        "paused": true,
+        "state": {
+          "family": null,
+          "volume": 0.55,
+          "playing": false
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 1,
+          "playPause": 0
+        },
+        "events": [
+          "pause"
+        ],
+        "marker": true,
+        "engineFrames": []
+      },
+      "after": {
+        "sameAudio": true,
+        "sameBay": true,
+        "sameSource": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1791293379053",
+        "time": 4.21615,
+        "paused": true,
+        "state": {
+          "family": null,
+          "volume": 0.55,
+          "playing": false
+        },
+        "calls": {
+          "select": 0,
+          "init": 0,
+          "pause": 1,
+          "playPause": 0
+        },
+        "events": [
+          "pause"
+        ],
+        "marker": true,
+        "engineFrames": []
+      },
+      "result": "PASS"
+    }
+  ],
+  "articleToArticle": "PASS",
+  "noDuplicateRuntime": true,
+  "errors": [],
+  "result": "PASS"
+}
