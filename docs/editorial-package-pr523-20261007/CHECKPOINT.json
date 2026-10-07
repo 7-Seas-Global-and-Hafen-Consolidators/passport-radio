@@ -1,0 +1,126 @@
+{
+  "status": "CONTENT_READY_QA_PENDING_MISSING_NINE_APPROVED_TEXTS",
+  "baseHead": "1a7fe6daf1eea58c38b7ae7ecdbb315188b44dec",
+  "branch": "feat/editorial-alice-nenhum-20261007",
+  "pr": 523,
+  "protected": {
+    "index.html": "15a13ba03ffafd5fd474b5a3bdddf45a794149cc31acc0ddd99231f99e5566a5",
+    "radio.html": "0a5b97020ea81db4fe3a75006abac2205edd4e02e310ae9861bbc7bde3ddd938",
+    "js/passport-persist-nav.js": "e092fbc2b3ba85f05e48e40a6e9c40420cc9a77e9708823038beac8d4367750c",
+    "js/passport-audio-continuity.js": "c92d0adbff9f174f8de1f53723d07a25e80e9cd427efd04084d25689eddefc5e",
+    "css/passport-participe-paper.css": "7ebf2f63d441f030b859799d33293d42d84b7f0febee351ae50df5bd95b64620",
+    "editorial/2026/10/07/alice-cooper-vincent-furnier-devil-on-my-shoulder.html": "f4f0796176f800c7d5dd9f4e76b4612429de59a75ccc0610d60ea18e55d5503b",
+    "editorial/2026/10/07/nenhum-de-nos-40-anos-rock-nacional.html": "fed5db921b2b782816fb42fc73b6cae84ce8db8bdbb1c9a72928eb77185918e0",
+    "editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html": "d6e4985e20e7a5246d4c3aee8d3a4c1088ff6d0e5ab99153f71e8936dbd995ba"
+  },
+  "complete": [
+    "Alice Cooper preserved",
+    "Nenhum de Nós preserved",
+    "Kurt Cobain",
+    "Anos 80 Volume 2",
+    "Anos 80 and PLOC feed cover corrections"
+  ],
+  "blocked": [
+    "Ella Langley",
+    "Noel Gallagher",
+    "Soundgarden",
+    "Crypta",
+    "Racionais MC’s",
+    "Björk",
+    "BLACKPINK",
+    "John Lennon / Paul McCartney",
+    "Festa PLOC narrative reform"
+  ],
+  "reason": "Approved full bodies are absent from the supplied dossier. The source starts with Anos 80 drafts/final and Kurt; the closing source message explicitly says earlier bodies are unavailable.",
+  "preservedAnosVideoIDs": [
+    "HaMEzljVtA4",
+    "JpbvkcZ5oGc",
+    "mHLLb7n2xsQ",
+    "qKbs4yDZpco",
+    "xuiaL9HD2hw",
+    "l7bommRIeW4",
+    "XxoBaEQGMPo",
+    "b0DL1ZD2qIw",
+    "Qfn1ZFfPxbU",
+    "v22YbORzDD0",
+    "C7Vnf2g6Qpw",
+    "izE7xZVlF6Y",
+    "7tuJfud4W6U",
+    "yZxmmsN2k48",
+    "skHjKAlTSm4",
+    "v0a2U_xEiw0",
+    "vLzj_S0Tzno",
+    "UlqGA7RCos8",
+    "JzByVhWju88",
+    "thGHAHHYwWU",
+    "fIuXicAzcFo",
+    "GHXCLnGJLIU",
+    "0CI5sShJXww",
+    "ygUuXtg98zA",
+    "CD8rJlPuX0g",
+    "W-t0LxHdS_s",
+    "GUVoVoQ1oRM",
+    "9FbCT-EEtQk",
+    "4nIiZlOWqug",
+    "0CwsvvZWvDE",
+    "91EjZCt_O1A",
+    "4WgpGFpi5Oo"
+  ],
+  "photosReceived": [
+    {
+      "name": "racionais-Bob-Wolfenson-rolling-stone-800x450.jpg",
+      "bytes": 52442,
+      "sha256": "5a52f735ed29065b8196cd4ad40754af1c682ba5f748667f4c874a7704adeabd"
+    },
+    {
+      "name": "john-lennon-1977-foto-Vinnie-Zuffante-Getty-Images-106494096-1536x864(1).jpg",
+      "bytes": 192069,
+      "sha256": "b60956d7395b4cb29c19300fccfbef2cc8393cc7293b8daf3bd0d82ef60773b9"
+    },
+    {
+      "name": "crypta-2026-1000x417(1).webp",
+      "bytes": 16060,
+      "sha256": "106786782f69e723b3eeaa84ac000a57998e51c880cc2b9c239ea222dacb81ed"
+    },
+    {
+      "name": "blaskpink-no-vma-2022(1).jpg",
+      "bytes": 352393,
+      "sha256": "7a3cfb7480e848649f9b8b1189437ded444bee996ef111fc59bf0b0a25d16be2"
+    },
+    {
+      "name": "bjork-15-anos-biophiliaGettyImages-1685387530-Santiago-Felipe-800x450(1).png",
+      "bytes": 200808,
+      "sha256": "9be04de6528505c2da8690ddf79bcdb90a2bc770f83a53fb046c475838ecc011"
+    },
+    {
+      "name": "paul-mccartney-john-lennon-beatles-1963-foto-fox-photos-getty-images-3295261(1).jpg",
+      "bytes": 299788,
+      "sha256": "37d5d14a69320cc60e4e2d3f1fb2cc8a02099a323ed0bfba04b1caf4e46e15d7"
+    },
+    {
+      "name": "soundgarden-tom-morello-1000x670(1).webp",
+      "bytes": 60520,
+      "sha256": "0fcb5491890d5f578ef9e7ae75b6448cc421da9838f7359e8e71a23c6de6029d"
+    },
+    {
+      "name": "noel-gallagher-matt-crockett(1).jpeg",
+      "bytes": 14270,
+      "sha256": "58f1ec418c8b65f1ce34dc5956a3cace0f5b9f2a8a5c74ee72e5dc4fd1f2edb7"
+    },
+    {
+      "name": "ella-langley-foto-1000x635(1).webp",
+      "bytes": 100706,
+      "sha256": "7b74209e82389bd24fcda09b3b8acd901a7def0e7d06a7c6752e1d6d039bc043"
+    },
+    {
+      "name": "kurt-cobain-nirvana-1993-foto-jeff-kravitz-filmmagic-74704695(1).jpg",
+      "bytes": 253899,
+      "sha256": "43cf6b1dd8108a6a6efaf7ac33e1f679b4ca87d5c69fb97ef9faa6809a7aa1d9"
+    },
+    {
+      "name": "beatles-paul-mccartney-john-lennon-1964-foto-david-redfern-redferns(1).jpg",
+      "bytes": 198292,
+      "sha256": "0c6a88363e52627c90e51f7053fa3d9f74704f0d2a7e161a8f6ad4c5107fcb81"
+    }
+  ]
+}
