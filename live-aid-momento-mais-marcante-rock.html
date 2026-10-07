@@ -1,400 +1,933 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mr. Nomad relembra o Live Aid de 1985 e o ranking dos dez momentos mais marcantes da história do rock.">
-  <meta name="theme-color" content="#f7f5f0">
-  <title>Qual o momento mais marcante da história do rock? | Passport Radio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --black: #02060b;
-      --navy: #071522;
-      --gold: #d4af37;
-      --gold-light: #f0ca65;
-      --cream: #f3f0e8;
-      --text: #c7ced7;
-      --muted: #7c8997;
-      --line: rgba(212,175,55,.22);
-      --shadow: 0 30px 90px rgba(0,0,0,.52);
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      background: var(--black);
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      background:
-        radial-gradient(circle at 82% 5%, rgba(212,175,55,.08), transparent 25rem),
-        linear-gradient(180deg, #07131f 0%, var(--black) 40%, var(--black) 100%);
-      color: var(--cream);
-      font-family: Montserrat, Arial, sans-serif;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; }
-
-    .shell {
-      width: min(calc(100% - 44px), 1160px);
-      margin-inline: auto;
-    }
-
-    .topbar {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand {
-      color: var(--cream);
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .back {
-      padding: 11px 17px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--gold-light);
-      font-size: .65rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .hero {
-      position: relative;
-      min-height: min(860px, 92vh);
-      display: flex;
-      align-items: flex-end;
-      isolation: isolate;
-      overflow: hidden;
-    }
-
-    .hero__image {
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(.84) contrast(1.07) brightness(.61);
-    }
-
-    .hero__veil {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(90deg, rgba(2,6,11,.98) 0%, rgba(2,6,11,.76) 48%, rgba(2,6,11,.18) 100%),
-        linear-gradient(0deg, rgba(2,6,11,1) 0%, transparent 52%);
-    }
-
-    .hero__content {
-      width: min(calc(100% - 44px), 1160px);
-      margin-inline: auto;
-      padding: 150px 0 115px;
-    }
-
-    .eyebrow {
-      margin: 0;
-      color: var(--gold-light);
-      font-size: .66rem;
-      font-weight: 800;
-      letter-spacing: .19em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, .ranking-number, blockquote {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      text-wrap: balance;
-    }
-
-    h1 {
-      max-width: 980px;
-      margin: 20px 0 0;
-      font-size: clamp(4rem, 8vw, 8rem);
-      line-height: .86;
-      letter-spacing: -.05em;
-    }
-
-    h1 span {
-      display: block;
-      color: var(--gold);
-    }
-
-    .hero__lead {
-      max-width: 790px;
-      margin: 30px 0 0;
-      color: #d5dae0;
-      font-size: 1.02rem;
-      line-height: 1.9;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 25px;
-      margin-top: 31px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      color: #9ba6b1;
-      font-size: .68rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-
-    .meta strong { color: var(--cream); }
-
-    .article {
-      max-width: 810px;
-      padding: 90px 0 120px;
-    }
-
-    .article p {
-      margin: 0 0 26px;
-      color: var(--text);
-      font-size: 1rem;
-      line-height: 1.95;
-    }
-
-    .article p:first-child::first-letter {
-      float: left;
-      margin: 8px 11px 0 0;
-      color: var(--gold-light);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 5rem;
-      font-weight: 700;
-      line-height: .72;
-    }
-
-    .article h2 {
-      margin: 58px 0 24px;
-      font-size: clamp(2.8rem, 5vw, 4.8rem);
-      line-height: .94;
-      letter-spacing: -.035em;
-    }
-
-    blockquote {
-      margin: 46px 0;
-      padding: 28px 32px;
-      border-left: 3px solid var(--gold);
-      background: rgba(212,175,55,.07);
-      color: var(--gold-light);
-      font-size: clamp(1.65rem, 3vw, 2.3rem);
-      line-height: 1.4;
-    }
-
-    .ranking {
-      display: grid;
-      gap: 14px;
-      margin: 36px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .ranking li {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 18px;
-      align-items: center;
-      min-height: 92px;
-      padding: 18px 22px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: linear-gradient(145deg, rgba(16,38,58,.68), rgba(2,6,11,.93));
-    }
-
-    .ranking-number {
-      color: var(--gold-light);
-      font-size: 2.35rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .ranking strong {
-      display: block;
-      color: var(--cream);
-      font-size: .96rem;
-      line-height: 1.55;
-    }
-
-    .ranking small {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: .7rem;
-      line-height: 1.5;
-    }
-
-    .next-route {
-      margin-top: 65px;
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 88% 10%, rgba(212,175,55,.10), transparent 28%),
-        var(--navy);
-      box-shadow: var(--shadow);
-    }
-
-    .next-route small {
-      color: var(--gold);
-      font-size: .62rem;
-      font-weight: 800;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-    .next-route h2 {
-      margin-top: 14px;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .next-route p { margin-bottom: 0; }
-
-    .ritual {
-      margin-top: 64px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
-      color: var(--gold-light);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(2.5rem, 6vw, 5.1rem);
-      font-weight: 700;
-    }
-
-    footer {
-      padding: 36px 0;
-      border-top: 1px solid var(--line);
-      color: #73808c;
-      font-size: .65rem;
-      text-align: center;
-    }
-
-    @media (max-width: 650px) {
-      .shell, .hero__content {
-        width: min(calc(100% - 26px), 1160px);
-      }
-
-      .hero {
-        min-height: 820px;
-      }
-
-      .hero__content {
-        padding-top: 120px;
-      }
-
-      .ranking li {
-        grid-template-columns: 54px 1fr;
-        padding: 16px;
-      }
-
-      .ranking-number { font-size: 2rem; }
-    }
-  </style>
-  <link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
-<link rel="stylesheet" href="/css/passport-editorial-fonts.css?v=31c">
-<link rel="stylesheet" href="/css/passport-editorial-ink.css?v=31c">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qual o momento mais marcante da história do rock? | Passport Radio</title>
+<meta name="description" content="Mr. Nomad relembra o Live Aid de 13 de julho de 1985, o ranking dos momentos do rock e as performances de Wembley e do JFK.">
+<link rel="canonical" href="https://passportradio.online/live-aid-momento-mais-marcante-rock.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Instrument+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#fff; --ink:#111; --red:#c41e3a; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:#fff; color:#111; }
+  body { font-family:"Instrument Sans",Arial,sans-serif; font-size:18px; line-height:1.55; }
+  a { color:inherit; }
+  .mast { width:min(920px, calc(100% - 32px)); margin:28px auto 0; text-align:center; }
+  .wordmark { margin:0; font-family:"Bodoni Moda",Georgia,serif; font-weight:700; font-size:clamp(3.2rem,8vw,5.4rem); line-height:.85; letter-spacing:-.03em; color:#c41e3a; }
+  .wordmark span { display:block; }
+  .mark { margin:.35rem 0 0; color:#111; font-size:.78rem; font-weight:700; letter-spacing:.18em; }
+  .pubnav { width:min(920px, calc(100% - 32px)); margin:16px auto 0; padding:10px 0; border-top:1px solid #111; border-bottom:1px solid #111; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  .pubnav a { text-decoration:none; }
+  .pubnav a:hover { color:#c41e3a; }
+  .story { width:min(760px, calc(100% - 32px)); margin:28px auto 64px; }
+  .kicker { margin:0 0 8px; color:#c41e3a; font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+  h1 { margin:0 0 12px; font-family:"Bodoni Moda",Georgia,serif; font-weight:700; font-size:clamp(2.4rem,6vw,4.2rem); line-height:.95; letter-spacing:-.03em; }
+  .lede { font-size:1.15rem; }
+  .meta { color:#333; font-size:.82rem; letter-spacing:.04em; text-transform:uppercase; }
+  figure.hero { margin:22px 0; }
+  figure.hero img { width:100%; height:auto; display:block; }
+  figure.hero figcaption { font-size:.82rem; margin-top:6px; }
+  h2 { margin:42px 0 10px; font-family:"Bodoni Moda",Georgia,serif; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.05; }
+  .set { margin:8px 0 18px; padding-top:8px; border-top:1px solid #111; }
+  .where { margin:0 0 8px; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+  ol.ranking { padding:0; margin:0; list-style:none; }
+  ol.ranking li { display:grid; grid-template-columns:3rem 1fr; gap:12px; padding:10px 0; border-top:1px solid #111; }
+  ol.ranking b { font-family:"Bodoni Moda",Georgia,serif; font-size:1.4rem; }
+  .clip { margin:22px 0 28px; }
+  .clip h3 { margin:0 0 4px; font-size:1.15rem; }
+  .clip .where { color:#c41e3a; }
+  .frame { position:relative; padding-top:56.25%; background:#111; }
+  .frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  footer { width:min(920px, calc(100% - 32px)); margin:0 auto 40px; padding-top:16px; border-top:1px solid #111; font-size:.85rem; text-align:center; }
+  footer a { text-decoration:none; }
+</style>
 </head>
-
-<body class="pp-article">
-  <header class="topbar shell">
-    <a class="brand" href="index.html">Passport Radio</a>
-    <a class="back" href="index.html#em-destaque">Voltar à exposição</a>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <img class="hero__image" src="/images/live-aid-1985.png" alt="Palco e público do Live Aid no Wembley Stadium em 13 de julho de 1985">
-      <div class="hero__veil" aria-hidden="true"></div>
-
-      <div class="hero__content">
-        <p class="eyebrow">Passport Review · Historic Moments</p>
-        <h1 id="hero-title">Qual o momento mais marcante<span>da história do rock?</span></h1>
-
-        <p class="hero__lead">
-          Entre Woodstock, MTV, Beatles, Motown e Glastonbury, uma pesquisa colocou o Live Aid no topo dos momentos que mudaram a história do rock.
-        </p>
-
-        <div class="meta">
-          <span><strong>Resenha:</strong> Mr. Nomad</span>
-          <span><strong>Data:</strong> 30/07/2026</span>
-          <span><strong>Destino:</strong> Londres · Filadélfia</span>
-          <span><strong>Leitura:</strong> 3 minutos</span>
-        </div>
-      </div>
-    </section>
-
-    <article class="article shell">
-      <p>
-        Qual o momento mais marcante da história do rock? O momento mais marcante destes 50 anos em que o rock reinou sobre a Terra foi — senhoras e senhores — a realização do Live Aid.
-      </p>
-
-      <p>
-        Foi em 13 de julho de 1985 que o mundo se reuniu para acompanhar bandas e artistas em apresentações simultâneas na Inglaterra e nos Estados Unidos. O festival beneficente arrecadava recursos para o combate à fome na Etiópia e transformou dois estádios em um único palco transmitido para o planeta.
-      </p>
-
-      <p>
-        No Brasil, o dia 13 de julho acabaria consagrado como Dia Mundial do Rock, uma tradição diretamente ligada à memória do Live Aid.
-      </p>
-
-      <blockquote>
-        Um dia. Dois continentes. Um mundo inteiro ouvindo junto.
-      </blockquote>
-
-      <p>
-        A escolha apareceu em uma pesquisa realizada com duas mil pessoas selecionadas pela rede britânica HMV. O Live Aid foi apontado como o maior momento do rock em seus primeiros 50 anos.
-      </p>
-
-      <h2>A concorrência foi pesada.</h2>
-
-      <p>
-        O resultado colocou lado a lado festivais, programas de televisão, gravadoras, encontros decisivos e momentos que atravessaram gerações. O top ten ficou assim:
-      </p>
-
-      <ol class="ranking">
-        <li><span class="ranking-number">01</span><div><strong>Live Aid</strong><small>1985</small></div></li>
-        <li><span class="ranking-number">02</span><div><strong>Surgimento da MTV</strong><small>1981</small></div></li>
-        <li><span class="ranking-number">03</span><div><strong>Festival de Woodstock</strong><small>1969</small></div></li>
-        <li><span class="ranking-number">04</span><div><strong>Entrevista dos Sex Pistols no programa de Bill Grundy</strong><small>1976</small></div></li>
-        <li><span class="ranking-number">05</span><div><strong>Beatles ocupam os cinco primeiros lugares da parada norte-americana</strong><small>1964</small></div></li>
-        <li><span class="ranking-number">06</span><div><strong>Estreia do programa Top of the Pops</strong><small>1964</small></div></li>
-        <li><span class="ranking-number">07</span><div><strong>Nascimento da Motown Records</strong><small>1959</small></div></li>
-        <li><span class="ranking-number">08</span><div><strong>Brian Epstein e George Martin se conhecem</strong><small>1962</small></div></li>
-        <li><span class="ranking-number">09</span><div><strong>A morte de Kurt Cobain</strong><small>1994</small></div></li>
-        <li><span class="ranking-number">10</span><div><strong>Primeiro Glastonbury Festival</strong><small>1970</small></div></li>
-      </ol>
-
-      <section class="next-route">
-        <small>Próximos destinos</small>
-        <h2>Dez posições. Dez histórias esperando para ser abertas.</h2>
-        <p>
-          Woodstock, MTV, Sex Pistols, Beatles, Motown e Glastonbury são os próximos portões desta viagem. Cada item deste ranking pode se transformar numa nova exposição da Passport Radio.
-        </p>
-      </section>
-
-      <div class="ritual">3... 2... 1... CLICK!</div>
-    </article>
-  </main>
-
-  <footer>
-    © 2026 Passport Radio · Primeiro a história. Depois a música.
-  </footer>
-<script src="/js/passport-amazon-affiliate.js?v=202608251849" defer></script>
+<body>
+<header class="mast">
+  <p class="wordmark"><span>Passport</span><span>Radio</span></p>
+  <p class="mark">1998 · 2026</p>
+</header>
+<nav class="pubnav" aria-label="Publicação">
+  <a href="/">Home</a>
+  <a href="/noticias.html">Notícias</a>
+  <a href="/editorial.html">Arquivo</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/radio.html">Ouvir</a>
+  <a href="/loja.html">Loja</a>
+</nav>
+<main class="story">
+  <p class="kicker">Arquivo · 13 de julho de 1985</p>
+  <h1>Qual o momento mais marcante da história do rock?</h1>
+  <p class="lede">Entre Woodstock, MTV, Beatles, Motown e Glastonbury, uma pesquisa colocou o Live Aid no topo dos momentos que mudaram a história do rock.</p>
+  <p class="meta">Mr. Nomad · 30/07/2026 · Wembley e JFK · 13/07/1985</p>
+  <figure class="hero">
+    <img src="/images/live-aid-1985.png" alt="Palco e público do Live Aid no Wembley Stadium em 13 de julho de 1985">
+    <figcaption>Wembley Stadium, Londres, 13 de julho de 1985.</figcaption>
+  </figure>
+  <p>Qual o momento mais marcante da história do rock? O momento mais marcante destes 50 anos em que o rock reinou sobre a Terra foi — senhoras e senhores — a realização do Live Aid.</p>
+  <p>Foi em 13 de julho de 1985 que o mundo se reuniu para acompanhar bandas e artistas em apresentações simultâneas na Inglaterra e nos Estados Unidos. O festival beneficente arrecadava recursos para o combate à fome na Etiópia e transformou dois estádios em um único palco transmitido para o planeta.</p>
+  <p>No Brasil, o dia 13 de julho acabaria consagrado como Dia Mundial do Rock, uma tradição diretamente ligada à memória do Live Aid.</p>
+  <p>Um dia. Dois continentes. Um mundo inteiro ouvindo junto.</p>
+  <p>A escolha apareceu em uma pesquisa realizada com duas mil pessoas selecionadas pela rede britânica HMV. O Live Aid foi apontado como o maior momento do rock em seus primeiros 50 anos.</p>
+  <h2>A concorrência foi pesada.</h2>
+  <p>O resultado colocou lado a lado festivais, programas de televisão, gravadoras, encontros decisivos e momentos que atravessaram gerações. O top ten ficou assim:</p>
+  <ol class="ranking">
+    <li><b>01</b><div><strong>Live Aid</strong><br>1985</div></li>
+    <li><b>02</b><div><strong>Surgimento da MTV</strong><br>1981</div></li>
+    <li><b>03</b><div><strong>Festival de Woodstock</strong><br>1969</div></li>
+    <li><b>04</b><div><strong>Entrevista dos Sex Pistols no programa de Bill Grundy</strong><br>1976</div></li>
+    <li><b>05</b><div><strong>Beatles ocupam os cinco primeiros lugares da parada norte-americana</strong><br>1964</div></li>
+    <li><b>06</b><div><strong>Estreia do programa Top of the Pops</strong><br>1964</div></li>
+    <li><b>07</b><div><strong>Nascimento da Motown Records</strong><br>1959</div></li>
+    <li><b>08</b><div><strong>Brian Epstein e George Martin se conhecem</strong><br>1962</div></li>
+    <li><b>09</b><div><strong>A morte de Kurt Cobain</strong><br>1994</div></li>
+    <li><b>10</b><div><strong>Primeiro Glastonbury Festival</strong><br>1970</div></li>
+  </ol>
+  <h2>O dia, música por música</h2>
+  <p>Abaixo está a playlist pública do Live Aid, na ordem em que foi publicada. Cada vídeo é uma performance de 13 de julho de 1985. Londres é o Wembley Stadium. Filadélfia é o JFK Stadium. A Passport conta o que foi aquele número. O leitor aperta play.</p>
+<section class="set">
+<h2>Regimental Band of the Coldstream Guards</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Antes das bandas, a banda militar. Em Wembley, o dia 13 de julho de 1985 começou com a saudação ao estádio, não com um solo.</p>
+<figure class="clip" id="zP120YaAL8w">
+  <h3>Regimental Band of the Coldstream Guards — Royal Salute</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>A banda do Regimento Coldstream Guards abriu o estádio de Londres com a saudacao real, antes de qualquer guitarra. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/zP120YaAL8w" title="Regimental Band of the Coldstream Guards — Royal Salute — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Status Quo</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>O Quo tinha a missão mais simples de Londres: fazer o público pular nos primeiros minutos. Três músicas e o Live Aid deixou de ser cerimônia.</p>
+<figure class="clip" id="eEO6v-YiS00">
+  <h3>Status Quo — Rockin&#x27; All Over The World</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Status Quo foi a primeira banda do dia em Londres e empurrou o estádio com o refrão que virou senha do concerto. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/eEO6v-YiS00" title="Status Quo — Rockin&#x27; All Over The World — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="JTIDmMn1ba0">
+  <h3>Status Quo — Caroline</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Caroline veio em seguida, ainda no mesmo set de abertura, com o boogie que a banda levava desde os anos 70. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/JTIDmMn1ba0" title="Status Quo — Caroline — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="o9po40NhAAQ">
+  <h3>Status Quo — Don’t Waste My Time</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Don&#x27;t Waste My Time fechou a passagem do Quo: três músicas, sem discurso longo, e o dia começou. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/o9po40NhAAQ" title="Status Quo — Don’t Waste My Time — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>The Style Council</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Paul Weller entrou com o Style Council, não com o Jam. O set é soul, terno e coro, no começo da tarde inglesa.</p>
+<figure class="clip" id="db8_i7bloAw">
+  <h3>The Style Council — You’re The Best Thing</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Paul Weller trocou o punk do Jam pelo soul branco e abriu o set com a balada que estava no radio. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/db8_i7bloAw" title="The Style Council — You’re The Best Thing — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="RhPayrSkErA">
+  <h3>The Style Council — The Big Boss Groove</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>The Big Boss Groove é o lado mais de pista do Style Council, entre o soul e o jazz de Wembley. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/RhPayrSkErA" title="The Style Council — The Big Boss Groove — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="0Ie8d-zdpFE">
+  <h3>The Style Council — Internationalists</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Internationalists segurou o groove da banda antes do hino que o público esperava. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/0Ie8d-zdpFE" title="The Style Council — Internationalists — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="F9ZsIWQCPnQ">
+  <h3>The Style Council — Walls Come Tumbling Down!</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Walls Come Tumbling Down fechou o Style Council com o coro político que Weller queria no meio do festival. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/F9ZsIWQCPnQ" title="The Style Council — Walls Come Tumbling Down! — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>The Boomtown Rats</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Geldof passou o ano inteiro no telefone montando o festival. Quando subiu, subiu com a própria banda.</p>
+<figure class="clip" id="FcZW0GFLSdw">
+  <h3>The Boomtown Rats — I Don&#x27;t Like Mondays</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Bob Geldof, um dos organizadores, subiu com o Boomtown Rats e cantou a música que o mundo já associava a ele. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/FcZW0GFLSdw" title="The Boomtown Rats — I Don&#x27;t Like Mondays — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="jpsj_kDXrCM">
+  <h3>The Boomtown Rats — Drag Me Down</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Drag Me Down ficou entre os dois hits do Rats, no miolo do set de Londres. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/jpsj_kDXrCM" title="The Boomtown Rats — Drag Me Down — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="1R66ZUnl9WM">
+  <h3>The Boomtown Rats — Rat Trap</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Rat Trap é o outro clássico da banda, tocado no meio da tarde inglesa. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/1R66ZUnl9WM" title="The Boomtown Rats — Rat Trap — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Adam Ant</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Adam Ant ficou com um número só. Vive Le Rock é a passagem dele por Wembley.</p>
+<figure class="clip" id="ryopKs_0EFU">
+  <h3>Adam Ant — Vive Le Rock</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Adam Ant apareceu com Vive Le Rock, já longe do auge do pirate-pop, mas ainda dono do palco. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/ryopKs_0EFU" title="Adam Ant — Vive Le Rock — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Ultravox</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Midge Ure organizou o lado britânico com Geldof e mesmo assim tocou um set inteiro com o Ultravox.</p>
+<figure class="clip" id="rDRodFGVTNM">
+  <h3>Ultravox — Reap The Wild Wind</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>O Ultravox entrou com Reap the Wild Wind. Midge Ure dividia o dia entre o microfone e a organização do evento. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/rDRodFGVTNM" title="Ultravox — Reap The Wild Wind — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="Eg6SaWUwDXM">
+  <h3>Ultravox — Dancing With Tears In My Eyes</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Dancing with Tears in My Eyes era o single recente, e Londres respondeu no refrão. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/Eg6SaWUwDXM" title="Ultravox — Dancing With Tears In My Eyes — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="CnKGUGCkfXk">
+  <h3>Ultravox — One Small Day</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>One Small Day segurou o set antes de Vienna. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CnKGUGCkfXk" title="Ultravox — One Small Day — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="8JLTC1_Rv4k">
+  <h3>Ultravox — Vienna</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Vienna foi o momento em que o estádio abaixou o volume e cantou com o Ultravox. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/8JLTC1_Rv4k" title="Ultravox — Vienna — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Spandau Ballet</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>O Spandau veio do circuito que tinha redesenhado o pop inglês no começo da década. Em Wembley, o set termina em True.</p>
+<figure class="clip" id="FmRirtA3TcI">
+  <h3>Spandau Ballet — Virgin</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>O Spandau Ballet abriu com Virgin, ainda na fase em que a banda misturava soul e pop de jaqueta. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/FmRirtA3TcI" title="Spandau Ballet — Virgin — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="PX1kr7Oyzw8">
+  <h3>Spandau Ballet — Only When You Leave</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Only When You Leave veio no meio do set, single de Parade. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/PX1kr7Oyzw8" title="Spandau Ballet — Only When You Leave — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="ghhEPM3RWxc">
+  <h3>Spandau Ballet — True</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>True é a balada que o público foi buscar. Tony Hadley segurou a nota e Wembley acompanhou. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/ghhEPM3RWxc" title="Spandau Ballet — True — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Joan Baez</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>A Filadélfia abriu com Joan Baez. Enquanto Londres já estava no pop, o JFK começou numa voz e num hino.</p>
+<figure class="clip" id="jS5RLNnBGIw">
+  <h3>Joan Baez — Amazing Grace</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Do outro lado do Atlântico, Joan Baez abriu a Filadélfia. Amazing Grace foi a primeira voz do JFK. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/jS5RLNnBGIw" title="Joan Baez — Amazing Grace — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Elvis Costello</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Costello tinha espaço para um hit próprio e escolheu uma música dos Beatles. O gesto é o do dia.</p>
+<figure class="clip" id="TTNqjzt9W5Y">
+  <h3>Elvis Costello — All You Need Is Love</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Elvis Costello largou o próprio repertório e cantou All You Need Is Love. O recado era o do dia, não o do disco. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/TTNqjzt9W5Y" title="Elvis Costello — All You Need Is Love — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Nik Kershaw</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Kershaw era figura fixa do Top of the Pops. Quatro músicas em Wembley, todas do repertório que a Inglaterra já cantava.</p>
+<figure class="clip" id="MVZg9RUt3SI">
+  <h3>Nik Kershaw — Wide Boy</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Nik Kershaw, entao um dos nomes do pop britânico, abriu com Wide Boy. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/MVZg9RUt3SI" title="Nik Kershaw — Wide Boy — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="2spwpp_0xis">
+  <h3>Nik Kershaw — Don Quixote</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Don Quixote ficou entre os singles, com o synth-pop que a banda levava na turnê. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/2spwpp_0xis" title="Nik Kershaw — Don Quixote — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="aBvlmkeFNwk">
+  <h3>Nik Kershaw — The Riddle</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>The Riddle era o sucesso do ano anterior e o estádio entrou no refrão. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/aBvlmkeFNwk" title="Nik Kershaw — The Riddle — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="twBU5Xxem7A">
+  <h3>Nik Kershaw — Wouldn&#x27;t It Be Good</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Wouldn&#x27;t It Be Good fechou Kershaw, o hit que tinha estourado em 1984. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/twBU5Xxem7A" title="Nik Kershaw — Wouldn&#x27;t It Be Good — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Black Sabbath</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>A reunião de Ozzy com o Black Sabbath aconteceu na Filadélfia, não em Londres. Três músicas do catálogo antigo.</p>
+<figure class="clip" id="QhJztB8M3bI">
+  <h3>Black Sabbath — Children of the Grave</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Em Filadélfia, o Black Sabbath reencontrou Ozzy. Children of the Grave veio do disco Master of Reality. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/QhJztB8M3bI" title="Black Sabbath — Children of the Grave — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="N0A5yKH2Iaw">
+  <h3>Black Sabbath — Iron Man</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Iron Man é a marcha de 1970, tocada na reunião com Ozzy no JFK. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/N0A5yKH2Iaw" title="Black Sabbath — Iron Man — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="mxqmEeOU9EI">
+  <h3>Black Sabbath — Paranoid</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Paranoid fechou o Sabbath do jeito que a reunião pedia: curta, direta, com Ozzy na frente. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/mxqmEeOU9EI" title="Black Sabbath — Paranoid — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Sade</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Sade foi o intervalo de silêncio de Wembley. Nada de coro de estádio: voz, baixo e a banda de Diamond Life.</p>
+<figure class="clip" id="vf-_ghxIiks">
+  <h3>Sade — Why Can&#x27;t We Live Together</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Sade chegou com o quiet storm. Why Can&#x27;t We Live Together baixou a temperatura de Wembley de propósito. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/vf-_ghxIiks" title="Sade — Why Can&#x27;t We Live Together — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="zwDjJP_l5AY">
+  <h3>Sade — Your Love Is King</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Your Love Is King era o cartão de visitas de Diamond Life. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/zwDjJP_l5AY" title="Sade — Your Love Is King — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="bFgv8Jq4xN0">
+  <h3>Sade — Is It A Crime</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Is It a Crime alongou o set e mostrou a banda como conjunto, não só como voz. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/bFgv8Jq4xN0" title="Sade — Is It A Crime — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Sting</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Sting e Phil Collins se dividiram no mesmo bloco de Londres. Collins tocava e, no fim da tarde, ia atravessar o Atlântico de Concorde para tocar de novo na Filadélfia.</p>
+<figure class="clip" id="Kman7MzhC0g">
+  <h3>Sting — Roxanne</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Sting abriu o bloco com Roxanne e chamou Phil Collins para a bateria no meio do dia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/Kman7MzhC0g" title="Sting — Roxanne — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="5CCtrsUEuJU">
+  <h3>Sting — Driven To Tears</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Driven to Tears veio do repertório do Police, com Collins na bateria. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/5CCtrsUEuJU" title="Sting — Driven To Tears — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Phil Collins</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Collins ainda estava em Wembley nestes registros. In the Air Tonight é o centro da passagem dele pela Inglaterra.</p>
+<figure class="clip" id="7A8NgPVizP4">
+  <h3>Phil Collins — Against All Odds</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Against All Odds é a balada do filme, cantada por Phil Collins ainda em Londres, horas antes do Concorde. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/7A8NgPVizP4" title="Phil Collins — Against All Odds — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Sting</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Sting e Phil Collins se dividiram no mesmo bloco de Londres. Collins tocava e, no fim da tarde, ia atravessar o Atlântico de Concorde para tocar de novo na Filadélfia.</p>
+<figure class="clip" id="CPMvyp8nGK0">
+  <h3>Sting — Message In A Bottle</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Message in a Bottle devolveu o Police ao set, de novo com Collins. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CPMvyp8nGK0" title="Sting — Message In A Bottle — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Phil Collins</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Collins ainda estava em Wembley nestes registros. In the Air Tonight é o centro da passagem dele pela Inglaterra.</p>
+<figure class="clip" id="cCSjuEz7iQk">
+  <h3>Phil Collins — In The Air Tonight</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>In the Air Tonight é o solo de bateria que Collins levou para o meio de Wembley. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/cCSjuEz7iQk" title="Phil Collins — In The Air Tonight — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Phil Collins &amp; Sting</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Os dois dividiram a balada no mesmo bloco, entre as músicas de cada um.</p>
+<figure class="clip" id="Aa2GoBdxTjg">
+  <h3>Phil Collins &amp; Sting — Long, Long Way To Go</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Long, Long Way to Go é a música menos óbvia do encontro: Sting e Collins dividindo uma balada. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/Aa2GoBdxTjg" title="Phil Collins &amp; Sting — Long, Long Way To Go — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Sting / Phil Collins</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Every Breath You Take fechou o encontro dos dois em Wembley.</p>
+<figure class="clip" id="V8fs2nZw2aI">
+  <h3>Sting / Phil Collins — Every Breath You Take</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Every Breath You Take fechou esse bloco. O riff caminhou pelo estádio inteiro. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/V8fs2nZw2aI" title="Sting / Phil Collins — Every Breath You Take — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Rick Springfield</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Springfield tocou no JFK, no bloco americano da tarde. O set termina na música que o rádio dos Estados Unidos não tinha largado.</p>
+<figure class="clip" id="U7ldTnJzfVs">
+  <h3>Rick Springfield — Love Somebody</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Rick Springfield tocou no JFK. Love Somebody era single de 1984. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/U7ldTnJzfVs" title="Rick Springfield — Love Somebody — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="_Ky8G5S_flw">
+  <h3>Rick Springfield — State Of The Heart</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>State of the Heart veio no meio do set americano de Springfield. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/_Ky8G5S_flw" title="Rick Springfield — State Of The Heart — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="t5Sw2j0oqz4">
+  <h3>Rick Springfield — Human Touch</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Human Touch segurou o pop de radio antes do hit que o JFK queria ouvir. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/t5Sw2j0oqz4" title="Rick Springfield — Human Touch — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="Y9zVOhQCYTE">
+  <h3>Rick Springfield — Jessie&#x27;s Girl</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Jessie Girl é a música pela qual Springfield atravessou o dia. O coro americano sabia a letra. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/Y9zVOhQCYTE" title="Rick Springfield — Jessie&#x27;s Girl — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>REO Speedwagon</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>O REO chegou à Filadélfia com a balada do momento e com o rock de arena antigo, lado a lado.</p>
+<figure class="clip" id="mnSgEAQ-x-M">
+  <h3>REO Speedwagon — Can&#x27;t Fight This Feeling</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>O REO Speedwagon entrou na Filadélfia com a balada que dominava o ano. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/mnSgEAQ-x-M" title="REO Speedwagon — Can&#x27;t Fight This Feeling — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="YsvXe0vKmxA">
+  <h3>REO Speedwagon — Roll With The Changes</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Roll with the Changes puxou o set de volta para o rock de arena dos anos 70. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/YsvXe0vKmxA" title="REO Speedwagon — Roll With The Changes — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Howard Jones</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Jones fez o oposto de um set de hits. Hide and Seek, quase solo, segurou Wembley num piano.</p>
+<figure class="clip" id="mC-XP_xkzmw">
+  <h3>Howard Jones — Hide And Seek</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Howard Jones sentou ao piano em Wembley e fez Hide and Seek quase sem banda. O estádio ficou em volta da voz. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/mC-XP_xkzmw" title="Howard Jones — Hide And Seek — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Bryan Ferry</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Ferry levou o espírito do Roxy Music sem transformar o set num revival. Slave to Love e, no meio, Lennon.</p>
+<figure class="clip" id="FxXw8gZIfc4">
+  <h3>Bryan Ferry — Slave To Love</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Bryan Ferry abriu com Slave to Love, o single novo, ainda com o figurino do Roxy Music. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/FxXw8gZIfc4" title="Bryan Ferry — Slave To Love — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="K5HhsE7nCNM">
+  <h3>Bryan Ferry — Jealous Guy</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Jealous Guy, de John Lennon, foi o centro do set de Ferry. Wembley cantou junto. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/K5HhsE7nCNM" title="Bryan Ferry — Jealous Guy — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Crosby, Stills &amp; Nash</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>O trio tocou na Filadélfia. Três músicas do catálogo que aquela geração já sabia de cor.</p>
+<figure class="clip" id="JMIPuZXUwy4">
+  <h3>Crosby, Stills &amp; Nash — Southern Cross</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Crosby, Stills e Nash tocaram na Filadélfia. Southern Cross abriu esse reencontro. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/JMIPuZXUwy4" title="Crosby, Stills &amp; Nash — Southern Cross — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="pH3nROuAY10">
+  <h3>Crosby, Stills &amp; Nash — Teach Your Children</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Teach Your Children é o coro de 1970, cantado no JFK quinze anos depois. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/pH3nROuAY10" title="Crosby, Stills &amp; Nash — Teach Your Children — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="P1eOrviD5nw">
+  <h3>Crosby, Stills &amp; Nash — Suite: Judy Blue Eyes</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Suite Judy Blue Eyes alongou o trio no formato em que eles ficaram famosos. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/P1eOrviD5nw" title="Crosby, Stills &amp; Nash — Suite: Judy Blue Eyes — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Judas Priest</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>O Priest foi o metal declarado do JFK. Rob Halford à frente, três músicas, sem discurso.</p>
+<figure class="clip" id="CmVqIgKOgEY">
+  <h3>Judas Priest — Living After Midnight</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>O Judas Priest levou o metal para o JFK. Living After Midnight abriu o set no meio da tarde americana. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CmVqIgKOgEY" title="Judas Priest — Living After Midnight — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="2Bd8m4ONod0">
+  <h3>Judas Priest — The Green Manalishi (With The Two-Pronged Crown)</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>The Green Manalishi, o tema de Peter Green que o Priest tinha tornado próprio, ficou no meio do set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/2Bd8m4ONod0" title="Judas Priest — The Green Manalishi (With The Two-Pronged Crown) — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="ihP8ckhqgpI">
+  <h3>Judas Priest — You&#x27;ve Got Another Thing Comin&#x27;</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>You&#x27;ve Got Another Thing Comin&#x27; é o hit de Screaming for Vengeance e fechou o Priest com o coro do estádio. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/ihP8ckhqgpI" title="Judas Priest — You&#x27;ve Got Another Thing Comin&#x27; — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Paul Young</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Young era uma das vozes do pop britânico de 1985. Em Wembley, dividiu uma música com Alison Moyet.</p>
+<figure class="clip" id="gwdoLW7sv3Q">
+  <h3>Paul Young — Come Back And Stay</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>De volta a Londres, Paul Young abriu com Come Back and Stay. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/gwdoLW7sv3Q" title="Paul Young — Come Back And Stay — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Paul Young / Alison Moyet</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Moyet entrou como convidada e saiu no dueto. Não houve set separado.</p>
+<figure class="clip" id="3Do6USpNICI">
+  <h3>Paul Young / Alison Moyet — That&#x27;s The Way Love Is</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Alison Moyet subiu para That&#x27;s the Way Love Is. As duas vozes do pop britânico dividiram o mesmo palco. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/3Do6USpNICI" title="Paul Young / Alison Moyet — That&#x27;s The Way Love Is — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Paul Young</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Young era uma das vozes do pop britânico de 1985. Em Wembley, dividiu uma música com Alison Moyet.</p>
+<figure class="clip" id="p9Rv619Cp8M">
+  <h3>Paul Young — Everytime You Go Away</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Everytime You Go Away era o hit americano de Young e fechou o set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/p9Rv619Cp8M" title="Paul Young — Everytime You Go Away — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>U2</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>O U2 ainda não era a banda das turnês gigantes. Em Wembley eram quatro músicos, e o set se partiu quando Bono desceu à plateia em Bad.</p>
+<figure class="clip" id="SCKcULlEydo">
+  <h3>U2 — Sunday Bloody Sunday</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>O U2 entrou com Sunday Bloody Sunday. Bono ainda era o da guerra na Irlanda, não o das turnês enormes que viriam. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/SCKcULlEydo" title="U2 — Sunday Bloody Sunday — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="HvBgRSSlVBA">
+  <h3>U2 — Bad</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Bad se esticou quando Bono desceu até a plateia. O relógio do festival estourou ali, e o resto do set foi cortado. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/HvBgRSSlVBA" title="U2 — Bad — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>The Beach Boys</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Os Beach Boys levaram a Califórnia para o JFK. Quatro números, do hit de praia ao Pet Sounds.</p>
+<figure class="clip" id="6lPYk65RaJw">
+  <h3>The Beach Boys — California Girls / Help Me, Rhonda</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Os Beach Boys abriram o bloco da Califórnia no JFK emendando Califórnia Girls e Help Me, Rhonda. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/6lPYk65RaJw" title="The Beach Boys — California Girls / Help Me, Rhonda — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="yZmpIQPeeO0">
+  <h3>The Beach Boys — Wouldn&#x27;t It Be Nice</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Wouldn&#x27;t It Be Nice veio do Pet Sounds, no meio do set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/yZmpIQPeeO0" title="The Beach Boys — Wouldn&#x27;t It Be Nice — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="gAT6UD8x-y0">
+  <h3>The Beach Boys — Good Vibrations</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Good Vibrations é a peça de estúdio que eles reconstruíram ao vivo na Filadélfia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/gAT6UD8x-y0" title="The Beach Boys — Good Vibrations — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="Cbe9P0TEXlU">
+  <h3>The Beach Boys — Surfin&#x27; USA</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Surfin USA fechou os Beach Boys no coro mais antigo da praia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/Cbe9P0TEXlU" title="The Beach Boys — Surfin&#x27; USA — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Dire Straits / Sting</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Knopfler chamou Sting, que já tinha passado pelo palco, para o single que estava no topo.</p>
+<figure class="clip" id="JcqhvPNiJzo">
+  <h3>Dire Straits / Sting — Money For Nothing</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Dire Straits chamou Sting para Money for Nothing. A música tinha meses de vida e já era o maior single da banda. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/JcqhvPNiJzo" title="Dire Straits / Sting — Money For Nothing — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Dire Straits</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Sultans of Swing ficou como o outro lado do mesmo set: a banda de palco pequeno, sem o convidado.</p>
+<figure class="clip" id="JVZTP_kX5BE">
+  <h3>Dire Straits — Sultans Of Swing</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Sultans of Swing mostrou o outro Dire Straits, o do clube, no meio de Wembley. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/JVZTP_kX5BE" title="Dire Straits — Sultans Of Swing — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>George Thorogood &amp; Bo Diddley</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Thorogood abriu o blues do JFK ao lado de Bo Diddley. Who Do You Love? é dos dois.</p>
+<figure class="clip" id="oXMgx92muQo">
+  <h3>George Thorogood &amp; Bo Diddley — Who Do You Love?</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>No JFK, George Thorogood dividiu Who Do You Love com Bo Diddley, o homem que tinha escrito o ritmo. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/oXMgx92muQo" title="George Thorogood &amp; Bo Diddley — Who Do You Love? — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>George Thorogood &amp; The Destroyers</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>O resto do set seguiu com os Destroyers, no blues elétrico.</p>
+<figure class="clip" id="eTLrjS_qTHs">
+  <h3>George Thorogood &amp; The Destroyers — The Sky Is Crying</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>The Sky Is Crying é o blues de Elmore James, no set dos Destroyers. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/eTLrjS_qTHs" title="George Thorogood &amp; The Destroyers — The Sky Is Crying — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="9jVs4XjXBUw">
+  <h3>George Thorogood &amp; The Destroyers — Madison Blues</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Madison Blues fechou Thorogood ainda no blues elétrico. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/9jVs4XjXBUw" title="George Thorogood &amp; The Destroyers — Madison Blues — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Queen</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Vinte minutos em Wembley. Seis músicas. É o set que a pesquisa da HMV, no começo desta matéria, trata como o centro do dia.</p>
+<figure class="clip" id="vbvyNnw8Qjg">
+  <h3>Queen — Bohemian Rhapsody</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>O Queen abriu com a ópera de Bohemian Rhapsody. Freddie entrou e o estádio já estava de pé. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/vbvyNnw8Qjg" title="Queen — Bohemian Rhapsody — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="o-0ygW-B_gI">
+  <h3>Queen — Radio Ga Ga</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Radio Ga Ga virou o coro de mãos. É o plano que Freddie ensaiou e Wembley executou por inteiro. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/o-0ygW-B_gI" title="Queen — Radio Ga Ga — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="D5bzrb-v9Y0">
+  <h3>Queen — Hammer To Fall</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Hammer to Fall devolveu o rock de The Works depois das duas primeiras cenas. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/D5bzrb-v9Y0" title="Queen — Hammer To Fall — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="0ORIoUohBUc">
+  <h3>Queen — Crazy Little Thing Called Love</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Crazy Little Thing Called Love é o rockabilly de 1979, curto, no meio do set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/0ORIoUohBUc" title="Queen — Crazy Little Thing Called Love — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="XvKkIttJLcc">
+  <h3>Queen — We Will Rock You</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>We Will Rock You baixou o andamento para o batido do estádio. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/XvKkIttJLcc" title="Queen — We Will Rock You — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="FP808MiJUcM">
+  <h3>Queen — We Are The Champions</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>We Are the Champions fechou o Queen. O set durou pouco mais de vinte minutos e ficou como o centro do dia em Londres. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/FP808MiJUcM" title="Queen — We Are The Champions — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Simple Minds</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Simple Minds tocou na Filadélfia. Don&#x27;t You (Forget About Me) era o single do ano, e o set não aconteceu em Londres.</p>
+<figure class="clip" id="YC9GwscfgIQ">
+  <h3>Simple Minds — Ghost Dancing</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Simple Minds tocou na Filadélfia, não em Londres. Ghost Dancing abriu o set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/YC9GwscfgIQ" title="Simple Minds — Ghost Dancing — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="vPPMr8kGWLI">
+  <h3>Simple Minds — Don&#x27;t You (Forget About Me)</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Don&#x27;t You (Forget About Me) era o single do filme The Breakfast Club e o motivo de o JFK estar esperando a banda. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/vPPMr8kGWLI" title="Simple Minds — Don&#x27;t You (Forget About Me) — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="W54tGdSrl4g">
+  <h3>Simple Minds — Promised You A Miracle</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Promised You a Miracle veio com um comentário de Jim Kerr por cima da imagem. Ainda assim é a performance do dia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/W54tGdSrl4g" title="Simple Minds — Promised You A Miracle — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>David Bowie</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Bowie fechou um bloco inteiro de Wembley em quatro músicas e parou em Heroes.</p>
+<figure class="clip" id="dsnTZHQZzN4">
+  <h3>David Bowie — TVC 15</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>David Bowie abriu em Wembley com TVC 15, uma escolha de fã, não de single óbvio. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/dsnTZHQZzN4" title="David Bowie — TVC 15 — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="00rP_mlZYx0">
+  <h3>David Bowie — Rebel Rebel</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Rebel Rebel devolveu o glam de 1974 para o meio da tarde. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/00rP_mlZYx0" title="David Bowie — Rebel Rebel — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="jLMUZahN7NU">
+  <h3>David Bowie — Modern Love</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Modern Love acelerou o set antes de Heroes. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/jLMUZahN7NU" title="David Bowie — Modern Love — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="JFHC6t13hi0">
+  <h3>David Bowie — Heroes</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Heroes foi o centro de Bowie. No fim da música ele falou das doacoes e segurou o estádio. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/JFHC6t13hi0" title="David Bowie — Heroes — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>The Pretenders</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Chrissie Hynde levou as Pretenders ao JFK. Cinco músicas, do primeiro disco até Learning to Crawl.</p>
+<figure class="clip" id="CDYX0RiP9DQ">
+  <h3>The Pretenders — Time The Avenger</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>As Pretenders tocaram no JFK. Time the Avenger abriu longe do hit mais conhecido. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CDYX0RiP9DQ" title="The Pretenders — Time The Avenger — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="IPDrzyp6OXE">
+  <h3>The Pretenders — Message Of Love</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Message of Love veio do disco Pretenders II. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/IPDrzyp6OXE" title="The Pretenders — Message Of Love — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="KCwwod4v1R8">
+  <h3>The Pretenders — Stop Your Sobbing</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Stop Your Sobbing é o tema de Ray Davies que Chrissie Hynde tinha gravado no primeiro disco. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/KCwwod4v1R8" title="The Pretenders — Stop Your Sobbing — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="h8ND6xhtbAg">
+  <h3>The Pretenders — Back On The Chain Gang</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Back on the Chain Gang é a música de 1982 e o coro que a Filadélfia sabia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/h8ND6xhtbAg" title="The Pretenders — Back On The Chain Gang — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="cBfvwRQ3ec4">
+  <h3>The Pretenders — Middle Of The Road</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Middle of the Road fechou as Pretenders no ritmo de Learning to Crawl. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/cBfvwRQ3ec4" title="The Pretenders — Middle Of The Road — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>The Who</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Townshend, Daltrey e Entwistle juntos de novo em Wembley. O set é curto e vai de My Generation até Won&#x27;t Get Fooled Again.</p>
+<figure class="clip" id="oMY-wjkTTkM">
+  <h3>The Who — My Generation</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>O Who subiu em Wembley na reunião de palco. My Generation abriu o set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/oMY-wjkTTkM" title="The Who — My Generation — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="Dm1a2mbKZ5o">
+  <h3>The Who — Pinball Wizard RARE COMPLETE AUDIO</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Pinball Wizard veio quase inteiro neste registro, com o teatro de Tommy no meio do festival. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/Dm1a2mbKZ5o" title="The Who — Pinball Wizard RARE COMPLETE AUDIO — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="PMxwPOoZm_c">
+  <h3>The Who — Love Reign O&#x27;er Me</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Love, Reign O&#x27;er Me segurou o Who no lado mais longo de Quadrophenia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/PMxwPOoZm_c" title="The Who — Love Reign O&#x27;er Me — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="RDVdomcsjBA">
+  <h3>The Who — Won&#x27;t Get Fooled Again</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Won&#x27;t Get Fooled Again fechou o Who com o grito e o sintetizador que o estádio esperava. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/RDVdomcsjBA" title="The Who — Won&#x27;t Get Fooled Again — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Santana &amp; Pat Metheny</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Santana e Pat Metheny dividiram o fim de tarde da Filadélfia. Três trechos, mais encontro de palco do que hit de rádio.</p>
+<figure class="clip" id="T99OrwyqWHI">
+  <h3>Santana &amp; Pat Metheny — Brotherhood/Primera Invasion</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Santana tocou no JFK com Pat Metheny. Brotherhood e Primera Invasion abriram o encontro. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/T99OrwyqWHI" title="Santana &amp; Pat Metheny — Brotherhood/Primera Invasion — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="CQpzb259FoQ">
+  <h3>Santana &amp; Pat Metheny — Open Invitation</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Open Invitation segurou o blues latino no meio do set. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CQpzb259FoQ" title="Santana &amp; Pat Metheny — Open Invitation — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="gGxCFwRkKQU">
+  <h3>Santana &amp; Pat Metheny — By The Pool/Right Now</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>By the Pool e Right Now fecharam Santana e Metheny. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/gGxCFwRkKQU" title="Santana &amp; Pat Metheny — By The Pool/Right Now — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Elton John</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Elton segurou o crepúsculo de Wembley. O set abre no hit de 1983 e caminha até os duetos.</p>
+<figure class="clip" id="toOkQvL6kgY">
+  <h3>Elton John — I&#x27;m Still Standing</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Elton John assumiu o fim de Wembley. I&#x27;m Still Standing abriu o set que ia durar até o anoitecer inglês. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/toOkQvL6kgY" title="Elton John — I&#x27;m Still Standing — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="SzMaWLbLnG8">
+  <h3>Elton John — Bennie And The Jets</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Bennie and the Jets veio de Goodbye Yellow Brick Road, no meio do bloco. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/SzMaWLbLnG8" title="Elton John — Bennie And The Jets — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="DMBhYnUKr-c">
+  <h3>Elton John — Rocket Man</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Rocket Man baixou as luzes antes dos duetos. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/DMBhYnUKr-c" title="Elton John — Rocket Man — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+<figure class="clip" id="LLrJvlp9pzg">
+  <h3>Elton John — Can I Get A Witness</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Can I Get a Witness, o tema de Holland-Dozier-Holland, apareceu no piano de Elton. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/LLrJvlp9pzg" title="Elton John — Can I Get A Witness — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Elton John / Kiki Dee</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>Kiki Dee voltou ao dueto de 1976 no meio do set de Elton.</p>
+<figure class="clip" id="8EwwYtA4WJ8">
+  <h3>Elton John / Kiki Dee — Don&#x27;t Go Breaking My Heart</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>Kiki Dee voltou para Don&#x27;t Go Breaking My Heart, o dueto de 1976. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/8EwwYtA4WJ8" title="Elton John / Kiki Dee — Don&#x27;t Go Breaking My Heart — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Elton John / George Michael</h2>
+<p class="where">Wembley Stadium, Londres · 13/07/1985</p>
+<p>George Michael tinha 22 anos e subiu para uma música de Elton. O dueto ficou maior do que o single original.</p>
+<figure class="clip" id="ECN_wgw55lc">
+  <h3>Elton John / George Michael — Don’t Let The Sun Go Down On Me</h3>
+  <p class="where">Wembley · 13/07/1985</p>
+  <p>George Michael subiu para Don&#x27;t Let the Sun Go Down on Me. Foi o dueto que fechou a parte inglesa antes dos discursos finais. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/ECN_wgw55lc" title="Elton John / George Michael — Don’t Let The Sun Go Down On Me — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Ashford &amp; Simpson</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Nick Ashford e Valerie Simpson fecharam um bloco do JFK com o single do ano.</p>
+<figure class="clip" id="iNchS9J3-3M">
+  <h3>Ashford &amp; Simpson — Solid</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Ashford e Simpson levaram Solid para o JFK, o single que estava no radio americano naquele ano. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/iNchS9J3-3M" title="Ashford &amp; Simpson — Solid — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<section class="set">
+<h2>Ashford &amp; Simpson / Teddy Pendergrass</h2>
+<p class="where">JFK Stadium, Filadélfia · 13/07/1985</p>
+<p>Pendergrass cantou com eles. A cena é lenta de propósito.</p>
+<figure class="clip" id="A1QnhENzXDk">
+  <h3>Ashford &amp; Simpson / Teddy Pendergrass — Reach Out And Touch</h3>
+  <p class="where">JFK · 13/07/1985</p>
+  <p>Teddy Pendergrass, na cadeira de rodas desde 1982, cantou Reach Out and Touch com Ashford e Simpson. Foi uma das cenas mais quietas da Filadélfia. A performance está abaixo, como entrou na playlist.</p>
+  <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/A1QnhENzXDk" title="Ashford &amp; Simpson / Teddy Pendergrass — Reach Out And Touch — Live Aid 13/07/1985" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</figure>
+</section>
+<h2>Playlists apontadas no fim da lista</h2>
+<p>Os dez últimos itens da playlist não são performances do Live Aid. O YouTube os devolve como outras playlists, de coletâneas e de nomes alheios ao dia 13 de julho de 1985. Não há videoId para incorporar. Ficam citados, não embutidos.</p>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLFufLQ1fai4mFxg-yEFflaDefMDnTzd5H">80s clssics</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL3_zAjBBERYd-BQKLY6RUo-Ii0nXYdXG4">Rock clásico 70 y 80</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLEJxmYVinRs7Z7ZcQ8vf53QgqZZdzAiM1">90s tunes</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLZrQ7SgLbS1aaIrjExCEDN-cCncEvHAha">TOSHIYUKI BEST</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLSnCaKuqiB2oBFNY9htul-PXnqiP1ou30">80s</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLDG4eKjzbdN4RAJJopTG4WfMdNb-iRg7F">80s/90s mix</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL0OGrOBGsTft35qOi49SBiEaEYKlQOU6g">No 1&#x27;s of the 80&#x27;s</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLWPQmiiMLdQRdjgGZ1kh0gCvdZTS3354x">Anos 80 internacional</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLvMDnZTComxFL3apab-8CLcwxDm5nJwJ0">Light stars</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL7FjpbNz5_MZCtsAdHVPaWAUZbolXaOyT">Stewart</a></li>
+</ul>
+<p>Vídeos indisponíveis que o YouTube esconde da playlist pública não vêm com título nem id. A página só avisa que estão ocultos. Não há como nomeá-los daqui.</p>
+<p>3... 2... 1... CLICK!</p>
+</main>
+<footer>
+  <p>© 2026 Passport Radio · Primeiro a história. Depois a música.</p>
+  <p><a href="/">Home</a> · <a href="/noticias.html">Notícias</a> · <a href="/editorial.html">Arquivo</a> · <a href="/blog.html">Blog</a></p>
+</footer>
 </body>
 </html>
