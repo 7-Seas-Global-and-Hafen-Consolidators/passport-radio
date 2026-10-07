@@ -4,6 +4,8 @@
   const $ = id => document.getElementById(id);
   const search=$('videos-search'), collection=$('videos-collection'), type=$('videos-type');
   const grid=$('videos-grid'), pagination=$('videos-pagination'), status=$('videos-status');
+  const collectionNav=$('videos-collections-nav'), heading=$('videos-heading');
+  let editorial=[], memberships=new Map(), featuredIds=[];
   const SIZE=24, norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   let catalogue=[], page=1, player=null, current=null, generation=0, bus=null, owned=false, revoked=false;
   // A registered peer of the existing Bus, not another Bus or audio engine.
@@ -11,8 +13,10 @@
   function register(){if(window.PassportBus&&bus!==window.PassportBus){bus=window.PassportBus;bus.register(peer);}}
   function claim(){register();window.PassportContinuity?.pause();bus?.claim(peer);owned=true;revoked=false;}
   function dateText(v){if(!v.showDate)return '';if(/^\d{4}$/.test(v.showDate))return v.showDate;return v.showDate.split('-').reverse().join('.');}
-  const results=()=>catalogue.filter(v=>(!search.value||norm(v.artist).includes(norm(search.value)))&&(!collection.value||v.collections.includes(collection.value))&&(!type.value||v.type===type.value)).sort((a,b)=>collection.value?(a.collectionOrder?.[collection.value]??0)-(b.collectionOrder?.[collection.value]??0):0);
+  const results=()=>catalogue.filter(v=>(!search.value||norm(v.artist).includes(norm(search.value)))&&(!collection.value||(memberships.get(collection.value)?.has(v.id)||v.collections.includes(collection.value)))&&(!type.value||v.type===type.value)).sort((a,b)=>collection.value?(a.collectionOrder?.[({bbc:'sessions-archive',wacken:'festival-archive',midnight:'tv-archive'})[collection.value]||collection.value]??0)-(b.collectionOrder?.[({bbc:'sessions-archive',wacken:'festival-archive',midnight:'tv-archive'})[collection.value]||collection.value]??0):0);
   function render(scroll=false){
+    heading.textContent=collection.selectedOptions[0].textContent==='Todas'?'Catálogo completo':collection.selectedOptions[0].textContent;
+    for(const button of collectionNav.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.collection===collection.value));
     const items=results(), total=Math.ceil(items.length/SIZE); page=Math.max(1,Math.min(page,total||1));
     close();grid.replaceChildren();pagination.replaceChildren();status.textContent=items.length?'':'Nenhum resultado.';
     for(const v of items.slice((page-1)*SIZE,page*SIZE)){
@@ -56,6 +60,17 @@
   window.addEventListener('pagehide',()=>{bus?.unregister(peer);close();});
   register();
   fetch('/data/passport-videos.json').then(r=>{if(!r.ok)throw Error('catalogue');return r.json();}).then(data=>{
-    catalogue=data.videos;for(const c of data.collections){const option=document.createElement('option');option.value=c.id;option.textContent=c.label;collection.append(option);}render();
+    catalogue=data.videos;
+    return fetch('/data/passport-videos-collections.json').then(r=>{if(!r.ok)throw Error('collections');return r.json();}).then(config=>{
+      editorial=config.collections;featuredIds=config.featuredIds;
+      // Reference original records; never clone or mutate the catalogue or playlist positions.
+      for(const c of editorial){const artists=new Set((c.artists||[]).map(norm));memberships.set(c.id,new Set(catalogue.filter(v=>(c.fromCollections||[]).some(id=>v.collections.includes(id))||artists.has(norm(v.artist))||v.artist.split(/\s+\+\s+|\s+and\s+/).some(a=>artists.has(norm(a)))).map(v=>v.id)));}
+      const known=new Set(editorial.filter(c=>c.fromCollections).flatMap(c=>[...memberships.get(c.id)]));for(const v of catalogue)if(!known.has(v.id))memberships.get('passport').add(v.id);
+      // Stable promotion on the general landing only; source playlist order remains intact.
+      const pinned=catalogue.filter(v=>featuredIds.includes(v.id)),rest=catalogue.filter(v=>!featuredIds.includes(v.id));catalogue=[...pinned,...rest];
+      for(const c of [...editorial,...data.collections]){const option=document.createElement('option');option.value=c.id;option.textContent=c.label;collection.append(option);}
+      for(const c of [{id:'',label:'Catálogo completo'},...editorial]){const button=document.createElement('button');button.type='button';button.dataset.collection=c.id;button.textContent=c.label;button.addEventListener('click',()=>{collection.value=c.id;page=1;render();});collectionNav.append(button);}
+      render();
+    });
   }).catch(()=>{status.textContent='Não foi possível carregar o catálogo. Recarregue a página para tentar novamente.';});
 })();
