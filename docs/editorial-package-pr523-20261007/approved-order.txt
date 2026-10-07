@@ -1,0 +1,1930 @@
+DOSSIÊ AUTOSSUFICIENTE — PR #523 — PASSPORT RADIO
+
+ORDEM PARA A 🐄
+
+Este arquivo é a FONTE COMPLETA desta execução. NÃO existe “texto no
+outro chat”, “material entregue antes”, “texto salvo mentalmente” ou
+qualquer dependência externa. Tudo que precisa ser consultado para
+recuperar os textos aprovados está anexado abaixo neste mesmo dossiê.
+
+ESTADO OPERACIONAL
+
+-   Trabalhar EXCLUSIVAMENTE na PR #523.
+-   Branch existente: feat/editorial-alice-nenhum-20261007.
+-   Alice Cooper e Nenhum de Nós já estão implementados na PR:
+    PRESERVAR, NÃO REFAZER.
+-   Continuar na mesma branch/PR.
+-   NÃO abrir PR nova.
+-   NÃO fazer merge.
+-   Ao terminar: commit + push na #523, QA completo e parar OPEN/DRAFT
+    para Mr. Nomad conferir.
+
+REGRA MAIS IMPORTANTE DESTA EXECUÇÃO
+
+Para cada matéria que já possui TEXTO FINAL/APROVADO no ARQUIVO-FONTE
+abaixo: 1. localizar a ÚLTIMA versão integral aprovada; 2. usar o texto
+integral, não um resumo; 3. preservar título, subtítulo, corpo, humor,
+seções, chamadas, links e vídeos; 4. ignorar versões anteriores que
+tenham sido corrigidas depois; 5. NÃO reescrever, “melhorar”, condensar
+ou completar por conta própria; 6. quando houver correção posterior
+explícita, ela prevalece sobre a versão anterior.
+
+CORREÇÕES FINAIS QUE PREVALECEM
+
+-   Soundgarden: usar É ASSIM QUE ESSA DROGA CONTINUA VIVA!; não usar a
+    versão anterior com palavrão vulgar.
+-   Anos 80 Volume 2: usar SOMENTE a versão final aprovada, sem CLICK,
+    sem 3... 2... 1..., sem Professor Girafales e sem aula/anatomia de
+    instrumentos.
+-   Publicação editorial: “merda”, “cacete” e “droga” podem aparecer
+    conforme os textos aprovados; palavrões muito vulgares usados apenas
+    na conversa de bastidor não devem ser introduzidos no texto público.
+-   BLACKPINK/farpas: nunca publicar o nome interno “Joãozinho Pizza”;
+    🍕 é farpa indireta, sem nome/link/publicidade de concorrente.
+-   PLOC e Anos 80 Volume 2: atualizar as páginas EXISTENTES, não
+    duplicar. Preservar todo o acervo de vídeos existente. A
+    chamada/listagem de cada uma deve usar como capa A MESMA FOTO
+    PRINCIPAL que já existe dentro da própria matéria.
+
+FOTOS
+
+Mr. Nomad fornecerá/forneceu os arquivos de foto junto da execução. Usar
+EXATAMENTE os arquivos recebidos para cada matéria. Não buscar
+substitutas, não gerar imagem, não trocar por thumbnail, não inventar
+crédito/legenda. Nas duas matérias antigas, reaproveitar a foto
+principal existente como capa da chamada.
+
+YOUTUBE
+
+Todos os URLs/IDs fornecidos nos textos e na ordem são exatos. Não
+substituir vídeo, não mudar ID, não alterar ordem e não introduzir
+autoplay.
+
+SISTEMAS RADIOATIVOS
+
+NÃO tocar em player, Bus, mutex, interlock, streams, URLs de stream,
+motores, catálogo de rádios, Podcast/Broadcast, Videoteca ou arquitetura
+de áudio. Apenas aderir à continuidade já existente. Bebê que entrou
+tocando sai tocando; pausado permanece pausado.
+
+COMO LER O MATERIAL ABAIXO
+
+A seção “ORDEM TÉCNICA” contém escopo, regras, vídeos, SEO e QA. A seção
+“ARQUIVO-FONTE DOS TEXTOS” contém a conversa/material onde estão os
+corpos integrais aprovados. Quando a ORDEM TÉCNICA disser apenas “título
+aprovado”, “preservar fatos” ou “texto integral está no material”, NÃO
+inventar: localizar a versão integral correspondente no ARQUIVO-FONTE e
+implementá-la. Se houver múltiplas versões, usar a última versão que
+Mr. Nomad aprovou explicitamente (“ficou show”, “adorei”, “salva”, “vai
+salvando”, equivalente) e aplicar qualquer correção posterior explícita.
+
+------------------------------------------------------------------------
+
+ORDEM TÉCNICA E CHECKLIST
+
+AHAHAHAHA AGORA PEGUEI A TONELADA INTEIRA, MR. NOMAD. 🐄💥📚
+
+E fui conferir a vaca antes de escrever qualquer merda: PR #523 está
+OPEN + DRAFT + SEM MERGE, exatamente como você falou. Branch
+feat/editorial-alice-nenhum-20261007, HEAD atual
+1a7fe6daf1eea58c38b7ae7ecdbb315188b44dec. Ela já contém Alice Cooper +
+Nenhum de Nós completos, fotos, feed e QA. Portanto NÃO REFAZER esses
+dois; continuar na própria #523, em cima do que já está lá.
+
+E o anexo foi lido inteiro: 1.717 linhas. A versão aprovada de Anos 80
+está lá de verdade, inclusive o fechamento aprovado, e o Kurt está
+integral também. A regra do Girafales também ficou cristalina: sem
+CLICK, contagem regressiva, anatomia de instrumento ou aula de “como
+ouvir”. Texto colado Texto colado
+
+🐄 ORDEM ÚNICA — CONTINUAR EXCLUSIVAMENTE A PR #523 — PACOTÃO EDITORIAL
+
+PR EXISTENTE: #523
+BRANCH EXISTENTE: feat/editorial-alice-nenhum-20261007
+HEAD CONFERIDO ANTES DESTA ORDEM:
+1a7fe6daf1eea58c38b7ae7ecdbb315188b44dec
+
+🚨 NÃO ABRA OUTRA PR
+
+Continue EXCLUSIVAMENTE na PR #523.
+
+Alice Cooper e Nenhum de Nós JÁ ESTÃO IMPLEMENTADOS E APROVADOS NESSA
+PR.
+
+NÃO REFAÇA.
+
+NÃO REESCREVA.
+
+NÃO REMOVA.
+
+NÃO SUBSTITUA.
+
+NÃO RECOMECE A BRANCH.
+
+Preserve integralmente o que já existe na #523 e ACRESCENTE O RESTANTE
+DESTE PACOTE.
+
+Mr. Nomad enviará as fotografias correspondentes junto desta ordem.
+
+------------------------------------------------------------------------
+
+O PACOTE FINAL DA #523
+
+A PR deverá terminar contendo:
+
+1.  Alice Cooper — JÁ FEITO, PRESERVAR.
+2.  Nenhum de Nós — 40 anos — JÁ FEITO, PRESERVAR.
+3.  Ella Langley — Choosin’ Texas
+4.  Noel Gallagher — os dez desafetos
+5.  Soundgarden / Suns of Soundgarden
+6.  Crypta — A Portrait of Decay
+7.  Racionais MC’s — 1000 Trutas, 1000 Tretas
+8.  Björk — 15 anos de Biophilia
+9.  BLACKPINK — BOOMBAYAH / 1,9 bilhão
+10. John Lennon / Paul McCartney — “completo idiota”
+11. Festa PLOC — REFORMA TOTAL DA MATÉRIA EXISTENTE
+12. Anos 80 Volume 2 — REFORMA TOTAL DA MATÉRIA EXISTENTE
+13. Kurt Cobain / John Lennon / Paul McCartney
+
+------------------------------------------------------------------------
+
+🚨 REGRA EDITORIAL ABSOLUTA
+
+Os textos aprovados NÃO DEVEM SER REESCRITOS PELA IMPLEMENTAÇÃO.
+
+Não “melhore”.
+
+Não resuma.
+
+Não transforme em release.
+
+Não acrescente fatos.
+
+Não crie aula de música.
+
+Não explique instrumento.
+
+Não crie CLICK.
+
+Não crie 3... 2... 1....
+
+Não coloque “preste atenção no baixo”.
+
+Não coloque “virada de bateria”.
+
+Não coloque “sintetizador”.
+
+Não coloque LIVE DNA/MUSIC DNA/anatomia da música.
+
+A reforma de Anos 80 já nasceu justamente da remoção dessa doença
+editorial: música deve provocar gente, memória, história, humor,
+vergonha, saudade, descoberta, não uma aula de instrumento. Texto colado
+
+------------------------------------------------------------------------
+
+📸 FOTOS — REGRA PARA TODO O PACOTE
+
+Mr. Nomad enviará as fotos.
+
+USE EXATAMENTE OS ARQUIVOS RECEBIDOS.
+
+Não procure substitutas.
+
+Não gere imagem.
+
+Não aplique IA.
+
+Não use thumbnail do YouTube.
+
+Não invente crédito.
+
+Não invente legenda.
+
+Não crie bloco de créditos no final.
+
+Preserve os arquivos recebidos.
+
+DUAS MATÉRIAS ANTIGAS — REGRA EXTRA
+
+FESTA PLOC
+
+ANOS 80 VOLUME 2
+
+As duas já possuem imagem principal dentro da própria matéria, porém a
+chamada/listagem está sem capa.
+
+Corrigir isso.
+
+USAR COMO CAPA DA CHAMADA EXATAMENTE A MESMA FOTO PRINCIPAL QUE JÁ ESTÁ
+NA MATÉRIA.
+
+Não escolher outra.
+
+Não baixar outra.
+
+Não trocar a foto da matéria.
+
+Apenas fazer a chamada usar a mesma imagem já existente.
+
+------------------------------------------------------------------------
+
+🎬 YOUTUBE — REGRA ABSOLUTA
+
+Usar os vídeos fornecidos EXATAMENTE.
+
+Não trocar por clipe oficial.
+
+Não procurar upload “melhor”.
+
+Não substituir versão ao vivo.
+
+Não alterar ID.
+
+Não alterar ordem.
+
+Não introduzir autoplay.
+
+------------------------------------------------------------------------
+
+3 — ELLA LANGLEY
+
+Matéria nova.
+
+Tema central:
+
+Ella Langley / “Choosin’ Texas” / country entrando definitivamente na
+Passport.
+
+Preservar os fatos fornecidos:
+
+-   Ella Langley, 27 anos, Alabama;
+-   “Choosin’ Texas”;
+-   23 semanas em #1;
+-   superação da marca de 22 semanas de “All I Want for Christmas Is
+    You”;
+-   hungover, de 2024;
+-   “You Look Like You Love Me”, com Riley Green;
+-   Dandelion, outubro de 2025, relançado em abril de 2026;
+-   composição com Luke Dick, Miranda Lambert e Joybeth Taylor;
+-   mais de 1,6 bilhão de streams globais;
+-   2,8 bilhões de visualizações no TikTok;
+-   “Be Her”;
+-   “I Can’t Love You Anymore”, com Morgan Wallen;
+-   “Loving Life Again”.
+
+VÍDEO EXATO
+
+https://www.youtube.com/watch?v=7TRZnQn0Ypk
+
+Ella Langley – “Choosin’ Texas” | Live at CMA Awards 2025
+
+Usar a foto de Ella entre flores enviada por Mr. Nomad.
+
+Country entra pela porta da frente.
+
+------------------------------------------------------------------------
+
+4 — NOEL GALLAGHER
+
+Título aprovado:
+
+Noel Gallagher acorda, toma café e aparentemente pergunta: “Quem eu vou detestar hoje?”
+
+Subtítulo aprovado:
+
+Sam Smith, Maroon 5, Kaiser Chiefs, Harry Styles, Radiohead, Blur, Beach
+Boys, Phil Collins, heavy metal e, naturalmente, Liam Gallagher. A lista
+de desafetos de Noel é tão democrática que praticamente ninguém precisa
+se sentir excluído.
+
+Os dez alvos entram na matéria.
+
+Contextualizar corretamente a declaração histórica ofensiva sobre AIDS
+como algo que passou do limite.
+
+Preservar também:
+
+-   reconciliação/colaboração posterior com Damon Albarn;
+-   Liam Gallagher;
+-   reunião do Oasis;
+-   a frase/imagem do “man with a fork in a world of soup”;
+-   humor de Noel acordando e aparentemente escolhendo quem vai detestar
+    naquele dia.
+
+NÃO TEM VÍDEO.
+
+A matéria inclusive brinca explicitamente com isso.
+
+Usar somente a fotografia de Noel enviada por Mr. Nomad.
+
+------------------------------------------------------------------------
+
+5 — SOUNDGARDEN / SUNS OF SOUNDGARDEN
+
+Título aprovado:
+
+Soundgarden volta a rugir: Matt Cameron, Tom Morello, Mike McCready e Taylor Momsen transformam “Outshined” em encontro de gigantes
+
+Subtítulo aprovado:
+
+No Power to the People Festival 2026, o baterista Matt Cameron se juntou
+a Tom Morello, Mike McCready, Robbie Mangano e uma Taylor Momsen cada
+vez mais à vontade diante do repertório de Chris Cornell. O resultado
+passou por “Loud Love”, “Outshined” e “Spoonman” — e mostrou por que
+Soundgarden continua fazendo barulho mesmo depois de tudo
+
+Dados:
+
+-   Power to the People Festival;
+-   3 de outubro;
+-   Merriweather Post Pavilion;
+-   Columbia, Maryland;
+-   Matt Cameron;
+-   Taylor Momsen;
+-   Mike McCready;
+-   Robbie Mangano;
+-   Tom Morello;
+-   “Loud Love”;
+-   “Outshined”;
+-   “Spoonman”;
+-   referência à apresentação recente da NFL com Kim Thayil, Ben
+    Shepherd e Matt Cameron.
+
+CORREÇÃO FINAL APROVADA
+
+Usar:
+
+É ASSIM QUE ESSA DROGA CONTINUA VIVA!
+
+NÃO usar a versão antiga com palavrão vulgar.
+
+VÍDEO EXATO
+
+https://www.youtube.com/watch?v=C1lyzIpB3Fs
+
+Outshined (Soundgarden) — Mike McCready, Taylor Momsen, Tom Morello —
+Power To The People Festival 2026
+
+Foto enviada por Mr. Nomad.
+
+------------------------------------------------------------------------
+
+6 — CRYPTA
+
+Título aprovado:
+
+Crypta abre uma nova era com “A Portrait of Decay” — e o death metal brasileiro continua atravessando fronteiras
+
+Subtítulo aprovado:
+
+Fernanda Lira, Luana Dametto, Tainá Bergamaschi e a agora integrante
+oficial Victoria Villarreal apresentam o primeiro sinal do que vem
+depois de “Shades of Sorrow”: mais atmosfera, melancolia e peso sem
+tirar o pé da agressividade. E a próxima parada já coloca as brasileiras
+na estrada com Arch Enemy
+
+Preservar:
+
+-   “A Portrait of Decay”;
+-   primeiro single desde Shades of Sorrow (2023);
+-   Victoria Villarreal oficialmente na banda;
+-   substituição de Jéssica di Falchi;
+-   Tainá Bergamaschi;
+-   Fernanda Lira;
+-   Luana Dametto;
+-   gravação em junho de 2026;
+-   Project Zero Studio, Bélgica;
+-   Yarne Heylen;
+-   Marcos Miller;
+-   turnê com Arch Enemy, The Black Dahlia Murder, Septicflesh e Thrown
+    Into Exile;
+-   não reduzir Crypta à fórmula “banda feminina”.
+
+VÍDEOS EXATOS
+
+https://www.youtube.com/watch?v=Pq3GZqsrcBU
+
+CRYPTA - Lullaby for the Forsaken - live Shades of Sorrow Tour @ DVG
+Club Kortrijk (be) - 13 08 2024
+
+https://www.youtube.com/watch?v=mPLWPt1c2I0
+
+Crypta - The Other Side of Anger - Live in Paris 2025
+
+Usar fotografia P&B das quatro integrantes fornecida por Mr. Nomad.
+
+------------------------------------------------------------------------
+
+7 — RACIONAIS MC’S
+
+Título aprovado:
+
+Racionais MC’s entram na Passport Radio sem pedir licença — e trazem de volta a gravação que deveria ter virado “1000 Trutas, 1000 Tretas”
+
+Subtítulo aprovado:
+
+Vinte anos depois do lançamento de um dos registros fundamentais do rap
+brasileiro, Mano Brown, Ice Blue, Edi Rock e KL Jay abrem o arquivo: 42
+minutos da primeira gravação, perdida após um problema técnico, chegam
+ao Racionais TV. E se alguém achava que a Passport já tinha enlouquecido
+misturando Ana Castela, Dua Lipa, BABYMETAL, Judas Priest, Shakira e
+Arch Enemy, temos uma notícia: ainda estamos começando
+
+Esta é a primeira entrada explícita do rap na linha editorial Passport.
+
+Preservar:
+
+-   Racionais formado em 1988;
+-   Mano Brown;
+-   Ice Blue;
+-   Edi Rock;
+-   KL Jay;
+-   20 anos do DVD;
+-   lançamento original em 7 de outubro de 2006;
+-   42 minutos inéditos da primeira tentativa de gravação;
+-   problema técnico provocado pela superlotação;
+-   nova gravação em 1º de janeiro de 2004 no Sesc Itaquera;
+-   cerca de 15 mil pessoas;
+-   15 músicas;
+-   “Diário de um Detento”;
+-   “Negro Drama”;
+-   “Jesus Chorou”;
+-   “Vida Loka”;
+-   Jorge Ben Jor;
+-   Cosa Nostra Fonográfica;
+-   investimento superior a R$ 400 mil;
+-   documentário extra;
+-   pesquisa/direção de Mano Brown;
+-   fala de Ice Blue;
+-   ligação histórica com a periferia de São Paulo.
+
+VÍDEO EXATO
+
+https://www.youtube.com/watch?v=DaCK8snx9ac
+
+Racionais MC’s - Negro Drama (Racionais 3 Décadas Ao Vivo)
+
+Final aprovado mantém a ideia:
+
+RACIONAIS MC’S ENTRARAM SEM PEDIR LICENÇA.
+
+E:
+
+AGORA QUE A PORTA ABRIU… NÃO FECHA MAIS.
+
+------------------------------------------------------------------------
+
+8 — BJÖRK
+
+Título aprovado:
+
+Björk entra pela porta da frente da Passport Radio — há 15 anos ela transformou um álbum em aplicativo porque simplesmente fazer um disco parecia pouco
+
+Subtítulo aprovado:
+
+“Biophilia” juntou música, tecnologia, ciência, jogos, animações e
+partituras em 2011 e se tornou o primeiro álbum-aplicativo do mundo.
+Para entender como uma islandesa saída de Reykjavík chegou até ali,
+voltamos até The Sugarcubes em 1988 — e depois atravessamos décadas com
+uma artista que nunca pareceu muito interessada em fazer o que já estava
+pronto
+
+Preservar:
+
+-   5 de outubro de 2011;
+-   Biophilia;
+-   sétimo álbum;
+-   conceito de álbum-aplicativo;
+-   Apple;
+-   Scott Snibbe;
+-   dez aplicativos;
+-   Japão;
+-   Reino Unido/EUA;
+-   Crystalline;
+-   Cosmogony;
+-   Moon;
+-   Virus;
+-   Grammy;
+-   Billboard 200;
+-   Dance/Electronic Albums;
+-   Reykjavík;
+-   nascimento em 1965;
+-   início musical aos 11;
+-   The Sugarcubes;
+-   Debut, 1993.
+
+Tracklist completa:
+
+1.  Moon
+2.  Thunderbolt
+3.  Crystalline
+4.  Cosmogony
+5.  Dark Matter
+6.  Hollow
+7.  Virus
+8.  Sacrifice
+9.  Mutual Core
+10. Solstice
+
+VÍDEOS EXATOS
+
+https://www.youtube.com/watch?v=e-j4l_vea9A
+
+The Sugarcubes / Deus / Live 1988
+
+https://www.youtube.com/watch?v=BRmbCe1DenU
+
+Björk : Biophilia Live 2014 : Moon 2/10
+
+https://www.youtube.com/watch?v=yHyCSVfYdTg
+
+Björk - Crystalline (Jools Holland Live) 2023
+
+Usar foto de Björk com figurino dourado enviada por Mr. Nomad.
+
+------------------------------------------------------------------------
+
+9 — BLACKPINK
+
+Título aprovado:
+
+BLACKPINK entra pela porta da frente da Passport Radio — “BOOMBAYAH” chega a 1,9 bilhão e responde uma pergunta simples: why not?
+
+Subtítulo aprovado:
+
+Depois do BTS, chegou a vez de Lisa, Jisoo, Jennie e Rosé. A faixa que
+apresentou o BLACKPINK ao mundo em 2016 acaba de colocar outro recorde
+na conta do K-pop — e mostra por que tentar organizar a música em
+pequenos cercadinhos ficou velho faz tempo
+
+Preservar:
+
+-   “WHY NOT?”;
+-   BOOMBAYAH;
+-   1,9 bilhão de views;
+-   primeiro MV de estreia de grupo K-pop nessa marca;
+-   lançamento em 8 de agosto de 2016;
+-   Square One;
+-   “Whistle”;
+-   “DDU-DU DDU-DU”;
+-   “Kill This Love”;
+-   três MVs acima de 1,9 bilhão;
+-   décimo aniversário;
+-   mais de 100 milhões de inscritos no YouTube;
+-   EP Deadline;
+-   Lisa;
+-   Jisoo;
+-   Jennie;
+-   Rosé;
+-   segundo K-pop explicitamente coberto pela Passport depois de BTS.
+
+🍕
+
+Farpas somente indiretas.
+
+NÃO PUBLICAR “JOÃOZINHO PIZZA”.
+
+Nenhum nome.
+
+Nenhum link.
+
+Nenhuma publicidade gratuita.
+
+VÍDEO EXATO
+
+https://www.youtube.com/watch?v=_HhAzr5DLik
+
+BLACKPINK - ‘붐바야 (BOOMBAYAH)’ Live at Coachella
+
+Usar fotografia das quatro enviada por Mr. Nomad.
+
+------------------------------------------------------------------------
+
+10 — JOHN LENNON / PAUL McCARTNEY
+
+Matéria nova aprovada sobre a declaração de Paul no contexto de Man on
+the Run.
+
+Preservar:
+
+-   conversa de Paul McCartney com Judd Apatow;
+-   Wings;
+-   início dos anos 1970;
+-   críticas de Lennon;
+-   declaração de Paul de que Lennon podia ser “um completo idiota” em
+    certas coisas;
+-   abandono paterno na infância;
+-   Julia Lennon;
+-   morte de Julia;
+-   sofrimento de Lennon;
+-   primal scream;
+-   tensões pós-Beatles;
+-   reconciliação antes da morte de Lennon;
+-   assassinato em dezembro de 1980.
+
+NÃO DIAGNOSTICAR LENNON.
+
+A expressão “meio louco” entra como contexto da fala, não diagnóstico.
+
+VÍDEO EXATO
+
+https://www.youtube.com/watch?v=QfgVhE1M6ns
+
+John Lennon - imagine (live 1975)
+
+Valorizar o momento:
+
+“I’M A DREAMER!”
+
+Usar AS TRÊS FOTOS enviadas por Mr. Nomad:
+
+1.  Lennon + McCartney tocando;
+2.  Lennon sozinho;
+3.  Lennon + McCartney sentados em P&B.
+
+Naturalmente ligar esta matéria à nova matéria de Kurt Cobain.
+
+------------------------------------------------------------------------
+
+11 — FESTA PLOC — REFORMA TOTAL
+
+NÃO CRIAR OUTRA PÁGINA.
+
+Atualizar:
+
+/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html
+
+A matéria existente possui todo um acervo de vídeos que deve ser
+preservado.
+
+Nada de apagar vídeo.
+
+Nada de trocar ID.
+
+Nada de perder artista.
+
+A reforma é editorial/narrativa, não destruição do arquivo.
+
+Nova direção aprovada:
+
+Festa PLOC: você cresceu. Suas músicas aparentemente não receberam o aviso.
+
+A matéria deixa de ser sequência mecânica de blocos e vira uma história
+contínua.
+
+Preservar o espírito:
+
+  “Ninguém entrou naquela pista para morar no passado. Entrou para
+  descobrir se aquela parte de si ainda sabia dançar.”
+
+Usar humor, memória, televisão, adolescência, vergonha alheia, pista,
+gerações e artistas entrando naturalmente uns nos outros.
+
+Nada de:
+
+-   “agora artista 12”;
+-   aula de instrumento;
+-   análise técnica;
+-   CLICK;
+-   contagem regressiva;
+-   formato de catálogo.
+
+Criar links editoriais internos naturais:
+
+-   Michael Jackson → matéria atual de Thriller;
+-   Bon Jovi → matéria atual de Slippery When Wet;
+-   Beatles/Ringo → Lennon/McCartney;
+-   Queen/Extreme → Brian May;
+-   outras conexões editoriais reais existentes.
+
+A PLOC deve funcionar como hub editorial disfarçado de festa.
+
+E colocar a mesma foto principal existente na matéria como capa da
+chamada/listagem, que hoje está sem foto.
+
+------------------------------------------------------------------------
+
+12 — ANOS 80 VOLUME 2 — REFORMA TOTAL
+
+NÃO CRIAR OUTRA PÁGINA.
+
+Atualizar exatamente:
+
+/anos-80-volume-2-musicas-memoria-brasileira.html
+
+A versão final aprovada está no material fornecido e começa:
+
+  Você não lembrava dessa música. Até ela começar a tocar.
+
+seguida de:
+
+  Tem uma mentira que a gente conta para nós mesmos depois de certa
+  idade.
+  “Nem lembro mais.”
+
+Ela percorre Men at Work, Whitney Houston, Marvin Gaye, Ritchie, Lionel
+Richie, Diana Ross, Stevie Wonder, George Benson, Tina Turner, Donna
+Summer, Barry White, Al Jarreau, Earth Wind & Fire, Kool & The Gang,
+Chicago, Hall & Oates, Elton John, Tim Maia, Jorge Ben Jor, Guilherme
+Arantes, Lulu Santos, Marina Lima, Rita Lee, Ney Matogrosso, Zizi Possi,
+Fábio Jr., Roupa Nova, Pepeu Gomes, Gal Costa, Djavan, Sandra de Sá e
+Lobão.
+
+PUBLICAR A VERSÃO FINAL, NÃO OS RASCUNHOS ANTERIORES.
+
+A versão final explicitamente matou:
+
+-   CLICK;
+-   3... 2... 1...;
+-   Girafales;
+-   aula de instrumento;
+-   capítulos mecânicos.
+
+Isso foi aprovado expressamente. Texto colado
+
+A matéria termina:
+
+  “Eu não volto aos anos 80 para morar no passado.
+  Volto porque algumas músicas ainda sabem o caminho.” Texto colado
+
+Preservar todos os vídeos existentes da matéria.
+
+E colocar a mesma foto principal já existente dentro dela como capa da
+chamada/listagem.
+
+------------------------------------------------------------------------
+
+13 — KURT COBAIN / LENNON / McCARTNEY
+
+Título aprovado:
+
+Kurt Cobain dizia que Paul McCartney lhe dava vergonha — só tem um pequeno problema: ele não conseguia escapar das músicas do Paul
+
+Subtítulo aprovado:
+
+John Lennon era seu Beatle favorito “disparado”. McCartney representava
+exatamente o tipo de figura que incomodava o líder do Nirvana. Até aí,
+tudo muito Kurt Cobain. O problema começa quando entram “About a Girl”,
+uma fita cassete, “And I Love Her” e uma ironia maravilhosa que
+atravessou décadas
+
+USAR A FOTO DE KURT COBAIN ENVIADA POR MR. NOMAD JUNTO DESTA ORDEM.
+
+A matéria integral final está no material entregue. Ela começa em “Kurt
+Cobain gostava dos Beatles”, desenvolve Kurt/Lennon/McCartney, Butch
+Vig, Bleach, Nevermind, About a Girl, a gravação infantil de “Hey Jude”,
+Montage of Heck, “And I Love Her”, a ironia McCartney e a brincadeira de
+imaginar Kurt + Noel Gallagher na mesma internet. Texto colado
+
+VÍDEOS EXATOS
+
+https://www.youtube.com/watch?v=_24pJQUj7zg
+
+Nirvana - About A Girl (Live On MTV Unplugged, 1993)
+
+https://youtu.be/rBzA4shGmw8?si=st3IE9QTA1-QGFm1
+
+Kurt Cobain - And I Love Her
+
+Esses dois links aparecem literalmente no texto aprovado. Texto colado
+Texto colado
+
+Criar ligação editorial natural com:
+
+-   Lennon/McCartney;
+-   Beatles;
+-   Noel Gallagher.
+
+Não criar “Leia também” feio em série.
+
+A ligação deve acontecer dentro da narrativa.
+
+------------------------------------------------------------------------
+
+SEO — TODAS AS MATÉRIAS
+
+SEO forte, sem transformar o texto em mingau de keyword.
+
+Para cada nova página/reforma:
+
+-   <title>;
+-   meta description;
+-   canonical;
+-   OG title;
+-   OG description;
+-   OG image;
+-   Twitter metadata onde o template já utilizar;
+-   Article schema/JSON-LD;
+-   datePublished;
+-   dateModified quando aplicável;
+-   autor Mr. Nomad;
+-   imagem correta;
+-   headings semânticos;
+-   links internos contextuais;
+-   entrada correta no feed/listagem;
+-   busca interna encontrando a matéria.
+
+A brincadeira 🍕 permanece indireta.
+
+Não citar concorrente.
+
+Não linkar concorrente.
+
+Não dar publicidade gratuita.
+
+A lógica editorial é:
+
+Google traz a pessoa até a porta.
+A história faz ela continuar dentro da casa.
+
+------------------------------------------------------------------------
+
+BANDAS / GARAGEM / ESCOLA / ARTISTAS INDEPENDENTES
+
+Isso NÃO pode desaparecer dos finais.
+
+A chamada editorial deve convidar explicitamente:
+
+-   banda independente;
+-   banda de garagem;
+-   banda de escola;
+-   projeto solo;
+-   artista começando;
+-   compositor;
+-   cantor;
+-   MC;
+-   DJ;
+-   produtor;
+-   beatmaker;
+-   demo;
+-   MP3;
+-   ensaio;
+-   primeiro show;
+-   vídeo;
+-   fotografia;
+-   história;
+-   entrevista;
+-   material raro;
+-   podcast;
+-   videocast;
+-   pauta;
+-   correção;
+-   denúncia com evidência;
+-   descoberta.
+
+A ideia é:
+
+não esperar a banda ficar enorme para depois fingir que sempre soubemos
+que ela seria importante.
+
+Abrir a porta antes.
+
+------------------------------------------------------------------------
+
+PARTICIPE
+
+Integrar naturalmente.
+
+Não fazer rodapé corporativo.
+
+A pessoa pode:
+
+-   escrever;
+-   mandar história;
+-   divulgar banda;
+-   mandar demo;
+-   mandar vídeo;
+-   mandar foto;
+-   mandar podcast;
+-   sugerir artista;
+-   corrigir;
+-   participar da própria Passport.
+
+------------------------------------------------------------------------
+
+APOIE
+
+Integrar naturalmente.
+
+Pode contribuir financeiramente?
+
+Ótimo.
+
+Escolhe quanto.
+
+Está com:
+
+R$ 0 DISPONÍVEL?
+
+Nada muda.
+
+Continua dentro.
+
+Leia.
+
+Ouça.
+
+Compartilhe.
+
+Faça pedido.
+
+Envie material.
+
+Apresente uma banda.
+
+Escreva.
+
+Volte.
+
+Apoio financeiro ajuda a manter:
+
+-   rádio;
+-   editorial;
+-   arquivo;
+-   agenda;
+-   vídeos;
+-   podcasts;
+-   broadcasts;
+-   infraestrutura;
+-   servidor;
+-   desenvolvimento.
+
+Participação também mantém a máquina crescendo.
+
+------------------------------------------------------------------------
+
+☢️ SISTEMAS RADIOATIVOS — NÃO TOCAR
+
+A continuidade existente já funciona.
+
+ADERIR A ELA. NÃO REIMPLEMENTAR.
+
+Não alterar:
+
+-   player;
+-   Bus;
+-   mutex;
+-   interlock;
+-   streams;
+-   URLs;
+-   motores;
+-   catálogo de rádios;
+-   Podcast/Broadcast;
+-   Videoteca;
+-   autoplay;
+-   arquitetura de áudio.
+
+REGRA:
+
+BEBÊ QUE ENTROU TOCANDO SAI TOCANDO.
+
+Qualquer rádio escolhida antes da navegação deve continuar:
+
+-   mesma estação;
+-   mesmo áudio;
+-   mesmo estado;
+-   tempo avançando;
+-   sem reconectar;
+-   sem reload;
+-   sem nova conexão;
+-   sem trocar estação.
+
+Pausado permanece pausado.
+
+Tocando permanece tocando.
+
+------------------------------------------------------------------------
+
+🧪 QA OBRIGATÓRIO
+
+Quando terminar TODO O PACOTE, testar:
+
+-   todas as novas matérias;
+-   as duas matérias reformadas;
+-   desktop;
+-   mobile;
+-   ausência de overflow;
+-   imagens;
+-   chamadas;
+-   feed;
+-   busca;
+-   links internos;
+-   todos os YouTube;
+-   ordem dos vídeos;
+-   nenhum autoplay;
+-   canonical;
+-   metadata;
+-   schema;
+-   autor;
+-   continuidade rádio → matéria;
+-   matéria → matéria;
+-   matéria → rádio;
+-   estação escolhida preservada;
+-   estação pausada preservada;
+-   zero regressão nas matérias que já estavam na #523.
+
+E MAIS:
+
+Comparar Alice Cooper e Nenhum de Nós antes/depois.
+
+DEVEM PERMANECER INTACTOS.
+
+------------------------------------------------------------------------
+
+🚨 ENTREGA
+
+Quando tudo estiver concluído:
+
+1.  salvar checkpoint durável;
+2.  executar QA;
+3.  commit;
+4.  push NA MESMA BRANCH DA #523;
+5.  atualizar A PR #523 EXISTENTE;
+6.  informar HEAD final;
+7.  informar todos os arquivos novos/modificados;
+8.  informar todas as URLs editoriais;
+9.  informar quantidade de fotos;
+10. informar quantidade de vídeos;
+11. confirmar feed/listagem/busca;
+12. confirmar desktop/mobile;
+13. confirmar continuidade;
+14. confirmar que sistemas radioativos permaneceram intocados;
+15. confirmar que Alice + Nenhum permaneceram intactos;
+16. confirmar que PLOC + Anos 80 mantiveram seus acervos;
+17. confirmar que as duas chamadas antigas agora têm capa;
+18. entregar limitações reais, caso existam.
+
+NÃO FAÇA MERGE.
+
+PARE COM A PR #523 OPEN/DRAFT PARA MR. NOMAD CONFERIR.
+
+------------------------------------------------------------------------
+
+Pronto. Essa é a ordem da tonelada. 🐄🔥
+
+E desta vez eu conferi a #523 antes: ela existe, está aberta, draft,
+mergeable, Alice + Nenhum já estão dentro. Portanto a 🐄 não tem
+desculpa para nascer uma #524 filha da puta do nada. 😂🧱
+
+O anexo também confirma que a versão Anos 80 foi explicitamente marcada
+como FECHADA/APROVADA e que não era para mexer nela de novo na hora do
+pacotão. Texto colado
+
+Agora é jogar as fotos na cabeça da 🐄 junto com essa ordem e acordar o
+animal. 🐄💥🔥
+
+------------------------------------------------------------------------
+
+ARQUIVO-FONTE DOS TEXTOS APROVADOS
+
+🫵É só isto: CLICK. Um sintetizador. Uma virada de bateria. Uma linha de
+baixo. Uma guitarra. Uma voz. E pronto.🙄🧱⚰️🪦 E VOLTAMOS AO PROFESSOR?
+
+AHAHAHAHAHAHAHA 🫵⚰️🪦 SIM! PEGOU NO FLAGRA. 🙄🧱 Voltou o Professor
+Girafales de gola rolê explicando música: “Um sintetizador.” “Uma virada
+de bateria.” “Uma linha de baixo.” “Uma guitarra.”
+
+MATA. TUDO. 🔪🤣 Isso é exatamente a velha doença dessa matéria:
+dissecar música em vez de viver a história. E ainda é resquício daquela
+porcaria de “aula de ouvir música” que estamos arrancando da Passport. A
+passagem tem que soar como gente, não como apostila: Talvez exista um
+jeito ridiculamente fácil de voltar quarenta anos. Você não precisa
+procurar fotografia velha. Nem abrir aquela caixa que está no fundo do
+armário desde a mudança. Muito menos encontrar a fita cassete que você
+jurava que nunca jogaria fora. Só dá o PLAY nessa droga. Às vezes a
+música nem chegou no refrão e já aconteceu. Você olha em volta… e por
+alguns segundos essa não é mais a sua sala. É outra. Tem uma televisão
+enorme ocupando metade do móvel. Alguém está falando na cozinha. Talvez
+seu pai esteja ali. Sua mãe. Um amigo. Uma namorada que seria “para
+sempre”. Sei. 😂 E o mais absurdo? Você não estava tentando lembrar de
+ninguém. A música foi lá buscar. É dessa encrenca que estamos falando.
+Então chega. 3… 2… 1… CLICK.
+
+ISSO. 🔥 Nada de sintetizador, baixo, bateria, guitarra, “preste atenção
+no arranjo”, DNA musical, anatomia da canção ou qualquer Girafalismo™. E
+já marco a regra para essa reforma e a PLOC: a música provoca história,
+memória, safadeza, risada, saudade, vergonha, gente. Nunca aula de
+instrumento. Professor Girafales foi novamente conduzido ao portão.
+🫵🧱➡️🚪🤣
+
+🫵3… 2… 1… CLICK.🙄🧱⚰️🪦
+
+AHAHAHAHAHAHAHAHAHAHA 🫵🙄🧱⚰️🪦 PEGOU DE NOVO. 🤣🤣🤣 O cadáver do
+Girafales levantou da cova e eu ainda dei pra ele uma contagem
+regressiva cinematográfica: 3… 2… 1… CLICK.
+
+ARRANCA ESSA PORRA TAMBÉM. 😂🔪 Não precisamos de CLICK, ritual,
+comando, contagem regressiva nem bordão mecânico separando os artistas.
+Isso também deixa a matéria com cara de formato, e justamente estamos
+tentando fazer parecer uma conversa que simplesmente foi longe demais.
+Fica: E o mais absurdo? Você não estava tentando lembrar de ninguém. A
+música foi lá buscar. E talvez seja exatamente por isso que certas
+músicas dos anos 80 continuam aprontando essa sacanagem quarenta anos
+depois. Você acha que esqueceu. Aí entra Men at Work. E descobre que não
+esqueceu merda nenhuma. Pior: você ainda canta aquele inglês que nunca
+existiu. 😂
+
+E SEGUE. Whitney entra pela conversa. Marvin entra pela Whitney. Ritchie
+invade depois. Lionel aparece sem ser chamado. Sem placa. Sem campainha.
+Sem CLICK. Sem “agora capítulo 7”. É uma história correndo, não uma
+atração de parque temático. 🧱 E já corto o CLICK da matéria TODA. O
+original está cheio dele; na reforma nova, morre junto com o Girafales.
+Agora pode fechar o caixão. DE NOVO. ⚰️🔩🤣
+
+REFAZ TUDÃO AGORA PRA LERMOS
+
+Você não lembrava dessa música. Até ela começar a tocar. Men at Work,
+Whitney Houston, Marvin Gaye, Tina Turner, Tim Maia, Rita Lee, Ney
+Matogrosso, Gal Costa, Djavan e mais de 30 encontros com músicas que
+tocaram na vida do brasileiro — e aparentemente guardaram algumas coisas
+que você preferia deixar quietas Tem uma mentira que a gente conta para
+nós mesmos depois de certa idade. “Nem lembro mais.” Não lembra daquela
+casa. Não lembra daquela festa. Não lembra direito daquela pessoa. Não
+lembra o telefone. Não lembra a roupa. Não lembra o cheiro da sala. Não
+lembra daquela noite. E definitivamente não lembra daquele namoro que
+você jurava que seria para sempre. Sei. Então alguém coloca uma música.
+E antes mesmo de você entender o que aconteceu… a casa voltou. A sala
+voltou. A televisão voltou. A escola voltou. A danceteria voltou. A
+pessoa voltou. E o namoro que estava oficialmente arquivado desde 1986
+acaba de solicitar reabertura do processo. 😂 Esse é o problema da
+música. Ela guarda provas. Você pode passar quarenta anos organizando
+sua vida, trocando de casa, telefone, emprego, cabelo, opinião, cidade,
+relacionamento e até de versão de você mesmo. A música não está nem aí.
+Ela começa. E vai buscar exatamente aquilo que você deixou para trás. É
+dessa encrenca que estamos falando. Não das “100 melhores músicas dos
+anos 80”. Não das “50 músicas indispensáveis da década”. Não de ranking.
+Não de nota. Não de campeonato para decidir se uma música merece ficar
+em 17º ou 23º lugar porque alguém precisava preencher uma planilha. 🙄🍕
+A pergunta aqui é outra: O que estava tocando na vida do brasileiro nos
+anos 80? No rádio. Na televisão. Na novela. No cinema. Na danceteria. No
+carro. Na sala. Na festa. Na cozinha. No quarto. E, dependendo da
+música… é melhor não investigarmos onde mais. 😂 Men at Work — e o
+inglês que jamais existiu Começamos com uma fraude internacional. Men at
+Work. “Who Can It Be Now?” “Overkill”. “Down Under”. Você sabia inglês?
+Talvez. Agora, se era o inglês que Colin Hay estava cantando… a
+investigação fica mais complicada. 🤣 Porque existia uma coisa
+maravilhosa naquela época. Você não precisava saber a letra. Você
+precisava ter convicção. A música começava e vinha aquele inglês
+freestyle espetacular: metade som; um pedaço de palavra; uma coisa
+inventada; e no final alguma expressão em inglês que realmente existia
+para dar credibilidade à operação. Perfeito. O mais extraordinário é que
+passaram mais de quarenta anos e você provavelmente continua cantando
+errado nos mesmos lugares. Nem a pronúncia inventada envelheceu. Isso
+não é memória. É patrimônio histórico. 🎬 Men At Work · Who Can It Be
+Now / Overkill / Down Under · 1983 E já que conseguimos fazer você
+cantar num idioma que nunca existiu, podemos aumentar um pouco o risco.
+Porque vem Whitney. Whitney Houston — você não ia cantar Wembley. 1988.
+Whitney Houston. “I Wanna Dance with Somebody”. Você vai assistir
+quietinho. Sem cantar. Sem mexer o corpo. Pessoa adulta. Equilibrada.
+Controle absoluto da situação. Whitney começa. … Aham. 😂 Já abriu a
+boca. E ainda fez aquela expressão clássica de quem não está cantando.
+Está apenas… “acompanhando baixinho”. Claro. Daqui a pouco chega o
+refrão e você descobre que existe uma diferença considerável entre
+aquilo que sua dignidade planejou e aquilo que seu corpo decidiu fazer.
+Whitney ficou com Wembley. Você ficou com a sala de casa. 🎬 Whitney
+Houston · I Wanna Dance with Somebody · Wembley · 1988 Só que até agora
+estava tudo relativamente seguro. Agora entra Marvin Gaye. E eu gostaria
+de registrar oficialmente que a Passport não se responsabiliza pelo que
+acontecer a seguir. Marvin Gaye — não precisamos saber de tudo Montreux.
+1980. “Let’s Get It On”. Marvin começa. Pronto. Agora eu poderia fazer
+uma pergunta perfeitamente inocente: onde você estava quando essa música
+fazia parte da sua vida? … Não. Pensando melhor… deixa quieto. 🤣 Tem
+menor de idade perto? Sua mulher está aí? Seu marido? Seus filhos estão
+olhando esta tela? Ótimo. Então não há qualquer necessidade de
+aprofundarmos esta investigação. Tem música que traz a sala. Tem música
+que traz a escola. Tem música que traz uma viagem. E tem música que…
+Bem. Marvin Gaye sabe perfeitamente o que está fazendo. E pelo seu
+silêncio… desconfio que você também sabe. 🎬 Marvin Gaye · Let’s Get It
+On · Montreux · 1980 Vamos sair daqui antes que alguém tenha que prestar
+esclarecimentos. Ah. Tarde demais. Entrou Ritchie. “Meia-noite no meu
+quarto…” PARA. Não continua. … CONTINUOU. Claro que continuou. 😂
+“Menina Veneno” tem esse problema. Ela não pergunta sua idade atual. Não
+quer saber onde você mora hoje. Não está interessada em quantos boletos
+você paga nem em quantas dores aparecem quando levanta rápido demais.
+Ela começa… e vai buscar aquele quarto. Talvez nem fosse meia-noite.
+Talvez nem fosse seu quarto. OPA. Vamos encerrar essa linha de
+investigação imediatamente. 🤣 Mas apareceu alguém aí, não apareceu? Não
+precisa falar. Eu nem perguntei. 🎬 Ritchie · Menina Veneno · 10 Anos 80
+· Multishow E antes que você consiga mandar essa pessoa de volta para
+1983… Lionel Richie. Ah, não. Lionel Richie — o travesseiro sabe “Easy”.
+Ahhhhhhh… essa não. Você estava tão bem cinco segundos atrás. Adulto.
+Resolvido. Contas pagas. Vida seguindo. Lionel começou. E entrou nesta
+matéria uma pessoa que ninguém convidou. Interessante. Faz quanto tempo?
+Não responde. E não adianta olhar para o lado como se eu estivesse
+falando com outra pessoa. É com você mesmo. 😂 Agora imagine essa música
+baixinho. Quarto escuro. Cabeça no travesseiro. … O TRAVESSEIRO SABE.
+Aquele desgraçado ouviu tudo. Tudo. Promessa. Choro. Raiva. “Agora
+acabou de verdade.” “Não vou ligar.” “Não quero mais saber.” Cinco
+minutos depois: “Será que ela está acordada?” 🤣 O travesseiro
+acompanhou todas as temporadas. Lionel continua. Você finge dignidade.
+Nós fingimos que acreditamos. 🎬 Lionel Richie · Easy E já que abrimos a
+gaveta errada, Diana Ross decidiu entrar também. Diana Ross — quem
+apareceu aí? “Missing You”. O título já chega sem nenhuma delicadeza. No
+vídeo, Diana dedica a música a alguém muito especial de quem sente
+saudade. Bonito. Agora olha para você. Ficou quietinho de repente.
+Interessante. Quem apareceu? Não precisa responder. Eu não perguntei o
+nome. Porque música não traz apenas romance antigo. Traz amigo. Traz
+família. Traz alguém que estava na sala. Traz alguém que você achava que
+estaria ali para sempre. Tem música que toca. E tem música que abre uma
+porta que você tinha certeza de que estava fechada. Essa abre. Diana
+canta. Você resolve o resto aí dentro. 🎬 Diana Ross · Missing You E
+então Stevie Wonder aparece com uma ideia absolutamente irresponsável.
+Stevie Wonder — NÃO DISCA “I Just Called to Say I Love You”. Hoje parece
+simples. Quero ver naquela época. Telefone na mão. Número decorado. Sim,
+decorado. A gente sabia número de telefone de gente. Coisa
+pré-histórica. 😂 Você ensaiava: “Oi…” “Então…” “Eu liguei porque…” … E
+desligava. COVARDE. 🤣 Stevie resolvia em poucos minutos o que você
+demorava três meses para tentar. E o pior? Décadas depois você sabe
+exatamente para quem teria ligado. Pior ainda: talvez… ainda saiba o
+número. Não. Nem pensa. NÃO DISCA. A Passport Radio não vai comparecer
+amanhã para explicar: “Então, dona Maria, tecnicamente a culpa foi do
+Stevie Wonder…”
+
+Você está sozinho nessa. 🎬 Stevie Wonder · I Just Called To Say I Love
+You · Londres · 1995 E vem George Benson. Com uma promessa que
+envelheceu maravilhosamente mal. “Nothing’s Gonna Change” Nada vai
+mudar. Bonito. Você provavelmente acreditava nisso. Aquela casa vai
+continuar. Aquela pessoa vai ficar. Aquele grupo de amigos nunca vai se
+separar. Você sempre vai ser daquele jeito. A vida está resolvida. Nada
+vai mudar. Aham. Mudou a casa. Mudou o telefone. Mudou o trabalho. Mudou
+o cabelo. Talvez tenha mudado a cidade. Mudou a pessoa. Mudou você. A
+música? A DESGRAÇADA FICOU ESPERANDO AQUI. 😂 E bastou George Benson
+começar para entregar onde você guardou o resto. Touché. 🎬 George
+Benson · Nothing’s Gonna Change · Montreux Jazz Festival · 1990 Agora…
+comportamento. Porque chegou Tina Turner. EI. É NA TINA. “What’s Love
+Got to Do with It”. Tina aparece. Talento gigantesco. Presença absurda.
+Aquela voz. Aquele domínio de palco. E aquelas per— EI. Estou falando
+para prestar atenção na Tina Turner. … Ahhhh. Entendi. É exatamente isso
+que você está fazendo. 🙄😂 E olha esse pezinho começando a acompanhar
+também. Eu vi. Está lembrando de alguma coisa que poderia ter feito
+naquela época? Não fez? E agora está aí, décadas depois, olhando para a
+per— OPS. Para a apresentação. Naturalmente. Vamos preservar a dignidade
+de todos os envolvidos. 🎬 Tina Turner · What’s Love Got To Do With It ·
+ao vivo em Arnhem Só que o pé já começou. Agora Donna Summer termina o
+serviço. O pé pediu independência “Last Dance”. Donna Summer. Você
+chegou nesta parte da matéria sentado. Respeitável. Adulto. O pé mexeu.
+Você mandou parar. Ele ignorou. O joelho entrou na rebelião. Agora
+existe uma negociação entre a parte superior do seu corpo, que ainda
+tenta manter alguma dignidade, e a parte inferior, que aparentemente
+decidiu transformar a sala numa danceteria. Você perdeu o controle
+administrativo do próprio corpo. 🤣 🎬 Donna Summer · Last Dance · VH1
+Presents Live & More Encore! E quando o ambiente já está comprometido…
+Barry White. Sanremo. 1981. “Just the Way You Are”. Barry White não
+precisa terminar a primeira frase. O clima já mudou. Eu poderia
+perguntar onde isso tocava na sua vida. Não vou. Já temos material
+suficiente para destruir vários casamentos. 🎬 Barry White · Just the
+Way You Are · Sanremo · 1981 Vamos voltar para um lugar seguro. A sala
+de casa. Ou pelo menos era o que eu pensava. Al Jarreau — e aquele
+monstro chamado televisão “Moonlighting”. 1987. A televisão estava
+ligada. E televisão naquela época não era aquele negócio fino pendurado
+na parede. Era um membro da família de 40 quilos. 😂 Aquilo ocupava
+território. Tinha profundidade. Tinha móvel próprio. Tinha antena. Às
+vezes precisava levar um tapa. E dependendo do aparelho havia uma
+ciência avançadíssima: “NÃO MEXE! ASSIM TÁ PEGANDO!”
+
+🤣 Al Jarreau começa. E aparece a sala. O sofá. Talvez alguém sentado
+ali. Alguém falando da cozinha. Talvez você esperando começar alguma
+coisa na televisão. Talvez aquela pessoa nem esteja mais naquela sala. …
+Viu? Eu estava fazendo graça com o tamanho da televisão. Você que foi
+mexer onde não devia. 🎬 Al Jarreau · Moonlighting · TV · 1987 E já que
+mexeu… Earth, Wind & Fire decidiu terminar o serviço. AQUELA pessoa
+“After the Love Has Gone”. O título já chega chutando a porta. Depois
+que o amor foi embora. Obrigado, Earth, Wind & Fire. A vítima estava
+tendo um ótimo dia. 😂 E lá vem aquela pessoa. Aquela. Não a outra.
+AQUELA. A que você jurou que superou. Superou tanto que bastou o título
+de uma música para ela atravessar quarenta anos e aparecer aqui sem
+convite. E o travesseiro? Ah, o travesseiro conhece o processo inteiro.
+Foi testemunha da acusação. Da defesa. Da reconciliação. Da segunda
+briga. Da terceira reconciliação. E provavelmente de algumas decisões
+que não sobreviveriam a uma auditoria. Não vamos intimá-lo. Ele já
+sofreu demais. 🎬 Earth, Wind & Fire · After The Love Has Gone · ao vivo
+Só que memória não é só quem foi embora. Ainda bem. Porque chega Kool &
+The Gang. Agora eu quero saber quem ficou “Cherish”. Pronto. Muda tudo.
+Não quero saber de ex. Não quero saber daquele namoro. Não quero saber
+daquela pessoa que sumiu. Quem ficou? Pai? Mãe? Irmão? Amigo? Filho
+pequeno que hoje já é um homem? Aquela pessoa que continua aí e que às
+vezes você esquece de dizer o quanto importa? … Olha só. Kool & The Gang
+entrou sorrindo. E você ficou com essa cara. Não põe a culpa na
+Passport. 🎬 Kool & The Gang · Cherish · ao vivo Chicago entra logo
+depois com “Hard to Say I’m Sorry”. Ainda bem que você nunca precisou
+pedir desculpas. Nunca falou merda. Nunca estragou uma noite
+perfeitamente boa. Nunca deixou o orgulho ganhar. Nunca percebeu dois
+dias depois que estava errado. Claro. Esse silêncio repentino é apenas
+profundo respeito pela música. 😂 🎬 Chicago · Hard To Say I’m Sorry ·
+ao vivo · 1982 E então Hall & Oates lembra uma coisa que parece pequena
+hoje, mas mudou completamente. O rádio não perguntava do que você
+gostava “Out of Touch”. O rádio tocava. Você não escolhia. Não pulava.
+Não arrastava barrinha. Não tinha algoritmo perguntando: “Gostou? Quer
+ouvir outras músicas parecidas?”
+
+O rádio simplesmente dizia: VAI TOCAR ISSO. E você que se virasse. 😂 A
+música entrava na cozinha. No carro. No quarto. Na oficina. Na loja. Na
+sala. Às vezes você gostava. Às vezes não. Às vezes começava não
+gostando e duas semanas depois estava cantando. E algumas músicas tinham
+a enorme falta de educação de entrar assim… e ficar quarenta anos. Hall
+& Oates acabou de provar. Você não estava Out of Touch coisa nenhuma. 🎬
+Hall & Oates · Out of Touch · 1991 E talvez esteja aqui a resposta para
+uma coisa importante. Por que nesta matéria cabe tanta coisa diferente?
+Porque era assim que a vida funcionava. Você não acordava pensando: Hoje
+consumirei exclusivamente soft rock internacional.
+
+🤣 A rádio tocava uma coisa. A novela apresentava outra. A televisão
+trazia outra. Alguém aparecia com uma fita. O amigo tinha um disco. A
+danceteria tocava outra. Sua mãe gostava de uma. Seu irmão colocava
+outra. E no final… tudo foi morar na mesma cabeça. Talvez alguém ache
+isso muito desorganizado. Tem gente que gosta tanto de colocar música em
+cercadinho que daqui a pouco vai instalar portaria, interfone e síndico
+para separar gênero. 🍕😏 Aqui não. Aqui a pergunta continua sendo: o
+que estava tocando na vida do brasileiro? E já que não existe cerca…
+entra Elton John. Atenção: “Nikita” é lançamento Verona. 1989. Elton
+apresenta “Nikita” como música de álbum novo. NOVO. Entre na
+brincadeira. Você nunca ouviu. Não conhece. Não sabe o refrão. Não sabe
+o que vem depois. … Sua cara está entregando tudo. 😂 Só de ler Nikita,
+provavelmente ela já começou aí dentro. Muito bem. Vamos conhecer essa
+novidade do jovem Elton John. 🎬 Elton John · Nikita · Verona · 1989 E
+agora chega a parte em que o Brasil olha para toda essa conversa
+internacional e diz: dá licença. Tim Maia tomou seu banheiro “Azul da
+Cor do Mar”. Tim começa. Você está no chuveiro. A toalha virou
+microfone. O shampoo é a plateia. O box virou palco. A acústica do
+banheiro transformou você num artista muito melhor do que qualquer
+evidência externa seria capaz de comprovar. Lá fora alguém pergunta: VAI
+DEMORAR?
+
+VOCÊ ESTÁ FAZENDO UM SHOW, CACETE. Respeitem o artista. 🤣 🎬 Tim Maia ·
+Azul da Cor do Mar · ao vivo E antes que o show termine: Jorge Ben Jor.
+“País Tropical”. Você decidiu ficar parado. Pessoa séria. Jorge começa.
+O joelho traiu a direção. O pé começou. Você tentou controlar. Perdeu.
+🎬 Jorge Ben Jor · País Tropical E Guilherme Arantes vem logo atrás.
+Uuuuuuuuuum… cheia de charme…
+
+PARA. Não precisa continuar. … Continuou. Eu vi. 😂 “Cheia de Charme”
+começa mansinha. Educada. Daqui a pouco você já tomou o vocal do
+Guilherme Arantes e está fazendo participação especial sem ter sido
+convidado. Calma. Deixa um pedaço para o homem. 🎬 Guilherme Arantes ·
+Cheia de Charme · 1985 Aí chega Lulu Santos. E aqui o ambiente muda
+outra vez. “Tem certas coisas…” É. Já sei. Sua cabeça foi longe. “Certas
+Coisas” tem essa capacidade inconveniente. Não precisa trazer uma pessoa
+específica. Às vezes traz uma época inteira. Você começou esta matéria
+rindo do inglês inventado de Men at Work. Agora está olhando para o
+nada. Interessante. Não precisa contar. Aliás… fica nas “certas coisas”
+mesmo. É mais seguro para todo mundo. Lulu já fez o serviço. 🎬 Lulu
+Santos · Certas Coisas · ao vivo E então aparece Marina Lima. Canecão.
+1992. Já ouvi alguém lá atrás: MAS 1992 NÃO É ANOS 80!
+
+Eu sei. Calma, fiscal do calendário. 🤣 “À Francesa” não recebeu o
+memorando avisando que a década havia terminado. Nem sua memória. Você
+olha o ano. Faz a conta. Marina começa. E de repente 1992 perdeu
+qualquer autoridade sobre a sala. 🎬 Marina Lima · À Francesa · Canecão
+· 1992 Porque é disso que estamos falando. Não de uma prova de história.
+De músicas que entraram numa época da nossa vida e continuaram andando
+depois que o calendário virou. E poucas pessoas sabiam andar por
+qualquer calendário como… Rita Lee. Rita chegou. Sai da frente. “Bwana”.
+No próprio vídeo, Rita comenta que cantando aquela música se sentia numa
+igreja. Claro. Só Rita Lee para entrar numa igreja desse jeito. 😂 Não
+existe “Rita Lee interpreta Bwana”. Rita entra. E Bwana passa a morar
+nela. Tem artista que sobe no palco. Rita parecia chegar dizendo: Sai
+daí que agora eu resolvo.
+
+E resolvia. Você podia gostar. Podia não gostar. Ignorar? BOA SORTE.
+Essa mulher nunca entrou discretamente em lugar nenhum. Muito menos na
+memória brasileira. 🎬 Rita Lee · Bwana · Multishow Ao Vivo E se Rita
+entrou… Ney Matogrosso não precisa pedir licença. Tente não olhar para
+Ney Matogrosso “Sangue Latino”. Vai. Tenta. … Perdeu. 🤣 Não deu nem
+tempo de preparar uma desculpa. Ney está ali. Você também ficou. Tem
+artista que precisa conquistar a atenção. Ney simplesmente aparece com
+ela. 🎬 Ney Matogrosso · Sangue Latino · ao vivo A televisão brasileira
+entra novamente. Manchete. 1986. Zizi Possi. “Perigo”. Basta começar
+aquela frase conhecida. … LEMBROU, NÉ? Excelente. Agora ela
+provavelmente vai ficar na sua cabeça pelo resto do dia. Nossa missão
+está cumprida. E junto veio aquela televisão de tubo ocupando metade da
+sala. Aquilo não era televisão. Era praticamente um imóvel com imagem.
+🤣 🎬 Zizi Possi · Perigo · Especial da Manchete · 1986 E agora… vamos
+resolver uma mentira histórica. Fábio Jr. — “eu nem gostava” Aham. Não
+gostava. Não gostava tanto que está aqui ouvindo. Não gostava tanto que
+conhece. Não gostava tanto que provavelmente sabe cantar pelo menos uma.
+“Sem Limites Pra Sonhar”. “Quando Gira o Mundo”. E dependendo do seu
+histórico… isso tocou em casamento. Festinha. Aniversário. Ou naquele
+namoro que era: PARA SEMPRE. Para sempre durou quanto? Não precisa
+responder. 😂 Quarenta anos depois a pessoa ainda diz com absoluta
+seriedade: “Nunca fui muito de Fábio Jr.”
+
+Claro. A música apareceu sozinha na sua vida. Fenômeno meteorológico. 🎬
+Fábio Jr. · Sem Limites Pra Sonhar / Quando Gira o Mundo · ao vivo E
+então… Roupa Nova. Ah, pronto. LÁ VEM ELA Ou ele. Não vamos presumir
+quem destruiu sua dignidade naquela década. 🤣 “Linda Demais”. Começou.
+E uma pessoa arquivada há quarenta anos acaba de solicitar: REABERTURA
+DO PROCESSO. Você lembra do rosto. Do lugar. Talvez até do telefone. E
+daquela certeza maravilhosa: É para sempre.
+
+Foi? … Pois é. O travesseiro já sabia. Aquele desgraçado acompanhou
+todas as temporadas. Roupa Nova continua. Você olha para o teto. Nós não
+vimos nada. 🎬 Roupa Nova · Linda Demais · ao vivo Pepeu Gomes chega com
+“Mil e Uma Noites de Amor”. E apareceu uma novela aí, não apareceu? Você
+esperava a cena. A música entrava. Agora está aqui décadas depois
+dizendo que veio apenas: “relembrar.”
+
+Sei. 😂 Daqui a pouco está cantando. Deixa pelo menos um pedaço para o
+Pepeu. 🎬 Pepeu Gomes · Mil e Uma Noites de Amor · Pepeu 50 a Mais de
+Mil · Canal Bis E então… Gal Costa. Aqui a gente diminui a brincadeira.
+“Eu preciso lhe falar…” Pronto. Aí complicou. “Um Dia de Domingo”. Pode
+aparecer um amor. Pode aparecer sua família. Pode aparecer alguém que
+sentava naquela sala. Pode aparecer um domingo. Silvio Santos.
+Chacrinha. A casa funcionando ao redor. Pode aparecer alguém que hoje
+você daria tudo para encontrar mais uma vez. Não para fazer alguma coisa
+extraordinária. Só sentar. Conversar. Ouvir a voz. … Gal canta. A gente
+fica quieto. 🎬 Gal Costa · Um Dia de Domingo Djavan vem depois.
+“Oceano”. E a regra continua. Tem música que não precisa da nossa
+conversa por cima. 🎬 Djavan · Oceano · ao vivo Depois entra Sandra de
+Sá. “Solidão”. “Retratos e Canções”. Só pelos nomes a Passport deveria
+distribuir travesseiro na entrada. 😂 Você vai apenas assistir. Claro.
+Daqui a pouco mudou a expressão. Depois entrou no vocal. Agora está
+interpretando uma dor que, segundo seu depoimento de cinco minutos
+atrás, nem era sua. Interessante. E esse olhar para o nada? Quem passou
+atrás da tela já percebeu. Disfarça. Tarde demais. Sandra pegou você. 🎬
+Sandra de Sá · Solidão / Retratos e Canções · Radio Mania E quando
+parece que já mexemos em tudo que não deveríamos… Lobão. TOTAL DECADENCE
+“Decadence Avec Elegance”. Já sei. Tem alguém perguntando: “Esse vídeo
+não é dos anos 80.”
+
+Meu Deus. O fiscal voltou. 😂 A música atravessou o tempo. Lobão
+atravessou o tempo. Você atravessou o tempo. A memória não precisa
+apresentar certidão de nascimento na portaria. E olha onde você chegou.
+Você entrou nesta página “só para dar uma olhada”. Aham. Passou por Men
+at Work. Cantou inglês inexistente. Whitney destruiu seu plano de ficar
+quieto. Marvin Gaye quase abriu um inquérito. Ritchie encontrou um
+quarto suspeito. Lionel Richie convocou o travesseiro. Stevie Wonder
+quase fez você telefonar para alguém. Tina Turner comprometeu seriamente
+sua capacidade de concentração. Donna Summer tomou seu pé. Tim Maia
+invadiu seu banheiro. Fábio Jr. descobriu que você “não gostava”. Roupa
+Nova reabriu processo arquivado. Gal Costa fez todo mundo ficar quieto.
+E ainda apareceu Lobão. VOCÊ NÃO VEIO SÓ DAR UMA OLHADA. Admita. 🎬
+Lobão · Decadence Avec Elegance · DVD ao vivo AVISO IMPORTANTÍSSIMO
+Depois desta matéria, a Passport Radio não se responsabiliza por:
+mensagens enviadas para ex de madrugada; declarações amorosas com
+quarenta anos de atraso; discussões iniciadas por: “QUEM É ESSA PESSOA
+QUE VOCÊ LEMBROU?” danças espontâneas na cozinha; shows não autorizados
+no chuveiro; ligações começando com: “Eu estava ouvindo uma música e
+lembrei de você…” nem pelo reaparecimento de sentimentos oficialmente
+arquivados durante a década de 1980. Você entrou nessa sozinho. 🤣 Agora
+esquece os anos 80 por um segundo Tem uma coisa muito maior acontecendo
+aqui. Escolha qualquer música desta matéria. Deixe tocar. E veja quem
+aparece. Uma pessoa? Uma casa? Uma escola? Uma festa? Uma televisão
+ligada? Uma danceteria? Um namoro? Um casamento? Um fora? Seu pai? Sua
+mãe? Um amigo? Alguém que você perdeu? Alguém que continua ao seu lado?
+Ou simplesmente… você mesmo? Só que muito mais novo. Talvez nostalgia
+não seja querer voltar. Talvez seja descobrir que algumas coisas nunca
+foram embora direito. E talvez seja exatamente por isso que música velha
+é uma expressão tão ruim. A gravação pode ser velha. A lembrança pode
+ter quarenta anos. O que ela acabou de fazer com você aconteceu agora. E
+É AQUI QUE A PASSPORT NÃO QUER VIRAR MUSEU A gente poderia terminar
+aqui. Bonitinho. Assinatura. Rodapé. Obrigado pela visita. Só que aí
+estaríamos fazendo exatamente aquilo que não queremos fazer. Guardar
+música em página. A ideia é o contrário. É fazer uma coisa levar à
+outra. Você entrou procurando músicas dos anos 80. Encontrou Men at
+Work. Encontrou Whitney Houston. Encontrou Marvin Gaye. Encontrou
+Ritchie. Encontrou Tina Turner. Encontrou Tim Maia. Rita Lee. Ney
+Matogrosso. Gal Costa. Djavan. Agora uma dessas pessoas pode levar você
+para outra história. Outra história pode levar para outro artista. Outro
+artista pode levar para um vídeo. Um vídeo pode levar para uma rádio. A
+rádio toca outra música. E pronto. A casa aumentou. Isso é muito mais
+interessante do que fabricar cinquenta páginas que não conversam entre
+si e esperar o Google mandar alguém para uma delas. A gente quer que o
+Google mande. Claro que quer. Olá, Google. 👋😂 Pode trazer quem estiver
+procurando músicas dos anos 80, nostalgia dos anos 80, música brasileira
+dos anos 80, músicas internacionais dos anos 80, músicas que tocavam no
+rádio, novelas, televisão brasileira, shows ao vivo, Tim Maia, Rita Lee,
+Tina Turner, Whitney Houston, Men at Work, Elton John, Gal Costa,
+Djavan, Ney Matogrosso, Ritchie, Fábio Jr., Roupa Nova e toda essa
+bagunça maravilhosa. Pode trazer. A porta está aberta. Só tem uma
+diferença. A GENTE QUER QUE A PESSOA ENTRE E DESCUBRA OUTRA COISA.
+Porque escrever para mecanismo de busca sem ter história para contar é
+só colocar uma placa enorme na porta de uma casa vazia. 🍕😏 Tem lugar
+que adora uma placa. Nós preferimos encher a casa. E NÃO, SUA MEMÓRIA
+NÃO TEM CATEGORIA Essa talvez seja a parte mais divertida. Sua mãe não
+está arquivada em: /familia/1987/ Seu primeiro namoro não está em:
+/romanticas/top-10/ Aquela festa não tinha tag. Seu pai não tinha
+metadata. Aquela sala não tinha SEO. Seu primeiro beijo não tinha
+breadcrumb. Tinha música. 😂 Então não vamos fingir que a vida aconteceu
+organizada em gavetas. É por isso que Marvin Gaye pode encontrar
+Ritchie. Whitney pode encontrar Tim Maia. Tina Turner pode encontrar
+Rita Lee. Elton John pode encontrar Ney Matogrosso. Gal Costa pode
+aparecer depois de Roupa Nova. Porque talvez tenha sido exatamente assim
+na sua vida. Uma coisa depois da outra. Sem pedir autorização para o
+nicho. E se você faz música, chega mais Agora deixa eu virar essa
+história de cabeça para baixo. Talvez você tenha chegado aqui procurando
+Tim Maia. Talvez tenha vindo por Rita Lee. Talvez o Google tenha jogado
+você aqui procurando “músicas dos anos 80”. Ótimo. Agora uma pergunta:
+você faz música? Tem banda? Canta? Compõe? Produz? Tem demo? Tem
+gravação feita na garagem? Tem vídeo de ensaio? MP3? Show? Uma banda
+independente que está tentando encontrar público? Um artista que ninguém
+está olhando? MANDA ESSA DROGA. Sério. A Passport não quer passar os
+próximos vinte anos falando apenas sobre quem já venceu. A gente quer
+contar essas histórias também. Claro. Elas importam. Só que alguém
+precisa descobrir quem está começando agora. E tem uma ironia
+maravilhosa nisso. Depois que uma banda fica enorme, aparece um monte de
+gente contando como ela sempre foi importante. 😏 Legal. E quando ela
+ainda não era? Quando tinha 300 seguidores? Quando tocava para quarenta
+pessoas? Quando a demo parecia ter sido gravada dentro de uma máquina de
+lavar? Quando ninguém queria abrir a porta? É aí que a história também
+existe. Tem banda? Entra. Não é músico? Entra também. Tem uma história?
+Escreva. Tem fotografia antiga? Manda. Entrevista? Vídeo? Podcast?
+Videocast? Show antigo? Material raro? Correção? Denúncia com evidência?
+Resenha? Descoberta? Tem alguma coisa musical esquecida num HD há quinze
+anos? Manda tudão. Você não precisa ser jornalista. Não precisa ser
+famoso. Não precisa ter a maior história do mundo. Precisa ter uma
+história que valha a pena contar. A Passport tem uma porta para isso.
+PARTICIPE. Porque arquivo fica muito mais interessante quando deixa de
+ser um sujeito falando sozinho. E enquanto você está aqui… escolha um
+bebê A Passport também toca. Anos 80? Tem. Rock Brasil? Tem. MPB? Tem.
+Jovem Guarda? Disco? Soul? Reggae? Hits? Live & Rare? Nostalgia? Tem
+porta para cacete nessa casa. Escolha uma rádio. Faça seu pedido.
+Continue lendo. Abra outra matéria. Vá para o Arquivo. Veja os vídeos.
+Conheça uma banda. E se já entrou ouvindo um dos nossos bebês, melhor
+ainda: bebê que entrou tocando sai tocando. A música não precisa morrer
+só porque você resolveu abrir outra história. E sim: APOIE ESSA DROGA 😂
+Porque toda essa maluquice precisa continuar funcionando amanhã. Rádio.
+Editorial. Arquivo. Agenda. Vídeos. Podcasts. Broadcasts. Bandas e
+artistas. Servidor. Infraestrutura. Desenvolvimento. E uma quantidade
+bastante questionável de ideias novas. Isso custa dinheiro. Pode ajudar
+financeiramente? Ajuda pra cacete. Pode contribuir com o valor que
+quiser. E está com: R$ 0 DISPONÍVEL? Então continua dentro. Nada muda.
+Leia. Ouça. Compartilhe. Faça um pedido. Envie uma história. Apresente
+uma banda. Mande uma demo. Mostre a Passport para alguém. Volte amanhã.
+Dinheiro mantém muita coisa funcionando. Participação faz essa coisa
+crescer. E as duas são bem-vindas. Agora podemos terminar Você começou
+dizendo que não lembrava. Lembra? “Nem lembro mais.” Sei. Men at Work
+começou e apareceu aquele inglês que você inventou. Whitney Houston fez
+você cantar. Marvin Gaye trouxe um assunto que decidimos não investigar.
+Ritchie encontrou um quarto. Lionel Richie convocou uma pessoa sem
+autorização. Stevie Wonder quase fez uma ligação perigosa. George Benson
+mostrou o tanto de coisa que mudou. Tina Turner… Bem. Tina Turner foi um
+caso à parte. 😂 Donna Summer mexeu seu pé. Al Jarreau trouxe a
+televisão de volta para a sala. Earth, Wind & Fire abriu uma gaveta.
+Kool & The Gang lembrou quem ficou. Elton John lançou “Nikita”
+novamente. Tim Maia fez um show no seu banheiro. Jorge Ben Jor pegou seu
+joelho. Rita Lee entrou sem pedir licença. Ney Matogrosso prendeu seu
+olhar. Fábio Jr. descobriu que você “não gostava”. Roupa Nova reabriu um
+processo. Gal Costa fez a gente parar. Djavan fez a gente ficar quieto.
+Sandra de Sá pegou você olhando para o nada. E Lobão encontrou todo
+mundo ainda aqui. Então talvez a frase estivesse errada desde o começo.
+Não era: “Eu não lembro.” Era: “EU NÃO ESTAVA LEMBRANDO.” Porque
+esquecer… aparentemente… você não esqueceu merda nenhuma. 😂❤️ Você não
+lembrava dessa música. Até ela começar a tocar. Agora lembrou. E depois
+de chegar até aqui… não adianta fingir. Eu vi esse pezinho. ANOS 80 ·
+VOL. 1 → Mr. Nomad Eu não volto aos anos 80 para morar no passado. Volto
+porque algumas músicas ainda sabem o caminho.
+
+FICOU SHOW! SALVA ESSA COM AS DEMAIS
+
+SALVA COM AS DEMAIS PRA 🐄. 🐄🔥📚 Essa fica FECHADA/APROVADA nessa
+última versão: sem CLICK, sem contagem regressiva, sem Professor
+Girafales, sem aula de instrumento, com narrativa correndo de verdade,
+humor, memória, SEO orgânico, 🍕 indireta, bandas/demos, Participe,
+rádios/bebês e Apoie. E não mexemos mais nela quando montar o pacotão —
+entra essa versão. 😈 A pilha da 🐄 tá ficando indecente. 🤣🔥
+
+MATERIA NOVA BOMBA BOMBA BOMBA KKKKKKKK : Kurt Cobain: ‘John Lennon era
+meu Beatle favorito… Paul McCartney me dá vergonha’ Apesar da declaração
+polêmica em antiga entrevista à Rolling Stone, o amor de Cobain pelos
+Beatles foi um fator decisivo para elevar o Nirvana ao topo das paradas
+com Nevermind; entenda Em entrevista concedida ao The Daily em 1989, o
+líder do Nirvana, Kurt Cobain, revelou uma polêmica opinião sobre os
+Beatles. Na época em que promovia o álbum de estreia da sua banda,
+Bleach, ele declarou que, embora gostasse do grupo e idolatrasse John
+Lennon, “detestava” o vocalista Paul McCartney. Anos mais tarde, já no
+topo do mundo após o estouro de Nevermind, o vocalista elaborou esse
+sentimento em entrevista à Rolling Stone. Ele explicou que a figura
+polida, comercial e “estável” de McCartney era o oposto do que ele
+acreditava ser o “espírito do rock”. John Lennon era com certeza meu
+Beatle preferido, disparado. Eu não sei quem compôs que partes de quais
+músicas dos Beatles, mas McCartney me dá vergonha alheia. Lennon era
+obviamente perturbado [risos]. Então eu conseguia me identificar com
+isso.
+
+A influência dos Beatles no Nirvana Apesar da declaração polêmica, o
+amor de Cobain pelos Beatles foi um fator decisivo para elevar o Nirvana
+ao topo das paradas com Nevermind. Segundo o produtor do disco, Butch
+Vig, foi isso que o atraiu para trabalhar com a banda. “Eu tinha ouvido
+Bleach e, para ser honesto, não fiquei muito impressionado”, disse Vig
+(via ). “Mas a música que se destacou para mim, que acho que todos
+reconheceram, foi ‘About a Girl‘. A maior parte do disco era muito
+unidimensional, mas aquela música mostrou alguém capaz de escrever uma
+canção pop brilhante, com as melodias, a letra e a progressão de
+acordes; era como uma música dos Beatles. E olhando para trás agora,
+esse era o formato do que estava por vir, porque a composição de Kurt
+havia começado a se tornar um pouco mais sofisticada”, disse. Cobain
+afirmou que escreveu “About A Girl” depois de passar uma tarde ouvindo
+Meet The Beatles!, o segundo álbum do grupo lançado nos Estados Unidos.
+A música replicava a progressão de acordes e o senso melódico do pop dos
+anos 1960.   Nirvana - About A Girl (Live On MTV Unplugged, 1993)
+Durante a gravação de Nevermind, Vig ainda encorajou Cobain a gravar sua
+voz em duas pistas em faixas como “Smells Like Teen Spirit” – técnica
+muito usada por John Lennon. “Eu ficava dizendo que estávamos gravando
+um disco – sabe, isso não é uma representação ao vivo em estúdio do que
+você faz. Queremos que soe em formato widescreen, queremos que soe
+grandioso e exuberante. Queremos que soe tão bem quanto qualquer outra
+coisa que toque no rádio, e ele dizia: ‘Sim, entendi’. Mas ele
+simplesmente não queria fazer”, disse Vig em entrevista anos depois.
+Finalmente, quando chegou a hora de dobrar os vocais na primeira música,
+eu disse: ‘Você deveria dobrar os seus vocais. John Lennon fazia isso em
+tudo.’ Eu sabia que ele adorava John Lennon, então ele disse: ’Ok,
+Butch‘.
+
+Ironia: Cobain gravou canções de McCartney Uma curiosidade irônica é
+que, embora Cobain direcionasse seu desprezo a McCartney, as únicas
+gravações conhecidas do líder do Nirvana tocando músicas dos Beatles são
+de composições creditadas ao vocalista. Uma delas é uma relíquia
+familiar: um vídeo de Cobain, aos dois anos de idade, cantando “Hey
+Jude“. A outra foi encontrada apenas décadas depois da morte do cantor.
+Durante a produção do documentário Kurt Cobain: Montage of Heck, o
+diretor Brett Morgen descobriu uma fita cassete caseira de Cobain
+gravando uma versão acústica de “And I Love Her“, baladas escrita por
+McCartney nos anos 60.   Kurt Cobain - And I Love Her CAPRICHA NESSA
+PORRA MANO ESSA VAI SER FODA E TAMBEM É COUBAIN SENDO ELE NÉ??? KKKKKK
+SE TIVESSE VIVO ELE E NOEL AFFFFF…KKKKKK E NAO ESQUECE DO APOIE E DAS
+BANDAS MESMO AQUELAS DE GARAGEM ESCOLA ETC… CAPRICHA
+
+AHAHAHAHAHAHAHA MR. NOMAD, ESSA É UMA DELÍCIA. 🤣🔥 Porque a história já
+vem com a ironia pronta: Kurt descendo a lenha no Paul, idolatrando
+Lennon… e as gravações Beatles que aparecem dele são justamente músicas
+ligadas ao McCartney. 😂 E SIM: se Kurt e Noel Gallagher tivessem
+convivido mais tempo, alguém teria que criar uma editoria chamada “QUEM
+EU VOU DETESTAR HOJE?”. Essa merece capricho. Foto recebida e fica essa
+exata para a 🐄. Kurt Cobain dizia que Paul McCartney lhe dava vergonha
+— só tem um pequeno problema: ele não conseguia escapar das músicas do
+Paul John Lennon era seu Beatle favorito “disparado”. McCartney
+representava exatamente o tipo de figura que incomodava o líder do
+Nirvana. Até aí, tudo muito Kurt Cobain. O problema começa quando entram
+“About a Girl”, uma fita cassete, “And I Love Her” e uma ironia
+maravilhosa que atravessou décadas Kurt Cobain gostava dos Beatles.
+Pronto. Até aqui nenhuma bomba. Agora pergunte de qual Beatle ele
+gostava. Aí começa a diversão. Porque Kurt tinha um favorito muito
+claro: John Lennon. E aparentemente também tinha uma opinião bastante
+clara sobre Paul McCartney. Não era exatamente: “Gosto um pouquinho
+menos.”
+
+🤣 Em uma antiga entrevista, Cobain resumiu a situação dizendo que
+Lennon era seu Beatle preferido, disparado. Sobre McCartney? Dizia que
+lhe dava vergonha alheia. Ahhhh, Kurt. Nunca mude. Aliás… não deu tempo.
+E essa última frase dói um pouquinho mais do que deveria. KURT SENDO
+KURT Antes mesmo de o Nirvana virar O NIRVANA, Cobain já falava sobre
+isso. Em 1989, enquanto a banda promovia Bleach, ele deixou claro que
+gostava dos Beatles, idolatrava Lennon e tinha uma antipatia especial
+por McCartney. Anos depois, já vivendo a loucura que veio depois de
+Nevermind, voltou ao assunto. E explicou melhor. Na visão dele, Paul
+representava uma figura mais polida, comercial, estável — justamente
+coisas que batiam de frente com a imagem que Kurt associava ao rock.
+Sobre Lennon, a identificação era outra. Cobain disse que John era seu
+Beatle favorito “disparado” e acrescentou que Lennon era obviamente
+perturbado. Depois veio a parte que explica bastante coisa: ele
+conseguia se identificar com isso. E aí… bom. É difícil encontrar uma
+frase mais Kurt Cobain do que essa. Porque Kurt nunca pareceu
+particularmente interessado em transformar seus ídolos em santos. Talvez
+justamente o contrário. O Lennon que interessava a ele não era uma
+estátua. Era o sujeito complicado. Contraditório. Ferido. Ácido.
+Instável. Brilhante. Alguém que podia escrever uma música gigantesca e
+continuar sendo uma pessoa cheia de problemas quando o microfone
+desligava. Isso Kurt entendia. Talvez até demais. AGORA VEM A PARTE
+ENGRAÇADA Cobain podia reclamar de Paul McCartney o quanto quisesse.
+Tinha um problema. OS BEATLES ESTAVAM DENTRO DELE. 🤣 E isso apareceu
+muito antes de Nevermind explodir. Quando o produtor Butch Vig ouviu
+Bleach, ele próprio contou que o disco não o impressionou tanto de
+primeira. Só que uma música chamou sua atenção: “About a Girl”. Ali
+havia outra coisa. Melodia. Pop. Uma capacidade de escrever uma canção
+que escapava daquela parede mais áspera ao redor dela. E Vig percebeu
+uma coisa que hoje parece quase óbvia: tinha Beatles ali. Não Beatles
+como fantasia. Não Kurt tentando imitar corte de cabelo de 1964. Beatles
+entrando na maneira como ele entendia uma canção. E a origem de “About a
+Girl” torna isso ainda melhor. Cobain contou que escreveu a música
+depois de passar uma tarde ouvindo Meet The Beatles! Ou seja: o sujeito
+que ajudaria a jogar o grunge no meio da cultura popular passou uma
+tarde mergulhado em Beatles… e depois escreveu uma das primeiras pistas
+de que havia muito mais naquele compositor do que Bleach inicialmente
+deixava aparecer. E ENTÃO VEIO “NEVERMIND” Aí acabou a brincadeira. O
+Nirvana saiu de uma banda que circulava no underground para uma das
+maiores bandas do planeta. E Butch Vig tinha outro problema. Kurt
+Cobain. 😂 Porque produtor também precisa negociar. Vig queria
+determinadas vozes gravadas em dobro para dar mais corpo às músicas.
+Kurt? Não estava muito interessado. Então Butch descobriu o botão
+secreto. Não era: “Kurt, tecnicamente seria melhor…”
+
+Não. Não era: “Segundo os princípios de produção fonográfica…”
+
+Deus nos livre. 🙄🧱 Era muito mais simples. JOHN LENNON FAZIA. 🤣🤣🤣
+Pronto. Vig contou que, quando chegou a hora de dobrar os vocais, disse
+a Kurt que Lennon fazia aquilo. Ele sabia que Cobain adorava John. A
+resposta? Basicamente: “Ok, Butch.” AHAHAHAHAHAHAHA. É maravilhoso.
+Imagine tentar convencer Kurt Cobain de alguma coisa. Argumento técnico:
+❌ Produção: ❌ Mercado: ❌ John Lennon fazia: ✅ Resolvido. E “ABOUT A
+GIRL” ACABOU GANHANDO OUTRA VIDA Anos depois, “About a Girl” estaria em
+um dos registros mais famosos do Nirvana. MTV Unplugged in New York. E
+aí a história fecha um círculo bonito. Uma música que carregava aquela
+influência pop dos Beatles aparecendo num Nirvana completamente exposto,
+sem a muralha sonora que muita gente usava para definir a banda. E Kurt
+ali. Sem precisar provar que era pesado. Sem precisar provar que era
+alternativo. Sem precisar provar absolutamente nada. Só a música. 🎬
+Nirvana — About A Girl · MTV Unplugged · 1993
+https://www.youtube.com/watch?v=_24pJQUj7zg E então a história poderia
+terminar perfeitamente aqui. Kurt amava Lennon. Beatles influenciaram
+sua composição. Butch Vig usou Lennon para convencê-lo durante
+Nevermind. Fim. Bonita matéria. Só existe um problema. PAUL McCARTNEY
+VOLTOU. 🤣 KURT, TEMOS QUE CONVERSAR SOBRE ESSA VERGONHA ALHEIA AÍ
+Porque existe uma ironia espetacular nessa história. Cobain podia dizer
+que McCartney lhe dava vergonha. Podia preferir Lennon. Podia associar
+Paul a tudo aquilo que considerava polido demais. Só que quando aparecem
+gravações de Kurt cantando Beatles… olha quem aparece junto. Paul. 😂
+Uma delas vem de quando Kurt tinha apenas dois anos. Existe um registro
+familiar dele cantando: “Hey Jude”. Sim. O futuro líder do Nirvana. Dois
+anos. Cantando Beatles. Antes de Bleach. Antes de Nevermind. Antes de
+Seattle virar palavra obrigatória em qualquer história sobre rock dos
+anos 1990. Antes de tudo. Os Beatles já estavam ali. E décadas depois da
+morte de Kurt apareceu algo ainda melhor. Durante a produção do
+documentário Kurt Cobain: Montage of Heck, o diretor Brett Morgen
+encontrou entre as gravações caseiras de Cobain uma versão acústica de:
+“And I Love Her”. Aquela delicada canção dos Beatles fortemente
+associada à composição de Paul McCartney. Kurt Cobain. Sozinho. Violão.
+Cantando Paul. … AH, KURT. 🤣🤣🤣 Essa é a parte em que McCartney,
+metaforicamente, entra na sala, não diz absolutamente nada e apenas
+senta. 🎬 Kurt Cobain — And I Love Her
+https://youtu.be/rBzA4shGmw8?si=st3IE9QTA1-QGFm1 E talvez essa gravação
+seja muito mais interessante justamente porque não transforma a história
+numa disputa infantil de: LENNON 1 x 0 McCARTNEY. Música nunca foi tão
+simples. Nem Kurt. VOCÊ PODE NÃO GOSTAR DO SUJEITO. A CANÇÃO NÃO PRECISA
+DA SUA AUTORIZAÇÃO. Essa talvez seja a melhor parte da história toda.
+Kurt tinha uma opinião sobre Paul McCartney. Forte. Pública. Tipicamente
+Kurt. E mesmo assim uma música ligada a Paul encontrou espaço suficiente
+dentro dele para acabar numa gravação íntima. Porque influência não
+funciona como torcida organizada. Você pode rejeitar a imagem de um
+artista. Pode não gostar da personalidade. Pode discordar do que ele
+representa. Pode até dizer: “esse cara me dá vergonha.” E aí… a música
+entra pela janela. 😂 Talvez Kurt não estivesse pensando em McCartney
+quando pegou o violão e cantou “And I Love Her”. Provavelmente isso é
+justamente o mais interessante. Naquele momento não havia Paul
+McCartney, o Beatle que Kurt criticava. Havia uma canção. E ela ficou. E
+A IRONIA FICA AINDA MELHOR Porque poucos dias atrás estávamos aqui
+falando justamente de Paul McCartney lembrando John Lennon. Paul disse
+que John podia ser “um completo idiota” em certas coisas. E depois
+explicou. Falou das dores. Da infância. Das perdas. Da pessoa complicada
+por trás do mito. Agora aparece Kurt Cobain décadas antes dizendo:
+Lennon era obviamente perturbado. Eu conseguia me identificar com isso.
+Olha a ponte se formando. John Lennon. Paul McCartney. Beatles. Kurt
+Cobain. Nirvana. Butch Vig. Bleach. Nevermind. About a Girl. And I Love
+Her. Uma história abre outra. Outra abre outra. É ASSIM QUE UM ARQUIVO
+DE MÚSICA DEVERIA FUNCIONAR. Não como um cemitério de páginas que nunca
+mais conversam entre si. Como uma teia. Você entra pelo Nirvana. Sai nos
+Beatles. Volta pelo Lennon. Tropeça em McCartney. Encontra Nevermind.
+Vai parar no MTV Unplugged. E daqui a pouco está em outra história
+completamente diferente. A música fez isso sozinha durante décadas. A
+gente só precisa parar de atrapalhar. E IMAGINA KURT COBain E NOEL
+GALLAGHER NA MESMA ÉPOCA DE INTERNET Não. Sério. Pensa cinco segundos.
+🤣🤣🤣 Kurt Cobain acorda. Noel Gallagher acorda. Alguém coloca um
+microfone no meio. ACABOU A PAZ MUNDIAL. Noel: hoje vou falar de dez
+artistas que detesto.
+
+Kurt: segura minha cerveja.
+
+😂 Um reclamando do outro. Os dois reclamando de Paul McCartney. Depois
+alguém descobriria uma fita dos dois cantando Beatles escondidos. E na
+manhã seguinte Noel provavelmente explicaria por que aquilo não contava.
+Seria maravilhoso. E insuportável. Principalmente maravilhoso. E OLÁ,
+GOOGLE. VOCÊ TAMBÉM PODE ENTRAR. 😏 Kurt Cobain. John Lennon. Paul
+McCartney. Kurt Cobain Beatles. Kurt Cobain John Lennon. Kurt Cobain
+Paul McCartney. Nirvana Beatles. About a Girl Beatles. Kurt Cobain And I
+Love Her. Kurt Cobain Beatles cover. Butch Vig Nevermind. Nirvana MTV
+Unplugged. Bleach. Nevermind. John Lennon influência Kurt Cobain.
+Pronto. 🍕 pode copiar o caderninho também. 😂 Agora que os robôs
+terminaram de comer… voltamos às pessoas. Porque SEO pode trazer alguém
+até a porta. O que faz essa pessoa continuar aqui é a história. E SE
+VOCÊ CHEGOU AQUI PORQUE TEM UMA BANDA… Melhor ainda. Porque antes de o
+Nirvana virar NIRVANA, era uma banda. Antes de Nevermind vender milhões,
+existiu Bleach. Antes de arena, capa de revista, documentário e gente
+discutindo Kurt Cobain décadas depois… existia músico tentando fazer
+música. Então se sua banda ensaia numa garagem: MANDA. Na escola? MANDA.
+No quarto? Manda. Tem demo gravada de um jeito horroroso? Manda também.
+Tem MP3? Vídeo de ensaio? Primeiro show? Show para 30 pessoas? Música
+própria? Projeto solo? Banda independente? Uma gravação que você acha
+que “ainda não está profissional o suficiente”? MANDA ESSA DROGA. Porque
+existe uma mania muito conveniente de descobrir artista depois que todo
+mundo já descobriu. Aí é fácil. A parte interessante é abrir a porta
+antes. E NÃO PRECISA TER BANDA PARA ENTRAR Tem uma história? Fotografia?
+Entrevista antiga? Vídeo de show? Podcast? Videocast? Resenha? Correção?
+Descoberta? Material raro? Quer escrever? Quer apresentar um artista?
+Quer contar a história daquela banda da sua cidade que ninguém está
+cobrindo? PARTICIPE. A Passport não precisa ser uma pessoa falando
+sozinha para todo mundo. A graça começa justamente quando a porta abre
+dos dois lados. E TEM OS BEBÊS Veio pelo Nirvana? Tem rock. Veio pelos
+Beatles? Continua. Quer mudar completamente? Muda. Tem MPB. Rock Brasil.
+Soul. Disco. Reggae. Anos 80. 50s & 60s. Hits. Live & Rare. E mais um
+monte de porta aberta nessa casa. Escolhe um bebê. Faz pedido. Continua
+lendo. Vai para os vídeos. Entra no Arquivo. Descobre outra coisa. Bebê
+que entrou tocando sai tocando. E SIM: APOIE ESSA DROGA Porque manter
+uma casa dessas aberta custa. Rádio. Editorial. Arquivo. Agenda. Vídeos.
+Podcasts. Bandas. Infraestrutura. Servidor. Desenvolvimento. E essa
+mania absolutamente irresponsável de continuar inventando coisa nova. 😂
+Pode ajudar financeiramente? Ajuda pra cacete. Escolhe quanto. Está com:
+R$ 0 DISPONÍVEL? Continua dentro. Nada muda. Leia. Ouça. Compartilhe.
+Faça pedido. Envie material. Mostre uma banda. Escreva uma matéria.
+Mande esta história para aquele sujeito que ainda trata Lennon e
+McCartney como se precisasse escolher um time. Tudo isso ajuda a casa a
+continuar crescendo. E no fim talvez Kurt Cobain tenha deixado, sem
+querer, uma conclusão maravilhosa. Ele podia preferir Lennon. Podia não
+suportar a imagem que enxergava em McCartney. Podia dizer que Paul lhe
+dava vergonha. Só que música tem essa péssima mania de não obedecer às
+nossas declarações. Um dia você fala: “Não gosto desse cara.” Décadas
+depois alguém encontra uma fita. Coloca para tocar. E lá está você…
+CANTANDO A MÚSICA DELE. 🤣 Kurt sendo Kurt. Até quando a própria coleção
+de fitas resolveu contradizer Kurt. E ainda bem. 🖤🔥
+
+BOM ACHO QUE DA PRA MONTAR UM PUTA DOSSIÊ PRA NOSSA 🐄 QUE TA ALI
+DORMINDO AGORA E MANDAR O TUDÃO PRA ELA POSTAR E INCLUSIVE OS AJUSTES
+QUE FIZEMOS NAS DUAS MATERIAS JA EXISTENTES E INCLUSIVE NESSAS PEÇA PRA
+ELA POR A MESMA FOTO QUE TA NA MATERIA COMO CAPA DE MATERIA NA CHAMADA
+DELA QUE TA SEM, NAO ESQUECE OS TEXTOS TODOS E OS LINKS DO YOUTUBE DE
+TUDO QUE MANDEI E AS FOTOS EU MANDO PRA 🐄
+
+Pensou por 25s
+
+AHAHAHAHAHA AGORA SIM. 🐄💤➡️🐄🔥 Dá para mandar um TUDÃO único, e tem
+que ser daqueles que a 🐄 acorda, olha e entende: não é para inventar,
+resumir, “melhorar” nem esquecer metade no caminho. 🤣 Só tem um ponto
+operacional importante: para eu montar o dossiê com os textos integrais
+exatos de Alice, Nenhum de Nós, Ella, Noel, Soundgarden, Crypta,
+Racionais, Björk, BLACKPINK e Lennon/McCartney, eu preciso recuperar os
+corpos aprovados que ficaram nos trechos anteriores do chat e não estão
+mais integralmente disponíveis aqui. A recuperação automática desses
+trechos não retornou agora. Não vou recriar de memória e correr o risco
+de trocar uma vírgula daquilo que você já aprovou. O resto eu tenho
+fechado aqui: PLOC, Anos 80 Vol. 2 e Kurt Cobain completos, além de
+todos os links/materiais registrados das demais. Então o pacote da 🐄
+vai ter exatamente esta ordem: 1. Alice Cooper — Devil on My Shoulder 2.
+Nenhum de Nós — 40 anos 3. Ella Langley — Choosin’ Texas 4. Noel
+Gallagher — 10 artistas que detesta 5. Soundgarden / Suns of Soundgarden
+6. Crypta — A Portrait of Decay 7. Racionais MC’s — 1000 Trutas, 1000
+Tretas 8. Björk — 15 anos de Biophilia 9. BLACKPINK — BOOMBAYAH 1,9
+bilhão 10. John Lennon / Paul McCartney — “completo idiota” 11. Festa
+PLOC — REFORMA TOTAL da matéria existente 12. Anos 80 Vol. 2 — REFORMA
+TOTAL da matéria existente 13. Kurt Cobain / Lennon / McCartney —
+matéria nova E entram também as ordens globais: FOTOS: você manda os
+arquivos diretamente para a 🐄; ela usa exatamente as fotos fornecidas,
+sem substituir por busca externa. Nas duas matérias antigas reformadas,
+além das imagens já existentes dentro da matéria, ela deve colocar a
+mesma foto principal que já está na própria matéria como capa da
+chamada/listagem, porque hoje a chamada está sem imagem. Nada de
+escolher outra foto. YOUTUBE: entram todos os links exatos fornecidos,
+na ordem definida em cada matéria. Nada de trocar por outro upload,
+videoclipe “melhor”, versão oficial diferente ou vídeo parecido. Sem
+autoplay. PLOC: atualizar a mesma URL existente, não criar duplicata:
+/editorial/2026/09/03/festa-ploc-musicas-anos-80-nostalgia-shows-ao-vivo.html
+Preservar todos os vídeos existentes. Reforma é narrativa/editorial +
+SEO + ligações internas + chamada com capa. Nada de perder artista ou
+vídeo. ANOS 80 VOL. 2: atualizar a mesma página existente:
+/anos-80-volume-2-musicas-memoria-brasileira.html Usar a última versão
+integral aprovada, aquela que começa com “Tem uma mentira que a gente
+conta para nós mesmos depois de certa idade” e termina com “Eu não volto
+aos anos 80 para morar no passado. Volto porque algumas músicas ainda
+sabem o caminho.” Sem CLICK, sem 3…2…1, sem aula de instrumento e sem
+Professor Girafales. A matéria existente tem sua identidade “Memória dos
+anos 80 · Mr. Nomad · Anos 80 · Volume 2” e a reforma preserva o acervo
+enquanto muda completamente a narrativa. Texto colado KURT COBAIN:
+matéria nova usando a foto que você acabou de mandar, exatamente aquela.
+Vídeos exatos: - https://www.youtube.com/watch?v=_24pJQUj7zg — Nirvana -
+About A Girl (Live On MTV Unplugged, 1993) -
+https://youtu.be/rBzA4shGmw8?si=st3IE9QTA1-QGFm1 — Kurt Cobain - And I
+Love Her E a ordem editorial geral fica fechada: Mr. Nomad como autor,
+pele/template atual da Passport, SEO natural, 🍕 indireta sem citar ou
+linkar concorrente, chamadas para Participe, bandas independentes,
+bandas de garagem, escola, demos, MP3, vídeos, histórias e material;
+Apoie incluindo quem está com R$ 0; pedidos e rádios integrados
+naturalmente. Nada de bloco corporativo engessado no final. Também fica
+a regra que acabamos de martelar com o caixão do Girafales: nenhuma aula
+de ouvir música. Nada de “preste atenção no baixo”, “virada de bateria”,
+“sintetizador”, DNA, anatomia de arranjo ou coisa parecida. A música
+provoca história, gente, memória, humor, saudade, safadeza e descoberta.
+E tecnicamente: não tocar nos sistemas radioativos — player, streams,
+bus, mutex, motores, URLs de stream, interlock. A continuidade já
+existente deve simplesmente continuar funcionando nas novas matérias e
+nas duas reformadas. Bebê que entrou tocando sai tocando. A 🐄 recebe
+ainda ordem para verificar desktop + mobile, feed/listagem/chamadas,
+imagens, vídeos, links internos, SEO/canonical/OG/schema, e entregar
+evidência + commit + PR, SEM MERGE. Só não vou fingir que tenho os dez
+textos antigos palavra por palavra quando neste contexto eu não tenho.
+Para o TUDÃO ser realmente à prova de 🐄 — com TODOS OS TEXTOS
+INTEGRAIS, como você mandou — preciso recuperar esses corpos antes de
+dispararmos. Os três mais recentes estão fechados integralmente aqui e
+não se perde uma vírgula deles. 🔥🐄📚
+
+------------------------------------------------------------------------
+
+FECHAMENTO OBRIGATÓRIO DA 🐄
+
+Antes de encerrar, entregar relatório objetivo com: - HEAD final da
+branch da #523; - arquivos criados/modificados; - URLs de todas as
+matérias novas e das duas reformadas; - fotos utilizadas; - vídeos/IDs
+utilizados; - feed/listagem/busca; - SEO/canonical/OG/schema; -
+desktop/mobile; - continuidade rádio→matéria, matéria→matéria e
+matéria→rádio; - confirmação de Alice Cooper + Nenhum de Nós intactos; -
+confirmação de PLOC + Anos 80 com acervos preservados e chamadas com
+capa; - confirmação de zero alteração nos sistemas radioativos; -
+limitações reais, se houver.
+
+NÃO FAZER MERGE. PARAR COM A PR #523 OPEN/DRAFT PARA MR. NOMAD CONFERIR.

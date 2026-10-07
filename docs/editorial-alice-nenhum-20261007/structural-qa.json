@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "articles": [
+    {
+      "article": "Alice Cooper",
+      "literalBody": "PASS",
+      "photos": 2,
+      "videoIDs": [
+        "G0B7mfSX_ls",
+        "ONqCfDqfYfI"
+      ],
+      "autoplay": "NONE"
+    },
+    {
+      "article": "Nenhum de Nós",
+      "literalBody": "PASS",
+      "photos": 2,
+      "videoIDs": [
+        "1NDxPTLxcrg",
+        "rOsoehHpOW4"
+      ],
+      "autoplay": "NONE"
+    }
+  ],
+  "protected": "UNCHANGED",
+  "feedOldEntries": "UNCHANGED"
+}

@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "searches": [
+    {
+      "route": "/noticias.html",
+      "query": "Kurt Cobain",
+      "result": "PASS"
+    },
+    {
+      "route": "/noticias.html",
+      "query": "Anos 80 Volume 2",
+      "result": "PASS"
+    },
+    {
+      "route": "/editorial.html",
+      "query": "Kurt Cobain",
+      "result": "PASS"
+    },
+    {
+      "route": "/editorial.html",
+      "query": "Anos 80 Volume 2",
+      "result": "PASS"
+    }
+  ]
+}

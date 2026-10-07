@@ -1,0 +1,1551 @@
+{
+  "scope": "Two supplied complete articles; Home and audio systems unchanged.",
+  "method": "Original engines and selected stream URLs; media HTTP response replaced with WAV for transport verification. YouTube external responses replaced with test documents. Neither external radio-provider audio nor YouTube playback availability is certified.",
+  "pages": [
+    {
+      "artist": "Kurt Cobain",
+      "width": 1440,
+      "http": 200,
+      "title": "Kurt Cobain dizia que Paul McCartney lhe dava vergonha — só tem um pequeno problema: ele não conseguia escapar das músicas do Paul",
+      "subtitle": "John Lennon era seu Beatle favorito “disparado”. McCartney representava exatamente o tipo de figura que incomodava o líder do Nirvana. Até aí, tudo muito Kurt Cobain. O problema começa quando entram “About a Girl”, uma fita cassete, “And I Love Her” e uma ironia maravilhosa que atravessou décadas",
+      "author": "Mr. Nomad",
+      "byline": "Mr. Nomad",
+      "canonical": "https://www.passportradio.online/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "images": [
+        {
+          "src": "images/editorial/2026-10-07-package-pr523/kurt-cobain-nirvana-1993.jpg",
+          "width": 1920,
+          "fit": "contain"
+        }
+      ],
+      "videoIds": [
+        "_24pJQUj7zg",
+        "rBzA4shGmw8"
+      ],
+      "overflow": false,
+      "radioHost": false,
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "artist": "Anos 80 Volume 2",
+      "width": 1440,
+      "http": 200,
+      "title": "Você não lembrava dessa música. Até ela começar a tocar.",
+      "subtitle": "Men at Work, Whitney Houston, Marvin Gaye, Tina Turner, Tim Maia, Rita Lee, Ney Matogrosso, Gal Costa, Djavan e mais de 30 encontros com músicas que tocaram na vida do brasileiro — e aparentemente guardaram algumas coisas que você preferia deixar quietas",
+      "author": "Mr. Nomad",
+      "byline": "Mr. Nomad",
+      "canonical": "https://www.passportradio.online/anos-80-volume-2-musicas-memoria-brasileira.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "images": [
+        {
+          "src": "images/editorial/anos80-vol2-u2.jpg",
+          "width": 1792,
+          "fit": "contain"
+        }
+      ],
+      "videoIds": [
+        "HaMEzljVtA4",
+        "JpbvkcZ5oGc",
+        "mHLLb7n2xsQ",
+        "qKbs4yDZpco",
+        "xuiaL9HD2hw",
+        "l7bommRIeW4",
+        "XxoBaEQGMPo",
+        "b0DL1ZD2qIw",
+        "Qfn1ZFfPxbU",
+        "v22YbORzDD0",
+        "C7Vnf2g6Qpw",
+        "izE7xZVlF6Y",
+        "7tuJfud4W6U",
+        "yZxmmsN2k48",
+        "skHjKAlTSm4",
+        "v0a2U_xEiw0",
+        "vLzj_S0Tzno",
+        "UlqGA7RCos8",
+        "JzByVhWju88",
+        "thGHAHHYwWU",
+        "fIuXicAzcFo",
+        "GHXCLnGJLIU",
+        "0CI5sShJXww",
+        "ygUuXtg98zA",
+        "CD8rJlPuX0g",
+        "W-t0LxHdS_s",
+        "GUVoVoQ1oRM",
+        "9FbCT-EEtQk",
+        "4nIiZlOWqug",
+        "0CwsvvZWvDE",
+        "91EjZCt_O1A",
+        "4WgpGFpi5Oo"
+      ],
+      "overflow": false,
+      "radioHost": false,
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "artist": "Kurt Cobain",
+      "width": 390,
+      "http": 200,
+      "title": "Kurt Cobain dizia que Paul McCartney lhe dava vergonha — só tem um pequeno problema: ele não conseguia escapar das músicas do Paul",
+      "subtitle": "John Lennon era seu Beatle favorito “disparado”. McCartney representava exatamente o tipo de figura que incomodava o líder do Nirvana. Até aí, tudo muito Kurt Cobain. O problema começa quando entram “About a Girl”, uma fita cassete, “And I Love Her” e uma ironia maravilhosa que atravessou décadas",
+      "author": "Mr. Nomad",
+      "byline": "Mr. Nomad",
+      "canonical": "https://www.passportradio.online/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "images": [
+        {
+          "src": "images/editorial/2026-10-07-package-pr523/kurt-cobain-nirvana-1993.jpg",
+          "width": 1920,
+          "fit": "contain"
+        }
+      ],
+      "videoIds": [
+        "_24pJQUj7zg",
+        "rBzA4shGmw8"
+      ],
+      "overflow": false,
+      "radioHost": false,
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "artist": "Anos 80 Volume 2",
+      "width": 390,
+      "http": 200,
+      "title": "Você não lembrava dessa música. Até ela começar a tocar.",
+      "subtitle": "Men at Work, Whitney Houston, Marvin Gaye, Tina Turner, Tim Maia, Rita Lee, Ney Matogrosso, Gal Costa, Djavan e mais de 30 encontros com músicas que tocaram na vida do brasileiro — e aparentemente guardaram algumas coisas que você preferia deixar quietas",
+      "author": "Mr. Nomad",
+      "byline": "Mr. Nomad",
+      "canonical": "https://www.passportradio.online/anos-80-volume-2-musicas-memoria-brasileira.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "images": [
+        {
+          "src": "images/editorial/anos80-vol2-u2.jpg",
+          "width": 1792,
+          "fit": "contain"
+        }
+      ],
+      "videoIds": [
+        "HaMEzljVtA4",
+        "JpbvkcZ5oGc",
+        "mHLLb7n2xsQ",
+        "qKbs4yDZpco",
+        "xuiaL9HD2hw",
+        "l7bommRIeW4",
+        "XxoBaEQGMPo",
+        "b0DL1ZD2qIw",
+        "Qfn1ZFfPxbU",
+        "v22YbORzDD0",
+        "C7Vnf2g6Qpw",
+        "izE7xZVlF6Y",
+        "7tuJfud4W6U",
+        "yZxmmsN2k48",
+        "skHjKAlTSm4",
+        "v0a2U_xEiw0",
+        "vLzj_S0Tzno",
+        "UlqGA7RCos8",
+        "JzByVhWju88",
+        "thGHAHHYwWU",
+        "fIuXicAzcFo",
+        "GHXCLnGJLIU",
+        "0CI5sShJXww",
+        "ygUuXtg98zA",
+        "CD8rJlPuX0g",
+        "W-t0LxHdS_s",
+        "GUVoVoQ1oRM",
+        "9FbCT-EEtQk",
+        "4nIiZlOWqug",
+        "0CwsvvZWvDE",
+        "91EjZCt_O1A",
+        "4WgpGFpi5Oo"
+      ],
+      "overflow": false,
+      "radioHost": false,
+      "errors": [],
+      "result": "PASS"
+    }
+  ],
+  "stations": [
+    {
+      "family": "mpb",
+      "forward": [
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 0.513426,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 0.852615,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 0.882482,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 1.268458,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 1.281308,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 1.629652,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 1.641217,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 1.963595,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 1.973829,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.347947,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "reverse": [
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.362371,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.634155,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.647353,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.980787,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "paused": [
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.996489,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.996489,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.996489,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791396935065",
+            "time": 2.996489,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "family": "hits",
+      "forward": [
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 0.514147,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 0.866323,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 0.883018,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 1.282118,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 1.297613,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 1.647897,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 1.660049,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 2.149254,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 2.163612,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 2.599395,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "reverse": [
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 2.616141,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 2.888061,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 2.904006,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 3.283665,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "paused": [
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 3.298152,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 3.298152,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 3.298152,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 3.298152,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "family": "disco",
+      "forward": [],
+      "reverse": [],
+      "paused": [
+        {
+          "href": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+            "time": 0.514293,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "disco",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+            "time": 0.514293,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "disco",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        },
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+            "time": 0.514293,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "disco",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+            "time": 0.514293,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "disco",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "errors": [],
+      "result": "PASS"
+    }
+  ],
+  "feed": {
+    "result": "PASS",
+    "searches": [
+      {
+        "route": "/noticias.html",
+        "query": "Kurt Cobain",
+        "result": "PASS"
+      },
+      {
+        "route": "/noticias.html",
+        "query": "Anos 80 Volume 2",
+        "result": "PASS"
+      },
+      {
+        "route": "/editorial.html",
+        "query": "Kurt Cobain",
+        "result": "PASS"
+      },
+      {
+        "route": "/editorial.html",
+        "query": "Anos 80 Volume 2",
+        "result": "PASS"
+      }
+    ]
+  },
+  "result": "PASS_AVAILABLE_TWO_ARTICLES",
+  "initialListingFailure": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/anos-80-volume-2-musicas-memoria-brasileira.html\"]').first()\u001b[22m\n",
+  "initialListingFailureResolution": "Older Anos record is paginated; existing priority-feed record overrode manual title/deck/photo. Authorized record corrected; both actual search/listing routes independently retested by search-qa.cjs."
+}
