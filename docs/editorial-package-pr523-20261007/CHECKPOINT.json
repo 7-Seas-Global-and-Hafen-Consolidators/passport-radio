@@ -137,5 +137,7 @@
     "newConnections": 0,
     "radioactiveChanged": false,
     "actualCoverRendering": "PASS two original cover photos loaded in both Noticias/Arquivo"
-  }
+  },
+  "supersededBy": "docs/editorial-pr523-completion-20261007/CHECKPOINT.json",
+  "currentStatus": "COMPLETED_QA_PASS_FROM_PERSISTED_SOURCE"
 }

@@ -1,5 +1,5 @@
 {
-  "status": "CONTENT_PERSISTED_QA_PENDING",
+  "status": "COMPLETED_QA_PASS",
   "baseHead": "6cdcdf3c5aa08a4fb3b81cfac5c787550486bb55",
   "branch": "feat/editorial-alice-nenhum-20261007",
   "pr": 523,
@@ -147,5 +147,19 @@
       ]
     }
   ],
-  "ploc": "PENDING_APPROVED_PERSISTED_SOURCE"
+  "ploc": "SEPARATE_PENDING_APPROVED_PERSISTED_SOURCE; existing page and cover preserved",
+  "contentCommit": "eacab7f4e5ea4e3543b460c2c8db4b33376197dd",
+  "qa": {
+    "literal": "PASS10",
+    "sourceMetadataPhotos": "PASS10",
+    "desktop": "PASS10",
+    "mobile": "PASS10",
+    "responsiveEmbeds": "PASS20",
+    "newsArchiveSearch": "PASS20",
+    "continuity": "PASS62 playing transitions +30 paused transitions; MPB/Hits; identical document/runtime/host/audio/currentSrc, advancing currentTime, zero new media requests and transport calls/events",
+    "returnHome": "PASS MPB/Hits/Disco",
+    "externalProviders": "NOT_CERTIFIED; controlled media responses"
+  },
+  "radioactiveSystems": "UNCHANGED",
+  "prState": "OPEN_DRAFT_NO_MERGE"
 }
