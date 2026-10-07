@@ -1,5 +1,5 @@
 {
-  "status": "SEVEN_IMPLEMENTED_QA_PENDING",
+  "status": "COMPLETE_SEVEN_QA_PASS",
   "branch": "feat/editorial-seven-20261007",
   "baseHead": "635b975c35109fd71bb8b0ec8c799c3710f78a05",
   "photos": [
@@ -10,7 +10,7 @@
       "bytes": 49793
     },
     {
-      "source": "/workspace/scratch/5b146c0052c7/recovered-photos/shakira_1789825209_3989663672533-1024x538.webp",
+      "source": "/workspace/scratch/5b146c0052c7/upload/shakira_1789825209_3989663672533-1024x538(1).webp",
       "path": "images/editorial/2026-10-07-seven/shakira-dua-lipa-antologia-recorde-amazon-music/shakira_1789825209_3989663672533-1024x538.webp",
       "sha256": "ab7b6e4b8028c13d8ec40cba2ea63ff4e87f4ac11e98153474ef516aedf6907d",
       "bytes": 38820
@@ -22,7 +22,7 @@
       "bytes": 57690
     },
     {
-      "source": "/workspace/scratch/5b146c0052c7/recovered-photos/steven.webp",
+      "source": "/workspace/scratch/5b146c0052c7/upload/steven(1).webp",
       "path": "images/editorial/2026-10-07-seven/aerosmith-steven-tyler-hollywood-bowl-friends/steven.webp",
       "sha256": "f56822cb1b44b65672591aedcef623dd1b8e2e4ca2570f73f5f1089e845257b9",
       "bytes": 135526
@@ -78,12 +78,34 @@
     "Seven supplied full bodies implemented",
     "Thirteen exact embeds implemented",
     "Seven feed entries; all prior feed entries unchanged",
-    "Home side-rail highlight adds Dave without replacing any existing block"
+    "Home side-rail highlight adds Dave without replacing any existing block",
+    "All7 desktop1440/mobile390 PASS",
+    "All7 literal bodies compared independently PASS",
+    "Responsive13 embeds16/9 without autoplay PASS",
+    "Both editorial listings PASS7 links",
+    "Home Dave present; original front/feed and volunteer block DOM identical",
+    "MPB and Hits continuity40 hops PASS: same document/runtime/host/audio/source, no new media requests or play calls; paused remains paused"
   ],
-  "pending": [
-    "Desktop/mobile7of7",
-    "Home baseline comparison",
-    "Continuity regression",
-    "Final commit and PR"
+  "pending": [],
+  "checkpointCommit": "33ca77ce9ca13bac30adf9aaf3b357dbca371cce",
+  "qa": {
+    "articles": "7/7 PASS",
+    "photos": "10/10 BYTE_IDENTICAL",
+    "videos": "13/13 EXACT_ORDER",
+    "desktop": "PASS",
+    "mobile": "PASS",
+    "feed": "PASS",
+    "home": "PASS",
+    "volunteers": "UNCHANGED",
+    "continuity": "PASS controlled native media; actual external stream availability not certified",
+    "radioactive": "UNCHANGED"
+  },
+  "evidence": [
+    "structural-qa.py",
+    "structural-qa.json",
+    "browser-qa.cjs",
+    "browser-qa.json",
+    "geometry-qa.cjs",
+    "geometry-qa.json"
   ]
 }
