@@ -1,0 +1,89 @@
+{
+  "status": "SEVEN_IMPLEMENTED_QA_PENDING",
+  "branch": "feat/editorial-seven-20261007",
+  "baseHead": "635b975c35109fd71bb8b0ec8c799c3710f78a05",
+  "photos": [
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/1200px-x-630-px-14-1024x538(1).jpg",
+      "path": "images/editorial/2026-10-07-seven/shakira-dua-lipa-antologia-recorde-amazon-music/1200px-x-630-px-14-1024x538.jpg",
+      "sha256": "9a565b0f52e0662f75208f3285ed6bd4b5fdf3b181a72abb1ea8836823527b2f",
+      "bytes": 49793
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/recovered-photos/shakira_1789825209_3989663672533-1024x538.webp",
+      "path": "images/editorial/2026-10-07-seven/shakira-dua-lipa-antologia-recorde-amazon-music/shakira_1789825209_3989663672533-1024x538.webp",
+      "sha256": "ab7b6e4b8028c13d8ec40cba2ea63ff4e87f4ac11e98153474ef516aedf6907d",
+      "bytes": 38820
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/aerosmith-jpg(1).webp",
+      "path": "images/editorial/2026-10-07-seven/aerosmith-steven-tyler-hollywood-bowl-friends/aerosmith-jpg.webp",
+      "sha256": "a9fdc0aa7379b8a1dd3617c0ff19d6bc48a86bd8d08197456fd43b5b8278111d",
+      "bytes": 57690
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/recovered-photos/steven.webp",
+      "path": "images/editorial/2026-10-07-seven/aerosmith-steven-tyler-hollywood-bowl-friends/steven.webp",
+      "sha256": "f56822cb1b44b65672591aedcef623dd1b8e2e4ca2570f73f5f1089e845257b9",
+      "bytes": 135526
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/1200px-x-630-px-5-1024x538(1).jpg",
+      "path": "images/editorial/2026-10-07-seven/dave-grohl-acdc-highway-to-hell/1200px-x-630-px-5-1024x538.jpg",
+      "sha256": "03a2a1cd3cb0bc0278ce82cd018a6256844d4e4221bc67efd6783c84906087e2",
+      "bytes": 68303
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/1200px-x-630-px-12-1024x538(1).jpg",
+      "path": "images/editorial/2026-10-07-seven/sir-elton-john-despedida-mexico/1200px-x-630-px-12-1024x538.jpg",
+      "sha256": "0b7f8b7418741c57535b9ee56cdcdaad19487b131a893d7241a047853f868308",
+      "bytes": 64305
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/Fabio-Jr.-Reproducao_Instagram-1024x538.webp",
+      "path": "images/editorial/2026-10-07-seven/fabio-jr-show-beneficente-tokio-marine-hall/Fabio-Jr.-Reproducao_Instagram-1024x538.webp",
+      "sha256": "86b2300ef7dcd7b139de03645f0fbe8ff30b6a81d5ac369bae7af54dfea77056",
+      "bytes": 23780
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/bts-1-1024x538(1).jpg",
+      "path": "images/editorial/2026-10-07-seven/bts-arirang-morumbis-kpop/bts-1-1024x538.jpg",
+      "sha256": "0f03fcf8d8693eda1087379541b3b55b48836a27511aadacc8e8f01bfb4ce6cc",
+      "bytes": 115211
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/ana-castela-idade-1-1024x538(1).webp",
+      "path": "images/editorial/2026-10-07-seven/ana-castela-fire-arena/ana-castela-idade-1-1024x538.webp",
+      "sha256": "0c3c4ddb9bef916b37e2ac511454e56b3c3d83b8acb886798ae377c7a27f5726",
+      "bytes": 20018
+    },
+    {
+      "source": "/workspace/scratch/5b146c0052c7/upload/ana-castela-boiadeira-1-1024x538(1).webp",
+      "path": "images/editorial/2026-10-07-seven/ana-castela-fire-arena/ana-castela-boiadeira-1-1024x538.webp",
+      "sha256": "ef27dc25c6d528f09853897dae32bab9900859aad7da1943131c1151cf38f44b",
+      "bytes": 21140
+    }
+  ],
+  "protected": {
+    "assets/index-DgBCruM8.js": "eb8f30c96eecc12373990f3bdc4986371c0ed21706778851872fac2bbbe39604",
+    "assets/index-CcTsvlNy.css": "1de7a43be81ec013f256db5be27dfef5f5900792eee6134da55bd133c1b9f801",
+    "js/passport-persist-nav.js": "e092fbc2b3ba85f05e48e40a6e9c40420cc9a77e9708823038beac8d4367750c",
+    "js/passport-audio-continuity.js": "c92d0adbff9f174f8de1f53723d07a25e80e9cd427efd04084d25689eddefc5e",
+    "js/passport-bus.js": "cbf78bb0308b913f8dc6deb815cbb54d15c140a488a95aff7e7833c2e180edb8",
+    "data/passport-videos.json": "c03fc564d1a3b2cd2b1d03bb3bc7cf3c16e1adc4009185792a0c777b7dd7c698",
+    "radio.html": "0a5b97020ea81db4fe3a75006abac2205edd4e02e310ae9861bbc7bde3ddd938"
+  },
+  "completed": [
+    "Ten original photographs recovered and used byte-identically",
+    "Seven supplied full bodies implemented",
+    "Thirteen exact embeds implemented",
+    "Seven feed entries; all prior feed entries unchanged",
+    "Home side-rail highlight adds Dave without replacing any existing block"
+  ],
+  "pending": [
+    "Desktop/mobile7of7",
+    "Home baseline comparison",
+    "Continuity regression",
+    "Final commit and PR"
+  ]
+}
