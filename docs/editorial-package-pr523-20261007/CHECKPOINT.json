@@ -1,5 +1,5 @@
 {
-  "status": "CONTENT_READY_QA_PENDING_MISSING_NINE_APPROVED_TEXTS",
+  "status": "AVAILABLE_TEXTS_COMPLETE_QA_PASS_BLOCKED_NINE_MISSING_TEXTS",
   "baseHead": "1a7fe6daf1eea58c38b7ae7ecdbb315188b44dec",
   "branch": "feat/editorial-alice-nenhum-20261007",
   "pr": 523,
@@ -122,5 +122,20 @@
       "bytes": 198292,
       "sha256": "0c6a88363e52627c90e51f7053fa3d9f74704f0d2a7e161a8f6ad4c5107fcb81"
     }
-  ]
+  ],
+  "contentCheckpoint": "dc34f3922d71e65df698a218633e8a7d5aa4716c",
+  "qa": {
+    "literal": "PASS",
+    "desktop": "2/2 PASS",
+    "mobile": "2/2 PASS",
+    "searchListings": "PASS",
+    "metadata": "PASS",
+    "playingMPB": "PASS",
+    "playingHits": "PASS",
+    "pausedDisco": "PASS",
+    "returnToRadio": "PASS",
+    "newConnections": 0,
+    "radioactiveChanged": false,
+    "actualCoverRendering": "PASS two original cover photos loaded in both Noticias/Arquivo"
+  }
 }

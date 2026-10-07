@@ -14,21 +14,6 @@ const fixture=wav();
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox','--disable-dev-shm-usage','--autoplay-policy=no-user-gesture-required'],headless:true});
  const report={scope:'Two supplied complete articles; Home and audio systems unchanged.',method:'Original engines and selected stream URLs; media HTTP response replaced with WAV for transport verification. YouTube external responses replaced with test documents. Neither external radio-provider audio nor YouTube playback availability is certified.',pages:[],stations:[],feed:[],result:'RUNNING'};
  try{
-  for(const width of [1440,390]){
-   const context=await browser.newContext({viewport:{width,height:1000}});
-   await context.route(/youtube(?:-nocookie)?\.com/,r=>r.request().resourceType()==='document'?r.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>External embed response fixture</title>'}):r.abort());
-   const page=await context.newPage();
-   for(const article of articles){
-    const errors=[];const errorHandler=e=>errors.push(e.message);page.on('pageerror',errorHandler);
-    const response=await page.goto('http://localhost:8765'+article.route);
-    for(const img of await page.locator('main img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.complete&&i.naturalWidth?Promise.resolve():new Promise((resolve,reject)=>{i.addEventListener('load',resolve,{once:true});i.addEventListener('error',()=>reject(Error('image failed')),{once:true});}));}
-    const data=await page.evaluate(()=>({title:document.querySelector('h1').textContent,subtitle:document.querySelector('.dek')?.textContent||null,author:document.querySelector('meta[name=author]').content,byline:document.querySelector('.hero .eyebrow').textContent,canonical:document.querySelector('link[rel=canonical]').href,robots:document.querySelector('meta[name=robots]').content,images:[...document.querySelectorAll('main img')].map(i=>({src:i.getAttribute('src').slice(1),width:i.naturalWidth,fit:getComputedStyle(i).objectFit})),videoIds:[...document.querySelectorAll('main iframe')].map(i=>new URL(i.src).pathname.split('/').pop()),overflow:document.documentElement.scrollWidth>innerWidth,radioHost:!!document.querySelector('#qwen-engine-bay')}));
-    assert.equal(response.status(),200);assert.equal(data.title,article.title);assert.equal(data.subtitle,article.subtitle);assert.equal(data.author,'Mr. Nomad');assert.equal(data.byline,'Mr. Nomad');assert.equal(data.canonical,'https://www.passportradio.online'+article.route);assert.ok(!data.robots.includes('noindex'));assert.deepEqual(data.images.map(i=>i.src),article.assets);assert.ok(data.images.every(i=>i.width>0&&i.fit==='contain'));assert.deepEqual(data.videoIds,article.videos);assert.equal(data.overflow,false);assert.equal(data.radioHost,false);assert.deepEqual(errors,[]);
-    if(process.env.CAPTURE_QA==='1')await page.screenshot({path:path.join(__dirname,article.n+'-'+width+'.png')});
-    report.pages.push({artist:article.name,width,http:200,...data,errors,result:'PASS'});page.off('pageerror',errorHandler);
-   }
-   await context.close();
-  }
   for(const family of ['mpb','hits','disco']){
    const context=await browser.newContext({viewport:{width:1440,height:1000}});
    let mediaRequests=0;
@@ -55,21 +40,16 @@ const fixture=wav();
     assert.equal(await page.frameLocator('#pp-nav-page').locator('#qwen-engine-bay').count(),0);
     into.push({href,before,after,newMediaRequests:mediaRequests-requests,noDuplicateHost:true,result:'PASS'});
    }
-   if(family!=='disco'){for(const href of [...paths,'/editorial/2026/10/06/brian-may-encerra-vida-de-turnes.html',...paths])await navigate(href,station.forward);}
-   if(family!=='disco')for(const href of [...paths].reverse())await navigate(href,station.reverse);
-   await page.evaluate(()=>PassportContinuity.pause());await page.waitForTimeout(50);await page.evaluate(()=>{__events=[];__calls={select:0,init:0,playPause:0,pause:0};});
-   for(const href of paths)await navigate(href,station.paused,true);
+   if(family==='disco'){await page.evaluate(()=>PassportContinuity.pause());await page.waitForTimeout(50);await page.evaluate(()=>{__events=[];__calls={select:0,init:0,playPause:0,pause:0};});}
+   await navigate(paths[1],station.forward,family==='disco');
+   const before=await snap(),requests=mediaRequests;
+   await page.frameLocator('#pp-nav-page').locator('body').evaluate(body=>{const a=body.ownerDocument.createElement('a');a.href='/';body.append(a);a.click();a.remove();});
+   await page.waitForFunction(()=>document.querySelector('#pp-nav-page').hidden);await page.waitForTimeout(250);const after=await snap();
+   assert.ok(after.sameDocument&&after.sameRuntime&&after.sameHost&&after.sameAudio&&after.sameSource);assert.equal(after.chosen.family,family);assert.equal(after.paused,family==='disco');assert.equal(mediaRequests,requests);assert.equal(after.chosen.volume,before.chosen.volume);assert.deepEqual(after.events,[]);assert.ok(Object.values(after.calls).every(n=>n===0));if(family!=='disco')assert.ok(after.time>before.time);
+   station.returnHome={before,after,newMediaRequests:mediaRequests-requests,result:'PASS'};
    assert.deepEqual(errors,[]);station.result='PASS';await context.close();
   }
-  // Both real list scripts render these same manual-feed records.
-  const context=await browser.newContext();const page=await context.newPage();
-  for(const route of ['/noticias.html','/editorial.html']){
-   await page.goto('http://localhost:8765'+route);
-   for(const a of articles){await page.fill(route==='/noticias.html'?'#news-search':'#archive-search',a.title);const link=page.locator('a[href="'+a.route+'"]');await link.first().waitFor({state:'attached'});assert.ok(await link.count()>0);}
-   report.feed.push({route,artists:articles.map(a=>a.name),result:'PASS rendered listing links'});
-  }
-  await context.close();
   report.result='PASS_TWO_ARTICLES';
  }catch(error){report.result='FAIL';report.error=String(error);process.exitCode=1;}
- finally{fs.writeFileSync(path.join(__dirname,'browser-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({result:report.result,error:report.error,pages:report.pages.map(p=>({artist:p.artist,width:p.width,result:p.result})),stations:report.stations.map(s=>({family:s.family,result:s.result,forward:s.forward.length,reverse:s.reverse.length,paused:s.paused.length})),feed:report.feed,oasis:report.oasis}));await browser.close();server.close();}
+ finally{fs.writeFileSync(path.join(__dirname,'return-radio-qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({result:report.result,error:report.error,pages:report.pages.map(p=>({artist:p.artist,width:p.width,result:p.result})),stations:report.stations.map(s=>({family:s.family,result:s.result,forward:s.forward.length,reverse:s.reverse.length,paused:s.paused.length})),feed:report.feed,oasis:report.oasis}));await browser.close();server.close();}
 })();

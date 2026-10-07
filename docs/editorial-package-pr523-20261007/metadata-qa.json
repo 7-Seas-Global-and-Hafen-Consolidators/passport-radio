@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "articles": [
+    {
+      "article": "Kurt Cobain",
+      "schema": "PASS",
+      "headings": "PASS",
+      "internalLinks": "PASS",
+      "videoArchive": "PASS"
+    },
+    {
+      "article": "Anos 80 Volume 2",
+      "schema": "PASS",
+      "headings": "PASS",
+      "internalLinks": "PASS",
+      "videoArchive": "PASS"
+    }
+  ],
+  "coverSource": "Existing exact main photo in each page; both feed layers verified",
+  "oldPriorityRecords": "UNCHANGED except authorized two card fields",
+  "aliceNenhumAndPloc": "BYTE_IDENTICAL"
+}

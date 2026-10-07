@@ -1,0 +1,426 @@
+{
+  "scope": "Two supplied complete articles; Home and audio systems unchanged.",
+  "method": "Original engines and selected stream URLs; media HTTP response replaced with WAV for transport verification. YouTube external responses replaced with test documents. Neither external radio-provider audio nor YouTube playback availability is certified.",
+  "pages": [],
+  "stations": [
+    {
+      "family": "mpb",
+      "forward": [
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791397044978",
+            "time": 0.505963,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://srv1.braudio.com.br:7008/;?t=1791397044978",
+            "time": 0.907999,
+            "paused": false,
+            "state": {
+              "family": "mpb",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "mpb",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "reverse": [],
+      "paused": [],
+      "errors": [],
+      "returnHome": {
+        "before": {
+          "sameDocument": true,
+          "sameRuntime": true,
+          "sameHost": true,
+          "sameAudio": true,
+          "sameSource": true,
+          "src": "https://srv1.braudio.com.br:7008/;?t=1791397044978",
+          "time": 0.926552,
+          "paused": false,
+          "state": {
+            "family": "mpb",
+            "volume": 0.8,
+            "playing": true
+          },
+          "chosen": {
+            "version": 1,
+            "family": "mpb",
+            "index": null,
+            "playing": true,
+            "volume": 0.8,
+            "archive": null
+          },
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0
+          }
+        },
+        "after": {
+          "sameDocument": true,
+          "sameRuntime": true,
+          "sameHost": true,
+          "sameAudio": true,
+          "sameSource": true,
+          "src": "https://srv1.braudio.com.br:7008/;?t=1791397044978",
+          "time": 1.224053,
+          "paused": false,
+          "state": {
+            "family": "mpb",
+            "volume": 0.8,
+            "playing": true
+          },
+          "chosen": {
+            "version": 1,
+            "family": "mpb",
+            "index": null,
+            "playing": true,
+            "volume": 0.8,
+            "archive": null
+          },
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0
+          }
+        },
+        "newMediaRequests": 0,
+        "result": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "family": "hits",
+      "forward": [
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 0.517224,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://listen.181fm.com/181-power_128k.mp3",
+            "time": 0.933033,
+            "paused": false,
+            "state": {
+              "family": "hits",
+              "volume": 0.8,
+              "playing": true
+            },
+            "chosen": {
+              "version": 1,
+              "family": "hits",
+              "index": null,
+              "playing": true,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "reverse": [],
+      "paused": [],
+      "errors": [],
+      "returnHome": {
+        "before": {
+          "sameDocument": true,
+          "sameRuntime": true,
+          "sameHost": true,
+          "sameAudio": true,
+          "sameSource": true,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 0.955753,
+          "paused": false,
+          "state": {
+            "family": "hits",
+            "volume": 0.8,
+            "playing": true
+          },
+          "chosen": {
+            "version": 1,
+            "family": "hits",
+            "index": null,
+            "playing": true,
+            "volume": 0.8,
+            "archive": null
+          },
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0
+          }
+        },
+        "after": {
+          "sameDocument": true,
+          "sameRuntime": true,
+          "sameHost": true,
+          "sameAudio": true,
+          "sameSource": true,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 1.248426,
+          "paused": false,
+          "state": {
+            "family": "hits",
+            "volume": 0.8,
+            "playing": true
+          },
+          "chosen": {
+            "version": 1,
+            "family": "hits",
+            "index": null,
+            "playing": true,
+            "volume": 0.8,
+            "archive": null
+          },
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0
+          }
+        },
+        "newMediaRequests": 0,
+        "result": "PASS"
+      },
+      "result": "PASS"
+    },
+    {
+      "family": "disco",
+      "forward": [
+        {
+          "href": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+          "before": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+            "time": 0.516185,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "disco",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "after": {
+            "sameDocument": true,
+            "sameRuntime": true,
+            "sameHost": true,
+            "sameAudio": true,
+            "sameSource": true,
+            "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+            "time": 0.516185,
+            "paused": true,
+            "state": {
+              "family": null,
+              "volume": 0.8,
+              "playing": false
+            },
+            "chosen": {
+              "version": 1,
+              "family": "disco",
+              "index": null,
+              "playing": false,
+              "volume": 0.8,
+              "archive": null
+            },
+            "events": [],
+            "calls": {
+              "select": 0,
+              "init": 0,
+              "playPause": 0,
+              "pause": 0
+            }
+          },
+          "newMediaRequests": 0,
+          "noDuplicateHost": true,
+          "result": "PASS"
+        }
+      ],
+      "reverse": [],
+      "paused": [],
+      "errors": [],
+      "returnHome": {
+        "before": {
+          "sameDocument": true,
+          "sameRuntime": true,
+          "sameHost": true,
+          "sameAudio": true,
+          "sameSource": true,
+          "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+          "time": 0.516185,
+          "paused": true,
+          "state": {
+            "family": null,
+            "volume": 0.8,
+            "playing": false
+          },
+          "chosen": {
+            "version": 1,
+            "family": "disco",
+            "index": null,
+            "playing": false,
+            "volume": 0.8,
+            "archive": null
+          },
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0
+          }
+        },
+        "after": {
+          "sameDocument": true,
+          "sameRuntime": true,
+          "sameHost": true,
+          "sameAudio": true,
+          "sameSource": true,
+          "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+          "time": 0.516185,
+          "paused": true,
+          "state": {
+            "family": null,
+            "volume": 0.8,
+            "playing": false
+          },
+          "chosen": {
+            "version": 1,
+            "family": "disco",
+            "index": null,
+            "playing": false,
+            "volume": 0.8,
+            "archive": null
+          },
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0
+          }
+        },
+        "newMediaRequests": 0,
+        "result": "PASS"
+      },
+      "result": "PASS"
+    }
+  ],
+  "feed": [],
+  "result": "PASS_TWO_ARTICLES"
+}

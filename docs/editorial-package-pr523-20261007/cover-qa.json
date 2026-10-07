@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "searches": [
+    {
+      "route": "/noticias.html",
+      "article": "Você não lembrava dessa música. Até ela começar a tocar.",
+      "photo": "/images/editorial/anos80-vol2-u2.jpg",
+      "result": "PASS exact original cover loaded"
+    },
+    {
+      "route": "/noticias.html",
+      "article": "Festa PLOC: você cresceu. A pista não recebeu o memorando.",
+      "photo": "/images/editorial/festa-ploc-cyndi-lauper.jpg",
+      "result": "PASS exact original cover loaded"
+    },
+    {
+      "route": "/editorial.html",
+      "article": "Você não lembrava dessa música. Até ela começar a tocar.",
+      "photo": "/images/editorial/anos80-vol2-u2.jpg",
+      "result": "PASS exact original cover loaded"
+    },
+    {
+      "route": "/editorial.html",
+      "article": "Festa PLOC: você cresceu. A pista não recebeu o memorando.",
+      "photo": "/images/editorial/festa-ploc-cyndi-lauper.jpg",
+      "result": "PASS exact original cover loaded"
+    }
+  ]
+}

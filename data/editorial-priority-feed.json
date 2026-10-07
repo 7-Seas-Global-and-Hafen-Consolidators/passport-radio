@@ -4,15 +4,27 @@
   "note": "Ordem da Home: Vol.2, The Mission, Festa PLOC, My Chemical Romance. RSS entra depois.",
   "items": [
     {
-      "title": "Anos 80 Vol. 2: músicas que o Brasil nunca esqueceu",
-      "deck": "Rádio, novela, TV, danceteria, cinema e shows. Mr. Nomad abre as performances com lupa, bisturi e ouvido nos instrumentos.",
+      "title": "Você não lembrava dessa música. Até ela começar a tocar.",
+      "deck": "Men at Work, Whitney Houston, Marvin Gaye, Tina Turner, Tim Maia, Rita Lee, Ney Matogrosso, Gal Costa, Djavan e mais de 30 encontros com músicas que tocaram na vida do brasileiro — e aparentemente guardaram algumas coisas que você preferia deixar quietas",
       "url": "/anos-80-volume-2-musicas-memoria-brasileira.html",
       "category": "anos_80",
       "format": "MR_NOMAD",
       "published_at": "2026-09-03T23:59:00-03:00",
-      "entities": ["Anos 80", "Men at Work", "Whitney Houston", "Marvin Gaye", "Ritchie", "Mr. Nomad"],
+      "entities": [
+        "Anos 80",
+        "Men at Work",
+        "Whitney Houston",
+        "Marvin Gaye",
+        "Ritchie",
+        "Mr. Nomad"
+      ],
       "author": "Mr. Nomad",
-      "image": {"src":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sLEx1giyuUMrJ3aDjV9cbMhTAsvup4B1QfjeN6dV6A&s","alt":"Anos 80 Vol. 2 — memória musical brasileira","focalPoint":"50% 42%","credit":"Passport Radio","approved":true}
+      "image": {
+        "src": "/images/editorial/anos80-vol2-u2.jpg",
+        "alt": "Memória dos anos 80",
+        "fit": "contain",
+        "approved": true
+      }
     },
     {
       "title": "The Mission: Wayne Hussey, Craig Adams e a banda que nasceu das cinzas do Sisters of Mercy",
@@ -32,9 +44,20 @@
       "category": "festa_ploc",
       "format": "MR_NOMAD",
       "published_at": "2026-09-03T23:58:00-03:00",
-      "entities": ["Festa PLOC", "Anos 80", "Patricia Marx", "Ritchie", "Mr. Nomad"],
+      "entities": [
+        "Festa PLOC",
+        "Anos 80",
+        "Patricia Marx",
+        "Ritchie",
+        "Mr. Nomad"
+      ],
       "author": "Mr. Nomad",
-      "image": {"src":"https://img.youtube.com/vi/w_1jWR76qCY/sddefault.jpg","alt":"Festa PLOC — nostalgia e pista dos anos 80","focalPoint":"50% 40%","credit":"Passport Radio","approved":true}
+      "image": {
+        "src": "/images/editorial/festa-ploc-cyndi-lauper.jpg",
+        "alt": "Festa PLOC",
+        "fit": "contain",
+        "approved": true
+      }
     },
     {
       "title": "My Chemical Romance quer outro disco. O problema é tudo o que aconteceu até eles conseguirem dizer isso.",
