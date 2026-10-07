@@ -188,3 +188,18 @@ Ao terminar:
 - **NÃO MERGEAR**;
 - entregar lista de arquivos alterados, inventário final dos 43 desafios, evidências de QA desktop/mobile e QA de continuidade;
 - registrar checkpoint em `docs/desafios-passport-43/completion/`.
+
+
+# CORREÇÃO DE CHECKPOINT — OBRIGATÓRIA
+
+A auditoria anterior que concluiu que os dados dos desafios estavam ausentes partiu da pasta errada. **NÃO registrar corpus incompleto e NÃO encerrar a tarefa por esse diagnóstico.**
+
+Fontes corretas recuperadas dos anexos do garimpo foram persistidas em:
+
+`docs/desafios-passport-43/source-correct/`
+
+Leia **source-correct/** antes de qualquer implementação. A pasta antiga `source/` está contaminada por arquivos editoriais e não deve ser usada como autoridade para dizer que os quizzes não existem.
+
+Os arquivos em `source-correct/` são matéria-prima bruta recuperada; podem conter páginas completas, índices e sobreposição entre dumps. Faça deduplicação por conteúdo/título/mecânica durante o inventário. Não invente perguntas para completar número.
+
+Preserve a regra radioativa já definida nesta ordem: não alterar `passport-audio-continuity.js`, player, streams, bus, mutex, interlock ou transporte.
