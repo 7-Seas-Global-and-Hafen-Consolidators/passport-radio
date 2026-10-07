@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "searches": [
+    {
+      "route": "/noticias.html",
+      "query": "Alice Cooper",
+      "result": "PASS"
+    },
+    {
+      "route": "/noticias.html",
+      "query": "Nenhum de Nós",
+      "result": "PASS"
+    },
+    {
+      "route": "/editorial.html",
+      "query": "Alice Cooper",
+      "result": "PASS"
+    },
+    {
+      "route": "/editorial.html",
+      "query": "Nenhum de Nós",
+      "result": "PASS"
+    }
+  ]
+}

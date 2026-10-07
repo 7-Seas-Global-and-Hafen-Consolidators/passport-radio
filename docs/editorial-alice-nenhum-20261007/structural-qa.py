@@ -20,4 +20,4 @@ for a in m:
 cp=json.loads((D/'CHECKPOINT.json').read_text())
 for f,h in cp['protected'].items():assert hashlib.sha256(Path(f).read_bytes()).hexdigest()==h
 old=json.loads(subprocess.check_output(['git','show',cp['baseHead']+':data/editorial-manual-feed.json']))['items'];now=json.loads(Path('data/editorial-manual-feed.json').read_text())['items'];assert now[2:]==old
-(D/'structural-qa.json').write_text(json.dumps(dict(result='PASS',articles=report,protected='UNCHANGED',feedOldEntries='UNCHANGED'),ensure_ascii=False,indent=2)+'\n');print('PASS7 literal bodies,10 photo hashes,13 exact IDs, protected files')
+(D/'structural-qa.json').write_text(json.dumps(dict(result='PASS',articles=report,protected='UNCHANGED',feedOldEntries='UNCHANGED'),ensure_ascii=False,indent=2)+'\n');print('PASS2 literal bodies,4 photo hashes,4 exact IDs, protected files')

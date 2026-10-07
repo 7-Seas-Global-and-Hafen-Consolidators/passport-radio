@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "articles": [
+    {
+      "article": "Alice Cooper",
+      "width": 1440,
+      "headers": 1,
+      "footers": 1,
+      "nav": true,
+      "videos": [
+        {
+          "width": 760,
+          "height": 427.5,
+          "contained": true,
+          "autoplay": false
+        },
+        {
+          "width": 760,
+          "height": 427.5,
+          "contained": true,
+          "autoplay": false
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "article": "Nenhum de Nós",
+      "width": 1440,
+      "headers": 1,
+      "footers": 1,
+      "nav": true,
+      "videos": [
+        {
+          "width": 760,
+          "height": 427.5,
+          "contained": true,
+          "autoplay": false
+        },
+        {
+          "width": 760,
+          "height": 427.5,
+          "contained": true,
+          "autoplay": false
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "article": "Alice Cooper",
+      "width": 390,
+      "headers": 1,
+      "footers": 1,
+      "nav": true,
+      "videos": [
+        {
+          "width": 358,
+          "height": 201.375,
+          "contained": true,
+          "autoplay": false
+        },
+        {
+          "width": 358,
+          "height": 201.375,
+          "contained": true,
+          "autoplay": false
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "article": "Nenhum de Nós",
+      "width": 390,
+      "headers": 1,
+      "footers": 1,
+      "nav": true,
+      "videos": [
+        {
+          "width": 358,
+          "height": 201.375,
+          "contained": true,
+          "autoplay": false
+        },
+        {
+          "width": 358,
+          "height": 201.375,
+          "contained": true,
+          "autoplay": false
+        }
+      ],
+      "result": "PASS"
+    }
+  ]
+}
