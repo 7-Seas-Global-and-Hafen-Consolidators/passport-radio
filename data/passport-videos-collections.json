@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "featuredIds": [
+    "KG_fqkyJ-wo",
+    "XXbK7ypyB4k"
+  ],
+  "collections": [
+    {
+      "id": "bbc",
+      "label": "BBC",
+      "fromCollections": [
+        "sessions-archive"
+      ]
+    },
+    {
+      "id": "wacken",
+      "label": "Wacken",
+      "fromCollections": [
+        "festival-archive"
+      ]
+    },
+    {
+      "id": "midnight",
+      "label": "The Midnight Special",
+      "fromCollections": [
+        "tv-archive"
+      ]
+    },
+    {
+      "id": "em-alta",
+      "label": "Em Alta",
+      "artists": [
+        "Taylor Swift",
+        "Billie Eilish",
+        "Olivia Rodrigo",
+        "Sabrina Carpenter",
+        "Ariana Grande",
+        "Dua Lipa",
+        "Bruno Mars",
+        "Miley Cyrus",
+        "Harry Styles",
+        "Ed Sheeran",
+        "Lady Gaga",
+        "The Weeknd",
+        "Coldplay",
+        "Beyoncé",
+        "Lana Del Rey",
+        "Chappell Roan",
+        "Oasis",
+        "BABYMETAL",
+        "Arch Enemy",
+        "The Warning"
+      ]
+    },
+    {
+      "id": "brasil",
+      "label": "Brasil",
+      "artists": [
+        "Biquini",
+        "Fleesh",
+        "Sepultura",
+        "Sepultura & Les Tambours du Bronx",
+        "Soulfly",
+        "Nervosa",
+        "Crypta",
+        "Torture Squad",
+        "Alissic"
+      ]
+    },
+    {
+      "id": "passport",
+      "label": "Acervo Passport",
+      "fromCollections": [
+        "selection",
+        "marillion",
+        "smashing",
+        "babymetal"
+      ]
+    }
+  ]
+}

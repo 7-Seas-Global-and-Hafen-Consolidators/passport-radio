@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_QA_PASS",
+  "baseHead": "00667acc08b959c4858843cfbd0c206dbc9e036c",
+  "branch": "feat/videoteca-editorial-collections-20261007",
+  "catalogueCount": 7117,
+  "catalogueSHA256": "c03fc564d1a3b2cd2b1d03bb3bc7cf3c16e1adc4009185792a0c777b7dd7c698",
+  "completed": [
+    "Read persisted catalogue and source inventory",
+    "No acquisition; existing catalogue frozen",
+    "Six collections and full-catalogue navigation implemented",
+    "7117 original IDs reached across297 pages desktop/mobile",
+    "Original catalogue byte-identical; original player block byte-identical",
+    "Search, format, legacy playlist order, pagination and demand player QA PASS",
+    "Real existing thumbnails loaded in visual captures"
+  ],
+  "pending": [],
+  "collectionCounts": {
+    "bbc": 4202,
+    "wacken": 1508,
+    "midnight": 1301,
+    "em-alta": 107,
+    "brasil": 16,
+    "passport": 106
+  },
+  "evidence": [
+    "integrity.json",
+    "browser-qa.json",
+    "qa.cjs",
+    "videos-1440.png",
+    "videos-390.png"
+  ]
+}

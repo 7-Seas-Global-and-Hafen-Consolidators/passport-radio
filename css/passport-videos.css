@@ -28,3 +28,9 @@ body.passport-videos { --news-red: #C41E3A; }
  .passport-videos .videos-tools { gap:16px; }
  .passport-videos .videos-tools label { flex:1 1 140px; }
 }
+
+/* Editorial collection navigation; existing cards and breakpoints are unchanged. */
+.passport-videos .videos-library-intro { font:400 18px/1.5 var(--news-body); margin:16px 0 24px; }
+.passport-videos .videos-collections-nav { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
+.passport-videos .videos-collections-nav button[aria-pressed="true"] { background:#C41E3A; color:#FFFFFF; border-color:#C41E3A; }
+.passport-videos .videos-heading { font:700 32px/1.2 var(--news-display); margin:0; }

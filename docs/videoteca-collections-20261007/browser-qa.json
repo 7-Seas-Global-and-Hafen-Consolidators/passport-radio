@@ -1,0 +1,105 @@
+{
+  "result": "PASS",
+  "desktop": [
+    "First-page BABYMETAL/Arch Enemy; seven navigation buttons; no initial player; no horizontal overflow PASS",
+    "All297 pages enumerate7117 unique original IDs PASS",
+    {
+      "collection": "bbc",
+      "count": 4202,
+      "result": "PASS"
+    },
+    {
+      "collection": "wacken",
+      "count": 1508,
+      "result": "PASS"
+    },
+    {
+      "collection": "midnight",
+      "count": 1301,
+      "result": "PASS"
+    },
+    {
+      "collection": "em-alta",
+      "count": 107,
+      "result": "PASS"
+    },
+    {
+      "collection": "brasil",
+      "count": 16,
+      "result": "PASS"
+    },
+    {
+      "collection": "passport",
+      "count": 106,
+      "result": "PASS"
+    },
+    "Artist search, no-results, filter reset, legacy Marillion order and format PASS",
+    "Player created only on deliberate click; original autoplay=0; one player; replacement destroys previous PASS controlled API"
+  ],
+  "mobile": [
+    "First-page BABYMETAL/Arch Enemy; seven navigation buttons; no initial player; no horizontal overflow PASS",
+    "All297 pages enumerate7117 unique original IDs PASS",
+    {
+      "collection": "bbc",
+      "count": 4202,
+      "result": "PASS"
+    },
+    {
+      "collection": "wacken",
+      "count": 1508,
+      "result": "PASS"
+    },
+    {
+      "collection": "midnight",
+      "count": 1301,
+      "result": "PASS"
+    },
+    {
+      "collection": "em-alta",
+      "count": 107,
+      "result": "PASS"
+    },
+    {
+      "collection": "brasil",
+      "count": 16,
+      "result": "PASS"
+    },
+    {
+      "collection": "passport",
+      "count": 106,
+      "result": "PASS"
+    },
+    "Artist search, no-results, filter reset, legacy Marillion order and format PASS",
+    "Player created only on deliberate click; original autoplay=0; one player; replacement destroys previous PASS controlled API"
+  ],
+  "providerPlayback": "NOT_CERTIFIED; controlled API only",
+  "screenshots": [
+    {
+      "width": 1440,
+      "images": [
+        {
+          "src": "https://img.youtube.com/vi/KG_fqkyJ-wo/hqdefault.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.youtube.com/vi/XXbK7ypyB4k/hqdefault.jpg",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "images": [
+        {
+          "src": "https://img.youtube.com/vi/KG_fqkyJ-wo/hqdefault.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://img.youtube.com/vi/XXbK7ypyB4k/hqdefault.jpg",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
