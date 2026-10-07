@@ -1,0 +1,151 @@
+{
+  "status": "CONTENT_PERSISTED_QA_PENDING",
+  "baseHead": "6cdcdf3c5aa08a4fb3b81cfac5c787550486bb55",
+  "branch": "feat/editorial-alice-nenhum-20261007",
+  "pr": 523,
+  "source": "docs/editorial-pr523-source-20261007.md",
+  "sourceSha256": "a0ab83157fb6bcd1908d611cd83ef1bdf9f607bf86df6dcdde6a78d95c7e6780",
+  "preserved": [
+    "Alice Cooper",
+    "Nenhum de Nós",
+    "PLOC"
+  ],
+  "implemented": [
+    {
+      "name": "Ella Langley",
+      "route": "/editorial/2026/10/07/ella-langley-choosin-texas-country.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/ella-langley-foto-1000x635.webp"
+      ],
+      "videos": [
+        "7TRZnQn0Ypk"
+      ]
+    },
+    {
+      "name": "Noel Gallagher",
+      "route": "/editorial/2026/10/07/noel-gallagher-desafetos.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/noel-gallagher-matt-crockett.jpeg"
+      ],
+      "videos": []
+    },
+    {
+      "name": "Soundgarden",
+      "route": "/editorial/2026/10/07/soundgarden-outshined-power-to-the-people.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/soundgarden-tom-morello-1000x670.webp"
+      ],
+      "videos": [
+        "C1lyzIpB3Fs"
+      ]
+    },
+    {
+      "name": "Crypta",
+      "route": "/editorial/2026/10/07/crypta-a-portrait-of-decay.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/crypta-2026-1000x417.webp"
+      ],
+      "videos": [
+        "Pq3GZqsrcBU",
+        "mPLWPt1c2I0"
+      ]
+    },
+    {
+      "name": "Racionais MC’s",
+      "route": "/editorial/2026/10/07/racionais-1000-trutas-1000-tretas.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/racionais-Bob-Wolfenson-rolling-stone-800x450.jpg"
+      ],
+      "videos": [
+        "DaCK8snx9ac"
+      ]
+    },
+    {
+      "name": "Björk",
+      "route": "/editorial/2026/10/07/bjork-biophilia-15-anos.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/bjork-15-anos-biophiliaGettyImages-1685387530-Santiago-Felipe-800x450.png"
+      ],
+      "videos": [
+        "e-j4l_vea9A",
+        "yHyCSVfYdTg",
+        "BRmbCe1DenU"
+      ]
+    },
+    {
+      "name": "BLACKPINK",
+      "route": "/editorial/2026/10/07/blackpink-boombayah-19-bilhao.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/blaskpink-no-vma-2022.jpg"
+      ],
+      "videos": [
+        "_HhAzr5DLik"
+      ]
+    },
+    {
+      "name": "Lennon/McCartney",
+      "route": "/editorial/2026/10/07/paul-mccartney-john-lennon-man-on-the-run.html",
+      "assets": [
+        "images/editorial/2026-10-07-pr523-final/beatles-paul-mccartney-john-lennon-1964-foto-david-redfern-redferns.jpg",
+        "images/editorial/2026-10-07-pr523-final/john-lennon-1977-foto-Vinnie-Zuffante-Getty-Images-106494096-1536x864.jpg",
+        "images/editorial/2026-10-07-pr523-final/paul-mccartney-john-lennon-beatles-1963-foto-fox-photos-getty-images-3295261.jpg"
+      ],
+      "videos": [
+        "QfgVhE1M6ns"
+      ]
+    },
+    {
+      "name": "Anos 80 Volume 2",
+      "route": "/anos-80-volume-2-musicas-memoria-brasileira.html",
+      "assets": [
+        "images/editorial/anos80-vol2-u2.jpg"
+      ],
+      "videos": [
+        "HaMEzljVtA4",
+        "JpbvkcZ5oGc",
+        "mHLLb7n2xsQ",
+        "qKbs4yDZpco",
+        "xuiaL9HD2hw",
+        "l7bommRIeW4",
+        "XxoBaEQGMPo",
+        "b0DL1ZD2qIw",
+        "Qfn1ZFfPxbU",
+        "v22YbORzDD0",
+        "C7Vnf2g6Qpw",
+        "izE7xZVlF6Y",
+        "7tuJfud4W6U",
+        "yZxmmsN2k48",
+        "skHjKAlTSm4",
+        "v0a2U_xEiw0",
+        "vLzj_S0Tzno",
+        "UlqGA7RCos8",
+        "JzByVhWju88",
+        "thGHAHHYwWU",
+        "fIuXicAzcFo",
+        "GHXCLnGJLIU",
+        "0CI5sShJXww",
+        "ygUuXtg98zA",
+        "CD8rJlPuX0g",
+        "W-t0LxHdS_s",
+        "GUVoVoQ1oRM",
+        "9FbCT-EEtQk",
+        "4nIiZlOWqug",
+        "0CwsvvZWvDE",
+        "91EjZCt_O1A",
+        "4WgpGFpi5Oo"
+      ]
+    },
+    {
+      "name": "Kurt Cobain",
+      "route": "/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html",
+      "assets": [
+        "images/editorial/2026-10-07-package-pr523/kurt-cobain-nirvana-1993.jpg"
+      ],
+      "videos": [
+        "_24pJQUj7zg",
+        "rBzA4shGmw8"
+      ]
+    }
+  ],
+  "ploc": "PENDING_APPROVED_PERSISTED_SOURCE"
+}

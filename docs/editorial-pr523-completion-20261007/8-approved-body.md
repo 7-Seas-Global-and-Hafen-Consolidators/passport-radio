@@ -1,0 +1,890 @@
+**PRIMEIRO UMA PERGUNTA.**
+
+Você sabe onde fica a **Islândia**?
+
+Não vale abrir o Google Maps.
+
+😂
+
+Porque existe uma chance razoável de alguém conhecer Björk há trinta anos, saber cantar alguma música dela, reconhecer aquela voz em três segundos...
+
+e ainda precisar dar aquela pequena pensada:
+
+— Islândia... Islândia...
+
+# **É AQUELA ILHA LÁ EM CIMA.**
+
+😂
+
+Atlântico Norte.
+
+Reykjavík.
+
+Vulcões.
+
+Geleiras.
+
+Pouca gente.
+
+E um belo dia aquele lugar resolveu entregar ao planeta:
+
+# **BJÖRK.**
+
+A partir daí, explicar exatamente **o que ela faz** ficou sendo problema nosso.
+
+---
+
+# E JÁ AVISAMOS: NÃO É FÁCIL
+
+Cantora?
+
+Sim.
+
+Compositora?
+
+Sim.
+
+Atriz?
+
+Também.
+
+Música eletrônica?
+
+Sim.
+
+Pop?
+
+Sim.
+
+Alternativo?
+
+Sim.
+
+Experimental?
+
+Sim.
+
+Orquestral?
+
+Também.
+
+Arte visual?
+
+Tecnologia?
+
+Cinema?
+
+Ciência?
+
+Aplicativos?
+
+Natureza?
+
+Instrumentos que parecem ter sido construídos por alguém que ignorou o manual?
+
+# **SIM.**
+
+Tudo isso.
+
+Às vezes na mesma obra.
+
+😂
+
+Talvez a melhor maneira de apresentar Björk para alguém que nunca ouviu seja justamente:
+
+**não tente encontrar uma gaveta primeiro.**
+
+Aperta o play.
+
+Depois a gente tenta resolver o resto.
+
+---
+
+# MAS ANTES DE “BIOPHILIA”...
+
+Vamos fazer uma pequena viagem no tempo.
+
+Porque Björk não apareceu em 2011 segurando um iPad e dizendo:
+
+> “Tenho uma ideia.”
+
+😂
+
+Ela nasceu em **Reykjavík, na Islândia, em 1965**.
+
+E começou cedo.
+
+Muito cedo.
+
+Aos **11 anos**, já havia gravado uma coleção de canções.
+
+Depois vieram diferentes experiências musicais até uma banda islandesa começar a atravessar as fronteiras do país:
+
+# **THE SUGARCUBES.**
+
+E é aqui que nossa máquina do tempo para primeiro.
+
+---
+
+# 1988.
+
+Björk ainda estava anos distante da carreira solo que transformaria seu nome numa referência mundial.
+
+Mas aquela voz...
+
+**já estava lá.**
+
+Aquela maneira estranha, explosiva, delicada, imprevisível de cantar...
+
+**já estava lá.**
+
+E temos prova.
+
+### 🎬 THE SUGARCUBES — “DEUS” — LIVE — 1988
+
+`https://www.youtube.com/watch?v=e-j4l_vea9A`
+
+Olha isso.
+
+Não é apenas colocar um vídeo antigo porque:
+
+> “Nossa, como ela era jovem.”
+
+Não.
+
+# **PRESTA ATENÇÃO NA BJÖRK.**
+
+Depois guarda essa imagem.
+
+Porque vamos pular mais de duas décadas.
+
+---
+
+# 1993: “DEBUT”
+
+O nome quase parece uma piada.
+
+Porque quando Björk lançou **_Debut_**, sua estreia solo internacional em 1993, ela já estava longe de ser uma principiante.
+
+Só que aquele disco apresentou outra Björk ao mundo.
+
+E daí para frente tentar prever o próximo passo virou um esporte de alto risco.
+
+Ela poderia entrar na eletrônica.
+
+Depois puxar cordas.
+
+Depois experimentar com voz.
+
+Depois construir paisagens sonoras completamente diferentes.
+
+Depois misturar coisas que no papel provavelmente não deveriam funcionar juntas.
+
+E fazer funcionar.
+
+A regra parecia ser:
+
+# **NÃO REPETIR A RESPOSTA SÓ PORQUE ELA FUNCIONOU DA PRIMEIRA VEZ.**
+
+---
+
+# AÍ CHEGAMOS A 2011
+
+Agora imagina a reunião.
+
+— Björk, precisamos pensar no próximo álbum.
+
+— Certo.
+
+— Dez músicas?
+
+— Sim.
+
+— CD?
+
+— Também.
+
+— Digital?
+
+— Claro.
+
+— Mais alguma coisa?
+
+Björk:
+
+# **“QUERO TRANSFORMAR CADA MÚSICA NUM APLICATIVO.”**
+
+Silêncio.
+
+😂😂😂
+
+Provavelmente alguém perguntou onde ficava a saída de emergência.
+
+---
+
+# NASCIA “BIOPHILIA”
+
+Em **5 de outubro de 2011**, Björk lançava seu sétimo álbum:
+
+# **_BIOPHILIA_**
+
+Só que chamar aquilo simplesmente de “álbum” era insuficiente.
+
+Desenvolvido em parceria com a **Apple** e com o artista e desenvolvedor **Scott Snibbe**, o projeto transformava as músicas em experiências interativas.
+
+E aqui precisamos lembrar:
+
+# **ERA 2011.**
+
+Hoje colocamos música, vídeo, mapa, jogo, câmera, banco, televisão e metade da nossa existência dentro do celular e achamos normal.
+
+Naquele momento, a ideia de um álbum pensado também como **plataforma interativa** era outra conversa.
+
+---
+
+# ERAM DEZ MÚSICAS.
+
+E:
+
+# **DEZ APLICATIVOS INTERATIVOS.**
+
+Um relacionado a cada faixa.
+
+Com:
+
+jogos.
+
+Animações.
+
+Partituras.
+
+Interação.
+
+Exploração dos conceitos das músicas.
+
+E ainda havia um **aplicativo-mãe**, funcionando como centro daquele pequeno universo e dando acesso aos demais.
+
+Ou seja:
+
+você não simplesmente comprava o disco.
+
+# **VOCÊ ENTRAVA NELE.**
+
+---
+
+# E É AQUI QUE “BIOPHILIA” FICA REALMENTE INTERESSANTE
+
+Porque tecnologia pela tecnologia envelhece rápido.
+
+Muito rápido.
+
+O aparelho muda.
+
+O sistema operacional muda.
+
+A tela muda.
+
+O aplicativo para de funcionar.
+
+Acabou.
+
+Só que a ideia de **Biophilia** era maior.
+
+Björk queria aproximar:
+
+# **MÚSICA + NATUREZA + TECNOLOGIA.**
+
+Não colocar um aplicativo em cima de dez músicas só para poder escrever:
+
+**INTERATIVO**
+
+na propaganda.
+
+O formato fazia parte do conceito.
+
+---
+
+# OLHA OS NOMES DAS MÚSICAS
+
+1. **Moon**
+2. **Thunderbolt**
+3. **Crystalline**
+4. **Cosmogony**
+5. **Dark Matter**
+6. **Hollow**
+7. **Virus**
+8. **Sacrifice**
+9. **Mutual Core**
+10. **Solstice**
+
+Lua.
+
+Trovão.
+
+Cristais.
+
+Cosmogonia.
+
+Matéria escura.
+
+Vírus.
+
+Núcleo.
+
+Solstício.
+
+Não é exatamente:
+
+> “Amor, você me deixou e estou triste.”
+
+😂
+
+Björk estava olhando para estruturas da natureza, física, espaço, biologia e relações entre sistemas...
+
+e transformando aquilo em música.
+
+---
+
+# “CRYSTALLINE” FOI A PORTA MAIS VISÍVEL
+
+Entre os singles que antecederam o álbum estavam:
+
+**“Crystalline”.**
+
+**“Cosmogony”.**
+
+**“Moon”.**
+
+**“Virus”.**
+
+“Crystalline” tornou-se a faixa de maior destaque comercial do projeto.
+
+E aqui já podemos pular novamente no tempo.
+
+Porque uma música lançada dentro daquele experimento de 2011 continuou existindo muito depois do aplicativo.
+
+### 🎬 BJÖRK — “CRYSTALLINE” — JOOLS HOLLAND LIVE — 2023
+
+`https://www.youtube.com/watch?v=yHyCSVfYdTg`
+
+**2011 → 2023.**
+
+É exatamente por isso que colocamos esse vídeo aqui.
+
+O software envelhece.
+
+A plataforma envelhece.
+
+O aparelho envelhece.
+
+# **A MÚSICA CONTINUA.**
+
+---
+
+# E “BIOPHILIA” TAMBÉM FOI PARA O PALCO
+
+Porque transformar um disco em aplicativo aparentemente ainda não era trabalho suficiente.
+
+😂
+
+O projeto ganhou vida ao vivo.
+
+E aí aquilo que existia entre tela, conceito, composição e interação precisava virar:
+
+**performance.**
+
+### 🎬 BJÖRK — “MOON” — BIOPHILIA LIVE — 2014
+
+`https://www.youtube.com/watch?v=BRmbCe1DenU`
+
+Agora compara.
+
+**The Sugarcubes — 1988.**
+
+**Biophilia — 2014.**
+
+**Crystalline — 2023.**
+
+São décadas diferentes da mesma artista.
+
+E isso talvez explique Björk melhor que qualquer definição de gênero.
+
+---
+
+# PORQUE ELA NÃO FICOU PARADA ESPERANDO O MUNDO ALCANÇÁ-LA
+
+Essa é uma das coisas deliciosas dessa história.
+
+Você pode gostar muito de **Biophilia**.
+
+Pode preferir outro disco.
+
+Pode achar determinada experiência genial.
+
+Pode achar outra completamente maluca.
+
+**Tudo bem.**
+
+A questão interessante é que Björk continuou tentando.
+
+E tentativa artística de verdade inclui o risco de alguém olhar e perguntar:
+
+> “Mas para que diabos você fez isso?”
+
+😂
+
+A resposta às vezes é simplesmente:
+
+# **PORQUE DAVA PARA FAZER.**
+
+---
+
+# E O MUNDO PRESTOU ATENÇÃO
+
+**Biophilia** estreou na **27ª posição da Billboard 200**.
+
+Chegou ao primeiro lugar da **Billboard Dance/Electronic Albums**.
+
+E recebeu duas indicações ao Grammy.
+
+Levou o prêmio de:
+
+# **MELHOR PROJETO GRÁFICO DE ÁLBUM.**
+
+O reconhecimento faz sentido.
+
+Porque separar música e apresentação visual naquele projeto era praticamente impossível.
+
+Era tudo parte da mesma criatura.
+
+---
+
+# E TEM OUTRO DETALHE BONITO: O PRIMEIRO LUGAR A RECEBER “BIOPHILIA”
+
+# **JAPÃO.**
+
+Foi o mercado escolhido para a estreia oficial e o primeiro a receber a edição física.
+
+Depois vieram Reino Unido e Estados Unidos, em 11 de outubro.
+
+Outra islandesa atravessando o planeta.
+
+Aliás...
+
+a Passport anda perigosamente cheia de gente que resolveu ignorar fronteira.
+
+😂
+
+---
+
+# E AGORA BJÖRK ENTRA NA PASSPORT RADIO
+
+Pela porta da frente.
+
+Sem precisar decidir antes:
+
+— Ela entra no pop?
+
+— Eletrônico?
+
+— Alternativo?
+
+— Experimental?
+
+— Arte?
+
+# **SIM.**
+
+😂
+
+Coloca tudo.
+
+Porque essa talvez seja a melhor matéria possível para aparecer justamente agora.
+
+---
+
+# OLHA A BAGUNÇA QUE JÁ ESTÁ ACONTECENDO NESTA CASA
+
+Ana Castela.
+
+Dua Lipa.
+
+Shakira.
+
+Elton John.
+
+Michael Jackson.
+
+Alice Cooper.
+
+Nenhum de Nós.
+
+BABYMETAL.
+
+Arch Enemy.
+
+Judas Priest.
+
+Crypta.
+
+Racionais MC’s.
+
+Agora:
+
+# **BJÖRK.**
+
+Se alguém ainda estiver tentando descobrir “qual gênero a Passport cobre”...
+
+Temos uma resposta técnica:
+
+# **HAHAHAHAHAHAHAHA.**
+
+😂🔥
+
+---
+
+# A GENTE COBRE HISTÓRIA BOA.
+
+É mais simples.
+
+Uma cantora islandesa que começou ainda criança, atravessou o rock alternativo com The Sugarcubes, construiu uma carreira solo impossível de resumir e em 2011 resolveu transformar um álbum inteiro numa experiência de software?
+
+# **ENTRA.**
+
+Um grupo de rap paulista abrindo imagens perdidas de vinte anos atrás?
+
+Entra.
+
+Uma banda brasileira de death metal começando nova formação?
+
+Entra.
+
+Country quebrando recorde?
+
+Entra.
+
+Uma banda de garagem com uma demo absurda que ninguém conhece?
+
+# **ENTRA TAMBÉM.**
+
+---
+
+# ALIÁS: VOCÊ TEM UMA DESSAS?
+
+Uma banda?
+
+Um projeto eletrônico?
+
+Uma cantora?
+
+Um rapper?
+
+Um DJ?
+
+Um produtor?
+
+Um grupo experimental tão esquisito que nem vocês sabem explicar o que estão fazendo?
+
+# **MANDA.**
+
+Especialmente esse último.
+
+Björk aprovaria a confusão.
+
+😂
+
+---
+
+# GRAVOU UMA DEMO?
+
+**MANDA.**
+
+Tem vídeo?
+
+Manda.
+
+Tem show?
+
+Manda.
+
+Tem uma história?
+
+Manda.
+
+Tem uma experiência misturando música e tecnologia?
+
+Manda.
+
+Tem uma banda ensaiando numa garagem?
+
+Manda.
+
+Tem alguém fazendo música dentro de um quarto porque ainda não existe dinheiro para estúdio?
+
+# **MANDA ESSA DROGA PRA CÁ.**
+
+A Passport não precisa esperar o artista aparecer numa parada para descobrir que ele existe.
+
+---
+
+# ENQUANTO ALGUNS FECHAM AS PORTAS...
+
+# **NÓS ABRIMOS.**
+
+E Björk é quase a prova perfeita de por que portas precisam ficar abertas.
+
+Porque imagina alguém tentando enquadrar uma artista dessas antes de ouvi-la:
+
+— Isso é pop?
+
+— Não exatamente.
+
+— Rock?
+
+— Às vezes.
+
+— Eletrônico?
+
+— Também.
+
+— Experimental?
+
+— Bastante.
+
+— Então onde colocamos?
+
+# **NO PLAY.**
+
+Problema resolvido.
+
+😂
+
+---
+
+# TEMOS RÁDIOS. MUITAS.
+
+Você chegou aqui pela Björk?
+
+Continua.
+
+Escolha uma rádio.
+
+Descubra alguma coisa.
+
+Faça um pedido.
+
+Talvez apareça algo conhecido.
+
+Talvez você encontre uma música de outro país, outra década ou outro gênero que jamais procuraria sozinho.
+
+**Melhor ainda.**
+
+Porque uma casa de música deveria ampliar seu ouvido.
+
+Não construir uma cerca em volta dele.
+
+---
+
+# QUER PARTICIPAR?
+
+A porta também está aberta.
+
+Escreva sua matéria.
+
+Mande sua banda.
+
+Divulgue um artista.
+
+Envie uma história.
+
+Mande fotos.
+
+Vídeos.
+
+Podcast.
+
+Material antigo.
+
+Descobertas.
+
+Correções.
+
+Tem alguma coisa esquecida num HD há vinte anos?
+
+Depois da história dos Racionais, acho bom verificar. 😂
+
+# **PARTICIPE.**
+
+Leitor não precisa ficar do lado de fora.
+
+---
+
+# E TEM O APOIE
+
+Porque fazer essa máquina crescer custa dinheiro.
+
+Servidor.
+
+Infraestrutura.
+
+Ferramentas.
+
+Arquivo.
+
+Desenvolvimento.
+
+Tudo isso existe.
+
+Quem puder contribuir financeiramente:
+
+# **AJUDA PRA CACETE.**
+
+E seguimos dentro do nosso vocabulário editorial autorizado. 😂
+
+Agora:
+
+não pode contribuir com dinheiro?
+
+# **NADA MUDA.**
+
+Leia.
+
+Ouça.
+
+Compartilhe.
+
+Faça pedidos.
+
+Mande uma pauta.
+
+Envie uma demo.
+
+Apresente um artista.
+
+Mostre a Passport para alguém.
+
+**Apoiar também é fazer a música circular.**
+
+---
+
+# PORQUE NÃO QUEREMOS UMA MÁQUINA ENGESSADA
+
+Essa talvez seja a maior lição que Björk pode deixar numa publicação musical.
+
+Fórmula funciona?
+
+Ótimo.
+
+# **E DEPOIS?**
+
+Você repete a fórmula até ninguém mais lembrar por que ela era interessante?
+
+Ou tenta outra coisa?
+
+A Passport quer continuar tentando.
+
+Rádio.
+
+Editorial.
+
+Vídeo.
+
+Podcast.
+
+Broadcast.
+
+Arquivo.
+
+Artista consagrado.
+
+Artista independente.
+
+Leitor escrevendo.
+
+Banda enviando material.
+
+Uma história levando para outra.
+
+# **MOVIMENTO.**
+
+---
+
+Há 15 anos, Björk poderia simplesmente ter lançado dez músicas.
+
+E provavelmente teria feito um ótimo disco.
+
+Só que ela olhou para aquilo e aparentemente pensou:
+
+**“Pouco.”**
+
+😂
+
+Então colocou música dentro de aplicativos.
+
+Jogos.
+
+Partituras.
+
+Animações.
+
+Ciência.
+
+Natureza.
+
+Tecnologia.
+
+Performance.
+
+Design.
+
+E chamou aquela criatura de:
+
+# **BIOPHILIA.**
+
+Hoje o hardware mudou.
+
+Os sistemas mudaram.
+
+A tecnologia mudou.
+
+Mas aperta o play em Björk cantando com **The Sugarcubes em 1988**.
+
+Depois vai para **“Moon”**.
+
+Depois coloca **“Crystalline” ao vivo em 2023**.
+
+Décadas.
+
+Formatos.
+
+Tecnologias.
+
+Palcos.
+
+A mesma voz impossível de confundir.
+
+Daquela ilha no Atlântico Norte que muita gente ainda precisa procurar no mapa...
+
+para o mundo inteiro.
+
+E agora:
+
+# **PARA DENTRO DA PASSPORT RADIO.**
+
+Sem gaveta.
+
+Sem cerca.
+
+Sem pedir licença.
+
+**Bem-vinda, Björk.**
+
+A porta da frente estava aberta.
+
+Só não esperávamos que você entrasse vestida desse jeito.
+
+...
+
+Pensando bem:
+
+# **É BJÖRK. É CLARO QUE ESPERÁVAMOS.** 😂🖤🔥
