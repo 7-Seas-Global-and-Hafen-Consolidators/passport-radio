@@ -1,0 +1,294 @@
+{
+  "id": "dp-04",
+  "version": 1,
+  "title": "Qual álbum veio primeiro?",
+  "family": "Visual",
+  "type": "comparacao-albuns",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "qg75d",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "3y2wq",
+          "label": "\"High Voltage\" — AC/DC",
+          "correct": false
+        },
+        {
+          "id": "osea7",
+          "label": "\"IV\" — Led Zeppelin",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/420eb3e988d69f7d.jpg",
+        "alt": "Pista visual da pergunta 1"
+      }
+    },
+    {
+      "id": "uuysp",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "reskv",
+          "label": "\"School's Out\" — Alice Cooper",
+          "correct": true
+        },
+        {
+          "id": "4amzm",
+          "label": "\"The River\" — Bruce Springsteen",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/1a4dc490404f5791.jpg",
+        "alt": "Pista visual da pergunta 2"
+      }
+    },
+    {
+      "id": "mlvm6",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "815fd",
+          "label": "\"Aerosmith\" — Aerosmith",
+          "correct": true
+        },
+        {
+          "id": "n5ym0",
+          "label": "\"The Dark Side Of The Moon\" — Pink Floyd",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/d48577f6e9836205.jpg",
+        "alt": "Pista visual da pergunta 3"
+      }
+    },
+    {
+      "id": "5diqr",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "6xq5i",
+          "label": "\"II\" — Billy Talent",
+          "correct": false
+        },
+        {
+          "id": "cvsix",
+          "label": "\"Americana\" The Offspring",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/5c4d84137845c02f.jpg",
+        "alt": "Pista visual da pergunta 4"
+      }
+    },
+    {
+      "id": "cmim7",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "u5h8y",
+          "label": "\"Slippery When Wet\" — Bon Jovi",
+          "correct": true
+        },
+        {
+          "id": "mxcv8",
+          "label": "\"Ten\" — Pearl Jam",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/4c6043446bb4f00a.jpg",
+        "alt": "Pista visual da pergunta 5"
+      }
+    },
+    {
+      "id": "j7ugi",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "4hsz2",
+          "label": "\"In Rock\" — Deep Purple",
+          "correct": true
+        },
+        {
+          "id": "v5m0u",
+          "label": "\"Escape\" — Journey",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/fc48343399ac694d.jpg",
+        "alt": "Pista visual da pergunta 6"
+      }
+    },
+    {
+      "id": "owek9",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "vji4e",
+          "label": "\"Wasting Light\" — Foo Fighters",
+          "correct": false
+        },
+        {
+          "id": "mhobw",
+          "label": "\"Dookie\" — Green Day",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/3d06e1647a74ff64.jpg",
+        "alt": "Pista visual da pergunta 7"
+      }
+    },
+    {
+      "id": "6g2pw",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "c6d1v",
+          "label": "\"Use Your Illusion\" — Guns N' Roses",
+          "correct": false
+        },
+        {
+          "id": "s78tt",
+          "label": "\"Turbo\" — Judas Priest",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/891e8f4aa9e74cff.jpg",
+        "alt": "Pista visual da pergunta 8"
+      }
+    },
+    {
+      "id": "wq695",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "gvkwr",
+          "label": "\"Hybrid Theory\" — Linkin Park",
+          "correct": true
+        },
+        {
+          "id": "ltcf7",
+          "label": "\"Karacho\" — Donots",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/f16491e90cf2c56c.jpg",
+        "alt": "Pista visual da pergunta 9"
+      }
+    },
+    {
+      "id": "mkdlc",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "x72hv",
+          "label": "\"Master Of Puppets\" — Metallica",
+          "correct": true
+        },
+        {
+          "id": "p8v75",
+          "label": "\"In Utero\" — Nirvana",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/4c6a89dd36649536.jpg",
+        "alt": "Pista visual da pergunta 10"
+      }
+    },
+    {
+      "id": "g7au6",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "yo565",
+          "label": "\"Brothers In Arms\" — Dire Straits",
+          "correct": true
+        },
+        {
+          "id": "yjac0",
+          "label": "\"Be Here Now\" — Oasis",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/3f8d29a384be5df1.jpg",
+        "alt": "Pista visual da pergunta 11"
+      }
+    },
+    {
+      "id": "lfrso",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "uptfu",
+          "label": "\"Infest\" — Papa Roach",
+          "correct": true
+        },
+        {
+          "id": "2w72m",
+          "label": "\"Jazz Ist Anders\" — Die Ärzte",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/280c8c030a9035c4.jpg",
+        "alt": "Pista visual da pergunta 12"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "3yyha",
+      "title": "Outra rodada vem aí",
+      "description": "Você pode reconhecer mais datas na próxima.",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "r1rqs",
+      "title": "Boa memória",
+      "description": "Você acertou várias cronologias.",
+      "min": 6,
+      "max": 9
+    },
+    {
+      "id": "2yebb",
+      "title": "Quase tudo",
+      "description": "Faltou pouco para fechar a rodada.",
+      "min": 10,
+      "max": 11
+    },
+    {
+      "id": "17jcn",
+      "title": "Cronologia completa",
+      "description": "Todos os discos na ordem certa.",
+      "min": 12,
+      "max": 12
+    }
+  ],
+  "sourceId": "1009",
+  "versionHash": "653f74b79f8bc01c"
+}

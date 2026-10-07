@@ -1,0 +1,510 @@
+{
+  "id": "dp-06",
+  "version": 1,
+  "title": "Seu perfil de rock",
+  "family": "Perfil",
+  "type": "personalidade-ponderada",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "d9fau",
+      "prompt": "Onde você mais gosta de ouvir música?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "h1m9x",
+          "label": "No carro, no trabalho, em casa: em todo lugar",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "hzkvv",
+          "label": "Ao vivo, num show",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "4aw68",
+          "label": "Em casa, com calma e atenção",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6q12",
+      "prompt": "Qual destas frases combina com você?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "51smx",
+          "label": "Antigo, mas cheio de energia",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        },
+        {
+          "id": "ecm0r",
+          "label": "Balançar a cabeça a vida inteira",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "8l9cl",
+          "label": "Abrir espaço para novidades",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "y9b2q",
+      "prompt": "Qual retrato parece mais com você?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "7x8nl",
+          "label": "Uma pessoa que conhece rock e busca descobertas",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "j315a",
+          "label": "Uma pessoa que gosta do rádio à moda antiga",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "y71a9",
+          "label": "Uma pessoa dos anos 80",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "br9qy",
+          "label": "Uma pessoa do metal e dos cabelos compridos",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "asc54",
+          "label": "Uma pessoa rebelde, de cabelo colorido",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "woyoi",
+          "label": "Uma pessoa de barba e espírito medieval",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "o21md",
+      "prompt": "Como você descreve seu gosto musical?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "l69y9",
+          "label": "Não agrada a todo mundo, mas agrada a você",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        },
+        {
+          "id": "7c7j6",
+          "label": "Descobrir novidades e reencontrar músicas antigas",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "4yr92",
+          "label": "Rock’n’roll puro",
+          "weights": {
+            "yiko9": 5,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "x661y",
+      "prompt": "Qual grupo de bandas chega mais perto do seu gosto?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "354fe",
+          "label": "The Rolling Stones, The Who, Queen e outros clássicos",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "17y49",
+          "label": "Iron Maiden, Metallica, In Extremo: música pesada",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        },
+        {
+          "id": "dqxot",
+          "label": "Green Day, The Offspring, April Art: nada velho ou sem graça",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "2teak",
+      "prompt": "O que faz uma música ganhar você?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "kplew",
+          "label": "Uma novidade e uma boa mensagem",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "ic41o",
+          "label": "Guitarra, baixo e uma voz de rock",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "r90e8",
+          "label": "Volume, boas letras e vozes ásperas",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "tkogj",
+      "prompt": "Se você fosse uma música, seria...",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "nhfxs",
+          "label": "Um sucesso único",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        },
+        {
+          "id": "psftk",
+          "label": "Um clássico que atravessa o tempo",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "jxket",
+          "label": "Um single de estreia",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "bjjlq",
+      "prompt": "Qual frase de rockstar você escolheria?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "pu8ga",
+          "label": "“Para ter ressaca, primeiro você precisa parar de beber.” — Lemmy Kilmister",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        },
+        {
+          "id": "54h2d",
+          "label": "“Não serei um rockstar. Serei uma lenda.” — Freddie Mercury",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "z0iqa",
+          "label": "“Não é um show de rock. É uma manifestação.” — Campino",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5xvm",
+      "prompt": "Qual formato você prefere para ouvir rock?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "fbcy3",
+          "label": "Em CD",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        },
+        {
+          "id": "ooj6z",
+          "label": "Em vinil",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 6,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "rvg6b",
+          "label": "No rádio",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "obppt",
+      "prompt": "O que você quer ouvir no show da sua banda favorita?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "zl81g",
+          "label": "Os grandes sucessos para cantar junto",
+          "weights": {
+            "yiko9": 6,
+            "pwapc": 6,
+            "itczm": 0,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "y8qoq",
+          "label": "Músicas novas que surpreendam",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 0,
+            "aper4": 6,
+            "whcyg": 6,
+            "dfobh": 0
+          }
+        },
+        {
+          "id": "hh5ua",
+          "label": "As músicas pesadas, para entrar na roda",
+          "weights": {
+            "yiko9": 0,
+            "pwapc": 0,
+            "itczm": 6,
+            "aper4": 0,
+            "whcyg": 0,
+            "dfobh": 6
+          }
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "yiko9",
+      "title": "Rock sem fronteiras",
+      "description": "Você gosta de variar entre classic rock, punk e metal."
+    },
+    {
+      "id": "pwapc",
+      "title": "Clássicos do rock",
+      "description": "Queen, The Rolling Stones e The Who estão entre as referências deste perfil."
+    },
+    {
+      "id": "itczm",
+      "title": "Som pesado",
+      "description": "O perfil puxa para o peso de Motörhead e Metallica."
+    },
+    {
+      "id": "aper4",
+      "title": "Espírito punk",
+      "description": "Ramones, The Clash e Green Day acompanham o lado rebelde deste perfil."
+    },
+    {
+      "id": "whcyg",
+      "title": "Novas bandas",
+      "description": "Descobrir bandas e músicas novas move este perfil."
+    },
+    {
+      "id": "dfobh",
+      "title": "Rock medieval",
+      "description": "Este perfil se aproxima do rock de inspiração medieval."
+    }
+  ],
+  "sourceId": "786",
+  "versionHash": "577c340ff2691cfb"
+}

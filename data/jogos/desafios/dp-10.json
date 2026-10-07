@@ -1,0 +1,472 @@
+{
+  "id": "dp-10",
+  "version": 1,
+  "title": "Quanto metal você conhece?",
+  "family": "Conhecimento",
+  "type": "misto-trivia-verdadeiro-falso",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "eyk3o",
+      "prompt": "Verdadeiro ou falso: Tony Iommi perdeu duas pontas dos dedos num acidente de trabalho.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "chtg2",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "vdc94",
+          "label": "Falso",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "3nqc6",
+      "prompt": "Quais bandas formam os Big Four do thrash metal?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "exkgk",
+          "label": "Metallica, Anthrax, Slayer, Megadeth",
+          "correct": true
+        },
+        {
+          "id": "4uicr",
+          "label": "Metallica, Anthrax, Slayer, Parkway Drive",
+          "correct": false
+        },
+        {
+          "id": "xnfpw",
+          "label": "Metallica, Anthrax, Judas Priest, Megadeth",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "kaqis",
+      "prompt": "Qual é o primeiro disco do Black Sabbath?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "i7qye",
+          "label": "Black Sabbath",
+          "correct": true
+        },
+        {
+          "id": "4l9gh",
+          "label": "Paranoid",
+          "correct": false
+        },
+        {
+          "id": "0f981",
+          "label": "Blizzard Of Ozz",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "rvtdt",
+      "prompt": "Como se chamava o palco Louder do Wacken antes de 2017?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "fjrf8",
+          "label": "Party Stage",
+          "correct": true
+        },
+        {
+          "id": "809kr",
+          "label": "Black Stage",
+          "correct": false
+        },
+        {
+          "id": "d0nxh",
+          "label": "True Stage",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "lttu9",
+      "prompt": "Quem criou Eddie, o mascote do Iron Maiden?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "bld2s",
+          "label": "Derek Riggs",
+          "correct": true
+        },
+        {
+          "id": "pwt1k",
+          "label": "Andres Serrano",
+          "correct": false
+        },
+        {
+          "id": "62sku",
+          "label": "John Pasche",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "jeuz5",
+      "prompt": "Qual rockstar aparece no clipe Running Wild, do Airbourne?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "go5of",
+          "label": "Lemmy Kilmister",
+          "correct": true
+        },
+        {
+          "id": "1qeih",
+          "label": "Steven Tyler",
+          "correct": false
+        },
+        {
+          "id": "jfctv",
+          "label": "Ozzy Osbourne",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "8evm5",
+      "prompt": "Como é descrito Avantasia, o projeto de Tobias Sammet?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "pj2ws",
+          "label": "Ópera metal",
+          "correct": true
+        },
+        {
+          "id": "9gw1c",
+          "label": "Best of Metal",
+          "correct": false
+        },
+        {
+          "id": "s8xh5",
+          "label": "Metal Symphony",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "765p3",
+      "prompt": "Qual título Doro recebeu dos fãs?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "5ovwo",
+          "label": "Queen of Metal",
+          "correct": true
+        },
+        {
+          "id": "utzph",
+          "label": "Princess of Metal",
+          "correct": false
+        },
+        {
+          "id": "2atc3",
+          "label": "Heavy Metal Queen",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "6pp0k",
+      "prompt": "Qual sigla identifica a cena britânica do fim dos anos 70 e começo dos 80?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "zbwce",
+          "label": "NWOBHM (New Wave of British Heavy Metal)",
+          "correct": true
+        },
+        {
+          "id": "hf6s2",
+          "label": "AWOBHM (Another Wave of British Heavy Metal)",
+          "correct": false
+        },
+        {
+          "id": "g42pb",
+          "label": "TWOBHM (The Wave of British Heavy Metal)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "rsz3o",
+      "prompt": "Quem é conhecido como Air-Raid Siren?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "j44fl",
+          "label": "Bruce Dickinson",
+          "correct": true
+        },
+        {
+          "id": "q4emj",
+          "label": "Ozzy Osbourne",
+          "correct": false
+        },
+        {
+          "id": "2bhgs",
+          "label": "Ronnie James Dio",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "1qlz5",
+      "prompt": "De qual música dos anos 60 teria vindo a expressão heavy metal, segundo o quiz?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "s42x9",
+          "label": "Born To Be Wild, de Steppenwolf",
+          "correct": true
+        },
+        {
+          "id": "3osot",
+          "label": "Times They Are A-Changin’, de Bob Dylan",
+          "correct": false
+        },
+        {
+          "id": "gu5q5",
+          "label": "Yesterday, dos Beatles",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "f9593",
+      "prompt": "Os fãs filmados em Heavy Metal Parking Lot, de 1986, esperavam por qual banda?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "6e5ln",
+          "label": "Judas Priest",
+          "correct": true
+        },
+        {
+          "id": "34y4s",
+          "label": "Metallica",
+          "correct": false
+        },
+        {
+          "id": "kj686",
+          "label": "Black Sabbath",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "odblj",
+      "prompt": "Qual era o time de futebol americano favorito de Ronnie James Dio?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "aoglp",
+          "label": "New York Giants",
+          "correct": true
+        },
+        {
+          "id": "z7lp8",
+          "label": "Philadelphia Eagles",
+          "correct": false
+        },
+        {
+          "id": "kb1fp",
+          "label": "Dallas Cowboys",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "vpn09",
+      "prompt": "Como Korn reagiu à expulsão de um aluno por usar uma camiseta da banda?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "e30o1",
+          "label": "Distribuíram camisetas do Korn de graça diante da escola",
+          "correct": true
+        },
+        {
+          "id": "btwl5",
+          "label": "Enviaram camisetas para virar uniforme escolar",
+          "correct": false
+        },
+        {
+          "id": "rk95z",
+          "label": "Deram ao aluno ingresso gratuito vitalício",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "gm30c",
+      "prompt": "Quando Metallica foi formada?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "dhqgy",
+          "label": "Outubro de 1981",
+          "correct": true
+        },
+        {
+          "id": "gjbrf",
+          "label": "Outubro de 1982",
+          "correct": false
+        },
+        {
+          "id": "qcvvu",
+          "label": "Dezembro de 1981",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "dwiy6",
+      "prompt": "Qual objeto Slayer admitiu ter atirado de um quarto de hotel?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "iwahz",
+          "label": "Um micro-ondas",
+          "correct": true
+        },
+        {
+          "id": "g2ni2",
+          "label": "Uma televisão",
+          "correct": false
+        },
+        {
+          "id": "hjuu3",
+          "label": "Um assento de vaso sanitário",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "dmi2a",
+      "prompt": "Qual é o primeiro álbum do Parkway Drive?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "xmp5r",
+          "label": "Killing with a Smile",
+          "correct": true
+        },
+        {
+          "id": "y5cvn",
+          "label": "Horizons",
+          "correct": false
+        },
+        {
+          "id": "4awsn",
+          "label": "Atlas",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "73sh0",
+      "prompt": "Como Slipknot chama seus fãs?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "mtnhv",
+          "label": "Maggots",
+          "correct": true
+        },
+        {
+          "id": "8t5km",
+          "label": "Slippies",
+          "correct": false
+        },
+        {
+          "id": "u5hid",
+          "label": "MetHead",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "fyv1x",
+      "prompt": "Qual é a área do festival Wacken indicada na fonte?",
+      "type": "misto-trivia-verdadeiro-falso",
+      "options": [
+        {
+          "id": "jiyz9",
+          "label": "240 hectares",
+          "correct": true
+        },
+        {
+          "id": "91kdz",
+          "label": "230 hectares",
+          "correct": false
+        },
+        {
+          "id": "zp2gc",
+          "label": "250 hectares",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "sgtbb",
+      "prompt": "Verdadeiro ou falso: a pesquisa citada pelo quiz associou ouvir metal a mais equilíbrio e inspiração.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "9rdur",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "xgyss",
+          "label": "Falso",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "2c7ig",
+      "title": "Algodão",
+      "description": "Ainda há muito metal para conhecer.",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "0dhm8",
+      "title": "Borracha",
+      "description": "Você já conhece uma parte do peso.",
+      "min": 6,
+      "max": 12
+    },
+    {
+      "id": "y0c3f",
+      "title": "Rocha",
+      "description": "Você foi longe no desafio.",
+      "min": 13,
+      "max": 19
+    },
+    {
+      "id": "k3d5w",
+      "title": "Diamante",
+      "description": "Todas as respostas certas.",
+      "min": 20,
+      "max": 20
+    }
+  ],
+  "sourceId": "725",
+  "versionHash": "c7822884ceb9a850"
+}

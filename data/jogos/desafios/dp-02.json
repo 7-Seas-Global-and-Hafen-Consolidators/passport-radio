@@ -1,0 +1,302 @@
+{
+  "id": "dp-02",
+  "version": 1,
+  "title": "De quem é esta barba?",
+  "family": "Visual",
+  "type": "barba",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "7wwjx",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "iy2ye",
+          "label": "John Frusciante",
+          "correct": false
+        },
+        {
+          "id": "f2ugx",
+          "label": "Anthony Kiedis",
+          "correct": true
+        },
+        {
+          "id": "8o1my",
+          "label": "Johnny Depp",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/10d7ad8a9ac5c810.jpg",
+        "alt": "Pista visual da pergunta 1"
+      }
+    },
+    {
+      "id": "168gt",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "1cd84",
+          "label": "Brent Hinds",
+          "correct": false
+        },
+        {
+          "id": "0w9ky",
+          "label": "Billy Gibbons",
+          "correct": false
+        },
+        {
+          "id": "n8om1",
+          "label": "Dave Grohl",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/720ef14ca8c79f22.jpg",
+        "alt": "Pista visual da pergunta 2"
+      }
+    },
+    {
+      "id": "ibzbd",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "wwgyd",
+          "label": "Frank Zappa",
+          "correct": true
+        },
+        {
+          "id": "0eno0",
+          "label": "Dweezil Zappa",
+          "correct": false
+        },
+        {
+          "id": "x634f",
+          "label": "John Oates",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/f76b35c1e8e92b66.jpg",
+        "alt": "Pista visual da pergunta 3"
+      }
+    },
+    {
+      "id": "zr4fw",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "75nov",
+          "label": "Carlos Santana",
+          "correct": false
+        },
+        {
+          "id": "4bsu9",
+          "label": "Freddie Mercury",
+          "correct": true
+        },
+        {
+          "id": "scxpl",
+          "label": "Marty Friedman",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/9f740c58b523fbe3.jpg",
+        "alt": "Pista visual da pergunta 4"
+      }
+    },
+    {
+      "id": "83sna",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "r65v9",
+          "label": "James Hetfield",
+          "correct": true
+        },
+        {
+          "id": "a5129",
+          "label": "Dave Navarro",
+          "correct": false
+        },
+        {
+          "id": "l9ef8",
+          "label": "Chris Cornell",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/d20934ca31764418.jpg",
+        "alt": "Pista visual da pergunta 5"
+      }
+    },
+    {
+      "id": "tk83m",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "lkcha",
+          "label": "Shavo Odadjian",
+          "correct": false
+        },
+        {
+          "id": "9hz1j",
+          "label": "Serj Tankian",
+          "correct": false
+        },
+        {
+          "id": "2i183",
+          "label": "Kerry King",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/aa34a6a522d6fb92.jpg",
+        "alt": "Pista visual da pergunta 6"
+      }
+    },
+    {
+      "id": "0cbp6",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "52m1l",
+          "label": "Zakk Wylde",
+          "correct": false
+        },
+        {
+          "id": "wsj0m",
+          "label": "Scott Ian",
+          "correct": false
+        },
+        {
+          "id": "sdhmo",
+          "label": "Lemmy Kilmister",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/5dccfb0cb20daaba.jpg",
+        "alt": "Pista visual da pergunta 7"
+      }
+    },
+    {
+      "id": "22iir",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "xdzj0",
+          "label": "Scott Ian",
+          "correct": true
+        },
+        {
+          "id": "uc90d",
+          "label": "Jerry Garcia",
+          "correct": false
+        },
+        {
+          "id": "qznf8",
+          "label": "Adam Jones",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/209759c8260d714d.jpg",
+        "alt": "Pista visual da pergunta 8"
+      }
+    },
+    {
+      "id": "5b8l7",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "2zgh1",
+          "label": "Duff McKagan",
+          "correct": false
+        },
+        {
+          "id": "m1peo",
+          "label": "Tom Araya",
+          "correct": true
+        },
+        {
+          "id": "1xrzz",
+          "label": "Troy Sanders",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/3ca3581667ace9fa.jpg",
+        "alt": "Pista visual da pergunta 9"
+      }
+    },
+    {
+      "id": "4t60a",
+      "prompt": "De quem é esta barba?",
+      "type": "barba",
+      "options": [
+        {
+          "id": "2xwyd",
+          "label": "Billy Gibbons",
+          "correct": true
+        },
+        {
+          "id": "jk4u8",
+          "label": "Rick Rubin",
+          "correct": false
+        },
+        {
+          "id": "m68uz",
+          "label": "Dusty Hill",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/45c28db50dd55426.jpg",
+        "alt": "Pista visual da pergunta 10"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "di3vg",
+      "title": "A barba escapou",
+      "description": "Ainda há rockstars para reconhecer.",
+      "min": 0,
+      "max": 3
+    },
+    {
+      "id": "jkpvi",
+      "title": "Boa rodada",
+      "description": "Você reconheceu uma parte das barbas.",
+      "min": 4,
+      "max": 6
+    },
+    {
+      "id": "p9hx6",
+      "title": "Quase todas",
+      "description": "Faltou pouco para fechar o desafio.",
+      "min": 7,
+      "max": 9
+    },
+    {
+      "id": "gr2t7",
+      "title": "Todas reconhecidas",
+      "description": "Você acertou todas as barbas.",
+      "min": 10,
+      "max": 10
+    }
+  ],
+  "sourceId": "1077",
+  "versionHash": "a4ddc7c79ec37b23"
+}

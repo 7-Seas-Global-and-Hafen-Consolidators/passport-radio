@@ -1,0 +1,558 @@
+{
+  "id": "dp-09",
+  "version": 1,
+  "title": "Seu parceiro de quarentena",
+  "family": "Perfil",
+  "type": "personalidade-ponderada",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "zcuvp",
+      "prompt": "O que você faz para espantar o tédio numa quarentena?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "f5d3q",
+          "label": "Assistir a um show após o outro na internet",
+          "weights": {
+            "xj038": 5,
+            "33wno": 2,
+            "9cc9j": 3,
+            "p57j2": 1,
+            "lpt4r": 4,
+            "kxfrm": 6
+          }
+        },
+        {
+          "id": "b2ntr",
+          "label": "Ajudar organizações e chamar outras pessoas para colaborar",
+          "weights": {
+            "xj038": 3,
+            "33wno": 4,
+            "9cc9j": 1,
+            "p57j2": 6,
+            "lpt4r": 2,
+            "kxfrm": 5
+          }
+        },
+        {
+          "id": "pdj5z",
+          "label": "Fazer vídeos divertidos ou músicas para animar as pessoas",
+          "weights": {
+            "xj038": 5,
+            "33wno": 1,
+            "9cc9j": 6,
+            "p57j2": 2,
+            "lpt4r": 4,
+            "kxfrm": 3
+          }
+        },
+        {
+          "id": "7jef7",
+          "label": "Montar quebra-cabeças e pensar no sentido da vida",
+          "weights": {
+            "xj038": 3,
+            "33wno": 6,
+            "9cc9j": 1,
+            "p57j2": 5,
+            "lpt4r": 2,
+            "kxfrm": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "juhrs",
+      "prompt": "O que não pode faltar quando você fica em casa?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "y1wfo",
+          "label": "A coleção de discos: finalmente dá para organizar",
+          "weights": {
+            "xj038": 3,
+            "33wno": 2,
+            "9cc9j": 1,
+            "p57j2": 4,
+            "lpt4r": 6,
+            "kxfrm": 5
+          }
+        },
+        {
+          "id": "c0m3g",
+          "label": "Os DVDs de shows para transformar a sala num festival",
+          "weights": {
+            "xj038": 5,
+            "33wno": 1,
+            "9cc9j": 4,
+            "p57j2": 2,
+            "lpt4r": 3,
+            "kxfrm": 6
+          }
+        },
+        {
+          "id": "73jgg",
+          "label": "Papel higiênico: nunca parece suficiente",
+          "weights": {
+            "xj038": 5,
+            "33wno": 2,
+            "9cc9j": 6,
+            "p57j2": 1,
+            "lpt4r": 4,
+            "kxfrm": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "x2snq",
+      "prompt": "O que você mais quer fazer quando a quarentena terminar?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "b0yek",
+          "label": "Voltar aos shows e festivais",
+          "weights": {
+            "xj038": 5,
+            "33wno": 1,
+            "9cc9j": 3,
+            "p57j2": 2,
+            "lpt4r": 4,
+            "kxfrm": 6
+          }
+        },
+        {
+          "id": "6biud",
+          "label": "Um churrasco com rock e amigos",
+          "weights": {
+            "xj038": 4,
+            "33wno": 1,
+            "9cc9j": 3,
+            "p57j2": 5,
+            "lpt4r": 6,
+            "kxfrm": 2
+          }
+        },
+        {
+          "id": "n3628",
+          "label": "Ainda existe alguma coisa para esperar com alegria?",
+          "weights": {
+            "xj038": 3,
+            "33wno": 6,
+            "9cc9j": 1,
+            "p57j2": 5,
+            "lpt4r": 2,
+            "kxfrm": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "q0rns",
+      "prompt": "Qual trecho seria seu lema?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "uxr41",
+          "label": "Acredito que já esperei tempo suficiente",
+          "weights": {
+            "xj038": 6,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "txlz4",
+          "label": "Estou aqui há tanto tempo: é hora de seguir",
+          "weights": {
+            "xj038": 0,
+            "33wno": 6,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "d7fsr",
+          "label": "A escola acabou para sempre",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 6,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "ffd31",
+          "label": "Quanto tempo, quanto tempo?",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 6,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "ghpyu",
+          "label": "Tem alguém vivo aí?",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 6
+          }
+        },
+        {
+          "id": "34w7d",
+          "label": "Os tempos mudaram e estão estranhos",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 6,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "1wtna",
+      "prompt": "Como fica seu humor nesses dias?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "ubi1m",
+          "label": "Melancólico: escrevo músicas para pensar nesses dias",
+          "weights": {
+            "xj038": 3,
+            "33wno": 6,
+            "9cc9j": 1,
+            "p57j2": 5,
+            "lpt4r": 4,
+            "kxfrm": 2
+          }
+        },
+        {
+          "id": "vfzyb",
+          "label": "Positivo: as preocupações ficam para depois",
+          "weights": {
+            "xj038": 5,
+            "33wno": 1,
+            "9cc9j": 6,
+            "p57j2": 2,
+            "lpt4r": 4,
+            "kxfrm": 3
+          }
+        },
+        {
+          "id": "x8191",
+          "label": "Sério: assuntos difíceis merecem reflexão",
+          "weights": {
+            "xj038": 2,
+            "33wno": 5,
+            "9cc9j": 1,
+            "p57j2": 6,
+            "lpt4r": 3,
+            "kxfrm": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "cw9e3",
+      "prompt": "Em que seu parceiro de quarentena precisa concordar com você?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "miqwv",
+          "label": "Na música que vai tocar. Existe algo além do rock?",
+          "weights": {
+            "xj038": 6,
+            "33wno": 1,
+            "9cc9j": 5,
+            "p57j2": 2,
+            "lpt4r": 4,
+            "kxfrm": 3
+          }
+        },
+        {
+          "id": "ajdfo",
+          "label": "Na vontade de mudar alguma coisa no mundo",
+          "weights": {
+            "xj038": 3,
+            "33wno": 4,
+            "9cc9j": 2,
+            "p57j2": 6,
+            "lpt4r": 1,
+            "kxfrm": 5
+          }
+        },
+        {
+          "id": "qs6in",
+          "label": "Vamos brigar e depois fazer as pazes",
+          "weights": {
+            "xj038": 5,
+            "33wno": 6,
+            "9cc9j": 4,
+            "p57j2": 2,
+            "lpt4r": 3,
+            "kxfrm": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "ll7vq",
+      "prompt": "Qual desastre doméstico faria a quarentena pesar?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "7oy6t",
+          "label": "O toca-discos quebrar: sem música não dá",
+          "weights": {
+            "xj038": 3,
+            "33wno": 4,
+            "9cc9j": 1,
+            "p57j2": 2,
+            "lpt4r": 6,
+            "kxfrm": 5
+          }
+        },
+        {
+          "id": "oqgtg",
+          "label": "A geladeira e a caixa de cerveja ficarem vazias",
+          "weights": {
+            "xj038": 6,
+            "33wno": 2,
+            "9cc9j": 5,
+            "p57j2": 1,
+            "lpt4r": 4,
+            "kxfrm": 3
+          }
+        },
+        {
+          "id": "46knz",
+          "label": "A internet cair: como assistir aos shows?",
+          "weights": {
+            "xj038": 2,
+            "33wno": 4,
+            "9cc9j": 3,
+            "p57j2": 1,
+            "lpt4r": 5,
+            "kxfrm": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "q60qe",
+      "prompt": "Qual disciplina você colocaria nas aulas em casa?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "jypqs",
+          "label": "História do rock",
+          "weights": {
+            "xj038": 4,
+            "33wno": 1,
+            "9cc9j": 3,
+            "p57j2": 2,
+            "lpt4r": 5,
+            "kxfrm": 6
+          }
+        },
+        {
+          "id": "2mge6",
+          "label": "Ciência do rock",
+          "weights": {
+            "xj038": 4,
+            "33wno": 1,
+            "9cc9j": 3,
+            "p57j2": 6,
+            "lpt4r": 5,
+            "kxfrm": 2
+          }
+        },
+        {
+          "id": "6oj88",
+          "label": "Filosofia do rock",
+          "weights": {
+            "xj038": 2,
+            "33wno": 6,
+            "9cc9j": 3,
+            "p57j2": 1,
+            "lpt4r": 4,
+            "kxfrm": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "y05hs",
+      "prompt": "Qual banda acompanha seus dias?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "rmksx",
+          "label": "E-Street-Band",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 6
+          }
+        },
+        {
+          "id": "yynev",
+          "label": "Foo Fighters",
+          "weights": {
+            "xj038": 6,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "6px4b",
+          "label": "Black Sabbath",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 6,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "ju74g",
+          "label": "U2",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 6,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "m8m54",
+          "label": "Rise Against",
+          "weights": {
+            "xj038": 0,
+            "33wno": 6,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 0,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "a2l7w",
+          "label": "Hollywood Vampires",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 0,
+            "p57j2": 0,
+            "lpt4r": 6,
+            "kxfrm": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "zhxzd",
+      "prompt": "Por que você vai aguentar a quarentena?",
+      "type": "perfil",
+      "options": [
+        {
+          "id": "kwwqk",
+          "label": "Para salvar vidas",
+          "weights": {
+            "xj038": 1,
+            "33wno": 4,
+            "9cc9j": 1,
+            "p57j2": 6,
+            "lpt4r": 1,
+            "kxfrm": 4
+          }
+        },
+        {
+          "id": "je57n",
+          "label": "Para salvar Ozzy",
+          "weights": {
+            "xj038": 0,
+            "33wno": 0,
+            "9cc9j": 6,
+            "p57j2": 0,
+            "lpt4r": 4,
+            "kxfrm": 0
+          }
+        },
+        {
+          "id": "173uf",
+          "label": "Para salvar o rock",
+          "weights": {
+            "xj038": 6,
+            "33wno": 1,
+            "9cc9j": 1,
+            "p57j2": 1,
+            "lpt4r": 1,
+            "kxfrm": 5
+          }
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "xj038",
+      "title": "Dave Grohl",
+      "description": "Seu perfil se aproxima de Dave Grohl."
+    },
+    {
+      "id": "33wno",
+      "title": "Tim McIlrath",
+      "description": "Seu perfil se aproxima de Tim McIlrath."
+    },
+    {
+      "id": "9cc9j",
+      "title": "Ozzy Osbourne",
+      "description": "Seu perfil se aproxima de Ozzy Osbourne."
+    },
+    {
+      "id": "p57j2",
+      "title": "Bono",
+      "description": "Seu perfil se aproxima de Bono."
+    },
+    {
+      "id": "lpt4r",
+      "title": "Alice Cooper",
+      "description": "Seu perfil se aproxima de Alice Cooper."
+    },
+    {
+      "id": "kxfrm",
+      "title": "Bruce Springsteen",
+      "description": "Seu perfil se aproxima de Bruce Springsteen."
+    }
+  ],
+  "sourceId": "755",
+  "versionHash": "5b904b8eb4986afe"
+}
