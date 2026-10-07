@@ -203,3 +203,101 @@ Leia **source-correct/** antes de qualquer implementação. A pasta antiga `sour
 Os arquivos em `source-correct/` são matéria-prima bruta recuperada; podem conter páginas completas, índices e sobreposição entre dumps. Faça deduplicação por conteúdo/título/mecânica durante o inventário. Não invente perguntas para completar número.
 
 Preserve a regra radioativa já definida nesta ordem: não alterar `passport-audio-continuity.js`, player, streams, bus, mutex, interlock ou transporte.
+
+
+# CORREÇÃO FINAL DO CORPUS — CHECKPOINT REPARADO EM 2026-10-07
+
+## AUTORIDADE DO CORPUS
+O bloqueio anterior foi um erro de aquisição/checkpoint, não ausência do material. A coleta manual do Mr. Nomad contém **43 desafios identificados**. A implementação NÃO pode reduzir esse corpus aos poucos dumps que por acaso já estejam em `source/` ou `source-correct/`.
+
+A autoridade operacional passa a ser:
+1. este inventário consolidado;
+2. os dumps brutos recuperados e persistidos;
+3. as imagens/associações presentes nesses dumps;
+4. a mecânica observada durante o garimpo.
+
+Um dump pode conter mais de um desafio. Dumps duplicados não contam como jogos novos. Não usar quantidade de arquivos como quantidade de desafios.
+
+## INVENTÁRIO CONSOLIDADO — 43 DESAFIOS
+O corpus precisa fechar em **43 IDs estáveis**, preservando as diferenças de mecânica. Famílias e exemplos efetivamente observados no garimpo incluem:
+
+### Conhecimento / história / cenas
+- Wacken Open Air;
+- MTV Unplugged;
+- décadas do rock, incluindo anos 70 e anos 90;
+- história do rock'n'roll;
+- fatos e curiosidades de bandas e artistas;
+- verdadeiro/falso (ex.: Tony Iommi);
+- qual banda / qual artista / formações (ex.: Keith Richards);
+- qual álbum veio antes / cronologia.
+
+### Identificação visual
+- barba de rockstar;
+- cabelo de rockstar;
+- silhueta / integrante / formação;
+- logos de bandas;
+- capas e fragmentos de álbuns;
+- frames de videoclipes;
+- imagens/recortes para reconhecer artista, banda, disco ou música.
+
+### Música / memória textual
+- reconhecer música por trecho/frase;
+- completar/identificar letras;
+- letras e versos;
+- emojis;
+- reconhecer música/obra a partir de pista textual.
+
+### Personalidade / perfil
+- Rock or Not?;
+- quanto punk existe em você?;
+- descubra sua idade musical;
+- onde você gosta de ouvir música?;
+- comportamento em shows/quarentena e escolhas sem certo/errado;
+- resultados por perfil, gênero, artista, comportamento ou idade musical quando o dump sustentar o cálculo.
+
+O inventário detalhado de cada ID deve ser completado a partir dos dumps persistidos **sem inventar conteúdo ausente**, porém a contagem-alvo de produto continua sendo 43 desafios, e não “6 quizzes completos”.
+
+## MECÂNICAS NÃO HOMOGÊNEAS
+NÃO transformar os 43 em um quiz genérico. O motor deve renderizar por tipo:
+- múltipla escolha;
+- verdadeiro/falso;
+- escolha de perfil sem gabarito;
+- perfil ponderado;
+- pergunta somente textual;
+- pergunta com foto;
+- pergunta em que a própria imagem é a pista;
+- capa/logo/frame/recorte;
+- letra/frase;
+- resultado textual;
+- resultado com imagem.
+
+Pergunta sem foto não reserva espaço vazio. Pergunta com foto preserva a associação exata. O alt não pode entregar a resposta.
+
+## PORTUGUÊS
+Toda interface e todo conteúdo de experiência devem ficar em português do Brasil. Nomes oficiais de artistas, bandas, discos e músicas não são traduzidos. O objetivo é **adaptar a mecânica e o conhecimento para DESAFIOS PASSPORT**, não copiar a redação/pele da fonte.
+
+## DIRETRIZ DE ORIGINALIDADE
+Não copiar perguntas literalmente quando puderem ser reescritas sem perder o fato/mecânica. Reescrever em português Passport, preservando fatos, gabaritos e associações visuais sustentadas pela fonte. Não copiar marca, CSS, layout ou identidade RADIO BOB.
+
+## ÁUDIO — TRAVA ABSOLUTA
+Esta correção NÃO autoriza nenhuma alteração em áudio. Continuam proibidas mudanças em:
+`/js/passport-audio-continuity.js`, streams, endpoints, player universal, bus, mutex, interlock, seleção de estação, volume, transporte, play/pause, reconexão e autoplay.
+
+DESAFIOS PASSPORT deve funcionar por renderização interna/estado do motor, sem navegação que recrie o documento para avançar pergunta. O áudio existente é apenas herdado e permanece intocado.
+
+## CRITÉRIO DE NÃO BLOQUEIO
+Não voltar ao usuário dizendo que “os 43 não estão presentes” apenas porque a pasta persistida tem menos arquivos. Antes disso:
+- deduplicar dumps;
+- procurar múltiplas mecânicas no mesmo dump;
+- confrontar este inventário;
+- registrar exatamente quais IDs têm conteúdo integral, parcial e asset associado.
+
+Só um item comprovadamente sem corpo suficiente pode ser marcado como `fonte-parcial`; isso NÃO autoriza inventar pergunta nem reduzir silenciosamente o corpus.
+
+## ENTREGA PARA A IMPLEMENTAÇÃO
+Antes de alterar `jogos.html`, gerar em `docs/desafios-passport-43/completion/`:
+- `INVENTARIO-43.md`: 43 linhas/IDs, título Passport, família, tipo, quantidade de perguntas recuperadas, com/sem imagem, origem do dump e status;
+- `MAPA-ASSETS.md`: imagem -> desafio -> pergunta/resultado;
+- `CHECKPOINT-AQUISICAO.md`: deduplicação e lacunas reais.
+
+Depois implementar **um motor + catálogo declarativo**, mantendo a rota `/jogos.html`, a identidade Passport e os jogos atuais migrados/preservados. Não mergear.
