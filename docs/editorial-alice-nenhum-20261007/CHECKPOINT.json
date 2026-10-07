@@ -1,0 +1,12 @@
+{
+  "status": "CONTENT_PERSISTENCE_PENDING_QA",
+  "baseHead": "1af2600fbe7ea691d39a2d4d6a077d58f827bd5d",
+  "branch": "feat/editorial-alice-nenhum-20261007",
+  "protected": {
+    "index.html": "15a13ba03ffafd5fd474b5a3bdddf45a794149cc31acc0ddd99231f99e5566a5",
+    "radio.html": "0a5b97020ea81db4fe3a75006abac2205edd4e02e310ae9861bbc7bde3ddd938",
+    "js/passport-persist-nav.js": "e092fbc2b3ba85f05e48e40a6e9c40420cc9a77e9708823038beac8d4367750c",
+    "js/passport-audio-continuity.js": "c92d0adbff9f174f8de1f53723d07a25e80e9cd427efd04084d25689eddefc5e",
+    "css/passport-participe-paper.css": "7ebf2f63d441f030b859799d33293d42d84b7f0febee351ae50df5bd95b64620"
+  }
+}
