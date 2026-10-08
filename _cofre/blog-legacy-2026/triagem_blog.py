@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Read-only legacy Blog triage. Never deletes or modifies source files."""
 import json, re, html, pathlib, collections, hashlib
-ROOT = pathlib.Path(__file__).resolve().parents[3]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 VAULT = ROOT / "_cofre/blog-legacy-2026"
 OUT = VAULT / "triagem"
 OUT.mkdir(parents=True, exist_ok=True)
