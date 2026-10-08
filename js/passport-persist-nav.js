@@ -17,7 +17,7 @@
   const home = url => /^(\/|\/index\.html)$/.test(url.pathname);
   const compatible = url => url && url.origin === location.origin && !excluded.test(url.pathname) &&
     (home(url) || /\.html$/i.test(url.pathname));
-  const knownEditorial = url => /^\/(?:editorial|historias)\//.test(url.pathname) ||
+  const knownEditorial = url => /^\/(?:editorial|historias|blog)\//.test(url.pathname) ||
     /^\/(?:noticias|editorial|blog)\.html$/.test(url.pathname);
 
   async function editorial(url) {

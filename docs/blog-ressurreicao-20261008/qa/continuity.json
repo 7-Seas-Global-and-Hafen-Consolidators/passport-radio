@@ -1,0 +1,104 @@
+{
+  "controlledMediaFixture": true,
+  "externalRealStreamCertified": false,
+  "baseline": {
+    "id": "passport-live-audio",
+    "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+    "time": 0.427613,
+    "station": {
+      "family": "continuous",
+      "volume": 0.8,
+      "playing": true
+    },
+    "calls": 17,
+    "mediaRequestCount": 3
+  },
+  "checkpoints": [
+    {
+      "label": "Home → Blog",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 1.047619,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "Blog → matéria",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 1.653597,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/editorial/2026/10/07/ella-langley-choosin-texas-country.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "matéria → Blog (voltar)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 2.199243,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "Blog → Home (voltar)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 2.713755,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "blank",
+      "mediaRequestCount": 3
+    }
+  ],
+  "mediaRequests": [
+    "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+    "https://listen.181fm.com/181-awesome80s_128k.mp3",
+    "https://mediaserv68.live-streams.nl:18012/OnlyLive"
+  ],
+  "pass": true,
+  "pausedEntry": {
+    "playing": false,
+    "playingElements": 0
+  }
+}
