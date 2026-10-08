@@ -1,0 +1,725 @@
+{
+  "id": "dp-39",
+  "version": 1,
+  "title": "Qual roqueiro é seu melhor amigo?",
+  "family": "Perfil",
+  "type": "nao-identificado",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "mp43h",
+      "prompt": "Como rockstar, eu…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "qfz0t",
+          "label": "… escreveria um hino do rock que todos conhecessem e que me tornasse imortal.",
+          "weights": {
+            "nkfw2": 1,
+            "woxjx": 4,
+            "28bev": 0,
+            "x1ihf": 2,
+            "nkffb": 3,
+            "hpk4w": 5,
+            "yhcet": 6
+          }
+        },
+        {
+          "id": "c4en4",
+          "label": "… modesto como sou, criaria a paz mundial!",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 5,
+            "28bev": 1,
+            "x1ihf": 6,
+            "nkffb": 2,
+            "hpk4w": 4,
+            "yhcet": 3
+          }
+        },
+        {
+          "id": "c2ypb",
+          "label": "… apareceria constantemente nas manchetes por causa das minhas loucuras.",
+          "weights": {
+            "nkfw2": 4,
+            "woxjx": 3,
+            "28bev": 6,
+            "x1ihf": 0,
+            "nkffb": 5,
+            "hpk4w": 2,
+            "yhcet": 1
+          }
+        },
+        {
+          "id": "h3pkn",
+          "label": "… faria festas com sexo, drogas e rock’n’roll. Só se vive uma vez!",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 0,
+            "28bev": 4,
+            "x1ihf": 1,
+            "nkffb": 6,
+            "hpk4w": 2,
+            "yhcet": 3
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "iviu8",
+      "prompt": "Por que você discutiria com seu melhor amigo?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ujkqs",
+          "label": "Na verdade, nunca discutimos. Somos muito tranquilos.",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 2,
+            "28bev": 1,
+            "x1ihf": 6,
+            "nkffb": 0,
+            "hpk4w": 4,
+            "yhcet": 3
+          }
+        },
+        {
+          "id": "s4k7r",
+          "label": "Porque ele ou ela não tem tempo de ir comigo ao próximo show.",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 0,
+            "28bev": 6,
+            "x1ihf": 1,
+            "nkffb": 2,
+            "hpk4w": 5,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "qvn8g",
+          "label": "Gostamos da mesma mulher ou do mesmo homem.",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 4,
+            "28bev": 5,
+            "x1ihf": 1,
+            "nkffb": 6,
+            "hpk4w": 2,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "oggsw",
+          "label": "Não brigamos: debatemos!",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 6,
+            "28bev": 0,
+            "x1ihf": 5,
+            "nkffb": 1,
+            "hpk4w": 4,
+            "yhcet": 3
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "zlnux",
+      "prompt": "Prefiro ir a um festival…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "xkmls",
+          "label": "Com um grupo enorme. Mais gente, mais diversão!",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 0,
+            "28bev": 6,
+            "x1ihf": 1,
+            "nkffb": 5,
+            "hpk4w": 2,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "pnj9t",
+          "label": "Com meu melhor amigo ou amiga. Juntos, com certeza será lendário.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 4,
+            "28bev": 1,
+            "x1ihf": 3,
+            "nkffb": 0,
+            "hpk4w": 6,
+            "yhcet": 5
+          }
+        },
+        {
+          "id": "gxdef",
+          "label": "Sozinho. Sempre conheço gente nova e ninguém pode me irritar.",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 0,
+            "28bev": 4,
+            "x1ihf": 1,
+            "nkffb": 5,
+            "hpk4w": 6,
+            "yhcet": 2
+          }
+        },
+        {
+          "id": "u4jmh",
+          "label": "Não vou. Prefiro ficar em casa trabalhando na minha música.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 6,
+            "28bev": 0,
+            "x1ihf": 5,
+            "nkffb": 1,
+            "hpk4w": 4,
+            "yhcet": 3
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "yuxtk",
+      "prompt": "Qual é o lema da amizade de vocês?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ce5pp",
+          "label": "Viva e deixe morrer.",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 0,
+            "28bev": 0,
+            "x1ihf": 0,
+            "nkffb": 6,
+            "hpk4w": 0,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "x01kw",
+          "label": "Venha como você é.",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 6,
+            "28bev": 0,
+            "x1ihf": 0,
+            "nkffb": 0,
+            "hpk4w": 0,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "4m07r",
+          "label": "Vamos fazer você vibrar.",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 0,
+            "28bev": 0,
+            "x1ihf": 0,
+            "nkffb": 0,
+            "hpk4w": 0,
+            "yhcet": 6
+          }
+        },
+        {
+          "id": "th0d1",
+          "label": "Podemos ser heróis.",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 0,
+            "28bev": 0,
+            "x1ihf": 0,
+            "nkffb": 0,
+            "hpk4w": 6,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "rnzd0",
+          "label": "É um belo dia. Não o deixe escapar.",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 0,
+            "28bev": 0,
+            "x1ihf": 6,
+            "nkffb": 0,
+            "hpk4w": 0,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "7h1ae",
+          "label": "Somos mortos pela morte.",
+          "weights": {
+            "nkfw2": 6,
+            "woxjx": 0,
+            "28bev": 0,
+            "x1ihf": 0,
+            "nkffb": 0,
+            "hpk4w": 0,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "lvd35",
+          "label": "Somos sonhadores.",
+          "weights": {
+            "nkfw2": 0,
+            "woxjx": 0,
+            "28bev": 6,
+            "x1ihf": 0,
+            "nkffb": 0,
+            "hpk4w": 0,
+            "yhcet": 0
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "8pii0",
+      "prompt": "Seus pensamentos são:",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "xvyv2",
+          "label": "Um pouco melancólicos. Você também mostra isso na sua música.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 6,
+            "28bev": 1,
+            "x1ihf": 3,
+            "nkffb": 0,
+            "hpk4w": 5,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "cxcuz",
+          "label": "Sempre no aqui e agora. Preocupações ficam para depois.",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 0,
+            "28bev": 5,
+            "x1ihf": 1,
+            "nkffb": 6,
+            "hpk4w": 2,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "5t1dp",
+          "label": "Frequentemente bobos. Na verdade, não existe diversão demais.",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 1,
+            "28bev": 6,
+            "x1ihf": 0,
+            "nkffb": 4,
+            "hpk4w": 3,
+            "yhcet": 2
+          }
+        },
+        {
+          "id": "4t0xc",
+          "label": "Às vezes mais sérios. Afinal, assuntos sérios precisam de reflexão séria.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 5,
+            "28bev": 0,
+            "x1ihf": 6,
+            "nkffb": 1,
+            "hpk4w": 3,
+            "yhcet": 4
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "dpts2",
+      "prompt": "O que vocês fazem primeiro quando vão a um show?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "95r9s",
+          "label": "Claro: buscar cerveja.",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 0,
+            "28bev": 6,
+            "x1ihf": 2,
+            "nkffb": 4,
+            "hpk4w": 1,
+            "yhcet": 3
+          }
+        },
+        {
+          "id": "6c1kb",
+          "label": "Procuramos o melhor lugar, bem em frente ao palco.",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 0,
+            "28bev": 2,
+            "x1ihf": 4,
+            "nkffb": 3,
+            "hpk4w": 1,
+            "yhcet": 6
+          }
+        },
+        {
+          "id": "6ggxz",
+          "label": "Primeiro vamos ao estande de camisetas escolher a roupa certa.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 6,
+            "28bev": 3,
+            "x1ihf": 4,
+            "nkffb": 1,
+            "hpk4w": 5,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "737n3",
+          "label": "Assistimos à banda de abertura para entrar no clima antes da nossa banda favorita.",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 3,
+            "28bev": 1,
+            "x1ihf": 0,
+            "nkffb": 2,
+            "hpk4w": 6,
+            "yhcet": 4
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "iqnps",
+      "prompt": "Em que vocês sempre concordam?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "61bq8",
+          "label": "Na música do carro. Existe algo além de rock?",
+          "weights": {
+            "nkfw2": 6,
+            "woxjx": 0,
+            "28bev": 4,
+            "x1ihf": 2,
+            "nkffb": 3,
+            "hpk4w": 1,
+            "yhcet": 5
+          }
+        },
+        {
+          "id": "rrl9y",
+          "label": "Nos festivais deste ano: todos!",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 0,
+            "28bev": 6,
+            "x1ihf": 1,
+            "nkffb": 3,
+            "hpk4w": 5,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "y724y",
+          "label": "Em querer mudar alguma coisa no mundo.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 4,
+            "28bev": 1,
+            "x1ihf": 6,
+            "nkffb": 0,
+            "hpk4w": 3,
+            "yhcet": 5
+          }
+        },
+        {
+          "id": "3lbed",
+          "label": "Em quem é a mulher ou o homem mais atraente da sala.",
+          "weights": {
+            "nkfw2": 4,
+            "woxjx": 3,
+            "28bev": 5,
+            "x1ihf": 1,
+            "nkffb": 6,
+            "hpk4w": 2,
+            "yhcet": 0
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "ju58g",
+      "prompt": "Como conheceu seu melhor amigo?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "nptmz",
+          "label": "Ficamos de castigo juntos depois de uma briga. Desde então, inseparáveis.",
+          "weights": {
+            "nkfw2": 4,
+            "woxjx": 3,
+            "28bev": 6,
+            "x1ihf": 0,
+            "nkffb": 5,
+            "hpk4w": 2,
+            "yhcet": 1
+          }
+        },
+        {
+          "id": "vop46",
+          "label": "Já montamos nossa banda no jardim de infância. É bom começar cedo.",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 0,
+            "28bev": 2,
+            "x1ihf": 3,
+            "nkffb": 1,
+            "hpk4w": 6,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "m1ozf",
+          "label": "Estávamos na mesma fila da cerveja em um show. O começo de uma grande amizade!",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 2,
+            "28bev": 4,
+            "x1ihf": 0,
+            "nkffb": 6,
+            "hpk4w": 3,
+            "yhcet": 1
+          }
+        },
+        {
+          "id": "dq4sl",
+          "label": "Estávamos em uma manifestação. Não lembro mais contra o quê.",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 5,
+            "28bev": 1,
+            "x1ihf": 6,
+            "nkffb": 0,
+            "hpk4w": 4,
+            "yhcet": 2
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "zq8o1",
+      "prompt": "Qual palavra descreve melhor você?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "32zbw",
+          "label": "Nasci para o palco",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 0,
+            "28bev": 4,
+            "x1ihf": 1,
+            "nkffb": 5,
+            "hpk4w": 3,
+            "yhcet": 6
+          }
+        },
+        {
+          "id": "djusi",
+          "label": "Anarquista de meio período",
+          "weights": {
+            "nkfw2": 4,
+            "woxjx": 5,
+            "28bev": 3,
+            "x1ihf": 6,
+            "nkffb": 2,
+            "hpk4w": 1,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "bckw9",
+          "label": "Conquistador ou conquistadora",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 3,
+            "28bev": 4,
+            "x1ihf": 1,
+            "nkffb": 6,
+            "hpk4w": 2,
+            "yhcet": 0
+          }
+        },
+        {
+          "id": "2pxxz",
+          "label": "Filósofo amador",
+          "weights": {
+            "nkfw2": 3,
+            "woxjx": 6,
+            "28bev": 1,
+            "x1ihf": 5,
+            "nkffb": 0,
+            "hpk4w": 2,
+            "yhcet": 4
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "hwea9",
+      "prompt": "Em qual crime seu amigo ajudaria você?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "c8i7d",
+          "label": "Entramos escondidos nos bastidores de um show para conhecer nossos ídolos.",
+          "weights": {
+            "nkfw2": 1,
+            "woxjx": 4,
+            "28bev": 2,
+            "x1ihf": 3,
+            "nkffb": 0,
+            "hpk4w": 6,
+            "yhcet": 5
+          }
+        },
+        {
+          "id": "466t1",
+          "label": "Na verdade, sempre preciso tirá-lo de alguma enrascada.",
+          "weights": {
+            "nkfw2": 2,
+            "woxjx": 5,
+            "28bev": 0,
+            "x1ihf": 6,
+            "nkffb": 1,
+            "hpk4w": 3,
+            "yhcet": 4
+          }
+        },
+        {
+          "id": "bikph",
+          "label": "Assaltamos uma cervejaria. Cerveja grátis para todos!",
+          "weights": {
+            "nkfw2": 5,
+            "woxjx": 2,
+            "28bev": 6,
+            "x1ihf": 0,
+            "nkffb": 4,
+            "hpk4w": 3,
+            "yhcet": 1
+          }
+        },
+        {
+          "id": "naw4y",
+          "label": "Destruímos um quarto de hotel. Rock’n’roll, baby!",
+          "weights": {
+            "nkfw2": 6,
+            "woxjx": 4,
+            "28bev": 3,
+            "x1ihf": 0,
+            "nkffb": 5,
+            "hpk4w": 2,
+            "yhcet": 1
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "nkfw2",
+      "title": "Lemmy Kilmister",
+      "description": "Tranquilidade é seu segundo nome. Pouca coisa tira você do sério. Com Lemmy, pode sentar no bar e aproveitar sua bebida tranquilamente. E quando os dois entram no clima de festa, a coisa esquenta. Juntos, vocês vivem o bom e velho rock’n’roll!"
+    },
+    {
+      "id": "woxjx",
+      "title": "Kurt Cobain",
+      "description": "Você pensa em muitas coisas. Às vezes, talvez, até demais? Poderia se dar bem com Kurt Cobain. Juntos, filosofariam sobre a vida e tentariam entender o sentido de tudo."
+    },
+    {
+      "id": "28bev",
+      "title": "Ozzy Osbourne",
+      "description": "Na verdade, você é uma pessoa engraçada. Quase nada é constrangedor ou bobo demais, e por isso os outros muitas vezes olham você de um jeito estranho. Ozzy e você seriam uma combinação interessante. Poderiam fazer boas brincadeiras juntos, mas cuidado para não serem pegos!"
+    },
+    {
+      "id": "x1ihf",
+      "title": "Bono",
+      "description": "Para você, festa ou diversão não vêm primeiro: quer dar um sentido maior à vida. Assim como Bono, não consegue simplesmente ficar sentado sem fazer nada. Vocês querem tornar o mundo melhor. Talvez não consigam salvá-lo, mas dão o primeiro passo para um futuro mais amigável."
+    },
+    {
+      "id": "nkffb",
+      "title": "Mick Jagger",
+      "description": "Qualquer um sabe festejar, mas quando você chega, vira um evento que ninguém quer perder! Você leva sexo, drogas e rock’n’roll ao pé da letra. Com Mick Jagger, sai pela noite, e ao fim os dois voltam para casa com uma roqueira atraente."
+    },
+    {
+      "id": "hpk4w",
+      "title": "David Bowie",
+      "description": "Com você, poucas coisas ficam como estão. Está sempre mudando algo: aparência, estilo musical ou personalidade. Nada está gravado em pedra. Por isso, seu parceiro perfeito para experimentar seria David Bowie. Juntos, poderiam tentar coisas novas e chegar a descobertas revolucionárias."
+    },
+    {
+      "id": "yhcet",
+      "title": "Freddie Mercury",
+      "description": "Onde quer que você chegue, tudo gira ao seu redor. E, graças ao talento, é fácil divertir as pessoas. Sua amizade com Freddie Mercury seria interessante, mas provavelmente não muito simples. Vocês poderiam disputar o favor do público e incentivar um ao outro a novas grandes atuações."
+    }
+  ],
+  "sourceId": "298",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welcher Rocker ist Dein bester Kumpel?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/32-rockstar-melhor-amigo.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "8c13f2c3ac2408cd"
+}

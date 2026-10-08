@@ -1,0 +1,549 @@
+{
+  "id": "dp-44",
+  "version": 1,
+  "title": "Quanto você conhece do rock dos anos 80?",
+  "family": "Conhecimento",
+  "type": "trivia",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "1yo1g",
+      "prompt": "Depois da morte trágica de seu vocalista, esta banda lançou “Back in Black” como álbum de retorno.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "9vwl4",
+          "label": "The Doors",
+          "correct": false
+        },
+        {
+          "id": "3a86p",
+          "label": "AC/DC",
+          "correct": true
+        },
+        {
+          "id": "xsg6l",
+          "label": "Queen",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "hn7eg",
+      "prompt": "Qual música de David Bowie marcou toda uma geração por meio do filme “Christiane F. — Wir Kinder vom Bahnhof Zoo”, lançado em 1981?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "eno79",
+          "label": "Space Oddity",
+          "correct": false
+        },
+        {
+          "id": "ioagb",
+          "label": "China Girl",
+          "correct": false
+        },
+        {
+          "id": "gchsc",
+          "label": "Heroes",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "sdld6",
+      "prompt": "Quem são os Toxic Twins?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "bw2br",
+          "label": "Mick Jagger & Keith Richards de Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "u7265",
+          "label": "Axl Rose & Slash de Guns n‘ Roses",
+          "correct": false
+        },
+        {
+          "id": "n9bj4",
+          "label": "Steven Tyler & Joe Perry de Aerosmith",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "485g0",
+      "prompt": "Qual capa mostra uma pessoa de jeans, camiseta branca e boné vermelho diante de uma bandeira americana?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "lqerz",
+          "label": "„Appetite For Destruction“ de Guns n‘ Roses",
+          "correct": false
+        },
+        {
+          "id": "38uee",
+          "label": "„Born In The U.S.A.“ de Bruce Springsteen",
+          "correct": true
+        },
+        {
+          "id": "sgsdv",
+          "label": "„Master Of Puppets“ de Metallica",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "tvaqx",
+      "prompt": "Para qual filme Huey Lewis escreveu “The Power of Love”?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "d30op",
+          "label": "De Volta para o Futuro",
+          "correct": true
+        },
+        {
+          "id": "179l2",
+          "label": "Beverly Hills Cop",
+          "correct": false
+        },
+        {
+          "id": "mvmoo",
+          "label": "E.T.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "1faqq",
+      "prompt": "Quem teve a ideia de “Kickstart My Heart” depois de quase morrer de overdose?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "sjvxk",
+          "label": "Lemmy Kilmister de Motörhead",
+          "correct": false
+        },
+        {
+          "id": "2ptk7",
+          "label": "Steven Tyler de Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "g84zd",
+          "label": "Nikki Sixx de Mötley Crüe",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "9uch1",
+      "prompt": "Qual música é considerada o hino da queda do Muro de Berlim?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "300c9",
+          "label": "„Wind Of Change“ de Scorpions",
+          "correct": true
+        },
+        {
+          "id": "1uwjv",
+          "label": "„I Won’t Back Down“ de Tom Petty",
+          "correct": false
+        },
+        {
+          "id": "27u2v",
+          "label": "„The Other Side“ de Aerosmith",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "ibtgh",
+      "prompt": "Qual banda foi formada em 1981 depois de seu baterista publicar o anúncio “Baterista procura outros músicos para tocar juntos”?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "32dyl",
+          "label": "The Police",
+          "correct": false
+        },
+        {
+          "id": "4hw0q",
+          "label": "Europe",
+          "correct": false
+        },
+        {
+          "id": "apq03",
+          "label": "Metallica",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "ueqz2",
+      "prompt": "“Eye of the Tiger” faz parte da trilha de qual filme?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "zd8a6",
+          "label": "Rocky I",
+          "correct": false
+        },
+        {
+          "id": "yzizp",
+          "label": "Rocky II",
+          "correct": false
+        },
+        {
+          "id": "16dvm",
+          "label": "Rocky III",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "8gpo9",
+      "prompt": "Este shock rocker se tornou inesquecível quando arrancou a cabeça de um morcego com uma mordida em um show de 1982.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "5ztlk",
+          "label": "Marilyn Manson",
+          "correct": false
+        },
+        {
+          "id": "amuw7",
+          "label": "Ozzy Osbourne",
+          "correct": true
+        },
+        {
+          "id": "9q712",
+          "label": "Alice Cooper",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "kkx8k",
+      "prompt": "Por que Kiss chamou tanta atenção em 1983?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "m8fm8",
+          "label": "Gene Simmons tocou um solo de guitarra com sua língua extremamente longa.",
+          "correct": false
+        },
+        {
+          "id": "klutm",
+          "label": "Eles destruíram um quarto de hotel por tédio enquanto esperavam para tocar.",
+          "correct": false
+        },
+        {
+          "id": "0kgxs",
+          "label": "Eles apareceram na televisão sem maquiagem pela primeira vez.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "btakb",
+      "prompt": "Onde Queen fez sua apresentação mais lendária em 13 de julho de 1985?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "xynco",
+          "label": "No Live Aid, no estádio de Wembley, em Londres",
+          "correct": true
+        },
+        {
+          "id": "o4dxt",
+          "label": "No show de encerramento da “Magic Tour”, em Knebworth Park",
+          "correct": false
+        },
+        {
+          "id": "vh7kn",
+          "label": "Na gravação do filme-show “We Will Rock You”, em Montreal",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "tm17j",
+      "prompt": "Qual festival de hard rock e metal abriu as portas pela primeira vez em 1980, com Judas Priest, Scorpions e Rainbow como atrações principais?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "5qt21",
+          "label": "Wacken Open Air",
+          "correct": false
+        },
+        {
+          "id": "mr7zk",
+          "label": "Monsters of Rock",
+          "correct": true
+        },
+        {
+          "id": "b4h5l",
+          "label": "Rock in Rio",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "svj99",
+      "prompt": "Qual é o álbum de estreia mais bem-sucedido já lançado por uma banda de rock?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "3tkug",
+          "label": "„Hysteria“ de Def Leppard",
+          "correct": false
+        },
+        {
+          "id": "8txbz",
+          "label": "„The Joshua Tree“ de U2",
+          "correct": false
+        },
+        {
+          "id": "h23s4",
+          "label": "„Appetite For Destruction“ de Guns N Roses",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "mlooa",
+      "prompt": "Quem lançou o primeiro e, até hoje, único single em alemão que chegou ao primeiro lugar nos Estados Unidos?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "a94xr",
+          "label": "Die Toten Hosen com “Hier kommt Alex”",
+          "correct": false
+        },
+        {
+          "id": "0ex51",
+          "label": "Falco com “Rock Me Amadeus”",
+          "correct": true
+        },
+        {
+          "id": "6iihy",
+          "label": "Die Ärzte com “Westerland”",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "a2ky1",
+      "prompt": "“Don’t You Forget About Me”, do Simple Minds, está na trilha de “The Breakfast Club”. Qual músico deveria originalmente gravar o sucesso, mas recusou?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "rhh1q",
+          "label": "Bryan Adams",
+          "correct": false
+        },
+        {
+          "id": "u8adu",
+          "label": "Billy Idol",
+          "correct": true
+        },
+        {
+          "id": "eis1b",
+          "label": "Huey Lewis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "cbrm7",
+      "prompt": "Qual afirmação é verdadeira?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "au0qf",
+          "label": "Bryan Adams confirmou que “Summer of ’69” era apenas uma referência a uma prática sexual.",
+          "correct": false
+        },
+        {
+          "id": "ii8pb",
+          "label": "“Still Loving You”, do Scorpions, provocou um baby boom na França.",
+          "correct": false
+        },
+        {
+          "id": "i7rg5",
+          "label": "David Bowie e Queen se encontraram para comer e tiveram por acaso a ideia de “Under Pressure”.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "rt2r4",
+      "prompt": "Quem ganhou o Oscar de melhor trilha musical em 1985?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "88n1k",
+          "label": "Prince com “Purple Rain”",
+          "correct": true
+        },
+        {
+          "id": "68rpx",
+          "label": "Van Halen com “1984”",
+          "correct": false
+        },
+        {
+          "id": "5poug",
+          "label": "Kenny Loggins com “Footloose”",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "r5b9t",
+      "prompt": "Quantos álbuns Van Halen vendeu até hoje?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "enltg",
+          "label": "80,3 milhões",
+          "correct": false
+        },
+        {
+          "id": "pz84n",
+          "label": "56,5 milhões",
+          "correct": true
+        },
+        {
+          "id": "sfsjo",
+          "label": "42,8 milhões",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "7q41f",
+      "prompt": "Qual videoclipe a Marinha dos Estados Unidos chamou de “o vídeo de recrutamento mais eficaz já produzido”?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "cqifg",
+          "label": "„Born In The USA“ de Bruce Springsteen",
+          "correct": false
+        },
+        {
+          "id": "ybned",
+          "label": "„The Wild Boys“ de Duran Duran",
+          "correct": false
+        },
+        {
+          "id": "1btxg",
+          "label": "„Danger Zone“ de Kenny Loggins",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "njjqe",
+      "title": "Infelizmente, foi uma atuação nula. Talvez precise pesquisar novamente o que aconteceu nos anos 80!",
+      "description": "",
+      "min": 0,
+      "max": 6
+    },
+    {
+      "id": "1ed3a",
+      "title": "Está razoável, mas ainda há muito espaço para melhorar! Pelo menos você conhece os acontecimentos mais importantes dos anos 80. Não desista!",
+      "description": "",
+      "min": 7,
+      "max": 15
+    },
+    {
+      "id": "c4bf6",
+      "title": "Nada mal! Você já conhece bem os anos 80, mas faltam alguns fatos para ser um verdadeiro especialista. Continue assim!",
+      "description": "",
+      "min": 16,
+      "max": 19
+    },
+    {
+      "id": "fd9o7",
+      "title": "Imbatível! Ninguém supera seu conhecimento. Você é um verdadeiro especialista nos anos 80! Rock’n’roll!",
+      "description": "",
+      "min": 20,
+      "max": 20
+    }
+  ],
+  "sourceId": "373",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr den Rock der 80er?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/25-rock-anos-80.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "25f83ce574e0a731"
+}

@@ -1,0 +1,429 @@
+{
+  "id": "dp-40",
+  "version": 1,
+  "title": "Quem disse isso?",
+  "family": "Conhecimento",
+  "type": "nao-identificado",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "5s4e8",
+      "prompt": "“Antes eu tinha um problema com drogas. Hoje ganho dinheiro suficiente.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "cpph3",
+          "label": "Joe Perry",
+          "correct": false
+        },
+        {
+          "id": "ygk8y",
+          "label": "David Lee Roth",
+          "correct": true
+        },
+        {
+          "id": "2lgwt",
+          "label": "Ozzy Osbourne",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "ya15f",
+      "prompt": "“Cada época tem seu enorme ponto cego moral. Talvez não o vejamos, mas nossos filhos verão.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "t5zw4",
+          "label": "Bono",
+          "correct": true
+        },
+        {
+          "id": "l7lof",
+          "label": "Sting",
+          "correct": false
+        },
+        {
+          "id": "7z48o",
+          "label": "Eric Clapton",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "d19el",
+      "prompt": "“Querer ser outra pessoa é um desperdício da pessoa que você é.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "mohb1",
+          "label": "Bob Dylan",
+          "correct": false
+        },
+        {
+          "id": "6c5lv",
+          "label": "Chester Bennington",
+          "correct": false
+        },
+        {
+          "id": "9r9x5",
+          "label": "Kurt Cobain",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "2tbd5",
+      "prompt": "“De tudo que perdi, sinto mais falta da minha cabeça.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ynmqg",
+          "label": "Alice Cooper",
+          "correct": false
+        },
+        {
+          "id": "8zt47",
+          "label": "Ozzy Osbourne",
+          "correct": true
+        },
+        {
+          "id": "k04nk",
+          "label": "Gene Simmons",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "814yw",
+      "prompt": "“Agora somos mais populares que Jesus.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "yaxkh",
+          "label": "Keith Richards",
+          "correct": false
+        },
+        {
+          "id": "ydpiy",
+          "label": "John Lennon",
+          "correct": true
+        },
+        {
+          "id": "ixxqo",
+          "label": "Angus Young",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "ntoha",
+      "prompt": "“Tudo bem ser um perdedor. Só depende de quanto você é bom nisso.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "pvi28",
+          "label": "Billie Joe Armstrong",
+          "correct": true
+        },
+        {
+          "id": "1n4yp",
+          "label": "Dave Grohl",
+          "correct": false
+        },
+        {
+          "id": "ng7qr",
+          "label": "Jimi Hendrix",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "kghs0",
+      "prompt": "“Para ter ressaca, primeiro você precisa parar de beber.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "uhi5b",
+          "label": "Malcom Young",
+          "correct": false
+        },
+        {
+          "id": "9g9cr",
+          "label": "Joe Cocker",
+          "correct": false
+        },
+        {
+          "id": "wgm4v",
+          "label": "Lemmy Kilmister",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "m4r5h",
+      "prompt": "“A vida é uma merda, mas de um jeito bonito.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "0cqyg",
+          "label": "Axl Rose",
+          "correct": true
+        },
+        {
+          "id": "q9uc4",
+          "label": "Liam Gallagher",
+          "correct": false
+        },
+        {
+          "id": "b9zvi",
+          "label": "Meat Loaf",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "4wfgb",
+      "prompt": "“Não serei uma estrela do rock. Serei uma lenda.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "nuuli",
+          "label": "Prince",
+          "correct": false
+        },
+        {
+          "id": "wo2lw",
+          "label": "Freddie Mercury",
+          "correct": true
+        },
+        {
+          "id": "68ehz",
+          "label": "Elvis Presley",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "89byg",
+      "prompt": "“Finja até conseguir.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "2dgay",
+          "label": "Steven Tyler",
+          "correct": true
+        },
+        {
+          "id": "t3bd9",
+          "label": "Jon Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "e54rr",
+          "label": "Anthony Kiedis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "823i3",
+      "prompt": "“Perca seus sonhos e perderá sua cabeça.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "zp6g4",
+          "label": "Lenny Kravitz",
+          "correct": false
+        },
+        {
+          "id": "y18jn",
+          "label": "Bruce Springsteen",
+          "correct": false
+        },
+        {
+          "id": "kmwsz",
+          "label": "Mick Jagger",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "i481n",
+      "prompt": "“Tenho o blues no coração e o diabo nos dedos.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "oi7z3",
+          "label": "Eddie Van Halen",
+          "correct": false
+        },
+        {
+          "id": "1ppiv",
+          "label": "Angus Young",
+          "correct": true
+        },
+        {
+          "id": "59d7c",
+          "label": "Jimmy Page",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "o69w0",
+      "prompt": "“Não somos arrogantes. Só acreditamos que somos a melhor banda do mundo.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "fsofg",
+          "label": "Lars Ulrich",
+          "correct": false
+        },
+        {
+          "id": "vx1u2",
+          "label": "Noel Gallagher",
+          "correct": true
+        },
+        {
+          "id": "qz92j",
+          "label": "Steve Perry",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "36cad",
+      "prompt": "“O amanhã pertence a quem consegue ouvi-lo chegar.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "y47tb",
+          "label": "David Bowie",
+          "correct": true
+        },
+        {
+          "id": "wo0bm",
+          "label": "Bruce Dickinson",
+          "correct": false
+        },
+        {
+          "id": "utsdv",
+          "label": "Brian Johnson",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "h9eev",
+      "prompt": "“Não é um show de rock. É uma manifestação.”",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "w4e23",
+          "label": "Campino",
+          "correct": true
+        },
+        {
+          "id": "mc3za",
+          "label": "Bela B.",
+          "correct": false
+        },
+        {
+          "id": "3ze3v",
+          "label": "Klaus Meine",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "j8ehb",
+      "title": "Não deu em nada. Mas cabeça erguida: essas frases são fáceis de memorizar.",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "1548x",
+      "title": "Tudo bem, já é um começo, mas ainda não é grande coisa! Pelo menos você conhece as frases mais famosas, mas precisa dominar o resto também!",
+      "description": "",
+      "min": 6,
+      "max": 10
+    },
+    {
+      "id": "zy0hd",
+      "title": "Nada mal! Se memorizar as últimas frases, ninguém mais engana você. Continue assim!",
+      "description": "",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "ck66r",
+      "title": "Você arrasa! Tudo certo: você deixa todos para trás! Rock on!",
+      "description": "",
+      "min": 15,
+      "max": 15
+    }
+  ],
+  "sourceId": "290",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wer hat's gesagt?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/33-quem-disse-rockstar.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "86eddb83b8733670"
+}

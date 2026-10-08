@@ -1,0 +1,309 @@
+{
+  "id": "dp-45",
+  "version": 1,
+  "title": "Você conhece os animais de estimação dos rockstars?",
+  "family": "Conhecimento",
+  "type": "trivia",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "ladue",
+      "prompt": "Este vocalista encontrou um minipônei em um estacionamento abandonado e o levou para casa. Desde então, o pequeno cavalo se chama Rocky e às vezes pode até entrar na casa.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "kov20",
+          "label": "James Hetfield",
+          "correct": false
+        },
+        {
+          "id": "urhr1",
+          "label": "Dave Grohl",
+          "correct": false
+        },
+        {
+          "id": "2og6o",
+          "label": "Dave Mustaine",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "1v6fn",
+      "prompt": "Quando alguém ama dinossauros acima de tudo na infância, o futuro animal de estimação precisa ser um réptil, claro. Mais de 80 lagartos e cobras de todos os tipos vivem na casa deste músico.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "1k575",
+          "label": "Keith Richards",
+          "correct": false
+        },
+        {
+          "id": "z5pgf",
+          "label": "Slash",
+          "correct": true
+        },
+        {
+          "id": "z2oaf",
+          "label": "Joe Perry",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "uleop",
+      "prompt": "Esta lenda do rock amava gatos. Chegou a escrever uma música sobre sua gata favorita, Delilah. Dizem que antigamente, durante as turnês, até telefonava sempre para os gatos.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "x1eau",
+          "label": "Kurt Cobain",
+          "correct": false
+        },
+        {
+          "id": "7g0li",
+          "label": "Bon Scott",
+          "correct": false
+        },
+        {
+          "id": "xbjce",
+          "label": "Freddie Mercury",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "qoa6g",
+      "prompt": "Este rockstar ganhou um canguru de seu agente. Achou legal, claro, mas preferiu entregar o animal aos cuidados de especialistas e sempre o visitava no zoológico de Memphis.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "5k6t0",
+          "label": "Elvis Presley",
+          "correct": true
+        },
+        {
+          "id": "dvxme",
+          "label": "Axl Rose",
+          "correct": false
+        },
+        {
+          "id": "loz9y",
+          "label": "Anthony Kiedis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "nhqmu",
+      "prompt": "Por algum tempo, 18 cachorros viveram na casa deste rockstar. Ele diz: “Amo cachorros. Entendo-os melhor que algumas pessoas.”",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "4i290",
+          "label": "Bono",
+          "correct": false
+        },
+        {
+          "id": "wo7qm",
+          "label": "Ozzy Osbourne",
+          "correct": true
+        },
+        {
+          "id": "vugcp",
+          "label": "Klaus Meine",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "9brxs",
+      "prompt": "Este músico tem um verdadeiro pássaro: uma cacatua. Ela tem até sua própria conta no Instagram e participa com tudo do videoclipe da música “Surfin’ Bird”.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "blt5n",
+          "label": "Iggy Pop",
+          "correct": true
+        },
+        {
+          "id": "lmldu",
+          "label": "David Bowie",
+          "correct": false
+        },
+        {
+          "id": "u127u",
+          "label": "Mick Jagger",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "xr1cb",
+      "prompt": "Este roqueiro tem uma casa cheia de gatos. Todos levam nomes de rappers famosos, como Biggie ou Eminem.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "z1p60",
+          "label": "Mick Jagger",
+          "correct": false
+        },
+        {
+          "id": "ue572",
+          "label": "Brandon Flowers",
+          "correct": false
+        },
+        {
+          "id": "bxrmw",
+          "label": "Geezer Butler",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "z86dx",
+      "prompt": "Este cantor de voz poderosa tinha, quando criança, um guaxinim chamado Bandit, com quem até ia pescar.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "2yppd",
+          "label": "Steven Tyler",
+          "correct": true
+        },
+        {
+          "id": "iwu6k",
+          "label": "Brian Johnson",
+          "correct": false
+        },
+        {
+          "id": "2fecx",
+          "label": "Bruce Dickinson",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "0tha2",
+      "prompt": "Os animais deste roqueiro não são apenas animais de estimação, mas também seus parceiros de cena. Suas cobras fazem parte regularmente do espetáculo no palco.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "pvozt",
+          "label": "Marilyn Manson",
+          "correct": false
+        },
+        {
+          "id": "pfc0f",
+          "label": "Jimmy Pop Ali",
+          "correct": false
+        },
+        {
+          "id": "hb17h",
+          "label": "Alice Cooper",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "y90kr",
+      "prompt": "Este animal não pertence a nenhum dos nossos roqueiros, mas quando Kelly Clarkson ganhou uma cabra de Natal, deu ao animal o nome dele.",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "9qfsb",
+          "label": "Campino",
+          "correct": false
+        },
+        {
+          "id": "917hm",
+          "label": "Billy Joel",
+          "correct": true
+        },
+        {
+          "id": "7x0qr",
+          "label": "Elvis Presley",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "vn3l6",
+      "title": "Não deu em nada. Mas cabeça erguida: os animais dos roqueiros são fáceis de memorizar.",
+      "description": "",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "id": "8ogj7",
+      "title": "Tudo bem, já é um começo, mas ainda não é grande coisa! Pelo menos você conhece os animais dos roqueiros mais famosos, mas precisa dominar o resto também!",
+      "description": "",
+      "min": 3,
+      "max": 7
+    },
+    {
+      "id": "36d1q",
+      "title": "Nada mal! Se memorizar os últimos donos roqueiros e seus animais, ninguém mais engana você. Continue assim!",
+      "description": "",
+      "min": 8,
+      "max": 9
+    },
+    {
+      "id": "npjw0",
+      "title": "Você arrasa! Tudo certo: você deixa todos para trás! Rock on!",
+      "description": "",
+      "min": 10,
+      "max": 10
+    }
+  ],
+  "sourceId": "323",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Kennt Ihr die Haustiere der Rockstars?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/29-haustiere-rockstars.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "3906c5e3d19e9511"
+}
