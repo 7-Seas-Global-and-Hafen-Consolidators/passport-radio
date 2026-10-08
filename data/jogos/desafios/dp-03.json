@@ -1,0 +1,351 @@
+{
+  "id": "dp-03",
+  "version": 1,
+  "title": "Quiz MTV Unplugged",
+  "family": "Conhecimento",
+  "type": "trivia",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "bpvgz",
+      "prompt": "Quando o primeiro MTV Unplugged foi exibido na televisão?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "liz0v",
+          "label": "1994",
+          "correct": false
+        },
+        {
+          "id": "vaojz",
+          "label": "1989",
+          "correct": true
+        },
+        {
+          "id": "dw5a1",
+          "label": "1999",
+          "correct": false
+        },
+        {
+          "id": "mm4io",
+          "label": "1979",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "6wqn3",
+      "prompt": "No recorte do quiz original, qual banda não tinha um MTV Unplugged?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "oxyki",
+          "label": "Poison",
+          "correct": false
+        },
+        {
+          "id": "qshmf",
+          "label": "Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "yby47",
+          "label": "Incubus",
+          "correct": false
+        },
+        {
+          "id": "zz7ui",
+          "label": "Green Day",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "f2mrw",
+      "prompt": "Qual é a proposta do MTV Unplugged?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "j5w7p",
+          "label": "Bandas tocam sem cantar",
+          "correct": false
+        },
+        {
+          "id": "1wxjn",
+          "label": "Bandas tocam com instrumentos acústicos",
+          "correct": true
+        },
+        {
+          "id": "ggv6p",
+          "label": "Bandas fazem versões de músicas que odeiam",
+          "correct": false
+        },
+        {
+          "id": "qz4wv",
+          "label": "Bandas tocam na sala dos fãs",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "375fg",
+      "prompt": "Quem ajudou a popularizar o formato ao lançar seu Unplugged em disco?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "l4g6e",
+          "label": "Paul McCartney",
+          "correct": true
+        },
+        {
+          "id": "ktnzg",
+          "label": "Elton John",
+          "correct": false
+        },
+        {
+          "id": "3ipg2",
+          "label": "David Bowie",
+          "correct": false
+        },
+        {
+          "id": "w53dd",
+          "label": "Bruce Springsteen",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "5ffqp",
+      "prompt": "Qual destes discos Unplugged foi o campeão de vendas e ganhou seis Grammys?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "nhrnm",
+          "label": "Acoustic — KISS",
+          "correct": false
+        },
+        {
+          "id": "mhsjh",
+          "label": "Honest — Nirvana",
+          "correct": false
+        },
+        {
+          "id": "ccs5r",
+          "label": "Unplugged — Eric Clapton",
+          "correct": true
+        },
+        {
+          "id": "n2drb",
+          "label": "No Distractions — The Cure",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "gd2oc",
+      "prompt": "Quem trocou o acústico por um show elétrico chamado MTV Plugged?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "aqsp2",
+          "label": "Joe Cocker",
+          "correct": false
+        },
+        {
+          "id": "f5c83",
+          "label": "Bruce Springsteen",
+          "correct": true
+        },
+        {
+          "id": "557yb",
+          "label": "Bryan Adams",
+          "correct": false
+        },
+        {
+          "id": "b6aq6",
+          "label": "Rod Stewart",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "dy7yf",
+      "prompt": "Quais integrantes do Faces se reencontraram no MTV Unplugged?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "z5b7u",
+          "label": "Rod Stewart e Ron Wood",
+          "correct": true
+        },
+        {
+          "id": "y0xnz",
+          "label": "Paul McCartney e Ringo Starr",
+          "correct": false
+        },
+        {
+          "id": "shslp",
+          "label": "John Scofield e Brant Bjork",
+          "correct": false
+        },
+        {
+          "id": "dnmc7",
+          "label": "Paul Simon e Gene Simmons",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "nmx0t",
+      "prompt": "A quem o quiz atribui Where Did You Sleep Last Night, regravada pelo Nirvana?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "2qrj1",
+          "label": "Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "uw2qy",
+          "label": "John Lee Hooker",
+          "correct": false
+        },
+        {
+          "id": "5nyej",
+          "label": "Meat Puppets",
+          "correct": false
+        },
+        {
+          "id": "kbjwl",
+          "label": "Leadbelly",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "x0azv",
+      "prompt": "Quando Page e Plant gravaram o encontro com orquestra e músicos marroquinos?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "3l0hv",
+          "label": "Agosto de 1994",
+          "correct": true
+        },
+        {
+          "id": "7crpu",
+          "label": "Março de 1999",
+          "correct": false
+        },
+        {
+          "id": "fqz9c",
+          "label": "Fevereiro de 1989",
+          "correct": false
+        },
+        {
+          "id": "io5yo",
+          "label": "Setembro de 1995",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "dr02s",
+      "prompt": "Segundo o quiz, em que ano KISS havia tocado junto pela última vez antes do encontro de 1995?",
+      "type": "trivia",
+      "options": [
+        {
+          "id": "skd8y",
+          "label": "1985",
+          "correct": false
+        },
+        {
+          "id": "94z3i",
+          "label": "1990",
+          "correct": false
+        },
+        {
+          "id": "0enff",
+          "label": "1979",
+          "correct": true
+        },
+        {
+          "id": "kgqx3",
+          "label": "1970",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "c2sd9",
+      "title": "Cabeça erguida. Na próxima vez, você vai se sair melhor!",
+      "description": "",
+      "min": 0,
+      "max": 4
+    },
+    {
+      "id": "3yl59",
+      "title": "Nada mal, parece que você conhece MTV Unplugged. Talvez tenha crescido ouvindo isso?",
+      "description": "",
+      "min": 5,
+      "max": 7
+    },
+    {
+      "id": "ecsdl",
+      "title": "Quase tudo certo! Você conhece bastante de MTV Unplugged. Pelo visto, gosta das apresentações acústicas dos rockstars.",
+      "description": "",
+      "min": 8,
+      "max": 9
+    },
+    {
+      "id": "gikp6",
+      "title": "Uau! Você foi perfeito. Tiramos o chapéu! Você é um verdadeiro especialista em MTV Unplugged.",
+      "description": "",
+      "min": 10,
+      "max": 10
+    }
+  ],
+  "sourceId": "991",
+  "versionHash": "83527d2cb256ca98",
+  "presentation": {
+    "questionLayout": "single",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "MTV Unplugged Quiz"
+  },
+  "sourceFiles": [
+    "48-mtv-unplugged.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "single",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
+}

@@ -1,0 +1,1020 @@
+{
+  "id": "dp-08",
+  "version": 1,
+  "title": "Quiz XXL do rock: uma viagem pela história do rock",
+  "family": "Conhecimento",
+  "type": "historia",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "k4emy",
+      "prompt": "Em qual intervalo de anos o quiz situa o surgimento do rock’n’roll?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "uyb2l",
+          "label": "1940-1950",
+          "correct": true
+        },
+        {
+          "id": "vucdz",
+          "label": "1930-1940",
+          "correct": false
+        },
+        {
+          "id": "bw1qi",
+          "label": "1950-1960",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "7yade",
+      "prompt": "Qual foi a participação de Alan Freed nessa história?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "2pjdh",
+          "label": "Um cantor importante para o rock’n’roll",
+          "correct": false
+        },
+        {
+          "id": "3j4xr",
+          "label": "Um dos primeiros DJs a levar rock’n’roll ao rádio",
+          "correct": true
+        },
+        {
+          "id": "0l9je",
+          "label": "Um apresentador de TV que divulgou nomes como Elvis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "zzfar",
+      "prompt": "Em qual cidade alemã Elvis viveu entre 1958 e 1960?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "l2qet",
+          "label": "Frankfurt am Main",
+          "correct": false
+        },
+        {
+          "id": "mflsj",
+          "label": "Marburg",
+          "correct": false
+        },
+        {
+          "id": "z0eo1",
+          "label": "Bad Nauheim",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "sx2dg",
+      "prompt": "Onde Jagger e Richards se encontraram em 17 de outubro de 1961?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "ajxsq",
+          "label": "Numa estação de trem",
+          "correct": true
+        },
+        {
+          "id": "kl8uh",
+          "label": "Num bar",
+          "correct": false
+        },
+        {
+          "id": "fanis",
+          "label": "Num show",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "ql0qf",
+      "prompt": "O que Keith Richards disse estar fazendo quando surgiu o começo de Satisfaction?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "hwss0",
+          "label": "Tomava banho",
+          "correct": false
+        },
+        {
+          "id": "v22qy",
+          "label": "Dormia",
+          "correct": true
+        },
+        {
+          "id": "10s8x",
+          "label": "Corria",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "uthri",
+      "prompt": "Qual música abriu o caminho dos Beatles nos Estados Unidos?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "evqef",
+          "label": "I Want To Hold Your Hand",
+          "correct": true
+        },
+        {
+          "id": "bmgz1",
+          "label": "Hey Jude",
+          "correct": false
+        },
+        {
+          "id": "tquaz",
+          "label": "Love Me Do",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "ffjr0",
+      "prompt": "Quando aconteceu a primeira edição de Woodstock?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "0bjf0",
+          "label": "8 a 11 de agosto de 1968",
+          "correct": false
+        },
+        {
+          "id": "mcnfv",
+          "label": "15 a 18 de agosto de 1969",
+          "correct": true
+        },
+        {
+          "id": "q9k0y",
+          "label": "8 a 11 de agosto de 1969",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "cnr5s",
+      "prompt": "Qual baterista explodiu sua bateria num programa de televisão em 1967?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "4fcjd",
+          "label": "Mitch Mitchell, do The Jimi Hendrix Experience",
+          "correct": false
+        },
+        {
+          "id": "z703x",
+          "label": "Keith Moon, do The Who",
+          "correct": true
+        },
+        {
+          "id": "mpep1",
+          "label": "Charlie Watts, do The Rolling Stones",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "4ltwh",
+      "prompt": "Qual destes guitarristas era canhoto?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "vbect",
+          "label": "Jimi Hendrix",
+          "correct": true
+        },
+        {
+          "id": "6kayt",
+          "label": "Eric Clapton",
+          "correct": false
+        },
+        {
+          "id": "xjybl",
+          "label": "Keith Richards",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "33p8l",
+      "prompt": "Quem o quiz apresenta como primeiro integrante do chamado Clube dos 27?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "3npyx",
+          "label": "Jimi Hendrix",
+          "correct": false
+        },
+        {
+          "id": "gomg1",
+          "label": "Jim Morrison",
+          "correct": false
+        },
+        {
+          "id": "tjw58",
+          "label": "Brian Jones",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "gpwr3",
+      "prompt": "Qual banda é apontada como pioneira do doom metal?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "s8r2o",
+          "label": "Black Sabbath",
+          "correct": true
+        },
+        {
+          "id": "uxh6o",
+          "label": "Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "1czgn",
+          "label": "Alice Cooper",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "9p6ni",
+      "prompt": "Qual banda de hard rock veio da história do The Yardbirds?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "4n5m5",
+          "label": "Deep Purple",
+          "correct": false
+        },
+        {
+          "id": "oyg12",
+          "label": "Led Zeppelin",
+          "correct": true
+        },
+        {
+          "id": "azauq",
+          "label": "Def Leppard",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "0uq45",
+      "prompt": "Qual gênero não nasceu nos anos 70?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "0r0gk",
+          "label": "Nu-Metal",
+          "correct": true
+        },
+        {
+          "id": "xtx06",
+          "label": "Heavy Metal",
+          "correct": false
+        },
+        {
+          "id": "3mcqw",
+          "label": "Glamrock",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "i1pxg",
+      "prompt": "Qual álbum do Led Zeppelin também é conhecido como Zoso?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "jyxtv",
+          "label": "Led Zeppelin III",
+          "correct": false
+        },
+        {
+          "id": "fvc6j",
+          "label": "Physical Graffitti",
+          "correct": false
+        },
+        {
+          "id": "fcko4",
+          "label": "Led Zeppelin IV",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "hqy07",
+      "prompt": "Quem Jon Landau chamou de futuro do rock’n’roll depois de um show em 1974?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "hq4cs",
+          "label": "Motörhead",
+          "correct": false
+        },
+        {
+          "id": "vt71n",
+          "label": "Lynyrd Skynyrd",
+          "correct": false
+        },
+        {
+          "id": "4nok5",
+          "label": "Bruce Springsteen",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "nhuin",
+      "prompt": "Qual disco dos anos 70 alcançou a marca de 773 semanas na Billboard citada no quiz?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "z9nvw",
+          "label": "Born To Run, de Bruce Springsteen",
+          "correct": false
+        },
+        {
+          "id": "5c5m8",
+          "label": "The Dark Side Of The Moon, de Pink Floyd",
+          "correct": true
+        },
+        {
+          "id": "pxns0",
+          "label": "Rumours, de Fleetwood Mac",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "4a07n",
+      "prompt": "Quem jogou uma galinha para o público?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "oa801",
+          "label": "Lemmy Kilmister",
+          "correct": false
+        },
+        {
+          "id": "441ek",
+          "label": "Alice Cooper",
+          "correct": true
+        },
+        {
+          "id": "aaxna",
+          "label": "Ozzy Osbourne",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "zsei5",
+      "prompt": "Qual destas bandas ajudou a popularizar o punk rock?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "8xegu",
+          "label": "Blink-182",
+          "correct": false
+        },
+        {
+          "id": "bj5gc",
+          "label": "The Ramones",
+          "correct": true
+        },
+        {
+          "id": "gf9pg",
+          "label": "Die Ärzte",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "vjngp",
+      "prompt": "Qual banda não se considerava parte da NWOBHM?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "7ma6x",
+          "label": "Motörhead",
+          "correct": true
+        },
+        {
+          "id": "mn8lv",
+          "label": "Saxon",
+          "correct": false
+        },
+        {
+          "id": "0vk4q",
+          "label": "Iron Maiden",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "o1dko",
+      "prompt": "Qual músico morreu em 1980 no banco de trás de um carro?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "7h607",
+          "label": "John Lennon",
+          "correct": false
+        },
+        {
+          "id": "4hnly",
+          "label": "John Bonham",
+          "correct": false
+        },
+        {
+          "id": "b9tfu",
+          "label": "Bon Scott",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
+    },
+    {
+      "id": "e8q2d",
+      "prompt": "Qual destes discos saiu em 1980?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "nwx8m",
+          "label": "Back In Black, de AC/DC",
+          "correct": true
+        },
+        {
+          "id": "vu8a1",
+          "label": "Hotel California, dos Eagles",
+          "correct": false
+        },
+        {
+          "id": "wkms8",
+          "label": "Appetite For Destruction, de Guns N’ Roses",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 20,
+      "answerType": "text"
+    },
+    {
+      "id": "3q73c",
+      "prompt": "Qual videoclipe inaugurou a MTV em 1º de agosto de 1981?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "vff2a",
+          "label": "Phil Collins: In the Air Tonight",
+          "correct": false
+        },
+        {
+          "id": "zd4pk",
+          "label": "Iron Maiden: Iron Maiden",
+          "correct": false
+        },
+        {
+          "id": "a5hrb",
+          "label": "The Buggles: Video Killed the Radio Star",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 21,
+      "answerType": "text"
+    },
+    {
+      "id": "geftp",
+      "prompt": "Quem desenhou o famoso logo do Queen?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "lx0fp",
+          "label": "Brian May",
+          "correct": false
+        },
+        {
+          "id": "fnm5r",
+          "label": "Freddie Mercury",
+          "correct": true
+        },
+        {
+          "id": "ijd39",
+          "label": "Roger Taylor",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 22,
+      "answerType": "text"
+    },
+    {
+      "id": "ahr8h",
+      "prompt": "Qual banda alemã foi formada em 1982?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "7fjrv",
+          "label": "Die Ärzte",
+          "correct": true
+        },
+        {
+          "id": "03flp",
+          "label": "Scorpions",
+          "correct": false
+        },
+        {
+          "id": "c66rs",
+          "label": "Rammstein",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 23,
+      "answerType": "text"
+    },
+    {
+      "id": "wrzy0",
+      "prompt": "Qual banda não estava na lista Filthy Fifteen de 1985?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "ck5hw",
+          "label": "Mötley Crüe",
+          "correct": false
+        },
+        {
+          "id": "av6p7",
+          "label": "Kiss",
+          "correct": true
+        },
+        {
+          "id": "9r98c",
+          "label": "Twisted Sister",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 24,
+      "answerType": "text"
+    },
+    {
+      "id": "a9tr0",
+      "prompt": "Qual banda o quiz aponta como a primeira desde The Who a tocar sem playback no Top of the Pops?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "z9zop",
+          "label": "Judas Priest",
+          "correct": false
+        },
+        {
+          "id": "9edge",
+          "label": "Def Leppard",
+          "correct": false
+        },
+        {
+          "id": "by1h7",
+          "label": "Iron Maiden",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 25,
+      "answerType": "text"
+    },
+    {
+      "id": "zyfto",
+      "prompt": "Quanto o Live Aid de 1985 arrecadou, segundo o quiz?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "i1x2r",
+          "label": "150 milhões de libras",
+          "correct": true
+        },
+        {
+          "id": "ajl9b",
+          "label": "1.500.00 libras",
+          "correct": false
+        },
+        {
+          "id": "ve47j",
+          "label": "15 milhões de libras",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 26,
+      "answerType": "text"
+    },
+    {
+      "id": "d6f47",
+      "prompt": "Qual destas bandas faz parte dos Big Four?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "kkyxp",
+          "label": "Motörhead",
+          "correct": false
+        },
+        {
+          "id": "i5iex",
+          "label": "Anthrax",
+          "correct": true
+        },
+        {
+          "id": "x0chp",
+          "label": "Pantera",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 27,
+      "answerType": "text"
+    },
+    {
+      "id": "sgm94",
+      "prompt": "O Black Album ocupa qual posição entre os discos de estúdio do Metallica?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "uemsl",
+          "label": "O quinto",
+          "correct": true
+        },
+        {
+          "id": "pu9al",
+          "label": "O sexto",
+          "correct": false
+        },
+        {
+          "id": "tqzu3",
+          "label": "O sétimo",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 28,
+      "answerType": "text"
+    },
+    {
+      "id": "6344t",
+      "prompt": "Qual cantor não integrou Temple Of The Dog?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "jt6h1",
+          "label": "Chris Cornell, do Soundgarden",
+          "correct": false
+        },
+        {
+          "id": "deygg",
+          "label": "Scott Weiland, do Stone Temple Pilots",
+          "correct": true
+        },
+        {
+          "id": "i6rjc",
+          "label": "Eddie Vedder, do Pearl Jam",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 29,
+      "answerType": "text"
+    },
+    {
+      "id": "cz69o",
+      "prompt": "Qual cidade é associada ao começo do grunge?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "72a6n",
+          "label": "New York",
+          "correct": false
+        },
+        {
+          "id": "1pvt5",
+          "label": "Seattle",
+          "correct": true
+        },
+        {
+          "id": "2hmy2",
+          "label": "Detroit",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 30,
+      "answerType": "text"
+    },
+    {
+      "id": "crhef",
+      "prompt": "O que Kurt Cobain criticava em Pearl Jam?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "593ti",
+          "label": "Os solos de guitarra",
+          "correct": true
+        },
+        {
+          "id": "8cykm",
+          "label": "As melodias vocais",
+          "correct": false
+        },
+        {
+          "id": "a1b4f",
+          "label": "O conteúdo das letras",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 31,
+      "answerType": "text"
+    },
+    {
+      "id": "ddfv2",
+      "prompt": "Qual destes acontecimentos não ocorreu na Alemanha dos anos 90?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "bvdu4",
+          "label": "Die Toten Hosen foi formada",
+          "correct": true
+        },
+        {
+          "id": "pt090",
+          "label": "O primeiro Wacken aconteceu",
+          "correct": false
+        },
+        {
+          "id": "ljgfs",
+          "label": "Rammstein foi formada",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 32,
+      "answerType": "text"
+    },
+    {
+      "id": "z6q62",
+      "prompt": "Qual banda puxou uma grande onda de pop punk naquela década?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "fgbd5",
+          "label": "Blink-182",
+          "correct": false
+        },
+        {
+          "id": "v917h",
+          "label": "Green Day",
+          "correct": true
+        },
+        {
+          "id": "1995o",
+          "label": "Sum41",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 33,
+      "answerType": "text"
+    },
+    {
+      "id": "ox5az",
+      "prompt": "Qual banda foi a primeira destas a se definir como nu metal?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "0n7pn",
+          "label": "Slipknot",
+          "correct": false
+        },
+        {
+          "id": "xgttm",
+          "label": "Deftones",
+          "correct": false
+        },
+        {
+          "id": "bg05w",
+          "label": "Korn",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 34,
+      "answerType": "text"
+    },
+    {
+      "id": "38m6k",
+      "prompt": "Em gravações de qual banda Dave Grohl não participou?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "hcxh0",
+          "label": "Rage Against The Machine",
+          "correct": true
+        },
+        {
+          "id": "3zmmx",
+          "label": "Tenacious D",
+          "correct": false
+        },
+        {
+          "id": "wktiw",
+          "label": "The Prodigy",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 35,
+      "answerType": "text"
+    },
+    {
+      "id": "vg4s2",
+      "prompt": "O que aconteceu durante o Woodstock de 1999?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "dz3uc",
+          "label": "Fãs destruíram partes do local enquanto Limp Bizkit tocava",
+          "correct": true
+        },
+        {
+          "id": "ovf8p",
+          "label": "Um fã incendiou o palco durante Rage Against The Machine",
+          "correct": false
+        },
+        {
+          "id": "gbcj0",
+          "label": "Fãs invadiram o palco nus durante Red Hot Chili Peppers",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 36,
+      "answerType": "text"
+    },
+    {
+      "id": "nqhu8",
+      "prompt": "Quais estilos se encontram no metalcore?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "nwm06",
+          "label": "Extreme Metal & Hardcore Punk",
+          "correct": true
+        },
+        {
+          "id": "mnrf9",
+          "label": "Hardcore Metal & Extreme Punk",
+          "correct": false
+        },
+        {
+          "id": "ofhlg",
+          "label": "Heavy Metal & Emocore",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 37,
+      "answerType": "text"
+    },
+    {
+      "id": "7ju2o",
+      "prompt": "Qual cantor aparece no filme Crank, de 2006?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "vzkws",
+          "label": "Jacoby Shaddix",
+          "correct": false
+        },
+        {
+          "id": "g343m",
+          "label": "Anthony Kiedis",
+          "correct": false
+        },
+        {
+          "id": "9w9wu",
+          "label": "Chester Bennington",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 38,
+      "answerType": "text"
+    },
+    {
+      "id": "f2f68",
+      "prompt": "Qual destas bandas não tinha irmãos entre seus integrantes?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "uxxdh",
+          "label": "The White Stripes",
+          "correct": true
+        },
+        {
+          "id": "ufsid",
+          "label": "Kings of Leon",
+          "correct": false
+        },
+        {
+          "id": "pxkfk",
+          "label": "Arcade Fire",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 39,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "l1we0",
+      "title": "Fracasso XXL",
+      "description": "Você dormiu nos últimos 70 anos? Seu conhecimento da história do rock é uma enorme lacuna. Tenha vergonha e estude mais um pouco!",
+      "min": 0,
+      "max": 9
+    },
+    {
+      "id": "30ipq",
+      "title": "Precisa de reforço",
+      "description": "Você tem algum conhecimento, mas está longe de conhecer toda a história do rock. Para se tornar especialista, precisa aprender muito mais!",
+      "min": 10,
+      "max": 25
+    },
+    {
+      "id": "zaxdh",
+      "title": "Raposa esperta",
+      "description": "Ei, nada mal! Só mais algumas respostas certas separam você do título definitivo de especialista na história do rock. Continue assim!",
+      "min": 26,
+      "max": 39
+    },
+    {
+      "id": "y5k3h",
+      "title": "Guru do conhecimento",
+      "description": "Incrível! Ou você viveu a história do rock ou recuperou tudo depois. Você é um verdadeiro especialista!",
+      "min": 40,
+      "max": 40
+    }
+  ],
+  "sourceId": "761",
+  "versionHash": "3e770a4e5f1e5bdb",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "XXL-Rock-Quiz: Eine Reise durch die Rock-Geschichte"
+  },
+  "sourceFiles": [
+    "03-xxl-rock-geschichte.html",
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  }
+}

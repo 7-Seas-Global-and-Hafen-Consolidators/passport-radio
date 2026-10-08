@@ -1,0 +1,641 @@
+{
+  "id": "dp-34",
+  "version": 1,
+  "title": "Qual é sua idade musical?",
+  "family": "Perfil",
+  "type": "idade-musical",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "wem94",
+      "prompt": "O que você mais costuma fazer em um show?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "86sav",
+          "label": "Fico no bar da cerveja e aproveito o espetáculo de longe.",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 5,
+            "8535g": 3,
+            "rcoa5": 4
+          }
+        },
+        {
+          "id": "p1vbl",
+          "label": "Grito todas as músicas na primeira fila até desmaiar.",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "y85r7",
+          "label": "Primeiro, compro o equipamento certo na barraca de camisetas.",
+          "weights": {
+            "cu922": 2,
+            "qylnr": 4,
+            "dr66g": 5,
+            "pjz4i": 3,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "wah5o",
+          "label": "Simplesmente danço até ficar completamente exausto.",
+          "weights": {
+            "cu922": 4,
+            "qylnr": 2,
+            "dr66g": 1,
+            "pjz4i": 0,
+            "8535g": 5,
+            "rcoa5": 3
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "sey87",
+      "prompt": "Qual filme você mais gostaria de assistir?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "m45u5",
+          "label": "Tubarão — é preciso um pouco de suspense",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 2,
+            "dr66g": 4,
+            "pjz4i": 5,
+            "8535g": 3,
+            "rcoa5": 1
+          }
+        },
+        {
+          "id": "k53as",
+          "label": "O Senhor dos Anéis — difícil ser mais épico",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "jmlwo",
+          "label": "Uma Babá Quase Perfeita — com certeza será engraçado",
+          "weights": {
+            "cu922": 4,
+            "qylnr": 5,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "wc7xd",
+          "label": "De Volta para o Futuro — é um clássico",
+          "weights": {
+            "cu922": 2,
+            "qylnr": 4,
+            "dr66g": 5,
+            "pjz4i": 3,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "j38xq",
+      "prompt": "Qual álbum ocupa o primeiro lugar na sua coleção?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "z5350",
+          "label": "Appetite For Destruction - Guns N' Roses",
+          "weights": {
+            "cu922": 2,
+            "qylnr": 4,
+            "dr66g": 5,
+            "pjz4i": 3,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "07me3",
+          "label": "Led Zeppelin - Led Zeppelin",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 4,
+            "8535g": 5,
+            "rcoa5": 3
+          }
+        },
+        {
+          "id": "lnv63",
+          "label": "Nevermind - Nirvana",
+          "weights": {
+            "cu922": 4,
+            "qylnr": 5,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "ervlc",
+          "label": "Dark Side Of The Moon - Pink Floyd",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 2,
+            "dr66g": 4,
+            "pjz4i": 5,
+            "8535g": 3,
+            "rcoa5": 1
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "n20u9",
+      "prompt": "Com qual música você consegue se soltar de verdade?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "25jnx",
+          "label": "(I Can't Get No) Satisfaction - The Rolling Stones",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 4,
+            "8535g": 5,
+            "rcoa5": 3
+          }
+        },
+        {
+          "id": "54l0c",
+          "label": "Smoke On The Water - Deep Purple",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 4,
+            "pjz4i": 5,
+            "8535g": 3,
+            "rcoa5": 2
+          }
+        },
+        {
+          "id": "g6wrw",
+          "label": "Numb - Linkin Park",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "1mhvd",
+          "label": "Born In The USA - Bruce Springsteen",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 3,
+            "rcoa5": 2
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "5fma6",
+      "prompt": "Como você mais gosta de ouvir música?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "k2ijo",
+          "label": "No celular: escolha ilimitada, disponível em qualquer lugar",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "mo0gd",
+          "label": "Discos e toca-discos: o ruído da agulha no vinil é maravilhoso",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 4,
+            "pjz4i": 5,
+            "8535g": 3,
+            "rcoa5": 2
+          }
+        },
+        {
+          "id": "b0blu",
+          "label": "Na fita cassete: sem avançar e rebobinar, faltaria alguma coisa",
+          "weights": {
+            "cu922": 1,
+            "qylnr": 3,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 2,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "9vnfu",
+          "label": "No CD player: prático para levar. Disco para viagem!",
+          "weights": {
+            "cu922": 4,
+            "qylnr": 5,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "d1l0c",
+      "prompt": "Qual rockstar é seu ídolo?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "9unlk",
+          "label": "David Bowie",
+          "weights": {
+            "cu922": 1,
+            "qylnr": 2,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 3,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "kzzfw",
+          "label": "Jimi Hendrix",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 3,
+            "8535g": 5,
+            "rcoa5": 4
+          }
+        },
+        {
+          "id": "yrata",
+          "label": "Elvis Presley",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 3,
+            "8535g": 4,
+            "rcoa5": 5
+          }
+        },
+        {
+          "id": "2nyly",
+          "label": "Bon Scott",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 3,
+            "pjz4i": 5,
+            "8535g": 4,
+            "rcoa5": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "sxp11",
+      "prompt": "Qual jogo não pode faltar em uma noite de jogos?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "bg0r4",
+          "label": "Trivial Pursuit — para também exercitar um pouco a cabeça",
+          "weights": {
+            "cu922": 1,
+            "qylnr": 3,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 2,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "j238p",
+          "label": "Risk — a mistura certa de estratégia e tensão",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 3,
+            "8535g": 4,
+            "rcoa5": 5
+          }
+        },
+        {
+          "id": "95mu3",
+          "label": "PlayStation — escolhas infinitas e dá para jogar sozinho",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "5t5ht",
+          "label": "Taboo — com certeza engraçado, e talvez constrangedor",
+          "weights": {
+            "cu922": 4,
+            "qylnr": 5,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "4gdo8",
+      "prompt": "Qual roupa você escolheria para um show?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "eyy3s",
+          "label": "Camisa de flanela ou camiseta, cabelo sem arrumar: nada muito chamativo",
+          "weights": {
+            "cu922": 4,
+            "qylnr": 5,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "0nfh3",
+          "label": "Roupa chamativa, maquiagem e uma cabeleira selvagem: precisa ser extravagante",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 4,
+            "pjz4i": 5,
+            "8535g": 3,
+            "rcoa5": 2
+          }
+        },
+        {
+          "id": "is6c9",
+          "label": "Camiseta ou suéter com um jeans bem cuidado: simples, mas chama a atenção",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 3,
+            "rcoa5": 2
+          }
+        },
+        {
+          "id": "2pfpe",
+          "label": "É preciso um pouco mais de elegância: camisa ou vestido são obrigatórios",
+          "weights": {
+            "cu922": 2,
+            "qylnr": 1,
+            "dr66g": 0,
+            "pjz4i": 3,
+            "8535g": 4,
+            "rcoa5": 5
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "npzoe",
+      "prompt": "A qual show lendário você gostaria de ter ido?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "y6661",
+          "label": "Queen no Live Aid",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 2,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 3,
+            "rcoa5": 1
+          }
+        },
+        {
+          "id": "v61g4",
+          "label": "Johnny Cash na prisão",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 2,
+            "pjz4i": 3,
+            "8535g": 5,
+            "rcoa5": 4
+          }
+        },
+        {
+          "id": "4uhii",
+          "label": "Metallica na Antártida",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "j2rn4",
+          "label": "Nirvana no MTV Unplugged",
+          "weights": {
+            "cu922": 3,
+            "qylnr": 5,
+            "dr66g": 4,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "3562r",
+      "prompt": "Qual separação de banda partiu seu coração?",
+      "type": "idade-musical",
+      "options": [
+        {
+          "id": "hxb3h",
+          "label": "The Beatles",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 1,
+            "dr66g": 3,
+            "pjz4i": 5,
+            "8535g": 4,
+            "rcoa5": 2
+          }
+        },
+        {
+          "id": "kg81o",
+          "label": "Oasis",
+          "weights": {
+            "cu922": 5,
+            "qylnr": 4,
+            "dr66g": 3,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "e06r7",
+          "label": "The Ramones",
+          "weights": {
+            "cu922": 3,
+            "qylnr": 5,
+            "dr66g": 4,
+            "pjz4i": 2,
+            "8535g": 1,
+            "rcoa5": 0
+          }
+        },
+        {
+          "id": "cgpmv",
+          "label": "The Clash",
+          "weights": {
+            "cu922": 0,
+            "qylnr": 3,
+            "dr66g": 5,
+            "pjz4i": 4,
+            "8535g": 2,
+            "rcoa5": 1
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "cu922",
+      "title": "Menos de 20",
+      "description": "Você é sangue novo no rock. Sente-se melhor na história mais recente do rock. Prefere as bandas e músicas novas às coisas antigas e chatas. Por isso, musicalmente, provavelmente nem chegou à maioridade."
+    },
+    {
+      "id": "qylnr",
+      "title": "25 anos",
+      "description": "Você prefere os anos 90. Talvez tenha sido levado pela onda grunge, ou apenas pelos destaques musicais dessa década. Em anos musicais, você tem os jovens 25 anos."
+    },
+    {
+      "id": "dr66g",
+      "title": "35 anos",
+      "description": "Década sólida, idade sólida. Em meados dos trinta, você encontrou seu estilo e sabe o que quer. Gosta do grande rock de estádio dos anos 80. Foi nessa época que escreveram as músicas mais lendárias e fizeram os shows mais inesquecíveis."
+    },
+    {
+      "id": "pjz4i",
+      "title": "45 anos",
+      "description": "Os loucos anos 70 são a década em que você está musicalmente em casa. Colocar discos de vinil e curtir rock: aqueles eram tempos! Pela música favorita, você revive essa década. Sua idade musical seria, portanto, cerca de 45 anos."
+    },
+    {
+      "id": "8535g",
+      "title": "55 anos",
+      "description": "Você já é veterano em música. Não gosta tanto dessas modernidades. Antigamente havia roqueiros de verdade, como Johnny Cash e Chuck Berry. O bom e velho rock de guitarra conquistou você. Musicalmente, teria por volta de 50 anos."
+    },
+    {
+      "id": "rcoa5",
+      "title": "Mais de 60",
+      "description": "Quanto mais velho, mais intenso: esse poderia ser seu lema musical. Os inventores do rock, como Elvis Presley, ainda têm grande valor para você, e é ao som deles que mais gosta de curtir. Musicalmente, já faz parte da velha guarda, com mais de 60 anos, mas está longe de enferrujar."
+    }
+  ],
+  "sourceId": "387",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Was ist Euer musikalisches Alter?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/23-idade-musical.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "36800f61cd513241"
+}

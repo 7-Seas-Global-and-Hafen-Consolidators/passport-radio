@@ -1,0 +1,543 @@
+{
+  "id": "dp-05",
+  "version": 1,
+  "title": "Quiz dos anos 70",
+  "family": "Conhecimento",
+  "type": "trivia-explicada",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "roqqv",
+      "prompt": "Qual banda anunciou sua separação em 1970?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "5wvp0",
+          "label": "Beatles",
+          "correct": true
+        },
+        {
+          "id": "f638a",
+          "label": "Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "x3jbq",
+          "label": "Pink Floyd",
+          "correct": false
+        }
+      ],
+      "explanation": "Os Beatles encerraram a banda depois de cerca de dez anos de atividade.",
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "4fm5b",
+      "prompt": "Qual destas bandas nasceu em 1970?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "vez2k",
+          "label": "Queen",
+          "correct": true
+        },
+        {
+          "id": "89gjq",
+          "label": "The Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "xndn3",
+          "label": "Black Sabbath",
+          "correct": false
+        }
+      ],
+      "explanation": "Freddie Mercury, Brian May e seus colegas formaram o Queen na Inglaterra.",
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "mliqv",
+      "prompt": "Para qual faroeste Bob Dylan escreveu músicas e também atuou?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "cdri8",
+          "label": "The Wild Bunch – Sie kannten kein Gesetz",
+          "correct": false
+        },
+        {
+          "id": "nr376",
+          "label": "Pat Garrett jagt Billy The Kid",
+          "correct": true
+        },
+        {
+          "id": "iyqca",
+          "label": "Knockin‘ on Heaven‘s Door",
+          "correct": false
+        }
+      ],
+      "explanation": "O filme de Sam Peckinpah foi lançado em 1973.",
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "kkp4a",
+      "prompt": "Em que ano Jim Morrison foi encontrado morto em Paris?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "b08m8",
+          "label": "1970",
+          "correct": false
+        },
+        {
+          "id": "n3ymd",
+          "label": "1971",
+          "correct": true
+        },
+        {
+          "id": "nsmzk",
+          "label": "1975",
+          "correct": false
+        }
+      ],
+      "explanation": "Jim Morrison foi encontrado morto em seu apartamento em Paris em 3 de julho de 1971.",
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "4aond",
+      "prompt": "Qual movimento ganhou força especialmente em 1976 e 1977?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "j3f4r",
+          "label": "Punk",
+          "correct": true
+        },
+        {
+          "id": "f386i",
+          "label": "Movimento hippie",
+          "correct": false
+        },
+        {
+          "id": "wzvny",
+          "label": "Gothic",
+          "correct": false
+        }
+      ],
+      "explanation": "O punk ganhou força especialmente no Reino Unido naquele período.",
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "qf8m0",
+      "prompt": "Qual disco de Bruce Springsteen consolidou sua carreira em 1975?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "1a0sr",
+          "label": "Greetings Form Asbury Park, N.J.",
+          "correct": false
+        },
+        {
+          "id": "gd3s9",
+          "label": "Born In The U.S.A.",
+          "correct": false
+        },
+        {
+          "id": "mkiyb",
+          "label": "Born To Run",
+          "correct": true
+        }
+      ],
+      "explanation": "Born To Run chegou ao terceiro lugar na Billboard e trouxe o sucesso comercial que os primeiros discos ainda não haviam alcançado.",
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "ecjeh",
+      "prompt": "Qual filme dos anos 70 nasceu de um álbum do The Who?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "q75n5",
+          "label": "Rocky Horror Picture Show",
+          "correct": false
+        },
+        {
+          "id": "e6mc9",
+          "label": "Tommy",
+          "correct": true
+        },
+        {
+          "id": "0wvsz",
+          "label": "Ronny",
+          "correct": false
+        }
+      ],
+      "explanation": "A resposta é Tommy.",
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "pqupy",
+      "prompt": "Por que alguns discos de vinil dos anos 70 ficaram tão finos?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "m16qb",
+          "label": "Mudou a norma oficial",
+          "correct": false
+        },
+        {
+          "id": "7iowd",
+          "label": "Uma inovação permitiu fabricar material mais resistente",
+          "correct": false
+        },
+        {
+          "id": "yrsru",
+          "label": "Faltava material, especialmente PVC",
+          "correct": true
+        }
+      ],
+      "explanation": "A escassez de PVC e seu custo levaram a economizar material na fabricação.",
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "fczyj",
+      "prompt": "Em qual programa de bonecos Alice Cooper apareceu em 1978?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "7t2kh",
+          "label": "Die Dinos",
+          "correct": false
+        },
+        {
+          "id": "mahw4",
+          "label": "The Muppet Show",
+          "correct": true
+        },
+        {
+          "id": "yvmrr",
+          "label": "The Wombles",
+          "correct": false
+        }
+      ],
+      "explanation": "Alice Cooper cantou Welcome To My Nightmare, You And Me e School’s Out no programa.",
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "jq2xm",
+      "prompt": "Qual foi o último álbum do AC/DC com Bon Scott, lançado em 1979?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "hi8v6",
+          "label": "Highway To Hell",
+          "correct": true
+        },
+        {
+          "id": "bcwzo",
+          "label": "Powerage",
+          "correct": false
+        },
+        {
+          "id": "rqj1m",
+          "label": "Back In Black",
+          "correct": false
+        }
+      ],
+      "explanation": "O disco é Highway To Hell.",
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "xflps",
+      "prompt": "O que Let There Be Rock e Highway To Hell têm em comum nas capas?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "xhx9z",
+          "label": "São os únicos com toda a banda na capa",
+          "correct": true
+        },
+        {
+          "id": "ngruq",
+          "label": "Foram restringidos na Alemanha",
+          "correct": false
+        },
+        {
+          "id": "velof",
+          "label": "As primeiras cem cópias foram prensadas em ouro",
+          "correct": false
+        }
+      ],
+      "explanation": "As duas capas mostram a banda inteira.",
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "vrqf1",
+      "prompt": "Qual acontecimento liga a ilha de Fehmarn à história do rock?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "jj8i3",
+          "label": "Mick Jagger foi preso pela primeira vez",
+          "correct": false
+        },
+        {
+          "id": "1tqzb",
+          "label": "A última apresentação de Jimi Hendrix",
+          "correct": true
+        },
+        {
+          "id": "yiqzf",
+          "label": "Nikki Sixx gravou ali uma fita sexual",
+          "correct": false
+        }
+      ],
+      "explanation": "Hendrix tocou no Love-and-Peace-Festival em Fehmarn, em 1970, diante de cerca de 25 mil pessoas.",
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "jzlp5",
+      "prompt": "Qual banda feminina marcou o rock dos anos 70?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "blypd",
+          "label": "Parisian Redheads",
+          "correct": false
+        },
+        {
+          "id": "6ci4l",
+          "label": "Riot Grrrl",
+          "correct": false
+        },
+        {
+          "id": "tu6bz",
+          "label": "The Runaways",
+          "correct": true
+        }
+      ],
+      "explanation": "The Runaways reuniu nomes como Joan Jett e Lita Ford.",
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "cve9v",
+      "prompt": "A qual cena pertenciam Iron Maiden e outras bandas britânicas daquele período?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "x2uzj",
+          "label": "British Invasion",
+          "correct": false
+        },
+        {
+          "id": "lozg2",
+          "label": "2-tone",
+          "correct": false
+        },
+        {
+          "id": "hj7xo",
+          "label": "NWOBHM",
+          "correct": true
+        }
+      ],
+      "explanation": "A sigla significa New Wave of British Heavy Metal.",
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "qi02d",
+      "prompt": "Qual músico morreu em setembro de 1978?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "assvg",
+          "label": "Keith Moon (The Who)",
+          "correct": true
+        },
+        {
+          "id": "ltz2c",
+          "label": "John Bonham (Led Zeppelin)",
+          "correct": false
+        },
+        {
+          "id": "e74oa",
+          "label": "Janis Joplin",
+          "correct": false
+        }
+      ],
+      "explanation": "Keith Moon morreu em Londres em 7 de setembro de 1978, aos 32 anos.",
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "ua7hp",
+      "prompt": "O que levou à saída de Lemmy do Hawkwind, antes de formar Motörhead?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "oz1mi",
+          "label": "Ele se envolveu numa briga de bar",
+          "correct": false
+        },
+        {
+          "id": "t25pq",
+          "label": "Ele perdeu um show inteiro depois de beber a noite toda",
+          "correct": false
+        },
+        {
+          "id": "32xea",
+          "label": "Ele foi flagrado com anfetaminas numa fronteira",
+          "correct": true
+        }
+      ],
+      "explanation": "Lemmy foi flagrado com anfetaminas numa fiscalização de fronteira.",
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "xsic4",
+      "prompt": "Na classificação usada pelo quiz, quantos discos de rock dos anos 70 estavam entre os dez mais vendidos?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "1ds5i",
+          "label": "Nenhum",
+          "correct": false
+        },
+        {
+          "id": "z69v6",
+          "label": "Dois",
+          "correct": false
+        },
+        {
+          "id": "ai90b",
+          "label": "Quatro",
+          "correct": true
+        }
+      ],
+      "explanation": "A lista do quiz inclui The Dark Side Of The Moon, Bat Out Of Hell, Hotel California e Rumours; com a coletânea dos Eagles, seriam cinco.",
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "ew957",
+      "prompt": "Quem Meat Loaf interpreta em The Rocky Horror Picture Show?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "jt4c2",
+          "label": "Eddie",
+          "correct": true
+        },
+        {
+          "id": "iscxl",
+          "label": "Dr. Frank N. Furter",
+          "correct": false
+        },
+        {
+          "id": "cti00",
+          "label": "Riff Raff",
+          "correct": false
+        }
+      ],
+      "explanation": "Meat Loaf interpreta Eddie.",
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "ns1ta",
+      "prompt": "Qual lugar The Clash chama em um de seus maiores sucessos?",
+      "type": "trivia-explicada",
+      "options": [
+        {
+          "id": "m17y3",
+          "label": "London",
+          "correct": true
+        },
+        {
+          "id": "ljtze",
+          "label": "Angie",
+          "correct": false
+        },
+        {
+          "id": "ef60w",
+          "label": "Rosie",
+          "correct": false
+        }
+      ],
+      "explanation": "A cidade é Londres.",
+      "sourceIndex": 18,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "ae28g",
+      "title": "Dá para melhorar bastante. Ligue o stream dos anos 70 e aprenda um pouco mais sobre rock!",
+      "description": "",
+      "min": 0,
+      "max": 7
+    },
+    {
+      "id": "bmpn2",
+      "title": "Bastante bom! Você tem a visão geral, mas ainda pode trabalhar nos detalhes.",
+      "description": "",
+      "min": 8,
+      "max": 12
+    },
+    {
+      "id": "3clgh",
+      "title": "Quase um especialista! Poucas lacunas de conhecimento, e até algumas perguntas menos comuns foram superadas!",
+      "description": "",
+      "min": 13,
+      "max": 17
+    },
+    {
+      "id": "so5ik",
+      "title": "Ou você cresceu nos anos 70 ou tem uma paixão absoluta por essa década em que o rock se tornou enorme. Respeito!",
+      "description": "",
+      "min": 18,
+      "max": 19
+    },
+    {
+      "id": "q27id",
+      "title": "Nenhum erro. Você é um verdadeiro especialista no rock dos anos 70!",
+      "description": "",
+      "min": 20,
+      "max": 20
+    }
+  ],
+  "sourceId": "970",
+  "versionHash": "a993c59a5a7b9d8e",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "70er-Quiz"
+  },
+  "sourceFiles": [
+    "49-rock-anos-70.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "on"
+  }
+}

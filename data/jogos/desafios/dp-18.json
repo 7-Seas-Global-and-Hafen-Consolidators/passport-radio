@@ -1,0 +1,639 @@
+{
+  "id": "dp-18",
+  "version": 1,
+  "title": "Quiz AC/DC: quanto você conhece dos roqueiros?",
+  "family": "Conhecimento",
+  "type": "artista",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "xkqc1",
+      "prompt": "O que significa AC/DC?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "zxn3o",
+          "label": "Corrente contínua/corrente alternada",
+          "correct": false
+        },
+        {
+          "id": "7296a",
+          "label": "Corrente alternada/corrente contínua",
+          "correct": true
+        },
+        {
+          "id": "6do82",
+          "label": "Anti-Christ-Devil’s-Children",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "b0pcx",
+      "prompt": "Verdadeiro ou falso: durante a gravação de “Let There Be Rock”, o amplificador de Angus pegou fogo, mas ele terminou a gravação mesmo assim.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "3u53m",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "7qy50",
+          "label": "Falso",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "smtas",
+      "prompt": "Do mais velho ao mais novo: qual é a ordem dos irmãos Young?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "tpgbu",
+          "label": "George, Malcolm, Angus",
+          "correct": true
+        },
+        {
+          "id": "n3dg4",
+          "label": "Malcolm, George, Angus",
+          "correct": false
+        },
+        {
+          "id": "648r0",
+          "label": "George, Angus, Malcolm",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "lcpqg",
+      "prompt": "Quando o AC/DC foi formado?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "fpk3g",
+          "label": "Março/abril de 1972",
+          "correct": false
+        },
+        {
+          "id": "5s9ss",
+          "label": "Novembro/dezembro de 1973",
+          "correct": true
+        },
+        {
+          "id": "622rk",
+          "label": "Fevereiro/março de 1974",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "omd8w",
+      "prompt": "Qual é o álbum mais vendido do AC/DC?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "aznt3",
+          "label": "Back in Black",
+          "correct": true
+        },
+        {
+          "id": "e0t3d",
+          "label": "T.N.T.",
+          "correct": false
+        },
+        {
+          "id": "agywh",
+          "label": "High Voltage",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "6ut3q",
+      "prompt": "De onde veio a ideia para o nome da banda?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "b9hin",
+          "label": "No primeiro show da banda, que ainda não tinha nome oficial, alguns fusíveis queimaram. AC/DC estava escrito na caixa de energia, e escolheram esse nome.",
+          "correct": false
+        },
+        {
+          "id": "3fuq7",
+          "label": "Margaret, irmã de Angus e Malcolm, viu o símbolo AC/DC em uma máquina de costura e o mostrou aos irmãos porque o achou interessante.",
+          "correct": true
+        },
+        {
+          "id": "oteow",
+          "label": "Era o símbolo dos técnicos de som que cuidavam das primeiras gravações da banda.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "non2e",
+      "prompt": "Quem substituiu Malcolm Young na guitarra em 2014?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "mlg08",
+          "label": "Seu irmão George Young",
+          "correct": false
+        },
+        {
+          "id": "4h6q0",
+          "label": "Slash",
+          "correct": false
+        },
+        {
+          "id": "hy74r",
+          "label": "Seu sobrinho Stevie Young",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "t3ild",
+      "prompt": "Quando o AC/DC entrou para o Rock and Roll Hall of Fame?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "f94x0",
+          "label": "10 de março de 2003",
+          "correct": true
+        },
+        {
+          "id": "ppvky",
+          "label": "15 de março de 2004",
+          "correct": false
+        },
+        {
+          "id": "7enkt",
+          "label": "11 de dezembro de 2002",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "1lxkx",
+      "prompt": "Qual era o trabalho de Bon Scott antes de entrar na banda como vocalista?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "ym8z7",
+          "label": "Ele trabalhava como roadie, inclusive para o AC/DC.",
+          "correct": false
+        },
+        {
+          "id": "hn3rl",
+          "label": "Durante o dia, era músico de rua; à noite, trabalhava como garçom.",
+          "correct": false
+        },
+        {
+          "id": "t8ca6",
+          "label": "Era motorista, inclusive da então novata banda AC/DC.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "yykx9",
+      "prompt": "Qual guitarra Angus Young toca?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "59uh6",
+          "label": "Gibson SG",
+          "correct": true
+        },
+        {
+          "id": "18wzj",
+          "label": "Fender AM",
+          "correct": false
+        },
+        {
+          "id": "pxzi6",
+          "label": "Gibson Les Paul",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "za0y2",
+      "prompt": "Onde fica a AC/DC Lane?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "cslci",
+          "label": "Sydney",
+          "correct": false
+        },
+        {
+          "id": "9x64t",
+          "label": "Melbourne",
+          "correct": true
+        },
+        {
+          "id": "a4prg",
+          "label": "New York",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "u0qt2",
+      "prompt": "Por que Brian Johnson interrompeu suas apresentações com a banda?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "zm09s",
+          "label": "Uma discussão entre os integrantes fez Brian precisar de distância.",
+          "correct": false
+        },
+        {
+          "id": "ehsn6",
+          "label": "Ele queria uma pausa para se dedicar a outros projetos.",
+          "correct": false
+        },
+        {
+          "id": "2xdrl",
+          "label": "Sua voz estava quase destruída e ele estava quase surdo depois de tantos anos de turnês.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "28q7t",
+      "prompt": "Verdadeiro ou falso: Bon Scott nasceu na Escócia, e os irmãos Young, na Irlanda.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "8nsup",
+          "label": "Verdadeiro",
+          "correct": false
+        },
+        {
+          "id": "hiknh",
+          "label": "Falso",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "9sxk1",
+      "prompt": "Quais foram as últimas palavras de Bon Scott na última gravação com o AC/DC antes de morrer?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "p9jyt",
+          "label": "“Shazbot. Nanu Nanu.”",
+          "correct": true
+        },
+        {
+          "id": "t8tob",
+          "label": "“Let’s rock them.”",
+          "correct": false
+        },
+        {
+          "id": "bxn1t",
+          "label": "“Damn! Ooops.”",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "tx4kp",
+      "prompt": "A quantos decibéis pode chegar um show do AC/DC? Para comparar: uma britadeira chega a 105 decibéis; um avião, a 140.",
+      "type": "artista",
+      "options": [
+        {
+          "id": "308uo",
+          "label": "100 decibéis",
+          "correct": false
+        },
+        {
+          "id": "cn9iu",
+          "label": "130 decibéis",
+          "correct": true
+        },
+        {
+          "id": "85gbb",
+          "label": "160 decibéis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "vhopp",
+      "prompt": "Quem tocou gaita de foles na gravação de “It’s a Long Way to the Top”?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "qmpxg",
+          "label": "Angus Young",
+          "correct": false
+        },
+        {
+          "id": "itsrh",
+          "label": "Bon Scott",
+          "correct": true
+        },
+        {
+          "id": "de46t",
+          "label": "Brian Johnson",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "g5jfu",
+      "prompt": "Quando Brian Johnson se apresentou pela primeira vez como novo vocalista do AC/DC?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "xhqci",
+          "label": "29 de junho de 1980",
+          "correct": true
+        },
+        {
+          "id": "bhu36",
+          "label": "20 de julho de 1980",
+          "correct": false
+        },
+        {
+          "id": "drh5t",
+          "label": "19 de agosto de 1980",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "zqvvd",
+      "prompt": "Qual ritual Bon Scott usava para manter suas cordas vocais em forma?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "uq3jg",
+          "label": "Exercícios vocais diários e aquecimento antes de cada show, com uma equipe própria de professores de canto.",
+          "correct": false
+        },
+        {
+          "id": "o7pm1",
+          "label": "Um uísque antes de cada apresentação mantinha a voz em forma.",
+          "correct": false
+        },
+        {
+          "id": "oeve1",
+          "label": "Ele gargarejava mel com vinho tinto todas as manhãs para cuidar das cordas vocais.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "z8y9u",
+      "prompt": "Quantas músicas do AC/DC têm a palavra “Rock” ou “Rockin’” no título?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "clgzz",
+          "label": "15",
+          "correct": false
+        },
+        {
+          "id": "w2an5",
+          "label": "23",
+          "correct": true
+        },
+        {
+          "id": "h9ci1",
+          "label": "28",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "1qfcc",
+      "prompt": "Verdadeiro ou falso: Bon Scott prendia a franja com fita adesiva ao tomar banho para que ela não ficasse muito encaracolada.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "vlpn7",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "mg5kw",
+          "label": "Falso",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
+    },
+    {
+      "id": "e9er1",
+      "prompt": "Qual vocalista conhecido substituiu Brian Johnson na turnê de 2016 do AC/DC?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "z8jdj",
+          "label": "Myles Kennedy",
+          "correct": false
+        },
+        {
+          "id": "jrth1",
+          "label": "Axl Rose",
+          "correct": true
+        },
+        {
+          "id": "h4fxq",
+          "label": "Bruce Dickinson",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 20,
+      "answerType": "text"
+    },
+    {
+      "id": "jo8ig",
+      "prompt": "Como se chama o álbum mais recente do AC/DC, lançado em 2020?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "o5ybp",
+          "label": "PWRUP",
+          "correct": true
+        },
+        {
+          "id": "kq780",
+          "label": "POWA UPP!",
+          "correct": false
+        },
+        {
+          "id": "36bu2",
+          "label": "No Sleep Till Hell",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 21,
+      "answerType": "text"
+    },
+    {
+      "id": "7fw3x",
+      "prompt": "Verdadeiro ou falso: Malcolm Young, que morreu em 2017, participou da composição de todas as músicas do álbum atual.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "kowys",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "yqg4n",
+          "label": "Falso",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 22,
+      "answerType": "text"
+    },
+    {
+      "id": "m1wcr",
+      "prompt": "O que significa “Shot in the Dark”, expressão usada pelo AC/DC em seu novo single?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "atuwv",
+          "label": "Sair para caçar à noite",
+          "correct": false
+        },
+        {
+          "id": "hd6zn",
+          "label": "Aproveitar uma oportunidade inesperada",
+          "correct": false
+        },
+        {
+          "id": "c1015",
+          "label": "Responder com confiança a uma pergunta cuja resposta você não sabe",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 23,
+      "answerType": "text"
+    },
+    {
+      "id": "7xn65",
+      "prompt": "Incluindo o novo álbum, quantos discos de estúdio o AC/DC lançou?",
+      "type": "artista",
+      "options": [
+        {
+          "id": "433zg",
+          "label": "8",
+          "correct": false
+        },
+        {
+          "id": "moxan",
+          "label": "10",
+          "correct": false
+        },
+        {
+          "id": "2asj8",
+          "label": "17",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 24,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "8p26z",
+      "title": "É um longo caminho até o topo! Mas você conseguiu. Você é o verdadeiro especialista em AC/DC. Os sinos do inferno tocam só para você.",
+      "description": "",
+      "min": 25,
+      "max": 25
+    },
+    {
+      "id": "90exw",
+      "title": "Você está no Rock n Roll Train, rumo ao fã de AC/DC que sabe tudo! Só precisa memorizar mais alguns fatos sobre a banda para saber tudo.",
+      "description": "",
+      "min": 15,
+      "max": 24
+    },
+    {
+      "id": "94cug",
+      "title": "Você deveria conhecer melhor a banda. Está entrando agora na estrada para o inferno!",
+      "description": "",
+      "min": 5,
+      "max": 14
+    },
+    {
+      "id": "rdlsa",
+      "title": "Você foi atingido pelo trovão! Tenha vergonha!",
+      "description": "",
+      "min": 0,
+      "max": 4
+    }
+  ],
+  "sourceId": "477",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "AC/DC Quiz: Wie gut kennt Ihr die Hardrocker?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/13-acdc-quiz.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "1",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  },
+  "versionHash": "dee59eadafe0de21"
+}

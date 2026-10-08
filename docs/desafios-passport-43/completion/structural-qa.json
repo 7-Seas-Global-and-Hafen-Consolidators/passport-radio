@@ -1,0 +1,253 @@
+{
+  "result": "PASS",
+  "catalogIds": 43,
+  "playableNew": 11,
+  "partialIds": [
+    "dp-12",
+    "dp-13",
+    "dp-14",
+    "dp-15",
+    "dp-16",
+    "dp-17",
+    "dp-18",
+    "dp-19",
+    "dp-20",
+    "dp-21",
+    "dp-22",
+    "dp-23",
+    "dp-24",
+    "dp-25",
+    "dp-26",
+    "dp-27",
+    "dp-28",
+    "dp-29",
+    "dp-30",
+    "dp-31",
+    "dp-32",
+    "dp-33",
+    "dp-34",
+    "dp-35",
+    "dp-36",
+    "dp-37",
+    "dp-38",
+    "dp-39",
+    "dp-40",
+    "dp-41",
+    "dp-42",
+    "dp-43"
+  ],
+  "sourceQuestions": 186,
+  "localClueAssets": 22,
+  "games": [
+    {
+      "id": "dp-01",
+      "questions": 15,
+      "source": "1070",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-02",
+      "questions": 10,
+      "source": "1077",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-03",
+      "questions": 10,
+      "source": "991",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-04",
+      "questions": 12,
+      "source": "1009",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-05",
+      "questions": 19,
+      "source": "970",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-06",
+      "questions": 10,
+      "source": "786",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-07",
+      "questions": 20,
+      "source": "770",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-08",
+      "questions": 40,
+      "source": "761",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-09",
+      "questions": 10,
+      "source": "755",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-10",
+      "questions": 20,
+      "source": "725",
+      "keysWeightsImages": "EXACT_MATCH"
+    },
+    {
+      "id": "dp-11",
+      "questions": 20,
+      "source": "719",
+      "keysWeightsImages": "EXACT_MATCH"
+    }
+  ],
+  "protected": [
+    {
+      "file": "js/passport-audio-continuity.js",
+      "sha256": "c92d0adbff9f174f8de1f53723d07a25e80e9cd427efd04084d25689eddefc5e",
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "file": "js/passport-persist-nav.js",
+      "sha256": "e092fbc2b3ba85f05e48e40a6e9c40420cc9a77e9708823038beac8d4367750c",
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "file": "js/passport-games-navigation.js",
+      "sha256": "f62ec6c590f5afa9f2b49bc6a0bde1ea488367b30b0aa7bbf81d66c3ded46847",
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "file": "data/jogos/catalog.json",
+      "sha256": "42e911ffea9e442414c7154f2efee20f59b995bf2be159a73529389922454ca5",
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "file": "data/jogos/universe.json",
+      "sha256": "38c3680daa12d83b91bcb24a8bfdfce17cb1542aa552db38106c3c316c6b7dac",
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "file": "index.html",
+      "sha256": "15a13ba03ffafd5fd474b5a3bdddf45a794149cc31acc0ddd99231f99e5566a5",
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "file": "radio.html",
+      "sha256": "0a5b97020ea81db4fe3a75006abac2205edd4e02e310ae9861bbc7bde3ddd938",
+      "status": "BYTE_IDENTICAL"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "docs/desafios-passport-43/source/01-Markdown_colado(20261007-181637).md",
+      "sha256": "1e21bfd37a4bd882026a3a48bd956a116daba85afd12bc07e278ecf414353caf"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/02-Markdown_colado_(2)(20261007-181702).md",
+      "sha256": "d0968bfde44cd399de1de412e3982529b875bca00d337c23942de30876c40546"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/03-Markdown_colado_(3)(9).md",
+      "sha256": "6d25dc57d75a07d00641c7fe3ffcada8ab511d30467ba6d7fd48479d27d49612"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/04-Markdown_colado_(4)(10).md",
+      "sha256": "c154af7d311cae584e569c0e5fe490023e19621bf6d48589ee7729fbef791b07"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/05-Markdown_colado_(5)(8).md",
+      "sha256": "c8308cde75fbf83347e23747c41ad93910baf2677c2254edbb2522b9fc6c848e"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/06-Markdown_colado_(6)(7).md",
+      "sha256": "4bf9493133636da79f30247550d71c3eb45dd2a14d5cb91b1f73692590f809f7"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/07-Markdown_colado_(7)(6).md",
+      "sha256": "c78026fdca7a122b465a8f7b779da7a0e8e7a76a763e47a88d7919372270abad"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/08-Texto_colado_(8).txt",
+      "sha256": "688982e6f2111e57c960a9ec1f5627675c654235e26d0079c31314032901207f"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/09-Texto_colado_(9).txt",
+      "sha256": "4082524d393196b654e5f68729b0781b629537a116351165875fbe132a32e991"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/10-Texto_colado_(10).txt",
+      "sha256": "abe0731963e37c8d8a3efb43a2abbd9a6e57ae1b9ee71db52ab9b6711d62fbf7"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/11-Texto_colado_(11).txt",
+      "sha256": "857ddf7b3518abf576a95fa5186caf17ae76f02edfc8fb4a1672485daa7fd02a"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/12-Texto_colado_(12).txt",
+      "sha256": "b91505d7a195d4cf75cfb99716c68548dfcf8d779a8358fe40f4926cc680d6f6"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/13-Texto_colado(20261007-190701).txt",
+      "sha256": "79fdea19e680457e27385321b18fb6269c5f21d4db7e709a378ea5f8fa143886"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/14-Markdown_colado(20261007-191344).md",
+      "sha256": "cd09a8e98122999ead4767e7c578f4b0e8f5229a5c7a458e741b1c696f7471f6"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/15-Markdown_colado_(2)(20261007-191538).md",
+      "sha256": "ad43c68b235f618e530daa3127d2f7fb5567698e88b034a7d3b0165b385173bb"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/16-Markdown_colado(20261007-191344).md",
+      "sha256": "cd09a8e98122999ead4767e7c578f4b0e8f5229a5c7a458e741b1c696f7471f6"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/17-Markdown_colado_(2)(20261007-191538).md",
+      "sha256": "ad43c68b235f618e530daa3127d2f7fb5567698e88b034a7d3b0165b385173bb"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/18-Markdown_colado_(3)(10).md",
+      "sha256": "6e168921b17e033eb49fb40d3aef88cdc7a782de85118b84de3404c95191dd50"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/19-Markdown_colado(20261007-192043).md",
+      "sha256": "56080b6fe5b2d0c841cff549b5843fd27b590a23d4c3d726c51eb8dc692ce489"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/20-Markdown_colado_(2)(20261007-192220).md",
+      "sha256": "94e1f0c1e8c44221c3126c69e715e2ec46effbc377f074d2f0ce6dbe0967833e"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/21-Markdown_colado_(3)(20261007-192349).md",
+      "sha256": "5cbabb7376583c966cb9a66560efe209ddb640de33e0a824d9b0e9de56d5662d"
+    },
+    {
+      "file": "docs/desafios-passport-43/source/22-Markdown_colado(20261007-192921).md",
+      "sha256": "5cbabb7376583c966cb9a66560efe209ddb640de33e0a824d9b0e9de56d5662d"
+    },
+    {
+      "file": "docs/desafios-passport-43/source-correct/RECUPERADO-A.html",
+      "sha256": "1a0872c0b0c49e7cc4e978c6cba94491a8677d34f9ff384562be08ed32652b39"
+    },
+    {
+      "file": "docs/desafios-passport-43/source-correct/RECUPERADO-B.html",
+      "sha256": "ac527d2765955f498c5976cfa521a1b1aae98c3997ec7c60053418d372dedaa6"
+    },
+    {
+      "file": "docs/desafios-passport-43/source-correct/pack-01.html",
+      "sha256": "1f9210dbf35d8a0d21e02b6ed41b75ad38e386f2c48eea03933ee25054d4708c"
+    },
+    {
+      "file": "docs/desafios-passport-43/source-correct/pack-02.html",
+      "sha256": "f7e150fc734ab9f8e41726e8db04d9242277f82ce4e96ed12c0296347833de76"
+    }
+  ],
+  "notCertified": "Missing source bodies are not invented; source-only mechanics have no real UI test."
+}

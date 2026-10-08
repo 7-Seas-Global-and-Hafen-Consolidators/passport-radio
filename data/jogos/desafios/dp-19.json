@@ -1,0 +1,539 @@
+{
+  "id": "dp-19",
+  "version": 1,
+  "title": "Você consegue completar estas letras?",
+  "family": "Memória",
+  "type": "completar-letra",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "is6zv",
+      "prompt": "Chances desperdiçadas / Nada é de graça / Saudade do que existia / Ainda é difícil / Difícil enxergar (The Kids Aren’t Alright — The Offspring)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "xc4pw",
+          "label": "Vidas frágeis, sonhos despedaçados",
+          "correct": true
+        },
+        {
+          "id": "lgeug",
+          "label": "As pessoas morrem e partem",
+          "correct": false
+        },
+        {
+          "id": "fw2kd",
+          "label": "Não existe você e eu",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "90y3o",
+      "prompt": "Vivendo depois da meia-noite, curtindo até o amanhecer / Amando até de manhã / Depois eu vou embora / Eu vou embora / Tenho cromo brilhante / Aço refletindo (Living After Midnight — Judas Priest)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "7og16",
+          "label": "Carregado, carregado",
+          "correct": true
+        },
+        {
+          "id": "4hs00",
+          "label": "Ultrapassado, ultrapassado",
+          "correct": false
+        },
+        {
+          "id": "8d1jx",
+          "label": "Decifrado, decifrado",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "2vpe8",
+      "prompt": "Ele é aquele que chamam de Dr. Feelgood / É quem faz você se sentir bem / É aquele que chamam de Dr. Feelgood (Dr. Feelgood — Mötley Crüe)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "q4xav",
+          "label": "Ele vai ser seu Frankenstein",
+          "correct": true
+        },
+        {
+          "id": "3gd6i",
+          "label": "Ele vai fazer você se sentir muito bem",
+          "correct": false
+        },
+        {
+          "id": "wegva",
+          "label": "Ele te dá um doce sessenta e nove",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "8iu57",
+      "prompt": "Herdeiros de uma guerra fria / Foi nisso que nos tornamos / Herdando problemas, minha mente está entorpecida / Louco, simplesmente não suporto (Crazy Train — Ozzy Osbourne)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "8rjpl",
+          "label": "Estou vivendo com algo que simplesmente não é justo",
+          "correct": true
+        },
+        {
+          "id": "c89g0",
+          "label": "Consigo sentir o medo crescendo",
+          "correct": false
+        },
+        {
+          "id": "lzmbo",
+          "label": "Criaturas sombrias por toda parte",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "xa1gh",
+      "prompt": "Toda noite eu subia escondido / Nas costas da música / Encostava os ouvidos nas asas (Radio — Rammstein)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "s10qn",
+          "label": "Cantar baixinho nas mãos",
+          "correct": true
+        },
+        {
+          "id": "y9lg8",
+          "label": "Preciso fazê-las queimar",
+          "correct": false
+        },
+        {
+          "id": "32cau",
+          "label": "Ouça meu coração frio se despedaçar",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "qaoqv",
+      "prompt": "Ouça o tambor batendo fora do tempo / Outro manifestante ultrapassou o limite / Para encontrar (Holiday — Green Day)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "vk8sw",
+          "label": "O dinheiro está do outro lado",
+          "correct": true
+        },
+        {
+          "id": "q6kkx",
+          "label": "Meu caminho de Jekyll para Hyde",
+          "correct": false
+        },
+        {
+          "id": "szoyw",
+          "label": "Alguma paciência por dentro",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "mgjfb",
+      "prompt": "Se você quer partir, cuide-se / Espero que faça muitos bons amigos por aí / Mas lembre-se (Wild World — Cat Stevens)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "lldk6",
+          "label": "Há muita coisa ruim, então tenha cuidado",
+          "correct": true
+        },
+        {
+          "id": "pb66v",
+          "label": "Vou matar seu próximo caso",
+          "correct": false
+        },
+        {
+          "id": "raoxg",
+          "label": "O amor verdadeiro é raro",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "3uz2e",
+      "prompt": "Os rostos mudam e as cores também / Palavras certeiras no momento certo / A multidão não anda, a multidão corre (Tanzt du noch einmal mit mir — Broilers)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "0vnix",
+          "label": "Atingiu o ponto sensível e libertou o porco em você",
+          "correct": true
+        },
+        {
+          "id": "wf1ia",
+          "label": "Contra a parede, sem piedade",
+          "correct": false
+        },
+        {
+          "id": "r68on",
+          "label": "Tudo passa, toda maldita briga",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "bvboy",
+      "prompt": "Tudo começou quando perdi minha mãe / Sem amor por mim / Sem amor por ninguém / Procurando um amor em um nível mais alto (Last Resort — Papa Roach)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "ateld",
+          "label": "Não encontrando nada além de perguntas e demônios",
+          "correct": true
+        },
+        {
+          "id": "38p41",
+          "label": "Pise fundo no acelerador",
+          "correct": false
+        },
+        {
+          "id": "u10jb",
+          "label": "Quebrado por dentro, destruindo minha mente",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "berx3",
+      "prompt": "Ela me olha como Peixes quando estou fraco / Há semanas estou preso em sua caixa em forma de coração / Fui atraído para sua armadilha magnética (Heart-Shaped Box — Nirvana)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "jhxdk",
+          "label": "Queria poder comer seu câncer quando você ficasse negra",
+          "correct": true
+        },
+        {
+          "id": "q2j3c",
+          "label": "Tudo em mim vai fazer você ser sequestrada",
+          "correct": false
+        },
+        {
+          "id": "oq34y",
+          "label": "Só se foi pelos gatinhos que desenham em sua abertura",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "9enus",
+      "prompt": "Vamos discutir, porque em nosso belo país / Ao menos em teoria todos são terrivelmente tolerantes / Palavras não querem mudar nada, palavras não machucam ninguém / Então vamos falar disso (Deine Schuld — Die Ärzte)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "wr0z0",
+          "label": "Discussões estão bem",
+          "correct": true
+        },
+        {
+          "id": "2uplh",
+          "label": "Essa é uma ideia",
+          "correct": false
+        },
+        {
+          "id": "a20sh",
+          "label": "Vamos conversar em alta definição",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "pqc8z",
+      "prompt": "Satélites me mandam imagens / Recebo no olho, levo até o fio / Girando como um dínamo / Sinto girar sem parar / Ficando sem chips (Who Made Who — AC/DC)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "gyuqc",
+          "label": "Veja-os cair no chão duro e frio",
+          "correct": false
+        },
+        {
+          "id": "zkkll",
+          "label": "Você não tem conexão em uma cidade de oito bits",
+          "correct": true
+        },
+        {
+          "id": "q2c4w",
+          "label": "Pegue mais uma libra",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "dtybk",
+      "prompt": "Chega de sonhos quebrados, sinto-me uma arma carregada / Cuspindo balas contra sua armadura de controle mental / Corte a língua dela, não acredite em uma palavra / Ela está caçando (Black Rose — Volbeat)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "c628s",
+          "label": "Cozinhando, cozinhando, cozinhando sofrimento",
+          "correct": true
+        },
+        {
+          "id": "vajm1",
+          "label": "Atirando, atirando, atirando família",
+          "correct": true
+        },
+        {
+          "id": "4xe81",
+          "label": "Correndo, correndo, correndo melodia",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "4rrqv",
+      "prompt": "Você sabe que nasci para perder, e apostar é coisa de tolos / Mas é assim que eu gosto, querida / Não quero viver para sempre (Ace of Spades — Motörhead)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "ipued",
+          "label": "E não esqueça o coringa!",
+          "correct": true
+        },
+        {
+          "id": "1bwbd",
+          "label": "Mas eu amo pôquer!",
+          "correct": false
+        },
+        {
+          "id": "z4xv7",
+          "label": "Até eu sou um fumante inveterado!",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "xuxtf",
+      "prompt": "Uma coisa, não sei por quê / Nem importa o quanto você tente / Tenha isso em mente / Fiz esta rima / Para lembrar a mim mesmo de um tempo em que (In the End — Linkin Park)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "uw3y7",
+          "label": "Eu tentei tanto",
+          "correct": true
+        },
+        {
+          "id": "srxb5",
+          "label": "Eu cheguei tão longe",
+          "correct": false
+        },
+        {
+          "id": "4vlgs",
+          "label": "Eu coloquei minha confiança em você",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "3t0xi",
+      "prompt": "E sempre de novo / São as mesmas músicas / Que fazem parecer / Que o tempo está parado / Porque nunca passa / Esta velha febre / Que sempre volta (An Tagen wie diesen — Die Toten Hosen)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "j668t",
+          "label": "Quando estamos juntos",
+          "correct": true
+        },
+        {
+          "id": "j0ryd",
+          "label": "Quando nossa cabeça dá voltas",
+          "correct": false
+        },
+        {
+          "id": "uu03d",
+          "label": "Quando a nostalgia começa",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "eeldo",
+      "prompt": "Você não pode encher o copo antes de esvaziá-lo / Não entende o que vem adiante / Se não entende o passado / Nunca aprende a voar / Até estar diante do precipício (Satellite — Rise Against)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "9cvge",
+          "label": "E você não pode amar de verdade antes de desistir disso",
+          "correct": true
+        },
+        {
+          "id": "30z9o",
+          "label": "E você não pode mudar a si mesmo enquanto se agarra a isso",
+          "correct": false
+        },
+        {
+          "id": "7um5e",
+          "label": "E você não pode ver a luz se há uma sombra diante dela",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "ed65r",
+      "prompt": "Meia-noite, preciso de rock / Há um caminhão à frente, luzes nos meus olhos / Meu Deus, não há tempo para virar (Detroit Rock City — KISS)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "5fzdi",
+          "label": "Preciso rir porque sei que vou morrer",
+          "correct": true
+        },
+        {
+          "id": "ot0br",
+          "label": "O que posso fazer? Não há tempo para chorar",
+          "correct": false
+        },
+        {
+          "id": "136j9",
+          "label": "Disparando um último adeus para você",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "qcu9v",
+      "prompt": "Ele vive em seu próprio céu / Busca tudo no Seven-Eleven / Passa a noite fora para ganhar a corrida / Desde que, desde que (Rebel Yell — Billy Idol)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "caw0b",
+          "label": "Isso não bagunça seu cabelo",
+          "correct": true
+        },
+        {
+          "id": "f9gha",
+          "label": "Ninguém se importa",
+          "correct": false
+        },
+        {
+          "id": "qtkxl",
+          "label": "Ele é o herdeiro",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "1yuat",
+      "prompt": "O que fizemos com a inocência? / Ela desapareceu com o tempo / Nunca fez muito sentido / Morador adolescente / Desperdiçando mais uma noite (Monkey Wrench — Foo Fighters)",
+      "type": "completar-letra",
+      "options": [
+        {
+          "id": "e8a5g",
+          "label": "Planejando minha vingança",
+          "correct": true
+        },
+        {
+          "id": "aj8dd",
+          "label": "Sonhando com novos planos",
+          "correct": false
+        },
+        {
+          "id": "e5x7d",
+          "label": "Dormindo em um banco de praça",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "rseyw",
+      "title": "Isso não deu em nada! Você deveria ouvir melhor quando toca rock. Ouça ainda mais RADIO BOB! e vai dar certo!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "860df",
+      "title": "Foi razoável, mas pode melhorar! Você domina as letras do rock básico, mas precisa estudar um pouco mais para fazer parte dos grandes.",
+      "description": "",
+      "min": 6,
+      "max": 13
+    },
+    {
+      "id": "0tqgl",
+      "title": "Muito impressionante! Você está perto de ser um verdadeiro especialista em rock. Continue e também vencerá as perguntas difíceis!",
+      "description": "",
+      "min": 14,
+      "max": 17
+    },
+    {
+      "id": "ahfj4",
+      "title": "Uau! Quero ver alguém fazer igual! Você é um cancioneiro ambulante. Provavelmente não existe música que você não consiga cantar inteira!",
+      "description": "",
+      "min": 18,
+      "max": 18
+    }
+  ],
+  "sourceId": "379",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Könnt Ihr diese Songtexte vervollständigen?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/24-complete-songtexte.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  },
+  "versionHash": "5964d96f5c9d3bbd"
+}

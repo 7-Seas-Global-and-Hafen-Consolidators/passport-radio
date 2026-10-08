@@ -1,0 +1,500 @@
+[
+  {
+    "sourceId": "786",
+    "originalTitle": "Welcher RADIO BOB! Stream passt zu Euch?",
+    "sources": [
+      "01-welcher-stream.html",
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
+    "questions": 10,
+    "images": 6,
+    "existing": "dp-06.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "770",
+    "originalTitle": "Wie gut kennt Ihr den Rock der 90er?",
+    "sources": [
+      "02-rock-der-90er.html",
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
+    "questions": 20,
+    "images": 0,
+    "existing": "dp-07.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "761",
+    "originalTitle": "XXL-Rock-Quiz: Eine Reise durch die Rock-Geschichte",
+    "sources": [
+      "03-xxl-rock-geschichte.html",
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
+    "questions": 40,
+    "images": 0,
+    "existing": "dp-08.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "449",
+    "originalTitle": "Rock-Abitur",
+    "sources": [
+      "17-rock-abitur.html"
+    ],
+    "questions": 15,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "231",
+    "originalTitle": "Zu welcher Band gehört dieser Musiker?",
+    "sources": [
+      "37-banda-musico.html"
+    ],
+    "questions": 12,
+    "images": 12,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "1077",
+    "originalTitle": "Bärte der Rockstars Quiz",
+    "sources": [
+      "42-baerte-rockstars.html"
+    ],
+    "questions": 10,
+    "images": 10,
+    "existing": "dp-02.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "1070",
+    "originalTitle": "Wacken Open Air Quiz",
+    "sources": [
+      "43-wacken-open-air.html"
+    ],
+    "questions": 15,
+    "images": 0,
+    "existing": "dp-01.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "1029",
+    "originalTitle": "Tour-Quiz",
+    "sources": [
+      "45-tour-quiz.html"
+    ],
+    "questions": 16,
+    "images": 16,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "1009",
+    "originalTitle": "Quiz: Welches Album ist älter?",
+    "sources": [
+      "47-album-mais-antigo.html"
+    ],
+    "questions": 12,
+    "images": 12,
+    "existing": "dp-04.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "991",
+    "originalTitle": "MTV Unplugged Quiz",
+    "sources": [
+      "48-mtv-unplugged.html"
+    ],
+    "questions": 10,
+    "images": 0,
+    "existing": "dp-03.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "970",
+    "originalTitle": "70er-Quiz",
+    "sources": [
+      "49-rock-anos-70.html"
+    ],
+    "questions": 19,
+    "images": 0,
+    "existing": "dp-05.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "923",
+    "originalTitle": "Mittelalter-Quiz",
+    "sources": [
+      "50-mittelalter.html"
+    ],
+    "questions": 7,
+    "images": 5,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "687",
+    "originalTitle": "Erkennt Ihr diese Bandlogos?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/04-bandlogos.html"
+    ],
+    "questions": 20,
+    "images": 20,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "654",
+    "originalTitle": "QUIZ: Wie viel Punk steht in Euch?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/05-wie-viel-punk.html"
+    ],
+    "questions": 15,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "642",
+    "originalTitle": "Wie gut kennt Ihr die Songtexte von Bruce Springsteen?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/06-bruce-springsteen-songtexte.html"
+    ],
+    "questions": 15,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "616",
+    "originalTitle": "Wisst Ihr wie diese Bands früher hießen?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/07-bands-frueher-hiessen.html"
+    ],
+    "questions": 18,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "602",
+    "originalTitle": "Welcher Song rockt Euren Sommer?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/08-sommersong.html"
+    ],
+    "questions": 10,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "520",
+    "originalTitle": "BOBs Emoji Quiz: Erkennt Ihr diese Songs?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/09-rocksongs-emojis.html"
+    ],
+    "questions": 12,
+    "images": 12,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "489",
+    "originalTitle": "Welche Lyrics wären Eure letzten Worte?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/12-ultimas-palavras-lyrics.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "477",
+    "originalTitle": "AC/DC Quiz: Wie gut kennt Ihr die Hardrocker?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/13-acdc-quiz.html"
+    ],
+    "questions": 25,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "475",
+    "originalTitle": "Welches Festival solltet Ihr besuchen?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/14-festival.html"
+    ],
+    "questions": 10,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "471",
+    "originalTitle": "Erkennt Ihr diese Rocker an der Frisur?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/16-frisuras.html"
+    ],
+    "questions": 16,
+    "images": 16,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "423",
+    "originalTitle": "Erkennt Ihr diese Alben am Cover?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/19-plattencover.html"
+    ],
+    "questions": 18,
+    "images": 18,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "417",
+    "originalTitle": "Wie gut kennt Ihr Euch im Classic Rock aus?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/20-classic-rock.html"
+    ],
+    "questions": 21,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "409",
+    "originalTitle": "Wie hoch ist Euer Rock-IQ?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/21-rock-iq.html"
+    ],
+    "questions": 15,
+    "images": 3,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "957",
+    "originalTitle": "Kennt Ihr die echten Namen der Rockstars?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/22-nomes-reais-rockstars.html"
+    ],
+    "questions": 18,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "387",
+    "originalTitle": "Was ist Euer musikalisches Alter?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/23-idade-musical.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "379",
+    "originalTitle": "Könnt Ihr diese Songtexte vervollständigen?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/24-complete-songtexte.html"
+    ],
+    "questions": 20,
+    "images": 0,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "373",
+    "originalTitle": "Wie gut kennt Ihr den Rock der 80er?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/25-rock-anos-80.html"
+    ],
+    "questions": 20,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "371",
+    "originalTitle": "Welcher Rocksong passt zu Deiner Persönlichkeit?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/26-rocksong-personalidade.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "345",
+    "originalTitle": "Erkennt Ihr diese rockigen Musikvideos?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/28-musikvideos-um-bild.html"
+    ],
+    "questions": 16,
+    "images": 16,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "323",
+    "originalTitle": "Kennt Ihr die Haustiere der Rockstars?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/29-haustiere-rockstars.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "315",
+    "originalTitle": "Wer war's - Kennt Ihr die Rockstarstories?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/30-stories-rockstars.html"
+    ],
+    "questions": 15,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "306",
+    "originalTitle": "Wer schreibt den passenden Song zu Deinem Leben?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/31-song-da-vida.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "298",
+    "originalTitle": "Welcher Rocker ist Dein bester Kumpel?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/32-rockstar-melhor-amigo.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "290",
+    "originalTitle": "Wer hat's gesagt?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/33-quem-disse-rockstar.html"
+    ],
+    "questions": 15,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "282",
+    "originalTitle": "Wie gut kennt Ihr die Spitznamen der Rocker?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/34-apelidos-rockstars.html"
+    ],
+    "questions": 15,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "278",
+    "originalTitle": "Welche Position nehmt Ihr in einer Band ein?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/35-posicao-na-banda.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "226",
+    "originalTitle": "Welches Rock-Genre gleicht deinem Charakter?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/38-rock-genero.html"
+    ],
+    "questions": 10,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "208",
+    "originalTitle": "Wie gut kennt Ihr Songtexte?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/39-songtexte.html"
+    ],
+    "questions": 18,
+    "images": 2,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "141",
+    "originalTitle": "Welcher Rockstar steckt in Dir?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/40-rockstar-em-voce.html"
+    ],
+    "questions": 8,
+    "images": 7,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "807",
+    "originalTitle": "Welcher Hund gehört zu welchem Rockstar?",
+    "sources": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/52-cachorros-rockstars.html"
+    ],
+    "questions": 10,
+    "images": 10,
+    "existing": null,
+    "action": "C: implementar a partir da fonte recuperada"
+  },
+  {
+    "sourceId": "755",
+    "originalTitle": "Dieser Rockstar wäre Euer perfekter Quarantäne-Partner!",
+    "sources": [
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
+    "questions": 10,
+    "images": 0,
+    "existing": "dp-09.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "725",
+    "originalTitle": "Wie hart seid Ihr wirklich?",
+    "sources": [
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
+    "questions": 20,
+    "images": 0,
+    "existing": "dp-10.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  },
+  {
+    "sourceId": "719",
+    "originalTitle": "Quiz: Rock Or Not?",
+    "sources": [
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
+    "questions": 20,
+    "images": 0,
+    "existing": "dp-11.json",
+    "action": "B: completar fidelidade/elementos ausentes, preservar perguntas e assets corretos"
+  }
+]

@@ -1,0 +1,541 @@
+{
+  "id": "dp-24",
+  "version": 1,
+  "title": "Quiz das turnês",
+  "family": "Conhecimento",
+  "type": "historia",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "cq32q",
+      "prompt": "Qual banda foi a primeira a fazer shows nos sete continentes em um único ano?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "5gvre",
+          "label": "The Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "2q3vu",
+          "label": "AC/DC",
+          "correct": false
+        },
+        {
+          "id": "jdkny",
+          "label": "Metallica",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/32232f9af6e3a86c.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://images.radiobob.de/2023/06/welt.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Ninguém menos que Metallica detém o recorde! Com um show na Antártida em 8 de dezembro de 2013, James Hetfield e companhia conseguiram estabelecer essa marca."
+    },
+    {
+      "id": "nuhqs",
+      "prompt": "Quem faturou mais em uma única turnê?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "m1f90",
+          "label": "U2",
+          "correct": false
+        },
+        {
+          "id": "3uisw",
+          "label": "Elton John",
+          "correct": true
+        },
+        {
+          "id": "migpv",
+          "label": "Bob Dylan",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7be6b7701c155df3.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://images.radiobob.de/2023/06/geld.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "A “Farewell Yellow Brick Tour”, de Elton John, arrecadou 817,9 milhões de dólares com 278 shows até o início de 2023. Segundo o Billboard Boxscore, ela se tornou a turnê mais bem-sucedida de todos os tempos. Naquele momento, Elton John estava em primeiro lugar, à frente de Ed Sheeran, com 776,4 milhões de dólares, e U2, com 736,4 milhões."
+    },
+    {
+      "id": "mzyu9",
+      "prompt": "Quando Van Halen se apresentava, fazia um pedido muito curioso aos organizadores. Qual?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "pt9ie",
+          "label": "Todos os M&M’s marrons precisavam ser retirados dos pacotes",
+          "correct": true
+        },
+        {
+          "id": "r178k",
+          "label": "Precisava haver uma foto de Elvis Presley nos bastidores",
+          "correct": false
+        },
+        {
+          "id": "gg13x",
+          "label": "Meia hora antes da chegada da banda, uísque com Coca-Cola precisava estar misturado na proporção exata de 1 para 3",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4be8a85f98305a33.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://images.radiobob.de/2023/06/wunschzettel.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "A resposta é: separar os M&M’s! O pedido tinha um motivo sério: se o organizador o cumprisse, ou ao menos discutisse o assunto, Van Halen poderia presumir que o rider da turnê havia sido lido. Isso era especialmente importante para a segurança, porque a banda tinha uma estrutura de palco enorme em comparação com outros grupos da época, e um palco já havia cedido sob ela. Esses detalhes precisavam ser tratados antes; os M&M’s serviam para verificar isso."
+    },
+    {
+      "id": "fublr",
+      "prompt": "Os Rolling Stones também detêm um recorde com a “Voodoo Lounge Tour”!",
+      "type": "historia",
+      "options": [
+        {
+          "id": "z3os8",
+          "label": "Os ingressos com maior preço médio",
+          "correct": false
+        },
+        {
+          "id": "ttthv",
+          "label": "O maior número de espectadores de shows em um ano",
+          "correct": true
+        },
+        {
+          "id": "xdenm",
+          "label": "O maior palco móvel do mundo",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/593ecf29f44b7bfd.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://images.radiobob.de/2023/06/stones_flugzeug.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "O maior número de espectadores! Mick Jagger, Keith Richards e seus colegas reuniram números impressionantes em um ano: em 12 meses, mais de 5,7 milhões de pessoas assistiram a 122 shows!"
+    },
+    {
+      "id": "ik9gj",
+      "prompt": "Ao encontrar um cartaz escrito “Die Roten Rosen”, vale a pena parar. Quem provavelmente está por trás desse nome?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "h0c1d",
+          "label": "Die Ärzte",
+          "correct": false
+        },
+        {
+          "id": "kxrzt",
+          "label": "Die Broilers",
+          "correct": false
+        },
+        {
+          "id": "b1smd",
+          "label": "Die Toten Hosen",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7a56c919d0f8a420.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://images.radiobob.de/2023/06/rosen.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Provavelmente não foi tão difícil! É o pseudônimo do Die Toten Hosen, que já fez shows secretos com esse nome. Outra curiosidade: foi assim que a banda conquistou seu primeiro sucesso nas paradas, com um disco de covers que misturava punk alemão e schlager e chegou ao 21º lugar nas paradas locais."
+    },
+    {
+      "id": "j7b7e",
+      "prompt": "Os Rolling Stones são uma das bandas de rock há mais tempo em atividade e continuam na estrada. Quando fizeram seu primeiro show?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "n0g1s",
+          "label": "12 de julho de 1962",
+          "correct": true
+        },
+        {
+          "id": "g9bwh",
+          "label": "16 de agosto de 1977",
+          "correct": false
+        },
+        {
+          "id": "cv2w5",
+          "label": "19 de fevereiro de 1957",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/d424d79644cda53b.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://images.radiobob.de/2023/06/stones.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Isso mesmo: Keith Richards e seus colegas estão na estrada há mais de 60 anos! Já 19 de fevereiro de 1957 é o aniversário de Johann Hölzel, mais conhecido como Falco, e 16 de agosto de 1977 é a data da morte de Elvis Presley."
+    },
+    {
+      "id": "2keu3",
+      "prompt": "Rod Stewart entrou no Guinness com o maior show gratuito de todos os tempos. Quantos espectadores compareceram?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "iuibx",
+          "label": "498.000",
+          "correct": false
+        },
+        {
+          "id": "3pf5r",
+          "label": "1.300.000",
+          "correct": false
+        },
+        {
+          "id": "89pzb",
+          "label": "4.200.000",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/1d8b1b7a76ecb8de.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://images.radiobob.de/2023/06/copacabana.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Oficialmente, com mais de 4,2 milhões de pessoas na Copacabana, ele é considerado o maior show de todos os tempos. Depois, surgiram dúvidas sobre quantos espectadores foram à praia do Rio por Rod Stewart e quantos estavam ali pelos fogos do réveillon."
+    },
+    {
+      "id": "1uht1",
+      "prompt": "Todo começo é difícil. No lugar de hotéis e comida de primeira, muitos roqueiros começam com uma van velha e enferrujada, sem nem ter o que comer direito. O que Guns N’ Roses roubou para não passar fome na primeira turnê?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "tz3al",
+          "label": "Restos de comida nas bandejas do McDonald’s",
+          "correct": false
+        },
+        {
+          "id": "fsc4o",
+          "label": "Cebolas dos campos à beira da estrada",
+          "correct": true
+        },
+        {
+          "id": "p4ebl",
+          "label": "A comida das bandas que tocavam antes deles",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/2b805652d64a21c2.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://images.radiobob.de/2023/06/hungry.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "A van da banda quebrou a caminho dos primeiros shows em Seattle. Eles precisaram fazer as mil milhas restantes de carona e se alimentaram de cebolas cruas à beira da estrada. A experiência os uniu ainda mais: “Naquele momento, simplesmente soubemos que éramos uma banda. Estávamos prontos para agitar Los Angeles”, recorda Duff McKagan. Para Slash, olhando para trás, aquela viagem colocou em movimento tudo que viria depois."
+    },
+    {
+      "id": "e4in2",
+      "prompt": "Uma música acompanha o Iron Maiden nas turnês há muito tempo. Ela toca ao fim da troca de palco, depois da banda de abertura. Qual?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "s5k1d",
+          "label": "„Hot Nurse“ – Aeroplane",
+          "correct": false
+        },
+        {
+          "id": "s6390",
+          "label": "„Be Patient“ – Submarines",
+          "correct": false
+        },
+        {
+          "id": "4sl1w",
+          "label": "„Doctor, Doctor“- UFO",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/edc198bde2b0bec0.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://images.radiobob.de/2023/06/scheinwerfer.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Quando a banda de abertura termina, toca “Doctor, Doctor”, do UFO, grupo do vocalista Phil Mogg. Michael Schenker, então integrante do UFO, escreveu a música com Mogg."
+    },
+    {
+      "id": "7tnox",
+      "prompt": "Na “Book of Souls Tour”, em 2016, o avião do Iron Maiden, o Boeing 747 “Ed Force One”, chamou a atenção do mundo. Por quê?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "sgqkl",
+          "label": "Uma tempestade colocou o avião em grandes dificuldades e ele quase caiu!",
+          "correct": false
+        },
+        {
+          "id": "4wmwl",
+          "label": "Ao pousar no aeroporto de Stuttgart, o enorme avião da banda era muito maior que os aviões oficiais de Angela Merkel e do então presidente francês François Hollande.",
+          "correct": true
+        },
+        {
+          "id": "1avh3",
+          "label": "Ao entrar no espaço aéreo errado, o Iron Maiden recebeu uma escolta involuntária de caças.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/a12fc66d7b00bc9f.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://images.radiobob.de/2023/06/ed_force_one.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "As lendas britânicas do metal sempre chegaram ao destino e nunca precisaram fugir de caças. Quando seu enorme Boeing 747-400 pousou em Zurique em 1º de junho de 2016, viralizou uma foto com dois outros aviões “minúsculos” diante dele. Eram os aviões oficiais da então chanceler alemã Angela Merkel e do então governante francês François Hollande, que viajavam para a inauguração do túnel de base de São Gotardo. Na comparação de tamanho, Bruce Dickinson e seus companheiros ganharam claramente: Up the Irons!"
+    },
+    {
+      "id": "j0xwf",
+      "prompt": "Sempre há alguma perda pelo caminho. O que Liam Gallagher perdeu durante uma das últimas turnês do Oasis, em 2002?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "t27pl",
+          "label": "Alguns dentes, depois de uma briga em Munique.",
+          "correct": true
+        },
+        {
+          "id": "g357y",
+          "label": "Seu relógio Rolex, que ele jogou na cabeça do irmão durante uma discussão.",
+          "correct": false
+        },
+        {
+          "id": "pkiza",
+          "label": "Uma de suas guitarras favoritas, roubada da bagagem por um fã radical do Blur.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4cb6309cb28bfbca.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://images.radiobob.de/2023/06/quiz_zaehne.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Dois dentes incisivos não voltaram com ele para o Reino Unido depois de uma confusão no Münchner Hof, em Munique. Ele brigou com outros cinco homens e, naturalmente, com seu irmão Noel. A luta percorreu o hotel, do porão ao saguão, até que as equipes de dez viaturas conseguiram acalmar a situação. Os Gallagher e companhia acabaram na cadeia."
+    },
+    {
+      "id": "c3pcr",
+      "prompt": "Às vezes, animais também saem em turnê. O ZZ Top levou isso longe: quais animais acompanharam sua “Worldwide Texas Tour” nos anos 70?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "k6vr2",
+          "label": "Tatus e gambás presos às guitarras em gaiolas especiais.",
+          "correct": false
+        },
+        {
+          "id": "fppqx",
+          "label": "Uma matilha inteira de coiotes, que deveria correr pelo palco e pela plateia.",
+          "correct": false
+        },
+        {
+          "id": "e3k5d",
+          "label": "Um bisão adulto, um touro Texas Longhorn, abutres e cascavéis.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/09fbc1ad438b35ec.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://images.radiobob.de/2023/06/zz_top.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Billy Gibbons, Dusty Hill e Frank Beard queriam representar seu Texas natal e decidiram levar bisão, touro e cascavéis! Além do enorme trabalho, o trio viveu uma experiência especial. Gibbons contou: “Aprendemos que é possível retirar o veneno de uma cascavel, mas ele se forma novamente em poucos dias.”"
+    },
+    {
+      "id": "nnz42",
+      "prompt": "Na turnê mundial do Black Sabbath, em 1978, Ozzy Osbourne foi procurado pela polícia, anunciado no rádio e na televisão, e a banda não pôde tocar. O que aconteceu?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "fug0t",
+          "label": "Ele deveria ser preso por atentado ao pudor, depois de urinar em uma estátua famosa.",
+          "correct": false
+        },
+        {
+          "id": "7d7be",
+          "label": "Ele simplesmente desapareceu e ninguém sabia onde estava. Passou mais de um dia sem dar sinal de vida.",
+          "correct": true
+        },
+        {
+          "id": "06ekz",
+          "label": "Fundamentalistas cristãos pediram protestos violentos contra o satanista, e ele precisou de proteção policial.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/571586b3b07ec19a.jpg",
+        "alt": "Imagem da pergunta 13",
+        "source": "https://images.radiobob.de/2023/06/quiz_polizei.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Simples como Ozzy: depois de beber rapidamente uma garrafa de álcool, o Príncipe das Trevas dormiu por mais de 24 horas. Os colegas só encontraram sua bagagem intocada no quarto e avisaram a polícia e a televisão. Depois do show de Van Halen, precisaram pedir desculpas e cancelar o show de Atlanta. Parecia que a cidade inteira procurava o rockstar desaparecido. Ele estava perto: entrou no quarto errado do hotel e ninguém o encontrou. Segundo os relatos, dormiu um dia inteiro. Quando acordou e ligou para os colegas, achava que só havia dormido bem e perguntou quando sairiam para o local do show."
+    },
+    {
+      "id": "2z2t7",
+      "prompt": "No início dos anos 90, Billy Idol foi retirado de um lugar por soldados. Por quê?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "saxw1",
+          "label": "Um ditador de um país vizinho queria um show particular.",
+          "correct": false
+        },
+        {
+          "id": "s5mf6",
+          "label": "Ele estava sendo procurado por um mandado de prisão internacional.",
+          "correct": false
+        },
+        {
+          "id": "g85e4",
+          "label": "Os funcionários do hotel queriam se livrar dele e não sabiam mais o que fazer.",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/6a97689f3722c5b7.jpg",
+        "alt": "Imagem da pergunta 14",
+        "source": "https://images.radiobob.de/2023/06/quiz_soldat.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "O roqueiro de cabelo descolorido foi retirado à força do hotel. Em três semanas de férias e festas, causou mais de 100 mil dólares em danos no quarto e se recusou a ir embora. Idol acabou sedado e foi carregado para fora em uma maca."
+    },
+    {
+      "id": "exj8h",
+      "prompt": "Logo no início da carreira, The Who perdeu o direito de se hospedar em hotéis Holiday Inn. Qual foi o motivo?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "2vxg0",
+          "label": "Eles já eram conhecidos, mas nunca tinham dinheiro. Por isso, fugiam discretamente na noite anterior à saída.",
+          "correct": false
+        },
+        {
+          "id": "iaq7w",
+          "label": "Ao comemorar seu aniversário em um Holiday Inn em Michigan, Keith Moon dirigiu um Rolls-Royce para dentro da piscina do hotel.",
+          "correct": true
+        },
+        {
+          "id": "xftrz",
+          "label": "Insatisfeitos com uma hospedagem, tiraram todos os móveis dos quartos e atearam fogo neles no pátio do hotel.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/cc6cc4a957d4e909.jpg",
+        "alt": "Imagem da pergunta 15",
+        "source": "https://images.radiobob.de/2023/06/quiz_hotel-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "Keith Moon não ganhou o apelido “The Loon” por acaso. De vez em quando, o baterista do The Who perdia completamente o controle e podia ter a ideia de afundar um carro de luxo. Como era de esperar, os donos do hotel não gostaram."
+    },
+    {
+      "id": "k58wu",
+      "prompt": "As turnês das grandes bandas cresceram muito em relação ao passado. Quantos caminhões teriam acompanhado os Rolling Stones na “No Filter Tour”, em 2017?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "b67kw",
+          "label": "35",
+          "correct": false
+        },
+        {
+          "id": "cr7hc",
+          "label": "140",
+          "correct": false
+        },
+        {
+          "id": "4yzzg",
+          "label": "250",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7a55da5655a35ffd.jpg",
+        "alt": "Imagem da pergunta 16",
+        "source": "https://images.radiobob.de/2023/06/quiz_stones.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "explanation": "É difícil acreditar: 250 caminhões transportavam tudo que precisava acompanhar a banda."
+    }
+  ],
+  "results": [
+    {
+      "id": "9bt0y",
+      "title": "",
+      "description": "Você ainda não é um mestre das curiosidades. Mas tente novamente e experimente os outros quizzes: logo conhecerá os fatos divertidos da história do rock!",
+      "min": 0,
+      "max": 6
+    },
+    {
+      "id": "1mhxp",
+      "title": "",
+      "description": "Nada mal! Parece que você leu bastante sobre a história do rock e também guardou as informações. Se repetir o quiz e explorar nossa página, conhecerá ainda mais histórias para contar na ocasião certa!",
+      "min": 7,
+      "max": 11
+    },
+    {
+      "id": "68r9t",
+      "title": "",
+      "description": "Quase perfeito! Parece que você conhece bem as pequenas e grandes histórias dos nossos rockstars. Faltam um ou dois detalhes, mas talvez já os tenha guardado depois desta rodada!",
+      "min": 12,
+      "max": 14
+    },
+    {
+      "id": "6bola",
+      "title": "",
+      "description": "Temos uma verdadeira enciclopédia do rock diante da tela! Continue acompanhando essas pequenas histórias e talvez descubra mais uma ou duas!",
+      "min": 15,
+      "max": 16
+    }
+  ],
+  "sourceId": "1029",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Tour-Quiz"
+  },
+  "sourceFiles": [
+    "45-tour-quiz.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "on",
+    "show_next_button": "on",
+    "end_answers": "off"
+  },
+  "versionHash": "310e0dcd57423744"
+}

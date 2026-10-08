@@ -1,0 +1,665 @@
+{
+  "id": "dp-38",
+  "version": 1,
+  "title": "Quem escreve a música que combina com sua vida?",
+  "family": "Perfil",
+  "type": "nao-identificado",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "n1aoh",
+      "prompt": "O que é mais importante em uma música?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "usqmg",
+          "label": "A mensagem. As pessoas devem ser alertadas sobre os problemas do mundo.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 3,
+            "w2qu1": 5,
+            "oz4b9": 0,
+            "c7ipe": 4,
+            "51gg8": 2
+          }
+        },
+        {
+          "id": "h4omi",
+          "label": "O volume. Rock precisa ser servido alto!",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 0,
+            "w2qu1": 2,
+            "oz4b9": 4,
+            "c7ipe": 1,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "yz40n",
+          "label": "A diversão. Sem boa música, também não há boa festa.",
+          "weights": {
+            "2x9p7": 3,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 5,
+            "c7ipe": 2,
+            "51gg8": 4
+          }
+        },
+        {
+          "id": "qjjp4",
+          "label": "A composição. Todos os instrumentos e a voz juntos formam uma obra de arte única.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 4,
+            "w2qu1": 3,
+            "oz4b9": 0,
+            "c7ipe": 2,
+            "51gg8": 5
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "5aqsg",
+      "prompt": "Se você fosse uma estrela do rock, como começariam seus shows?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "eah1c",
+          "label": "Com certeza atrasados, porque ainda estou me divertindo com minhas groupies nos bastidores.",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 2,
+            "w2qu1": 0,
+            "oz4b9": 4,
+            "c7ipe": 1,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "0qv81",
+          "label": "Tudo escuro, depois ouvem apenas a mim e minha guitarra. Um momento de arrepiar.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 5,
+            "w2qu1": 3,
+            "oz4b9": 0,
+            "c7ipe": 2,
+            "51gg8": 4
+          }
+        },
+        {
+          "id": "px81g",
+          "label": "Começaria logo com um estrondo, para a festa começar imediatamente.",
+          "weights": {
+            "2x9p7": 4,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 5,
+            "c7ipe": 2,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "ytzhd",
+          "label": "Uma introdução carregada de significado, criando tensão, e depois a coisa pega fogo.",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 2,
+            "w2qu1": 4,
+            "oz4b9": 1,
+            "c7ipe": 3,
+            "51gg8": 5
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "9vjer",
+      "prompt": "Qual música descreve melhor seu dia?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "3nwe2",
+          "label": "Highway to Hell",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 0,
+            "w2qu1": 0,
+            "oz4b9": 0,
+            "c7ipe": 0,
+            "51gg8": 0
+          }
+        },
+        {
+          "id": "sdohv",
+          "label": "Where did you sleep last Night",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 5,
+            "w2qu1": 0,
+            "oz4b9": 0,
+            "c7ipe": 0,
+            "51gg8": 0
+          }
+        },
+        {
+          "id": "3l9ag",
+          "label": "Tragedy + Time",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 0,
+            "w2qu1": 5,
+            "oz4b9": 0,
+            "c7ipe": 0,
+            "51gg8": 0
+          }
+        },
+        {
+          "id": "osmgb",
+          "label": "Party Like Tomorrow is the End of the World",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 0,
+            "w2qu1": 0,
+            "oz4b9": 5,
+            "c7ipe": 0,
+            "51gg8": 0
+          }
+        },
+        {
+          "id": "mcd0g",
+          "label": "Tougher than the Rest",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 0,
+            "w2qu1": 0,
+            "oz4b9": 0,
+            "c7ipe": 5,
+            "51gg8": 0
+          }
+        },
+        {
+          "id": "7cbm2",
+          "label": "No more Mr. Nice Guy",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 0,
+            "w2qu1": 0,
+            "oz4b9": 0,
+            "c7ipe": 0,
+            "51gg8": 5
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "8ajd1",
+      "prompt": "Sua música tocaria no rádio?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "3ugkd",
+          "label": "Na maioria dos países, com certeza seria proibida pela linguagem pesada. Escandaloso!",
+          "weights": {
+            "2x9p7": 4,
+            "88iss": 2,
+            "w2qu1": 1,
+            "oz4b9": 5,
+            "c7ipe": 0,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "lkx1c",
+          "label": "Claro, toca sem parar. Será um sucesso número um.",
+          "weights": {
+            "2x9p7": 2,
+            "88iss": 3,
+            "w2qu1": 0,
+            "oz4b9": 1,
+            "c7ipe": 5,
+            "51gg8": 4
+          }
+        },
+        {
+          "id": "ygp2u",
+          "label": "Sim, mas só na versão curta. Para ouvir os nove minutos completos, é preciso comprar o álbum.",
+          "weights": {
+            "2x9p7": 4,
+            "88iss": 0,
+            "w2qu1": 2,
+            "oz4b9": 1,
+            "c7ipe": 3,
+            "51gg8": 5
+          }
+        },
+        {
+          "id": "9g07u",
+          "label": "A mensagem crítica não agrada a todos, então provavelmente faria mais sucesso ao vivo.",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 3,
+            "w2qu1": 5,
+            "oz4b9": 1,
+            "c7ipe": 4,
+            "51gg8": 2
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "ibfnw",
+      "prompt": "Qual palavra descreve melhor seu estado de espírito?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "cx3q0",
+          "label": "Teatral",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 1,
+            "w2qu1": 2,
+            "oz4b9": 4,
+            "c7ipe": 3,
+            "51gg8": 5
+          }
+        },
+        {
+          "id": "296jt",
+          "label": "Cheio de alegria de viver",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 0,
+            "w2qu1": 2,
+            "oz4b9": 4,
+            "c7ipe": 3,
+            "51gg8": 1
+          }
+        },
+        {
+          "id": "2ihk6",
+          "label": "Pensativo",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 5,
+            "w2qu1": 4,
+            "oz4b9": 0,
+            "c7ipe": 3,
+            "51gg8": 2
+          }
+        },
+        {
+          "id": "6j79n",
+          "label": "Disposto a aventuras",
+          "weights": {
+            "2x9p7": 2,
+            "88iss": 1,
+            "w2qu1": 5,
+            "oz4b9": 3,
+            "c7ipe": 4,
+            "51gg8": 0
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "od7w6",
+      "prompt": "Qual programa de TV você assiste quando está em um quarto de hotel?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "8w9im",
+          "label": "Um debate político. Afinal, é preciso saber o que acontece no mundo.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 2,
+            "w2qu1": 5,
+            "oz4b9": 0,
+            "c7ipe": 4,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "wto4c",
+          "label": "Tentaria invadir os canais codificados.",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 2,
+            "w2qu1": 1,
+            "oz4b9": 4,
+            "c7ipe": 0,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "un2r7",
+          "label": "Em algum lugar deve estar passando uma série de fantasia. Drama, diversão e suspense: exatamente o que gosto.",
+          "weights": {
+            "2x9p7": 3,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 4,
+            "c7ipe": 2,
+            "51gg8": 5
+          }
+        },
+        {
+          "id": "3kzto",
+          "label": "Televisão me entedia. Só passa lixo mesmo.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 5,
+            "w2qu1": 4,
+            "oz4b9": 0,
+            "c7ipe": 3,
+            "51gg8": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "17u0x",
+      "prompt": "Você prefere ouvir música…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "8eijm",
+          "label": "… nos dias em que você já está de bom humor. Com a música, a festa está sempre com você.",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 4,
+            "c7ipe": 2,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "o19vt",
+          "label": "… quando você está muito mal. Assim, pode se perder ainda mais na melancolia.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 5,
+            "w2qu1": 3,
+            "oz4b9": 0,
+            "c7ipe": 2,
+            "51gg8": 4
+          }
+        },
+        {
+          "id": "6umtw",
+          "label": "… no carro, baixando as janelas e cantando alto junto.",
+          "weights": {
+            "2x9p7": 4,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 3,
+            "c7ipe": 5,
+            "51gg8": 2
+          }
+        },
+        {
+          "id": "pdnde",
+          "label": "… sempre! Preciso de música 24 horas por dia, sete dias por semana.",
+          "weights": {
+            "2x9p7": 3,
+            "88iss": 5,
+            "w2qu1": 1,
+            "oz4b9": 2,
+            "c7ipe": 0,
+            "51gg8": 4
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "varc3",
+      "prompt": "Qual tema não poderia faltar de jeito nenhum na sua música?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "cw398",
+          "label": "Sexo, drogas e rock’n’roll",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 2,
+            "w2qu1": 0,
+            "oz4b9": 4,
+            "c7ipe": 1,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "6wnjn",
+          "label": "Ela deveria abordar algo político.",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 3,
+            "w2qu1": 5,
+            "oz4b9": 1,
+            "c7ipe": 4,
+            "51gg8": 2
+          }
+        },
+        {
+          "id": "vblcr",
+          "label": "Com certeza precisa falar de liberdade de algum jeito.",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 3,
+            "w2qu1": 1,
+            "oz4b9": 2,
+            "c7ipe": 5,
+            "51gg8": 4
+          }
+        },
+        {
+          "id": "qbi0n",
+          "label": "O melhor seria levar as pessoas a pensar sobre si mesmas.",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 5,
+            "w2qu1": 4,
+            "oz4b9": 1,
+            "c7ipe": 3,
+            "51gg8": 2
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "2acu2",
+      "prompt": "Como seria sua viagem perfeita?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "9yovc",
+          "label": "De moto pelos Estados Unidos, para espairecer.",
+          "weights": {
+            "2x9p7": 3,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 2,
+            "c7ipe": 5,
+            "51gg8": 4
+          }
+        },
+        {
+          "id": "c7k80",
+          "label": "Levar os amigos e ir de festival em festival. Com certeza, festa e bom humor.",
+          "weights": {
+            "2x9p7": 4,
+            "88iss": 0,
+            "w2qu1": 1,
+            "oz4b9": 5,
+            "c7ipe": 2,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "ooxzr",
+          "label": "Um pouco de cultura, talvez uma viagem a uma cidade. Afinal, também precisamos aprender e conhecer o mundo.",
+          "weights": {
+            "2x9p7": 0,
+            "88iss": 2,
+            "w2qu1": 4,
+            "oz4b9": 1,
+            "c7ipe": 3,
+            "51gg8": 5
+          }
+        },
+        {
+          "id": "2f6nr",
+          "label": "Para que viajar? Não preciso conhecer nada novo. Em casa me sinto melhor.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 5,
+            "w2qu1": 2,
+            "oz4b9": 0,
+            "c7ipe": 3,
+            "51gg8": 4
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "l2fc0",
+      "prompt": "Para que você usaria sua fama de rockstar?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "xtcva",
+          "label": "Para entrar em todas as festas e conquistar mulheres. Para que mais?",
+          "weights": {
+            "2x9p7": 5,
+            "88iss": 2,
+            "w2qu1": 0,
+            "oz4b9": 4,
+            "c7ipe": 1,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "ro6y0",
+          "label": "Definitivamente para tornar o mundo um lugar melhor!",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 2,
+            "w2qu1": 5,
+            "oz4b9": 0,
+            "c7ipe": 4,
+            "51gg8": 3
+          }
+        },
+        {
+          "id": "6abg8",
+          "label": "Quero transmitir o amor pela música também às próximas gerações.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 4,
+            "w2qu1": 3,
+            "oz4b9": 0,
+            "c7ipe": 2,
+            "51gg8": 5
+          }
+        },
+        {
+          "id": "j4fe0",
+          "label": "Toda essa fama irrita! Na verdade, só a música deveria importar.",
+          "weights": {
+            "2x9p7": 1,
+            "88iss": 5,
+            "w2qu1": 3,
+            "oz4b9": 0,
+            "c7ipe": 2,
+            "51gg8": 4
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "2x9p7",
+      "title": "AC/DC",
+      "description": "Assim como seu estilo de vida, sua música deveria seguir o lema sexo, drogas e rock’n’roll. Você vive o rock! Alto e direto, sempre com força total. Por isso, os caras do AC/DC seriam a formação ideal para seu hino pessoal. Enquanto Brian Johnson, Axl Rose ou quem estiver por lá depois canta a letra sugestiva sobre sua vida, Angus dispara seu riff de guitarra e a multidão vai à loucura."
+    },
+    {
+      "id": "88iss",
+      "title": "Nirvana",
+      "description": "Sempre um pouco pensativo e voltado para dentro, você não gosta de muita agitação ao redor. Por isso, uma letra de Kurt Cobain expressaria bem seu lado sensível. O Nirvana dedicaria uma música a você que não decepcionaria nem você nem seu estado de espírito melancólico."
+    },
+    {
+      "id": "w2qu1",
+      "title": "Rise Against",
+      "description": "Você gosta de volume, mas não ser um roqueiro suave não significa que nada importa. Assim como os caras do Rise Against, que se empenham especialmente pelos direitos humanos e pela proteção animal, você também é muito engajado e defende sua opinião em assuntos políticos. Por isso, uma música crítica do Rise Against seria a escolha certa para você. Talvez sua mensagem leve ainda mais pessoas a se interessarem por esses temas."
+    },
+    {
+      "id": "oz4b9",
+      "title": "Steel Panther",
+      "description": "Na sua opinião, um dia nunca pode ser entediante. Você sempre encontra uma maneira de se divertir. Mesmo quando passa do ponto e faz uma piada pesada a mais, na verdade está piscando o olho. Assim como os reis da festa do Steel Panther tiram sarro do glam rock com sua música, você atravessa a vida com autoironia. Por isso, justamente o Steel Panther deveria escrever um sucesso de festa para você, chocando e brincando com as pessoas com uma letra não muito apropriada para menores."
+    },
+    {
+      "id": "c7ipe",
+      "title": "Bruce Springsteen",
+      "description": "Você é uma pessoa comum que não reclama muito dos obstáculos cotidianos. Ainda assim, deseja um mundo mais justo. Por isso, Bruce Springsteen deveria escrever para você um sucesso de crítica social sobre a vida e os problemas com que toda pessoa comum precisa lidar. Claro que a sensação de liberdade e alegria de viver também não pode faltar. A música não deve ser deprimente, mas cheia de vontade de agir!"
+    },
+    {
+      "id": "51gg8",
+      "title": "Alice Cooper",
+      "description": "Às vezes você está no seu próprio mundo e deixa a imaginação correr. Ama o drama, e isso também deve aparecer na sua música. Melhor perguntar a Alice Cooper se ele pode montar uma música épica que leve você e todos os outros aos mundos fantásticos que você tantas vezes imagina. Claro que uma introdução carregada de significado e um bom solo de guitarra não podem faltar."
+    }
+  ],
+  "sourceId": "306",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wer schreibt den passenden Song zu Deinem Leben?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/31-song-da-vida.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "10e409326ff49058"
+}

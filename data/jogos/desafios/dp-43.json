@@ -1,0 +1,589 @@
+{
+  "id": "dp-43",
+  "version": 1,
+  "title": "Qual rockstar existe em você?",
+  "family": "Perfil",
+  "type": "nao-identificado",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "afyy6",
+      "prompt": "Qual instrumento você toca?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ptytd",
+          "label": "Guitarra",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 4,
+            "fwsgc": 4,
+            "jotdg": 4,
+            "3khov": 1,
+            "v9ph1": 0,
+            "wyaes": 7
+          }
+        },
+        {
+          "id": "0x6j2",
+          "label": "Baixo",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 0,
+            "fwsgc": 0,
+            "jotdg": 7,
+            "3khov": 0,
+            "v9ph1": 0,
+            "wyaes": 0
+          }
+        },
+        {
+          "id": "e7ulo",
+          "label": "Me deem o microfone!",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 7,
+            "fwsgc": 7,
+            "jotdg": 7,
+            "3khov": 0,
+            "v9ph1": 7,
+            "wyaes": 7
+          }
+        },
+        {
+          "id": "qliw2",
+          "label": "Por que só um?",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 6,
+            "fwsgc": 4,
+            "jotdg": 4,
+            "3khov": 7,
+            "v9ph1": 1,
+            "wyaes": 4
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "s8cc6",
+      "prompt": "O que você faz depois do show?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "5xleq",
+          "label": "Escrevo imediatamente o próximo sucesso mundial",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 6,
+            "fwsgc": 5,
+            "jotdg": 3,
+            "3khov": 2,
+            "v9ph1": 3,
+            "wyaes": 4
+          }
+        },
+        {
+          "id": "pmy4j",
+          "label": "Festa, festa, festa! Com groupies, álcool e drogas, claro!",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 4,
+            "fwsgc": 3,
+            "jotdg": 6,
+            "3khov": 2,
+            "v9ph1": 4,
+            "wyaes": 2
+          }
+        },
+        {
+          "id": "y5i7k",
+          "label": "Dou autógrafos e fico com os fãs",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 2,
+            "fwsgc": 7,
+            "jotdg": 5,
+            "3khov": 7,
+            "v9ph1": 5,
+            "wyaes": 6
+          }
+        },
+        {
+          "id": "p6fdp",
+          "label": "Primeiro fico sozinho. Preciso de tranquilidade",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 7,
+            "fwsgc": 3,
+            "jotdg": 1,
+            "3khov": 0,
+            "v9ph1": 4,
+            "wyaes": 3
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "7iyp2",
+      "prompt": "Por que quer ser uma estrela do rock?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "9hdg6",
+          "label": "Pela fama. Quero ser admirado!",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 5,
+            "fwsgc": 6,
+            "jotdg": 4,
+            "3khov": 2,
+            "v9ph1": 6,
+            "wyaes": 2
+          }
+        },
+        {
+          "id": "61tjz",
+          "label": "Pelas groupies. Preciso de sexo!",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 3,
+            "fwsgc": 1,
+            "jotdg": 6,
+            "3khov": 0,
+            "v9ph1": 3,
+            "wyaes": 2
+          }
+        },
+        {
+          "id": "x0u9y",
+          "label": "Pela música. Quero me conectar com o público!",
+          "weights": {
+            "e89vv": 4,
+            "e4sd3": 7,
+            "fwsgc": 6,
+            "jotdg": 5,
+            "3khov": 6,
+            "v9ph1": 4,
+            "wyaes": 6
+          }
+        },
+        {
+          "id": "kr1rs",
+          "label": "Por uma boa causa. Preciso de um sentido maior na vida!",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 4,
+            "fwsgc": 7,
+            "jotdg": 3,
+            "3khov": 3,
+            "v9ph1": 4,
+            "wyaes": 7
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "276bz",
+      "prompt": "Descreva-se em uma palavra!",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "hgn06",
+          "label": "Nasci para o palco",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 7,
+            "fwsgc": 6,
+            "jotdg": 6,
+            "3khov": 7,
+            "v9ph1": 5,
+            "wyaes": 5
+          }
+        },
+        {
+          "id": "gk3un",
+          "label": "Transformador do mundo",
+          "weights": {
+            "e89vv": 3,
+            "e4sd3": 4,
+            "fwsgc": 7,
+            "jotdg": 4,
+            "3khov": 7,
+            "v9ph1": 4,
+            "wyaes": 7
+          }
+        },
+        {
+          "id": "g1z5v",
+          "label": "Pioneiro",
+          "weights": {
+            "e89vv": 2,
+            "e4sd3": 6,
+            "fwsgc": 5,
+            "jotdg": 7,
+            "3khov": 5,
+            "v9ph1": 6,
+            "wyaes": 7
+          }
+        },
+        {
+          "id": "9ddpz",
+          "label": "Palhaço",
+          "weights": {
+            "e89vv": 2,
+            "e4sd3": 5,
+            "fwsgc": 2,
+            "jotdg": 6,
+            "3khov": 7,
+            "v9ph1": 6,
+            "wyaes": 2
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "wztzp",
+      "prompt": "Como é sua roupa de palco?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "69t4d",
+          "label": "Jeans skinny preto e uma camisa casual. Bem tranquilo",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 0,
+            "fwsgc": 6,
+            "jotdg": 4,
+            "3khov": 7,
+            "v9ph1": 0,
+            "wyaes": 4
+          }
+        },
+        {
+          "id": "fk0eg",
+          "label": "Preto! O importante é ser preto!",
+          "weights": {
+            "e89vv": 1,
+            "e4sd3": 1,
+            "fwsgc": 6,
+            "jotdg": 7,
+            "3khov": 5,
+            "v9ph1": 3,
+            "wyaes": 6
+          }
+        },
+        {
+          "id": "4riux",
+          "label": "Quanto mais extravagante, melhor! O palco precisa de drama e lápis de olho!",
+          "weights": {
+            "e89vv": 4,
+            "e4sd3": 7,
+            "fwsgc": 2,
+            "jotdg": 3,
+            "3khov": 0,
+            "v9ph1": 7,
+            "wyaes": 6
+          }
+        },
+        {
+          "id": "v5ph1",
+          "label": "Bandana, jeans rasgado e jaqueta de couro",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 0,
+            "fwsgc": 1,
+            "jotdg": 2,
+            "3khov": 0,
+            "v9ph1": 1,
+            "wyaes": 3
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "mtsnk",
+      "prompt": "Por qual crime você seria preso?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "mr2od",
+          "label": "Ativismo. Sou preso em uma manifestação",
+          "weights": {
+            "e89vv": 2,
+            "e4sd3": 2,
+            "fwsgc": 7,
+            "jotdg": 1,
+            "3khov": 6,
+            "v9ph1": 2,
+            "wyaes": 7
+          }
+        },
+        {
+          "id": "ygkie",
+          "label": "Briga, drogas, vandalismo, insulto. Escolha!",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 0,
+            "fwsgc": 1,
+            "jotdg": 6,
+            "3khov": 1,
+            "v9ph1": 2,
+            "wyaes": 4
+          }
+        },
+        {
+          "id": "cvf4l",
+          "label": "Atentado ao pudor. Nem todos gostam do meu show…",
+          "weights": {
+            "e89vv": 6,
+            "e4sd3": 5,
+            "fwsgc": 1,
+            "jotdg": 4,
+            "3khov": 1,
+            "v9ph1": 7,
+            "wyaes": 4
+          }
+        },
+        {
+          "id": "5obmp",
+          "label": "Alguma brincadeira. Sou o palhaço da turma!",
+          "weights": {
+            "e89vv": 5,
+            "e4sd3": 5,
+            "fwsgc": 2,
+            "jotdg": 5,
+            "3khov": 7,
+            "v9ph1": 4,
+            "wyaes": 1
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "t9erv",
+      "prompt": "Qual seria sua profissão se não fosse uma estrela do rock?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "1nhua",
+          "label": "Criminoso",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 1,
+            "fwsgc": 1,
+            "jotdg": 6,
+            "3khov": 3,
+            "v9ph1": 2,
+            "wyaes": 5
+          }
+        },
+        {
+          "id": "fbp9l",
+          "label": "Veterinário",
+          "weights": {
+            "e89vv": 4,
+            "e4sd3": 7,
+            "fwsgc": 6,
+            "jotdg": 2,
+            "3khov": 5,
+            "v9ph1": 3,
+            "wyaes": 7
+          }
+        },
+        {
+          "id": "8305m",
+          "label": "Agente de desenvolvimento humanitário",
+          "weights": {
+            "e89vv": 3,
+            "e4sd3": 6,
+            "fwsgc": 7,
+            "jotdg": 3,
+            "3khov": 3,
+            "v9ph1": 2,
+            "wyaes": 6
+          }
+        },
+        {
+          "id": "otqjb",
+          "label": "Dono de bar",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 1,
+            "fwsgc": 2,
+            "jotdg": 7,
+            "3khov": 5,
+            "v9ph1": 4,
+            "wyaes": 4
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "wle1i",
+      "prompt": "Seu humor diário tende a ser…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "t1o1m",
+          "label": "Sombrio",
+          "weights": {
+            "e89vv": 4,
+            "e4sd3": 5,
+            "fwsgc": 2,
+            "jotdg": 3,
+            "3khov": 2,
+            "v9ph1": 3,
+            "wyaes": 5
+          }
+        },
+        {
+          "id": "dqchg",
+          "label": "Eufórico",
+          "weights": {
+            "e89vv": 4,
+            "e4sd3": 6,
+            "fwsgc": 4,
+            "jotdg": 2,
+            "3khov": 7,
+            "v9ph1": 6,
+            "wyaes": 4
+          }
+        },
+        {
+          "id": "fohkb",
+          "label": "Agressivo",
+          "weights": {
+            "e89vv": 7,
+            "e4sd3": 1,
+            "fwsgc": 1,
+            "jotdg": 3,
+            "3khov": 1,
+            "v9ph1": 1,
+            "wyaes": 4
+          }
+        },
+        {
+          "id": "malzr",
+          "label": "Equilibrado",
+          "weights": {
+            "e89vv": 0,
+            "e4sd3": 1,
+            "fwsgc": 5,
+            "jotdg": 6,
+            "3khov": 6,
+            "v9ph1": 5,
+            "wyaes": 5
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "e89vv",
+      "title": "Axl Rose",
+      "description": "Sexo, drogas e rock’n’roll, em partes iguais! A festa é tão importante quanto a música. Você costuma abrir a boca um pouco além da conta, e não só no palco. Briga? Você começou! Groupies? Pode mandar! Você é a diva do rock, mas na hora necessária entrega tudo, com microfone na mão e voz cortante!",
+      "image": {
+        "src": "/assets/desafios/ce7467a70732ae61.jpg",
+        "alt": "Imagem do resultado Axl Rose",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/BOB_Axl-Rose_16-9.jpg"
+      }
+    },
+    {
+      "id": "e4sd3",
+      "title": "Freddie Mercury",
+      "description": "“Me deem um palco!” Esse é seu lema. Vive para o show e para o público. Musicalmente, ninguém engana você: sabe do que é capaz e explora sua criatividade até o limite. Com carisma e talento, tem os fãs aos seus pés. Mas, na verdade, é uma alma suave, uma pessoa tímida e sensível com um grande amor pelos animais.",
+      "image": {
+        "src": "/assets/desafios/a068a18fc6b1883a.jpg",
+        "alt": "Imagem do resultado Freddie Mercury",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/Unbenannt-3.jpg"
+      }
+    },
+    {
+      "id": "fwsgc",
+      "title": "Bono",
+      "description": "Você é quem quer melhorar o mundo entre os roqueiros! Música é sua paixão, mas fazer o bem é sua missão. É versátil, na música e nos negócios. Tem o coração no lugar certo, mas às vezes pensa demais. Entoa um hino depois do outro, com um pouco de grandiosidade para transmitir bem a mensagem. Se depender de você, o rock salva o mundo!",
+      "image": {
+        "src": "/assets/desafios/903742365334924e.jpg",
+        "alt": "Imagem do resultado Bono",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/bono.jpg"
+      }
+    },
+    {
+      "id": "jotdg",
+      "title": "Lemmy Kilmister",
+      "description": "Você não faz nada pela metade! Rock’n’roll puro e uísque com cola correm nas suas veias. Com a voz castigada, inclina-se tranquilamente sobre o baixo. Sem frescura, sem conversa, apenas rock sem concessões bem na cara. Mas não se leva tão a sério e, no fundo, é uma pessoa honestíssima, sempre presente para os amigos. Sexo e drogas são bem-vindos, mas o rock’n’roll vem primeiro!",
+      "image": {
+        "src": "/assets/desafios/71ec3b9cda86ce3a.jpg",
+        "alt": "Imagem do resultado Lemmy Kilmister",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/lemmy.jpg"
+      }
+    },
+    {
+      "id": "3khov",
+      "title": "Dave Grohl",
+      "description": "A pessoa mais legal do rock é você! Mas sem ser molenga, claro. Amigável e confiável, atravessa a vida de dedo do meio estendido e piscando o olho. É versátil: tudo que toca vira ouro. Todos querem se casar com você, não só pelo talento musical, mas também pelo humor e pelo charme. Quero ver fazer igual!",
+      "image": {
+        "src": "/assets/desafios/02e56456d9e4b4ba.jpg",
+        "alt": "Imagem do resultado Dave Grohl",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/Dave.jpg"
+      }
+    },
+    {
+      "id": "v9ph1",
+      "title": "Alice Cooper",
+      "description": "Drama, baby, drama! Você gosta de chocar, pois acha que rock não é para fracos. A música sempre vem com o espetáculo certo! Na vida, já viu de tudo e participou de muitas festas, mas hoje leva a vida particular com mais calma. Prefere guardar o artista para o palco, e ali o solta de verdade. Esse animal de palco precisa sair regularmente!",
+      "image": {
+        "src": "/assets/desafios/19c84dd38ea6c0ba.jpg",
+        "alt": "Imagem do resultado Alice Cooper",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/alice.jpg"
+      }
+    },
+    {
+      "id": "wyaes",
+      "title": "Joan Jett",
+      "description": "Glam rock, punk rock, hard rock: essa é sua vida! Você é pioneiro musical e exemplo para muitos. Afetuoso, estiloso e engraçado, mas também duríssimo quando necessário. Segue seu caminho musical com determinação e sucesso. Seu amor pelos animais é parte firme da vida, mas não gosta de revelar muito da vida particular. Ninguém engana você, e quem vier com bobagem leva uma na cabeça!",
+      "image": {
+        "src": "/assets/desafios/9b728f164a2b2026.jpg",
+        "alt": "Imagem do resultado Joan Jett",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/01/joan.jpg"
+      }
+    }
+  ],
+  "sourceId": "141",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welcher Rockstar steckt in Dir?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/40-rockstar-em-voce.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "f1b8ac09862cb904"
+}

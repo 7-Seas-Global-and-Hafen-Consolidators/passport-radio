@@ -1,0 +1,523 @@
+{
+  "id": "dp-28",
+  "version": 1,
+  "title": "Você reconhece estes roqueiros pelo cabelo?",
+  "family": "Visual",
+  "type": "cabelo",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "rpdrx",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "x5puh",
+          "label": "Jon Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "sf82j",
+          "label": "Steven Tyler",
+          "correct": true
+        },
+        {
+          "id": "5iglz",
+          "label": "Mick Jagger",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5741cbc90ee64e5b.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/steven.jpg"
+      }
+    },
+    {
+      "id": "dh40g",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "myp5t",
+          "label": "Ronnie James Dio",
+          "correct": true
+        },
+        {
+          "id": "ke8fl",
+          "label": "Klaus Meine",
+          "correct": false
+        },
+        {
+          "id": "ewiyc",
+          "label": "Paul Stanley",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/c41fd43d40df7db3.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/ronnie-james.jpg"
+      }
+    },
+    {
+      "id": "66ir8",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "hqpzw",
+          "label": "Campino",
+          "correct": false
+        },
+        {
+          "id": "secvp",
+          "label": "Rod Stewart",
+          "correct": true
+        },
+        {
+          "id": "oozqy",
+          "label": "David Bowie",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/130fa528e23ad337.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/rod.jpg"
+      }
+    },
+    {
+      "id": "gbxtz",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "wc87n",
+          "label": "Lenny Kravitz",
+          "correct": true
+        },
+        {
+          "id": "q099e",
+          "label": "Jimi Hendrix",
+          "correct": false
+        },
+        {
+          "id": "mvweu",
+          "label": "Slash",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/05c06e4630155ce9.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/lenny.jpg"
+      }
+    },
+    {
+      "id": "5na44",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "vj7vo",
+          "label": "Kid Rock",
+          "correct": false
+        },
+        {
+          "id": "ebzku",
+          "label": "Ozzy Osbourne",
+          "correct": true
+        },
+        {
+          "id": "1ux4q",
+          "label": "Brian May",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/499629f7c5c965b0.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/lemmy.jpg"
+      }
+    },
+    {
+      "id": "3j814",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "wlpi8",
+          "label": "Kurt Cobain",
+          "correct": true
+        },
+        {
+          "id": "j49kj",
+          "label": "Nikki Sixx",
+          "correct": false
+        },
+        {
+          "id": "t4vid",
+          "label": "Bryan Adams",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/2611e983f2b29982.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/kurt.jpg"
+      }
+    },
+    {
+      "id": "5mv11",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "2avav",
+          "label": "Jimmy Page",
+          "correct": false
+        },
+        {
+          "id": "7dz01",
+          "label": "Dee Snider",
+          "correct": false
+        },
+        {
+          "id": "mi3ou",
+          "label": "Jon Bon Jovi",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/f928fcfe4795a85d.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/Jon-Bon.jpg"
+      }
+    },
+    {
+      "id": "dw7kn",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "3cjr0",
+          "label": "Jimi Hendrix",
+          "correct": true
+        },
+        {
+          "id": "dup1d",
+          "label": "Keith Moon",
+          "correct": false
+        },
+        {
+          "id": "3vy79",
+          "label": "Joe Perry",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/da28fc30a2b4e9ed.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/jimmy.jpg"
+      }
+    },
+    {
+      "id": "9ixab",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "eofyx",
+          "label": "Ace Frehley",
+          "correct": false
+        },
+        {
+          "id": "3381j",
+          "label": "Gene Simmons",
+          "correct": true
+        },
+        {
+          "id": "yifof",
+          "label": "Ronnie James Dio",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/8d136ef7fe2ae3c6.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/gene.jpg"
+      }
+    },
+    {
+      "id": "3eyg8",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "rte94",
+          "label": "Freddie Mercury",
+          "correct": true
+        },
+        {
+          "id": "7467r",
+          "label": "Joey Ramone",
+          "correct": false
+        },
+        {
+          "id": "1uvcm",
+          "label": "Ritchie Blackmore",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/a09f27f2aa04c57e.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/freddie.jpg"
+      }
+    },
+    {
+      "id": "w6d3q",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "ue08o",
+          "label": "Billy Idol",
+          "correct": false
+        },
+        {
+          "id": "tlqiq",
+          "label": "Tom DeLonge",
+          "correct": false
+        },
+        {
+          "id": "rjkvn",
+          "label": "Farin Urlaub",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/e2949e3ec1895ba6.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/farin.jpg"
+      }
+    },
+    {
+      "id": "2csax",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "b1yv9",
+          "label": "P!nk",
+          "correct": false
+        },
+        {
+          "id": "c9wha",
+          "label": "David Bowie",
+          "correct": true
+        },
+        {
+          "id": "ziaom",
+          "label": "Iggy Pop",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/71b91a46dd56d875.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/david.jpg"
+      }
+    },
+    {
+      "id": "bnebm",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "zv7f1",
+          "label": "Billie Joe Armstrong",
+          "correct": true
+        },
+        {
+          "id": "scot7",
+          "label": "Bela B",
+          "correct": false
+        },
+        {
+          "id": "o0ah8",
+          "label": "Till Lindemann",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/53e441c9584871c5.jpg",
+        "alt": "Imagem da pergunta 13",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/billie-joe.jpg"
+      }
+    },
+    {
+      "id": "n7sbq",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "86odj",
+          "label": "Jon Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "hto2h",
+          "label": "Axl Rose",
+          "correct": true
+        },
+        {
+          "id": "1lgbu",
+          "label": "Lou Gramm",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/b270f4d40c667377.jpg",
+        "alt": "Imagem da pergunta 14",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/axl.jpg"
+      }
+    },
+    {
+      "id": "mf8i2",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "98ogd",
+          "label": "Anthony Kiedis",
+          "correct": true
+        },
+        {
+          "id": "1fvif",
+          "label": "Liam Gallagher",
+          "correct": false
+        },
+        {
+          "id": "xboub",
+          "label": "Dave Grohl",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7689bec9f98b93bb.jpg",
+        "alt": "Imagem da pergunta 15",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/anthony.jpg"
+      }
+    },
+    {
+      "id": "62an1",
+      "prompt": "Qual roqueiro estamos procurando?",
+      "type": "cabelo",
+      "options": [
+        {
+          "id": "k2g21",
+          "label": "Angus Young",
+          "correct": false
+        },
+        {
+          "id": "vg5x3",
+          "label": "Dee Dee Ramone",
+          "correct": false
+        },
+        {
+          "id": "vqdd4",
+          "label": "Alice Cooper",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7af643a61deb1ee0.jpg",
+        "alt": "Imagem da pergunta 16",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/04/alice.jpg"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "tevbs",
+      "title": "Você é o especialista entre os cabeleireiros das estrelas. Nenhum penteado escapa ao seu olhar atento. Como recompensa, recebe o prêmio oficial de penteados do rock.",
+      "description": "",
+      "min": 16,
+      "max": 16
+    },
+    {
+      "id": "tsvf3",
+      "title": "Uau, nada mal! Com um pouco de prática, não será difícil chegar ao posto de deus dos penteados.",
+      "description": "",
+      "min": 10,
+      "max": 15
+    },
+    {
+      "id": "urdgu",
+      "title": "Não foi grande coisa. Você conhece os grandes rockstars, mas quando sai do rock comum, seu conhecimento de penteados tropeça. Continue praticando!",
+      "description": "",
+      "min": 1,
+      "max": 9
+    },
+    {
+      "id": "w8o9g",
+      "title": "Isso não deu certo. Com um resultado tão ruim, cuidado para não perder sua licença para bater a cabeça.",
+      "description": "",
+      "min": 0,
+      "max": 0
+    }
+  ],
+  "sourceId": "471",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Erkennt Ihr diese Rocker an der Frisur?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/16-frisuras.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "9d60eae42d4dd594"
+}

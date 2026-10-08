@@ -1,0 +1,429 @@
+{
+  "id": "dp-37",
+  "version": 1,
+  "title": "Quem foi? Você conhece as histórias dos rockstars?",
+  "family": "Conhecimento",
+  "type": "nao-identificado",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "1xvoy",
+      "prompt": "Esta banda fez um show no Polo Sul, protegida por uma cúpula transparente. O público recebeu fones de ouvido para não perturbar o ambiente com o volume das caixas de som e amplificadores.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "5agts",
+          "label": "Guns n' Roses",
+          "correct": false
+        },
+        {
+          "id": "6mhhb",
+          "label": "AC/DC",
+          "correct": false
+        },
+        {
+          "id": "5yaox",
+          "label": "Metallica",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "9cxqa",
+      "prompt": "Este vocalista caiu do palco em um show e quebrou a perna. Mas isso não o impediu de terminar a apresentação até o fim. Quando voltou a se apresentar no mesmo lugar anos depois, pregou uma peça no público: contratou um dublê que entrou no palco e caiu novamente.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "4o3xj",
+          "label": "Dave Grohl",
+          "correct": true
+        },
+        {
+          "id": "mgwkq",
+          "label": "Josh Homme",
+          "correct": false
+        },
+        {
+          "id": "yppqq",
+          "label": "Billie Joe Armstrong",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "j4l5h",
+      "prompt": "Este rockstar cheirou uma carreira de formigas enquanto estava em turnê com o Mötley Crüe.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "2fghp",
+          "label": "Tommy Lee",
+          "correct": false
+        },
+        {
+          "id": "tlc87",
+          "label": "Joe Perry",
+          "correct": false
+        },
+        {
+          "id": "sgblr",
+          "label": "Ozzy Osbourne",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "pwope",
+      "prompt": "Este lendário vocalista de rock foi expulso da escola porque urinou na comida do diretor.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "11pri",
+          "label": "Ronnie James Dio",
+          "correct": false
+        },
+        {
+          "id": "q13vz",
+          "label": "Bruce Dickinson",
+          "correct": true
+        },
+        {
+          "id": "9zljf",
+          "label": "James Hetfield",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "5m4k0",
+      "prompt": "Durante as férias, este veterano do rock caiu de uma palmeira. Por isso, a turnê seguinte da banda precisou ser adiada. Mais tarde, afirmou que era mais um arbusto do que uma árvore alta.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "jdeu3",
+          "label": "Keith Richards",
+          "correct": true
+        },
+        {
+          "id": "2mxks",
+          "label": "Jim Morrison",
+          "correct": false
+        },
+        {
+          "id": "oda3o",
+          "label": "Angus Young",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "l5cju",
+      "prompt": "Este shock rocker oferece horror de verdade nos shows: uma vez atirou uma galinha no público enlouquecido. Pensou que ela pudesse voar, mas estava errado. A pobre ave caiu na multidão e foi literalmente despedaçada.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "6nnui",
+          "label": "Marilyn Manson",
+          "correct": false
+        },
+        {
+          "id": "r203u",
+          "label": "Ozzy Osbourne",
+          "correct": false
+        },
+        {
+          "id": "ikftv",
+          "label": "Alice Cooper",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "g56qn",
+      "prompt": "Com o anúncio “A melhor banda do mundo procura gravadora”, esta banda de rock alemã buscou uma nova gravadora depois de se reunir.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "snfom",
+          "label": "Die Ärzte",
+          "correct": true
+        },
+        {
+          "id": "9pd5p",
+          "label": "Die Toten Hosen",
+          "correct": false
+        },
+        {
+          "id": "h94xw",
+          "label": "Scorpions",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "5gi5x",
+      "prompt": "Durante uma entrevista, este roqueiro comeu vermes vivos. A banda inteira é conhecida por destruir quartos de hotel, urinar e vomitar ao vivo no palco.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "te6x2",
+          "label": "Keith Moon e The Who",
+          "correct": false
+        },
+        {
+          "id": "s3mdx",
+          "label": "Jimmy Pop Ali e Bloodhound Gang",
+          "correct": true
+        },
+        {
+          "id": "yatht",
+          "label": "Ozzy Osbourne e Black Sabbath",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "f4ftj",
+      "prompt": "Depois de se divertir com um fã nos bastidores e receber uma advertência da polícia, este vocalista ficou tão furioso que insultou os policiais durante o show, diante de todo o público. Foi então preso e levado embora ao vivo, no palco.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "czodx",
+          "label": "Axl Rose",
+          "correct": false
+        },
+        {
+          "id": "o9tga",
+          "label": "Jim Morrison",
+          "correct": true
+        },
+        {
+          "id": "t0ub8",
+          "label": "Mick Jagger",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "nljqn",
+      "prompt": "Este baterista ficou inconsciente no palco por causa de álcool e drogas. Como não podia terminar o show, um garoto subiu ao palco e tocou o restante da apresentação com a banda em seu lugar.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "l067q",
+          "label": "Chad Smith e Red Hot Chili Peppers",
+          "correct": false
+        },
+        {
+          "id": "cxj98",
+          "label": "John Bonham e Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "ejzj8",
+          "label": "Keith Moon e The Who",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "sqhen",
+      "prompt": "Esta banda de rock se apresentava totalmente nua no início da carreira. Os rapazes não usavam nada além de uma meia cobrindo as partes íntimas.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ck8pt",
+          "label": "Rise Against",
+          "correct": false
+        },
+        {
+          "id": "49na5",
+          "label": "Biffy Clyro",
+          "correct": false
+        },
+        {
+          "id": "megj9",
+          "label": "Red Hot Chili Peppers",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "4v1xp",
+      "prompt": "Este músico viajou de navio pelo Atlântico durante dez dias porque seu medo de voar o impedia de acompanhar o restante da banda no avião.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "qv4a3",
+          "label": "Travis Barker",
+          "correct": true
+        },
+        {
+          "id": "49hjy",
+          "label": "Bruce Dickinson",
+          "correct": false
+        },
+        {
+          "id": "iqa1d",
+          "label": "Bono",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "oyh09",
+      "prompt": "Esta lenda do rock começou sua turnê em 1988 e ainda não a terminou. Na “Never Ending Tour”, já fez mais de 2.600 shows.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "e5agv",
+          "label": "Bruce Springsteen",
+          "correct": false
+        },
+        {
+          "id": "lhx5i",
+          "label": "Eric Clapton",
+          "correct": false
+        },
+        {
+          "id": "ud2v1",
+          "label": "Bob Dylan",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "bhfpo",
+      "prompt": "Este cantor deixou seus colegas de banda na mão, no meio da criação de um novo álbum, porque queria participar do teste para o novo vocalista do Led Zeppelin.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "qbj83",
+          "label": "Steven Tyler",
+          "correct": true
+        },
+        {
+          "id": "uzofa",
+          "label": "Ronnie James Dio",
+          "correct": false
+        },
+        {
+          "id": "92uk4",
+          "label": "Axl Rose",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "r87ty",
+      "prompt": "Depois de sua apresentação no MTV Music Awards, este roqueiro cuspiu em um piano porque pensou que Axl Rose o tocaria mais tarde. Deu errado: o piano era de Elton John.",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "1ri0j",
+          "label": "Kurt Cobain",
+          "correct": true
+        },
+        {
+          "id": "dzjdu",
+          "label": "Keith Richards",
+          "correct": false
+        },
+        {
+          "id": "wovod",
+          "label": "Liam Gallagher",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "t12yc",
+      "title": "Nada feito! É melhor pesquisar novamente as histórias dos roqueiros. Ouça RADIO BOB!: além de música boa, você também ouve todas as histórias dos bastidores.",
+      "description": "",
+      "min": 0,
+      "max": 4
+    },
+    {
+      "id": "ye09c",
+      "title": "Pelo menos algumas estão certas. Mas ainda há muito espaço para melhorar!",
+      "description": "",
+      "min": 5,
+      "max": 10
+    },
+    {
+      "id": "iy2n3",
+      "title": "Está quase perfeito. Agora só precisa conhecer as últimas histórias de cor e salteado para chegar lá!",
+      "description": "",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "hfscy",
+      "title": "Impecável! Você conhece todas as histórias. Ninguém engana você. Conhece não só boa música de rock, mas também as histórias malucas dos nossos roqueiros.",
+      "description": "",
+      "min": 15,
+      "max": 15
+    }
+  ],
+  "sourceId": "315",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wer war's - Kennt Ihr die Rockstarstories?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/30-stories-rockstars.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "cdf900f30772ad28"
+}

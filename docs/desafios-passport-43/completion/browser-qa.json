@@ -1,0 +1,7385 @@
+{
+  "result": "PASS_IMPLEMENTED_WITH_DECLARED_SOURCE_PARTIALS",
+  "desktopMobile": [
+    {
+      "width": 1440,
+      "cases": [
+        {
+          "id": "dp-01",
+          "questions": [
+            {
+              "id": "7nwqr",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7vu8h",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "mtaz9",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "hp475",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "pek4y",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vuv4b",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "flmdq",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jp51k",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5gqmk",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "yaiku",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "1v59h",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vpfnm",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "jxasx",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jdcor",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "43qv5",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-02",
+          "questions": [
+            {
+              "id": "7wwjx",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "168gt",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ibzbd",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "zr4fw",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "83sna",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "tk83m",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "0cbp6",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "22iir",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5b8l7",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "4t60a",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-03",
+          "questions": [
+            {
+              "id": "bpvgz",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6wqn3",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "f2mrw",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "375fg",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5ffqp",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "gd2oc",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "dy7yf",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "nmx0t",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "x0azv",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "dr02s",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-04",
+          "questions": [
+            {
+              "id": "qg75d",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "uuysp",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "mlvm6",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "5diqr",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "cmim7",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "j7ugi",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "owek9",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6g2pw",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "wq695",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "mkdlc",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "g7au6",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "lfrso",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-05",
+          "questions": [
+            {
+              "id": "roqqv",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "4fm5b",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "mliqv",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "kkp4a",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4aond",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "qf8m0",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ecjeh",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "pqupy",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "fczyj",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jq2xm",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "xflps",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vrqf1",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "jzlp5",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "cve9v",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "qi02d",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ua7hp",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "xsic4",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ew957",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ns1ta",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-06",
+          "questions": [
+            {
+              "id": "d9fau",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q6q12",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "y9b2q",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "o21md",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "x661y",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "2teak",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "tkogj",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "bjjlq",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q5xvm",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "obppt",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-07",
+          "questions": [
+            {
+              "id": "nje6j",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6zbdd",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "pcrgb",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "szz4a",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "0suw8",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "1sgp7",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "z92aw",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "1gij6",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "3p23j",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vqwf0",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5kqq3",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "e6qo1",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4wht3",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "u1a0c",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "knw30",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "9wavy",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "v1uw6",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "bpnlx",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "2p9w7",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "b2iip",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-08",
+          "questions": [
+            {
+              "id": "k4emy",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7yade",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "zzfar",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "sx2dg",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ql0qf",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "uthri",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ffjr0",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "cnr5s",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4ltwh",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "33p8l",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "gpwr3",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "9p6ni",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "0uq45",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "i1pxg",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "hqy07",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "nhuin",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4a07n",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "zsei5",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "vjngp",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "o1dko",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "e8q2d",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "3q73c",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "geftp",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ahr8h",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "wrzy0",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "a9tr0",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "zyfto",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "d6f47",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "sgm94",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6344t",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "cz69o",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "crhef",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ddfv2",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "z6q62",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ox5az",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "38m6k",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "vg4s2",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "nqhu8",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "7ju2o",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "f2f68",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-09",
+          "questions": [
+            {
+              "id": "zcuvp",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "juhrs",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "x2snq",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q0rns",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "1wtna",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "cw9e3",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "ll7vq",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q60qe",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "y05hs",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "zhxzd",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-10",
+          "questions": [
+            {
+              "id": "eyk3o",
+              "type": "verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "3nqc6",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "kaqis",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "rvtdt",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "lttu9",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jeuz5",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "8evm5",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "765p3",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "6pp0k",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "rsz3o",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "1qlz5",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "f9593",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "odblj",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vpn09",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "gm30c",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "dwiy6",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "dmi2a",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "73sh0",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "fyv1x",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "sgtbb",
+              "type": "verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-11",
+          "questions": [
+            {
+              "id": "iucwo",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ztg3v",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "7qpup",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "5ggwz",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "c5xvl",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "hf0pj",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "oyzdw",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7r7i7",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "9w96u",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "enpll",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "olc50",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "wzsri",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "zgsul",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "lgslt",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "lor2y",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "r357q",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "g5fge",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "bp8cu",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "g281f",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7x1ey",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "salada",
+          "migration": "PASS",
+          "wrongCorrect": "PASS",
+          "dialogKeyboard": "PASS",
+          "restart": "PASS"
+        },
+        {
+          "id": "quem",
+          "migration": "PASS",
+          "wrongCorrect": "PASS",
+          "dialogKeyboard": "PASS",
+          "restart": "PASS"
+        },
+        {
+          "id": "onde",
+          "migration": "PASS",
+          "wrongCorrect": "PASS",
+          "dialogKeyboard": "PASS",
+          "restart": "PASS"
+        }
+      ],
+      "geometry": {
+        "overflow": false,
+        "headers": 1,
+        "footers": 1,
+        "controls": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ]
+      },
+      "consoleErrors": [],
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "cases": [
+        {
+          "id": "dp-01",
+          "questions": [
+            {
+              "id": "7nwqr",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7vu8h",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "mtaz9",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "hp475",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "pek4y",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vuv4b",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "flmdq",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jp51k",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5gqmk",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "yaiku",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "1v59h",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vpfnm",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "jxasx",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jdcor",
+              "type": "festival",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "43qv5",
+              "type": "festival",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-02",
+          "questions": [
+            {
+              "id": "7wwjx",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "168gt",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ibzbd",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "zr4fw",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "83sna",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "tk83m",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "0cbp6",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "22iir",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5b8l7",
+              "type": "barba",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "4t60a",
+              "type": "barba",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-03",
+          "questions": [
+            {
+              "id": "bpvgz",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6wqn3",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "f2mrw",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "375fg",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5ffqp",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "gd2oc",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "dy7yf",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "nmx0t",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "x0azv",
+              "type": "trivia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "dr02s",
+              "type": "trivia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-04",
+          "questions": [
+            {
+              "id": "qg75d",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "uuysp",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "mlvm6",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "5diqr",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "cmim7",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "j7ugi",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "owek9",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6g2pw",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "wq695",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "mkdlc",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "g7au6",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "lfrso",
+              "type": "comparacao-albuns",
+              "image": true,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-05",
+          "questions": [
+            {
+              "id": "roqqv",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "4fm5b",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "mliqv",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "kkp4a",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4aond",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "qf8m0",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ecjeh",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "pqupy",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "fczyj",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jq2xm",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "xflps",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vrqf1",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "jzlp5",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "cve9v",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "qi02d",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ua7hp",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "xsic4",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ew957",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ns1ta",
+              "type": "trivia-explicada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-06",
+          "questions": [
+            {
+              "id": "d9fau",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q6q12",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "y9b2q",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "o21md",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "x661y",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "2teak",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "tkogj",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "bjjlq",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q5xvm",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "obppt",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-07",
+          "questions": [
+            {
+              "id": "nje6j",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6zbdd",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "pcrgb",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "szz4a",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "0suw8",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "1sgp7",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "z92aw",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "1gij6",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "3p23j",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vqwf0",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "5kqq3",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "e6qo1",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4wht3",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "u1a0c",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "knw30",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "9wavy",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "v1uw6",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "bpnlx",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "2p9w7",
+              "type": "decada",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "b2iip",
+              "type": "decada",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-08",
+          "questions": [
+            {
+              "id": "k4emy",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7yade",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "zzfar",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "sx2dg",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ql0qf",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "uthri",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ffjr0",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "cnr5s",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4ltwh",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "33p8l",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "gpwr3",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "9p6ni",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "0uq45",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "i1pxg",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "hqy07",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "nhuin",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "4a07n",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "zsei5",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "vjngp",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "o1dko",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "e8q2d",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "3q73c",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "geftp",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ahr8h",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "wrzy0",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "a9tr0",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "zyfto",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "d6f47",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "sgm94",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "6344t",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "cz69o",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "crhef",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ddfv2",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "z6q62",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "ox5az",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "38m6k",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "vg4s2",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "nqhu8",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "7ju2o",
+              "type": "historia",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "f2f68",
+              "type": "historia",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-09",
+          "questions": [
+            {
+              "id": "zcuvp",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "juhrs",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "x2snq",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q0rns",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "1wtna",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "cw9e3",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "ll7vq",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "q60qe",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "y05hs",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            },
+            {
+              "id": "zhxzd",
+              "type": "perfil",
+              "image": false,
+              "correct": null,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-10",
+          "questions": [
+            {
+              "id": "eyk3o",
+              "type": "verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "3nqc6",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "kaqis",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "rvtdt",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "lttu9",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "jeuz5",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "8evm5",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "765p3",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "6pp0k",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "rsz3o",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "1qlz5",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "f9593",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "odblj",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "vpn09",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "gm30c",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "dwiy6",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "dmi2a",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "73sh0",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "fyv1x",
+              "type": "misto-trivia-verdadeiro-falso",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "sgtbb",
+              "type": "verdadeiro-falso",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "dp-11",
+          "questions": [
+            {
+              "id": "iucwo",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "ztg3v",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "7qpup",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "5ggwz",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "c5xvl",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "hf0pj",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "oyzdw",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7r7i7",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "9w96u",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "enpll",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "olc50",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "wzsri",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "zgsul",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "lgslt",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "lor2y",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "r357q",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "g5fge",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "bp8cu",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            },
+            {
+              "id": "g281f",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": true,
+              "result": "PASS"
+            },
+            {
+              "id": "7x1ey",
+              "type": "trecho-musical",
+              "image": false,
+              "correct": false,
+              "result": "PASS"
+            }
+          ],
+          "persistence": "PASS",
+          "restart": "PASS",
+          "result": "PASS"
+        },
+        {
+          "id": "salada",
+          "migration": "PASS",
+          "wrongCorrect": "PASS",
+          "dialogKeyboard": "PASS",
+          "restart": "PASS"
+        },
+        {
+          "id": "quem",
+          "migration": "PASS",
+          "wrongCorrect": "PASS",
+          "dialogKeyboard": "PASS",
+          "restart": "PASS"
+        },
+        {
+          "id": "onde",
+          "migration": "PASS",
+          "wrongCorrect": "PASS",
+          "dialogKeyboard": "PASS",
+          "restart": "PASS"
+        }
+      ],
+      "geometry": {
+        "overflow": false,
+        "headers": 1,
+        "footers": 1,
+        "controls": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ]
+      },
+      "consoleErrors": [],
+      "result": "PASS"
+    }
+  ],
+  "continuity": [
+    {
+      "family": "mpb",
+      "startedPaused": false,
+      "steps": [
+        {
+          "step": "abrir dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.733977,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.871151,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.060908,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.316604,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.510466,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.75007,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.937871,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.156323,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.339685,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.523136,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.714617,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/10",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.945143,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.148001,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/12",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.360563,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/13",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.568656,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/14",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.759451,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.912318,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.068509,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.221388,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.382054,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.505895,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.690681,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.896407,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.095987,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.28651,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.482983,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.672235,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.870398,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.083308,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.272586,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.407126,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.570684,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.717755,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.887479,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.022053,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.203711,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.384407,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.579646,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.754207,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.933444,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.131844,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.335599,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.519346,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.682457,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.800158,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.932673,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.086931,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.248888,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.384123,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.547297,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.703635,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.884436,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.035108,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.208152,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.389219,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.574335,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.751641,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.934237,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/10",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.116638,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.284552,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/12",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.472539,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/13",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.636715,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/14",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.825493,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/15",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.002079,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/16",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.18561,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/17",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.395518,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/18",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.599258,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/19",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.786967,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.922319,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 13.06136,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 13.205725,
+          "paused": false,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "family": "hits",
+      "startedPaused": false,
+      "steps": [
+        {
+          "step": "abrir dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.666229,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.826144,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.021715,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.193348,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.385372,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.603102,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.780896,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 1.960005,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.12631,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.30709,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.503625,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/10",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.738214,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 2.929809,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/12",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.109776,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/13",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.289626,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/14",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.443794,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.578944,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.710368,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 3.855583,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.016987,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.142787,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.361923,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.553765,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.74029,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 4.929872,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.112521,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.327039,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.523042,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.71072,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 5.901406,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.053029,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.177687,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.318296,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.492144,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.627672,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.796459,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 6.963527,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.142015,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.323167,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.473451,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.642089,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 7.842301,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.027554,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.210666,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.343748,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.475293,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.61737,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.772738,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 8.891703,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.093873,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.260308,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.426156,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.609898,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.805808,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 9.962199,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.151462,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.364453,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.55473,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/10",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.776689,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 10.973902,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/12",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.162366,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/13",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.342204,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/14",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.527632,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/15",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.71104,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/16",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 11.895553,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/17",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.08007,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/18",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.257564,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/19",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.444412,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.579791,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.708767,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 12.846489,
+          "paused": false,
+          "family": "hits",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "family": "mpb",
+      "startedPaused": true,
+      "steps": [
+        {
+          "step": "abrir dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/10",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/12",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/13",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-01/14",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-01",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-02/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-02",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-06/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-06",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "abrir dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/0",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/1",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/2",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/3",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/4",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/5",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/6",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/7",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/8",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/9",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/10",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/12",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/13",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/14",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/15",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/16",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/17",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/18",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "responder dp-11/19",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "resultado dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "reiniciar dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        },
+        {
+          "step": "portal dp-11",
+          "document": true,
+          "runtime": true,
+          "host": true,
+          "audio": true,
+          "source": true,
+          "time": 0.310139,
+          "paused": true,
+          "family": "mpb",
+          "volume": 0.8,
+          "events": [],
+          "calls": {
+            "select": 0,
+            "init": 0,
+            "playPause": 0,
+            "pause": 0,
+            "volume": 0
+          },
+          "newMediaRequests": 0
+        }
+      ],
+      "result": "PASS"
+    }
+  ],
+  "limitations": [
+    "Controlled WAV responses verify document/element/transport survival; external audible reception not certified.",
+    "Source-partial mechanics without question/key/asset payload are catalogued, not fabricated or claimed tested."
+  ],
+  "radioStage": "reader",
+  "lastAudioSnapshot": {
+    "document": true,
+    "runtime": true,
+    "host": true,
+    "audio": true,
+    "source": true,
+    "time": 0.310139,
+    "paused": true,
+    "family": "mpb",
+    "volume": 0.8,
+    "events": [],
+    "calls": {
+      "select": 0,
+      "init": 0,
+      "playPause": 0,
+      "pause": 0,
+      "volume": 0
+    }
+  }
+}

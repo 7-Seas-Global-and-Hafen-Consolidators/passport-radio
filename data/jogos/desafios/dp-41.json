@@ -1,0 +1,429 @@
+{
+  "id": "dp-41",
+  "version": 1,
+  "title": "Quanto você conhece dos apelidos dos roqueiros?",
+  "family": "Conhecimento",
+  "type": "nao-identificado",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "pn5v0",
+      "prompt": "Como Bruce Dickinson também é chamado por causa de sua voz?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "gyjw6",
+          "label": "Air-Raid-Siren",
+          "correct": true
+        },
+        {
+          "id": "bna03",
+          "label": "Freio de trem-bala",
+          "correct": false
+        },
+        {
+          "id": "rw6pc",
+          "label": "Screamer",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "6i107",
+      "prompt": "Qual é o apelido de Bob Dylan?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ikm8g",
+          "label": "Mr. Blues-Rock",
+          "correct": false
+        },
+        {
+          "id": "fwce1",
+          "label": "His Bobness",
+          "correct": true
+        },
+        {
+          "id": "xr0il",
+          "label": "Lyric-Master",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "gtppc",
+      "prompt": "Como Bruce Springsteen é conhecido pelos fãs?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "z24qe",
+          "label": "The Chief",
+          "correct": false
+        },
+        {
+          "id": "h56w8",
+          "label": "The Boss",
+          "correct": true
+        },
+        {
+          "id": "ezy44",
+          "label": "The General",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "k2bqw",
+      "prompt": "O Die Ärzte se descreve como…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "lmr0p",
+          "label": "The Fuckin‘ Greatest Band",
+          "correct": false
+        },
+        {
+          "id": "orwv8",
+          "label": "Super-humanos do rock’n’roll",
+          "correct": false
+        },
+        {
+          "id": "579bg",
+          "label": "A melhor banda do mundo",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "thiwj",
+      "prompt": "Qual é o apelido de Eric Clapton?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "dw7n1",
+          "label": "Mr. Slow",
+          "correct": false
+        },
+        {
+          "id": "jlkf7",
+          "label": "Mr. Slowhand",
+          "correct": true
+        },
+        {
+          "id": "vcgnp",
+          "label": "Mr. Guitar",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "3v75s",
+      "prompt": "Qual é o apelido de Ozzy Osbourne?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "bizjm",
+          "label": "Prince of Darkness",
+          "correct": true
+        },
+        {
+          "id": "f4qlf",
+          "label": "Duke of Hardrock",
+          "correct": false
+        },
+        {
+          "id": "4kx3d",
+          "label": "King of the Dark",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "qbpwj",
+      "prompt": "Como os Beatles também são chamados?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "mabu9",
+          "label": "Kings of Rock",
+          "correct": false
+        },
+        {
+          "id": "2q8rz",
+          "label": "A banda dos cabelos de cogumelo",
+          "correct": false
+        },
+        {
+          "id": "bahpd",
+          "label": "Fab(ulous) Four",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "8owep",
+      "prompt": "Johnny Cash é o…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "4rb4w",
+          "label": "Bad Boy",
+          "correct": false
+        },
+        {
+          "id": "0c1gv",
+          "label": "Man in Black",
+          "correct": true
+        },
+        {
+          "id": "42i9z",
+          "label": "Master of Rock",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "1ve3e",
+      "prompt": "Qual é o apelido de Billy Joel?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "0nc7i",
+          "label": "Mr. Piano",
+          "correct": false
+        },
+        {
+          "id": "3axqe",
+          "label": "Drum Man",
+          "correct": false
+        },
+        {
+          "id": "yq4uo",
+          "label": "Piano Man",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "zzd05",
+      "prompt": "Qual é o apelido de Doro Pesch?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "hba5x",
+          "label": "Queen of Metal",
+          "correct": true
+        },
+        {
+          "id": "n7pyq",
+          "label": "Princesa de Wacken",
+          "correct": false
+        },
+        {
+          "id": "ippwn",
+          "label": "Rainha da escuridão",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "s80as",
+      "prompt": "Como Prince é chamado?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "hks1u",
+          "label": "Prince of Rock",
+          "correct": false
+        },
+        {
+          "id": "wj026",
+          "label": "His Rockness",
+          "correct": false
+        },
+        {
+          "id": "lklz4",
+          "label": "His Royal Badness",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "1xwan",
+      "prompt": "Qual é o apelido de Keith Richards?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "cgjf6",
+          "label": "The Human Riff",
+          "correct": true
+        },
+        {
+          "id": "723pk",
+          "label": "Guitar Hero",
+          "correct": false
+        },
+        {
+          "id": "sjr0q",
+          "label": "The Riff Master",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "pe81l",
+      "prompt": "Qual descrição do The Clash está correta?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "0wogq",
+          "label": "The Only Band That Rocks",
+          "correct": false
+        },
+        {
+          "id": "vxp4o",
+          "label": "The Greatest Rockband Of All Time",
+          "correct": false
+        },
+        {
+          "id": "pe015",
+          "label": "The Only Band That Matters",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "6kcvp",
+      "prompt": "Elvis Presley é…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "kb847",
+          "label": "The God",
+          "correct": false
+        },
+        {
+          "id": "i2mvj",
+          "label": "The Knight",
+          "correct": false
+        },
+        {
+          "id": "tf1d9",
+          "label": "The King",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "xrpy4",
+      "prompt": "O que são os Rolling Stones?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "as63v",
+          "label": "The Loudest Rock and Roll Band in the World",
+          "correct": false
+        },
+        {
+          "id": "ak0r0",
+          "label": "The Greatest Rock and Roll Band in the World",
+          "correct": true
+        },
+        {
+          "id": "a94be",
+          "label": "The Four Forces of Rock",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "mtwjh",
+      "title": "Puxa, isso deu errado. Talvez deva estudar mais um pouco os apelidos dos roqueiros. Assim, com certeza vai melhorar.",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "pn02g",
+      "title": "Tudo bem. Ainda não foi grande coisa, mas pelo menos você conhece alguns nomes. Continue!",
+      "description": "",
+      "min": 6,
+      "max": 10
+    },
+    {
+      "id": "7ygbt",
+      "title": "Quase perfeito! Você é muito bom. Continue e logo será um verdadeiro especialista. Dá para memorizar os últimos nomes agora também.",
+      "description": "",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "60cc5",
+      "title": "Você arrasa! Tudo certo: não é fácil fazer igual!",
+      "description": "",
+      "min": 15,
+      "max": 15
+    }
+  ],
+  "sourceId": "282",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr die Spitznamen der Rocker?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/34-apelidos-rockstars.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "6c7a4eb825704c1d"
+}

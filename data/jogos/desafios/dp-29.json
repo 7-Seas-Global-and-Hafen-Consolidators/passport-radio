@@ -1,0 +1,407 @@
+{
+  "id": "dp-29",
+  "version": 1,
+  "title": "De qual banda é este músico?",
+  "family": "Visual",
+  "type": "silhueta",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "s9yrq",
+      "prompt": "Em qual banda Keith Richards toca?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "yblwh",
+          "label": "Def Leppard",
+          "correct": false
+        },
+        {
+          "id": "kw7ao",
+          "label": "The Rolling Stones",
+          "correct": true
+        },
+        {
+          "id": "gxs9w",
+          "label": "Aerosmith",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/3654282f0be8c9db.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Rolling-Stones-Frage.jpg"
+      }
+    },
+    {
+      "id": "9s7n5",
+      "prompt": "Malcolm Young foi integrante de qual banda?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "kn3ih",
+          "label": "AC/DC",
+          "correct": true
+        },
+        {
+          "id": "9a7q4",
+          "label": "Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "i1hc7",
+          "label": "Black Sabbath",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/e708df45c99e79df.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/ACDC-Frage.jpg"
+      }
+    },
+    {
+      "id": "88skm",
+      "prompt": "De qual banda Joe Perry faz parte?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "b6889",
+          "label": "Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "dbz3u",
+          "label": "Guns N' Roses",
+          "correct": false
+        },
+        {
+          "id": "72ci0",
+          "label": "Aerosmith",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bc5f5c9c9383e78d.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Aerosmith-Frage.jpg"
+      }
+    },
+    {
+      "id": "53qjk",
+      "prompt": "Em qual banda Steve Harris toca?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "btaab",
+          "label": "Iron Maiden",
+          "correct": true
+        },
+        {
+          "id": "rl6i6",
+          "label": "Queen",
+          "correct": false
+        },
+        {
+          "id": "x24j6",
+          "label": "The Who",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/9453cf3a99d38443.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Iron-Maiden-Frage.jpg"
+      }
+    },
+    {
+      "id": "g9xy8",
+      "prompt": "Este músico se chama Andreas Meurer e toca em qual banda?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "mkqhd",
+          "label": "Beatsteaks",
+          "correct": false
+        },
+        {
+          "id": "xwo6v",
+          "label": "Broilers",
+          "correct": false
+        },
+        {
+          "id": "7s5zl",
+          "label": "Die Toten Hosen",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/9e9fec4d95777401.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Toten-Hosen-Frage.jpg"
+      }
+    },
+    {
+      "id": "awmzk",
+      "prompt": "Krist Novoselic foi o baixista de qual banda?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "m5tfo",
+          "label": "Nirvana",
+          "correct": true
+        },
+        {
+          "id": "5jffe",
+          "label": "Kings of Leon",
+          "correct": false
+        },
+        {
+          "id": "ny7t9",
+          "label": "Ramones",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/ec93a2ffdba6b304.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Nirvana-Frage.jpg"
+      }
+    },
+    {
+      "id": "n4pn6",
+      "prompt": "Em qual banda Taylor Hawkins toca?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "wp9pa",
+          "label": "Foo Fighters",
+          "correct": true
+        },
+        {
+          "id": "dvpu0",
+          "label": "Coldplay",
+          "correct": false
+        },
+        {
+          "id": "tjd7t",
+          "label": "Billy Talent",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5d061de3d9f76166.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Foo-FIghters-Frage.jpg"
+      }
+    },
+    {
+      "id": "ztv66",
+      "prompt": "Lemmy Kilmister foi o vocalista de qual banda?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "32pkg",
+          "label": "Guns N' Roses",
+          "correct": false
+        },
+        {
+          "id": "57ng5",
+          "label": "Pink Floyd",
+          "correct": false
+        },
+        {
+          "id": "69tde",
+          "label": "Motörhead",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/0b95d969277ed11e.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Motörhead-Frage.jpg"
+      }
+    },
+    {
+      "id": "7u3em",
+      "prompt": "De qual banda Mike Dirnt faz parte?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "rgai4",
+          "label": "blink-182",
+          "correct": false
+        },
+        {
+          "id": "2qiu7",
+          "label": "Green Day",
+          "correct": true
+        },
+        {
+          "id": "doffo",
+          "label": "Muse",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/0678fb0df11a1852.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Green-Day-Frage.jpg"
+      }
+    },
+    {
+      "id": "uyxds",
+      "prompt": "Em qual destas bandas Rod Gonzalez toca?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "1y1x0",
+          "label": "Die Ärzte",
+          "correct": true
+        },
+        {
+          "id": "qvbqo",
+          "label": "Donots",
+          "correct": false
+        },
+        {
+          "id": "k8if9",
+          "label": "Placebo",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bc75bb6a93a29380.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Die-Ärzte-Frage.jpg"
+      }
+    },
+    {
+      "id": "ni9p7",
+      "prompt": "Simon Neil toca em qual banda?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "n6u3a",
+          "label": "Biffy Clyro",
+          "correct": true
+        },
+        {
+          "id": "rxd19",
+          "label": "Linkin Park",
+          "correct": false
+        },
+        {
+          "id": "2oclb",
+          "label": "Blur",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/16ed2614b473e240.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Biffy-Clyro-Frage.jpg"
+      }
+    },
+    {
+      "id": "w5xtr",
+      "prompt": "Rob Trujillo é integrante de qual banda?",
+      "type": "silhueta",
+      "options": [
+        {
+          "id": "n6yad",
+          "label": "Red Hot Chili Peppers",
+          "correct": false
+        },
+        {
+          "id": "h3rg3",
+          "label": "Anthrax",
+          "correct": false
+        },
+        {
+          "id": "aik45",
+          "label": "Metallica",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/37d57bd575f39466.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Metallica-Frage.jpg"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "cuoq3",
+      "title": "Puxa! Isso não deu certo… É melhor olhar os músicos com atenção novamente e estudar os integrantes das bandas.",
+      "description": "",
+      "min": 0,
+      "max": 4
+    },
+    {
+      "id": "hq59x",
+      "title": "Bem, dá para melhorar. Você reconhece os roqueiros das suas bandas favoritas, claro, mas queremos que amplie seus horizontes! Então olhe também as outras bandas.",
+      "description": "",
+      "min": 5,
+      "max": 8
+    },
+    {
+      "id": "q69hq",
+      "title": "Muito bom! Você reconheceu muito bem a maioria dos rockstars, mas ainda pode melhorar! Dá para memorizar os últimos rostos também. Continue assim!",
+      "description": "",
+      "min": 9,
+      "max": 11
+    },
+    {
+      "id": "4xabn",
+      "title": "Realmente impressionante! Você conhece todo mundo. Sua memória é invejável. Continue rockando!",
+      "description": "",
+      "min": 12,
+      "max": 12
+    }
+  ],
+  "sourceId": "231",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Zu welcher Band gehört dieser Musiker?"
+  },
+  "sourceFiles": [
+    "37-banda-musico.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "e4956af9622a4d8e"
+}

@@ -1,0 +1,641 @@
+{
+  "id": "dp-42",
+  "version": 1,
+  "title": "Qual música de rock combina com sua personalidade?",
+  "family": "Perfil",
+  "type": "nao-identificado",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "ecoka",
+      "prompt": "Qual música você mais espera em um show da sua banda favorita?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "f8gfz",
+          "label": "A balada de rock tranquila: todos os isqueiros para o alto",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 5,
+            "lr2q8": 1,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 3
+          }
+        },
+        {
+          "id": "baz03",
+          "label": "Claro que a música mais roqueira, e depois direto para a roda!",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 0,
+            "lr2q8": 4,
+            "gn856": 2,
+            "5a18h": 5,
+            "utuik": 1
+          }
+        },
+        {
+          "id": "7l93b",
+          "label": "O importante é tocarem seu maior sucesso para cantarmos junto a plenos pulmões!",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 1,
+            "lr2q8": 5,
+            "gn856": 2,
+            "5a18h": 4,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "a0jxu",
+          "label": "Preferiria ouvir uma música nova, que nunca foi tocada ao vivo.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 1,
+            "lr2q8": 4,
+            "gn856": 2,
+            "5a18h": 3,
+            "utuik": 0
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "a6a43",
+      "prompt": "Em uma festa, você é…",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "peiqe",
+          "label": "… no bar, bêbado.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 1,
+            "lr2q8": 5,
+            "gn856": 4,
+            "5a18h": 3,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "7xmqe",
+          "label": "… no meio de tudo. Claro que você é o centro das atenções.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 1,
+            "lr2q8": 3,
+            "gn856": 2,
+            "5a18h": 4,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "uqlhy",
+          "label": "… um pouco afastado, observando tudo. Discutir com bêbados não adianta mesmo.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 3,
+            "lr2q8": 1,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 5
+          }
+        },
+        {
+          "id": "td556",
+          "label": "… já foi embora, porque precisou carregar seu amigo bêbado para casa!",
+          "weights": {
+            "ovf0b": 1,
+            "dgnow": 5,
+            "lr2q8": 2,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 3
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "qav1t",
+      "prompt": "Qual título você receberia?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "sq4jc",
+          "label": "Capitão do Caos",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 0,
+            "lr2q8": 3,
+            "gn856": 1,
+            "5a18h": 4,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "i3fat",
+          "label": "Duque do Headbang",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 0,
+            "lr2q8": 4,
+            "gn856": 3,
+            "5a18h": 5,
+            "utuik": 1
+          }
+        },
+        {
+          "id": "fwmqd",
+          "label": "Mestre do Rock",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 2,
+            "lr2q8": 3,
+            "gn856": 1,
+            "5a18h": 4,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "mxokh",
+          "label": "Líder dos Solitários",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 3,
+            "lr2q8": 1,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 5
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "h3kp1",
+      "prompt": "No carro, você e seus amigos não conseguem concordar sobre qual música tocar. O que faz?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "i79ew",
+          "label": "Você impõe sua vontade. Seu gosto musical é o melhor mesmo.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 1,
+            "lr2q8": 4,
+            "gn856": 3,
+            "5a18h": 5,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "18dwb",
+          "label": "Você fica completamente fora da discussão. Tanto faz.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 3,
+            "lr2q8": 1,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 5
+          }
+        },
+        {
+          "id": "zs1rf",
+          "label": "Você simplesmente ouve a música desconhecida. Talvez descubra músicas boas e novas para você.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 3,
+            "lr2q8": 0,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "n2m71",
+          "label": "Vocês fazem um acordo: cada um pode colocar sua música por meia hora.",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 5,
+            "lr2q8": 0,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 2
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "m9zk1",
+      "prompt": "O que um álbum precisa ter para você comprá-lo?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "dpcea",
+          "label": "Rock’n’roll sólido, com guitarras elétricas e muita força. A guitarra imaginária está pronta.",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 2,
+            "lr2q8": 4,
+            "gn856": 1,
+            "5a18h": 5,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "ovz59",
+          "label": "Por que ainda produzem álbuns neste mundo digitalizado? Ninguém mais compra mesmo.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 3,
+            "lr2q8": 0,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 5
+          }
+        },
+        {
+          "id": "e5hhu",
+          "label": "Um conceito com boas letras e grandes melodias, para os arrepios não passarem.",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 5,
+            "lr2q8": 1,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "wsgdy",
+          "label": "Música de bom humor, que você pode cantar alto no carro de janela aberta!",
+          "weights": {
+            "ovf0b": 4,
+            "dgnow": 2,
+            "lr2q8": 5,
+            "gn856": 1,
+            "5a18h": 3,
+            "utuik": 0
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "gk1pt",
+      "prompt": "Você sai para comer com os amigos. O que tem de gostoso?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "iqqz0",
+          "label": "Algo que você nunca comeu. É preciso ampliar os horizontes.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 3,
+            "lr2q8": 0,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "iaa57",
+          "label": "Você não vai junto. Acha bobagem: dá para comer em casa.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 3,
+            "lr2q8": 1,
+            "gn856": 4,
+            "5a18h": 0,
+            "utuik": 5
+          }
+        },
+        {
+          "id": "tl30x",
+          "label": "Você come o que sempre pede ali. Pelo menos sabe que vai gostar!",
+          "weights": {
+            "ovf0b": 0,
+            "dgnow": 3,
+            "lr2q8": 5,
+            "gn856": 2,
+            "5a18h": 4,
+            "utuik": 1
+          }
+        },
+        {
+          "id": "2ehwq",
+          "label": "Vocês pedem um prato enorme e todos comem dele. Assim, cada um pode provar tudo.",
+          "weights": {
+            "ovf0b": 4,
+            "dgnow": 3,
+            "lr2q8": 0,
+            "gn856": 2,
+            "5a18h": 5,
+            "utuik": 1
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "c6bff",
+      "prompt": "Quando você mais gosta de ouvir música?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "zfui3",
+          "label": "Quando você está de bom humor, pode se soltar de verdade.",
+          "weights": {
+            "ovf0b": 4,
+            "dgnow": 1,
+            "lr2q8": 3,
+            "gn856": 2,
+            "5a18h": 5,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "ohcki",
+          "label": "Sempre que precisa de motivação. E vamos lá!",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 1,
+            "lr2q8": 5,
+            "gn856": 2,
+            "5a18h": 4,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "10ybe",
+          "label": "Quando ninguém pode impedir você de cantar alto e desafinado.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 0,
+            "lr2q8": 3,
+            "gn856": 1,
+            "5a18h": 4,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "20q24",
+          "label": "Quando está de mau humor. Música é o melhor remédio contra o mau humor.",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 4,
+            "lr2q8": 1,
+            "gn856": 3,
+            "5a18h": 0,
+            "utuik": 5
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "6hynw",
+      "prompt": "Se pudesse ser uma música, preferiria ser:",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "6kk24",
+          "label": "Sucesso de uma música só",
+          "weights": {
+            "ovf0b": 0,
+            "dgnow": 5,
+            "lr2q8": 3,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "e4bqc",
+          "label": "Faixa escondida",
+          "weights": {
+            "ovf0b": 3,
+            "dgnow": 2,
+            "lr2q8": 0,
+            "gn856": 5,
+            "5a18h": 1,
+            "utuik": 4
+          }
+        },
+        {
+          "id": "qdn8o",
+          "label": "Faixa-título",
+          "weights": {
+            "ovf0b": 1,
+            "dgnow": 3,
+            "lr2q8": 4,
+            "gn856": 2,
+            "5a18h": 5,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "dgaoc",
+          "label": "Clássico que nunca envelhece",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 1,
+            "lr2q8": 4,
+            "gn856": 2,
+            "5a18h": 3,
+            "utuik": 0
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "peqx8",
+      "prompt": "De que você se fantasiaria para uma festa à fantasia?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ct4uj",
+          "label": "Você tem muitas ideias e primeiro não consegue decidir. Depois escolhe a fantasia mais maluca que consegue imaginar.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 2,
+            "lr2q8": 3,
+            "gn856": 1,
+            "5a18h": 4,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "s91qt",
+          "label": "Festa à fantasia? Você acha bobagem. Com certeza não vão encontrar você lá.",
+          "weights": {
+            "ovf0b": 0,
+            "dgnow": 2,
+            "lr2q8": 3,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 5
+          }
+        },
+        {
+          "id": "pgaxt",
+          "label": "Você vai de Knight Rider ou Exterminador do Futuro. Algo muito legal!",
+          "weights": {
+            "ovf0b": 2,
+            "dgnow": 1,
+            "lr2q8": 5,
+            "gn856": 3,
+            "5a18h": 4,
+            "utuik": 0
+          }
+        },
+        {
+          "id": "tff9w",
+          "label": "Festa à fantasia: sim. Mas com certeza nada cafona. Você vai de zumbi.",
+          "weights": {
+            "ovf0b": 0,
+            "dgnow": 3,
+            "lr2q8": 1,
+            "gn856": 5,
+            "5a18h": 2,
+            "utuik": 4
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "k34o9",
+      "prompt": "O que faz uma música ser boa?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "lz49q",
+          "label": "Algo totalmente novo e experimental, que ninguém fez antes.",
+          "weights": {
+            "ovf0b": 5,
+            "dgnow": 3,
+            "lr2q8": 0,
+            "gn856": 4,
+            "5a18h": 1,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "c0lkx",
+          "label": "A mensagem é o mais importante!",
+          "weights": {
+            "ovf0b": 0,
+            "dgnow": 5,
+            "lr2q8": 2,
+            "gn856": 3,
+            "5a18h": 1,
+            "utuik": 4
+          }
+        },
+        {
+          "id": "9rwc3",
+          "label": "Guitarras, vozes ásperas e volume!",
+          "weights": {
+            "ovf0b": 1,
+            "dgnow": 0,
+            "lr2q8": 4,
+            "gn856": 3,
+            "5a18h": 5,
+            "utuik": 2
+          }
+        },
+        {
+          "id": "pssav",
+          "label": "Um bom riff de guitarra e um vocal capaz de arrepiar.",
+          "weights": {
+            "ovf0b": 0,
+            "dgnow": 5,
+            "lr2q8": 1,
+            "gn856": 3,
+            "5a18h": 2,
+            "utuik": 4
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "ovf0b",
+      "title": "Bohemian Rhapsody",
+      "description": "Você é uma pessoa de muitos rostos e facetas, que adora experimentar coisas novas. De início, isso parece loucura para muita gente, mas a maioria também ama e admira você por isso. Bohemian Rhapsody destaca sua disposição para experimentar. Embora as pessoas ao redor muitas vezes não entendam você, gostam muito de você, e não o incomoda ninguém compreendê-lo de verdade. Você simplesmente segue seu caminho! “Isto é a vida real? Ou é apenas fantasia?”"
+    },
+    {
+      "id": "dgnow",
+      "title": "Stairway To Heaven",
+      "description": "Você é sensível e percebe rapidamente do que os outros precisam. Quase nada tira sua tranquilidade, mas às vezes parece um pouco melancólico. Stairway To Heaven mostra como você pode ser único, emotivo e direto. Muitas pessoas inicialmente não sabem como entender você e depois se impressionam com seu jeito agradável e acessível. “Mas, a longo prazo, ainda há tempo para mudar a estrada em que você está.”"
+    },
+    {
+      "id": "lr2q8",
+      "title": "Born To Be Wild",
+      "description": "Você não gosta de complicação. Prefere ser direto e honesto. Além disso, vive e ama o bom e velho rock’n’roll. Born To Be Wild mostra a todos seu coração roqueiro apaixonado por liberdade. Você não quer reinventar a roda, apenas fazer com seus velhos amigos o que sempre foi divertido. “Nascemos, nascemos para ser selvagens.”"
+    },
+    {
+      "id": "gn856",
+      "title": "Enter Sandman",
+      "description": "Casca dura, interior macio: é a melhor descrição de você. Por fora é sempre durão, mas quem o conhece melhor logo percebe seu lado suave. Por isso, Enter Sandman destaca melhor sua personalidade. Muitas pessoas avaliam você errado, mas você consegue convencê-las rapidamente do seu lado bondoso. “Vamos à terra do nunca, pegue minha mão.”"
+    },
+    {
+      "id": "5a18h",
+      "title": "Thunderstruck",
+      "description": "Você sempre dá tudo. Por isso, às vezes parece selvagem e impulsivo demais para alguns, mas é apenas o rock puro que corre nas suas veias. Thunderstruck destaca seu coração roqueiro. É sempre força total: alto e sem censura, esse é seu lema. Com você, todos se divertem muito e aproveitam, mas de vez em quando você também deveria reduzir uma marcha, não? Que nada! “Você foi atingido pelo trovão!”"
+    },
+    {
+      "id": "utuik",
+      "title": "Smells Like Teen Spirit",
+      "description": "Em geral, seu humor é um pouco melancólico. Raramente tem vontade de discutir com os outros: para que serviria? Gosta de seguir seu próprio caminho e quase nunca se importa com o que dizem. Aos seus olhos, tudo é inútil mesmo. Ainda assim, pensa bastante em temas importantes para você e tenta lutar por eles. Smells Like Teen Spirit destaca esse seu lado. Mas talvez encontre motivos para não ficar tão insatisfeito consigo e com o mundo? “Sou o pior naquilo que faço melhor, e por esse dom me sinto abençoado.”"
+    }
+  ],
+  "sourceId": "371",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welcher Rocksong passt zu Deiner Persönlichkeit?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/26-rocksong-personalidade.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "5441fc1c1e7c37c6"
+}

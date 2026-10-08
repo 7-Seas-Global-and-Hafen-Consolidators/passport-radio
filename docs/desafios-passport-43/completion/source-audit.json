@@ -1,0 +1,1169 @@
+{
+  "correct": [
+    {
+      "file": "RECUPERADO-A.html",
+      "sha256": "1a0872c0b0c49e7cc4e978c6cba94491a8677d34f9ff384562be08ed32652b39",
+      "bytes": 1513004,
+      "quizzes": [],
+      "pages": [
+        {
+          "title": "Welches Rock-Genre spiegelt Euch wider? ",
+          "path": {
+            "alias": "/musik/rockquiz/welches-rock-genre-gleicht-eurem-charakter",
+            "langcode": "de",
+            "pid": 21247
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Wisst Ihr, wie diese Bands früher hießen?",
+          "path": {
+            "alias": "/musik/rockquiz/wisst-ihr-wie-diese-bands-frueher-hiessen",
+            "langcode": "de",
+            "pid": 21828
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Wie gut kennt Ihr Songtexte?",
+          "path": {
+            "alias": "/musik/rockquiz/wie-gut-kennt-ihr-songtexte",
+            "langcode": "de",
+            "pid": 21233
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Welche Lyrics wären Eure letzten Worte?",
+          "path": {
+            "alias": "/musik/rockquiz/welche-lyrics-waeren-eure-letzten-worte",
+            "langcode": "de",
+            "pid": 21762
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Wie viel Punk steckt in Euch?",
+          "path": {
+            "alias": "/musik/rockquiz/quiz-wie-viel-punk-steckt-euch",
+            "langcode": "de",
+            "pid": 21891
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            },
+            {
+              "type": "stream",
+              "keys": [
+                "audiences",
+                "audiotheque_channel",
+                "behaviors",
+                "id",
+                "links",
+                "relationshipNames",
+                "stream",
+                "text",
+                "type"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "RECUPERADO-B.html",
+      "sha256": "ac527d2765955f498c5976cfa521a1b1aae98c3997ec7c60053418d372dedaa6",
+      "bytes": 1244865,
+      "quizzes": [],
+      "pages": [
+        {
+          "title": "Welches Festival solltet Ihr besuchen?",
+          "path": {
+            "alias": "/musik/rockquiz/welches-festival-solltet-ihr-besuchen",
+            "langcode": "de",
+            "pid": 21714
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            },
+            {
+              "type": "stream",
+              "keys": [
+                "audiences",
+                "audiotheque_channel",
+                "behaviors",
+                "id",
+                "links",
+                "relationshipNames",
+                "stream",
+                "text",
+                "type"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hier könnt Ihr Eure Persönlichkeit und Euer Wissen testen ",
+          "path": {
+            "alias": "/musik/rockquiz",
+            "langcode": "de",
+            "pid": 22652
+          },
+          "sections": [
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 9
+            },
+            {
+              "type": "stream",
+              "keys": [
+                "audiences",
+                "audiotheque_channel",
+                "behaviors",
+                "id",
+                "links",
+                "relationshipNames",
+                "stream",
+                "text",
+                "type"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Das große AC/DC Quiz",
+          "path": {
+            "alias": "/musik/rockquiz/ac-dc-quiz",
+            "langcode": "de",
+            "pid": 21734
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            },
+            {
+              "type": "stream",
+              "keys": [
+                "audiences",
+                "audiotheque_channel",
+                "behaviors",
+                "id",
+                "links",
+                "relationshipNames",
+                "stream",
+                "text",
+                "type"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Könnt Ihr diese Songtexte vervollständigen?",
+          "path": {
+            "alias": "/musik/rockquiz/koennt-ihr-diese-songtexte-vervollstaendigen",
+            "langcode": "de",
+            "pid": 21521
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "pack-01.html",
+      "sha256": "1f9210dbf35d8a0d21e02b6ed41b75ad38e386f2c48eea03933ee25054d4708c",
+      "bytes": 366769,
+      "quizzes": [
+        {
+          "id": "786",
+          "title": "Welcher RADIO BOB! Stream passt zu Euch?",
+          "questions": 10
+        },
+        {
+          "id": "770",
+          "title": "Wie gut kennt Ihr den Rock der 90er?",
+          "questions": 20
+        },
+        {
+          "id": "761",
+          "title": "XXL-Rock-Quiz: Eine Reise durch die Rock-Geschichte",
+          "questions": 40
+        },
+        {
+          "id": "755",
+          "title": "Dieser Rockstar wäre Euer perfekter Quarantäne-Partner!",
+          "questions": 10
+        },
+        {
+          "id": "725",
+          "title": "Wie hart seid Ihr wirklich?",
+          "questions": 20
+        },
+        {
+          "id": "719",
+          "title": "Quiz: Rock Or Not?",
+          "questions": 20
+        }
+      ],
+      "pages": []
+    },
+    {
+      "file": "pack-02.html",
+      "sha256": "f7e150fc734ab9f8e41726e8db04d9242277f82ce4e96ed12c0296347833de76",
+      "bytes": 1814078,
+      "quizzes": [],
+      "pages": [
+        {
+          "title": "Erkennt Ihr diese Bandlogos?",
+          "path": {
+            "alias": "/musik/rockquiz/erkennt-ihr-diese-bandlogos",
+            "langcode": "de",
+            "pid": 21906
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Wie viel Punk steckt in Euch?",
+          "path": {
+            "alias": "/musik/rockquiz/quiz-wie-viel-punk-steckt-euch",
+            "langcode": "de",
+            "pid": 21891
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            },
+            {
+              "type": "stream",
+              "keys": [
+                "audiences",
+                "audiotheque_channel",
+                "behaviors",
+                "id",
+                "links",
+                "relationshipNames",
+                "stream",
+                "text",
+                "type"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Wie gut kennt Ihr die Songtexte von Bruce Springsteen?",
+          "path": {
+            "alias": "/musik/rockquiz/wie-gut-kennt-ihr-die-songtexte-von-bruce-springsteen",
+            "langcode": "de",
+            "pid": 21849
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Wisst Ihr, wie diese Bands früher hießen?",
+          "path": {
+            "alias": "/musik/rockquiz/wisst-ihr-wie-diese-bands-frueher-hiessen",
+            "langcode": "de",
+            "pid": 21828
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Welcher Song rockt Euren Sommer?",
+          "path": {
+            "alias": "/musik/rockquiz/welcher-song-rockt-euren-sommer",
+            "langcode": "de",
+            "pid": 21806
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        },
+        {
+          "title": "Erkennt Ihr diese Rocksongs nur mit Emojis?",
+          "path": {
+            "alias": "/musik/rockquiz/emoji-quiz-erkennt-ihr-diese-rocksongs",
+            "langcode": "de",
+            "pid": 21785
+          },
+          "sections": [
+            {
+              "type": "text",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "links",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "badge",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "media",
+                "relationshipNames",
+                "subtitle",
+                "text",
+                "title",
+                "type"
+              ]
+            },
+            {
+              "type": "teaser",
+              "keys": [
+                "audiences",
+                "behaviors",
+                "id",
+                "link",
+                "links",
+                "pagination",
+                "relationshipNames",
+                "teasers",
+                "text",
+                "title",
+                "type"
+              ],
+              "teasers": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "original": [
+    {
+      "file": "01-Markdown_colado(20261007-181637).md",
+      "bytes": 14895,
+      "sha256": "1e21bfd37a4bd882026a3a48bd956a116daba85afd12bc07e278ecf414353caf",
+      "title": "# Alice Cooper finalmente chega à Passport Radio. Vincent Damon Furnier também — embora esse senhor seja bem menos assustador",
+      "quizVariables": []
+    },
+    {
+      "file": "02-Markdown_colado_(2)(20261007-181702).md",
+      "bytes": 11840,
+      "sha256": "d0968bfde44cd399de1de412e3982529b875bca00d337c23942de30876c40546",
+      "title": "# E viva o rock nacional: Nenhum de Nós chega aos 40 anos — e ainda tem muita estrada pela frente",
+      "quizVariables": []
+    },
+    {
+      "file": "03-Markdown_colado_(3)(9).md",
+      "bytes": 10939,
+      "sha256": "6d25dc57d75a07d00641c7fe3ffcada8ab511d30467ba6d7fd48479d27d49612",
+      "title": "# ABRE ALAS PARA O COUNTRY: Ella Langley acaba de chegar à Passport Radio — e trouxe um recorde debaixo do braço",
+      "quizVariables": []
+    },
+    {
+      "file": "04-Markdown_colado_(4)(10).md",
+      "bytes": 14996,
+      "sha256": "c154af7d311cae584e569c0e5fe490023e19621bf6d48589ee7729fbef791b07",
+      "title": "# Noel Gallagher acorda, toma café e aparentemente pergunta: “Quem eu vou detestar hoje?”",
+      "quizVariables": []
+    },
+    {
+      "file": "05-Markdown_colado_(5)(8).md",
+      "bytes": 13865,
+      "sha256": "c8308cde75fbf83347e23747c41ad93910baf2677c2254edbb2522b9fc6c848e",
+      "title": "# Soundgarden volta a rugir: Matt Cameron, Tom Morello, Mike McCready e Taylor Momsen transformam “Outshined” em encontro de gigantes",
+      "quizVariables": []
+    },
+    {
+      "file": "06-Markdown_colado_(6)(7).md",
+      "bytes": 11661,
+      "sha256": "4bf9493133636da79f30247550d71c3eb45dd2a14d5cb91b1f73692590f809f7",
+      "title": "# Crypta abre uma nova era com “A Portrait of Decay” — e o death metal brasileiro continua atravessando fronteiras",
+      "quizVariables": []
+    },
+    {
+      "file": "07-Markdown_colado_(7)(6).md",
+      "bytes": 14511,
+      "sha256": "c78026fdca7a122b465a8f7b779da7a0e8e7a76a763e47a88d7919372270abad",
+      "title": "# Racionais MC’s entram na Passport Radio sem pedir licença — e trazem de volta a gravação que deveria ter virado “1000 Trutas, 1000 Tretas”",
+      "quizVariables": []
+    },
+    {
+      "file": "08-Texto_colado_(8).txt",
+      "bytes": 14696,
+      "sha256": "688982e6f2111e57c960a9ec1f5627675c654235e26d0079c31314032901207f",
+      "title": "AHAHAHAHAHA **ESSA É DELICIOSA MESMO**, Mr. Nomad. 😂🔥",
+      "quizVariables": []
+    },
+    {
+      "file": "09-Texto_colado_(9).txt",
+      "bytes": 13063,
+      "sha256": "4082524d393196b654e5f68729b0781b629537a116351165875fbe132a32e991",
+      "title": "AHAHAHAHAHAHAHAHAHA **AGORA TEM FOTO NOS AUTOS!** 😂🖤💗",
+      "quizVariables": []
+    },
+    {
+      "file": "10-Texto_colado_(10).txt",
+      "bytes": 13901,
+      "sha256": "abe0731963e37c8d8a3efb43a2abbd9a6e57ae1b9ee71db52ab9b6711d62fbf7",
+      "title": "AHAHAHAHAHAHA **AGORA SIM, PAROU A GRÁFICA E CHEGARAM AS PROVAS DO CRIME.** 😂🔥",
+      "quizVariables": []
+    },
+    {
+      "file": "11-Texto_colado_(11).txt",
+      "bytes": 15555,
+      "sha256": "857ddf7b3518abf576a95fa5186caf17ae76f02edfc8fb4a1672485daa7fd02a",
+      "title": "# Você não lembrava dessa música. Até ela começar a tocar.",
+      "quizVariables": []
+    },
+    {
+      "file": "12-Texto_colado_(12).txt",
+      "bytes": 13882,
+      "sha256": "b91505d7a195d4cf75cfb99716c68548dfcf8d779a8358fe40f4926cc680d6f6",
+      "title": "AHAHAHAHAHAHAHA **MR. NOMAD, ESSA É UMA DELÍCIA.** 🤣🔥",
+      "quizVariables": []
+    },
+    {
+      "file": "13-Texto_colado(20261007-190701).txt",
+      "bytes": 320825,
+      "sha256": "79fdea19e680457e27385321b18fb6269c5f21d4db7e709a378ea5f8fa143886",
+      "title": "Hier könnt Ihr Eure Persönlichkeit und Euer Wissen testen  | RADIO BOB! national",
+      "quizVariables": []
+    },
+    {
+      "file": "14-Markdown_colado(20261007-191344).md",
+      "bytes": 49102,
+      "sha256": "cd09a8e98122999ead4767e7c578f4b0e8f5229a5c7a458e741b1c696f7471f6",
+      "title": "Wacken Open Air Quiz &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz1070",
+          "name": "Wacken Open Air Quiz",
+          "questions": 15,
+          "results": 0
+        }
+      ]
+    },
+    {
+      "file": "15-Markdown_colado_(2)(20261007-191538).md",
+      "bytes": 49544,
+      "sha256": "ad43c68b235f618e530daa3127d2f7fb5567698e88b034a7d3b0165b385173bb",
+      "title": "Bärte der Rockstars Quiz &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz1077",
+          "name": "Bärte der Rockstars Quiz",
+          "questions": 10,
+          "results": 4
+        }
+      ]
+    },
+    {
+      "file": "16-Markdown_colado(20261007-191344).md",
+      "bytes": 49102,
+      "sha256": "cd09a8e98122999ead4767e7c578f4b0e8f5229a5c7a458e741b1c696f7471f6",
+      "title": "Wacken Open Air Quiz &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz1070",
+          "name": "Wacken Open Air Quiz",
+          "questions": 15,
+          "results": 0
+        }
+      ]
+    },
+    {
+      "file": "17-Markdown_colado_(2)(20261007-191538).md",
+      "bytes": 49544,
+      "sha256": "ad43c68b235f618e530daa3127d2f7fb5567698e88b034a7d3b0165b385173bb",
+      "title": "Bärte der Rockstars Quiz &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz1077",
+          "name": "Bärte der Rockstars Quiz",
+          "questions": 10,
+          "results": 4
+        }
+      ]
+    },
+    {
+      "file": "18-Markdown_colado_(3)(10).md",
+      "bytes": 40046,
+      "sha256": "6e168921b17e033eb49fb40d3aef88cdc7a782de85118b84de3404c95191dd50",
+      "title": "MTV Unplugged Quiz &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz991",
+          "name": "MTV Unplugged Quiz",
+          "questions": 10,
+          "results": 4
+        }
+      ]
+    },
+    {
+      "file": "19-Markdown_colado(20261007-192043).md",
+      "bytes": 54550,
+      "sha256": "56080b6fe5b2d0c841cff549b5843fd27b590a23d4c3d726c51eb8dc692ce489",
+      "title": "Quiz: Welches Album ist älter? &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz1009",
+          "name": "Quiz: Welches Album ist älter?",
+          "questions": 12,
+          "results": 4
+        }
+      ]
+    },
+    {
+      "file": "20-Markdown_colado_(2)(20261007-192220).md",
+      "bytes": 63813,
+      "sha256": "94e1f0c1e8c44221c3126c69e715e2ec46effbc377f074d2f0ce6dbe0967833e",
+      "title": "70er-Quiz &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "triviaQuiz970",
+          "name": "70er-Quiz",
+          "questions": 19,
+          "results": 5
+        }
+      ]
+    },
+    {
+      "file": "21-Markdown_colado_(3)(20261007-192349).md",
+      "bytes": 46418,
+      "sha256": "5cbabb7376583c966cb9a66560efe209ddb640de33e0a824d9b0e9de56d5662d",
+      "title": "Welcher RADIO BOB! Stream passt zu Euch? &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "personalityQuiz786",
+          "name": "Welcher RADIO BOB! Stream passt zu Euch?",
+          "questions": 10,
+          "results": 6
+        }
+      ]
+    },
+    {
+      "file": "22-Markdown_colado(20261007-192921).md",
+      "bytes": 46418,
+      "sha256": "5cbabb7376583c966cb9a66560efe209ddb640de33e0a824d9b0e9de56d5662d",
+      "title": "Welcher RADIO BOB! Stream passt zu Euch? &#8211; RADIO BOB! Quiz Center",
+      "quizVariables": [
+        {
+          "var": "personalityQuiz786",
+          "name": "Welcher RADIO BOB! Stream passt zu Euch?",
+          "questions": 10,
+          "results": 6
+        }
+      ]
+    }
+  ]
+}

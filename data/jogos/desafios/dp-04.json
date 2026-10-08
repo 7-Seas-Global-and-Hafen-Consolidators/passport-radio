@@ -1,0 +1,349 @@
+{
+  "id": "dp-04",
+  "version": 1,
+  "title": "Quiz: qual álbum é mais antigo?",
+  "family": "Visual",
+  "type": "comparacao-albuns",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "qg75d",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "3y2wq",
+          "label": "\"High Voltage\" — AC/DC",
+          "correct": false
+        },
+        {
+          "id": "osea7",
+          "label": "\"IV\" — Led Zeppelin",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/420eb3e988d69f7d.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://images.radiobob.de/2023/05/acdc-led-zep.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "uuysp",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "reskv",
+          "label": "\"School's Out\" — Alice Cooper",
+          "correct": true
+        },
+        {
+          "id": "4amzm",
+          "label": "\"The River\" — Bruce Springsteen",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/1a4dc490404f5791.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://images.radiobob.de/2023/05/aerosmith-bruce-springsteen.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "mlvm6",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "815fd",
+          "label": "\"Aerosmith\" — Aerosmith",
+          "correct": true
+        },
+        {
+          "id": "n5ym0",
+          "label": "\"The Dark Side Of The Moon\" — Pink Floyd",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/d48577f6e9836205.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://images.radiobob.de/2023/05/aerosmith-pink-floyd-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "5diqr",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "6xq5i",
+          "label": "\"II\" — Billy Talent",
+          "correct": false
+        },
+        {
+          "id": "cvsix",
+          "label": "\"Americana\" The Offspring",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/5c4d84137845c02f.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://images.radiobob.de/2023/05/billy-talent-the-offspring-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "cmim7",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "u5h8y",
+          "label": "\"Slippery When Wet\" — Bon Jovi",
+          "correct": true
+        },
+        {
+          "id": "mxcv8",
+          "label": "\"Ten\" — Pearl Jam",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/4c6043446bb4f00a.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://images.radiobob.de/2023/05/bon-jovi-pearl-jam-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "j7ugi",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "4hsz2",
+          "label": "\"In Rock\" — Deep Purple",
+          "correct": true
+        },
+        {
+          "id": "v5m0u",
+          "label": "\"Escape\" — Journey",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/fc48343399ac694d.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://images.radiobob.de/2023/05/deep-purple-journey.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "owek9",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "vji4e",
+          "label": "\"Wasting Light\" — Foo Fighters",
+          "correct": false
+        },
+        {
+          "id": "mhobw",
+          "label": "\"Dookie\" — Green Day",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/3d06e1647a74ff64.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://images.radiobob.de/2023/05/foo-fighters-green-day-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "6g2pw",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "c6d1v",
+          "label": "\"Use Your Illusion\" — Guns N' Roses",
+          "correct": false
+        },
+        {
+          "id": "s78tt",
+          "label": "\"Turbo\" — Judas Priest",
+          "correct": true
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/891e8f4aa9e74cff.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://images.radiobob.de/2023/05/guns-n-roses-judas-priest.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "wq695",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "gvkwr",
+          "label": "\"Hybrid Theory\" — Linkin Park",
+          "correct": true
+        },
+        {
+          "id": "ltcf7",
+          "label": "\"Karacho\" — Donots",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/f16491e90cf2c56c.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://images.radiobob.de/2023/05/linkin-park-donots-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "mkdlc",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "x72hv",
+          "label": "\"Master Of Puppets\" — Metallica",
+          "correct": true
+        },
+        {
+          "id": "p8v75",
+          "label": "\"In Utero\" — Nirvana",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/4c6a89dd36649536.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://images.radiobob.de/2023/05/metallica-nirvana-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "g7au6",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "yo565",
+          "label": "\"Brothers In Arms\" — Dire Straits",
+          "correct": true
+        },
+        {
+          "id": "yjac0",
+          "label": "\"Be Here Now\" — Oasis",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/3f8d29a384be5df1.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://images.radiobob.de/2023/05/oasis-dire-straits-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "lfrso",
+      "prompt": "Qual destes álbuns saiu primeiro?",
+      "type": "comparacao-albuns",
+      "options": [
+        {
+          "id": "uptfu",
+          "label": "\"Infest\" — Papa Roach",
+          "correct": true
+        },
+        {
+          "id": "2w72m",
+          "label": "\"Jazz Ist Anders\" — Die Ärzte",
+          "correct": false
+        }
+      ],
+      "image": {
+        "src": "/assets/desafios/280c8c030a9035c4.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://images.radiobob.de/2023/05/papa-roach-die-aerzte-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 11,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "3yyha",
+      "title": "Dá para melhorar… Mas na próxima vez, com certeza, vai dar certo!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "r1rqs",
+      "title": "Nada mal! Você conhece algumas datas de lançamento.",
+      "description": "",
+      "min": 6,
+      "max": 9
+    },
+    {
+      "id": "2yebb",
+      "title": "Uau, quase tudo certo! Na próxima vez, com certeza, você alcança a pontuação máxima.",
+      "description": "",
+      "min": 10,
+      "max": 11
+    },
+    {
+      "id": "17jcn",
+      "title": "Perfeito! Você é uma enciclopédia musical ambulante. Tiramos o chapéu.",
+      "description": "",
+      "min": 12,
+      "max": 12
+    }
+  ],
+  "sourceId": "1009",
+  "versionHash": "653f74b79f8bc01c",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Quiz: Welches Album ist älter?"
+  },
+  "sourceFiles": [
+    "47-album-mais-antigo.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
+}

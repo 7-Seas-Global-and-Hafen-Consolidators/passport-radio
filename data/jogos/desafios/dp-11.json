@@ -1,0 +1,459 @@
+{
+  "id": "dp-11",
+  "version": 1,
+  "title": "Quiz: rock ou não?",
+  "family": "Memória",
+  "type": "trecho-musical",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "iucwo",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "klw7g",
+          "label": "Rise Against - Give It All",
+          "correct": false
+        },
+        {
+          "id": "ze7d3",
+          "label": "Justin Bieber - Baby",
+          "correct": true
+        }
+      ],
+      "clue": "E me sacuda até me acordar deste pesadelo.",
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "ztg3v",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "bs2bb",
+          "label": "Rise Against - Tragedy + Time",
+          "correct": true
+        },
+        {
+          "id": "8j8sg",
+          "label": "Taylor Swift - Look What You Made Me Do",
+          "correct": false
+        }
+      ],
+      "clue": "Às vezes é preciso voltar para saber onde você estava.",
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "7qpup",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "8nux6",
+          "label": "Disturbed - Just Stop",
+          "correct": false
+        },
+        {
+          "id": "pqf64",
+          "label": "Taylor Swift - Bad Blood",
+          "correct": true
+        }
+      ],
+      "clue": "Ainda tenho nas costas as marcas da sua faca: não pense que ficou no passado.",
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "5ggwz",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "rqtjt",
+          "label": "Papa Roach - Forever",
+          "correct": true
+        },
+        {
+          "id": "yympo",
+          "label": "Jennifer Lopez - Forever",
+          "correct": false
+        }
+      ],
+      "clue": "Um último beijo antes de ir. Seque as lágrimas: chegou a hora de deixar você partir.",
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "c5xvl",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "kncya",
+          "label": "Linkin Park - Burn It Down",
+          "correct": true
+        },
+        {
+          "id": "7iw0a",
+          "label": "Eminem ft. Rihanna - Love The Way You Lie",
+          "correct": false
+        }
+      ],
+      "clue": "Você disse sim, me colocou nas alturas, e acreditei naquela mentira.",
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "hf0pj",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "kxnbq",
+          "label": "Rammstein - Ohne Dich",
+          "correct": true
+        },
+        {
+          "id": "forjz",
+          "label": "Rosenstolz - Ohne Dich",
+          "correct": false
+        }
+      ],
+      "clue": "Sem você, conto as horas. Com você, os segundos param.",
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "oyzdw",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "ad8fm",
+          "label": "Die Ärzte - Nur ein Kuss",
+          "correct": false
+        },
+        {
+          "id": "pvtqs",
+          "label": "Helene Fischer - Atemlos",
+          "correct": true
+        }
+      ],
+      "clue": "Você está mesmo viciado, pele com pele, completamente embriagado.",
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "7r7i7",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "2chna",
+          "label": "R.E.M. - Fall On Me",
+          "correct": false
+        },
+        {
+          "id": "x73hp",
+          "label": "Ed Sheeran - Sing",
+          "correct": true
+        }
+      ],
+      "clue": "Vamos, dê o tom. Se sentir que está caindo, me avise.",
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "9w96u",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "9beh8",
+          "label": "Stone Sour - Song #3",
+          "correct": true
+        },
+        {
+          "id": "sqngt",
+          "label": "Madonna - Justify My Love",
+          "correct": false
+        }
+      ],
+      "clue": "Deixe que eu dê um passo em sua direção e sinta você em minhas mãos.",
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "enpll",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "xn0hr",
+          "label": "Social Distortion - Don't Drag Me Down",
+          "correct": false
+        },
+        {
+          "id": "e86c3",
+          "label": "One Direction - Drag Me Down",
+          "correct": true
+        }
+      ],
+      "clue": "Ninguém pode me derrubar.",
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "olc50",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "8c06b",
+          "label": "Papa Roach - Falling Apart",
+          "correct": false
+        },
+        {
+          "id": "uojev",
+          "label": "Backstreet Boys - I Want It That Way",
+          "correct": true
+        }
+      ],
+      "clue": "Agora vejo que nos afastamos do que costumávamos ser.",
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "wzsri",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "90x6u",
+          "label": "Lifehouse - Hanging by The Moment",
+          "correct": true
+        },
+        {
+          "id": "k1wa5",
+          "label": "Bruno Mars - Just The Way You Are",
+          "correct": false
+        }
+      ],
+      "clue": "Estou me apaixonando ainda mais e deixando para trás tudo a que me agarrei.",
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "zgsul",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "uoki1",
+          "label": "Alanis Morissette - You Oughta Know",
+          "correct": true
+        },
+        {
+          "id": "h52cf",
+          "label": "ABBA - S.O.S.",
+          "correct": false
+        }
+      ],
+      "clue": "O amor que você deu, que construímos, não foi suficiente para você.",
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "lgslt",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "4qj1n",
+          "label": "Papa Roach - Scars",
+          "correct": false
+        },
+        {
+          "id": "69ap3",
+          "label": "Adele - Rolling In The Deep",
+          "correct": true
+        }
+      ],
+      "clue": "As marcas do seu amor me lembram de nós e de como quase tivemos tudo.",
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "lor2y",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "dxlil",
+          "label": "Die Toten Hosen - Ich bin die Sehnsucht in Dir",
+          "correct": true
+        },
+        {
+          "id": "e5aei",
+          "label": "PUR - Ich bin dein Lied",
+          "correct": false
+        }
+      ],
+      "clue": "Procurei seus caminhos. Sou sua sorte e sua maldição. Você ainda acreditou em mim.",
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "r357q",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "w685d",
+          "label": "Rammstein - Mein Herz brennt",
+          "correct": false
+        },
+        {
+          "id": "t72xs",
+          "label": "Mark Forster - Kogong",
+          "correct": true
+        }
+      ],
+      "clue": "Meu coração se agita no peito, grita e me chama à razão.",
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "g5fge",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "niyid",
+          "label": "R.E.M. - Supernatural Superserious",
+          "correct": true
+        },
+        {
+          "id": "6lmnr",
+          "label": "Madonna - Supernatural",
+          "correct": false
+        }
+      ],
+      "clue": "Agora não há nada escuro, nem estranho.",
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "bp8cu",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "yxw7k",
+          "label": "Bruce Springsteen - Streets Of Philadelphia",
+          "correct": false
+        },
+        {
+          "id": "q1536",
+          "label": "Robbie Williams - Angels",
+          "correct": true
+        }
+      ],
+      "clue": "Quando fico fraco e a dor segue por uma rua de mão única, olho para cima.",
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "g281f",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "b42vp",
+          "label": "Nirvana - All Apologies",
+          "correct": false
+        },
+        {
+          "id": "42wsa",
+          "label": "Timbaland - Apologize",
+          "correct": true
+        }
+      ],
+      "clue": "Tento de novo, caio de novo, levo outro golpe seu.",
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "7x1ey",
+      "prompt": "Qual destas músicas contém este trecho?",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "63msd",
+          "label": "Killswitch Engage - The End Of Heartache",
+          "correct": true
+        },
+        {
+          "id": "x2pay",
+          "label": "Kelly Clarkson - Catch My Breath",
+          "correct": false
+        }
+      ],
+      "clue": "Estou respirando? Minhas forças me abandonam.",
+      "sourceIndex": 19,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "zouhu",
+      "title": "Você anda ouvindo as paradas escondido? Precisa prestar mais atenção às letras. Continue ouvindo RADIO BOB! e vai dar certo!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "flsis",
+      "title": "Foi razoável, mas pode melhorar! Pelo menos distingue rock de música popular alemã, mas é só isso. Uma dica para praticar: ouvir mais RADIO BOB!",
+      "description": "",
+      "min": 6,
+      "max": 13
+    },
+    {
+      "id": "naumb",
+      "title": "Bastante impressionante! Você está perto de ser um verdadeiro especialista em rock. Continue, e reconhecerá as últimas letras também!",
+      "description": "",
+      "min": 14,
+      "max": 19
+    },
+    {
+      "id": "gbfs6",
+      "title": "Uau! Quero ver alguém fazer igual! Você é um cancioneiro ambulante. Provavelmente não existe música que você não consiga cantar inteira!",
+      "description": "",
+      "min": 20,
+      "max": 20
+    }
+  ],
+  "sourceId": "719",
+  "versionHash": "79f64084df89fce3",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Quiz: Rock Or Not?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "1",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  }
+}

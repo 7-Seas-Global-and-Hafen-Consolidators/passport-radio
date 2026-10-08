@@ -1,0 +1,641 @@
+{
+  "id": "dp-12",
+  "version": 1,
+  "title": "Qual gênero do rock combina com seu jeito?",
+  "family": "Perfil",
+  "type": "personalidade",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "3mr5e",
+      "prompt": "Prefiro ouvir música…",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "cbyp8",
+          "label": "… ao vivo, em shows e festivais, festejando com meus amigos.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 5,
+            "wrwsd": 4,
+            "fzlr1": 6,
+            "6db5i": 3,
+            "r701c": 2
+          }
+        },
+        {
+          "id": "0qszw",
+          "label": "… em casa, no meu aparelho de som, dançando pelo apartamento.",
+          "weights": {
+            "f5wwl": 5,
+            "oy4p7": 2,
+            "wrwsd": 3,
+            "fzlr1": 4,
+            "6db5i": 1,
+            "r701c": 6
+          }
+        },
+        {
+          "id": "dx4ml",
+          "label": "… no carro. Aumento tudo e canto alto e desafinado.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 5,
+            "wrwsd": 4,
+            "fzlr1": 1,
+            "6db5i": 3,
+            "r701c": 2
+          }
+        },
+        {
+          "id": "qgtmv",
+          "label": "… em um bar. Tomo uma cerveja com os amigos enquanto toca minha música favorita.",
+          "weights": {
+            "f5wwl": 4,
+            "oy4p7": 6,
+            "wrwsd": 2,
+            "fzlr1": 1,
+            "6db5i": 5,
+            "r701c": 3
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "ixl1n",
+      "prompt": "Qual instrumento imaginário você toca?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "6meft",
+          "label": "Guitarra imaginária, claro!",
+          "weights": {
+            "f5wwl": 4,
+            "oy4p7": 6,
+            "wrwsd": 3,
+            "fzlr1": 1,
+            "6db5i": 5,
+            "r701c": 2
+          }
+        },
+        {
+          "id": "ioqf6",
+          "label": "Bateria imaginária. Podem me dar as baquetas.",
+          "weights": {
+            "f5wwl": 2,
+            "oy4p7": 3,
+            "wrwsd": 6,
+            "fzlr1": 5,
+            "6db5i": 1,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "feksp",
+          "label": "Teclado imaginário. Mando ver nas teclas.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 4,
+            "wrwsd": 3,
+            "fzlr1": 1,
+            "6db5i": 1,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "1vmor",
+          "label": "Nenhum. Sou o vocalista e pulo pelo palco com meu microfone imaginário.",
+          "weights": {
+            "f5wwl": 5,
+            "oy4p7": 6,
+            "wrwsd": 3,
+            "fzlr1": 5,
+            "6db5i": 4,
+            "r701c": 3
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "o6zvm",
+      "prompt": "Que roupa você usa quando vai a um show?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "4e8dr",
+          "label": "Cabelo comprido e uma fantasia maluca. Algo que ninguém tem!",
+          "weights": {
+            "f5wwl": 5,
+            "oy4p7": 6,
+            "wrwsd": 1,
+            "fzlr1": 4,
+            "6db5i": 1,
+            "r701c": 2
+          }
+        },
+        {
+          "id": "6wayc",
+          "label": "Camisa de flanela, jeans rasgado e cabelo comprido bagunçado.",
+          "weights": {
+            "f5wwl": 2,
+            "oy4p7": 2,
+            "wrwsd": 3,
+            "fzlr1": 0,
+            "6db5i": 6,
+            "r701c": 5
+          }
+        },
+        {
+          "id": "njvac",
+          "label": "Cabelo em um moicano colorido, jaqueta de couro e um cinto de rebites indispensável.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 1,
+            "wrwsd": 6,
+            "fzlr1": 2,
+            "6db5i": 4,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "to68g",
+          "label": "Preto com preto!",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 5,
+            "wrwsd": 4,
+            "fzlr1": 6,
+            "6db5i": 3,
+            "r701c": 5
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "2maek",
+      "prompt": "Qual animal de estimação você tem?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "5v782",
+          "label": "Um papagaio. Ele também tem uma boca enorme.",
+          "weights": {
+            "f5wwl": 3,
+            "oy4p7": 2,
+            "wrwsd": 6,
+            "fzlr1": 3,
+            "6db5i": 5,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "czv9a",
+          "label": "Um cachorro. Ele late alto acompanhando todas as músicas.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 5,
+            "wrwsd": 2,
+            "fzlr1": 3,
+            "6db5i": 4,
+            "r701c": 2
+          }
+        },
+        {
+          "id": "v94w7",
+          "label": "Um gato. Admito: ele é o chefe.",
+          "weights": {
+            "f5wwl": 4,
+            "oy4p7": 2,
+            "wrwsd": 1,
+            "fzlr1": 3,
+            "6db5i": 5,
+            "r701c": 6
+          }
+        },
+        {
+          "id": "ezggt",
+          "label": "Um porquinho. Assim ele pode rolar comigo na lama no próximo festival.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 2,
+            "wrwsd": 5,
+            "fzlr1": 4,
+            "6db5i": 4,
+            "r701c": 6
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "96hv8",
+      "prompt": "O que você mais gosta de fazer em shows?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "0o9tj",
+          "label": "Bater a cabeça, bater a cabeça, bater a cabeça. Depois geralmente me perco na roda.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 6,
+            "wrwsd": 3,
+            "fzlr1": 6,
+            "6db5i": 3,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "ny2xc",
+          "label": "Fico na primeira fila e canto junto a plenos pulmões.",
+          "weights": {
+            "f5wwl": 3,
+            "oy4p7": 1,
+            "wrwsd": 6,
+            "fzlr1": 3,
+            "6db5i": 5,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "ew974",
+          "label": "Prefiro ficar no bar com uma cerveja gelada, assistindo ao espetáculo.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 3,
+            "wrwsd": 1,
+            "fzlr1": 2,
+            "6db5i": 5,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "xlmki",
+          "label": "Danço até a exaustão!",
+          "weights": {
+            "f5wwl": 2,
+            "oy4p7": 5,
+            "wrwsd": 2,
+            "fzlr1": 4,
+            "6db5i": 3,
+            "r701c": 6
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "mgowt",
+      "prompt": "Por qual causa sairia às ruas em uma manifestação?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "alp9k",
+          "label": "Qualquer coisa contra o sistema.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 1,
+            "wrwsd": 6,
+            "fzlr1": 3,
+            "6db5i": 5,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "b7yba",
+          "label": "Definitivamente pela redução do preço da cerveja!",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 6,
+            "wrwsd": 1,
+            "fzlr1": 6,
+            "6db5i": 2,
+            "r701c": 2
+          }
+        },
+        {
+          "id": "eba8l",
+          "label": "Contra a digitalização da música.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 5,
+            "wrwsd": 2,
+            "fzlr1": 4,
+            "6db5i": 1,
+            "r701c": 3
+          }
+        },
+        {
+          "id": "b4ngh",
+          "label": "Rock’n’roll deveria fazer parte da formação geral e ser ensinado nas escolas.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 5,
+            "wrwsd": 2,
+            "fzlr1": 4,
+            "6db5i": 1,
+            "r701c": 3
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "1y7ia",
+      "prompt": "O que faria se fosse uma estrela do rock por um dia?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "7i6gg",
+          "label": "Sexo, drogas e rock’n’roll. Mais alguma pergunta?",
+          "weights": {
+            "f5wwl": 4,
+            "oy4p7": 6,
+            "wrwsd": 2,
+            "fzlr1": 5,
+            "6db5i": 1,
+            "r701c": 3
+          }
+        },
+        {
+          "id": "vt8m3",
+          "label": "Daria um show incrível, que entraria para a história.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 5,
+            "wrwsd": 2,
+            "fzlr1": 3,
+            "6db5i": 4,
+            "r701c": 1
+          }
+        },
+        {
+          "id": "2lci2",
+          "label": "Claro que festejaria a noite inteira. Só se vive uma vez!",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 2,
+            "wrwsd": 5,
+            "fzlr1": 3,
+            "6db5i": 4,
+            "r701c": 6
+          }
+        },
+        {
+          "id": "s5cn4",
+          "label": "Claro: escreveria um clássico que me tornasse inesquecível.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 3,
+            "wrwsd": 4,
+            "fzlr1": 2,
+            "6db5i": 2,
+            "r701c": 1
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "9qw79",
+      "prompt": "O que você mais gosta de assistir na TV?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "g3i0o",
+          "label": "Assisto a Alf ou The Cosby Show. Aquilo era televisão boa!",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 4,
+            "wrwsd": 3,
+            "fzlr1": 3,
+            "6db5i": 2,
+            "r701c": 1
+          }
+        },
+        {
+          "id": "3qnxn",
+          "label": "The King of Queens, Um Maluco no Pedaço. Algo divertido.",
+          "weights": {
+            "f5wwl": 2,
+            "oy4p7": 1,
+            "wrwsd": 6,
+            "fzlr1": 3,
+            "6db5i": 4,
+            "r701c": 5
+          }
+        },
+        {
+          "id": "s51pp",
+          "label": "Os Simpsons ou South Park. Algo engraçado e crítico à sociedade.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 3,
+            "wrwsd": 5,
+            "fzlr1": 2,
+            "6db5i": 6,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "mn96e",
+          "label": "Game of Thrones, The Walking Dead. Simplesmente épico.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 5,
+            "wrwsd": 2,
+            "fzlr1": 6,
+            "6db5i": 3,
+            "r701c": 4
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "931rl",
+      "prompt": "O que as vozes na sua cabeça estão fazendo agora?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "b4up7",
+          "label": "Discutem a quais festivais devo ir neste ano.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 3,
+            "wrwsd": 5,
+            "fzlr1": 6,
+            "6db5i": 2,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "k3zwu",
+          "label": "Cantarolam minha música favorita.",
+          "weights": {
+            "f5wwl": 6,
+            "oy4p7": 4,
+            "wrwsd": 2,
+            "fzlr1": 1,
+            "6db5i": 3,
+            "r701c": 5
+          }
+        },
+        {
+          "id": "1pvpb",
+          "label": "Estão brigando. Ainda não sabemos quem vencerá.",
+          "weights": {
+            "f5wwl": 2,
+            "oy4p7": 1,
+            "wrwsd": 5,
+            "fzlr1": 4,
+            "6db5i": 6,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "1uaqw",
+          "label": "Na minha cabeça, na verdade, sempre é festa.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 5,
+            "wrwsd": 4,
+            "fzlr1": 6,
+            "6db5i": 3,
+            "r701c": 4
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "ijsma",
+      "prompt": "Qual é sua bebida de festival?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "bx9lw",
+          "label": "Cerveja. Existem outras bebidas?",
+          "weights": {
+            "f5wwl": 5,
+            "oy4p7": 6,
+            "wrwsd": 2,
+            "fzlr1": 4,
+            "6db5i": 1,
+            "r701c": 3
+          }
+        },
+        {
+          "id": "k8rdt",
+          "label": "Acho uísque com cola muito bom.",
+          "weights": {
+            "f5wwl": 4,
+            "oy4p7": 5,
+            "wrwsd": 1,
+            "fzlr1": 6,
+            "6db5i": 1,
+            "r701c": 1
+          }
+        },
+        {
+          "id": "tcnpu",
+          "label": "Não sou exigente. O que estiver disponível.",
+          "weights": {
+            "f5wwl": 1,
+            "oy4p7": 2,
+            "wrwsd": 6,
+            "fzlr1": 1,
+            "6db5i": 5,
+            "r701c": 4
+          }
+        },
+        {
+          "id": "iy97t",
+          "label": "Para não perder nada, fico acordado durante todo o festival com energéticos.",
+          "weights": {
+            "f5wwl": 2,
+            "oy4p7": 2,
+            "wrwsd": 5,
+            "fzlr1": 3,
+            "6db5i": 2,
+            "r701c": 6
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "f5wwl",
+      "title": "Classic Rock",
+      "description": "Você prefere tudo simples e descomplicado. Tendências novas não empolgam de imediato, e você prefere o antigo: classic rock ainda era rock puro! E está tudo bem. Encontrou seu estilo e segue assim pela vida. Nos grandes hinos do rock, canta mais alto que todos, porque nunca se cansa dessas músicas. É impossível não amar. Dentro de você há um pequeno nerd musical: interessa-se apaixonadamente por muitas coisas."
+    },
+    {
+      "id": "oy4p7",
+      "title": "Hard rock",
+      "description": "Alguns amigos diriam que você é meio louco, com carinho, claro. De vez em quando precisa de ação, senão logo se entedia. Para você, alto nunca é alto o bastante! Música não é só música, mas sua filosofia de vida. Fiel ao lema: sexo, drogas e rock’n’roll!"
+    },
+    {
+      "id": "wrwsd",
+      "title": "Punk",
+      "description": "Um pouco de anarquia na vida? Obrigatório para você! Embora assim não houvesse mais regras para quebrar. E se ninguém se irritasse com suas loucuras, seria chato! Você luta sem condições pelos seus princípios e deixa outras pessoas furiosas. Mas não consegue evitar: às vezes seu pequeno rebelde interior aparece e precisa se mostrar a todos. Como isso nem sempre funciona no trabalho, a música faz isso por você."
+    },
+    {
+      "id": "fzlr1",
+      "title": "Metal",
+      "description": "Você gostaria de passar o ano inteiro em festivais com os amigos, batendo a cabeça e celebrando suas bandas favoritas. Mas em você há mais do que alguém que gosta de palco e festa. Acima de tudo, é uma pessoa tranquila e pé no chão, sempre disposta a brincar. Faz amizades em todo lugar, pois é acessível e confiável. Macio por dentro, metal por fora!"
+    },
+    {
+      "id": "6db5i",
+      "title": "Grunge",
+      "description": "Tanto faz: você diz não ligar para as normas sociais, mas elas o levam à beira do desespero. Da euforia à tristeza profunda, seus sentimentos caminham por uma linha estreita. A música dá um palco às suas emoções. Ao ouvir, pode extravasar toda sua raiva e vulnerabilidade e limpar a cabeça. São justamente essas arestas que tornam o som e a vida interessantes. Você descobre beleza nas coisas mais feias."
+    },
+    {
+      "id": "r701c",
+      "title": "Rock alternativo",
+      "description": "Você não gosta que digam o que deve ou não fazer. Se algo dá errado, não é tão grave. Em compensação, os sucessos são ainda melhores. Gosta de experimentar coisas fora do comum e compartilhá-las. Na música e na vida, precisa de variedade e inovação: ficar parado é morrer."
+    }
+  ],
+  "sourceId": "226",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welches Rock-Genre gleicht deinem Charakter?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/38-rock-genero.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "bff2b810f9731a51"
+}

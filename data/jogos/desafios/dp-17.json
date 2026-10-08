@@ -1,0 +1,643 @@
+{
+  "id": "dp-17",
+  "version": 1,
+  "title": "Qual festival você deveria visitar?",
+  "family": "Perfil",
+  "type": "personalidade",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "xy6ci",
+      "prompt": "Para começar: quando e como você chega?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "hbkap",
+          "label": "Reservo cedo e sou sempre o primeiro a chegar, claro, com o carro lotado até o teto.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 2,
+            "xbouu": 1,
+            "3v3am": 4
+          }
+        },
+        {
+          "id": "y8y0t",
+          "label": "Chego no último instante, usando transporte público.",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 5,
+            "8dac2": 0,
+            "bm25z": 4,
+            "xbouu": 3,
+            "3v3am": 1
+          }
+        },
+        {
+          "id": "eh97u",
+          "label": "Naturalmente, chego pontualmente com meu trailer.",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 4,
+            "8dac2": 3,
+            "bm25z": 5,
+            "xbouu": 0,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "oac0i",
+          "label": "Não me importo quando nem como chego. Alguém vai me levar.",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 3,
+            "8dac2": 0,
+            "bm25z": 4,
+            "xbouu": 5,
+            "3v3am": 1
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "i08t5",
+      "prompt": "Onde você passa o tempo no festival quando não está pulando no mosh diante de algum palco?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "mihpp",
+          "label": "Na barraca do Green Camp: aproveito com pessoas parecidas e ainda faço algo pelo meio ambiente.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 0,
+            "8dac2": 1,
+            "bm25z": 5,
+            "xbouu": 4,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "j4glr",
+          "label": "O chão é meu quarto. Em qualquer lugar encontro um canto para relaxar e dormir.",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 0,
+            "8dac2": 1,
+            "bm25z": 3,
+            "xbouu": 5,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "5b2pz",
+          "label": "Volto para casa à noite. Festival é bom, mas preciso do meu sono de beleza.",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 5,
+            "8dac2": 0,
+            "bm25z": 3,
+            "xbouu": 2,
+            "3v3am": 1
+          }
+        },
+        {
+          "id": "xovhw",
+          "label": "Meu trailer tem espaço para deitar com a turma, mas quase não fico no acampamento: é hora de festa!",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 3,
+            "xbouu": 2,
+            "3v3am": 4
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "6z9hu",
+      "prompt": "Do que você se alimenta?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "9fvh3",
+          "label": "De cerveja. Do que mais seria?",
+          "weights": {
+            "rg9sq": 0,
+            "ckzpw": 5,
+            "8dac2": 2,
+            "bm25z": 4,
+            "xbouu": 3,
+            "3v3am": 1
+          }
+        },
+        {
+          "id": "kujsn",
+          "label": "Só preciso da música!",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 2,
+            "8dac2": 5,
+            "bm25z": 1,
+            "xbouu": 0,
+            "3v3am": 3
+          }
+        },
+        {
+          "id": "8eo1o",
+          "label": "Tenho comida suficiente guardada.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 0,
+            "8dac2": 4,
+            "bm25z": 2,
+            "xbouu": 1,
+            "3v3am": 5
+          }
+        },
+        {
+          "id": "t0wvq",
+          "label": "Pego tudo que consigo de graça.",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 3,
+            "8dac2": 1,
+            "bm25z": 4,
+            "xbouu": 5,
+            "3v3am": 0
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "xnd01",
+      "prompt": "Quais bandas você vai assistir?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "3onfh",
+          "label": "Só as que queria ver desde o começo. O resto não me interessa.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 4,
+            "8dac2": 0,
+            "bm25z": 5,
+            "xbouu": 1,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "e6gyx",
+          "label": "Todas as conhecidas e as poucas menores que me fizeram vir.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 2,
+            "8dac2": 5,
+            "bm25z": 1,
+            "xbouu": 0,
+            "3v3am": 4
+          }
+        },
+        {
+          "id": "ycjd6",
+          "label": "Tudo que consigo assistir: dá para descobrir muita coisa nova.",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 4,
+            "xbouu": 2,
+            "3v3am": 3
+          }
+        },
+        {
+          "id": "5pfo3",
+          "label": "Que bandas? Fico bêbado no acampamento e nem lembro meu nome…",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 4,
+            "8dac2": 0,
+            "bm25z": 3,
+            "xbouu": 5,
+            "3v3am": 1
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "pla7t",
+      "prompt": "Qual é sua roupa de festival?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "x839q",
+          "label": "Camisetas de banda e bermuda",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 5,
+            "8dac2": 3,
+            "bm25z": 4,
+            "xbouu": 0,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "pk96r",
+          "label": "Não importa a roupa: ela está sempre cheia de lama e sujeira",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 2,
+            "xbouu": 1,
+            "3v3am": 4
+          }
+        },
+        {
+          "id": "wmbbr",
+          "label": "Uma roupa nova por dia. Dá para manter a boa aparência até em festival",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 5,
+            "8dac2": 0,
+            "bm25z": 3,
+            "xbouu": 4,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "g7zvs",
+          "label": "Uma fantasia maluca de viking ou algo assim",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 2,
+            "8dac2": 5,
+            "bm25z": 1,
+            "xbouu": 0,
+            "3v3am": 4
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "sbc11",
+      "prompt": "A chuva…",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "wrcyp",
+          "label": "…melhora tudo. Começa a guerra de lama!",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 1,
+            "xbouu": 2,
+            "3v3am": 3
+          }
+        },
+        {
+          "id": "6ehaj",
+          "label": "…estraga tudo. Vou para casa!",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 5,
+            "8dac2": 0,
+            "bm25z": 3,
+            "xbouu": 4,
+            "3v3am": 1
+          }
+        },
+        {
+          "id": "sbqsp",
+          "label": "…incomoda um pouco, mas eu aproveito mesmo assim.",
+          "weights": {
+            "rg9sq": 5,
+            "ckzpw": 0,
+            "8dac2": 4,
+            "bm25z": 2,
+            "xbouu": 1,
+            "3v3am": 3
+          }
+        },
+        {
+          "id": "0zy4t",
+          "label": "…não me afeta, porque estou sempre preparado para tudo.",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 3,
+            "xbouu": 1,
+            "3v3am": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "fkffd",
+      "prompt": "Com quem você passa os dias do festival?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "fx9jn",
+          "label": "Vou sozinho. Sempre dá para conhecer gente legal.",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 4,
+            "8dac2": 0,
+            "bm25z": 3,
+            "xbouu": 5,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "ngemt",
+          "label": "Vou com uma turma grande, mas geralmente nos separamos no festival.",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 1,
+            "8dac2": 5,
+            "bm25z": 4,
+            "xbouu": 0,
+            "3v3am": 3
+          }
+        },
+        {
+          "id": "dsugx",
+          "label": "Vou com meus amigos e gostamos de ficar entre nós.",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 1,
+            "8dac2": 3,
+            "bm25z": 2,
+            "xbouu": 0,
+            "3v3am": 5
+          }
+        },
+        {
+          "id": "ayuvh",
+          "label": "Vou com meu melhor amigo; juntos fazemos amizade em qualquer lugar.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 4,
+            "8dac2": 0,
+            "bm25z": 1,
+            "xbouu": 5,
+            "3v3am": 2
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "h538s",
+      "prompt": "O que não pode faltar na sua bagagem?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "rkom9",
+          "label": "A churrasqueira",
+          "weights": {
+            "rg9sq": 4,
+            "ckzpw": 0,
+            "8dac2": 3,
+            "bm25z": 2,
+            "xbouu": 1,
+            "3v3am": 5
+          }
+        },
+        {
+          "id": "vfgfv",
+          "label": "Cerveja, cerveja e, muito importante, cerveja!",
+          "weights": {
+            "rg9sq": 1,
+            "ckzpw": 4,
+            "8dac2": 2,
+            "bm25z": 5,
+            "xbouu": 3,
+            "3v3am": 0
+          }
+        },
+        {
+          "id": "ngqr3",
+          "label": "Com certeza, botas de borracha",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 0,
+            "8dac2": 4,
+            "bm25z": 3,
+            "xbouu": 1,
+            "3v3am": 5
+          }
+        },
+        {
+          "id": "54z6v",
+          "label": "Sem dúvida, camisinhas",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 3,
+            "8dac2": 0,
+            "bm25z": 4,
+            "xbouu": 5,
+            "3v3am": 1
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "z8461",
+      "prompt": "Como é seu dia perfeito em um festival?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "dc5iy",
+          "label": "Dormir bastante, tomar café com calma, passear pelo local e, à noite, curtir até cair.",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 1,
+            "8dac2": 4,
+            "bm25z": 3,
+            "xbouu": 0,
+            "3v3am": 5
+          }
+        },
+        {
+          "id": "c2bjc",
+          "label": "Ficar o dia todo de bobeira e bebendo com os amigos no acampamento, depois ver nossas bandas favoritas.",
+          "weights": {
+            "rg9sq": 3,
+            "ckzpw": 1,
+            "8dac2": 5,
+            "bm25z": 4,
+            "xbouu": 0,
+            "3v3am": 2
+          }
+        },
+        {
+          "id": "steaz",
+          "label": "Alterno entre dormir e festejar.",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 0,
+            "8dac2": 1,
+            "bm25z": 4,
+            "xbouu": 5,
+            "3v3am": 3
+          }
+        },
+        {
+          "id": "r3o4q",
+          "label": "Não faço ideia. Nunca lembro dos melhores dias…",
+          "weights": {
+            "rg9sq": 2,
+            "ckzpw": 5,
+            "8dac2": 0,
+            "bm25z": 3,
+            "xbouu": 4,
+            "3v3am": 1
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "z0pl5",
+      "prompt": "Para onde você vai?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "ujzvd",
+          "label": "Norte",
+          "weights": {
+            "rg9sq": 0,
+            "ckzpw": 0,
+            "8dac2": 5,
+            "bm25z": 0,
+            "xbouu": 0,
+            "3v3am": 0
+          }
+        },
+        {
+          "id": "xznbp",
+          "label": "Sul",
+          "weights": {
+            "rg9sq": 0,
+            "ckzpw": 0,
+            "8dac2": 0,
+            "bm25z": 0,
+            "xbouu": 0,
+            "3v3am": 5
+          }
+        },
+        {
+          "id": "o6nts",
+          "label": "Leste",
+          "weights": {
+            "rg9sq": 5,
+            "ckzpw": 0,
+            "8dac2": 0,
+            "bm25z": 0,
+            "xbouu": 5,
+            "3v3am": 0
+          }
+        },
+        {
+          "id": "idid3",
+          "label": "Oeste",
+          "weights": {
+            "rg9sq": 0,
+            "ckzpw": 5,
+            "8dac2": 0,
+            "bm25z": 0,
+            "xbouu": 0,
+            "3v3am": 0
+          }
+        },
+        {
+          "id": "huagn",
+          "label": "Para uma boa festa, vou a qualquer lugar.",
+          "weights": {
+            "rg9sq": 0,
+            "ckzpw": 0,
+            "8dac2": 0,
+            "bm25z": 5,
+            "xbouu": 0,
+            "3v3am": 0
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "rg9sq",
+      "title": "Full Force",
+      "description": "Você é um frequentador tranquilo de festivais, que não gosta apenas de bom metal, mas também aprecia outras formas de rock. Quer uma diversão musical variada com fãs de rock de gosto parecido, em um festival ainda relativamente novo, mas em crescimento constante. Neste verão, você precisa de peso e calor: deveria fazer parte da nova geração do metal e ir ao Full Force."
+    },
+    {
+      "id": "ckzpw",
+      "title": "Vainstream",
+      "description": "Você é uma pessoa aberta, sempre espalha bom humor e é ótima companhia para festejar. Mas, com tanta vontade de festa, provavelmente não sobreviveria a um fim de semana inteiro de festival. Por isso, prefere a rapidinha entre os festivais: Vainstream. Mas essa rapidinha não fica devendo! A festa começou!"
+    },
+    {
+      "id": "8dac2",
+      "title": "Wacken Open Air",
+      "description": "Chuva ou sol: esse é seu lema, não precisamos saber mais. Todo ano você peregrina ao Wacken Open Air para reencontrar amigos, curtir bandas incríveis e viver os melhores momentos da sua vida. Wacken é seu segundo lar, e Holy Land é sua sala de estar. Você está na sua comunidade metal, que não deixaria por nada nem ninguém. Por isso, os ingressos do próximo ano já estão reservados."
+    },
+    {
+      "id": "bm25z",
+      "title": "Open Flair",
+      "description": "Você vai ao festival pelas bandas favoritas, mas o clima no acampamento costuma ser tão bom que poderia passar o dia inteiro lá. Gosta de tranquilidade, mas também de volume. No Open Flair, sente-se em casa, e todos ao redor são tão roqueiros quanto você. Nada impede a festa: no acampamento ou diante do palco, tanto faz, será lendária."
+    },
+    {
+      "id": "xbouu",
+      "title": "Highfield",
+      "description": "Entre os frequentadores de festivais, você definitivamente é o mais descomplicado. Basta uma cerveja gelada na mão e música boa. Punk, alternative, metal ou hard rock: tanto faz, você festeja onde estiver, com quem encontrar. Quem sabe esse seja seu segredo: uma festa não é festa até você chegar. Por isso, deveria ir ao Highfield neste ano. Uma enorme festa de rock espera por você."
+    },
+    {
+      "id": "3v3am",
+      "title": "Summer Breeze",
+      "description": "Quer um festival incrível? Música sensacional? Quer voltar a curtir rock de verdade? Então deveria ir ao Summer Breeze neste ano. Lá tem rock feito à mão até você cair. Tire seu colete do armário, seque sua cabeleira metal e já comece a se preparar mentalmente para o verão de festivais mais roqueiro da sua vida. O Summer Breeze será quente e barulhento neste ano: é melhor não perder!"
+    }
+  ],
+  "sourceId": "475",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welches Festival solltet Ihr besuchen?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/14-festival.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "793d3b177ccc90c2"
+}

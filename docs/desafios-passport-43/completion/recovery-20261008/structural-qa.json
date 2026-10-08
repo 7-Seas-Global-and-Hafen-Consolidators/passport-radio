@@ -1,0 +1,307 @@
+{
+  "result": "PASS",
+  "expected": 45,
+  "delivered": 45,
+  "questions": 666,
+  "sourcesProcessed": 52,
+  "games": [
+    {
+      "id": "dp-01",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-02",
+      "mode": "quiz",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-03",
+      "mode": "quiz",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-04",
+      "mode": "quiz",
+      "questions": 12,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-05",
+      "mode": "quiz",
+      "questions": 19,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-06",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-07",
+      "mode": "quiz",
+      "questions": 20,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-08",
+      "mode": "quiz",
+      "questions": 40,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-09",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-10",
+      "mode": "quiz",
+      "questions": 20,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-11",
+      "mode": "quiz",
+      "questions": 20,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-12",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-13",
+      "mode": "quiz",
+      "questions": 18,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-14",
+      "mode": "quiz",
+      "questions": 18,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-15",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-16",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-17",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-18",
+      "mode": "quiz",
+      "questions": 25,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-19",
+      "mode": "quiz",
+      "questions": 20,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-20",
+      "mode": "quiz",
+      "questions": 20,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-21",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-22",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-23",
+      "mode": "quiz",
+      "questions": 12,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-24",
+      "mode": "quiz",
+      "questions": 16,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-25",
+      "mode": "quiz",
+      "questions": 21,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-26",
+      "mode": "profile",
+      "questions": 7,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-27",
+      "mode": "quiz",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-28",
+      "mode": "quiz",
+      "questions": 16,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-29",
+      "mode": "quiz",
+      "questions": 12,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-30",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-31",
+      "mode": "quiz",
+      "questions": 18,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-32",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-33",
+      "mode": "quiz",
+      "questions": 16,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-34",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-35",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-36",
+      "mode": "quiz",
+      "questions": 18,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-37",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-38",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-39",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-40",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-41",
+      "mode": "quiz",
+      "questions": 15,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-42",
+      "mode": "profile",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-43",
+      "mode": "profile",
+      "questions": 8,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-44",
+      "mode": "quiz",
+      "questions": 20,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    },
+    {
+      "id": "dp-45",
+      "mode": "quiz",
+      "questions": 10,
+      "nativeOrderOptionsWeightsRangesImages": "PASS"
+    }
+  ],
+  "preservation": [
+    {
+      "path": "jogos.html",
+      "sha256": "616c2b498b897f9d1a9ff506f094051c716d4812d2d538767f0b918f998433f6",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "js/passport-audio-continuity.js",
+      "sha256": "c92d0adbff9f174f8de1f53723d07a25e80e9cd427efd04084d25689eddefc5e",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "js/passport-persist-nav.js",
+      "sha256": "e092fbc2b3ba85f05e48e40a6e9c40420cc9a77e9708823038beac8d4367750c",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "data/jogos/catalog.json",
+      "sha256": "42e911ffea9e442414c7154f2efee20f59b995bf2be159a73529389922454ca5",
+      "result": "UNCHANGED"
+    }
+  ],
+  "assets": {
+    "total": 163,
+    "reused": 22,
+    "new": 141,
+    "byteHashes": "PASS"
+  }
+}

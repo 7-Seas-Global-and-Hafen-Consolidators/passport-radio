@@ -1,0 +1,341 @@
+{
+  "id": "dp-23",
+  "version": 1,
+  "title": "Quiz de emojis da BOB: você reconhece estas músicas?",
+  "family": "Memória",
+  "type": "emoji",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "vnhri",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "n1z52",
+          "label": "Demons&Wizards",
+          "correct": false
+        },
+        {
+          "id": "n8x0m",
+          "label": "Abracadabra",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/a32bb4840eebce27.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Abracadabra.jpg"
+      }
+    },
+    {
+      "id": "xyn6s",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "hjvcg",
+          "label": "Thunderstruck",
+          "correct": true
+        },
+        {
+          "id": "7n7o5",
+          "label": "Blitzkrieg Bop",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/793f714ea439c8ba.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Thunderstruck.jpg"
+      }
+    },
+    {
+      "id": "vu4oq",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "ru767",
+          "label": "Purple Haze",
+          "correct": false
+        },
+        {
+          "id": "bvb95",
+          "label": "Purple Rain",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/3b3cae15fdb737b5.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Purple-Rain.jpg"
+      }
+    },
+    {
+      "id": "9hmke",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "nlje4",
+          "label": "T.N.T.",
+          "correct": true
+        },
+        {
+          "id": "octgl",
+          "label": "Dirty Dynamite",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/dc296d0fec1d7cb3.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/TNT.jpg"
+      }
+    },
+    {
+      "id": "xg1ay",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "3b7mo",
+          "label": "Ace of Spades",
+          "correct": false
+        },
+        {
+          "id": "rgfi5",
+          "label": "The Joker",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/2a0913d41e7de819.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Joker.jpg"
+      }
+    },
+    {
+      "id": "gujfo",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "67qdy",
+          "label": "Beds are Burning",
+          "correct": true
+        },
+        {
+          "id": "dw9le",
+          "label": "Sex on Fire",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/034758e27ad116da.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Beds-are-Burning.jpg"
+      }
+    },
+    {
+      "id": "c402m",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "roq8e",
+          "label": "Mountains",
+          "correct": false
+        },
+        {
+          "id": "5t09b",
+          "label": "Run to the Hills",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5b0c1a0ecbeb3276.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Run-to-the-Hills.jpg"
+      }
+    },
+    {
+      "id": "kn2k3",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "mauhb",
+          "label": "Moneytalks",
+          "correct": true
+        },
+        {
+          "id": "t2zp6",
+          "label": "Money for Nothing",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4bf18e0ff589f676.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Money-Talks.jpg"
+      }
+    },
+    {
+      "id": "jimxc",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "ojama",
+          "label": "Sledgehammer",
+          "correct": false
+        },
+        {
+          "id": "0dux6",
+          "label": "Hammer to Fall",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5faaabb351314292.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Hammer-to-Fall.jpg"
+      }
+    },
+    {
+      "id": "4607d",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "pp92f",
+          "label": "Highway to Hell",
+          "correct": true
+        },
+        {
+          "id": "f5oma",
+          "label": "One more for the Road",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5e70d3a891277226.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Highway-to-Hell.jpg"
+      }
+    },
+    {
+      "id": "qsotz",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "v0k4d",
+          "label": "Light my Fire",
+          "correct": false
+        },
+        {
+          "id": "ojh7j",
+          "label": "Ring of Fire",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/65b5542ba38150f1.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Ring-of-Fire.jpg"
+      }
+    },
+    {
+      "id": "q7666",
+      "prompt": "Qual música estamos procurando?",
+      "type": "emoji",
+      "options": [
+        {
+          "id": "37bsj",
+          "label": "Juke Box Hero",
+          "correct": false
+        },
+        {
+          "id": "63dzd",
+          "label": "Heroes",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bc4f8f88ce2496b1.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/07/Heroes.jpg"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "auij5",
+      "title": "Você precisa se esforçar um pouco mais se quiser fazer parte dos especialistas em rock!",
+      "description": "",
+      "min": 0,
+      "max": 6
+    },
+    {
+      "id": "tt4ec",
+      "title": "Já está bom. Na próxima vez, com certeza, você reconhece as últimas músicas também.",
+      "description": "",
+      "min": 7,
+      "max": 11
+    },
+    {
+      "id": "664t5",
+      "title": "Ótimo! Tudo certo. Ninguém engana você! Você arrasa!",
+      "description": "",
+      "min": 12,
+      "max": 12
+    }
+  ],
+  "sourceId": "520",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "BOBs Emoji Quiz: Erkennt Ihr diese Songs?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/09-rocksongs-emojis.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off",
+    "end_answers": "on"
+  },
+  "versionHash": "978aee5850a4f9d5"
+}

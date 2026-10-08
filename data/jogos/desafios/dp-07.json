@@ -1,0 +1,540 @@
+{
+  "id": "dp-07",
+  "version": 1,
+  "title": "Quanto você conhece do rock dos anos 90?",
+  "family": "Conhecimento",
+  "type": "decada",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "nje6j",
+      "prompt": "O Nirvana foi expulso da festa de lançamento de qual disco?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "eijj4",
+          "label": "Nevermind",
+          "correct": true
+        },
+        {
+          "id": "0i3ig",
+          "label": "In Utero",
+          "correct": false
+        },
+        {
+          "id": "ccyor",
+          "label": "MTV Unplugged in New York",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "6zbdd",
+      "prompt": "O Black Album foi qual álbum de estúdio do Metallica?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "glhhx",
+          "label": "O quinto álbum",
+          "correct": true
+        },
+        {
+          "id": "f6z3x",
+          "label": "O quarto álbum",
+          "correct": false
+        },
+        {
+          "id": "o9vno",
+          "label": "O sexto álbum",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "pcrgb",
+      "prompt": "Em que ano Rammstein foi formada?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "v768s",
+          "label": "1994",
+          "correct": true
+        },
+        {
+          "id": "xw2rr",
+          "label": "1995",
+          "correct": false
+        },
+        {
+          "id": "ogtey",
+          "label": "1996",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "szz4a",
+      "prompt": "Qual cidade ficou associada ao nascimento do grunge?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "9xrs1",
+          "label": "Seattle",
+          "correct": true
+        },
+        {
+          "id": "qpjye",
+          "label": "New York City",
+          "correct": false
+        },
+        {
+          "id": "j8ltx",
+          "label": "Boston",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "0suw8",
+      "prompt": "Qual álbum fez Green Day explodir em 1994?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "t734j",
+          "label": "Dookie",
+          "correct": true
+        },
+        {
+          "id": "s37qb",
+          "label": "American Idiot",
+          "correct": false
+        },
+        {
+          "id": "yxa16",
+          "label": "21st Century Breakdown",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "1sgp7",
+      "prompt": "Qual destas linhas abre Wonderwall, do Oasis?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "4tcxm",
+          "label": "Hoje vai ser o dia em que vão devolver tudo para você",
+          "correct": true
+        },
+        {
+          "id": "5r43y",
+          "label": "Hoje vai ser um dia que você nunca vai esquecer",
+          "correct": false
+        },
+        {
+          "id": "3w7kk",
+          "label": "Algum dia será o dia em que ela vai voltar para você",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "z92aw",
+      "prompt": "Qual banda aparece como banda escolar em American Pie, de 1999?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "zor3s",
+          "label": "Blink-182",
+          "correct": true
+        },
+        {
+          "id": "6fgue",
+          "label": "The Offspring",
+          "correct": false
+        },
+        {
+          "id": "5djp5",
+          "label": "Green Day",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "1gij6",
+      "prompt": "Qual disco lidera as vendas da série MTV Unplugged no quiz?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "klx77",
+          "label": "Eric Clapton Unplugged",
+          "correct": true
+        },
+        {
+          "id": "147l8",
+          "label": "Nirvana Unplugged",
+          "correct": false
+        },
+        {
+          "id": "4x66i",
+          "label": "Aerosmith Unplugged",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "3p23j",
+      "prompt": "Quando aconteceu o tributo a Freddie Mercury em Wembley?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "uodv5",
+          "label": "20 de abril de 1992",
+          "correct": true
+        },
+        {
+          "id": "3rfm9",
+          "label": "19 de junho de 1992",
+          "correct": false
+        },
+        {
+          "id": "gd7rh",
+          "label": "25 de maio de 1992",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "vqwf0",
+      "prompt": "Qual banda é apontada como pioneira do nu metal?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "5ew1o",
+          "label": "Korn",
+          "correct": true
+        },
+        {
+          "id": "ixh4j",
+          "label": "Slipknot",
+          "correct": false
+        },
+        {
+          "id": "lry76",
+          "label": "Linkin Park",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "5kqq3",
+      "prompt": "Quantas pessoas estiveram no primeiro Wacken, em 1990?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "8r19m",
+          "label": "800",
+          "correct": true
+        },
+        {
+          "id": "0u35i",
+          "label": "600",
+          "correct": false
+        },
+        {
+          "id": "ctkyk",
+          "label": "1000",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "e6qo1",
+      "prompt": "Qual é a duração de Smash, do The Offspring, indicada no quiz?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "to4sw",
+          "label": "46:38 min",
+          "correct": true
+        },
+        {
+          "id": "0j03m",
+          "label": "43:35 min",
+          "correct": false
+        },
+        {
+          "id": "72dtf",
+          "label": "31:23 min",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "4wht3",
+      "prompt": "Qual visual ficou associado ao grunge dos anos 90?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "i4bfv",
+          "label": "Camisas de flanela e cabelos desgrenhados",
+          "correct": true
+        },
+        {
+          "id": "j7awc",
+          "label": "Roupas rasgadas e moicanos",
+          "correct": false
+        },
+        {
+          "id": "0olro",
+          "label": "Camisetas pretas de banda e cabelos compridos",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "u1a0c",
+      "prompt": "Qual turnê levou Guns N’ Roses a quase duzentos shows entre 1991 e 1993?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "yi6rt",
+          "label": "Use Your Illusion Tour",
+          "correct": true
+        },
+        {
+          "id": "x92m5",
+          "label": "Appetite for Destruction Tour",
+          "correct": false
+        },
+        {
+          "id": "fsmrv",
+          "label": "Guns N’ Roses Forever Tour",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "knw30",
+      "prompt": "Segundo o quiz, onde Red Hot Chili Peppers gravou Californication?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "ch968",
+          "label": "Na garagem do baixista Flea",
+          "correct": true
+        },
+        {
+          "id": "rrv06",
+          "label": "Na antiga sala de ensaio da banda escolar",
+          "correct": false
+        },
+        {
+          "id": "x7qhe",
+          "label": "Na casa da mãe de Anthony Kiedis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "9wavy",
+      "prompt": "Qual trio de bandas marcou o britpop dos anos 90?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "saoc5",
+          "label": "Oasis, Blur, The Verve",
+          "correct": true
+        },
+        {
+          "id": "d2y5h",
+          "label": "The Rolling Stones, Beatles, Queen",
+          "correct": false
+        },
+        {
+          "id": "emprv",
+          "label": "Oasis, Coldplay, The Cure",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "v1uw6",
+      "prompt": "Quantas vezes o refrão Woo-hoo aparece em Song 2, segundo o quiz?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "8jk8u",
+          "label": "Dez vezes",
+          "correct": true
+        },
+        {
+          "id": "mu56v",
+          "label": "Onze vezes",
+          "correct": false
+        },
+        {
+          "id": "7sfzg",
+          "label": "Sete vezes",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "bpnlx",
+      "prompt": "Qual clipe de 1999 mostra a banda fantasiada de macacos?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "sxzow",
+          "label": "The Bad Touch, do Bloodhound Gang",
+          "correct": true
+        },
+        {
+          "id": "l6tbk",
+          "label": "What’s My Age Again?, do Blink-182",
+          "correct": false
+        },
+        {
+          "id": "cmj4w",
+          "label": "All Star, do Smash Mouth",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "2p9w7",
+      "prompt": "Qual banda encerrou suas atividades em 1996?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "3xnl7",
+          "label": "Ramones",
+          "correct": true
+        },
+        {
+          "id": "azr3v",
+          "label": "Pink Floyd",
+          "correct": false
+        },
+        {
+          "id": "ukdw2",
+          "label": "Sex Pistols",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "b2iip",
+      "prompt": "Qual destes sucessos apareceu em 1994?",
+      "type": "decada",
+      "options": [
+        {
+          "id": "tav86",
+          "label": "The Cranberries — Zombie",
+          "correct": true
+        },
+        {
+          "id": "fv1o8",
+          "label": "Blur — Song 2",
+          "correct": false
+        },
+        {
+          "id": "kodzw",
+          "label": "Foo Fighters — Everlong",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "cqhvb",
+      "title": "Infelizmente, foi uma atuação ruim. Talvez você precise pesquisar novamente o que aconteceu nos anos 90!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "5jp0m",
+      "title": "Está razoável, mas ainda há muito espaço para melhorar! Pelo menos você conhece os acontecimentos mais importantes dos anos 90. Não desista!",
+      "description": "",
+      "min": 6,
+      "max": 12
+    },
+    {
+      "id": "nbqk7",
+      "title": "Nada mal! Você já conhece bem os anos 90, mas ainda faltam alguns fatos para se tornar um verdadeiro especialista. Continue assim!",
+      "description": "",
+      "min": 13,
+      "max": 19
+    },
+    {
+      "id": "s4diy",
+      "title": "Imbatível! Ninguém supera seu conhecimento. Você é um verdadeiro especialista nos anos 90! Rock on!",
+      "description": "",
+      "min": 20,
+      "max": 20
+    }
+  ],
+  "sourceId": "770",
+  "versionHash": "bf160936e62d4356",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr den Rock der 90er?"
+  },
+  "sourceFiles": [
+    "02-rock-der-90er.html",
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "1",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  }
+}

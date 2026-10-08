@@ -1,0 +1,467 @@
+{
+  "id": "dp-01",
+  "version": 1,
+  "title": "Quiz Wacken Open Air",
+  "family": "Conhecimento",
+  "type": "festival",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "7nwqr",
+      "prompt": "Em que ano aconteceu o primeiro Wacken Open Air?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "eaxmt",
+          "label": "1990",
+          "correct": true
+        },
+        {
+          "id": "a2va6",
+          "label": "1978",
+          "correct": false
+        },
+        {
+          "id": "newbr",
+          "label": "2003",
+          "correct": false
+        },
+        {
+          "id": "bho2n",
+          "label": "1984",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "7vu8h",
+      "prompt": "Quantas pessoas foram à primeira edição do Wacken?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "qah95",
+          "label": "Cerca de 30.000",
+          "correct": false
+        },
+        {
+          "id": "732fi",
+          "label": "Cerca de 100",
+          "correct": false
+        },
+        {
+          "id": "behd2",
+          "label": "Cerca de 5.000",
+          "correct": false
+        },
+        {
+          "id": "cs24r",
+          "label": "Cerca de 800",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "mtaz9",
+      "prompt": "Segundo o quiz recuperado, quantos habitantes tinha a comunidade de Wacken?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "meogu",
+          "label": "Cerca de 300",
+          "correct": false
+        },
+        {
+          "id": "xabw7",
+          "label": "Cerca de 1.800",
+          "correct": true
+        },
+        {
+          "id": "07gdp",
+          "label": "Cerca de 45.000",
+          "correct": false
+        },
+        {
+          "id": "34frq",
+          "label": "Cerca de 100.000",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "hp475",
+      "prompt": "Seis bandas tocaram no primeiro Wacken. Quanto custava o ingresso?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "fo2ta",
+          "label": "200 marcos alemães",
+          "correct": false
+        },
+        {
+          "id": "ywmel",
+          "label": "50 marcos alemães",
+          "correct": false
+        },
+        {
+          "id": "ajkrs",
+          "label": "30 marcos alemães",
+          "correct": false
+        },
+        {
+          "id": "u2hsb",
+          "label": "12 marcos alemães",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "pek4y",
+      "prompt": "Qual homenagem Thomas Jensen e Holger Hübner receberam por transformar Wacken numa capital do metal?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "73v10",
+          "label": "Ordem do Mérito de Schleswig-Holstein",
+          "correct": true
+        },
+        {
+          "id": "lz8zf",
+          "label": "Prêmio Nobel",
+          "correct": false
+        },
+        {
+          "id": "u8ubq",
+          "label": "Medalha de Schleswig-Holstein",
+          "correct": false
+        },
+        {
+          "id": "7jqjm",
+          "label": "Prêmio Grimme",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "vuv4b",
+      "prompt": "O que atrapalhou a preparação do Wacken de 1993?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "je8w4",
+          "label": "Faltaram bandas adequadas",
+          "correct": false
+        },
+        {
+          "id": "djquy",
+          "label": "Hübner sofreu um grave acidente de carro e houve uma morte na família de Jensen",
+          "correct": true
+        },
+        {
+          "id": "iztjt",
+          "label": "O tempo estava muito ruim",
+          "correct": false
+        },
+        {
+          "id": "od1i5",
+          "label": "Houve um incêndio no local",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "flmdq",
+      "prompt": "Como os fundadores seguiram em frente depois do prejuízo de 1993?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "06los",
+          "label": "Eles deixaram os empregos e pegaram dinheiro emprestado com a família",
+          "correct": true
+        },
+        {
+          "id": "kq8w4",
+          "label": "Eles arrumaram novos empregos",
+          "correct": false
+        },
+        {
+          "id": "z6enu",
+          "label": "Eles ganharam na loteria",
+          "correct": false
+        },
+        {
+          "id": "52iea",
+          "label": "Eles lançaram uma grande campanha de financiamento coletivo",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "jp51k",
+      "prompt": "Em que ano o Wacken ultrapassou dez mil visitantes pela primeira vez?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "yukcc",
+          "label": "2007",
+          "correct": false
+        },
+        {
+          "id": "j4kq8",
+          "label": "2000",
+          "correct": false
+        },
+        {
+          "id": "z8uno",
+          "label": "1997",
+          "correct": true
+        },
+        {
+          "id": "hyauw",
+          "label": "1994",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "5gqmk",
+      "prompt": "Quantas pessoas participaram do Wacken em 2022?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "ix8f2",
+          "label": "Cerca de 83.000",
+          "correct": true
+        },
+        {
+          "id": "z3elf",
+          "label": "Cerca de 43.000",
+          "correct": false
+        },
+        {
+          "id": "axsrr",
+          "label": "Cerca de 23.000",
+          "correct": false
+        },
+        {
+          "id": "n1maq",
+          "label": "Cerca de 830.000",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "yaiku",
+      "prompt": "Quando Iron Maiden tocou no Wacken pela primeira vez?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "kiy2r",
+          "label": "1996",
+          "correct": false
+        },
+        {
+          "id": "qanfj",
+          "label": "2004",
+          "correct": false
+        },
+        {
+          "id": "pqtnd",
+          "label": "2008",
+          "correct": true
+        },
+        {
+          "id": "zijty",
+          "label": "2012",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "1v59h",
+      "prompt": "No recorte do quiz original, qual destas bandas ainda não havia tocado no Wacken?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "ti965",
+          "label": "Metallica",
+          "correct": true
+        },
+        {
+          "id": "3fmi3",
+          "label": "Motörhead",
+          "correct": false
+        },
+        {
+          "id": "07fzt",
+          "label": "Deep Purple",
+          "correct": false
+        },
+        {
+          "id": "6tkbk",
+          "label": "Sabaton",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "vpfnm",
+      "prompt": "Quantas vezes Motörhead, com Lemmy, tocou no Wacken?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "812w1",
+          "label": "Uma vez",
+          "correct": false
+        },
+        {
+          "id": "ssbwh",
+          "label": "Oito vezes",
+          "correct": true
+        },
+        {
+          "id": "e5ajw",
+          "label": "Quatro vezes",
+          "correct": false
+        },
+        {
+          "id": "iy5qo",
+          "label": "Quinze vezes",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "jxasx",
+      "prompt": "Quem interpreta Holger Hübner na série Legend Of Wacken, lançada em 2023?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "2v4ax",
+          "label": "Jürgen Vogel",
+          "correct": false
+        },
+        {
+          "id": "f1wrj",
+          "label": "Matthias Schweighöfer",
+          "correct": false
+        },
+        {
+          "id": "7vmfu",
+          "label": "Charly Hübner",
+          "correct": true
+        },
+        {
+          "id": "xbtcv",
+          "label": "Uwe Ochsenknecht",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "jdcor",
+      "prompt": "A partir de qual ano as edições do Wacken passaram a esgotar os ingressos?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "usi28",
+          "label": "2007",
+          "correct": true
+        },
+        {
+          "id": "peip1",
+          "label": "1997",
+          "correct": false
+        },
+        {
+          "id": "y1bvq",
+          "label": "2018",
+          "correct": false
+        },
+        {
+          "id": "tnr4p",
+          "label": "2011",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "43qv5",
+      "prompt": "Quanto tempo levou para esgotar o Wacken de 2023?",
+      "type": "festival",
+      "options": [
+        {
+          "id": "31pf1",
+          "label": "Dez dias",
+          "correct": false
+        },
+        {
+          "id": "hmru7",
+          "label": "Dois meses",
+          "correct": false
+        },
+        {
+          "id": "jn5x2",
+          "label": "Três semanas",
+          "correct": false
+        },
+        {
+          "id": "zg6hv",
+          "label": "Cinco horas",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [],
+  "sourceId": "1070",
+  "versionHash": "ada1f5779706d3a4",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wacken Open Air Quiz"
+  },
+  "sourceFiles": [
+    "43-wacken-open-air.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
+}
