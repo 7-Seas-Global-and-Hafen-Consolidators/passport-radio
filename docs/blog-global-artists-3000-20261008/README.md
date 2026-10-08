@@ -2,7 +2,7 @@
 >
 > O push Git dos dois commits locais falhou por ausência de credencial: `could not read Username for 'https://github.com'`. Esta branch/PR guarda o patch binário integral em `recovery/full-recovery.patch.gz`, juntamente com checkpoint e evidências legíveis. O conteúdo do site nesta árvore remota permanece igual à main; os resultados abaixo certificam o checkout local reconstruível, não um deployment desta PR. A missão de 3.000 perfis está incompleta.
 >
-> Para recuperar exatamente os arquivos: usar um checkout isolado da base `d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b`, verificar SHA256 `2b7444d0af553eb4b6c72537be87fc548f829f88c348e7805adda66a24d97786`, descomprimir o arquivo e aplicar com `git apply --binary`. O pacote inclui todas as capturas e o inventário completo. Não repetir aquisição, inventário ou QA já persistidos. A restauração precisa preservar os arquivos de recuperação ao atualizar esta mesma branch. Nenhum merge autorizado.
+> Para recuperar exatamente os arquivos: usar um checkout isolado da base `d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b`, verificar SHA256 `2b7444d0af553eb4b6c72537be87fc548f829f88c348e7805adda66a24d97786`, descomprimir o arquivo e aplicar com `git apply --binary --unidiff-zero`. O pacote inclui todas as capturas e o inventário completo. Não repetir aquisição, inventário ou QA já persistidos. A restauração precisa preservar os arquivos de recuperação ao atualizar esta mesma branch. Nenhum merge autorizado.
 
 # Continuação global do Blog — 08/10/2026
 
