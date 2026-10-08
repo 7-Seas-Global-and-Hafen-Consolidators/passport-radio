@@ -1,0 +1,25 @@
+name: Blog legacy vault triage
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/blog-legacy-cofre-20261008
+          persist-credentials: true
+      - name: Run read-only HTML triage
+        run: python3 _cofre/blog-legacy-2026/triagem_blog.py
+      - name: Commit report to archive branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _cofre/blog-legacy-2026/triagem/
+          if ! git diff --cached --quiet; then
+            git commit -m "docs(blog): persist vault triage classification and report"
+            git push origin HEAD:archive/blog-legacy-cofre-20261008
+          fi
