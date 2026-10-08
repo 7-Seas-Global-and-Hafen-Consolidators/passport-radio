@@ -1,0 +1,665 @@
+{
+  "id": "dp-15",
+  "version": 1,
+  "title": "Quais versos seriam suas últimas palavras?",
+  "family": "Perfil",
+  "type": "personalidade",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "k7otu",
+      "prompt": "Na sua opinião, quanto tempo uma música deve durar?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "ppyz5",
+          "label": "Bem longa: uma música boa deve durar pelo menos oito minutos",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 2,
+            "icf6d": 4,
+            "3d312": 3,
+            "1xa6t": 1,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "r5gcn",
+          "label": "O padrão: de três a quatro minutos",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 3,
+            "icf6d": 2,
+            "3d312": 1,
+            "1xa6t": 4,
+            "g4068": 5
+          }
+        },
+        {
+          "id": "durzg",
+          "label": "No máximo dois minutos: músicas curtas vão direto ao ponto",
+          "weights": {
+            "9ox0v": 3,
+            "omn2k": 2,
+            "icf6d": 1,
+            "3d312": 5,
+            "1xa6t": 4,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "4tp4t",
+          "label": "Às vezes longa, às vezes curta. Uma música precisa sempre surpreender.",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 4,
+            "icf6d": 5,
+            "3d312": 1,
+            "1xa6t": 2,
+            "g4068": 3
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "wji75",
+      "prompt": "O que você faria na vida após a morte?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "n06ny",
+          "label": "Não acredito nisso: depois da morte, só quero que me deixem em paz",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 2,
+            "icf6d": 0,
+            "3d312": 4,
+            "1xa6t": 5,
+            "g4068": 3
+          }
+        },
+        {
+          "id": "wejvm",
+          "label": "Será uma enorme festa!",
+          "weights": {
+            "9ox0v": 4,
+            "omn2k": 5,
+            "icf6d": 0,
+            "3d312": 3,
+            "1xa6t": 2,
+            "g4068": 1
+          }
+        },
+        {
+          "id": "yndyr",
+          "label": "Vou renascer como rockstar e agitar os palcos do mundo",
+          "weights": {
+            "9ox0v": 4,
+            "omn2k": 2,
+            "icf6d": 3,
+            "3d312": 5,
+            "1xa6t": 0,
+            "g4068": 1
+          }
+        },
+        {
+          "id": "kcpol",
+          "label": "Vou continuar, sem dó, exatamente de onde parei nesta vida",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 4,
+            "icf6d": 0,
+            "3d312": 5,
+            "1xa6t": 3,
+            "g4068": 2
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "gmpe0",
+      "prompt": "Qual música você mais espera ouvir em um show?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "wu8gs",
+          "label": "Os bons e velhos sucessos da minha juventude",
+          "weights": {
+            "9ox0v": 2,
+            "omn2k": 3,
+            "icf6d": 4,
+            "3d312": 1,
+            "1xa6t": 0,
+            "g4068": 5
+          }
+        },
+        {
+          "id": "44tbb",
+          "label": "As músicas novas, que devem ser muito boas",
+          "weights": {
+            "9ox0v": 4,
+            "omn2k": 3,
+            "icf6d": 2,
+            "3d312": 1,
+            "1xa6t": 5,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "fh5q4",
+          "label": "As baladas, para me perder na melancolia",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 0,
+            "icf6d": 4,
+            "3d312": 3,
+            "1xa6t": 5,
+            "g4068": 2
+          }
+        },
+        {
+          "id": "g2tse",
+          "label": "Tudo que seja alto, para cantar berrando e bater cabeça!",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 4,
+            "icf6d": 0,
+            "3d312": 5,
+            "1xa6t": 3,
+            "g4068": 2
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "maiof",
+      "prompt": "Qual banda toca no seu funeral?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "vyvu4",
+          "label": "Queen",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "uivux",
+          "label": "Steel Panther",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 5,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "i29bh",
+          "label": "Aerosmith",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 5,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "b37vx",
+          "label": "Motörhead",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 5,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "s4oyt",
+          "label": "Papa Roach",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 5,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "rf2ii",
+          "label": "Bon Jovi",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 5
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "d9vti",
+      "prompt": "Qual monumento do rock você gostaria de visitar?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "mn5gb",
+          "label": "O Rainbow Bar & Grill, em Hollywood",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 4,
+            "icf6d": 0,
+            "3d312": 5,
+            "1xa6t": 3,
+            "g4068": 2
+          }
+        },
+        {
+          "id": "cmcry",
+          "label": "A estátua de Freddie Mercury, em Montreux",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 2,
+            "icf6d": 4,
+            "3d312": 0,
+            "1xa6t": 1,
+            "g4068": 3
+          }
+        },
+        {
+          "id": "espil",
+          "label": "Não faço esse tipo de coisa…",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 4,
+            "icf6d": 2,
+            "3d312": 3,
+            "1xa6t": 5,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "paatp",
+          "label": "A AC/DC Lane, em Melbourne",
+          "weights": {
+            "9ox0v": 2,
+            "omn2k": 3,
+            "icf6d": 4,
+            "3d312": 1,
+            "1xa6t": 0,
+            "g4068": 5
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "k7cgb",
+      "prompt": "Seus pensamentos são…",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "yjrdl",
+          "label": "Melancólicos",
+          "weights": {
+            "9ox0v": 3,
+            "omn2k": 0,
+            "icf6d": 4,
+            "3d312": 2,
+            "1xa6t": 5,
+            "g4068": 1
+          }
+        },
+        {
+          "id": "34kjr",
+          "label": "No aqui e agora",
+          "weights": {
+            "9ox0v": 2,
+            "omn2k": 3,
+            "icf6d": 1,
+            "3d312": 4,
+            "1xa6t": 0,
+            "g4068": 5
+          }
+        },
+        {
+          "id": "1iikd",
+          "label": "Bobos",
+          "weights": {
+            "9ox0v": 4,
+            "omn2k": 5,
+            "icf6d": 3,
+            "3d312": 1,
+            "1xa6t": 0,
+            "g4068": 2
+          }
+        },
+        {
+          "id": "sgwiv",
+          "label": "Sérios",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 0,
+            "icf6d": 4,
+            "3d312": 5,
+            "1xa6t": 3,
+            "g4068": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "shuyn",
+      "prompt": "O que não pode faltar em uma música?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "fvtzn",
+          "label": "Algo experimental, que ninguém tentou antes",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 0,
+            "icf6d": 4,
+            "3d312": 1,
+            "1xa6t": 3,
+            "g4068": 2
+          }
+        },
+        {
+          "id": "24phw",
+          "label": "Toda música precisa de uma letra criativa e de uma boa mensagem",
+          "weights": {
+            "9ox0v": 2,
+            "omn2k": 0,
+            "icf6d": 5,
+            "3d312": 1,
+            "1xa6t": 4,
+            "g4068": 3
+          }
+        },
+        {
+          "id": "p5b0r",
+          "label": "Guitarras, vozes roucas e volume!",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 4,
+            "icf6d": 2,
+            "3d312": 5,
+            "1xa6t": 3,
+            "g4068": 1
+          }
+        },
+        {
+          "id": "7huju",
+          "label": "Um bom riff de guitarra e um vocal de arrepiar são OBRIGATÓRIOS",
+          "weights": {
+            "9ox0v": 3,
+            "omn2k": 2,
+            "icf6d": 4,
+            "3d312": 0,
+            "1xa6t": 1,
+            "g4068": 5
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "fvw94",
+      "prompt": "O que levaria você para debaixo da terra?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "nkqzq",
+          "label": "O fim da minha banda favorita",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 2,
+            "icf6d": 0,
+            "3d312": 3,
+            "1xa6t": 4,
+            "g4068": 5
+          }
+        },
+        {
+          "id": "nawv8",
+          "label": "O aumento constante dos preços dos shows",
+          "weights": {
+            "9ox0v": 1,
+            "omn2k": 5,
+            "icf6d": 0,
+            "3d312": 4,
+            "1xa6t": 2,
+            "g4068": 3
+          }
+        },
+        {
+          "id": "o4vvh",
+          "label": "Ir a uma festa de schlager",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 3,
+            "icf6d": 1,
+            "3d312": 5,
+            "1xa6t": 2,
+            "g4068": 4
+          }
+        },
+        {
+          "id": "hssyt",
+          "label": "Eu sobrevivo a tudo…",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 1,
+            "icf6d": 3,
+            "3d312": 4,
+            "1xa6t": 0,
+            "g4068": 2
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "nkeo8",
+      "prompt": "Você é:",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "2lx0w",
+          "label": "Uma figura excêntrica",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "s68kr",
+          "label": "Um festeiro",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 5,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "hur23",
+          "label": "Um sonhador",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 5,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "1qzva",
+          "label": "Um sujeito durão",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 5,
+            "1xa6t": 0,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "xb8hy",
+          "label": "Um pensador inquieto",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 5,
+            "g4068": 0
+          }
+        },
+        {
+          "id": "cp0ij",
+          "label": "Um casca-grossa",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 0,
+            "icf6d": 0,
+            "3d312": 0,
+            "1xa6t": 0,
+            "g4068": 5
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "x5jad",
+      "prompt": "Qual caminho você escolheria?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "0cboo",
+          "label": "Highway to Hell",
+          "weights": {
+            "9ox0v": 0,
+            "omn2k": 4,
+            "icf6d": 1,
+            "3d312": 5,
+            "1xa6t": 3,
+            "g4068": 2
+          }
+        },
+        {
+          "id": "ghbed",
+          "label": "Stairway To Heaven",
+          "weights": {
+            "9ox0v": 5,
+            "omn2k": 2,
+            "icf6d": 4,
+            "3d312": 0,
+            "1xa6t": 1,
+            "g4068": 3
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "9ox0v",
+      "title": "Isto é a vida real? Ou é apenas fantasia?",
+      "description": "Você sempre faz tudo à sua maneira, não importa o que digam. Assim como viveu, partirá do seu próprio jeito, com palavras cujo sentido ninguém entende direito. Você é uma pessoa extravagante, às vezes muito excêntrica, mas todos adoram seu jeito estranho e honesto. Festas e shows com você são sempre lendários, e o céu dos roqueiros receberá você com uma festa enorme."
+    },
+    {
+      "id": "omn2k",
+      "title": "Vamos festejar como se amanhã fosse o fim do mundo",
+      "description": "Você não quer deixar este mundo, mas todos precisam partir um dia. E você consegue criar uma festa em qualquer lugar. Então por que não no céu ou no inferno? Uma verdadeira fera das festas como você vive pelo lema sexo, drogas e rock’n’roll, e continuará em uma festa eterna depois da morte."
+    },
+    {
+      "id": "icf6d",
+      "title": "Sonhe, sonhe até seus sonhos se tornarem realidade",
+      "description": "Você é um pequeno poeta amador e gosta de sonhar acordado. Sua visão romântica do mundo e da vida não agrada a todos, mas você não liga. Só quer uma vida bonita, com muito rock e boa música, e depois de morrer deixar o rock chover sobre as pessoas lá do céu."
+    },
+    {
+      "id": "3d312",
+      "title": "Nascidos para causar o inferno, nascidos para causar o inferno. Sabemos como fazer e fazemos muito bem",
+      "description": "Uma coisa é certa: provavelmente você não vai para o céu dos roqueiros. Já garantiu um lugar no purgatório eterno e tem até um pouco de orgulho disso. Se em vida você não liga para regras, na morte menos ainda. Você é um hard rocker durão e não deixa ninguém mandar em você. Até a morte tem medo de você… Você vai rockar a morte até o fim dos tempos!"
+    },
+    {
+      "id": "1xa6t",
+      "title": "Corte minha vida em pedaços. Este é meu último recurso",
+      "description": "Para que serve tudo isso? Estar vivo ou morto é meio indiferente para você. Com seu jeito melancólico, você consegue estragar o humor dos outros. Não tem vontade de festas, shows ou qualquer outra coisa; a vida é meio entediante… Mas você também não acredita em vida após a morte. Provavelmente não conseguiria escolher entre céu e inferno e assombraria eternamente este mundo e os vivos como um fantasma."
+    },
+    {
+      "id": "g4068",
+      "title": "Pegue minha mão, vamos conseguir, eu juro. Vivendo de uma oração",
+      "description": "Você é um verdadeiro hard rocker. Bem, pelo menos é o que pensa… Talvez seja apenas o fã de rock comum, mas e daí? Sua vida é cheia de shows, pessoas incríveis e muita música. O que mais desejar? Você vive uma vida longa e cheia de rock e vai satisfeito para o céu dos roqueiros. Claro que lá o rock continua…"
+    }
+  ],
+  "sourceId": "489",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welche Lyrics wären Eure letzten Worte?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/12-ultimas-palavras-lyrics.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "6f03d9e32b05e54b"
+}

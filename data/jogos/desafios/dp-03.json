@@ -1,7 +1,7 @@
 {
   "id": "dp-03",
   "version": 1,
-  "title": "MTV Unplugged",
+  "title": "Quiz MTV Unplugged",
   "family": "Conhecimento",
   "type": "trivia",
   "mode": "quiz",
@@ -31,7 +31,9 @@
           "label": "1979",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "6wqn3",
@@ -58,7 +60,9 @@
           "label": "Green Day",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "f2mrw",
@@ -85,7 +89,9 @@
           "label": "Bandas tocam na sala dos fãs",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "375fg",
@@ -112,7 +118,9 @@
           "label": "Bruce Springsteen",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "5ffqp",
@@ -139,7 +147,9 @@
           "label": "No Distractions — The Cure",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "gd2oc",
@@ -166,7 +176,9 @@
           "label": "Rod Stewart",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "dy7yf",
@@ -193,7 +205,9 @@
           "label": "Paul Simon e Gene Simmons",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "nmx0t",
@@ -220,7 +234,9 @@
           "label": "Leadbelly",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "x0azv",
@@ -247,7 +263,9 @@
           "label": "Setembro de 1995",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "dr02s",
@@ -274,39 +292,60 @@
           "label": "1970",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "c2sd9",
-      "title": "Vale outra rodada",
-      "description": "Na próxima você pode ir mais longe.",
+      "title": "Cabeça erguida. Na próxima vez, você vai se sair melhor!",
+      "description": "",
       "min": 0,
       "max": 4
     },
     {
       "id": "3yl59",
-      "title": "Você conhece o formato",
-      "description": "Boa parte da história do Unplugged já está na memória.",
+      "title": "Nada mal, parece que você conhece MTV Unplugged. Talvez tenha crescido ouvindo isso?",
+      "description": "",
       "min": 5,
       "max": 7
     },
     {
       "id": "ecsdl",
-      "title": "Quase perfeito",
-      "description": "Você conhece bastante dessa história.",
+      "title": "Quase tudo certo! Você conhece bastante de MTV Unplugged. Pelo visto, gosta das apresentações acústicas dos rockstars.",
+      "description": "",
       "min": 8,
       "max": 9
     },
     {
       "id": "gikp6",
-      "title": "Especialista em Unplugged",
-      "description": "Todas as respostas certas.",
+      "title": "Uau! Você foi perfeito. Tiramos o chapéu! Você é um verdadeiro especialista em MTV Unplugged.",
+      "description": "",
       "min": 10,
       "max": 10
     }
   ],
   "sourceId": "991",
-  "versionHash": "83527d2cb256ca98"
+  "versionHash": "83527d2cb256ca98",
+  "presentation": {
+    "questionLayout": "single",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "MTV Unplugged Quiz"
+  },
+  "sourceFiles": [
+    "48-mtv-unplugged.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "single",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
 }

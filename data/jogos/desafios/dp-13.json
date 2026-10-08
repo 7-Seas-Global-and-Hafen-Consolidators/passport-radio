@@ -1,0 +1,401 @@
+{
+  "id": "dp-13",
+  "version": 1,
+  "title": "Você sabe como estas bandas se chamavam antes?",
+  "family": "Conhecimento",
+  "type": "bandas",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "aqpss",
+      "prompt": "Como Simon&Garfunkel se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "uifst",
+          "label": "Tom&Jerry",
+          "correct": true
+        },
+        {
+          "id": "gvvom",
+          "label": "Ernie&Bert",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "1izxc",
+      "prompt": "Como Pearl Jam se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "m55ck",
+          "label": "Mookie Blaylock",
+          "correct": true
+        },
+        {
+          "id": "2qa05",
+          "label": "Ram Jam",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "dr3bw",
+      "prompt": "Como Radiohead se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "o933z",
+          "label": "On a Monday",
+          "correct": false
+        },
+        {
+          "id": "en41s",
+          "label": "On a Friday",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "vtcnt",
+      "prompt": "Como Queen se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "px9al",
+          "label": "Smile",
+          "correct": true
+        },
+        {
+          "id": "tlj8c",
+          "label": "Cry",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "rrwzf",
+      "prompt": "Como Def Leppard se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "kujnp",
+          "label": "Automatic Attack",
+          "correct": false
+        },
+        {
+          "id": "cdm5z",
+          "label": "Atomic Mass",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "kgeox",
+      "prompt": "Como Green Day se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "knchj",
+          "label": "Sweet Children",
+          "correct": true
+        },
+        {
+          "id": "622c0",
+          "label": "21st Century Breakdown",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "eqxgo",
+      "prompt": "Como The Black Crowes se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "126lj",
+          "label": "Flying Crowes",
+          "correct": false
+        },
+        {
+          "id": "h92tl",
+          "label": "Mr. Crowe's Garden",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "t8icf",
+      "prompt": "Como KISS se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "li1wx",
+          "label": "Wicked Lester",
+          "correct": true
+        },
+        {
+          "id": "kqfwk",
+          "label": "Wicked Sister",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "wgwnd",
+      "prompt": "Como Blue Öyster Cult se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "4b7ma",
+          "label": "Soft White Underbelly",
+          "correct": true
+        },
+        {
+          "id": "ak0oj",
+          "label": "Big Bottom",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "h0keh",
+      "prompt": "Como Lamb of God se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "ytaua",
+          "label": "Raising Hellfire",
+          "correct": false
+        },
+        {
+          "id": "keeii",
+          "label": "Burn The Priest",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "xwtn9",
+      "prompt": "Como Red Hot Chili Peppers se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "0rz87",
+          "label": "Tony Flow and the Miraculously Majestic Masters of Mayhem",
+          "correct": true
+        },
+        {
+          "id": "xvueb",
+          "label": "Tony Flow and the Miraculously Majestic Masters of Miracles",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "cf6bv",
+      "prompt": "Como Black Sabbath se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "vx0pt",
+          "label": "The Heaviest Metal Band",
+          "correct": false
+        },
+        {
+          "id": "3hst9",
+          "label": "The Polka Tulk Blues Band",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "lidbj",
+      "prompt": "Como Creedence Clearwater Revival se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "hpni3",
+          "label": "The Golliwogs",
+          "correct": true
+        },
+        {
+          "id": "rbuum",
+          "label": "The Boogie Woogies",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "drysz",
+      "prompt": "Como Nickelback se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "wzydk",
+          "label": "The Village Idiots",
+          "correct": true
+        },
+        {
+          "id": "a566n",
+          "label": "The City Boys",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "essld",
+      "prompt": "Como Led Zeppelin se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "77sqj",
+          "label": "The Other Yardbirds",
+          "correct": false
+        },
+        {
+          "id": "kyoco",
+          "label": "The New Yardbirds",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "w3it7",
+      "prompt": "Como Oasis se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "o5no5",
+          "label": "Sun",
+          "correct": false
+        },
+        {
+          "id": "ncwz9",
+          "label": "Rain",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "r95bh",
+      "prompt": "Como U2 se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "3wkgg",
+          "label": "Mirror of Society",
+          "correct": false
+        },
+        {
+          "id": "ikc6b",
+          "label": "Feedback",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "pgeth",
+      "prompt": "Como The Who se chamava antes?",
+      "type": "bandas",
+      "options": [
+        {
+          "id": "yn8ld",
+          "label": "The Detours",
+          "correct": true
+        },
+        {
+          "id": "5xy8r",
+          "label": "The Wonder Boys",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "v7bc1",
+      "title": "Puxa, isso não deu certo. É melhor estudar os antigos nomes das bandas mais um pouco. Vai dar certo!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "rd6vz",
+      "title": "Foi razoável, mas queremos ver mais de você! Veja novamente os antigos nomes das bandas com calma. Na próxima vez, você vai se sair melhor.",
+      "description": "",
+      "min": 6,
+      "max": 12
+    },
+    {
+      "id": "rl8n4",
+      "title": "Nada mal! Agora faltam só um ou dois antigos nomes para você ser um verdadeiro especialista. Continue!",
+      "description": "",
+      "min": 13,
+      "max": 17
+    },
+    {
+      "id": "8nhcj",
+      "title": "Uau! Quero ver alguém fazer igual! Você conhece todos os antigos nomes das bandas. Respeito!",
+      "description": "",
+      "min": 18,
+      "max": 18
+    }
+  ],
+  "sourceId": "616",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wisst Ihr wie diese Bands früher hießen?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/07-bands-frueher-hiessen.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "c9b82f41f52463ba"
+}

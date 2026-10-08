@@ -1,7 +1,7 @@
 {
   "id": "dp-07",
   "version": 1,
-  "title": "Rock dos anos 90",
+  "title": "Quanto você conhece do rock dos anos 90?",
   "family": "Conhecimento",
   "type": "decada",
   "mode": "quiz",
@@ -26,7 +26,9 @@
           "label": "MTV Unplugged in New York",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "6zbdd",
@@ -48,7 +50,9 @@
           "label": "O sexto álbum",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "pcrgb",
@@ -70,7 +74,9 @@
           "label": "1996",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "szz4a",
@@ -92,7 +98,9 @@
           "label": "Boston",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "0suw8",
@@ -114,7 +122,9 @@
           "label": "21st Century Breakdown",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "1sgp7",
@@ -136,7 +146,9 @@
           "label": "Algum dia será o dia em que ela vai voltar para você",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "z92aw",
@@ -158,7 +170,9 @@
           "label": "Green Day",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "1gij6",
@@ -180,7 +194,9 @@
           "label": "Aerosmith Unplugged",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "3p23j",
@@ -202,7 +218,9 @@
           "label": "25 de maio de 1992",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "vqwf0",
@@ -224,7 +242,9 @@
           "label": "Linkin Park",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     },
     {
       "id": "5kqq3",
@@ -246,7 +266,9 @@
           "label": "1000",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
     },
     {
       "id": "e6qo1",
@@ -268,7 +290,9 @@
           "label": "31:23 min",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
     },
     {
       "id": "4wht3",
@@ -290,7 +314,9 @@
           "label": "Camisetas pretas de banda e cabelos compridos",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
     },
     {
       "id": "u1a0c",
@@ -312,7 +338,9 @@
           "label": "Guns N’ Roses Forever Tour",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
     },
     {
       "id": "knw30",
@@ -334,7 +362,9 @@
           "label": "Na casa da mãe de Anthony Kiedis",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
     },
     {
       "id": "9wavy",
@@ -356,7 +386,9 @@
           "label": "Oasis, Coldplay, The Cure",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
     },
     {
       "id": "v1uw6",
@@ -378,7 +410,9 @@
           "label": "Sete vezes",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
     },
     {
       "id": "bpnlx",
@@ -400,7 +434,9 @@
           "label": "All Star, do Smash Mouth",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
     },
     {
       "id": "2p9w7",
@@ -422,7 +458,9 @@
           "label": "Sex Pistols",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
     },
     {
       "id": "b2iip",
@@ -444,39 +482,59 @@
           "label": "Foo Fighters — Everlong",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "cqhvb",
-      "title": "Hora de outra rodada",
-      "description": "Os anos 90 ainda têm histórias para contar.",
+      "title": "Infelizmente, foi uma atuação ruim. Talvez você precise pesquisar novamente o que aconteceu nos anos 90!",
+      "description": "",
       "min": 0,
       "max": 5
     },
     {
       "id": "5jp0m",
-      "title": "Os grandes acontecimentos estão aí",
-      "description": "Você conhece parte dessa década.",
+      "title": "Está razoável, mas ainda há muito espaço para melhorar! Pelo menos você conhece os acontecimentos mais importantes dos anos 90. Não desista!",
+      "description": "",
       "min": 6,
       "max": 12
     },
     {
       "id": "nbqk7",
-      "title": "Você conhece os anos 90",
-      "description": "Falta pouco para fechar todos os detalhes.",
+      "title": "Nada mal! Você já conhece bem os anos 90, mas ainda faltam alguns fatos para se tornar um verdadeiro especialista. Continue assim!",
+      "description": "",
       "min": 13,
       "max": 19
     },
     {
       "id": "s4diy",
-      "title": "Especialista nos anos 90",
-      "description": "Todas as respostas certas.",
+      "title": "Imbatível! Ninguém supera seu conhecimento. Você é um verdadeiro especialista nos anos 90! Rock on!",
+      "description": "",
       "min": 20,
       "max": 20
     }
   ],
   "sourceId": "770",
-  "versionHash": "bf160936e62d4356"
+  "versionHash": "bf160936e62d4356",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr den Rock der 90er?"
+  },
+  "sourceFiles": [
+    "02-rock-der-90er.html",
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "1",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  }
 }

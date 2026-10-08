@@ -1,7 +1,7 @@
 {
   "id": "dp-01",
   "version": 1,
-  "title": "Wacken Open Air",
+  "title": "Quiz Wacken Open Air",
   "family": "Conhecimento",
   "type": "festival",
   "mode": "quiz",
@@ -31,7 +31,9 @@
           "label": "1984",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "7vu8h",
@@ -58,7 +60,9 @@
           "label": "Cerca de 800",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "mtaz9",
@@ -85,7 +89,9 @@
           "label": "Cerca de 100.000",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "hp475",
@@ -112,7 +118,9 @@
           "label": "12 marcos alemães",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "pek4y",
@@ -139,7 +147,9 @@
           "label": "Prêmio Grimme",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "vuv4b",
@@ -166,7 +176,9 @@
           "label": "Houve um incêndio no local",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "flmdq",
@@ -193,7 +205,9 @@
           "label": "Eles lançaram uma grande campanha de financiamento coletivo",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "jp51k",
@@ -220,7 +234,9 @@
           "label": "1994",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "5gqmk",
@@ -247,7 +263,9 @@
           "label": "Cerca de 830.000",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "yaiku",
@@ -274,7 +292,9 @@
           "label": "2012",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     },
     {
       "id": "1v59h",
@@ -301,7 +321,9 @@
           "label": "Sabaton",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
     },
     {
       "id": "vpfnm",
@@ -328,7 +350,9 @@
           "label": "Quinze vezes",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
     },
     {
       "id": "jxasx",
@@ -355,7 +379,9 @@
           "label": "Uwe Ochsenknecht",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
     },
     {
       "id": "jdcor",
@@ -382,7 +408,9 @@
           "label": "2011",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
     },
     {
       "id": "43qv5",
@@ -409,10 +437,31 @@
           "label": "Cinco horas",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
     }
   ],
   "results": [],
   "sourceId": "1070",
-  "versionHash": "ada1f5779706d3a4"
+  "versionHash": "ada1f5779706d3a4",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wacken Open Air Quiz"
+  },
+  "sourceFiles": [
+    "43-wacken-open-air.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
 }

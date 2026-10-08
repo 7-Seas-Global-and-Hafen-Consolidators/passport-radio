@@ -1,0 +1,419 @@
+{
+  "id": "dp-16",
+  "version": 1,
+  "title": "QUIZ: quanto punk existe em você?",
+  "family": "Conhecimento",
+  "type": "historia-punk",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "xpe37",
+      "prompt": "Quem é chamado de “Godfather of Punk”?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "2aatj",
+          "label": "Joey Ramone",
+          "correct": false
+        },
+        {
+          "id": "fjtc6",
+          "label": "Iggy Pop",
+          "correct": true
+        },
+        {
+          "id": "lw6g4",
+          "label": "Sid Vicious",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "gzstb",
+      "prompt": "Em que ano os Ramones foram formados?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "rxd5f",
+          "label": "1973",
+          "correct": false
+        },
+        {
+          "id": "vmm2k",
+          "label": "1974",
+          "correct": true
+        },
+        {
+          "id": "behmj",
+          "label": "1975",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "b60re",
+      "prompt": "Quando os Sex Pistols fizeram seu primeiro show?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "t2q0h",
+          "label": "06.11.1975",
+          "correct": true
+        },
+        {
+          "id": "aqadq",
+          "label": "08.09.1976",
+          "correct": false
+        },
+        {
+          "id": "7wvpe",
+          "label": "04.10.1977",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "2vhiu",
+      "prompt": "Qual clube abriu em 1977 e deu palco às bandas punk?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "k3pwu",
+          "label": "Marquee Club",
+          "correct": false
+        },
+        {
+          "id": "clsn3",
+          "label": "SO 36",
+          "correct": false
+        },
+        {
+          "id": "pxi5o",
+          "label": "Roxy Club",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "mkwhi",
+      "prompt": "Em que ano Die Ärzte e Die Toten Hosen foram formados?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "usxsg",
+          "label": "1982",
+          "correct": true
+        },
+        {
+          "id": "nfcjc",
+          "label": "1983",
+          "correct": false
+        },
+        {
+          "id": "1w168",
+          "label": "1984",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "7ek3e",
+      "prompt": "O que aconteceu no primeiro show dos Sex Pistols?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "elsr3",
+          "label": "Depois, os fãs ocuparam o local por vários dias",
+          "correct": false
+        },
+        {
+          "id": "e72vm",
+          "label": "Eles insultaram seus fãs",
+          "correct": true
+        },
+        {
+          "id": "1m3yt",
+          "label": "Eles destruíram tudo que estava no palco",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "3192g",
+      "prompt": "Qual foi a primeira banda punk a entrar para o Rock and Roll Hall of Fame?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "j34m8",
+          "label": "The Clash",
+          "correct": false
+        },
+        {
+          "id": "hlfxk",
+          "label": "Bad Religion",
+          "correct": false
+        },
+        {
+          "id": "t65rx",
+          "label": "Ramones",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "wqjrr",
+      "prompt": "A capa de “London Calling”, do The Clash, foi inspirada em qual álbum?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "iuhot",
+          "label": "Elvis Presley com „Elvis Presley“",
+          "correct": true
+        },
+        {
+          "id": "bncdf",
+          "label": "Beach Boys com “Surfin‘ U.S.A.”",
+          "correct": false
+        },
+        {
+          "id": "rmuxa",
+          "label": "Creedence Cleartwater Revival com “Green River”",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "jl7al",
+      "prompt": "Por que a turnê dos Sex Pistols prevista para 1976 foi cancelada?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "0hxp1",
+          "label": "Os integrantes não podiam tocar por causa de problemas com drogas",
+          "correct": false
+        },
+        {
+          "id": "c1yje",
+          "label": "Não encontraram lugares onde a banda pudesse se apresentar",
+          "correct": false
+        },
+        {
+          "id": "cs5og",
+          "label": "As autoridades estavam preocupadas com os jovens",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "cblu0",
+      "prompt": "Quem ficou bêbado no bar durante a inauguração do clube punk SO36, em Berlim?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "a5be6",
+          "label": "Farin Urlaub & Bela B.",
+          "correct": false
+        },
+        {
+          "id": "0aoxc",
+          "label": "Iggy Pop & David Bowie",
+          "correct": true
+        },
+        {
+          "id": "7mrtx",
+          "label": "Sid Vicious & Johnny Rotten",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "f4ccw",
+      "prompt": "Como a banda de Billie Joe Armstrong se chamava antes de virar Green Day?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "wnfr1",
+          "label": "Revolution Children",
+          "correct": false
+        },
+        {
+          "id": "wnyoy",
+          "label": "Lost Children",
+          "correct": false
+        },
+        {
+          "id": "al73v",
+          "label": "Sweet Children",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "tz6f7",
+      "prompt": "Quantos shows os Ramones fizeram nos 22 anos em que estiveram em turnê?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "hvkhb",
+          "label": "2263 shows",
+          "correct": true
+        },
+        {
+          "id": "0eung",
+          "label": "1911 shows",
+          "correct": false
+        },
+        {
+          "id": "1eoyg",
+          "label": "3063 shows",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "6y43k",
+      "prompt": "O que significa “gobbing” na cena punk?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "gyknc",
+          "label": "A banda cospe no público quando ele não se anima o suficiente",
+          "correct": false
+        },
+        {
+          "id": "bki7h",
+          "label": "O público cospe uns nos outros como uma espécie de mosh",
+          "correct": false
+        },
+        {
+          "id": "ethet",
+          "label": "O público cospe na banda durante os shows para demonstrar aprovação",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "9k6ya",
+      "prompt": "Qual banda fez o punk ressurgir nos anos 90?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "k5ril",
+          "label": "My Chemical Romance",
+          "correct": false
+        },
+        {
+          "id": "tltvh",
+          "label": "Rise Against",
+          "correct": false
+        },
+        {
+          "id": "n62qz",
+          "label": "Green Day",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "ntszm",
+      "prompt": "Qual banda ficou muito conhecida na cena punk depois de tocar no Roxy Club em 1º de janeiro de 1977?",
+      "type": "historia-punk",
+      "options": [
+        {
+          "id": "j8cna",
+          "label": "Sex Pistols",
+          "correct": false
+        },
+        {
+          "id": "xx2vu",
+          "label": "The Clash",
+          "correct": true
+        },
+        {
+          "id": "vgfvg",
+          "label": "Ramones",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "m9fum",
+      "title": "Careta",
+      "description": "É melhor ir arrumar sua gravata. Você não tem lugar na cena punk. ;-)",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "id": "ipx78",
+      "title": "Punk de fachada",
+      "description": "Um jeans rasgado ainda não faz de você um punk. É melhor continuar praticando com nosso stream de punk! :-)",
+      "min": 3,
+      "max": 10
+    },
+    {
+      "id": "eg87u",
+      "title": "Punk disfarçado",
+      "description": "Seu coração punk está no lugar certo e a revolta punk dorme dentro de você. Nos shows, você finalmente deixa seu punk interior sair! ;-)",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "ntq8o",
+      "title": "Lenda punk",
+      "description": "Você é punk da cabeça aos pés! A rebeldia corre nas suas veias e você não tem medo de mostrar seu lado punk ao mundo! Rock on! ;-)",
+      "min": 15,
+      "max": 15
+    }
+  ],
+  "sourceId": "654",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "QUIZ: Wie viel Punk steht in Euch?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/05-wie-viel-punk.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  },
+  "versionHash": "142c41ddc24b8264"
+}

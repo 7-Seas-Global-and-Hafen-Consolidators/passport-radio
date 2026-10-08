@@ -1,7 +1,7 @@
 {
   "id": "dp-02",
   "version": 1,
-  "title": "De quem é esta barba?",
+  "title": "Quiz: barbas dos rockstars",
   "family": "Visual",
   "type": "barba",
   "mode": "quiz",
@@ -29,8 +29,11 @@
       ],
       "image": {
         "src": "/assets/desafios/10d7ad8a9ac5c810.jpg",
-        "alt": "Pista visual da pergunta 1"
-      }
+        "alt": "Imagem da pergunta 1",
+        "source": "https://images.radiobob.de/2023/10/anthony-kiedis.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "168gt",
@@ -55,8 +58,11 @@
       ],
       "image": {
         "src": "/assets/desafios/720ef14ca8c79f22.jpg",
-        "alt": "Pista visual da pergunta 2"
-      }
+        "alt": "Imagem da pergunta 2",
+        "source": "https://images.radiobob.de/2023/10/dave-grohl-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "ibzbd",
@@ -81,8 +87,11 @@
       ],
       "image": {
         "src": "/assets/desafios/f76b35c1e8e92b66.jpg",
-        "alt": "Pista visual da pergunta 3"
-      }
+        "alt": "Imagem da pergunta 3",
+        "source": "https://images.radiobob.de/2023/10/frank-zappa.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "zr4fw",
@@ -107,8 +116,11 @@
       ],
       "image": {
         "src": "/assets/desafios/9f740c58b523fbe3.jpg",
-        "alt": "Pista visual da pergunta 4"
-      }
+        "alt": "Imagem da pergunta 4",
+        "source": "https://images.radiobob.de/2023/10/freddie-mercury.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "83sna",
@@ -133,8 +145,11 @@
       ],
       "image": {
         "src": "/assets/desafios/d20934ca31764418.jpg",
-        "alt": "Pista visual da pergunta 5"
-      }
+        "alt": "Imagem da pergunta 5",
+        "source": "https://images.radiobob.de/2023/10/james-hetfield.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "tk83m",
@@ -159,8 +174,11 @@
       ],
       "image": {
         "src": "/assets/desafios/aa34a6a522d6fb92.jpg",
-        "alt": "Pista visual da pergunta 6"
-      }
+        "alt": "Imagem da pergunta 6",
+        "source": "https://images.radiobob.de/2023/10/kerry-king.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "0cbp6",
@@ -185,8 +203,11 @@
       ],
       "image": {
         "src": "/assets/desafios/5dccfb0cb20daaba.jpg",
-        "alt": "Pista visual da pergunta 7"
-      }
+        "alt": "Imagem da pergunta 7",
+        "source": "https://images.radiobob.de/2023/10/lemmy-kilmister.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "22iir",
@@ -211,8 +232,11 @@
       ],
       "image": {
         "src": "/assets/desafios/209759c8260d714d.jpg",
-        "alt": "Pista visual da pergunta 8"
-      }
+        "alt": "Imagem da pergunta 8",
+        "source": "https://images.radiobob.de/2023/10/scott-ian.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "5b8l7",
@@ -237,8 +261,11 @@
       ],
       "image": {
         "src": "/assets/desafios/3ca3581667ace9fa.jpg",
-        "alt": "Pista visual da pergunta 9"
-      }
+        "alt": "Imagem da pergunta 9",
+        "source": "https://images.radiobob.de/2023/10/tom-araya.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "4t60a",
@@ -263,40 +290,62 @@
       ],
       "image": {
         "src": "/assets/desafios/45c28db50dd55426.jpg",
-        "alt": "Pista visual da pergunta 10"
-      }
+        "alt": "Imagem da pergunta 10",
+        "source": "https://images.radiobob.de/2023/10/billy-gibbons.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 9,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "di3vg",
-      "title": "A barba escapou",
-      "description": "Ainda há rockstars para reconhecer.",
+      "title": "Infelizmente, não deu certo. Seu conhecimento sobre barbas ainda deixa a desejar…",
+      "description": "",
       "min": 0,
       "max": 3
     },
     {
       "id": "jkpvi",
-      "title": "Boa rodada",
-      "description": "Você reconheceu uma parte das barbas.",
+      "title": "Nada mal! Mas ainda há espaço para melhorar. Observe novamente as barbas dos seus rockstars favoritos antes de tentar outra vez.",
+      "description": "",
       "min": 4,
       "max": 6
     },
     {
       "id": "p9hx6",
-      "title": "Quase todas",
-      "description": "Faltou pouco para fechar o desafio.",
+      "title": "Quase tudo certo! Parece que você conhece bem as barbas dos rockstars…",
+      "description": "",
       "min": 7,
       "max": 9
     },
     {
       "id": "gr2t7",
-      "title": "Todas reconhecidas",
-      "description": "Você acertou todas as barbas.",
+      "title": "Uau! Você é um verdadeiro especialista em barbas… Tudo certo!",
+      "description": "",
       "min": 10,
       "max": 10
     }
   ],
   "sourceId": "1077",
-  "versionHash": "a4ddc7c79ec37b23"
+  "versionHash": "a4ddc7c79ec37b23",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Bärte der Rockstars Quiz"
+  },
+  "sourceFiles": [
+    "42-baerte-rockstars.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
 }

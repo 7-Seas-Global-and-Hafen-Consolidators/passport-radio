@@ -1,0 +1,501 @@
+{
+  "id": "dp-14",
+  "version": 1,
+  "title": "Quanto você conhece das letras?",
+  "family": "Memória",
+  "type": "trecho-musical",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "44wh0",
+      "prompt": "“Ganhei minha primeira guitarra de verdade, comprada na loja de variedades…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "te8tg",
+          "label": "The Police – „So Lonely“",
+          "correct": false
+        },
+        {
+          "id": "ydcgy",
+          "label": "Bon Jovi – „It’s My Life“",
+          "correct": false
+        },
+        {
+          "id": "9ycj0",
+          "label": "Bryan Adams – „Summer Of ´69“",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "em1pr",
+      "prompt": "“Sem placas de parada nem limite de velocidade. Ninguém vai me segurar. Como uma roda, vou girar. Ninguém vai me atrapalhar…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "c16jh",
+          "label": "Journey – „Wheel In The Sky“",
+          "correct": false
+        },
+        {
+          "id": "67ec1",
+          "label": "AC/DC – „Highway To Hell“",
+          "correct": true
+        },
+        {
+          "id": "72bv2",
+          "label": "Dire Straits – „Money For Nothing“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "745ik",
+      "prompt": "“Eu estava machucado e ferido, não conseguia dizer o que sentia. Não me reconhecia…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "442kv",
+          "label": "Robert Palmer – „Bad Case Of Loving You“",
+          "correct": false
+        },
+        {
+          "id": "qpft9",
+          "label": "Bruce Springsteen – „Streets Of Philadelphia“",
+          "correct": true
+        },
+        {
+          "id": "zx061",
+          "label": "Genesis – „No Son Of Mine“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "ss2it",
+      "prompt": "“Nunca me importei com o que fazem. Nunca me importei com o que sabem. Mas eu sei.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "ucftf",
+          "label": "Volbeat – „Heaven Nor Hell“",
+          "correct": false
+        },
+        {
+          "id": "93lpd",
+          "label": "Metallica – „Nothing Else Matters“",
+          "correct": true
+        },
+        {
+          "id": "nha9j",
+          "label": "Green Day – „Basket Case“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "sb99z",
+      "prompt": "“Nadando entre canções de ninar doentias, sufocando com seus álibis. Mas é o preço que pago, o destino está me chamando…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "4ot1d",
+          "label": "30 Seconds Mars – „Kings And Queens“",
+          "correct": false
+        },
+        {
+          "id": "5bfyf",
+          "label": "The Killers – „Mr. Brightside“",
+          "correct": true
+        },
+        {
+          "id": "wc146",
+          "label": "Linkin Park – „In The End“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "jhbon",
+      "prompt": "“Mas toque minhas lágrimas com seus lábios, toque meu mundo com seus dedos. E podemos ter a eternidade…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "voejb",
+          "label": "Queen – „Who Wants To Live Forever“",
+          "correct": true
+        },
+        {
+          "id": "wlo57",
+          "label": "Van Halen – „Why Can’t This Be Love“",
+          "correct": false
+        },
+        {
+          "id": "wqcq4",
+          "label": "Whitesnake – „Is This Love“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "91l09",
+      "prompt": "“Há uma sensação que tenho quando olho para o oeste, e meu espírito chora para partir…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "qvjxg",
+          "label": "ZZ Top – „La Grange“",
+          "correct": false
+        },
+        {
+          "id": "hlv5d",
+          "label": "Black Sabbath – „Paranoid“",
+          "correct": false
+        },
+        {
+          "id": "ubt14",
+          "label": "Led Zeppelin – „Stairway To Heaven“",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "34qgg",
+      "prompt": "“Bem-vindo a um novo tipo de tensão, por toda esta nação alienígena…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "7ck1l",
+          "label": "Genesis – „Land Of Confusion“",
+          "correct": false
+        },
+        {
+          "id": "6rw6p",
+          "label": "Green Day – „American Idiot“",
+          "correct": true
+        },
+        {
+          "id": "k3lth",
+          "label": "Rise Against – „Hero Of War“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "9glme",
+      "prompt": "“Gina sonha em fugir. Quando ela chora à noite, Tommy sussurra: querida, tudo bem, algum dia…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "jqud9",
+          "label": "Poison – „Every Rose Has Its Thorn“",
+          "correct": false
+        },
+        {
+          "id": "im869",
+          "label": "Bon Jovi – „Livin´ On A Prayer“",
+          "correct": true
+        },
+        {
+          "id": "ap6kl",
+          "label": "R.E.M. – „The Sidewinder Sleeps Tonight“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "yzdfy",
+      "prompt": "“Através da tempestade alcançamos a costa. Você dá tudo, mas eu quero mais. E estou esperando por você…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "fodlr",
+          "label": "Bruce Springsteen – „Born To Run“",
+          "correct": false
+        },
+        {
+          "id": "hh0s6",
+          "label": "U2 – „With Or Without You“",
+          "correct": true
+        },
+        {
+          "id": "bhg47",
+          "label": "Bryan Adams – „Run To You“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "mbltd",
+      "prompt": "“Jogando alto, dançando com o diabo, seguindo o fluxo. Para mim, tudo é um jogo…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "9dy88",
+          "label": "Motörhead –„Ace Of Spades“",
+          "correct": true
+        },
+        {
+          "id": "6kv9w",
+          "label": "Lenny Kravitz – „Are You Gonna Go My Way“",
+          "correct": false
+        },
+        {
+          "id": "id0xu",
+          "label": "Judas Priest – „Living After Midnight“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "8hsi8",
+      "prompt": "“Trovão de heavy metal, correndo com o vento e a sensação que me domina…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "w2bku",
+          "label": "Mötley Crüe – „Smokin‘ In The Boys Room“",
+          "correct": false
+        },
+        {
+          "id": "3ib4i",
+          "label": "Steppenwolf – „Born To Be Wild“",
+          "correct": true
+        },
+        {
+          "id": "ar4kd",
+          "label": "Status Quo – „Rockin‘ All Over The World“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "wshw8",
+      "prompt": "“O que vi? Posso acreditar que aquilo que vi naquela noite era real e não apenas fantasia?”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "gmj1d",
+          "label": "Queen – „Bohemian Rhapsody“",
+          "correct": false
+        },
+        {
+          "id": "ayobs",
+          "label": "Iron Maiden – „Number Of The Beast“",
+          "correct": true
+        },
+        {
+          "id": "v60fa",
+          "label": "Dio – „Rainbow In The Dark“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "qrvz5",
+      "prompt": "“Ouço você me chamar, e são agulhas e alfinetes. Quero machucar você, só para ouvir você gritar meu nome…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "e9usy",
+          "label": "Alice Cooper – „Poison“",
+          "correct": true
+        },
+        {
+          "id": "vwtgj",
+          "label": "Marilyn Manson – „We’re From America“",
+          "correct": false
+        },
+        {
+          "id": "dluzy",
+          "label": "Aerosmith – „Rag Doll“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "nd73l",
+      "prompt": "“Venha coberto de lama, encharcado de água sanitária, como quero que você seja.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "e0okn",
+          "label": "Pearl Jam – „Alive“",
+          "correct": false
+        },
+        {
+          "id": "8cbbf",
+          "label": "Soundgarden – „Black Hole Sun“",
+          "correct": false
+        },
+        {
+          "id": "cemlw",
+          "label": "Nirvana – „Come As You Are“",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "0t2u2",
+      "prompt": "“De pé junto ao muro. E os tiros passaram sobre nossas cabeças. E nos beijamos como se nada pudesse cair…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "35999",
+          "label": "David Bowie – „Heroes“",
+          "correct": true
+        },
+        {
+          "id": "qm3qs",
+          "label": "Iggy Pop – „Lust For Life“",
+          "correct": false
+        },
+        {
+          "id": "jig74",
+          "label": "Peter Gabriel – „Digging In The Dirt“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "26pxw",
+      "prompt": "“Há algo dentro de mim que puxa sob a superfície. Consome, confunde…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "epcb3",
+          "label": "Kings Of Leon – Temple“",
+          "correct": false
+        },
+        {
+          "id": "3f1zo",
+          "label": "Oasis – „Some Might Say“",
+          "correct": false
+        },
+        {
+          "id": "f6zlc",
+          "label": "Linkin Park – „Crawling“",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "vhwgy",
+      "prompt": "“Você diz que quer um líder. Mas parece não conseguir se decidir…”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "r5xfw",
+          "label": "Scorpions – „Wind Of Change“",
+          "correct": false
+        },
+        {
+          "id": "ezabd",
+          "label": "Prince – „Purple Rain“",
+          "correct": true
+        },
+        {
+          "id": "pzbbj",
+          "label": "Pretenders – „Don’t Get Me Wrong“",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "no35d",
+      "title": "Não! Isso não deu certo… Você precisa voltar ao treinamento de músicas e praticar! Então: música ligada e letras para aprender!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "z8y68",
+      "title": "Bem, mais ou menos. Você conhece os clássicos, mas está longe de ser profissional do rock! Precisa de reforço: ligue o player e continue praticando!",
+      "description": "",
+      "min": 5,
+      "max": 10
+    },
+    {
+      "id": "2anl2",
+      "title": "Nada mal! Alguém conhece suas letras! Ainda há espaço para melhorar, mas você chega lá!",
+      "description": "",
+      "min": 10,
+      "max": 15
+    },
+    {
+      "id": "jv9dx",
+      "title": "Uau! Temos um verdadeiro roqueiro alfa! Nas letras, não é fácil enganar você. Respeito!",
+      "description": "",
+      "min": 15,
+      "max": 18
+    }
+  ],
+  "sourceId": "208",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr Songtexte?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/39-songtexte.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "0824dfd562cbb1b3"
+}

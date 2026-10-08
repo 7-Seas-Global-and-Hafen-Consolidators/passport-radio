@@ -1,7 +1,7 @@
 {
   "id": "dp-05",
   "version": 1,
-  "title": "Rock dos anos 70",
+  "title": "Quiz dos anos 70",
   "family": "Conhecimento",
   "type": "trivia-explicada",
   "mode": "quiz",
@@ -27,7 +27,9 @@
           "correct": false
         }
       ],
-      "explanation": "Os Beatles encerraram a banda depois de cerca de dez anos de atividade."
+      "explanation": "Os Beatles encerraram a banda depois de cerca de dez anos de atividade.",
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "4fm5b",
@@ -50,7 +52,9 @@
           "correct": false
         }
       ],
-      "explanation": "Freddie Mercury, Brian May e seus colegas formaram o Queen na Inglaterra."
+      "explanation": "Freddie Mercury, Brian May e seus colegas formaram o Queen na Inglaterra.",
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "mliqv",
@@ -73,7 +77,9 @@
           "correct": false
         }
       ],
-      "explanation": "O filme de Sam Peckinpah foi lançado em 1973."
+      "explanation": "O filme de Sam Peckinpah foi lançado em 1973.",
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "kkp4a",
@@ -96,7 +102,9 @@
           "correct": false
         }
       ],
-      "explanation": "Jim Morrison foi encontrado morto em seu apartamento em Paris em 3 de julho de 1971."
+      "explanation": "Jim Morrison foi encontrado morto em seu apartamento em Paris em 3 de julho de 1971.",
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "4aond",
@@ -119,7 +127,9 @@
           "correct": false
         }
       ],
-      "explanation": "O punk ganhou força especialmente no Reino Unido naquele período."
+      "explanation": "O punk ganhou força especialmente no Reino Unido naquele período.",
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "qf8m0",
@@ -142,7 +152,9 @@
           "correct": true
         }
       ],
-      "explanation": "Born To Run chegou ao terceiro lugar na Billboard e trouxe o sucesso comercial que os primeiros discos ainda não haviam alcançado."
+      "explanation": "Born To Run chegou ao terceiro lugar na Billboard e trouxe o sucesso comercial que os primeiros discos ainda não haviam alcançado.",
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "ecjeh",
@@ -165,7 +177,9 @@
           "correct": false
         }
       ],
-      "explanation": "A resposta é Tommy."
+      "explanation": "A resposta é Tommy.",
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "pqupy",
@@ -188,7 +202,9 @@
           "correct": true
         }
       ],
-      "explanation": "A escassez de PVC e seu custo levaram a economizar material na fabricação."
+      "explanation": "A escassez de PVC e seu custo levaram a economizar material na fabricação.",
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "fczyj",
@@ -211,7 +227,9 @@
           "correct": false
         }
       ],
-      "explanation": "Alice Cooper cantou Welcome To My Nightmare, You And Me e School’s Out no programa."
+      "explanation": "Alice Cooper cantou Welcome To My Nightmare, You And Me e School’s Out no programa.",
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "jq2xm",
@@ -234,7 +252,9 @@
           "correct": false
         }
       ],
-      "explanation": "O disco é Highway To Hell."
+      "explanation": "O disco é Highway To Hell.",
+      "sourceIndex": 9,
+      "answerType": "text"
     },
     {
       "id": "xflps",
@@ -257,7 +277,9 @@
           "correct": false
         }
       ],
-      "explanation": "As duas capas mostram a banda inteira."
+      "explanation": "As duas capas mostram a banda inteira.",
+      "sourceIndex": 10,
+      "answerType": "text"
     },
     {
       "id": "vrqf1",
@@ -280,7 +302,9 @@
           "correct": false
         }
       ],
-      "explanation": "Hendrix tocou no Love-and-Peace-Festival em Fehmarn, em 1970, diante de cerca de 25 mil pessoas."
+      "explanation": "Hendrix tocou no Love-and-Peace-Festival em Fehmarn, em 1970, diante de cerca de 25 mil pessoas.",
+      "sourceIndex": 11,
+      "answerType": "text"
     },
     {
       "id": "jzlp5",
@@ -303,7 +327,9 @@
           "correct": true
         }
       ],
-      "explanation": "The Runaways reuniu nomes como Joan Jett e Lita Ford."
+      "explanation": "The Runaways reuniu nomes como Joan Jett e Lita Ford.",
+      "sourceIndex": 12,
+      "answerType": "text"
     },
     {
       "id": "cve9v",
@@ -326,7 +352,9 @@
           "correct": true
         }
       ],
-      "explanation": "A sigla significa New Wave of British Heavy Metal."
+      "explanation": "A sigla significa New Wave of British Heavy Metal.",
+      "sourceIndex": 13,
+      "answerType": "text"
     },
     {
       "id": "qi02d",
@@ -349,7 +377,9 @@
           "correct": false
         }
       ],
-      "explanation": "Keith Moon morreu em Londres em 7 de setembro de 1978, aos 32 anos."
+      "explanation": "Keith Moon morreu em Londres em 7 de setembro de 1978, aos 32 anos.",
+      "sourceIndex": 14,
+      "answerType": "text"
     },
     {
       "id": "ua7hp",
@@ -372,7 +402,9 @@
           "correct": true
         }
       ],
-      "explanation": "Lemmy foi flagrado com anfetaminas numa fiscalização de fronteira."
+      "explanation": "Lemmy foi flagrado com anfetaminas numa fiscalização de fronteira.",
+      "sourceIndex": 15,
+      "answerType": "text"
     },
     {
       "id": "xsic4",
@@ -395,7 +427,9 @@
           "correct": true
         }
       ],
-      "explanation": "A lista do quiz inclui The Dark Side Of The Moon, Bat Out Of Hell, Hotel California e Rumours; com a coletânea dos Eagles, seriam cinco."
+      "explanation": "A lista do quiz inclui The Dark Side Of The Moon, Bat Out Of Hell, Hotel California e Rumours; com a coletânea dos Eagles, seriam cinco.",
+      "sourceIndex": 16,
+      "answerType": "text"
     },
     {
       "id": "ew957",
@@ -418,7 +452,9 @@
           "correct": false
         }
       ],
-      "explanation": "Meat Loaf interpreta Eddie."
+      "explanation": "Meat Loaf interpreta Eddie.",
+      "sourceIndex": 17,
+      "answerType": "text"
     },
     {
       "id": "ns1ta",
@@ -441,46 +477,67 @@
           "correct": false
         }
       ],
-      "explanation": "A cidade é Londres."
+      "explanation": "A cidade é Londres.",
+      "sourceIndex": 18,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "ae28g",
-      "title": "Ainda dá para ir além",
-      "description": "Há mais histórias dos anos 70 para descobrir.",
+      "title": "Dá para melhorar bastante. Ligue o stream dos anos 70 e aprenda um pouco mais sobre rock!",
+      "description": "",
       "min": 0,
       "max": 7
     },
     {
       "id": "bmpn2",
-      "title": "Boa visão da década",
-      "description": "Você conhece o panorama dos anos 70.",
+      "title": "Bastante bom! Você tem a visão geral, mas ainda pode trabalhar nos detalhes.",
+      "description": "",
       "min": 8,
       "max": 12
     },
     {
       "id": "3clgh",
-      "title": "Quase especialista",
-      "description": "Você foi bem até nas perguntas mais específicas.",
+      "title": "Quase um especialista! Poucas lacunas de conhecimento, e até algumas perguntas menos comuns foram superadas!",
+      "description": "",
       "min": 13,
       "max": 17
     },
     {
       "id": "so5ik",
-      "title": "Os anos 70 estão com você",
-      "description": "Você conhece muito dessa década.",
+      "title": "Ou você cresceu nos anos 70 ou tem uma paixão absoluta por essa década em que o rock se tornou enorme. Respeito!",
+      "description": "",
       "min": 18,
       "max": 19
     },
     {
       "id": "q27id",
-      "title": "Especialista dos anos 70",
-      "description": "Nenhum erro no resultado máximo previsto pela fonte.",
+      "title": "Nenhum erro. Você é um verdadeiro especialista no rock dos anos 70!",
+      "description": "",
       "min": 20,
       "max": 20
     }
   ],
   "sourceId": "970",
-  "versionHash": "a993c59a5a7b9d8e"
+  "versionHash": "a993c59a5a7b9d8e",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "70er-Quiz"
+  },
+  "sourceFiles": [
+    "49-rock-anos-70.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "on"
+  }
 }

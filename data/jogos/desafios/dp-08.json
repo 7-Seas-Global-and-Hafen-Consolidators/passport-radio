@@ -1,7 +1,7 @@
 {
   "id": "dp-08",
   "version": 1,
-  "title": "Uma história de rock’n’roll",
+  "title": "Quiz XXL do rock: uma viagem pela história do rock",
   "family": "Conhecimento",
   "type": "historia",
   "mode": "quiz",
@@ -26,7 +26,9 @@
           "label": "1950-1960",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "7yade",
@@ -48,7 +50,9 @@
           "label": "Um apresentador de TV que divulgou nomes como Elvis",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "zzfar",
@@ -70,7 +74,9 @@
           "label": "Bad Nauheim",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "sx2dg",
@@ -92,7 +98,9 @@
           "label": "Num show",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "ql0qf",
@@ -114,7 +122,9 @@
           "label": "Corria",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "uthri",
@@ -136,7 +146,9 @@
           "label": "Love Me Do",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "ffjr0",
@@ -158,7 +170,9 @@
           "label": "8 a 11 de agosto de 1969",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "cnr5s",
@@ -180,7 +194,9 @@
           "label": "Charlie Watts, do The Rolling Stones",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "4ltwh",
@@ -202,7 +218,9 @@
           "label": "Keith Richards",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "33p8l",
@@ -224,7 +242,9 @@
           "label": "Brian Jones",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     },
     {
       "id": "gpwr3",
@@ -246,7 +266,9 @@
           "label": "Alice Cooper",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
     },
     {
       "id": "9p6ni",
@@ -268,7 +290,9 @@
           "label": "Def Leppard",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
     },
     {
       "id": "0uq45",
@@ -290,7 +314,9 @@
           "label": "Glamrock",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
     },
     {
       "id": "i1pxg",
@@ -312,7 +338,9 @@
           "label": "Led Zeppelin IV",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
     },
     {
       "id": "hqy07",
@@ -334,7 +362,9 @@
           "label": "Bruce Springsteen",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
     },
     {
       "id": "nhuin",
@@ -356,7 +386,9 @@
           "label": "Rumours, de Fleetwood Mac",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
     },
     {
       "id": "4a07n",
@@ -378,7 +410,9 @@
           "label": "Ozzy Osbourne",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
     },
     {
       "id": "zsei5",
@@ -400,7 +434,9 @@
           "label": "Die Ärzte",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
     },
     {
       "id": "vjngp",
@@ -422,7 +458,9 @@
           "label": "Iron Maiden",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
     },
     {
       "id": "o1dko",
@@ -444,7 +482,9 @@
           "label": "Bon Scott",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
     },
     {
       "id": "e8q2d",
@@ -466,7 +506,9 @@
           "label": "Appetite For Destruction, de Guns N’ Roses",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 20,
+      "answerType": "text"
     },
     {
       "id": "3q73c",
@@ -488,7 +530,9 @@
           "label": "The Buggles: Video Killed the Radio Star",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 21,
+      "answerType": "text"
     },
     {
       "id": "geftp",
@@ -510,7 +554,9 @@
           "label": "Roger Taylor",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 22,
+      "answerType": "text"
     },
     {
       "id": "ahr8h",
@@ -532,7 +578,9 @@
           "label": "Rammstein",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 23,
+      "answerType": "text"
     },
     {
       "id": "wrzy0",
@@ -554,7 +602,9 @@
           "label": "Twisted Sister",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 24,
+      "answerType": "text"
     },
     {
       "id": "a9tr0",
@@ -576,7 +626,9 @@
           "label": "Iron Maiden",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 25,
+      "answerType": "text"
     },
     {
       "id": "zyfto",
@@ -598,7 +650,9 @@
           "label": "15 milhões de libras",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 26,
+      "answerType": "text"
     },
     {
       "id": "d6f47",
@@ -620,7 +674,9 @@
           "label": "Pantera",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 27,
+      "answerType": "text"
     },
     {
       "id": "sgm94",
@@ -642,7 +698,9 @@
           "label": "O sétimo",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 28,
+      "answerType": "text"
     },
     {
       "id": "6344t",
@@ -664,7 +722,9 @@
           "label": "Eddie Vedder, do Pearl Jam",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 29,
+      "answerType": "text"
     },
     {
       "id": "cz69o",
@@ -686,7 +746,9 @@
           "label": "Detroit",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 30,
+      "answerType": "text"
     },
     {
       "id": "crhef",
@@ -708,7 +770,9 @@
           "label": "O conteúdo das letras",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 31,
+      "answerType": "text"
     },
     {
       "id": "ddfv2",
@@ -730,7 +794,9 @@
           "label": "Rammstein foi formada",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 32,
+      "answerType": "text"
     },
     {
       "id": "z6q62",
@@ -752,7 +818,9 @@
           "label": "Sum41",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 33,
+      "answerType": "text"
     },
     {
       "id": "ox5az",
@@ -774,7 +842,9 @@
           "label": "Korn",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 34,
+      "answerType": "text"
     },
     {
       "id": "38m6k",
@@ -796,7 +866,9 @@
           "label": "The Prodigy",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 35,
+      "answerType": "text"
     },
     {
       "id": "vg4s2",
@@ -818,7 +890,9 @@
           "label": "Fãs invadiram o palco nus durante Red Hot Chili Peppers",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 36,
+      "answerType": "text"
     },
     {
       "id": "nqhu8",
@@ -840,7 +914,9 @@
           "label": "Heavy Metal & Emocore",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 37,
+      "answerType": "text"
     },
     {
       "id": "7ju2o",
@@ -862,7 +938,9 @@
           "label": "Chester Bennington",
           "correct": true
         }
-      ]
+      ],
+      "sourceIndex": 38,
+      "answerType": "text"
     },
     {
       "id": "f2f68",
@@ -884,39 +962,59 @@
           "label": "Arcade Fire",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 39,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "l1we0",
-      "title": "O começo da descoberta",
-      "description": "A história do rock ainda tem muito para oferecer.",
+      "title": "Fracasso XXL",
+      "description": "Você dormiu nos últimos 70 anos? Seu conhecimento da história do rock é uma enorme lacuna. Tenha vergonha e estude mais um pouco!",
       "min": 0,
       "max": 9
     },
     {
       "id": "30ipq",
-      "title": "Mais histórias pela frente",
-      "description": "Há bastante coisa para reencontrar numa próxima rodada.",
+      "title": "Precisa de reforço",
+      "description": "Você tem algum conhecimento, mas está longe de conhecer toda a história do rock. Para se tornar especialista, precisa aprender muito mais!",
       "min": 10,
       "max": 25
     },
     {
       "id": "zaxdh",
-      "title": "Memória afiada",
-      "description": "Você conhece quase tudo dessa história.",
+      "title": "Raposa esperta",
+      "description": "Ei, nada mal! Só mais algumas respostas certas separam você do título definitivo de especialista na história do rock. Continue assim!",
       "min": 26,
       "max": 39
     },
     {
       "id": "y5k3h",
-      "title": "Conhecimento completo",
-      "description": "Todas as perguntas respondidas corretamente.",
+      "title": "Guru do conhecimento",
+      "description": "Incrível! Ou você viveu a história do rock ou recuperou tudo depois. Você é um verdadeiro especialista!",
       "min": 40,
       "max": 40
     }
   ],
   "sourceId": "761",
-  "versionHash": "3e770a4e5f1e5bdb"
+  "versionHash": "3e770a4e5f1e5bdb",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "XXL-Rock-Quiz: Eine Reise durch die Rock-Geschichte"
+  },
+  "sourceFiles": [
+    "03-xxl-rock-geschichte.html",
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  }
 }

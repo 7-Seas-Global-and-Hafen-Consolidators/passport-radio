@@ -1,7 +1,7 @@
 {
   "id": "dp-04",
   "version": 1,
-  "title": "Qual álbum veio primeiro?",
+  "title": "Quiz: qual álbum é mais antigo?",
   "family": "Visual",
   "type": "comparacao-albuns",
   "mode": "quiz",
@@ -24,8 +24,11 @@
       ],
       "image": {
         "src": "/assets/desafios/420eb3e988d69f7d.jpg",
-        "alt": "Pista visual da pergunta 1"
-      }
+        "alt": "Imagem da pergunta 1",
+        "source": "https://images.radiobob.de/2023/05/acdc-led-zep.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "uuysp",
@@ -45,8 +48,11 @@
       ],
       "image": {
         "src": "/assets/desafios/1a4dc490404f5791.jpg",
-        "alt": "Pista visual da pergunta 2"
-      }
+        "alt": "Imagem da pergunta 2",
+        "source": "https://images.radiobob.de/2023/05/aerosmith-bruce-springsteen.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "mlvm6",
@@ -66,8 +72,11 @@
       ],
       "image": {
         "src": "/assets/desafios/d48577f6e9836205.jpg",
-        "alt": "Pista visual da pergunta 3"
-      }
+        "alt": "Imagem da pergunta 3",
+        "source": "https://images.radiobob.de/2023/05/aerosmith-pink-floyd-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "5diqr",
@@ -87,8 +96,11 @@
       ],
       "image": {
         "src": "/assets/desafios/5c4d84137845c02f.jpg",
-        "alt": "Pista visual da pergunta 4"
-      }
+        "alt": "Imagem da pergunta 4",
+        "source": "https://images.radiobob.de/2023/05/billy-talent-the-offspring-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "cmim7",
@@ -108,8 +120,11 @@
       ],
       "image": {
         "src": "/assets/desafios/4c6043446bb4f00a.jpg",
-        "alt": "Pista visual da pergunta 5"
-      }
+        "alt": "Imagem da pergunta 5",
+        "source": "https://images.radiobob.de/2023/05/bon-jovi-pearl-jam-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "j7ugi",
@@ -129,8 +144,11 @@
       ],
       "image": {
         "src": "/assets/desafios/fc48343399ac694d.jpg",
-        "alt": "Pista visual da pergunta 6"
-      }
+        "alt": "Imagem da pergunta 6",
+        "source": "https://images.radiobob.de/2023/05/deep-purple-journey.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "owek9",
@@ -150,8 +168,11 @@
       ],
       "image": {
         "src": "/assets/desafios/3d06e1647a74ff64.jpg",
-        "alt": "Pista visual da pergunta 7"
-      }
+        "alt": "Imagem da pergunta 7",
+        "source": "https://images.radiobob.de/2023/05/foo-fighters-green-day-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "6g2pw",
@@ -171,8 +192,11 @@
       ],
       "image": {
         "src": "/assets/desafios/891e8f4aa9e74cff.jpg",
-        "alt": "Pista visual da pergunta 8"
-      }
+        "alt": "Imagem da pergunta 8",
+        "source": "https://images.radiobob.de/2023/05/guns-n-roses-judas-priest.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "wq695",
@@ -192,8 +216,11 @@
       ],
       "image": {
         "src": "/assets/desafios/f16491e90cf2c56c.jpg",
-        "alt": "Pista visual da pergunta 9"
-      }
+        "alt": "Imagem da pergunta 9",
+        "source": "https://images.radiobob.de/2023/05/linkin-park-donots-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "mkdlc",
@@ -213,8 +240,11 @@
       ],
       "image": {
         "src": "/assets/desafios/4c6a89dd36649536.jpg",
-        "alt": "Pista visual da pergunta 10"
-      }
+        "alt": "Imagem da pergunta 10",
+        "source": "https://images.radiobob.de/2023/05/metallica-nirvana-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 9,
+      "answerType": "text"
     },
     {
       "id": "g7au6",
@@ -234,8 +264,11 @@
       ],
       "image": {
         "src": "/assets/desafios/3f8d29a384be5df1.jpg",
-        "alt": "Pista visual da pergunta 11"
-      }
+        "alt": "Imagem da pergunta 11",
+        "source": "https://images.radiobob.de/2023/05/oasis-dire-straits-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 10,
+      "answerType": "text"
     },
     {
       "id": "lfrso",
@@ -255,40 +288,62 @@
       ],
       "image": {
         "src": "/assets/desafios/280c8c030a9035c4.jpg",
-        "alt": "Pista visual da pergunta 12"
-      }
+        "alt": "Imagem da pergunta 12",
+        "source": "https://images.radiobob.de/2023/05/papa-roach-die-aerzte-1.jpg?fm=pjpg&ixlib=php-3.3.1"
+      },
+      "sourceIndex": 11,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "3yyha",
-      "title": "Outra rodada vem aí",
-      "description": "Você pode reconhecer mais datas na próxima.",
+      "title": "Dá para melhorar… Mas na próxima vez, com certeza, vai dar certo!",
+      "description": "",
       "min": 0,
       "max": 5
     },
     {
       "id": "r1rqs",
-      "title": "Boa memória",
-      "description": "Você acertou várias cronologias.",
+      "title": "Nada mal! Você conhece algumas datas de lançamento.",
+      "description": "",
       "min": 6,
       "max": 9
     },
     {
       "id": "2yebb",
-      "title": "Quase tudo",
-      "description": "Faltou pouco para fechar a rodada.",
+      "title": "Uau, quase tudo certo! Na próxima vez, com certeza, você alcança a pontuação máxima.",
+      "description": "",
       "min": 10,
       "max": 11
     },
     {
       "id": "17jcn",
-      "title": "Cronologia completa",
-      "description": "Todos os discos na ordem certa.",
+      "title": "Perfeito! Você é uma enciclopédia musical ambulante. Tiramos o chapéu.",
+      "description": "",
       "min": 12,
       "max": 12
     }
   ],
   "sourceId": "1009",
-  "versionHash": "653f74b79f8bc01c"
+  "versionHash": "653f74b79f8bc01c",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "traditional",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Quiz: Welches Album ist älter?"
+  },
+  "sourceFiles": [
+    "47-album-mais-antigo.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "traditional",
+    "rand_questions": "off",
+    "rand_answers": "off",
+    "restart_questions": "off",
+    "show_next_button": "on",
+    "end_answers": "off"
+  }
 }

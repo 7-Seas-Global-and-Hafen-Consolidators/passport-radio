@@ -1,7 +1,7 @@
 {
   "id": "dp-09",
   "version": 1,
-  "title": "Seu parceiro de quarentena",
+  "title": "Este rockstar seria seu parceiro perfeito de quarentena!",
   "family": "Perfil",
   "type": "personalidade-ponderada",
   "mode": "profile",
@@ -59,7 +59,9 @@
             "kxfrm": 4
           }
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "juhrs",
@@ -102,7 +104,9 @@
             "kxfrm": 3
           }
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "x2snq",
@@ -145,7 +149,9 @@
             "kxfrm": 4
           }
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "q0rns",
@@ -224,7 +230,9 @@
             "kxfrm": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "1wtna",
@@ -267,7 +275,9 @@
             "kxfrm": 4
           }
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "cw9e3",
@@ -310,7 +320,9 @@
             "kxfrm": 1
           }
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "ll7vq",
@@ -353,7 +365,9 @@
             "kxfrm": 6
           }
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "q60qe",
@@ -396,7 +410,9 @@
             "kxfrm": 5
           }
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "y05hs",
@@ -475,7 +491,9 @@
             "kxfrm": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "zhxzd",
@@ -518,41 +536,60 @@
             "kxfrm": 5
           }
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "xj038",
       "title": "Dave Grohl",
-      "description": "Seu perfil se aproxima de Dave Grohl."
+      "description": "Você é a tranquilidade em pessoa. Quase nada o tira do sério, e por isso também é uma companhia tranquila na quarentena. Com Dave Grohl, pode relaxar tomando uma bebida e esperar a quarentena acabar. E quando os dois entram no clima de festa, a coisa esquenta: festa em casa a dois! Juntos, vocês vivem o bom e velho rock’n’roll!"
     },
     {
       "id": "33wno",
       "title": "Tim McIlrath",
-      "description": "Seu perfil se aproxima de Tim McIlrath."
+      "description": "Você pensa em muitas coisas, especialmente nestes tempos. Às vezes, talvez, demais? Poderia se juntar ao vocalista do Rise Against, Tim McIlrath. Juntos, filosofariam sobre esta crise e tentariam entender seu sentido. Talvez até surgissem músicas novas para lidar com a quarentena. Só não deveriam ficar sérios demais…"
     },
     {
       "id": "9cc9j",
       "title": "Ozzy Osbourne",
-      "description": "Seu perfil se aproxima de Ozzy Osbourne."
+      "description": "Você é engraçado e topa tudo, então a quarentena vai entediá-lo rapidamente. Felizmente, isso não acontecerá com Ozzy como parceiro. Vocês passam o tempo com pequenas brincadeiras, e as semanas voam mais depressa do que imaginavam!"
     },
     {
       "id": "p57j2",
       "title": "Bono",
-      "description": "Seu perfil se aproxima de Bono."
+      "description": "Você quer dar um sentido maior à vida, também durante a quarentena. Assim como Bono, não consegue ficar sentado sem fazer nada, sem sentir o teto cair sobre a cabeça. Querem tornar o mundo melhor e, juntos, inventam muitas coisas para ajudar quem passa por dificuldades nestes tempos. Talvez não consigam salvá-los, mas dão o primeiro passo para um futuro melhor."
     },
     {
       "id": "lpt4r",
       "title": "Alice Cooper",
-      "description": "Seu perfil se aproxima de Alice Cooper."
+      "description": "Você é uma pessoa legal, mas também não escapa da quarentena. Como não consegue ficar parado, Alice Cooper terminaria seu novo álbum com você, e à noite os dois ouviriam suas coleções de discos. Talvez, com tempo bom, jogassem golfe no jardim. ;)"
     },
     {
       "id": "kxfrm",
       "title": "Bruce Springsteen",
-      "description": "Seu perfil se aproxima de Bruce Springsteen."
+      "description": "Onde você chega, tudo gira ao seu redor. Mas na quarentena não há ninguém para entreter. Por isso, passaria bons momentos com Bruce, afastando o tédio. Provavelmente transmitiriam um show no Instagram todos os dias para curtir rock com as pessoas. Nesse espírito: continue rockando!"
     }
   ],
   "sourceId": "755",
-  "versionHash": "5b904b8eb4986afe"
+  "versionHash": "5b904b8eb4986afe",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Dieser Rockstar wäre Euer perfekter Quarantäne-Partner!"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  }
 }

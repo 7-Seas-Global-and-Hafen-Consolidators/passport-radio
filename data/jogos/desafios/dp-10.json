@@ -1,7 +1,7 @@
 {
   "id": "dp-10",
   "version": 1,
-  "title": "Quanto metal você conhece?",
+  "title": "Quanto você é pesado de verdade?",
   "family": "Conhecimento",
   "type": "misto-trivia-verdadeiro-falso",
   "mode": "quiz",
@@ -21,7 +21,9 @@
           "label": "Falso",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "3nqc6",
@@ -43,7 +45,9 @@
           "label": "Metallica, Anthrax, Judas Priest, Megadeth",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "kaqis",
@@ -65,7 +69,9 @@
           "label": "Blizzard Of Ozz",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "rvtdt",
@@ -87,7 +93,9 @@
           "label": "True Stage",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "lttu9",
@@ -109,7 +117,9 @@
           "label": "John Pasche",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "jeuz5",
@@ -131,7 +141,9 @@
           "label": "Ozzy Osbourne",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "8evm5",
@@ -153,7 +165,9 @@
           "label": "Metal Symphony",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "765p3",
@@ -175,7 +189,9 @@
           "label": "Heavy Metal Queen",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "6pp0k",
@@ -197,7 +213,9 @@
           "label": "TWOBHM (The Wave of British Heavy Metal)",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "rsz3o",
@@ -219,7 +237,9 @@
           "label": "Ronnie James Dio",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     },
     {
       "id": "1qlz5",
@@ -241,7 +261,9 @@
           "label": "Yesterday, dos Beatles",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
     },
     {
       "id": "f9593",
@@ -263,7 +285,9 @@
           "label": "Black Sabbath",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
     },
     {
       "id": "odblj",
@@ -285,7 +309,9 @@
           "label": "Dallas Cowboys",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
     },
     {
       "id": "vpn09",
@@ -307,7 +333,9 @@
           "label": "Deram ao aluno ingresso gratuito vitalício",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
     },
     {
       "id": "gm30c",
@@ -329,7 +357,9 @@
           "label": "Dezembro de 1981",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
     },
     {
       "id": "dwiy6",
@@ -351,7 +381,9 @@
           "label": "Um assento de vaso sanitário",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
     },
     {
       "id": "dmi2a",
@@ -373,7 +405,9 @@
           "label": "Atlas",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
     },
     {
       "id": "73sh0",
@@ -395,7 +429,9 @@
           "label": "MetHead",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
     },
     {
       "id": "fyv1x",
@@ -417,7 +453,9 @@
           "label": "250 hectares",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
     },
     {
       "id": "sgtbb",
@@ -434,39 +472,58 @@
           "label": "Falso",
           "correct": false
         }
-      ]
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "2c7ig",
       "title": "Algodão",
-      "description": "Ainda há muito metal para conhecer.",
+      "description": "Vá para o canto e tenha vergonha! Você não é duro nem como algodão. Quanto ao conhecimento de metal, tem muito a recuperar.",
       "min": 0,
       "max": 5
     },
     {
       "id": "0dhm8",
-      "title": "Borracha",
-      "description": "Você já conhece uma parte do peso.",
+      "title": "Bolinha de borracha",
+      "description": "Foi razoável. Seu conhecimento o torna tão duro quanto uma bolinha de borracha, mas você está longe de ser um verdadeiro especialista em metal.",
       "min": 6,
       "max": 12
     },
     {
       "id": "y0c3f",
-      "title": "Rocha",
-      "description": "Você foi longe no desafio.",
+      "title": "Pedra",
+      "description": "O resultado é respeitável. Você é duro como uma pedra. Mas faltam algumas respostas certas para ser um verdadeiro especialista em metal.",
       "min": 13,
       "max": 19
     },
     {
       "id": "k3d5w",
       "title": "Diamante",
-      "description": "Todas as respostas certas.",
+      "description": "Uau! Você é mais duro que o diamante mais duro. Agora pode se considerar oficialmente um verdadeiro especialista em metal. Rock on!",
       "min": 20,
       "max": 20
     }
   ],
   "sourceId": "725",
-  "versionHash": "c7822884ceb9a850"
+  "versionHash": "c7822884ceb9a850",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie hart seid Ihr wirklich?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  }
 }

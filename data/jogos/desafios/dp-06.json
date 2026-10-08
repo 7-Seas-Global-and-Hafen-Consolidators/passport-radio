@@ -1,7 +1,7 @@
 {
   "id": "dp-06",
   "version": 1,
-  "title": "Seu perfil de rock",
+  "title": "Qual stream da RADIO BOB! combina com você?",
   "family": "Perfil",
   "type": "personalidade-ponderada",
   "mode": "profile",
@@ -47,7 +47,9 @@
             "dfobh": 6
           }
         }
-      ]
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
     },
     {
       "id": "q6q12",
@@ -90,7 +92,9 @@
             "dfobh": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
     },
     {
       "id": "y9b2q",
@@ -169,7 +173,9 @@
             "dfobh": 6
           }
         }
-      ]
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
     },
     {
       "id": "o21md",
@@ -212,7 +218,9 @@
             "dfobh": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
     },
     {
       "id": "x661y",
@@ -255,7 +263,9 @@
             "dfobh": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
     },
     {
       "id": "2teak",
@@ -298,7 +308,9 @@
             "dfobh": 6
           }
         }
-      ]
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
     },
     {
       "id": "tkogj",
@@ -341,7 +353,9 @@
             "dfobh": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
     },
     {
       "id": "bjjlq",
@@ -384,7 +398,9 @@
             "dfobh": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
     },
     {
       "id": "q5xvm",
@@ -427,7 +443,9 @@
             "dfobh": 0
           }
         }
-      ]
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
     },
     {
       "id": "obppt",
@@ -470,41 +488,91 @@
             "dfobh": 6
           }
         }
-      ]
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
     }
   ],
   "results": [
     {
       "id": "yiko9",
-      "title": "Rock sem fronteiras",
-      "description": "Você gosta de variar entre classic rock, punk e metal."
+      "title": "Stream ao vivo",
+      "description": "Você é um roqueiro de carteirinha. Classic rock, punk, metal: você encontra algo em cada estilo e gosta sobretudo da variedade. Por isso, o stream ao vivo da RADIO BOB! é perfeito para você. Aqui você recebe diariamente o rock mais pesado nos ouvidos, além de fatos interessantes e notícias sobre o mundo da música apresentados pelos nossos locutores.",
+      "image": {
+        "src": "/assets/desafios/8f8d6a769e64c492.jpg",
+        "alt": "Imagem do resultado Stream ao vivo",
+        "source": "https://images.radiobob.de/2021/02/bob_stream-tile_livestream-rock-n-pop_1.jpg?fm=pjpg&ixlib=php-1.2.1"
+      }
     },
     {
       "id": "pwapc",
-      "title": "Clássicos do rock",
-      "description": "Queen, The Rolling Stones e The Who estão entre as referências deste perfil."
+      "title": "Stream de classic rock",
+      "description": "Você é fã de rock desde que se entende por gente. As lendas do rock conquistaram você: Queen, The Rolling Stones, The Who e muitos outros. Você conhece todos os sucessos. Por isso, o stream de classic rock é perfeito para você. Aqui você ouve as pérolas do classic rock 24 horas por dia. Continue rockando!",
+      "image": {
+        "src": "/assets/desafios/bde3eb77080a319b.jpg",
+        "alt": "Imagem do resultado Stream de classic rock",
+        "source": "https://images.radiobob.de/2021/02/bob_stream-tile_classic-rock.jpg?fm=pjpg&ixlib=php-1.2.1"
+      }
     },
     {
       "id": "itczm",
-      "title": "Som pesado",
-      "description": "O perfil puxa para o peso de Motörhead e Metallica."
+      "title": "Stream Harte Saite",
+      "description": "Pesado, mais pesado, VOCÊ! A música pesada é seu mundo. Cabelo comprido, bater a cabeça e se jogar na roda nos shows: nada é melhor para você. No stream Harte Saite da BOB, você pode bater a cabeça ao som de Motörhead e Metallica o dia inteiro, até a cabeça latejar.",
+      "image": {
+        "src": "/assets/desafios/c0ab9cedcd0eaee1.jpg",
+        "alt": "Imagem do resultado Stream Harte Saite",
+        "source": "https://images.radiobob.de/2021/02/bob_stream-tile_harte-saite.jpg?fm=pjpg&ixlib=php-1.2.1"
+      }
     },
     {
       "id": "aper4",
-      "title": "Espírito punk",
-      "description": "Ramones, The Clash e Green Day acompanham o lado rebelde deste perfil."
+      "title": "Stream de punk",
+      "description": "Tanto faz se você tem cabelo colorido e moicano ou carrega o punk apenas por dentro. O stream de punk da BOB é obrigatório para todo rebelde! Aqui você atravessa os primeiros tempos do movimento punk com Ramones e The Clash, mas bandas como Die Ärzte e Green Day também não podem faltar. Ligue o stream e vá para o pogo!",
+      "image": {
+        "src": "/assets/desafios/e86bc359d71d5677.jpg",
+        "alt": "Imagem do resultado Stream de punk",
+        "source": "https://images.radiobob.de/2021/02/bob_stream-tile_punk_0.jpg?fm=pjpg&ixlib=php-1.2.1"
+      }
     },
     {
       "id": "whcyg",
-      "title": "Novas bandas",
-      "description": "Descobrir bandas e músicas novas move este perfil."
+      "title": "Stream de novos artistas",
+      "description": "Por que vocês sempre tocam as mesmas coisas antigas? Isso não vale para o stream de novos artistas da BOB. Aqui há apenas bandas novas e músicas novas para fãs curiosos como você descobrirem. Apresentamos bandas emergentes de toda a Alemanha e suas músicas. Então entre no stream e curta música nova!",
+      "image": {
+        "src": "/assets/desafios/4007e3ea8a415c2c.jpg",
+        "alt": "Imagem do resultado Stream de novos artistas",
+        "source": "https://images.radiobob.de/2021/02/bob_stream-tile_newcomer_0.jpg?fm=pjpg&ixlib=php-1.2.1"
+      }
     },
     {
       "id": "dfobh",
-      "title": "Rock medieval",
-      "description": "Este perfil se aproxima do rock de inspiração medieval."
+      "title": "Stream de rock medieval",
+      "description": "Saudações, cavaleiros e nobres damas! No stream de rock medieval, verdadeiros guerreiros como você encontram suas bandas favoritas, como Saltatio Mortis, In Extremo e muitas outras. Catapulte-se de volta à Idade Média e esteja sempre preparado para a próxima feira medieval. Deixe o stream tocar!",
+      "image": {
+        "src": "/assets/desafios/943ccdcdbccd1c16.jpg",
+        "alt": "Imagem do resultado Stream de rock medieval",
+        "source": "https://images.radiobob.de/2021/02/bob_stream-tile_mittelalter-rock_0.jpg?fm=pjpg&ixlib=php-1.2.1"
+      }
     }
   ],
   "sourceId": "786",
-  "versionHash": "577c340ff2691cfb"
+  "versionHash": "577c340ff2691cfb",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welcher RADIO BOB! Stream passt zu Euch?"
+  },
+  "sourceFiles": [
+    "01-welcher-stream.html",
+    "docs/desafios-passport-43/source-correct/pack-01.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  }
 }
