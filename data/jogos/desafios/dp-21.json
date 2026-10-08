@@ -1,0 +1,344 @@
+{
+  "id": "dp-21",
+  "version": 1,
+  "title": "Quanto você conhece das letras de Bruce Springsteen?",
+  "family": "Memória",
+  "type": "trecho-musical",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "n2kc8",
+      "prompt": "“A noite caiu, estou deitado acordado, consigo sentir que estou desaparecendo.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "sei8e",
+          "label": "Streets of Philadelphia",
+          "correct": true
+        },
+        {
+          "id": "wo4xa",
+          "label": "Brilliant Disguise",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "579nt",
+      "prompt": "“Fui falar com o homem da assistência aos veteranos, e ele disse: filho, você não entende?”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "v85te",
+          "label": "The River",
+          "correct": false
+        },
+        {
+          "id": "18ler",
+          "label": "Born in the USA",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "52op9",
+      "prompt": "“É sábado à noite. Você está toda vestida de azul. Estou olhando você há algum tempo; talvez você também esteja olhando para mim.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "s4z7f",
+          "label": "Human Touch",
+          "correct": false
+        },
+        {
+          "id": "1a38n",
+          "label": "Tougher Than The Rest",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "uos9u",
+      "prompt": "“Eu tinha oito anos e corria com uma moeda na mão até o ponto de ônibus para comprar um jornal para meu pai.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "6rlfc",
+          "label": "My Hometown",
+          "correct": true
+        },
+        {
+          "id": "4dxss",
+          "label": "Born in the USA",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "ie2ur",
+      "prompt": "“Só quero ser seu amante, não sou mentiroso.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "3urif",
+          "label": "Hello Sunshine",
+          "correct": false
+        },
+        {
+          "id": "njsj5",
+          "label": "Rosalita (Come Out Tonight)",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "i93cu",
+      "prompt": "“Mary e eu nos conhecemos no colégio quando ela tinha apenas dezessete anos.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "75upb",
+          "label": "The River",
+          "correct": true
+        },
+        {
+          "id": "dwqfh",
+          "label": "The Ghost of Tom Joad",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "66pxj",
+      "prompt": "“Quando olho nos seus olhos, é você, querida?”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "reucc",
+          "label": "Brilliant Disguise",
+          "correct": true
+        },
+        {
+          "id": "2hqm9",
+          "label": "Rosalita (Come Out Tonight)",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "766ms",
+      "prompt": "“Correndo por nossas vidas à noite pelas ruas dos fundos.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "no6h0",
+          "label": "Racing the Street",
+          "correct": false
+        },
+        {
+          "id": "vqjae",
+          "label": "Backstreets",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "r834w",
+      "prompt": "“A estrada está viva esta noite.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "1kkc2",
+          "label": "The Ghost of Tom Joad",
+          "correct": true
+        },
+        {
+          "id": "1rd76",
+          "label": "Backstreets",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "a2vum",
+      "prompt": "“Esta noite, tudo é silêncio no mundo enquanto tomamos posição.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "86xlg",
+          "label": "My Hometown",
+          "correct": false
+        },
+        {
+          "id": "0d0g7",
+          "label": "Jungleland",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "ch70g",
+      "prompt": "“Ela ficou para baixo, mas nunca se prendeu; vai ficar tudo bem.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "11a18",
+          "label": "Blinded by the Light",
+          "correct": true
+        },
+        {
+          "id": "v7ifl",
+          "label": "Tougher Than The Rest",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "llb6y",
+      "prompt": "“Você e eu éramos os que fingiam; deixamos tudo escapar.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "yj9pv",
+          "label": "Human Touch",
+          "correct": true
+        },
+        {
+          "id": "da3e6",
+          "label": "Streets of Philadelphia",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "1eeo8",
+      "prompt": "“Precisamos sair daqui enquanto somos jovens.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "2r9kf",
+          "label": "Born in the U.S.A.",
+          "correct": false
+        },
+        {
+          "id": "ybz6d",
+          "label": "Born to Run",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "yam77",
+      "prompt": "“O que tenho, conquistei; o que não sou, aprendi.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "gr995",
+          "label": "Jungleland",
+          "correct": false
+        },
+        {
+          "id": "t6rj0",
+          "label": "Because the Night",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "daq29",
+      "prompt": "“Bancos de veludo amassado, sentado atrás, passeando pela rua.”",
+      "type": "trecho-musical",
+      "options": [
+        {
+          "id": "t9c2z",
+          "label": "Pink Cadillac",
+          "correct": true
+        },
+        {
+          "id": "h7591",
+          "label": "Racing the Streets",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "j5yf7",
+      "title": "Não deu em nada. Mas cabeça erguida: você só precisa aprender melhor as letras.",
+      "description": "",
+      "min": 0,
+      "max": 4
+    },
+    {
+      "id": "f5u98",
+      "title": "Tudo bem, já é um começo, mas ainda não é grande coisa! Pelo menos você conhece as letras mais famosas, mas precisa dominar o resto também!",
+      "description": "",
+      "min": 5,
+      "max": 10
+    },
+    {
+      "id": "9g1e9",
+      "title": "Nada mal! Se memorizar as últimas letras, ninguém mais engana você. Continue assim!",
+      "description": "",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "4yo5b",
+      "title": "Você é o Boss! Tudo certo. Assim, você deixa todos para trás! Rock on!",
+      "description": "",
+      "min": 15,
+      "max": 15
+    }
+  ],
+  "sourceId": "642",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr die Songtexte von Bruce Springsteen?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/06-bruce-springsteen-songtexte.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "b98eb9a7fb0f2f20"
+}

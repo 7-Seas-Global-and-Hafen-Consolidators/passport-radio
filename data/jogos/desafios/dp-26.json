@@ -1,0 +1,375 @@
+{
+  "id": "dp-26",
+  "version": 1,
+  "title": "Quiz medieval",
+  "family": "Perfil",
+  "type": "personalidade",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "8wgnd",
+      "prompt": "Onde você mais gosta de ficar nos shows?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "857l3",
+          "label": "Bem na frente: eu também quero ver o artista!",
+          "weights": {
+            "9s1r3": 2,
+            "fsxmm": 5,
+            "2ncem": 4,
+            "pg6vu": 2,
+            "2sryp": 3
+          }
+        },
+        {
+          "id": "88vof",
+          "label": "No meio, onde tudo acontece! Mosh, mosh, mosh…",
+          "weights": {
+            "9s1r3": 1,
+            "fsxmm": 3,
+            "2ncem": 5,
+            "pg6vu": 2,
+            "2sryp": 4
+          }
+        },
+        {
+          "id": "7rc11",
+          "label": "Atrás: quero aproveitar a música completamente, sem aperto nem distrações!",
+          "weights": {
+            "9s1r3": 5,
+            "fsxmm": 3,
+            "2ncem": 1,
+            "pg6vu": 4,
+            "2sryp": 2
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "2tig4",
+      "prompt": "Qual tipo descreve melhor você quando vai a um show?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "smiob",
+          "label": "Eu sempre canto junto bem alto!",
+          "weights": {
+            "9s1r3": 1,
+            "fsxmm": 5,
+            "2ncem": 4,
+            "pg6vu": 2,
+            "2sryp": 3
+          }
+        },
+        {
+          "id": "umnx3",
+          "label": "Primeiro vou ao bar buscar cerveja. Depois estou pronto para tudo.",
+          "weights": {
+            "9s1r3": 1,
+            "fsxmm": 2,
+            "2ncem": 5,
+            "pg6vu": 4,
+            "2sryp": 3
+          }
+        },
+        {
+          "id": "sgy39",
+          "label": "Faço amizade facilmente e converso com todo mundo, conhecido ou desconhecido.",
+          "weights": {
+            "9s1r3": 1,
+            "fsxmm": 2,
+            "2ncem": 4,
+            "pg6vu": 3,
+            "2sryp": 5
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "wydzd",
+      "prompt": "Qual é seu traje habitual?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "t47as",
+          "label": "Botas resistentes, jeans e uma boa jaqueta. Nada pode me atingir.",
+          "weights": {
+            "9s1r3": 2,
+            "fsxmm": 3,
+            "2ncem": 5,
+            "pg6vu": 1,
+            "2sryp": 4
+          }
+        },
+        {
+          "id": "0ukoo",
+          "label": "Não importa o tempo: bermuda e uma camiseta velha de banda! Isso basta e resiste a banhos de cerveja.",
+          "weights": {
+            "9s1r3": 1,
+            "fsxmm": 4,
+            "2ncem": 3,
+            "pg6vu": 2,
+            "2sryp": 5
+          }
+        },
+        {
+          "id": "ng1j4",
+          "label": "Eu me arrumo um pouco. Cabelo em ordem e roupa mais elegante. Assim, não importa quem encontro na rua!",
+          "weights": {
+            "9s1r3": 4,
+            "fsxmm": 3,
+            "2ncem": 2,
+            "pg6vu": 5,
+            "2sryp": 1
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "lmd4o",
+      "prompt": "As palavras trombeta marinha, saltério ou órgão portativo dizem alguma coisa para você?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "91n2v",
+          "label": "Tranquilo, conheço tudo isso!",
+          "weights": {
+            "9s1r3": 3,
+            "fsxmm": 5,
+            "2ncem": 1,
+            "pg6vu": 4,
+            "2sryp": 2
+          }
+        },
+        {
+          "id": "egyxa",
+          "label": "Alguma coisa me soa familiar, mas saber exatamente o que é tudo isso… difícil!",
+          "weights": {
+            "9s1r3": 3,
+            "fsxmm": 1,
+            "2ncem": 5,
+            "pg6vu": 2,
+            "2sryp": 4
+          }
+        },
+        {
+          "id": "1dmi1",
+          "label": "Não me venha com isso! Nunca estudei latim e, mesmo que tivesse, teria abandonado a matéria!",
+          "weights": {
+            "9s1r3": 2,
+            "fsxmm": 1,
+            "2ncem": 4,
+            "pg6vu": 3,
+            "2sryp": 5
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "ota41",
+      "prompt": "Como você descreveria seu talento musical?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "twmja",
+          "label": "Leio partituras razoavelmente e acerto as notas quando me concentro. Não basta?",
+          "weights": {
+            "9s1r3": 4,
+            "fsxmm": 1,
+            "2ncem": 2,
+            "pg6vu": 5,
+            "2sryp": 3
+          }
+        },
+        {
+          "id": "75mcg",
+          "label": "Consigo tudo! Cantar, dançar e tocar instrumentos… Dê um pouco de tempo e vou impressionar você.",
+          "weights": {
+            "9s1r3": 3,
+            "fsxmm": 5,
+            "2ncem": 1,
+            "pg6vu": 4,
+            "2sryp": 2
+          }
+        },
+        {
+          "id": "oszmv",
+          "label": "Sabe como é… Deixo os outros na frente e prefiro ouvir.",
+          "weights": {
+            "9s1r3": 5,
+            "fsxmm": 1,
+            "2ncem": 4,
+            "pg6vu": 2,
+            "2sryp": 3
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "tg5q2",
+      "prompt": "Você quer organizar uma grande festa com outras pessoas. Em qual papel você se imagina?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "hv11h",
+          "label": "Cuido do bar. Atendimento é comigo e a noite nunca fica chata.",
+          "weights": {
+            "9s1r3": 3,
+            "fsxmm": 2,
+            "2ncem": 4,
+            "pg6vu": 1,
+            "2sryp": 5
+          }
+        },
+        {
+          "id": "cwslk",
+          "label": "Organizo compras, local e tudo mais. Na noite da festa, só quero conferir que tudo funciona e aproveitar.",
+          "weights": {
+            "9s1r3": 5,
+            "fsxmm": 1,
+            "2ncem": 2,
+            "pg6vu": 4,
+            "2sryp": 3
+          }
+        },
+        {
+          "id": "8n43p",
+          "label": "Sinceramente? Contribuo para o caixa, mas não quero estresse: só quero festejar.",
+          "weights": {
+            "9s1r3": 1,
+            "fsxmm": 4,
+            "2ncem": 3,
+            "pg6vu": 5,
+            "2sryp": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "4a6jf",
+      "prompt": "Como você decide a quais shows vai?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "oin80",
+          "label": "Não importa quem toca, desde que eu tenha música ao vivo de novo nesta semana.",
+          "weights": {
+            "9s1r3": 2,
+            "fsxmm": 1,
+            "2ncem": 5,
+            "pg6vu": 4,
+            "2sryp": 3
+          }
+        },
+        {
+          "id": "kr6w1",
+          "label": "Tenho minhas bandas favoritas. Não importa a distância, preciso estar lá.",
+          "weights": {
+            "9s1r3": 4,
+            "fsxmm": 5,
+            "2ncem": 1,
+            "pg6vu": 3,
+            "2sryp": 2
+          }
+        },
+        {
+          "id": "1nsqs",
+          "label": "Tenho minha turma fixa e sempre saímos juntos. Nosso gosto musical parecido facilita ainda mais!",
+          "weights": {
+            "9s1r3": 3,
+            "fsxmm": 4,
+            "2ncem": 1,
+            "pg6vu": 5,
+            "2sryp": 2
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "9s1r3",
+      "title": "Rei ou rainha",
+      "description": "Você está no topo e cuida com carinho de seus súditos. Organiza as grandes festas principalmente para alegrar seu povo e é, por assim dizer, o organizador de festivais da Idade Média. Você se sente bem quando a população está bem e aprecia as apresentações de seu trono, a certa distância, aproximadamente onde ficaria a torre de som.",
+      "image": {
+        "src": "/assets/desafios/59818a9af709e256.png",
+        "alt": "Imagem do resultado Rei ou rainha",
+        "source": "https://images.radiobob.de/2022/02/quadratische_r_koenig_in.png?fm=png&ixlib=php-1.2.1"
+      }
+    },
+    {
+      "id": "fsxmm",
+      "title": "Trovador:",
+      "description": "Você é a estrela do rock da Idade Média. Tem talento musical e sabe divertir as pessoas, conhece seus colegas músicos e viaja com seus companheiros de castelo em castelo. Mas também não se acha importante demais para se apresentar sozinho em uma taverna em uma boa noite.",
+      "image": {
+        "src": "/assets/desafios/99a01e9fc6edd38f.png",
+        "alt": "Imagem do resultado Trovador:",
+        "source": "https://images.radiobob.de/2022/02/quadratischer_minnesaenger.png?fm=png&ixlib=php-1.2.1"
+      }
+    },
+    {
+      "id": "2ncem",
+      "title": "Povo comum",
+      "description": "Você trabalha duro e busca sua recompensa nas festas populares! Com suas coisas e os outros da região, sai do campo ou da oficina direto para o show. Hoje, o cotidiano fica de lado. Soltar-se de vez e extravasar bem em frente ao palco: é por esses momentos que tanto trabalho vale a pena.",
+      "image": {
+        "src": "/assets/desafios/16fa08fb4c70b0c3.png",
+        "alt": "Imagem do resultado Povo comum",
+        "source": "https://images.radiobob.de/2022/02/quadratische_bauern.png?fm=png&ixlib=php-1.2.1"
+      }
+    },
+    {
+      "id": "pg6vu",
+      "title": "Cavaleiro ou integrante da corte",
+      "description": "Você tem fortes laços com seu grupo e está sempre fazendo algo com as mesmas pessoas, seja começando esportivamente em uma justa ou terminando com uma festa animada no grande salão do castelo. Para representar sua posição, a armadura está sempre polida e o vestido sem amassados.",
+      "image": {
+        "src": "/assets/desafios/7c6e383144c23357.png",
+        "alt": "Imagem do resultado Cavaleiro ou integrante da corte",
+        "source": "https://images.radiobob.de/2022/02/quadratische_edelleute.png?fm=png&ixlib=php-1.2.1"
+      }
+    },
+    {
+      "id": "2sryp",
+      "title": "Bobo da corte",
+      "description": "Você é agitado e cheio de energia, e onde você está sempre há festa. Tanto faz se há um plebeu, um nobre ou um rei diante de você. Você quer se divertir e se diverte. Seu bom humor contagia facilmente quem está ao lado. Por isso, deixam você fazer muita coisa: sem você, não seria a festa do ano, e no ano seguinte voltam a convidá-lo de boa vontade.",
+      "image": {
+        "src": "/assets/desafios/6d3c1b5dc0c0382e.png",
+        "alt": "Imagem do resultado Bobo da corte",
+        "source": "https://images.radiobob.de/2022/02/quadratischer_hofnarr.png?fm=png&ixlib=php-1.2.1"
+      }
+    }
+  ],
+  "sourceId": "923",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Mittelalter-Quiz"
+  },
+  "sourceFiles": [
+    "50-mittelalter.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "1",
+    "restart_questions": "off"
+  },
+  "versionHash": "bace5ccb418a4809"
+}

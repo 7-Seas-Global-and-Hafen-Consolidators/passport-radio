@@ -1,0 +1,523 @@
+{
+  "id": "dp-33",
+  "version": 1,
+  "title": "Você reconhece estes videoclipes de rock?",
+  "family": "Visual",
+  "type": "frame",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "kzusq",
+      "prompt": "De qual música é este vídeo cheio de animais?",
+      "type": "frame",
+      "options": [
+        {
+          "id": "r4mom",
+          "label": "Give It Away - Red Hot Chili Peppers",
+          "correct": false
+        },
+        {
+          "id": "4gsxd",
+          "label": "Bad Touch - Bloodhound Gang",
+          "correct": true
+        },
+        {
+          "id": "1f50x",
+          "label": "American Idiot - Green Day",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/44780f7e2dec3ece.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Bad-Touch.jpg"
+      }
+    },
+    {
+      "id": "qxcgt",
+      "prompt": "Qual música é apresentada neste videoclipe cult?",
+      "type": "frame",
+      "options": [
+        {
+          "id": "0f14a",
+          "label": "Time - Pink Floyd",
+          "correct": false
+        },
+        {
+          "id": "uw5ka",
+          "label": "La Grange - ZZ Top",
+          "correct": false
+        },
+        {
+          "id": "8bxmh",
+          "label": "Black Hole Sun - Soundgarden",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/64cf2331271c68ae.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Black-Hole-Sun.jpg"
+      }
+    },
+    {
+      "id": "s9wsn",
+      "prompt": "Este videoclipe foi inspirado no filme “From Dusk Till Dawn”. Mas de qual música é ele?",
+      "type": "frame",
+      "options": [
+        {
+          "id": "wtqqg",
+          "label": "Engel - Rammstein",
+          "correct": true
+        },
+        {
+          "id": "kxanr",
+          "label": "Zombie - Cranberries",
+          "correct": false
+        },
+        {
+          "id": "wj33s",
+          "label": "Janie's Got A Gun - Aerosmith",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5e0e5a48b0f689a0.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Engel.jpg"
+      }
+    },
+    {
+      "id": "gskeu",
+      "prompt": "Com esta música, um pedaço da história da música foi escrito em 1975:",
+      "type": "frame",
+      "options": [
+        {
+          "id": "gynxm",
+          "label": "Born To Run - Bruce Springsteen",
+          "correct": false
+        },
+        {
+          "id": "8ug39",
+          "label": "T.N.T. - AC/DC",
+          "correct": false
+        },
+        {
+          "id": "heqsv",
+          "label": "Bohemian Rhapsody - Queen",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4f397749ec014143.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Bohemian-Rhapsody.jpg"
+      }
+    },
+    {
+      "id": "v8cq4",
+      "prompt": "Com esta música cheia de emoção, este roqueiro se tornou inesquecível:",
+      "type": "frame",
+      "options": [
+        {
+          "id": "viw06",
+          "label": "Tears In Heaven - Eric Clapton",
+          "correct": false
+        },
+        {
+          "id": "3qwvy",
+          "label": "Hurt - Johnny Cash",
+          "correct": true
+        },
+        {
+          "id": "g3cq7",
+          "label": "I'd Do Anything For Love - Meat Loaf",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/051d6de71327d231.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Hurt.jpg"
+      }
+    },
+    {
+      "id": "nk9fc",
+      "prompt": "Neste videoclipe, a banda assume os papéis de pilotos, passageiros e tripulação:",
+      "type": "frame",
+      "options": [
+        {
+          "id": "ljiku",
+          "label": "Learn To Fly - Foo Fighters",
+          "correct": true
+        },
+        {
+          "id": "ff1im",
+          "label": "Unter den Wolken - Die Toten Hosen",
+          "correct": false
+        },
+        {
+          "id": "2fxey",
+          "label": "Learning To Fly - Pink Floyd",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/06749650b70e1e42.png",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Learn-To-Fly.png"
+      }
+    },
+    {
+      "id": "8xpc8",
+      "prompt": "Qual videoclipe está representado aqui? Dica: deuses do rock!",
+      "type": "frame",
+      "options": [
+        {
+          "id": "epykm",
+          "label": "We Will Rock You - Queen",
+          "correct": false
+        },
+        {
+          "id": "j1ec8",
+          "label": "Sympathy For The Devil - The Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "wvigf",
+          "label": "Let There Be Rock - AC/DC",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/ffad9e5e962a6fba.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Let-There-Be-Rock.jpg"
+      }
+    },
+    {
+      "id": "lkznl",
+      "prompt": "Lara Croft troca tiros com a banda neste vídeo:",
+      "type": "frame",
+      "options": [
+        {
+          "id": "akdos",
+          "label": "Männer Sind Schweine - Die Ärzte",
+          "correct": true
+        },
+        {
+          "id": "x1jrd",
+          "label": "Why Don't You Get A Job - The Offspring",
+          "correct": false
+        },
+        {
+          "id": "grf8t",
+          "label": "21 Guns - Green Day",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/3162ebb64123c405.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Männer-Sind-Schweine.jpg"
+      }
+    },
+    {
+      "id": "4p19a",
+      "prompt": "Esta música tem dois videoclipes. A segunda versão, “americana”, virou um sucesso no YouTube.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "hgb0m",
+          "label": "Numb - Linkin Park",
+          "correct": false
+        },
+        {
+          "id": "shc2y",
+          "label": "Tragedy + Time - Rise Against",
+          "correct": false
+        },
+        {
+          "id": "k7kpq",
+          "label": "Mr. Brightside - The Killers",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/822633a63907bca3.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Mr-Brightside.jpg"
+      }
+    },
+    {
+      "id": "xvmd9",
+      "prompt": "Este clássico tem mais de um bilhão de visualizações no YouTube, o que o torna um dos videoclipes de rock mais acessados.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "in3mk",
+          "label": "November Rain - Guns N' Roses",
+          "correct": true
+        },
+        {
+          "id": "97mt3",
+          "label": "Nothing Else Matters - Metallica",
+          "correct": false
+        },
+        {
+          "id": "hwve3",
+          "label": "Africa - Toto",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/ebd3d5acaf3131a6.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/November-Rain.jpg"
+      }
+    },
+    {
+      "id": "a6nlf",
+      "prompt": "Este videoclipe ganhou o MTV Video Music Award em 1987. A música também chegou ao primeiro lugar das paradas.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "ngxk4",
+          "label": "You Give Love A Bad Name - Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "vgth8",
+          "label": "The Final Countdown - Europe",
+          "correct": false
+        },
+        {
+          "id": "cxvk9",
+          "label": "Sledgehammer - Peter Gabriel",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/d8c1555c2074c1a3.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Sledgehammer.jpg"
+      }
+    },
+    {
+      "id": "dqc7t",
+      "prompt": "Muitas partes deste vídeo vieram das ideias do vocalista. Além disso, é o videoclipe mais exibido na MTV.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "r4pgt",
+          "label": "Heroes - David Bowie",
+          "correct": false
+        },
+        {
+          "id": "xjg9p",
+          "label": "Smells Like Teen Spirit - Nirvana",
+          "correct": true
+        },
+        {
+          "id": "twiqn",
+          "label": "The Anthem - Good Charlotte",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/8f84b6b8ad20ad59.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Smells-Like-Teen-Spirit.jpg"
+      }
+    },
+    {
+      "id": "iu1yq",
+      "prompt": "Esta música saiu em 1997 e era uma paródia do grunge. No começo, toca uma versão distorcida de “Smells Like Teen Spirit”.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "jpgw7",
+          "label": "Song 2 - Blur",
+          "correct": true
+        },
+        {
+          "id": "v5qip",
+          "label": "Everlong - Foo Fighters",
+          "correct": false
+        },
+        {
+          "id": "rlspj",
+          "label": "Semi-Charmed Life - Third Eye Blind",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/c6e3fa48fd960816.jpg",
+        "alt": "Imagem da pergunta 13",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Song-2.jpg"
+      }
+    },
+    {
+      "id": "fkh55",
+      "prompt": "Neste videoclipe, a banda corre nua por Los Angeles e, em uma cena, encontra a atriz pornô Janine Lindemulder.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "8dff2",
+          "label": "Just Like Tiger Woods - Steel Panther",
+          "correct": false
+        },
+        {
+          "id": "ubvo8",
+          "label": "Californication - Red Hot Chili Peppers",
+          "correct": false
+        },
+        {
+          "id": "ia5fi",
+          "label": "What's My Age Again? - Blink-182",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/087a2164fe84626c.jpg",
+        "alt": "Imagem da pergunta 14",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Whats-My-Age-Again.jpg"
+      }
+    },
+    {
+      "id": "jybfm",
+      "prompt": "A música deste videoclipe foi um enorme sucesso e vendeu mais de três milhões de discos no mundo inteiro.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "l8x8t",
+          "label": "Live And Let Die - Guns N' Roses",
+          "correct": false
+        },
+        {
+          "id": "ca3f2",
+          "label": "Always - Bon Jovi",
+          "correct": true
+        },
+        {
+          "id": "rkdl3",
+          "label": "Carzy - Aerosmith",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/c0c8386978e5e989.png",
+        "alt": "Imagem da pergunta 15",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Always-1.png"
+      }
+    },
+    {
+      "id": "we9wr",
+      "prompt": "Partes do filme “Loser” foram usadas neste videoclipe, e um final diferente do filme foi gravado especialmente para a música.",
+      "type": "frame",
+      "options": [
+        {
+          "id": "tppis",
+          "label": "One - U2",
+          "correct": false
+        },
+        {
+          "id": "auqft",
+          "label": "In The End - Linkin Park",
+          "correct": false
+        },
+        {
+          "id": "tt99u",
+          "label": "Teenage Dirtbag - Wheatus",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/2acaa91fa29ca163.jpg",
+        "alt": "Imagem da pergunta 16",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/08/Teenage-Dirtbag.jpg"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "vc955",
+      "title": "Puxa, puxa, isso não deu certo. Você precisa olhar os vídeos novamente com atenção!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "4xdog",
+      "title": "Bem, já não está ruim. Mas ainda precisa de prática para reconhecer todos os vídeos. Continue!",
+      "description": "",
+      "min": 6,
+      "max": 12
+    },
+    {
+      "id": "36p3h",
+      "title": "Foi QUASE perfeito! Veja os últimos vídeos mais uma vez: então também os reconhecerá.",
+      "description": "",
+      "min": 13,
+      "max": 15
+    },
+    {
+      "id": "m92qe",
+      "title": "Nada mal! Você realmente conhece o assunto. É isso que esperamos de um fã de rock de verdade!",
+      "description": "",
+      "min": 16,
+      "max": 16
+    }
+  ],
+  "sourceId": "345",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Erkennt Ihr diese rockigen Musikvideos?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/28-musikvideos-um-bild.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "4fd6a99392f65fd3"
+}

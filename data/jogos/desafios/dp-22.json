@@ -1,0 +1,499 @@
+{
+  "id": "dp-22",
+  "version": 1,
+  "title": "Qual música agita seu verão?",
+  "family": "Perfil",
+  "type": "personalidade",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "jhb76",
+      "prompt": "O que refresca você em um dia quente de verão?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "qp9ux",
+          "label": "Uma cervejinha gelada",
+          "weights": {
+            "b23vj": 6,
+            "3ptnd": 5,
+            "encco": 2,
+            "km7sx": 4,
+            "shk76": 1,
+            "dfl5w": 3
+          }
+        },
+        {
+          "id": "nr8zv",
+          "label": "Um mergulho na piscina",
+          "weights": {
+            "b23vj": 3,
+            "3ptnd": 2,
+            "encco": 5,
+            "km7sx": 4,
+            "shk76": 6,
+            "dfl5w": 1
+          }
+        },
+        {
+          "id": "qejay",
+          "label": "Um bom passeio de moto",
+          "weights": {
+            "b23vj": 4,
+            "3ptnd": 5,
+            "encco": 3,
+            "km7sx": 1,
+            "shk76": 2,
+            "dfl5w": 6
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text"
+    },
+    {
+      "id": "bw14z",
+      "prompt": "Você é do tipo:",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "498sj",
+          "label": "Adorador do sol",
+          "weights": {
+            "b23vj": 5,
+            "3ptnd": 4,
+            "encco": 2,
+            "km7sx": 1,
+            "shk76": 6,
+            "dfl5w": 3
+          }
+        },
+        {
+          "id": "q6cls",
+          "label": "Criatura da noite",
+          "weights": {
+            "b23vj": 2,
+            "3ptnd": 4,
+            "encco": 6,
+            "km7sx": 5,
+            "shk76": 3,
+            "dfl5w": 1
+          }
+        },
+        {
+          "id": "1rtaw",
+          "label": "Dançarino da chuva",
+          "weights": {
+            "b23vj": 2,
+            "3ptnd": 4,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 1,
+            "dfl5w": 3
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text"
+    },
+    {
+      "id": "foa99",
+      "prompt": "Como você prefere passar as férias?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "mg7jr",
+          "label": "Ouvindo música no jardim, sem sair da espreguiçadeira",
+          "weights": {
+            "b23vj": 6,
+            "3ptnd": 5,
+            "encco": 2,
+            "km7sx": 1,
+            "shk76": 3,
+            "dfl5w": 4
+          }
+        },
+        {
+          "id": "ey8pb",
+          "label": "Em festivais, festivais e mais festivais",
+          "weights": {
+            "b23vj": 1,
+            "3ptnd": 4,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 2,
+            "dfl5w": 3
+          }
+        },
+        {
+          "id": "hel3a",
+          "label": "Nada melhor que férias à beira-mar",
+          "weights": {
+            "b23vj": 5,
+            "3ptnd": 4,
+            "encco": 2,
+            "km7sx": 1,
+            "shk76": 6,
+            "dfl5w": 3
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "pg0e7",
+      "prompt": "Qual é seu veículo de verão?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "pg5oz",
+          "label": "O carro com ar-condicionado",
+          "weights": {
+            "b23vj": 5,
+            "3ptnd": 2,
+            "encco": 4,
+            "km7sx": 3,
+            "shk76": 6,
+            "dfl5w": 1
+          }
+        },
+        {
+          "id": "nwesi",
+          "label": "A bicicleta arejada",
+          "weights": {
+            "b23vj": 4,
+            "3ptnd": 3,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 2,
+            "dfl5w": 1
+          }
+        },
+        {
+          "id": "8plce",
+          "label": "A moto ao vento",
+          "weights": {
+            "b23vj": 4,
+            "3ptnd": 5,
+            "encco": 3,
+            "km7sx": 1,
+            "shk76": 2,
+            "dfl5w": 6
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "dijie",
+      "prompt": "Qual bebida refresca você no verão?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "ghbke",
+          "label": "Cerveja bem gelada",
+          "weights": {
+            "b23vj": 2,
+            "3ptnd": 3,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 1,
+            "dfl5w": 4
+          }
+        },
+        {
+          "id": "fwqo3",
+          "label": "Coquetéis refrescantes",
+          "weights": {
+            "b23vj": 2,
+            "3ptnd": 3,
+            "encco": 4,
+            "km7sx": 5,
+            "shk76": 6,
+            "dfl5w": 1
+          }
+        },
+        {
+          "id": "oi6rk",
+          "label": "Bastante água",
+          "weights": {
+            "b23vj": 6,
+            "3ptnd": 5,
+            "encco": 2,
+            "km7sx": 1,
+            "shk76": 4,
+            "dfl5w": 3
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "xyggk",
+      "prompt": "Qual é a melhor parte do verão para você?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "wnqek",
+          "label": "Festivais durante o verão inteiro!",
+          "weights": {
+            "b23vj": 1,
+            "3ptnd": 3,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 2,
+            "dfl5w": 4
+          }
+        },
+        {
+          "id": "yqf9e",
+          "label": "Shows ao ar livre — pelo menos um por semana!",
+          "weights": {
+            "b23vj": 4,
+            "3ptnd": 5,
+            "encco": 3,
+            "km7sx": 1,
+            "shk76": 2,
+            "dfl5w": 6
+          }
+        },
+        {
+          "id": "5uni5",
+          "label": "Tirar férias e ouvir música com tranquilidade",
+          "weights": {
+            "b23vj": 5,
+            "3ptnd": 4,
+            "encco": 3,
+            "km7sx": 1,
+            "shk76": 6,
+            "dfl5w": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "6kxxt",
+      "prompt": "No verão, a janela do seu carro fica…",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "lyf6b",
+          "label": "Aberta e com a música no volume máximo",
+          "weights": {
+            "b23vj": 1,
+            "3ptnd": 5,
+            "encco": 4,
+            "km7sx": 3,
+            "shk76": 2,
+            "dfl5w": 6
+          }
+        },
+        {
+          "id": "84eda",
+          "label": "Fechada, com o ar-condicionado deixando tudo fresquinho",
+          "weights": {
+            "b23vj": 5,
+            "3ptnd": 2,
+            "encco": 3,
+            "km7sx": 4,
+            "shk76": 6,
+            "dfl5w": 1
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "tmmd3",
+      "prompt": "Qual é sua cor ao final do verão?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "41gho",
+          "label": "Vermelho-lagosta",
+          "weights": {
+            "b23vj": 5,
+            "3ptnd": 6,
+            "encco": 3,
+            "km7sx": 4,
+            "shk76": 1,
+            "dfl5w": 2
+          }
+        },
+        {
+          "id": "zrt8p",
+          "label": "Branco-farinha",
+          "weights": {
+            "b23vj": 6,
+            "3ptnd": 4,
+            "encco": 3,
+            "km7sx": 2,
+            "shk76": 1,
+            "dfl5w": 5
+          }
+        },
+        {
+          "id": "grpcl",
+          "label": "Bronzeado de férias",
+          "weights": {
+            "b23vj": 1,
+            "3ptnd": 4,
+            "encco": 3,
+            "km7sx": 2,
+            "shk76": 6,
+            "dfl5w": 5
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "ximhd",
+      "prompt": "Qual foi seu melhor verão até agora?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "ppaqi",
+          "label": "Um verão da minha juventude: naquela época, eles eram infinitos",
+          "weights": {
+            "b23vj": 6,
+            "3ptnd": 5,
+            "encco": 2,
+            "km7sx": 1,
+            "shk76": 3,
+            "dfl5w": 4
+          }
+        },
+        {
+          "id": "xltud",
+          "label": "O verão do ano que vem pode ser ainda melhor que os anteriores",
+          "weights": {
+            "b23vj": 1,
+            "3ptnd": 3,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 4,
+            "dfl5w": 2
+          }
+        },
+        {
+          "id": "x6aeb",
+          "label": "Este verão está demais!",
+          "weights": {
+            "b23vj": 1,
+            "3ptnd": 2,
+            "encco": 4,
+            "km7sx": 6,
+            "shk76": 3,
+            "dfl5w": 5
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "e8c6s",
+      "prompt": "Como você encerra uma noite de verão perfeita?",
+      "type": "personalidade",
+      "options": [
+        {
+          "id": "d1x70",
+          "label": "Uma noite tranquila, com violão ao redor da fogueira",
+          "weights": {
+            "b23vj": 4,
+            "3ptnd": 5,
+            "encco": 3,
+            "km7sx": 1,
+            "shk76": 2,
+            "dfl5w": 6
+          }
+        },
+        {
+          "id": "tgrb8",
+          "label": "Cervejinha na mão no show da banda favorita",
+          "weights": {
+            "b23vj": 2,
+            "3ptnd": 4,
+            "encco": 5,
+            "km7sx": 6,
+            "shk76": 1,
+            "dfl5w": 3
+          }
+        },
+        {
+          "id": "vjz0w",
+          "label": "Churrasco na varanda com o melhor do rock no rádio",
+          "weights": {
+            "b23vj": 6,
+            "3ptnd": 4,
+            "encco": 2,
+            "km7sx": 1,
+            "shk76": 5,
+            "dfl5w": 3
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "b23vj",
+      "title": "Summer of '69 — Bryan Adams",
+      "description": "O verão não deixa você apenas feliz, mas também um pouco melancólico ao lembrar todos os dias de verão da juventude. Nas férias, você prefere deitar em uma espreguiçadeira no jardim e ouvir no rádio seus sucessos favoritos de antigamente. Claro que Summer of '69 não pode faltar!"
+    },
+    {
+      "id": "3ptnd",
+      "title": "Sweet Home Alabama — Lynyrd Skynyrd",
+      "description": "Você sempre quer aproveitar seu verão com o máximo de rock. Seja em uma longa viagem de férias ou curtindo os dias livres em casa, com a trilha certa você sempre curte! Nem um dia chuvoso de verão incomoda. Com Sweet Home Alabama como música de verão, seu verão não pode ser ruim."
+    },
+    {
+      "id": "encco",
+      "title": "Jump — Van Halen",
+      "description": "Seja pulando na água fresca em uma festa na piscina ou se divertindo na roda de um festival, verão significa bom humor, noites longas e quentes e clima de festa! Por isso, Jump não pode faltar na sua playlist de verão. Bom humor garantido!"
+    },
+    {
+      "id": "km7sx",
+      "title": "School’s Out — Alice Cooper",
+      "description": "School’s Out! Isso significa um verão inteiro de aventuras pela frente, com seus amigos. No verão, seu lar é praticamente cada festival do país. Vocês curtem a cerveja gelada e os muitos shows. Nenhum tempo ruim estraga seu humor. É hora de festa!"
+    },
+    {
+      "id": "shk76",
+      "title": "Paradise City — Guns N' Roses",
+      "description": "Nas férias, você quer conhecer algo novo, de preferência com o melhor tempo. Por isso, foge do verão instável da Alemanha para lugares quentes com mar e praia. Beber coquetéis e simplesmente aproveitar a vida. Como isso é quase estar em Paradise City, esta música não pode faltar na sua lista para adoçar o verão."
+    },
+    {
+      "id": "dfl5w",
+      "title": "One More For The Road — The New Roses",
+      "description": "Janelas abertas com o carro em movimento e música no máximo: essa é sua sensação de verão. Guitarras na fogueira, cerveja gelada na mão e, de dia, um show de rock ao ar livre. Você quer que o verão nunca termine. One More For The Road deve estar na playlist para tornar seu verão inesquecível!"
+    }
+  ],
+  "sourceId": "602",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welcher Song rockt Euren Sommer?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/08-sommersong.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "1647c726d7d797b5"
+}

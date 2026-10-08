@@ -1,0 +1,518 @@
+{
+  "id": "dp-30",
+  "version": 1,
+  "title": "Vestibular do rock",
+  "family": "Visual",
+  "type": "formacao",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "xgf0z",
+      "prompt": "Geografia — Qual banda tocou nos sete continentes no período de um ano?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "te5ae",
+          "label": "Guns N‘ Roses",
+          "correct": false
+        },
+        {
+          "id": "es0qa",
+          "label": "AC/DC",
+          "correct": false
+        },
+        {
+          "id": "42nqc",
+          "label": "Metallica",
+          "correct": true
+        },
+        {
+          "id": "4hif3",
+          "label": "Aerosmith",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "63fg1",
+      "prompt": "Deep Purple escreveu “Smoke on the Water” depois de ver a fumaça de um incêndio sobre um lago. Em qual lago eles estavam?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "94sz7",
+          "label": "Lago de Genebra",
+          "correct": true
+        },
+        {
+          "id": "bsfxq",
+          "label": "Lago de Constança",
+          "correct": false
+        },
+        {
+          "id": "ujqxo",
+          "label": "Lago de Garda",
+          "correct": false
+        },
+        {
+          "id": "5p20b",
+          "label": "Lago Chiemsee",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "ucuuu",
+      "prompt": "Inglês — Qual música é sempre mal interpretada? Na verdade, ela fala de um perseguidor, sem nada de romântico.",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "eob4j",
+          "label": "You Could Be Mine – Guns N‘ Roses",
+          "correct": false
+        },
+        {
+          "id": "5iflk",
+          "label": "Every Breath You Take – The Police",
+          "correct": true
+        },
+        {
+          "id": "vkzqn",
+          "label": "Still Loving You - Scorpions",
+          "correct": false
+        },
+        {
+          "id": "qktdd",
+          "label": "Got My Mind Set On You – George Harrison",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "2qiki",
+      "prompt": "Alemão — O que acontece com o oitavo Jägermeister na música “10 kleine Jägermeister”, do Die Toten Hosen?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "91m24",
+          "label": "Ele precisou morrer para deixar uma herança",
+          "correct": false
+        },
+        {
+          "id": "wg1y1",
+          "label": "Ele disputou quem bebia mais com os outros",
+          "correct": false
+        },
+        {
+          "id": "yfdce",
+          "label": "Ele foi para Colônia; os outros, para Düsseldorf",
+          "correct": true
+        },
+        {
+          "id": "k46mr",
+          "label": "O marido apareceu durante seu encontro",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "mvyvn",
+      "prompt": "História — Quando Brian Johnson fez seu primeiro show como novo vocalista do AC/DC?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "u9o6w",
+          "label": "29 de junho de 1980",
+          "correct": true
+        },
+        {
+          "id": "7nw0k",
+          "label": "11 de janeiro de 1981",
+          "correct": false
+        },
+        {
+          "id": "wl8lu",
+          "label": "17 de abril de 1980",
+          "correct": false
+        },
+        {
+          "id": "6i0r3",
+          "label": "20 de julho de 1980",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "7stfc",
+      "prompt": "História — Qual banda abriu o show do Live Aid em 1985?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "dlks7",
+          "label": "Queen",
+          "correct": false
+        },
+        {
+          "id": "6k20k",
+          "label": "Judas Priest",
+          "correct": false
+        },
+        {
+          "id": "653bf",
+          "label": "U2",
+          "correct": false
+        },
+        {
+          "id": "ce0w0",
+          "label": "Status Quo",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "hk8oq",
+      "prompt": "Matemática — Por que a banda se chamou Sum 41?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "90nbk",
+          "label": "Já haviam passado 41 dias do verão — Sum 41 é a abreviação de 41 Days of Summer",
+          "correct": true
+        },
+        {
+          "id": "d3hi9",
+          "label": "Faltavam apenas 41 dias para o verão — Sum 41 é a abreviação de 41 Days ’til Summer",
+          "correct": false
+        },
+        {
+          "id": "gl937",
+          "label": "Era a soma do dinheiro que os integrantes tinham nos bolsos quando escolheram o nome: 41 dólares",
+          "correct": false
+        },
+        {
+          "id": "um0sx",
+          "label": "Era a soma das idades dos integrantes fundadores naquela época",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "w8a4b",
+      "prompt": "Física — Qual é o título da tese de doutorado de Brian May em astrofísica?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "i2e72",
+          "label": "Radiação eletromagnética dos corpos celestes",
+          "correct": false
+        },
+        {
+          "id": "sdc5y",
+          "label": "Uma investigação da velocidade radial das nuvens de poeira interplanetária",
+          "correct": true
+        },
+        {
+          "id": "7epvy",
+          "label": "Características dos universos em expansão",
+          "correct": false
+        },
+        {
+          "id": "miz1d",
+          "label": "Influência da dissipação no efeito Landau-Zener",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "wd6ex",
+      "prompt": "Arte — Para que Kurt Cobain desenhou originalmente o sorriso do Nirvana? Só depois ele virou, sem intenção, o logo icônico da banda.",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "uxz36",
+          "label": "Para o cenário de um videoclipe",
+          "correct": false
+        },
+        {
+          "id": "ixitl",
+          "label": "No lugar de sua assinatura, porque tinha preguiça de assinar",
+          "correct": false
+        },
+        {
+          "id": "3x3qq",
+          "label": "Para o panfleto da festa de lançamento de Nevermind",
+          "correct": true
+        },
+        {
+          "id": "s9r1t",
+          "label": "Para o primeiro pôster da banda",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "qhhla",
+      "prompt": "Música — Cordas vocais normais produzem oscilações entre 5,4 e 6,9 hertz por segundo. O que havia de especial na voz de Freddie Mercury?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "f5q99",
+          "label": "Suas oscilações chegavam a 7,04 hertz por segundo. Ele aproveitava sua extensão vocal muito melhor que os outros.",
+          "correct": true
+        },
+        {
+          "id": "y51sn",
+          "label": "Nada. Tecnicamente, sua voz era perfeitamente normal. Tudo isso é apenas um mito.",
+          "correct": false
+        },
+        {
+          "id": "oi26w",
+          "label": "Sua extensão vocal abrangia quatro oitavas, permitindo alcançar notas que ninguém mais conseguia.",
+          "correct": false
+        },
+        {
+          "id": "5qt8d",
+          "label": "Suas oscilações ficavam abaixo da média — isso tornava sua voz especial.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "3i603",
+      "prompt": "Educação física — Quantos quilômetros Mick Jagger percorre no palco em uma noite normal de show?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "bs8j4",
+          "label": "Cerca de 5 quilômetros",
+          "correct": false
+        },
+        {
+          "id": "2153l",
+          "label": "Cerca de 12,5 quilômetros",
+          "correct": false
+        },
+        {
+          "id": "1bkzi",
+          "label": "Cerca de 19 quilômetros",
+          "correct": true
+        },
+        {
+          "id": "3lyoq",
+          "label": "Cerca de 23 quilômetros",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "jx4z1",
+      "prompt": "Política — Qual tema político é abordado em “Sunday Bloody Sunday”, do U2?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "9uwql",
+          "label": "A Guerra dos Trinta Anos",
+          "correct": false
+        },
+        {
+          "id": "lss6k",
+          "label": "Os conflitos durante a questão da Irlanda do Norte",
+          "correct": true
+        },
+        {
+          "id": "yn895",
+          "label": "A Guerra de Independência da Escócia",
+          "correct": false
+        },
+        {
+          "id": "5bxff",
+          "label": "A Guerra da Sucessão Espanhola",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "dc836",
+      "prompt": "Química — Qual dupla do rock recebeu o apelido “Toxic Twins” por causa do consumo excessivo de drogas?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "itt3x",
+          "label": "Axl Rose & Slash",
+          "correct": false
+        },
+        {
+          "id": "2m7a4",
+          "label": "David Bowie & Iggy Pop",
+          "correct": false
+        },
+        {
+          "id": "8w84q",
+          "label": "Mick Jagger & Keith Richards",
+          "correct": false
+        },
+        {
+          "id": "wiurk",
+          "label": "Steven Tyler & Joe Perry",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "f4zc6",
+      "prompt": "Biologia — Heteropoda davidbowie é uma espécie de aranha-caçadora batizada em homenagem a David Bowie. O que ela tem de especial?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "5unhl",
+          "label": "Ela consegue mudar sua cor para tons muito vivos",
+          "correct": false
+        },
+        {
+          "id": "ge5hj",
+          "label": "Ela tem um raio na parte traseira, como o desenho da aranha-de-cruz",
+          "correct": false
+        },
+        {
+          "id": "dylwx",
+          "label": "Ela tem pelos longos e de cor laranja-clara",
+          "correct": true
+        },
+        {
+          "id": "p5ert",
+          "label": "Ela emite sons semelhantes a canto para atrair presas para a teia com ondas sonoras",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "4mmk2",
+      "prompt": "Religião — Qual acontecimento inspirou Billie Joe Armstrong a escrever “East Jesus Nowhere”?",
+      "type": "formacao",
+      "options": [
+        {
+          "id": "u0uhb",
+          "label": "O funeral de um grande amigo",
+          "correct": false
+        },
+        {
+          "id": "o1hz0",
+          "label": "Ele foi convidado para um batizado",
+          "correct": true
+        },
+        {
+          "id": "28ctr",
+          "label": "O casamento de seu primo",
+          "correct": false
+        },
+        {
+          "id": "8ck4u",
+          "label": "Quando criança, precisava acompanhar os avós à igreja todos os domingos",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "wccmj",
+      "title": "1 — excelente: Aprovado com a nota máxima. Você é o aluno aplicado entre os roqueiros. Bravo!",
+      "description": "",
+      "min": 15,
+      "max": 15
+    },
+    {
+      "id": "za0gg",
+      "title": "2 — bom: Dá para ficar bastante satisfeito. Você está acima da média.",
+      "description": "",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "qne45",
+      "title": "3 — satisfatório: Bem, pelo menos você se saiu razoavelmente bem. Não precisa se envergonhar do vestibular do rock, mas algumas matérias não são seu forte.",
+      "description": "",
+      "min": 7,
+      "max": 10
+    },
+    {
+      "id": "qaqsc",
+      "title": "4 — suficiente: Chegou por pouco. Você recebe o diploma do rock, mas só por consideração aos seus pais!",
+      "description": "",
+      "min": 4,
+      "max": 6
+    },
+    {
+      "id": "pzqkj",
+      "title": "5 — insuficiente: Puxa, mas quase acertar ainda é errar. Alguém terá de fazer uma rodada extra.",
+      "description": "",
+      "min": 1,
+      "max": 1
+    },
+    {
+      "id": "bz2fa",
+      "title": "6 — péssimo: Tenha vergonha! Nem um ponto. Pelo visto, alguém não estudou…",
+      "description": "",
+      "min": 0,
+      "max": 0
+    }
+  ],
+  "sourceId": "449",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Rock-Abitur"
+  },
+  "sourceFiles": [
+    "17-rock-abitur.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "f430c118eaad6184"
+}

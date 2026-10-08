@@ -1,0 +1,501 @@
+{
+  "id": "dp-36",
+  "version": 1,
+  "title": "Você conhece os nomes verdadeiros dos rockstars?",
+  "family": "Conhecimento",
+  "type": "nao-identificado",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "wl8mg",
+      "prompt": "Quem está por trás do nome artístico Alice Cooper?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "kuh3a",
+          "label": "Michael John Farmer",
+          "correct": false
+        },
+        {
+          "id": "e9b49",
+          "label": "Vincent Damon Furnier",
+          "correct": true
+        },
+        {
+          "id": "5am2e",
+          "label": "Ramon Tyler Furry",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "7ya71",
+      "prompt": "Com qual nome William Michael Albert Broad faz música?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "kpyyx",
+          "label": "Billy Idol",
+          "correct": true
+        },
+        {
+          "id": "qwv0l",
+          "label": "Bono",
+          "correct": false
+        },
+        {
+          "id": "9hqhi",
+          "label": "Billy Joel",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "jj4ga",
+      "prompt": "Qual é o nome verdadeiro de Farin Urlaub?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "qlgax",
+          "label": "Hans Netter",
+          "correct": false
+        },
+        {
+          "id": "da64b",
+          "label": "Andreas Fetter",
+          "correct": false
+        },
+        {
+          "id": "is2dh",
+          "label": "Jan Vetter",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "ntw6l",
+      "prompt": "Qual rockstar condecorado se chama Paul David Hewson, KBE?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "hgnt4",
+          "label": "Mick Jagger",
+          "correct": false
+        },
+        {
+          "id": "1g3ux",
+          "label": "Bono",
+          "correct": true
+        },
+        {
+          "id": "ohu9l",
+          "label": "Bob Geldorf",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "4ztsa",
+      "prompt": "Todo mundo conhece Meat Loaf, mas qual é seu nome verdadeiro?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "ghh9j",
+          "label": "Marvin Lee Aday",
+          "correct": true
+        },
+        {
+          "id": "gyyb2",
+          "label": "Edward Johnson",
+          "correct": false
+        },
+        {
+          "id": "myd64",
+          "label": "Richard Sam Lay",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "0nfbj",
+      "prompt": "Quem nasceu Frank Carlton Serafino Feranna?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "s7zi9",
+          "label": "Freddie Mercury",
+          "correct": false
+        },
+        {
+          "id": "p8cnw",
+          "label": "Joey Ramone",
+          "correct": false
+        },
+        {
+          "id": "5jqqw",
+          "label": "Nikki Sixx",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "6o1a3",
+      "prompt": "Qual musicista usa o nome P!nk?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "xwrts",
+          "label": "Alecia Beth Moore",
+          "correct": true
+        },
+        {
+          "id": "2un6r",
+          "label": "Sarah Anne Williams",
+          "correct": false
+        },
+        {
+          "id": "2uoji",
+          "label": "Amy June Morrison",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "w9kni",
+      "prompt": "Com qual nome Saul Hudson é conhecido?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "61igw",
+          "label": "The Edge",
+          "correct": false
+        },
+        {
+          "id": "i18x8",
+          "label": "Dio",
+          "correct": false
+        },
+        {
+          "id": "73z5d",
+          "label": "Slash",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "ncp6c",
+      "prompt": "Qual destes músicos se chama Dirk Albert Felsenheimer na vida real?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "yb0xv",
+          "label": "Campino",
+          "correct": false
+        },
+        {
+          "id": "kc6rm",
+          "label": "Bela B.",
+          "correct": true
+        },
+        {
+          "id": "0sueb",
+          "label": "Udo Lindenberg",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "qid0a",
+      "prompt": "Qual é o nome de nascimento de Steven Tyler?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "vefno",
+          "label": "Stephen Mike Tassisco",
+          "correct": false
+        },
+        {
+          "id": "83366",
+          "label": "Steven Richard Tyler",
+          "correct": false
+        },
+        {
+          "id": "mzg5p",
+          "label": "Stephen Victor Tallarico",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "oa7m9",
+      "prompt": "Qual nome Jeffry Ross Hyman adotou, incluindo nele o nome de sua banda?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "9r76l",
+          "label": "Joey Ramone",
+          "correct": true
+        },
+        {
+          "id": "4njsk",
+          "label": "Jon Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "q73pl",
+          "label": "Axl Rose",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "kwien",
+      "prompt": "The Edge é um nome artístico! Como esse homem se chama de verdade?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "6iahx",
+          "label": "William Joe Garner",
+          "correct": false
+        },
+        {
+          "id": "vshop",
+          "label": "Jimmy Sanders",
+          "correct": false
+        },
+        {
+          "id": "6cli9",
+          "label": "David Howell Evans",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "mmwwi",
+      "prompt": "Com qual nome Farrokh Bulsara entrou para a história da música?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "llu8b",
+          "label": "Falco",
+          "correct": false
+        },
+        {
+          "id": "tzm6y",
+          "label": "Freddie Mercury",
+          "correct": true
+        },
+        {
+          "id": "em0rd",
+          "label": "Jimi Hendrix",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "09pg6",
+      "prompt": "“The Artist Formerly Known As Prince” nasceu com qual nome?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "jy9fo",
+          "label": "Peter Ronald Hudson",
+          "correct": false
+        },
+        {
+          "id": "6g27l",
+          "label": "Prince Rogers Nelson",
+          "correct": true
+        },
+        {
+          "id": "17dw4",
+          "label": "Rogers Nelson",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "nwcb7",
+      "prompt": "Qual nome David Robert Jones adotou ao completar dezoito anos?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "3wlor",
+          "label": "David Bowie",
+          "correct": true
+        },
+        {
+          "id": "8ljp2",
+          "label": "Davy Jones",
+          "correct": false
+        },
+        {
+          "id": "52gnh",
+          "label": "Bob Dylan",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "gv6gt",
+      "prompt": "Qual é o nome verdadeiro de Campino, sem o nome artístico?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "w5gx1",
+          "label": "Andreas von Holst",
+          "correct": false
+        },
+        {
+          "id": "0w9wt",
+          "label": "Klaus Meine",
+          "correct": false
+        },
+        {
+          "id": "icc0c",
+          "label": "Andreas Frege",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "qafjg",
+      "prompt": "Como todos chamam Ian Fraser Kilmister?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "echbb",
+          "label": "Lenny",
+          "correct": false
+        },
+        {
+          "id": "y64uz",
+          "label": "Lemmy",
+          "correct": true
+        },
+        {
+          "id": "dz28t",
+          "label": "Remmy",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "9y3z1",
+      "prompt": "Quem é conhecido como Flea, ou “pulga”, em português?",
+      "type": "nao-identificado",
+      "options": [
+        {
+          "id": "v2f4j",
+          "label": "Jeff Darran",
+          "correct": false
+        },
+        {
+          "id": "9r8uo",
+          "label": "Samuel Kurt Howards",
+          "correct": false
+        },
+        {
+          "id": "ac7xo",
+          "label": "Michael Peter Balzary",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "d6yog",
+      "title": "Puxa, isso não deu certo. É melhor estudar um pouco mais os nomes de registro dos roqueiros. Vai dar certo!",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "fo5mn",
+      "title": "Foi razoável, mas queremos ver mais de você! Olhe novamente os nomes com calma. Na próxima vez, você vai se sair melhor.",
+      "description": "",
+      "min": 6,
+      "max": 14
+    },
+    {
+      "id": "o08ph",
+      "title": "Nada mal! Agora faltam só um ou dois nomes para você ser um verdadeiro especialista. Continue!",
+      "description": "",
+      "min": 15,
+      "max": 17
+    },
+    {
+      "id": "nlfca",
+      "title": "Uau! Quero ver alguém fazer igual! Você conhece todo mundo. Respeito!",
+      "description": "",
+      "min": 18,
+      "max": 18
+    }
+  ],
+  "sourceId": "957",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Kennt Ihr die echten Namen der Rockstars?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/22-nomes-reais-rockstars.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "c4e79a23f7d79535"
+}

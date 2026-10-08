@@ -1,0 +1,581 @@
+{
+  "id": "dp-31",
+  "version": 1,
+  "title": "Você reconhece estes álbuns pela capa?",
+  "family": "Visual",
+  "type": "capa",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "53gqo",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "f5yrs",
+          "label": "The Wall de Pink Floyd",
+          "correct": false
+        },
+        {
+          "id": "7gjof",
+          "label": "Tommy de The Who",
+          "correct": true
+        },
+        {
+          "id": "jrpc2",
+          "label": "Are You Experienced de The Jimi Hendrix Experience",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5c59b38d4b5fe52a.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/The-Who.jpg"
+      }
+    },
+    {
+      "id": "hustk",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "68ya6",
+          "label": "Toy In The Attic de Aerosmith",
+          "correct": true
+        },
+        {
+          "id": "motoi",
+          "label": "Rumors de Fleetwood Mac",
+          "correct": false
+        },
+        {
+          "id": "u8ed4",
+          "label": "Hunky Dory de David Bowie",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/09a72c2c531ea82d.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Aerosmith.jpg"
+      }
+    },
+    {
+      "id": "mg7qg",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "tcky1",
+          "label": "Rock Or Bust de AC/DC",
+          "correct": false
+        },
+        {
+          "id": "xmzbu",
+          "label": "High Voltage de AC/DC",
+          "correct": false
+        },
+        {
+          "id": "loan1",
+          "label": "Highway To Hell de AC/DC",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5ac2b64805b9934a.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/ACDC-Highway-to-Hell.jpg"
+      }
+    },
+    {
+      "id": "haqih",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "julg5",
+          "label": "Sticky Fingers de Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "mmjjc",
+          "label": "Born In The U.S.A. de Bruce Springsteen",
+          "correct": true
+        },
+        {
+          "id": "ik97e",
+          "label": "Born To Run de Bruce Springsteen",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/eb82dfe8fd18e78a.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Bruce-Springsteen.jpg"
+      }
+    },
+    {
+      "id": "8p7kw",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "3jr9b",
+          "label": "Led Zeppelin IV de Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "h3ocu",
+          "label": "The Book of Taliesyn de Deep Purple",
+          "correct": false
+        },
+        {
+          "id": "hp29u",
+          "label": "Black Sabbath de Black Sabbath",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5595b9ddef2d4422.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Black-Sabbath.jpg"
+      }
+    },
+    {
+      "id": "e9rlr",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "37hlj",
+          "label": "Dookie de Green Day",
+          "correct": true
+        },
+        {
+          "id": "w4spg",
+          "label": "Smash de The Offspring",
+          "correct": false
+        },
+        {
+          "id": "4i0ve",
+          "label": "Enema Of The State de Blink-182",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/d6ed5734a13b8914.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/GreenDay.jpg"
+      }
+    },
+    {
+      "id": "ggxj2",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "2zysw",
+          "label": "London Calling de The Clash",
+          "correct": true
+        },
+        {
+          "id": "nl4m8",
+          "label": "Never Mind the Bollocks de Sex Pistols",
+          "correct": false
+        },
+        {
+          "id": "ewryr",
+          "label": "Bleach de Nirvana",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/592fdd96e9141079.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/The-Clash-1.jpg"
+      }
+    },
+    {
+      "id": "9le2b",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "j0cc2",
+          "label": "The Dark Side Of The Moon de Pink Floyd",
+          "correct": false
+        },
+        {
+          "id": "lc7fr",
+          "label": "Hysteria de Def Leppard",
+          "correct": true
+        },
+        {
+          "id": "fkycr",
+          "label": "Machine Head de Deep Purple",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/d9592adbb5c6cf78.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Def-Leppard-1.jpg"
+      }
+    },
+    {
+      "id": "azg6g",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "09yis",
+          "label": "Back in Black de AC/DC",
+          "correct": false
+        },
+        {
+          "id": "1ash3",
+          "label": "Black Album de Weezer",
+          "correct": false
+        },
+        {
+          "id": "go5zb",
+          "label": "Black Album de Metallica",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/40899666df7b82f7.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Metallica.jpg"
+      }
+    },
+    {
+      "id": "kqqp5",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "drg3k",
+          "label": "Led Zeppelin de Led Zeppelin",
+          "correct": true
+        },
+        {
+          "id": "jgyqq",
+          "label": "Who's Next de The Who",
+          "correct": false
+        },
+        {
+          "id": "6bnzr",
+          "label": "Wish You Were Here de Pink Floyd",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4640e873597927fd.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Led-Zeppelkin.jpg"
+      }
+    },
+    {
+      "id": "ktms6",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "pxa5j",
+          "label": "Laune der Natur de Toten Hosen",
+          "correct": false
+        },
+        {
+          "id": "xdms3",
+          "label": "Paranoid de Black Sabbath",
+          "correct": false
+        },
+        {
+          "id": "6rlf5",
+          "label": "Appetite For Destruction de Guns N' Roses",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/8140437f9be10911.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Guns-N-Roses.jpg"
+      }
+    },
+    {
+      "id": "6jdzn",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "w1rpk",
+          "label": "Dirt de Alice In Chains",
+          "correct": false
+        },
+        {
+          "id": "52ejv",
+          "label": "Nevermind de Nirvana",
+          "correct": true
+        },
+        {
+          "id": "5i7r2",
+          "label": "Achtung Baby de U2",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bd034aefe2956eee.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Nirvana.jpg"
+      }
+    },
+    {
+      "id": "row9o",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "vgd1n",
+          "label": "Blonde On Blonde de Bob Dylan",
+          "correct": false
+        },
+        {
+          "id": "9iqyu",
+          "label": "The Wall de Pink Floyd",
+          "correct": true
+        },
+        {
+          "id": "0i3kx",
+          "label": "Pyromania de Def Leppard",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/f420f06db805eed3.jpg",
+        "alt": "Imagem da pergunta 13",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Pink-Floyd-The-Wall.jpg"
+      }
+    },
+    {
+      "id": "6plu7",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "ferng",
+          "label": "Joshua Tree de U2",
+          "correct": true
+        },
+        {
+          "id": "09twl",
+          "label": "Don't Look Back de Boston",
+          "correct": false
+        },
+        {
+          "id": "c0srn",
+          "label": "Woodstock de Jimi Hendrix",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/e0866f34cdc6378e.jpg",
+        "alt": "Imagem da pergunta 14",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/U2-1.jpg"
+      }
+    },
+    {
+      "id": "jct8q",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "v73p5",
+          "label": "Let It Bleed de Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "cirvs",
+          "label": "Quo de Status Quo",
+          "correct": false
+        },
+        {
+          "id": "tvxt1",
+          "label": "A Night At The Opera de Queen",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4ac2792ece37ad46.jpg",
+        "alt": "Imagem da pergunta 15",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Queen.jpg"
+      }
+    },
+    {
+      "id": "zpuru",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "xwp4l",
+          "label": "Exile On Main St. de Rolling Stones",
+          "correct": true
+        },
+        {
+          "id": "19zr6",
+          "label": "Like A Rolling Stone de Bob Dylan",
+          "correct": false
+        },
+        {
+          "id": "jg6kt",
+          "label": "Hotel California de Eagles",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/60ef9074889c2346.jpg",
+        "alt": "Imagem da pergunta 16",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/The-Rolling-Stones-1.jpg"
+      }
+    },
+    {
+      "id": "owdba",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "r5wlm",
+          "label": "Rising de Rainbow",
+          "correct": false
+        },
+        {
+          "id": "ec0r3",
+          "label": "Holy Diver de Dio",
+          "correct": false
+        },
+        {
+          "id": "z1w59",
+          "label": "The Dark Side Of The Moon de Pink Floyd",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/9731b0179f6227f6.jpg",
+        "alt": "Imagem da pergunta 17",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/Pink-Floyd.jpg"
+      }
+    },
+    {
+      "id": "yywq2",
+      "prompt": "Qual é este álbum?",
+      "type": "capa",
+      "options": [
+        {
+          "id": "kew2z",
+          "label": "The Clash de The Clash",
+          "correct": false
+        },
+        {
+          "id": "r8h8m",
+          "label": "Ramones de Ramones",
+          "correct": true
+        },
+        {
+          "id": "hvczc",
+          "label": "Dr. Feelgood de Mötley Crüe",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/11b1f0d7e46150d9.jpg",
+        "alt": "Imagem da pergunta 18",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/03/The-Ramones.jpg"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "kicib",
+      "title": "Não deu em nada. Mas cabeça erguida: as capas são fáceis de memorizar.",
+      "description": "",
+      "min": 0,
+      "max": 3
+    },
+    {
+      "id": "59cdp",
+      "title": "Tudo bem, já é um começo, mas ainda não é grande coisa! Pelo menos você conhece as capas mais famosas, mas precisa dominar o resto também!",
+      "description": "",
+      "min": 4,
+      "max": 9
+    },
+    {
+      "id": "ujl49",
+      "title": "Nada mal! Se memorizar as últimas capas, ninguém mais engana você. Continue assim!",
+      "description": "",
+      "min": 10,
+      "max": 17
+    },
+    {
+      "id": "qdo29",
+      "title": "Você arrasa! Tudo certo: você deixa todos para trás! Rock on!",
+      "description": "",
+      "min": 18,
+      "max": 18
+    }
+  ],
+  "sourceId": "423",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Erkennt Ihr diese Alben am Cover?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/19-plattencover.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "edf28c6a9b39759b"
+}

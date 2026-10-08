@@ -1,0 +1,359 @@
+{
+  "id": "dp-27",
+  "version": 1,
+  "title": "Qual cachorro pertence a qual rockstar?",
+  "family": "Visual",
+  "type": "foto",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "k3mkg",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "2d0dp",
+          "label": "Ozzy Osbourne",
+          "correct": true
+        },
+        {
+          "id": "vbaeq",
+          "label": "Alice Cooper",
+          "correct": false
+        },
+        {
+          "id": "friom",
+          "label": "Marilyn Manson",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/b3b26c68179c3905.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://images.radiobob.de/2021/08/Ozzy.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Ozzy Osbourne, do Black Sabbath, e seu cachorro Rocky."
+    },
+    {
+      "id": "82llp",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "wr2j6",
+          "label": "Bob Dylan",
+          "correct": false
+        },
+        {
+          "id": "yx643",
+          "label": "Johnny Cash",
+          "correct": false
+        },
+        {
+          "id": "ixev6",
+          "label": "Keith Richards",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/b04ea34f1c218d32.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://images.radiobob.de/2021/08/Keith-richards.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Keith Richards chamou seu cachorro de Ratbag."
+    },
+    {
+      "id": "vu8m8",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "tbh4p",
+          "label": "Serj Tankian",
+          "correct": false
+        },
+        {
+          "id": "c7wt8",
+          "label": "Liam Gallagher",
+          "correct": false
+        },
+        {
+          "id": "1z30c",
+          "label": "Lenny Kravitz",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/63a8c9122527595e.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://images.radiobob.de/2021/08/Lenny.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "A imagem mostra Jojo e Leroy, os cachorros de Lenny."
+    },
+    {
+      "id": "5cup0",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "j0th4",
+          "label": "Brian May",
+          "correct": false
+        },
+        {
+          "id": "9pjle",
+          "label": "Eric Clapton",
+          "correct": true
+        },
+        {
+          "id": "kx3k1",
+          "label": "Paul McCartney",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4fb33825e31c98b7.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://images.radiobob.de/2021/08/eric-clapton.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "A imagem mostra Eric Clapton com seu cachorro Jeep."
+    },
+    {
+      "id": "c4phr",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "sy23b",
+          "label": "John Lennon",
+          "correct": false
+        },
+        {
+          "id": "izbk1",
+          "label": "Charlie Watts",
+          "correct": false
+        },
+        {
+          "id": "ai1ph",
+          "label": "Paul McCartney",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/098d9c9a1584e198.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://images.radiobob.de/2021/08/paul-mccartney.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Paul e sua cadela Martha."
+    },
+    {
+      "id": "j378j",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "63pam",
+          "label": "Paul Stanley",
+          "correct": false
+        },
+        {
+          "id": "8ga9d",
+          "label": "Jon Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "m5fgg",
+          "label": "Duff McKagan",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/aa43fc4cba8c7b86.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://images.radiobob.de/2021/08/duff.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Aqui, Buckley, o cachorro de Duff McKagan, olha para fora da cesta da bicicleta."
+    },
+    {
+      "id": "taupz",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "rj8kb",
+          "label": "Rob Halford",
+          "correct": false
+        },
+        {
+          "id": "ty2ha",
+          "label": "Bret Michaels",
+          "correct": true
+        },
+        {
+          "id": "hehwk",
+          "label": "Vince Neil",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/59ecdeed53e3558b.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://images.radiobob.de/2021/08/brett.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Diesel e Phoenix pertencem a Bret Michaels, do Poison."
+    },
+    {
+      "id": "pybh2",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "fx7sn",
+          "label": "Steven Tyler",
+          "correct": true
+        },
+        {
+          "id": "1s1ow",
+          "label": "Angus Young",
+          "correct": false
+        },
+        {
+          "id": "5mnju",
+          "label": "Mick Jagger",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/ca639305fed8344c.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://images.radiobob.de/2021/08/steven-tyler.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Butch Cassidy e Sundance Kid são os cachorros do vocalista do Aerosmith, Steven Tyler."
+    },
+    {
+      "id": "hn07w",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "em968",
+          "label": "Anthony Kiedis",
+          "correct": false
+        },
+        {
+          "id": "jb19u",
+          "label": "Billie Joe Armstrong",
+          "correct": false
+        },
+        {
+          "id": "h8ud2",
+          "label": "Pete Wentz",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/24685b79ade0d6b6.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://images.radiobob.de/2021/08/pete-wentz.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "Este é Hemingway, o buldogue, e seu dono Pete Wentz, do Fall Out Boy."
+    },
+    {
+      "id": "xjao3",
+      "prompt": "De quem é este cachorro?",
+      "type": "foto",
+      "options": [
+        {
+          "id": "8crzq",
+          "label": "Robert Plant",
+          "correct": true
+        },
+        {
+          "id": "hcn3x",
+          "label": "Klaus Meine",
+          "correct": false
+        },
+        {
+          "id": "u4rev",
+          "label": "Francis Rossi",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/8f92ef84beea803e.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://images.radiobob.de/2021/08/robert-plant.jpg?fm=pjpg&ixlib=php-1.2.1"
+      },
+      "explanation": "A imagem mostra Robert Plant e seu cachorro Strider."
+    }
+  ],
+  "results": [
+    {
+      "id": "ken3n",
+      "title": "Imbatível! Você conhece não só os rockstars, mas também seus amigos de focinho gelado!",
+      "description": "",
+      "min": 10,
+      "max": 10
+    },
+    {
+      "id": "cyg1d",
+      "title": "Bom, mas ainda não muito bom! Você sabe bastante, mas infelizmente ainda falta o último detalhe.",
+      "description": "",
+      "min": 7,
+      "max": 9
+    },
+    {
+      "id": "qmabw",
+      "title": "Está razoável, mas ainda há muito espaço para melhorar. Pratique mais um pouco!",
+      "description": "",
+      "min": 4,
+      "max": 7
+    },
+    {
+      "id": "rw6t9",
+      "title": "Infelizmente, isso não deu em nada… Você precisa voltar à escola, de cachorros!",
+      "description": "",
+      "min": 0,
+      "max": 4
+    }
+  ],
+  "sourceId": "807",
+  "presentation": {
+    "questionLayout": "single",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welcher Hund gehört zu welchem Rockstar?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/52-cachorros-rockstars.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "single",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "a4f03b6d6a27e5de"
+}

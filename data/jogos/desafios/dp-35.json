@@ -1,0 +1,641 @@
+{
+  "id": "dp-35",
+  "version": 1,
+  "title": "Qual é seu lugar em uma banda?",
+  "family": "Perfil",
+  "type": "comportamento",
+  "mode": "profile",
+  "questions": [
+    {
+      "id": "94ce4",
+      "prompt": "Você está no carro com os amigos, a caminho de um festival. O que faz para não se entediar?",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "jz6bo",
+          "label": "Repasso mentalmente tudo de que precisamos: barraca, cerveja, ingressos. Tudo certo, a festa pode começar!",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 5,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 3,
+            "2zdqw": 4
+          }
+        },
+        {
+          "id": "5j87n",
+          "label": "Sou o motorista, então é melhor me concentrar no trânsito.",
+          "weights": {
+            "45ed3": 3,
+            "2azsn": 6,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 4,
+            "2zdqw": 5
+          }
+        },
+        {
+          "id": "8xtsf",
+          "label": "Com boa música na viagem, já coloco todos no clima do festival. Rock’n’roll, baby!",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 3,
+            "2zdqw": 4
+          }
+        },
+        {
+          "id": "860nj",
+          "label": "Para dar tudo no festival, durmo antes. A festa só começa quando chegarmos.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 3,
+            "1qhj3": 4,
+            "pwe3r": 5,
+            "2zdqw": 6
+          }
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/040fa6ce134597c9.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/BOB_AdvenA_16-9.jpg"
+      }
+    },
+    {
+      "id": "70bmg",
+      "prompt": "Como está seu quarto ou apartamento?",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "e4lqw",
+          "label": "Depende de quem olha! Eu diria que é uma bagunça organizada.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 4,
+            "1qhj3": 3,
+            "pwe3r": 6,
+            "2zdqw": 5
+          }
+        },
+        {
+          "id": "0yh1b",
+          "label": "Impecável, cada coisa em seu lugar. Como encontraríamos algo de outro jeito?",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 4,
+            "sh4s7": 3,
+            "1qhj3": 5,
+            "pwe3r": 1,
+            "2zdqw": 2
+          }
+        },
+        {
+          "id": "0022a",
+          "label": "Só arrumo quando alguém avisa que vai me visitar.",
+          "weights": {
+            "45ed3": 4,
+            "2azsn": 3,
+            "sh4s7": 5,
+            "1qhj3": 1,
+            "pwe3r": 2,
+            "2zdqw": 6
+          }
+        },
+        {
+          "id": "nk0dy",
+          "label": "No momento, durmo no sofá de um amigo…",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 6,
+            "sh4s7": 2,
+            "1qhj3": 5,
+            "pwe3r": 4,
+            "2zdqw": 3
+          }
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bdec57e020548499.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/AdvenA_-_Lass_es_regnen-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "j7lz9",
+      "prompt": "Quando alguém me joga uma bola, eu…",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "hxdir",
+          "label": "… me abaixo para não ser atingido.",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 4,
+            "sh4s7": 3,
+            "1qhj3": 2,
+            "pwe3r": 1,
+            "2zdqw": 6
+          }
+        },
+        {
+          "id": "634fm",
+          "label": "… PÁ! Peguei. Tenho reflexos instantâneos.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 4,
+            "sh4s7": 3,
+            "1qhj3": 6,
+            "pwe3r": 5,
+            "2zdqw": 2
+          }
+        },
+        {
+          "id": "fbdiz",
+          "label": "… pego, claro. Mas chega de brincadeira.",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 5,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 3,
+            "2zdqw": 4
+          }
+        },
+        {
+          "id": "6cglk",
+          "label": "… peço mais duas e começo a fazer malabarismo.",
+          "weights": {
+            "45ed3": 2,
+            "2azsn": 5,
+            "sh4s7": 6,
+            "1qhj3": 4,
+            "pwe3r": 3,
+            "2zdqw": 1
+          }
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "oixbi",
+      "prompt": "Vocês estão organizando uma festa. De quais tarefas você cuida?",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "0bs2y",
+          "label": "A diversão! Garanto que todos aproveitem. Deixo a organização para os outros.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 4,
+            "2zdqw": 3
+          }
+        },
+        {
+          "id": "e1thd",
+          "label": "A maior parte acaba comigo de novo. Mas cuido de tudo com gosto, da decoração às bebidas e comidas. É hora de fazer várias coisas ao mesmo tempo!",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 6,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 4,
+            "2zdqw": 3
+          }
+        },
+        {
+          "id": "vaes5",
+          "label": "Cuido do local. Com uma boa base, só pode dar certo.",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 5,
+            "sh4s7": 4,
+            "1qhj3": 3,
+            "pwe3r": 2,
+            "2zdqw": 1
+          }
+        },
+        {
+          "id": "oti6d",
+          "label": "Cuido da música: caixas de som e um DJ que só toque o melhor rock.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 4,
+            "1qhj3": 3,
+            "pwe3r": 6,
+            "2zdqw": 5
+          }
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "7bnuz",
+      "prompt": "Em um show, eu estou…",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "6a7ct",
+          "label": "… no bar, curtindo a música tranquilamente.",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 5,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 3,
+            "2zdqw": 4
+          }
+        },
+        {
+          "id": "4cbom",
+          "label": "… sempre procurando meus amigos.",
+          "weights": {
+            "45ed3": 3,
+            "2azsn": 4,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 5,
+            "2zdqw": 6
+          }
+        },
+        {
+          "id": "wzk7e",
+          "label": "… dançando. O que mais seria?",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 4,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 3,
+            "2zdqw": 2
+          }
+        },
+        {
+          "id": "wqtl0",
+          "label": "… atravessando o salão no crowd-surfing.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 3,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 4,
+            "2zdqw": 2
+          }
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "q0qxl",
+      "prompt": "Em uma palavra, você é:",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "qy4yx",
+          "label": "Versátil",
+          "weights": {
+            "45ed3": 4,
+            "2azsn": 6,
+            "sh4s7": 2,
+            "1qhj3": 3,
+            "pwe3r": 5,
+            "2zdqw": 1
+          }
+        },
+        {
+          "id": "e4iwu",
+          "label": "Pensador fora da caixa",
+          "weights": {
+            "45ed3": 2,
+            "2azsn": 3,
+            "sh4s7": 1,
+            "1qhj3": 6,
+            "pwe3r": 5,
+            "2zdqw": 4
+          }
+        },
+        {
+          "id": "6rlgq",
+          "label": "Incansável no trabalho",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 6,
+            "sh4s7": 1,
+            "1qhj3": 3,
+            "pwe3r": 4,
+            "2zdqw": 2
+          }
+        },
+        {
+          "id": "obpx2",
+          "label": "Pirata das festas",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 3,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 4,
+            "2zdqw": 2
+          }
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "mh6sd",
+      "prompt": "Qual momento da sua música favorita você mais espera?",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "76sr1",
+          "label": "O solo de bateria. Aí a coisa começa de verdade!",
+          "weights": {
+            "45ed3": 2,
+            "2azsn": 5,
+            "sh4s7": 3,
+            "1qhj3": 1,
+            "pwe3r": 6,
+            "2zdqw": 4
+          }
+        },
+        {
+          "id": "iwef4",
+          "label": "A parte em que o vocalista grita com toda a força. Uma sensação incrível!",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 3,
+            "sh4s7": 6,
+            "1qhj3": 2,
+            "pwe3r": 4,
+            "2zdqw": 1
+          }
+        },
+        {
+          "id": "b8wmg",
+          "label": "Como assim? Claro que o solo de guitarra! Toco junto na guitarra imaginária.",
+          "weights": {
+            "45ed3": 2,
+            "2azsn": 3,
+            "sh4s7": 4,
+            "1qhj3": 6,
+            "pwe3r": 1,
+            "2zdqw": 5
+          }
+        },
+        {
+          "id": "y0w10",
+          "label": "O grande final, com todos os instrumentos e a voz juntos. Arrepiante!",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 6,
+            "sh4s7": 3,
+            "1qhj3": 2,
+            "pwe3r": 1,
+            "2zdqw": 4
+          }
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "ht6fu",
+      "prompt": "Quando coloco meu álbum favorito, eu…",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "d3mlo",
+          "label": "… avanço até minha música favorita e a ouço sem parar.",
+          "weights": {
+            "45ed3": 4,
+            "2azsn": 6,
+            "sh4s7": 1,
+            "1qhj3": 3,
+            "pwe3r": 2,
+            "2zdqw": 5
+          }
+        },
+        {
+          "id": "a08cb",
+          "label": "… ouço todas as músicas. O disco inteiro é um sucesso.",
+          "weights": {
+            "45ed3": 3,
+            "2azsn": 2,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 4,
+            "2zdqw": 1
+          }
+        },
+        {
+          "id": "9usmz",
+          "label": "… tenho duas ou três músicas que sempre ouço primeiro.",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 3,
+            "sh4s7": 2,
+            "1qhj3": 4,
+            "pwe3r": 5,
+            "2zdqw": 1
+          }
+        },
+        {
+          "id": "sxcfk",
+          "label": "… um álbum favorito? Tenho pelo menos cinco!",
+          "weights": {
+            "45ed3": 2,
+            "2azsn": 5,
+            "sh4s7": 4,
+            "1qhj3": 3,
+            "pwe3r": 6,
+            "2zdqw": 1
+          }
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "qnvt7",
+      "prompt": "Como sua banda seria formada?",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "1h78n",
+          "label": "Publicaria um anúncio no jornal procurando integrantes.",
+          "weights": {
+            "45ed3": 6,
+            "2azsn": 5,
+            "sh4s7": 2,
+            "1qhj3": 4,
+            "pwe3r": 1,
+            "2zdqw": 3
+          }
+        },
+        {
+          "id": "0yhry",
+          "label": "Meus amigos da escola e eu levaríamos a sério nosso pequeno sucesso como banda de garagem e tentaríamos conquistar a fama.",
+          "weights": {
+            "45ed3": 3,
+            "2azsn": 4,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 5,
+            "2zdqw": 6
+          }
+        },
+        {
+          "id": "pau7p",
+          "label": "Conversaria com o artista de rua que tem um som incrível.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 4,
+            "1qhj3": 6,
+            "pwe3r": 5,
+            "2zdqw": 3
+          }
+        },
+        {
+          "id": "cxpfa",
+          "label": "Iria a um programa de talentos na TV e deixaria montarem uma banda para mim.",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 4,
+            "sh4s7": 6,
+            "1qhj3": 3,
+            "pwe3r": 2,
+            "2zdqw": 1
+          }
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "8s9vq",
+      "prompt": "Como sua banda acabaria?",
+      "type": "comportamento",
+      "options": [
+        {
+          "id": "vsuqu",
+          "label": "Avisaria aos colegas pelo Twitter que não quero mais saber deles.",
+          "weights": {
+            "45ed3": 4,
+            "2azsn": 3,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 2,
+            "2zdqw": 1
+          }
+        },
+        {
+          "id": "t024e",
+          "label": "Depois de décadas de sucesso juntos, decidiríamos que é hora de algo novo. Dizem que devemos parar no melhor momento.",
+          "weights": {
+            "45ed3": 5,
+            "2azsn": 4,
+            "sh4s7": 1,
+            "1qhj3": 2,
+            "pwe3r": 3,
+            "2zdqw": 6
+          }
+        },
+        {
+          "id": "ov9yf",
+          "label": "Acabar? Nunca! Tocamos juntos até morrer e depois continuamos no céu ou no inferno.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 2,
+            "sh4s7": 4,
+            "1qhj3": 5,
+            "pwe3r": 6,
+            "2zdqw": 3
+          }
+        },
+        {
+          "id": "y1gf5",
+          "label": "Brigaríamos feio e passaríamos anos sem nos falar. Mas uma reunião não estaria descartada.",
+          "weights": {
+            "45ed3": 1,
+            "2azsn": 3,
+            "sh4s7": 6,
+            "1qhj3": 5,
+            "pwe3r": 4,
+            "2zdqw": 2
+          }
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "45ed3",
+      "title": "Empresário",
+      "description": "Relaxar é quase uma palavra desconhecida para você. Está sempre atento e tem uma visão geral. Sabe exatamente como conseguir o que quer, sem descartar alguns truques. Mesmo assim, as pessoas gostam de você e valorizam sua confiabilidade. Você é a voz da razão, mesmo quando isso significa estragar a diversão. Mas faz tudo porque quer o melhor para sua banda. Sem dúvida, seu trabalho é estressante, mas no fim sempre há um grande show e fãs satisfeitos."
+    },
+    {
+      "id": "2azsn",
+      "title": "Roadie",
+      "description": "Fazer várias coisas ao mesmo tempo é seu lema. Você se enche de trabalho e gosta disso. As pessoas dos bastidores costumam receber pouca atenção, mas pessoas como você são o coração secreto de uma banda. Faria tudo pelos seus. Montagem, desmontagem, tudo funcionando sem problemas: se for preciso, também dirige o ônibus da turnê. Você é um integrante completo, e a banda também deve seu sucesso a você."
+    },
+    {
+      "id": "sh4s7",
+      "title": "Vocalista",
+      "description": "Você nasceu para entreter. A vida é seu palco e, onde chega, gosta de estar no centro das atenções. Espalha bom humor por toda parte, e se colocarem um microfone na sua mão, a noite será lendária. Em cada projeto novo, coloca toda sua capacidade e conhecimento: colegas de banda e fãs agradecem. No palco, você se solta e celebra a música com as pessoas. Vamos rockar!"
+    },
+    {
+      "id": "1qhj3",
+      "title": "Guitarrista",
+      "description": "Em um grupo, você geralmente é um dos mais barulhentos e chamativos. Adora fazer um bom espetáculo, mesmo sem nenhum palco por perto. Quando a música começa, quase ninguém consegue segurar você. Aquele formigamento na ponta dos dedos ao tocar as cordas da guitarra é puro rock’n’roll para você. Pula pelo palco e aproveita a atenção da multidão que grita diante de você. Mas também gosta dos momentos tranquilos, quando pode ficar sozinho com seus pensamentos."
+    },
+    {
+      "id": "pwe3r",
+      "title": "Baterista",
+      "description": "Você realmente tem o ritmo no sangue! É difícil ficar parado, pois precisa acompanhar a batida e conduzir as melodias das suas músicas favoritas. Com as baquetas na mão, dá a direção à banda. No fundo, você manda, inclusive nas relações pessoais. Nos relacionamentos, costuma assumir a liderança, sem ostentar isso. Sabe dar aos outros o espaço de que precisam, sem reduzir sua capacidade nem sua autoconfiança."
+    },
+    {
+      "id": "2zdqw",
+      "title": "Baixista",
+      "description": "Você é uma pessoa tranquila. Enfrenta cada problema com calma e encontra uma solução. Não é de dar ordens aos outros nem de se colocar no centro das atenções. É a boa alma da banda. Antes, depois ou durante o show, você não se agita! Enquanto o baterista bate com força e vocalista e guitarrista recebem os aplausos, você fica consigo e com a música."
+    }
+  ],
+  "sourceId": "278",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Welche Position nehmt Ihr in einer Band ein?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/35-posicao-na-banda.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "abe15957280c4fce"
+}

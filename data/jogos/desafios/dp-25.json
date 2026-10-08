@@ -1,0 +1,558 @@
+{
+  "id": "dp-25",
+  "version": 1,
+  "title": "Quanto você conhece de classic rock?",
+  "family": "Conhecimento",
+  "type": "historia",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "ituh9",
+      "prompt": "De onde veio a inspiração para o famoso logo da língua dos Rolling Stones?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "gdif0",
+          "label": "Uma propaganda de chiclete",
+          "correct": false
+        },
+        {
+          "id": "kqgk1",
+          "label": "A deusa hindu da morte e da destruição, Kali",
+          "correct": true
+        },
+        {
+          "id": "qutq4",
+          "label": "Uma noite de festa selvagem com groupies",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "osgk0",
+      "prompt": "Qual banda não se separou em 1980?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "bh6eb",
+          "label": "Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "wx015",
+          "label": "Eagles",
+          "correct": false
+        },
+        {
+          "id": "lc694",
+          "label": "The Clash",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "t4kh6",
+      "prompt": "Qual banda fez o primeiro show da história no Hyde Park, em Londres?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "p34oa",
+          "label": "Pink Floyd",
+          "correct": true
+        },
+        {
+          "id": "q1udc",
+          "label": "Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "exfbk",
+          "label": "Deep Purple",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "rq78i",
+      "prompt": "Quais músicas Brian Johnson cantou na seleção para ser o novo vocalista do AC/DC?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "mwbr4",
+          "label": "Let There Be Rock de AC/DC und Walk This Way de Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "a0qmd",
+          "label": "Whole Lotta Rosie de AC/DC und Nutbush City Limits de Tina Turner",
+          "correct": true
+        },
+        {
+          "id": "pssrm",
+          "label": "T.N.T de AC/DC und Paranoid de Black Sabbath",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "2x2ka",
+      "prompt": "Qual destes integrantes do Queen recebeu a condecoração britânica CBE?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "agq2z",
+          "label": "Freddie Mercury",
+          "correct": false
+        },
+        {
+          "id": "zi0rj",
+          "label": "Brian May",
+          "correct": true
+        },
+        {
+          "id": "p5fb1",
+          "label": "Roger Taylor",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "h99lr",
+      "prompt": "Qual banda recebeu o nome de um professor de seus tempos de escola?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "522bl",
+          "label": "Lynyrd Skynyrd",
+          "correct": true
+        },
+        {
+          "id": "phkvu",
+          "label": "Greta Van Fleet",
+          "correct": false
+        },
+        {
+          "id": "s0lny",
+          "label": "Bachman-Turner Overdrive",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "ehb4w",
+      "prompt": "Verdadeiro ou falso: antes da carreira no The Who, Roger Daltrey foi professor de escola primária.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "i4ha2",
+          "label": "Verdadeiro",
+          "correct": false
+        },
+        {
+          "id": "7vazz",
+          "label": "Falso",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "hfjjd",
+      "prompt": "Qual vocalista também é conhecido como “Demon of Screamin’”?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "gese8",
+          "label": "Axl Rose",
+          "correct": false
+        },
+        {
+          "id": "z8dzu",
+          "label": "Steven Tyler",
+          "correct": true
+        },
+        {
+          "id": "ba7qv",
+          "label": "Sammy Hagar",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "srcl8",
+      "prompt": "O nome Deep Purple foi inspirado em quê?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "epnja",
+          "label": "A cor roxa da pequena van usada para ir aos shows no começo da carreira",
+          "correct": false
+        },
+        {
+          "id": "m440g",
+          "label": "A cor do céu quando, voltando de uma festa, decidiram formar a banda",
+          "correct": false
+        },
+        {
+          "id": "519ex",
+          "label": "Uma música de Peter De Rose que a avó de Ritchie Blackmore sempre tocava para ele no piano",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "5rv7v",
+      "prompt": "Qual destes três álbuns de estúdio dos Eagles foi lançado por último?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "ueb9p",
+          "label": "Hotel California",
+          "correct": true
+        },
+        {
+          "id": "c0w4r",
+          "label": "Eagles",
+          "correct": false
+        },
+        {
+          "id": "mybn0",
+          "label": "One Of These Nights",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "ig1fz",
+      "prompt": "Com qual recorde Van Halen entrou para o Guinness em 1983?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "ynstq",
+          "label": "Eles tiveram o maior público de um show de rock.",
+          "correct": false
+        },
+        {
+          "id": "1as4t",
+          "label": "Eles foram a banda mais bem paga.",
+          "correct": true
+        },
+        {
+          "id": "q81po",
+          "label": "Eles fizeram o show mais alto, com 139 decibéis.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "j56pe",
+      "prompt": "Quantas vezes Bruce Springsteen repete a palavra “down” em “I’m Going Down”?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "cj0xs",
+          "label": "73 vezes",
+          "correct": false
+        },
+        {
+          "id": "uy1pm",
+          "label": "97 vezes",
+          "correct": false
+        },
+        {
+          "id": "664bq",
+          "label": "81 vezes",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "olrnb",
+      "prompt": "Depois de “Thriller”, de Michael Jackson, qual foi a música mais pedida na MTV?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "sdp9x",
+          "label": "Photograph de Def Leppard",
+          "correct": true
+        },
+        {
+          "id": "hv5fp",
+          "label": "Stairway To Heaven de Led Zeppelin",
+          "correct": false
+        },
+        {
+          "id": "ysxvg",
+          "label": "Smoke On The Water de Deep Purple",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text"
+    },
+    {
+      "id": "zpq64",
+      "prompt": "Verdadeiro ou falso: em um show de Londres, as autoridades desligaram o microfone de Bruce Springsteen depois de três horas e meia.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "6fl1s",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "264gb",
+          "label": "Falso",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "ye3ea",
+      "prompt": "“É só tirar aqueles discos antigos da prateleira” são as primeiras palavras de qual música?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "8gnrb",
+          "label": "Ragdoll de Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "aqtd9",
+          "label": "Jump de Van Halen",
+          "correct": false
+        },
+        {
+          "id": "35kx6",
+          "label": "Old Time Rock And Roll de Bob Seger",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    },
+    {
+      "id": "nmotz",
+      "prompt": "Em qual banda Paul Stanley e Gene Simmons tocaram antes do Kiss?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "oddbj",
+          "label": "Screamin Devils",
+          "correct": false
+        },
+        {
+          "id": "a5fm1",
+          "label": "Wicked Witches",
+          "correct": false
+        },
+        {
+          "id": "p0hur",
+          "label": "Wicked Lester",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text"
+    },
+    {
+      "id": "ixvk3",
+      "prompt": "Qual banda fez uma participação em “De Volta para o Futuro 3”?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "s2lrq",
+          "label": "ZZ Top",
+          "correct": true
+        },
+        {
+          "id": "863yc",
+          "label": "Lynyrd Skynyrd",
+          "correct": false
+        },
+        {
+          "id": "xs1rn",
+          "label": "Huey Lewis & The News",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text"
+    },
+    {
+      "id": "nzztx",
+      "prompt": "Quando as palavras “Don’t Stop Believin’” aparecem pela primeira vez na música do Journey com esse nome?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "jr7sc",
+          "label": "Depois de 35 segundos",
+          "correct": false
+        },
+        {
+          "id": "nlcay",
+          "label": "Depois de 3 minutos e 21 segundos",
+          "correct": true
+        },
+        {
+          "id": "77e99",
+          "label": "Depois de 2 minutos e 54 segundos",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text"
+    },
+    {
+      "id": "j166b",
+      "prompt": "Em qual destas bandas Eric Clapton não tocou?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "muw0f",
+          "label": "Derek & The Dominos",
+          "correct": false
+        },
+        {
+          "id": "tczzo",
+          "label": "British Invasion",
+          "correct": true
+        },
+        {
+          "id": "g8k57",
+          "label": "The Yardbirds",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text"
+    },
+    {
+      "id": "l0gnj",
+      "prompt": "Verdadeiro ou falso: quando Creedence Clearwater Revival fez um show na Rússia em 1977, cantou todas as músicas em russo.",
+      "type": "verdadeiro-falso",
+      "options": [
+        {
+          "id": "zz94x",
+          "label": "Verdadeiro",
+          "correct": true
+        },
+        {
+          "id": "6d8mo",
+          "label": "Falso",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text"
+    },
+    {
+      "id": "9r7k0",
+      "prompt": "Quem queria muito tirar John Bonham do Led Zeppelin para sua própria banda?",
+      "type": "historia",
+      "options": [
+        {
+          "id": "2gf2b",
+          "label": "Jon Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "v306x",
+          "label": "Alice Cooper",
+          "correct": false
+        },
+        {
+          "id": "88z2u",
+          "label": "Jimi Hendrix",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 20,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "2745l",
+      "title": "Vá para o canto e tenha vergonha! Esta atuação não merece aplausos. Você tem muito a recuperar no conhecimento de classic rock.",
+      "description": "",
+      "min": 0,
+      "max": 5
+    },
+    {
+      "id": "a6m90",
+      "title": "Foi razoável, mas você ainda está longe de ser um verdadeiro especialista em classic rock. Continue, você consegue!",
+      "description": "",
+      "min": 6,
+      "max": 15
+    },
+    {
+      "id": "f346k",
+      "title": "O resultado é respeitável. Mas faltam algumas respostas certas para ser um verdadeiro especialista em classic rock. Não desista: você está quase lá!",
+      "description": "",
+      "min": 16,
+      "max": 20
+    },
+    {
+      "id": "rnluy",
+      "title": "Nota máxima com louvor! Agora você pode se considerar oficialmente um verdadeiro especialista em classic rock. Rock on!",
+      "description": "",
+      "min": 21,
+      "max": 21
+    }
+  ],
+  "sourceId": "417",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie gut kennt Ihr Euch im Classic Rock aus?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/20-classic-rock.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "d1bdbaaa8db9ddc8"
+}

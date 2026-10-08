@@ -1,0 +1,639 @@
+{
+  "id": "dp-20",
+  "version": 1,
+  "title": "Você reconhece estes logos de bandas?",
+  "family": "Visual",
+  "type": "logo",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "ixs7a",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "8ebgm",
+          "label": "Bon Jovi",
+          "correct": false
+        },
+        {
+          "id": "pac5y",
+          "label": "Guns N' Roses",
+          "correct": true
+        },
+        {
+          "id": "mkbfw",
+          "label": "Def Leppard",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/5471bc966e0baf5d.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_GunsRoses.jpg"
+      }
+    },
+    {
+      "id": "u507b",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "wqms7",
+          "label": "Papa Roach",
+          "correct": false
+        },
+        {
+          "id": "g9bgw",
+          "label": "The Killers",
+          "correct": false
+        },
+        {
+          "id": "mbw3d",
+          "label": "Linkin Park",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/b20b5dc35003ec9f.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_LinkinPark.jpg"
+      }
+    },
+    {
+      "id": "i6eh5",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "4evca",
+          "label": "Motörhead",
+          "correct": true
+        },
+        {
+          "id": "095pm",
+          "label": "Mötley Crüe",
+          "correct": false
+        },
+        {
+          "id": "ikt6h",
+          "label": "Black Sabbath",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/9bba6f6613859e47.jpg",
+        "alt": "Imagem da pergunta 3",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Motorhead.jpg"
+      }
+    },
+    {
+      "id": "3puxp",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "ayfgf",
+          "label": "Nazareth",
+          "correct": false
+        },
+        {
+          "id": "4eok5",
+          "label": "Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "1e8y4",
+          "label": "Ramones",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/d9e1079f47c38e57.jpg",
+        "alt": "Imagem da pergunta 4",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Ramones.jpg"
+      }
+    },
+    {
+      "id": "y01me",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "xavdi",
+          "label": "Slipknot",
+          "correct": false
+        },
+        {
+          "id": "o6xlt",
+          "label": "Disturbed",
+          "correct": true
+        },
+        {
+          "id": "7ab76",
+          "label": "Korn",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7fe878bab6502aac.jpg",
+        "alt": "Imagem da pergunta 5",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Disturbed.jpg"
+      }
+    },
+    {
+      "id": "qm97p",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "ch53f",
+          "label": "Ramones",
+          "correct": false
+        },
+        {
+          "id": "owbxw",
+          "label": "R.E.M.",
+          "correct": false
+        },
+        {
+          "id": "b1jr4",
+          "label": "Rammstein",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/bb58d5e3c916eb87.jpg",
+        "alt": "Imagem da pergunta 6",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Rammstein.jpg"
+      }
+    },
+    {
+      "id": "6vtjv",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "hrtpl",
+          "label": "The Offspring",
+          "correct": true
+        },
+        {
+          "id": "3v2dy",
+          "label": "Sum 41",
+          "correct": false
+        },
+        {
+          "id": "s6kzn",
+          "label": "Blink-182",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/00c9165bc7d92efc.jpg",
+        "alt": "Imagem da pergunta 7",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_TheOffspring.jpg"
+      }
+    },
+    {
+      "id": "jkbpx",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "nnkuh",
+          "label": "KISS",
+          "correct": false
+        },
+        {
+          "id": "kb97b",
+          "label": "Scoprions",
+          "correct": false
+        },
+        {
+          "id": "l8qsz",
+          "label": "Rolling Stones",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/51f50d785d049f70.jpg",
+        "alt": "Imagem da pergunta 8",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_rolingstones.jpg"
+      }
+    },
+    {
+      "id": "c6rqy",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "gw34e",
+          "label": "Nirvana",
+          "correct": false
+        },
+        {
+          "id": "7fmhs",
+          "label": "Blink-182",
+          "correct": true
+        },
+        {
+          "id": "xhzmm",
+          "label": "Jimmy Eat World",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/07da6307932031b9.jpg",
+        "alt": "Imagem da pergunta 9",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Blink182.jpg"
+      }
+    },
+    {
+      "id": "72jv6",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "8xv1v",
+          "label": "Bon Jovi",
+          "correct": true
+        },
+        {
+          "id": "hh0ni",
+          "label": "Queen",
+          "correct": false
+        },
+        {
+          "id": "ux99o",
+          "label": "Aerosmith",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/7362775ca9069b81.jpg",
+        "alt": "Imagem da pergunta 10",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_BonJovi.jpg"
+      }
+    },
+    {
+      "id": "gb8v6",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "2ku1l",
+          "label": "Dire Straits",
+          "correct": false
+        },
+        {
+          "id": "4vgmq",
+          "label": "The Who",
+          "correct": true
+        },
+        {
+          "id": "zoeju",
+          "label": "Journey",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/9dfbe0fe649e23ec.jpg",
+        "alt": "Imagem da pergunta 11",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_TheWho.jpg"
+      }
+    },
+    {
+      "id": "e912d",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "6lcs4",
+          "label": "Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "d14zr",
+          "label": "Deep Purple",
+          "correct": false
+        },
+        {
+          "id": "g7qvq",
+          "label": "Black Sabbath",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/476f1dfd5b4c07a4.jpg",
+        "alt": "Imagem da pergunta 12",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_BlackSabbath.jpg"
+      }
+    },
+    {
+      "id": "zxays",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "p6x0g",
+          "label": "Blink-182",
+          "correct": false
+        },
+        {
+          "id": "6klkt",
+          "label": "Foo Fighters",
+          "correct": false
+        },
+        {
+          "id": "yakc3",
+          "label": "Nirvana",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/885f0c676d53fce2.jpg",
+        "alt": "Imagem da pergunta 13",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_nirvana.jpg"
+      }
+    },
+    {
+      "id": "reidr",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "5rxor",
+          "label": "Red Hot Chili Peppers",
+          "correct": true
+        },
+        {
+          "id": "uvtak",
+          "label": "The Gaslight Anthem",
+          "correct": false
+        },
+        {
+          "id": "r88x2",
+          "label": "Stone Sour",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/55a2b13adf0d7f39.jpg",
+        "alt": "Imagem da pergunta 14",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_RHCP.jpg"
+      }
+    },
+    {
+      "id": "c847l",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "p9g8x",
+          "label": "Whitesnake",
+          "correct": false
+        },
+        {
+          "id": "ut9em",
+          "label": "Weezer",
+          "correct": true
+        },
+        {
+          "id": "5mh8o",
+          "label": "The Who",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/4d679258cc4ba8ea.jpg",
+        "alt": "Imagem da pergunta 15",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_weezer.jpg"
+      }
+    },
+    {
+      "id": "up1iw",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "y5dc4",
+          "label": "Volbeat",
+          "correct": true
+        },
+        {
+          "id": "035mb",
+          "label": "Aerosmith",
+          "correct": false
+        },
+        {
+          "id": "qk0r4",
+          "label": "Mötley Crüe",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 15,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/c8580c22ecaddc09.jpg",
+        "alt": "Imagem da pergunta 16",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_volbeat.jpg"
+      }
+    },
+    {
+      "id": "w9zfw",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "ax2nu",
+          "label": "Deep Purple",
+          "correct": false
+        },
+        {
+          "id": "ji6on",
+          "label": "Queen",
+          "correct": false
+        },
+        {
+          "id": "qcxj0",
+          "label": "Led Zepplin",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 16,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/8ec3bdcf2eee275a.jpg",
+        "alt": "Imagem da pergunta 17",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_LedZeppelin.jpg"
+      }
+    },
+    {
+      "id": "etbnq",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "6lu0e",
+          "label": "Korn",
+          "correct": false
+        },
+        {
+          "id": "lf8fi",
+          "label": "Slipknot",
+          "correct": true
+        },
+        {
+          "id": "z9iqc",
+          "label": "Disturbed",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 17,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/63c16fa4fa5b6e3f.jpg",
+        "alt": "Imagem da pergunta 18",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Slipknot.jpg"
+      }
+    },
+    {
+      "id": "cnzzk",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "a7d0h",
+          "label": "Foreigner",
+          "correct": false
+        },
+        {
+          "id": "p47v7",
+          "label": "Franz Ferdinand",
+          "correct": false
+        },
+        {
+          "id": "olp34",
+          "label": "Foo Fighters",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 18,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/a042b604e7381703.jpg",
+        "alt": "Imagem da pergunta 19",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_FooFighters.jpg"
+      }
+    },
+    {
+      "id": "sbvdm",
+      "prompt": "De qual banda é este logo?",
+      "type": "logo",
+      "options": [
+        {
+          "id": "b48bh",
+          "label": "Kings of Leons",
+          "correct": false
+        },
+        {
+          "id": "ak71v",
+          "label": "Queens of the Stone Age",
+          "correct": false
+        },
+        {
+          "id": "q018s",
+          "label": "Queen",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 19,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/912605d4e1822921.jpg",
+        "alt": "Imagem da pergunta 20",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2019/11/00final_Queen.jpg"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "v2537",
+      "title": "Puxa, isso não deu certo. É melhor estudar os logos das bandas mais um pouco. Vai dar certo!",
+      "description": "",
+      "min": 0,
+      "max": 6
+    },
+    {
+      "id": "4fam0",
+      "title": "Foi razoável, mas queremos ver mais de você! Olhe novamente os logos com calma. Na próxima vez, você vai se sair melhor.",
+      "description": "",
+      "min": 7,
+      "max": 14
+    },
+    {
+      "id": "8izfj",
+      "title": "Nada mal! Agora faltam só um ou dois logos para você ser um verdadeiro especialista. Continue!",
+      "description": "",
+      "min": 15,
+      "max": 19
+    },
+    {
+      "id": "rbeop",
+      "title": "Uau! Quero ver alguém fazer igual! Você conhece todos os logos de bandas. Respeito!",
+      "description": "",
+      "min": 20,
+      "max": 20
+    }
+  ],
+  "sourceId": "687",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Erkennt Ihr diese Bandlogos?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/04-bandlogos.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "03baf297d54a1966"
+}

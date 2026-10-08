@@ -1,0 +1,509 @@
+{
+  "id": "dp-32",
+  "version": 1,
+  "title": "Qual é seu QI do rock?",
+  "family": "Visual",
+  "type": "fragmento-capa",
+  "mode": "quiz",
+  "questions": [
+    {
+      "id": "whm24",
+      "prompt": "Qual roqueiro tem doutorado em astrofísica?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "hbtv9",
+          "label": "Bono",
+          "correct": false
+        },
+        {
+          "id": "2p3tc",
+          "label": "Brian May",
+          "correct": true
+        },
+        {
+          "id": "5yl00",
+          "label": "Chester Bennington",
+          "correct": false
+        },
+        {
+          "id": "4frb9",
+          "label": "Farin Urlaub",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 0,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 1",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "bqy9f",
+      "prompt": "Quanto tempo dura um show de três horas de Bruce Springsteen?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "mjmzb",
+          "label": "Duas horas e meia",
+          "correct": false
+        },
+        {
+          "id": "9op5k",
+          "label": "Pouco mais de uma hora",
+          "correct": false
+        },
+        {
+          "id": "i9hoa",
+          "label": "Quatro horas",
+          "correct": false
+        },
+        {
+          "id": "9crzi",
+          "label": "Três horas",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 1,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/73794a8bffd9b37e.jpg",
+        "alt": "Imagem da pergunta 2",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2017/08/Liver-of-a-Duck-Perfect-Gift-mp3-image.jpg"
+      }
+    },
+    {
+      "id": "utr4t",
+      "prompt": "Wacken é um festival. Todos os festivais têm rock. Portanto…",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "wx4jc",
+          "label": "…Wacken acontece em agosto.",
+          "correct": false
+        },
+        {
+          "id": "g5xkm",
+          "label": "…Wacken é incrível.",
+          "correct": false
+        },
+        {
+          "id": "gmhlw",
+          "label": "…Wacken tem rock.",
+          "correct": true
+        },
+        {
+          "id": "7fczw",
+          "label": "…Wacken está esgotado.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 2,
+      "answerType": "text"
+    },
+    {
+      "id": "9oifo",
+      "prompt": "Qual banda ainda toca com sua formação original?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "rt5sz",
+          "label": "Rolling Stones",
+          "correct": false
+        },
+        {
+          "id": "apiui",
+          "label": "U2",
+          "correct": true
+        },
+        {
+          "id": "pfslg",
+          "label": "AC/DC",
+          "correct": false
+        },
+        {
+          "id": "saiwf",
+          "label": "Guns n Roses",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 3,
+      "answerType": "text"
+    },
+    {
+      "id": "tp50j",
+      "prompt": "Quantos fãs de rock podem entrar em um espaço vazio de festival?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "s9z68",
+          "label": "Um",
+          "correct": true
+        },
+        {
+          "id": "8i2ts",
+          "label": "Depende do espaço",
+          "correct": false
+        },
+        {
+          "id": "iduum",
+          "label": "Cerca de dez mil pessoas, em média",
+          "correct": false
+        },
+        {
+          "id": "32ax3",
+          "label": "Que se dane, desde que tenha cerveja para todo mundo!",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 4,
+      "answerType": "text"
+    },
+    {
+      "id": "v2dbs",
+      "prompt": "“Saindo da minha gaiola / E tenho passado muito bem / Preciso, preciso me controlar.” Como a letra continua?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "3r6cx",
+          "label": "“Porque eu sei tudo”",
+          "correct": false
+        },
+        {
+          "id": "flovn",
+          "label": "“Quando não consigo sentir o chão”",
+          "correct": false
+        },
+        {
+          "id": "qh2hs",
+          "label": "“Porque eu quero tudo”",
+          "correct": true
+        },
+        {
+          "id": "euytp",
+          "label": "“Para ver por onde passei”",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 5,
+      "answerType": "text"
+    },
+    {
+      "id": "m316d",
+      "prompt": "Queen se escreve com “Q” no começo e “h” no fim. Está certo?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "troi9",
+          "label": "Não!",
+          "correct": false
+        },
+        {
+          "id": "s32zi",
+          "label": "Sim.",
+          "correct": true
+        },
+        {
+          "id": "fywt0",
+          "label": "Hum… não faço ideia?",
+          "correct": false
+        },
+        {
+          "id": "ktgbj",
+          "label": "Em inglês, sim.",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 6,
+      "answerType": "text"
+    },
+    {
+      "id": "v26th",
+      "prompt": "Qual banda fez seu primeiro show com o nome “Tony Flow And The Miraculously Majestic Masters Of Mayhem”?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "ypsk6",
+          "label": "Bloodhound Gang",
+          "correct": false
+        },
+        {
+          "id": "cawu3",
+          "label": "Nirvana",
+          "correct": false
+        },
+        {
+          "id": "g3en4",
+          "label": "Red Hot Chili Peppers",
+          "correct": true
+        },
+        {
+          "id": "axugh",
+          "label": "Oasis",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 7,
+      "answerType": "text"
+    },
+    {
+      "id": "jvr2i",
+      "prompt": "Complete: guitarrista — amplificador; vocalista — ?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "4y44w",
+          "label": "Voz",
+          "correct": false
+        },
+        {
+          "id": "hxbw6",
+          "label": "Microfone",
+          "correct": true
+        },
+        {
+          "id": "64prp",
+          "label": "Guitarra",
+          "correct": false
+        },
+        {
+          "id": "8drlp",
+          "label": "Letra",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 8,
+      "answerType": "text"
+    },
+    {
+      "id": "b45h0",
+      "prompt": "Qual roqueiro urinou na comida do diretor da escola quando era criança?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "qisdd",
+          "label": "Bruce Dickinson",
+          "correct": true
+        },
+        {
+          "id": "u2m44",
+          "label": "Dave Grohl",
+          "correct": false
+        },
+        {
+          "id": "5alci",
+          "label": "Liam Gallagher",
+          "correct": false
+        },
+        {
+          "id": "unwtr",
+          "label": "Jimmy Page",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 9,
+      "answerType": "text"
+    },
+    {
+      "id": "816uc",
+      "prompt": "Três bandas fazem três shows em três horas. Quanto tempo cem bandas levam para fazer cem shows?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "xrqro",
+          "label": "Uma semana",
+          "correct": false
+        },
+        {
+          "id": "2ctrd",
+          "label": "Cem horas",
+          "correct": false
+        },
+        {
+          "id": "ipjpv",
+          "label": "Três horas",
+          "correct": true
+        },
+        {
+          "id": "eig0h",
+          "label": "Três dias",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 10,
+      "answerType": "text"
+    },
+    {
+      "id": "pvw78",
+      "prompt": "Uma banda tem cinco integrantes. Todos saem, exceto dois. Quantos integrantes continuam na banda?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "9tyzy",
+          "label": "Dois",
+          "correct": true
+        },
+        {
+          "id": "f3qet",
+          "label": "Nenhum",
+          "correct": false
+        },
+        {
+          "id": "eos2c",
+          "label": "Cinco",
+          "correct": false
+        },
+        {
+          "id": "5f3yb",
+          "label": "Todos",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 11,
+      "answerType": "text"
+    },
+    {
+      "id": "b6eem",
+      "prompt": "Qual banda estamos procurando?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "v7v92",
+          "label": "Guns n Roses",
+          "correct": false
+        },
+        {
+          "id": "n7ayt",
+          "label": "Biffy Clyro",
+          "correct": true
+        },
+        {
+          "id": "17wdy",
+          "label": "Mötley Crüe",
+          "correct": false
+        },
+        {
+          "id": "mft3e",
+          "label": "Green Day",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 12,
+      "answerType": "text",
+      "image": {
+        "src": "/assets/desafios/16ed2614b473e240.jpg",
+        "alt": "Imagem da pergunta 13",
+        "source": "https://quiz.radiobob.de/wp-content/uploads/2018/02/Biffy-Clyro-Frage.jpg"
+      }
+    },
+    {
+      "id": "c8j57",
+      "prompt": "A mãe de Ozzy tem três filhos: Huguinho, Zezinho e ?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "nonho",
+          "label": "Luisinho",
+          "correct": false
+        },
+        {
+          "id": "sf0ui",
+          "label": "Hack",
+          "correct": false
+        },
+        {
+          "id": "a728v",
+          "label": "Tack",
+          "correct": false
+        },
+        {
+          "id": "9zfta",
+          "label": "Ozzy",
+          "correct": true
+        }
+      ],
+      "sourceIndex": 13,
+      "answerType": "text"
+    },
+    {
+      "id": "c904k",
+      "prompt": "A mãe deste rockstar é a sogra da minha mãe. Quem é o rockstar?",
+      "type": "fragmento-capa",
+      "options": [
+        {
+          "id": "z5n6s",
+          "label": "Meu avô",
+          "correct": false
+        },
+        {
+          "id": "4694z",
+          "label": "Alice Cooper",
+          "correct": false
+        },
+        {
+          "id": "bmubu",
+          "label": "Meu pai",
+          "correct": true
+        },
+        {
+          "id": "sm3ix",
+          "label": "James Hetfield",
+          "correct": false
+        }
+      ],
+      "sourceIndex": 14,
+      "answerType": "text"
+    }
+  ],
+  "results": [
+    {
+      "id": "ln6se",
+      "title": "Abaixo de 90 — abaixo da média: Quando distribuíram cérebros, parece que você tinha ido buscar cerveja. Ops.",
+      "description": "",
+      "min": 0,
+      "max": 3
+    },
+    {
+      "id": "zjjcq",
+      "title": "90 a 109 — média: Você tem o QI do rock absolutamente comum. Nem sua avó consideraria você superdotado.",
+      "description": "",
+      "min": 4,
+      "max": 10
+    },
+    {
+      "id": "ohm5i",
+      "title": "110 a 129 — acima da média: Uau. Sua inteligência deixa mais de 50% dos roqueiros para trás. Impressionante!",
+      "description": "",
+      "min": 11,
+      "max": 14
+    },
+    {
+      "id": "g9cak",
+      "title": "Acima de 130 — superdotado: Parece que você desenvolveu seu QI do rock desde criança. Você é o cérebro entre os roqueiros. Respeito!",
+      "description": "",
+      "min": 15,
+      "max": 15
+    }
+  ],
+  "sourceId": "409",
+  "presentation": {
+    "questionLayout": "multiple",
+    "skin": "flat",
+    "answerLayout": "stacked",
+    "imagePlacement": "left",
+    "sourceTitle": "Wie hoch ist Euer Rock-IQ?"
+  },
+  "sourceFiles": [
+    "docs/desafios-passport-43/source/recovery-20261008/native/21-rock-iq.html"
+  ],
+  "sourceSettings": {
+    "question_layout": "multiple",
+    "skin": "flat",
+    "rand_questions": "0",
+    "rand_answers": "0",
+    "restart_questions": "off"
+  },
+  "versionHash": "198a6815b9117eae"
+}
