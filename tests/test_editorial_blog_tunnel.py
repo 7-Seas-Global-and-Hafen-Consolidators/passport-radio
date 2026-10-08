@@ -337,8 +337,18 @@ def test_destination_and_isolation() -> None:
     if "backfill" not in (engine.get("discovery") or {}):
         fail("backfill caps missing")
     blog = (ROOT / "blog.html").read_text("utf-8")
-    if "contar-historias-que-dao-vontade-de-ouvir.html" not in blog:
-        fail("human cover was removed from blog.html")
+    cover = json.loads((ROOT / "data/blog-cover.json").read_text("utf-8"))
+    if not cover or "/js/passport-blog-cover.js" not in blog:
+        fail("curated cover is not wired on blog.html")
+    for story in cover:
+        url = story.get("url", "")
+        image = (story.get("image") or {}).get("src", "")
+        if not url.startswith("/") or not (ROOT / url.lstrip("/")).is_file():
+            fail(f"curated cover destination missing: {url}")
+        if not image.startswith("/") or not (ROOT / image.lstrip("/")).is_file():
+            fail(f"curated cover image missing: {image}")
+        if not story.get("title") or not story.get("author"):
+            fail(f"curated cover editorial metadata missing: {url}")
     if "passport-blog-search.js" not in blog and 'form class="blog-search"' not in blog:
         fail("search not wired on blog cover")
     news = (ROOT / "noticias.html").read_text("utf-8")
