@@ -1,0 +1,67 @@
+{
+  "status": "RECOVERY_PERSISTED_CODE_PUSH_BLOCKED_PROFILES_PENDING",
+  "mission_complete": false,
+  "base_main_head": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
+  "branch": "feat/blog-global-artists-3000-20261008",
+  "prior_pr": {
+    "number": 527,
+    "merged": true,
+    "head": "f2473a5e80b351d0cee9521cac085859e21e4fc9"
+  },
+  "target_profiles": 3000,
+  "inventory_positions": 3000,
+  "certified_complete_profiles": 0,
+  "existing_matches": 798,
+  "new_candidates": 2202,
+  "new_profiles_published": 0,
+  "last_completed_artist": null,
+  "next_pending_artist": {
+    "position": 1,
+    "name": "10.000 Maniacs",
+    "reference_url": "https://whiplash.net/bandas/1/10000maniacs.html",
+    "existing_url": "/blog/e/10000maniacs.html",
+    "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
+    "photo": null,
+    "validated_official_video": null,
+    "original_editorial_profile": null,
+    "completed": false
+  },
+  "last_inventory_position": 3000,
+  "last_inventory_artist": "Eric Johnson",
+  "sources": {
+    "whiplash_sha256": "6bf58aa0b76e54c0e7eedce2d6a8332a0cee1727bf21f2dc60102bdabcad6b3d",
+    "metalhammer_sha256": "ab0c0a78e3c7aeba0c312fc8eeab4e76916cde8a0ec28c085d71a1e95b07c934"
+  },
+  "presentation_hooks": 26184,
+  "historical_articles_preserved": 21933,
+  "historical_az_destinations_preserved": 2767,
+  "title_pattern_flags": 16447,
+  "new_photos_acquired": 0,
+  "official_videos_certified": 0,
+  "acquisition_resume": "Reuse inventory and source hashes. Complete profile facts, authorized artist photo and official video before marking a record complete. Do not recreate existing destination or copy and reattribute source articles.",
+  "pending": [
+    "3000 factual profiles with authorized photos, official validated videos and substantiated relationships",
+    "Original complete editorial articles; wholesale third-party text copying and attribution removal not performed",
+    "Remote CI confirmation after push"
+  ],
+  "qa": "qa/results.json",
+  "radio_code_unchanged": [
+    "js/passport-audio-continuity.js",
+    "js/passport-bus.js",
+    "assets/index-DgBCruM8.js",
+    "radio.html",
+    "index.html"
+  ],
+  "merge_performed": false,
+  "implementation_commit": "5959adb422da73653731f3a5fb2449d2993dbab4",
+  "git_push_error": "fatal: could not read Username for 'https://github.com': No such device or address",
+  "local_final_head": "dc6481a6e2a2674d01d9a710769ba1164aacb4b7",
+  "remote_implementation_applied": false,
+  "recovery": {
+    "path": "docs/blog-global-artists-3000-20261008/recovery/full-recovery.patch.gz",
+    "sha256": "2b7444d0af553eb4b6c72537be87fc548f829f88c348e7805adda66a24d97786",
+    "bytes": 8791303,
+    "base": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
+    "contains": "Full binary Git patch: implementation, 26184 hooks, inventory, hashes, QA scripts/results and screenshots."
+  }
+}

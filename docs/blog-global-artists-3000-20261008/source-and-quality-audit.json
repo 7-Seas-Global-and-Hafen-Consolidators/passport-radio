@@ -1,0 +1,30 @@
+{
+  "source_sha256": "6bf58aa0b76e54c0e7eedce2d6a8332a0cee1727bf21f2dc60102bdabcad6b3d",
+  "source_unique_destinations": 9911,
+  "metalhammer_source_sha256": "ab0c0a78e3c7aeba0c312fc8eeab4e76916cde8a0ec28c085d71a1e95b07c934",
+  "metalhammer_img_elements": 98,
+  "target_inventory": 3000,
+  "matched_existing_destinations": 798,
+  "unmatched_source_candidates": 2202,
+  "certified_complete_profiles": 0,
+  "historical_records_preserved": 21933,
+  "titles_flagged_by_explicit_patterns": 16447,
+  "pattern_counts": {
+    "continua encontrável": 2704,
+    "que permanece no Blog": 2774,
+    "que o acervo escolheu guardar": 2702,
+    "a porta que o arquivo não deixa fechar": 2718,
+    "A história de .+ que a Passport recoloca no mapa": 2782,
+    "Passport guarda .+ por um": 2767
+  },
+  "classification_note": "Lexical audit, not a factual verdict or authorization to delete or rewrite. Sources are indexes, not 3000 complete licensed profiles. No source article copied; no author reassigned.",
+  "accept_source_probe": {
+    "url": "https://whiplash.net/bandas/a/accept.html",
+    "http": 200,
+    "bytes": 89135,
+    "sha256": "27eead94da8559f9bac9d280cdb2fc2e7c631add5e5317e152a6b41a38a1682c",
+    "copy_published": false,
+    "photo_license_verified": false,
+    "official_video_verified": false
+  }
+}
