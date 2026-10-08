@@ -1,0 +1,13 @@
+{
+  "result": "FAIL",
+  "cases": [
+    {
+      "id": "dp-03",
+      "completeSheet": "PASS",
+      "outOfOrderAnswerReload": "PASS",
+      "portalResume": "PASS",
+      "restart": "PASS"
+    }
+  ],
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-question=\"xjao3\"] .challenge-option').first()\u001b[22m\n"
+}

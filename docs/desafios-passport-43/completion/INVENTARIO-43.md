@@ -1,3 +1,5 @@
+> Inventário histórico da primeira entrega. Substituído pela decisão final e por [INVENTARIO-45.md](INVENTARIO-45.md): 45/45 completos.
+
 # Inventário dos 43 IDs — DESAFIOS PASSPORT
 
 Alvo de produto preservado: 43 posições estáveis. IDs são da Passport; sourceId registra a identidade encontrada. Não se declara um jogo recuperado quando apenas o índice, a descrição ou a contagem-alvo o sustentam. Os jogos anteriores ficam fora deste corpus e serão preservados separadamente.

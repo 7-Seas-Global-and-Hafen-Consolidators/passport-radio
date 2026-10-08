@@ -1,785 +1,871 @@
 [
   {
     "id": "dp-01",
-    "slug": "wacken",
-    "title": "Wacken Open Air",
-    "family": "Conhecimento",
-    "type": "festival",
     "sourceId": "1070",
-    "source": "16-Markdown_colado(20261007-191344).md",
+    "titleOriginal": "Wacken Open Air Quiz",
+    "titlePtBr": "Quiz Wacken Open Air",
+    "sourceFiles": [
+      "43-wacken-open-air.html",
+      "43-wacken-open-air.md"
+    ],
     "questions": 15,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "43-wacken-open-air.md"
+    ]
   },
   {
     "id": "dp-02",
-    "slug": "barbas",
-    "title": "De quem é esta barba?",
-    "family": "Visual",
-    "type": "barba",
     "sourceId": "1077",
-    "source": "17-Markdown_colado_(2)(20261007-191538).md",
-    "questions": 10,
-    "images": "com imagem",
-    "assets": [
-      {
-        "question": "7wwjx",
-        "url": "https://images.radiobob.de/2023/10/anthony-kiedis.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "168gt",
-        "url": "https://images.radiobob.de/2023/10/dave-grohl-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "ibzbd",
-        "url": "https://images.radiobob.de/2023/10/frank-zappa.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "zr4fw",
-        "url": "https://images.radiobob.de/2023/10/freddie-mercury.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "83sna",
-        "url": "https://images.radiobob.de/2023/10/james-hetfield.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "tk83m",
-        "url": "https://images.radiobob.de/2023/10/kerry-king.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "0cbp6",
-        "url": "https://images.radiobob.de/2023/10/lemmy-kilmister.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "22iir",
-        "url": "https://images.radiobob.de/2023/10/scott-ian.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "5b8l7",
-        "url": "https://images.radiobob.de/2023/10/tom-araya.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "4t60a",
-        "url": "https://images.radiobob.de/2023/10/billy-gibbons.jpg?fm=pjpg&ixlib=php-3.3.1"
-      }
+    "titleOriginal": "Bärte der Rockstars Quiz",
+    "titlePtBr": "Quiz: barbas dos rockstars",
+    "sourceFiles": [
+      "42-baerte-rockstars.html",
+      "41-bart-rockstar-evidencia.png",
+      "42-baerte-rockstars.md"
     ],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "questions": 10,
+    "assets": 10,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "41-bart-rockstar-evidencia.png",
+      "42-baerte-rockstars.md"
+    ]
   },
   {
     "id": "dp-03",
-    "slug": "mtv-unplugged",
-    "title": "MTV Unplugged",
-    "family": "Conhecimento",
-    "type": "trivia",
     "sourceId": "991",
-    "source": "18-Markdown_colado_(3)(10).md",
+    "titleOriginal": "MTV Unplugged Quiz",
+    "titlePtBr": "Quiz MTV Unplugged",
+    "sourceFiles": [
+      "48-mtv-unplugged.html",
+      "48-mtv-unplugged.md"
+    ],
     "questions": 10,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "single",
+    "recoveryFiles": [
+      "48-mtv-unplugged.md"
+    ]
   },
   {
     "id": "dp-04",
-    "slug": "album-primeiro",
-    "title": "Qual álbum veio primeiro?",
-    "family": "Visual",
-    "type": "comparacao-albuns",
     "sourceId": "1009",
-    "source": "19-Markdown_colado(20261007-192043).md",
-    "questions": 12,
-    "images": "com imagem",
-    "assets": [
-      {
-        "question": "qg75d",
-        "url": "https://images.radiobob.de/2023/05/acdc-led-zep.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "uuysp",
-        "url": "https://images.radiobob.de/2023/05/aerosmith-bruce-springsteen.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "mlvm6",
-        "url": "https://images.radiobob.de/2023/05/aerosmith-pink-floyd-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "5diqr",
-        "url": "https://images.radiobob.de/2023/05/billy-talent-the-offspring-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "cmim7",
-        "url": "https://images.radiobob.de/2023/05/bon-jovi-pearl-jam-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "j7ugi",
-        "url": "https://images.radiobob.de/2023/05/deep-purple-journey.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "owek9",
-        "url": "https://images.radiobob.de/2023/05/foo-fighters-green-day-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "6g2pw",
-        "url": "https://images.radiobob.de/2023/05/guns-n-roses-judas-priest.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "wq695",
-        "url": "https://images.radiobob.de/2023/05/linkin-park-donots-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "mkdlc",
-        "url": "https://images.radiobob.de/2023/05/metallica-nirvana-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "g7au6",
-        "url": "https://images.radiobob.de/2023/05/oasis-dire-straits-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      },
-      {
-        "question": "lfrso",
-        "url": "https://images.radiobob.de/2023/05/papa-roach-die-aerzte-1.jpg?fm=pjpg&ixlib=php-3.3.1"
-      }
+    "titleOriginal": "Quiz: Welches Album ist älter?",
+    "titlePtBr": "Quiz: qual álbum é mais antigo?",
+    "sourceFiles": [
+      "47-album-mais-antigo.html",
+      "46-album-mais-antigo-evidencia.png",
+      "47-album-mais-antigo.md"
     ],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "questions": 12,
+    "assets": 12,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "46-album-mais-antigo-evidencia.png",
+      "47-album-mais-antigo.md"
+    ]
   },
   {
     "id": "dp-05",
-    "slug": "anos-70",
-    "title": "Rock dos anos 70",
-    "family": "Conhecimento",
-    "type": "trivia-explicada",
     "sourceId": "970",
-    "source": "20-Markdown_colado_(2)(20261007-192220).md",
+    "titleOriginal": "70er-Quiz",
+    "titlePtBr": "Quiz dos anos 70",
+    "sourceFiles": [
+      "49-rock-anos-70.html",
+      "49-rock-anos-70.md"
+    ],
     "questions": 19,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "49-rock-anos-70.md"
+    ]
   },
   {
     "id": "dp-06",
-    "slug": "perfil-musical",
-    "title": "Seu perfil de rock",
-    "family": "Perfil",
-    "type": "personalidade-ponderada",
     "sourceId": "786",
-    "source": "pack-01.html",
+    "titleOriginal": "Welcher RADIO BOB! Stream passt zu Euch?",
+    "titlePtBr": "Qual stream da RADIO BOB! combina com você?",
+    "sourceFiles": [
+      "01-welcher-stream.html",
+      "docs/desafios-passport-43/source-correct/pack-01.html",
+      "01-welcher-stream.md"
+    ],
     "questions": 10,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "soma dos pesos por perfil; resultados empatados apresentados juntos",
-    "status": "recuperado",
-    "available": true
+    "assets": 6,
+    "status": "completo",
+    "action": "completado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "01-welcher-stream.md"
+    ]
   },
   {
     "id": "dp-07",
-    "slug": "anos-90",
-    "title": "Rock dos anos 90",
-    "family": "Conhecimento",
-    "type": "decada",
     "sourceId": "770",
-    "source": "pack-01.html",
+    "titleOriginal": "Wie gut kennt Ihr den Rock der 90er?",
+    "titlePtBr": "Quanto você conhece do rock dos anos 90?",
+    "sourceFiles": [
+      "02-rock-der-90er.html",
+      "docs/desafios-passport-43/source-correct/pack-01.html",
+      "02-rock-der-90er.md"
+    ],
     "questions": 20,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "02-rock-der-90er.md"
+    ]
   },
   {
     "id": "dp-08",
-    "slug": "historia-rock",
-    "title": "Uma história de rock’n’roll",
-    "family": "Conhecimento",
-    "type": "historia",
     "sourceId": "761",
-    "source": "pack-01.html",
+    "titleOriginal": "XXL-Rock-Quiz: Eine Reise durch die Rock-Geschichte",
+    "titlePtBr": "Quiz XXL do rock: uma viagem pela história do rock",
+    "sourceFiles": [
+      "03-xxl-rock-geschichte.html",
+      "docs/desafios-passport-43/source-correct/pack-01.html",
+      "03-xxl-rock-geschichte.md"
+    ],
     "questions": 40,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "03-xxl-rock-geschichte.md"
+    ]
   },
   {
     "id": "dp-09",
-    "slug": "quarentena",
-    "title": "Seu parceiro de quarentena",
-    "family": "Perfil",
-    "type": "personalidade-ponderada",
     "sourceId": "755",
-    "source": "pack-01.html",
+    "titleOriginal": "Dieser Rockstar wäre Euer perfekter Quarantäne-Partner!",
+    "titlePtBr": "Este rockstar seria seu parceiro perfeito de quarentena!",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
     "questions": 10,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "soma dos pesos por perfil; resultados empatados apresentados juntos",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": []
   },
   {
     "id": "dp-10",
-    "slug": "metal",
-    "title": "Quanto metal você conhece?",
-    "family": "Conhecimento",
-    "type": "misto-trivia-verdadeiro-falso",
     "sourceId": "725",
-    "source": "pack-01.html",
+    "titleOriginal": "Wie hart seid Ihr wirklich?",
+    "titlePtBr": "Quanto você é pesado de verdade?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
     "questions": 20,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": []
   },
   {
     "id": "dp-11",
-    "slug": "rock-ou-nao",
-    "title": "Rock ou não?",
-    "family": "Memória",
-    "type": "trecho-musical",
     "sourceId": "719",
-    "source": "pack-01.html",
+    "titleOriginal": "Quiz: Rock Or Not?",
+    "titlePtBr": "Quiz: rock ou não?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source-correct/pack-01.html"
+    ],
     "questions": 20,
-    "images": "sem imagem",
-    "assets": [],
-    "scoring": "gabarito isCorrect e faixas min/max originais",
-    "status": "recuperado",
-    "available": true
+    "assets": 0,
+    "status": "completo",
+    "action": "completado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": []
   },
   {
     "id": "dp-12",
-    "slug": "genero",
-    "title": "Qual gênero combina com você?",
-    "family": "Perfil",
-    "type": "personalidade",
-    "sourceId": "417d18f0-1fb9-44e1-8bd4-f75131ede7bb",
-    "source": "RECUPERADO-A.html",
-    "sourceAlias": "/musik/rockquiz/welches-rock-genre-gleicht-eurem-charakter",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "226",
+    "titleOriginal": "Welches Rock-Genre gleicht deinem Charakter?",
+    "titlePtBr": "Qual gênero do rock combina com seu jeito?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/38-rock-genero.html",
+      "38-rock-genero.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "38-rock-genero.md"
+    ]
   },
   {
     "id": "dp-13",
-    "slug": "nomes-antigos",
-    "title": "Antes de ganhar esse nome",
-    "family": "Conhecimento",
-    "type": "bandas",
-    "sourceId": "ebabfe76-13ba-4830-97b4-3b1a85183da8",
-    "source": "pack-02.html",
-    "sourceAlias": "/musik/rockquiz/wisst-ihr-wie-diese-bands-frueher-hiessen",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "616",
+    "titleOriginal": "Wisst Ihr wie diese Bands früher hießen?",
+    "titlePtBr": "Você sabe como estas bandas se chamavam antes?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/07-bands-frueher-hiessen.html",
+      "07-bands-frueher-hiessen.md"
+    ],
+    "questions": 18,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "07-bands-frueher-hiessen.md"
+    ]
   },
   {
     "id": "dp-14",
-    "slug": "letras",
-    "title": "Reconheça a música pelo trecho",
-    "family": "Memória",
-    "type": "trecho-musical",
-    "sourceId": "2cf22e74-84bb-40f7-bb74-9090fadd4aaf",
-    "source": "RECUPERADO-A.html",
-    "sourceAlias": "/musik/rockquiz/wie-gut-kennt-ihr-songtexte",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "208",
+    "titleOriginal": "Wie gut kennt Ihr Songtexte?",
+    "titlePtBr": "Quanto você conhece das letras?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/39-songtexte.html",
+      "39-songtexte.md"
+    ],
+    "questions": 18,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "39-songtexte.md"
+    ]
   },
   {
     "id": "dp-15",
-    "slug": "ultimas-palavras",
-    "title": "Uma letra para suas últimas palavras",
-    "family": "Perfil",
-    "type": "personalidade",
-    "sourceId": "d99e0e51-7930-4fe4-a1f0-ab542f0958f0",
-    "source": "RECUPERADO-A.html",
-    "sourceAlias": "/musik/rockquiz/welche-lyrics-waeren-eure-letzten-worte",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "489",
+    "titleOriginal": "Welche Lyrics wären Eure letzten Worte?",
+    "titlePtBr": "Quais versos seriam suas últimas palavras?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/12-ultimas-palavras-lyrics.html",
+      "12-ultimas-palavras-lyrics.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "12-ultimas-palavras-lyrics.md"
+    ]
   },
   {
     "id": "dp-16",
-    "slug": "punk",
-    "title": "Quanto punk existe em você?",
-    "family": "Conhecimento",
-    "type": "historia-punk",
-    "sourceId": "7ac51751-9d2a-4568-8869-eaa1f890e4c1",
-    "source": "pack-02.html",
-    "sourceAlias": "/musik/rockquiz/quiz-wie-viel-punk-steckt-euch",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "654",
+    "titleOriginal": "QUIZ: Wie viel Punk steht in Euch?",
+    "titlePtBr": "QUIZ: quanto punk existe em você?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/05-wie-viel-punk.html",
+      "05-wie-viel-punk.md"
+    ],
+    "questions": 15,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "05-wie-viel-punk.md"
+    ]
   },
   {
     "id": "dp-17",
-    "slug": "festival-perfil",
-    "title": "Qual festival combina com você?",
-    "family": "Perfil",
-    "type": "personalidade",
-    "sourceId": "a1278075-0ebe-4335-ad73-95b7a6273fba",
-    "source": "RECUPERADO-B.html",
-    "sourceAlias": "/musik/rockquiz/welches-festival-solltet-ihr-besuchen",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "475",
+    "titleOriginal": "Welches Festival solltet Ihr besuchen?",
+    "titlePtBr": "Qual festival você deveria visitar?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/14-festival.html",
+      "14-festival.md"
+    ],
+    "questions": 10,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "14-festival.md"
+    ]
   },
   {
     "id": "dp-18",
-    "slug": "acdc",
-    "title": "AC/DC: o desafio",
-    "family": "Conhecimento",
-    "type": "artista",
-    "sourceId": "cf813dcb-fafc-4b26-b1ee-9dfd3cbeacff",
-    "source": "RECUPERADO-B.html",
-    "sourceAlias": "/musik/rockquiz/ac-dc-quiz",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "477",
+    "titleOriginal": "AC/DC Quiz: Wie gut kennt Ihr die Hardrocker?",
+    "titlePtBr": "Quiz AC/DC: quanto você conhece dos roqueiros?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/13-acdc-quiz.html",
+      "13-acdc-quiz.txt"
+    ],
+    "questions": 25,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "13-acdc-quiz.txt"
+    ]
   },
   {
     "id": "dp-19",
-    "slug": "complete-letra",
-    "title": "Complete a letra",
-    "family": "Memória",
-    "type": "completar-letra",
-    "sourceId": "d34e7b57-4b69-46a4-973f-7f78aa7b4144",
-    "source": "RECUPERADO-B.html",
-    "sourceAlias": "/musik/rockquiz/koennt-ihr-diese-songtexte-vervollstaendigen",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "379",
+    "titleOriginal": "Könnt Ihr diese Songtexte vervollständigen?",
+    "titlePtBr": "Você consegue completar estas letras?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/24-complete-songtexte.html",
+      "24-complete-songtexte.md"
+    ],
+    "questions": 20,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "24-complete-songtexte.md"
+    ]
   },
   {
     "id": "dp-20",
-    "slug": "logos",
-    "title": "Reconheça o logo",
-    "family": "Visual",
-    "type": "logo",
-    "sourceId": "5ef43c71-2ac1-46fc-b039-f834ffc3b91f",
-    "source": "pack-02.html",
-    "sourceAlias": "/musik/rockquiz/erkennt-ihr-diese-bandlogos",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "687",
+    "titleOriginal": "Erkennt Ihr diese Bandlogos?",
+    "titlePtBr": "Você reconhece estes logos de bandas?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/04-bandlogos.html",
+      "04-bandlogos.md",
+      "10-bandlogos-evidencia.png"
+    ],
+    "questions": 20,
+    "assets": 20,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "04-bandlogos.md",
+      "10-bandlogos-evidencia.png"
+    ]
   },
   {
     "id": "dp-21",
-    "slug": "springsteen",
-    "title": "As letras de Bruce Springsteen",
-    "family": "Memória",
-    "type": "trecho-musical",
-    "sourceId": "8b103414-a093-4cc2-924e-f9d6c0d07e34",
-    "source": "pack-02.html",
-    "sourceAlias": "/musik/rockquiz/wie-gut-kennt-ihr-die-songtexte-von-bruce-springsteen",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "642",
+    "titleOriginal": "Wie gut kennt Ihr die Songtexte von Bruce Springsteen?",
+    "titlePtBr": "Quanto você conhece das letras de Bruce Springsteen?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/06-bruce-springsteen-songtexte.html",
+      "06-bruce-springsteen-songtexte.md"
+    ],
+    "questions": 15,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "06-bruce-springsteen-songtexte.md"
+    ]
   },
   {
     "id": "dp-22",
-    "slug": "verao",
-    "title": "A música do seu verão",
-    "family": "Perfil",
-    "type": "personalidade",
-    "sourceId": "1eabc076-fcc6-4de2-b2cf-2a4b3d3e7a2f",
-    "source": "pack-02.html",
-    "sourceAlias": "/musik/rockquiz/welcher-song-rockt-euren-sommer",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "602",
+    "titleOriginal": "Welcher Song rockt Euren Sommer?",
+    "titlePtBr": "Qual música agita seu verão?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/08-sommersong.html",
+      "08-sommersong.md"
+    ],
+    "questions": 10,
+    "assets": 0,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "08-sommersong.md"
+    ]
   },
   {
     "id": "dp-23",
-    "slug": "emojis",
-    "title": "Rock em emojis",
-    "family": "Memória",
-    "type": "emoji",
-    "sourceId": "ee575cc8-1b43-4ee9-8fa3-d54fe977cdd1",
-    "source": "pack-02.html",
-    "sourceAlias": "/musik/rockquiz/emoji-quiz-erkennt-ihr-diese-rocksongs",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "520",
+    "titleOriginal": "BOBs Emoji Quiz: Erkennt Ihr diese Songs?",
+    "titlePtBr": "Quiz de emojis da BOB: você reconhece estas músicas?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/09-rocksongs-emojis.html",
+      "09-rocksongs-emojis.md",
+      "11-emojis-evidencia.png"
+    ],
+    "questions": 12,
+    "assets": 12,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "09-rocksongs-emojis.md",
+      "11-emojis-evidencia.png"
+    ]
   },
   {
     "id": "dp-24",
-    "slug": "turnes",
-    "title": "Histórias da estrada e dos shows",
-    "family": "Conhecimento",
-    "type": "historia",
-    "sourceId": "e39d4481-0bfe-4261-8d31-10fac59bd2d4",
-    "source": "RECUPERADO-A.html",
-    "sourceAlias": "/tour-und-konzert-quiz",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "1029",
+    "titleOriginal": "Tour-Quiz",
+    "titlePtBr": "Quiz das turnês",
+    "sourceFiles": [
+      "45-tour-quiz.html",
+      "44-sete-continentes-evidencia.png",
+      "45-tour-quiz.md"
+    ],
+    "questions": 16,
+    "assets": 16,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "44-sete-continentes-evidencia.png",
+      "45-tour-quiz.md"
+    ]
   },
   {
     "id": "dp-25",
-    "slug": "alternative",
-    "title": "Alternative rock",
-    "family": "Conhecimento",
-    "type": "historia",
-    "sourceId": "d343998a-5633-44de-9376-671123e79cfd",
-    "source": "RECUPERADO-B.html",
-    "sourceAlias": "/alternative-rock-quiz",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "417",
+    "titleOriginal": "Wie gut kennt Ihr Euch im Classic Rock aus?",
+    "titlePtBr": "Quanto você conhece de classic rock?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/20-classic-rock.html",
+      "20-classic-rock.md"
+    ],
+    "questions": 21,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "20-classic-rock.md"
+    ]
   },
   {
     "id": "dp-26",
-    "slug": "medieval",
-    "title": "Seu rock na Idade Média",
-    "family": "Perfil",
-    "type": "personalidade",
-    "sourceId": "cbbc0b46-a1b2-4c69-8bf0-e65420c5102e",
-    "source": "RECUPERADO-B.html",
-    "sourceAlias": "/wie-haettet-ihr-das-mittelalter-gerockt",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "923",
+    "titleOriginal": "Mittelalter-Quiz",
+    "titlePtBr": "Quiz medieval",
+    "sourceFiles": [
+      "50-mittelalter.html",
+      "50-mittelalter.md"
+    ],
+    "questions": 7,
+    "assets": 5,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "50-mittelalter.md"
+    ]
   },
   {
     "id": "dp-27",
-    "slug": "cachorros",
-    "title": "Qual cachorro é de qual rockstar?",
-    "family": "Visual",
-    "type": "foto",
-    "sourceId": "4708a5c9-35ca-4dbc-8b7c-dd51c0bc15d4",
-    "source": "RECUPERADO-B.html",
-    "sourceAlias": "/tag-des-hundes-welcher-hund-gehoert-zu-welchem-rockstar",
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "807",
+    "titleOriginal": "Welcher Hund gehört zu welchem Rockstar?",
+    "titlePtBr": "Qual cachorro pertence a qual rockstar?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/52-cachorros-rockstars.html",
+      "51-cachorros-rockstars-evidencia.png",
+      "52-cachorros-rockstars.md"
+    ],
+    "questions": 10,
+    "assets": 10,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "single",
+    "recoveryFiles": [
+      "51-cachorros-rockstars-evidencia.png",
+      "52-cachorros-rockstars.md"
+    ]
   },
   {
     "id": "dp-28",
-    "slug": "cabelos",
-    "title": "De quem é este cabelo?",
-    "family": "Visual",
-    "type": "cabelo",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "471",
+    "titleOriginal": "Erkennt Ihr diese Rocker an der Frisur?",
+    "titlePtBr": "Você reconhece estes roqueiros pelo cabelo?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/16-frisuras.html",
+      "15-frisuras-evidencia.png",
+      "16-frisuras.md"
+    ],
+    "questions": 16,
+    "assets": 16,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "15-frisuras-evidencia.png",
+      "16-frisuras.md"
+    ]
   },
   {
     "id": "dp-29",
-    "slug": "silhuetas",
-    "title": "Reconheça a silhueta",
-    "family": "Visual",
-    "type": "silhueta",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "231",
+    "titleOriginal": "Zu welcher Band gehört dieser Musiker?",
+    "titlePtBr": "De qual banda é este músico?",
+    "sourceFiles": [
+      "37-banda-musico.html",
+      "36-banda-musico-evidencia.png",
+      "37-banda-musico.md"
+    ],
+    "questions": 12,
+    "assets": 12,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "36-banda-musico-evidencia.png",
+      "37-banda-musico.md"
+    ]
   },
   {
     "id": "dp-30",
-    "slug": "formacoes",
-    "title": "Integrantes e formações",
-    "family": "Visual",
-    "type": "formacao",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "449",
+    "titleOriginal": "Rock-Abitur",
+    "titlePtBr": "Vestibular do rock",
+    "sourceFiles": [
+      "17-rock-abitur.html",
+      "17-rock-abitur.md"
+    ],
+    "questions": 15,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "17-rock-abitur.md"
+    ]
   },
   {
     "id": "dp-31",
-    "slug": "capas",
-    "title": "Reconheça a capa",
-    "family": "Visual",
-    "type": "capa",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "423",
+    "titleOriginal": "Erkennt Ihr diese Alben am Cover?",
+    "titlePtBr": "Você reconhece estes álbuns pela capa?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/19-plattencover.html",
+      "18-plattencover-evidencia.png",
+      "19-plattencover.md"
+    ],
+    "questions": 18,
+    "assets": 18,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "18-plattencover-evidencia.png",
+      "19-plattencover.md"
+    ]
   },
   {
     "id": "dp-32",
-    "slug": "fragmentos",
-    "title": "Fragmentos de álbuns",
-    "family": "Visual",
-    "type": "fragmento-capa",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "409",
+    "titleOriginal": "Wie hoch ist Euer Rock-IQ?",
+    "titlePtBr": "Qual é seu QI do rock?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/21-rock-iq.html",
+      "21-rock-iq.md"
+    ],
+    "questions": 15,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "21-rock-iq.md"
+    ]
   },
   {
     "id": "dp-33",
-    "slug": "frames",
-    "title": "De qual clipe é este frame?",
-    "family": "Visual",
-    "type": "frame",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "345",
+    "titleOriginal": "Erkennt Ihr diese rockigen Musikvideos?",
+    "titlePtBr": "Você reconhece estes videoclipes de rock?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/28-musikvideos-um-bild.html",
+      "27-musikvideos-evidencia.png",
+      "28-musikvideos-um-bild.md"
+    ],
+    "questions": 16,
+    "assets": 16,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "27-musikvideos-evidencia.png",
+      "28-musikvideos-um-bild.md"
+    ]
   },
   {
     "id": "dp-34",
-    "slug": "idade",
-    "title": "Sua idade musical",
-    "family": "Perfil",
-    "type": "idade-musical",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "387",
+    "titleOriginal": "Was ist Euer musikalisches Alter?",
+    "titlePtBr": "Qual é sua idade musical?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/23-idade-musical.html",
+      "23-idade-musical.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "23-idade-musical.md"
+    ]
   },
   {
     "id": "dp-35",
-    "slug": "habitos",
-    "title": "Seus hábitos musicais",
-    "family": "Perfil",
-    "type": "comportamento",
-    "sourceId": null,
-    "source": "ORDEM-UNICA.md — inventário consolidado",
-    "sourceAlias": null,
-    "questions": 0,
-    "images": "não comprovado no corpo de perguntas",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Só página/teaser ou mecânica do checkpoint; corpo, alternativas e gabarito/pesos não recuperados."
+    "sourceId": "278",
+    "titleOriginal": "Welche Position nehmt Ihr in einer Band ein?",
+    "titlePtBr": "Qual é seu lugar em uma banda?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/35-posicao-na-banda.html",
+      "35-posicao-na-banda.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "35-posicao-na-banda.md"
+    ]
   },
   {
     "id": "dp-36",
-    "slug": "identificacao-pendente-36",
-    "title": "Desafio 36 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "957",
+    "titleOriginal": "Kennt Ihr die echten Namen der Rockstars?",
+    "titlePtBr": "Você conhece os nomes verdadeiros dos rockstars?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/22-nomes-reais-rockstars.html",
+      "22-nomes-reais-rockstars.md"
+    ],
+    "questions": 18,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "22-nomes-reais-rockstars.md"
+    ]
   },
   {
     "id": "dp-37",
-    "slug": "identificacao-pendente-37",
-    "title": "Desafio 37 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "315",
+    "titleOriginal": "Wer war's - Kennt Ihr die Rockstarstories?",
+    "titlePtBr": "Quem foi? Você conhece as histórias dos rockstars?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/30-stories-rockstars.html",
+      "30-stories-rockstars.md"
+    ],
+    "questions": 15,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "30-stories-rockstars.md"
+    ]
   },
   {
     "id": "dp-38",
-    "slug": "identificacao-pendente-38",
-    "title": "Desafio 38 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "306",
+    "titleOriginal": "Wer schreibt den passenden Song zu Deinem Leben?",
+    "titlePtBr": "Quem escreve a música que combina com sua vida?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/31-song-da-vida.html",
+      "31-song-da-vida.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "31-song-da-vida.md"
+    ]
   },
   {
     "id": "dp-39",
-    "slug": "identificacao-pendente-39",
-    "title": "Desafio 39 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "298",
+    "titleOriginal": "Welcher Rocker ist Dein bester Kumpel?",
+    "titlePtBr": "Qual roqueiro é seu melhor amigo?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/32-rockstar-melhor-amigo.html",
+      "32-rockstar-melhor-amigo.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "32-rockstar-melhor-amigo.md"
+    ]
   },
   {
     "id": "dp-40",
-    "slug": "identificacao-pendente-40",
-    "title": "Desafio 40 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "290",
+    "titleOriginal": "Wer hat's gesagt?",
+    "titlePtBr": "Quem disse isso?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/33-quem-disse-rockstar.html",
+      "33-quem-disse-rockstar.md"
+    ],
+    "questions": 15,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "33-quem-disse-rockstar.md"
+    ]
   },
   {
     "id": "dp-41",
-    "slug": "identificacao-pendente-41",
-    "title": "Desafio 41 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "282",
+    "titleOriginal": "Wie gut kennt Ihr die Spitznamen der Rocker?",
+    "titlePtBr": "Quanto você conhece dos apelidos dos roqueiros?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/34-apelidos-rockstars.html",
+      "34-apelidos-rockstars.md"
+    ],
+    "questions": 15,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "34-apelidos-rockstars.md"
+    ]
   },
   {
     "id": "dp-42",
-    "slug": "identificacao-pendente-42",
-    "title": "Desafio 42 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "371",
+    "titleOriginal": "Welcher Rocksong passt zu Deiner Persönlichkeit?",
+    "titlePtBr": "Qual música de rock combina com sua personalidade?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/26-rocksong-personalidade.html",
+      "26-rocksong-personalidade.md"
+    ],
+    "questions": 10,
+    "assets": 2,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "26-rocksong-personalidade.md"
+    ]
   },
   {
     "id": "dp-43",
-    "slug": "identificacao-pendente-43",
-    "title": "Desafio 43 — identificação pendente",
-    "family": "Em preparação",
-    "type": "nao-identificado",
-    "source": "ORDEM-UNICA.md — alvo de 43, sem nome individual para esta posição",
-    "questions": 0,
-    "images": "não comprovado",
-    "assets": [],
-    "scoring": "não recuperado",
-    "status": "fonte-parcial",
-    "available": false,
-    "gap": "Posição reservada do corpus; título original e mecânica individual ausentes. Não é um jogo recuperado."
+    "sourceId": "141",
+    "titleOriginal": "Welcher Rockstar steckt in Dir?",
+    "titlePtBr": "Qual rockstar existe em você?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/40-rockstar-em-voce.html",
+      "40-rockstar-em-voce.md"
+    ],
+    "questions": 8,
+    "assets": 7,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "profile",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "40-rockstar-em-voce.md"
+    ]
+  },
+  {
+    "id": "dp-44",
+    "sourceId": "373",
+    "titleOriginal": "Wie gut kennt Ihr den Rock der 80er?",
+    "titlePtBr": "Quanto você conhece do rock dos anos 80?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/25-rock-anos-80.html",
+      "25-rock-anos-80.md"
+    ],
+    "questions": 20,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "25-rock-anos-80.md"
+    ]
+  },
+  {
+    "id": "dp-45",
+    "sourceId": "323",
+    "titleOriginal": "Kennt Ihr die Haustiere der Rockstars?",
+    "titlePtBr": "Você conhece os animais de estimação dos rockstars?",
+    "sourceFiles": [
+      "docs/desafios-passport-43/source/recovery-20261008/native/29-haustiere-rockstars.html",
+      "29-haustiere-rockstars.md"
+    ],
+    "questions": 10,
+    "assets": 1,
+    "status": "completo",
+    "action": "implementado",
+    "mode": "quiz",
+    "questionLayout": "multiple",
+    "recoveryFiles": [
+      "29-haustiere-rockstars.md"
+    ]
   }
 ]

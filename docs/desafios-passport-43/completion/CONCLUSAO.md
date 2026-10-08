@@ -1,33 +1,33 @@
-# Desafios Passport — entrega para revisão
+# Conclusão — PR #524
 
-Branch: `feat/desafios-passport-43-20261007`. Base corrigida: `8122e83318423a922ddf5b7b5d06e7cf3fb8fa1c`. Checkpoint de aquisição já publicado: `4466f038671ccfd5da5d0c7266ed76160ee3f458`.
+**45/45 desafios distintos entregues**, conforme a decisão final de Mr. Nomad de preservar todos os jogos recuperados, substituindo a contagem antiga de 43. Nenhum quiz foi excluído para ajustar o inventário.
 
-## Resultado e limites
+- Todos os 52 arquivos da recuperação foram processados: 42 fontes textuais e dez capturas visuais.
+- Os 11 quizzes já implementados preservam suas perguntas, alternativas, IDs, gabaritos, pesos e versão de progresso. Receberam títulos literais, resultados integrais e imagens omitidas onde necessário.
+- 34 quizzes restantes foram implementados com dados separados no mesmo motor.
+- 666 perguntas; 163 assets originais únicos, com 22 reutilizados e 141 novos. Imagens de perguntas, capas, logos, recortes, fotografias e imagens de resultados foram mantidos, sem reconversão ou recriação.
+- Os três mosaicos anteriores permanecem inalterados. O portal tem 48 desafios jogáveis.
+- Os dois formatos nativos foram mantidos: apresentação sucessiva (`multiple`) e questionário completo (`single`, MTV Unplugged e Cachorros). Alternativas, ordem, pesos e faixas de resultados conferem com os payloads nativos.
+- As duas perguntas que têm mais de uma alternativa marcada como correta na fonte mantêm ambas corretas; os gabaritos não foram inventados nem corrigidos por interpretação.
+- A apresentação dos quizzes preserva barra de progresso, pergunta em caixa alta, mídia original alinhada à esquerda, alternativas empilhadas e resultados com imagens. A paleta e as fontes são Passport. Header, footer, publicidade e navegação institucional da fonte não foram copiados.
 
-43 posições estáveis no inventário: 11 desafios novos disponíveis (186 perguntas recuperadas), 32 posições com fonte parcial, claramente indisponíveis no portal. As posições 36–43 não possuem identidade recuperada e permanecem reservadas, sem títulos ou perguntas inventados. Não é uma entrega de 43 jogos completos. Os três mosaicos anteriores continuam disponíveis, com seus dados, 46 imagens e armazenamento existentes preservados: total de 14 desafios jogáveis.
+## Evidências
 
-As fontes brutas e corrigidas foram auditadas e deduplicadas. Veja `INVENTARIO-43.md`, `CHECKPOINT-AQUISICAO.md`, `source-audit.json` e `translation-provenance.json`. As mecânicas sem corpo recuperado não foram simuladas nem declaradas aprovadas em QA.
+- Inventário individual: [INVENTARIO-45.md](INVENTARIO-45.md), também em `inventory.json`.
+- `recovery-20261008/sources-audit.json`: 52 arquivos com tamanho e SHA-256.
+- `recovery-20261008/native-quizzes.json.gz`: todos os 45 payloads nativos integrais, com proveniência.
+- `../source/recovery-20261008/native-documents.tar.gz`: os 30 documentos nativos resolvidos exclusivamente pelos endereços incorporados nas fontes, mais as folhas de referência visual. Não há descoberta de fontes substitutas.
+- `recovery-20261008/structural-qa.json`: PASS em 45 jogos, 666 perguntas, ordem, alternativas, pesos, gabaritos, faixas e associação de assets.
+- `recovery-20261008/browser-qa.json`: PASS em 1440 e 390 px; 45 casos em cada largura. As rodadas antigas já testadas não foram repetidas; para elas, a QA verificou apenas resultados alterados. Os 34 novos quizzes e a folha nativa receberam rodadas completas.
+- `recovery-20261008/text-delta-qa.json`: PASS nos cinco jogos cujas traduções integrais receberam ajuste final, em ambas as larguras, mais duas verificações por largura após os últimos ajustes de alternativas.
+- `recovery-20261008/single-state-qa.json`: PASS em MTV Unplugged e Cachorros, com resposta fora de ordem, recarga, retomada pelo portal e reinício isolado.
+- `node --check js/passport-games.js` e `git diff --check`: PASS.
+- Capturas desktop/mobile: `recovery-20261008/*-question-*.png`, `*-result-*.png`, `portal-*.png`.
 
-22 pistas fotográficas foram persistidas sem alteração. Seis imagens de resultados com marca RADIO BOB foram excluídas da interface e não incluídas como assets. As associações e hashes estão em `assets.json` e `MAPA-ASSETS.md`.
+## Sistemas de áudio
 
-Um portal em `/jogos.html`, um motor em `/js/passport-games.js`, dados JSON separados e CSS limitado aos desafios. Perguntas textuais não recebem imagem; perguntas visuais conservam a pista nativa. Perfis usam os pesos recuperados e exibem empates. Respostas repetidas não somam pontos; progresso e reinício são isolados por desafio.
+`jogos.html`, `js/passport-audio-continuity.js`, `js/passport-persist-nav.js` e `data/jogos/catalog.json` permanecem idênticos ao checkpoint por SHA-256. Nenhum player, stream, rádio, endpoint, Bus, mutex, interlock, seleção, volume ou transporte foi alterado. O motor de jogos não chama APIs de áudio.
 
-## QA
+A QA controlada já persistida em `browser-qa.json` desta pasta permanece válida e foi reutilizada, sem repetir suas 71 etapas por cenário: MPB tocando, Hits tocando e MPB pausada; mesmo documento, runtime, host, elemento e fonte, sem chamadas de transporte nem novas requisições de mídia. Esse teste comprova sobrevivência do elemento/transporte com WAV controlado; não certifica recepção audível de um stream externo real.
 
-- `structural-qa.py`: PASS — 43 IDs; 186 IDs, alternativas, respostas, pesos e faixas conferidos contra a fonte; 22 hashes de imagens; dados e assets antigos preservados; arquivos radioativos byte a byte intactos.
-- `node --check js/passport-games.js`: PASS.
-- `git diff --check`: PASS.
-- `browser-qa.cjs`: PASS para os 14 disponíveis, em 1440 e 390 px. Todas as 186 perguntas foram percorridas em cada largura; pontuação/perfis, explicações, respostas repetidas, reinício, persistência, mosaicos, filtros, teclado e ausência de overflow foram verificados. Sem erros JavaScript nas páginas dos desafios.
-- Continuidade: MPB tocando PASS, Hits tocando PASS, MPB pausada PASS. 71 etapas por cenário: entrada no portal, quatro desafios de famílias distintas, perguntas, resultados, reinício, outro desafio e volta ao portal. Documento externo, runtime, host, elemento de áudio e fonte sobreviveram; estação/volume mantidos; zero chamadas de transporte, eventos de interrupção ou novas requisições de mídia após a seleção inicial. Em reprodução o tempo avançou; pausado permaneceu pausado.
-
-O teste usa WAV controlado nas requisições de mídia do motor existente. Comprova sobrevivência do elemento/transporte, sem certificar recepção audível de streams externos reais. As faltas locais de ícones de pagamento da Home não afetam os desafios nem são alterações desta entrega.
-
-## Integração da continuidade
-
-A única integração necessária foi acrescentar `story` ao `main` de `jogos.html`, marcador já reconhecido pelo mecanismo compartilhado `passport-persist-nav.js`. Nenhum mecanismo novo: o leitor existente mantém o documento externo e seu transporte. `passport-audio-continuity.js`, `passport-persist-nav.js`, player, streams, bus, mutex/interlock, engines e demais páginas permanecem sem alteração. O código dos jogos não chama APIs de áudio nem grava estado de estação.
-
-## Persistência
-
-Inventário, mapa de assets e aquisição foram publicados antes da implementação. Dados finais, testes reproduzíveis, resultados e screenshots estão nesta pasta. Pendências são as 32 posições explicitamente parciais, aguardando corpo aprovado persistido; não houve novo garimpo.
-
-Entrega na mesma branch, PR DRAFT para revisão, sem merge.
+Branch: `feat/desafios-passport-43-20261007`. PR #524 mantida OPEN/DRAFT. **Sem merge.**

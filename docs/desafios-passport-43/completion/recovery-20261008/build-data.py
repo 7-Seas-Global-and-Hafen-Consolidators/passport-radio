@@ -56,3 +56,10 @@ cat['games']=[meta[k] for k in sorted(meta)];cat['version']=2;cat['sourceGames']
 inv.sort(key=lambda x:x['id']);(out/'inventory.json').write_text(json.dumps(inv,ensure_ascii=False,indent=2)+'\n')
 assert len(inv)==45 and sum(x['questions'] for x in inv)==666
 print({'games':len(inv),'questions':sum(x['questions'] for x in inv),'assets':len(assets),'new':sum(x['status']=='saved-new' for x in assets)})
+# Reconcile all supplied visual references with the native source IDs too.
+audit=json.loads((out/'sources-audit.json').read_text());by_number={x['file'][:2]:x['file'] for x in audit};screens={'10':'687','11':'520','15':'471','18':'423','27':'345','36':'231','41':'1077','44':'1029','46':'1009','51':'807'}
+for x in inv:
+ nums={Path(p).name[:2] for p in x['sourceFiles'] if Path(p).name[:2] in by_number}|{n for n,s in screens.items() if s==x['sourceId']}
+ x['recoveryFiles']=[by_number[n] for n in sorted(nums)];x['sourceFiles']=list(dict.fromkeys(x['sourceFiles']+x['recoveryFiles']))
+assert {f for x in inv for f in x['recoveryFiles']}=={x['file'] for x in audit}
+(out/'inventory.json').write_text(json.dumps(inv,ensure_ascii=False,indent=2)+'\n')

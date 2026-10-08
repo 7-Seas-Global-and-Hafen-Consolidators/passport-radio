@@ -28,7 +28,7 @@ function list(){
  const pagination=$('#challenge-pagination');pagination.replaceChildren();const previous=button('ANTERIORES',()=>{page--;list();$('#challenge-cards').scrollIntoView({block:'start'});});previous.disabled=page===1;const next=button('PRÓXIMOS',()=>{page++;list();$('#challenge-cards').scrollIntoView({block:'start'});});next.disabled=page===pages;pagination.append(previous,el('span',`Página ${page} de ${pages}`),next);
 }
 function portal(){openToken++;active=null;$('#challenge-play').hidden=true;$('#challenge-portal').hidden=false;route(null);list();$('#challenge-search').focus();}
-function validProgress(s,g){return s?.version===g.versionHash&&Array.isArray(s.answers)&&s.answers.length<=g.questions.length&&s.answers.every((id,i)=>g.questions[i].options.some(o=>o.id===id))&&Number.isInteger(s.index)&&s.index>=0&&s.index<=s.answers.length&&s.index<=g.questions.length;}
+function validProgress(s,g){return s?.version===g.versionHash&&Array.isArray(s.answers)&&s.answers.length<=g.questions.length&&s.answers.every((id,i)=>(id===null&&g.presentation?.questionLayout==='single')||g.questions[i].options.some(o=>o.id===id))&&Number.isInteger(s.index)&&s.index>=0&&s.index<=s.answers.length&&s.index<=g.questions.length;}
 function save(){write(active.id,JSON.stringify(state));}
 // Pure result calculation: facts/weights live in JSON; ties are visible, never resolved randomly.
 export function evaluate(g,answers){
@@ -48,20 +48,31 @@ async function openGame(id){
 function heading(title,progress){$('#challenge-title').textContent=title;$('#challenge-progress').textContent=progress;$('#challenge-content').replaceChildren();}
 function renderQuestion(){
  if(state.index===active.questions.length){renderResult();return;}
+ if(active.presentation?.questionLayout==='single'){renderSingle();return;}
  const q=active.questions[state.index],selected=state.answers[state.index],answered=selected!==undefined;
- heading(active.title,`Pergunta ${state.index+1} de ${active.questions.length}`);const target=$('#challenge-content');target.dataset.mechanic=q.type;
- target.append(el('h3',q.prompt,'challenge-prompt'));if(q.clue)target.append(el('blockquote',q.clue,'challenge-clue'));image(q.image,target);
+ heading(active.title,`Pergunta ${state.index+1} de ${active.questions.length}`);const target=$('#challenge-content');target.dataset.mechanic=q.type;target.dataset.presentation=active.presentation?'native':'';
+ progress(target,state.answers.length);target.append(el('h3',q.prompt,'challenge-prompt'));if(q.clue)target.append(el('blockquote',q.clue,'challenge-clue'));const body=el('div',undefined,'challenge-question-body');body.classList.toggle('has-image',!!q.image);image(q.image,body);target.append(body);
  const choices=el('div',undefined,'challenge-options');choices.setAttribute('role','group');choices.setAttribute('aria-label','Alternativas');
  for(const option of q.options){const b=button(option.label,()=>{
   if(state.answers[state.index]!==undefined)return;state.answers.push(option.id);save();renderQuestion();$('#challenge-feedback').focus();
- },'challenge-option');b.dataset.option=option.id;b.disabled=answered;if(selected===option.id){b.classList.add('is-selected');b.append(el('span',' — sua escolha','choice-label'));}choices.append(b);}target.append(choices);
+ },'challenge-option');b.dataset.option=option.id;b.disabled=answered;if(selected===option.id){b.classList.add('is-selected');b.append(el('span',' — sua escolha','choice-label'));}image(option.image,b);choices.append(b);}body.append(choices);
  if(answered){const o=q.options.find(o=>o.id===selected),correct=q.options.filter(o=>o.correct).map(o=>o.label).join(', '),feedback=el('p',active.mode==='profile'?'Escolha registrada.':o.correct?'Resposta certa!':'Não foi desta vez. Resposta: '+correct,'challenge-feedback');feedback.id='challenge-feedback';feedback.setAttribute('role','status');feedback.tabIndex=-1;target.append(feedback);if(q.explanation)target.append(el('p',q.explanation,'challenge-explanation'));
   target.append(button(state.index===active.questions.length-1?'VER RESULTADO':'PRÓXIMA PERGUNTA',()=>{state.index++;save();renderQuestion();focusTitle();}));}
 }
+function progress(target,answered){if(!active.presentation)return;const bar=el('progress',undefined,'challenge-progress-bar');bar.max=active.questions.length;bar.value=answered;bar.setAttribute('aria-label','Perguntas respondidas');target.append(bar);}
+// The source's "single" layout displays the complete question sheet, not a slideshow.
+function renderSingle(){
+ const completed=state.answers.filter(id=>id!=null).length;heading(active.title,`${completed} de ${active.questions.length} perguntas respondidas`);const target=$('#challenge-content');target.dataset.presentation='native';target.dataset.mechanic='questionario';progress(target,completed);
+ active.questions.forEach((q,i)=>{const selected=state.answers[i],answered=selected!=null,section=el('section',undefined,'challenge-single-question');section.dataset.question=q.id;section.append(el('h3',q.prompt,'challenge-prompt'));const body=el('div',undefined,'challenge-question-body');body.classList.toggle('has-image',!!q.image);image(q.image,body);const choices=el('div',undefined,'challenge-options');choices.setAttribute('role','group');choices.setAttribute('aria-label',q.prompt);
+  for(const option of q.options){const b=button(option.label,()=>{if(state.answers[i]!=null)return;while(state.answers.length<=i)state.answers.push(null);state.answers[i]=option.id;save();renderSingle();target.querySelector(`[data-question="${q.id}"] .challenge-feedback`).focus();},'challenge-option');b.dataset.option=option.id;b.disabled=answered;b.classList.toggle('is-selected',selected===option.id);image(option.image,b);choices.append(b);}body.append(choices);section.append(body);
+  if(answered){const o=q.options.find(o=>o.id===selected),feedback=el('p',o.correct?'Resposta certa!':'Não foi desta vez. Resposta: '+q.options.filter(o=>o.correct).map(o=>o.label).join(', '),'challenge-feedback');feedback.setAttribute('role','status');feedback.tabIndex=-1;section.append(feedback);if(q.explanation)section.append(el('p',q.explanation,'challenge-explanation'));}target.append(section);
+ });
+ if(completed===active.questions.length)target.append(button('VER RESULTADO',()=>{state.index=active.questions.length;save();renderResult();focusTitle();}));
+}
 function renderResult(){
- const outcome=evaluate(active,state.answers);heading(active.title,'Rodada concluída');const target=$('#challenge-content');target.dataset.mechanic='resultado';
+ const outcome=evaluate(active,state.answers);heading(active.title,'Rodada concluída');const target=$('#challenge-content');target.dataset.mechanic='resultado';target.dataset.presentation=active.presentation?'native':'';
  target.append(el('h3',active.mode==='profile'?(outcome.results.length>1?'Seus perfis':'Seu perfil'):`Você acertou ${outcome.score} de ${active.questions.length}.`,'challenge-prompt'));
- for(const r of outcome.results){const section=el('section',undefined,'challenge-result');section.append(el('h4',r.title),el('p',r.description));image(r.image,section);target.append(section);}
+ for(const r of outcome.results){const section=el('section',undefined,'challenge-result');if(r.title)section.append(el('h4',r.title));image(r.image,section);if(r.description)section.append(el('p',r.description));target.append(section);}
  if(active.mode==='profile'&&outcome.results.length>1)target.append(el('p','Suas escolhas chegaram à mesma pontuação em mais de um perfil.'));
  target.append(button('ESCOLHER OUTRO DESAFIO',portal));
 }

@@ -1,12 +1,33 @@
 {
-  "status": "ALL_45_NATIVE_PAYLOADS_PERSISTED_IMPLEMENTATION_PENDING",
+  "status": "COMPLETE_45_OF_45_QA_PASSED",
   "expectedByLatestUserOrder": 45,
-  "distinct": 45,
-  "questions": 666,
+  "delivered": 45,
   "sourceFilesProcessed": 52,
-  "nativeSourcesSupplied": 12,
-  "exactEmbeddedPayloadsResolved": 30,
-  "oldPreserved": 11,
-  "newToImplement": 34,
-  "audioModified": false
+  "questions": 666,
+  "assets": {
+    "total": 163,
+    "reused": 22,
+    "new": 141,
+    "newPersisted": 141
+  },
+  "oldQuizzesPreserved": 11,
+  "newQuizzes": 34,
+  "oldMosaicsPreserved": 3,
+  "playableTotal": 48,
+  "audioModified": false,
+  "branch": "feat/desafios-passport-43-20261007",
+  "pr": 524,
+  "merge": false,
+  "inventory": "INVENTARIO-45.md",
+  "nativeArchive": "recovery-20261008/native-quizzes.json.gz",
+  "qa": {
+    "structural": "PASS",
+    "desktop1440": "PASS — 45 cases",
+    "mobile390": "PASS — 45 cases",
+    "textDelta": "PASS — 5 cases per viewport",
+    "nodeCheck": "PASS",
+    "diffCheck": "PASS",
+    "continuity": "Existing controlled QA reused; protected continuity/navigation files unchanged by SHA-256.",
+    "singleSheetState": "PASS — out-of-order answer, reload, portal resume, restart"
+  }
 }
