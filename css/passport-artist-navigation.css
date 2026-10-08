@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap");
+/* Additive A–Z controls; no existing article text, media, or global shell changes. */
+.passport-artist-nav{padding:20px;margin:20px 0;border-top:1px solid #111111;border-bottom:1px solid #111111;background:#FFFFFF;color:#111111;font-family:'Instrument Sans',sans-serif}
+.passport-artist-nav h2{margin:0 0 14px;font:700 28px/1.2 'Bodoni Moda',serif;color:#111111}
+.passport-artist-nav h3{margin:18px 0 10px;font:700 15px/1.4 'Instrument Sans',sans-serif;color:#111111}
+.passport-artist-nav nav{display:flex;flex-wrap:wrap;gap:12px 20px}
+.passport-artist-nav a{color:#C41E3A;text-decoration:underline;text-underline-offset:3px;font:600 14px/1.5 'Instrument Sans',sans-serif}
+.passport-artist-nav label{display:grid;gap:8px;margin-top:18px;max-width:420px;font:600 14px/1.5 'Instrument Sans',sans-serif}
+.passport-artist-nav input{box-sizing:border-box;width:100%;padding:12px;border:1px solid #111111;border-radius:0;background:#FFFFFF;color:#111111;font:16px 'Instrument Sans',sans-serif}
+.passport-artist-nav p{font:16px/1.5 'Source Serif 4',serif;color:#111111}
+.passport-artist-nav a:focus-visible,.passport-artist-nav input:focus-visible{outline:2px solid #C41E3A;outline-offset:3px}
+body.pp-blog a[hidden]{display:none!important}
+@media(max-width:560px){.passport-artist-nav{padding:18px 12px}.passport-artist-nav h2{font-size:25px}}
+
+html body.pp-blog .passport-artist-nav a{color:#C41E3A!important;background:#FFFFFF!important;}
+html body.pp-blog .passport-artist-nav input{color:#111111!important;background:#FFFFFF!important;border:1px solid #111111!important;border-radius:0!important;}
+html body.pp-blog .blog-page [hidden]{display:none!important;}
+
+body.pp-blog.passport-artist-archive{--blog-gold:#C41E3A;--blog-ink:#111111;--blog-line:#111111;--blog-muted:#111111;background:#FFFFFF;color:#111111;}
+body.pp-blog.passport-artist-archive .blog-entity-cloud small{color:#C41E3A;}

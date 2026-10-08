@@ -1,0 +1,351 @@
+{
+  "controlledMediaFixture": true,
+  "externalRealStreamCertified": false,
+  "baseline": {
+    "id": "passport-live-audio",
+    "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+    "time": 0.43257,
+    "station": {
+      "family": "continuous",
+      "volume": 0.8,
+      "playing": true
+    },
+    "calls": 17,
+    "mediaRequestCount": 3
+  },
+  "checkpoints": [
+    {
+      "label": "Home → Blog",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 1.075425,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "Blog → A–Z",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 1.776162,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/arquivo/letras.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "A–Z → Ozzy Osbourne",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 2.379375,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "Ozzy → matéria (entidade explícita)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 2.979402,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/w/382947-ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "matéria → Ozzy (voltar)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 3.488846,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "Ozzy ↔ Black Sabbath",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 4.09351,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/black-sabbath.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "bruce-dickinson → iron-maiden (vínculo documentado)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 4.877957,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/bruce-dickinson.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "da-vidcoverdale → deep-purple (vínculo documentado)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 5.619831,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/da-vidcoverdale.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "artista → A–Z (retorno)",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 6.300853,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/arquivo/letras.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "desktop A–Z → Ozzy",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 7.323322,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "desktop Ozzy → matéria",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 7.939357,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/w/382947-ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "desktop matéria → A–Z",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 8.629041,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/arquivo/letras.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "mobile A–Z → Ozzy",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 9.656317,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/e/ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "mobile Ozzy → matéria",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 10.251654,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/w/382947-ozzy-osbourne.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "mobile matéria → A–Z",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 10.915054,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog/arquivo/letras.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "A–Z → Blog",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 11.513395,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "/blog.html",
+      "mediaRequestCount": 3
+    },
+    {
+      "label": "Blog → Home",
+      "playingElements": 1,
+      "sameDocument": true,
+      "sameBay": true,
+      "sameElement": true,
+      "connected": true,
+      "paused": false,
+      "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+      "currentTime": 12.024305,
+      "newTransportCalls": [],
+      "station": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": true
+      },
+      "reader": "blank",
+      "mediaRequestCount": 3
+    }
+  ],
+  "mediaRequests": [
+    "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+    "https://listen.181fm.com/181-awesome80s_128k.mp3",
+    "https://mediaserv68.live-streams.nl:18012/OnlyLive"
+  ],
+  "pass": true,
+  "pausedEntry": {
+    "playing": false,
+    "playingElements": 0
+  }
+}

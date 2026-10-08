@@ -1,0 +1,70 @@
+{
+  "links": 2767,
+  "unique": 2767,
+  "missing": [],
+  "base": "b82a93a0b1a723dbe1b9f3b187db71e97c1a58e4",
+  "profileHubs": {
+    "bandas": "index.html only",
+    "artistas": "index.html only"
+  },
+  "exampleCollections": [
+    {
+      "id": "ozzy-osbourne",
+      "name": "Ozzy Osbourne",
+      "kind": "artist",
+      "url": "/blog/e/ozzy-osbourne.html",
+      "aliases": [],
+      "story_count": 410
+    },
+    {
+      "id": "black-sabbath",
+      "name": "Black Sabbath",
+      "kind": "band",
+      "url": "/blog/e/black-sabbath.html",
+      "aliases": [],
+      "story_count": 440
+    },
+    {
+      "id": "bruce-dickinson",
+      "name": "Bruce Dickinson",
+      "kind": "artist",
+      "url": "/blog/e/bruce-dickinson.html",
+      "aliases": [],
+      "story_count": 86
+    },
+    {
+      "id": "iron-maiden",
+      "name": "Iron Maiden",
+      "kind": "band",
+      "url": "/blog/e/iron-maiden.html",
+      "aliases": [],
+      "story_count": 554
+    },
+    {
+      "id": "da-vidcoverdale",
+      "name": "David Coverdale",
+      "kind": "artist",
+      "url": "/blog/e/da-vidcoverdale.html",
+      "aliases": [
+        "Da Vidcoverdale"
+      ],
+      "story_count": 7
+    },
+    {
+      "id": "deep-purple",
+      "name": "Deep Purple",
+      "kind": "band",
+      "url": "/blog/e/deep-purple.html",
+      "aliases": [],
+      "story_count": 148
+    },
+    {
+      "id": "whitesnake",
+      "name": "Whitesnake",
+      "kind": "band",
+      "url": "/blog/e/whitesnake.html",
+      "aliases": [],
+      "story_count": 27
+    }
+  ]
+}
