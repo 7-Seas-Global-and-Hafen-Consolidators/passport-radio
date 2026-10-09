@@ -19,23 +19,43 @@
   let data={nodes:[],edges:[]};let dataReady=false;let media={};
   function pictures(doc){
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
-      const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)return;
+      const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)continue;
       const storyCount=a.querySelector("small")?.textContent.trim()||"";
       const label=[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(" ").trim()||a.textContent.replace(storyCount,"").trim();
-      a.dataset.artistName=label;a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
+      a.dataset.artistName=photo.name||label;a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
       const img=doc.createElement("img");img.src=photo.image;img.alt=photo.name;img.loading="lazy";img.decoding="async";
-      const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=label;
+      const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=photo.name||label;
       const count=doc.createElement("small");count.className="passport-artist-story-count";count.textContent=storyCount;count.setAttribute("aria-label",storyCount+" matérias relacionadas");
       const credit=doc.createElement("small");credit.className="passport-artist-photo-credit";credit.textContent=[photo.credit,photo.license].filter(Boolean).join(" · ");
       a.replaceChildren(img,name,count,credit);
       let credits=doc.querySelector("[data-passport-gallery-credits]");if(!credits){credits=doc.createElement("p");credits.dataset.passportGalleryCredits="1";credits.className="passport-gallery-credits";doc.querySelector("main")?.append(credits)}
       credits.append(link(doc,photo.name+" — "+photo.credit,photo.source),doc.createTextNode(" · "),link(doc,photo.license,photo.license_url),doc.createTextNode(". "));
     }
+    cards(doc);
+  }
+  function cards(doc){
+    for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
+      a.classList.add('passport-az-card');
+      if(a.querySelector('img')||a.querySelector('.passport-az-plate'))continue;
+      const small=a.querySelector('small');
+      const storyCount=small?.textContent.trim()||'';
+      const label=a.dataset.artistName||[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(' ').trim()||a.textContent.replace(storyCount,'').trim();
+      a.dataset.artistName=label;
+      const plate=doc.createElement('span');plate.className='passport-az-plate';plate.setAttribute('aria-hidden','true');
+      plate.textContent=(label.match(/[A-Za-z0-9]/)||['#'])[0].toUpperCase();
+      const name=doc.createElement('span');name.className='passport-artist-name';name.textContent=label;
+      const count=doc.createElement('small');count.className='passport-artist-story-count';count.textContent=storyCount;
+      if(storyCount)count.setAttribute('aria-label',storyCount+' matérias relacionadas');
+      a.replaceChildren(plate,name,count);
+    }
   }
   function link(doc, text, href) {
     const a = doc.createElement('a'); a.textContent=text; a.href=href; return a;
   }
   function styles(doc) {
+    if (!doc.querySelector('link[data-passport-az-cards]')) {
+      const cardsCss=doc.createElement('link');cardsCss.rel='stylesheet';cardsCss.href='/css/passport-az-cards.css?v=20261009-cards';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);
+    }
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
     const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
@@ -52,7 +72,7 @@
     const existing=doc.querySelector('[data-passport-artist-tools]');
     if(existing){existing._passportAzUpdate?.();return;}
     const main=doc.querySelector('main'); if (!main) return;
-    styles(doc);pictures(doc);
+    styles(doc);pictures(doc);cards(doc);
     const nav=doc.createElement('section');nav.className='passport-artist-nav';nav.dataset.passportArtistTools='1';nav.setAttribute('aria-label','Navegação do artista e do acervo');
     const heading=doc.createElement('h2');heading.textContent='Explore o acervo';nav.append(heading);
     const row=doc.createElement('nav');row.setAttribute('aria-label','Caminhos do acervo');row.append(link(doc,'A–Z completo','/blog/arquivo/letras.html'),link(doc,'Blog','/blog.html'));
@@ -76,8 +96,8 @@
     if(az) {
       const indexPage=path.endsWith('/letras.html');
       if(indexPage){
-        const title=main.querySelector('h1');if(title)title.textContent='A–Z — Artistas, Bandas & Acervo';
-        const intro=main.querySelector('.blog-intro');if(intro)intro.textContent='Encontre artistas, bandas e outras entidades já indexadas. Cada nome mantém seu destino no acervo; os números indicam matérias relacionadas.';
+        const title=main.querySelector('h1');if(title)title.textContent='ARTISTAS & BANDAS';
+        const intro=main.querySelector('.blog-intro');if(intro)intro.textContent='Primeiro a história. Depois a música.';
       }
       let alphabet=main.querySelector('.blog-az');
       if(!alphabet){
@@ -128,7 +148,7 @@
         const params=new URL(doc.URL).searchParams;input.value=params.get('q')||'';type.value=params.get('tipo')||'all';
         if(!['all','band','artist','formation','untyped'].includes(type.value))type.value='all';
         let page=Math.max(1,Number.parseInt(params.get('pagina'),10)||1);
-        const pageSize=48;
+        const pageSize=24;
         const update=()=>{
           const nodesByPath=new Map((data?.nodes||[]).map(n=>[n.url,n]));
           const formationIds=new Set((data?.edges||[]).flatMap(e=>[e.artist,e.band]));
@@ -179,7 +199,7 @@
   }
   window.PassportArtistNavigation=Object.freeze({enhance});
   enhance(document);
-  window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document)});
+  window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document);cards(document)});
   fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value;pictures(document)}).catch(()=>{});
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{
     data=value;dataReady=true;enhance(document);
