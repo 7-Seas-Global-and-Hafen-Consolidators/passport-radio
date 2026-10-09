@@ -1,5 +1,5 @@
 {
-  "status": "INSTITUTIONAL_OUTLET_IMPLEMENTED_BROWSER_STRUCTURE_PASS_EDITORIAL_RECOVERY_PENDING",
+  "status": "STOPPED_BY_USER",
   "mission_complete": false,
   "base_main_head": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
   "branch": "feat/blog-global-artists-3000-20261008",
@@ -191,5 +191,12 @@
     "certified_profiles": 0,
     "qa": "qa/gallery-resumption-20261009.json"
   },
-  "latest_acquisition_ledger": "batches/first-50-fields-part3-20261009.json"
+  "latest_acquisition_ledger": "batches/first-50-fields-part3-20261009.json",
+  "stop_checkpoint": {
+    "last_persisted_acquisition_commit": "5bba3982c5367b5ad90fe8a5d394ce5eb8d9332a",
+    "next_acquisition_position": 19,
+    "next_artist": "24K",
+    "unpersisted_search": "Positions 19–22 search results located only; not acquired or completed. Resume from position 19.",
+    "mission_complete": false
+  }
 }
