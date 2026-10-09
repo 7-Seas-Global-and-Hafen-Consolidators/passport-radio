@@ -38,7 +38,7 @@
   load('script','/js/passport-artist-navigation.js?v=20261009-outlet');
  }
  function mount(){
-  if(!/^\\/blog(?:\\.html|\\/)/.test(location.pathname))return;
+  if(!/^\/blog(?:\.html|\/)/.test(location.pathname))return;
   const main=document.querySelector('main');
   if(!main)return;
   // The editorial pages already ship their own masthead, navigation, content
