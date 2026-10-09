@@ -45,8 +45,8 @@ body.pp-blog.passport-az-directory .passport-az-shot>img{
 }
 body.pp-blog.passport-az-directory .passport-az-shot>img.passport-az-logo{
   object-fit:contain;
-  object-position:center;
-  padding:10%;
+  object-position:center center;
+  padding:4%;
   box-sizing:border-box;
   background:#fff;
 }

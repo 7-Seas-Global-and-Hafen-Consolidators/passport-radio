@@ -39,6 +39,10 @@
     }
     cards(doc);
   }
+  const columns=new Set(["a-cena","agenda","albunsquemarcaram","apos","baixo","baterista","biografias","blabbermouth","box-set","brasil","canal","cds","celebridades","clubedos27","colecoes","curiosidades","engenheiros","e-studos","ex-vocal","guitarrista","historiasdemusicas","historiasdemusicassaxon","ibagenscast","ingressos","instrumentos","lancamentos","livros","lollapalooza","mashups","melhores","melhores2025","melhoresporestilorym","metal-hammer","morteozzyosbourne","newmetal","noisecreep","opinioes","pedepagina","policia","prog-metal","thrash-metal","traducoes","woodstock1969","rock-and-rollhalloffame","rock-inrio1985","rock-inrio2026","the-town2025","monsters-of-rock-brasil-2026","bangersopenair2026","bangersopenair2027"]);
+  function isColumn(path){
+    return columns.has(path.split("/").pop().replace(".html",""));
+  }
   function cards(doc){
     let themes=doc.querySelector('[data-passport-az-themes]');
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
@@ -50,7 +54,7 @@
       a.dataset.artistName=label;
       const nameEl=a.querySelector('.passport-artist-name');
       if(nameEl&&nameEl.textContent!==label)nameEl.textContent=label;
-      if(fold(label)==='acena'||path.endsWith('/a-cena.html')){
+      if(isColumn(path)||fold(label)==='acena'){
         if(!themes){
           themes=doc.createElement('section');
           themes.dataset.passportAzThemes='1';
@@ -77,7 +81,7 @@
   function styles(doc) {
       const cardsCss=doc.querySelector('link[data-passport-az-cards]')||doc.createElement('link');
       if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
-      cardsCss.href='/css/passport-az-cards.css?v=20261009-azlogo';
+      cardsCss.href='/css/passport-az-cards.css?v=20261009-az268';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
     const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
