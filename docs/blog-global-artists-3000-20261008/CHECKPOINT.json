@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 3500,
+  "presentation_hooks_remote": 4000,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 3500,
-    "next_batch": 7,
-    "last_path": "blog/e/rogerioskylab.html",
-    "previous_remote_commit": "754285780f8ca2ecc67ad5e2d866e27fbb493389"
+    "persisted": 4000,
+    "next_batch": 8,
+    "last_path": "blog/e/tomahawk.html",
+    "previous_remote_commit": "809d2197158dc1b81b809a5ce3033e688c722e98"
   }
 }
