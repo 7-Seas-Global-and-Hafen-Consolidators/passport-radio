@@ -10,6 +10,23 @@
     if (document.querySelector(`script[${marker}],script[src^="${src}"]`)) return;
     const node=document.createElement('script');node.src=src;node.defer=true;node.setAttribute(marker,'');document.head.append(node);
   }
+  function refreshReadingTime(main) {
+    const prose=main.querySelector('.pe-prose,.mn-prose,article.prose,.blog-profile');
+    if(!prose)return;
+    const words=[...prose.querySelectorAll('p,li')]
+      .filter(node=>!node.closest('details,figure,nav,.blog-collab-strip,.blog-share,.blog-follow,.blog-prevnext,.blog-listen')&&!node.querySelector('p,li')&&!node.matches('.blog-kicker,[data-passport-reading-time]'))
+      .map(node=>node.textContent.trim()).join(' ').split(/\s+/u).filter(Boolean).length;
+    if(!words)return;
+    let reading=main.querySelector('[data-passport-reading-time]');
+    if(!reading){
+      const title=main.querySelector('h1');if(!title)return;
+      reading=document.createElement('p');reading.dataset.passportReadingTime='1';
+      reading.className='passport-blog-shell-reading';title.after(reading);
+    }
+    const text='🕒 Leitura: '+Math.ceil(words/200)+' '+(words<=200?'minuto':'minutos');
+    if(reading.textContent!==text)reading.textContent=text;
+    reading.dataset.passportWordCount=String(words);
+  }
   function mount() {
     if (!/^\/blog(?:\.html|\/)/.test(location.pathname) || document.body.dataset.passportBlogShell) return;
     const body=document.body, main=body.querySelector('main');if(!main)return;
@@ -28,6 +45,10 @@
     body.prepend(header);
     const editorial=document.createElement('nav');editorial.className='passport-blog-shell-editorial';editorial.setAttribute('aria-label','Navegação editorial');editorial.innerHTML=anchors(archiveLinks);
     header.after(editorial);
+    const edition=document.createElement('p');edition.className='passport-blog-shell-edition';
+    edition.dataset.passportEdition='1';
+    edition.innerHTML='<span>ACERVO PASSPORT RADIO</span><span>EDIÇÃO MR. NOMAD</span>';
+    editorial.after(edition);
     // Preserve every destination present in the historical editorial menu.
     for(const menu of main.querySelectorAll('.blog-doors')) {
       for(const a of menu.querySelectorAll('a[href]')) if(![...editorial.querySelectorAll('a')].some(x=>x.getAttribute('href')===a.getAttribute('href')))editorial.append(a.cloneNode(true));
@@ -45,12 +66,11 @@
     script('/js/passport-audio-continuity.js','data-passport-continuity');
     script('/js/passport-persist-nav.js','data-passport-shell-navigation');
     script('/js/passport-artist-navigation.js','data-passport-artist-navigation');
-    const prose=main.querySelector('.pe-prose,.mn-prose,article.prose');
-    if(prose&&!main.querySelector('[data-passport-reading-time]')){
-      const reading=document.createElement('p');reading.dataset.passportReadingTime='1';reading.className='passport-blog-shell-reading';reading.textContent='🕒 Leitura: '+Math.max(1,Math.ceil(prose.innerText.trim().split(/\s+/u).filter(Boolean).length/200))+' minutos';
-      const title=main.querySelector('h1');if(title)title.after(reading);
-    }
+    refreshReadingTime(main);
+    const prose=main.querySelector('.pe-prose,.mn-prose,article.prose,.blog-profile');
+    if(prose)new MutationObserver(()=>refreshReadingTime(main)).observe(prose,{childList:true,subtree:true,characterData:true});
   }
-  window.PassportBlogShell=Object.freeze({mount});
+  window.PassportBlogShell=Object.freeze({mount,refreshReadingTime});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
+

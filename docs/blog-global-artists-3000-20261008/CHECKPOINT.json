@@ -20,7 +20,7 @@
     "name": "10.000 Maniacs",
     "reference_url": "https://whiplash.net/bandas/1/10000maniacs.html",
     "existing_url": "/blog/e/10000maniacs.html",
-    "status": "ENRICHED_PENDING_COMPLETE_LINEUP_HISTORY_AND_BROWSER_PLAYBACK",
+    "status": "ENRICHED_WITH_FACTUAL_ARTICLE_PENDING_FULL_CERTIFICATION",
     "photo": {
       "path": "/assets/blog/artists/10000-maniacs.jpg",
       "source": "https://commons.wikimedia.org/wiki/File:10,000_Maniacs.jpg",
@@ -50,7 +50,7 @@
     },
     "original_editorial_profile": {
       "url": "/blog/e/10000maniacs.html",
-      "sha256": "d1013b13e143a536a39229de36a4c2bf12cf4d6bb9567c87548bd0251b083487"
+      "sha256": "2bf4d93d46ff30e2aff94fd3b948666ed7661333baae72cbfe5749cefb969e84"
     },
     "completed": false,
     "evidence": "profiles/10000-maniacs.json"
@@ -115,5 +115,27 @@
     "new local links resolve",
     "official-site video selection and YouTube oEmbed HTTP200",
     "no autoplay parameter"
-  ]
+  ],
+  "source_authorization": {
+    "status": "CONFIRMED_BY_OWNER_20261008",
+    "references": [
+      "Radio BOB!",
+      "Whiplash.net",
+      "Metal Hammer"
+    ],
+    "media_research": "Search engines, official artist/label channels, press archives, Wikimedia Commons and other legitimate sources authorized; compatible rights required."
+  },
+  "editorial_records_factually_replaced": 1,
+  "last_resumption": {
+    "base_remote_head": "995c0fa7ebe38394ab90362095f25c1a84ff0efe",
+    "uploaded_source_hashes_match_checkpoint": true,
+    "screenshots_read": 4,
+    "source_blocker_resolved": true,
+    "reading_time": "Shared calculation now tracks prose changes, excludes chrome/references, includes profiles",
+    "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
+    "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
+    "browser_qa_blocker": "Playwright installed but Chromium executable absent; no browser playback certification",
+    "next_exact_work": "Certify 10,000 Maniacs historical lineup, video playback and full radio catalog; then next inventory profile",
+    "new_certified_profiles": 0
+  }
 }

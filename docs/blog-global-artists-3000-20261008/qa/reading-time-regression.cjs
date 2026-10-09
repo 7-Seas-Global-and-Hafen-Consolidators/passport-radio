@@ -1,0 +1,15 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+let paragraphs=[],reading={textContent:'Leitura: 99 minutos',dataset:{}},created=0;
+const main={querySelector:s=>s.includes('.pe-prose')?prose:s==='[data-passport-reading-time]'?reading:s==='h1'?{after:n=>{reading=n;created++}}:null};
+const prose={querySelectorAll:()=>paragraphs};
+const document={readyState:'loading',addEventListener(){},createElement:()=>({dataset:{},textContent:''})};
+const context={window:{},document};vm.createContext(context);
+vm.runInContext(fs.readFileSync('js/passport-blog-shell.js','utf8'),context);
+const node=(words,{excluded=false,nested=false,kicker=false}={})=>({textContent:('palavra ').repeat(words),closest:()=>excluded,querySelector:()=>nested,matches:()=>kicker});
+const refresh=()=>context.window.PassportBlogShell.refreshReadingTime(main);
+paragraphs=[node(199),node(900,{excluded:true}),node(900,{kicker:true})];refresh();assert.equal(reading.dataset.passportWordCount,'199');assert.equal(reading.textContent,'🕒 Leitura: 1 minuto');
+paragraphs.push(node(2));refresh();assert.equal(reading.textContent,'🕒 Leitura: 2 minutos');assert.equal(reading.dataset.passportWordCount,'201');
+paragraphs=[node(400,{nested:true}),node(200),node(200)];refresh();assert.equal(reading.dataset.passportWordCount,'400');
+reading=null;refresh();assert.equal(created,1);refresh();assert.equal(created,1);
+paragraphs=[];refresh();assert.equal(reading.textContent,'🕒 Leitura: 2 minutos');
+console.log('PASS: thresholds, stale reading replaced, excluded chrome, nested blocks, single reading element');
