@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 13500,
+  "presentation_hooks_remote": 14000,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 13500,
-    "next_batch": 27,
-    "last_path": "blog/w/009955-guns-n-roses.html",
-    "previous_remote_commit": "d3b1821eec0f5dc41fd7960bf28d9a640e5f74a5"
+    "persisted": 14000,
+    "next_batch": 28,
+    "last_path": "blog/w/370467-ozzy-osbourne.html",
+    "previous_remote_commit": "79adbb0a0abe6dbdd711a349f22919c92351a454"
   }
 }
