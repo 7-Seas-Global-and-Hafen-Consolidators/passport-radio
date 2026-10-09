@@ -20,11 +20,40 @@
     "name": "10.000 Maniacs",
     "reference_url": "https://whiplash.net/bandas/1/10000maniacs.html",
     "existing_url": "/blog/e/10000maniacs.html",
-    "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
-    "photo": null,
-    "validated_official_video": null,
-    "original_editorial_profile": null,
-    "completed": false
+    "status": "ENRICHED_PENDING_COMPLETE_LINEUP_HISTORY_AND_BROWSER_PLAYBACK",
+    "photo": {
+      "path": "/assets/blog/artists/10000-maniacs.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:10,000_Maniacs.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/10%2C000_Maniacs.jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "attribution_as_listed": "Lindsey Best / Howard Thompson",
+      "changes": "none",
+      "sha256": "a995fd2d7f27ae9638c37b1583c74d1b71ef71ff7ff555e85089e0f97c651079",
+      "dimensions": [
+        444,
+        350
+      ],
+      "decoded": true,
+      "description": "Rob Buck, Steve Gustafson, Natalie Merchant, Dennis Drew e Jerry Augustyniak, segundo a ficha da imagem."
+    },
+    "validated_official_video": {
+      "id": "9eUc0IuGQW8",
+      "title": "These are Days",
+      "publisher": "10KMTV",
+      "publisher_url": "https://www.youtube.com/@10KMTV",
+      "official_selection_source": "https://maniacs.com/videos",
+      "oembed_http": 200,
+      "embedding_available": true,
+      "browser_playback_certified": false,
+      "autoplay": false
+    },
+    "original_editorial_profile": {
+      "url": "/blog/e/10000maniacs.html",
+      "sha256": "d1013b13e143a536a39229de36a4c2bf12cf4d6bb9567c87548bd0251b083487"
+    },
+    "completed": false,
+    "evidence": "profiles/10000-maniacs.json"
   },
   "last_inventory_position": 9911,
   "last_inventory_artist": "ZZ Top",
@@ -36,7 +65,7 @@
   "historical_articles_preserved": 21933,
   "historical_az_destinations_preserved": 2767,
   "title_pattern_flags": 16447,
-  "new_photos_acquired": 0,
+  "new_photos_acquired": 1,
   "official_videos_certified": 0,
   "acquisition_resume": "Reuse inventory and source hashes. Complete profile facts, authorized artist photo and official video before marking a record complete. Do not recreate existing destination or copy and reattribute source articles.",
   "pending": [
@@ -78,5 +107,13 @@
     "previous_remote_commit": "47b8be37487c2545d107d4f489885e76549bf19c"
   },
   "inventory": "artists-9911-inventory.json",
-  "remote_global_presentation_commit": "334661cb0dc6442d7ea9e7d5eae78be49f54a649"
+  "remote_global_presentation_commit": "334661cb0dc6442d7ea9e7d5eae78be49f54a649",
+  "enriched_existing_profiles": 1,
+  "official_video_embeds_oembed_verified": 1,
+  "profile_incremental_qa": [
+    "photo decoded, 444x350, SHA256 recorded",
+    "new local links resolve",
+    "official-site video selection and YouTube oEmbed HTTP200",
+    "no autoplay parameter"
+  ]
 }
