@@ -76,7 +76,7 @@
   function styles(doc) {
       const cardsCss=doc.querySelector('link[data-passport-az-cards]')||doc.createElement('link');
       if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
-      cardsCss.href='/css/passport-az-cards.css?v=20261009-photos2';
+      cardsCss.href='/css/passport-az-cards.css?v=20261009-azframe';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
     const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }

@@ -16,7 +16,7 @@ body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card:visited
   gap:0;
   min-height:0;
   padding:0;
-  overflow:hidden;
+  overflow:visible;
   border:1px solid #d7d7d7;
   border-bottom:1px solid #d7d7d7;
   border-radius:0;
@@ -35,11 +35,14 @@ body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>img{
   height:auto;
   aspect-ratio:1;
   object-fit:cover;
+  object-position:center center;
   background:#fff;
 }
 body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>img.passport-az-logo{
   object-fit:contain;
-  padding:28px;
+  object-position:center;
+  padding:8%;
+  box-sizing:border-box;
   background:#fff;
 }
 body.pp-blog.passport-az-directory .passport-az-plate{
