@@ -1,6 +1,14 @@
 const fs=require('fs');
 const root=__dirname;
 const inventory=JSON.parse(fs.readFileSync(root+'/artists-9911-inventory.json','utf8'));
+// Apply small acquisition ledgers before rebuilding queues; no repeated inventory reconciliation.
+for(const file of fs.readdirSync(root+'/batches').filter(f=>f.endsWith('.json')).sort()){
+ const ledger=JSON.parse(fs.readFileSync(root+'/batches/'+file,'utf8'));
+ for(const entry of ledger.records||[]){const record=inventory.records.find(r=>r.position===entry.position);if(!record)continue;
+ record.evidence='batches/'+file;record.status=entry.status;
+ if(entry.original_editorial_profile)record.original_editorial_profile=entry.original_editorial_profile;
+ }
+}
 const queues={certified:[],photo:[],video:[],biography:[],editorial_links:[],specific:[]};
 const records=inventory.records.map(r=>{
   const pending=[];

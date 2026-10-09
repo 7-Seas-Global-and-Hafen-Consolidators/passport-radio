@@ -135,14 +135,14 @@
     "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
     "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
     "browser_qa_blocker": "Playwright installed but Chromium executable absent; no browser playback certification",
-    "next_exact_work": "First batch positions 7-50 factual fields; media queues separately; certification pending for positions 1-6; direct editorial full catalog and browser audio QA pending",
+    "next_exact_work": "Continue first batch positions 11-50; use batch ledgers before source acquisition; pending certification positions 1-10; direct editorial facade and real browser audio QA pending",
     "new_certified_profiles": 0,
     "first_batch_remote_commit": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
     "home_to_editorial_facade": "Keep original React player and complete original catalog in their existing root; hide Home editorial siblings; resize reader below original facade; no transport API calls",
     "direct_editorial_entry": "Full facade on direct entry without a Home root remains pending; do not certify all routes",
     "facade_regression": "PASS: original facade not inert; one reader; dynamic measured bounds; Home return; no duplicate footer controls",
     "preservation_commit": "575d8bd9cb989784be2d9b43c6311eb1f20f0782",
-    "last_implementation_commit": "01e43b29182f631aa20244e9c00f959b4af40bf8",
+    "last_implementation_commit": "0f99236ea809eaf68b3e77a3131f4f269e95635a",
     "ci_last_implementation": {
       "build": "success",
       "purge": "success"
@@ -151,7 +151,10 @@
     "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS"
   },
   "batch_queues": "work-queues.json",
-  "batch_acquisition": "batches/first-50-fields-20261009.json",
-  "factually_enriched_existing_profiles": 2,
-  "next_acquisition_position": 7
+  "batch_acquisition": [
+    "docs/blog-global-artists-3000-20261008/batches/first-50-fields-20261009.json",
+    "docs/blog-global-artists-3000-20261008/batches/first-50-fields-part2-20261009.json"
+  ],
+  "factually_enriched_existing_profiles": 4,
+  "next_acquisition_position": 11
 }
