@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 8000,
+  "presentation_hooks_remote": 8500,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 8000,
-    "next_batch": 16,
-    "last_path": "blog/w/004272-do-ropesch.html",
-    "previous_remote_commit": "6b20823701a838e945a9d3e001e8ee3f9b9ee0ca"
+    "persisted": 8500,
+    "next_batch": 17,
+    "last_path": "blog/w/004790-silverchair.html",
+    "previous_remote_commit": "3cfdf13bbbebd0dba322ed64845b3c488290d13c"
   }
 }
