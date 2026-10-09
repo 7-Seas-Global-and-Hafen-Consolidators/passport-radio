@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 1000,
+  "presentation_hooks_remote": 1500,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 1000,
-    "next_batch": 2,
-    "last_path": "blog/e/a-cena-p24.html",
-    "previous_remote_commit": "7aa034900c6f500e59057bce30ba9861a98436a4"
+    "persisted": 1500,
+    "next_batch": 3,
+    "last_path": "blog/e/bring-me-the-horizon.html",
+    "previous_remote_commit": "241192143cb488ed684e22451d2203ec506942ed"
   }
 }
