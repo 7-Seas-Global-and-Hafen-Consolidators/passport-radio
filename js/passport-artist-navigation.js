@@ -34,28 +34,41 @@
     cards(doc);
   }
   function cards(doc){
+    let themes=doc.querySelector('[data-passport-az-themes]');
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
-      a.classList.add('passport-az-card');
-      if(a.querySelector('img')||a.querySelector('.passport-az-plate'))continue;
       const small=a.querySelector('small');
-      const storyCount=small?.textContent.trim()||'';
-      const label=a.dataset.artistName||[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(' ').trim()||a.textContent.replace(storyCount,'').trim();
+      const storyCount=small?.textContent.trim()||a.dataset.storyCount||'';
+      const raw=a.dataset.artistName||[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(' ').trim()||a.textContent.replace(storyCount,'').trim();
+      const label=raw;
       a.dataset.artistName=label;
-      const plate=doc.createElement('span');plate.className='passport-az-plate';plate.setAttribute('aria-hidden','true');
-      plate.textContent=(label.match(/[A-Za-z0-9]/)||['#'])[0].toUpperCase();
-      const name=doc.createElement('span');name.className='passport-artist-name';name.textContent=label;
+      if(fold(label)==='acena'){
+        if(!themes){
+          themes=doc.createElement('section');
+          themes.dataset.passportAzThemes='1';
+          themes.className='passport-az-themes';
+          const heading=doc.createElement('h2');heading.textContent='Temas e categorias';themes.append(heading);
+          const nav=doc.createElement('nav');nav.className='passport-az-theme-links';nav.setAttribute('aria-label','Temas e categorias do acervo');themes.append(nav);
+          doc.querySelector('main')?.append(themes);
+        }
+        if(a.parentElement!==themes.querySelector('nav')) themes.querySelector('nav').append(a);
+        continue;
+      }
+      a.classList.add('passport-az-card');
+      if(a.querySelector('img'))continue;
+      if(a.querySelector('.passport-artist-name')&&!a.querySelector('.passport-az-plate'))continue;
+      const name=doc.createElement('span');name.className='passport-artist-name passport-az-fallback';name.textContent=label;
       const count=doc.createElement('small');count.className='passport-artist-story-count';count.textContent=storyCount;
       if(storyCount)count.setAttribute('aria-label',storyCount+' matérias relacionadas');
-      a.replaceChildren(plate,name,count);
+      a.replaceChildren(name,count);
     }
   }
   function link(doc, text, href) {
     const a = doc.createElement('a'); a.textContent=text; a.href=href; return a;
   }
   function styles(doc) {
-    if (!doc.querySelector('link[data-passport-az-cards]')) {
-      const cardsCss=doc.createElement('link');cardsCss.rel='stylesheet';cardsCss.href='/css/passport-az-cards.css?v=20261009-cards';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);
-    }
+      const cardsCss=doc.querySelector('link[data-passport-az-cards]')||doc.createElement('link');
+      if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
+      cardsCss.href='/css/passport-az-cards.css?v=20261009-namecard';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
     const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
