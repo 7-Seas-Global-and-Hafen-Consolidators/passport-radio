@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog Aberto | Passport Radio</title>
+<meta name="description" content="Blog Aberto: lista do acervo publicado, com título, autor, data e categoria. A busca é por título. O envio de visitante não publica sozinho.">
+<link rel="canonical" href="https://passportradio.online/blog/aberto.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog Aberto | Passport Radio">
+<meta property="og:description" content="Lista do acervo publicado. Título, autor, data e categoria.">
+<meta property="og:url" content="https://passportradio.online/blog/aberto.html">
+<meta property="og:image" content="https://passportradio.online/images/blog-aberto-capa.jpg">
+<link rel="stylesheet" href="/css/passport-blog-aberto.css?v=20261009">
+</head>
+<body class="blog-aberto">
+<header class="ba-mast">
+  <p class="ba-mast__brand">Passport Radio</p>
+  <h1>BLOG ABERTO</h1>
+</header>
+<figure class="ba-cover">
+  <img src="/images/blog-aberto-capa.jpg" width="1792" height="1008" alt="Capa do Blog Aberto entregue pelo Mr. Nomad: nomes de artistas e bandas do acervo.">
+</figure>
+<main class="ba-wrap" id="lista">
+  <p class="ba-lead">O que já foi publicado continua achável. O título abre a matéria antiga. Autor, data e categoria são os do acervo. Contribuição de visitante não entra nesta lista.</p>
+  <form class="ba-tools" id="ba-form" action="/blog/aberto.html" method="get" role="search">
+    <label>Buscar por título
+      <input id="ba-q" name="q" type="search" autocomplete="off" placeholder="Título da matéria">
+    </label>
+    <label>Categoria
+      <select id="ba-cat" name="cat">
+        <option value="">Todas</option>
+      </select>
+    </label>
+    <label>Ano
+      <select id="ba-ano" name="ano">
+        <option value="">Todos</option>
+      </select>
+    </label>
+    <label>Mês
+      <select id="ba-mes" name="mes">
+        <option value="">Todos</option>
+      </select>
+    </label>
+    <button type="submit">Filtrar</button>
+  </form>
+  <p class="ba-count" id="ba-count">Carregando o índice do acervo…</p>
+  <ol class="ba-list" id="ba-list"></ol>
+  <nav class="ba-pager" id="ba-pager" aria-label="Páginas da lista"></nav>
+  <section class="ba-block" id="envio">
+    <h2>Envio</h2>
+    <p><strong>Não concluído.</strong> O caminho que já existe, <a href="/blog/envie-sua-historia.html">envie-sua-historia.html</a>, grava em <code>public.blog_submissions</code> pela Conta Passport. Essa tabela não está no projeto: a API responde PGRST205. Sem destino persistente, não há estado pendente e nada é publicado. Esta página não traz formulário. Arquivo local não conta como destino. O SQL em <code>supabase/blog_submissions.sql</code> não foi aplicado daqui.</p>
+  </section>
+  <p class="ba-foot">© 2026 Passport Radio · <a href="/blog.html">Blog</a> · <a href="/blog/arquivo/">Arquivo do Blog</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a> · <a href="/contato.html">Contato</a></p>
+</main>
+<script>
+(function () {
+  "use strict";
+  var PAGE = 40;
+  var MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+  var FAMILY = {
+    historias: "Histórias",
+    discos: "Discos",
+    cultura: "Cultura",
+    shows: "Shows",
+    entrevistas: "Entrevistas"
+  };
+  var items = [];
+
+  function fold(value) {
+    return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
+
+  function params() {
+    var q = new URLSearchParams(location.search);
+    return {
+      q: q.get("q") || "",
+      cat: q.get("cat") || "",
+      ano: q.get("ano") || "",
+      mes: q.get("mes") || "",
+      p: Math.max(1, parseInt(q.get("p") || "1", 10) || 1)
+    };
+  }
+
+  function titleHit(title, query) {
+    var tokens = fold(query).split(/\s+/).filter(Boolean);
+    if (!tokens.length) return true;
+    var name = fold(title);
+    return tokens.every(function (token) { return name.indexOf(token) !== -1; });
+  }
+
+  function monthKey(date) {
+    return String(date || "").slice(0, 7);
+  }
+
+  function labelFamily(key) {
+    return FAMILY[key] || key || "—";
+  }
+
+  function labelDate(date) {
+    var parts = String(date || "").split("-");
+    if (parts.length < 3) return date || "";
+    var month = MONTHS[(parseInt(parts[1], 10) || 1) - 1] || parts[1];
+    return parseInt(parts[2], 10) + " " + month + " " + parts[0];
+  }
+
+  function filtered(state) {
+    return items.filter(function (item) {
+      if (state.cat && item.family !== state.cat) return false;
+      var key = monthKey(item.date);
+      if (state.ano && key.slice(0, 4) !== state.ano) return false;
+      if (state.mes && key !== state.ano + "-" + state.mes && key.slice(5, 7) !== state.mes) return false;
+      if (state.mes && state.ano && key !== state.ano + "-" + state.mes) return false;
+      return titleHit(item.title, state.q);
+    });
+  }
+
+  function fillSelect(select, rows, current) {
+    while (select.options.length > 1) select.remove(1);
+    rows.forEach(function (row) {
+      var opt = document.createElement("option");
+      opt.value = row.value;
+      opt.textContent = row.label;
+      if (row.value === current) opt.selected = true;
+      select.appendChild(opt);
+    });
+  }
+
+  function hrefFor(state, page) {
+    var q = new URLSearchParams();
+    if (state.q) q.set("q", state.q);
+    if (state.cat) q.set("cat", state.cat);
+    if (state.ano) q.set("ano", state.ano);
+    if (state.mes) q.set("mes", state.mes);
+    if (page > 1) q.set("p", String(page));
+    var s = q.toString();
+    return "/blog/aberto.html" + (s ? "?" + s : "");
+  }
+
+  function render(state) {
+    var rows = filtered(state);
+    var pages = Math.max(1, Math.ceil(rows.length / PAGE));
+    var page = Math.min(state.p, pages);
+    var slice = rows.slice((page - 1) * PAGE, page * PAGE);
+    var list = document.getElementById("ba-list");
+    var count = document.getElementById("ba-count");
+    var pager = document.getElementById("ba-pager");
+    list.replaceChildren();
+    count.textContent = rows.length + " " + (rows.length === 1 ? "matéria" : "matérias") + " no recorte. Página " + page + " de " + pages + ".";
+    if (!rows.length) {
+      var empty = document.createElement("li");
+      empty.textContent = "Nenhuma matéria com esse título neste recorte.";
+      list.appendChild(empty);
+    }
+    slice.forEach(function (item) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = item.url;
+      a.textContent = item.title || item.url;
+      var author = document.createElement("span");
+      author.className = "ba-meta";
+      author.textContent = item.author || "Passport Radio";
+      var time = document.createElement("time");
+      time.className = "ba-meta";
+      time.dateTime = item.date || "";
+      time.textContent = labelDate(item.date);
+      var cat = document.createElement("span");
+      cat.className = "ba-meta";
+      cat.textContent = labelFamily(item.family);
+      li.append(a, author, time, cat);
+      list.appendChild(li);
+    });
+    pager.replaceChildren();
+    if (page > 1) {
+      var prev = document.createElement("a");
+      prev.href = hrefFor(state, page - 1);
+      prev.textContent = "Anterior";
+      pager.appendChild(prev);
+    }
+    if (page < pages) {
+      var next = document.createElement("a");
+      next.href = hrefFor(state, page + 1);
+      next.textContent = "Próxima";
+      pager.appendChild(next);
+    }
+  }
+
+  function bootFilters(state) {
+    var families = {};
+    var years = {};
+    var months = {};
+    items.forEach(function (item) {
+      if (item.family) families[item.family] = (families[item.family] || 0) + 1;
+      var key = monthKey(item.date);
+      if (key.length >= 7) {
+        years[key.slice(0, 4)] = true;
+        months[key] = (months[key] || 0) + 1;
+      }
+    });
+    fillSelect(document.getElementById("ba-cat"), Object.keys(families).sort().map(function (key) {
+      return { value: key, label: labelFamily(key) + " (" + families[key] + ")" };
+    }), state.cat);
+    fillSelect(document.getElementById("ba-ano"), Object.keys(years).sort().map(function (year) {
+      return { value: year, label: year };
+    }), state.ano);
+    var monthRows = Object.keys(months).sort().filter(function (key) {
+      return !state.ano || key.slice(0, 4) === state.ano;
+    }).map(function (key) {
+      var n = parseInt(key.slice(5, 7), 10);
+      return { value: key.slice(5, 7), label: (MONTHS[n - 1] || key) + " " + key.slice(0, 4) + " (" + months[key] + ")" };
+    });
+    fillSelect(document.getElementById("ba-mes"), monthRows, state.mes);
+    document.getElementById("ba-q").value = state.q;
+  }
+
+  fetch("/data/blog-search/manifest.json", { credentials: "same-origin" })
+    .then(function (res) { if (!res.ok) throw new Error("manifest"); return res.json(); })
+    .then(function (manifest) {
+      return Promise.all((manifest.shards || []).map(function (shard) {
+        return fetch(shard.file, { credentials: "same-origin" }).then(function (res) { return res.json(); });
+      }));
+    })
+    .then(function (shards) {
+      shards.forEach(function (shard) {
+        (shard.items || []).forEach(function (item) {
+          if (!item || !item.url || !item.title) return;
+          items.push({
+            title: item.title,
+            url: item.url,
+            author: item.author || "Passport Radio",
+            date: item.date || "",
+            family: item.family || ""
+          });
+        });
+      });
+      var state = params();
+      bootFilters(state);
+      render(state);
+    })
+    .catch(function () {
+      document.getElementById("ba-count").textContent = "O índice do acervo não abriu. A lista não foi inventada.";
+    });
+})();
+</script>
+<noscript><p class="ba-wrap">A lista usa o índice já publicado em /data/blog-search/. Sem JavaScript ela não monta. As matérias continuam em /blog/arquivo/.</p></noscript>
+</body>
+</html>
