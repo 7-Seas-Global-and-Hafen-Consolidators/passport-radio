@@ -16,15 +16,20 @@
   } catch (_) { return; }
   const fold = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   const watched = new WeakSet();
-  let data={nodes:[],edges:[]};let dataReady=false;let media={};
+  let data={nodes:[],edges:[]};let dataReady=false;let media={};let names={};
+  function shownName(doc,a,fallback){
+    const path=new URL(a.href,doc.URL).pathname;
+    return names[path]||media[path]?.name||fallback;
+  }
   function pictures(doc){
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
       const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)continue;
       const storyCount=a.querySelector("small")?.textContent.trim()||"";
-      const label=[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(" ").trim()||a.textContent.replace(storyCount,"").trim();
+      const label=shownName(doc,a,[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(" ").trim()||a.textContent.replace(storyCount,"").trim());
       a.dataset.artistName=photo.name||label;a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
-      const img=doc.createElement("img");img.src=photo.image;img.alt=photo.name;img.loading="lazy";img.decoding="async";
-      const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=photo.name||label;
+      const img=doc.createElement("img");img.src=photo.image;img.alt=photo.name||label;img.loading="lazy";img.decoding="async";
+      if(photo.kind==="logo")img.className="passport-az-logo";
+      const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=label;
       const count=doc.createElement("small");count.className="passport-artist-story-count";count.textContent=storyCount;count.setAttribute("aria-label",storyCount+" matérias relacionadas");
       const credit=doc.createElement("small");credit.className="passport-artist-photo-credit";credit.textContent=[photo.credit,photo.license].filter(Boolean).join(" · ");
       a.replaceChildren(img,name,count,credit);
@@ -38,10 +43,13 @@
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
       const small=a.querySelector('small');
       const storyCount=small?.textContent.trim()||a.dataset.storyCount||'';
-      const raw=a.dataset.artistName||[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(' ').trim()||a.textContent.replace(storyCount,'').trim();
+      const path=new URL(a.href,doc.URL).pathname;
+      const raw=shownName(doc,a,a.dataset.artistName||[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(' ').trim()||a.textContent.replace(storyCount,'').trim());
       const label=raw;
       a.dataset.artistName=label;
-      if(fold(label)==='acena'){
+      const nameEl=a.querySelector('.passport-artist-name');
+      if(nameEl&&nameEl.textContent!==label)nameEl.textContent=label;
+      if(fold(label)==='acena'||path.endsWith('/a-cena.html')){
         if(!themes){
           themes=doc.createElement('section');
           themes.dataset.passportAzThemes='1';
@@ -68,7 +76,7 @@
   function styles(doc) {
       const cardsCss=doc.querySelector('link[data-passport-az-cards]')||doc.createElement('link');
       if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
-      cardsCss.href='/css/passport-az-cards.css?v=20261009-namecard';
+      cardsCss.href='/css/passport-az-cards.css?v=20261009-photos2';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
     const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
@@ -81,7 +89,11 @@
     if(!archive&&!article)return;
     if(!az&&!dataReady)return;
     if(archive)doc.body.classList.add('passport-artist-archive');
-    if(az){doc.body.classList.add('passport-az-directory');styles(doc);}
+    if(az){
+      doc.body.classList.add('passport-az-directory');styles(doc);
+      const blogQ=doc.querySelector('#blog-q');
+      if(blogQ){blogQ.placeholder='Nome do artista ou banda';blogQ.setAttribute('aria-label','Buscar pelo nome');}
+    }
     const existing=doc.querySelector('[data-passport-artist-tools]');
     if(existing){existing._passportAzUpdate?.();return;}
     const main=doc.querySelector('main'); if (!main) return;
@@ -144,7 +156,7 @@
         const row=doc.createElement('nav');row.setAttribute('aria-label','Caminhos do acervo');row.append(link(doc,'A–Z completo','/blog/arquivo/letras.html'),link(doc,'Blog','/blog.html'));nav.append(row);
 
         const searchLabel=doc.createElement('label');searchLabel.className='passport-az-search-label';searchLabel.textContent='Buscar nome';
-        const input=doc.createElement('input');input.type='search';input.className='passport-az-search';input.placeholder='Artista, banda ou entidade';input.setAttribute('aria-label','Buscar artista, banda ou entidade');searchLabel.append(input);nav.append(searchLabel);
+        const input=doc.createElement('input');input.type='search';input.className='passport-az-search';input.placeholder='Nome do artista ou banda';input.setAttribute('aria-label','Buscar pelo nome');searchLabel.append(input);nav.append(searchLabel);
 
         const typeLabel=doc.createElement('label');typeLabel.className='passport-az-type-label';typeLabel.textContent='Tipo identificado no acervo';
         const type=doc.createElement('select');type.className='passport-az-type';type.setAttribute('aria-label','Filtrar por tipo identificado');
@@ -213,7 +225,8 @@
   window.PassportArtistNavigation=Object.freeze({enhance});
   enhance(document);
   window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document);cards(document)});
-  fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value;pictures(document)}).catch(()=>{});
+  fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value||{};pictures(document);cards(document);}).catch(()=>{});
+  fetch('/data/blog-artist-names.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{names=value||{};pictures(document);cards(document);}).catch(()=>{});
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{
     data=value;dataReady=true;enhance(document);
     const frames=()=>document.querySelectorAll('#pp-nav-page').forEach(watch);frames();
