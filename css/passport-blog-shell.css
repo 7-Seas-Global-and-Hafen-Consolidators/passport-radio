@@ -57,3 +57,6 @@ html body[data-passport-blog-shell] .payment-footer-trust__brands img{background
 body[data-passport-institutional] .pb-mast .pb-mast__logo,body[data-passport-institutional] .pb-mast .pb-mast__logo em{color:#C41E3A!important;font-family: Bodoni Moda,Georgia,serif}
 body[data-passport-institutional] :is(.pb-nav a,.pb-door a,.pb-door__subs button,.pb-door__groups button){color:#111111!important}
 body[data-passport-institutional] :is(.pb-door a.active,.pb-door button.active){color:#C41E3A!important}
+html body[data-passport-blog-shell][data-passport-institutional] #root header.pb-mast h1.pb-mast__logo,
+html body[data-passport-blog-shell][data-passport-institutional] #root header.pb-mast h1.pb-mast__logo em{color:#C41E3A!important}
+@media(max-width:600px){body[data-passport-institutional] #root .pb-nav{overflow:visible}body[data-passport-institutional] #root .pb-nav ul{flex-wrap:wrap;justify-content:center;gap:10px 16px;padding:12px 16px}}

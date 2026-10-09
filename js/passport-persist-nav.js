@@ -63,7 +63,7 @@
   try{
    if(home(url)){
     document.getElementById('passport-editorial-outlet')?.replaceChildren();route(null);
-    document.body.className='pp-body pp-home';document.body.removeAttribute('data-passport-blog-shell');document.body.removeAttribute('data-passport-institutional');document.querySelectorAll('link[rel="canonical"]').forEach(n=>n.remove());const canonical=document.createElement('link');canonical.rel='canonical';canonical.href=new URL('/',location.href).href;document.head.append(canonical);document.title=/^\/(?:index\.html)?$/.test(new URL(originalURL).pathname)?originalTitle:'Passport Radio — 1998·2026';current=null;
+    document.body.className='pp-body pp-home';document.body.removeAttribute('data-passport-blog-shell');document.body.removeAttribute('data-passport-institutional');document.querySelectorAll('link[rel="canonical"]').forEach(n=>n.remove());const canonical=document.createElement('link');canonical.rel='canonical';canonical.href='https://passportradio.online/';document.head.append(canonical);const homeDoc=cache.get(new URL('/',originalURL).href);if(homeDoc)metadata(homeDoc,url);else document.querySelectorAll('meta[property^="og:"],meta[name^="twitter:"],script[type="application/ld+json"]').forEach(n=>n.remove());document.title=/^\/(?:index\.html)?$/.test(new URL(originalURL).pathname)?originalTitle:'Passport Radio — 1998·2026';current=null;
     if(push)history.pushState({ppNav:1},'',url.href);window.scrollTo(0,0);return;
    }
    let doc=cache.get(url.href);

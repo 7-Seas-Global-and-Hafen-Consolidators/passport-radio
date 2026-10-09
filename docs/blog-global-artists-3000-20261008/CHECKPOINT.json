@@ -146,7 +146,15 @@
     },
     "batch_method": "50 positions per resumable batch; overlapping queues per missing evidence/validation, reuse acquired facts",
     "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS",
-    "audio_playback_certified": false
+    "audio_playback_certified": false,
+    "audio_browser_attempt": {
+      "source": "Existing continuous Metal stream",
+      "media_error_code": 4,
+      "ready_state": 0,
+      "played": false,
+      "source_and_selected_family_preserved": true,
+      "certified": false
+    }
   },
   "batch_queues": "work-queues.json",
   "batch_acquisition": "batches/first-50-fields-20261009.json",
@@ -165,6 +173,12 @@
     "new_certified_profiles": 0,
     "new_articles_recovered": 0,
     "new_images": 0,
-    "merge": false
+    "merge": false,
+    "latest_remote_head": "9eafe66a1de09311b21c90fd3846fe62c0d3c049",
+    "ci": {
+      "build": "success",
+      "purge": "success"
+    },
+    "direct_mobile_families": "article, archive, authors, countries, themes, eras, formats, artist; single chrome, no overflow, logo approved red"
   }
 }

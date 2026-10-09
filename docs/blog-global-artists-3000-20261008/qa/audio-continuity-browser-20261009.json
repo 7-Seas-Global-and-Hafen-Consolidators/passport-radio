@@ -1,0 +1,358 @@
+{
+  "before": [
+    {
+      "url": "/",
+      "media": [
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive?_passport=1791514980153",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": 4
+        },
+        {
+          "src": "https://listen.181fm.com/181-awesome80s_128k.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": 4
+        },
+        {
+          "src": "https://cp9.serverse.com/proxy/rockandpop/stream",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://playerservices.streamtheworld.com/api/livestream-redirect/TOP_RADIO.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://0n-reggae.radionetz.de/0n-reggae.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        }
+      ],
+      "runtime": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": false
+      }
+    }
+  ],
+  "after": [
+    {
+      "url": "/blog/w/007745-10000maniacs.html",
+      "media": [
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive?_passport=1791514980153",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": 4
+        },
+        {
+          "src": "https://listen.181fm.com/181-awesome80s_128k.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": 4
+        },
+        {
+          "src": "https://cp9.serverse.com/proxy/rockandpop/stream",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://playerservices.streamtheworld.com/api/livestream-redirect/TOP_RADIO.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://0n-reggae.radionetz.de/0n-reggae.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        }
+      ],
+      "runtime": {
+        "family": "continuous",
+        "volume": 0.8,
+        "playing": false
+      }
+    },
+    {
+      "url": "/",
+      "media": []
+    }
+  ],
+  "paused": [
+    {
+      "url": "/",
+      "media": [
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://mediaserv68.live-streams.nl:18012/OnlyLive?_passport=1791514980153",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": 4
+        },
+        {
+          "src": "https://listen.181fm.com/181-awesome80s_128k.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": 4
+        },
+        {
+          "src": "https://cp9.serverse.com/proxy/rockandpop/stream",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://0n-disco.radionetz.de/0n-disco.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://playerservices.streamtheworld.com/api/livestream-redirect/TOP_RADIO.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "https://0n-reggae.radionetz.de/0n-reggae.mp3",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        },
+        {
+          "src": "",
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "error": null
+        }
+      ],
+      "runtime": {
+        "family": null,
+        "volume": 0.8,
+        "playing": false
+      }
+    }
+  ],
+  "certification_scope": "Structural browser evidence only; external audio playback not certified"
+}
