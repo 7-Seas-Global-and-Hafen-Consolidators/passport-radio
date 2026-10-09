@@ -1,5 +1,5 @@
 {
-  "status": "RECOVERY_PERSISTED_CODE_PUSH_BLOCKED_PROFILES_PENDING",
+  "status": "RECOVERY_RESTORED_SHARED_CODE_PERSISTED_GLOBAL_HOOKS_AND_9911_PROFILES_PENDING",
   "mission_complete": false,
   "base_main_head": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
   "branch": "feat/blog-global-artists-3000-20261008",
@@ -8,7 +8,7 @@
     "merged": true,
     "head": "f2473a5e80b351d0cee9521cac085859e21e4fc9"
   },
-  "target_profiles": 3000,
+  "target_profiles": 9911,
   "inventory_positions": 3000,
   "certified_complete_profiles": 0,
   "existing_matches": 798,
@@ -40,9 +40,11 @@
   "official_videos_certified": 0,
   "acquisition_resume": "Reuse inventory and source hashes. Complete profile facts, authorized artist photo and official video before marking a record complete. Do not recreate existing destination or copy and reattribute source articles.",
   "pending": [
-    "3000 factual profiles with authorized photos, official validated videos and substantiated relationships",
-    "Original complete editorial articles; wholesale third-party text copying and attribution removal not performed",
-    "Remote CI confirmation after push"
+    "Apply 26184 recovered presentation hooks to remote documents without rebuilding corpus",
+    "Reconcile only inventory positions 3001–9911; first 3000 reuse existing inventory",
+    "Complete 9911 factual original profiles with licensed photos and official validated videos",
+    "Verify and repair flagged historical articles individually while retaining routes and required provenance",
+    "Validate full existing radio catalog access and external transport; prior 3-engine controlled QA is not full catalog certification"
   ],
   "qa": "qa/results.json",
   "radio_code_unchanged": [
@@ -56,12 +58,18 @@
   "implementation_commit": "5959adb422da73653731f3a5fb2449d2993dbab4",
   "git_push_error": "fatal: could not read Username for 'https://github.com': No such device or address",
   "local_final_head": "dc6481a6e2a2674d01d9a710769ba1164aacb4b7",
-  "remote_implementation_applied": false,
+  "remote_implementation_applied": "PARTIAL_SHARED_FILES_ONLY",
   "recovery": {
     "path": "docs/blog-global-artists-3000-20261008/recovery/full-recovery.patch.gz",
     "sha256": "2b7444d0af553eb4b6c72537be87fc548f829f88c348e7805adda66a24d97786",
     "bytes": 8791303,
     "base": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
-    "contains": "Full binary Git patch: implementation, 26184 hooks, inventory, hashes, QA scripts/results and screenshots."
-  }
+    "contains": "Full binary Git patch: implementation, 26184 hooks, inventory, hashes, QA scripts/results and screenshots.",
+    "sha256_reverified": true
+  },
+  "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
+  "presentation_hooks_remote": 0,
+  "previous_local_directory_present": false,
+  "implementation_restored_from_verified_package": true,
+  "authenticated_git_data_api_write_confirmed": true
 }
