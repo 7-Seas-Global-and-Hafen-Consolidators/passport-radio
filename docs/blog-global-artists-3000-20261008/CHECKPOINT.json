@@ -58,7 +58,7 @@
   "implementation_commit": "5959adb422da73653731f3a5fb2449d2993dbab4",
   "git_push_error": "fatal: could not read Username for 'https://github.com': No such device or address",
   "local_final_head": "dc6481a6e2a2674d01d9a710769ba1164aacb4b7",
-  "remote_implementation_applied": "PARTIAL_DOCUMENT_HOOKS",
+  "remote_implementation_applied": "SHARED_PRESENTATION_AND_ALL_DOCUMENT_HOOKS",
   "recovery": {
     "path": "docs/blog-global-artists-3000-20261008/recovery/full-recovery.patch.gz",
     "sha256": "2b7444d0af553eb4b6c72537be87fc548f829f88c348e7805adda66a24d97786",
@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 26000,
+  "presentation_hooks_remote": 26184,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 26000,
-    "next_batch": 52,
-    "last_path": "blog/w/382824-iron-maiden.html",
-    "previous_remote_commit": "8304342b9bf7d83c2222f35844eadd84e8e9dd27"
+    "persisted": 26184,
+    "next_batch": 53,
+    "last_path": "blog/w/383014-prog-metal.html",
+    "previous_remote_commit": "47b8be37487c2545d107d4f489885e76549bf19c"
   }
 }
