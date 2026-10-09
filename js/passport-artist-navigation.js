@@ -16,7 +16,7 @@
   } catch (_) { return; }
   const fold = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   const watched = new WeakSet();
-  let data={nodes:[],edges:[]};let media={};
+  let data={nodes:[],edges:[]};let dataReady=false;let media={};
   function pictures(doc){
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
       const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)return;
@@ -46,6 +46,7 @@
     const article=doc.body.classList.contains('pp-blog-article');
     const az=/^\/blog\/arquivo\/(?:letras|letra-[a-z])\.html$/.test(path);
     if(!archive&&!article)return;
+    if(!az&&!dataReady)return;
     if(archive)doc.body.classList.add('passport-artist-archive');
     if(az){doc.body.classList.add('passport-az-directory');styles(doc);}
     const existing=doc.querySelector('[data-passport-artist-tools]');
@@ -181,7 +182,7 @@
   window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document)});
   fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value;pictures(document)}).catch(()=>{});
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{
-    data=value;enhance(document);
+    data=value;dataReady=true;enhance(document);
     const frames=()=>document.querySelectorAll('#pp-nav-page').forEach(watch);frames();
     new MutationObserver(frames).observe(document.body,{childList:true,subtree:true});
   }).catch(()=>{}); // Existing archive links remain usable when enhancement is unavailable.
