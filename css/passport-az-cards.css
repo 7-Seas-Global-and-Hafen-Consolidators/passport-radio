@@ -38,13 +38,29 @@ body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>img{
   background:#fff;
 }
 body.pp-blog.passport-az-directory .passport-az-plate{
-  display:grid;
-  place-items:center;
-  aspect-ratio:1;
-  border-bottom:4px solid #C41E3A;
+  display:none;
+}
+body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>.passport-az-fallback{
+  display:flex;
+  align-items:flex-end;
+  min-height:168px;
+  padding:16px 14px 8px;
   background:#fff;
+  color:#111;
+  font:600 1.35rem/1.25 'Bodoni Moda',Georgia,serif;
+}
+body.pp-blog.passport-az-directory .passport-az-themes{
+  margin:28px 0 0;
+  padding:16px 0 0;
+  border-top:1px solid #111;
+}
+body.pp-blog.passport-az-directory .passport-az-themes h2{
+  margin:0 0 10px;
+  font:700 1.4rem/1.2 'Bodoni Moda',Georgia,serif;
+}
+body.pp-blog.passport-az-directory .passport-az-theme-links a{
   color:#C41E3A;
-  font:700 4.5rem/1 'Bodoni Moda',Georgia,serif;
+  font:400 1rem/1.4 'Source Serif 4',Georgia,serif;
 }
 body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>.passport-artist-name{
   grid-column:auto;
