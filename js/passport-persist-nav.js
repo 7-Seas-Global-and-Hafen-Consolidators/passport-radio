@@ -6,7 +6,7 @@
  const home=url=>/^\/(?:index\.html)?$/.test(url.pathname);
  const known=url=>/^\/blog(?:\.html|\/)/.test(url.pathname)||/^\/(?:noticias|editorial)\.html$/.test(url.pathname)||/^\/(?:editorial|historias)\//.test(url.pathname);
  const excluded=/\/(?:radio[^/]*|globo-de-ouro-player|passport-player[^/]*|adapter-lab)\.html$/i;
- const compatible=url=>url.origin===location.origin&&!excluded.test(url.pathname)&&(home(url)||known(url)||/\.html$/i.test(url.pathname));
+ const compatible=url=>url.origin===location.origin&&!!document.querySelector('#root #passport-editorial-outlet')&&!excluded.test(url.pathname)&&(home(url)||known(url));
  let serial=0,current=null;const cache=new Map();
  const parse=html=>new DOMParser().parseFromString(html,'text/html');
  const isEditorial=(doc,url)=>!!doc.querySelector('main')&&(!!doc.querySelector('body.pp-blog,body.pp-blog-article,body.pp-article,.pe-prose,.mn-prose,article.prose,main.story,body.passport-news-paper')||known(url));
