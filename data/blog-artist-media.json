@@ -27858,9 +27858,9 @@
     "credit": "Discogs",
     "license": "Discogs",
     "license_url": "https://www.discogs.com/artist/3579586-Dark-Eden-2",
-    "changes": "recorte quadrado ao centro",
+    "changes": "wordmark inteiro no cartão",
     "certified_profile": false,
-    "kind": "photo"
+    "kind": "logo"
   },
   "/blog/e/da-rkwitch.html": {
     "name": "Dark Witch",
@@ -28254,9 +28254,9 @@
     "credit": "Discogs",
     "license": "Discogs",
     "license_url": "https://www.discogs.com/artist/3195663-Minatory",
-    "changes": "recorte quadrado ao centro",
+    "changes": "logo inteiro no cartão",
     "certified_profile": false,
-    "kind": "photo"
+    "kind": "logo"
   },
   "/blog/e/monkeyhead.html": {
     "name": "Monkey Head",
@@ -28452,9 +28452,9 @@
     "credit": "Discogs",
     "license": "Discogs",
     "license_url": "https://www.discogs.com/artist/6083307-Semic-Stains",
-    "changes": "recorte quadrado ao centro",
+    "changes": "logo inteiro no cartão",
     "certified_profile": false,
-    "kind": "photo"
+    "kind": "logo"
   },
   "/blog/e/seventhone.html": {
     "name": "Seventh One",
@@ -28496,7 +28496,7 @@
     "credit": "Discogs",
     "license": "Discogs",
     "license_url": "https://www.discogs.com/artist/2560187-Silent-Cry",
-    "changes": "recorte quadrado ao centro",
+    "changes": "banda inteira",
     "certified_profile": false,
     "kind": "photo"
   },
@@ -28661,9 +28661,9 @@
     "credit": "Discogs",
     "license": "Discogs",
     "license_url": "https://www.discogs.com/artist/1948709-Tribuzy",
-    "changes": "recorte quadrado ao centro",
+    "changes": "logo inteiro no cartão",
     "certified_profile": false,
-    "kind": "photo"
+    "kind": "logo"
   },
   "/blog/e/ulikusch.html": {
     "name": "Uli Kusch",
@@ -28705,6 +28705,215 @@
     "credit": "Discogs",
     "license": "Discogs",
     "license_url": "https://www.discogs.com/artist/6519344-Zênite",
+    "changes": "logo inteiro no cartão",
+    "certified_profile": false,
+    "kind": "logo"
+  },
+  "/blog/e/gillanandglover.html": {
+    "name": "Gillan & Glover",
+    "image": "/assets/blog/artists/gillanandglover.jpg",
+    "source": "https://en.wikipedia.org/wiki/Accidentally_on_Purpose_(Ian_Gillan_and_Roger_Glover_album)",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Accidentally_on_Purpose_(Ian_Gillan_and_Roger_Glover_album)",
+    "changes": "capa inteira, wordmark no alto",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/mikevescera.html": {
+    "name": "Mike Vescera",
+    "image": "/assets/blog/artists/mikevescera.jpg",
+    "source": "https://www.deezer.com/artist/9690942",
+    "credit": "Imagem promocional",
+    "license": "promocional",
+    "license_url": "https://www.deezer.com/artist/9690942",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/perzonalwar.html": {
+    "name": "Perzonal War",
+    "image": "/assets/blog/artists/perzonalwar.jpg",
+    "source": "https://www.wikidata.org/wiki/Q1436743",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://www.wikidata.org/wiki/Q1436743",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/allhelluja.html": {
+    "name": "All Helluja",
+    "image": "/assets/blog/artists/allhelluja.jpg",
+    "source": "https://www.discogs.com/artist/1359094-Allhelluja",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/1359094-Allhelluja",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/catedral.html": {
+    "name": "Catedral",
+    "image": "/assets/blog/artists/catedral.jpg",
+    "source": "https://www.discogs.com/artist/4822440-Catedral-2",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/4822440-Catedral-2",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/chimaera.html": {
+    "name": "Chimaera",
+    "image": "/assets/blog/artists/chimaera.jpg",
+    "source": "https://www.discogs.com/artist/88384-Chimaera",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/88384-Chimaera",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "logo"
+  },
+  "/blog/e/collapsenr.html": {
+    "name": "Collapse NR",
+    "image": "/assets/blog/artists/collapsenr.jpg",
+    "source": "https://www.discogs.com/artist/3720975-Collapse-NR",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/3720975-Collapse-NR",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/e-meraldrain.html": {
+    "name": "Emerald Rain",
+    "image": "/assets/blog/artists/e-meraldrain.jpg",
+    "source": "https://www.discogs.com/artist/1272666-Emerald-Rain",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/1272666-Emerald-Rain",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/fabiorocha.html": {
+    "name": "Fábio Rocha",
+    "image": "/assets/blog/artists/fabiorocha.jpg",
+    "source": "https://www.discogs.com/artist/4037421-Fabio-Rocha",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/4037421-Fabio-Rocha",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/gates.html": {
+    "name": "Gates",
+    "image": "/assets/blog/artists/gates.jpg",
+    "source": "https://www.discogs.com/artist/2485197-Gates-4",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/2485197-Gates-4",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/jessicafalchi.html": {
+    "name": "Jéssica Falchi",
+    "image": "/assets/blog/artists/jessicafalchi.jpg",
+    "source": "https://www.discogs.com/artist/13343556-Jéssica-Di-Falchi",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/13343556-Jéssica-Di-Falchi",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/powergod.html": {
+    "name": "Powergod",
+    "image": "/assets/blog/artists/powergod.jpg",
+    "source": "https://www.discogs.com/artist/413107-Powergod",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/413107-Powergod",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/proloud.html": {
+    "name": "Proloud",
+    "image": "/assets/blog/artists/proloud.jpg",
+    "source": "https://www.discogs.com/artist/3216196-Proloud",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/3216196-Proloud",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/silverblade.html": {
+    "name": "Silverblade",
+    "image": "/assets/blog/artists/silverblade.jpg",
+    "source": "https://www.discogs.com/artist/9534739-Silverblade-3",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/9534739-Silverblade-3",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "logo"
+  },
+  "/blog/e/simbolo.html": {
+    "name": "Símbolo",
+    "image": "/assets/blog/artists/simbolo.jpg",
+    "source": "https://www.discogs.com/artist/59916-Simbolo",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/59916-Simbolo",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/southernrockallstars.html": {
+    "name": "Southern Rock All-Stars",
+    "image": "/assets/blog/artists/southernrockallstars.jpg",
+    "source": "https://www.discogs.com/artist/1748625-Southern-Rock-Allstars",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/1748625-Southern-Rock-Allstars",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/spectrus.html": {
+    "name": "Spectrus",
+    "image": "/assets/blog/artists/spectrus.jpg",
+    "source": "https://www.discogs.com/artist/3422663-Spectrus",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/3422663-Spectrus",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/van-ize.html": {
+    "name": "Vanize",
+    "image": "/assets/blog/artists/van-ize.jpg",
+    "source": "https://www.discogs.com/artist/833322-Vanize",
+    "credit": "Discogs",
+    "license": "Discogs",
+    "license_url": "https://www.discogs.com/artist/833322-Vanize",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/luizcarlini.html": {
+    "name": "Luiz Carlini",
+    "image": "/assets/blog/artists/luizcarlini.jpg",
+    "source": "https://pt.wikipedia.org/wiki/Luiz_S%C3%A9rgio_Carlini",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://pt.wikipedia.org/wiki/Luiz_S%C3%A9rgio_Carlini",
     "changes": "recorte quadrado ao centro",
     "certified_profile": false,
     "kind": "photo"
