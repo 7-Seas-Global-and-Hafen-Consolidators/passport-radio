@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 12000,
+  "presentation_hooks_remote": 12500,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 12000,
-    "next_batch": 24,
-    "last_path": "blog/w/008447-ac-dc.html",
-    "previous_remote_commit": "37de08b8230b99c8fbe8dafbfec1c8bbc215ba24"
+    "persisted": 12500,
+    "next_batch": 25,
+    "last_path": "blog/w/008950-planethemp.html",
+    "previous_remote_commit": "2d53a4f5c98c4ee3eaac7f16a0f9c2c1f59ed715"
   }
 }
