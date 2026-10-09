@@ -43,7 +43,7 @@
   document.body.className=doc.body.className;document.body.dataset.passportInstitutional='1';
   contentStyles(doc);metadata(doc,url);current=url.href;
   if(/^\/blog(?:\.html|\/)/.test(url.pathname)){
-   if(!window.PassportBlogShell)await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/js/passport-blog-shell.js?v=20261009-outlet';script.onload=resolve;script.onerror=reject;document.head.append(script)});
+   if(!window.PassportBlogShell)await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/js/passport-blog-shell.js?v=20261009-az-directory';script.onload=resolve;script.onerror=reject;document.head.append(script)});
    if(token!==serial)return;
    const href='/css/passport-blog-shell.css?v=20261009-outlet';if(!document.querySelector('link[data-passport-outlet-style]')){const css=document.createElement('link');css.rel='stylesheet';css.href=href;css.dataset.passportOutletStyle='1';document.head.append(css)}
    window.PassportBlogShell.decorate(outlet.querySelector('main'));
