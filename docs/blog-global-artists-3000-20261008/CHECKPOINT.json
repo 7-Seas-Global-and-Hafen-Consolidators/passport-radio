@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 25000,
+  "presentation_hooks_remote": 25500,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 25000,
-    "next_batch": 50,
-    "last_path": "blog/w/381785-nevermore.html",
-    "previous_remote_commit": "b5e9b400ba66c126ded5b31de6f81f32c3614752"
+    "persisted": 25500,
+    "next_batch": 51,
+    "last_path": "blog/w/382309-the-beatles.html",
+    "previous_remote_commit": "36997ff0fc77a7036cb0e887f123ebaa5c6965e6"
   }
 }
