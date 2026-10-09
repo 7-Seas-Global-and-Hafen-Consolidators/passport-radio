@@ -1,8 +1,15 @@
 /* Editorial chrome only. Media hosts and station controls are outside scope. */
-@import url('/css/payment-footer-trust.css');
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,700&family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;700&display=swap');
 body[data-passport-blog-shell]{--blog-gold:#C41E3A;--blog-ink:#111111;--blog-mute:#555;--blog-panel:#FFFFFF;--blog-line:#ddd;background:#FFFFFF;color:#111111;font-family:'Instrument Sans',sans-serif;margin:0}
 body[data-passport-blog-shell] :is(h1,h2,h3){font-family:'Bodoni Moda',Georgia,serif}
+/* The original institutional App remains the only chrome and radio facade. */
+body[data-passport-institutional] #root{width:100%;margin:0;padding:0}
+#passport-editorial-outlet[hidden]{display:none}
+#passport-editorial-outlet{position:static;min-width:0}
+body[data-passport-institutional] :is(.pb-mast,.pb-nav,.player-bar,.pb-door,.pb-footer){background:#FFFFFF;color:#111111}
+body[data-passport-institutional] .pb-mast__logo{color:#C41E3A}
+body[data-passport-institutional] .pb-footer__editorial{max-width:1200px;margin:0 auto;padding:24px 20px;font-family:'Instrument Sans',sans-serif}
+body[data-passport-institutional] .pb-footer__editorial nav{display:flex;flex-wrap:wrap;gap:12px 20px}
+body[data-passport-institutional] .pb-footer__editorial a{color:#C41E3A}
 body[data-passport-blog-shell] :is(.pe-prose,.mn-prose,.blog-intro){font-family:'Source Serif 4',Georgia,serif}
 body[data-passport-blog-shell] .blog-page{max-width:1120px;margin:0 auto;padding:24px 20px 48px}
 body[data-passport-blog-shell] :is(.blog-card,.blog-collab-strip,.blog-follow,.blog-comment,.blog-doc-cell,.passport-discussion){background:#fff;color:#111;border-color:#ddd}
@@ -45,3 +52,8 @@ html body[data-passport-blog-shell] .passport-blog-shell-search input{background
 html body[data-passport-blog-shell] :is(.payment-footer-trust__inner,.payment-footer-trust__brands,.payment-footer-trust__provider,.payment-footer-trust__methods){background:#FFFFFF!important;color:#111111!important}
 html body[data-passport-blog-shell] .payment-footer-trust__brands img{background:#FFFFFF!important;border-color:#111111!important}
 
+
+/* Approved institutional colours override legacy page skins on direct entry. */
+body[data-passport-institutional] .pb-mast .pb-mast__logo,body[data-passport-institutional] .pb-mast .pb-mast__logo em{color:#C41E3A!important;font-family: Bodoni Moda,Georgia,serif}
+body[data-passport-institutional] :is(.pb-nav a,.pb-door a,.pb-door__subs button,.pb-door__groups button){color:#111111!important}
+body[data-passport-institutional] :is(.pb-door a.active,.pb-door button.active){color:#C41E3A!important}

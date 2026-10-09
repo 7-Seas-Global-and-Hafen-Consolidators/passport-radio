@@ -93,10 +93,12 @@
     frame.addEventListener('load',run);run();
   }
   window.PassportArtistNavigation=Object.freeze({enhance});
+  window.addEventListener('passport:editorial-rendered',()=>enhance(document));
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{
     data=value;enhance(document);
     const frames=()=>document.querySelectorAll('#pp-nav-page').forEach(watch);frames();
     new MutationObserver(frames).observe(document.body,{childList:true,subtree:true});
   }).catch(()=>{}); // Existing archive links remain usable when enhancement is unavailable.
 })();
+
 

@@ -1,5 +1,5 @@
 {
-  "status": "SHARED_BLOG_PRESENTATION_PERSISTED_9911_INVENTORIED_PROFILES_PENDING",
+  "status": "INSTITUTIONAL_OUTLET_IMPLEMENTED_BROWSER_STRUCTURE_PASS_EDITORIAL_RECOVERY_PENDING",
   "mission_complete": false,
   "base_main_head": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
   "branch": "feat/blog-global-artists-3000-20261008",
@@ -75,9 +75,7 @@
   ],
   "qa": "qa/results.json",
   "radio_code_unchanged": [
-    "js/passport-audio-continuity.js",
     "js/passport-bus.js",
-    "assets/index-DgBCruM8.js",
     "radio.html",
     "index.html"
   ],
@@ -108,7 +106,7 @@
   },
   "inventory": "artists-9911-inventory.json",
   "remote_global_presentation_commit": "334661cb0dc6442d7ea9e7d5eae78be49f54a649",
-  "enriched_existing_profiles": 1,
+  "enriched_existing_profiles": 4,
   "official_video_embeds_oembed_verified": 2,
   "profile_incremental_qa": [
     "photo decoded, 444x350, SHA256 recorded",
@@ -117,44 +115,56 @@
     "no autoplay parameter"
   ],
   "source_authorization": {
-    "status": "CONFIRMED_BY_OWNER_20261008",
+    "status": "OWNER_SUPREME_ORDER_20261009_WHIPLASH_INACTIVE_PRESERVED",
     "references": [
       "Radio BOB!",
-      "Whiplash.net",
       "Metal Hammer"
     ],
     "media_research": "Search engines, official artist/label channels, press archives, Wikimedia Commons and other legitimate sources authorized; compatible rights required."
   },
   "editorial_records_factually_replaced": 1,
   "last_resumption": {
-    "base_remote_head": "995c0fa7ebe38394ab90362095f25c1a84ff0efe",
+    "base_remote_head": "c987e46e5c7c8abe2e81c222a65f7bdd21204596",
     "uploaded_source_hashes_match_checkpoint": true,
     "screenshots_read": 4,
     "source_blocker_resolved": true,
     "reading_time": "Shared calculation now tracks prose changes, excludes chrome/references, includes profiles",
     "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
     "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
-    "browser_qa_blocker": "Playwright installed but Chromium executable absent; no browser playback certification",
-    "next_exact_work": "Continue first batch positions 11-50; use batch ledgers before source acquisition; pending certification positions 1-10; direct editorial facade and real browser audio QA pending",
+    "browser_qa_blocker": null,
+    "next_exact_work": "Real audio stream continuity certification; direct article/other index families visual checks; live video replacement; artificial article recovery; next acquisition position11 18 Voutz",
     "new_certified_profiles": 0,
     "first_batch_remote_commit": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
-    "home_to_editorial_facade": "Keep original React player and complete original catalog in their existing root; hide Home editorial siblings; resize reader below original facade; no transport API calls",
-    "direct_editorial_entry": "Full facade on direct entry without a Home root remains pending; do not certify all routes",
-    "facade_regression": "PASS: original facade not inert; one reader; dynamic measured bounds; Home return; no duplicate footer controls",
+    "home_to_editorial_facade": "Home content unmounted by original App route state; stable original player/catalog and single main outlet; no editorial iframe or Home-hiding CSS",
+    "direct_editorial_entry": "Same approved App mounted once; templates removed; transport ownership bootstrap preserved",
+    "facade_regression": "Chromium153 PASS five editorial families plus Home return and direct mobile Accept; one main/header/footer/player; no overflow; original player/catalog/bay identities retained; no JS errors",
     "preservation_commit": "575d8bd9cb989784be2d9b43c6311eb1f20f0782",
-    "last_implementation_commit": "0f99236ea809eaf68b3e77a3131f4f269e95635a",
+    "last_implementation_commit": "01e43b29182f631aa20244e9c00f959b4af40bf8",
     "ci_last_implementation": {
       "build": "success",
       "purge": "success"
     },
     "batch_method": "50 positions per resumable batch; overlapping queues per missing evidence/validation, reuse acquired facts",
-    "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS"
+    "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS",
+    "audio_playback_certified": false
   },
   "batch_queues": "work-queues.json",
-  "batch_acquisition": [
-    "docs/blog-global-artists-3000-20261008/batches/first-50-fields-20261009.json",
-    "docs/blog-global-artists-3000-20261008/batches/first-50-fields-part2-20261009.json"
-  ],
+  "batch_acquisition": "batches/first-50-fields-20261009.json",
   "factually_enriched_existing_profiles": 4,
-  "next_acquisition_position": 11
+  "next_acquisition_position": 11,
+  "video_policy": {
+    "main_video": "LIVE_MUSICAL_PERFORMANCE_ONLY",
+    "existing_oembed_checks": 2,
+    "certified_live_playbacks": 0,
+    "known_prior_studio_selections": "Pending live replacement; not qualifying"
+  },
+  "shared_architecture_batch": {
+    "parent_remote_head": "c987e46e5c7c8abe2e81c222a65f7bdd21204596",
+    "qa": "qa/institutional-outlet-browser-20261009.json",
+    "transport_engine_region_byte_identical": true,
+    "new_certified_profiles": 0,
+    "new_articles_recovered": 0,
+    "new_images": 0,
+    "merge": false
+  }
 }
