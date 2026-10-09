@@ -1,5 +1,5 @@
 {
-  "status": "RECOVERY_RESTORED_SHARED_CODE_PERSISTED_GLOBAL_HOOKS_AND_9911_PROFILES_PENDING",
+  "status": "SHARED_BLOG_PRESENTATION_PERSISTED_9911_INVENTORIED_PROFILES_PENDING",
   "mission_complete": false,
   "base_main_head": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
   "branch": "feat/blog-global-artists-3000-20261008",
@@ -9,10 +9,10 @@
     "head": "f2473a5e80b351d0cee9521cac085859e21e4fc9"
   },
   "target_profiles": 9911,
-  "inventory_positions": 3000,
+  "inventory_positions": 9911,
   "certified_complete_profiles": 0,
-  "existing_matches": 798,
-  "new_candidates": 2202,
+  "existing_matches": 2619,
+  "new_candidates": 7292,
   "new_profiles_published": 0,
   "last_completed_artist": null,
   "next_pending_artist": {
@@ -26,8 +26,8 @@
     "original_editorial_profile": null,
     "completed": false
   },
-  "last_inventory_position": 3000,
-  "last_inventory_artist": "Eric Johnson",
+  "last_inventory_position": 9911,
+  "last_inventory_artist": "ZZ Top",
   "sources": {
     "whiplash_sha256": "6bf58aa0b76e54c0e7eedce2d6a8332a0cee1727bf21f2dc60102bdabcad6b3d",
     "metalhammer_sha256": "ab0c0a78e3c7aeba0c312fc8eeab4e76916cde8a0ec28c085d71a1e95b07c934"
@@ -40,8 +40,6 @@
   "official_videos_certified": 0,
   "acquisition_resume": "Reuse inventory and source hashes. Complete profile facts, authorized artist photo and official video before marking a record complete. Do not recreate existing destination or copy and reattribute source articles.",
   "pending": [
-    "Apply 26184 recovered presentation hooks to remote documents without rebuilding corpus",
-    "Reconcile only inventory positions 3001–9911; first 3000 reuse existing inventory",
     "Complete 9911 factual original profiles with licensed photos and official validated videos",
     "Verify and repair flagged historical articles individually while retaining routes and required provenance",
     "Validate full existing radio catalog access and external transport; prior 3-engine controlled QA is not full catalog certification"
@@ -78,5 +76,7 @@
     "next_batch": 53,
     "last_path": "blog/w/383014-prog-metal.html",
     "previous_remote_commit": "47b8be37487c2545d107d4f489885e76549bf19c"
-  }
+  },
+  "inventory": "artists-9911-inventory.json",
+  "remote_global_presentation_commit": "334661cb0dc6442d7ea9e7d5eae78be49f54a649"
 }
