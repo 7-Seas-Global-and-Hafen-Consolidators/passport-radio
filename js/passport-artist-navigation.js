@@ -29,10 +29,11 @@
       a.dataset.artistName=photo.name||label;a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
       const img=doc.createElement("img");img.src=photo.image;img.alt=photo.name||label;img.loading="lazy";img.decoding="async";
       if(photo.kind==="logo")img.className="passport-az-logo";
+      const shot=doc.createElement("span");shot.className="passport-az-shot";shot.append(img);
+      if(photo.credit){const stamp=doc.createElement("em");stamp.className="passport-az-credit";stamp.textContent=photo.credit;shot.append(stamp);}
       const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=label;
       const count=doc.createElement("small");count.className="passport-artist-story-count";count.textContent=storyCount;count.setAttribute("aria-label",storyCount+" matérias relacionadas");
-      const credit=doc.createElement("small");credit.className="passport-artist-photo-credit";credit.textContent=[photo.credit,photo.license].filter(Boolean).join(" · ");
-      a.replaceChildren(img,name,count,credit);
+      a.replaceChildren(shot,name,count);
       let credits=doc.querySelector("[data-passport-gallery-credits]");if(!credits){credits=doc.createElement("p");credits.dataset.passportGalleryCredits="1";credits.className="passport-gallery-credits";doc.querySelector("main")?.append(credits)}
       credits.append(link(doc,photo.name+" — "+photo.credit,photo.source),doc.createTextNode(" · "),link(doc,photo.license,photo.license_url),doc.createTextNode(". "));
     }
@@ -76,7 +77,7 @@
   function styles(doc) {
       const cardsCss=doc.querySelector('link[data-passport-az-cards]')||doc.createElement('link');
       if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
-      cardsCss.href='/css/passport-az-cards.css?v=20261009-azframe';
+      cardsCss.href='/css/passport-az-cards.css?v=20261009-azlogo';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
     const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
@@ -179,7 +180,8 @@
           const formationIds=new Set((data?.edges||[]).flatMap(e=>[e.artist,e.band]));
           const q=fold(input.value),kind=type.value;
           const filtered=entries.filter(a=>{
-            if(!fold(a.dataset.artistName||a.textContent).includes(q))return false;
+            const folded=fold(a.dataset.artistName||a.textContent);
+            if(q && !(folded.startsWith(q) || folded.replace(/^(the|os|as|o|a|los|las)/,'')===q))return false;
             const node=nodesByPath.get(new URL(a.href,doc.URL).pathname);
             if(kind==='all')return true;
             if(kind==='band')return node?.kind==='band';

@@ -28,9 +28,14 @@ body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card:hover{
   border-color:#C41E3A;
   color:#111!important;
 }
-body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>img{
-  grid-column:auto;
-  grid-row:auto;
+body.pp-blog.passport-az-directory .passport-az-shot{
+  position:relative;
+  display:block;
+  width:100%;
+  background:#fff;
+}
+body.pp-blog.passport-az-directory .passport-az-shot>img{
+  display:block;
   width:100%;
   height:auto;
   aspect-ratio:1;
@@ -38,12 +43,24 @@ body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>img{
   object-position:center center;
   background:#fff;
 }
-body.pp-blog.passport-az-directory .blog-entity-cloud>a.passport-az-card>img.passport-az-logo{
+body.pp-blog.passport-az-directory .passport-az-shot>img.passport-az-logo{
   object-fit:contain;
   object-position:center;
-  padding:8%;
+  padding:10%;
   box-sizing:border-box;
   background:#fff;
+}
+body.pp-blog.passport-az-directory .passport-az-credit{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+  padding:18px 8px 6px;
+  background:linear-gradient(transparent,rgba(0,0,0,.72));
+  color:#fff;
+  font:600 11px/1.2 'Instrument Sans',sans-serif;
+  font-style:normal;
 }
 body.pp-blog.passport-az-directory .passport-az-plate{
   display:none;

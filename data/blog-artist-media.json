@@ -1004,7 +1004,7 @@
     "name": "Bandit",
     "image": "/assets/blog/artists/bandit.jpg",
     "source": "https://en.wikipedia.org/wiki/Bandit_%28band%29",
-    "credit": "Wikimedia",
+    "credit": "© Steve Emberton",
     "license": "ver página",
     "license_url": "https://en.wikipedia.org/wiki/Bandit_%28band%29",
     "changes": "recorte quadrado ao centro",
@@ -3258,13 +3258,13 @@
   "/blog/e/rammstein.html": {
     "name": "Rammstein",
     "image": "/assets/blog/artists/rammstein.jpg",
-    "source": "https://en.wikipedia.org/wiki/Rammstein",
+    "source": "https://commons.wikimedia.org/wiki/File:Rammstein.svg",
     "credit": "Wikimedia",
     "license": "ver página",
-    "license_url": "https://en.wikipedia.org/wiki/Rammstein",
+    "license_url": "https://commons.wikimedia.org/wiki/File:Rammstein.svg",
     "changes": "recorte quadrado ao centro",
     "certified_profile": false,
-    "kind": "photo"
+    "kind": "logo"
   },
   "/blog/e/ragnarock.html": {
     "name": "Ragnarock",
@@ -3388,12 +3388,12 @@
     "kind": "photo"
   },
   "/blog/e/rasmus.html": {
-    "name": "R.A.S.M.U.S",
+    "name": "The Rasmus",
     "image": "/assets/blog/artists/rasmus.jpg",
-    "source": "https://www.deezer.com/artist/87916932",
-    "credit": "Imagem promocional",
-    "license": "promocional",
-    "license_url": "https://www.deezer.com/artist/87916932",
+    "source": "https://en.wikipedia.org/wiki/The_Rasmus",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/The_Rasmus",
     "changes": "recorte quadrado ao centro",
     "certified_profile": false,
     "kind": "photo"
@@ -4545,10 +4545,10 @@
   "/blog/e/zach-cregger.html": {
     "name": "Zach Cregger",
     "image": "/assets/blog/artists/zach-cregger.jpg",
-    "source": "https://www.deezer.com/artist/7710346",
-    "credit": "Imagem promocional",
-    "license": "promocional",
-    "license_url": "https://www.deezer.com/artist/7710346",
+    "source": "https://en.wikipedia.org/wiki/Zach_Cregger",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Zach_Cregger",
     "changes": "recorte quadrado ao centro",
     "certified_profile": false,
     "kind": "photo"
@@ -27011,6 +27011,116 @@
     "credit": "Imagem promocional",
     "license": "promocional",
     "license_url": "https://www.deezer.com/artist/111727",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/bush.html": {
+    "name": "Bush",
+    "image": "/assets/blog/artists/bush.jpg",
+    "source": "https://en.wikipedia.org/wiki/Bush_(British_band)",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Bush_(British_band)",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/bon-fire.html": {
+    "name": "Bonfire",
+    "image": "/assets/blog/artists/bon-fire.jpg",
+    "source": "https://en.wikipedia.org/wiki/Bonfire_%28band%29",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Bonfire_%28band%29",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/e-chobrain.html": {
+    "name": "Echobrain",
+    "image": "/assets/blog/artists/e-chobrain.jpg",
+    "source": "https://en.wikipedia.org/wiki/Echobrain",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Echobrain",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/e-clipse.html": {
+    "name": "Eclipse",
+    "image": "/assets/blog/artists/e-clipse.jpg",
+    "source": "https://en.wikipedia.org/wiki/Eclipse_%28band%29",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Eclipse_%28band%29",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/john-bush.html": {
+    "name": "John Bush",
+    "image": "/assets/blog/artists/john-bush.jpg",
+    "source": "https://en.wikipedia.org/wiki/John_Bush_%28singer%29",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/John_Bush_%28singer%29",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/mashups.html": {
+    "name": "Mashups",
+    "image": "/assets/blog/artists/mashups.jpg",
+    "source": "https://www.deezer.com/artist/4851713",
+    "credit": "Imagem promocional",
+    "license": "promocional",
+    "license_url": "https://www.deezer.com/artist/4851713",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/mullmuzzler.html": {
+    "name": "MullMuzzler",
+    "image": "/assets/blog/artists/mullmuzzler.jpg",
+    "source": "https://en.wikipedia.org/wiki/MullMuzzler",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/MullMuzzler",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/sunno.html": {
+    "name": "Sunn O)))",
+    "image": "/assets/blog/artists/sunno.jpg",
+    "source": "https://en.wikipedia.org/wiki/Sunn_O%29%29%29",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/Sunn_O%29%29%29",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/thrash-metal.html": {
+    "name": "thrash metal",
+    "image": "/assets/blog/artists/thrash-metal.jpg",
+    "source": "https://www.wikidata.org/wiki/Q483352",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://www.wikidata.org/wiki/Q483352",
+    "changes": "recorte quadrado ao centro",
+    "certified_profile": false,
+    "kind": "photo"
+  },
+  "/blog/e/udo.html": {
+    "name": "U.D.O",
+    "image": "/assets/blog/artists/udo.jpg",
+    "source": "https://en.wikipedia.org/wiki/U.D.O.",
+    "credit": "Wikimedia",
+    "license": "ver página",
+    "license_url": "https://en.wikipedia.org/wiki/U.D.O.",
     "changes": "recorte quadrado ao centro",
     "certified_profile": false,
     "kind": "photo"
