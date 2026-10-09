@@ -174,11 +174,20 @@
     "new_articles_recovered": 0,
     "new_images": 0,
     "merge": false,
-    "latest_remote_head": "9eafe66a1de09311b21c90fd3846fe62c0d3c049",
+    "latest_remote_head": "742dd33618c5577f92d15fe09dbfe9f5ff025b10",
     "ci": {
       "build": "success",
       "purge": "success"
     },
     "direct_mobile_families": "article, archive, authors, countries, themes, eras, formats, artist; single chrome, no overflow, logo approved red"
+  },
+  "az_media_registry": {
+    "path": "data/blog-artist-media.json",
+    "previously_acquired_photos": 2,
+    "images_integrated_in_existing_az": 1,
+    "new_acquisitions": 0,
+    "new_destinations": 0,
+    "certified_profiles": 0,
+    "qa": "qa/gallery-resumption-20261009.json"
   }
 }

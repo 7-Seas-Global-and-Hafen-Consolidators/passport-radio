@@ -1,10 +1,10 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
 function node(tag){return {tagName:tag.toUpperCase(),children:[],dataset:{},events:{},hidden:false,textContent:'',value:'',setAttribute(k,v){this[k]=v},append(...v){this.children.push(...v)},addEventListener(k,v){this.events[k]=v},classList:{add(){},contains(){return false}}};}
-const entries=Array.from({length:100},(_,i)=>({textContent:i<3?'Águia '+i:'Banda '+i,hidden:false}));
+const entries=Array.from({length:100},(_,i)=>({textContent:i<3?'Águia '+i:'Banda '+i,hidden:false,dataset:{}}));
 const cloud={querySelectorAll:()=>entries,parentElement:node('section')};
 const main={tools:null,querySelector:()=>null,querySelectorAll:s=>s==='a[href^="/blog/e/"]'?entries:s==='.blog-entity-cloud'?[cloud]:[],prepend(n){this.tools=n}};
 const doc={URL:'https://passport.test/blog/arquivo/letras.html?pagina=999',body:node('body'),head:node('head'),createElement:node,querySelector:s=>s==='main'?main:null,querySelectorAll:()=>[],defaultView:{history:{state:null,replaceState(){}}}};
-const win={};const context={window:win,top:win,document:doc,URL,fetch:async()=>({ok:true,json:async()=>({nodes:[],edges:[]})}),MutationObserver:class{observe(){}}};vm.createContext(context);
+const win={addEventListener(){}};const context={window:win,top:win,document:doc,URL,fetch:async()=>({ok:true,json:async()=>({nodes:[],edges:[]})}),MutationObserver:class{observe(){}}};vm.createContext(context);
 vm.runInContext(fs.readFileSync('js/passport-artist-navigation.js','utf8'),context);
 setImmediate(()=>{
  try{
