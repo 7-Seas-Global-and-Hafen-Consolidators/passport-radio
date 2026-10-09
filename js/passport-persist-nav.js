@@ -17,14 +17,25 @@
   // Presentation only: keep the opaque transport mounted, remove the underlying
   // page from the reader's visual/accessibility flow until the reader closes.
   const presentation = document.createElement('style');
-  presentation.textContent = 'body.pp-editorial-reader-active{height:100dvh;overflow:hidden!important}body.pp-editorial-reader-active> :not(#pp-nav-page):not(#qwen-engine-bay):not(#passport-casa-host):not(script):not(style){visibility:hidden!important;position:fixed!important}#pp-nav-page[hidden]{display:none!important}#pp-nav-page:not([hidden]){display:block!important}';
+  presentation.textContent = 'body.pp-editorial-reader-active{height:100dvh;overflow:hidden!important}body.pp-editorial-reader-active> :not(#root):not(#pp-nav-page):not(#qwen-engine-bay):not(#passport-casa-host):not(script):not(style){visibility:hidden!important;position:fixed!important}body.pp-editorial-reader-active #root{position:fixed;inset:0 0 auto;z-index:2147483001;background:#fff}body.pp-editorial-reader-active #root>:not(.player-bar):not(.pb-door){display:none!important}body.pp-editorial-reader-active #root .pb-door{max-height:35dvh;overflow:auto;margin-top:0;margin-bottom:0}#pp-nav-page[hidden]{display:none!important}#pp-nav-page:not([hidden]){display:block!important}';
   document.head.append(presentation);
   const root = document.getElementById('root');
   const priorInert = root?.inert;
   function readerActive(active) {
     document.body.classList.toggle('pp-editorial-reader-active', active);
-    if (root) root.inert = active || priorInert;
+    // The approved Home facade stays in its React root. Keep its real controls
+    // and complete catalog reachable; hide only the Home's editorial sections.
+    if (root) root.inert = priorInert;
+    readerBounds();
   }
+  function readerBounds() {
+    if(!frame)return;
+    const height=root && document.body.classList.contains('pp-editorial-reader-active') ? root.getBoundingClientRect().height : 0;
+    frame.style.top=height+'px';
+    frame.style.height='calc(100dvh - '+height+'px)';
+  }
+  if(root && typeof ResizeObserver==='function')new ResizeObserver(readerBounds).observe(root);
+  window.addEventListener('resize',readerBounds);
   const urlOf = href => { try { return new URL(href, location.href); } catch (_) { return null; } };
   const home = url => /^(\/|\/index\.html)$/.test(url.pathname);
   const compatible = url => url && url.origin === location.origin && !excluded.test(url.pathname) &&
@@ -56,7 +67,8 @@
       if (!doc || !currentURL || frame.contentWindow.location.href !== currentURL.href) return;
       attach(doc);
       document.title = doc.title;
-      window.PassportContinuity?.attachControls(doc);
+      if(root?.querySelector('.player-bar'))window.PassportContinuity?.detachControls();
+      else window.PassportContinuity?.attachControls(doc);
       frame.focus();
     });
     document.body.append(frame);
@@ -125,3 +137,4 @@
     isCompat: href => compatible(urlOf(href))
   });
 })();
+

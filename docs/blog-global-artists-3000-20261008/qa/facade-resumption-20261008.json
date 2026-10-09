@@ -1,0 +1,10 @@
+{
+  "parent_remote_head": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
+  "modified_behavior": "Home reader keeps original player/catalog root available",
+  "unit_regression": "PASS",
+  "js_syntax": "PASS",
+  "browser_visual_transport": "NOT_CERTIFIED_CHROMIUM_ABSENT",
+  "direct_editorial_entry": "PENDING",
+  "engine_changes": false,
+  "merge": false
+}

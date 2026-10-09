@@ -135,7 +135,11 @@
     "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
     "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
     "browser_qa_blocker": "Playwright installed but Chromium executable absent; no browser playback certification",
-    "next_exact_work": "Certify 10,000 Maniacs historical lineup, video playback and full radio catalog; then next inventory profile",
-    "new_certified_profiles": 0
+    "next_exact_work": "Validate Home reader facade visually and with actual transport; direct editorial entry catalog pending; finish earliest Maniacs lineup and video playback; continue inventory position 2",
+    "new_certified_profiles": 0,
+    "first_batch_remote_commit": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
+    "home_to_editorial_facade": "Keep original React player and complete original catalog in their existing root; hide Home editorial siblings; resize reader below original facade; no transport API calls",
+    "direct_editorial_entry": "Full facade on direct entry without a Home root remains pending; do not certify all routes",
+    "facade_regression": "PASS: original facade not inert; one reader; dynamic measured bounds; Home return; no duplicate footer controls"
   }
 }
