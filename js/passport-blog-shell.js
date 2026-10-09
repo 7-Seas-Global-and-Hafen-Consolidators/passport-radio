@@ -38,19 +38,21 @@
   load('script','/js/passport-artist-navigation.js?v=20261009-outlet');
  }
  function mount(){
-  if(!/^\/blog(?:\.html|\/)/.test(location.pathname)||document.body.dataset.passportInstitutional)return;
-  const main=document.querySelector('main');if(!main)return;
-  window.PassportInitialEditorial=document.cloneNode(true);
-  window.PassportEditorialRoute=location.pathname+location.search+location.hash;
-  window.PassportInstitutionalHost=true;
-  // Keep existing opaque transport hosts if one is already mounted. Templates are removed.
-  for(const node of [...document.body.children])if(!node.matches('script,style,#qwen-engine-bay,#passport-casa-host'))node.remove();
-  const root=document.createElement('div');root.id='root';document.body.prepend(root);
-  document.body.dataset.passportInstitutional='1';
-  load('link','/assets/index-CcTsvlNy.css');load('link','/css/passport-blog-shell.css?v=20261009-outlet');
-  const module=document.createElement('script');module.type='module';module.src='/assets/index-DgBCruM8.js';document.head.append(module);
-  load('script','/js/passport-persist-nav.js');load('script','/js/passport-audio-continuity.js');
+  if(!/^\\/blog(?:\\.html|\\/)/.test(location.pathname))return;
+  const main=document.querySelector('main');
+  if(!main)return;
+  // The editorial pages already ship their own masthead, navigation, content
+  // and footer. Do not destroy that document and boot the Home SPA over it.
+  // This was the source of the doubled Home/editorial chrome on direct entry.
+  document.body.dataset.passportBlogShell='1';
+  document.body.dataset.editorialPaperChrome='1';
+  load('link','/css/passport-blog-shell.css?v=20261009-single-chrome');
+  load('script','/js/passport-audio-continuity.js');
+  // Retain the page's existing editorial links, payment footer and article
+  // DOM. Never create another header, footer, #root or audio transport.
+  refreshReadingTime(main);
  }
+
  window.PassportBlogShell=Object.freeze({mount,decorate,refreshReadingTime});
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
