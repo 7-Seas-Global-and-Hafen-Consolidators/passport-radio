@@ -132,7 +132,7 @@
     "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
     "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
     "browser_qa_blocker": null,
-    "next_exact_work": "Real audio stream continuity certification; direct article/other index families visual checks; live video replacement; artificial article recovery; next acquisition position11 18 Voutz",
+    "next_exact_work": "Continuar lote de 50 na posição19 24K; campos e validações pendentes das posições anteriores permanecem abertos, sem repetição das consultas já registradas.",
     "new_certified_profiles": 0,
     "first_batch_remote_commit": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
     "home_to_editorial_facade": "Home content unmounted by original App route state; stable original player/catalog and single main outlet; no editorial iframe or Home-hiding CSS",
@@ -144,7 +144,7 @@
       "build": "success",
       "purge": "success"
     },
-    "batch_method": "50 positions per resumable batch; overlapping queues per missing evidence/validation, reuse acquired facts",
+    "batch_method": "Lote50; aquisição agrupada por campo; referências localizadas não equivalem a biografias prontas ou perfis certificados",
     "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS",
     "audio_playback_certified": false,
     "audio_browser_attempt": {
@@ -154,12 +154,13 @@
       "played": false,
       "source_and_selected_family_preserved": true,
       "certified": false
-    }
+    },
+    "latest_acquisition_parent": "bd92232c54e6915fd25dd417b9b4d3c9613eee64"
   },
   "batch_queues": "work-queues.json",
   "batch_acquisition": "batches/first-50-fields-20261009.json",
   "factually_enriched_existing_profiles": 4,
-  "next_acquisition_position": 11,
+  "next_acquisition_position": 19,
   "video_policy": {
     "main_video": "LIVE_MUSICAL_PERFORMANCE_ONLY",
     "existing_oembed_checks": 2,
@@ -189,5 +190,6 @@
     "new_destinations": 0,
     "certified_profiles": 0,
     "qa": "qa/gallery-resumption-20261009.json"
-  }
+  },
+  "latest_acquisition_ledger": "batches/first-50-fields-part3-20261009.json"
 }
