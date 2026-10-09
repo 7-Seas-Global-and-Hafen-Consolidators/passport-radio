@@ -1,0 +1,202 @@
+{
+  "status": "STOPPED_BY_USER",
+  "mission_complete": false,
+  "base_main_head": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
+  "branch": "feat/blog-global-artists-3000-20261008",
+  "prior_pr": {
+    "number": 527,
+    "merged": true,
+    "head": "f2473a5e80b351d0cee9521cac085859e21e4fc9"
+  },
+  "target_profiles": 9911,
+  "inventory_positions": 9911,
+  "certified_complete_profiles": 0,
+  "existing_matches": 2619,
+  "new_candidates": 7292,
+  "new_profiles_published": 0,
+  "last_completed_artist": null,
+  "next_pending_artist": {
+    "position": 1,
+    "name": "10.000 Maniacs",
+    "reference_url": "https://whiplash.net/bandas/1/10000maniacs.html",
+    "existing_url": "/blog/e/10000maniacs.html",
+    "status": "ENRICHED_WITH_FACTUAL_ARTICLE_PENDING_FULL_CERTIFICATION",
+    "photo": {
+      "path": "/assets/blog/artists/10000-maniacs.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:10,000_Maniacs.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/10%2C000_Maniacs.jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "attribution_as_listed": "Lindsey Best / Howard Thompson",
+      "changes": "none",
+      "sha256": "a995fd2d7f27ae9638c37b1583c74d1b71ef71ff7ff555e85089e0f97c651079",
+      "dimensions": [
+        444,
+        350
+      ],
+      "decoded": true,
+      "description": "Rob Buck, Steve Gustafson, Natalie Merchant, Dennis Drew e Jerry Augustyniak, segundo a ficha da imagem."
+    },
+    "validated_official_video": {
+      "id": "9eUc0IuGQW8",
+      "title": "These are Days",
+      "publisher": "10KMTV",
+      "publisher_url": "https://www.youtube.com/@10KMTV",
+      "official_selection_source": "https://maniacs.com/videos",
+      "oembed_http": 200,
+      "embedding_available": true,
+      "browser_playback_certified": false,
+      "autoplay": false
+    },
+    "original_editorial_profile": {
+      "url": "/blog/e/10000maniacs.html",
+      "sha256": "2bf4d93d46ff30e2aff94fd3b948666ed7661333baae72cbfe5749cefb969e84"
+    },
+    "completed": false,
+    "evidence": "profiles/10000-maniacs.json"
+  },
+  "last_inventory_position": 9911,
+  "last_inventory_artist": "ZZ Top",
+  "sources": {
+    "whiplash_sha256": "6bf58aa0b76e54c0e7eedce2d6a8332a0cee1727bf21f2dc60102bdabcad6b3d",
+    "metalhammer_sha256": "ab0c0a78e3c7aeba0c312fc8eeab4e76916cde8a0ec28c085d71a1e95b07c934"
+  },
+  "presentation_hooks": 26184,
+  "historical_articles_preserved": 21933,
+  "historical_az_destinations_preserved": 2767,
+  "title_pattern_flags": 16447,
+  "new_photos_acquired": 2,
+  "official_videos_certified": 0,
+  "acquisition_resume": "Reuse inventory and source hashes. Complete profile facts, authorized artist photo and official video before marking a record complete. Do not recreate existing destination or copy and reattribute source articles.",
+  "pending": [
+    "Complete 9911 factual original profiles with licensed photos and official validated videos",
+    "Verify and repair flagged historical articles individually while retaining routes and required provenance",
+    "Validate full existing radio catalog access and external transport; prior 3-engine controlled QA is not full catalog certification"
+  ],
+  "qa": "qa/results.json",
+  "radio_code_unchanged": [
+    "js/passport-bus.js",
+    "radio.html",
+    "index.html"
+  ],
+  "merge_performed": false,
+  "implementation_commit": "5959adb422da73653731f3a5fb2449d2993dbab4",
+  "git_push_error": "fatal: could not read Username for 'https://github.com': No such device or address",
+  "local_final_head": "dc6481a6e2a2674d01d9a710769ba1164aacb4b7",
+  "remote_implementation_applied": "SHARED_PRESENTATION_AND_ALL_DOCUMENT_HOOKS",
+  "recovery": {
+    "path": "docs/blog-global-artists-3000-20261008/recovery/full-recovery.patch.gz",
+    "sha256": "2b7444d0af553eb4b6c72537be87fc548f829f88c348e7805adda66a24d97786",
+    "bytes": 8791303,
+    "base": "d2aeeb64185d3c6f40531dbf7f176be5b4d35a4b",
+    "contains": "Full binary Git patch: implementation, 26184 hooks, inventory, hashes, QA scripts/results and screenshots.",
+    "sha256_reverified": true
+  },
+  "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
+  "presentation_hooks_remote": 26184,
+  "previous_local_directory_present": false,
+  "implementation_restored_from_verified_package": true,
+  "authenticated_git_data_api_write_confirmed": true,
+  "presentation_transfer": {
+    "total": 26184,
+    "persisted": 26184,
+    "next_batch": 53,
+    "last_path": "blog/w/383014-prog-metal.html",
+    "previous_remote_commit": "47b8be37487c2545d107d4f489885e76549bf19c"
+  },
+  "inventory": "artists-9911-inventory.json",
+  "remote_global_presentation_commit": "334661cb0dc6442d7ea9e7d5eae78be49f54a649",
+  "enriched_existing_profiles": 4,
+  "official_video_embeds_oembed_verified": 2,
+  "profile_incremental_qa": [
+    "photo decoded, 444x350, SHA256 recorded",
+    "new local links resolve",
+    "official-site video selection and YouTube oEmbed HTTP200",
+    "no autoplay parameter"
+  ],
+  "source_authorization": {
+    "status": "OWNER_SUPREME_ORDER_20261009_WHIPLASH_INACTIVE_PRESERVED",
+    "references": [
+      "Radio BOB!",
+      "Metal Hammer"
+    ],
+    "media_research": "Search engines, official artist/label channels, press archives, Wikimedia Commons and other legitimate sources authorized; compatible rights required."
+  },
+  "editorial_records_factually_replaced": 1,
+  "last_resumption": {
+    "base_remote_head": "c987e46e5c7c8abe2e81c222a65f7bdd21204596",
+    "uploaded_source_hashes_match_checkpoint": true,
+    "screenshots_read": 4,
+    "source_blocker_resolved": true,
+    "reading_time": "Shared calculation now tracks prose changes, excludes chrome/references, includes profiles",
+    "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
+    "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
+    "browser_qa_blocker": null,
+    "next_exact_work": "Continuar lote de 50 na posição19 24K; campos e validações pendentes das posições anteriores permanecem abertos, sem repetição das consultas já registradas.",
+    "new_certified_profiles": 0,
+    "first_batch_remote_commit": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
+    "home_to_editorial_facade": "Home content unmounted by original App route state; stable original player/catalog and single main outlet; no editorial iframe or Home-hiding CSS",
+    "direct_editorial_entry": "Same approved App mounted once; templates removed; transport ownership bootstrap preserved",
+    "facade_regression": "Chromium153 PASS five editorial families plus Home return and direct mobile Accept; one main/header/footer/player; no overflow; original player/catalog/bay identities retained; no JS errors",
+    "preservation_commit": "575d8bd9cb989784be2d9b43c6311eb1f20f0782",
+    "last_implementation_commit": "01e43b29182f631aa20244e9c00f959b4af40bf8",
+    "ci_last_implementation": {
+      "build": "success",
+      "purge": "success"
+    },
+    "batch_method": "Lote50; aquisição agrupada por campo; referências localizadas não equivalem a biografias prontas ou perfis certificados",
+    "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS",
+    "audio_playback_certified": false,
+    "audio_browser_attempt": {
+      "source": "Existing continuous Metal stream",
+      "media_error_code": 4,
+      "ready_state": 0,
+      "played": false,
+      "source_and_selected_family_preserved": true,
+      "certified": false
+    },
+    "latest_acquisition_parent": "bd92232c54e6915fd25dd417b9b4d3c9613eee64"
+  },
+  "batch_queues": "work-queues.json",
+  "batch_acquisition": "batches/first-50-fields-20261009.json",
+  "factually_enriched_existing_profiles": 4,
+  "next_acquisition_position": 19,
+  "video_policy": {
+    "main_video": "LIVE_MUSICAL_PERFORMANCE_ONLY",
+    "existing_oembed_checks": 2,
+    "certified_live_playbacks": 0,
+    "known_prior_studio_selections": "Pending live replacement; not qualifying"
+  },
+  "shared_architecture_batch": {
+    "parent_remote_head": "c987e46e5c7c8abe2e81c222a65f7bdd21204596",
+    "qa": "qa/institutional-outlet-browser-20261009.json",
+    "transport_engine_region_byte_identical": true,
+    "new_certified_profiles": 0,
+    "new_articles_recovered": 0,
+    "new_images": 0,
+    "merge": false,
+    "latest_remote_head": "742dd33618c5577f92d15fe09dbfe9f5ff025b10",
+    "ci": {
+      "build": "success",
+      "purge": "success"
+    },
+    "direct_mobile_families": "article, archive, authors, countries, themes, eras, formats, artist; single chrome, no overflow, logo approved red"
+  },
+  "az_media_registry": {
+    "path": "data/blog-artist-media.json",
+    "previously_acquired_photos": 2,
+    "images_integrated_in_existing_az": 1,
+    "new_acquisitions": 0,
+    "new_destinations": 0,
+    "certified_profiles": 0,
+    "qa": "qa/gallery-resumption-20261009.json"
+  },
+  "latest_acquisition_ledger": "batches/first-50-fields-part3-20261009.json",
+  "stop_checkpoint": {
+    "last_persisted_acquisition_commit": "5bba3982c5367b5ad90fe8a5d394ce5eb8d9332a",
+    "next_acquisition_position": 19,
+    "next_artist": "24K",
+    "unpersisted_search": "Positions 19–22 search results located only; not acquired or completed. Resume from position 19.",
+    "mission_complete": false
+  }
+}

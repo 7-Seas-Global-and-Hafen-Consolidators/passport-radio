@@ -10,7 +10,7 @@
     }
   } catch (_) {}
   const KEY = 'passport.audio.continuity.v1';
-  const HOME = location.pathname === '/' || location.pathname === '/index.html';
+  const HOME = location.pathname === '/' || location.pathname === '/index.html' || window.PassportInstitutionalHost === true;
   let state = null, runtime = null, ready = false, restoring = false, unloading = false, leavingExternal = false;
   let controls, status, toggle, volume, choosingDoor=false;
   const read = () => {
@@ -171,3 +171,4 @@
   });
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
+

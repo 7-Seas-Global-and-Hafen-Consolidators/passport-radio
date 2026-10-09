@@ -1,0 +1,175 @@
+{
+  "batch": "first-50-fields-20261009",
+  "positions": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "certified_complete": 0,
+  "records": [
+    {
+      "position": 3,
+      "name": "100 Dogmas",
+      "sources": [
+        "https://100dogmas.bandcamp.com/album/a-caixa-de-pandora-ep"
+      ],
+      "facts": {
+        "origin": "Blumenau, Santa Catarina, Brazil",
+        "styles": [
+          "groove metal",
+          "stoner metal"
+        ],
+        "releases": [
+          {
+            "name": "A Caixa de Pandora",
+            "date": "2018-07-21",
+            "type": "EP",
+            "tracks": [
+              "Viajante",
+              "Desconectado",
+              "Catarse"
+            ],
+            "production": "André Luís",
+            "concept": "Rafhael Jorge"
+          },
+          {
+            "name": "aMALdiçoado Seja",
+            "date_precision": "month",
+            "date": "2019-04"
+          },
+          {
+            "name": "Ritual",
+            "date_precision": "month",
+            "date": "2022-06",
+            "collaboration": "The Gee J"
+          }
+        ]
+      },
+      "pending": [
+        "Full biography and lineup",
+        "Licensed band photo",
+        "Official video playback",
+        "Passport article links"
+      ],
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA"
+    },
+    {
+      "position": 4,
+      "name": "100 Watt Vipers",
+      "sources": [
+        "https://100wattvipers.bandcamp.com/album/100-watt-vipers-wired-for-power-2024"
+      ],
+      "facts": {
+        "origin": "Jacksonville, Florida, USA",
+        "formed": "early 2013",
+        "first_release": "Something Wicked Comes This Way (2014)",
+        "hiatus": "Band's page says ended in 2018, returned with new lineup in 2024",
+        "release": {
+          "name": "Wired For Power",
+          "date": "2024-04-21",
+          "members": {
+            "vocals": "Robert Zawisza",
+            "drums": "Danny P Harkin",
+            "guitars_and_bass": "Paul Joseph"
+          },
+          "production": "Paul Joseph"
+        }
+      },
+      "pending": [
+        "Full discography and biography",
+        "Licensed band photo",
+        "Official video playback",
+        "Passport article links"
+      ],
+      "conflicts": [
+        "Original duo description is historical; 2024 album credits list three performers",
+        "Switchblades and Sinners release date conflicts between platforms; not resolved or asserted"
+      ],
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA"
+    },
+    {
+      "position": 5,
+      "name": "101 South",
+      "existing_url": "/blog/e/101south.html",
+      "sources": [
+        "https://hardrock80fr.wordpress.com/2018/10/16/interview-archive-101-south-band-roger-scott-graig/"
+      ],
+      "facts": {
+        "interview_date": "2000-04-13",
+        "archive_publication_date": "2018-10-16",
+        "founder": "Roger Scott Craig",
+        "vocals": "Gregory Lynn Hall",
+        "studio_members": [
+          "Mike Turner (guitar)",
+          "Chris Julian (bass, production and mixing)",
+          "Hans Geiger (drums)"
+        ],
+        "guest_guitars": [
+          "Billy Liesegang",
+          "Pablo Schirmer"
+        ],
+        "relationships": [
+          "Fortune",
+          "Harlan Cage"
+        ],
+        "format": "Craig describes a studio project rather than a touring band in this 2000 interview"
+      },
+      "pending": [
+        "Full chronology and discography",
+        "Licensed band photo",
+        "Official video playback",
+        "Existing Passport links factual validation"
+      ],
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA"
+    },
+    {
+      "position": 6,
+      "name": "10CC",
+      "display_name": "10cc",
+      "sources": [
+        "https://www.10cc.world/biography"
+      ],
+      "facts": {
+        "founders": [
+          "Graham Gouldman",
+          "Kevin Godley",
+          "Eric Stewart",
+          "Lol Creme"
+        ],
+        "studio": "Strawberry Studios, Stockport",
+        "events": [
+          "Donna reached UK number 2 in 1972",
+          "Godley and Creme departed in 1976",
+          "Gouldman and Stewart split in 1993",
+          "Gouldman established Mark 3 live format early 2000s",
+          "Paul Burgess remained until September 2025"
+        ],
+        "relationships": [
+          "Hotlegs",
+          "The Mindbenders",
+          "The Mockingbirds",
+          "The Yardbirds (Gouldman songwriter)"
+        ],
+        "hits": [
+          "Rubber Bullets",
+          "I'm Not in Love",
+          "Dreadlock Holiday"
+        ]
+      },
+      "pending": [
+        "Full discography and biography",
+        "Licensed band photo",
+        "Official video playback",
+        "Passport article links"
+      ],
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA"
+    }
+  ],
+  "source_responses_saved": true
+}
+

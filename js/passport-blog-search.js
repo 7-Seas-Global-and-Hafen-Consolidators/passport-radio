@@ -85,6 +85,7 @@
       const pager = pages > 1
         ? `<nav class="blog-pager" aria-label="Paginação da busca">${safePage > 1 ? `<a href="/blog/busca.html?q=${encodeURIComponent(query)}&p=${safePage - 1}">Anterior</a>` : ""}<span>${safePage} / ${pages}</span>${safePage < pages ? `<a href="/blog/busca.html?q=${encodeURIComponent(query)}&p=${safePage + 1}">Próxima</a>` : ""}</nav>`
         : "";
+      if(!root.isConnected)return;
       root.innerHTML = `<p class="blog-search-count">${total} resultado${total === 1 ? "" : "s"} para “${esc(query)}”</p><div class="blog-grid">${slice.map((row) => card(row.item)).join("")}</div>${pager}`;
     }).catch(() => {
       root.innerHTML = '<p class="blog-empty">Não foi possível carregar o índice de busca agora.</p>';
@@ -104,14 +105,16 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  const initialize = () => {
     bindForms();
     const root = document.querySelector("[data-search-root]");
     const state = params();
     const input = document.getElementById("blog-q");
     if (input && state.q) input.value = state.q;
     if (root) renderResults(root, state.q, state.p);
-  });
+  };
+  window.addEventListener("passport:editorial-rendered",initialize);
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initialize,{once:true});else initialize();
 })();
 
 /* Editorial copy: a single shared implementation; non-article surfaces are excluded. */
@@ -131,7 +134,7 @@
 /* Current paper chrome: individual articles only; existing behavior is unchanged. */
 (() => {
   const install = () => {
-    if (!document.body.classList.contains('pp-article') || document.body.classList.contains('passport-participe-paper')) return;
+    if (document.body.dataset.passportInstitutional || !document.body.classList.contains('pp-article') || document.body.classList.contains('passport-participe-paper')) return;
     if ([...document.scripts].some(script => script.src.includes('/js/passport-editorial-paper-chrome.js'))) return;
     const script = document.createElement('script');
     script.src = '/js/passport-editorial-paper-chrome.js?v=20261001';
@@ -148,3 +151,4 @@
 
 /* Principal-navigation link only. */
 (() => {if(document.querySelector('script[src="/js/passport-games-navigation.js"]'))return;const s=document.createElement('script');s.src='/js/passport-games-navigation.js';s.defer=true;document.head.append(s);})();
+

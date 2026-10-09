@@ -1,0 +1,177 @@
+{
+  "positions": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "certified_complete": 0,
+  "records": [
+    {
+      "position": 7,
+      "name": "1349",
+      "sources": [
+        "https://legion1349.com/biography/",
+        "https://www.season-of-mist.com/bands/1349/"
+      ],
+      "facts": {
+        "formed": 1997,
+        "predecessor": "Alvheim",
+        "founders": [
+          "Ravn",
+          "Tjalve",
+          "Seidemann"
+        ],
+        "joining": {
+          "Archaon": 1999,
+          "Frost": 2001
+        },
+        "releases": [
+          "Liberation (2003)",
+          "Beyond the Apocalypse (2004)",
+          "Hellfire (2005)",
+          "Revelations of the Black Flame (2009)",
+          "Demonoir (2010)"
+        ],
+        "relationships": [
+          "Satyricon (Frost)",
+          "Pantheon I (Tjalve)",
+          "Celtic Frost (2006 tour; Tom Gabriel Fischer mixing collaboration)"
+        ]
+      },
+      "conflicts": [
+        "Official biography lists Massive Cauldron of Chaos as 2013; date not adopted pending release record"
+      ],
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
+      "pending": [
+        "Complete biography/chronology",
+        "Licensed photograph",
+        "Official video playback",
+        "Related factual Passport articles"
+      ]
+    },
+    {
+      "position": 8,
+      "name": "13 Bats",
+      "sources": [
+        "https://13bats.bandcamp.com/album/13-bats-live-out-of-the-cave"
+      ],
+      "facts": {
+        "origin": "Madrid, Spain",
+        "formed": "late 2006",
+        "founding_location": "Vallekas Tattoo basement",
+        "members_historical": [
+          "Dani Bats (double bass/vocals)",
+          "Albert Baro (guitar)",
+          "Carter (drums)"
+        ],
+        "albums": [
+          "Punk Physical Therapy (2011)",
+          "La venganza del sol (2013)",
+          "Out of the Cave (2015)",
+          "Next Move (2018)",
+          "Once a Punk Always a Punk (2021)"
+        ],
+        "live_record": {
+          "venue": "Gruta77, Madrid",
+          "release": "2015-03-25"
+        }
+      },
+      "conflicts": [
+        "Debut dating differs: band's biography 2009, Apple listing 2008. Not silently harmonized."
+      ],
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
+      "pending": [
+        "Complete biography/chronology",
+        "Licensed photograph",
+        "Official video playback",
+        "Related factual Passport articles"
+      ]
+    },
+    {
+      "position": 9,
+      "name": "13th Floor Elevators",
+      "sources": [
+        "https://www.rokyerickson.com/bio",
+        "https://13thfloorelevators.org/albums/"
+      ],
+      "facts": {
+        "origin": "Austin, Texas, USA",
+        "lead_vocal": "Roky Erickson",
+        "electric_jug": "Tommy Hall",
+        "guitar": "Stacy Sutherland",
+        "label": "International Artists",
+        "releases": [
+          "The Psychedelic Sounds of the 13th Floor Elevators",
+          "Easter Everywhere",
+          "Bull of the Woods"
+        ],
+        "first_hit": "You're Gonna Miss Me"
+      },
+      "existing_url": "/blog/e/13thfloorelevators.html",
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
+      "pending": [
+        "Complete biography/chronology",
+        "Licensed photograph",
+        "Official video playback",
+        "Related factual Passport articles"
+      ],
+      "original_editorial_profile": {
+        "url": "/blog/e/13thfloorelevators.html",
+        "status": "PARTIAL_FACTUAL_HISTORY_ADDED"
+      }
+    },
+    {
+      "position": 10,
+      "name": "14bis",
+      "display_name": "14 Bis",
+      "sources": [
+        "https://14bis.com.br/",
+        "https://14bis.com.br/biografia/",
+        "https://14bis.com.br/integrantes/"
+      ],
+      "facts": {
+        "formed": 1979,
+        "first_album": {
+          "name": "14 Bis",
+          "release": 1980,
+          "producer": "Milton Nascimento",
+          "label": "EMI",
+          "songs": [
+            "Natural",
+            "Canção da América"
+          ]
+        },
+        "original_members": [
+          "Cláudio Venturini",
+          "Flávio Venturini",
+          "Sérgio Magrão",
+          "Vermelho",
+          "Hely Rodrigues"
+        ],
+        "releases": [
+          "Além Paraíso (1982)",
+          "Sete",
+          "Siga o Sol (1996)"
+        ]
+      },
+      "existing_url": "/blog/e/14bis.html",
+      "completed": false,
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
+      "pending": [
+        "Complete biography/chronology",
+        "Licensed photograph",
+        "Official video playback",
+        "Related factual Passport articles"
+      ],
+      "original_editorial_profile": {
+        "url": "/blog/e/14bis.html",
+        "status": "PARTIAL_FACTUAL_HISTORY_ADDED"
+      }
+    }
+  ],
+  "next_acquisition_position": 11
+}

@@ -1,0 +1,83 @@
+{
+  "artist": "1000mods",
+  "position": 2,
+  "completed": false,
+  "status": "FACTS_AND_LICENSED_PHOTO_SAVED_PROFILE_PENDING",
+  "origin": {
+    "city": "Chiliomodi",
+    "country": "Greece",
+    "source": "https://1000mods.bandcamp.com/album/youth-of-dissent"
+  },
+  "discography": [
+    [
+      "Super Van Vacation",
+      2011
+    ],
+    [
+      "Vultures",
+      2014
+    ],
+    [
+      "Repeated Exposure to...",
+      2016
+    ],
+    [
+      "Youth of Dissent",
+      2020
+    ],
+    [
+      "Cheat Death",
+      2024
+    ]
+  ],
+  "sources": [
+    "https://ougabooga.com/collections/1000mods",
+    "https://1000mods.bandcamp.com/album/youth-of-dissent",
+    "https://1000mods.bandcamp.com/album/cheat-death",
+    "https://www.1000mods.com/",
+    "https://www.heavypsychsounds.com/bands/1000mods.htm",
+    "https://www.dirtyrock.info/2025/02/interview-with-labros-from-1000mods-no-compromises-just-pure-rock-touring-spain-this-march/"
+  ],
+  "verified_notes": [
+    "Youth of Dissent released 2020-04-24; produced Matt Bayles and band; recorded London Bridge Studio and Studio Litho, Seattle",
+    "Cheat Death released 2024-11-08; produced Matt Bayles and band; recorded Sierra Studios Athens; mixed Red Room Seattle; mastered Brad Boatright Audiosiege Portland",
+    "Labros interview February 2025: Dani bass/vocals, Giorgos guitar, Labros drums; Giannis departed previous year; guest touring guitarists; own label releasing others after COVID"
+  ],
+  "photo": {
+    "path": "/assets/blog/artists/1000mods-transbordeur-2025.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Concert_1000mods_Transbordeur_2025.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Concert_1000mods_Transbordeur_2025.jpg",
+    "author": "Sebleouf",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "none",
+    "date": "2025-03-10",
+    "dimensions": [
+      4032,
+      3024
+    ],
+    "sha256": "896bdd97468ef931b5035200dbced88836af51ba13905b19e10bc3e66a6e9693",
+    "decoded": true,
+    "visually_inspected": true
+  },
+  "video": {
+    "id": "dMbsju-qSeE",
+    "title": "1000mods - Electric Carve - Official Music Video",
+    "publisher": "1000mods",
+    "publisher_url": "https://www.youtube.com/@1000mods",
+    "oembed_http": 200,
+    "embedding_available": true,
+    "browser_playback_certified": false
+  },
+  "rejected_photo": {
+    "source": "https://commons.wikimedia.org/wiki/File:1000mods-bands-photo-2024.jpg",
+    "reason": "Replaced with photographer's own-work live photograph; no further investigation necessary"
+  },
+  "pending": [
+    "Original editorial profile",
+    "Canonical destination and index integration",
+    "Related Passport articles verified individually",
+    "Browser embed playback",
+    "Complete universal facade on direct entry"
+  ]
+}

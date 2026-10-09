@@ -1,0 +1,92 @@
+{
+  "report": [
+    {
+      "url": "/blog.html",
+      "main": 1,
+      "header": 1,
+      "footer": 1,
+      "readerFrames": 0,
+      "homeSections": 0,
+      "playerSame": true,
+      "catalogSame": true,
+      "baySame": true,
+      "payments": 1,
+      "overflow": false
+    },
+    {
+      "url": "/blog/arquivo/letras.html",
+      "main": 1,
+      "header": 1,
+      "footer": 1,
+      "readerFrames": 0,
+      "homeSections": 0,
+      "playerSame": true,
+      "catalogSame": true,
+      "baySame": true,
+      "payments": 1,
+      "overflow": false
+    },
+    {
+      "url": "/blog/e/accept.html",
+      "main": 1,
+      "header": 1,
+      "footer": 1,
+      "readerFrames": 0,
+      "homeSections": 0,
+      "playerSame": true,
+      "catalogSame": true,
+      "baySame": true,
+      "payments": 1,
+      "overflow": false
+    },
+    {
+      "url": "/blog/w/007745-10000maniacs.html",
+      "main": 1,
+      "header": 1,
+      "footer": 1,
+      "readerFrames": 0,
+      "homeSections": 0,
+      "playerSame": true,
+      "catalogSame": true,
+      "baySame": true,
+      "payments": 1,
+      "overflow": false
+    },
+    {
+      "url": "/blog/busca.html",
+      "main": 1,
+      "header": 1,
+      "footer": 1,
+      "readerFrames": 0,
+      "homeSections": 0,
+      "playerSame": true,
+      "catalogSame": true,
+      "baySame": true,
+      "payments": 1,
+      "overflow": false
+    },
+    {
+      "url": "/",
+      "homeSections": 1,
+      "playerSame": true,
+      "catalogSame": true
+    },
+    {
+      "direct": true,
+      "url": "/blog/e/accept.html",
+      "main": 1,
+      "header": 1,
+      "footer": 1,
+      "players": 1,
+      "homeSections": 0,
+      "catalogGroups": 23,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Existing public resources used as local preview fallback.",
+    "Audio node identity is proven; external stream playback is not yet certified.",
+    "Editorial content and media recovery remain pending."
+  ]
+}

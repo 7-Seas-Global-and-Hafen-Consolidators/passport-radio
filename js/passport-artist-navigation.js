@@ -16,7 +16,19 @@
   } catch (_) { return; }
   const fold = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   const watched = new WeakSet();
-  let data;
+  let data;let media={};
+  function pictures(doc){
+    for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
+      const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)return;
+      a.dataset.artistName=a.textContent.trim();a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
+      const img=doc.createElement("img");img.src=photo.image;img.alt=photo.name;img.loading="lazy";img.decoding="async";
+      const name=doc.createElement("span");name.textContent=a.dataset.artistName;
+      const credit=doc.createElement("small");credit.textContent=[photo.credit,photo.license].filter(Boolean).join(" · ");
+      a.replaceChildren(img,name,credit);
+      let credits=doc.querySelector("[data-passport-gallery-credits]");if(!credits){credits=doc.createElement("p");credits.dataset.passportGalleryCredits="1";credits.className="passport-gallery-credits";doc.querySelector("main")?.append(credits)}
+      credits.append(link(doc,photo.name+" — "+photo.credit,photo.source),doc.createTextNode(" · "),link(doc,photo.license,photo.license_url),doc.createTextNode(". "));
+    }
+  }
   function link(doc, text, href) {
     const a = doc.createElement('a'); a.textContent=text; a.href=href; return a;
   }
@@ -32,7 +44,7 @@
     if (!archive && !article) return;
     if(archive)doc.body.classList.add('passport-artist-archive');
     const main=doc.querySelector('main'); if (!main) return;
-    styles(doc);
+    styles(doc);pictures(doc);
     const nav=doc.createElement('section');nav.className='passport-artist-nav';nav.dataset.passportArtistTools='1';nav.setAttribute('aria-label','Navegação do artista e do acervo');
     const heading=doc.createElement('h2');heading.textContent='Explore o acervo';nav.append(heading);
     const row=doc.createElement('nav');row.setAttribute('aria-label','Caminhos do acervo');row.append(link(doc,'A–Z completo','/blog/arquivo/letras.html'),link(doc,'Blog','/blog.html'));
@@ -58,8 +70,30 @@
       if(entries.length) {
         const label=doc.createElement('label');label.textContent='Encontre no A–Z';const input=doc.createElement('input');input.type='search';input.placeholder='Nome do artista ou banda';label.append(input);nav.append(label);
         const count=doc.createElement('p');count.setAttribute('aria-live','polite');nav.append(count);
-        const update=()=>{const q=fold(input.value);let found=0;for(const a of entries){const show=fold(a.textContent).includes(q);a.hidden=!show;if(show)found++;}for(const cloud of main.querySelectorAll('.blog-entity-cloud')){const visible=[...cloud.querySelectorAll('a')].some(a=>!a.hidden);cloud.hidden=!visible;if(cloud.parentElement?.classList.contains('blog-section'))cloud.parentElement.hidden=!visible;const heading=cloud.previousElementSibling;if(heading?.tagName==='H2')heading.hidden=!visible;}count.textContent=found.toLocaleString('pt-BR')+' entradas neste índice';};
-        input.addEventListener('input',update);update();
+        const pages=doc.createElement('nav');pages.setAttribute('aria-label','Paginação do A–Z');
+        const previous=doc.createElement('button');previous.type='button';previous.textContent='Anterior';
+        const next=doc.createElement('button');next.type='button';next.textContent='Próxima';
+        const pageLabel=doc.createElement('span');pages.append(previous,pageLabel,next);nav.append(pages);
+        const params=new URL(doc.URL).searchParams;input.value=params.get('q')||'';
+        let page=Math.max(1,Number.parseInt(params.get('pagina'),10)||1);
+        const pageSize=48;
+        const update=()=>{
+          const q=fold(input.value),matches=entries.filter(a=>fold(a.dataset.artistName||a.textContent).includes(q));
+          const total=Math.max(1,Math.ceil(matches.length/pageSize));page=Math.min(page,total);
+          const visibleEntries=new Set(matches.slice((page-1)*pageSize,page*pageSize));
+          for(const a of entries)a.hidden=!visibleEntries.has(a);
+          for(const cloud of main.querySelectorAll('.blog-entity-cloud')){
+            const visible=[...cloud.querySelectorAll('a')].some(a=>!a.hidden);cloud.hidden=!visible;
+            if(cloud.parentElement?.classList.contains('blog-section'))cloud.parentElement.hidden=!visible;
+            const heading=cloud.previousElementSibling;if(heading?.tagName==='H2')heading.hidden=!visible;
+          }
+          count.textContent=matches.length.toLocaleString('pt-BR')+' entradas encontradas · '+entries.length.toLocaleString('pt-BR')+' destinos neste índice';
+          pageLabel.textContent='Página '+page+' de '+total;previous.disabled=page===1;next.disabled=page===total;
+          // Canonical remains the historical URL. Reader frame owns its own pagination URL.
+          try{const url=new URL(doc.URL);url.searchParams.set('pagina',String(page));if(input.value)url.searchParams.set('q',input.value);else url.searchParams.delete('q');doc.defaultView.history.replaceState(doc.defaultView.history.state,'',url.href);}catch(_){}
+        };
+        input.addEventListener('input',()=>{page=1;update();});
+        previous.addEventListener('click',()=>{page--;update();});next.addEventListener('click',()=>{page++;update();});update();
       }
     }
     const crumbs=main.querySelector('.blog-crumbs');
@@ -71,9 +105,13 @@
     frame.addEventListener('load',run);run();
   }
   window.PassportArtistNavigation=Object.freeze({enhance});
+  window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document)});
+  fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value;pictures(document)}).catch(()=>{});
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{
     data=value;enhance(document);
     const frames=()=>document.querySelectorAll('#pp-nav-page').forEach(watch);frames();
     new MutationObserver(frames).observe(document.body,{childList:true,subtree:true});
   }).catch(()=>{}); // Existing archive links remain usable when enhancement is unavailable.
 })();
+
+

@@ -1,0 +1,236 @@
+{
+  "batch": "first-50-fields-part3-20261009",
+  "positions": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "certified_complete": 0,
+  "new_images": 0,
+  "new_video_playbacks": 0,
+  "queries_repeated": false,
+  "whiplash_accessed": false,
+  "next_acquisition_position": 19,
+  "records": [
+    {
+      "position": 11,
+      "name": "18 Voutz",
+      "sources": [
+        "https://www.spirit-of-metal.com/pt/band/18_Voutz"
+      ],
+      "facts_secondary": {
+        "origin": "Curitiba, Brasil",
+        "formed": 2006,
+        "releases": [
+          "Sentido Contrário (single, 2010)",
+          "O Teu Caminho é o Que Te Mantém (EP, 2012)",
+          "Ego Perdido (single, 2014)"
+        ],
+        "historical_lineup": [
+          "Felipe Muller",
+          "Rodrigo Agostini",
+          "Wellington Lorena",
+          "Alexandre Silva",
+          "Rodrigo Rodrigues",
+          "Fabricio Plombon"
+        ]
+      },
+      "status": "SECONDARY_IDENTITY_FIELDS_ACQUIRED_PRIMARY_CONFIRMATION_PENDING",
+      "completed": false,
+      "pending": [
+        "Confirmação primária da história e formação",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 12,
+      "name": "1914",
+      "sources": [
+        "https://label.napalmrecords.com/1914",
+        "https://napalmrecords.com/english/1914-viribus-unitis-digipak-cd.html"
+      ],
+      "reference_fields": {
+        "label": "Napalm Records",
+        "origin": "Ucrânia",
+        "release": "Viribus Unitis",
+        "release_date": "2025-11-14"
+      },
+      "primary_fetch": {
+        "url": "https://label.napalmrecords.com/1914",
+        "http": 403,
+        "action": "Sem contorno do bloqueio; referência preservada"
+      },
+      "status": "OFFICIAL_RELEASE_REFERENCE_LOCATED_PRIMARY_FETCH_BLOCKED",
+      "completed": false,
+      "pending": [
+        "Biografia e formação completas",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 13,
+      "name": "1945",
+      "sources": [
+        "https://1945metal.bandcamp.com/album/heavy-metal-is-not-for-sale"
+      ],
+      "facts": {
+        "origin": "Salamanca, Espanha",
+        "formed": "primavera de 2016",
+        "release": {
+          "title": "Heavy Metal is not for sale",
+          "date": "2021-12-17",
+          "tracks": 11
+        },
+        "lineup_at_release": {
+          "voz": "Sheyla Sergio",
+          "baixo": "Javier Rubio",
+          "guitarras": [
+            "Gorka RC",
+            "Diego González"
+          ],
+          "bateria": "Jose Angel koko"
+        },
+        "related_projects_as_stated": [
+          "K-OS",
+          "Evil Rise",
+          "Sarah Evil"
+        ],
+        "recorded_cover": "Ace of Spades — Motörhead"
+      },
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
+      "completed": false,
+      "pending": [
+        "Cronologia integral",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 14,
+      "name": "1975",
+      "display_name": "The 1975",
+      "sources": [
+        "https://concord.com/publishing-roster/the-1975/",
+        "https://store.the1975.com/products/the-1975-lp?_pos=11&_sid=d17004fc5&_ss=r"
+      ],
+      "facts": {
+        "origin": "Wilmslow, Inglaterra",
+        "formed": 2002,
+        "early_release": "Facedown (EP, 2012)",
+        "albums": [
+          "The 1975 (2013)",
+          "I like it when you sleep, for you are so beautiful yet so unaware of it (2016)",
+          "Notes on a Conditional Form (2020)"
+        ],
+        "frontman": "Matty Healy"
+      },
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
+      "completed": false,
+      "pending": [
+        "Cronologia e discografia integrais",
+        "Formação completa",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 15,
+      "name": "1kilo",
+      "sources": [],
+      "status": "PRIMARY_IDENTITY_SOURCE_PENDING",
+      "completed": false,
+      "attempt": {
+        "query": "\"1Kilo\" site:1kilo.com.br OR site:onerpm.com",
+        "result": "Sem referência primária adequada no resultado desta consulta"
+      },
+      "pending": [
+        "Identidade e história documentadas",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 16,
+      "name": "2050",
+      "sources": [],
+      "rejected_identity_candidates": [
+        {
+          "url": "https://2050official.bandcamp.com/album/space-and-beyond-this-world",
+          "reason": "Página identifica projeto de música eletrônica/computador de Bangor, Maine; correspondência com a posição do corpus não comprovada"
+        },
+        {
+          "url": "https://we2050.bandcamp.com/",
+          "reason": "Projeto de produção musical para publicidade; correspondência não comprovada"
+        }
+      ],
+      "status": "AMBIGUOUS_IDENTITY_PENDING_NOT_EXCLUDED",
+      "completed": false,
+      "pending": [
+        "Desambiguação fundamentada",
+        "História e formação",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 17,
+      "name": "21 Guns",
+      "existing_url": "/blog/e/21guns.html",
+      "sources": [
+        "https://www.thinlizzyofficial.com/band-biographies-scott-gorham/"
+      ],
+      "reference_fields": {
+        "founder": "Scott Gorham",
+        "relationship": "Thin Lizzy; Phenomena II",
+        "collaborator": "Leif Johansen",
+        "debut": "Salute (1992)"
+      },
+      "status": "OFFICIAL_REFERENCE_LOCATED_PENDING_FULL_ACQUISITION",
+      "completed": false,
+      "pending": [
+        "Cronologia integral",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    },
+    {
+      "position": 18,
+      "name": "220 Volt",
+      "sources": [
+        "https://www.powerplayrecords.com/interviews/220volt_interview.htm",
+        "https://music.apple.com/us/album/220-volt/592364107"
+      ],
+      "reference_fields": {
+        "release": "220 Volt (1983)",
+        "label": "CBS / Sony",
+        "interview_subjects": [
+          "Mats Karlsson",
+          "Thomas Drevin"
+        ]
+      },
+      "identity_note": "Resultados da página geral Apple misturam singles de artistas homônimos; não importar indiscriminadamente",
+      "status": "OFFICIAL_RELEASE_AND_INTERVIEW_REFERENCES_LOCATED",
+      "completed": false,
+      "pending": [
+        "História e formação verificadas",
+        "Foto utilizável",
+        "Apresentação musical ao vivo oficial",
+        "Matérias Passport reais"
+      ]
+    }
+  ]
+}

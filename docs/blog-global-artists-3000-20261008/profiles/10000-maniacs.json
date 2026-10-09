@@ -1,0 +1,69 @@
+{
+  "position": 1,
+  "name": "10,000 Maniacs",
+  "existing_url": "/blog/e/10000maniacs.html",
+  "status": "ENRICHED_WITH_FACTUAL_ARTICLE_PENDING_FULL_CERTIFICATION",
+  "completed": false,
+  "photo": {
+    "path": "/assets/blog/artists/10000-maniacs.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:10,000_Maniacs.jpg",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/10%2C000_Maniacs.jpg",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "attribution_as_listed": "Lindsey Best / Howard Thompson",
+    "changes": "none",
+    "sha256": "a995fd2d7f27ae9638c37b1583c74d1b71ef71ff7ff555e85089e0f97c651079",
+    "dimensions": [
+      444,
+      350
+    ],
+    "decoded": true,
+    "description": "Rob Buck, Steve Gustafson, Natalie Merchant, Dennis Drew e Jerry Augustyniak, segundo a ficha da imagem."
+  },
+  "video": {
+    "id": "9eUc0IuGQW8",
+    "title": "These are Days",
+    "publisher": "10KMTV",
+    "publisher_url": "https://www.youtube.com/@10KMTV",
+    "official_selection_source": "https://maniacs.com/videos",
+    "oembed_http": 200,
+    "embedding_available": true,
+    "browser_playback_certified": false,
+    "autoplay": false
+  },
+  "fact_sources": [
+    "https://maniacs.com/about",
+    "https://maniacs.com/videos",
+    "https://www.rhino.com/article/10000-maniacs-reveal-mtv-unplugged-expanded-edition",
+    "https://www.rhino.com/article/happy-anniversary-10000-maniacs-blind-mans-zoo",
+    "https://10000maniacs1.bandcamp.com/album/twice-told-tales",
+    "https://www.berkshiretheatregroup.org/images/press-releases/141001/10000_Maniacs_PR.pdf",
+    "https://www.allmusic.com/artist/10000-maniacs-mn0000501081/biography"
+  ],
+  "verified_current_members": [
+    "Mary Ramsey",
+    "Jerome Augustyniak",
+    "John Lombardo",
+    "Dennis Drew",
+    "Ben Medina",
+    "Steven Gustafson"
+  ],
+  "historical_articles": [
+    {
+      "url": "/blog/w/007745-10000maniacs.html",
+      "quality_status": "ORIGINAL_FACTUAL_REPLACEMENT_PERSISTENCE_PENDING"
+    }
+  ],
+  "unresolved": [
+    "Real video playback not yet certified.",
+    "Complete historical membership including earliest pre-recording drummers remains pending.",
+    "Full radio catalog availability and global navigation QA remain pending."
+  ],
+  "verified_corrections": {
+    "augustyniak_joined": 1983,
+    "lombardo_departure": "1986-07",
+    "lombardo_return": 1994,
+    "twice_told_tales_release": "2015-06-05"
+  },
+  "original_editorial_profile_sha256": "2bf4d93d46ff30e2aff94fd3b948666ed7661333baae72cbfe5749cefb969e84"
+}

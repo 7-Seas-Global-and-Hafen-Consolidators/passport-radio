@@ -1,0 +1,34 @@
+{
+  "tested_head": "74490bcee07cfb3279bd8baadfb179ab19f03763",
+  "merge_ready": false,
+  "ci": {
+    "build": {
+      "conclusion": "success",
+      "url": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/37925421556/job/113803079905"
+    },
+    "purge": {
+      "conclusion": "success",
+      "url": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/37925421603/job/113803080639"
+    }
+  },
+  "syntax": "PASS",
+  "route_cases": 6,
+  "browser": {
+    "certified": false,
+    "playwright_distribution_error": "End of central directory record signature not found",
+    "official_alternative": "Chrome for Testing 155.0.8059.39",
+    "alternative_launch_error": "SIGSEGV before opening any page"
+  },
+  "static_findings": [
+    {
+      "path": "blog.html",
+      "finding": "Direct-entry HTML contains news-mast template, no .player-bar or .pb-door. Current mount preserves template and does not mount institutional App. Full station selection on direct paused entry remains unproven."
+    }
+  ],
+  "desktop_mobile": "NOT_CERTIFIED",
+  "audio": "NOT_CERTIFIED",
+  "assets": "NOT_CERTIFIED",
+  "radio_files_changed": false,
+  "acquisition_repeated": false,
+  "merge": false
+}
