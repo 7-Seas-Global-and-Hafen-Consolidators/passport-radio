@@ -16,15 +16,18 @@
   } catch (_) { return; }
   const fold = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   const watched = new WeakSet();
-  let data;let media={};
+  let data={nodes:[],edges:[]};let media={};
   function pictures(doc){
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
       const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)return;
-      a.dataset.artistName=a.textContent.trim();a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
+      const storyCount=a.querySelector("small")?.textContent.trim()||"";
+      const label=[...a.childNodes].filter(node=>node.nodeType===3).map(node=>node.textContent).join(" ").trim()||a.textContent.replace(storyCount,"").trim();
+      a.dataset.artistName=label;a.dataset.artistPhoto="1";a.dataset.photoSource=photo.source;a.dataset.photoLicense=photo.license_url;
       const img=doc.createElement("img");img.src=photo.image;img.alt=photo.name;img.loading="lazy";img.decoding="async";
-      const name=doc.createElement("span");name.textContent=a.dataset.artistName;
-      const credit=doc.createElement("small");credit.textContent=[photo.credit,photo.license].filter(Boolean).join(" · ");
-      a.replaceChildren(img,name,credit);
+      const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=label;
+      const count=doc.createElement("small");count.className="passport-artist-story-count";count.textContent=storyCount;count.setAttribute("aria-label",storyCount+" matérias relacionadas");
+      const credit=doc.createElement("small");credit.className="passport-artist-photo-credit";credit.textContent=[photo.credit,photo.license].filter(Boolean).join(" · ");
+      a.replaceChildren(img,name,count,credit);
       let credits=doc.querySelector("[data-passport-gallery-credits]");if(!credits){credits=doc.createElement("p");credits.dataset.passportGalleryCredits="1";credits.className="passport-gallery-credits";doc.querySelector("main")?.append(credits)}
       credits.append(link(doc,photo.name+" — "+photo.credit,photo.source),doc.createTextNode(" · "),link(doc,photo.license,photo.license_url),doc.createTextNode(". "));
     }
@@ -34,15 +37,19 @@
   }
   function styles(doc) {
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
-    const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261008';css.dataset.passportArtistNavigation='1';doc.head.append(css);
+    const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
   function enhance(doc) {
-    if (!data || !doc?.body || doc.querySelector('[data-passport-artist-tools]')) return;
+    if(!doc?.body)return;
     const path=new URL(doc.URL).pathname;
     const archive=/^\/blog\/(?:arquivo\/[^/]*\.html|e\/[^/]+\.html)$/.test(path);
     const article=doc.body.classList.contains('pp-blog-article');
-    if (!archive && !article) return;
+    const az=/^\/blog\/arquivo\/(?:letras|letra-[a-z])\.html$/.test(path);
+    if(!archive&&!article)return;
     if(archive)doc.body.classList.add('passport-artist-archive');
+    if(az){doc.body.classList.add('passport-az-directory');styles(doc);}
+    const existing=doc.querySelector('[data-passport-artist-tools]');
+    if(existing){existing._passportAzUpdate?.();return;}
     const main=doc.querySelector('main'); if (!main) return;
     styles(doc);pictures(doc);
     const nav=doc.createElement('section');nav.className='passport-artist-nav';nav.dataset.passportArtistTools='1';nav.setAttribute('aria-label','Navegação do artista e do acervo');
@@ -65,39 +72,104 @@
       const h=doc.createElement('h3');h.textContent='Bandas e artistas ligados à formação';nav.append(h);
       const links=doc.createElement('nav');links.setAttribute('aria-label','Vínculos de formação');for(const n of related.values())links.append(link(doc,n.name,n.url));nav.append(links);
     }
-    if(/^\/blog\/arquivo\/(?:letras|letra-[a-z])\.html$/.test(path)) {
-      const entries=[...main.querySelectorAll('a[href^="/blog/e/"]')];
-      if(entries.length) {
-        const label=doc.createElement('label');label.textContent='Encontre no A–Z';const input=doc.createElement('input');input.type='search';input.placeholder='Nome do artista ou banda';label.append(input);nav.append(label);
-        const count=doc.createElement('p');count.setAttribute('aria-live','polite');nav.append(count);
-        const pages=doc.createElement('nav');pages.setAttribute('aria-label','Paginação do A–Z');
+    if(az) {
+      const indexPage=path.endsWith('/letras.html');
+      if(indexPage){
+        const title=main.querySelector('h1');if(title)title.textContent='A–Z — Artistas, Bandas & Acervo';
+        const intro=main.querySelector('.blog-intro');if(intro)intro.textContent='Encontre artistas, bandas e outras entidades já indexadas. Cada nome mantém seu destino no acervo; os números indicam matérias relacionadas.';
+      }
+      let alphabet=main.querySelector('.blog-az');
+      if(!alphabet){
+        alphabet=doc.createElement('nav');alphabet.className='blog-az';
+        for(const letter of 'abcdefghijklmnopqrstuvwxyz'){
+          const a=link(doc,letter.toUpperCase(),'/blog/arquivo/letra-'+letter+'.html');
+          if(path.endsWith('/letra-'+letter+'.html'))a.setAttribute('aria-current','page');
+          alphabet.append(a);
+        }
+        const firstSection=main.querySelector('.blog-section');if(firstSection)firstSection.before(alphabet);
+      } else if(alphabet.tagName!=='NAV'){
+        const index=doc.createElement('nav');index.className='blog-az';index.setAttribute('aria-label','Índice alfabético');
+        while(alphabet.firstChild)index.append(alphabet.firstChild);alphabet.replaceWith(index);alphabet=index;
+      }
+      alphabet.setAttribute('aria-label','Índice alfabético de artistas e bandas');
+      for(const a of alphabet.querySelectorAll('a[href]')){
+        if(new URL(a.href,doc.URL).pathname===path)a.setAttribute('aria-current','page');
+        else a.removeAttribute('aria-current');
+      }
+
+      const entries=[...main.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')];
+      for(const a of entries){
+        a.classList.add('passport-az-entry');
+        if(!a.dataset.artistName){
+          const small=a.querySelector('small');
+          a.dataset.artistName=[...a.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(' ').trim()||a.textContent.replace(small?.textContent||'','').trim();
+        }
+      }
+      if(entries.length){
+        const heading=doc.createElement('h2');heading.className='passport-az-tools-title';heading.textContent=indexPage?'Explore o diretório':'Filtre esta letra';nav.append(heading);
+        const row=doc.createElement('nav');row.setAttribute('aria-label','Caminhos do acervo');row.append(link(doc,'A–Z completo','/blog/arquivo/letras.html'),link(doc,'Blog','/blog.html'));nav.append(row);
+
+        const searchLabel=doc.createElement('label');searchLabel.className='passport-az-search-label';searchLabel.textContent='Buscar nome';
+        const input=doc.createElement('input');input.type='search';input.className='passport-az-search';input.placeholder='Artista, banda ou entidade';input.setAttribute('aria-label','Buscar artista, banda ou entidade');searchLabel.append(input);nav.append(searchLabel);
+
+        const typeLabel=doc.createElement('label');typeLabel.className='passport-az-type-label';typeLabel.textContent='Tipo identificado no acervo';
+        const type=doc.createElement('select');type.className='passport-az-type';type.setAttribute('aria-label','Filtrar por tipo identificado');
+        for(const [value,label] of [['all','Todos os nomes'],['band','Bandas identificadas'],['artist','Artistas e músicos identificados'],['formation','Com vínculo de formação explícito'],['untyped','Sem classificação estruturada']]){
+          const option=doc.createElement('option');option.value=value;option.textContent=label;type.append(option);
+        }
+        typeLabel.append(type);nav.append(typeLabel);
+        const count=doc.createElement('p');count.className='passport-az-results';count.setAttribute('aria-live','polite');nav.append(count);
+        const pages=doc.createElement('nav');pages.className='passport-az-pagination';pages.setAttribute('aria-label','Paginação do diretório');
         const previous=doc.createElement('button');previous.type='button';previous.textContent='Anterior';
         const next=doc.createElement('button');next.type='button';next.textContent='Próxima';
         const pageLabel=doc.createElement('span');pages.append(previous,pageLabel,next);nav.append(pages);
-        const params=new URL(doc.URL).searchParams;input.value=params.get('q')||'';
+
+        const params=new URL(doc.URL).searchParams;input.value=params.get('q')||'';type.value=params.get('tipo')||'all';
+        if(!['all','band','artist','formation','untyped'].includes(type.value))type.value='all';
         let page=Math.max(1,Number.parseInt(params.get('pagina'),10)||1);
         const pageSize=48;
         const update=()=>{
-          const q=fold(input.value),matches=entries.filter(a=>fold(a.dataset.artistName||a.textContent).includes(q));
-          const total=Math.max(1,Math.ceil(matches.length/pageSize));page=Math.min(page,total);
-          const visibleEntries=new Set(matches.slice((page-1)*pageSize,page*pageSize));
-          for(const a of entries)a.hidden=!visibleEntries.has(a);
+          const nodesByPath=new Map((data?.nodes||[]).map(n=>[n.url,n]));
+          const formationIds=new Set((data?.edges||[]).flatMap(e=>[e.artist,e.band]));
+          const q=fold(input.value),kind=type.value;
+          const filtered=entries.filter(a=>{
+            if(!fold(a.dataset.artistName||a.textContent).includes(q))return false;
+            const node=nodesByPath.get(new URL(a.href,doc.URL).pathname);
+            if(kind==='all')return true;
+            if(kind==='band')return node?.kind==='band';
+            if(kind==='artist')return node?.kind==='artist';
+            if(kind==='formation')return !!node&&formationIds.has(node.id);
+            return !node;
+          });
+          const total=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.max(1,Math.min(page,total));
+          const visible=new Set(filtered.slice((page-1)*pageSize,page*pageSize));
+          for(const a of entries)a.hidden=!visible.has(a);
           for(const cloud of main.querySelectorAll('.blog-entity-cloud')){
-            const visible=[...cloud.querySelectorAll('a')].some(a=>!a.hidden);cloud.hidden=!visible;
-            if(cloud.parentElement?.classList.contains('blog-section'))cloud.parentElement.hidden=!visible;
-            const heading=cloud.previousElementSibling;if(heading?.tagName==='H2')heading.hidden=!visible;
+            const show=[...cloud.querySelectorAll('a')].some(a=>!a.hidden);cloud.hidden=!show;
+            if(cloud.parentElement?.classList.contains('blog-section'))cloud.parentElement.hidden=!show;
+            const heading=cloud.previousElementSibling;if(heading?.tagName==='H2')heading.hidden=!show;
           }
-          count.textContent=matches.length.toLocaleString('pt-BR')+' entradas encontradas · '+entries.length.toLocaleString('pt-BR')+' destinos neste índice';
-          pageLabel.textContent='Página '+page+' de '+total;previous.disabled=page===1;next.disabled=page===total;
-          // Canonical remains the historical URL. Reader frame owns its own pagination URL.
-          try{const url=new URL(doc.URL);url.searchParams.set('pagina',String(page));if(input.value)url.searchParams.set('q',input.value);else url.searchParams.delete('q');doc.defaultView.history.replaceState(doc.defaultView.history.state,'',url.href);}catch(_){}
+          const typed=entries.filter(a=>nodesByPath.has(new URL(a.href,doc.URL).pathname)).length;
+          count.textContent=filtered.length.toLocaleString('pt-BR')+' resultados · '+entries.length.toLocaleString('pt-BR')+' destinos · '+typed.toLocaleString('pt-BR')+' com tipo estruturado';
+          pageLabel.textContent='Página '+page+' de '+total;previous.disabled=page<=1;next.disabled=page>=total;
+          try{const url=new URL(doc.URL);url.searchParams.set('pagina',String(page));
+            if(input.value.trim())url.searchParams.set('q',input.value.trim());else url.searchParams.delete('q');
+            if(kind==='all')url.searchParams.delete('tipo');else url.searchParams.set('tipo',kind);
+            doc.defaultView.history.replaceState(doc.defaultView.history.state,'',url.href);
+          }catch(_){}
         };
-        input.addEventListener('input',()=>{page=1;update();});
-        previous.addEventListener('click',()=>{page--;update();});next.addEventListener('click',()=>{page++;update();});update();
+        nav._passportAzUpdate=update;
+        input.addEventListener('input',()=>{page=1;update();});type.addEventListener('change',()=>{page=1;update();});
+        previous.addEventListener('click',()=>{if(page>1){page--;update();}});
+        next.addEventListener('click',()=>{if(page<Math.ceil(entries.length/pageSize)){page++;update();}});
+        update();
       }
+      const firstSection=main.querySelector('.blog-section');if(firstSection&&alphabet.parentElement!==main)firstSection.before(alphabet);
+      const intro=main.querySelector('.blog-intro');
+      if(intro)intro.after(nav);else if(alphabet.parentElement===main)alphabet.before(nav);else if(firstSection)firstSection.before(nav);
     }
     const crumbs=main.querySelector('.blog-crumbs');
-    if(crumbs) crumbs.insertAdjacentElement('afterend',nav);else main.prepend(nav);
+    if(az){}else if(crumbs)crumbs.insertAdjacentElement('afterend',nav);else main.prepend(nav);
   }
   function watch(frame) {
     if(watched.has(frame))return;watched.add(frame);
@@ -105,6 +177,7 @@
     frame.addEventListener('load',run);run();
   }
   window.PassportArtistNavigation=Object.freeze({enhance});
+  enhance(document);
   window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document)});
   fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value;pictures(document)}).catch(()=>{});
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{

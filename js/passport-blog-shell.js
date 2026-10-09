@@ -35,7 +35,7 @@
   // Content tools are inside the single main, below the original header/player/catalog.
   main.prepend(editorial,form,edition);
   refreshReadingTime(main);const prose=main.querySelector('.pe-prose,.mn-prose,article.prose,.blog-profile');if(prose){proseObserver=new MutationObserver(()=>refreshReadingTime(main));proseObserver.observe(prose,{childList:true,subtree:true,characterData:true})}
-  load('script','/js/passport-artist-navigation.js?v=20261009-outlet');
+  load('script','/js/passport-artist-navigation.js?v=20261009-az-directory');
  }
  function mount(){
   if(!/^\/blog(?:\.html|\/)/.test(location.pathname))return;
