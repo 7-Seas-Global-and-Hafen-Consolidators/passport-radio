@@ -1,0 +1,42 @@
+/* Editorial chrome only. Media hosts and station controls are outside scope. */
+@import url('/css/payment-footer-trust.css');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,700&family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;700&display=swap');
+body[data-passport-blog-shell]{--blog-gold:#C41E3A;--blog-ink:#111111;--blog-mute:#555;--blog-panel:#FFFFFF;--blog-line:#ddd;background:#FFFFFF;color:#111111;font-family:'Instrument Sans',sans-serif;margin:0}
+body[data-passport-blog-shell] :is(h1,h2,h3){font-family:'Bodoni Moda',Georgia,serif}
+body[data-passport-blog-shell] :is(.pe-prose,.mn-prose,.blog-intro){font-family:'Source Serif 4',Georgia,serif}
+body[data-passport-blog-shell] .blog-page{max-width:1120px;margin:0 auto;padding:24px 20px 48px}
+body[data-passport-blog-shell] :is(.blog-card,.blog-collab-strip,.blog-follow,.blog-comment,.blog-doc-cell,.passport-discussion){background:#fff;color:#111;border-color:#ddd}
+body[data-passport-blog-shell] :is(.blog-card h2,.blog-card p,.blog-card__meta,.blog-follow p,.blog-doc-cell figcaption){color:#111}
+.passport-blog-shell-header{background:#fff;text-align:center;padding:26px 20px 0;color:#111}
+.passport-blog-shell-logo{display:inline-flex;flex-direction:column;font-family:'Bodoni Moda',Georgia,serif;font-weight:700;font-size:clamp(48px,6vw,78px);line-height:.85;color:#C41E3A;text-decoration:none}
+.passport-blog-shell-logo em{font-weight:700}
+.passport-blog-shell-years{font-size:10px;letter-spacing:.3em;margin:16px 0 22px}
+.passport-blog-shell-main-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 18px;border-top:4px double #111;border-bottom:1px solid #111;padding:12px 0}
+.passport-blog-shell-main-nav a{text-transform:uppercase;font-size:11px;font-weight:700;letter-spacing:.06em;color:#111;text-decoration:none}
+.passport-blog-shell-editorial{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 18px;max-width:1120px;margin:0 auto;padding:14px 20px;border-bottom:1px solid #ddd}
+.passport-blog-shell-editorial a{color:#C41E3A;font-size:12px;text-decoration:none}
+body[data-passport-blog-shell] .passport-blog-shell-search{display:flex;align-items:center;gap:10px;max-width:560px;margin:16px auto;padding:0;flex-wrap:wrap}
+.passport-blog-shell-search label{font-size:12px;font-weight:700}
+body[data-passport-blog-shell] .passport-blog-shell-search input{flex:1;min-width:140px;min-height:40px;border:1px solid #111;border-radius:0;background:#fff;color:#111;padding:8px 12px}
+body[data-passport-blog-shell] .passport-blog-shell-search button{min-height:40px;background:#C41E3A;color:#fff;border:1px solid #C41E3A;border-radius:0;padding:8px 16px}
+.passport-blog-shell-footer{background:#fff;color:#111;text-align:center;border-top:4px double #111;padding:32px 20px;clear:both}
+.passport-blog-shell-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 18px;max-width:1120px;margin:20px auto}
+.passport-blog-shell-footer nav a{color:#111;font-size:12px;text-decoration:none}
+.passport-blog-shell-footer p{font-size:13px}
+.passport-blog-shell-footer-brand{font-family:'Bodoni Moda',Georgia,serif;font-weight:700;font-size:30px;color:#C41E3A;text-decoration:none}
+.passport-blog-shell-support{max-width:900px;margin:0 auto 28px}
+.passport-blog-shell-support h2{font-size:clamp(24px,3vw,34px)}
+.passport-blog-shell-support a{color:#C41E3A}
+.passport-blog-shell-donate{display:inline-block;padding:12px 20px;background:#C41E3A;color:#fff!important;font-size:12px;font-weight:700;text-decoration:none}
+.passport-blog-shell-reading{font-family:'Instrument Sans',sans-serif;font-size:13px;color:#555}
+@media(max-width:600px){.passport-blog-shell-header{padding:22px 16px 0}.passport-blog-shell-main-nav{gap:12px}.passport-blog-shell-editorial{justify-content:flex-start;gap:12px}.passport-blog-shell-footer nav{gap:12px}.passport-blog-shell-search label{flex-basis:100%}body[data-passport-blog-shell] .blog-layout{display:block;width:auto;margin:0 16px}.passport-blog-shell-footer{padding:28px 16px}}
+/* Legacy station/light skins carry important gold/warm declarations. Override
+   only editorial chrome; never apply these rules to media or transport nodes. */
+html body[data-passport-blog-shell] :is(.passport-blog-shell-header,.passport-blog-shell-footer,.passport-blog-shell-support,.payment-footer-trust){background:#FFFFFF!important;color:#111111!important;border-color:#111111!important}
+html body[data-passport-blog-shell] :is(.passport-blog-shell-logo,.passport-blog-shell-logo em,.passport-blog-shell-footer-brand){color:#C41E3A!important}
+html body[data-passport-blog-shell] :is(.passport-blog-shell-main-nav a,.passport-blog-shell-footer nav a,.passport-blog-shell-search label,.passport-blog-shell-years){color:#111111!important}
+html body[data-passport-blog-shell] :is(.passport-blog-shell-editorial a,.passport-blog-shell-support a,.blog-crumbs a,.blog-kicker,.blog-card__eyebrow,.blog-pager a){color:#C41E3A!important}
+html body[data-passport-blog-shell] :is(.passport-blog-shell-donate,.passport-blog-shell-search button){background:#C41E3A!important;color:#FFFFFF!important;border-color:#C41E3A!important}
+html body[data-passport-blog-shell] .passport-blog-shell-search input{background:#FFFFFF!important;color:#111111!important;border-color:#111111!important}
+html body[data-passport-blog-shell] :is(.payment-footer-trust__inner,.payment-footer-trust__brands,.payment-footer-trust__provider,.payment-footer-trust__methods){background:#FFFFFF!important;color:#111111!important}
+html body[data-passport-blog-shell] .payment-footer-trust__brands img{background:#FFFFFF!important;border-color:#111111!important}

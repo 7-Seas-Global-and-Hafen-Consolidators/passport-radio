@@ -8,15 +8,27 @@
 
   const originHome = /^(\/|\/index\.html)$/.test(location.pathname);
   if (!originHome && !/^\/(?:noticias|editorial|blog)\.html$/.test(location.pathname) &&
+      !/^\/blog\//.test(location.pathname) &&
       !document.querySelector('body.pp-article,.pe-prose,.mn-prose,article.prose,main.story')) return;
   const originURL = location.href;
   const originTitle = document.title;
   const excluded = /\/(?:radio[^/]*|globo-de-ouro-player|passport-player[^/]*|adapter-lab)\.html$/i;
   let frame, currentURL, savedOverflow, pending = 0;
+  // Presentation only: keep the opaque transport mounted, remove the underlying
+  // page from the reader's visual/accessibility flow until the reader closes.
+  const presentation = document.createElement('style');
+  presentation.textContent = 'body.pp-editorial-reader-active{height:100dvh;overflow:hidden!important}body.pp-editorial-reader-active> :not(#pp-nav-page):not(#qwen-engine-bay):not(#passport-casa-host):not(script):not(style){visibility:hidden!important;position:fixed!important}#pp-nav-page[hidden]{display:none!important}#pp-nav-page:not([hidden]){display:block!important}';
+  document.head.append(presentation);
+  const root = document.getElementById('root');
+  const priorInert = root?.inert;
+  function readerActive(active) {
+    document.body.classList.toggle('pp-editorial-reader-active', active);
+    if (root) root.inert = active || priorInert;
+  }
   const urlOf = href => { try { return new URL(href, location.href); } catch (_) { return null; } };
   const home = url => /^(\/|\/index\.html)$/.test(url.pathname);
   const compatible = url => url && url.origin === location.origin && !excluded.test(url.pathname) &&
-    (home(url) || /\.html$/i.test(url.pathname));
+    (home(url) || /\.html$/i.test(url.pathname) || /^\/blog\/(?:[^?#]*\/)?$/.test(url.pathname));
   const knownEditorial = url => /^\/(?:editorial|historias|blog)\//.test(url.pathname) ||
     /^\/(?:noticias|editorial|blog)\.html$/.test(url.pathname);
 
@@ -55,6 +67,7 @@
     if (home(url)) {
       if (!originHome) { location.assign(url.href); return; }
       currentURL = null;
+      readerActive(false);
       if (frame) { frame.hidden = true; frame.contentWindow.location.replace('about:blank'); }
       document.body.style.overflow = savedOverflow ?? document.body.style.overflow;
       window.PassportContinuity?.detachControls();
@@ -69,6 +82,7 @@
       if (view.hidden) savedOverflow = document.body.style.overflow;
       currentURL = url;
       view.hidden = false;
+      readerActive(true);
       document.body.style.overflow = 'hidden';
       // Only the reader document changes. No engine, media node or source calls.
       view.contentWindow.location.replace(url.href);
@@ -95,6 +109,7 @@
     const url = urlOf(location.href);
     if (url.href === originURL && !originHome) {
       currentURL = null;
+      readerActive(false);
       if (frame) {frame.hidden=true;frame.contentWindow.location.replace('about:blank');}
       document.body.style.overflow = savedOverflow ?? '';
       window.PassportContinuity?.detachControls();
