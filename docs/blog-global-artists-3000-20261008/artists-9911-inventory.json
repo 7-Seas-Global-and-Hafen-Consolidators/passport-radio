@@ -10,7 +10,7 @@
       "name": "10.000 Maniacs",
       "reference_url": "https://whiplash.net/bandas/1/10000maniacs.html",
       "existing_url": "/blog/e/10000maniacs.html",
-      "status": "ENRICHED_PENDING_COMPLETE_LINEUP_HISTORY_AND_BROWSER_PLAYBACK",
+      "status": "ENRICHED_WITH_FACTUAL_ARTICLE_PENDING_FULL_CERTIFICATION",
       "photo": {
         "path": "/assets/blog/artists/10000-maniacs.jpg",
         "source": "https://commons.wikimedia.org/wiki/File:10,000_Maniacs.jpg",
@@ -40,7 +40,7 @@
       },
       "original_editorial_profile": {
         "url": "/blog/e/10000maniacs.html",
-        "sha256": "d1013b13e143a536a39229de36a4c2bf12cf4d6bb9567c87548bd0251b083487"
+        "sha256": "2bf4d93d46ff30e2aff94fd3b948666ed7661333baae72cbfe5749cefb969e84"
       },
       "completed": false,
       "evidence": "profiles/10000-maniacs.json"
@@ -50,55 +50,88 @@
       "name": "1000mods",
       "reference_url": "https://whiplash.net/bandas/1/1000mods.html",
       "existing_url": null,
-      "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
-      "photo": null,
-      "validated_official_video": null,
+      "status": "FACTS_AND_LICENSED_PHOTO_SAVED_PROFILE_PENDING",
+      "photo": {
+        "path": "/assets/blog/artists/1000mods-transbordeur-2025.jpg",
+        "source": "https://commons.wikimedia.org/wiki/File:Concert_1000mods_Transbordeur_2025.jpg",
+        "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Concert_1000mods_Transbordeur_2025.jpg",
+        "author": "Sebleouf",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "none",
+        "date": "2025-03-10",
+        "dimensions": [
+          4032,
+          3024
+        ],
+        "sha256": "896bdd97468ef931b5035200dbced88836af51ba13905b19e10bc3e66a6e9693",
+        "decoded": true,
+        "visually_inspected": true
+      },
+      "validated_official_video": {
+        "id": "dMbsju-qSeE",
+        "title": "1000mods - Electric Carve - Official Music Video",
+        "publisher": "1000mods",
+        "publisher_url": "https://www.youtube.com/@1000mods",
+        "oembed_http": 200,
+        "embedding_available": true,
+        "browser_playback_certified": false
+      },
       "original_editorial_profile": null,
-      "completed": false
+      "completed": false,
+      "evidence": "profiles/1000mods.json"
     },
     {
       "position": 3,
       "name": "100 Dogmas",
       "reference_url": "https://whiplash.net/bandas/1/100dogmas.html",
       "existing_url": null,
-      "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
       "photo": null,
       "validated_official_video": null,
       "original_editorial_profile": null,
-      "completed": false
+      "completed": false,
+      "evidence": "batches/first-50-fields-20261009.json"
     },
     {
       "position": 4,
       "name": "100 Watt Vipers",
       "reference_url": "https://whiplash.net/bandas/1/100wattvipers.html",
       "existing_url": null,
-      "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
       "photo": null,
       "validated_official_video": null,
       "original_editorial_profile": null,
-      "completed": false
+      "completed": false,
+      "evidence": "batches/first-50-fields-20261009.json"
     },
     {
       "position": 5,
       "name": "101 South",
       "reference_url": "https://whiplash.net/bandas/1/101south.html",
       "existing_url": "/blog/e/101south.html",
-      "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
       "photo": null,
       "validated_official_video": null,
-      "original_editorial_profile": null,
-      "completed": false
+      "original_editorial_profile": {
+        "url": "/blog/e/101south.html",
+        "status": "PARTIAL_FACTUAL_HISTORY_ADDED",
+        "sha256": "17153a3c5ee2d2658a828c6121a36a6084709c15dfabd460ca9ff207cda7e84a"
+      },
+      "completed": false,
+      "evidence": "batches/first-50-fields-20261009.json"
     },
     {
       "position": 6,
       "name": "10CC",
       "reference_url": "https://whiplash.net/bandas/1/10cc.html",
       "existing_url": null,
-      "status": "PENDING_FACTUAL_PROFILE_AND_AUTHORIZED_MEDIA",
+      "status": "FACTUAL_FIELDS_ACQUIRED_PENDING_PROFILE_AND_MEDIA",
       "photo": null,
       "validated_official_video": null,
       "original_editorial_profile": null,
-      "completed": false
+      "completed": false,
+      "evidence": "batches/first-50-fields-20261009.json"
     },
     {
       "position": 7,

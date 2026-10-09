@@ -65,7 +65,7 @@
   "historical_articles_preserved": 21933,
   "historical_az_destinations_preserved": 2767,
   "title_pattern_flags": 16447,
-  "new_photos_acquired": 1,
+  "new_photos_acquired": 2,
   "official_videos_certified": 0,
   "acquisition_resume": "Reuse inventory and source hashes. Complete profile facts, authorized artist photo and official video before marking a record complete. Do not recreate existing destination or copy and reattribute source articles.",
   "pending": [
@@ -109,7 +109,7 @@
   "inventory": "artists-9911-inventory.json",
   "remote_global_presentation_commit": "334661cb0dc6442d7ea9e7d5eae78be49f54a649",
   "enriched_existing_profiles": 1,
-  "official_video_embeds_oembed_verified": 1,
+  "official_video_embeds_oembed_verified": 2,
   "profile_incremental_qa": [
     "photo decoded, 444x350, SHA256 recorded",
     "new local links resolve",
@@ -135,11 +135,23 @@
     "institutional_edition": "Shared visible ACERVO PASSPORT RADIO / EDIÇÃO MR. NOMAD",
     "presentation_hooks_note": "Script loading hooks are presentation integration, not certified artist/article relations",
     "browser_qa_blocker": "Playwright installed but Chromium executable absent; no browser playback certification",
-    "next_exact_work": "Validate Home reader facade visually and with actual transport; direct editorial entry catalog pending; finish earliest Maniacs lineup and video playback; continue inventory position 2",
+    "next_exact_work": "First batch positions 7-50 factual fields; media queues separately; certification pending for positions 1-6; direct editorial full catalog and browser audio QA pending",
     "new_certified_profiles": 0,
     "first_batch_remote_commit": "710e27d3e3091ec98d49254a79ee2e52479f0b46",
     "home_to_editorial_facade": "Keep original React player and complete original catalog in their existing root; hide Home editorial siblings; resize reader below original facade; no transport API calls",
     "direct_editorial_entry": "Full facade on direct entry without a Home root remains pending; do not certify all routes",
-    "facade_regression": "PASS: original facade not inert; one reader; dynamic measured bounds; Home return; no duplicate footer controls"
-  }
+    "facade_regression": "PASS: original facade not inert; one reader; dynamic measured bounds; Home return; no duplicate footer controls",
+    "preservation_commit": "575d8bd9cb989784be2d9b43c6311eb1f20f0782",
+    "last_implementation_commit": "01e43b29182f631aa20244e9c00f959b4af40bf8",
+    "ci_last_implementation": {
+      "build": "success",
+      "purge": "success"
+    },
+    "batch_method": "50 positions per resumable batch; overlapping queues per missing evidence/validation, reuse acquired facts",
+    "az_pagination": "48 existing destinations/page; accent search; query resets page; canonical unchanged; regression PASS"
+  },
+  "batch_queues": "work-queues.json",
+  "batch_acquisition": "batches/first-50-fields-20261009.json",
+  "factually_enriched_existing_profiles": 2,
+  "next_acquisition_position": 7
 }
