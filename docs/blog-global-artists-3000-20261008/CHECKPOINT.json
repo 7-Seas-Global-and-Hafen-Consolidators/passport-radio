@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 15500,
+  "presentation_hooks_remote": 16000,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 15500,
-    "next_batch": 31,
-    "last_path": "blog/w/372003-rainbow.html",
-    "previous_remote_commit": "c2d6ac1481b2d32d3b486eb24ae9c7198353a99b"
+    "persisted": 16000,
+    "next_batch": 32,
+    "last_path": "blog/w/372516-rickwakeman.html",
+    "previous_remote_commit": "68b930c5b38f4d7a141faa13a7b82423e95408a2"
   }
 }
