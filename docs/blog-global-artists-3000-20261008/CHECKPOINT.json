@@ -68,15 +68,15 @@
     "sha256_reverified": true
   },
   "remote_shared_implementation_commit": "039542bf016f5c71289c04cba7d79e1191c18132",
-  "presentation_hooks_remote": 9000,
+  "presentation_hooks_remote": 9500,
   "previous_local_directory_present": false,
   "implementation_restored_from_verified_package": true,
   "authenticated_git_data_api_write_confirmed": true,
   "presentation_transfer": {
     "total": 26184,
-    "persisted": 9000,
-    "next_batch": 18,
-    "last_path": "blog/w/005412-crimsonglory.html",
-    "previous_remote_commit": "8113ce880f2e4eee0908b6a16dd051310fdb2f73"
+    "persisted": 9500,
+    "next_batch": 19,
+    "last_path": "blog/w/005916-iron-maiden.html",
+    "previous_remote_commit": "b2605fa2590d5dbc27d947d4d239b3e42e2e68cf"
   }
 }
