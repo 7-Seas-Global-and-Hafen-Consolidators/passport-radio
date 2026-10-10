@@ -17,6 +17,15 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /js/passport-persist-nav.js
+            /js/passport-automatic-editorial.js
+            /css/passport-automatic-editorial.css
+            /editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html
+            /tests/automatic_editorial_browser.cjs
+            /tests/fixtures/automatic-editorial-preservation.json
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

@@ -17,9 +17,12 @@
     const active = automatic();
     document.body.toggleAttribute('data-passport-automatic', active);
     document.querySelectorAll('[data-passport-automatic-nav]').forEach(n => n.remove());
+    // Reference classes also provide wrapping: the App's horizontal strip
+    // would otherwise clip the first destinations when all routes are shown.
+    for (const [selector, name] of [['.pb-mast__logo','participe-paper-mast__logo'],['.pb-nav','participe-paper-nav'],['.pb-footer','participe-paper-footer'],['.pb-footer__brand','participe-paper-footer-brand'],['.pb-footer__bottom','participe-paper-footer-bottom']]) {
+      document.querySelector('#root '+selector)?.classList.toggle(name, active);
+    }
     if (!active) return;
-    // Reuse the reference's approved wordmark class on the App's existing node.
-    document.querySelector('#root .pb-mast__logo')?.classList.add('participe-paper-mast__logo');
     // Existing approved destinations omitted from the current App's nav.
     const list = document.querySelector('#root .pb-nav ul');
     if (list) for (const [href, label, after] of [['/radio.html','Podcast & Broadcast','/videos.html'],['/promocoes.html','Promoções','/divulgar-bandas.html']]) {
