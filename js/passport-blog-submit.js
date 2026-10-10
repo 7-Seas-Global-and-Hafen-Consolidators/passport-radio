@@ -34,6 +34,9 @@
 
   async function send(event, form, action) {
     event.preventDefault();
+    const nativeReceipt = action === "submit" && document.getElementById("participe-receipt");
+    if (nativeReceipt && form.dataset.sending === "true") return;
+    if (nativeReceipt) form.dataset.sending = "true";
     const result = form.querySelector(".ba-result");
     const button = form.querySelector("button");
     if (button) button.disabled = true;
@@ -64,6 +67,16 @@
     }
     if (!ok && message === "Recebido.") message = FAIL;
     paint(result, ok, message);
+    const receipt = nativeReceipt;
+    if (receipt) {
+      receipt.hidden = !ok;
+      if (ok) {
+        result.textContent = "";
+        receipt.focus({ preventScroll: true });
+        receipt.scrollIntoView({ block: "center", behavior: "auto" });
+      }
+    }
+    if (nativeReceipt) delete form.dataset.sending;
     if (button) button.disabled = false;
     if (ok) {
       form.reset();
