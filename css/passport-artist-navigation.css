@@ -65,7 +65,7 @@ body.pp-blog.passport-az-directory .passport-az-theme-links a{display:inline-fle
 body.pp-blog.passport-az-directory .passport-az-static-pages,
 body.pp-blog.passport-az-directory .passport-az-pagination{align-items:center;justify-content:center;gap:6px;}
 body.pp-blog.passport-az-directory .passport-az-page-status,
-body.pp-blog.passport-az-directory .passport-az-pagination>span:first-of-type{flex-basis:100%;text-align:center;font:600 .85rem/1.5 'Instrument Sans',sans-serif;}
+body.pp-blog.passport-az-directory .passport-az-pagination>span:first-of-type{flex-basis:100%;order:-1;text-align:center;font:600 .85rem/1.5 'Instrument Sans',sans-serif;}
 body.pp-blog.passport-az-directory .passport-az-static-pages a,
 body.pp-blog.passport-az-directory .passport-az-static-pages>span:not(.passport-az-page-status),
 body.pp-blog.passport-az-directory .passport-az-pagination a,
