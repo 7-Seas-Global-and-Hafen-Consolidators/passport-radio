@@ -13,3 +13,5 @@ Validação: 110 documentos comparados com a base; todos os bytes fora das categ
 Evidências: VALIDATION.json e 16 capturas page-<página>-<largura>-<js|html>.png. Run: https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38075942433
 
 O workflow temporário exclusivo de validação foi retirado do diff após salvar os resultados. Nenhum workflow existente foi alterado. Nenhuma aquisição, reprocessamento de imagens, geração editorial ou reprodução de áudio. Sem merge.
+
+Revisão final dos controles: status da página acima de toda a linha de Anterior/números/Próxima. Dois casos adicionais desktop1440/celular390 aprovados sem repetir os 16 anteriores. PAGER-VALIDATION.json e compact-controls-1440.png/compact-controls-390.png; run https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38076226030
