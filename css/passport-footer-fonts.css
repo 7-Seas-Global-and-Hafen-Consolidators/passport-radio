@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Passport Footer Bodoni Moda';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/passport-footer/09a2d3f581282a95.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passport Footer Bodoni Moda';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/passport-footer/b8d14dc4cf4c0d27.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passport Footer Instrument Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/fonts/passport-footer/01689ad055025ff1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passport Footer Instrument Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/fonts/passport-footer/a7bcb84cb01f6e33.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passport Footer Instrument Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/fonts/passport-footer/5e39a358a65a72b6.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passport Footer Instrument Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(/fonts/passport-footer/d25efe5b0dcf3b36.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Passport Footer Source Serif 4';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/passport-footer/f01900495012279f.ttf) format('truetype');
+}
