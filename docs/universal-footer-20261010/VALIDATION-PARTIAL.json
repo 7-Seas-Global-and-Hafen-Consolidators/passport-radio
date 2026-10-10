@@ -1,0 +1,3494 @@
+[
+  {
+    "viewport": 1440,
+    "path": "/index.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 9.328125
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 4.53125
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/noticias.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/editorial.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/agenda.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/blog.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/bandas/index.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/jogos.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/videos.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/radio.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/loja.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/promocoes.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/anuncie.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/doe.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/divulgar-bandas.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/blog/arquivo/letras.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/blog/e/soundgarden.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 9.328125
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 4.53125
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 1440,
+    "path": "/loja/p/2752375.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/index.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 9.328125
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 4.53125
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/noticias.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/editorial.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/agenda.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/blog.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/bandas/index.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/jogos.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/videos.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/radio.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/loja.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/promocoes.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/anuncie.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/doe.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/divulgar-bandas.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/blog/arquivo/letras.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/blog/e/soundgarden.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 9.328125
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 4.53125
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  },
+  {
+    "viewport": 390,
+    "path": "/loja/p/2752375.html",
+    "active": 1,
+    "visibleFooters": 1,
+    "images": [
+      {
+        "alt": "",
+        "src": "/images/payments/pix.png",
+        "ok": true,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "alt": "",
+        "src": "/images/payments/caixa.png",
+        "ok": true,
+        "width": 20,
+        "height": 16
+      },
+      {
+        "alt": "Visa",
+        "src": "/images/payments/visa.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Mastercard",
+        "src": "/images/payments/mastercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Elo",
+        "src": "/images/payments/elo.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "American Express",
+        "src": "/images/payments/amex.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Hipercard",
+        "src": "/images/payments/hipercard.png",
+        "ok": true,
+        "width": 36,
+        "height": 28
+      },
+      {
+        "alt": "Diners Club",
+        "src": "/images/payments/diners.png",
+        "ok": true,
+        "width": 51.703125,
+        "height": 28
+      },
+      {
+        "alt": "Mercado Pago",
+        "src": "/images/payments/mercado-pago.svg",
+        "ok": true,
+        "width": 70,
+        "height": 33.78125
+      }
+    ],
+    "order": [
+      "puf-identity",
+      "puf-navigation",
+      "puf-payments",
+      "puf-legal"
+    ],
+    "overflow": false,
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "ink": "rgb(17, 17, 17)",
+      "red": "rgb(196, 30, 58)"
+    },
+    "brandHeights": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "fonts": [
+      "\"Passport Footer Bodoni Moda\", Georgia, serif",
+      "\"Passport Footer Instrument Sans\", system-ui, sans-serif",
+      "\"Passport Footer Source Serif 4\", Georgia, serif"
+    ],
+    "outsideAudioAutoplay": false
+  }
+]

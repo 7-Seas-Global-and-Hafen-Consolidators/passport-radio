@@ -1,0 +1,8 @@
+{
+  "html_integrados": 28016,
+  "component": "/js/passport-universal-footer.js",
+  "css": "/css/passport-universal-footer.css",
+  "conteudo_externo_preservado_byte_a_byte": true,
+  "excluidos": "documentação/fixtures/cofre/painel privado/fragments sem body; nenhuma rota nova",
+  "nota": "Documentos de player/widget sem footer recebem apenas bootstrap inerte; o componente não cria footer neles."
+}
