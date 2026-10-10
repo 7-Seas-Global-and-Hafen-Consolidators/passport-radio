@@ -1,62 +1,115 @@
--- Witness → collaborator → author. Apply on the existing Conta Passport project.
--- Authenticated users submit stories. They can read only their own rows.
--- Editors apply status changes with the dashboard (service role), never from the browser.
+-- Blog Aberto. Visitante sem conta. O navegador não insere.
+-- O Build NÃO aplicou este arquivo. Quem aplica é o owner do projeto
+-- https://kmrnnudmujezriomimwn.supabase.co
+-- Não rode a versão antiga, a da conta, por cima desta.
+-- Se a tabela já existir com user_id, pare. Não apague daqui.
 
-create table if not exists public.blog_submissions (
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name = 'blog_submissions'
+      and column_name = 'user_id'
+  ) then
+    raise exception 'blog_submissions ainda está no modelo com conta';
+  end if;
+end $$;
+
+create table public.blog_submissions (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
-  display_name text not null default 'Colaborador Passport',
+  pseudonym text not null check (char_length(pseudonym) between 2 and 40),
+  email text not null check (position('@' in email) > 1 and char_length(email) <= 120),
   title text not null check (char_length(title) between 8 and 160),
-  deck text check (deck is null or char_length(deck) <= 280),
-  body text not null check (char_length(body) between 40 and 20000),
-  entity text,
-  country text,
-  period text,
-  format text,
-  sources text,
-  media_urls text,
-  notes text,
+  category text not null check (category in ('historias', 'discos', 'cultura', 'shows', 'entrevistas')),
+  body text not null check (char_length(body) between 40 and 8000),
+  rules_accepted boolean not null check (rules_accepted),
   status text not null default 'recebida' check (status in (
-    'recebida','em_analise','ajustes','aprovada','publicada','nao_publicada'
+    'recebida',
+    'pendente_revisao',
+    'aprovada_aguardando',
+    'publicando',
+    'publicada_verificada',
+    'rejeitada',
+    'falha_publicacao'
   )),
-  editor_note text,
+  attachment_path text,
+  approved_at timestamptz,
+  published_url text,
+  github_branch text,
+  github_pr integer,
+  publish_attempt integer not null default 0,
+  failure_note text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
 
-create index if not exists blog_submissions_user_idx on public.blog_submissions (user_id, created_at desc);
-create index if not exists blog_submissions_status_idx on public.blog_submissions (status, created_at desc);
+comment on column public.blog_submissions.email is 'Privado. Não sai em API pública, feed, sitemap, busca ou preview.';
+comment on column public.blog_submissions.attachment_path is 'Caminho no bucket privado blog-aberto-private. Não é URL pública.';
+
+create index blog_submissions_status_idx on public.blog_submissions (status, created_at desc);
+
+create table public.blog_rate_limits (
+  id bigint generated always as identity primary key,
+  origin_hash text not null check (char_length(origin_hash) between 16 and 128),
+  kind text not null check (kind in ('submit', 'comment')),
+  created_at timestamptz not null default now()
+);
+
+create index blog_rate_limits_origin_idx on public.blog_rate_limits (origin_hash, kind, created_at desc);
 
 alter table public.blog_submissions enable row level security;
+alter table public.blog_rate_limits enable row level security;
 
-drop policy if exists blog_submissions_select_own on public.blog_submissions;
-create policy blog_submissions_select_own on public.blog_submissions
-  for select using (auth.uid() = user_id);
+revoke all on table public.blog_submissions from public, anon, authenticated;
+revoke all on table public.blog_rate_limits from public, anon, authenticated;
+grant all on table public.blog_submissions to service_role;
+grant all on table public.blog_rate_limits to service_role;
+revoke all on sequence public.blog_rate_limits_id_seq from public, anon, authenticated;
+grant usage, select on sequence public.blog_rate_limits_id_seq to service_role;
 
-drop policy if exists blog_submissions_insert_own on public.blog_submissions;
-create policy blog_submissions_insert_own on public.blog_submissions
-  for insert with check (auth.uid() = user_id);
-
-drop policy if exists blog_submissions_update_own_draft on public.blog_submissions;
-create policy blog_submissions_update_own_draft on public.blog_submissions
-  for update using (auth.uid() = user_id and status in ('recebida','ajustes'))
-  with check (auth.uid() = user_id and status in ('recebida','ajustes'));
-
-create or replace function public.blog_submissions_touch()
-returns trigger language plpgsql as $$
+create or replace function public.blog_submissions_visitor_guard()
+returns trigger
+language plpgsql
+as $$
+declare
+  role text := coalesce(current_setting('request.jwt.claim.role', true), '');
 begin
-  new.updated_at = now();
-  if tg_op = 'UPDATE' and auth.uid() = new.user_id then
-    if new.status not in ('recebida','ajustes') then
-      new.status = old.status;
-    end if;
-    new.editor_note = old.editor_note;
+  if role = '' then
+    begin
+      role := coalesce(current_setting('request.jwt.claims', true)::json->>'role', '');
+    exception when others then
+      role := '';
+    end;
   end if;
+  if role in ('anon', 'authenticated') then
+    raise exception 'visitante não grava';
+  end if;
+  if tg_op = 'INSERT' then
+    if new.status is distinct from 'recebida'
+       or new.published_url is not null
+       or new.approved_at is not null
+       or new.github_pr is not null then
+      raise exception 'status de insert recusado';
+    end if;
+  end if;
+  if tg_op = 'UPDATE' and new.status = 'publicada_verificada' then
+    if coalesce(new.published_url, '') !~ '^https://passportradio\.online/blog/aberto/p/' then
+      raise exception 'publicada sem url no ar';
+    end if;
+  end if;
+  new.updated_at = now();
   return new;
 end;
 $$;
 
-drop trigger if exists blog_submissions_touch on public.blog_submissions;
-create trigger blog_submissions_touch
-  before update on public.blog_submissions
-  for each row execute function public.blog_submissions_touch();
+drop trigger if exists blog_submissions_visitor_guard on public.blog_submissions;
+create trigger blog_submissions_visitor_guard
+  before insert or update on public.blog_submissions
+  for each row execute function public.blog_submissions_visitor_guard();
+
+revoke all on function public.blog_submissions_visitor_guard() from public, anon, authenticated;
+
+insert into storage.buckets (id, name, public)
+values ('blog-aberto-private', 'blog-aberto-private', false)
+on conflict (id) do update set public = false;
