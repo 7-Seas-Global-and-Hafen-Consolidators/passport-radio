@@ -50,7 +50,7 @@
   <section class="ba-block">
     <h2>Publicação</h2>
     <p>Aprovar inicia. Não pede segunda aprovação. O servidor abre um pull request técnico a partir da main, espera o check build e só diz publicada quando a URL responde. Não atualiza a ref da main. Não faz merge da #531. Sem o token do repositório, a aprovação fica guardada e o estado vai para falha de publicação.</p>
-    <p>O owner ainda aplica, fora daqui: os SQL em supabase/blog_submissions.sql, supabase/blog_comments.sql e supabase/blog_controls.sql; a função blog-aberto com verify_jwt falso; e os segredos só no servidor SUPABASE_SERVICE_ROLE_KEY, BLOG_ABERTO_ADMIN_USER_ID e BLOG_ABERTO_GITHUB_TOKEN. Os controles nascem fechados.</p>
+    <p>Envios exigem conta confirmada e token validado no servidor. Apenas a identidade administrativa configurada, com segundo fator quando habilitado, acessa esta fila. Aprovar prepara uma PR técnica: o merge continua autorizado separadamente. Notificações pendentes permanecem na fila privada até a integração com um serviço de e-mail autorizado.</p>
   </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -96,7 +96,13 @@
     el.type = "button";
     el.textContent = label;
     el.addEventListener("click", function () {
-      call(action, { id: id }).then(function () { load(); });
+      var extra = {id:id};
+      if(action === "admin-reject") {
+        var reason = prompt("Motivo editorial da rejeição (sem dados pessoais):");
+        if(!reason) return;
+        extra.reason = reason;
+      }
+      call(action, extra).then(function () { load(); });
     });
     return el;
   }
@@ -113,8 +119,26 @@
       (data.submissions || []).forEach(function (row) {
         var li = document.createElement("li");
         li.textContent = row.status + " — " + row.title + " — " + row.pseudonym + " — " + row.email;
+        var details = document.createElement("details");
+        var summary = document.createElement("summary"); summary.textContent = "Analisar material completo";
+        var body = document.createElement("p"); body.textContent = row.body || ""; body.style.whiteSpace="pre-wrap";
+        var type = document.createElement("p"); type.textContent = "Tipo: " + (row.participation_type || "matéria") + " · " + row.created_at;
+        details.append(summary,type,body);
+        (row.reference_links || []).concat(row.official_links || []).forEach(function(url){
+          try { var parsed=new URL(url); if(parsed.protocol!=="https:" || parsed.username || parsed.password) return; }
+          catch { return; }
+          var link=document.createElement("a");link.href=url;link.textContent=url;link.target="_blank";link.rel="noopener noreferrer";
+          var paragraph=document.createElement("p");paragraph.append(link);details.append(paragraph);
+        });
+        if(row.attachment_path){
+          var attachment=document.createElement("button");attachment.type="button";attachment.textContent="Obter link privado do anexo (5 minutos)";
+          attachment.addEventListener("click",async function(){var data=await call("admin-attachment",{id:row.id});if(data?.url){var link=document.createElement("a");link.href=data.url;link.textContent="Abrir anexo privado";link.target="_blank";link.rel="noopener noreferrer";details.append(link);}});
+          details.append(attachment);
+        }
+        if(row.rejection_reason){var reason=document.createElement("p");reason.textContent="Motivo: "+row.rejection_reason;details.append(reason);}
+        li.append(details);
         if (row.status !== "publicada_verificada" && row.status !== "rejeitada") {
-          li.append(button("Aprovar e publicar", "admin-approve", row.id));
+          li.append(button("Aprovar / preparar PR", "admin-approve", row.id));
           li.append(button("Rejeitar", "admin-reject", row.id));
         }
         if (row.status === "falha_publicacao" || row.status === "aprovada_aguardando" || row.status === "publicando") {

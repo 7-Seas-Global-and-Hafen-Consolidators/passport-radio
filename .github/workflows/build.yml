@@ -305,3 +305,10 @@ jobs:
           node --check js/passport-automatic-editorial.js
           python tests/test_automatic_editorial.py
 
+
+      - name: Validate authenticated Participe queue
+        run: |
+          node --check js/passport-auth.js
+          node --check js/passport-blog-submit.js
+          node --check supabase/functions/blog-aberto/logic.js
+          node --test tests/participe_authenticated.test.cjs

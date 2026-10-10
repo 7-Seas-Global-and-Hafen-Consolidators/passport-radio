@@ -43,7 +43,19 @@
     let message = FAIL;
     let ok = false;
     try {
-      const res = await fetch(ENDPOINT, { method: "POST", body });
+      const headers = {};
+      if (action === "submit") {
+        const account = window.PassportAccount;
+        if (!account) throw new Error("account");
+        const checked = await account.client.auth.getUser();
+        const current = await account.client.auth.getSession();
+        if (checked.error || !checked.data.user || !current.data.session) {
+          message = "Entre na Minha Passport para enviar. Nada foi publicado.";
+          throw new Error("session");
+        }
+        headers.Authorization = "Bearer " + current.data.session.access_token;
+      }
+      const res = await fetch(ENDPOINT, { method: "POST", headers, body });
       const data = await res.json();
       if (data && typeof data.message === "string") message = data.message;
       ok = !!(res.ok && data && data.ok === true && data.message === "Recebido.");
@@ -56,6 +68,7 @@
     if (ok) {
       form.reset();
       stamp();
+      if(action === "submit") window.dispatchEvent(new CustomEvent("passport-account",{detail:{session:window.PassportAccount.session}}));
     }
   }
 
@@ -98,13 +111,36 @@
     const openSubmissions = !!(data && data.submissions === true);
     const openComments = !!(data && data.comments === true);
     const openFiles = !!(data && data.attachments === true);
-    if (submitForm && openSubmissions) {
+    if (submitForm) {
       const note = document.getElementById("ba-closed");
-      if (note) note.hidden = true;
-      submitForm.hidden = false;
-      const file = submitForm.querySelector(".ba-file");
-      if (file) file.hidden = !openFiles;
+      function refresh(session) {
+        const active = !!(openSubmissions && session && session.user);
+        submitForm.hidden = !active;
+        if (note) {
+          note.hidden = active;
+          note.textContent = openSubmissions ? "Entre na Minha Passport para enviar. Nada é publicado antes da aprovação editorial." : "Envios suspensos pela redação. Nada foi publicado.";
+        }
+        if (active) {
+          const nickname = submitForm.querySelector('[name="pseudonym"]');
+          if (nickname && !nickname.value) nickname.value = session.user.user_metadata?.display_name || "";
+          const email = submitForm.querySelector('[name="email"]');
+          if (email) { email.value = session.user.email || ""; email.readOnly = true; }
+          submitForm.querySelectorAll(".ba-file").forEach(el => { el.hidden = !openFiles; });
+          stamp();
+        }
+      }
+      window.addEventListener("passport-account", event => refresh(event.detail.session));
+      if (window.PassportAccount) {
+        await window.PassportAccount.ready;
+        refresh(window.PassportAccount.session);
+      } else refresh(null);
       bind(submitForm, "submit");
+      document.querySelectorAll("[data-participation]").forEach(link => {
+        link.addEventListener("click", () => {
+          const type = submitForm.querySelector('[name="participation_type"]');
+          if (type) type.value = link.dataset.participation;
+        });
+      });
     }
     if (commentForm && openComments) {
       const note = document.getElementById("ba-c-closed");

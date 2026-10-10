@@ -4,7 +4,8 @@
   const SUPABASE_URL='https://kmrnnudmujezriomimwn.supabase.co';
   const SUPABASE_PUBLISHABLE_KEY='sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y';
   const ACCOUNT_URL='https://passportradio.online/minha-passport.html';
-  const DEFAULT_AFTER_LOGIN='/?bemvindo=1';
+  const DEFAULT_AFTER_LOGIN='/divulgar-bandas.html#manda';
+  const embedded=!!document.querySelector('[data-auth-embedded]');
 
   const $=id=>document.getElementById(id);
   const loginForm=$('login-form');
@@ -25,21 +26,29 @@
       const decoded=decodeURIComponent(value);
       if(!decoded.startsWith('/')) return '';
       if(decoded.startsWith('//')) return '';
-      if(decoded.includes('://')) return '';
+      if(decoded.includes('://') || decoded.includes('\\') || new URL(decoded,location.origin).origin!==location.origin) return '';
       return decoded;
     }catch(error){return '';}
   }
 
   const returnToFromUrl=safeReturnTo(initialParams.get('returnTo'));
   const returnToFromStorage=safeReturnTo(sessionStorage.getItem('passport_return_to'));
-  const RETURN_TO=returnToFromUrl || returnToFromStorage || '';
+  const RETURN_TO=embedded?'/divulgar-bandas.html#manda':(returnToFromUrl || returnToFromStorage || DEFAULT_AFTER_LOGIN);
   if(RETURN_TO) sessionStorage.setItem('passport_return_to',RETURN_TO);
 
   if(!window.supabase){show('Não foi possível carregar o serviço de conta. Tente novamente.',true);return;}
 
   const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 
-  function show(text,isError=false,isSuccess=false){message.textContent=text;message.className='auth-message is-visible'+(isError?' is-error':'')+(isSuccess?' is-success':'');}
+  window.PassportAccount={client,ready:client.auth.getSession(),session:null};
+  client.auth.onAuthStateChange((event,session)=>{
+    window.PassportAccount.session=session;
+    window.dispatchEvent(new CustomEvent('passport-account',{detail:{session}}));
+  });
+  window.PassportAccount.ready.then(({data})=>{window.PassportAccount.session=data.session;window.dispatchEvent(new CustomEvent('passport-account',{detail:{session:data.session}}));});
+  if(!loginForm) return;
+
+  function show(text,isError=false,isSuccess=false){if(!message)return;message.textContent=text;message.className='auth-message is-visible'+(isError?' is-error':'')+(isSuccess?' is-success':'');}
   function clearMessage(){message.textContent='';message.className='auth-message';}
   function setBusy(form,busy){const button=form?.querySelector('button[type="submit"]');if(button) button.disabled=busy;}
   function setWelcome(visible){if(welcomeMessage) welcomeMessage.hidden=!visible;}
@@ -47,6 +56,7 @@
   function goAfterAuth(){
     const target=safeReturnTo(sessionStorage.getItem('passport_return_to')) || RETURN_TO || DEFAULT_AFTER_LOGIN;
     sessionStorage.removeItem('passport_return_to');
+    if(embedded){client.auth.getSession().then(({data})=>renderSession(data.session));return;}
     location.replace(target);
   }
 
@@ -89,6 +99,7 @@
   }
 
   async function loadMemberData(userId){
+    if(embedded) return;
     const favoritesTarget=$('account-favorites');
     const votesTarget=$('account-votes');
     if(favoritesTarget) favoritesTarget.textContent='Carregando seus favoritos…';
@@ -148,13 +159,13 @@
     const displayName=$('signup-name').value.trim();const email=$('signup-email').value.trim();const password=$('signup-password').value;
     const redirectUrl=ACCOUNT_URL+'?bemvindo=1'+(RETURN_TO?'&returnTo='+encodeURIComponent(RETURN_TO):'');
     const {data,error}=await client.auth.signUp({email,password,options:{data:{display_name:displayName},emailRedirectTo:redirectUrl}});setBusy(signupForm,false);
-    if(error){show(error.message || 'Não foi possível criar a conta.',true);return;}
+    if(error){show('Não foi possível criar a conta. Confira os dados ou tente novamente mais tarde.',true);return;}
     if(data.session){goAfterAuth();return;}else show('Conta criada. Confira seu e-mail. O link de confirmação leva direto para sua Passport.',false,true);
   });
 
   $('forgot-password').addEventListener('click',async()=>{
     const email=$('login-email').value.trim();if(!email){show('Digite seu e-mail primeiro.',true);return;}
-    const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:ACCOUNT_URL+'?recovery=1'});
+    const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:ACCOUNT_URL+'?recovery=1&returnTo='+encodeURIComponent(RETURN_TO)});
     if(error){show('Não foi possível enviar a recuperação agora.',true);return;}show('Enviamos as instruções de recuperação para seu e-mail.',false,true);
   });
 
@@ -163,15 +174,15 @@
     if(password!==confirm){show('As duas senhas precisam ser iguais.',true);return;}setBusy(recoveryForm,true);
     const {error}=await client.auth.updateUser({password});setBusy(recoveryForm,false);
     if(error){show('Não foi possível atualizar a senha. Abra novamente o link enviado por e-mail.',true);return;}
-    recoveryMode=false;cleanAuthUrl();recoveryForm.reset();const {data}=await client.auth.getSession();await renderSession(data.session);show('Senha atualizada com sucesso.',false,true);
+    recoveryMode=false;cleanAuthUrl();recoveryForm.reset();const {data}=await client.auth.getSession();await renderSession(data.session);show('Senha atualizada com sucesso. Volte a Participe para enviar seu material.',false,true);
   });
 
-  $('logout-button').addEventListener('click',async()=>{await client.auth.signOut();setView('login');show('Você saiu da sua conta.',false,true);});
+  $('logout-button').addEventListener('click',async()=>{const {error}=await client.auth.signOut();if(error){show('Não foi possível encerrar a sessão. Tente novamente.',true);return;}setView('login');show('Você saiu da sua conta.',false,true);});
   client.auth.onAuthStateChange((event,session)=>{if(event==='PASSWORD_RECOVERY') recoveryMode=true;setTimeout(()=>renderSession(session),0);});
 
   client.auth.getSession().then(async({data})=>{
     if(data.session && welcomeReturn && !recoveryMode){goAfterAuth();return;}
     await renderSession(data.session);
-    if(data.session && !recoveryMode && (location.hash || /[?&](code|access_token|refresh_token|token_type|expires_in|expires_at|type)=/.test(location.search))) cleanAuthUrl();
+    if(data.session && !recoveryMode && (/access_token=|refresh_token=|type=recovery/.test(location.hash) || /[?&](code|access_token|refresh_token|token_type|expires_in|expires_at|type)=/.test(location.search))) cleanAuthUrl();
   });
 })();

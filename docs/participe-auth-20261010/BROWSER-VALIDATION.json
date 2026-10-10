@@ -1,0 +1,30 @@
+{
+  "base": "2ed6442f47c3621588c5a38e29325680c783c18d",
+  "production_auth_emails_tested": false,
+  "checks": [
+    {
+      "width": 1440,
+      "rendered": true,
+      "signup_confirmation_message": "mocked Auth response",
+      "login_logout_reset": "mocked Auth responses",
+      "private_submission": "mocked endpoint",
+      "return_callback": "PASS",
+      "no_horizontal_overflow": true,
+      "mike_marrs_loaded": true,
+      "universal_footer_count": 1,
+      "preserved_header_image_support_footer": "byte-identical"
+    },
+    {
+      "width": 390,
+      "rendered": true,
+      "signup_confirmation_message": "mocked Auth response",
+      "login_logout_reset": "mocked Auth responses",
+      "private_submission": "mocked endpoint",
+      "return_callback": "PASS",
+      "no_horizontal_overflow": true,
+      "mike_marrs_loaded": true,
+      "universal_footer_count": 1,
+      "preserved_header_image_support_footer": "byte-identical"
+    }
+  ]
+}
