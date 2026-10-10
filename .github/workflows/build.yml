@@ -316,4 +316,4 @@ jobs:
       - name: Validate Participe notification delivery
         run: |
           node --check supabase/functions/participe-notifications/logic.js
-          node --test tests/participe_notification_delivery.test.cjs
+          node --test tests/participe_notification_delivery.test.cjs tests/participe_receipt_types.test.cjs

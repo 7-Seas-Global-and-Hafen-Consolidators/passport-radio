@@ -1,7 +1,7 @@
 {
   "project": "kmrnnudmujezriomimwn",
   "worker": "participe-notifications",
-  "deployed_version": 1,
+  "deployed_version": 2,
   "verify_jwt": false,
   "authentication": "private Vault token, service_role-only RPC",
   "cron": {
@@ -13,9 +13,9 @@
     "status": 503,
     "code": "missing_email_configuration",
     "missing": [
-      "RESEND_API_KEY",
       "PASSPORT_EDITORIAL_MAIL_FROM"
-    ]
+    ],
+    "controlled_request_id": 62
   },
   "bee_gees": {
     "id": "28ca543d-b917-4516-9763-fc9111f30a5b",
@@ -27,5 +27,19 @@
   "emails_sent": 0,
   "private_queue_and_worker_rpc": true,
   "new_worker_tests_passed": 6,
-  "claim_test": "transaction rolled back; second claim empty"
+  "claim_test": "transaction rolled back; second claim empty",
+  "secret_presence": {
+    "RESEND_API_KEY": true,
+    "PASSPORT_EDITORIAL_MAIL_FROM": false
+  },
+  "provider_key_validity": "not tested: sender missing blocks provider request",
+  "receipt_types": {
+    "materia": "PASS",
+    "banda": "PASS",
+    "programa": "PASS",
+    "true_error": "no gratitude",
+    "concurrent_clicks": "one request",
+    "new_focused_tests": 5,
+    "responses": "isolated fixtures, no production submission"
+  }
 }
