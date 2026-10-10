@@ -1,0 +1,31 @@
+@import url('/css/passport-footer-fonts.css');
+/* One footer; approved Home payment geometry and existing official wordmark. */
+footer[data-passport-universal-footer]{display:block!important;position:static!important;width:100%!important;max-width:none!important;height:auto!important;min-height:0!important;margin:0!important;padding:30px 16px 20px!important;border:0!important;border-top:3px solid #111111!important;border-radius:0!important;background:#FFFFFF!important;color:#111111!important;box-sizing:border-box!important;float:none!important;text-align:left!important}
+footer[data-passport-universal-footer]>:not([data-universal-footer-content]):not(.passport-continuity-controls){display:none!important}
+[data-retired-institutional-footer],[data-retired-payment-footer]{display:none!important}
+#passport-universal-footer-content,#passport-universal-footer-content *{box-sizing:border-box}
+#passport-universal-footer-content{width:100%;max-width:1200px;margin:0 auto;padding:0;color:#111111;background:#FFFFFF;font:400 13px/1.5 "Passport Footer Instrument Sans",system-ui,sans-serif;letter-spacing:normal;text-transform:none}
+#passport-universal-footer-content a{color:#111111;text-decoration:none;font:500 13px/1.5 "Passport Footer Instrument Sans",system-ui,sans-serif;letter-spacing:normal;text-transform:none}
+#passport-universal-footer-content a:hover{color:#C41E3A}
+#passport-universal-footer-content a:focus-visible{outline:2px solid #C41E3A;outline-offset:4px}
+#passport-universal-footer-content .puf-wordmark{font:700 24px/1 "Passport Footer Bodoni Moda",Georgia,serif;color:#C41E3A;white-space:nowrap}
+#passport-universal-footer-content .puf-wordmark em{font-style:italic}
+#passport-universal-footer-content .puf-identity{margin:0 0 24px}
+#passport-universal-footer-content .puf-identity p{margin:12px 0 0;font:400 16px/1.55 "Passport Footer Source Serif 4",Georgia,serif;color:#111111}
+#passport-universal-footer-content .puf-navigation{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;border:0}
+#passport-universal-footer-content .puf-group{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:0;margin:0;min-width:0;border:0}
+#passport-universal-footer-content .puf-group h2{margin:0 0 6px;font:700 12px/1.4 "Passport Footer Instrument Sans",system-ui,sans-serif;letter-spacing:.1em;color:#111111}
+#passport-universal-footer-content .puf-payments{display:flex;flex-direction:column;align-items:center;gap:14px;margin:24px 0 0;padding:20px 0;border-top:1px solid #e0e0e0}
+#passport-universal-footer-content .puf-methods{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px;width:100%}
+#passport-universal-footer-content .puf-methods span{display:flex;align-items:center;gap:6px;font:700 12px/1 "Passport Footer Instrument Sans",system-ui,sans-serif;letter-spacing:.1em;color:#111111}
+#passport-universal-footer-content .puf-methods img,#passport-universal-footer-content .puf-methods svg{display:block;object-fit:contain;flex-shrink:0;max-width:none;margin:0;padding:0;border:0}
+#passport-universal-footer-content .puf-brands{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;width:100%}
+#passport-universal-footer-content .puf-brands img{display:block;object-fit:contain;background:#FFFFFF;border:1px solid #e0e0e0;border-radius:3px;width:auto;max-width:56px;height:28px;padding:2px 6px;margin:0}
+#passport-universal-footer-content .puf-provider{display:flex;justify-content:center;width:100%}
+#passport-universal-footer-content .puf-provider img{display:block;width:70px;max-width:70px;height:auto;margin:0;padding:0;border:0;object-fit:contain}
+#passport-universal-footer-content .puf-legal{margin:0;padding:16px 0 0;border-top:1px solid #e0e0e0;text-align:center}
+#passport-universal-footer-content .puf-legal p{margin:0 0 8px;font:400 12px/1.8 "Passport Footer Instrument Sans",system-ui,sans-serif;color:#111111}
+#passport-universal-footer-content .puf-legal nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin:0;padding:0;border:0}
+#passport-universal-footer-content .puf-legal a{font-size:12px}
+@media(max-width:700px){#passport-universal-footer-content .puf-navigation{grid-template-columns:repeat(2,minmax(0,1fr))}#passport-universal-footer-content .puf-methods{gap:14px 20px}}
+@media(max-width:360px){#passport-universal-footer-content .puf-navigation{gap:24px 16px}#passport-universal-footer-content .puf-group a{overflow-wrap:anywhere}}
