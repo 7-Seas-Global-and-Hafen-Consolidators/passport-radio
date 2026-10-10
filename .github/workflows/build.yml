@@ -312,3 +312,8 @@ jobs:
           node --check js/passport-blog-submit.js
           node --check supabase/functions/blog-aberto/logic.js
           node --test tests/participe_authenticated.test.cjs
+
+      - name: Validate Participe notification delivery
+        run: |
+          node --check supabase/functions/participe-notifications/logic.js
+          node --test tests/participe_notification_delivery.test.cjs

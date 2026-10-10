@@ -1,0 +1,42 @@
+name: Participe receipt evidence
+on:
+  push:
+    branches: [fix/participe-receipt-mail-20261010]
+    paths: [.github/workflows/participe-receipt-capture.yml, tests/validate_participe_receipt.cjs]
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            *.html
+            *.js
+            *.cjs
+            *.css
+            *.json
+            /fonts/*
+            /images/payments/*
+            /images/*marrs*
+            /docs/participe-receipt-20261010/*
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-package-lock playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/validate_participe_receipt.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: participe-receipt-evidence
+          path: docs/participe-receipt-20261010/
+      - name: Save evidence on this branch
+        run: |
+          git config user.name 'passport-evidence'
+          git config user.email 'passport-evidence@users.noreply.github.com'
+          git add --sparse docs/participe-receipt-20261010/
+          git commit -m "test: save Participe receipt browser evidence"
+          git push
