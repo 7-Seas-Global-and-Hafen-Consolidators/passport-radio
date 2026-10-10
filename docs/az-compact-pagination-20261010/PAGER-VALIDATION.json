@@ -1,0 +1,898 @@
+{
+  "base": "e3e2bc49d24e6f224943a7aaa11adcaf9c12860f",
+  "static_documents": 110,
+  "original_data_records": 2679,
+  "functions_pictures_cards": "byte-identical",
+  "card_styles": "byte-identical",
+  "media_and_metadata": "unchanged",
+  "checks": [
+    {
+      "page": 1,
+      "width": 1440,
+      "javaScriptEnabled": true,
+      "pagers": 1,
+      "status": "AnteriorPágina 1 de 11012345…110Próxima",
+      "statusBeforeControls": true,
+      "current": "1",
+      "numbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "110"
+      ],
+      "overflow": false,
+      "paths": [
+        "/blog/e/10000maniacs.html",
+        "/blog/e/101south.html",
+        "/blog/e/13thfloorelevators.html",
+        "/blog/e/14bis.html",
+        "/blog/e/21guns.html",
+        "/blog/e/24k.html",
+        "/blog/e/36crazyfists.html",
+        "/blog/e/38special.html",
+        "/blog/e/3doorsdown.html",
+        "/blog/e/3hombres.html",
+        "/blog/e/4nonblondes.html",
+        "/blog/e/69eyes.html",
+        "/blog/e/91suite.html",
+        "/blog/e/abattoir.html",
+        "/blog/e/abba.html",
+        "/blog/e/abbath.html",
+        "/blog/e/abominator.html",
+        "/blog/e/aborted.html",
+        "/blog/e/aborym.html",
+        "/blog/e/abraxas.html",
+        "/blog/e/abscess.html",
+        "/blog/e/absolutedisgrace.html",
+        "/blog/e/absyntho.html",
+        "/blog/e/abydos.html"
+      ],
+      "photos": [
+        {
+          "href": "/blog/e/10000maniacs.html",
+          "src": "/assets/blog/artists/10000maniacs.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/2638",
+          "license": "https://www.deezer.com/artist/2638",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/101south.html",
+          "src": "/assets/blog/artists/101south.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/1016418",
+          "license": "https://www.deezer.com/artist/1016418",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/13thfloorelevators.html",
+          "src": "/assets/blog/artists/13thfloorelevators.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/100555",
+          "license": "https://www.deezer.com/artist/100555",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/14bis.html",
+          "src": "/assets/blog/artists/14bis.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6254686",
+          "license": "https://www.deezer.com/artist/6254686",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/21guns.html",
+          "src": "/assets/blog/artists/21guns.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6579777",
+          "license": "https://www.deezer.com/artist/6579777",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/24k.html",
+          "src": "/assets/blog/artists/24k.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/72218302",
+          "license": "https://www.deezer.com/artist/72218302",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/36crazyfists.html",
+          "src": "/assets/blog/artists/36crazyfists.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/3054",
+          "license": "https://www.deezer.com/artist/3054",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/38special.html",
+          "src": "/assets/blog/artists/38special.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/38_Special_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/38_Special_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/3doorsdown.html",
+          "src": "/assets/blog/artists/3doorsdown.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/3_Doors_Down",
+          "license": "https://en.wikipedia.org/wiki/3_Doors_Down",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/3hombres.html",
+          "src": "/assets/blog/artists/3hombres.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/8769186",
+          "license": "https://www.deezer.com/artist/8769186",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/4nonblondes.html",
+          "src": "/assets/blog/artists/4nonblondes.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/4_Non_Blondes",
+          "license": "https://en.wikipedia.org/wiki/4_Non_Blondes",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/69eyes.html",
+          "src": "/assets/blog/artists/69eyes.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/The_69_Eyes",
+          "license": "https://en.wikipedia.org/wiki/The_69_Eyes",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/91suite.html",
+          "src": "/assets/blog/artists/91suite.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/111727",
+          "license": "https://www.deezer.com/artist/111727",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abattoir.html",
+          "src": "/assets/blog/artists/abattoir.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Abattoir_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/Abattoir_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abba.html",
+          "src": "/assets/blog/artists/abba.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/ABBA",
+          "license": "https://en.wikipedia.org/wiki/ABBA",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abbath.html",
+          "src": "/assets/blog/artists/abbath.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Abbath_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/Abbath_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abominator.html",
+          "src": "/assets/blog/artists/abominator.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/12221",
+          "license": "https://www.deezer.com/artist/12221",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/aborted.html",
+          "src": "/assets/blog/artists/aborted.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Aborted",
+          "license": "https://en.wikipedia.org/wiki/Aborted",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/aborym.html",
+          "src": "/assets/blog/artists/aborym.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6898",
+          "license": "https://www.deezer.com/artist/6898",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abraxas.html",
+          "src": "/assets/blog/artists/abraxas.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Abraxas_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/Abraxas_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abscess.html",
+          "src": "/assets/blog/artists/abscess.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/68886",
+          "license": "https://www.deezer.com/artist/68886",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/absolutedisgrace.html",
+          "src": "/assets/blog/artists/absolutedisgrace.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6573169",
+          "license": "https://www.deezer.com/artist/6573169",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/absyntho.html",
+          "src": "/assets/blog/artists/absyntho.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/7327636",
+          "license": "https://www.deezer.com/artist/7327636",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abydos.html",
+          "src": "/assets/blog/artists/abydos.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/619202",
+          "license": "https://www.deezer.com/artist/619202",
+          "loaded": true
+        }
+      ],
+      "themeLabels": [
+        {
+          "href": "/blog/e/a-cena.html",
+          "label": "A cena 1522"
+        },
+        {
+          "href": "/blog/e/agenda.html",
+          "label": "Agenda 90"
+        },
+        {
+          "href": "/blog/e/albunsquemarcaram.html",
+          "label": "Álbuns que marcaram 13"
+        },
+        {
+          "href": "/blog/e/apos.html",
+          "label": "Após 1"
+        },
+        {
+          "href": "/blog/e/baixo.html",
+          "label": "Baixo 1"
+        },
+        {
+          "href": "/blog/e/bangersopenair2026.html",
+          "label": "Bangers Open Air 2026 34"
+        },
+        {
+          "href": "/blog/e/bangersopenair2027.html",
+          "label": "Bangers Open Air 2027 5"
+        },
+        {
+          "href": "/blog/e/baterista.html",
+          "label": "Baterista 1"
+        },
+        {
+          "href": "/blog/e/biografias.html",
+          "label": "Biografias 4"
+        },
+        {
+          "href": "/blog/e/blabbermouth.html",
+          "label": "Blabbermouth 1"
+        },
+        {
+          "href": "/blog/e/box-set.html",
+          "label": "Box-set 1"
+        },
+        {
+          "href": "/blog/e/brasil.html",
+          "label": "Brasil 4"
+        },
+        {
+          "href": "/blog/e/canal.html",
+          "label": "Canal 1"
+        },
+        {
+          "href": "/blog/e/cds.html",
+          "label": "CDs 388"
+        },
+        {
+          "href": "/blog/e/celebridades.html",
+          "label": "Celebridades 5"
+        },
+        {
+          "href": "/blog/e/clubedos27.html",
+          "label": "Clube dos 27 1"
+        },
+        {
+          "href": "/blog/e/colecoes.html",
+          "label": "Coleções 1"
+        },
+        {
+          "href": "/blog/e/curiosidades.html",
+          "label": "Curiosidades 4"
+        },
+        {
+          "href": "/blog/e/e-studos.html",
+          "label": "Estudos 5"
+        },
+        {
+          "href": "/blog/e/engenheiros.html",
+          "label": "Engenheiros 2"
+        },
+        {
+          "href": "/blog/e/ex-vocal.html",
+          "label": "Ex-vocal 1"
+        },
+        {
+          "href": "/blog/e/guitarrista.html",
+          "label": "Guitarrista 1"
+        },
+        {
+          "href": "/blog/e/historiasdemusicas.html",
+          "label": "Histórias de músicas 3"
+        },
+        {
+          "href": "/blog/e/historiasdemusicassaxon.html",
+          "label": "Histórias de músicas — Saxon 1"
+        },
+        {
+          "href": "/blog/e/ibagenscast.html",
+          "label": "Ibagens Cast 1"
+        },
+        {
+          "href": "/blog/e/ingressos.html",
+          "label": "Ingressos 1"
+        },
+        {
+          "href": "/blog/e/instrumentos.html",
+          "label": "Instrumentos 12"
+        },
+        {
+          "href": "/blog/e/lancamentos.html",
+          "label": "Lançamentos 25"
+        },
+        {
+          "href": "/blog/e/livros.html",
+          "label": "Livros 1"
+        },
+        {
+          "href": "/blog/e/lollapalooza.html",
+          "label": "Lollapalooza 1"
+        },
+        {
+          "href": "/blog/e/mashups.html",
+          "label": "Mashups 1"
+        },
+        {
+          "href": "/blog/e/melhores.html",
+          "label": "Melhores 265"
+        },
+        {
+          "href": "/blog/e/melhores2025.html",
+          "label": "Melhores 2025 32"
+        },
+        {
+          "href": "/blog/e/melhoresporestilorym.html",
+          "label": "Melhores por estilo — RYM 2"
+        },
+        {
+          "href": "/blog/e/metal-hammer.html",
+          "label": "Metal Hammer 1"
+        },
+        {
+          "href": "/blog/e/monsters-of-rock-brasil-2026.html",
+          "label": "Monsters of Rock Brasil 2026 5"
+        },
+        {
+          "href": "/blog/e/morteozzyosbourne.html",
+          "label": "Morte de Ozzy Osbourne 1"
+        },
+        {
+          "href": "/blog/e/newmetal.html",
+          "label": "New metal 1"
+        },
+        {
+          "href": "/blog/e/noisecreep.html",
+          "label": "Noisecreep 1"
+        },
+        {
+          "href": "/blog/e/opinioes.html",
+          "label": "Opiniões 16"
+        },
+        {
+          "href": "/blog/e/pedepagina.html",
+          "label": "Pé de página 8"
+        },
+        {
+          "href": "/blog/e/policia.html",
+          "label": "Polícia 1"
+        },
+        {
+          "href": "/blog/e/prog-metal.html",
+          "label": "Prog Metal 2"
+        },
+        {
+          "href": "/blog/e/rock-and-rollhalloffame.html",
+          "label": "Rock and Roll Hall of Fame 1"
+        },
+        {
+          "href": "/blog/e/rock-inrio1985.html",
+          "label": "Rock in Rio 1985 1"
+        },
+        {
+          "href": "/blog/e/rock-inrio2026.html",
+          "label": "Rock in Rio 2026 8"
+        },
+        {
+          "href": "/blog/e/the-town2025.html",
+          "label": "The Town 2025 2"
+        },
+        {
+          "href": "/blog/e/thrash-metal.html",
+          "label": "Thrash Metal 5"
+        },
+        {
+          "href": "/blog/e/traducoes.html",
+          "label": "Traduções 3"
+        },
+        {
+          "href": "/blog/e/woodstock1969.html",
+          "label": "Woodstock 1969 3"
+        }
+      ],
+      "footer": 1,
+      "duplicateTools": 1,
+      "navigationTo": 2,
+      "navigation": "PASS"
+    },
+    {
+      "page": 1,
+      "width": 390,
+      "javaScriptEnabled": true,
+      "pagers": 1,
+      "status": "AnteriorPágina 1 de 11012345…110Próxima",
+      "statusBeforeControls": true,
+      "current": "1",
+      "numbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "110"
+      ],
+      "overflow": false,
+      "paths": [
+        "/blog/e/10000maniacs.html",
+        "/blog/e/101south.html",
+        "/blog/e/13thfloorelevators.html",
+        "/blog/e/14bis.html",
+        "/blog/e/21guns.html",
+        "/blog/e/24k.html",
+        "/blog/e/36crazyfists.html",
+        "/blog/e/38special.html",
+        "/blog/e/3doorsdown.html",
+        "/blog/e/3hombres.html",
+        "/blog/e/4nonblondes.html",
+        "/blog/e/69eyes.html",
+        "/blog/e/91suite.html",
+        "/blog/e/abattoir.html",
+        "/blog/e/abba.html",
+        "/blog/e/abbath.html",
+        "/blog/e/abominator.html",
+        "/blog/e/aborted.html",
+        "/blog/e/aborym.html",
+        "/blog/e/abraxas.html",
+        "/blog/e/abscess.html",
+        "/blog/e/absolutedisgrace.html",
+        "/blog/e/absyntho.html",
+        "/blog/e/abydos.html"
+      ],
+      "photos": [
+        {
+          "href": "/blog/e/10000maniacs.html",
+          "src": "/assets/blog/artists/10000maniacs.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/2638",
+          "license": "https://www.deezer.com/artist/2638",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/101south.html",
+          "src": "/assets/blog/artists/101south.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/1016418",
+          "license": "https://www.deezer.com/artist/1016418",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/13thfloorelevators.html",
+          "src": "/assets/blog/artists/13thfloorelevators.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/100555",
+          "license": "https://www.deezer.com/artist/100555",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/14bis.html",
+          "src": "/assets/blog/artists/14bis.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6254686",
+          "license": "https://www.deezer.com/artist/6254686",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/21guns.html",
+          "src": "/assets/blog/artists/21guns.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6579777",
+          "license": "https://www.deezer.com/artist/6579777",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/24k.html",
+          "src": "/assets/blog/artists/24k.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/72218302",
+          "license": "https://www.deezer.com/artist/72218302",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/36crazyfists.html",
+          "src": "/assets/blog/artists/36crazyfists.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/3054",
+          "license": "https://www.deezer.com/artist/3054",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/38special.html",
+          "src": "/assets/blog/artists/38special.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/38_Special_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/38_Special_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/3doorsdown.html",
+          "src": "/assets/blog/artists/3doorsdown.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/3_Doors_Down",
+          "license": "https://en.wikipedia.org/wiki/3_Doors_Down",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/3hombres.html",
+          "src": "/assets/blog/artists/3hombres.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/8769186",
+          "license": "https://www.deezer.com/artist/8769186",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/4nonblondes.html",
+          "src": "/assets/blog/artists/4nonblondes.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/4_Non_Blondes",
+          "license": "https://en.wikipedia.org/wiki/4_Non_Blondes",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/69eyes.html",
+          "src": "/assets/blog/artists/69eyes.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/The_69_Eyes",
+          "license": "https://en.wikipedia.org/wiki/The_69_Eyes",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/91suite.html",
+          "src": "/assets/blog/artists/91suite.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/111727",
+          "license": "https://www.deezer.com/artist/111727",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abattoir.html",
+          "src": "/assets/blog/artists/abattoir.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Abattoir_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/Abattoir_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abba.html",
+          "src": "/assets/blog/artists/abba.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/ABBA",
+          "license": "https://en.wikipedia.org/wiki/ABBA",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abbath.html",
+          "src": "/assets/blog/artists/abbath.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Abbath_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/Abbath_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abominator.html",
+          "src": "/assets/blog/artists/abominator.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/12221",
+          "license": "https://www.deezer.com/artist/12221",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/aborted.html",
+          "src": "/assets/blog/artists/aborted.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Aborted",
+          "license": "https://en.wikipedia.org/wiki/Aborted",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/aborym.html",
+          "src": "/assets/blog/artists/aborym.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6898",
+          "license": "https://www.deezer.com/artist/6898",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abraxas.html",
+          "src": "/assets/blog/artists/abraxas.jpg",
+          "credit": "Wikimedia",
+          "source": "https://en.wikipedia.org/wiki/Abraxas_%28band%29",
+          "license": "https://en.wikipedia.org/wiki/Abraxas_%28band%29",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abscess.html",
+          "src": "/assets/blog/artists/abscess.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/68886",
+          "license": "https://www.deezer.com/artist/68886",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/absolutedisgrace.html",
+          "src": "/assets/blog/artists/absolutedisgrace.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/6573169",
+          "license": "https://www.deezer.com/artist/6573169",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/absyntho.html",
+          "src": "/assets/blog/artists/absyntho.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/7327636",
+          "license": "https://www.deezer.com/artist/7327636",
+          "loaded": true
+        },
+        {
+          "href": "/blog/e/abydos.html",
+          "src": "/assets/blog/artists/abydos.jpg",
+          "credit": "Imagem promocional",
+          "source": "https://www.deezer.com/artist/619202",
+          "license": "https://www.deezer.com/artist/619202",
+          "loaded": true
+        }
+      ],
+      "themeLabels": [
+        {
+          "href": "/blog/e/a-cena.html",
+          "label": "A cena 1522"
+        },
+        {
+          "href": "/blog/e/agenda.html",
+          "label": "Agenda 90"
+        },
+        {
+          "href": "/blog/e/albunsquemarcaram.html",
+          "label": "Álbuns que marcaram 13"
+        },
+        {
+          "href": "/blog/e/apos.html",
+          "label": "Após 1"
+        },
+        {
+          "href": "/blog/e/baixo.html",
+          "label": "Baixo 1"
+        },
+        {
+          "href": "/blog/e/bangersopenair2026.html",
+          "label": "Bangers Open Air 2026 34"
+        },
+        {
+          "href": "/blog/e/bangersopenair2027.html",
+          "label": "Bangers Open Air 2027 5"
+        },
+        {
+          "href": "/blog/e/baterista.html",
+          "label": "Baterista 1"
+        },
+        {
+          "href": "/blog/e/biografias.html",
+          "label": "Biografias 4"
+        },
+        {
+          "href": "/blog/e/blabbermouth.html",
+          "label": "Blabbermouth 1"
+        },
+        {
+          "href": "/blog/e/box-set.html",
+          "label": "Box-set 1"
+        },
+        {
+          "href": "/blog/e/brasil.html",
+          "label": "Brasil 4"
+        },
+        {
+          "href": "/blog/e/canal.html",
+          "label": "Canal 1"
+        },
+        {
+          "href": "/blog/e/cds.html",
+          "label": "CDs 388"
+        },
+        {
+          "href": "/blog/e/celebridades.html",
+          "label": "Celebridades 5"
+        },
+        {
+          "href": "/blog/e/clubedos27.html",
+          "label": "Clube dos 27 1"
+        },
+        {
+          "href": "/blog/e/colecoes.html",
+          "label": "Coleções 1"
+        },
+        {
+          "href": "/blog/e/curiosidades.html",
+          "label": "Curiosidades 4"
+        },
+        {
+          "href": "/blog/e/e-studos.html",
+          "label": "Estudos 5"
+        },
+        {
+          "href": "/blog/e/engenheiros.html",
+          "label": "Engenheiros 2"
+        },
+        {
+          "href": "/blog/e/ex-vocal.html",
+          "label": "Ex-vocal 1"
+        },
+        {
+          "href": "/blog/e/guitarrista.html",
+          "label": "Guitarrista 1"
+        },
+        {
+          "href": "/blog/e/historiasdemusicas.html",
+          "label": "Histórias de músicas 3"
+        },
+        {
+          "href": "/blog/e/historiasdemusicassaxon.html",
+          "label": "Histórias de músicas — Saxon 1"
+        },
+        {
+          "href": "/blog/e/ibagenscast.html",
+          "label": "Ibagens Cast 1"
+        },
+        {
+          "href": "/blog/e/ingressos.html",
+          "label": "Ingressos 1"
+        },
+        {
+          "href": "/blog/e/instrumentos.html",
+          "label": "Instrumentos 12"
+        },
+        {
+          "href": "/blog/e/lancamentos.html",
+          "label": "Lançamentos 25"
+        },
+        {
+          "href": "/blog/e/livros.html",
+          "label": "Livros 1"
+        },
+        {
+          "href": "/blog/e/lollapalooza.html",
+          "label": "Lollapalooza 1"
+        },
+        {
+          "href": "/blog/e/mashups.html",
+          "label": "Mashups 1"
+        },
+        {
+          "href": "/blog/e/melhores.html",
+          "label": "Melhores 265"
+        },
+        {
+          "href": "/blog/e/melhores2025.html",
+          "label": "Melhores 2025 32"
+        },
+        {
+          "href": "/blog/e/melhoresporestilorym.html",
+          "label": "Melhores por estilo — RYM 2"
+        },
+        {
+          "href": "/blog/e/metal-hammer.html",
+          "label": "Metal Hammer 1"
+        },
+        {
+          "href": "/blog/e/monsters-of-rock-brasil-2026.html",
+          "label": "Monsters of Rock Brasil 2026 5"
+        },
+        {
+          "href": "/blog/e/morteozzyosbourne.html",
+          "label": "Morte de Ozzy Osbourne 1"
+        },
+        {
+          "href": "/blog/e/newmetal.html",
+          "label": "New metal 1"
+        },
+        {
+          "href": "/blog/e/noisecreep.html",
+          "label": "Noisecreep 1"
+        },
+        {
+          "href": "/blog/e/opinioes.html",
+          "label": "Opiniões 16"
+        },
+        {
+          "href": "/blog/e/pedepagina.html",
+          "label": "Pé de página 8"
+        },
+        {
+          "href": "/blog/e/policia.html",
+          "label": "Polícia 1"
+        },
+        {
+          "href": "/blog/e/prog-metal.html",
+          "label": "Prog Metal 2"
+        },
+        {
+          "href": "/blog/e/rock-and-rollhalloffame.html",
+          "label": "Rock and Roll Hall of Fame 1"
+        },
+        {
+          "href": "/blog/e/rock-inrio1985.html",
+          "label": "Rock in Rio 1985 1"
+        },
+        {
+          "href": "/blog/e/rock-inrio2026.html",
+          "label": "Rock in Rio 2026 8"
+        },
+        {
+          "href": "/blog/e/the-town2025.html",
+          "label": "The Town 2025 2"
+        },
+        {
+          "href": "/blog/e/thrash-metal.html",
+          "label": "Thrash Metal 5"
+        },
+        {
+          "href": "/blog/e/traducoes.html",
+          "label": "Traduções 3"
+        },
+        {
+          "href": "/blog/e/woodstock1969.html",
+          "label": "Woodstock 1969 3"
+        }
+      ],
+      "footer": 1,
+      "duplicateTools": 1,
+      "navigationTo": 2,
+      "navigation": "PASS"
+    }
+  ]
+}
