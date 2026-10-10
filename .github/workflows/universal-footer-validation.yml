@@ -34,12 +34,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Integrate one loader without modifying existing content
-        run: python3 tools/integrate_universal_footer.py
-      - name: Install ephemeral browser QA dependency
-        run: |
-          npm install --no-save --no-package-lock playwright
-          npx playwright install --with-deps chromium
       - name: Recover approved desktop/mobile evidence without repeating it
         uses: actions/download-artifact@v4
         with:
@@ -47,6 +41,12 @@ jobs:
           run-id: 38070460284
           github-token: ${{ github.token }}
           path: docs/universal-footer-20261010/
+      - name: Integrate one loader without modifying existing content
+        run: python3 tools/integrate_universal_footer.py
+      - name: Install ephemeral browser QA dependency
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
       - name: Consolidated structural and desktop/mobile validation
         run: |
           node --check js/passport-universal-footer.js
