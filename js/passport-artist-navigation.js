@@ -16,12 +16,13 @@
   } catch (_) { return; }
   const fold = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   const watched = new WeakSet();
-  let data={nodes:[],edges:[]};let dataReady=false;let media={};let names={};
+  let data={nodes:[],edges:[]};let dataReady=false;let media={};let names={};let catalog=null;
   function shownName(doc,a,fallback){
     const path=new URL(a.href,doc.URL).pathname;
     return names[path]||media[path]?.name||fallback;
   }
   function pictures(doc){
+    doc.querySelectorAll(".passport-gallery-credits,[data-passport-gallery-credits]").forEach(node=>node.remove());
     for(const a of doc.querySelectorAll('.blog-entity-cloud a[href^="/blog/e/"]')){
       const photo=media[new URL(a.href,doc.URL).pathname];if(!photo?.image||a.dataset.artistPhoto)continue;
       const storyCount=a.querySelector("small")?.textContent.trim()||"";
@@ -34,8 +35,6 @@
       const name=doc.createElement("span");name.className="passport-artist-name";name.textContent=label;
       const count=doc.createElement("small");count.className="passport-artist-story-count";count.textContent=storyCount;count.setAttribute("aria-label",storyCount+" matérias relacionadas");
       a.replaceChildren(shot,name,count);
-      let credits=doc.querySelector("[data-passport-gallery-credits]");if(!credits){credits=doc.createElement("p");credits.dataset.passportGalleryCredits="1";credits.className="passport-gallery-credits";doc.querySelector("main")?.append(credits)}
-      credits.append(link(doc,photo.name+" — "+photo.credit,photo.source),doc.createTextNode(" · "),link(doc,photo.license,photo.license_url),doc.createTextNode(". "));
     }
     cards(doc);
   }
@@ -81,16 +80,16 @@
   function styles(doc) {
       const cardsCss=doc.querySelector('link[data-passport-az-cards]')||doc.createElement('link');
       if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
-      cardsCss.href='/css/passport-az-cards.css?v=20261009-az268';
+      cardsCss.href='/css/passport-az-cards.css?v=20261010-az24';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
-    const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261009-az-directory';css.dataset.passportArtistNavigation='1';doc.head.append(css);
+    const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261010-az24';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
   function enhance(doc) {
     if(!doc?.body)return;
     const path=new URL(doc.URL).pathname;
-    const archive=/^\/blog\/(?:arquivo\/[^/]*\.html|e\/[^/]+\.html)$/.test(path);
+    const archive=/^\/blog\/(?:arquivo\/(?:[^/]*\.html|letras\/\d+\.html)|e\/[^/]+\.html)$/.test(path);
     const article=doc.body.classList.contains('pp-blog-article');
-    const az=/^\/blog\/arquivo\/(?:letras|letra-[a-z])\.html$/.test(path);
+    const az=/^\/blog\/arquivo\/(?:letras(?:\/\d+)?|letra-[a-z])\.html$/.test(path);
     if(!archive&&!article)return;
     if(!az&&!dataReady)return;
     if(archive)doc.body.classList.add('passport-artist-archive');
@@ -124,7 +123,7 @@
       const links=doc.createElement('nav');links.setAttribute('aria-label','Vínculos de formação');for(const n of related.values())links.append(link(doc,n.name,n.url));nav.append(links);
     }
     if(az) {
-      const indexPage=path.endsWith('/letras.html');
+      const indexPage=/^\/blog\/arquivo\/letras(?:\/\d+)?\.html$/.test(path);
       if(indexPage){
         const title=main.querySelector('h1');if(title)title.textContent='ARTISTAS & BANDAS';
         const intro=main.querySelector('.blog-intro');if(intro)intro.textContent='Primeiro a história. Depois a música.';
@@ -179,7 +178,76 @@
         if(!['all','band','artist','formation','untyped'].includes(type.value))type.value='all';
         let page=Math.max(1,Number.parseInt(params.get('pagina'),10)||1);
         const pageSize=24;
+        let interacted=false;
+        const requestedPage=()=>{
+          const fromQuery=Number.parseInt(new URL(doc.URL).searchParams.get('pagina'),10);
+          const fromPath=Number((path.match(/\/letras\/(\d+)\.html$/)||[])[1]||0);
+          return Math.max(1, fromQuery||fromPath||1);
+        };
+        const paintCatalog=()=>{
+          const nodesByPath=new Map((data?.nodes||[]).map(n=>[n.url,n]));
+          const formationIds=new Set((data?.edges||[]).flatMap(e=>[e.artist,e.band]));
+          const q=fold(input.value),kind=type.value;
+          const filtered=catalog.artists.filter(item=>{
+            const folded=fold(item.name);
+            if(q && !(folded.startsWith(q) || folded.replace(/^(the|os|as|o|a|los|las)/,'')===q))return false;
+            const node=nodesByPath.get(item.href);
+            if(kind==='all')return true;
+            if(kind==='band')return node?.kind==='band';
+            if(kind==='artist')return node?.kind==='artist';
+            if(kind==='formation')return !!node&&formationIds.has(node.id);
+            return !node;
+          });
+          if(!interacted)page=requestedPage();
+          const total=Math.max(1,Math.ceil(filtered.length/pageSize));
+          page=Math.max(1,Math.min(page,total));
+          const slice=filtered.slice((page-1)*pageSize,page*pageSize);
+          const cloud=main.querySelector('.blog-entity-cloud');
+          if(cloud){
+            cloud.hidden=false;
+            const parent=cloud.parentElement;
+            if(parent)parent.hidden=false;
+            const heading=parent?.querySelector('h2');
+            if(heading){heading.hidden=false;if(!q&&kind==='all')heading.textContent='Página '+page;}
+            cloud.replaceChildren();
+            for(const item of slice){
+              const a=doc.createElement('a');
+              a.href=item.href;a.className='passport-az-entry';a.dataset.artistName=item.name;
+              a.append(doc.createTextNode(item.name+' '));
+              const small=doc.createElement('small');small.textContent=String(item.count);a.append(small);
+              cloud.append(a);
+            }
+          }
+          pictures(doc);cards(doc);
+          const typed=filtered.filter(item=>nodesByPath.has(item.href)).length;
+          count.textContent=filtered.length.toLocaleString('pt-BR')+' resultados · '+catalog.artists.length.toLocaleString('pt-BR')+' destinos · '+typed.toLocaleString('pt-BR')+' com tipo estruturado';
+          pageLabel.textContent='Página '+page+' de '+total;previous.disabled=page<=1;next.disabled=page>=total;
+          const pager=main.querySelector('.passport-az-static-pages');
+          if(pager){
+            pager.hidden=!!(q||kind!=='all');
+            for(const a of pager.querySelectorAll('a')){
+              if(Number(a.textContent)===page)a.setAttribute('aria-current','page');
+              else a.removeAttribute('aria-current');
+            }
+          }
+          try{const url=new URL(doc.URL);url.searchParams.set('pagina',String(page));
+            if(input.value.trim())url.searchParams.set('q',input.value.trim());else url.searchParams.delete('q');
+            if(kind==='all')url.searchParams.delete('tipo');else url.searchParams.set('tipo',kind);
+            doc.defaultView.history.replaceState(doc.defaultView.history.state,'',url.href);
+          }catch(_){}
+        };
         const update=()=>{
+          const index=/^\/blog\/arquivo\/letras(?:\/\d+)?\.html$/.test(path);
+          if(index){
+            if(!catalog){
+              pageLabel.textContent='Página '+requestedPage();
+              previous.disabled=requestedPage()<=1;
+              next.disabled=false;
+              return;
+            }
+            paintCatalog();
+            return;
+          }
           const nodesByPath=new Map((data?.nodes||[]).map(n=>[n.url,n]));
           const formationIds=new Set((data?.edges||[]).flatMap(e=>[e.artist,e.band]));
           const q=fold(input.value),kind=type.value;
@@ -211,14 +279,25 @@
           }catch(_){}
         };
         nav._passportAzUpdate=update;
-        input.addEventListener('input',()=>{page=1;update();});type.addEventListener('change',()=>{page=1;update();});
-        previous.addEventListener('click',()=>{if(page>1){page--;update();}});
-        next.addEventListener('click',()=>{if(page<Math.ceil(entries.length/pageSize)){page++;update();}});
+        input.addEventListener('input',()=>{interacted=true;page=1;update();});type.addEventListener('change',()=>{interacted=true;page=1;update();});
+        previous.addEventListener('click',()=>{interacted=true;if(page>1){page--;update();}});
+        next.addEventListener('click',()=>{interacted=true;page++;update();});
         update();
       }
-      const firstSection=main.querySelector('.blog-section');if(firstSection&&alphabet.parentElement!==main)firstSection.before(alphabet);
+      const firstSection=main.querySelector('.blog-section');
+      if(!alphabet.isConnected){
+        const title=main.querySelector('h1');
+        if(firstSection)firstSection.before(alphabet);
+        else if(title)title.after(alphabet);
+        else main.prepend(alphabet);
+      }
       const intro=main.querySelector('.blog-intro');
-      if(intro)intro.after(nav);else if(alphabet.parentElement===main)alphabet.before(nav);else if(firstSection)firstSection.before(nav);
+      if(!nav.isConnected){
+        if(intro)intro.after(nav);
+        else if(alphabet.isConnected)alphabet.after(nav);
+        else if(firstSection)firstSection.before(nav);
+        else main.querySelector('h1')?.after(nav);
+      }
     }
     const crumbs=main.querySelector('.blog-crumbs');
     if(az){}else if(crumbs)crumbs.insertAdjacentElement('afterend',nav);else main.prepend(nav);
@@ -233,6 +312,10 @@
   window.addEventListener('passport:editorial-rendered',()=>{enhance(document);pictures(document);cards(document)});
   fetch('/data/blog-artist-media.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{media=value||{};pictures(document);cards(document);}).catch(()=>{});
   fetch('/data/blog-artist-names.json',{credentials:'same-origin'}).then(r=>r.ok?r.json():{}).then(value=>{names=value||{};pictures(document);cards(document);}).catch(()=>{});
+  fetch('/data/blog-az-index.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('az index unavailable');return r.json();}).then(value=>{
+    if(!value||!Array.isArray(value.artists))throw Error('az index invalid');
+    catalog=value;enhance(document);
+  }).catch(()=>{});
   fetch('/data/blog-artist-navigation.json',{credentials:'same-origin'}).then(r=>{if(!r.ok)throw Error('archive navigation unavailable');return r.json();}).then(value=>{
     data=value;dataReady=true;enhance(document);
     const frames=()=>document.querySelectorAll('#pp-nav-page').forEach(watch);frames();
