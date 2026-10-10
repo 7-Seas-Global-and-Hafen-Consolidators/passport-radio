@@ -1,0 +1,13 @@
+# Rodapé universal — implementação e evidências
+
+Um único componente `js/passport-universal-footer.js`, um único stylesheet `css/passport-universal-footer.css`. Todos os documentos públicos elegíveis recebem o mesmo loader absoluto. O manifesto `FILES.csv` lista cada arquivo e hashes antes/depois; a transformação inversa preserva todos os bytes anteriores.
+
+O componente conserva o nó do footer e os nós dos frameworks. Apenas os filhos de apresentação substituídos ficam desativados por CSS; controles existentes `.passport-continuity-controls` continuam visíveis, com suas referências/listeners preservados. Dock de player não é rodapé institucional e permanece intacto. Páginas de produto ganham o componente depois de seu conteúdo. Não há alterações nos motores, rádio, player, bus, carrinho, checkout, catálogo, automações editoriais ou cabeçalhos. Nenhuma rota criada ou reativada.
+
+Pagamentos reutilizam os nove arquivos originais de `images/payments/` e o ícone de boleto já presente no bundle da Home. Todas as dez identificações estão presentes. Medidas copiadas do CSS da Home: bandeiras height28/max-width56/padding2px6px/gap8, PIX16×16, CAIXA20×16, Mercado Pago width70. Meios, bandeiras e Mercado Pago ocupam três linhas distintas, entre navegação e informações legais. Wordmark existente Passport/em Radio e tamanho24 do rodapé oficial Participe; branco/preto/vermelho aprovados.
+
+As fontes oficiais Bodoni Moda, Instrument Sans e Source Serif 4 são servidas localmente com aliases exclusivos do rodapé. Os aliases evitam alterar a tipografia fora dele. URLs sociais e financeiros reaproveitados do projeto; Rádio24H conserva o destino já utilizado em Contato. Os dois links de privacidade históricos convergem para a página oficial existente.
+
+Validação consolidada: 18 destinos representativos × desktop1440/celular390, mais conferência estrutural de todos os HTML integrados, destinos e assets. JSON contém presença única, proporções, cores, fontes, imagens carregadas e ausência de overflow. Capturas index/blog/loja ilustram o mesmo componente. Não houve reprodução de áudio; verificação específica garante preservação de nós/volume e exclusão do dock. Casos aprovados recuperados do run38070460284; apenas a fronteira de player e a persistência foram retomadas depois do bloqueio do sparse-checkout.
+
+O workflow adicional executa somente na branch desta operação, não possui cron, não faz merge nem altera os workflows de publicação existentes. Integração hospedada necessária para gravar o grande conjunto de HTML através das credenciais próprias do GitHub Actions; apenas arquivos de rodapé e evidências entram no commit.

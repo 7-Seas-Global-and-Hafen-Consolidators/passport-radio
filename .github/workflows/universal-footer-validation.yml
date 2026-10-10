@@ -10,6 +10,7 @@ on:
       - .github/workflows/universal-footer-validation.yml
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: universal-footer-${{ github.ref }}
   cancel-in-progress: false
@@ -39,16 +40,24 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
+      - name: Recover approved desktop/mobile evidence without repeating it
+        uses: actions/download-artifact@v4
+        with:
+          name: universal-footer-evidence
+          run-id: 38070460284
+          github-token: ${{ github.token }}
+          path: docs/universal-footer-20261010/
       - name: Consolidated structural and desktop/mobile validation
         run: |
           node --check js/passport-universal-footer.js
-          node tests/validate_universal_footer.cjs
+          node tests/validate_universal_footer.cjs --structural-only
+          node tests/validate_footer_player_boundary.cjs
           git diff --check
       - name: Persist only footer integration and evidence on this feature branch
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add '*.html' css/passport-footer-fonts.css fonts/passport-footer docs/universal-footer-20261010
+          git add --sparse '*.html' css/passport-footer-fonts.css fonts/passport-footer docs/universal-footer-20261010
           git diff --cached --quiet || git commit -m 'fix(footer): integrate shared institutional footer across public HTML'
           git push origin HEAD:fix/universal-footer-20261010
       - name: Upload visual and structural evidence

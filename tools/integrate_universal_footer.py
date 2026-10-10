@@ -25,6 +25,10 @@ def install_footer_fonts():
         css=css.replace("font-family: '"+name+"'", "font-family: 'Passport Footer "+name+"'")
     (ROOT/'css/passport-footer-fonts.css').write_text(css)
 
+def media_only(name, before):
+    if name == 'app/index.html': return True  # footer is the existing player dock
+    return b'<footer' not in before.lower() and (name.startswith(('radio-', 'player-', 'passport-player', 'adapter-lab')) or name.endswith('-player.html'))
+
 def integrate():
     install_footer_fonts()
     paths = subprocess.check_output(['git','ls-files','-z','*.html'],cwd=ROOT).decode().split('\0')
@@ -32,6 +36,7 @@ def integrate():
     for name in paths:
         if not name or not public_html(Path(name)): continue
         p=ROOT/name; before=p.read_bytes()
+        if media_only(name, before): continue
         # Only complete public documents; embedded fragments do not gain a shell.
         if b'</body>' not in before.lower(): continue
         if b'data-passport-universal-footer defer' in before: continue

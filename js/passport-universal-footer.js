@@ -26,7 +26,7 @@
   let queued = false;
   function mount() {
     if (!document.body) return;
-    const footers = [...document.querySelectorAll('footer')].filter(node=>!node.closest('article,.player,.pe-prose,.mn-prose'));
+    const footers = [...document.querySelectorAll('footer')].filter(node=>!node.closest('article,.player,.player-dock,[id*="player"],[class*="player-"],.pe-prose,.mn-prose'));
     if (!footers.length && document.querySelector('main.pp-product-page')) {
       const footer=document.createElement('footer');document.body.append(footer);footers.push(footer);
     }

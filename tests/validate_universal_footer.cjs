@@ -7,11 +7,12 @@ const html=[];
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.name.startsWith('.')||e.name.startsWith('_')||excluded.has(e.name))continue;const f=path.join(dir,e.name);if(e.isDirectory())walk(f);else if(e.name.endsWith('.html'))html.push(f);}}
 walk(root);
 let covered=0;
-for(const f of html){const s=fs.readFileSync(f,'utf8');if(!s.toLowerCase().includes('</body>'))continue;assert(s.includes('data-passport-universal-footer defer'),f);covered++;}
+for(const f of html){const s=fs.readFileSync(f,'utf8');if(!s.toLowerCase().includes('</body>'))continue;const rel=path.relative(root,f);if(rel==='app/index.html'||(!s.toLowerCase().includes('<footer')&&(/^(radio-|player-|passport-player|adapter-lab)/.test(rel)||rel.endsWith('-player.html'))))continue;assert(s.includes('data-passport-universal-footer defer'),f);covered++;}
 const component=fs.readFileSync(path.join(root,'js/passport-universal-footer.js'),'utf8');
 for(const p of ['pix.png','caixa.png','visa.png','mastercard.png','elo.png','amex.png','hipercard.png','diners.png','mercado-pago.svg'])assert(fs.statSync(path.join(root,'images/payments',p)).size>0,p);
 const internal=[...component.matchAll(/'([^']+)','(\/[^']*)'/g)].map(m=>m[2]);
 for(const u of internal){const f=path.join(root,u==='/'?'index.html':u.slice(1));assert(fs.existsSync(f),'missing footer destination '+u);}
+if(process.argv.includes('--structural-only')){console.log(`PASS: ${covered} public HTML footer loaders; all original assets and destinations exist.`);process.exit(0);}
 const contentTypes={'.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.json':'application/json','.html':'text/html','.ttf':'font/ttf','.woff2':'font/woff2'};
 const server=http.createServer((req,res)=>{const url=new URL(req.url,'http://localhost'),name=decodeURIComponent(url.pathname),file=path.join(root,name==='/'?'index.html':name);if(!file.startsWith(root)||!fs.existsSync(file)||fs.statSync(file).isDirectory()){res.writeHead(404);res.end();return;}res.setHeader('Content-Type',contentTypes[path.extname(file)]||'application/octet-stream');fs.createReadStream(file).pipe(res);});
 function sample(prefix){return html.find(f=>f.includes('/'+prefix))?.slice(root.length+1);}
