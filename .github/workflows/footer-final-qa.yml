@@ -1,0 +1,39 @@
+name: Footer additional public templates QA
+on:
+  push:
+    branches: [fix/universal-footer-20261010]
+    paths: [js/passport-universal-footer.js, .github/workflows/footer-final-qa.yml]
+permissions:
+  contents: write
+jobs:
+  footer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            *.html
+            *.js
+            *.cjs
+            *.css
+            *.json
+            *.ttf
+            *.yml
+            /images/payments/*
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+          node tests/validate_footer_additional_pages.cjs
+          node tests/validate_footer_player_boundary.cjs
+      - name: Persist additional evidence only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse docs/universal-footer-20261010/ADDITIONAL-VALIDATION.json docs/universal-footer-20261010/VALIDATION.json
+          git diff --cached --quiet || git commit -m 'test(footer): prove additional public pages without original footer'
+          git push origin HEAD:fix/universal-footer-20261010

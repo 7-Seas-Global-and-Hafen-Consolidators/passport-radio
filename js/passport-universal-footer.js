@@ -27,7 +27,8 @@
   function mount() {
     if (!document.body) return;
     const footers = [...document.querySelectorAll('footer')].filter(node=>!node.closest('article,.player,.player-dock,[id*="player"],[class*="player-"],.pe-prose,.mn-prose'));
-    if (!footers.length && document.querySelector('main.pp-product-page')) {
+    const mediaOnly = /^\/(?:app\/|radio-|player-|passport-player|adapter-lab)/.test(location.pathname) || /-player\.html$/.test(location.pathname);
+    if (!footers.length && !mediaOnly && document.querySelector('main') && !document.querySelector('meta[http-equiv="refresh" i]')) {
       const footer=document.createElement('footer');document.body.append(footer);footers.push(footer);
     }
     if (!footers.length) return; // Widget/player-only documents do not gain an institutional shell.
