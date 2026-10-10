@@ -1,0 +1,37 @@
+{
+  "operation": "editorial-admin-access",
+  "pr": 542,
+  "branch": "fix/editorial-admin-access-20261010",
+  "verified_starting_sha": "c8a127039927a81c7df6aabb3a88420c7518cdfd",
+  "status": "BLOCKED_PRODUCTION_DEPLOY",
+  "pr_open": true,
+  "merged": false,
+  "production": {
+    "url": "https://passportradio.online/privado/blog-aberto.html",
+    "http": 200,
+    "passwordless_form_present": false,
+    "updated_admin_script_present": false
+  },
+  "completed": {
+    "login_errors_and_session_restore": "saved in PR",
+    "passwordless_link_and_otp": "saved in PR",
+    "server_uuid_and_mfa_authorization": "preserved",
+    "previous_focused_tests": 8,
+    "additional_tests": {
+      "approval_fixture": "PASS",
+      "rejection_fixture": "PASS",
+      "production_approval_or_rejection": false
+    },
+    "previous_build": "38093309136 success",
+    "existing_materials": "Bee Gees and QUALQUER COISA unchanged"
+  },
+  "real_admin_access_demonstrated": false,
+  "auth_link_request_previous": "Supabase accepted HTTP 200; delivery and owner consumption not proven",
+  "next_pending_operation": "Owner-authorized merge/deploy of PR 542; then owner consumes Supabase link/code and server admin-session validates identity before loading queue",
+  "prohibitions_preserved": [
+    "no merge",
+    "no new PR",
+    "no production approval/rejection",
+    "no Resend/radio/player/public form changes"
+  ]
+}

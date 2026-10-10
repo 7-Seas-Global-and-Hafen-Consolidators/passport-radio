@@ -27,3 +27,9 @@ Após merge/deploy autorizado, abrir https://passportradio.online/privado/blog-a
 Referência: https://supabase.com/docs/guides/auth/auth-email-passwordless
 
 Falha de recuperação do token durante uma ação também é capturada e exibida, sem confirmar aprovação. Teste focado específico aprovado.
+
+## Checkpoint de retomada — sem repetição
+
+PR #542 permanece aberta, sem merge. HTTP 200 do site ainda apresenta o painel antigo: sem `ba-link-login` e sem o novo script `passport-blog-admin.js`. Portanto, produção ainda não contém a correção salva. Bloqueio exato: merge/deploy ainda não realizado. Nenhuma autenticação administrativa real nem leitura da fila pelo proprietário foi declarada.
+
+Executados somente os dois testes adicionais pendentes: clique explícito de aprovação e clique explícito de rejeição em fixtures isoladas. Ambos passaram; nenhuma ação real contra Supabase. Os oito testes anteriores não foram repetidos manualmente. Checkpoint em CHECKPOINT.json. Nenhuma nova solicitação de e-mail foi feita nesta retomada, para preservar o link já solicitado.
