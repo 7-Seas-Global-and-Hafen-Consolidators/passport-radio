@@ -11,7 +11,7 @@
 <meta property="og:description" content="Lista do acervo publicado. Título, autor, data e categoria.">
 <meta property="og:url" content="https://passportradio.online/blog/aberto.html">
 <meta property="og:image" content="https://passportradio.online/images/blog-aberto-capa.jpg">
-<link rel="stylesheet" href="/css/passport-blog-aberto.css?v=20261009">
+<link rel="stylesheet" href="/css/passport-blog-aberto.css?v=20261010a">
 </head>
 <body class="blog-aberto">
 <header class="ba-mast">
@@ -47,12 +47,36 @@
   <p class="ba-count" id="ba-count">Carregando o índice do acervo…</p>
   <ol class="ba-list" id="ba-list"></ol>
   <nav class="ba-pager" id="ba-pager" aria-label="Páginas da lista"></nav>
-  <section class="ba-block" id="envio">
+  <section class="ba-block" id="envio" data-blog-submit="1">
     <h2>Envio</h2>
-    <p><strong>Não concluído.</strong> O caminho que já existe, <a href="/blog/envie-sua-historia.html">envie-sua-historia.html</a>, grava em <code>public.blog_submissions</code> pela Conta Passport. Essa tabela não está no projeto: a API responde PGRST205. Sem destino persistente, não há estado pendente e nada é publicado. Esta página não traz formulário. Arquivo local não conta como destino. O SQL em <code>supabase/blog_submissions.sql</code> não foi aplicado daqui.</p>
+    <p class="ba-closed" id="ba-closed">O Blog Aberto não está recebendo envios agora. Nada foi publicado.</p>
+    <form class="ba-send" id="ba-send" hidden novalidate>
+      <label>Pseudônimo <input name="pseudonym" maxlength="40" required autocomplete="nickname"></label>
+      <label>E-mail privado <input name="email" type="email" maxlength="120" required autocomplete="email"></label>
+      <label>Título <input name="title" maxlength="160" required></label>
+      <label>Categoria
+        <select name="category" required>
+          <option value="">Escolha</option>
+          <option value="historias">Histórias</option>
+          <option value="discos">Discos</option>
+          <option value="cultura">Cultura</option>
+          <option value="shows">Shows</option>
+          <option value="entrevistas">Entrevistas</option>
+        </select>
+      </label>
+      <label>Texto <textarea name="body" maxlength="8000" required rows="10"></textarea></label>
+      <label class="ba-file" hidden>Anexo <input name="attachment" type="file" accept="image/jpeg,image/png,image/webp,application/pdf"></label>
+      <label class="ba-check"><input name="rules" type="checkbox" value="sim" required> Li que a redação decide, que dado pessoal não entra e que o envio não publica sozinho.</label>
+      <div class="ba-hp" aria-hidden="true"><label>Fax <input name="passport_fax" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="opened" value="">
+      <button type="submit">Enviar</button>
+      <p class="ba-note">O e-mail não aparece. A resposta é só “recebido”. Sem página e sem conta.</p>
+      <p class="ba-result" role="status"></p>
+    </form>
   </section>
   <p class="ba-foot">© 2026 Passport Radio · <a href="/blog.html">Blog</a> · <a href="/blog/arquivo/">Arquivo do Blog</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/termos.html">Termos</a> · <a href="/contato.html">Contato</a></p>
 </main>
+<script src="/js/passport-blog-submit.js?v=20261010a" defer></script>
 <script>
 (function () {
   "use strict";

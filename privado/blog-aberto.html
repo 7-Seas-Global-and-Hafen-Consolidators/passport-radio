@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel do Blog Aberto | Passport Radio</title>
+<link rel="canonical" href="https://passportradio.online/privado/blog-aberto.html">
+<link rel="stylesheet" href="/css/passport-blog-aberto.css?v=20261010a">
+</head>
+<body class="blog-aberto">
+<header class="ba-mast">
+  <p class="ba-mast__brand">Passport Radio</p>
+  <h1>PAINEL</h1>
+</header>
+<main class="ba-wrap" id="painel">
+  <p>O caminho desta página não autoriza. Um e-mail digitado, um id de navegador ou um botão escondido não abrem o painel. Cada ação volta ao servidor. noindex não esconde pendência: pendência não está neste HTML.</p>
+  <form class="ba-send" id="ba-login">
+    <label>E-mail <input name="email" type="email" autocomplete="username" required></label>
+    <label>Senha <input name="password" type="password" autocomplete="current-password" required></label>
+    <p class="ba-note">Isto não autoriza. O servidor confere a identidade administrativa e o segundo fator, se já existir.</p>
+    <button type="submit">Entrar</button>
+    <p class="ba-result" id="ba-auth-msg" role="status"></p>
+  </form>
+  <form class="ba-send" id="ba-mfa" hidden>
+    <label>Segundo fator <input name="code" inputmode="numeric" autocomplete="one-time-code" required></label>
+    <button type="submit">Confirmar</button>
+  </form>
+  <section id="ba-desk" hidden>
+    <h2>Controles</h2>
+    <p class="ba-note">Reabrir não liga o envio sozinho. Fechar não apaga acervo nem pendente.</p>
+    <p>
+      <button type="button" data-control="submissions_on">Receber envios</button>
+      <button type="button" data-control="submissions_off">Suspender envios</button>
+      <button type="button" data-control="comments_on">Receber comentários</button>
+      <button type="button" data-control="comments_off">Suspender comentários</button>
+      <button type="button" data-control="attachments_on">Receber anexo</button>
+      <button type="button" data-control="attachments_off">Suspender anexo</button>
+      <button type="button" data-control="close_all">Fechar interações</button>
+      <button type="button" data-control="reopen">Reabrir</button>
+    </p>
+    <p class="ba-result" id="ba-flags" role="status"></p>
+    <h2>Fila</h2>
+    <ul id="ba-queue"></ul>
+    <h2>Comentários</h2>
+    <ul id="ba-comments"></ul>
+    <h2>Log</h2>
+    <ul id="ba-log"></ul>
+  </section>
+  <section class="ba-block">
+    <h2>Publicação</h2>
+    <p>Aprovar inicia. Não pede segunda aprovação. O servidor abre um pull request técnico a partir da main, espera o check build e só diz publicada quando a URL responde. Não atualiza a ref da main. Não faz merge da #531. Sem o token do repositório, a aprovação fica guardada e o estado vai para falha de publicação.</p>
+    <p>O owner ainda aplica, fora daqui: os SQL em supabase/blog_submissions.sql, supabase/blog_comments.sql e supabase/blog_controls.sql; a função blog-aberto com verify_jwt falso; e os segredos só no servidor SUPABASE_SERVICE_ROLE_KEY, BLOG_ABERTO_ADMIN_USER_ID e BLOG_ABERTO_GITHUB_TOKEN. Os controles nascem fechados.</p>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function () {
+  "use strict";
+  var SUPABASE_URL = "https://kmrnnudmujezriomimwn.supabase.co";
+  var PUBLISHABLE = "sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y";
+  var ENDPOINT = SUPABASE_URL + "/functions/v1/blog-aberto";
+  var client = window.supabase.createClient(SUPABASE_URL, PUBLISHABLE, { auth: { persistSession: true, autoRefreshToken: true } });
+  var factorId = "";
+  var challengeId = "";
+  var msg = document.getElementById("ba-auth-msg");
+
+  function say(text, bad) {
+    msg.textContent = text;
+    msg.dataset.state = bad ? "no" : "yes";
+  }
+
+  async function token() {
+    var session = await client.auth.getSession();
+    return session.data.session && session.data.session.access_token;
+  }
+
+  async function call(action, extra) {
+    var access = await token();
+    if (!access) { say("Sessão ausente.", true); return null; }
+    var res = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + access },
+      body: JSON.stringify(Object.assign({ action: action }, extra || {}))
+    });
+    var data = await res.json();
+    if (!res.ok || !data || data.ok !== true) {
+      say((data && data.message) || "Recusado.", true);
+      return null;
+    }
+    return data;
+  }
+
+  function button(label, action, id) {
+    var el = document.createElement("button");
+    el.type = "button";
+    el.textContent = label;
+    el.addEventListener("click", function () {
+      call(action, { id: id }).then(function () { load(); });
+    });
+    return el;
+  }
+
+  function load() {
+    call("admin-list").then(function (data) {
+      if (!data) return;
+      document.getElementById("ba-login").hidden = true;
+      document.getElementById("ba-desk").hidden = false;
+      var flags = data.controls || {};
+      document.getElementById("ba-flags").textContent = "Envios " + (flags.submissions_open ? "ligados" : "desligados") + ". Comentários " + (flags.comments_open ? "ligados" : "desligados") + ". Interações " + (flags.interactions_closed ? "fechadas" : "abertas") + ".";
+      var queue = document.getElementById("ba-queue");
+      queue.replaceChildren();
+      (data.submissions || []).forEach(function (row) {
+        var li = document.createElement("li");
+        li.textContent = row.status + " — " + row.title + " — " + row.pseudonym + " — " + row.email;
+        if (row.status !== "publicada_verificada" && row.status !== "rejeitada") {
+          li.append(button("Aprovar e publicar", "admin-approve", row.id));
+          li.append(button("Rejeitar", "admin-reject", row.id));
+        }
+        if (row.status === "falha_publicacao" || row.status === "aprovada_aguardando" || row.status === "publicando") {
+          li.append(button("Tentar de novo", "admin-retry", row.id));
+        }
+        if (row.failure_note) {
+          var note = document.createElement("p");
+          note.textContent = row.failure_note;
+          li.append(note);
+        }
+        queue.appendChild(li);
+      });
+      var comments = document.getElementById("ba-comments");
+      comments.replaceChildren();
+      (data.comments || []).forEach(function (row) {
+        var li = document.createElement("li");
+        li.textContent = row.status + " — " + row.pseudonym + " — " + row.body;
+        if (row.status === "pendente_revisao") {
+          li.append(button("Aprovar comentário", "admin-comment-approve", row.id));
+          li.append(button("Rejeitar comentário", "admin-comment-reject", row.id));
+        }
+        comments.appendChild(li);
+      });
+      var log = document.getElementById("ba-log");
+      log.replaceChildren();
+      (data.log || []).forEach(function (row) {
+        var li = document.createElement("li");
+        li.textContent = row.action + " — " + (row.detail || "");
+        log.appendChild(li);
+      });
+    });
+  }
+
+  document.getElementById("ba-login").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    var fd = new FormData(event.target);
+    var signed = await client.auth.signInWithPassword({ email: String(fd.get("email") || ""), password: String(fd.get("password") || "") });
+    if (signed.error) { say("Sessão recusada.", true); return; }
+    var level = await client.auth.mfa.getAuthenticatorAssuranceLevel();
+    var next = level.data && level.data.nextLevel;
+    var current = level.data && level.data.currentLevel;
+    if (next === "aal2" && current !== "aal2") {
+      var factors = await client.auth.mfa.listFactors();
+      var totp = factors.data && factors.data.totp && factors.data.totp[0];
+      if (!totp) { say("Falta o segundo fator.", true); return; }
+      var challenge = await client.auth.mfa.challenge({ factorId: totp.id });
+      if (challenge.error) { say("Falta o segundo fator.", true); return; }
+      factorId = totp.id;
+      challengeId = challenge.data.id;
+      document.getElementById("ba-mfa").hidden = false;
+      say("Falta o segundo fator.", true);
+      return;
+    }
+    var session = await call("admin-session");
+    if (session) load();
+  });
+
+  document.getElementById("ba-mfa").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    var code = String(new FormData(event.target).get("code") || "");
+    var verified = await client.auth.mfa.verify({ factorId: factorId, challengeId: challengeId, code: code });
+    if (verified.error) { say("Falta o segundo fator.", true); return; }
+    var session = await call("admin-session");
+    if (session) load();
+  });
+
+  document.querySelectorAll("[data-control]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      call("admin-control", { control: el.getAttribute("data-control") }).then(function () { load(); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

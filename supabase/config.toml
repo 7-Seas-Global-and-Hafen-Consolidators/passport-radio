@@ -1,0 +1,5 @@
+# Visitante não tem JWT. A função recusa sozinha.
+# verify_jwt fica falso no deploy. Se o gateway exigir conta, o envio não existe.
+
+[functions.blog-aberto]
+verify_jwt = false
