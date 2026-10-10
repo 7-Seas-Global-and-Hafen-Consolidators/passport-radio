@@ -53,5 +53,10 @@ body.pp-blog.passport-az-directory .blog-entity-cloud>a>.passport-artist-story-c
 body.pp-blog.passport-az-directory .blog-entity-cloud>a>.passport-artist-photo-credit{grid-column:2/4;grid-row:2;padding:0;border:0;color:#555!important;font:400 .65rem/1.25 'Instrument Sans',sans-serif;white-space:normal}
 body.pp-blog.passport-az-directory :is(a,button,input,select):focus-visible{outline:3px solid #C41E3A;outline-offset:3px}
 body.pp-blog.passport-az-directory [hidden]{display:none!important}
+body.pp-blog.passport-az-directory .passport-az-static-pages{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 28px}
+body.pp-blog.passport-az-directory .passport-az-static-pages a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:36px;padding:4px 8px;border:1px solid #111111;background:#FFFFFF;color:#111111;font:600 .75rem/1 'Instrument Sans',sans-serif;text-decoration:none}
+body.pp-blog.passport-az-directory .passport-az-static-pages a[aria-current="page"],body.pp-blog.passport-az-directory .passport-az-static-pages a:hover{border-color:#C41E3A;background:#C41E3A;color:#FFFFFF}
+body.pp-blog.passport-az-directory .passport-az-theme-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+body.pp-blog.passport-az-directory .passport-az-theme-links a{display:inline-flex;align-items:baseline;gap:6px}
 @media(max-width:900px){body.pp-blog.passport-az-directory .blog-entity-cloud{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}}
 @media(max-width:620px){body.pp-blog.passport-az-directory .blog-page{width:min(calc(100% - 28px),1280px);padding:24px 0 48px}body.pp-blog.passport-az-directory .passport-artist-nav{grid-template-columns:1fr;gap:12px;padding:16px 12px}body.pp-blog.passport-az-directory .passport-artist-nav>*{grid-column:1/-1}body.pp-blog.passport-az-directory .blog-entity-cloud{grid-template-columns:1fr}body.pp-blog.passport-az-directory .blog-section{margin:20px 0 30px}}
