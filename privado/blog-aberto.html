@@ -15,12 +15,22 @@
 </header>
 <main class="ba-wrap" id="painel">
   <p>O caminho desta página não autoriza. Um e-mail digitado, um id de navegador ou um botão escondido não abrem o painel. Cada ação volta ao servidor. noindex não esconde pendência: pendência não está neste HTML.</p>
+  <form class="ba-send" id="ba-link-login">
+    <h2>Acessar sem senha</h2>
+    <label>E-mail da conta administrativa <input name="email" type="email" autocomplete="email" value="passportradio.online@gmail.com" required></label>
+    <button type="submit">ENVIAR LINK DE ACESSO</button>
+    <p>Abra o link enviado ao seu e-mail. O Supabase valida o acesso temporário; a redação continua protegida pela identidade administrativa e pelo segundo fator, quando habilitado.</p>
+  </form>
+  <form class="ba-send" id="ba-code-login" hidden>
+    <label>Se o e-mail trouxer um código, informe aqui <input name="token" inputmode="numeric" autocomplete="one-time-code" required></label>
+    <button type="submit">Confirmar código</button>
+  </form>
   <form class="ba-send" id="ba-login">
     <label>E-mail <input name="email" type="email" autocomplete="username" required></label>
-    <label>Senha <input name="password" type="password" autocomplete="current-password" required></label>
+    <label>Senha (acesso com senha) <input name="password" type="password" autocomplete="current-password" required></label>
     <p class="ba-note">Isto não autoriza. O servidor confere a identidade administrativa e o segundo fator, se já existir.</p>
     <button type="submit">Entrar</button>
-    <p class="ba-result" id="ba-auth-msg" role="status"></p>
+    <p class="ba-result" id="ba-auth-msg" role="status" aria-live="polite" tabindex="-1">Carregando o acesso administrativo…</p>
   </form>
   <form class="ba-send" id="ba-mfa" hidden>
     <label>Segundo fator <input name="code" inputmode="numeric" autocomplete="one-time-code" required></label>
@@ -53,164 +63,7 @@
     <p>Envios exigem conta confirmada e token validado no servidor. Apenas a identidade administrativa configurada, com segundo fator quando habilitado, acessa esta fila. Aprovar prepara uma PR técnica: o merge continua autorizado separadamente. Notificações pendentes permanecem na fila privada até a integração com um serviço de e-mail autorizado.</p>
   </section>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-(function () {
-  "use strict";
-  var SUPABASE_URL = "https://kmrnnudmujezriomimwn.supabase.co";
-  var PUBLISHABLE = "sb_publishable_LzwZUlVjSpvFXPZfMz6_DA_RRtNai3y";
-  var ENDPOINT = SUPABASE_URL + "/functions/v1/blog-aberto";
-  var client = window.supabase.createClient(SUPABASE_URL, PUBLISHABLE, { auth: { persistSession: true, autoRefreshToken: true } });
-  var factorId = "";
-  var challengeId = "";
-  var msg = document.getElementById("ba-auth-msg");
-
-  function say(text, bad) {
-    msg.textContent = text;
-    msg.dataset.state = bad ? "no" : "yes";
-  }
-
-  async function token() {
-    var session = await client.auth.getSession();
-    return session.data.session && session.data.session.access_token;
-  }
-
-  async function call(action, extra) {
-    var access = await token();
-    if (!access) { say("Sessão ausente.", true); return null; }
-    var res = await fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: "Bearer " + access },
-      body: JSON.stringify(Object.assign({ action: action }, extra || {}))
-    });
-    var data = await res.json();
-    if (!res.ok || !data || data.ok !== true) {
-      say((data && data.message) || "Recusado.", true);
-      return null;
-    }
-    return data;
-  }
-
-  function button(label, action, id) {
-    var el = document.createElement("button");
-    el.type = "button";
-    el.textContent = label;
-    el.addEventListener("click", function () {
-      var extra = {id:id};
-      if(action === "admin-reject") {
-        var reason = prompt("Motivo editorial da rejeição (sem dados pessoais):");
-        if(!reason) return;
-        extra.reason = reason;
-      }
-      call(action, extra).then(function () { load(); });
-    });
-    return el;
-  }
-
-  function load() {
-    call("admin-list").then(function (data) {
-      if (!data) return;
-      document.getElementById("ba-login").hidden = true;
-      document.getElementById("ba-desk").hidden = false;
-      var flags = data.controls || {};
-      document.getElementById("ba-flags").textContent = "Envios " + (flags.submissions_open ? "ligados" : "desligados") + ". Comentários " + (flags.comments_open ? "ligados" : "desligados") + ". Interações " + (flags.interactions_closed ? "fechadas" : "abertas") + ".";
-      var queue = document.getElementById("ba-queue");
-      queue.replaceChildren();
-      (data.submissions || []).forEach(function (row) {
-        var li = document.createElement("li");
-        li.textContent = row.status + " — " + row.title + " — " + row.pseudonym + " — " + row.email;
-        var details = document.createElement("details");
-        var summary = document.createElement("summary"); summary.textContent = "Analisar material completo";
-        var body = document.createElement("p"); body.textContent = row.body || ""; body.style.whiteSpace="pre-wrap";
-        var type = document.createElement("p"); type.textContent = "Tipo: " + (row.participation_type || "matéria") + " · " + row.created_at;
-        details.append(summary,type,body);
-        (row.reference_links || []).concat(row.official_links || []).forEach(function(url){
-          try { var parsed=new URL(url); if(parsed.protocol!=="https:" || parsed.username || parsed.password) return; }
-          catch { return; }
-          var link=document.createElement("a");link.href=url;link.textContent=url;link.target="_blank";link.rel="noopener noreferrer";
-          var paragraph=document.createElement("p");paragraph.append(link);details.append(paragraph);
-        });
-        if(row.attachment_path){
-          var attachment=document.createElement("button");attachment.type="button";attachment.textContent="Obter link privado do anexo (5 minutos)";
-          attachment.addEventListener("click",async function(){var data=await call("admin-attachment",{id:row.id});if(data?.url){var link=document.createElement("a");link.href=data.url;link.textContent="Abrir anexo privado";link.target="_blank";link.rel="noopener noreferrer";details.append(link);}});
-          details.append(attachment);
-        }
-        if(row.rejection_reason){var reason=document.createElement("p");reason.textContent="Motivo: "+row.rejection_reason;details.append(reason);}
-        li.append(details);
-        if (row.status !== "publicada_verificada" && row.status !== "rejeitada") {
-          li.append(button("Aprovar / preparar PR", "admin-approve", row.id));
-          li.append(button("Rejeitar", "admin-reject", row.id));
-        }
-        if (row.status === "falha_publicacao" || row.status === "aprovada_aguardando" || row.status === "publicando") {
-          li.append(button("Tentar de novo", "admin-retry", row.id));
-        }
-        if (row.failure_note) {
-          var note = document.createElement("p");
-          note.textContent = row.failure_note;
-          li.append(note);
-        }
-        queue.appendChild(li);
-      });
-      var comments = document.getElementById("ba-comments");
-      comments.replaceChildren();
-      (data.comments || []).forEach(function (row) {
-        var li = document.createElement("li");
-        li.textContent = row.status + " — " + row.pseudonym + " — " + row.body;
-        if (row.status === "pendente_revisao") {
-          li.append(button("Aprovar comentário", "admin-comment-approve", row.id));
-          li.append(button("Rejeitar comentário", "admin-comment-reject", row.id));
-        }
-        comments.appendChild(li);
-      });
-      var log = document.getElementById("ba-log");
-      log.replaceChildren();
-      (data.log || []).forEach(function (row) {
-        var li = document.createElement("li");
-        li.textContent = row.action + " — " + (row.detail || "");
-        log.appendChild(li);
-      });
-    });
-  }
-
-  document.getElementById("ba-login").addEventListener("submit", async function (event) {
-    event.preventDefault();
-    var fd = new FormData(event.target);
-    var signed = await client.auth.signInWithPassword({ email: String(fd.get("email") || ""), password: String(fd.get("password") || "") });
-    if (signed.error) { say("Sessão recusada.", true); return; }
-    var level = await client.auth.mfa.getAuthenticatorAssuranceLevel();
-    var next = level.data && level.data.nextLevel;
-    var current = level.data && level.data.currentLevel;
-    if (next === "aal2" && current !== "aal2") {
-      var factors = await client.auth.mfa.listFactors();
-      var totp = factors.data && factors.data.totp && factors.data.totp[0];
-      if (!totp) { say("Falta o segundo fator.", true); return; }
-      var challenge = await client.auth.mfa.challenge({ factorId: totp.id });
-      if (challenge.error) { say("Falta o segundo fator.", true); return; }
-      factorId = totp.id;
-      challengeId = challenge.data.id;
-      document.getElementById("ba-mfa").hidden = false;
-      say("Falta o segundo fator.", true);
-      return;
-    }
-    var session = await call("admin-session");
-    if (session) load();
-  });
-
-  document.getElementById("ba-mfa").addEventListener("submit", async function (event) {
-    event.preventDefault();
-    var code = String(new FormData(event.target).get("code") || "");
-    var verified = await client.auth.mfa.verify({ factorId: factorId, challengeId: challengeId, code: code });
-    if (verified.error) { say("Falta o segundo fator.", true); return; }
-    var session = await call("admin-session");
-    if (session) load();
-  });
-
-  document.querySelectorAll("[data-control]").forEach(function (el) {
-    el.addEventListener("click", function () {
-      call("admin-control", { control: el.getAttribute("data-control") }).then(function () { load(); });
-    });
-  });
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.js" onerror="document.getElementById('ba-auth-msg').textContent='Não foi possível carregar a autenticação. Recarregue o painel.'"></script>
+<script src="/js/passport-blog-admin.js?v=20261010-access"></script>
 </body>
 </html>

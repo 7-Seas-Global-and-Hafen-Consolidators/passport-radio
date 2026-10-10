@@ -317,3 +317,8 @@ jobs:
         run: |
           node --check supabase/functions/participe-notifications/logic.js
           node --test tests/participe_notification_delivery.test.cjs tests/participe_receipt_types.test.cjs
+
+      - name: Validate editorial administrative access
+        run: |
+          node --check js/passport-blog-admin.js
+          node --test tests/editorial_admin_access.test.cjs
