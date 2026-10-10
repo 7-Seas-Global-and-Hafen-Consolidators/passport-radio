@@ -10,7 +10,12 @@
   "anonymous_admin_http": 401,
   "invalid_token_admin_http": 403,
   "public_controls_http": 200,
-  "public_controls": {"authentication_required": true,"submissions": true,"comments": true,"attachments": true},
+  "public_controls": {
+    "authentication_required": true,
+    "submissions": true,
+    "comments": true,
+    "attachments": true
+  },
   "signup_enabled": true,
   "email_provider_enabled": true,
   "email_confirmation_required": true,
@@ -30,5 +35,9 @@
   "admin_email_notification": "PENDING: no existing notifier found in Edge Function, triggers or Vault; delivery service and authorized credential unavailable through current capabilities",
   "notification_outbox": "private pending metadata only; NOT email delivery",
   "frontend_deployment": "PENDING PR merge",
-  "public_articles_created": 0
+  "public_articles_created": 0,
+  "migration_version": "20261010193646",
+  "browser_validation_workflow": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38080723777",
+  "clean_visual_captures_workflow": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38080955231",
+  "build_verified_workflow": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38080727146"
 }

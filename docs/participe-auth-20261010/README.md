@@ -29,3 +29,18 @@ Migração aditiva aplicada ao projeto existente, preservando usuários, registr
 ## Preservação
 
 Imagem Mike Marrs, manchete, header/nav, apoio e footer de Participe preservados byte a byte (teste de navegador). Scripts de Participe, rodapé universal, pagamentos, mídias, rádios/players/interlock, Home, Notícias, Loja, diretório e túneis não alterados. Nenhuma matéria pública de teste.
+
+## Verificação consolidada
+
+- [Build aprovado](https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38080727146).
+- [Teste funcional desktop/mobile aprovado](https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38080723777).
+- [Capturas sem sobreposição do aviso de cookies](https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38080955231), após aceitação pelo botão existente; somente captura, sem repetir os fluxos já aprovados.
+- Migração registrada: `20261010193646` / `participe_authenticated_submissions`.
+- Capturas: `account-1440.png`, `account-390.png`, `submission-1440.png`, `submission-390.png`, `footer-1440.png`, `footer-390.png`.
+- O workflow temporário de captura é retirado da PR; os 18 testes de segurança e checks de sintaxe passam a integrar o `build` existente, sem secrets ou chamadas a serviços externos.
+
+## Arquivos de implementação alterados
+
+`.github/workflows/build.yml`, `divulgar-bandas.html`, `minha-passport.html`, `blog/envie-sua-historia.html`, `privado/blog-aberto.html`, `css/passport-auth.css`, `js/passport-auth.js`, `js/passport-blog-submit.js`, `supabase/functions/blog-aberto/logic.js`, `supabase/participe_authenticated_submissions.sql`.
+
+Testes: `tests/participe_authenticated.test.cjs` e `tests/validate_participe_auth.cjs`. Documentação, resultados e seis imagens de evidência ficam neste diretório. A lista integral está no diff da PR #540.
