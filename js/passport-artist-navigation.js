@@ -82,7 +82,7 @@
       if(!cardsCss.parentNode){cardsCss.rel='stylesheet';cardsCss.dataset.passportAzCards='1';doc.head.append(cardsCss);}
       cardsCss.href='/css/passport-az-cards.css?v=20261010-az24';
     if (doc.querySelector('link[data-passport-artist-navigation]')) return;
-    const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261010-az24';css.dataset.passportArtistNavigation='1';doc.head.append(css);
+    const css=doc.createElement('link');css.rel='stylesheet';css.href='/css/passport-artist-navigation.css?v=20261010-compact';css.dataset.passportArtistNavigation='1';doc.head.append(css);
   }
   function enhance(doc) {
     if(!doc?.body)return;
@@ -113,6 +113,7 @@
       row.append(link(doc,'Buscar '+n.name,'/blog/busca.html?q='+encodeURIComponent(n.name)));
     }
     nav.append(row);
+    if(az)heading.remove();
     const related=new Map();
     for(const n of selected) for(const edge of data.edges) {
       const id=edge.artist===n.id?edge.band:edge.band===n.id?edge.artist:null;
@@ -157,7 +158,6 @@
       }
       if(entries.length){
         const heading=doc.createElement('h2');heading.className='passport-az-tools-title';heading.textContent=indexPage?'Explore o diretório':'Filtre esta letra';nav.append(heading);
-        const row=doc.createElement('nav');row.setAttribute('aria-label','Caminhos do acervo');row.append(link(doc,'A–Z completo','/blog/arquivo/letras.html'),link(doc,'Blog','/blog.html'));nav.append(row);
 
         const searchLabel=doc.createElement('label');searchLabel.className='passport-az-search-label';searchLabel.textContent='Buscar nome';
         const input=doc.createElement('input');input.type='search';input.className='passport-az-search';input.placeholder='Nome do artista ou banda';input.setAttribute('aria-label','Buscar pelo nome');searchLabel.append(input);nav.append(searchLabel);
@@ -221,14 +221,25 @@
           pictures(doc);cards(doc);
           const typed=filtered.filter(item=>nodesByPath.has(item.href)).length;
           count.textContent=filtered.length.toLocaleString('pt-BR')+' resultados · '+catalog.artists.length.toLocaleString('pt-BR')+' destinos · '+typed.toLocaleString('pt-BR')+' com tipo estruturado';
+          pages.hidden=false;
           pageLabel.textContent='Página '+page+' de '+total;previous.disabled=page<=1;next.disabled=page>=total;
+          pages.querySelectorAll('[data-az-page-link], [data-az-gap]').forEach(a=>a.remove());
+          if(!q&&kind==='all'){
+            const start=Math.max(1,Math.min(page-2,total-4));
+            const numbers=Array.from({length:Math.min(5,total)},(_,i)=>start+i);
+            if(start>1){numbers.unshift(1);if(start>2)numbers.splice(1,0,null);}
+            if(numbers.at(-1)<total){if(numbers.at(-1)<total-1)numbers.push(null);numbers.push(total);}
+            for(const n of numbers){
+              if(n===null){const gap=doc.createElement('span');gap.dataset.azGap='1';gap.setAttribute('aria-hidden','true');gap.textContent='…';pages.insertBefore(gap,next);continue;}
+              const a=link(doc,String(n),n===1?'/blog/arquivo/letras.html':'/blog/arquivo/letras/'+n+'.html');
+              a.dataset.azPageLink=String(n);if(n===page)a.setAttribute('aria-current','page');
+              a.addEventListener('click',event=>{if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();interacted=true;page=n;update();});
+              pages.insertBefore(a,next);
+            }
+          }
           const pager=main.querySelector('.passport-az-static-pages');
           if(pager){
-            pager.hidden=!!(q||kind!=='all');
-            for(const a of pager.querySelectorAll('a')){
-              if(Number(a.textContent)===page)a.setAttribute('aria-current','page');
-              else a.removeAttribute('aria-current');
-            }
+            pager.hidden=true; // Replaced only after the live catalogue is available.
           }
           try{const url=new URL(doc.URL);url.searchParams.set('pagina',String(page));
             if(input.value.trim())url.searchParams.set('q',input.value.trim());else url.searchParams.delete('q');
@@ -240,6 +251,7 @@
           const index=/^\/blog\/arquivo\/letras(?:\/\d+)?\.html$/.test(path);
           if(index){
             if(!catalog){
+              pages.hidden=true;
               pageLabel.textContent='Página '+requestedPage();
               previous.disabled=requestedPage()<=1;
               next.disabled=false;
