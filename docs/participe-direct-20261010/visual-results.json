@@ -1,0 +1,22 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "formAbsent": true,
+    "linksCorrect": true,
+    "noOverflow": true,
+    "originalImageLoaded": true,
+    "panelRetired": true
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "formAbsent": true,
+    "linksCorrect": true,
+    "noOverflow": true,
+    "originalImageLoaded": true,
+    "panelRetired": true
+  }
+]

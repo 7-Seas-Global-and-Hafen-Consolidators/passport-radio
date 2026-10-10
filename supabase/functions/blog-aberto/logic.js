@@ -706,9 +706,9 @@ function publicFlags(controls) {
   return {
     ok: true,
     authentication_required: true,
-    submissions: !!(open && controls.submissions_open),
+    submissions: false,
     comments: !!(open && controls.comments_open),
-    attachments: !!(open && controls.submissions_open && controls.attachments_open)
+    attachments: false
   };
 }
 
@@ -728,6 +728,9 @@ async function readFields(req) {
 
 export async function dispatch(fields, req, ctx) {
   const action = String((fields && fields.action) || "");
+  if (action === "submit" || action.startsWith("admin-")) {
+    return { status: 410, body: { ok: false, message: "O formulário e o painel de participações foram desativados. Envie seu material para passportradio.online@gmail.com.", contact: "mailto:passportradio.online@gmail.com" } };
+  }
   const store = storeOf(ctx);
   if (action === "public-controls") {
     const controls = await store.getControls();

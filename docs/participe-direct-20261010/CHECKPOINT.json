@@ -1,0 +1,45 @@
+{
+  "decision": "Retire participation form and panel; receive by email and official social channels",
+  "base": "d3353ff782741a8e3566f461c6de639489820a1f",
+  "supersedes": "6a4265d827aa2a4b958a6ed25089ff10aaefc12c",
+  "production": {
+    "function": "blog-aberto",
+    "version": 7,
+    "submit_http": 410,
+    "admin_list_http": 410,
+    "notification_cron": "inactive"
+  },
+  "preservation": "No users, submissions, logs, notifications, secrets or media deleted. Bee Gees and QUALQUER COISA remain stored. UI pending merge.",
+  "contacts": {
+    "email": "passportradio.online@gmail.com",
+    "whatsapp": "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k",
+    "telegram": "https://t.me/+FKto2N185cs4OGU0"
+  },
+  "validation": {
+    "focused_tests": "3 passed",
+    "visual_run": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38094512408",
+    "desktop": "1440x1000 passed",
+    "mobile": "390x844 passed",
+    "original_image": "loaded unchanged",
+    "submit_http": 410,
+    "admin_list_http": 410,
+    "public_controls": {
+      "submissions": false,
+      "attachments": false,
+      "comments": true
+    },
+    "preserved_records": [
+      {
+        "title": "MATERIA SOBRE BEE GEES",
+        "id": "28ca543d-b917-4516-9763-fc9111f30a5b",
+        "status": "recebida"
+      },
+      {
+        "title": "QUALQUER COISA",
+        "id": "cf2588ed-41be-4606-b7e3-dc341c92c92a",
+        "status": "recebida"
+      }
+    ],
+    "outbox": "2 pending preserved; cron inactive"
+  }
+}
