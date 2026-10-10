@@ -34,8 +34,9 @@
 
   async function send(event, form, action) {
     event.preventDefault();
-    if (form.dataset.sending === "true") return;
-    form.dataset.sending = "true";
+    const nativeReceipt = action === "submit" && document.getElementById("participe-receipt");
+    if (nativeReceipt && form.dataset.sending === "true") return;
+    if (nativeReceipt) form.dataset.sending = "true";
     const result = form.querySelector(".ba-result");
     const button = form.querySelector("button");
     if (button) button.disabled = true;
@@ -66,7 +67,7 @@
     }
     if (!ok && message === "Recebido.") message = FAIL;
     paint(result, ok, message);
-    const receipt = action === "submit" && document.getElementById("participe-receipt");
+    const receipt = nativeReceipt;
     if (receipt) {
       receipt.hidden = !ok;
       if (ok) {
@@ -75,7 +76,7 @@
         receipt.scrollIntoView({ block: "center", behavior: "auto" });
       }
     }
-    delete form.dataset.sending;
+    if (nativeReceipt) delete form.dataset.sending;
     if (button) button.disabled = false;
     if (ok) {
       form.reset();

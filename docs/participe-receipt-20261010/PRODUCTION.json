@@ -1,0 +1,31 @@
+{
+  "project": "kmrnnudmujezriomimwn",
+  "worker": "participe-notifications",
+  "deployed_version": 1,
+  "verify_jwt": false,
+  "authentication": "private Vault token, service_role-only RPC",
+  "cron": {
+    "name": "participe-notifications",
+    "schedule": "* * * * *",
+    "active": true
+  },
+  "hosted_response": {
+    "status": 503,
+    "code": "missing_email_configuration",
+    "missing": [
+      "RESEND_API_KEY",
+      "PASSPORT_EDITORIAL_MAIL_FROM"
+    ]
+  },
+  "bee_gees": {
+    "id": "28ca543d-b917-4516-9763-fc9111f30a5b",
+    "status": "pending",
+    "attempts": 0,
+    "provider_id": null
+  },
+  "production_submissions_created": 0,
+  "emails_sent": 0,
+  "private_queue_and_worker_rpc": true,
+  "new_worker_tests_passed": 6,
+  "claim_test": "transaction rolled back; second claim empty"
+}
