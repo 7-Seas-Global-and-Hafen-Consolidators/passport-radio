@@ -22,6 +22,8 @@ Após merge/deploy autorizado, abrir https://passportradio.online/privado/blog-a
 
 ## Testes
 
-7 testes focados do handler: sessão restaurada carrega conteúdo integral dos três tipos; não administrador barrado; OTP não cria usuário e preserva retorno; OTP consulta autorização antes da fila; SDK/rede mostram erro; MFA permanece exigido. Respostas simuladas, nenhum material real criado/aprovado/rejeitado. HTTP real admin-list: anônimo 401, token inválido 403. Banco real: Bee Gees e QUALQUER COISA preservadas como recebida. Auth signup, Resend, cron, notificações, formulário público, players e rádios não foram alterados ou reexecutados.
+8 testes focados do handler: sessão restaurada carrega conteúdo integral dos três tipos; não administrador barrado; OTP não cria usuário e preserva retorno; OTP consulta autorização antes da fila; SDK/rede mostram erro; MFA permanece exigido. Respostas simuladas, nenhum material real criado/aprovado/rejeitado. HTTP real admin-list: anônimo 401, token inválido 403. Banco real: Bee Gees e QUALQUER COISA preservadas como recebida. Auth signup, Resend, cron, notificações, formulário público, players e rádios não foram alterados ou reexecutados.
 
 Referência: https://supabase.com/docs/guides/auth/auth-email-passwordless
+
+Falha de recuperação do token durante uma ação também é capturada e exibida, sem confirmar aprovação. Teste focado específico aprovado.

@@ -20,9 +20,9 @@
   }
 
   async function call(action, extra) {
+    try {
     var access = await token();
     if (!access) { say("Sessão ausente.", true); return null; }
-    try {
     var res = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: "Bearer " + access },
