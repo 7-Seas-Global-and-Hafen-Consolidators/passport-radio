@@ -1,0 +1,26 @@
+✔ anonymous direct submission refused before writing or rate-limit (2.928308ms)
+✔ expired or forged token fails Auth validation (2.478624ms)
+✔ authenticated private submission: materia (13.176966ms)
+✔ authenticated private submission: banda (1.981381ms)
+✔ authenticated private submission: programa (1.34078ms)
+✔ server blocks unsafe text: meu CPF: 12345678901 (1.213746ms)
+✔ server blocks unsafe text: o endereço: Rua Particular 123 (2.179677ms)
+✔ server blocks unsafe text: contato privado: pessoa@example.test (0.802456ms)
+✔ server blocks unsafe text: vamos exterminar todos os judeus (0.81927ms)
+✔ server blocks unsafe text: <script>alert(1)</script> (1.196731ms)
+✔ server blocks unsafe text: n​igger (2.20347ms)
+✔ unconfirmed account rejected (0.500146ms)
+✔ ordinary account cannot approve reject list or control (0.990365ms)
+✔ owner MFA remains required (0.374417ms)
+✔ owner approval prepares PR but never merges; rejection records reason (3.464437ms)
+✔ rights declaration and dangerous attachments enforced (1.577319ms)
+✔ public comments and controls stay anonymous (0.411811ms)
+✔ cross-origin www canonical is supported (0.737295ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 140.246647

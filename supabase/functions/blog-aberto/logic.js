@@ -3,6 +3,7 @@
 // Publicar não atualiza refs/heads/main e não faz merge da #531.
 // A tela só fica "publicada e verificada" depois que a URL responde.
 
+const PARTICIPATION_TYPES = ["materia", "banda", "programa"];
 const CATEGORIES = ["historias", "discos", "cultura", "shows", "entrevistas"];
 const STATUSES = [
   "recebida",
@@ -32,6 +33,9 @@ const ADDRESS = /\b(?:rua|avenida|av\.|travessa|alameda|rodovia|estrada)\s+\S[^.
 const FAMILY = /\b(?:meu|minha)\s+(?:filho|filha|m[aã]e|pai|esposa|marido|irm[aã]o|irma)\s+[A-ZÁÉÍÓÚÂÊÔÃÕ][\p{L}'-]{1,40}/u;
 const CIVIL = /\b(?:meu nome civil|meu nome completo|chamo-me|eu me chamo|portador(?:a)? do (?:rg|cpf)|meu rg\b|meu cpf\b|meu endere[cç]o)\b/i;
 const HARM = [
+  /\b(?:matar|eliminar|exterminar|espancar|expulsar)\s+(?:todos?\s+)?(?:os?\s+|as?\s+)?(?:negros|judeus|gays|homossexuais|indigenas|indígenas|mulheres|imigrantes|muçulmanos)\b/i,
+  /\b(?:negros|judeus|gays|homossexuais|indígenas|imigrantes|muçulmanos)\s+(?:são|sao)\s+(?:inferiores|animais|pragas|vermes)\b/i,
+
   /\bvou te matar\b/i,
   /\bte mato\b/i,
   /\bmerece morrer\b/i,
@@ -66,15 +70,15 @@ export function escapeHtml(value) {
 }
 
 export function privacyHit(text) {
-  const raw = String(text || "");
-  if (PHONE.test(raw) || CPF.test(raw) || CEP.test(raw) || ADDRESS.test(raw) || FAMILY.test(raw) || CIVIL.test(raw) || EMAIL_IN_TEXT.test(raw)) {
+  const raw = String(text || "").normalize("NFKC").replace(/[\u200B-\u200D\uFEFF]/g, "");
+  if (PHONE.test(raw) || CPF.test(raw) || /\b(?:cpf|rg|passaporte)\s*[:=]?\s*\d[\d. -]{6,}/i.test(raw) || /\b\d{11}\b/.test(raw) || CEP.test(raw) || ADDRESS.test(raw) || FAMILY.test(raw) || CIVIL.test(raw) || EMAIL_IN_TEXT.test(raw)) {
     return "Não recebido. Tem dado pessoal. Nada foi publicado.";
   }
   return "";
 }
 
 export function contentHit(text) {
-  const raw = String(text || "");
+  const raw = String(text || "").normalize("NFKC").replace(/[\u200B-\u200D\uFEFF]/g, "");
   for (const rule of HARM) {
     if (rule.test(raw)) return "Não recebido. O texto não entra. Nada foi publicado.";
   }
@@ -83,7 +87,7 @@ export function contentHit(text) {
   }
   if (BAD_LINK.test(raw)) return "Não recebido. O texto não entra. Nada foi publicado.";
   const links = raw.match(/https?:\/\/\S+/gi) || [];
-  if (links.length > 2) return "Não recebido. O texto não entra. Nada foi publicado.";
+  if (links.length > 6) return "Não recebido. O texto não entra. Nada foi publicado.";
   return "";
 }
 
@@ -291,7 +295,7 @@ export function createRestStore(env, fetchImpl) {
       return call("PATCH", "/blog_submissions?id=eq." + encodeURIComponent(id), patch, "return=minimal");
     },
     async listSubmissions() {
-      const res = await fetchImpl(env.SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/blog_submissions?select=id,pseudonym,email,title,category,body,status,created_at,approved_at,published_url,github_pr,github_branch,failure_note,attachment_path,publish_attempt&order=created_at.desc&limit=100", {
+      const res = await fetchImpl(env.SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/blog_submissions?select=id,pseudonym,email,title,category,body,status,created_at,approved_at,published_url,github_pr,github_branch,failure_note,attachment_path,publish_attempt,rules_accepted,user_id,participation_type,reference_links,official_links,rejection_reason,notification_status&order=created_at.desc&limit=100", {
         headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: "Bearer " + env.SUPABASE_SERVICE_ROLE_KEY }
       });
       if (!res.ok) throw new Error("db");
@@ -343,6 +347,15 @@ export function createRestStore(env, fetchImpl) {
       if (!res.ok) throw new Error("db");
       return res.json();
     },
+    async signAttachment(path) {
+      if (!/^[a-f0-9-]+\/[a-f0-9-]+\.(jpg|png|webp|pdf)$/.test(path)) throw new Error("attachment");
+      const res = await fetchImpl(env.SUPABASE_URL.replace(/\/$/, "") + "/storage/v1/object/sign/blog-aberto-private/" + path, {
+        method: "POST", headers: {apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: "Bearer " + env.SUPABASE_SERVICE_ROLE_KEY, "Content-Type":"application/json"}, body: JSON.stringify({expiresIn:300})
+      });
+      if (!res.ok) throw new Error("attachment");
+      const data = await res.json();
+      return env.SUPABASE_URL.replace(/\/$/, "") + "/storage/v1" + data.signedURL;
+    },
     async saveAttachment(path, bytes, mime) {
       const res = await fetchImpl(env.SUPABASE_URL.replace(/\/$/, "") + "/storage/v1/object/blog-aberto-private/" + path, {
         method: "POST",
@@ -385,6 +398,9 @@ async function sniff(file, attachmentsOpen) {
   } else {
     return { error: "Não recebido. O anexo não serve. Nada foi publicado." };
   }
+  // Private attachments are never automatically embedded or published.
+  const text = new TextDecoder().decode(bytes);
+  if (/<script|<iframe|javascript:|\/JavaScript|\/JS\b|\/Launch|\/EmbeddedFile/i.test(text)) return {error:"Não recebido. O anexo não serve. Nada foi publicado."};
   return { ext, mime, bytes };
 }
 
@@ -568,12 +584,9 @@ export function createGithub(env, fetchImpl) {
       const run = (out.body.check_runs || []).find((item) => item.name === "build");
       return !!(run && run.conclusion === "success");
     },
-    async mergePull(number) {
-      if (Number(number) === FORBIDDEN_PR) throw new Error("recusa merge da 531");
+    async pullMerged(number) {
       const look = await api("GET", "/repos/" + repo + "/pulls/" + number);
-      if (look.ok && look.body && look.body.merged) return true;
-      const out = await api("PUT", "/repos/" + repo + "/pulls/" + number + "/merge", { merge_method: "merge" });
-      return !!out.ok;
+      return !!(look.ok && look.body?.merged);
     }
   };
 }
@@ -601,9 +614,10 @@ export async function runPublication(row, ctx) {
     }
     ctx = { ...ctx, github: createGithub(ctx.env, ctx.fetch || fetch) };
   }
-  if (typeof ctx.live !== "function") {
-    return { ...baseResult, status: "falha_publicacao", failure_note: "A URL não foi conferida. A aprovação permanece." };
-  }
+  if (typeof ctx.live !== "function") ctx = {...ctx,live:async(target,title)=>{
+    const res = await (ctx.fetch || fetch)(target);
+    return res.ok && (await res.text()).includes(escapeHtml(title));
+  }};
   try {
     let sha = null;
     if (!row.published_url) {
@@ -623,9 +637,9 @@ export async function runPublication(row, ctx) {
       if (!built) {
         return { ...baseResult, status: "falha_publicacao", github_pr: pr, failure_note: "O check build não passou. A aprovação permanece." };
       }
-      const merged = await ctx.github.mergePull(pr);
+      const merged = typeof ctx.github.pullMerged === "function" && await ctx.github.pullMerged(pr);
       if (!merged) {
-        return { ...baseResult, status: "falha_publicacao", github_pr: pr, failure_note: "O pull request técnico não entrou. A aprovação permanece." };
+        return { ...baseResult, status: "aprovada_aguardando", github_pr: pr, failure_note: "PR técnica pronta. Aguarda merge autorizado após o check build." };
       }
     }
     const target = row.published_url || url;
@@ -637,6 +651,31 @@ export async function runPublication(row, ctx) {
   } catch {
     return { ...baseResult, status: "falha_publicacao", github_pr: pr, failure_note: "A publicação técnica falhou. A aprovação permanece." };
   }
+}
+
+async function requireMember(req, ctx) {
+  const token = bearer(req);
+  if (!token) return fail(401, "Entre na Minha Passport para enviar. Nada foi publicado.");
+  const env = ctx.env || {};
+  if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return fail(503, "Autenticação indisponível. Nada foi publicado.");
+  const res = await (ctx.fetch || fetch)(env.SUPABASE_URL.replace(/\/$/, "") + "/auth/v1/user", {
+    headers: {Authorization: "Bearer " + token, apikey: env.SUPABASE_SERVICE_ROLE_KEY}
+  });
+  if (!res.ok) return fail(401, "Sessão inválida. Entre novamente. Nada foi publicado.");
+  const user = await res.json();
+  if (!UUID.test(user?.id || "") || !EMAIL_FIELD.test(user?.email || "") || !user.email_confirmed_at || user.is_anonymous) return fail(403, "Confirme o e-mail da sua conta. Nada foi publicado.");
+  return {ok:true,user};
+}
+
+function linksField(value) {
+  const lines = String(value || "").trim().split(/\n+/).map(s=>s.trim()).filter(Boolean);
+  if (lines.length > 2) throw new Error("links");
+  for (const line of lines) {
+    if (line.length > 1000 || privacyHit(line) || contentHit(line)) throw new Error("links");
+    const url = new URL(line);
+    if (url.protocol !== "https:" || url.username || url.password || !url.hostname.includes(".") || /^(localhost|127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|\[)/i.test(url.hostname)) throw new Error("links");
+  }
+  return lines;
 }
 
 async function requireAdmin(req, ctx) {
@@ -654,10 +693,8 @@ async function requireAdmin(req, ctx) {
   if (!user || String(user.id || "").toLowerCase() !== adminId.toLowerCase()) {
     return fail(403, "Esta sessão não autoriza o painel.");
   }
-  const factorsRes = await fetchImpl(root + "/auth/v1/factors", { headers });
-  if (!factorsRes.ok) return fail(403, "Sessão recusada.");
-  const body = await factorsRes.json();
-  const list = Array.isArray(body) ? body : ((body && (body.all || body.factors)) || []);
+  // Auth's verified getUser response carries enrolled factors; no unverified metadata.
+  const list = Array.isArray(user.factors) ? user.factors : [];
   const verified = list.filter((factor) => factor && factor.status === "verified");
   const aal = jwtPayload(token).aal || "aal1";
   if (verified.length && aal !== "aal2") return fail(403, "Falta o segundo fator.");
@@ -668,6 +705,7 @@ function publicFlags(controls) {
   const open = controls && !controls.interactions_closed;
   return {
     ok: true,
+    authentication_required: true,
     submissions: !!(open && controls.submissions_open),
     comments: !!(open && controls.comments_open),
     attachments: !!(open && controls.submissions_open && controls.attachments_open)
@@ -708,6 +746,8 @@ export async function dispatch(fields, req, ctx) {
 }
 
 async function submit(fields, req, ctx, store) {
+  const member = await requireMember(req, ctx);
+  if (!member.ok) return member;
   try { assertInsertStatus(fields.status); }
   catch (err) { return fail(403, err.publicMessage || closedMessage()); }
   const gated = await gate(store, req, { ...ctx, fields }, "submit");
@@ -716,10 +756,16 @@ async function submit(fields, req, ctx, store) {
     return fail(403, "Não recebido. Parece automático. Nada foi publicado.");
   }
   const pseudonym = clean(fields.pseudonym, 40);
-  const email = clean(fields.email, 120);
+  const email = clean(member.user.email, 120);
   const title = clean(fields.title, 160);
   const category = clean(fields.category, 20);
   const body = clean(fields.body, MAX_BODY);
+  const participationType = clean(fields.participation_type || "materia",20);
+  if (!PARTICIPATION_TYPES.includes(participationType)) return fail(400,"Tipo de participação inválido. Nada foi publicado.");
+  let referenceLinks, officialLinks;
+  try { referenceLinks = linksField(fields.reference_links); officialLinks = linksField(fields.official_links); }
+  catch { return fail(400,"Links inválidos. Use até dois links HTTPS por campo. Nada foi publicado."); }
+  if (String(fields.body || "").length > MAX_BODY || String(fields.title || "").length > 160) return fail(400,"Texto acima do limite. Nada foi publicado.");
   if (pseudonym.length < 2 || title.length < 8 || body.length < MIN_BODY) {
     return fail(400, "Não recebido. Falta título ou relato. Nada foi publicado.");
   }
@@ -738,6 +784,10 @@ async function submit(fields, req, ctx, store) {
   }
   await store.insertSubmission({
     id,
+    user_id: member.user.id,
+    participation_type: participationType,
+    reference_links: referenceLinks,
+    official_links: officialLinks,
     pseudonym,
     email,
     title,
@@ -784,6 +834,12 @@ async function admin(action, fields, req, ctx, store) {
   const auth = await requireAdmin(req, ctx);
   if (!auth.ok) return auth;
   if (action === "admin-session") return { status: 200, body: { ok: true, message: "Sessão aceita." } };
+  if (action === "admin-attachment") {
+    const rows = await store.listSubmissions();
+    const row = rows.find(item => item.id === fields.id);
+    if (!row?.attachment_path || !store.signAttachment) return fail(404,"Anexo indisponível.");
+    return {status:200,body:{ok:true,url:await store.signAttachment(row.attachment_path)}};
+  }
   if (action === "admin-list") {
     const controls = await store.getControls();
     const submissions = await store.listSubmissions();
@@ -832,6 +888,8 @@ async function adminApprove(fields, actor, ctx, store) {
   if (row.status === "rejeitada" || row.status === "publicada_verificada") {
     return fail(409, "Esse estado não volta por aqui.");
   }
+  const blocked = scanBundle([row.pseudonym,row.title,row.body,...(row.reference_links || []),...(row.official_links || [])]);
+  if (blocked || !row.rules_accepted) return fail(403,"Material precisa de correção editorial antes da aprovação.");
   const approvedAt = row.approved_at || iso(ctx);
   await store.updateSubmission(id, { status: "aprovada_aguardando", approved_at: approvedAt });
   await store.addLog({ action: "aprovar", target_id: id, actor_id: actor, detail: "aprovada_aguardando", created_at: iso(ctx) });
@@ -865,7 +923,9 @@ async function adminReject(fields, actor, store, _kind) {
   const row = rows.find((item) => item.id === id);
   if (!row) return fail(404, "Não achou o envio.");
   if (row.status === "publicada_verificada") return fail(409, "Já verificada no ar. Não retiro por este botão.");
-  await store.updateSubmission(id, { status: "rejeitada" });
+  const reason = clean(fields.reason,1000);
+  if (reason.length < 3 || privacyHit(reason) || contentHit(reason)) return fail(400,"Informe um motivo editorial sem dados privados.");
+  await store.updateSubmission(id, { status: "rejeitada", rejection_reason:reason });
   await store.addLog({ action: "rejeitar", target_id: id, actor_id: actor, detail: "rejeitada", created_at: new Date().toISOString() });
   return { status: 200, body: { ok: true, status: "rejeitada", published: false } };
 }
@@ -882,7 +942,7 @@ async function adminComment(fields, actor, store, status) {
 }
 
 function cors(origin) {
-  const allow = origin === SITE ? SITE : SITE;
+  const allow = [SITE,"https://www.passportradio.online"].includes(origin) ? origin : SITE;
   return {
     "Access-Control-Allow-Origin": allow,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
