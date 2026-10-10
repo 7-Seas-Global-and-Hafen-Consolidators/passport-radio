@@ -1,0 +1,38 @@
+/* Article geometry extracted from the approved Soundgarden reference. */
+
+/* Festa PLOC only. Values reused from Participe/Apoiar and Anuncie; video geometry from the existing article habitat. */
+.passport-automatic-article .participe-content{max-width:1200px}
+.passport-automatic-article .article,.passport-automatic-article .shell{width:100%;max-width:760px;margin-inline:auto}
+.passport-automatic-article .hero,.passport-automatic-article .intro,.passport-automatic-article .chapter,.passport-automatic-article .signature{padding:28px 0;border-bottom:1px solid var(--pr-ink)}
+.passport-automatic-article .hero{padding-top:0}
+.passport-automatic-article .hero>img{display:block;width:100%;max-width:760px;height:auto;object-fit:contain;margin:0 auto 24px}
+.passport-automatic-article .hero-copy h1{max-width:22ch;font-size:clamp(38px,5vw,64px);margin:16px 0}
+.passport-automatic-article .eyebrow,.passport-automatic-article .tag{display:block;color:var(--pr-red);font:700 10px/1.4 var(--pr-sans);letter-spacing:.18em;text-transform:uppercase}
+.passport-automatic-article .tag{margin-bottom:16px}
+.passport-automatic-article p{margin:0 0 16px}
+.passport-automatic-article .big,.passport-automatic-article .quote{margin:28px 0;font:700 clamp(20px,2.6vw,30px)/1.2 var(--pr-display)}
+.passport-automatic-article .video{position:relative;width:100%;aspect-ratio:16/9;margin:28px 0 12px;overflow:hidden;background:var(--pr-ink)}
+.passport-automatic-article .video iframe{position:absolute;inset:0;width:100%;height:100%;max-width:100%;border:0}
+.passport-automatic-article .caption,.passport-automatic-article .credit{font:400 15px/1.5 var(--pr-body)}
+.passport-automatic-article .sources a{color:var(--pr-red);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.passport-automatic-article .story-related{display:inline-flex;align-items:center;min-height:44px;color:var(--pr-red);border-bottom:1px solid var(--pr-red);font:700 12px/1.4 var(--pr-sans);letter-spacing:.06em}
+.passport-automatic-article .signature>strong{display:block;margin:28px 0 16px;font:700 24px/1 var(--pr-display)}
+.passport-automatic-article .click{margin-top:28px;font:700 12px/1.4 var(--pr-sans);letter-spacing:.1em}
+.passport-automatic-article .spell{margin:28px 0;text-align:center;color:var(--pr-red);font:700 clamp(36px,4.4vw,52px)/1.05 var(--pr-display)}
+@media(max-width:560px){.passport-automatic-article .participe-content{padding-top:28px}}
+/* Scope integration rules to the new tunnel; official chrome/players remain shared. */
+body[data-passport-automatic] #root{width:100%;margin:0;padding:0}
+body[data-passport-automatic] .pb-footer__editorial{max-width:1200px;margin:0 auto;padding:24px 20px;font-family:var(--pr-sans)}
+body[data-passport-automatic] .pb-footer__editorial nav{display:flex;flex-wrap:wrap;gap:12px 20px}
+body[data-passport-automatic] .pb-footer__editorial a{color:var(--pr-red)}
+body[data-passport-automatic] .pb-footer__editorial>a:last-child{display:block;text-align:center;background:var(--pr-red);color:var(--pr-paper);padding:16px;margin-top:20px}
+.passport-automatic-article .byline{font:400 14px/1.6 var(--pr-sans);margin:16px 0}
+.passport-automatic-article .hero figure{margin:0 0 24px}
+.passport-automatic-article .hero figure img{display:block;width:100%;height:auto;object-fit:contain}
+.passport-automatic-article .intro a{color:var(--pr-red);text-decoration:underline;overflow-wrap:anywhere}
+/* The reference already supplies the shared DOE dock. Avoid displaying the
+   legacy loader's second, unstyled support anchor below the official footer. */
+.passport-automatic-article .passport-support-float{display:flex;justify-content:center;align-items:center;gap:14px;margin:20px 16px;min-height:44px;background:var(--pr-red);color:var(--pr-paper)!important;font:700 12px/1.4 var(--pr-sans)}
+.passport-automatic-article .passport-support-float__copy{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.passport-automatic-article:has(.fofonete-dock) .passport-support-float{display:none}
+body[data-passport-automatic] .pb-footer__inner>div:first-child>p{display:none}
