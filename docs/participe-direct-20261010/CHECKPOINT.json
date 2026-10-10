@@ -14,5 +14,32 @@
     "email": "passportradio.online@gmail.com",
     "whatsapp": "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k",
     "telegram": "https://t.me/+FKto2N185cs4OGU0"
+  },
+  "validation": {
+    "focused_tests": "3 passed",
+    "visual_run": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38094512408",
+    "desktop": "1440x1000 passed",
+    "mobile": "390x844 passed",
+    "original_image": "loaded unchanged",
+    "submit_http": 410,
+    "admin_list_http": 410,
+    "public_controls": {
+      "submissions": false,
+      "attachments": false,
+      "comments": true
+    },
+    "preserved_records": [
+      {
+        "title": "MATERIA SOBRE BEE GEES",
+        "id": "28ca543d-b917-4516-9763-fc9111f30a5b",
+        "status": "recebida"
+      },
+      {
+        "title": "QUALQUER COISA",
+        "id": "cf2588ed-41be-4606-b7e3-dc341c92c92a",
+        "status": "recebida"
+      }
+    ],
+    "outbox": "2 pending preserved; cron inactive"
   }
 }
