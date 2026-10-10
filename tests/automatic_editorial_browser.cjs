@@ -47,6 +47,10 @@ async function presentation(page,label) {
   for (const text of ['1998–2026','Política de Privacidade','Termos de Uso','Política de Cookies','Contato','PIX','BOLETO','CARTÃO']) assert(footer.includes(text),text);
   assert.equal(await page.locator('footer a[href="https://link.mercadopago.com.br/passportradio"]').count()>=1,true);
   assert.equal(await page.locator('footer img[src="/images/payments/caixa.png"]').count(),1);
+  assert(!footer.includes('Rock sem fronteiras'),'Retired footer slogan');
+  await page.locator('.fofonete-dock').waitFor();
+  assert.equal(await page.locator('.fofonete-dock').evaluate(node=>getComputedStyle(node).position),'fixed');
+  assert.equal(await page.locator('.passport-support-float').evaluate(node=>getComputedStyle(node).display),'none','Duplicate support anchor');
   await page.waitForFunction(() => [...document.querySelectorAll('main img')].every(i=>i.complete && i.naturalWidth>0));
   assert.equal(await page.locator('main img').getAttribute('src'),saved.image);
   const geometry = await page.evaluate(() => ({width:innerWidth,scroll:document.documentElement.scrollWidth,article:document.querySelector('main .article').getBoundingClientRect().width,red:getComputedStyle(document.querySelector('.pb-mast__logo')).color,titleFont:getComputedStyle(document.querySelector('main h1')).fontFamily,bodyFont:getComputedStyle(document.querySelector('#article-text p')).fontFamily}));
@@ -57,6 +61,8 @@ async function presentation(page,label) {
   assert(geometry.bodyFont.includes('Source Serif 4'));
   assert.equal(await page.locator('main audio,main video[autoplay],main iframe[src*="autoplay=1"]').count(),0);
   record(label,geometry);
+  const cookies = page.getByRole('button',{name:'ACEITAR COOKIES',exact:true});
+  if (await cookies.count()) await cookies.click();
   await page.screenshot({path:`test-results/${label}.png`,fullPage:true});
 }
 (async()=>{
