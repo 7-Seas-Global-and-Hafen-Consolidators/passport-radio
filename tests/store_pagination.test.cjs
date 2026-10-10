@@ -13,11 +13,19 @@ async function fixture(code=source,paper=true,earlySearch){
  return{elements,window,location,chips,clickPage(n,disabled=false){elements['pp-store-pagination'].listeners.click({target:{closest:()=>({dataset:{page:String(n)},disabled})}})},clickCategory(cat){bar.click({target:{closest:()=>chips.find(x=>x.dataset.cat===cat)}})}};
 }
 function cards(html){return [...html.matchAll(/<a class="pp-product"[\s\S]*?<\/a>/g)].map(m=>({id:m[0].match(/data-id="([^"]*)"/)[1],href:m[0].match(/href="([^"]*)"/)[1],image:m[0].match(/<img src="([^"]*)"/)[1],name:m[0].match(/<strong>(.*?)<\/strong>/)[1],price:m[0].match(/<span class="pp-price">(.*?)<\/span>/)[1],payments:m[0].match(/<span class="pp-installments">(.*?)<\/span>/)?.[1]}))}
-test('all commercial inputs and existing product pages are byte-identical to audited main',()=>{
+test('all commercial inputs and original product bytes are unchanged outside the exact footer loader',()=>{
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/store/commercial-baseline.json'));const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
  for(const[p,h]of Object.entries(baseline.data))assert.equal(sha(fs.readFileSync(p)),h,p);
  const files=fs.readdirSync('loja/p').filter(p=>p.endsWith('.html')).map(p=>'loja/p/'+p).sort();assert.equal(files.length,baseline.product_pages_count);
- assert.equal(sha(files.map(p=>p+':'+sha(fs.readFileSync(p))).join('\n')),baseline.product_pages_sha256);
+ const footerLoader=Buffer.from('<script src="/js/passport-universal-footer.js?v=20261010" data-passport-universal-footer defer></script>\n');
+ const originalProductBytes=p=>{
+  const bytes=fs.readFileSync(p),at=bytes.indexOf(footerLoader);
+  if(at===-1)return bytes;
+  assert.equal(bytes.indexOf(footerLoader,at+footerLoader.length),-1,p+' duplicate footer loader');
+  assert.equal(bytes.subarray(at+footerLoader.length,at+footerLoader.length+7).toString().toLowerCase(),'</body>',p+' footer loader position');
+  return Buffer.concat([bytes.subarray(0,at),bytes.subarray(at+footerLoader.length)]);
+ };
+ assert.equal(sha(files.map(p=>p+':'+sha(originalProductBytes(p))).join('\n')),baseline.product_pages_sha256);
  assert.equal(products.length,933);assert.equal(visible.length,882);
 });
 test('all 37 pages preserve every original card, destination, price and image in original order',async()=>{
