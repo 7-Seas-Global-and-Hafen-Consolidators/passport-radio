@@ -15,6 +15,7 @@
 </header>
 <main class="ba-wrap" id="painel">
   <p>O caminho desta página não autoriza. Um e-mail digitado, um id de navegador ou um botão escondido não abrem o painel. Cada ação volta ao servidor. noindex não esconde pendência: pendência não está neste HTML.</p>
+  <p class="ba-result" id="ba-auth-msg" role="status" aria-live="polite" tabindex="-1">Carregando o acesso administrativo…</p>
   <form class="ba-send" id="ba-link-login">
     <h2>Acessar sem senha</h2>
     <label>E-mail da conta administrativa <input name="email" type="email" autocomplete="email" value="passportradio.online@gmail.com" required></label>
@@ -30,7 +31,6 @@
     <label>Senha (acesso com senha) <input name="password" type="password" autocomplete="current-password" required></label>
     <p class="ba-note">Isto não autoriza. O servidor confere a identidade administrativa e o segundo fator, se já existir.</p>
     <button type="submit">Entrar</button>
-    <p class="ba-result" id="ba-auth-msg" role="status" aria-live="polite" tabindex="-1">Carregando o acesso administrativo…</p>
   </form>
   <form class="ba-send" id="ba-mfa" hidden>
     <label>Segundo fator <input name="code" inputmode="numeric" autocomplete="one-time-code" required></label>

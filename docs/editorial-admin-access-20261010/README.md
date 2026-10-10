@@ -2,13 +2,13 @@
 
 ## Diagnóstico comprovado
 
-Produção `/privado/blog-aberto.html` HTTP 200: oferece somente `signInWithPassword`, não restaura a fila com sessão existente, não escuta mudanças de sessão e não protege inicialização contra SDK ausente. Login e chamadas de rede não têm tratamento completo de exceções. Isso impede recuperação sem senha e permite falhas silenciosas. A causa específica observada no navegador do proprietário não foi capturada; não se inventa erro de console.
+Produção `/privado/blog-aberto.html` HTTP 200: oferece somente `signInWithPassword`, não restaura a fila com sessão existente, não escuta mudanças de sessão e não protege inicialização contra SDK ausente. As mensagens ficam dentro do formulário de senha, que é ocultado quando a fila abre, escondendo erros posteriores. Login e chamadas de rede não têm tratamento completo de exceções. Isso impede recuperação sem senha e permite falhas silenciosas. A causa específica observada no navegador do proprietário não foi capturada; não se inventa erro de console.
 
 `blog-aberto` produção v6 inspecionada: valida JWT em `/auth/v1/user`, exige UUID igual ao secret `BLOG_ABERTO_ADMIN_USER_ID` e AAL2 quando existem fatores verificados. Secret administrativo presente (token inválido retorna `Sessão recusada.`, não `Identidade administrativa não configurada.`). O valor do secret não foi exposto nem modificado; sua correspondência com a conta do proprietário depende da autenticação real. Conta do e-mail administrativo existente e confirmada; nenhum fator MFA cadastrado nessa conta. SELECT da fila não é concedido a authenticated.
 
 ## Correção
 
-Somente o painel: SDK fixado em 2.57.4; script externo; mensagens visíveis, aria-live, prevenção de cliques concorrentes e restauração automática de sessão. Login por link Supabase (`shouldCreateUser:false`) e suporte a código OTP caso o template de e-mail use código. Retorno usa a página Minha Passport já existente, com returnTo exclusivo para o painel. Não se altera Minha Passport, Auth, segredo administrativo ou RLS. O endereço digitado solicita autenticação; nunca concede autorização administrativa. `admin-session` precisa autorizar antes de `admin-list` abrir a fila. Segundo fator continua obrigatório quando cadastrado. Fila integral, anexos privados e ações manuais existentes preservados. Saída/401/403 escondem fila e limpam sua apresentação.
+Somente o painel: SDK fixado em 2.57.4; script externo; mensagens visíveis, aria-live, prevenção de cliques concorrentes e restauração automática de sessão. Login por link Supabase (`shouldCreateUser:false`) e suporte a código OTP caso o template de e-mail use código. Retorno usa a página Minha Passport já existente, com returnTo exclusivo para o painel. Não se altera Minha Passport, Auth, segredo administrativo ou RLS. O endereço digitado solicita autenticação; nunca concede autorização administrativa. `admin-session` precisa autorizar antes de `admin-list` abrir a fila. Segundo fator continua obrigatório quando cadastrado. Fila integral, anexos privados e ações manuais existentes preservados. Saída/401/403 escondem fila e limpam sua apresentação. O status agora fica fora dos formulários, continuando visível após login e falhas de ações.
 
 ## Pedido real de acesso
 
@@ -22,6 +22,6 @@ Após merge/deploy autorizado, abrir https://passportradio.online/privado/blog-a
 
 ## Testes
 
-6 testes focados do handler: sessão restaurada carrega conteúdo integral dos três tipos; não administrador barrado; OTP não cria usuário e preserva retorno; OTP consulta autorização antes da fila; SDK/rede mostram erro; MFA permanece exigido. Respostas simuladas, nenhum material real criado/aprovado/rejeitado. HTTP real admin-list: anônimo 401, token inválido 403. Banco real: Bee Gees e QUALQUER COISA preservadas como recebida. Auth signup, Resend, cron, notificações, formulário público, players e rádios não foram alterados ou reexecutados.
+7 testes focados do handler: sessão restaurada carrega conteúdo integral dos três tipos; não administrador barrado; OTP não cria usuário e preserva retorno; OTP consulta autorização antes da fila; SDK/rede mostram erro; MFA permanece exigido. Respostas simuladas, nenhum material real criado/aprovado/rejeitado. HTTP real admin-list: anônimo 401, token inválido 403. Banco real: Bee Gees e QUALQUER COISA preservadas como recebida. Auth signup, Resend, cron, notificações, formulário público, players e rádios não foram alterados ou reexecutados.
 
 Referência: https://supabase.com/docs/guides/auth/auth-email-passwordless
