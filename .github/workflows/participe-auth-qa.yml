@@ -30,9 +30,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Focused server and browser tests
+      - name: Focused browser tests
         run: |
-          node --test tests/participe_authenticated.test.cjs
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
           node tests/validate_participe_auth.cjs

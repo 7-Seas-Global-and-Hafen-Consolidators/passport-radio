@@ -177,12 +177,12 @@
     recoveryMode=false;cleanAuthUrl();recoveryForm.reset();const {data}=await client.auth.getSession();await renderSession(data.session);show('Senha atualizada com sucesso. Volte a Participe para enviar seu material.',false,true);
   });
 
-  $('logout-button').addEventListener('click',async()=>{await client.auth.signOut();setView('login');show('Você saiu da sua conta.',false,true);});
+  $('logout-button').addEventListener('click',async()=>{const {error}=await client.auth.signOut();if(error){show('Não foi possível encerrar a sessão. Tente novamente.',true);return;}setView('login');show('Você saiu da sua conta.',false,true);});
   client.auth.onAuthStateChange((event,session)=>{if(event==='PASSWORD_RECOVERY') recoveryMode=true;setTimeout(()=>renderSession(session),0);});
 
   client.auth.getSession().then(async({data})=>{
     if(data.session && welcomeReturn && !recoveryMode){goAfterAuth();return;}
     await renderSession(data.session);
-    if(data.session && !recoveryMode && (location.hash || /[?&](code|access_token|refresh_token|token_type|expires_in|expires_at|type)=/.test(location.search))) cleanAuthUrl();
+    if(data.session && !recoveryMode && (/access_token=|refresh_token=|type=recovery/.test(location.hash) || /[?&](code|access_token|refresh_token|token_type|expires_in|expires_at|type)=/.test(location.search))) cleanAuthUrl();
   });
 })();
