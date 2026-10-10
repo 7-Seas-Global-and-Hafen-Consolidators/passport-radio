@@ -48,6 +48,11 @@
    const href='/css/passport-blog-shell.css?v=20261009-outlet';if(!document.querySelector('link[data-passport-outlet-style]')){const css=document.createElement('link');css.rel='stylesheet';css.href=href;css.dataset.passportOutletStyle='1';document.head.append(css)}
    window.PassportBlogShell.decorate(outlet.querySelector('main'));
   }
+  // Generated articles supply content only; reuse the outer App and its transport.
+  if(main.hasAttribute('data-passport-automatic-article')){
+   if(!window.PassportAutomaticEditorial)await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/js/passport-automatic-editorial.js';script.onload=resolve;script.onerror=reject;document.head.append(script)});
+   if(token!==serial)return;
+  }
   window.dispatchEvent(new CustomEvent('passport:editorial-rendered',{detail:{url:url.href}}));
   // Only page-content helpers run here. No source module, audio host or chrome scripts.
   for(const name of ['passport-blog-search','passport-blog-cover','passport-news','passport-archive']){
@@ -91,3 +96,4 @@
  if(window.PassportInitialEditorial){const initial=window.PassportInitialEditorial;delete window.PassportInitialEditorial;cache.set(originalURL,initial);render(initial,new URL(originalURL),++serial).catch(e=>console.error(e));}
  else if(home(new URL(originalURL)))cache.set(originalURL,document.cloneNode(true));
 })();
+

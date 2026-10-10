@@ -1,0 +1,37 @@
+name: Native editorial browser
+on:
+  pull_request:
+    paths:
+      - 'js/passport-automatic-editorial.js'
+      - 'js/passport-persist-nav.js'
+      - 'css/passport-automatic-editorial.css'
+      - 'editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html'
+      - 'tests/automatic_editorial_browser.cjs'
+      - 'tests/fixtures/automatic-editorial-preservation.json'
+      - '.github/workflows/editorial-native-browser.yml'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependency
+        run: npm install --prefix "$RUNNER_TEMP/editorial-browser" --no-save --package-lock=false playwright@1.62.1
+      - name: Real transport and native presentation
+        env:
+          EDITORIAL_PLAYWRIGHT: ${{ runner.temp }}/editorial-browser
+        run: |
+          export EDITORIAL_CHROME="$(command -v google-chrome)"
+          node tests/automatic_editorial_browser.cjs
+      - name: Save browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-editorial-browser-evidence
+          path: test-results/
+          retention-days: 14
