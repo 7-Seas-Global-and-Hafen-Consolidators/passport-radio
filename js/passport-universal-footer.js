@@ -27,6 +27,9 @@
   function mount() {
     if (!document.body) return;
     const footers = [...document.querySelectorAll('footer')].filter(node=>!node.closest('article,.player,.pe-prose,.mn-prose'));
+    if (!footers.length && document.querySelector('main.pp-product-page')) {
+      const footer=document.createElement('footer');document.body.append(footer);footers.push(footer);
+    }
     if (!footers.length) return; // Widget/player-only documents do not gain an institutional shell.
     const host = footers.find(node=>node.hasAttribute('data-passport-universal-footer')) || footers[0];
     if (!document.querySelector('link[data-passport-universal-footer-style]')) {
