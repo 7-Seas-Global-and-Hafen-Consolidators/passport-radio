@@ -306,19 +306,14 @@ jobs:
           python tests/test_automatic_editorial.py
 
 
-      - name: Validate authenticated Participe queue
+      - name: Validate retired Participe endpoints and direct contacts
         run: |
           node --check js/passport-auth.js
           node --check js/passport-blog-submit.js
           node --check supabase/functions/blog-aberto/logic.js
-          node --test tests/participe_authenticated.test.cjs
+          node --test tests/participe_direct_contacts.test.cjs
 
       - name: Validate Participe notification delivery
         run: |
           node --check supabase/functions/participe-notifications/logic.js
           node --test tests/participe_notification_delivery.test.cjs tests/participe_receipt_types.test.cjs
-
-      - name: Validate editorial administrative access
-        run: |
-          node --check js/passport-blog-admin.js
-          node --test tests/editorial_admin_access.test.cjs

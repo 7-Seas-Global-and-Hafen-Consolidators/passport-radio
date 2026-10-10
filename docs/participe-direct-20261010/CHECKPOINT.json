@@ -1,0 +1,18 @@
+{
+  "decision": "Retire participation form and panel; receive by email and official social channels",
+  "base": "d3353ff782741a8e3566f461c6de639489820a1f",
+  "supersedes": "6a4265d827aa2a4b958a6ed25089ff10aaefc12c",
+  "production": {
+    "function": "blog-aberto",
+    "version": 7,
+    "submit_http": 410,
+    "admin_list_http": 410,
+    "notification_cron": "inactive"
+  },
+  "preservation": "No users, submissions, logs, notifications, secrets or media deleted. Bee Gees and QUALQUER COISA remain stored. UI pending merge.",
+  "contacts": {
+    "email": "passportradio.online@gmail.com",
+    "whatsapp": "https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k",
+    "telegram": "https://t.me/+FKto2N185cs4OGU0"
+  }
+}
