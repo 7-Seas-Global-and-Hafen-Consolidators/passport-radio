@@ -5,12 +5,12 @@
     "name": "K-Pop Hits™",
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "seoulfm",
-    "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8",
+    "stream": "https://api.seoul.fm/v3/streams/public/manifest.m3u8",
     "format": "HLS AAC-LC",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-seoulfm",
       "name": "K-Pop Hits™",
@@ -35,7 +35,10 @@
       "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios"
     ],
     "diagnosis": "Native HLS reports maybe; media error code 4 / NotSupportedError. init MP4 and m4s requests blocked by Chromium ORB. Both documented direct bitrate and public CDN option failed. No security overrides or engine modifications.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true,
+    "originalManifest": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8"
   },
   {
     "number": 2,
@@ -48,7 +51,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-new",
       "name": "K-Pop Now™",
@@ -67,7 +70,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 3,
@@ -80,7 +85,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-girlpower",
       "name": "K-Pop Girls™",
@@ -99,7 +104,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 4,
@@ -112,7 +119,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-boypower",
       "name": "K-Pop Boys™",
@@ -131,7 +138,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 5,
@@ -144,7 +153,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-classics",
       "name": "K-Pop Classics™",
@@ -163,7 +172,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 6,
@@ -176,7 +187,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-1990s",
       "name": "K-Pop 90s™",
@@ -195,7 +206,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 7,
@@ -208,7 +221,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-2000s",
       "name": "K-Pop 2000s™",
@@ -227,7 +240,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 8,
@@ -240,7 +255,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-2010s",
       "name": "K-Pop 2010s™",
@@ -259,7 +274,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 9,
@@ -272,7 +289,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-2020s",
       "name": "K-Pop 2020s™",
@@ -291,7 +308,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 10,
@@ -304,7 +323,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-dance",
       "name": "K-Dance™",
@@ -323,7 +342,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 11,
@@ -336,7 +357,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-krock",
       "name": "K-Rock™",
@@ -355,7 +376,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 12,
@@ -368,7 +391,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-indie",
       "name": "K-Indie™",
@@ -387,7 +410,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 13,
@@ -400,7 +425,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-hiphop",
       "name": "K-Hip-Hop™",
@@ -419,7 +444,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 14,
@@ -432,7 +459,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-rnb",
       "name": "K-R&B™",
@@ -451,7 +478,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 15,
@@ -464,7 +493,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-ballad",
       "name": "K-Ballads™",
@@ -483,7 +512,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 16,
@@ -496,7 +527,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-chill",
       "name": "K-Chill™",
@@ -515,7 +546,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 17,
@@ -528,7 +561,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-lofi",
       "name": "K-LoFi™",
@@ -547,7 +580,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 18,
@@ -560,7 +595,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-citypop",
       "name": "K-City Pop™",
@@ -579,7 +614,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 19,
@@ -592,7 +629,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-ost",
       "name": "K-Drama OST™",
@@ -611,7 +648,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 20,
@@ -624,7 +663,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-divas",
       "name": "K-Divas™",
@@ -643,7 +682,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 21,
@@ -656,7 +697,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-kings",
       "name": "K-Kings™",
@@ -675,7 +716,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 22,
@@ -688,7 +731,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-japan",
       "name": "K-Pop Japan™",
@@ -707,7 +750,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 23,
@@ -720,7 +765,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VALIDATING",
     "validation": {
       "id": "passport-korean-holidays",
       "name": "K-Holidays™",
@@ -739,7 +784,9 @@
       ]
     },
     "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": false
+    "integrated": true,
+    "previousStatus": "BLOCKED",
+    "hlsJs": true
   },
   {
     "number": 24,
