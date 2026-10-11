@@ -1,0 +1,393 @@
+{
+  "application_commit": "4f97f09afdf7857d11655bf11f0255584118ad44",
+  "note": "All application files unchanged across both runs; tests only changed. First run: 9 decoded channels, 2 startup timeouts. Focused fresh-page recheck: both remaining decoded, no application fix or URL replacement. 206 is successful playlist content; initial diagnostic incorrectly only counted 200.",
+  "checks": [
+    {
+      "name": "menu, no autoplay, original first and one canonical footer",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "Home",
+          "path": "/"
+        },
+        {
+          "name": "Notícias",
+          "path": "/noticias.html"
+        },
+        {
+          "name": "Agenda",
+          "path": "/agenda.html"
+        },
+        {
+          "name": "Arquivo",
+          "path": "/editorial.html"
+        },
+        {
+          "name": "Bandas",
+          "path": "/bandas/index.html"
+        },
+        {
+          "name": "Blog",
+          "path": "/blog.html"
+        },
+        {
+          "name": "Jogos",
+          "path": "/jogos.html"
+        },
+        {
+          "name": "Clips TV",
+          "path": "/clips-tv.html"
+        },
+        {
+          "name": "Vídeos",
+          "path": "/videos.html"
+        },
+        {
+          "name": "A–Z",
+          "path": "/blog/arquivo/letras.html"
+        },
+        {
+          "name": "Podcast & Broadcast",
+          "path": "/radio.html"
+        },
+        {
+          "name": "Loja",
+          "path": "/loja.html"
+        },
+        {
+          "name": "Participe",
+          "path": "/divulgar-bandas.html"
+        },
+        {
+          "name": "Promoções",
+          "path": "/promocoes.html"
+        },
+        {
+          "name": "Anuncie",
+          "path": "/anuncie.html"
+        },
+        {
+          "name": "Apoie",
+          "path": "/doe.html"
+        }
+      ]
+    },
+    {
+      "name": "responsive widths, payments and readable cards",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 320,
+          "document": 320,
+          "video": 288,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 360,
+          "document": 360,
+          "video": 328,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 375,
+          "document": 375,
+          "video": 343,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 390,
+          "document": 390,
+          "video": 358,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 414,
+          "document": 414,
+          "video": 382,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 480,
+          "document": 480,
+          "video": 448,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 768,
+          "document": 768,
+          "video": 736,
+          "cards": true,
+          "names": true
+        },
+        {
+          "width": 1280,
+          "document": 1280,
+          "video": 1088,
+          "cards": true,
+          "names": true
+        }
+      ]
+    },
+    {
+      "name": "failure is visible, bounded and does not report live",
+      "status": "PASS"
+    },
+    {
+      "name": "Home unchanged inventory, menu and new TV destination",
+      "status": "PASS",
+      "detail": {
+        "cards": 162
+      }
+    },
+    {
+      "name": "real radio → TV → radio and single TV switching",
+      "status": "PASS",
+      "detail": {
+        "oneVideo": true,
+        "radioYielded": true,
+        "tvYielded": true
+      }
+    },
+    {
+      "name": "videoteca preserved and no duplicated TV; leave and return without autoplay",
+      "status": "PASS",
+      "detail": {
+        "videoCards": 24
+      }
+    }
+  ],
+  "channels": [
+    {
+      "id": "passport-clips-original",
+      "name": "Passport Clips TV™",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.690444,
+        "width": 640,
+        "height": 480,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 8301,
+        "videoBytes": 121535
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-2",
+      "name": "80s Flashback",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.714676,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 29689,
+        "videoBytes": 152601
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-3",
+      "name": "90s Throwback",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.7188,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 29544,
+        "videoBytes": 151776
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-4",
+      "name": "Rock On",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.719856,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 29304,
+        "videoBytes": 160084
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-5",
+      "name": "Just Chill",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.724,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 30100,
+        "videoBytes": 190582
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-6",
+      "name": "Siempre Latino",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.716101,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 26643,
+        "videoBytes": 143338
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-7",
+      "name": "Hits",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.730322,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 24727,
+        "videoBytes": 150984
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-8",
+      "name": "Nuevo Latino",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.729501,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 30270,
+        "videoBytes": 183633
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-9",
+      "name": "Classic Country",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.721432,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 24104,
+        "videoBytes": 143147
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-10",
+      "name": "Celebrates",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.729607,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 28590,
+        "videoBytes": 159343
+      },
+      "pauseResume": true
+    },
+    {
+      "id": "passport-clips-11",
+      "name": "Hits UK",
+      "status": "PLAYING",
+      "playlist": true,
+      "media": {
+        "time": 1.951664,
+        "width": 640,
+        "height": 360,
+        "paused": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "ready": 4,
+        "audioBytes": 15733,
+        "videoBytes": 161820
+      },
+      "pauseResume": true
+    }
+  ],
+  "runs": [
+    {
+      "id": 38114697086,
+      "sha": "4f97f09afdf7857d11655bf11f0255584118ad44",
+      "artifact_id": 11693166930
+    },
+    {
+      "id": 38115034868,
+      "sha": "a1243c5c7453fad81efb6a2571e39446114f90f7",
+      "artifact_id": 11692778142
+    }
+  ],
+  "unmodified_video_engine_console_errors": [
+    "this.api.isExternalMethodAvailable is not a function",
+    "this.api.isExternalMethodAvailable is not a function"
+  ],
+  "protection": "The existing video catalogue engine emits a pre-existing YouTube API error; outside TV code and not modified."
+}

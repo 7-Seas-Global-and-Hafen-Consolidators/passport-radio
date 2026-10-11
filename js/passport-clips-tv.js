@@ -1,51 +1,113 @@
 /* One controllable TV peer of the existing Passport Bus. No radio engine changes. */
 (() => {
   'use strict';
-  const SOURCE = 'https://video04.logicahost.com.br/mastervision/mastervision/playlist.m3u8';
+  const section = document.getElementById('passport-clips-tv');
+  if (!section) return;
   const HLS_LIBRARY = 'https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js';
-  let owned = false, bus, hls, pending, generation = 0, gesture = 0;
-  const section = document.createElement('section'); section.id = 'passport-clips-tv'; section.setAttribute('aria-labelledby','passport-clips-title');
-  const heading = document.createElement('h2'); heading.id = 'passport-clips-title'; heading.textContent = 'Passport Clips TV™';
-  const intro = document.createElement('p'); intro.textContent = 'Primeiro a história. Depois a música. Sua primeira TV da Passport.';
-  const video = document.createElement('video'); video.controls = true; video.playsInline = true; video.preload = 'none'; video.crossOrigin = 'anonymous'; video.setAttribute('aria-label','Passport Clips TV™ — transmissão ao vivo');
-  const start = document.createElement('button'); start.type = 'button'; start.textContent = 'ASSISTIR À PASSPORT CLIPS TV™';
-  const status = document.createElement('p'); status.setAttribute('role','status'); status.setAttribute('aria-live','polite'); status.textContent = 'A reprodução começa somente quando você escolher assistir.';
-  section.append(heading,intro,video,start,status);
-  const main = document.querySelector('main'); if (!main) return; main.prepend(section);
-  const peer = {PassportBus:{enable(){owned=true;},silence(){owned=false;generation++;video.pause();}}};
+  const video = document.getElementById('passport-clips-video');
+  const heading = document.getElementById('passport-clips-title');
+  const start = document.getElementById('passport-clips-start');
+  const status = document.getElementById('passport-clips-status');
+  const grid = document.getElementById('passport-clips-channels');
+  video.crossOrigin = 'anonymous';
+  let channels = [], selected, owned = false, bus, hls, generation = 0, gesture = 0;
+  let libraryPromise, preparing, cancelPrepare, loadTimer;
+  const unavailable = () => {
+    status.textContent = 'Este canal está indisponível neste momento. Tente novamente ou escolha outra TV.';
+    start.textContent = 'TENTAR NOVAMENTE';
+  };
+  const peer = {PassportBus:{
+    enable(){owned=true;},
+    silence(){owned=false;release();}
+  }};
   function register(){if(window.PassportBus && bus!==window.PassportBus){bus=window.PassportBus;bus.register(peer);}}
   function claim(){register();if(!bus)throw Error('bus');window.PassportContinuity?.pause();bus.claim(peer);owned=true;}
+  function release(){
+    generation++;cancelPrepare?.();cancelPrepare=null;clearTimeout(loadTimer);
+    video.pause();hls?.destroy();hls=null;preparing=null;
+    video.removeAttribute('src');video.load();start.disabled=!selected;
+  }
   function library(){
     if(window.Hls)return Promise.resolve(window.Hls);
-    return new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=HLS_LIBRARY;script.crossOrigin='anonymous';script.onload=()=>window.Hls?resolve(window.Hls):reject(Error('library'));script.onerror=()=>reject(Error('library'));document.head.append(script);});
+    if(libraryPromise)return libraryPromise;
+    libraryPromise=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');script.src=HLS_LIBRARY;script.crossOrigin='anonymous';
+      const timeout=setTimeout(()=>{script.remove();reject(Error('library'));},15000);
+      script.onload=()=>{clearTimeout(timeout);window.Hls?resolve(window.Hls):reject(Error('library'));};
+      script.onerror=()=>{clearTimeout(timeout);script.remove();reject(Error('library'));};document.head.append(script);
+    }).catch(error=>{libraryPromise=null;throw error;});return libraryPromise;
   }
-  function prepare(){
-    if(video.getAttribute('src') || hls)return Promise.resolve();
-    if(pending)return pending;
-    pending=(async()=>{
-      if(video.canPlayType('application/vnd.apple.mpegurl')){video.src=SOURCE;return;}
-      const Hls=await library();if(!Hls.isSupported())throw Error('unsupported');
-      await new Promise((resolve,reject)=>{const instance=new Hls({enableWorker:true});hls=instance;
-        instance.on(Hls.Events.MEDIA_ATTACHED,()=>instance.loadSource(SOURCE));
-        instance.on(Hls.Events.MANIFEST_PARSED,resolve);
-        instance.on(Hls.Events.ERROR,(_event,data)=>{if(data.fatal){instance.destroy();if(hls===instance)hls=null;reject(Error('signal'));video.pause();status.textContent='Não foi possível reproduzir a TV neste navegador. Tente novamente.';}});
+  async function prepare(ticket){
+    if(video.getAttribute('src') || hls)return;
+    if(preparing)return preparing;
+    const source=selected.stream;
+    preparing=(async()=>{
+      if(video.canPlayType('application/vnd.apple.mpegurl')){
+        if(ticket!==generation)throw Error('cancelled');video.src=source;return;
+      }
+      const Hls=await library();if(ticket!==generation)throw Error('cancelled');
+      if(!Hls.isSupported())throw Error('unsupported');
+      await new Promise((resolve,reject)=>{
+        const instance=new Hls({enableWorker:true});hls=instance;
+        const done=error=>{clearTimeout(timeout);if(cancelPrepare===cancel)cancelPrepare=null;error?reject(error):resolve();};
+        const cancel=()=>done(Error('cancelled'));cancelPrepare=cancel;
+        const timeout=setTimeout(()=>done(Error('timeout')),20000);
+        instance.on(Hls.Events.MEDIA_ATTACHED,()=>instance.loadSource(source));
+        instance.on(Hls.Events.MANIFEST_PARSED,()=>done());
+        instance.on(Hls.Events.ERROR,(_event,data)=>{
+          if(!data.fatal || hls!==instance)return;
+          done(Error('signal'));instance.destroy();hls=null;video.pause();
+          if(ticket===generation){owned=false;start.disabled=false;unavailable();}
+        });
         instance.attachMedia(video);
       });
-    })().finally(()=>{pending=null;});return pending;
+    })();
+    try{await preparing;}finally{if(ticket===generation)preparing=null;}
   }
-  start.addEventListener('click',async event=>{
-    if(!event.isTrusted || start.disabled)return;
+  async function play(){
     gesture=Date.now();const ticket=++generation;start.disabled=true;
-    try{claim();status.textContent='Conectando a Passport Clips TV™…';await prepare();if(ticket!==generation||!owned)return;await video.play();}
-    catch(_){video.pause();status.textContent='Não foi possível reproduzir a TV neste navegador. Tente novamente.';}
-    finally{start.disabled=false;}
-  });
+    try{
+      claim();status.textContent='Conectando '+selected.name+'…';
+      loadTimer=setTimeout(()=>{if(ticket!==generation)return;release();owned=false;unavailable();},25000);
+      await prepare(ticket);if(ticket!==generation||!owned)return;await video.play();
+    }catch(_){if(ticket===generation){release();owned=false;unavailable();}}
+    finally{if(ticket===generation)start.disabled=false;}
+  }
+  function choose(channel,playNow=false){
+    if(selected?.id!==channel.id){release();owned=false;selected=channel;}
+    heading.textContent=channel.name;video.setAttribute('aria-label',channel.name+' — transmissão ao vivo');
+    start.textContent='ASSISTIR À '+channel.name.toLocaleUpperCase('pt-BR');start.disabled=false;
+    for(const button of grid.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.channelId===channel.id));
+    status.textContent='A reprodução começa somente quando você escolher assistir.';
+    if(playNow)play();
+  }
+  start.addEventListener('click',event=>{if(event.isTrusted && selected && !start.disabled)play();});
   for(const event of ['pointerdown','keydown'])video.addEventListener(event,e=>{if(e.isTrusted)gesture=Date.now();});
   video.addEventListener('play',()=>{if(!owned){if(Date.now()-gesture>2000){video.pause();return;}try{claim();}catch(_){video.pause();}}});
-  video.addEventListener('playing',()=>{if(!owned){video.pause();return;}status.textContent='Passport Clips TV™ · AO VIVO';start.textContent='RETOMAR PASSPORT CLIPS TV™';});
-  video.addEventListener('pause',()=>{if(video.currentTime>0)status.textContent='Passport Clips TV™ · pausada';});
-  video.addEventListener('error',()=>{status.textContent='Não foi possível reproduzir a TV neste navegador. Tente novamente.';});
+  video.addEventListener('playing',()=>{
+    if(!owned){video.pause();return;}clearTimeout(loadTimer);start.disabled=false;
+    status.textContent=selected.name+(selected.live?' · AO VIVO':'');start.textContent='RETOMAR '+selected.name.toLocaleUpperCase('pt-BR');
+  });
+  video.addEventListener('waiting',()=>{
+    if(!owned)return;status.textContent='Reconectando '+selected.name+'…';clearTimeout(loadTimer);
+    const ticket=generation;loadTimer=setTimeout(()=>{if(ticket===generation){release();owned=false;unavailable();}},25000);
+  });
+  video.addEventListener('pause',()=>{clearTimeout(loadTimer);if(video.currentTime>0 && selected && !/indisponível/.test(status.textContent))status.textContent=selected.name+' · pausada';});
+  video.addEventListener('error',()=>{if(selected && video.getAttribute('src')){release();owned=false;unavailable();}});
   window.addEventListener('passport:audio-state',event=>{register();if(event.detail?.playing&&owned)peer.PassportBus.silence();});
-  window.addEventListener('pagehide',()=>{peer.PassportBus.silence();hls?.destroy();bus?.unregister(peer);});
+  window.addEventListener('pagehide',()=>{owned=false;release();bus?.unregister(peer);});
+  window.addEventListener('pageshow',()=>{register();bus?.register(peer);});
   register();
+  fetch('/data/passport-clips-channels.json').then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{
+    channels=data.channels;
+    for(const channel of channels){
+      const button=document.createElement('button');button.type='button';button.className='clips-channel-card';button.dataset.channelId=channel.id;
+      button.setAttribute('aria-pressed','false');
+      const type=document.createElement('span');type.className='clips-channel-type';type.textContent='PASSPORT RADIO · TV';
+      const name=document.createElement('strong');name.textContent=channel.name;
+      const action=document.createElement('span');action.className='clips-channel-action';action.textContent='ASSISTIR →';
+      button.append(type,name,action);button.addEventListener('click',event=>{if(event.isTrusted)choose(channel,true);});grid.append(button);
+    }
+    choose(channels[0]);
+  }).catch(()=>{status.textContent='Não foi possível carregar os canais. Recarregue a página para tentar novamente.';});
 })();

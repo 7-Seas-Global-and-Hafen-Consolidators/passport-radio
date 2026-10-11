@@ -1,4 +1,4 @@
-/* Adds only Jogos and Vídeos destinations to existing principal navigation. */
+/* Adds Jogos, Clips TV and Vídeos destinations to existing principal navigation. */
 (() => {
   const install = () => {
     document.querySelectorAll('nav').forEach(nav => {
@@ -9,7 +9,7 @@
       const store = links.find(a => path(a) === '/loja.html');
       if (!blog || !store || !links.some(a => ['/','/index.html','/noticias.html'].includes(path(a)))) return;
       let anchor = links.find(a => path(a) === '/jogos.html') || blog;
-      for (const [href,label] of [['/jogos.html','Jogos'],['/videos.html','Vídeos']]) {
+      for (const [href,label] of [['/jogos.html','Jogos'],['/clips-tv.html','Clips TV'],['/videos.html','Vídeos']]) {
         const existing = [...nav.querySelectorAll('a[href]')].find(a => path(a) === href);
         if (existing) { anchor = existing; continue; }
         const a = document.createElement('a'); a.href = href; a.textContent = label;

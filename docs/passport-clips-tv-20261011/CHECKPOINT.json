@@ -1,0 +1,39 @@
+{
+  "state": "VALIDATED_READY_FOR_REVIEW",
+  "base": "68694fa7e8b59d0aa502523ff7a75d0472a35c1d",
+  "branch": "feat/passport-clips-tv-hub-20261011",
+  "route": "/clips-tv.html",
+  "channels": 11,
+  "merge": false,
+  "pr": 544,
+  "pr_url": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/544",
+  "implemented_commit": "4f97f09afdf7857d11655bf11f0255584118ad44",
+  "validated_commit": "a1243c5c7453fad81efb6a2571e39446114f90f7",
+  "channels_played": 11,
+  "channels_not_confirmed": 0,
+  "focused_tests": "3 PASS",
+  "browser_checks": "6 PASS; all 11 channels decoded video/audio and advanced frames, pause/resume confirmed across two runs",
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    414,
+    480,
+    768,
+    1280
+  ],
+  "interlock": "real radio → TV → radio PASS; one video element, previous HLS destroyed on channel switch",
+  "footer": "one canonical footer; 6 card brands plus PIX, Boleto, card, CAIXA and Mercado Pago; assets decoded, links preserved",
+  "radio_inventory": "151 radios + 11 existing project selectors unchanged",
+  "preview": "https://passport-clips-tv-preview-20261011.mr-nomad.chatgpt.site/clips-tv.html",
+  "evidence_runs": [
+    38114697086,
+    38115034868
+  ],
+  "pending": [
+    "Owner review and merge; Passport production remains unchanged"
+  ],
+  "updated_at": "2026-10-11T05:34:00Z",
+  "branding": "No provider names or logos in authored cards/controls/messages. Watermarks already embedded in incoming video pixels are not edited or removed."
+}

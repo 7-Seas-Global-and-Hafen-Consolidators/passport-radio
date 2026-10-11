@@ -67,10 +67,12 @@ async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='radio'&&!name.s
   await page.locator('.pb-lead img').waitFor();await page.waitForFunction(()=>document.querySelector('.pb-lead img').complete);assert.ok(await page.locator('.pb-lead img').evaluate(a=>a.naturalWidth>0));
   return {lead:await page.locator('.pb-lead h1').textContent(),newImages:0};
  });
- await page.goto('http://127.0.0.1:4173/videos.html#passport-clips-tv');await page.locator('#passport-clips-tv').waitFor();
+ await page.goto('http://127.0.0.1:4173/videos.html');await page.waitForSelector('#videos-grid .videos-card',{timeout:30000});
+ const preservedVideoCards=await page.locator('#videos-grid .videos-card').count();
+ await page.goto('http://127.0.0.1:4173/clips-tv.html');await page.locator('#passport-clips-tv').waitFor();
  await check('TV no autoplay; original video catalogue preserved',async()=>{
   assert.equal(await page.locator('#passport-clips-tv video').evaluate(v=>v.paused),true);assert.equal(await page.locator('#passport-clips-tv video').getAttribute('src'),null);
-  await page.waitForSelector('#videos-grid .videos-card',{timeout:30000});return {cards:await page.locator('#videos-grid .videos-card').count(),tv:1};
+  return {cards:preservedVideoCards,tv:1};
  });
  await check('real TV HLS playback, radio/TV mutex, volume, pause and fullscreen capability',async()=>{
   await page.getByRole('button',{name:'ASSISTIR À PASSPORT CLIPS TV™',exact:true}).click();
