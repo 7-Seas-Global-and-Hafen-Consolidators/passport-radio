@@ -106687,6 +106687,47 @@
       },
       "embedAllowed": true,
       "thumbnail": "https://img.youtube.com/vi/j0lufswzkCw/hqdefault.jpg"
+    },
+    {
+      "id": "XLrsurnMjKc",
+      "artist": "The Mission",
+      "showDate": "2023",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {},
+      "title": "Live in Paris · Show completo",
+      "thumbnail": "https://img.youtube.com/vi/XLrsurnMjKc/hqdefault.jpg"
+    },
+    {
+      "id": "3KW4sPXJh5I",
+      "artist": "BTS",
+      "showDate": "2026",
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {},
+      "title": "iHeartRadio Music Festival · Show completo",
+      "thumbnail": "https://img.youtube.com/vi/3KW4sPXJh5I/hqdefault.jpg"
+    },
+    {
+      "id": "GqUgSWT-5CA",
+      "artist": "a-ha",
+      "showDate": "2016-03-24",
+      "type": "full-concert",
+      "collections": [
+        "sessions-archive"
+      ],
+      "embedAllowed": false,
+      "collectionOrder": {
+        "sessions-archive": 4395
+      },
+      "title": "BBC Radio 2 In Concert · Show completo",
+      "thumbnail": "https://img.youtube.com/vi/GqUgSWT-5CA/hqdefault.jpg"
     }
   ]
 }

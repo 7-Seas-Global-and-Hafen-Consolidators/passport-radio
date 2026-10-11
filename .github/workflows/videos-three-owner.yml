@@ -1,0 +1,52 @@
+name: Three owner videos — focused verification
+on:
+  pull_request:
+    paths:
+      - 'data/passport-videos*.json'
+      - 'tests/videos_three_owner.cjs'
+      - '.github/workflows/videos-three-owner.yml'
+permissions:
+  contents: read
+jobs:
+  videos:
+    if: github.head_ref == 'feat/videos-three-owner-20261011'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /videos.html
+            /js/
+            /css/
+            /assets/*.js
+            /assets/*.css
+            /images/payments/
+            /fonts/
+            /data/
+            /tests/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Existing catalogue integrity
+        run: python3 -m unittest discover -s tests -p test_videos_catalog.py
+      - name: Browser tooling
+        run: |
+          mkdir /tmp/passport-browser
+          cd /tmp/passport-browser
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chrome
+      - name: Single focused browser round
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
+          NODE_PATH=/tmp/passport-browser/node_modules node tests/videos_three_owner.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: videos-three-evidence
+          path: reports/videos-three/
