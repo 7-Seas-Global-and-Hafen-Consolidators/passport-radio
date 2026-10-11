@@ -17,6 +17,8 @@ permissions:
   contents: read
 jobs:
   browser:
+    # This operation has its own focused preservation, TV and interlock workflow.
+    if: github.head_ref != 'feat/passport-clips-tv-hub-20261011'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:

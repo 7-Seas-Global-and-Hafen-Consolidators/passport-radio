@@ -35,3 +35,5 @@ Gothic TV, Unplugged TV e candidatos reprovados não incluídos. Nenhuma aquisi�
 Limites antigos de continuidade entre carregamentos completos são preservados. A saída da TV libera seus recursos; a volta não inicia TV automaticamente. Apenas as rotas já suportadas pelo mecanismo de áudio possuem continuidade real sem reinício.
 
 Resultados finais, PR e preview serão persistidos no CHECKPOINT.json após o ensaio hospedado.
+
+O ensaio antigo Passport 40 foi ajustado exclusivamente ao novo endereço da TV (videoteca continua em Vídeos). Nesta branch ele cede ao workflow focado para evitar repetir auditorias já aprovadas; nas demais branches conserva sua validação completa.
