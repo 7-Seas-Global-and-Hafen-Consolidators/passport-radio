@@ -1,14 +1,14 @@
 {
   "branch": "feat/passport-kpop-26-20261011",
   "base": "b10875a900625eb1bdfb6418233f11f4e6f06d93",
-  "status": "KOREAN_HOSTED_CDN_DENIAL",
+  "status": "KOREAN_INTEGRATION_REOPENED",
   "discovered": 26,
   "integratedConfirmed": 3,
   "pending": 23,
   "radioBefore": 151,
-  "radioAfter": 154,
+  "radioAfter": 177,
   "programSelectors": 11,
-  "publicCards": 165,
+  "publicCards": 188,
   "validatedAppCommit": "d6499353fc00865c674eeee877f094524f0b3862",
   "playbackRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124032423",
   "layoutRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124284614",
@@ -21,7 +21,7 @@
     38123414803,
     38123620699
   ],
-  "nextPendingOperation": "Resolve or obtain authorization for the BunnyCDN HTTP 403 affecting the hosted browser. Cause such as IP/referrer/token policy is not established. Do not spoof headers, proxy around denials, reacquire channels or replay the three confirmed radios. Apply prepared per-Korean HLS.js patch only after actual decoded browser audio is confirmed. Original source is not declared offline.",
+  "nextPendingOperation": "Compare original source and Passport in the same browser, verify each of the 23 canonical streams with scoped MSE integration. No old acquisitions or old radio replay.",
   "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/545",
   "merge": false,
   "referenceCommit": "c373388e196afd7b302e565b45697be5f7761f2a",
@@ -30,5 +30,18 @@
   "koreanMseRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38145780818",
   "koreanSingleDiagnosticRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38146843694",
   "preparedPatch": "docs/passport-kpop-20261011/PREPARED_KOREAN_COMPATIBILITY.patch",
-  "runtimeRestoredExactlyTo": "c373388e196afd7b302e565b45697be5f7761f2a"
+  "runtimeRestoredExactlyTo": null,
+  "koreanRegistered": 23,
+  "resumedFrom": "fa8900d15c79a6d4bdc1e00e6c7c3ae0a840aaf5",
+  "cloudOriginalBaseline": {
+    "page": "https://seoul.fm/pt/pop/",
+    "readyState": 4,
+    "paused": false,
+    "clockSamples": [
+      43.215217,
+      124.841117
+    ],
+    "status": "DECODED_AND_ADVANCING",
+    "environment": "cloud Chrome, direct user click; not Passport integration proof"
+  }
 }

@@ -37,6 +37,7 @@ jobs:
             /data/
             /docs/passport-kpop-20261011/
             /tests/passport_kpop*
+            /tests/passport_korean_compatibility.cjs
             /editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html
       - name: Reuse playback evidence when only documentation changed
         id: changed
@@ -63,7 +64,7 @@ jobs:
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
-          NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_kpop_browser.cjs
+          NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_korean_compatibility.cjs
       - name: Save real browser evidence
         if: always() && steps.changed.outputs.browser == 'true'
         uses: actions/upload-artifact@v4

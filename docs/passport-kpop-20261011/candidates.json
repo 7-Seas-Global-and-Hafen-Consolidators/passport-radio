@@ -5,12 +5,12 @@
     "name": "K-Pop Hits™",
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "seoulfm",
-    "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8",
+    "stream": "https://api.seoul.fm/v3/streams/public/manifest.m3u8",
     "format": "HLS AAC-LC",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-seoulfm",
       "name": "K-Pop Hits™",
@@ -36,7 +36,7 @@
       "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192&cdn=ios"
     ],
     "diagnosis": "Native HLS reports maybe; media error code 4 / NotSupportedError. init MP4 and m4s requests blocked by Chromium ORB. Both documented direct bitrate and public CDN option failed. No security overrides or engine modifications.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-seoulfm",
@@ -64,7 +64,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-new",
       "name": "K-Pop Now™",
@@ -83,7 +83,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-new",
@@ -110,7 +110,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-girlpower",
       "name": "K-Pop Girls™",
@@ -129,7 +129,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-girlpower",
@@ -156,7 +156,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-boypower",
       "name": "K-Pop Boys™",
@@ -175,7 +175,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-boypower",
@@ -202,7 +202,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-classics",
       "name": "K-Pop Classics™",
@@ -221,7 +221,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-classics",
@@ -248,7 +248,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-1990s",
       "name": "K-Pop 90s™",
@@ -267,7 +267,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-1990s",
@@ -294,7 +294,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-2000s",
       "name": "K-Pop 2000s™",
@@ -313,7 +313,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-2000s",
@@ -340,7 +340,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-2010s",
       "name": "K-Pop 2010s™",
@@ -359,7 +359,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-2010s",
@@ -386,7 +386,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-2020s",
       "name": "K-Pop 2020s™",
@@ -405,7 +405,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-2020s",
@@ -432,7 +432,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-dance",
       "name": "K-Dance™",
@@ -451,7 +451,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-dance",
@@ -478,7 +478,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-krock",
       "name": "K-Rock™",
@@ -497,7 +497,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-krock",
@@ -524,7 +524,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-indie",
       "name": "K-Indie™",
@@ -543,7 +543,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-indie",
@@ -570,7 +570,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-hiphop",
       "name": "K-Hip-Hop™",
@@ -589,7 +589,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-hiphop",
@@ -616,7 +616,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-rnb",
       "name": "K-R&B™",
@@ -635,7 +635,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-rnb",
@@ -662,7 +662,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-ballad",
       "name": "K-Ballads™",
@@ -681,7 +681,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-ballad",
@@ -708,7 +708,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-chill",
       "name": "K-Chill™",
@@ -727,7 +727,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-chill",
@@ -754,7 +754,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-lofi",
       "name": "K-LoFi™",
@@ -773,7 +773,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-lofi",
@@ -800,7 +800,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-citypop",
       "name": "K-City Pop™",
@@ -819,7 +819,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-citypop",
@@ -846,7 +846,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-ost",
       "name": "K-Drama OST™",
@@ -865,7 +865,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-ost",
@@ -892,7 +892,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-divas",
       "name": "K-Divas™",
@@ -911,7 +911,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-divas",
@@ -938,7 +938,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-kings",
       "name": "K-Kings™",
@@ -957,7 +957,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-kings",
@@ -984,7 +984,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-japan",
       "name": "K-Pop Japan™",
@@ -1003,7 +1003,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-japan",
@@ -1030,7 +1030,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "BLOCKED",
+    "status": "VERIFICATION_PENDING",
     "validation": {
       "id": "passport-korean-holidays",
       "name": "K-Holidays™",
@@ -1049,7 +1049,7 @@
       ]
     },
     "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
-    "integrated": false,
+    "integrated": true,
     "availability": "NOT_DECLARED_OFFLINE",
     "recoveryValidation": {
       "id": "passport-korean-holidays",
