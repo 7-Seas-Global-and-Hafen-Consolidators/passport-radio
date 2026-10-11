@@ -1,0 +1,87 @@
+{
+  "testedAt": "2026-10-11T08:18:16.446Z",
+  "channels": [],
+  "checks": [
+    {
+      "name": "all cards / approved order / no autoplay",
+      "status": "PASS",
+      "detail": {
+        "cards": 165,
+        "names": [
+          "DANCE, FLASH HOUSE & DISCOTECAS",
+          "ROCK, METAL & ALTERNATIVAS",
+          "POP, DÉCADAS & NOSTALGIA",
+          "SOUL, BLACK MUSIC & REGGAE",
+          "BRASIL: MPB, SAMBA & SERTANEJO",
+          "JAZZ, CLÁSSICA & AMBIENTES",
+          "AO VIVO, PROGRAMAS & ESPECIAIS",
+          "WORLD DIAL™",
+          "CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS"
+        ]
+      }
+    },
+    {
+      "name": "responsive exact existing card CSS at eight widths",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 320,
+          "document": 320,
+          "cards": 165,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 360,
+          "document": 360,
+          "cards": 165,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 375,
+          "document": 375,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 390,
+          "document": 390,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 414,
+          "document": 414,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 480,
+          "document": 480,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 768,
+          "document": 768,
+          "cards": 165,
+          "clipped": [],
+          "columns": 4
+        },
+        {
+          "width": 1280,
+          "document": 1280,
+          "cards": 165,
+          "clipped": [],
+          "columns": 8
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

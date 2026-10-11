@@ -1,0 +1,187 @@
+{
+  "testedAt": "2026-10-11T08:13:45.661Z",
+  "channels": [
+    {
+      "id": "passport-chinese-pop",
+      "name": "中国流行音乐™",
+      "status": "PLAYING",
+      "resumeMedia": {
+        "time": 1.825532,
+        "decoded": 17088
+      },
+      "media": {
+        "time": 1.510078,
+        "decoded": 14592
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        },
+        {
+          "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    },
+    {
+      "id": "passport-sertanejo-raiz",
+      "name": "Sertanejo Raiz™",
+      "status": "PLAYING",
+      "resumeMedia": {
+        "time": 1.843008,
+        "decoded": 34691
+      },
+      "media": {
+        "time": 1.532047,
+        "decoded": 29257
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://radio2.mazagafm.com:8443/live?type=.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        },
+        {
+          "url": "https://radio2.mazagafm.com:8443/live?type=.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    },
+    {
+      "id": "passport-sertanejo-fm",
+      "name": "Sertanejo FM™",
+      "status": "PLAYING",
+      "resumeMedia": {
+        "time": 1.831542,
+        "decoded": 51409
+      },
+      "media": {
+        "time": 1.52719,
+        "decoded": 43886
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live?source=website",
+          "status": 200,
+          "type": "audio/mpeg"
+        },
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live?source=website",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "all cards / approved order / no autoplay",
+      "status": "PASS",
+      "detail": {
+        "cards": 165,
+        "names": [
+          "DANCE, FLASH HOUSE & DISCOTECAS",
+          "ROCK, METAL & ALTERNATIVAS",
+          "POP, DÉCADAS & NOSTALGIA",
+          "SOUL, BLACK MUSIC & REGGAE",
+          "BRASIL: MPB, SAMBA & SERTANEJO",
+          "JAZZ, CLÁSSICA & AMBIENTES",
+          "AO VIVO, PROGRAMAS & ESPECIAIS",
+          "WORLD DIAL™",
+          "CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS"
+        ]
+      }
+    },
+    {
+      "name": "responsive exact existing card CSS at eight widths",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 320,
+          "document": 320,
+          "cards": 165,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 360,
+          "document": 360,
+          "cards": 165,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 375,
+          "document": 375,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 390,
+          "document": 390,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 414,
+          "document": 414,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 480,
+          "document": 480,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 768,
+          "document": 768,
+          "cards": 165,
+          "clipped": [],
+          "columns": 4
+        },
+        {
+          "width": 1280,
+          "document": 1280,
+          "cards": 165,
+          "clipped": [],
+          "columns": 8
+        }
+      ]
+    },
+    {
+      "name": "real new radio continuity / volume / previous-next",
+      "status": "PASS",
+      "detail": {
+        "sameElement": true,
+        "volume": 0.4,
+        "noRestart": true
+      }
+    },
+    {
+      "name": "new radio versus existing Hits and real Clips TV interlock",
+      "status": "PASS",
+      "detail": {
+        "radioToRadio": true,
+        "radioToTV": true,
+        "tvToRadio": true
+      }
+    }
+  ],
+  "errors": []
+}

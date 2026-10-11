@@ -1,0 +1,2101 @@
+{
+  "testedAt": "2026-10-11T14:06:12.561Z",
+  "channels": [
+    {
+      "id": "passport-korean-seoulfm",
+      "name": "K-Pop Hits™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [],
+      "warnings": [
+        "No available adapters.",
+        "No available adapters.",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/public/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-new",
+      "name": "K-Pop Now™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "CONECTANDO · Passport Radio",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/192k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/128k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/48k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/48k/seg_1791406257.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406257.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406258.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406256.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/new/320k/seg_1791406257.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-girlpower",
+      "name": "K-Pop Girls™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/128k/seg_1791406300.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/48k/seg_1791406300.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/192k/seg_1791406300.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/192k/seg_1791406301.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/192k/seg_1791406302.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/192k/seg_1791406303.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/192k/seg_1791406304.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/girlpower/192k/seg_1791406305.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8 AbortError: The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-boypower",
+      "name": "K-Pop Boys™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/128k/seg_1791406312.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/48k/seg_1791406312.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/48k/seg_1791406313.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/48k/seg_1791406314.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/48k/seg_1791406315.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/48k/seg_1791406316.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/boypower/48k/seg_1791406317.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/boypower/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-classics",
+      "name": "K-Pop Classics™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708301.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/128k/seg_1791708301.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708302.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708304.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708305.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708306.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708307.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/classics/320k/seg_1791708308.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/classics/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-1990s",
+      "name": "K-Pop 90s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/1990s/320k/seg_1791419283.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/1990s/48k/seg_1791419283.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/1990s/48k/seg_1791419284.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/1990s/48k/seg_1791419286.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/1990s/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-2000s",
+      "name": "K-Pop 2000s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419298.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/192k/seg_1791419298.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/128k/seg_1791419298.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/48k/seg_1791419298.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419298.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419299.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419300.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419301.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419302.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419303.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419304.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2000s/320k/seg_1791419305.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/2000s/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-2010s",
+      "name": "K-Pop 2010s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/2010s/192k/seg_1791406297.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2010s/128k/seg_1791406297.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2010s/48k/seg_1791406298.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2010s/48k/seg_1791406300.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2010s/48k/seg_1791406301.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2010s/48k/seg_1791406302.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/2010s/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-2020s",
+      "name": "K-Pop 2020s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/320k/seg_1791520422.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/192k/seg_1791520422.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/128k/seg_1791520422.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520422.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520423.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520424.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520425.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520426.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520427.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/2020s/48k/seg_1791520428.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/2020s/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-dance",
+      "name": "K-Dance™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/320k/seg_1791406315.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/192k/seg_1791406315.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/128k/seg_1791406316.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406316.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406317.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406318.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406319.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406320.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406321.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/dance/48k/seg_1791406322.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/dance/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-krock",
+      "name": "K-Rock™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/320k/seg_1791406371.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/192k/seg_1791406371.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/128k/seg_1791406371.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/48k/seg_1791406372.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/48k/seg_1791406373.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/48k/seg_1791406374.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/48k/seg_1791406375.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/krock/48k/seg_1791406376.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/krock/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-indie",
+      "name": "K-Indie™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/128k/seg_1791406315.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/48k/seg_1791406315.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/48k/seg_1791406316.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/48k/seg_1791406317.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/48k/seg_1791406318.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/48k/seg_1791406319.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/indie/48k/seg_1791406320.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/indie/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-hiphop",
+      "name": "K-Hip-Hop™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/hiphop/320k/seg_1791553757.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/hiphop/48k/seg_1791553757.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-rnb",
+      "name": "K-R&B™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/rnb/320k/seg_1791406346.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/rnb/192k/seg_1791406346.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/rnb/48k/seg_1791406348.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/rnb/48k/seg_1791406349.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/rnb/48k/seg_1791406351.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/rnb/48k/seg_1791406352.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/rnb/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-ballad",
+      "name": "K-Ballads™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/320k/seg_1791703045.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/192k/seg_1791703045.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/128k/seg_1791703045.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/48k/seg_1791703045.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/48k/seg_1791703046.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/320k/seg_1791703045.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ballad/320k/seg_1791703049.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/ballad/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-chill",
+      "name": "K-Chill™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/chill/48k/seg_1791406437.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/chill/48k/seg_1791406438.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/chill/48k/seg_1791406439.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/chill/48k/seg_1791406440.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/chill/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-lofi",
+      "name": "K-LoFi™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/320k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/192k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/128k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/48k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/48k/seg_1791406458.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/48k/seg_1791406459.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/48k/seg_1791406460.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/48k/seg_1791406461.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/lofi/48k/seg_1791406462.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/lofi/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-citypop",
+      "name": "K-City Pop™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/128k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/48k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/48k/seg_1791406458.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/48k/seg_1791406459.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/48k/seg_1791406460.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406457.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406458.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406459.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406460.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406461.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406462.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406463.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/citypop/320k/seg_1791406464.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/citypop/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-ost",
+      "name": "K-Drama OST™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/192k/seg_1791406384.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/128k/seg_1791406384.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406384.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406385.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406386.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406387.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406388.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406389.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/ost/48k/seg_1791406390.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/ost/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-divas",
+      "name": "K-Divas™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406438.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/192k/seg_1791406438.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/128k/seg_1791406438.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/48k/seg_1791406438.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/48k/seg_1791406439.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/48k/seg_1791406440.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/48k/seg_1791406441.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/48k/seg_1791406442.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406438.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406439.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406440.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406441.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406442.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406443.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406444.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/divas/320k/seg_1791406445.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/divas/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-kings",
+      "name": "K-Kings™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "CONECTANDO · Passport Radio",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/192k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/128k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/48k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/48k/seg_1791421512.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/48k/seg_1791421513.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/48k/seg_1791421514.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421512.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/kings/320k/seg_1791421513.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-japan",
+      "name": "K-Pop Japan™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/320k/seg_1791406464.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/192k/seg_1791406464.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/128k/seg_1791406464.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/48k/seg_1791406464.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/48k/seg_1791406465.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/48k/seg_1791406466.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/48k/seg_1791406467.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/48k/seg_1791406468.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/japan/48k/seg_1791406469.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/japan/manifest.m3u8 AbortError: The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/japan/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-korean-holidays",
+      "name": "K-Holidays™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8?bitrate=320",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8?bitrate=192",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8?bitrate=128",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8?bitrate=48",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/320k/seg_1791406507.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/192k/seg_1791406507.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/128k/seg_1791406507.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406507.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406508.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406509.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406510.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406511.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406512.m4s",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/holidays/48k/seg_1791406513.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/holidays/manifest.m3u8 AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22"
+      ],
+      "mediaErrors": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "all cards / approved order / no autoplay",
+      "status": "PASS",
+      "detail": {
+        "cards": 188,
+        "names": [
+          "DANCE, FLASH HOUSE & DISCOTECAS",
+          "ROCK, METAL & ALTERNATIVAS",
+          "POP, DÉCADAS & NOSTALGIA",
+          "K-POP & MÚSICA COREANA",
+          "SOUL, BLACK MUSIC & REGGAE",
+          "BRASIL: MPB, SAMBA & SERTANEJO",
+          "JAZZ, CLÁSSICA & AMBIENTES",
+          "AO VIVO, PROGRAMAS & ESPECIAIS",
+          "WORLD DIAL™",
+          "CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS"
+        ]
+      }
+    },
+    {
+      "name": "responsive exact existing card CSS at eight widths",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 320,
+          "document": 320,
+          "cards": 188,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 360,
+          "document": 360,
+          "cards": 188,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 375,
+          "document": 375,
+          "cards": 188,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 390,
+          "document": 390,
+          "cards": 188,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 414,
+          "document": 414,
+          "cards": 188,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 480,
+          "document": 480,
+          "cards": 188,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 768,
+          "document": 768,
+          "cards": 188,
+          "clipped": [],
+          "columns": 4
+        },
+        {
+          "width": 1280,
+          "document": 1280,
+          "cards": 188,
+          "clipped": [],
+          "columns": 8
+        }
+      ]
+    },
+    {
+      "name": "real new radio continuity / volume / previous-next",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(c)\n"
+    },
+    {
+      "name": "new radio versus existing Hits and real Clips TV interlock",
+      "status": "FAIL",
+      "error": "Cannot read properties of undefined (reading 'id')"
+    }
+  ],
+  "errors": []
+}

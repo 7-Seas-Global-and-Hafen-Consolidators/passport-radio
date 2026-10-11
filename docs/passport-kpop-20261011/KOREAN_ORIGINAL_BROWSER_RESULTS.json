@@ -1,0 +1,146 @@
+{
+  "environment": "Cloud Chrome on original service, explicit button clicks, read-only HTMLMediaElement observations",
+  "page": "https://seoul.fm/pt/pop/",
+  "scope": "Original-service playback proof only; not Passport integration proof",
+  "channels": [
+    {
+      "key": "seoulfm",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 124.841117
+    },
+    {
+      "key": "new",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 60.41291
+    },
+    {
+      "key": "girlpower",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.26384
+    },
+    {
+      "key": "boypower",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.114052
+    },
+    {
+      "key": "classics",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.07053
+    },
+    {
+      "key": "1990s",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.542264
+    },
+    {
+      "key": "2000s",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.686772
+    },
+    {
+      "key": "2010s",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.723428
+    },
+    {
+      "key": "2020s",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 32.793673
+    },
+    {
+      "key": "dance",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.630899
+    },
+    {
+      "key": "krock",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.39457
+    },
+    {
+      "key": "indie",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.610783
+    },
+    {
+      "key": "hiphop",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.743636
+    },
+    {
+      "key": "rnb",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.637648
+    },
+    {
+      "key": "ballad",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.701315
+    },
+    {
+      "key": "chill",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.785618
+    },
+    {
+      "key": "lofi",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.717654
+    },
+    {
+      "key": "citypop",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.745965
+    },
+    {
+      "key": "ost",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.623761
+    },
+    {
+      "key": "divas",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.471767
+    },
+    {
+      "key": "kings",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.822705
+    },
+    {
+      "key": "japan",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.504519
+    },
+    {
+      "key": "holidays",
+      "status": "PLAYING",
+      "readyState": 4,
+      "currentTime": 36.708774
+    }
+  ],
+  "pausedAtEnd": true
+}

@@ -1,0 +1,73 @@
+name: Passport Korean additions — focused evidence
+on:
+  pull_request:
+    paths:
+      - 'js/passport-radio-grid.js'
+      - 'js/world-radio-player.js'
+      - 'data/passport-radio-inventory.json'
+      - 'tests/passport_kpop*'
+      - '.github/workflows/passport-kpop-validation.yml'
+concurrency:
+  group: passport-kpop-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*.html
+            /js/
+            /css/
+            /assets/*.js
+            /assets/*.css
+            /assets/home/
+            /images/editorial/wayne-hussey.png
+            /images/editorial/2026-10-07-seven/dave-grohl-acdc-highway-to-hell/
+            /images/payments/
+            /fonts/
+            /data/
+            /docs/passport-kpop-20261011/
+            /tests/passport_kpop*
+            /tests/passport_korean_compatibility.cjs
+            /editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html
+      - name: Reuse playback evidence when only documentation changed
+        id: changed
+        run: |
+          if node -e "process.exit(require('./data/passport-radio-inventory.json').records.some(r=>r.section===11)?0:1)" && git diff --name-only HEAD^ HEAD | grep -Eq '^(js/(world-radio-player|passport-radio-grid)\.js|data/passport-radio-inventory\.json|tests/passport_kpop_browser\.cjs)$'; then
+            echo 'browser=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'browser=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Focused inventory preservation tests
+        run: node --test tests/passport_kpop_inventory.test.cjs
+      - name: Install browser test tooling outside application
+        if: steps.changed.outputs.browser == 'true'
+        run: |
+          mkdir /tmp/passport-browser
+          cd /tmp/passport-browser
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chrome
+      - name: Browser verification and screenshots
+        if: steps.changed.outputs.browser == 'true'
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
+          NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_korean_compatibility.cjs
+      - name: Save real browser evidence
+        if: always() && steps.changed.outputs.browser == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: passport-kpop-browser-evidence
+          path: reports/passport-kpop/

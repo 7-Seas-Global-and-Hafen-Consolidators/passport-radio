@@ -1,0 +1,197 @@
+{
+  "run": 38146843694,
+  "channels": [
+    {
+      "id": "passport-korean-seoulfm",
+      "name": "K-Pop Hits™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192&cdn=ios",
+          "status": 200,
+          "type": "application/vnd.apple.mpegurl",
+          "cors": "*"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791406491.m4s",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791406492.m4s",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791406494.m4s",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791406495.m4s",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791406496.m4s",
+          "status": 403,
+          "type": "text/html",
+          "cors": "*",
+          "body": "<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family: 'Rubik'; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjg4MHB4IiBoZWlnaHQ9IjE0MjRweCIgdmlld0JveD0iMCAwIDI4"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791406493.m4s",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Permissions policy violation: compute-pressure is not allowed in this document.",
+        "No available adapters.",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "No available adapters.",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Failed to load resource: the server responded with a status of 403 ()",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192&cdn=ios AbortError: The play() request was interrupted by a new load request. https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 403 ()"
+      ],
+      "mediaErrors": [],
+      "hlsErrors": [
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": false,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        },
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": false,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        },
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": false,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        },
+        {
+          "type": "networkError",
+          "details": "aborted",
+          "fatal": false,
+          "error": "Aborted"
+        },
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": false,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        },
+        {
+          "type": "networkError",
+          "details": "aborted",
+          "fatal": false,
+          "error": "Aborted"
+        },
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": false,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        },
+        {
+          "type": "networkError",
+          "details": "aborted",
+          "fatal": false,
+          "error": "Aborted"
+        },
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": false,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        },
+        {
+          "type": "networkError",
+          "details": "aborted",
+          "fatal": false,
+          "error": "Aborted"
+        },
+        {
+          "type": "networkError",
+          "details": "fragLoadError",
+          "fatal": true,
+          "error": "HTTP Error 403 ",
+          "code": 403
+        }
+      ]
+    }
+  ],
+  "meaning": "Diagnostic completed; playback NOT_CONFIRMED. GitHub job success is not proof of audio."
+}

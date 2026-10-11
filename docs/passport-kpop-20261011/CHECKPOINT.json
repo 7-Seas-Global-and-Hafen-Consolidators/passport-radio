@@ -1,0 +1,57 @@
+{
+  "branch": "feat/passport-kpop-26-20261011",
+  "base": "b10875a900625eb1bdfb6418233f11f4e6f06d93",
+  "status": "177_REGISTERED_PASSPORT_PLAYBACK_NOT_CONFIRMED",
+  "discovered": 26,
+  "integratedConfirmed": 3,
+  "pending": 23,
+  "radioBefore": 151,
+  "radioAfter": 177,
+  "programSelectors": 11,
+  "publicCards": 188,
+  "validatedAppCommit": "d6499353fc00865c674eeee877f094524f0b3862",
+  "playbackRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124032423",
+  "layoutRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124284614",
+  "preview": "https://passport-kpop-preview-20261011.mr-nomad.chatgpt.site",
+  "previewSourceCommit": "eee79e3b6bb6a1e399f8bb56c286f39472aba2f2",
+  "previewDeployment": "appgdep_6acba45114d08191b457d545bd987e29",
+  "initialRun": 38122342146,
+  "diagnosticRuns": [
+    38123180335,
+    38123414803,
+    38123620699
+  ],
+  "nextPendingOperation": "Owner reviews current 177-channel preview. Confirm Passport playback in authenticated preview; original-source playback is proven for all 23, Passport playback is not yet proven. No new investigation or tests started after final stop instruction.",
+  "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/545",
+  "merge": false,
+  "referenceCommit": "c373388e196afd7b302e565b45697be5f7761f2a",
+  "koreanTested": 23,
+  "koreanConfirmed": 0,
+  "koreanMseRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38145780818",
+  "koreanSingleDiagnosticRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38146843694",
+  "preparedPatch": "docs/passport-kpop-20261011/PREPARED_KOREAN_COMPATIBILITY.patch",
+  "runtimeRestoredExactlyTo": null,
+  "koreanRegistered": 23,
+  "resumedFrom": "fa8900d15c79a6d4bdc1e00e6c7c3ae0a840aaf5",
+  "cloudOriginalBaseline": {
+    "page": "https://seoul.fm/pt/pop/",
+    "readyState": 4,
+    "paused": false,
+    "clockSamples": [
+      43.215217,
+      124.841117
+    ],
+    "status": "DECODED_AND_ADVANCING",
+    "environment": "cloud Chrome, direct user click; not Passport integration proof"
+  },
+  "koreanOriginalConfirmed": 23,
+  "koreanFinalValidationRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38149165571",
+  "buildRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38149165608",
+  "buildResult": "PASS",
+  "focusedPreservationTests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "originalEvidence": "docs/passport-kpop-20261011/KOREAN_ORIGINAL_BROWSER_RESULTS.json",
+  "stoppedByOwner": true
+}
