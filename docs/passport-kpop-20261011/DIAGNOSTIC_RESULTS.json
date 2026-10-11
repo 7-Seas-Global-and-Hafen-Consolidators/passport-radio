@@ -1,0 +1,49 @@
+{
+  "testedAt": "2026-10-11T07:59:12.754Z",
+  "channels": [
+    {
+      "id": "passport-korean-seoulfm",
+      "name": "K-Pop Hits™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8",
+          "status": 206,
+          "type": "application/vnd.apple.mpegurl"
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=48",
+          "status": 206,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ],
+      "hlsErrors": []
+    },
+    {
+      "id": "passport-sertanejo-raiz",
+      "name": "Sertanejo Raiz™",
+      "status": "PLAYING",
+      "media": {
+        "time": 1.526715,
+        "decoded": 29257
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://radio2.mazagafm.com:8443/live?type=.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    }
+  ],
+  "checks": [],
+  "errors": []
+}

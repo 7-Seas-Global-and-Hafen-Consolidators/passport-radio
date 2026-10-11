@@ -59,8 +59,6 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chrome
       - name: Browser verification and screenshots
-        env:
-          PASSPORT_KPOP_ONLY: passport-korean-seoulfm
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &

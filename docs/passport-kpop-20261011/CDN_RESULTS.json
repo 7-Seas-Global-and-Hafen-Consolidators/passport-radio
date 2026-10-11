@@ -1,0 +1,46 @@
+{
+  "testedAt": "2026-10-11T08:06:38.550Z",
+  "channels": [
+    {
+      "id": "passport-korean-seoulfm",
+      "name": "K-Pop Hits™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios",
+          "status": 206,
+          "type": "application/vnd.apple.mpegurl"
+        }
+      ],
+      "networkFailures": [
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/init_2.mp4",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        },
+        {
+          "url": "https://cdn.kpopradio.net/hls/seoulfm/192k/seg_1791400846.m4s",
+          "error": "net::ERR_BLOCKED_BY_ORB"
+        }
+      ],
+      "warnings": [
+        "No available adapters.",
+        "Stream bloqueado pelo navegador: https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios NotSupportedError: Failed to load because no supported source was found."
+      ],
+      "mediaErrors": [
+        {
+          "code": 4,
+          "message": "",
+          "src": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios",
+          "ready": 0,
+          "network": 3,
+          "nativeHls": "maybe"
+        }
+      ],
+      "hlsErrors": []
+    }
+  ],
+  "checks": [],
+  "errors": []
+}
