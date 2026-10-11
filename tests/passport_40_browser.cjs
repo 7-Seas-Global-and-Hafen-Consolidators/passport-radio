@@ -2,13 +2,14 @@ const {chromium}=require('playwright'),fs=require('node:fs'),assert=require('nod
 const inventory=require('../data/passport-radio-inventory.json');
 const out='reports/passport-40';fs.mkdirSync(out,{recursive:true});
 const report={checks:[],failures:[],networkErrors:[],testedAt:new Date().toISOString()};
+async function dismissCookies(page){const button=page.getByRole('button',{name:'ACEITAR COOKIES',exact:true});if(await button.isVisible())await button.click();}
 async function check(name,fn){try{const detail=await fn();report.checks.push({name,status:'PASS',detail});}catch(e){report.failures.push({name,status:'FAIL',error:String(e)});}}
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=user-gesture-required']});
  const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();
  page.on('pageerror',e=>report.networkErrors.push(String(e)));
- await page.goto('http://127.0.0.1:4173/');await page.waitForFunction(()=>window.PassportAudioRuntime?.ready,{timeout:60000});
- await page.locator('#passport-radio-catalog').waitFor();
+ await page.goto('http://127.0.0.1:4173/');await page.waitForFunction(()=>window.PassportAudioRuntime?.ready,null,{timeout:60000});
+ await page.locator('#passport-radio-catalog').waitFor();await dismissCookies(page);
  await check('all 151 radios and 11 project selectors visible; no duplicate cards; no autoplay',async()=>{
   assert.equal(await page.locator('[data-radio-id]').count(),162);
   assert.equal(await page.locator('#passport-player').count(),1);
@@ -17,12 +18,13 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
  });
  await check('all new radio cards select correct streams through universal player',async()=>{
   await page.route('https://centova4.transmissaodigital.com:**/stream',r=>r.abort());
-  for(const row of inventory.records.filter(r=>r.new)){
+  try{for(const row of inventory.records.filter(r=>r.new)){
+   const requested=page.waitForRequest(request=>request.url()===row.stream);
    await page.locator(`[data-radio-id="${row.id}"]`).click();
    const d=await page.evaluate(()=>({src:document.querySelector('#world-audio').src,label:document.querySelector('#track').textContent,state:window.PassportContinuity.getState()}));
-   assert.equal(d.src,row.stream,row.name);assert.equal(d.label,row.name);assert.equal(d.state.index,row.index);assert.equal(d.state.family,'world');
+   assert.equal((await requested).url(),row.stream,row.name);assert.equal(d.label,row.name);assert.equal(d.state.index,row.index);assert.equal(d.state.family,'world');
   }
-  await page.unroute('https://centova4.transmissaodigital.com:**/stream');return {mapped:39,method:'real card clicks; abort only upstream audio requests to avoid repeating stream acquisition'};
+  }finally{await page.unroute('https://centova4.transmissaodigital.com:**/stream');}return {mapped:39,method:'real card clicks; abort only upstream audio requests to avoid repeating stream acquisition'};
  });
  await check('responsive 360/390/480/768/1280 and original World alphabets',async()=>{
   const result=[];
@@ -36,7 +38,7 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
  await page.setViewportSize({width:1280,height:900});
  await check('real new radio playback, pause, volume and previous/next',async()=>{
   await page.locator('[data-radio-id="passport-flash-house-classics"]').click();
-  await page.waitForFunction(()=>{const a=document.querySelector('#world-audio');return !a.paused&&a.currentTime>1},{timeout:45000});
+  await page.waitForFunction(()=>{const a=document.querySelector('#world-audio');return !a.paused&&a.currentTime>1},null,{timeout:45000});
   await page.locator('#pb-vol-range').focus();await page.locator('#pb-vol-range').press('Home');for(let i=0;i<8;i++)await page.locator('#pb-vol-range').press('ArrowRight');assert.equal(await page.locator('#world-audio').evaluate(a=>a.volume),0.4);
   await page.getByRole('button',{name:'Pausar',exact:true}).click();assert.equal(await page.locator('#world-audio').evaluate(a=>a.paused),true);
   await page.getByRole('button',{name:'Tocar',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('#world-audio').paused);
@@ -45,7 +47,8 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
   return await page.locator('#world-audio').evaluate(a=>({src:a.src,time:a.currentTime,volume:a.volume}));
  });
  await check('existing Hits continuous audio: Home → Arquivo → automatic article → Home',async()=>{
-  await page.locator('[data-radio-id="hits:main"]').click();await page.waitForFunction(()=>{const a=document.querySelector('#passportHitsAudio');return !a.paused&&a.currentTime>1},{timeout:45000});
+  await page.locator('[data-radio-id="hits:main"]').click();await page.waitForFunction(()=>{const a=document.querySelector('#passportHitsAudio');return !a.paused&&a.currentTime>1},null,{timeout:45000});
+  await page.locator('#pb-vol-range').focus();await page.locator('#pb-vol-range').press('Home');for(let i=0;i<8;i++)await page.locator('#pb-vol-range').press('ArrowRight');
   await page.evaluate(()=>{document.querySelector('#passportHitsAudio').dataset.qaTransport='retained'});
   const before=await page.locator('#passportHitsAudio').evaluate(a=>a.currentTime);
   await page.locator('.pb-nav').getByRole('link',{name:'Arquivo',exact:true}).click();await page.waitForURL('**/editorial.html');await page.waitForSelector('#passport-editorial-outlet main');
@@ -56,6 +59,7 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
   await page.locator('.pb-nav').getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('http://127.0.0.1:4173/');await page.locator('#passport-radio-catalog').waitFor();assert.equal(await page.locator('[data-radio-id]').count(),162);return actual;
  });
  await check('editorial content and original images retained',async()=>{
+  if(new URL(page.url()).pathname!=='/'){await page.locator('.pb-nav').getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('http://127.0.0.1:4173/');}
   assert.equal(await page.locator('.pb-lead').count(),1);assert.equal(await page.locator('.pb-recruit').count(),1);assert.ok(await page.locator('#pp-feed h3').count()>0);
   await page.locator('.pb-lead img').waitFor();await page.waitForFunction(()=>document.querySelector('.pb-lead img').complete);assert.ok(await page.locator('.pb-lead img').evaluate(a=>a.naturalWidth>0));
   return {lead:await page.locator('.pb-lead h1').textContent(),newImages:0};
@@ -67,13 +71,13 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
  });
  await check('real TV HLS playback, radio/TV mutex, volume, pause and fullscreen capability',async()=>{
   await page.getByRole('button',{name:'ASSISTIR À PASSPORT CLIPS TV™',exact:true}).click();
-  await page.waitForFunction(()=>{const v=document.querySelector('#passport-clips-tv video');return !v.paused&&v.currentTime>1&&v.videoWidth>0},{timeout:60000});
+  await page.waitForFunction(()=>{const v=document.querySelector('#passport-clips-tv video');return !v.paused&&v.currentTime>1&&v.videoWidth>0},null,{timeout:60000});
   const data=await page.locator('#passport-clips-tv video').evaluate(v=>({time:v.currentTime,width:v.videoWidth,height:v.videoHeight,controls:v.controls,volume:v.volume,fullscreen:!!v.requestFullscreen,autoplay:v.autoplay}));
   assert.equal(data.autoplay,false);assert.equal(data.controls,true);assert.equal(data.fullscreen,true);
   assert.equal(await page.evaluate(()=>[...document.querySelectorAll('audio')].filter(a=>!a.paused).length),0);
   await page.evaluate(()=>document.querySelector('#passport-clips-tv video').pause());assert.equal(await page.locator('#passport-clips-tv video').evaluate(v=>v.paused),true);
   await page.getByRole('button',{name:'RETOMAR PASSPORT CLIPS TV™',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('#passport-clips-tv video').paused);
-  await page.getByRole('button',{name:'RETOMAR RÁDIO',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#passport-clips-tv video').paused);return data;
+  await dismissCookies(page);await page.getByRole('button',{name:'RETOMAR RÁDIO',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#passport-clips-tv video').paused);return data;
  });
  for(const width of [390,1280]){await page.setViewportSize({width,height:900});await page.locator('#passport-clips-tv').scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/tv-${width}.png`,fullPage:false});}
  await browser.close();fs.writeFileSync(`${out}/results.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));if(report.failures.length)process.exitCode=1;
