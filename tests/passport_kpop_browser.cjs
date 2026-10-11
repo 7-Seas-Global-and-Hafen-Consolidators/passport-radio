@@ -1,8 +1,9 @@
 const {chromium}=require('playwright'),fs=require('node:fs'),assert=require('node:assert/strict');
 const candidates=require('../docs/passport-kpop-20261011/candidates.json'),inventory=require('../data/passport-radio-inventory.json');
 const only=(process.env.PASSPORT_KPOP_ONLY||'').split(',').filter(Boolean);
+const layoutOnly=process.env.PASSPORT_KPOP_LAYOUT_ONLY==='1';
 const out='reports/passport-kpop';fs.mkdirSync(out,{recursive:true});const report={testedAt:new Date().toISOString(),channels:[],checks:[],errors:[]};
-async function check(name,fn){if(only.length)return;try{report.checks.push({name,status:'PASS',detail:await fn()});}catch(e){report.checks.push({name,status:'FAIL',error:e.message});}}
+async function check(name,fn){if(only.length||(layoutOnly&&name.startsWith('real new radio'))||(layoutOnly&&name.startsWith('new radio versus')))return;try{report.checks.push({name,status:'PASS',detail:await fn()});}catch(e){report.checks.push({name,status:'FAIL',error:e.message});}}
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=user-gesture-required']});const page=await browser.newPage({viewport:{width:1280,height:900}});page.on('pageerror',e=>report.errors.push(e.message));
  await page.goto('http://127.0.0.1:4173/');await page.waitForFunction(()=>window.PassportAudioRuntime?.ready,null,{timeout:60000});await page.locator('#passport-radio-catalog').waitFor();const cookie=page.getByRole('button',{name:'ACEITAR COOKIES',exact:true});if(await cookie.isVisible())await cookie.click();
@@ -11,7 +12,7 @@ async function check(name,fn){if(only.length)return;try{report.checks.push({name
  const responses=[],networkFailures=[],warnings=[];page.on('requestfailed',r=>networkFailures.push({url:r.url().split('?')[0],error:r.failure()?.errorText}));page.on('console',m=>{if(m.type()==='warning'||m.type()==='error')warnings.push(m.text());});
  if(only.length){await page.addScriptTag({url:'https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js'});await page.evaluate(()=>{const Original=window.Hls;window.__hlsErrors=[];window.Hls=class extends Original{constructor(config){super(config);this.on(Original.Events.ERROR,(_,d)=>window.__hlsErrors.push({type:d.type,details:d.details,fatal:d.fatal,reason:d.reason,error:d.error?.message,code:d.response?.code}));}};});}
  page.on('response',r=>{if(/m3u8|\.mp3|\/live\?/.test(r.url()))responses.push({url:r.url(),status:r.status(),type:r.headers()['content-type']});});
- for(const c of candidates.filter(c=>c.status!=='BLOCKED'&&(!only.length||only.includes(c.id)))){
+ for(const c of candidates.filter(c=>!layoutOnly&&c.status!=='BLOCKED'&&(!only.length||only.includes(c.id)))){
   const row={id:c.id,name:c.name,status:'NOT_CONFIRMED'};responses.length=0;networkFailures.length=0;warnings.length=0;
   try{
    await page.locator(`[data-radio-id="${c.id}"]`).click();await page.waitForFunction(()=>{const a=document.querySelector('#world-audio');return !a.paused&&a.currentTime>1&&a.readyState>=2},null,{timeout:30000});

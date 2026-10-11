@@ -33,6 +33,7 @@ jobs:
             /images/editorial/wayne-hussey.png
             /images/editorial/2026-10-07-seven/dave-grohl-acdc-highway-to-hell/
             /images/payments/
+            /fonts/
             /data/
             /docs/passport-kpop-20261011/
             /tests/passport_kpop*
@@ -59,6 +60,8 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chrome
       - name: Browser verification and screenshots
+        env:
+          PASSPORT_KPOP_LAYOUT_ONLY: '1'
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
