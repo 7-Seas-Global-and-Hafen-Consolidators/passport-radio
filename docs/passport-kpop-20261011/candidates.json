@@ -5,12 +5,30 @@
     "name": "K-Pop Hits™",
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "seoulfm",
-    "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8",
-    "format": "HLS AAC",
+    "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192",
+    "format": "HLS AAC-LC",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-seoulfm",
+      "name": "K-Pop Hits™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    },
+    "variantEvidence": "Documented bitrate query: auto or numeric 48/64/96/128/192/320. Encoder lists 192 kbps; direct media variant avoids master selection without engine changes."
   },
   {
     "number": 2,
@@ -19,11 +37,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "new",
     "stream": "https://api.seoul.fm/v3/streams/new/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-new",
+      "name": "K-Pop Now™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 3,
@@ -32,11 +67,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "girlpower",
     "stream": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-girlpower",
+      "name": "K-Pop Girls™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 4,
@@ -45,11 +97,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "boypower",
     "stream": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-boypower",
+      "name": "K-Pop Boys™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 5,
@@ -58,11 +127,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "classics",
     "stream": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-classics",
+      "name": "K-Pop Classics™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 6,
@@ -71,11 +157,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "1990s",
     "stream": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-1990s",
+      "name": "K-Pop 90s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 7,
@@ -84,11 +187,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "2000s",
     "stream": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-2000s",
+      "name": "K-Pop 2000s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 8,
@@ -97,11 +217,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "2010s",
     "stream": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-2010s",
+      "name": "K-Pop 2010s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 9,
@@ -110,11 +247,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "2020s",
     "stream": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-2020s",
+      "name": "K-Pop 2020s™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 10,
@@ -123,11 +277,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "dance",
     "stream": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-dance",
+      "name": "K-Dance™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 11,
@@ -136,11 +307,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "krock",
     "stream": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-krock",
+      "name": "K-Rock™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 12,
@@ -149,11 +337,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "indie",
     "stream": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-indie",
+      "name": "K-Indie™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 13,
@@ -162,11 +367,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "hiphop",
     "stream": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-hiphop",
+      "name": "K-Hip-Hop™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 14,
@@ -175,11 +397,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "rnb",
     "stream": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-rnb",
+      "name": "K-R&B™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 15,
@@ -188,11 +427,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "ballad",
     "stream": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-ballad",
+      "name": "K-Ballads™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 16,
@@ -201,11 +457,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "chill",
     "stream": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-chill",
+      "name": "K-Chill™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 17,
@@ -214,11 +487,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "lofi",
     "stream": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-lofi",
+      "name": "K-LoFi™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 18,
@@ -227,11 +517,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "citypop",
     "stream": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-citypop",
+      "name": "K-City Pop™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 19,
@@ -240,11 +547,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "ost",
     "stream": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-ost",
+      "name": "K-Drama OST™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 20,
@@ -253,11 +577,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "divas",
     "stream": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-divas",
+      "name": "K-Divas™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 21,
@@ -266,11 +607,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "kings",
     "stream": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-kings",
+      "name": "K-Kings™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 22,
@@ -279,11 +637,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "japan",
     "stream": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-japan",
+      "name": "K-Pop Japan™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 23,
@@ -292,11 +667,28 @@
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "holidays",
     "stream": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8",
-    "format": "HLS AAC",
+    "format": "HLS",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "AWAITING_PLAYBACK"
+    "status": "NOT_CONFIRMED",
+    "validation": {
+      "id": "passport-korean-holidays",
+      "name": "K-Holidays™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8",
+          "status": 206
+        },
+        {
+          "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8?bitrate=48",
+          "status": 206
+        }
+      ]
+    }
   },
   {
     "number": 24,
@@ -309,7 +701,24 @@
     "section": 8,
     "lang": "zh-CN",
     "evidence": "Public player DOM source/configuration",
-    "status": "AWAITING_PLAYBACK"
+    "status": "PLAYING",
+    "validation": {
+      "id": "passport-chinese-pop",
+      "name": "中国流行音乐™",
+      "status": "PLAYING",
+      "media": {
+        "time": 1.508369,
+        "decoded": 14592
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
+          "status": 200
+        }
+      ]
+    }
   },
   {
     "number": 25,
@@ -322,7 +731,25 @@
     "section": 5,
     "lang": "pt-BR",
     "evidence": "Public player DOM source/configuration",
-    "status": "AWAITING_PLAYBACK"
+    "status": "PLAYING",
+    "validation": {
+      "id": "passport-sertanejo-raiz",
+      "name": "Sertanejo Raiz™",
+      "status": "PLAYING",
+      "media": {
+        "time": 1.526715,
+        "decoded": 29257
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://radio2.mazagafm.com:8443/live?type=.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    }
   },
   {
     "number": 26,
@@ -335,6 +762,24 @@
     "section": 5,
     "lang": "pt-BR",
     "evidence": "Public player DOM source/configuration",
-    "status": "AWAITING_PLAYBACK"
+    "status": "PLAYING",
+    "validation": {
+      "id": "passport-sertanejo-fm",
+      "name": "Sertanejo FM™",
+      "status": "PLAYING",
+      "media": {
+        "time": 1.524342,
+        "decoded": 43886
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live?source=website",
+          "status": 200
+        }
+      ]
+    },
+    "formatEvidence": "HEAD on exact confirmed stream: HTTP 200, Content-Type audio/mpeg"
   }
 ]
