@@ -43,7 +43,7 @@
     "layoutPass": true,
     "warnings": "HTTP 403 messages; segment response bodies not captured in first round. Exact CDN response diagnosis pending on one sample."
   },
-  "finalState": "Prepared correction is inactive: runtime restored exactly to c373388e196afd7b302e565b45697be5f7761f2a because no Korean browser playback was confirmed.",
+  "finalState": "Active scoped MSE correction and all 23 Korean records retained by explicit owner instruction. 177 radios registered, 154 previously proven; original source has 23 real browser playback confirmations. Passport playback is not yet confirmed.",
   "specificCDNDenial": {
     "run": 38146843694,
     "channel": "K-Pop Hits™",
@@ -53,5 +53,7 @@
     "provider": "BunnyCDN",
     "hlsError": "fragLoadError / HTTP Error 403",
     "cause": "IP, referrer, token policy or another CDN rule not established; no workaround attempted."
-  }
+  },
+  "originalBrowserEvidence": "KOREAN_ORIGINAL_BROWSER_RESULTS.json",
+  "preparedPatchStatus": "Applied; Pop uses canonical public stream key without the diagnostic ios query."
 }

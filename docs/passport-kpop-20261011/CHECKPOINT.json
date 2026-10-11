@@ -1,7 +1,7 @@
 {
   "branch": "feat/passport-kpop-26-20261011",
   "base": "b10875a900625eb1bdfb6418233f11f4e6f06d93",
-  "status": "KOREAN_INTEGRATION_REOPENED",
+  "status": "177_REGISTERED_PASSPORT_PLAYBACK_NOT_CONFIRMED",
   "discovered": 26,
   "integratedConfirmed": 3,
   "pending": 23,
@@ -13,15 +13,15 @@
   "playbackRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124032423",
   "layoutRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124284614",
   "preview": "https://passport-kpop-preview-20261011.mr-nomad.chatgpt.site",
-  "previewSourceCommit": "9e679879052e19858263c06714fe14007db3c48c",
-  "previewDeployment": "appgdep_6acb46973ca08191ad86827d176bd1c7",
+  "previewSourceCommit": "eee79e3b6bb6a1e399f8bb56c286f39472aba2f2",
+  "previewDeployment": "appgdep_6acba45114d08191b457d545bd987e29",
   "initialRun": 38122342146,
   "diagnosticRuns": [
     38123180335,
     38123414803,
     38123620699
   ],
-  "nextPendingOperation": "Compare original source and Passport in the same browser, verify each of the 23 canonical streams with scoped MSE integration. No old acquisitions or old radio replay.",
+  "nextPendingOperation": "Owner reviews current 177-channel preview. Confirm Passport playback in authenticated preview; original-source playback is proven for all 23, Passport playback is not yet proven. No new investigation or tests started after final stop instruction.",
   "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/545",
   "merge": false,
   "referenceCommit": "c373388e196afd7b302e565b45697be5f7761f2a",
@@ -43,5 +43,15 @@
     ],
     "status": "DECODED_AND_ADVANCING",
     "environment": "cloud Chrome, direct user click; not Passport integration proof"
-  }
+  },
+  "koreanOriginalConfirmed": 23,
+  "koreanFinalValidationRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38149165571",
+  "buildRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38149165608",
+  "buildResult": "PASS",
+  "focusedPreservationTests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "originalEvidence": "docs/passport-kpop-20261011/KOREAN_ORIGINAL_BROWSER_RESULTS.json",
+  "stoppedByOwner": true
 }
