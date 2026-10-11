@@ -1,0 +1,35 @@
+{
+  "branch": "style/home-radio-compact-20261011",
+  "base": "5f35e6227fbbfcbbc431bb790e52200f6573db0d",
+  "radioCount": 160,
+  "programSelectors": 11,
+  "inventoryChanged": false,
+  "playerChanged": false,
+  "applicationFiles": [
+    "js/passport-radio-grid.js",
+    "css/passport-radio-grid.css"
+  ],
+  "localPreservationTests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "status": "VALIDATED_READY_FOR_OWNER_REVIEW",
+  "merge": false,
+  "applicationCommit": "41f5ddd45de6ea57547aa691b018caa5145548e0",
+  "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/547",
+  "preview": "https://passport-kpop-preview-20261011.mr-nomad.chatgpt.site",
+  "previewSourceCommit": "1c496ffa75abb1da010d4c02b2e4b5db687a4e1a",
+  "browserRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38157001220",
+  "screenshotsArtifact": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38157001220/artifacts/11709195388",
+  "build": "PASS",
+  "browserChecks": "PASS",
+  "widths": [
+    320,
+    360,
+    390,
+    480,
+    768,
+    1024,
+    1280
+  ]
+}

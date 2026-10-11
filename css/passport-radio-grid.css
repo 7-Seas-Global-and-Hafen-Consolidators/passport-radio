@@ -3,18 +3,27 @@
 #passport-radio-catalog{max-width:1200px;margin:18px auto 28px;padding:0 20px;color:#111111;font-family:'Instrument Sans',sans-serif;background:#FFFFFF}
 #passport-radio-catalog[hidden]{display:none}
 #passport-radio-catalog>h2{margin:0;font-size:17px;letter-spacing:.035em}
-.passport-radio-count{font-size:12px;margin:7px 0 18px}
-.passport-radio-family{margin:0 0 20px}
-.passport-radio-family h3{font-size:12px;letter-spacing:.065em;border-bottom:1px solid #111111;padding:0 0 8px;margin:0 0 9px}
-.passport-radio-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px}
-.passport-radio-card{display:flex;align-items:center;gap:7px;min-width:0;min-height:54px;padding:8px;border:1px solid #dedede;border-radius:0;background:#FFFFFF;color:#111111;text-align:start;font:600 12px/1.3 'Instrument Sans',sans-serif;cursor:pointer;overflow-wrap:anywhere}
-.passport-radio-icon{color:#C41E3A;font-size:13px;flex-shrink:0}
-.passport-radio-card[aria-pressed=true]{border-color:#C41E3A;background:#fff4f6;box-shadow:inset 0 -2px #C41E3A}
-.passport-radio-card:focus-visible,.passport-tv-door:focus-visible{outline:2px solid #C41E3A;outline-offset:3px}
-.passport-radio-card:disabled{cursor:wait}
+#passport-radio-catalog .passport-radio-count{font-size:12px;margin:4px 0 8px}
+#passport-radio-catalog .passport-radio-tools{display:flex;align-items:center;gap:8px;margin:0 0 12px}
+#passport-radio-catalog .passport-radio-search{position:relative;flex:0 0 140px;margin:0}
+#passport-radio-catalog .passport-radio-search input{box-sizing:border-box;width:100%;min-width:0;border:1px solid #dedede;border-radius:0;padding:5px 7px;background:#FFFFFF;color:#111111;font:12px/1.3 'Instrument Sans',sans-serif}
+#passport-radio-catalog .passport-radio-search-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#passport-radio-catalog .passport-radio-shortcuts{display:flex;flex-wrap:wrap;gap:4px 9px;min-width:0}
+#passport-radio-catalog .passport-radio-shortcuts a{color:#111111;font-size:11px;line-height:1.3;text-decoration:underline;text-underline-offset:3px}
+#passport-radio-catalog .passport-radio-family{margin:0 0 12px;scroll-margin-top:12px}
+#passport-radio-catalog .passport-radio-family h3{font-size:12px;letter-spacing:.065em;border-bottom:1px solid #111111;padding:0 0 5px;margin:0 0 5px}
+#passport-radio-catalog .passport-radio-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+#passport-radio-catalog .passport-radio-card{display:flex;align-items:center;justify-content:center;gap:4px;min-width:0;min-height:34px;padding:4px 5px;border:1px solid #dedede;border-radius:0;background:#FFFFFF;color:#111111;text-align:center;font:600 12px/1.2 'Instrument Sans',sans-serif;cursor:pointer;overflow-wrap:anywhere;box-sizing:border-box}
+#passport-radio-catalog .passport-radio-card>span:last-child{min-width:0;white-space:normal}
+#passport-radio-catalog .passport-radio-icon{color:#C41E3A;font-size:10px;flex-shrink:0}
+#passport-radio-catalog .passport-radio-card[aria-pressed=true]{border-color:#C41E3A;color:#C41E3A;background:#fff4f6;box-shadow:inset 0 -1px #C41E3A}
+#passport-radio-catalog .passport-radio-card.passport-radio-match{outline:1px solid #C41E3A;outline-offset:-2px}
+#passport-radio-catalog .passport-radio-card:focus-visible,#passport-radio-catalog .passport-radio-tools :focus-visible{outline:2px solid #C41E3A;outline-offset:2px}
+#passport-radio-catalog .passport-radio-card:disabled{cursor:wait}
+.passport-tv-door:focus-visible{outline:2px solid #C41E3A;outline-offset:3px}
 .passport-tv-door{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:2px solid #111111;border-bottom:2px solid #111111;padding:15px 0;color:#C41E3A;text-decoration:none}
 .passport-tv-door strong{font-size:18px}.passport-tv-door span{font-size:11px;color:#111111}
-@media(max-width:1000px){.passport-radio-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
-@media(max-width:768px){.passport-radio-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:480px){#passport-radio-catalog{padding:0 12px;margin-top:12px}.passport-radio-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.passport-radio-card{padding:7px 5px;font-size:11px;gap:4px;min-height:58px}.passport-radio-family{margin-bottom:17px}.passport-tv-door{align-items:flex-start;flex-direction:column;gap:5px}}
-@media(max-width:374px){.passport-radio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.passport-radio-card{font-size:12px}}
+@media(max-width:1024px){#passport-radio-catalog .passport-radio-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:800px){#passport-radio-catalog .passport-radio-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:600px){#passport-radio-catalog .passport-radio-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#passport-radio-catalog .passport-radio-tools{gap:6px;align-items:flex-start}#passport-radio-catalog .passport-radio-search{flex-basis:110px}#passport-radio-catalog .passport-radio-shortcuts{gap:3px 7px}}
+@media(max-width:480px){#passport-radio-catalog{padding:0 12px;margin-top:12px}.passport-tv-door{align-items:flex-start;flex-direction:column;gap:5px}}

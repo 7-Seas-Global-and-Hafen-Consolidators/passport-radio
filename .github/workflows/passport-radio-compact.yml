@@ -1,0 +1,67 @@
+name: Home radio mural — focused visual verification
+on:
+  pull_request:
+    paths:
+      - 'js/passport-radio-grid.js'
+      - 'css/passport-radio-grid.css'
+      - 'tests/passport_radio_compact*'
+      - '.github/workflows/passport-radio-compact.yml'
+permissions:
+  contents: read
+jobs:
+  visual:
+    if: github.head_ref == 'style/home-radio-compact-20261011'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*.html
+            /js/
+            /css/
+            /assets/*.js
+            /assets/*.css
+            /assets/home/
+            /images/editorial/wayne-hussey.png
+            /images/editorial/2026-10-07-seven/dave-grohl-acdc-highway-to-hell/
+            /images/payments/
+            /fonts/
+            /data/
+            /tests/passport_radio_compact*
+      - name: Reuse completed evidence for documentation-only updates
+        id: changed
+        run: |
+          if git diff --name-only HEAD^ HEAD | grep -Eq '^(js/passport-radio-grid\.js|css/passport-radio-grid\.css|tests/passport_radio_compact)'; then
+            echo 'visual=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'visual=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preservation assertions
+        if: steps.changed.outputs.visual == 'true'
+        run: node --test tests/passport_radio_compact.test.cjs
+      - name: Browser tooling outside application
+        if: steps.changed.outputs.visual == 'true'
+        run: |
+          mkdir /tmp/passport-browser
+          cd /tmp/passport-browser
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chrome
+      - name: One focused visual and selection round
+        if: steps.changed.outputs.visual == 'true'
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
+          NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_radio_compact_browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.changed.outputs.visual == 'true'
+        with:
+          name: home-radio-compact-evidence
+          path: reports/home-radio-compact/
