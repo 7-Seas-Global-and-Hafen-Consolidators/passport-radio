@@ -5,7 +5,7 @@
     "name": "K-Pop Hits™",
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "seoulfm",
-    "stream": "https://api.seoul.fm/v3/streams/public/manifest.m3u8",
+    "stream": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192&cdn=ios",
     "format": "HLS AAC-LC",
     "section": 11,
     "lang": "ko-KR",
