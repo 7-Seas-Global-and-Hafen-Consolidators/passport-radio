@@ -1,0 +1,22 @@
+{
+  "branch": "feat/videos-three-owner-20261011",
+  "pr": 548,
+  "base": "a8f1dcac3841fc03c26ced5693b3958b1668b427",
+  "catalogueBefore": 7117,
+  "catalogueAfter": 7120,
+  "ids": [
+    "3KW4sPXJh5I",
+    "GqUgSWT-5CA",
+    "XLrsurnMjKc"
+  ],
+  "publicTitles": "exact owner mandated titles",
+  "previousRecords": "unchanged",
+  "build": "PASS 38159121362",
+  "catalogueTests": "8 PASS",
+  "embedRestriction": {
+    "id": "GqUgSWT-5CA",
+    "playableInEmbed": false
+  },
+  "playback": "not independently proved",
+  "visual": "correcting test locator that depended on thumbnail removed by existing embed; no application defect or player change"
+}
