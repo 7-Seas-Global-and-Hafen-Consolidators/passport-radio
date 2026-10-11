@@ -28,3 +28,7 @@ O patch MSE está ativo somente para os 23 registros novos; usa HLS.js já exist
 Conferir a reprodução na Passport pelo preview autenticado. Por ordem final do proprietário, não iniciar novas pesquisas, aquisições ou rodadas de testes. Os 177 registros permanecem salvos. A missão funcional dos 23 não é declarada concluída.
 
 Os endereços técnicos e a relação individual permanecem em `candidates.json`. O SHA final é o HEAD da mesma PR, evitando referência circular no próprio commit.
+
+## Production follow-up — 2026-10-11
+
+PR #545 is already merged. The official Home still contains 177 radios. A bounded Passport test of K-Pop Hits attached MediaSource but decoded no audio. A controlled comparison of the same signed init MP4 returned 200 (764 bytes) without Referer, 200 with Passport Origin only, and 403 with Passport Referer (with or without Origin). This isolates a referer-sensitive CDN access restriction for this resource. No request headers were falsified or suppressed to evade denial. No provider allowlist configuration is available. The other 22 have not been retested or declared functional. All source evidence and the 154 previous records remain unchanged. See PASSPORT_ACCESS_RESTRICTION.json. Next step: provider-authorized cross-site access or an officially permitted public endpoint, followed by individual Passport decoding validation. No runtime change, new branch, new PR, or merge was performed.

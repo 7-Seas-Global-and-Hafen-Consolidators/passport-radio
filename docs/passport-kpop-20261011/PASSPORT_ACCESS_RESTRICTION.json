@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-11",
+  "referenceCommit": "a87194c61f6d1d59d0b6c5be39c2871ecae3f0d7",
+  "passportPage": "https://passportradio.online/",
+  "channel": "passport-korean-seoulfm",
+  "officialBrowser": {
+    "mediaSourceAttached": true,
+    "readyState": 0,
+    "paused": true,
+    "currentTime": 0,
+    "consoleError": "AbortError: The play() request was interrupted by a new load request",
+    "result": "NO_DECODED_AUDIO"
+  },
+  "controlledSameSignedInitResource": {
+    "noOriginNoReferer": {
+      "status": 200,
+      "mime": "video/mp4",
+      "bytes": 764
+    },
+    "passportOriginOnly": {
+      "status": 200,
+      "bytes": 764
+    },
+    "passportRefererOnly": {
+      "status": 403
+    },
+    "passportOriginAndReferer": {
+      "status": 403
+    }
+  },
+  "conclusion": "The tested signed initialization resource rejects the Passport Referer. Origin alone is accepted. This demonstrates a referer-sensitive access restriction for K-Pop Hits, not a codec or CORS failure. Provider policy configuration is unavailable; no allowlist assumption is made. Other 22 remain separately unverified on Passport; previous individual CDN failures are preserved.",
+  "changesToRuntime": [],
+  "notAttempted": [
+    "remove or falsify Referer to evade denial",
+    "proxy access restriction",
+    "repeat original playback",
+    "repeat 23-channel failure battery"
+  ],
+  "nextPendingOperation": "Obtain provider-authorized cross-site access for Passport or an officially permitted public playback endpoint; then validate each of the 23 through the universal player. A merged PR cannot accept another merge."
+}

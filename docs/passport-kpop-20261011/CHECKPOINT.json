@@ -1,7 +1,7 @@
 {
   "branch": "feat/passport-kpop-26-20261011",
   "base": "b10875a900625eb1bdfb6418233f11f4e6f06d93",
-  "status": "177_REGISTERED_PASSPORT_PLAYBACK_NOT_CONFIRMED",
+  "status": "177_REGISTERED_PASSPORT_ACCESS_RESTRICTION_UNRESOLVED",
   "discovered": 26,
   "integratedConfirmed": 3,
   "pending": 23,
@@ -21,10 +21,10 @@
     38123414803,
     38123620699
   ],
-  "nextPendingOperation": "Owner reviews current 177-channel preview. Confirm Passport playback in authenticated preview; original-source playback is proven for all 23, Passport playback is not yet proven. No new investigation or tests started after final stop instruction.",
+  "nextPendingOperation": "Obtain provider-authorized cross-site access for Passport or an officially permitted public playback endpoint; then validate each of the 23 through the universal player. A merged PR cannot accept another merge.",
   "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/545",
   "merge": false,
-  "referenceCommit": "c373388e196afd7b302e565b45697be5f7761f2a",
+  "referenceCommit": "a87194c61f6d1d59d0b6c5be39c2871ecae3f0d7",
   "koreanTested": 23,
   "koreanConfirmed": 0,
   "koreanMseRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38145780818",
@@ -53,5 +53,8 @@
     "failed": 0
   },
   "originalEvidence": "docs/passport-kpop-20261011/KOREAN_ORIGINAL_BROWSER_RESULTS.json",
-  "stoppedByOwner": true
+  "stoppedByOwner": false,
+  "prAlreadyMerged": true,
+  "passportAccessEvidence": "docs/passport-kpop-20261011/PASSPORT_ACCESS_RESTRICTION.json",
+  "productionPlaybackConfirmed": false
 }
