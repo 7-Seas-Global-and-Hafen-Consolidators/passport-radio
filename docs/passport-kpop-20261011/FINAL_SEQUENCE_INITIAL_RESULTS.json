@@ -1,0 +1,241 @@
+{
+  "testedAt": "2026-10-11T08:09:38.536Z",
+  "channels": [
+    {
+      "id": "passport-chinese-pop",
+      "name": "中国流行音乐™",
+      "status": "PLAYING",
+      "media": {
+        "time": 1.507512,
+        "decoded": 14592
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    },
+    {
+      "id": "passport-sertanejo-raiz",
+      "name": "Sertanejo Raiz™",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "message": "SINAL INDISPONÍVEL (CORS/HTTPS) · TENTE NOVAMENTE",
+      "responses": [],
+      "networkFailures": [
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://radio2.mazagafm.com:8443/live",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4173/fonts/passport-footer/b8d14dc4cf4c0d27.ttf",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4173/fonts/passport-footer/09a2d3f581282a95.ttf",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4173/fonts/passport-footer/01689ad055025ff1.ttf",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4173/fonts/passport-footer/a7bcb84cb01f6e33.ttf",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4173/fonts/passport-footer/f01900495012279f.ttf",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4173/fonts/passport-footer/d25efe5b0dcf3b36.ttf",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://mediaserv68.live-streams.nl:18012/OnlyLive",
+          "error": "net::ERR_CONNECTION_CLOSED"
+        },
+        {
+          "url": "https://googleads.g.doubleclick.net/pagead/id",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://googleads.g.doubleclick.net/pagead/id",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://googleads.g.doubleclick.net/pagead/id",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://googleads.g.doubleclick.net/pagead/id",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://googleads.g.doubleclick.net/pagead/id",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "warnings": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Stream bloqueado pelo navegador: https://lhttp.qtfm.cn/live/20500215/64k.mp3 AbortError: The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+        "Stream bloqueado pelo navegador: https://lhttp.qtfm.cn/live/20500215/64k.mp3 AbortError: The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "Stream bloqueado pelo navegador: https://lhttp.qtfm.cn/live/20500215/64k.mp3 NotAllowedError: play() can only be initiated by a user gesture.",
+        "Unrecognized feature: 'web-share'.",
+        "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+        "[Passport Live] erro de áudio: MediaError",
+        "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('http://127.0.0.1:4173').",
+        "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('http://127.0.0.1:4173').",
+        "No available adapters.",
+        "No available adapters.",
+        "No available adapters.",
+        "Failed to load resource: the server responded with a status of 404 (File not found)"
+      ],
+      "mediaErrors": []
+    },
+    {
+      "id": "passport-sertanejo-fm",
+      "name": "Sertanejo FM™",
+      "status": "PLAYING",
+      "media": {
+        "time": 1.516385,
+        "decoded": 43886
+      },
+      "pauseResume": true,
+      "singleAudio": true,
+      "responses": [
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live?source=website",
+          "status": 200,
+          "type": "audio/mpeg"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "all cards / approved order / no autoplay",
+      "status": "PASS",
+      "detail": {
+        "cards": 165,
+        "names": [
+          "DANCE, FLASH HOUSE & DISCOTECAS",
+          "ROCK, METAL & ALTERNATIVAS",
+          "POP, DÉCADAS & NOSTALGIA",
+          "SOUL, BLACK MUSIC & REGGAE",
+          "BRASIL: MPB, SAMBA & SERTANEJO",
+          "JAZZ, CLÁSSICA & AMBIENTES",
+          "AO VIVO, PROGRAMAS & ESPECIAIS",
+          "WORLD DIAL™",
+          "CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS"
+        ]
+      }
+    },
+    {
+      "name": "responsive exact existing card CSS at eight widths",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 320,
+          "document": 320,
+          "cards": 165,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 360,
+          "document": 360,
+          "cards": 165,
+          "clipped": [],
+          "columns": 2
+        },
+        {
+          "width": 375,
+          "document": 375,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 390,
+          "document": 390,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 414,
+          "document": 414,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 480,
+          "document": 480,
+          "cards": 165,
+          "clipped": [],
+          "columns": 3
+        },
+        {
+          "width": 768,
+          "document": 768,
+          "cards": 165,
+          "clipped": [],
+          "columns": 4
+        },
+        {
+          "width": 1280,
+          "document": 1280,
+          "cards": 165,
+          "clipped": [],
+          "columns": 8
+        }
+      ]
+    },
+    {
+      "name": "real new radio continuity / volume / previous-next",
+      "status": "PASS",
+      "detail": {
+        "sameElement": true,
+        "volume": 0.4,
+        "noRestart": true
+      }
+    },
+    {
+      "name": "new radio versus existing Hits and real Clips TV interlock",
+      "status": "PASS",
+      "detail": {
+        "radioToRadio": true,
+        "radioToTV": true,
+        "tvToRadio": true
+      }
+    }
+  ],
+  "errors": []
+}

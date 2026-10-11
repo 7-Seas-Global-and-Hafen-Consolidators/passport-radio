@@ -1,19 +1,27 @@
 {
   "branch": "feat/passport-kpop-26-20261011",
   "base": "b10875a900625eb1bdfb6418233f11f4e6f06d93",
-  "operation": "validate_final_three_at_new_indices",
+  "status": "PARTIAL_BLOCKED",
   "discovered": 26,
-  "integrated_confirmed": 3,
+  "integratedConfirmed": 3,
   "pending": 23,
-  "status": "FINAL_VALIDATION",
   "radioBefore": 151,
   "radioAfter": 154,
-  "initialRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38122342146",
+  "programSelectors": 11,
+  "publicCards": 165,
+  "validatedAppCommit": "d6499353fc00865c674eeee877f094524f0b3862",
+  "playbackRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124032423",
+  "layoutRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124284614",
+  "preview": "https://passport-kpop-preview-20261011.mr-nomad.chatgpt.site",
+  "previewSourceCommit": "9e679879052e19858263c06714fe14007db3c48c",
+  "previewDeployment": "appgdep_6acb46973ca08191ad86827d176bd1c7",
+  "initialRun": 38122342146,
   "diagnosticRuns": [
     38123180335,
     38123414803,
     38123620699
   ],
-  "nextPending": "Resolve Korean HLS public CDN/native playback compatibility without weakening browser protections or modifying protected engines. All canonical manifests and previous tests remain persisted; do not redo discovery.",
+  "nextPendingOperation": "Resolve public Korean HLS CDN/native-media compatibility. All 23 canonical manifests and per-channel failures are persisted. ORB and code 4 are proven for the Pop sample. Do not rediscover sources, reprocess verified radios, weaken protections, or alter protected engines.",
+  "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/545",
   "merge": false
 }

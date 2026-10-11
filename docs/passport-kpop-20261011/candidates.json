@@ -757,8 +757,12 @@
       "id": "passport-chinese-pop",
       "name": "中国流行音乐™",
       "status": "PLAYING",
+      "resumeMedia": {
+        "time": 1.825532,
+        "decoded": 17088
+      },
       "media": {
-        "time": 1.508369,
+        "time": 1.510078,
         "decoded": 14592
       },
       "pauseResume": true,
@@ -766,11 +770,18 @@
       "responses": [
         {
           "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
-          "status": 200
+          "status": 200,
+          "type": "audio/mpeg"
+        },
+        {
+          "url": "https://lhttp.qtfm.cn/live/20500215/64k.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
         }
       ]
     },
-    "integrated": true
+    "integrated": true,
+    "formatEvidence": "Chrome response Content-Type audio/mpeg; decoded bytes and advancing clock, before and after pause/resume."
   },
   {
     "number": 25,
@@ -788,8 +799,12 @@
       "id": "passport-sertanejo-raiz",
       "name": "Sertanejo Raiz™",
       "status": "PLAYING",
+      "resumeMedia": {
+        "time": 1.843008,
+        "decoded": 34691
+      },
       "media": {
-        "time": 1.526715,
+        "time": 1.532047,
         "decoded": 29257
       },
       "pauseResume": true,
@@ -799,10 +814,16 @@
           "url": "https://radio2.mazagafm.com:8443/live?type=.mp3",
           "status": 200,
           "type": "audio/mpeg"
+        },
+        {
+          "url": "https://radio2.mazagafm.com:8443/live?type=.mp3",
+          "status": 200,
+          "type": "audio/mpeg"
         }
       ]
     },
-    "integrated": true
+    "integrated": true,
+    "formatEvidence": "Chrome response Content-Type audio/mpeg; decoded bytes and advancing clock, before and after pause/resume."
   },
   {
     "number": 26,
@@ -820,8 +841,12 @@
       "id": "passport-sertanejo-fm",
       "name": "Sertanejo FM™",
       "status": "PLAYING",
+      "resumeMedia": {
+        "time": 1.831542,
+        "decoded": 51409
+      },
       "media": {
-        "time": 1.524342,
+        "time": 1.52719,
         "decoded": 43886
       },
       "pauseResume": true,
@@ -829,11 +854,17 @@
       "responses": [
         {
           "url": "https://servidor36-1.brlogic.com:7104/live?source=website",
-          "status": 200
+          "status": 200,
+          "type": "audio/mpeg"
+        },
+        {
+          "url": "https://servidor36-1.brlogic.com:7104/live?source=website",
+          "status": 200,
+          "type": "audio/mpeg"
         }
       ]
     },
-    "formatEvidence": "HEAD on exact confirmed stream: HTTP 200, Content-Type audio/mpeg",
+    "formatEvidence": "Chrome response Content-Type audio/mpeg; decoded bytes and advancing clock, before and after pause/resume.",
     "integrated": true
   }
 ]
