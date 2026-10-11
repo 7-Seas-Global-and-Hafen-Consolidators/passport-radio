@@ -14,7 +14,12 @@
     "nosniff": true,
     "bytes": 764,
     "container": "ISO BMFF fragmented MP4",
-    "advertisedCodec": "AAC-LC mp4a.40.2"
+    "advertisedCodec": "AAC-LC mp4a.40.2",
+    "ffprobe": {
+      "codec_name": "aac",
+      "sample_rate": 44100,
+      "channels": 2
+    }
   },
   "correction": "New Korean records opt into the already-existing HLS.js path when MediaSource supports AAC. Native HLS stays available without MSE. The universal player, Bus, mutex and continuity files are unchanged. All older World records keep the original native-HLS decision.",
   "pendingEvidenceRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38145780818",
@@ -22,5 +27,31 @@
     "js/world-radio-player.js": "0b953286abff9a6262e56eb3a06c6107ffb7ddf11e003f83cb3a8ecfb8b66a44",
     "data/passport-radio-inventory.json": "69d615853dcd5c190aa53209edad6610354ab96fe4ad1f290f31964d15e5d980",
     "js/passport-radio-grid.js": "00b733eacef42c99d8a03938bc901fb8201f520b93b0f36770eb4c5e32abbc8d"
+  },
+  "sampleFragment": {
+    "freshPublicManifest": true,
+    "status": 200,
+    "contentType": "video/iso.segment",
+    "cors": "*",
+    "bytes": 101904,
+    "environment": "workspace HTTPS client, not browser playback"
+  },
+  "hostedFirstMseRound": {
+    "run": 38145780818,
+    "channels": 23,
+    "decodedPlaying": 0,
+    "layoutPass": true,
+    "warnings": "HTTP 403 messages; segment response bodies not captured in first round. Exact CDN response diagnosis pending on one sample."
+  },
+  "finalState": "Prepared correction is inactive: runtime restored exactly to c373388e196afd7b302e565b45697be5f7761f2a because no Korean browser playback was confirmed.",
+  "specificCDNDenial": {
+    "run": 38146843694,
+    "channel": "K-Pop Hits™",
+    "playlistStatus": 200,
+    "initAndSegmentStatus": 403,
+    "contentType": "text/html",
+    "provider": "BunnyCDN",
+    "hlsError": "fragLoadError / HTTP Error 403",
+    "cause": "IP, referrer, token policy or another CDN rule not established; no workaround attempted."
   }
 }

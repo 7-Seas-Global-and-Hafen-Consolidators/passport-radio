@@ -5,12 +5,12 @@
     "name": "K-Pop Hits™",
     "sourcePage": "https://seoul.fm/pt/",
     "origin": "seoulfm",
-    "stream": "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192&cdn=ios",
+    "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8",
     "format": "HLS AAC-LC",
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-seoulfm",
       "name": "K-Pop Hits™",
@@ -29,16 +29,29 @@
       ]
     },
     "variantEvidence": "Documented bitrate query: auto or numeric 48/64/96/128/192/320. Encoder lists 192 kbps; direct media variant avoids master selection without engine changes. Public cdn=ios parameter documented as app pull zone; same keyless AAC stream, no header spoofing or security overrides.",
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
     "attemptedVariants": [
       "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192",
-      "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios"
+      "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios",
+      "https://api.seoul.fm/v3/streams/public/manifest.m3u8?bitrate=192&cdn=ios"
     ],
     "diagnosis": "Native HLS reports maybe; media error code 4 / NotSupportedError. init MP4 and m4s requests blocked by Chromium ORB. Both documented direct bitrate and public CDN option failed. No security overrides or engine modifications.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true,
-    "originalManifest": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8"
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-seoulfm",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/public/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 18,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-seoulfm"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback.",
+    "proposedManifest": "https://api.seoul.fm/v3/streams/public/manifest.m3u8"
   },
   {
     "number": 2,
@@ -51,7 +64,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-new",
       "name": "K-Pop Now™",
@@ -69,10 +82,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-new",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/new/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 21,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-new"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 3,
@@ -85,7 +110,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-girlpower",
       "name": "K-Pop Girls™",
@@ -103,10 +128,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-girlpower",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/girlpower/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 10,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-girlpower"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 4,
@@ -119,7 +156,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-boypower",
       "name": "K-Pop Boys™",
@@ -137,10 +174,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-boypower",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/boypower/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 11,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-boypower"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 5,
@@ -153,7 +202,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-classics",
       "name": "K-Pop Classics™",
@@ -171,10 +220,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-classics",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/classics/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 16,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-classics"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 6,
@@ -187,7 +248,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-1990s",
       "name": "K-Pop 90s™",
@@ -205,10 +266,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-1990s",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/1990s/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 14,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-1990s"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 7,
@@ -221,7 +294,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-2000s",
       "name": "K-Pop 2000s™",
@@ -239,10 +312,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-2000s",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/2000s/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 12,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-2000s"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 8,
@@ -255,7 +340,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-2010s",
       "name": "K-Pop 2010s™",
@@ -273,10 +358,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-2010s",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/2010s/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 12,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-2010s"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 9,
@@ -289,7 +386,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-2020s",
       "name": "K-Pop 2020s™",
@@ -307,10 +404,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-2020s",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/2020s/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 10,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-2020s"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 10,
@@ -323,7 +432,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-dance",
       "name": "K-Dance™",
@@ -341,10 +450,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-dance",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/dance/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 10,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-dance"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 11,
@@ -357,7 +478,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-krock",
       "name": "K-Rock™",
@@ -375,10 +496,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-krock",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/krock/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 10,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-krock"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 12,
@@ -391,7 +524,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-indie",
       "name": "K-Indie™",
@@ -409,10 +542,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-indie",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/indie/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 11,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-indie"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 13,
@@ -425,7 +570,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-hiphop",
       "name": "K-Hip-Hop™",
@@ -443,10 +588,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-hiphop",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/hiphop/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 16,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-hiphop"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 14,
@@ -459,7 +616,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-rnb",
       "name": "K-R&B™",
@@ -477,10 +634,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-rnb",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/rnb/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 14,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-rnb"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 15,
@@ -493,7 +662,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-ballad",
       "name": "K-Ballads™",
@@ -511,10 +680,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-ballad",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/ballad/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 17,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-ballad"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 16,
@@ -527,7 +708,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-chill",
       "name": "K-Chill™",
@@ -545,10 +726,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-chill",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/chill/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 14,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-chill"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 17,
@@ -561,7 +754,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-lofi",
       "name": "K-LoFi™",
@@ -579,10 +772,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-lofi",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/lofi/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 9,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-lofi"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 18,
@@ -595,7 +800,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-citypop",
       "name": "K-City Pop™",
@@ -613,10 +818,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-citypop",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/citypop/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 17,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-citypop"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 19,
@@ -629,7 +846,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-ost",
       "name": "K-Drama OST™",
@@ -647,10 +864,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-ost",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/ost/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 11,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-ost"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 20,
@@ -663,7 +892,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-divas",
       "name": "K-Divas™",
@@ -681,10 +910,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-divas",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/divas/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 16,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-divas"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 21,
@@ -697,7 +938,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-kings",
       "name": "K-Kings™",
@@ -715,10 +956,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-kings",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/kings/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 17,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-kings"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 22,
@@ -731,7 +984,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-japan",
       "name": "K-Pop Japan™",
@@ -749,10 +1002,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-japan",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/japan/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 9,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-japan"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 23,
@@ -765,7 +1030,7 @@
     "section": 11,
     "lang": "ko-KR",
     "evidence": "GET /v3/streams via official public Swagger UI: HTTP 200; distinct encoder key; live=true; CORS *; no API key required",
-    "status": "VALIDATING",
+    "status": "BLOCKED",
     "validation": {
       "id": "passport-korean-holidays",
       "name": "K-Holidays™",
@@ -783,10 +1048,22 @@
         }
       ]
     },
-    "blocker": "Playlist and variant answered HTTP 206 but no decoded playback within 30 seconds through unchanged Passport transport.",
-    "integrated": true,
-    "previousStatus": "BLOCKED",
-    "hlsJs": true
+    "blocker": "Public playlist loaded via MSE but no decoded playback within 30 seconds; scoped console recorded HTTP 403 responses. Exact BunnyCDN init/segment 403 body was captured only for the Pop diagnostic.",
+    "integrated": false,
+    "availability": "NOT_DECLARED_OFFLINE",
+    "recoveryValidation": {
+      "id": "passport-korean-holidays",
+      "status": "NOT_CONFIRMED",
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "playlist": {
+        "url": "https://api.seoul.fm/v3/streams/holidays/manifest.m3u8",
+        "status": 200,
+        "type": "application/vnd.apple.mpegurl"
+      },
+      "http403Warnings": 10,
+      "fullEvidence": "KOREAN_MSE_INITIAL_RESULTS.json#passport-korean-holidays"
+    },
+    "preparedTransport": "Existing HLS.js via per-new-record hlsJs flag; patch retained but inactive pending actual decoded playback."
   },
   {
     "number": 24,

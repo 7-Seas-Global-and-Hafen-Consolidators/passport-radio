@@ -1,14 +1,14 @@
 {
   "branch": "feat/passport-kpop-26-20261011",
   "base": "b10875a900625eb1bdfb6418233f11f4e6f06d93",
-  "status": "KOREAN_COMPATIBILITY_VALIDATING",
+  "status": "KOREAN_HOSTED_CDN_DENIAL",
   "discovered": 26,
   "integratedConfirmed": 3,
   "pending": 23,
   "radioBefore": 151,
-  "radioAfter": 177,
+  "radioAfter": 154,
   "programSelectors": 11,
-  "publicCards": 188,
+  "publicCards": 165,
   "validatedAppCommit": "d6499353fc00865c674eeee877f094524f0b3862",
   "playbackRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124032423",
   "layoutRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38124284614",
@@ -21,8 +21,14 @@
     38123414803,
     38123620699
   ],
-  "nextPendingOperation": "Validate only 23 Korean channels through existing HLS.js transport, selected by per-new-record flag. Preserve the 154 previously validated records. Do not update preview until decoded audio evidence.",
+  "nextPendingOperation": "Resolve or obtain authorization for the BunnyCDN HTTP 403 affecting the hosted browser. Cause such as IP/referrer/token policy is not established. Do not spoof headers, proxy around denials, reacquire channels or replay the three confirmed radios. Apply prepared per-Korean HLS.js patch only after actual decoded browser audio is confirmed. Original source is not declared offline.",
   "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/545",
   "merge": false,
-  "referenceCommit": "c373388e196afd7b302e565b45697be5f7761f2a"
+  "referenceCommit": "c373388e196afd7b302e565b45697be5f7761f2a",
+  "koreanTested": 23,
+  "koreanConfirmed": 0,
+  "koreanMseRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38145780818",
+  "koreanSingleDiagnosticRun": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38146843694",
+  "preparedPatch": "docs/passport-kpop-20261011/PREPARED_KOREAN_COMPATIBILITY.patch",
+  "runtimeRestoredExactlyTo": "c373388e196afd7b302e565b45697be5f7761f2a"
 }
