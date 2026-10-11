@@ -85,11 +85,15 @@
     "existingName": "한국 음악 라디오",
     "stream": "https://antares.dribbcast.com/proxy/kpop?mp=/s"
   },
-  "state": "SAVED_READY_FOR_BROWSER_VALIDATION",
+  "state": "READY_FOR_OWNER_MERGE",
   "merge": false,
   "staticTests": {
     "passed": 3,
     "failed": 0
   },
-  "audioDecoded": 6
+  "audioDecoded": 6,
+  "browserPlaybackPassed": 6,
+  "browserValidation": "BROWSER_VALIDATION.json",
+  "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/546",
+  "applicationCommit": "611f0507ec56bf9345796bb000846580129303dd"
 }
