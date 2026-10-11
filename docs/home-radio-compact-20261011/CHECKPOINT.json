@@ -1,0 +1,12 @@
+{
+  "branch": "style/home-radio-compact-20261011",
+  "base": "5f35e6227fbbfcbbc431bb790e52200f6573db0d",
+  "radioCount": 160,
+  "programSelectors": 11,
+  "inventoryChanged": false,
+  "playerChanged": false,
+  "applicationFiles": ["js/passport-radio-grid.js", "css/passport-radio-grid.css"],
+  "localPreservationTests": {"passed": 2, "failed": 0},
+  "status": "IMPLEMENTED_BROWSER_VALIDATION_PENDING",
+  "merge": false
+}
