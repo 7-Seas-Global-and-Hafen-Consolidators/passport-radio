@@ -2,21 +2,41 @@
   "branch": "feat/videos-three-owner-20261011",
   "pr": 548,
   "base": "a8f1dcac3841fc03c26ced5693b3958b1668b427",
-  "catalogueBefore": 7117,
-  "catalogueAfter": 7120,
+  "validatedCommit": "8565be417e71e3ef216514e4d2a1599405820d20",
+  "publicTitles": [
+    "BTS — Live in Las Vegas 2026",
+    "a-ha — Live BBC 2026",
+    "The Mission — Live in London"
+  ],
   "ids": [
     "3KW4sPXJh5I",
     "GqUgSWT-5CA",
     "XLrsurnMjKc"
   ],
-  "publicTitles": "exact owner mandated titles",
-  "previousRecords": "unchanged",
-  "build": "PASS 38159121362",
+  "catalogueBefore": 7117,
+  "catalogueAfter": 7120,
+  "oldRecordsUnchanged": true,
+  "build": {
+    "status": "PASS",
+    "run": 38159545720
+  },
+  "visual": {
+    "status": "PASS",
+    "run": 38159545758,
+    "widths": [
+      360,
+      390,
+      1280
+    ],
+    "artifact": 11708983882
+  },
   "catalogueTests": "8 PASS",
   "embedRestriction": {
     "id": "GqUgSWT-5CA",
-    "playableInEmbed": false
+    "playableInEmbed": false,
+    "existingMessageVerified": true
   },
-  "playback": "not independently proved",
-  "visual": "correcting test locator that depended on thumbnail removed by existing embed; no application defect or player change"
+  "playback": "BTS and The Mission permitted by YouTube metadata; audiovisual playback not independently proved",
+  "departmentsOutsideVideos": "unchanged",
+  "merge": false
 }
