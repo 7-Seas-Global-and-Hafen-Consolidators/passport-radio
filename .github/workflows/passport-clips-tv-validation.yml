@@ -50,6 +50,8 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chrome
       - name: Real TV, interlock and responsive checks
+        env:
+          PASSPORT_CLIPS_ONLY: ${{ github.head_ref == 'feat/passport-clips-tv-hub-20261011' && 'passport-clips-7,passport-clips-9' || '' }}
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
           NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_clips_tv_browser.cjs

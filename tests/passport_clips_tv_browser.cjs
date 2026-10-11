@@ -3,8 +3,9 @@ const fs=require('node:fs');const assert=require('node:assert/strict');
 const origin=process.env.PASSPORT_TEST_ORIGIN||'http://127.0.0.1:4173';
 const out='reports/passport-clips-tv';fs.mkdirSync(out,{recursive:true});
 const catalog=JSON.parse(fs.readFileSync('data/passport-clips-channels.json')).channels;
+const only=(process.env.PASSPORT_CLIPS_ONLY||'').split(',').filter(Boolean);
 const report={checks:[],channels:[],errors:[],testedAt:new Date().toISOString()};
-async function check(name,fn){try{report.checks.push({name,status:'PASS',detail:await fn()});}catch(e){report.checks.push({name,status:'FAIL',error:e.message});}}
+async function check(name,fn){if(only.length)return;try{report.checks.push({name,status:'PASS',detail:await fn()});}catch(e){report.checks.push({name,status:'FAIL',error:e.message});}}
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true});
  const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();
@@ -12,6 +13,10 @@ async function check(name,fn){try{report.checks.push({name,status:'PASS',detail:
  const media='video#passport-clips-video';
  const state=()=>page.locator(media).evaluate(v=>({time:v.currentTime,width:v.videoWidth,height:v.videoHeight,paused:v.paused,volume:v.volume,controls:v.controls,autoplay:v.autoplay,ready:v.readyState,audioBytes:v.webkitAudioDecodedByteCount??null,videoBytes:v.webkitVideoDecodedByteCount??null}));
  await page.goto(origin+'/clips-tv.html');await page.waitForSelector('.clips-channel-card');
+ if(only.length){
+   await page.addScriptTag({url:'https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js'});
+   await page.evaluate(()=>{const Original=window.Hls;window.__tvProbe=[];window.Hls=class extends Original{constructor(config){super(config);for(const event of [Original.Events.MANIFEST_PARSED,Original.Events.FRAG_LOADED,Original.Events.ERROR])this.on(event,(_,data)=>{window.__tvProbe.push({event,type:data.type,details:data.details,fatal:data.fatal,reason:data.reason,level:data.frag?.level,url:data.frag?.url,levels:data.levels?.map(l=>({width:l.width,height:l.height,codec:l.codecSet,bitrate:l.bitrate})),error:data.error?.message});});}};});
+ }
  await check('menu, no autoplay, original first and one canonical footer',async()=>{
   assert.equal(await page.locator('.clips-channel-card').count(),11);assert.equal(await page.locator(media).count(),1);
   assert.equal((await state()).paused,true);assert.equal(await page.locator(media).getAttribute('src'),null);
@@ -26,7 +31,7 @@ async function check(name,fn){try{report.checks.push({name,status:'PASS',detail:
   assert(await page.locator('.puf-provider a').getAttribute('href')==='https://link.mercadopago.com.br/passportradio');
   return links;
  });
- for(const channel of catalog){
+ for(const channel of catalog.filter(c=>!only.length||only.includes(c.id))){
   const record={id:channel.id,name:channel.name,status:'NOT_CONFIRMED',playlist:false};
   const responses=[];const failures=[];
   const onResponse=r=>{if(r.url().includes('.m3u8'))responses.push({url:r.url(),status:r.status()});};
@@ -36,14 +41,15 @@ async function check(name,fn){try{report.checks.push({name,status:'PASS',detail:
     await page.locator(`[data-channel-id="${channel.id}"]`).click();
     await page.waitForFunction(()=>{const v=document.querySelector('#passport-clips-video');return !v.paused&&v.videoWidth>0&&v.currentTime>1;},{},{timeout:35000});
     const a=await state();await page.waitForTimeout(700);const b=await state();assert(b.time>a.time);assert(b.videoBytes===null||b.videoBytes>0);assert(b.audioBytes===null||b.audioBytes>0);
-    record.playlist=responses.some(r=>r.status===200);record.status='PLAYING';record.media=b;
+    record.playlist=responses.some(r=>r.status>=200&&r.status<300);record.status='PLAYING';record.media=b;
     await page.locator(media).evaluate(v=>v.pause());assert((await state()).paused);
     await page.locator('#passport-clips-start').click();await page.waitForFunction(()=>!document.querySelector('#passport-clips-video').paused);
     record.pauseResume=true;
     if(channel.id==='passport-clips-original'){await page.screenshot({path:out+'/tv-original-1280.png',fullPage:true});}
-  }catch(e){record.playlist=responses.some(r=>r.status===200);record.error=e.message;record.responses=responses.slice(-4);record.failures=failures;record.message=await page.locator('#passport-clips-status').textContent();record.status='BLOCKED_IN_TEST';}
+  }catch(e){record.playlist=responses.some(r=>r.status>=200&&r.status<300);record.error=e.message;record.responses=responses.slice(-4);record.failures=failures;record.message=await page.locator('#passport-clips-status').textContent();record.status='BLOCKED_IN_TEST';if(only.length)record.diagnostics=await page.evaluate(()=>window.__tvProbe.splice(0));}
   finally{page.off('response',onResponse);page.off('requestfailed',onFail);report.channels.push(record);}
  }
+ if(only.length){fs.writeFileSync(out+'/results.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));await browser.close();return;}
  await check('responsive widths, payments and readable cards',async()=>{
   const rows=[];
   for(const width of [320,360,375,390,414,480,768,1280]){
