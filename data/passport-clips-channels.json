@@ -1,0 +1,81 @@
+{
+  "channels": [
+    {
+      "id": "passport-clips-original",
+      "name": "Passport Clips TV™",
+      "stream": "https://video04.logicahost.com.br/mastervision/mastervision/playlist.m3u8",
+      "origin": "Master Vision TV",
+      "live": true
+    },
+    {
+      "id": "passport-clips-2",
+      "name": "80s Flashback",
+      "stream": "https://d1n314cytqn9r3.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-bklagqy82v0pr/XITE_80s_Flashback.m3u8",
+      "origin": "XITE 80s Flashback",
+      "live": true
+    },
+    {
+      "id": "passport-clips-3",
+      "name": "90s Throwback",
+      "stream": "https://d284aawtm5vi48.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fjdfi2br1jtq7/XITE_90s_Throwback.m3u8",
+      "origin": "XITE 90s Throwback",
+      "live": true
+    },
+    {
+      "id": "passport-clips-4",
+      "name": "Rock On",
+      "stream": "https://d198ro05q94rc4.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-c5xdq9qwilrd2/XITE_Rock_On.m3u8",
+      "origin": "XITE Rock On",
+      "live": true
+    },
+    {
+      "id": "passport-clips-5",
+      "name": "Just Chill",
+      "stream": "https://dvnftgdlbnemm.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-dh48uzd9o895t/XITE_Just_Chill.m3u8",
+      "origin": "XITE Just Chill",
+      "live": true
+    },
+    {
+      "id": "passport-clips-6",
+      "name": "Siempre Latino",
+      "stream": "https://d1xc25jm9e0l4b.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-xplkt8i7m24dc/XITE_Siempre_Latino.m3u8",
+      "origin": "XITE Siempre Latino",
+      "live": true
+    },
+    {
+      "id": "passport-clips-7",
+      "name": "Hits",
+      "stream": "https://d726x48n2pd5h.cloudfront.net/XITE_Hits.m3u8",
+      "origin": "XITE Hits",
+      "live": true
+    },
+    {
+      "id": "passport-clips-8",
+      "name": "Nuevo Latino",
+      "stream": "https://d3bsgqzbpkrvbb.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w288eaw03izg1/XITE_Nuevo_Latino.m3u8",
+      "origin": "XITE Nuevo Latino",
+      "live": true
+    },
+    {
+      "id": "passport-clips-9",
+      "name": "Classic Country",
+      "stream": "https://d2xm7fwgbakh1x.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ltmgkaa20sgt9/XITE_Countrys_Finest.m3u8",
+      "origin": "XITE Countrys Finest",
+      "live": true
+    },
+    {
+      "id": "passport-clips-10",
+      "name": "Celebrates",
+      "stream": "https://dt1s4l2cmiyit.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fcwpee1h7t5cs/XITE_Celebrates.m3u8",
+      "origin": "XITE Celebrates",
+      "live": true
+    },
+    {
+      "id": "passport-clips-11",
+      "name": "Hits UK",
+      "stream": "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8",
+      "origin": "XITE Hits UK",
+      "live": true
+    }
+  ]
+}

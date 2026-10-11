@@ -50,7 +50,7 @@
       });
       section.append(heading, grid); catalog.append(section);
     });
-    const tv = document.createElement('a'); tv.href = '/videos.html#passport-clips-tv'; tv.className = 'passport-tv-door';
+    const tv = document.createElement('a'); tv.href = '/clips-tv.html'; tv.className = 'passport-tv-door';
     const tvName = document.createElement('strong'); tvName.textContent = 'Passport Clips TV™';
     const tvAction = document.createElement('span'); tvAction.textContent = 'CLIPES, HISTÓRIAS E MÚSICA · ASSISTIR →';
     tv.append(tvName, tvAction); catalog.append(tv);
