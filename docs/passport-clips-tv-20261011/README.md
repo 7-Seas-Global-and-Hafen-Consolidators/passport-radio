@@ -37,3 +37,17 @@ Limites antigos de continuidade entre carregamentos completos são preservados. 
 Resultados finais, PR e preview serão persistidos no CHECKPOINT.json após o ensaio hospedado.
 
 O ensaio antigo Passport 40 foi ajustado exclusivamente ao novo endereço da TV (videoteca continua em Vídeos). Nesta branch ele cede ao workflow focado para evitar repetir auditorias já aprovadas; nas demais branches conserva sua validação completa.
+
+## Resultado salvo
+
+- PR: https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/544
+- Preview: https://passport-clips-tv-preview-20261011.mr-nomad.chatgpt.site/clips-tv.html
+- 3 testes de preservação PASS, 6 checks Chrome PASS, todos os 11 canais com vídeo e áudio decodificados, tempo avançando e pausa/retomada. Resultados consolidados em `verification.json`.
+- Primeiro run https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38114697086: 9 canais reproduzidos; Hits e Classic Country tiveram timeout inicial. Segundo run https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38115034868: somente os dois pendentes, ambos reproduzidos. Nenhuma URL ou arquivo da aplicação mudou entre os runs. Não foi estabelecida causa específica dos timeouts transitórios.
+- HLS retornou 206 em vários canais, resposta válida de conteúdo; o diagnóstico foi corrigido para aceitar 2xx. HTTP isolado nunca substitui vídeo/áudio decodificados.
+- Oito larguras sem overflow; todos os cards legíveis. Rodapé canônico único e imagens de pagamentos sem quebra.
+- Interlock real de rádio/TV aprovado. Videoteca: 24 cartões na página inicial; coleções, motor e dados preservados por hash. Entrada/retorno à TV sem autoplay; saída libera HLS.
+- Nenhum canal aprovado excluído. Nenhum candidato reprovado, Gothic TV ou Unplugged fictícia incluído.
+- As marcas externas não são usadas nos cards, títulos, mensagens ou controles. Marcas d’água que já fazem parte dos quadros transmitidos não foram editadas ou removidas; os streams públicos também permanecem observáveis na rede.
+- Código YouTube da videoteca registrou `this.api.isExternalMethodAvailable is not a function`; componente antigo intocado. Os testes da nova TV não registraram erros no ensaio isolado.
+- Apenas revisão/merge e deploy da produção pendentes. Nenhum merge executado.
