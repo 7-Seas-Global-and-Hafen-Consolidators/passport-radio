@@ -106687,6 +106687,47 @@
       },
       "embedAllowed": true,
       "thumbnail": "https://img.youtube.com/vi/j0lufswzkCw/hqdefault.jpg"
+    },
+    {
+      "id": "XLrsurnMjKc",
+      "artist": "The Mission",
+      "showDate": null,
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {},
+      "title": "Live in London",
+      "thumbnail": "https://img.youtube.com/vi/XLrsurnMjKc/hqdefault.jpg"
+    },
+    {
+      "id": "3KW4sPXJh5I",
+      "artist": "BTS",
+      "showDate": null,
+      "type": "full-concert",
+      "collections": [
+        "selection"
+      ],
+      "embedAllowed": true,
+      "collectionOrder": {},
+      "title": "Live in Las Vegas 2026",
+      "thumbnail": "https://img.youtube.com/vi/3KW4sPXJh5I/hqdefault.jpg"
+    },
+    {
+      "id": "GqUgSWT-5CA",
+      "artist": "a-ha",
+      "showDate": null,
+      "type": "full-concert",
+      "collections": [
+        "sessions-archive"
+      ],
+      "embedAllowed": false,
+      "collectionOrder": {
+        "sessions-archive": 4395
+      },
+      "title": "Live BBC 2026",
+      "thumbnail": "https://img.youtube.com/vi/GqUgSWT-5CA/hqdefault.jpg"
     }
   ]
 }
