@@ -1,0 +1,69 @@
+{
+  "appCommit": "611f0507ec56bf9345796bb000846580129303dd",
+  "run": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38154113552",
+  "artifact": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38154113552/artifacts/11707279889",
+  "channels": [
+    {
+      "id": "passport-kpop-now",
+      "media": {
+        "time": 1.016918,
+        "ready": 3,
+        "decoded": 31973
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "passport-kpop-mix",
+      "media": {
+        "time": 1.006297,
+        "ready": 4,
+        "decoded": 21316
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "passport-japan-hits",
+      "media": {
+        "time": 1.010072,
+        "ready": 4,
+        "decoded": 21316
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "passport-global-pop",
+      "media": {
+        "time": 1.020731,
+        "ready": 4,
+        "decoded": 21316
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "passport-gold-hits",
+      "media": {
+        "time": 1.013779,
+        "ready": 4,
+        "decoded": 21316
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "passport-top-hits",
+      "media": {
+        "time": 1.014097,
+        "ready": 4,
+        "decoded": 21316
+      },
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    "no autoplay",
+    "each channel pause/resume",
+    "one active audio while switching",
+    "390 and 1280px no horizontal overflow"
+  ],
+  "build": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38154113527",
+  "buildResult": "PASS"
+}

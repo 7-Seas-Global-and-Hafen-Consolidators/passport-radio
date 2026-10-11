@@ -1,0 +1,99 @@
+{
+  "branch": "fix/passport-kpop-approved-streams-20261011",
+  "base": "ab46567bd27980b634ec666ee444885718158ca3",
+  "removed": 23,
+  "added": 6,
+  "preservedRadioCount": 154,
+  "radioAfter": 160,
+  "channels": [
+    {
+      "id": "passport-kpop-now",
+      "name": "K-Pop Now™",
+      "source": "Passport Radio",
+      "terms": "K-pop",
+      "lang": "ko-KR",
+      "dir": "ltr",
+      "page": "/#passport-kpop-now",
+      "stream": "https://play.streamafrica.net/kpopradio",
+      "passportGroup": 11,
+      "origin": "Box Radio KPOP"
+    },
+    {
+      "id": "passport-kpop-mix",
+      "name": "K-Pop Mix™",
+      "source": "Passport Radio",
+      "terms": "K-pop",
+      "lang": "ko-KR",
+      "dir": "ltr",
+      "page": "/#passport-kpop-mix",
+      "stream": "https://cdn.onlyhitsradio.net/kpop",
+      "passportGroup": 11,
+      "origin": "OnlyHits KPOP"
+    },
+    {
+      "id": "passport-japan-hits",
+      "name": "Japan Hits™",
+      "source": "Passport Radio",
+      "terms": "J-pop · Música japonesa",
+      "lang": "ja-JP",
+      "dir": "ltr",
+      "page": "/#passport-japan-hits",
+      "stream": "https://cdn.onlyhitsradio.net/japan",
+      "passportGroup": 8,
+      "origin": "OnlyHits Japan"
+    },
+    {
+      "id": "passport-global-pop",
+      "name": "Global Pop™",
+      "source": "Passport Radio",
+      "terms": "Pop internacional",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "page": "/#passport-global-pop",
+      "stream": "https://cdn.onlyhitsradio.net/onlyhits",
+      "passportGroup": 3,
+      "origin": "OnlyHits"
+    },
+    {
+      "id": "passport-gold-hits",
+      "name": "Gold Hits™",
+      "source": "Passport Radio",
+      "terms": "Pop · Clássicos",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "page": "/#passport-gold-hits",
+      "stream": "https://cdn.onlyhitsradio.net/gold",
+      "passportGroup": 3,
+      "origin": "OnlyHits Gold"
+    },
+    {
+      "id": "passport-top-hits",
+      "name": "Top Hits™",
+      "source": "Passport Radio",
+      "terms": "Pop · Hits internacionais",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "page": "/#passport-top-hits",
+      "stream": "https://cdn.onlyhitsradio.net/tophits",
+      "passportGroup": 3,
+      "origin": "OnlyHits Top Hits"
+    }
+  ],
+  "duplicateNotAdded": {
+    "proposedName": "K-Pop Hits™",
+    "existingId": "kr",
+    "existingName": "한국 음악 라디오",
+    "stream": "https://antares.dribbcast.com/proxy/kpop?mp=/s"
+  },
+  "state": "READY_FOR_OWNER_MERGE",
+  "merge": false,
+  "staticTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "audioDecoded": 6,
+  "browserPlaybackPassed": 6,
+  "browserValidation": "BROWSER_VALIDATION.json",
+  "pr": "https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/546",
+  "applicationCommit": "611f0507ec56bf9345796bb000846580129303dd"
+}
