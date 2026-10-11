@@ -1,7 +1,7 @@
 /* Home presentation only. All selection goes through the unchanged universal engine. */
 (() => {
   'use strict';
-  const sections = ['DANCE, FLASH HOUSE & DISCOTECAS','ROCK, METAL & ALTERNATIVAS','POP, DÉCADAS & NOSTALGIA','SOUL, BLACK MUSIC & REGGAE','BRASIL: MPB, SAMBA & SERTANEJO','JAZZ, CLÁSSICA & AMBIENTES','AO VIVO, PROGRAMAS & ESPECIAIS','WORLD DIAL™','CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS','DEMAIS RÁDIOS EXISTENTES'];
+  const sections = ['DANCE, FLASH HOUSE & DISCOTECAS','ROCK, METAL & ALTERNATIVAS','POP, DÉCADAS & NOSTALGIA','SOUL, BLACK MUSIC & REGGAE','BRASIL: MPB, SAMBA & SERTANEJO','JAZZ, CLÁSSICA & AMBIENTES','AO VIVO, PROGRAMAS & ESPECIAIS','WORLD DIAL™','CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS','DEMAIS RÁDIOS EXISTENTES','K-POP & MÚSICA COREANA'];
   let inventory, catalog;
   const home = () => /^\/(?:index\.html)?$/.test(location.pathname);
   function sync() {
@@ -26,8 +26,9 @@
     const count = document.createElement('p'); count.className = 'passport-radio-count';
     count.textContent = `${inventory.radioCount} rádios · projetos próprios preservados · escolha seu som`;
     catalog.append(title, count);
-    sections.forEach((label, i) => {
-      const rows = inventory.records.filter(row => row.section === i + 1);
+    [1,2,3,11,4,5,6,7,8,9,10].forEach(number => {
+      const label = sections[number - 1];
+      const rows = inventory.records.filter(row => row.section === number);
       if (!rows.length) return;
       const section = document.createElement('section'); section.className = 'passport-radio-family';
       const heading = document.createElement('h3'); heading.textContent = label;
