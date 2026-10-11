@@ -10,6 +10,9 @@ on:
       - 'data/passport-radio-inventory.json'
       - 'tests/passport_40*'
       - '.github/workflows/passport-40-validation.yml'
+concurrency:
+  group: passport-40-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -20,6 +23,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*.html
+            /js/
+            /css/
+            /assets/*.js
+            /assets/*.css
+            /assets/home/
+            /images/editorial/wayne-hussey.png
+            /images/payments/
+            /data/
+            /docs/passport-40-20261011/
+            /tests/passport_40*
+            /editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

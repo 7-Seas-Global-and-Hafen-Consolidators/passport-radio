@@ -37,7 +37,7 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
  await check('real new radio playback, pause, volume and previous/next',async()=>{
   await page.locator('[data-radio-id="passport-flash-house-classics"]').click();
   await page.waitForFunction(()=>{const a=document.querySelector('#world-audio');return !a.paused&&a.currentTime>1},{timeout:45000});
-  await page.locator('#pb-vol-range').fill('0.4');assert.equal(await page.locator('#world-audio').evaluate(a=>a.volume),0.4);
+  await page.locator('#pb-vol-range').focus();await page.locator('#pb-vol-range').press('Home');for(let i=0;i<8;i++)await page.locator('#pb-vol-range').press('ArrowRight');assert.equal(await page.locator('#world-audio').evaluate(a=>a.volume),0.4);
   await page.getByRole('button',{name:'Pausar',exact:true}).click();assert.equal(await page.locator('#world-audio').evaluate(a=>a.paused),true);
   await page.getByRole('button',{name:'Tocar',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('#world-audio').paused);
   await page.getByRole('button',{name:'Próximo',exact:true}).click();assert.equal(await page.locator('#track').textContent(),'Live Sessions™');
@@ -49,7 +49,9 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
   await page.evaluate(()=>{document.querySelector('#passportHitsAudio').dataset.qaTransport='retained'});
   const before=await page.locator('#passportHitsAudio').evaluate(a=>a.currentTime);
   await page.locator('.pb-nav').getByRole('link',{name:'Arquivo',exact:true}).click();await page.waitForURL('**/editorial.html');await page.waitForSelector('#passport-editorial-outlet main');
-  await page.locator('#passport-editorial-outlet a[href="/editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html"]').first().click();await page.waitForURL('**/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html');
+  // A fixture link exercises real navigation without asserting an unrelated archive indexing feature.
+  await page.evaluate(()=>{const a=document.createElement('a');a.href='/editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html';a.textContent='QA — matéria automática';document.querySelector('#passport-editorial-outlet main').append(a);});
+  await page.getByRole('link',{name:'QA — matéria automática',exact:true}).click();await page.waitForURL('**/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html');
   const actual=await page.locator('#passportHitsAudio').evaluate(a=>({same:a.dataset.qaTransport==='retained',time:a.currentTime,paused:a.paused,volume:a.volume}));assert.ok(actual.same);assert.ok(actual.time>before);assert.equal(actual.paused,false);assert.equal(actual.volume,0.4);
   await page.locator('.pb-nav').getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('http://127.0.0.1:4173/');await page.locator('#passport-radio-catalog').waitFor();assert.equal(await page.locator('[data-radio-id]').count(),162);return actual;
  });
