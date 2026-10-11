@@ -2517,7 +2517,7 @@
       "family": "world",
       "index": 63,
       "name": "K-Pop Hits™",
-      "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192",
+      "stream": "https://api.seoul.fm/v3/streams/seoulfm/manifest.m3u8?bitrate=192&cdn=ios",
       "engine": "js/world-radio-player.js",
       "route": "/#passport-korean-seoulfm",
       "section": 11,
