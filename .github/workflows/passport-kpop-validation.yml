@@ -36,6 +36,7 @@ jobs:
             /fonts/
             /data/
             /docs/passport-kpop-20261011/
+            /docs/passport-kpop-replacement-20261011/
             /tests/passport_kpop*
             /tests/passport_korean_compatibility.cjs
             /editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html
@@ -51,7 +52,7 @@ jobs:
         with:
           node-version: '22'
       - name: Focused inventory preservation tests
-        run: node --test tests/passport_kpop_inventory.test.cjs
+        run: node --test tests/passport_kpop_replacement.test.cjs
       - name: Install browser test tooling outside application
         if: steps.changed.outputs.browser == 'true'
         run: |
@@ -64,7 +65,7 @@ jobs:
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
-          NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_korean_compatibility.cjs
+          NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_kpop_replacement_browser.cjs
       - name: Save real browser evidence
         if: always() && steps.changed.outputs.browser == 'true'
         uses: actions/upload-artifact@v4

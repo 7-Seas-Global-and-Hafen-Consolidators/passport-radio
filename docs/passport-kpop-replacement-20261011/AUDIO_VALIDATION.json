@@ -1,0 +1,74 @@
+[
+  {
+    "id": "passport-kpop-now",
+    "name": "K-Pop Now™",
+    "decodedAudio": true,
+    "exitCode": 0,
+    "evidence": [
+      "[Parsed_astats_0 @ 0x563dec0934c0] RMS level dB: -7.421287",
+      "[Parsed_astats_0 @ 0x563dec0934c0] RMS level dB: -6.772655",
+      "[Parsed_astats_0 @ 0x563dec0934c0] RMS level dB: -7.084873"
+    ],
+    "error": null
+  },
+  {
+    "id": "passport-kpop-mix",
+    "name": "K-Pop Mix™",
+    "decodedAudio": true,
+    "exitCode": 0,
+    "evidence": [
+      "[Parsed_astats_0 @ 0x563469dbd240] RMS level dB: -19.095889",
+      "[Parsed_astats_0 @ 0x563469dbd240] RMS level dB: -19.099598",
+      "[Parsed_astats_0 @ 0x563469dbd240] RMS level dB: -19.097743"
+    ],
+    "error": null
+  },
+  {
+    "id": "passport-japan-hits",
+    "name": "Japan Hits™",
+    "decodedAudio": true,
+    "exitCode": 0,
+    "evidence": [
+      "[Parsed_astats_0 @ 0x55a8ce902480] RMS level dB: -18.194984",
+      "[Parsed_astats_0 @ 0x55a8ce902480] RMS level dB: -18.553574",
+      "[Parsed_astats_0 @ 0x55a8ce902480] RMS level dB: -18.370579"
+    ],
+    "error": null
+  },
+  {
+    "id": "passport-global-pop",
+    "name": "Global Pop™",
+    "decodedAudio": true,
+    "exitCode": 0,
+    "evidence": [
+      "[Parsed_astats_0 @ 0x5558f1194200] RMS level dB: -17.688459",
+      "[Parsed_astats_0 @ 0x5558f1194200] RMS level dB: -17.571923",
+      "[Parsed_astats_0 @ 0x5558f1194200] RMS level dB: -17.629800"
+    ],
+    "error": null
+  },
+  {
+    "id": "passport-gold-hits",
+    "name": "Gold Hits™",
+    "decodedAudio": true,
+    "exitCode": 0,
+    "evidence": [
+      "[Parsed_astats_0 @ 0x55d8b9d199c0] RMS level dB: -18.983069",
+      "[Parsed_astats_0 @ 0x55d8b9d199c0] RMS level dB: -18.993563",
+      "[Parsed_astats_0 @ 0x55d8b9d199c0] RMS level dB: -18.988313"
+    ],
+    "error": null
+  },
+  {
+    "id": "passport-top-hits",
+    "name": "Top Hits™",
+    "decodedAudio": true,
+    "exitCode": 0,
+    "evidence": [
+      "[Parsed_astats_0 @ 0x565141fce580] RMS level dB: -16.862918",
+      "[Parsed_astats_0 @ 0x565141fce580] RMS level dB: -16.800472",
+      "[Parsed_astats_0 @ 0x565141fce580] RMS level dB: -16.831583"
+    ],
+    "error": null
+  }
+]
