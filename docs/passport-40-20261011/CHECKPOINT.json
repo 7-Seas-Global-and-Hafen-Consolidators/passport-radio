@@ -1,0 +1,39 @@
+{
+  "state": "VALIDATED_READY_FOR_REVIEW",
+  "base": "391191cab504ea070ce2d65513d04c71e4ddb14f",
+  "branch": "feat/passport-39-radios-clips-tv-20261011",
+  "before_radios": 112,
+  "added_radios": 39,
+  "after_radios": 151,
+  "preserved_program_selectors": 11,
+  "televisions": 1,
+  "focused_inventory_tests": "3 PASS",
+  "merge": false,
+  "pr": 543,
+  "validated_code_sha": "d868183d31b23f666dc91113745e7742c1d05239",
+  "browser_evidence": {
+    "full_run": 38107328440,
+    "approved_checks": 7,
+    "remaining_radio_run": 38107573722,
+    "remaining_radio": "PASS",
+    "widths": [
+      360,
+      390,
+      480,
+      768,
+      1280
+    ],
+    "tv": "HLS decoded 640x480, real playback, pause/resume and Bus interlock PASS",
+    "continuity": "Hits same audio element Home/Arquivo/editorial/Home, advancing time and volume 0.4",
+    "mapping": "39 card selection requests matched exact ports; no claim of 39 separate live browser decodes"
+  },
+  "build": "PASS at 771a218460ef4cb4f089b9d0444ab4ea70f28ccf",
+  "preview": {
+    "home": "https://passport-40-preview-20261011.mr-nomad.chatgpt.site",
+    "tv": "https://passport-40-preview-20261011.mr-nomad.chatgpt.site/videos.html#passport-clips-tv"
+  },
+  "pending": [
+    "Owner review and merge; production remains unchanged"
+  ],
+  "updated_at": "2026-10-11T03:15:00Z"
+}
