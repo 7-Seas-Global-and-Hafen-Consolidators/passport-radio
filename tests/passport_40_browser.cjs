@@ -3,11 +3,13 @@ const inventory=require('../data/passport-radio-inventory.json');
 const out='reports/passport-40';fs.mkdirSync(out,{recursive:true});
 const report={checks:[],failures:[],networkErrors:[],testedAt:new Date().toISOString()};
 async function dismissCookies(page){const button=page.getByRole('button',{name:'ACEITAR COOKIES',exact:true});if(await button.isVisible())await button.click();}
-async function check(name,fn){try{const detail=await fn();report.checks.push({name,status:'PASS',detail});}catch(e){report.failures.push({name,status:'FAIL',error:String(e)});}}
+async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='radio'&&!name.startsWith('real new radio'))return;try{const detail=await fn();report.checks.push({name,status:'PASS',detail});}catch(e){report.failures.push({name,status:'FAIL',error:String(e)});}}
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=user-gesture-required']});
  const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();
  page.on('pageerror',e=>report.networkErrors.push(String(e)));
+ page.on('console',m=>{if(m.type()==='warning'&&m.text().includes('Stream bloqueado'))report.networkErrors.push(m.text());});
+ page.on('requestfailed',r=>{if(r.url().includes('centova4')&&process.env.PASSPORT_40_ONLY==='radio')report.networkErrors.push(r.url()+' '+r.failure()?.errorText);});
  await page.goto('http://127.0.0.1:4173/');await page.waitForFunction(()=>window.PassportAudioRuntime?.ready,null,{timeout:60000});
  await page.locator('#passport-radio-catalog').waitFor();await dismissCookies(page);
  await check('all 151 radios and 11 project selectors visible; no duplicate cards; no autoplay',async()=>{
@@ -46,6 +48,7 @@ async function check(name,fn){try{const detail=await fn();report.checks.push({na
   await page.getByRole('button',{name:'Anterior',exact:true}).click();assert.equal(await page.locator('#track').textContent(),'Flash House Classics™');
   return await page.locator('#world-audio').evaluate(a=>({src:a.src,time:a.currentTime,volume:a.volume}));
  });
+ if(process.env.PASSPORT_40_ONLY==='radio'){await page.screenshot({path:`${out}/radio-real-1280.png`,fullPage:false});await browser.close();fs.writeFileSync(`${out}/results.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));if(report.failures.length)process.exitCode=1;return;}
  await check('existing Hits continuous audio: Home → Arquivo → automatic article → Home',async()=>{
   await page.locator('[data-radio-id="hits:main"]').click();await page.waitForFunction(()=>{const a=document.querySelector('#passportHitsAudio');return !a.paused&&a.currentTime>1},null,{timeout:45000});
   await page.locator('#pb-vol-range').focus();await page.locator('#pb-vol-range').press('Home');for(let i=0;i<8;i++)await page.locator('#pb-vol-range').press('ArrowRight');
