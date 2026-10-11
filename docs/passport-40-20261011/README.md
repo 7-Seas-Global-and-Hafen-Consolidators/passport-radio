@@ -25,3 +25,12 @@ A continuidade real permanece dentro das rotas suportadas pelo mecanismo existen
 Workflow `Passport 40 — inventory and browser evidence`: Chrome hospedado, seleção dos 39 canais, cinco larguras, rádio real, player universal, continuidade editorial, TV HLS real e interlock. O teste de seleção aborta apenas requisições upstream durante a comparação das 39 URLs, evitando repetir a aquisição; reprodução real é verificada separadamente. Capturas e resultado JSON ficam no artifact `passport-40-browser-evidence`.
 
 Nenhum merge ou publicação no domínio público é executado.
+
+## Evidências finais
+
+- 3 testes de inventário aprovados. Chrome: 7 verificações aprovadas no [run 38107328440](https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38107328440), incluindo 39 seleções, cinco larguras, continuidade real e TV real.
+- A etapa restante de rádio real passou isoladamente no [run 38107573722](https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38107573722): Flash House Classics tocou, pausou/retomou, manteve volume 0,4 e respondeu a anterior/próxima. Os abortos registrados durante a troca explícita de canal são cancelamentos esperados.
+- O código da aplicação é idêntico nos dois runs; somente o isolamento dos testes mudou. A verificação isolada evita repetir os sete casos aprovados. Nesta branch o workflow conserva esse foco; em outras branches executa a suíte completa.
+- Fullscreen: capacidade do controle nativo verificada; transição de tela cheia não exercitada. Os 39 mapeamentos foram verificados por seleção real e requisição, sem alegar 39 decodificações independentes em Chrome.
+- Capturas desktop e celular e JSON verificáveis nos artifacts dos runs. Build aprovado no SHA `771a218460ef4cb4f089b9d0444ab4ea70f28ccf`.
+- Preview: https://passport-40-preview-20261011.mr-nomad.chatgpt.site e `/videos.html#passport-clips-tv`.
