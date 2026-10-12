@@ -133,7 +133,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/ou3kzauizv6i",
       "aac_hd": "",
       "family": "world",
-      "index": 80
+      "index": 80,
+      "identity_validation": {
+        "status": "IDENTITY_MISMATCH",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": false,
+        "observed_icy_name": "NRJ POOL PARTY",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "1810",
@@ -148,7 +157,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/ouwrrusk6j4d",
       "aac_hd": "",
       "family": "world",
-      "index": 81
+      "index": 81,
+      "identity_validation": {
+        "status": "IDENTITY_MISMATCH",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": false,
+        "observed_icy_name": "NRJ Back To School",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2213",
@@ -163,7 +181,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/ouagnew2dqao",
       "aac_hd": "",
       "family": "world",
-      "index": 82
+      "index": 82,
+      "identity_validation": {
+        "status": "CONFIRMED_EXTERNAL",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": true,
+        "observed_icy_name": "corresponding original channel (exact header not supplied)",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2375",
@@ -178,7 +205,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/outb2i6ubafg",
       "aac_hd": "",
       "family": "world",
-      "index": 83
+      "index": 83,
+      "identity_validation": {
+        "status": "CONFIRMED_EXTERNAL",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": true,
+        "observed_icy_name": "corresponding original channel (exact header not supplied)",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2376",
@@ -193,7 +229,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/ouuzkr5n3nje",
       "aac_hd": "",
       "family": "world",
-      "index": 84
+      "index": 84,
+      "identity_validation": {
+        "status": "CONFIRMED_EXTERNAL",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": true,
+        "observed_icy_name": "corresponding original channel (exact header not supplied)",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2377",
@@ -208,7 +253,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/ougt7urb92oc",
       "aac_hd": "",
       "family": "world",
-      "index": 85
+      "index": 85,
+      "identity_validation": {
+        "status": "CONFIRMED_EXTERNAL",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": true,
+        "observed_icy_name": "corresponding original channel (exact header not supplied)",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2383",
@@ -223,7 +277,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/ouqcicyoeo8p",
       "aac_hd": "",
       "family": "world",
-      "index": 86
+      "index": 86,
+      "identity_validation": {
+        "status": "IDENTITY_MISMATCH",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": false,
+        "observed_icy_name": "NRJ ROAD TRIP",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2393",
@@ -238,7 +301,16 @@
       "aac_64": "https://streaming.nrjaudio.fm/our6tgvukkaq",
       "aac_hd": "",
       "family": "world",
-      "index": 87
+      "index": 87,
+      "identity_validation": {
+        "status": "IDENTITY_MISMATCH",
+        "evidence_source": "Owner supplied external investigation, 2026-10-12",
+        "http_status": 200,
+        "audio_valid": true,
+        "icy_name_corresponds": false,
+        "observed_icy_name": "NRJ HOUSE",
+        "local_reprobe": false
+      }
     },
     {
       "source_id": "2384",
@@ -2873,64 +2945,32 @@
       "original_name": "NRJ LES GAGNANTS DES NMA 2025",
       "passport_name": "Awards Winners 2025™",
       "stream": "https://streaming.nrjaudio.fm/oupyuebgddr9",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+      "result": "icy-name: NRJ POOL PARTY",
+      "classification": "IDENTITY_MISMATCH"
     },
     {
       "source_id": "1810",
       "original_name": "NRJ LES PLUS GRANDS GAGNANTS DES NMA",
       "passport_name": "Awards Hall of Fame™",
       "stream": "https://streaming.nrjaudio.fm/ouwrr5sk6j4d",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
-    },
-    {
-      "source_id": "2213",
-      "original_name": "NRJ FAN POWER",
-      "passport_name": "Fan Power™",
-      "stream": "https://streaming.nrjaudio.fm/ou87u4gk7oiu",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
-    },
-    {
-      "source_id": "2375",
-      "original_name": "NRJ LA PLAYLIST DE BRUNO MARS",
-      "passport_name": "Bruno Mars Mix™",
-      "stream": "https://streaming.nrjaudio.fm/ou2yn9pw5hs7",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
-    },
-    {
-      "source_id": "2376",
-      "original_name": "NRJ LA PLAYLIST DE MILEY",
-      "passport_name": "Miley Mix™",
-      "stream": "https://streaming.nrjaudio.fm/ou72xcf3s5gi",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
-    },
-    {
-      "source_id": "2377",
-      "original_name": "NRJ LA PLAYLIST DE DUA LIPA",
-      "passport_name": "Dua Lipa Mix™",
-      "stream": "https://streaming.nrjaudio.fm/ouykiv36zcw2",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+      "result": "icy-name: NRJ Back To School",
+      "classification": "IDENTITY_MISMATCH"
     },
     {
       "source_id": "2383",
       "original_name": "NRJ LA PLAYLIST DE VIANNEY",
       "passport_name": "Vianney Mix™",
       "stream": "https://streaming.nrjaudio.fm/oudqny2h9r57",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+      "result": "icy-name: NRJ ROAD TRIP",
+      "classification": "IDENTITY_MISMATCH"
     },
     {
       "source_id": "2393",
       "original_name": "NRJ LA PLAYLIST DE MARINE",
       "passport_name": "Marine Mix™",
       "stream": "https://streaming.nrjaudio.fm/ousovsm4z85f",
-      "result": "TypeError: fetch failed",
-      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+      "result": "icy-name: NRJ HOUSE",
+      "classification": "IDENTITY_MISMATCH"
     }
   ]
 }
