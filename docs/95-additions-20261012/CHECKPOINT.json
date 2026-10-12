@@ -2,7 +2,7 @@
   "branch": "feat/passport-nrj-191-20261012",
   "pr": 552,
   "base": "88b1f5a4968c3bb5ae8bc8e869f2be80328d6847",
-  "state": "IMPLEMENTED_LOCAL_INTEGRITY_PASSED_PREVIEW_PENDING",
+  "state": "IMPLEMENTED_PREVIEW_PUBLISHED_STATIC_CI_CORRECTIONS_PENDING",
   "counts": {
     "radio_before": 351,
     "radio_added": 50,
@@ -61,7 +61,13 @@
     "workflow_yaml": "PASS four focused workflows; static checks remain required",
     "stream_requests": 0,
     "media_downloads": 0,
-    "acquisition_repeated": false
+    "acquisition_repeated": false,
+    "initial_ci": {
+      "Passport 40": "PASS 38218228502",
+      "Korean preservation": "PASS 38218228503",
+      "NRJ local integrity": "5/6 PASS; snapshot grid hash included local extra newline. Snapshot corrected from exact unchanged GitHub source; affected assertion PASS locally. No app file changed.",
+      "Clips TV": "2/3 PASS; first check used pre-existing older video collections hash. Updated comparison to exact pre-operation commit 88b1f5a; all protected file comparisons remain mandatory."
+    }
   },
   "preserved": [
     "all 351 existing radio objects and indices",
@@ -74,7 +80,9 @@
   ],
   "preview_home": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site/",
   "preview_clips_tv": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site/clips-tv.html",
-  "next": "Publish existing private preview with this branch code; persist static CI outcomes. No media revalidation and no merge.",
+  "next": "Collect corrected mandatory static CI checks; no network/media tests, no merge.",
   "merged": false,
-  "production_modified": false
+  "production_modified": false,
+  "implementation_commit": "13c0450442b2356ebf1416429276204f29dc3539",
+  "preview_implementation_commit": "13c0450442b2356ebf1416429276204f29dc3539"
 }
