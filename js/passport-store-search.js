@@ -82,7 +82,7 @@
     if (document.body.classList.contains("passport-store-paper") && window.passportStoreView) {
       const active = state.q || state.entity || state.cat || state.type || state.gender;
       host.innerHTML = active && !items.length ? `<p class="pp-store-empty">Nenhum produto publicável para “${esc(state.q || state.entity || state.type)}”. O catálogo Stamp/Passport não inventa SKU para preencher buraco.</p>` : "";
-      const render = (p) => `<article class="pp-product"><a class="pp-product-link" data-id="${esc(p.id)}" href="${esc(p.url || ("/loja/p/" + p.id + ".html"))}"><div class="rv6-media"><img src="${esc(p.image || "")}" alt="${esc(p.name)}" width="220" height="220" loading="lazy" onerror="this.hidden=true;this.closest('.rv6-media').dataset.img='error';"></div><b>${esc(p.category || "")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a><button type="button" class="pp-btn pp-btn--red" data-add-cart="${esc(p.id)}" data-sku="${esc(p.sku||p.id)}" data-name="${esc(p.name)}" data-price="${esc(p.price)}">ADICIONAR AO CARRINHO</button></article>`;
+      const render = (p) => `<article class="pp-product"><a class="pp-product-link" data-id="${esc(p.id)}" href="${esc(p.url || ("/loja/p/" + p.id + ".html"))}"><div class="rv6-media"><img src="${esc(p.image || "")}" alt="${esc(p.name)}" width="220" height="220" loading="lazy" onerror="this.hidden=true;this.closest('.rv6-media').dataset.img='error';"></div><b>${esc(p.category || "")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-installments">${window.PassportStorePresentation?.payments(p)||''}</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a><button type="button" class="pp-btn pp-btn--red" data-add-cart="${esc(p.id)}" data-sku="${esc(p.sku||p.id)}" data-name="${esc(p.name)}" data-price="${esc(p.price)}">ADICIONAR AO CARRINHO</button></article>`;
       window.passportStoreView.search(active ? (cat) => filterItems(allItems, { ...state, cat }) : null, render, state);
       return;
     }
@@ -170,6 +170,9 @@
 
   }
 
+  if(/^\/loja\/p\/[^/]+\.html$/.test(location.pathname)){
+    const script=document.createElement('script');script.src='/js/passport-store-product.js';script.defer=true;document.head.appendChild(script);
+  }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
   window.addEventListener("passport-store:ready",paintCart);

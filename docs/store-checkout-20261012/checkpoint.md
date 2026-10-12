@@ -54,3 +54,18 @@ The temporary affected-test resume flag was removed after successful checkout ev
 - `backend/src/services/mpService.mjs`
 - `backend/src/services/shippingProvider.mjs`
 - `docs/store-checkout-20261012/test-results.json`
+
+## Continuation — owner's commercial presentation order
+Resume HEAD: `6822f6e2148aec3173f4a0d3c87d86cfd2c08bdc`; same PR #554 / branch. Supplied four screenshots and order-result HTML were read as presentation/behavior references; proprietary code, customer information, Fatum identity and payment processor were not copied.
+
+- Store card purchase actions align; photos retain original URLs and contain sizing; separate Pix/card/boleto lines. Existing search, categories, 24-item pagination and catalog retained.
+- Existing product templates are enhanced centrally through their existing Store script; no hundreds-of-pages rewrite. Real recorded variations only, persistent cart, product delivery query and official existing Store masthead/footer.
+- Cart includes reference, real photo, variant, quantity, subtotal, continue-shopping and checkout actions.
+- Checkout responsibility moved to its own controller; commercial graphics have their own presentation module; product integration has its own module. Three-area desktop, two-column tablet, stacked mobile, compact editable address.
+- Mandatory account creation/login enforced server-side. Passwords use unique salt/scrypt; expiring sessions stored as hashes and sent as HttpOnly Secure cookies. Trusted Origin required for account mutations. No password or session token enters public artifacts.
+- CPF and numeric/alphanumeric CNPJ check digits, buyer type, legal name/responsible, phone and account email validated server-side. Check-digit validation is not a verification of legal identity. Reference: Receita/Serpro manual-dv-cnpj.pdf. Pix sends the corresponding CPF/CNPJ type to the existing provider; real provider acceptance remains unverified.
+- CAIXA removed as autonomous checkout method. Payment choices depend on backend/provider availability, also checked before checkout; existing Pix-specific discount and idempotency preserved. Original official payment graphics reused at readable sizes. Safe Browsing link targets Passport; no certification claim or Fatum badge copied; unverified Let's Encrypt/Cloudflare claims omitted.
+- New `pedido.html` displays actual backend order ID/date/items/address/shipping/total/method and provider-backed status. Pending does not mean approved. Cart only clears after confirmed APPROVED and exact snapshot match.
+- Test-only fixture was produced by the real backend using temporary SQLite and mocked providers, not by inserting fake products. Its synthetic order ID and explicit isolated marker are recorded in preview-fixture.json. Private preview's normal APIs remain unavailable; a separately labeled isolated test path will exercise the preserved test record without production transactions.
+
+Validation: changed backend contracts passed 13 existing focused checks; two new account/CPF/CNPJ/ownership checks passed. Browser round pending scoped CI. External CWS/physical-profile/hosting/payment environment blockers from the previous checkpoint remain; no fresh credential test or acquisition was performed. No production change or merge.
