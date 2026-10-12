@@ -53,7 +53,7 @@ jobs:
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-store-http.log 2>&1 &
-          NODE_PATH=/tmp/passport-store-browser/node_modules node tests/passport_store_browser.cjs
+          STORE_BROWSER_RESUME=checkout NODE_PATH=/tmp/passport-store-browser/node_modules node tests/passport_store_browser.cjs
       - uses: actions/upload-artifact@v4
         if: always() && steps.changed.outputs.browser == 'true'
         with:
