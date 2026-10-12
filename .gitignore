@@ -8,3 +8,12 @@ data/blog-queue/*.jsonl
 !data/blog-queue/*.jsonl.gz
 .passport-wa-auth/
 data/whatsapp-channel-local-state.json
+
+# Passport Store backend runtime secrets and customer records
+.env
+.env.*
+!.env.example
+backend/var/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

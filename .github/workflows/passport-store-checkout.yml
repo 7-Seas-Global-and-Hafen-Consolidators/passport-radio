@@ -1,0 +1,62 @@
+name: Passport Store — focused checkout evidence
+on:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - 'loja.html'
+      - 'checkout.html'
+      - 'js/passport-store-*'
+      - 'css/passport-store-commercial.css'
+      - 'data/store-runtime.json'
+      - 'tests/passport_store_*'
+      - '.github/workflows/passport-store-checkout.yml'
+permissions:
+  contents: read
+jobs:
+  store:
+    if: github.head_ref == 'feat/passport-store-shipping-checkout-20261012'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 2
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /loja.html
+            /checkout.html
+            /backend/
+            /js/
+            /css/
+            /data/store*
+            /data/store-search/
+            /assets/payments/
+            /images/payments/
+            /images/store/
+            /tests/passport_store_*
+            /docs/store-checkout-20261012/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Focused backend tests — isolated fixtures, no live charges
+        run: node --test tests/passport_store_backend.test.mjs
+      - name: Reuse completed visual round on documentation-only changes
+        id: changed
+        run: |
+          if git diff --name-only HEAD^ HEAD | grep -Eq '^(loja.html|checkout.html|js/passport-store-|css/passport-store-commercial|tests/passport_store_browser)'; then echo 'browser=true' >> "$GITHUB_OUTPUT"; else echo 'browser=false' >> "$GITHUB_OUTPUT"; fi
+      - name: Browser tooling outside application
+        if: steps.changed.outputs.browser == 'true'
+        run: npm install --prefix /tmp/passport-store-browser --no-save --package-lock=false playwright
+      - name: Catalog, cart and checkout evidence — mocked providers only
+        if: steps.changed.outputs.browser == 'true'
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-store-http.log 2>&1 &
+          NODE_PATH=/tmp/passport-store-browser/node_modules node tests/passport_store_browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.changed.outputs.browser == 'true'
+        with:
+          name: passport-store-checkout-evidence
+          path: reports/store-checkout/
+          retention-days: 14

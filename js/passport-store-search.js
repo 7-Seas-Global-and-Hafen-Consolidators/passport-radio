@@ -21,7 +21,7 @@
   const esc = (value) => {
     const d = document.createElement("div");
     d.textContent = String(value || "");
-    return d.innerHTML;
+    return d.innerHTML.replace(/"/g,"&quot;").replace(/'/g,"&#39;");
   };
 
   function params() {
@@ -51,54 +51,11 @@
   function paintCart() {
     const slot = document.getElementById("pp-store-cart");
     if (!slot) return;
-    const items = cart();
-    if (!items.length) {
-      slot.innerHTML = '<p class="pp-cart-empty">Carrinho vazio. A Loja usa o checkout Mercado Pago; o pedido detalhado também pode ir pelo WhatsApp.</p>';
-      return;
-    }
-    const total = items.reduce((n, i) => n + Number(i.price || 0) * Number(i.qty || 1), 0);
-    const pixTotal = items.reduce((n, i) => {
-      const unit = i.pix != null && i.pix !== "" ? Number(i.pix) : Number(i.price || 0) * 0.95;
-      return n + unit * Number(i.qty || 1);
-    }, 0);
-    const cardEach = total / 6;
-    slot.innerHTML = `
-      <h2>Carrinho</h2>
-      <ul>${items.map((i) => `<li data-id="${esc(i.id)}"><strong>${esc(i.name)}</strong> · ${money(i.price)} ×
-        <button type="button" data-qty="-1" aria-label="diminuir">−</button>
-        <span>${esc(i.qty)}</span>
-        <button type="button" data-qty="1" aria-label="aumentar">+</button>
-        <button type="button" data-remove="1">Remover</button></li>`).join("")}</ul>
-      <p>Subtotal ${money(total)}</p>
-      <p>Pix ${money(pixTotal)} <small>5% off o preço Passport</small></p>
-      <p>Boleto à vista ${money(total)}</p>
-      <p>Cartão em até 6x de ${money(cardEach)}</p>
-      <p class="pp-cart-note">O Mercado Pago é o checkout atual. WhatsApp leva o pedido com os itens escolhidos.</p>
-      <p><a class="pp-btn pp-btn--red" href="${MERCADO_PAGO}" target="_blank" rel="noopener">Checkout Mercado Pago</a>
-         <a class="pp-btn pp-btn--ghost" href="${WA}?text=${encodeURIComponent("Pedido Passport Store: " + items.map((i) => i.qty + "× " + i.name + " " + money(i.price)).join(", ") + " | Pix " + money(pixTotal))}" target="_blank" rel="noopener">Pedir via WhatsApp</a></p>
-    `;
-    slot.onclick = (ev) => {
-      const li = ev.target.closest("li[data-id]");
-      if (!li) return;
-      const id = li.getAttribute("data-id");
-      let next = cart().slice();
-      const row = next.find((x) => String(x.id) === id);
-      if (!row) return;
-      if (ev.target.closest("[data-remove]")) next = next.filter((x) => String(x.id) !== id);
-      else if (ev.target.closest("[data-qty]")) {
-        row.qty = Math.max(1, Number(row.qty || 1) + Number(ev.target.getAttribute("data-qty")));
-      }
-      saveCart(next);
-    };
+    if (window.PassportStore) window.PassportStore.renderCart();
   }
 
   function add(product) {
-    const items = cart();
-    const found = items.find((x) => String(x.id) === String(product.id));
-    if (found) found.qty = Number(found.qty || 1) + 1;
-    else items.push({ id: product.id, sku: product.sku, name: product.name, price: product.price, pix: product.pix, qty: 1 });
-    saveCart(items);
-    emit("add_to_cart", { id: product.id });
+    window.PassportStore?.add(product);
   }
 
   function filterItems(items, state) {
@@ -125,7 +82,7 @@
     if (document.body.classList.contains("passport-store-paper") && window.passportStoreView) {
       const active = state.q || state.entity || state.cat || state.type || state.gender;
       host.innerHTML = active && !items.length ? `<p class="pp-store-empty">Nenhum produto publicável para “${esc(state.q || state.entity || state.type)}”. O catálogo Stamp/Passport não inventa SKU para preencher buraco.</p>` : "";
-      const render = (p) => `<a class="pp-product" data-id="${esc(p.id)}" href="${esc(p.url || ("/loja/p/" + p.id + ".html"))}"><div class="rv6-media"><img src="${esc(p.image || "")}" alt="${esc(p.name)}" width="220" height="220" loading="lazy" onerror="this.hidden=true;this.closest('.rv6-media').dataset.img='error';"></div><b>${esc(p.category || "")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a>`;
+      const render = (p) => `<article class="pp-product"><a class="pp-product-link" data-id="${esc(p.id)}" href="${esc(p.url || ("/loja/p/" + p.id + ".html"))}"><div class="rv6-media"><img src="${esc(p.image || "")}" alt="${esc(p.name)}" width="220" height="220" loading="lazy" onerror="this.hidden=true;this.closest('.rv6-media').dataset.img='error';"></div><b>${esc(p.category || "")}</b><strong>${esc(p.name)}</strong><span class="pp-price">${money(p.price)}</span><span class="pp-btn pp-btn--ink">VER PRODUTO →</span></a><button type="button" class="pp-btn pp-btn--red" data-add-cart="${esc(p.id)}" data-sku="${esc(p.sku||p.id)}" data-name="${esc(p.name)}" data-price="${esc(p.price)}">ADICIONAR AO CARRINHO</button></article>`;
       window.passportStoreView.search(active ? (cat) => filterItems(allItems, { ...state, cat }) : null, render, state);
       return;
     }
@@ -183,6 +140,7 @@
     document.addEventListener("click", (ev) => {
       const btn = ev.target.closest("[data-add-cart]");
       if (!btn) return;
+      ev.preventDefault();
       add({
         id: btn.getAttribute("data-add-cart"),
         sku: btn.getAttribute("data-sku"),
@@ -209,16 +167,10 @@
         host.parentNode.insertBefore(bar, host);
       }
     }
-    const cep = document.getElementById("pp-store-cep");
-    if (cep) {
-      cep.addEventListener("submit", (ev) => {
-        ev.preventDefault();
-        const out = document.getElementById("pp-store-cep-out");
-        if (out) out.textContent = "Frete e prazo saem do checkout Mercado Pago / WhatsApp. Esta página não inventa transportadora.";
-      });
-    }
+
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
+  window.addEventListener("passport-store:ready",paintCart);
 })();

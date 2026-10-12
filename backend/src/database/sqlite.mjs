@@ -1,0 +1,11 @@
+import {DatabaseSync} from 'node:sqlite';
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+export function database(file){if(file!==':memory:')fs.mkdirSync(path.dirname(file),{recursive:true});const db=new DatabaseSync(file);db.exec(`PRAGMA journal_mode=WAL;PRAGMA foreign_keys=ON;
+ CREATE TABLE IF NOT EXISTS shipping_profiles(product_id TEXT PRIMARY KEY, supplier_id TEXT NOT NULL, origin_zip TEXT NOT NULL, weight REAL NOT NULL, height REAL NOT NULL, width REAL NOT NULL, length REAL NOT NULL, units_per_package INTEGER NOT NULL DEFAULT 1, declared_value INTEGER NOT NULL DEFAULT 0, verified_at TEXT NOT NULL);
+ CREATE TABLE IF NOT EXISTS quotes(id TEXT PRIMARY KEY, fingerprint TEXT NOT NULL, destination TEXT NOT NULL, expires INTEGER NOT NULL, payload TEXT NOT NULL);
+ CREATE TABLE IF NOT EXISTS orders(id TEXT PRIMARY KEY, access_hash TEXT NOT NULL, idempotency_hash TEXT NOT NULL UNIQUE, status TEXT NOT NULL, payload TEXT NOT NULL, preference_id TEXT, payment_id TEXT, created INTEGER NOT NULL, updated INTEGER NOT NULL);
+ CREATE TABLE IF NOT EXISTS payment_events(id TEXT PRIMARY KEY, order_id TEXT NOT NULL, state TEXT NOT NULL, processed INTEGER NOT NULL);`);
+ const json=row=>row?{...row,payload:JSON.parse(row.payload)}:null;
+ return {db,profile:id=>db.prepare('SELECT * FROM shipping_profiles WHERE product_id=?').get(String(id)),quote:id=>json(db.prepare('SELECT * FROM quotes WHERE id=?').get(id)),saveQuote:q=>db.prepare('INSERT INTO quotes VALUES(?,?,?,?,?)').run(q.id,q.fingerprint,q.destination,q.expires,JSON.stringify(q.payload)),order:id=>json(db.prepare('SELECT * FROM orders WHERE id=?').get(id)),orderByKey:key=>json(db.prepare('SELECT * FROM orders WHERE idempotency_hash=?').get(key)),saveOrder:o=>db.prepare('INSERT INTO orders VALUES(?,?,?,?,?,?,?,?,?)').run(o.id,o.access_hash,o.idempotency_hash,o.status,JSON.stringify(o.payload),o.preference_id||null,o.payment_id||null,o.created,o.updated),updateOrder:o=>db.prepare('UPDATE orders SET status=?,payload=?,preference_id=?,payment_id=?,updated=? WHERE id=?').run(o.status,JSON.stringify(o.payload),o.preference_id||null,o.payment_id||null,Date.now(),o.id),close:()=>db.close()};
+}
+export const tokenHash=s=>crypto.createHash('sha256').update(s).digest('hex');
