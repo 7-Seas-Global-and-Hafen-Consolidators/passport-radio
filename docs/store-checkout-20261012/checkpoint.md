@@ -29,32 +29,6 @@ Private UI preview: https://passport-store-checkout-preview.mr-nomad.chatgpt.sit
 
 The temporary affected-test resume flag was removed after successful checkout evidence; future UI changes run the complete focused browser test. Existing CI/protections are unchanged. Scope comparison against initial main confirmed only Store frontend/backend, its runtime config, ignore entries, tests, dedicated workflow and checkpoint changed; inventory chunks and all protected systems remained identical.
 
-## Files changed
-- `.gitignore`
-- `loja.html`
-- `checkout.html`
-- `js/passport-store-v6.js`
-- `js/passport-store-search.js`
-- `js/passport-store-commercial.js`
-- `css/passport-store-commercial.css`
-- `data/store-runtime.json`
-- `.github/workflows/passport-store-checkout.yml`
-- `tests/passport_store_backend.test.mjs`
-- `tests/passport_store_browser.cjs`
-- `docs/store-checkout-20261012/checkpoint.md`
-- `backend/import-shipping-profiles.mjs`
-- `backend/Dockerfile`
-- `backend/server.mjs`
-- `backend/.env.example`
-- `backend/src/database/sqlite.mjs`
-- `backend/src/routes/shipping.mjs`
-- `backend/src/routes/checkout.mjs`
-- `backend/src/services/catalog.mjs`
-- `backend/src/services/errors.mjs`
-- `backend/src/services/mpService.mjs`
-- `backend/src/services/shippingProvider.mjs`
-- `docs/store-checkout-20261012/test-results.json`
-
 ## Continuation — owner's commercial presentation order
 Resume HEAD: `6822f6e2148aec3173f4a0d3c87d86cfd2c08bdc`; same PR #554 / branch. Supplied four screenshots and order-result HTML were read as presentation/behavior references; proprietary code, customer information, Fatum identity and payment processor were not copied.
 
@@ -75,3 +49,48 @@ Scoped CI run 38320088296 passed all 15 backend tests and catalog/product/cart p
 The general CI Loja contract failed on an outdated VM missing CustomEvent and literal assertions freezing the retired cart/payment presentation. Its environment and assertions were updated for event dispatch and authorized graphic presentation/controller delegation; hashes of all catalog data and original product pages, all 37 pages/order/destinations/images/prices, boundary navigation, all categories, early/late search, and non-store ownership remain checked. Only affected assertions were rerun locally. No existing CI was disabled.
 
 The private test path uses isolated storage keys; normal preview and production APIs are not replaced by simulated providers. Test fields/quotes/account/order are explicitly labeled, and no real payment endpoint is called by that preview.
+
+## Final verified delivery — continuation
+Application HEAD: `a6f96b268b50f39a987daa75ee4f34df6aaecf78`. General CI 38321781027 and functional Store CI 38321781093 passed. The last capture-only commit 50f0077404489befba13f9809a695c1dfc12fe00 also passed general CI 38322684939 and Store CI 38322684926. 15 backend tests and all 6 historical preservation/pagination tests passed. Desktop/tablet/mobile at 1440/850/390px were verified. Double submit generated one request; pending payment preserved cart. The submitted snapshot is captured before the request, so later cart changes cannot be cleared by an earlier order.
+
+The final capture round reused approved functional tests and only decoded existing images before 11 fresh screenshots; review thumbnails were confirmed loaded. No original image bytes/URLs were changed, no download/conversion/acquisition pipeline was run, no real quote/payment was created. The temporary resume flag was removed; future affected UI/fixture changes execute the full focused browser test. Required CI is preserved.
+
+Existing owner-private preview updated successfully: application source pinned to a6f96b268b50f39a987daa75ee4f34df6aaecf78, Sites source commit 31a96e027307bd8dca80b12e01b260c80ee2d9d3, deployment appgdep_6acd6cc9335c8191821f0dc75a25c359. Normal /api endpoints remain inactive. Explicit /__preview paths show an isolated-test banner, synthetic account/buyer/tariffs, separate storage keys, and the backend-generated test order. No production service or domain was changed.
+
+Preview links:
+- Loja: https://passport-store-checkout-preview.mr-nomad.chatgpt.site/loja.html
+- Product: https://passport-store-checkout-preview.mr-nomad.chatgpt.site/loja/p/5770202.html
+- Test cart: https://passport-store-checkout-preview.mr-nomad.chatgpt.site/__preview/loja.html#pp-store-cart
+- Test checkout: https://passport-store-checkout-preview.mr-nomad.chatgpt.site/__preview/checkout.html?reset=1
+- Test pending order: https://passport-store-checkout-preview.mr-nomad.chatgpt.site/__preview/pedido.html?order=cead6068-00ac-45d8-877c-d2d5ea2ce1f7
+
+Evidence: https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/actions/runs/38322684926/artifacts/11779586506 . Eleven screenshots and combined results saved in Passport-Store-evidencias-20261012.zip. JSON evidence persists alongside this checkpoint.
+
+Exact external activation work remains: provision dedicated Node 24 backend/persistent SQLite hosting (existing Railway trial blocker); serve API on the same origin/site as the Store and configure allowed origins; import verified supplier parcel profiles; configure CWS/posting card/contract service codes; verify Mercado Pago acceptance in an appropriate test environment and configure signed webhook. Supplied MP credentials remain private; no new token/PAT test was performed. STORE_PAYMENTS_ENABLED remains false until this validation. No invented measurements, tariffs, payment acceptance or identity certification.
+
+Scope comparison: original catalog data and all product HTML bytes unchanged; no radio/player/Bus/interlock/mutex/Home/Blog/Clips/Podcast/Broadcast changes. No merge.
+
+## Files changed in this continuation (23)
+- `.github/workflows/passport-store-checkout.yml`
+- `backend/server.mjs`
+- `backend/src/database/sqlite.mjs`
+- `backend/src/routes/account.mjs`
+- `backend/src/routes/checkout.mjs`
+- `backend/src/services/mpService.mjs`
+- `checkout.html`
+- `css/passport-store-commercial.css`
+- `docs/store-checkout-20261012/checkpoint.md`
+- `docs/store-checkout-20261012/preview-fixture.json`
+- `docs/store-checkout-20261012/test-results.json`
+- `js/passport-store-checkout.js`
+- `js/passport-store-commercial.js`
+- `js/passport-store-presentation.js`
+- `js/passport-store-product.js`
+- `js/passport-store-search.js`
+- `js/passport-store-v6.js`
+- `loja.html`
+- `pedido.html`
+- `tests/passport_store_backend.test.mjs`
+- `tests/passport_store_browser.cjs`
+- `tests/store_pagination.test.cjs`
+- `tests/store_preview_fixture.mjs`

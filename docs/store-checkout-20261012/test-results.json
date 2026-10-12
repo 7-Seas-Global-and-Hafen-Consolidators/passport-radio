@@ -1,26 +1,40 @@
 {
   "checks": [
-    "Catalog, pagination, categories and cart/CEP/quote steps reuse passed evidence from run 38312257415",
-    "address fields, persisted delivery, Pix/card/Caixa methods, three-column review and mocked checkout request; zero live charges",
-    "390px layouts fit without horizontal overflow; checkout blocks stack in required order",
-    "existing search remains functional; institutional header/footer preserved"
+    "Capture-only round: approved functional checks reused from 38321781093; existing images decoded before screenshots; 11 desktop/tablet/mobile captures, no transactions"
   ],
   "liveCharges": 0,
   "realCorreiosQuotes": 0,
-  "providerMode": "isolated browser fixtures",
+  "providerMode": "isolated fixtures; original backend generated order record",
   "screenshots": [
     "catalog-desktop.png",
+    "product-desktop.png",
     "cart-desktop.png",
     "checkout-desktop.png",
+    "checkout-tablet.png",
+    "checkout-mobile.png",
+    "order-pending-desktop.png",
+    "order-pending-mobile.png",
     "catalog-mobile.png",
-    "cart-mobile.png",
-    "checkout-mobile.png"
+    "product-mobile.png",
+    "cart-mobile.png"
   ],
+  "functional_checks": [
+    "Catalog alignment/product/cart/CEP/five-service checks reuse passed run 38320088296",
+    "Mandatory account blocks guest checkout; PF/PJ fields/masks; compact editable address; method conditions; real backend fixture ID in pending order; cart remains intact and one checkout request",
+    "1440/850/390px layouts; no horizontal overflow; preserved institutional navigation/footer; existing payment graphic assets in scoped commercial strip",
+    "Explicit private-test mode isolates storage and API paths; normal cart is not overwritten"
+  ],
+  "functional_run_id": 38321781093,
+  "capture_run_id": 38322684926,
   "backend_tests": {
-    "passed": 13,
-    "failed": 0,
-    "run_id": 38312817739
+    "passed": 15,
+    "failed": 0
   },
-  "catalog_and_cart_source_run": 38312257415,
-  "note": "Frete e pagamento simulados em testes isolados. Nenhuma cotação Correios real ou cobrança real. Backend comercial ainda não ativado."
+  "legacy_catalogue_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "general_ci_run_id": 38322684939,
+  "application_head": "a6f96b268b50f39a987daa75ee4f34df6aaecf78",
+  "note": "Buyer data and tariffs are synthetic. Real backend generated the isolated order record; no real payment or shipping quote. Normal preview remains inactive; /__preview is explicitly isolated."
 }

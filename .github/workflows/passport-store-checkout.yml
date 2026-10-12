@@ -10,6 +10,8 @@ on:
       - 'css/passport-store-commercial.css'
       - 'data/store-runtime.json'
       - 'tests/passport_store_*'
+      - 'tests/store_preview_fixture.mjs'
+      - 'docs/store-checkout-20261012/preview-fixture.json'
       - '.github/workflows/passport-store-checkout.yml'
 permissions:
   contents: read
@@ -52,7 +54,7 @@ jobs:
       - name: Reuse completed visual round on documentation-only changes
         id: changed
         run: |
-          if git diff --name-only HEAD^ HEAD | grep -Eq '^(loja.html|checkout.html|pedido.html|js/passport-store-|css/passport-store-commercial|tests/passport_store_browser)'; then echo 'browser=true' >> "$GITHUB_OUTPUT"; else echo 'browser=false' >> "$GITHUB_OUTPUT"; fi
+          if git diff --name-only HEAD^ HEAD | grep -Eq '^(loja.html|checkout.html|pedido.html|js/passport-store-|css/passport-store-commercial|tests/passport_store_browser|docs/store-checkout-20261012/preview-fixture.json)'; then echo 'browser=true' >> "$GITHUB_OUTPUT"; else echo 'browser=false' >> "$GITHUB_OUTPUT"; fi
       - name: Browser tooling outside application
         if: steps.changed.outputs.browser == 'true'
         run: npm install --prefix /tmp/passport-store-browser --no-save --package-lock=false playwright
@@ -60,7 +62,7 @@ jobs:
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-store-http.log 2>&1 &
-          STORE_BROWSER_RESUME=screenshots NODE_PATH=/tmp/passport-store-browser/node_modules node tests/passport_store_browser.cjs
+          NODE_PATH=/tmp/passport-store-browser/node_modules node tests/passport_store_browser.cjs
       - uses: actions/upload-artifact@v4
         if: always() && steps.changed.outputs.browser == 'true'
         with:
