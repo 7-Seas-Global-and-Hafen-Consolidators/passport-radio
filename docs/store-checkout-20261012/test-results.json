@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "Catalog, pagination, categories and cart/CEP/quote steps reuse passed evidence from run 38312257415",
+    "address fields, persisted delivery, Pix/card/Caixa methods, three-column review and mocked checkout request; zero live charges",
+    "390px layouts fit without horizontal overflow; checkout blocks stack in required order",
+    "existing search remains functional; institutional header/footer preserved"
+  ],
+  "liveCharges": 0,
+  "realCorreiosQuotes": 0,
+  "providerMode": "isolated browser fixtures",
+  "screenshots": [
+    "catalog-desktop.png",
+    "cart-desktop.png",
+    "checkout-desktop.png",
+    "catalog-mobile.png",
+    "cart-mobile.png",
+    "checkout-mobile.png"
+  ],
+  "backend_tests": {
+    "passed": 13,
+    "failed": 0,
+    "run_id": 38312817739
+  },
+  "catalog_and_cart_source_run": 38312257415,
+  "note": "Frete e pagamento simulados em testes isolados. Nenhuma cotação Correios real ou cobrança real. Backend comercial ainda não ativado."
+}
