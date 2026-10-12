@@ -12,13 +12,15 @@
   "validation": {
     "static_tests": "4 PASS",
     "transport_suffix": "byte-identical to exact GitHub source",
-    "live_media_layout_continuity": "PASS six sampled streams, single active audio, Home/Arquivo continuity, 4 responsive widths; 183/191 endpoint probes PASS, 8 connection failures individually recorded"
+    "live_media_layout_continuity": "PASS six sampled streams, single active audio, Home/Arquivo continuity, 4 responsive widths; 183/191 endpoint probes PASS, 8 connection failures individually recorded",
+    "eight_stream_resolution": "4 external identity confirmations accepted; 4 explicit identity mismatches remain; URLs unchanged",
+    "historical_tests": "11 local assertions PASS; Passport 40 preservation 3/3 PASS and browser visibility/responsive PASS run 38203717048; Korean preservation 3/3 PASS run 38203717054"
   },
   "collection_repeated": false,
   "new_audio_players": 0,
   "production_modified": false,
   "merged": false,
-  "next": "Collect directly affected Passport 40 layout-only CI and Korean preservation CI; retain four identity divergences without remapping.",
+  "next": "Four divergent identities require corresponding stream evidence; entries and URLs preserved. No acquisition, no merge.",
   "code_commit": "2b5a6f28fa5562f804b34256b9917edb9fd091fb",
   "pull_request": 552,
   "preview": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site",
@@ -134,7 +136,26 @@
   "workflow_result": "FAILURE: 8 fetch connection failures; all layout/playback/navigation assertions passed",
   "evidence_artifact": 11725956591,
   "existing_ci": {
-    "previous_runs": "Preserved in test-results.json and previous commits; historical expectations corrected in this continuation."
+    "Passport CI": {
+      "run": 38203717047,
+      "result": "PASS"
+    },
+    "Materialize official Passport channels": {
+      "run": 38203717075,
+      "result": "PASS"
+    },
+    "Passport 40": {
+      "run": 38203717048,
+      "result": "PASS"
+    },
+    "Passport Korean additions": {
+      "run": 38203717054,
+      "result": "PASS"
+    },
+    "Passport NRJ 191": {
+      "run": 38203717055,
+      "result": "REUSED: no stream execution"
+    }
   },
   "remaining_limits": [
     "8 connection failures do not prove permanent stream unavailability; supplied URLs retained and individually recorded.",
@@ -152,5 +173,6 @@
     "passed": 11,
     "failed": 0,
     "method": "Node tests using exact GitHub historical blobs as read-only git-show fixtures locally; repeat only two failed assertions after fixture byte restoration/legacy route correction"
-  }
+  },
+  "continuation_commit": "8a699da1f2921d46c1abbc3c8fc7f3539bd3d824"
 }
