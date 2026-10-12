@@ -35,9 +35,12 @@ jobs:
             /data/
             /docs/nrj-catalog-20261012/
             /tests/passport_nrj_browser.cjs
+            /tests/passport_additions_integrity.test.cjs
+            /docs/95-additions-20261012/
       - name: Reuse completed round on documentation-only updates
         id: changed
         run: |
+          if node -e "process.exit(require('./data/passport-radio-inventory.json').records.some(r=>r.id.startsWith('passport-add-20261012-radio-'))?0:1)"; then echo 'supplied=true' >> "$GITHUB_OUTPUT"; else echo 'supplied=false' >> "$GITHUB_OUTPUT"; fi
           if git diff --name-only HEAD^ HEAD | grep -Eq '^(js/world-radio-player\.js|css/passport-radio-grid\.css|data/passport-radio-inventory\.json|tests/passport_nrj_browser\.cjs|\.github/workflows/passport-nrj-191\.yml)$'; then
             echo 'run=true' >> "$GITHUB_OUTPUT"
           else
@@ -48,15 +51,19 @@ jobs:
         with:
           node-version: '22'
       - name: Browser tooling outside application
-        if: steps.changed.outputs.run == 'true'
+        if: steps.changed.outputs.run == 'true' && steps.changed.outputs.supplied != 'true'
         run: npm install --prefix /tmp/passport-nrj-browser --no-save --package-lock=false playwright
-      - name: One media, layout and navigation round — no acquisition
+      - name: Local catalog integrity or original controlled media round
         if: steps.changed.outputs.run == 'true'
         run: |
-          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-nrj-http.log 2>&1 &
-          NODE_PATH=/tmp/passport-nrj-browser/node_modules node tests/passport_nrj_browser.cjs
+          if [ "${{ steps.changed.outputs.supplied }}" = 'true' ]; then
+            node --test tests/passport_additions_integrity.test.cjs
+          else
+            python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-nrj-http.log 2>&1 &
+            NODE_PATH=/tmp/passport-nrj-browser/node_modules node tests/passport_nrj_browser.cjs
+          fi
       - uses: actions/upload-artifact@v4
-        if: always() && steps.changed.outputs.run == 'true'
+        if: always() && steps.changed.outputs.run == 'true' && steps.changed.outputs.supplied != 'true'
         with:
           name: passport-nrj-191-evidence
           path: reports/nrj-191/

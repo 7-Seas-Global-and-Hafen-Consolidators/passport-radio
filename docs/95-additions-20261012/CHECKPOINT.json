@@ -1,0 +1,80 @@
+{
+  "branch": "feat/passport-nrj-191-20261012",
+  "pr": 552,
+  "base": "88b1f5a4968c3bb5ae8bc8e869f2be80328d6847",
+  "state": "IMPLEMENTED_LOCAL_INTEGRITY_PASSED_PREVIEW_PENDING",
+  "counts": {
+    "radio_before": 351,
+    "radio_added": 50,
+    "radio_total": 401,
+    "selectors": 11,
+    "tv_before": 11,
+    "tv_added": 12,
+    "tv_total": 23,
+    "videoclips_added": 31,
+    "total_added": 93
+  },
+  "radio_duplicates": [
+    {
+      "requested": {
+        "order": 41,
+        "id": "passport-add-20261012-radio-41",
+        "name": "Seoul Hit Factory™",
+        "origin": "OnlyHit K-Pop",
+        "section": 11,
+        "stream": "https://cdn.onlyhitsradio.net/kpop"
+      },
+      "existing_id": "passport-kpop-mix",
+      "existing_name": "K-Pop Mix™",
+      "reason": "Exact stream URL"
+    },
+    {
+      "requested": {
+        "order": 46,
+        "id": "passport-add-20261012-radio-46",
+        "name": "French Dancefloor™",
+        "origin": "NRJ DAVID GUETTA",
+        "section": 1,
+        "stream": "https://streaming.nrjaudio.fm/outdax6ubafg?origine=radio.net"
+      },
+      "existing_id": "passport-nrj-188",
+      "existing_name": "David Guetta™",
+      "reason": "Same existing NRJ DAVID GUETTA endpoint; only source attribution parameter differs"
+    }
+  ],
+  "limitations": [
+    {
+      "id": "passport-add-20261012-radio-38",
+      "name": "Seoul Hearts™",
+      "reason": "User supplied HTTP URL with temporary parameters is preserved. Existing World transport upgrades HTTP to HTTPS; no radio transport changes or availability verification performed."
+    },
+    {
+      "id": "passport-add-20261012-tv-08",
+      "name": "E40 — Paraguai",
+      "reason": "Supplied required Referer is https://www.estacion40.com.py/. Browser scripts cannot assign an arbitrary foreign Referer; no proxy or infrastructure change introduced. Playback remains subject to upstream origin authorization."
+    }
+  ],
+  "validation": {
+    "local_assertions": 17,
+    "failed": 0,
+    "syntax": "PASS changed player JS and Clips TV test",
+    "workflow_yaml": "PASS four focused workflows; static checks remain required",
+    "stream_requests": 0,
+    "media_downloads": 0,
+    "acquisition_repeated": false
+  },
+  "preserved": [
+    "all 351 existing radio objects and indices",
+    "all 11 existing TV objects",
+    "11 program selectors",
+    "radio transport body byte-identical",
+    "Home grid JS and CSS byte-identical",
+    "TV Bus claim/release and existing HLS implementation unchanged",
+    "one existing video element and existing card CSS"
+  ],
+  "preview_home": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site/",
+  "preview_clips_tv": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site/clips-tv.html",
+  "next": "Publish existing private preview with this branch code; persist static CI outcomes. No media revalidation and no merge.",
+  "merged": false,
+  "production_modified": false
+}

@@ -1,7 +1,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
 const before=require('../docs/passport-40-20261011/before.json'),after=require('../data/passport-radio-inventory.json'),approved=require('../docs/passport-40-20261011/approved-additions.json');
 test('112 existing radios and 11 program selectors survive unchanged; all 39 approved historical additions plus the current expanded catalog',()=>{
- assert.equal(before.radioCount,112);assert.equal(after.radioCount,351);assert.equal(after.programSelectorCount,before.programSelectorCount);
+ assert.equal(before.radioCount,112);assert.equal(after.radioCount,401);assert.equal(after.programSelectorCount,before.programSelectorCount);
  for(const old of before.records){const found=after.records.find(r=>r.id===old.id);assert.ok(found,old.id);assert.deepEqual(found,old);}
  const approvedIds=new Set(approved.map(r=>r.id));const added=after.records.filter(r=>approvedIds.has(r.id));assert.equal(added.length,39);assert.equal(new Set(after.records.map(r=>r.id)).size,after.records.length);
  assert.equal(new Set(added.map(r=>r.name)).size,39);assert.equal(new Set(added.map(r=>r.stream)).size,39);

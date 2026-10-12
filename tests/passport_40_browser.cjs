@@ -3,7 +3,7 @@ const inventory=require('../data/passport-radio-inventory.json');
 const out='reports/passport-40';fs.mkdirSync(out,{recursive:true});
 const report={checks:[],failures:[],networkErrors:[],testedAt:new Date().toISOString()};
 async function dismissCookies(page){const button=page.getByRole('button',{name:'ACEITAR COOKIES',exact:true});if(await button.isVisible())await button.click();}
-async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='catalog'&&!/^(all 351|responsive)/.test(name))return;if(process.env.PASSPORT_40_ONLY==='radio'&&!name.startsWith('real new radio'))return;try{const detail=await fn();report.checks.push({name,status:'PASS',detail});}catch(e){report.failures.push({name,status:'FAIL',error:String(e)});}}
+async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='catalog'&&!/^(all 401|responsive)/.test(name))return;if(process.env.PASSPORT_40_ONLY==='radio'&&!name.startsWith('real new radio'))return;try{const detail=await fn();report.checks.push({name,status:'PASS',detail});}catch(e){report.failures.push({name,status:'FAIL',error:String(e)});}}
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true,args:['--autoplay-policy=user-gesture-required']});
  const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();
@@ -12,8 +12,8 @@ async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='catalog'&&!/^(a
  page.on('requestfailed',r=>{if(r.url().includes('centova4')&&process.env.PASSPORT_40_ONLY==='radio')report.networkErrors.push(r.url()+' '+r.failure()?.errorText);});
  await page.goto('http://127.0.0.1:4173/');await page.waitForFunction(()=>window.PassportAudioRuntime?.ready,null,{timeout:60000});
  await page.locator('#passport-radio-catalog').waitFor();await dismissCookies(page);
- await check('all 351 radios and 11 project selectors visible; no duplicate cards; no autoplay',async()=>{
-  assert.equal(await page.locator('[data-radio-id]').count(),362);
+ await check('all 401 radios and 11 project selectors visible; no duplicate cards; no autoplay',async()=>{
+  assert.equal(await page.locator('[data-radio-id]').count(),412);
   assert.equal(await page.locator('#passport-player').count(),1);
   const d=await page.evaluate(()=>({audible:[...document.querySelectorAll('audio,video')].filter(a=>!a.paused).length,ids:[...document.querySelectorAll('[data-radio-id]')].map(x=>x.dataset.radioId),hidden:document.querySelector('.pb-door').getBoundingClientRect().height}));
   assert.equal(d.audible,0);assert.equal(d.ids.length,new Set(d.ids).size);assert.equal(d.hidden,0);return d;
@@ -32,7 +32,7 @@ async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='catalog'&&!/^(a
   const result=[];
   for(const width of [360,390,480,768,1280]){await page.setViewportSize({width,height:900});
    const d=await page.evaluate(()=>({width:innerWidth,document:document.documentElement.scrollWidth,cards:[...document.querySelectorAll('[data-radio-id]')].length,columns:getComputedStyle(document.querySelector('.passport-radio-grid')).gridTemplateColumns.split(' ').length,clipped:[...document.querySelectorAll('[data-radio-id]')].filter(b=>b.scrollWidth>b.clientWidth+2).map(b=>b.textContent)}));
-   assert.ok(d.document<=width+1,JSON.stringify(d));assert.equal(d.cards,362);assert.equal(d.clipped.length,0);result.push(d);await page.screenshot({path:`${out}/home-${width}.png`,fullPage:true});
+   assert.ok(d.document<=width+1,JSON.stringify(d));assert.equal(d.cards,412);assert.equal(d.clipped.length,0);result.push(d);await page.screenshot({path:`${out}/home-${width}.png`,fullPage:true});
   }
   for(const row of inventory.records.filter(r=>r.family==='world'&&!r.new))assert.equal(await page.locator(`[data-radio-id="${row.id}"] span`).last().textContent(),row.name);
   return result;
@@ -60,7 +60,7 @@ async function check(name,fn){if(process.env.PASSPORT_40_ONLY==='catalog'&&!/^(a
   await page.evaluate(()=>{const a=document.createElement('a');a.href='/editorial/2026/10/09/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html';a.textContent='QA — matéria automática';document.querySelector('#passport-editorial-outlet main').append(a);});
   await page.getByRole('link',{name:'QA — matéria automática',exact:true}).click();await page.waitForURL('**/a-forca-implacavel-de-badmotorfinger-na-historia-do-rock-7f648f963d.html');
   const actual=await page.locator('#passportHitsAudio').evaluate(a=>({same:a.dataset.qaTransport==='retained',time:a.currentTime,paused:a.paused,volume:a.volume}));assert.ok(actual.same);assert.ok(actual.time>before);assert.equal(actual.paused,false);assert.equal(actual.volume,0.4);
-  await page.locator('.pb-nav').getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('http://127.0.0.1:4173/');await page.locator('#passport-radio-catalog').waitFor();assert.equal(await page.locator('[data-radio-id]').count(),362);return actual;
+  await page.locator('.pb-nav').getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('http://127.0.0.1:4173/');await page.locator('#passport-radio-catalog').waitFor();assert.equal(await page.locator('[data-radio-id]').count(),412);return actual;
  });
  await check('editorial content and original images retained',async()=>{
   if(new URL(page.url()).pathname!=='/'){await page.locator('.pb-nav').getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('http://127.0.0.1:4173/');}

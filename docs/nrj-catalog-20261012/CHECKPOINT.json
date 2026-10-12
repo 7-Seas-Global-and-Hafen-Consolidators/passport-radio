@@ -174,5 +174,12 @@
     "failed": 0,
     "method": "Node tests using exact GitHub historical blobs as read-only git-show fixtures locally; repeat only two failed assertions after fixture byte restoration/legacy route correction"
   },
-  "continuation_commit": "8a699da1f2921d46c1abbc3c8fc7f3539bd3d824"
+  "continuation_commit": "8a699da1f2921d46c1abbc3c8fc7f3539bd3d824",
+  "current_catalog": {
+    "radio_count": 401,
+    "program_selectors": 11,
+    "nrj_channels_preserved": 191,
+    "new_supplied_operation": "docs/95-additions-20261012/CHECKPOINT.json",
+    "four_nrj_identity_mismatches_still_pending": true
+  }
 }

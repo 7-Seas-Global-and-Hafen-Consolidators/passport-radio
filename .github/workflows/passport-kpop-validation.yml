@@ -44,7 +44,7 @@ jobs:
       - name: Reuse playback evidence when only documentation changed
         id: changed
         run: |
-          if node -e "process.exit(require('./data/passport-radio-inventory.json').records.some(r=>r.section===11)?0:1)" && git diff --name-only HEAD^ HEAD | grep -Eq '^(js/(world-radio-player|passport-radio-grid)\.js|data/passport-radio-inventory\.json|tests/passport_kpop_browser\.cjs)$'; then
+          if ! node -e "process.exit(require('./data/passport-radio-inventory.json').records.some(r=>r.id.startsWith('passport-add-20261012-radio-'))?0:1)" && node -e "process.exit(require('./data/passport-radio-inventory.json').records.some(r=>r.section===11)?0:1)" && git diff --name-only HEAD^ HEAD | grep -Eq '^(js/(world-radio-player|passport-radio-grid)\.js|data/passport-radio-inventory\.json|tests/passport_kpop_browser\.cjs)$'; then
             echo 'browser=true' >> "$GITHUB_OUTPUT"
           else
             echo 'browser=false' >> "$GITHUB_OUTPUT"

@@ -4,20 +4,23 @@ const fs=require('node:fs');
 const crypto=require('node:crypto');
 const cp=require('node:child_process');
 const read=p=>fs.readFileSync(p,'utf8');
+const additions=fs.existsSync('docs/95-additions-20261012/before.json')?JSON.parse(read('docs/95-additions-20261012/before.json')):null;
+const digest=s=>crypto.createHash('sha256').update(s).digest('hex');
 const baseline=JSON.parse(read('docs/passport-clips-tv-20261011/before.json'));
 test('protected radio, video, podcast, broadcast, footer and Home files are identical',()=>{
-  for(const [path,hash] of Object.entries(baseline.protected))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path)).digest('hex'),hash,path);
+  for(const [path,hash] of Object.entries(baseline.protected)){if(additions&&path==='js/world-radio-player.js'){const source=read(path),stations=JSON.parse(JSON.stringify(require('node:vm').runInNewContext(source.match(/const stations=(\[[\s\S]*?\]);/)[1])));assert.equal(digest(JSON.stringify(stations.slice(0,263))),additions.worldStationsHash);assert.equal(digest(source.slice(source.indexOf('\n];'))),additions.worldTransportHash);}else if(additions&&path==='data/passport-radio-inventory.json'){assert.equal(digest(JSON.stringify(JSON.parse(read(path)).records.slice(0,362))),additions.radioRecordsHash);}else assert.equal(digest(fs.readFileSync(path)),hash,path);}
   const old=cp.execFileSync('git',['show',baseline.base+':js/passport-radio-grid.js'],{encoding:'utf8'});
   assert.equal(read('js/passport-radio-grid.js'),old.replace("tv.href = '/videos.html#passport-clips-tv'","tv.href = '/clips-tv.html'"));
   const oldVideos=cp.execFileSync('git',['show',baseline.base+':videos.html'],{encoding:'utf8'});
   assert.equal(read('videos.html'),oldVideos.replace('<link rel="stylesheet" href="/css/passport-clips-tv.css">\n<script src="/js/passport-clips-tv.js" defer></script>\n',''));
 });
 test('11 approved TV channels with unique identities, original first and exact supplied URLs',()=>{
-  const c=JSON.parse(read('data/passport-clips-channels.json')).channels;assert.equal(c.length,11);
-  assert.equal(new Set(c.map(x=>x.id)).size,11);assert.equal(new Set(c.map(x=>x.stream)).size,11);
+  const c=JSON.parse(read('data/passport-clips-channels.json')).channels;assert.equal(c.length,additions?23:11);
+  assert.equal(new Set(c.map(x=>x.id)).size,additions?23:11);assert.equal(new Set(c.map(x=>x.stream)).size,additions?23:11);
   const old=cp.execFileSync('git',['show',baseline.base+':js/passport-clips-tv.js'],{encoding:'utf8'});
   assert.equal(c[0].stream,old.match(/const SOURCE = '([^']+)'/)[1]);
-  assert.deepEqual(c.map(x=>x.name),['Passport Clips TV™','80s Flashback','90s Throwback','Rock On','Just Chill','Siempre Latino','Hits','Nuevo Latino','Classic Country','Celebrates','Hits UK']);
+  assert.deepEqual(c.slice(0,11).map(x=>x.name),['Passport Clips TV™','80s Flashback','90s Throwback','Rock On','Just Chill','Siempre Latino','Hits','Nuevo Latino','Classic Country','Celebrates','Hits UK']);
+  if(additions){assert.deepEqual(c.slice(0,11),additions.tvChannels);const supplied=JSON.parse(read('docs/95-additions-20261012/source.json'));assert.deepEqual(c.slice(11),supplied.tv);assert.deepEqual(JSON.parse(read('data/passport-clips-channels.json')).videoclips,supplied.clips);}
   for(const x of c)assert.equal(new URL(x.stream).protocol,'https:');
   for(const excluded of ['Classic Jams','Groove','Rap Game','Hip-Hop','Country Today','Gothic','Unplugged'])assert(!c.some(x=>x.name.includes(excluded)));
 });
