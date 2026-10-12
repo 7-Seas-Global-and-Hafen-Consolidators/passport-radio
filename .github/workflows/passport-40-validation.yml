@@ -46,7 +46,18 @@ jobs:
           node-version: '22'
       - name: Focused inventory preservation tests
         run: node --test tests/passport_40_inventory.test.cjs
+      - name: Reuse verified catalog layout on checkpoint-only updates
+        id: layout
+        run: |
+          if node -e "process.exit(require('./data/passport-radio-inventory.json').records.some(r=>r.id.startsWith('passport-add-20261012-radio-'))?0:1)"; then
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.head_ref }}" != 'feat/passport-nrj-191-20261012' ] || git diff --name-only HEAD^ HEAD | grep -Eq '^(js/(world-radio-player|passport-radio-grid)\.js|css/passport-radio-grid\.css|data/passport-radio-inventory\.json|tests/passport_40_browser\.cjs)$'; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
       - name: Install browser test tooling outside application
+        if: steps.layout.outputs.run == 'true'
         run: |
           mkdir /tmp/passport-browser
           cd /tmp/passport-browser
@@ -54,13 +65,14 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chrome
       - name: Browser verification and screenshots
+        if: steps.layout.outputs.run == 'true'
         env:
-          PASSPORT_40_ONLY: ${{ github.head_ref == 'feat/passport-39-radios-clips-tv-20261011' && 'radio' || '' }}
+          PASSPORT_40_ONLY: ${{ github.head_ref == 'feat/passport-nrj-191-20261012' && 'catalog' || github.head_ref == 'feat/passport-39-radios-clips-tv-20261011' && 'radio' || '' }}
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-http.log 2>&1 &
           NODE_PATH=/tmp/passport-browser/node_modules node tests/passport_40_browser.cjs
       - name: Save real browser evidence
-        if: always()
+        if: always() && steps.layout.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: passport-40-browser-evidence

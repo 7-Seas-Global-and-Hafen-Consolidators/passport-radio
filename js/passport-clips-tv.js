@@ -9,6 +9,7 @@
   const start = document.getElementById('passport-clips-start');
   const status = document.getElementById('passport-clips-status');
   const grid = document.getElementById('passport-clips-channels');
+  const clipGrid = document.getElementById('passport-clips-videoclips');
   video.crossOrigin = 'anonymous';
   let channels = [], selected, owned = false, bus, hls, generation = 0, gesture = 0;
   let libraryPromise, preparing, cancelPrepare, loadTimer;
@@ -41,6 +42,11 @@
     if(video.getAttribute('src') || hls)return;
     if(preparing)return preparing;
     const source=selected.stream;
+    if(selected.type==='clip'){
+      if(ticket!==generation)throw Error('cancelled');
+      video.removeAttribute('crossorigin');video.src=source;return;
+    }
+    video.crossOrigin='anonymous';
     preparing=(async()=>{
       if(video.canPlayType('application/vnd.apple.mpegurl')){
         if(ticket!==generation)throw Error('cancelled');video.src=source;return;
@@ -75,9 +81,9 @@
   }
   function choose(channel,playNow=false){
     if(selected?.id!==channel.id){release();owned=false;selected=channel;}
-    heading.textContent=channel.name;video.setAttribute('aria-label',channel.name+' — transmissão ao vivo');
+    heading.textContent=channel.name;video.setAttribute('aria-label',channel.name+(channel.type==='clip'?' — videoclipe':' — transmissão ao vivo'));
     start.textContent='ASSISTIR À '+channel.name.toLocaleUpperCase('pt-BR');start.disabled=false;
-    for(const button of grid.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.channelId===channel.id));
+    for(const button of document.querySelectorAll('#passport-clips-channels button, #passport-clips-videoclips button'))button.setAttribute('aria-pressed',String(button.dataset.channelId===channel.id));
     status.textContent='A reprodução começa somente quando você escolher assistir.';
     if(playNow)play();
   }
@@ -100,14 +106,18 @@
   register();
   fetch('/data/passport-clips-channels.json').then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{
     channels=data.channels;
-    for(const channel of channels){
+    function cards(items,target,kind){
+    if(!target)return;
+    for(const channel of items){
       const button=document.createElement('button');button.type='button';button.className='clips-channel-card';button.dataset.channelId=channel.id;
       button.setAttribute('aria-pressed','false');
-      const type=document.createElement('span');type.className='clips-channel-type';type.textContent='PASSPORT RADIO · TV';
+      const type=document.createElement('span');type.className='clips-channel-type';type.textContent=kind==='clip'?'PASSPORT RADIO · VIDEOCLIPE':'PASSPORT RADIO · TV';
       const name=document.createElement('strong');name.textContent=channel.name;
       const action=document.createElement('span');action.className='clips-channel-action';action.textContent='ASSISTIR →';
-      button.append(type,name,action);button.addEventListener('click',event=>{if(event.isTrusted)choose(channel,true);});grid.append(button);
+      button.append(type,name,action);button.addEventListener('click',event=>{if(event.isTrusted)choose(channel,true);});target.append(button);
     }
+    }
+    cards(channels,grid,'tv');cards(data.videoclips||[],clipGrid,'clip');
     choose(channels[0]);
   }).catch(()=>{status.textContent='Não foi possível carregar os canais. Recarregue a página para tentar novamente.';});
 })();

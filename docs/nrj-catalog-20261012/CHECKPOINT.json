@@ -1,0 +1,185 @@
+{
+  "status": "191_VISIBLE_4_IDENTITY_MISMATCHES_REMAIN",
+  "base": "1635bfafeeff638731ac5c3ddd87114772eaf42c",
+  "branch": "feat/passport-nrj-191-20261012",
+  "previous_radios": 160,
+  "added_radios": 191,
+  "final_radios": 351,
+  "preserved_program_selectors": 11,
+  "duplicate_channels": [],
+  "missing_stream_channels": [],
+  "implementation": "Append only to World Dial station data and Home inventory; unchanged playback implementation and grid callback; compact CSS only.",
+  "validation": {
+    "static_tests": "4 PASS",
+    "transport_suffix": "byte-identical to exact GitHub source",
+    "live_media_layout_continuity": "PASS six sampled streams, single active audio, Home/Arquivo continuity, 4 responsive widths; 183/191 endpoint probes PASS, 8 connection failures individually recorded",
+    "eight_stream_resolution": "4 external identity confirmations accepted; 4 explicit identity mismatches remain; URLs unchanged",
+    "historical_tests": "11 local assertions PASS; Passport 40 preservation 3/3 PASS and browser visibility/responsive PASS run 38203717048; Korean preservation 3/3 PASS run 38203717054"
+  },
+  "collection_repeated": false,
+  "new_audio_players": 0,
+  "production_modified": false,
+  "merged": false,
+  "next": "Four divergent identities require corresponding stream evidence; entries and URLs preserved. No acquisition, no merge.",
+  "code_commit": "2b5a6f28fa5562f804b34256b9917edb9fd091fb",
+  "pull_request": 552,
+  "preview": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site",
+  "preview_code_commit": "2b5a6f28fa5562f804b34256b9917edb9fd091fb",
+  "pending_streams": [
+    {
+      "source_id": "1105",
+      "original_name": "NRJ LES GAGNANTS DES NMA 2025",
+      "passport_name": "Awards Winners 2025™",
+      "stream": "https://streaming.nrjaudio.fm/oupyuebgddr9",
+      "result": "icy-name: NRJ POOL PARTY",
+      "classification": "IDENTITY_MISMATCH"
+    },
+    {
+      "source_id": "1810",
+      "original_name": "NRJ LES PLUS GRANDS GAGNANTS DES NMA",
+      "passport_name": "Awards Hall of Fame™",
+      "stream": "https://streaming.nrjaudio.fm/ouwrr5sk6j4d",
+      "result": "icy-name: NRJ Back To School",
+      "classification": "IDENTITY_MISMATCH"
+    },
+    {
+      "source_id": "2383",
+      "original_name": "NRJ LA PLAYLIST DE VIANNEY",
+      "passport_name": "Vianney Mix™",
+      "stream": "https://streaming.nrjaudio.fm/oudqny2h9r57",
+      "result": "icy-name: NRJ ROAD TRIP",
+      "classification": "IDENTITY_MISMATCH"
+    },
+    {
+      "source_id": "2393",
+      "original_name": "NRJ LA PLAYLIST DE MARINE",
+      "passport_name": "Marine Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ousovsm4z85f",
+      "result": "icy-name: NRJ HOUSE",
+      "classification": "IDENTITY_MISMATCH"
+    }
+  ],
+  "browser_checks": [
+    "351 radios + 11 existing selectors; zero autoplay; zero early NRJ connections; one universal player",
+    "search highlights only; all categories/cards remain open",
+    "real stream retains same audio/time through Arquivo and back; no second active audio"
+  ],
+  "responsive_checks": [
+    {
+      "width": 320,
+      "overflow": false,
+      "columns": 2,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "columns": 3,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "columns": 4,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "columns": 8,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    }
+  ],
+  "sample_playback": [
+    {
+      "sourceId": "1772",
+      "name": "K-Pop Select™",
+      "ok": true
+    },
+    {
+      "sourceId": "4",
+      "name": "Dance Pulse™",
+      "ok": true
+    },
+    {
+      "sourceId": "68",
+      "name": "Metal Select™",
+      "ok": true
+    },
+    {
+      "sourceId": "60",
+      "name": "Rap USA™",
+      "ok": true
+    },
+    {
+      "sourceId": "139",
+      "name": "Acoustic Hits™",
+      "ok": true
+    },
+    {
+      "sourceId": "1156",
+      "name": "BTS™",
+      "ok": true
+    }
+  ],
+  "stream_probe_success": 183,
+  "stream_probe_total": 191,
+  "workflow_run": 38201280333,
+  "workflow_result": "FAILURE: 8 fetch connection failures; all layout/playback/navigation assertions passed",
+  "evidence_artifact": 11725956591,
+  "existing_ci": {
+    "Passport CI": {
+      "run": 38203717047,
+      "result": "PASS"
+    },
+    "Materialize official Passport channels": {
+      "run": 38203717075,
+      "result": "PASS"
+    },
+    "Passport 40": {
+      "run": 38203717048,
+      "result": "PASS"
+    },
+    "Passport Korean additions": {
+      "run": 38203717054,
+      "result": "PASS"
+    },
+    "Passport NRJ 191": {
+      "run": 38203717055,
+      "result": "REUSED: no stream execution"
+    }
+  },
+  "remaining_limits": [
+    "8 connection failures do not prove permanent stream unavailability; supplied URLs retained and individually recorded.",
+    "Historical fixed-total CI tests are not compatible with the expanded catalog; no workflow or historical test was disabled.",
+    "Preview is a separate owner-private read-only proxy frozen at the implementation commit; later checkpoint-only commits do not change application bytes."
+  ],
+  "external_identity_confirmation": {
+    "confirmed": 4,
+    "mismatches": 4,
+    "source": "Owner supplied external investigation 2026-10-12",
+    "urls_changed": 0,
+    "no_reprobe": true
+  },
+  "affected_static_tests": {
+    "passed": 11,
+    "failed": 0,
+    "method": "Node tests using exact GitHub historical blobs as read-only git-show fixtures locally; repeat only two failed assertions after fixture byte restoration/legacy route correction"
+  },
+  "continuation_commit": "8a699da1f2921d46c1abbc3c8fc7f3539bd3d824",
+  "current_catalog": {
+    "radio_count": 401,
+    "program_selectors": 11,
+    "nrj_channels_preserved": 191,
+    "new_supplied_operation": "docs/95-additions-20261012/CHECKPOINT.json",
+    "four_nrj_identity_mismatches_still_pending": true
+  }
+}

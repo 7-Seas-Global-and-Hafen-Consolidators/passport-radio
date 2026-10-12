@@ -76,6 +76,298 @@
       "stream": "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8",
       "origin": "XITE Hits UK",
       "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-01",
+      "name": "Afrobeat TV Entertainment — Reino Unido",
+      "stream": "https://stream.ecable.tv/afrobeats/index.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-02",
+      "name": "Muzangala TV — Angola",
+      "stream": "https://5cf4a2c2512a2.streamlock.net/tvmuzangala/tvmuzangala/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-03",
+      "name": "KN Music TV — Azerbaijão",
+      "stream": "https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-04",
+      "name": "Audiokiss — Bolívia",
+      "stream": "https://master.tucableip.com/audiokisstv/index.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-05",
+      "name": "TV Cidade — Cabo Verde",
+      "stream": "https://stmv1.srvif.com/tvcidade/tvcidade/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-06",
+      "name": "13 Festival — Chile",
+      "stream": "https://origin.dpsgo.com/ssai/event/Nftd0fM2SXasfDlRphvUsg/master.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-07",
+      "name": "IQ Channel — Costa Rica",
+      "stream": "https://rtmp.info/iqtv/envivo/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-08",
+      "name": "E40 — Paraguai",
+      "stream": "https://copacotf.desdeparaguay.net/e40tv/e40tv_py_alta/playlist.m3u8?admin=tvaccion",
+      "live": true,
+      "requiredReferer": "https://www.estacion40.com.py/"
+    },
+    {
+      "id": "passport-add-20261012-tv-09",
+      "name": "Now 70s — Reino Unido",
+      "stream": "https://lightning-now70s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now70s-rakuten/CDN/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-10",
+      "name": "Now 80s — Reino Unido",
+      "stream": "https://lightning-now80s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now80s-rakuten/CDN/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-11",
+      "name": "Now 90s00s — Reino Unido",
+      "stream": "https://amg01076-amg01076c19-rakuten-gb-8653.playouts.now.amagi.tv/playlist/amg01076-lightning-now90s00s-rakutengb/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-12",
+      "name": "RTL 102.5 Best — Itália",
+      "stream": "https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S76960628/OEPHRUIctA0M/playlist_video.m3u8",
+      "live": true
+    }
+  ],
+  "videoclips": [
+    {
+      "id": "passport-add-20261012-clip-01",
+      "name": "She's Country — Jason Aldean",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video126/v4/83/d2/85/83d285fb-bcf2-e91f-7c5a-f0d95aad8c71/mzvf_6748300548122012586.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-02",
+      "name": "Choosin' Texas",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/3a/2f/4e/3a2f4ec2-2294-91ed-42be-3be3c57dc93e/mzvf_1678921043904066988.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-03",
+      "name": "Be Her",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/5b/8d/e0/5b8de07f-3110-0cb7-9366-6b248f0f77ce/mzvf_435486156317842128.640x480.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-04",
+      "name": "You Belong With Me",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video124/v4/41/6c/b7/416cb761-241f-5e28-b323-73044bc5dafa/mzvf_15425510054566376711.640x362.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-05",
+      "name": "Kinda Love It",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/b3/aa/a7/b3aaa77f-85c8-21e2-cd8a-9b2e27d870da/mzvf_2505241512294857036.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-06",
+      "name": "I Got Better",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/20/41/0b/20410b81-5958-95db-7d04-581d8d4c3786/mzvf_8446298547918932522.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-07",
+      "name": "20 Cigarettes",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/6c/ac/1a/6cac1ac5-70d6-2475-d161-f1dfc54fbd1a/mzvf_964863067268084683.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-08",
+      "name": "you look like you love me",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/1b/a5/08/1ba508ef-8db8-8d5d-b4b6-4ee5fe4a3c55/mzvf_9603554058425567358.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-09",
+      "name": "Boston (Live)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/b0/ee/75/b0ee75a4-2d49-add0-c325-54d8343af5ed/mzvf_13216128982345062022.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-10",
+      "name": "A Bar Song (Tipsy) [Visualizer]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/65/68/eb/6568eb8b-a922-dbf2-a722-f83f2155f3eb/mzvf_16513369385607233995.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-11",
+      "name": "Mexico Honey",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/52/e2/9c/52e29c17-8857-bda2-948f-2284c8878556/mzvf_15261146802743563344.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-12",
+      "name": "String By - Acoustic",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/11/d2/53/11d2535f-855d-014d-a6e9-e7003956348e/mzvf_13009306054679723204.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-13",
+      "name": "High Noon (feat. Gunna)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/56/73/b5/5673b50f-c42a-6b5a-9127-9317e7c88a60/mzvf_12136169706348795415.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-14",
+      "name": "Another Drink",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/d8/7a/11/d87a11ad-c3be-0496-c792-915c429f9d52/mzvf_16495624211585634312.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-15",
+      "name": "Don't We (Live From Tuscaloosa)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/52/b9/97/52b997ee-7803-521c-34bc-db1d8182b52a/mzvf_13563901101882815999.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-16",
+      "name": "Drivin' Around Song (feat. Jason Aldean)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/b3/5b/bd/b35bbd5b-7bcf-ed1e-54bb-4f5c693b3c43/mzvf_4619887389638300287.640x288.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-17",
+      "name": "Tuskegee Complete DVD Footage",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/a7/aa/99/a7aa992c-a48a-091f-8a7d-e50c2dd618a9/mzvf_11913637580135721863.640x352.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-18",
+      "name": "Night Train",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/74/82/a0/7482a03f-0293-2b9a-44d0-dadaefc2105d/mzvf_4138391828795812960.640x272.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-19",
+      "name": "Straight To Hell (feat. Jason Aldean, Luke Bryan & Charles Kelley)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/e7/ec/a8/e7eca8fe-819e-22e8-c1ec-9487e2e0c1b6/mzvf_9387949783381593623.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-20",
+      "name": "Let Your Boys Be Country",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video116/v4/64/0c/19/640c19d5-9147-4717-b196-60cb3c86193b/mzvf_15373494482996295109.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-21",
+      "name": "How Far Does A Goodbye Go",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/3b/94/6c/3b946cfe-fc94-96ac-9d79-f81479887f1f/mzvf_7988334707471524540.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-22",
+      "name": "Friends Like That (feat. Jason Aldean)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/ba/81/af/ba81af63-fba1-391b-7436-88f269b0b0c8/mzvf_7716866495427083999.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-23",
+      "name": "My Kinda Party",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video116/v4/0d/70/23/0d702366-278e-664b-4248-6bd476362e38/mzvf_14349312530369548208.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-24",
+      "name": "Big Green Tractor (Live)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video128/v4/0e/b7/4f/0eb74ff5-6cad-e8ba-0057-4c8e2c7c38cf/mzvf_2367962951108959755.640x360.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-25",
+      "name": "Whiskey Drink",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/f5/87/23/f5872308-7706-e871-c897-f4f2a1f14281/mzvf_16364742677388946888.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-26",
+      "name": "Rolex® On A Redneck (feat. Jason Aldean) [The Lyrics]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video112/v4/c7/68/29/c768298d-6ae9-5fc3-a0ae-0ea9c5d61291/mzvf_7136308513882444810.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-27",
+      "name": "Sunday in the South",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/d1/c6/f5/d1c6f506-0aac-d1c4-c41c-6530223f3853/mzvf_5560214133204058341.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-28",
+      "name": "Tennesee River (feat. Jason Aldean) [Live]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video122/v4/a4/63/6f/a4636f4d-553f-9c2e-5079-a3acd6f92ab5/mzvf_2908283266934820083.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-29",
+      "name": "Rolex® On A Redneck (feat. Jason Aldean) [Lyric Video]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video112/v4/9b/ee/bc/9beebc31-b7b8-077d-15d4-1dff1bb6d148/mzvf_12769294264900129666.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-30",
+      "name": "I Knew It, I Knew You (From \"Toy Story 5\")",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/0b/a4/42/0ba44280-d112-198e-9f1a-f45806cfecd5/mzvf_14194221150817615408.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-31",
+      "name": "All My Ex's Live In Texas (feat. Jason Aldean, Ray Benson, Kenny Chesney, Eric Church, Sheryl Crow, Vince Gill, Faith Hill, Alan Jackson, Miranda Lambert & Martina McBride) [Live]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/85/c2/2f/85c22f96-e248-e024-84ad-b01649a184a1/mzvf_7493642978928306632.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
     }
   ]
 }

@@ -1,0 +1,89 @@
+{
+  "radioRecordsHash": "3715ba4e79d39d1f7fae2ed14868f1c779a9b83cbef7eeaa88b4372d47b2367d",
+  "worldStationsHash": "11c4b4c542690c849e51bbd64babed98df7878f0a368732a7dde2a163164ba09",
+  "worldTransportHash": "f8384501bbaea973f352816cf1cfbe428d86bf0c4a7fe3d465d8ad9dea03f4b4",
+  "gridHash": "51e99179f7d827a89a24de3a9567bcb5562661102eb72c6c301bfcb3af5f83e1",
+  "gridCssHash": "5ce3374a7c9cb9bf6533173deb839186ddfd1057b7f6c34892d209a36cf1865c",
+  "tvChannels": [
+    {
+      "id": "passport-clips-original",
+      "name": "Passport Clips TV™",
+      "stream": "https://video04.logicahost.com.br/mastervision/mastervision/playlist.m3u8",
+      "origin": "Master Vision TV",
+      "live": true
+    },
+    {
+      "id": "passport-clips-2",
+      "name": "80s Flashback",
+      "stream": "https://d1n314cytqn9r3.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-bklagqy82v0pr/XITE_80s_Flashback.m3u8",
+      "origin": "XITE 80s Flashback",
+      "live": true
+    },
+    {
+      "id": "passport-clips-3",
+      "name": "90s Throwback",
+      "stream": "https://d284aawtm5vi48.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fjdfi2br1jtq7/XITE_90s_Throwback.m3u8",
+      "origin": "XITE 90s Throwback",
+      "live": true
+    },
+    {
+      "id": "passport-clips-4",
+      "name": "Rock On",
+      "stream": "https://d198ro05q94rc4.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-c5xdq9qwilrd2/XITE_Rock_On.m3u8",
+      "origin": "XITE Rock On",
+      "live": true
+    },
+    {
+      "id": "passport-clips-5",
+      "name": "Just Chill",
+      "stream": "https://dvnftgdlbnemm.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-dh48uzd9o895t/XITE_Just_Chill.m3u8",
+      "origin": "XITE Just Chill",
+      "live": true
+    },
+    {
+      "id": "passport-clips-6",
+      "name": "Siempre Latino",
+      "stream": "https://d1xc25jm9e0l4b.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-xplkt8i7m24dc/XITE_Siempre_Latino.m3u8",
+      "origin": "XITE Siempre Latino",
+      "live": true
+    },
+    {
+      "id": "passport-clips-7",
+      "name": "Hits",
+      "stream": "https://d726x48n2pd5h.cloudfront.net/XITE_Hits.m3u8",
+      "origin": "XITE Hits",
+      "live": true
+    },
+    {
+      "id": "passport-clips-8",
+      "name": "Nuevo Latino",
+      "stream": "https://d3bsgqzbpkrvbb.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w288eaw03izg1/XITE_Nuevo_Latino.m3u8",
+      "origin": "XITE Nuevo Latino",
+      "live": true
+    },
+    {
+      "id": "passport-clips-9",
+      "name": "Classic Country",
+      "stream": "https://d2xm7fwgbakh1x.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ltmgkaa20sgt9/XITE_Countrys_Finest.m3u8",
+      "origin": "XITE Countrys Finest",
+      "live": true
+    },
+    {
+      "id": "passport-clips-10",
+      "name": "Celebrates",
+      "stream": "https://dt1s4l2cmiyit.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fcwpee1h7t5cs/XITE_Celebrates.m3u8",
+      "origin": "XITE Celebrates",
+      "live": true
+    },
+    {
+      "id": "passport-clips-11",
+      "name": "Hits UK",
+      "stream": "https://amg01243-xitenetworksint-hitsuk-samsunguk-mvovq.amagi.tv/playlist/amg01243-xitenetworksint-hitsuk-samsunguk/playlist.m3u8",
+      "origin": "XITE Hits UK",
+      "live": true
+    }
+  ],
+  "tvHtmlHash": "5bafab4a80cb8cdd9a0d0d13695aa34180c9587575be7e6ad3c0aca3a95baa33",
+  "tvCssHash": "40199336a5faacd254a14e511beb5ab7787ca7920e92f5a5ad09883f857160ec",
+  "tvScript": "/* One controllable TV peer of the existing Passport Bus. No radio engine changes. */\n(() => {\n  'use strict';\n  const section = document.getElementById('passport-clips-tv');\n  if (!section) return;\n  const HLS_LIBRARY = 'https://cdn.jsdelivr.net/npm/hls.js@1.7.0/dist/hls.min.js';\n  const video = document.getElementById('passport-clips-video');\n  const heading = document.getElementById('passport-clips-title');\n  const start = document.getElementById('passport-clips-start');\n  const status = document.getElementById('passport-clips-status');\n  const grid = document.getElementById('passport-clips-channels');\n  video.crossOrigin = 'anonymous';\n  let channels = [], selected, owned = false, bus, hls, generation = 0, gesture = 0;\n  let libraryPromise, preparing, cancelPrepare, loadTimer;\n  const unavailable = () => {\n    status.textContent = 'Este canal está indisponível neste momento. Tente novamente ou escolha outra TV.';\n    start.textContent = 'TENTAR NOVAMENTE';\n  };\n  const peer = {PassportBus:{\n    enable(){owned=true;},\n    silence(){owned=false;release();}\n  }};\n  function register(){if(window.PassportBus && bus!==window.PassportBus){bus=window.PassportBus;bus.register(peer);}}\n  function claim(){register();if(!bus)throw Error('bus');window.PassportContinuity?.pause();bus.claim(peer);owned=true;}\n  function release(){\n    generation++;cancelPrepare?.();cancelPrepare=null;clearTimeout(loadTimer);\n    video.pause();hls?.destroy();hls=null;preparing=null;\n    video.removeAttribute('src');video.load();start.disabled=!selected;\n  }\n  function library(){\n    if(window.Hls)return Promise.resolve(window.Hls);\n    if(libraryPromise)return libraryPromise;\n    libraryPromise=new Promise((resolve,reject)=>{\n      const script=document.createElement('script');script.src=HLS_LIBRARY;script.crossOrigin='anonymous';\n      const timeout=setTimeout(()=>{script.remove();reject(Error('library'));},15000);\n      script.onload=()=>{clearTimeout(timeout);window.Hls?resolve(window.Hls):reject(Error('library'));};\n      script.onerror=()=>{clearTimeout(timeout);script.remove();reject(Error('library'));};document.head.append(script);\n    }).catch(error=>{libraryPromise=null;throw error;});return libraryPromise;\n  }\n  async function prepare(ticket){\n    if(video.getAttribute('src') || hls)return;\n    if(preparing)return preparing;\n    const source=selected.stream;\n    preparing=(async()=>{\n      if(video.canPlayType('application/vnd.apple.mpegurl')){\n        if(ticket!==generation)throw Error('cancelled');video.src=source;return;\n      }\n      const Hls=await library();if(ticket!==generation)throw Error('cancelled');\n      if(!Hls.isSupported())throw Error('unsupported');\n      await new Promise((resolve,reject)=>{\n        const instance=new Hls({enableWorker:true});hls=instance;\n        const done=error=>{clearTimeout(timeout);if(cancelPrepare===cancel)cancelPrepare=null;error?reject(error):resolve();};\n        const cancel=()=>done(Error('cancelled'));cancelPrepare=cancel;\n        const timeout=setTimeout(()=>done(Error('timeout')),20000);\n        instance.on(Hls.Events.MEDIA_ATTACHED,()=>instance.loadSource(source));\n        instance.on(Hls.Events.MANIFEST_PARSED,()=>done());\n        instance.on(Hls.Events.ERROR,(_event,data)=>{\n          if(!data.fatal || hls!==instance)return;\n          done(Error('signal'));instance.destroy();hls=null;video.pause();\n          if(ticket===generation){owned=false;start.disabled=false;unavailable();}\n        });\n        instance.attachMedia(video);\n      });\n    })();\n    try{await preparing;}finally{if(ticket===generation)preparing=null;}\n  }\n  async function play(){\n    gesture=Date.now();const ticket=++generation;start.disabled=true;\n    try{\n      claim();status.textContent='Conectando '+selected.name+'…';\n      loadTimer=setTimeout(()=>{if(ticket!==generation)return;release();owned=false;unavailable();},25000);\n      await prepare(ticket);if(ticket!==generation||!owned)return;await video.play();\n    }catch(_){if(ticket===generation){release();owned=false;unavailable();}}\n    finally{if(ticket===generation)start.disabled=false;}\n  }\n  function choose(channel,playNow=false){\n    if(selected?.id!==channel.id){release();owned=false;selected=channel;}\n    heading.textContent=channel.name;video.setAttribute('aria-label',channel.name+' — transmissão ao vivo');\n    start.textContent='ASSISTIR À '+channel.name.toLocaleUpperCase('pt-BR');start.disabled=false;\n    for(const button of grid.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.channelId===channel.id));\n    status.textContent='A reprodução começa somente quando você escolher assistir.';\n    if(playNow)play();\n  }\n  start.addEventListener('click',event=>{if(event.isTrusted && selected && !start.disabled)play();});\n  for(const event of ['pointerdown','keydown'])video.addEventListener(event,e=>{if(e.isTrusted)gesture=Date.now();});\n  video.addEventListener('play',()=>{if(!owned){if(Date.now()-gesture>2000){video.pause();return;}try{claim();}catch(_){video.pause();}}});\n  video.addEventListener('playing',()=>{\n    if(!owned){video.pause();return;}clearTimeout(loadTimer);start.disabled=false;\n    status.textContent=selected.name+(selected.live?' · AO VIVO':'');start.textContent='RETOMAR '+selected.name.toLocaleUpperCase('pt-BR');\n  });\n  video.addEventListener('waiting',()=>{\n    if(!owned)return;status.textContent='Reconectando '+selected.name+'…';clearTimeout(loadTimer);\n    const ticket=generation;loadTimer=setTimeout(()=>{if(ticket===generation){release();owned=false;unavailable();}},25000);\n  });\n  video.addEventListener('pause',()=>{clearTimeout(loadTimer);if(video.currentTime>0 && selected && !/indisponível/.test(status.textContent))status.textContent=selected.name+' · pausada';});\n  video.addEventListener('error',()=>{if(selected && video.getAttribute('src')){release();owned=false;unavailable();}});\n  window.addEventListener('passport:audio-state',event=>{register();if(event.detail?.playing&&owned)peer.PassportBus.silence();});\n  window.addEventListener('pagehide',()=>{owned=false;release();bus?.unregister(peer);});\n  window.addEventListener('pageshow',()=>{register();bus?.register(peer);});\n  register();\n  fetch('/data/passport-clips-channels.json').then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{\n    channels=data.channels;\n    for(const channel of channels){\n      const button=document.createElement('button');button.type='button';button.className='clips-channel-card';button.dataset.channelId=channel.id;\n      button.setAttribute('aria-pressed','false');\n      const type=document.createElement('span');type.className='clips-channel-type';type.textContent='PASSPORT RADIO · TV';\n      const name=document.createElement('strong');name.textContent=channel.name;\n      const action=document.createElement('span');action.className='clips-channel-action';action.textContent='ASSISTIR →';\n      button.append(type,name,action);button.addEventListener('click',event=>{if(event.isTrusted)choose(channel,true);});grid.append(button);\n    }\n    choose(channels[0]);\n  }).catch(()=>{status.textContent='Não foi possível carregar os canais. Recarregue a página para tentar novamente.';});\n})();\n"
+}

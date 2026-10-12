@@ -1,0 +1,850 @@
+{
+  "base": "88b1f5a4968c3bb5ae8bc8e869f2be80328d6847",
+  "radios_added": [
+    {
+      "order": 1,
+      "id": "passport-add-20261012-radio-01",
+      "name": "Sakura Revolution™",
+      "origin": "rajiokakumeifmpro",
+      "section": 8,
+      "stream": "https://rajiokakumeifmpro.online:2020/stream/rajiokakumeifmpro",
+      "index": 263,
+      "category": "World Dial"
+    },
+    {
+      "order": 2,
+      "id": "passport-add-20261012-radio-02",
+      "name": "Seoul Romance™",
+      "origin": "Radio Saranghae",
+      "section": 11,
+      "stream": "https://vm65162.streamerr.co/listen/radiosaranghae/radio.mp3",
+      "index": 264,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 3,
+      "id": "passport-add-20261012-radio-03",
+      "name": "Northern Frequencies™",
+      "origin": "Moin.fm",
+      "section": 3,
+      "stream": "https://a7.asurahosting.com/listen/radio_moin.fm/radio.mp3",
+      "index": 265,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 4,
+      "id": "passport-add-20261012-radio-04",
+      "name": "Seoul Galaxy™",
+      "origin": "HearMe.fm K-Pop",
+      "section": 11,
+      "stream": "https://radio.hearme.fm:8064/stream",
+      "index": 266,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 5,
+      "id": "passport-add-20261012-radio-05",
+      "name": "Kyiv Seoul Connection™",
+      "origin": "K-Pop 24 Ukraine",
+      "section": 11,
+      "stream": "https://lux.radio.tvstitch.com/k-pop-sd",
+      "index": 267,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 6,
+      "id": "passport-add-20261012-radio-06",
+      "name": "Monterrey Seoul Beat™",
+      "origin": "Radio Hits K-Pop MTY",
+      "section": 11,
+      "stream": "https://stream.ademmedios.workers.dev/",
+      "index": 268,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 7,
+      "id": "passport-add-20261012-radio-07",
+      "name": "Neko Frequencies™",
+      "origin": "Radio-AniNeko",
+      "section": 8,
+      "stream": "https://rs1.shirokaze.de/listen/radio-anineko/RadioAniNeko128.mp3",
+      "index": 269,
+      "category": "World Dial"
+    },
+    {
+      "order": 8,
+      "id": "passport-add-20261012-radio-08",
+      "name": "Digital Pulse™",
+      "origin": "Paula IA Radio",
+      "section": 3,
+      "stream": "https://trackcloud.es/radio/stream/;stream.mp3",
+      "index": 270,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 9,
+      "id": "passport-add-20261012-radio-09",
+      "name": "Midnight Anime™",
+      "origin": "Radio AnimeNight",
+      "section": 8,
+      "stream": "https://www.animenight.com.br/stream",
+      "index": 271,
+      "category": "World Dial"
+    },
+    {
+      "order": 10,
+      "id": "passport-add-20261012-radio-10",
+      "name": "Seoul Dancefloor™",
+      "origin": "Mad Mix Kpop",
+      "section": 11,
+      "stream": "https://mml2.prostream.se/listen/kpop/radio.mp3",
+      "index": 272,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 11,
+      "id": "passport-add-20261012-radio-11",
+      "name": "Otaku Dimension™",
+      "origin": "Isekai Anime Radio",
+      "section": 8,
+      "stream": "https://hello.citrus3.com:2020/stream/isekaianimeradio",
+      "index": 273,
+      "category": "World Dial"
+    },
+    {
+      "order": 12,
+      "id": "passport-add-20261012-radio-12",
+      "name": "Girl Power Asia™",
+      "origin": "conexion girls groups",
+      "section": 11,
+      "stream": "https://conexiongirlsgroups.stream.laut.fm/conexiongirlsgroups",
+      "index": 274,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 13,
+      "id": "passport-add-20261012-radio-13",
+      "name": "Seoul Voltage™",
+      "origin": "ENERGY K-Pop",
+      "section": 11,
+      "stream": "https://frontend.streamonkey.net/energy-kpop?aggregator=radiode",
+      "index": 275,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 14,
+      "id": "passport-add-20261012-radio-14",
+      "name": "Seoul Soundwave™",
+      "origin": "Music Radio K-pop",
+      "section": 11,
+      "stream": "https://radio.musicradio.ai/listen/music_radio_k-pop/radio.mp3",
+      "index": 276,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 15,
+      "id": "passport-add-20261012-radio-15",
+      "name": "Northern Pop™",
+      "origin": "Heusi.FM",
+      "section": 3,
+      "stream": "https://stream.laut.fm/heusi-fm?ref=radiode",
+      "index": 277,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 16,
+      "id": "passport-add-20261012-radio-16",
+      "name": "Double Frequency™",
+      "origin": "Doble via Radio",
+      "section": 3,
+      "stream": "https://stream.zeno.fm/x6fynpfunuptv",
+      "index": 278,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 17,
+      "id": "passport-add-20261012-radio-17",
+      "name": "Seoul Cinema™",
+      "origin": "K-Drama OST's Radio",
+      "section": 11,
+      "stream": "https://s67.radiolize.com/radio/8130/radio.mp3",
+      "index": 279,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 18,
+      "id": "passport-add-20261012-radio-18",
+      "name": "Next Generation Pop™",
+      "origin": "Rizz Radio",
+      "section": 3,
+      "stream": "https://c25.radioboss.fm:8203/stream",
+      "index": 280,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 19,
+      "id": "passport-add-20261012-radio-19",
+      "name": "Eastern Fusion™",
+      "origin": "CINZ NET Radio",
+      "section": 8,
+      "stream": "https://stream.cinz.net",
+      "index": 281,
+      "category": "World Dial"
+    },
+    {
+      "order": 20,
+      "id": "passport-add-20261012-radio-20",
+      "name": "Anime After Dark™",
+      "origin": "Lazus anime radio",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/wwl1pz3upisuv",
+      "index": 282,
+      "category": "World Dial"
+    },
+    {
+      "order": 21,
+      "id": "passport-add-20261012-radio-21",
+      "name": "Seoul Heatwave™",
+      "origin": "Hotmix K-Pop",
+      "section": 11,
+      "stream": "https://streaming.hotmixradio.fr/hotmix-k-pop-en-mp3",
+      "index": 283,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 22,
+      "id": "passport-add-20261012-radio-22",
+      "name": "Korean Hit Machine™",
+      "origin": "Kpop Hit Radio",
+      "section": 11,
+      "stream": "https://stream20.usastreams.com/8208/stream",
+      "index": 284,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 23,
+      "id": "passport-add-20261012-radio-23",
+      "name": "Seoul Connection™",
+      "origin": "Conexión Kpop",
+      "section": 11,
+      "stream": "https://stream.laut.fm/conexionkpop",
+      "index": 285,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 24,
+      "id": "passport-add-20261012-radio-24",
+      "name": "Keystone Frequencies™",
+      "origin": "Candid Radio Pennsylvania",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/aq2smvms008uv",
+      "index": 286,
+      "category": "World Dial"
+    },
+    {
+      "order": 25,
+      "id": "passport-add-20261012-radio-25",
+      "name": "Pacific Northwest Sounds™",
+      "origin": "Candid Radio Oregon",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/g0usebms008uv",
+      "index": 287,
+      "category": "World Dial"
+    },
+    {
+      "order": 26,
+      "id": "passport-add-20261012-radio-26",
+      "name": "Desert Southwest Sounds™",
+      "origin": "Candid Radio New Mexico",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/sx7crmks008uv",
+      "index": 288,
+      "category": "World Dial"
+    },
+    {
+      "order": 27,
+      "id": "passport-add-20261012-radio-27",
+      "name": "Granite State Sounds™",
+      "origin": "Candid Radio New Hampshire",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/h4ux4k8r008uv",
+      "index": 289,
+      "category": "World Dial"
+    },
+    {
+      "order": 28,
+      "id": "passport-add-20261012-radio-28",
+      "name": "Silver State Sounds™",
+      "origin": "Candid Radio Nevada",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/3c5s097r008uv",
+      "index": 290,
+      "category": "World Dial"
+    },
+    {
+      "order": 29,
+      "id": "passport-add-20261012-radio-29",
+      "name": "Big Sky Frequencies™",
+      "origin": "Candid Radio Montana",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/3awa1u7r008uv",
+      "index": 291,
+      "category": "World Dial"
+    },
+    {
+      "order": 30,
+      "id": "passport-add-20261012-radio-30",
+      "name": "Heartland Frequencies™",
+      "origin": "Candid Radio Missouri",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/yz2s1b7r008uv",
+      "index": 292,
+      "category": "World Dial"
+    },
+    {
+      "order": 31,
+      "id": "passport-add-20261012-radio-31",
+      "name": "Magnolia State Sounds™",
+      "origin": "Candid Radio Mississippi",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/bekt826r008uv",
+      "index": 293,
+      "category": "World Dial"
+    },
+    {
+      "order": 32,
+      "id": "passport-add-20261012-radio-32",
+      "name": "Lone Star Frequencies™",
+      "origin": "Candid Radio Texas",
+      "section": 8,
+      "stream": "https://stream.zeno.fm/t50y19ss008uv",
+      "index": 294,
+      "category": "World Dial"
+    },
+    {
+      "order": 33,
+      "id": "passport-add-20261012-radio-33",
+      "name": "Alternative Heritage™",
+      "origin": "Alt Class X",
+      "section": 2,
+      "stream": "https://streaming.live365.com/a87561",
+      "index": 295,
+      "category": "Rock · Metal · Alternativas"
+    },
+    {
+      "order": 34,
+      "id": "passport-add-20261012-radio-34",
+      "name": "Korean Time Machine™",
+      "origin": "113.fm KPOP",
+      "section": 11,
+      "stream": "https://113fm.cdnstream1.com/1856_128",
+      "index": 296,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 35,
+      "id": "passport-add-20261012-radio-35",
+      "name": "Eastern Gold™",
+      "origin": "ASIA HITZ",
+      "section": 8,
+      "stream": "https://streaming.live365.com/a57743",
+      "index": 297,
+      "category": "World Dial"
+    },
+    {
+      "order": 36,
+      "id": "passport-add-20261012-radio-36",
+      "name": "Pop Without Borders™",
+      "origin": "Inpop",
+      "section": 3,
+      "stream": "https://stream.laut.fm/inpop?ref=radiode",
+      "index": 298,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 37,
+      "id": "passport-add-20261012-radio-37",
+      "name": "Seoul For You™",
+      "origin": "Kpop 4 You",
+      "section": 11,
+      "stream": "https://stream.laut.fm/kpop4you?ref=radiode",
+      "index": 299,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 38,
+      "id": "passport-add-20261012-radio-38",
+      "name": "Seoul Hearts™",
+      "origin": "K-POP Love Radio",
+      "section": 11,
+      "stream": "http://node-14.zeno.fm/psx4yr2rsf9uv.aac?zs=OR1mj1KQRQ2cXN4mElkA2g&rj-tok=AAABgT1-A9UAaIk6cJxyKHq_7w&rj-ttl=5",
+      "index": 300,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 39,
+      "id": "passport-add-20261012-radio-39",
+      "name": "Seoul Fitness Beats™",
+      "origin": "Sportify K-Pop Workout",
+      "section": 11,
+      "stream": "https://drive.uber.radio/uber/sportifykpop/icecast.audio",
+      "index": 301,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 40,
+      "id": "passport-add-20261012-radio-40",
+      "name": "Korean Sound Factory™",
+      "origin": "K-POP by rautemusik",
+      "section": 11,
+      "stream": "https://streams.rautemusik.fm/k-pop/mp3-192/?ref=radiode",
+      "index": 302,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 42,
+      "id": "passport-add-20261012-radio-42",
+      "name": "Seoul Nonstop™",
+      "origin": "ON K-Pop",
+      "section": 11,
+      "stream": "https://0n-kpop.radionetz.de/0n-kpop.mp3",
+      "index": 303,
+      "category": "K-pop · Música coreana"
+    },
+    {
+      "order": 43,
+      "id": "passport-add-20261012-radio-43",
+      "name": "Urban Bassline™",
+      "origin": "Hot 108 Jamz",
+      "section": 4,
+      "stream": "https://live.powerhitz.com/hot108?aw_0_req.gdpr=true&hot108jamz",
+      "index": 304,
+      "category": "Soul · Black music · Reggae"
+    },
+    {
+      "order": 44,
+      "id": "passport-add-20261012-radio-44",
+      "name": "Nightclub Frequencies™",
+      "origin": "Clubmix",
+      "section": 1,
+      "stream": "https://tuner.m1.fm/clubmix.mp3",
+      "index": 305,
+      "category": "Dance · Flash house · Discotecas"
+    },
+    {
+      "order": 45,
+      "id": "passport-add-20261012-radio-45",
+      "name": "Paulista Pop™",
+      "origin": "Mix FM São Paulo",
+      "section": 3,
+      "stream": "https://playerservices.streamtheworld.com/api/livestream-redirect/MIXFM_SAOPAULOAAC.aac",
+      "index": 306,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 47,
+      "id": "passport-add-20261012-radio-47",
+      "name": "Boston Headlines™",
+      "origin": "WBZ NewsRadio",
+      "section": 7,
+      "stream": "https://stream.revma.ihrhls.com/zc7729",
+      "index": 307,
+      "category": "Ao vivo · Programas · Especiais"
+    },
+    {
+      "order": 48,
+      "id": "passport-add-20261012-radio-48",
+      "name": "Brasil Universitário™",
+      "origin": "Radio Studio Souto Sertanejo Universitário",
+      "section": 5,
+      "stream": "https://centova5.transmissaodigital.com:20042/stream",
+      "index": 308,
+      "category": "Brasil · MPB · Samba · Sertanejo"
+    },
+    {
+      "order": 49,
+      "id": "passport-add-20261012-radio-49",
+      "name": "German Soundwave™",
+      "origin": "SWR3",
+      "section": 3,
+      "stream": "https://liveradio.swr.de/rddez3a/swr3/",
+      "index": 309,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 50,
+      "id": "passport-add-20261012-radio-50",
+      "name": "Memórias Musicais™",
+      "origin": "RADIO SAUDADE",
+      "section": 3,
+      "stream": "https://stream.zeno.fm/xt7hzq0nshruv",
+      "index": 310,
+      "category": "Pop · Décadas · Nostalgia"
+    },
+    {
+      "order": 51,
+      "id": "passport-add-20261012-radio-51",
+      "name": "Ritmos Metropolitanos™",
+      "origin": "Radio Transcontinental 104.7 FM",
+      "section": 5,
+      "stream": "https://ice.fabricahost.com.br/transcontinentalsp48",
+      "index": 311,
+      "category": "Brasil · MPB · Samba · Sertanejo"
+    },
+    {
+      "order": 52,
+      "id": "passport-add-20261012-radio-52",
+      "name": "Universe™",
+      "origin": "Exclusively Taylor Swift",
+      "section": 3,
+      "stream": "https://streaming.exclusive.radio/er/taylorswift/icecast.audio",
+      "index": 312,
+      "category": "Pop · Décadas · Nostalgia"
+    }
+  ],
+  "radio_duplicates": [
+    {
+      "requested": {
+        "order": 41,
+        "id": "passport-add-20261012-radio-41",
+        "name": "Seoul Hit Factory™",
+        "origin": "OnlyHit K-Pop",
+        "section": 11,
+        "stream": "https://cdn.onlyhitsradio.net/kpop"
+      },
+      "existing_id": "passport-kpop-mix",
+      "existing_name": "K-Pop Mix™",
+      "reason": "Exact stream URL"
+    },
+    {
+      "requested": {
+        "order": 46,
+        "id": "passport-add-20261012-radio-46",
+        "name": "French Dancefloor™",
+        "origin": "NRJ DAVID GUETTA",
+        "section": 1,
+        "stream": "https://streaming.nrjaudio.fm/outdax6ubafg?origine=radio.net"
+      },
+      "existing_id": "passport-nrj-188",
+      "existing_name": "David Guetta™",
+      "reason": "Same existing NRJ DAVID GUETTA endpoint; only source attribution parameter differs"
+    }
+  ],
+  "tv_added": [
+    {
+      "id": "passport-add-20261012-tv-01",
+      "name": "Afrobeat TV Entertainment — Reino Unido",
+      "stream": "https://stream.ecable.tv/afrobeats/index.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-02",
+      "name": "Muzangala TV — Angola",
+      "stream": "https://5cf4a2c2512a2.streamlock.net/tvmuzangala/tvmuzangala/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-03",
+      "name": "KN Music TV — Azerbaijão",
+      "stream": "https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-04",
+      "name": "Audiokiss — Bolívia",
+      "stream": "https://master.tucableip.com/audiokisstv/index.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-05",
+      "name": "TV Cidade — Cabo Verde",
+      "stream": "https://stmv1.srvif.com/tvcidade/tvcidade/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-06",
+      "name": "13 Festival — Chile",
+      "stream": "https://origin.dpsgo.com/ssai/event/Nftd0fM2SXasfDlRphvUsg/master.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-07",
+      "name": "IQ Channel — Costa Rica",
+      "stream": "https://rtmp.info/iqtv/envivo/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-08",
+      "name": "E40 — Paraguai",
+      "stream": "https://copacotf.desdeparaguay.net/e40tv/e40tv_py_alta/playlist.m3u8?admin=tvaccion",
+      "live": true,
+      "requiredReferer": "https://www.estacion40.com.py/"
+    },
+    {
+      "id": "passport-add-20261012-tv-09",
+      "name": "Now 70s — Reino Unido",
+      "stream": "https://lightning-now70s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now70s-rakuten/CDN/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-10",
+      "name": "Now 80s — Reino Unido",
+      "stream": "https://lightning-now80s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now80s-rakuten/CDN/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-11",
+      "name": "Now 90s00s — Reino Unido",
+      "stream": "https://amg01076-amg01076c19-rakuten-gb-8653.playouts.now.amagi.tv/playlist/amg01076-lightning-now90s00s-rakutengb/playlist.m3u8",
+      "live": true
+    },
+    {
+      "id": "passport-add-20261012-tv-12",
+      "name": "RTL 102.5 Best — Itália",
+      "stream": "https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S76960628/OEPHRUIctA0M/playlist_video.m3u8",
+      "live": true
+    }
+  ],
+  "videoclips_added": [
+    {
+      "id": "passport-add-20261012-clip-01",
+      "name": "She's Country — Jason Aldean",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video126/v4/83/d2/85/83d285fb-bcf2-e91f-7c5a-f0d95aad8c71/mzvf_6748300548122012586.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-02",
+      "name": "Choosin' Texas",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/3a/2f/4e/3a2f4ec2-2294-91ed-42be-3be3c57dc93e/mzvf_1678921043904066988.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-03",
+      "name": "Be Her",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/5b/8d/e0/5b8de07f-3110-0cb7-9366-6b248f0f77ce/mzvf_435486156317842128.640x480.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-04",
+      "name": "You Belong With Me",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video124/v4/41/6c/b7/416cb761-241f-5e28-b323-73044bc5dafa/mzvf_15425510054566376711.640x362.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-05",
+      "name": "Kinda Love It",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/b3/aa/a7/b3aaa77f-85c8-21e2-cd8a-9b2e27d870da/mzvf_2505241512294857036.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-06",
+      "name": "I Got Better",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/20/41/0b/20410b81-5958-95db-7d04-581d8d4c3786/mzvf_8446298547918932522.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-07",
+      "name": "20 Cigarettes",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/6c/ac/1a/6cac1ac5-70d6-2475-d161-f1dfc54fbd1a/mzvf_964863067268084683.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-08",
+      "name": "you look like you love me",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/1b/a5/08/1ba508ef-8db8-8d5d-b4b6-4ee5fe4a3c55/mzvf_9603554058425567358.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-09",
+      "name": "Boston (Live)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/b0/ee/75/b0ee75a4-2d49-add0-c325-54d8343af5ed/mzvf_13216128982345062022.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-10",
+      "name": "A Bar Song (Tipsy) [Visualizer]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/65/68/eb/6568eb8b-a922-dbf2-a722-f83f2155f3eb/mzvf_16513369385607233995.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-11",
+      "name": "Mexico Honey",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/52/e2/9c/52e29c17-8857-bda2-948f-2284c8878556/mzvf_15261146802743563344.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-12",
+      "name": "String By - Acoustic",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/11/d2/53/11d2535f-855d-014d-a6e9-e7003956348e/mzvf_13009306054679723204.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-13",
+      "name": "High Noon (feat. Gunna)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/56/73/b5/5673b50f-c42a-6b5a-9127-9317e7c88a60/mzvf_12136169706348795415.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-14",
+      "name": "Another Drink",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/d8/7a/11/d87a11ad-c3be-0496-c792-915c429f9d52/mzvf_16495624211585634312.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-15",
+      "name": "Don't We (Live From Tuscaloosa)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/52/b9/97/52b997ee-7803-521c-34bc-db1d8182b52a/mzvf_13563901101882815999.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-16",
+      "name": "Drivin' Around Song (feat. Jason Aldean)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/b3/5b/bd/b35bbd5b-7bcf-ed1e-54bb-4f5c693b3c43/mzvf_4619887389638300287.640x288.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-17",
+      "name": "Tuskegee Complete DVD Footage",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/a7/aa/99/a7aa992c-a48a-091f-8a7d-e50c2dd618a9/mzvf_11913637580135721863.640x352.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-18",
+      "name": "Night Train",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/74/82/a0/7482a03f-0293-2b9a-44d0-dadaefc2105d/mzvf_4138391828795812960.640x272.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-19",
+      "name": "Straight To Hell (feat. Jason Aldean, Luke Bryan & Charles Kelley)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/e7/ec/a8/e7eca8fe-819e-22e8-c1ec-9487e2e0c1b6/mzvf_9387949783381593623.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-20",
+      "name": "Let Your Boys Be Country",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video116/v4/64/0c/19/640c19d5-9147-4717-b196-60cb3c86193b/mzvf_15373494482996295109.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-21",
+      "name": "How Far Does A Goodbye Go",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/3b/94/6c/3b946cfe-fc94-96ac-9d79-f81479887f1f/mzvf_7988334707471524540.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-22",
+      "name": "Friends Like That (feat. Jason Aldean)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/ba/81/af/ba81af63-fba1-391b-7436-88f269b0b0c8/mzvf_7716866495427083999.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-23",
+      "name": "My Kinda Party",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video116/v4/0d/70/23/0d702366-278e-664b-4248-6bd476362e38/mzvf_14349312530369548208.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-24",
+      "name": "Big Green Tractor (Live)",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video128/v4/0e/b7/4f/0eb74ff5-6cad-e8ba-0057-4c8e2c7c38cf/mzvf_2367962951108959755.640x360.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-25",
+      "name": "Whiskey Drink",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video221/v4/f5/87/23/f5872308-7706-e871-c897-f4f2a1f14281/mzvf_16364742677388946888.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-26",
+      "name": "Rolex® On A Redneck (feat. Jason Aldean) [The Lyrics]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video112/v4/c7/68/29/c768298d-6ae9-5fc3-a0ae-0ea9c5d61291/mzvf_7136308513882444810.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-27",
+      "name": "Sunday in the South",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/d1/c6/f5/d1c6f506-0aac-d1c4-c41c-6530223f3853/mzvf_5560214133204058341.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-28",
+      "name": "Tennesee River (feat. Jason Aldean) [Live]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video122/v4/a4/63/6f/a4636f4d-553f-9c2e-5079-a3acd6f92ab5/mzvf_2908283266934820083.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-29",
+      "name": "Rolex® On A Redneck (feat. Jason Aldean) [Lyric Video]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video112/v4/9b/ee/bc/9beebc31-b7b8-077d-15d4-1dff1bb6d148/mzvf_12769294264900129666.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-30",
+      "name": "I Knew It, I Knew You (From \"Toy Story 5\")",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/0b/a4/42/0ba44280-d112-198e-9f1a-f45806cfecd5/mzvf_14194221150817615408.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    },
+    {
+      "id": "passport-add-20261012-clip-31",
+      "name": "All My Ex's Live In Texas (feat. Jason Aldean, Ray Benson, Kenny Chesney, Eric Church, Sheryl Crow, Vince Gill, Faith Hill, Alan Jackson, Miranda Lambert & Martina McBride) [Live]",
+      "stream": "https://video-ssl.itunes.apple.com/itunes-assets/Video115/v4/85/c2/2f/85c22f96-e248-e024-84ad-b01649a184a1/mzvf_7493642978928306632.720w.h264lc.U.p.m4v",
+      "live": false,
+      "type": "clip"
+    }
+  ],
+  "counts": {
+    "radio_before": 351,
+    "radio_added": 50,
+    "radio_total": 401,
+    "selectors": 11,
+    "tv_before": 11,
+    "tv_added": 12,
+    "tv_total": 23,
+    "videoclips_added": 31,
+    "total_added": 93
+  },
+  "limitations": [
+    {
+      "id": "passport-add-20261012-radio-38",
+      "name": "Seoul Hearts™",
+      "reason": "User supplied HTTP URL with temporary parameters is preserved. Existing World transport upgrades HTTP to HTTPS; no radio transport changes or availability verification performed."
+    },
+    {
+      "id": "passport-add-20261012-tv-08",
+      "name": "E40 — Paraguai",
+      "reason": "Supplied required Referer is https://www.estacion40.com.py/. Browser scripts cannot assign an arbitrary foreign Referer; no proxy or infrastructure change introduced. Playback remains subject to upstream origin authorization."
+    }
+  ]
+}
