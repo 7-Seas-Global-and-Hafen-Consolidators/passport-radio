@@ -2,7 +2,7 @@
   "branch": "feat/passport-nrj-191-20261012",
   "pr": 552,
   "base": "88b1f5a4968c3bb5ae8bc8e869f2be80328d6847",
-  "state": "IMPLEMENTED_PREVIEW_PUBLISHED_STATIC_CI_CORRECTIONS_PENDING",
+  "state": "PERSISTED_PRIVATE_PREVIEW_PUBLISHED_STATIC_CI_PASSED",
   "counts": {
     "radio_before": 351,
     "radio_added": 50,
@@ -67,6 +67,29 @@
       "Korean preservation": "PASS 38218228503",
       "NRJ local integrity": "5/6 PASS; snapshot grid hash included local extra newline. Snapshot corrected from exact unchanged GitHub source; affected assertion PASS locally. No app file changed.",
       "Clips TV": "2/3 PASS; first check used pre-existing older video collections hash. Updated comparison to exact pre-operation commit 88b1f5a; all protected file comparisons remain mandatory."
+    },
+    "final_ci": {
+      "tested_commit": "a73a54f22422e3fe86a9414a32e08b1ffaa4e9f2",
+      "Passport CI": {
+        "id": 38218564900,
+        "result": "PASS"
+      },
+      "Clips TV preservation": {
+        "id": 38218564990,
+        "result": "PASS"
+      },
+      "Passport 40 preservation": {
+        "id": 38218564831,
+        "result": "PASS"
+      },
+      "Korean preservation": {
+        "id": 38218564845,
+        "result": "PASS"
+      },
+      "Catalog integrity": {
+        "id": 38218564823,
+        "result": "PASS"
+      }
     }
   },
   "preserved": [
@@ -80,9 +103,10 @@
   ],
   "preview_home": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site/",
   "preview_clips_tv": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site/clips-tv.html",
-  "next": "Collect corrected mandatory static CI checks; no network/media tests, no merge.",
+  "next": "Owner review PR #552 and supplied name/URL table. E40 origin requirement and Seoul Hearts HTTP/temporary URL limitations remain explicit; four prior NRJ identity mismatches remain pending. No merge.",
   "merged": false,
   "production_modified": false,
   "implementation_commit": "13c0450442b2356ebf1416429276204f29dc3539",
-  "preview_implementation_commit": "13c0450442b2356ebf1416429276204f29dc3539"
+  "preview_implementation_commit": "13c0450442b2356ebf1416429276204f29dc3539",
+  "preview_state": "Owner-private deployment succeeded; application bytes frozen at implementation commit, later commits only tests/checkpoint/workflows."
 }
