@@ -1,5 +1,5 @@
 {
-  "status": "IMPLEMENTED_LIVE_TEST_PENDING",
+  "status": "IMPLEMENTED_WITH_8_EXTERNAL_STREAMS_UNCONFIRMED",
   "base": "1635bfafeeff638731ac5c3ddd87114772eaf42c",
   "branch": "feat/passport-nrj-191-20261012",
   "previous_radios": 160,
@@ -9,10 +9,172 @@
   "duplicate_channels": [],
   "missing_stream_channels": [],
   "implementation": "Append only to World Dial station data and Home inventory; unchanged playback implementation and grid callback; compact CSS only.",
-  "validation": {"static_tests": "4 PASS", "transport_suffix": "byte-identical to exact GitHub source", "live_media_layout_continuity": "PENDING one focused GitHub Actions round"},
+  "validation": {
+    "static_tests": "4 PASS",
+    "transport_suffix": "byte-identical to exact GitHub source",
+    "live_media_layout_continuity": "PENDING one focused GitHub Actions round"
+  },
   "collection_repeated": false,
   "new_audio_players": 0,
   "production_modified": false,
   "merged": false,
-  "next": "Collect the single focused workflow result; fix only proved failures; publish frozen-commit preview; update this checkpoint without rerunning completed tests."
+  "next": "Review PR and naming table; 8 supplied streaming.nrjaudio.fm endpoints have unconfirmed live availability. No stream URL substitutions or playback-engine changes were made. No repeated tests required for checkpoint-only update.",
+  "code_commit": "2b5a6f28fa5562f804b34256b9917edb9fd091fb",
+  "pull_request": 552,
+  "preview": "https://passport-nrj-191-branch-preview.mr-nomad.chatgpt.site",
+  "preview_code_commit": "2b5a6f28fa5562f804b34256b9917edb9fd091fb",
+  "pending_streams": [
+    {
+      "source_id": "1105",
+      "original_name": "NRJ LES GAGNANTS DES NMA 2025",
+      "passport_name": "Awards Winners 2025™",
+      "stream": "https://streaming.nrjaudio.fm/oupyuebgddr9",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "1810",
+      "original_name": "NRJ LES PLUS GRANDS GAGNANTS DES NMA",
+      "passport_name": "Awards Hall of Fame™",
+      "stream": "https://streaming.nrjaudio.fm/ouwrr5sk6j4d",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2213",
+      "original_name": "NRJ FAN POWER",
+      "passport_name": "Fan Power™",
+      "stream": "https://streaming.nrjaudio.fm/ou87u4gk7oiu",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2375",
+      "original_name": "NRJ LA PLAYLIST DE BRUNO MARS",
+      "passport_name": "Bruno Mars Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ou2yn9pw5hs7",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2376",
+      "original_name": "NRJ LA PLAYLIST DE MILEY",
+      "passport_name": "Miley Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ou72xcf3s5gi",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2377",
+      "original_name": "NRJ LA PLAYLIST DE DUA LIPA",
+      "passport_name": "Dua Lipa Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ouykiv36zcw2",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2383",
+      "original_name": "NRJ LA PLAYLIST DE VIANNEY",
+      "passport_name": "Vianney Mix™",
+      "stream": "https://streaming.nrjaudio.fm/oudqny2h9r57",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2393",
+      "original_name": "NRJ LA PLAYLIST DE MARINE",
+      "passport_name": "Marine Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ousovsm4z85f",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    }
+  ],
+  "browser_checks": [
+    "351 radios + 11 existing selectors; zero autoplay; zero early NRJ connections; one universal player",
+    "search highlights only; all categories/cards remain open",
+    "real stream retains same audio/time through Arquivo and back; no second active audio"
+  ],
+  "responsive_checks": [
+    {
+      "width": 320,
+      "overflow": false,
+      "columns": 2,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "columns": 3,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "columns": 4,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "columns": 8,
+      "hidden": 0,
+      "clipped": [],
+      "font": "10.5px"
+    }
+  ],
+  "sample_playback": [
+    {
+      "sourceId": "1772",
+      "name": "K-Pop Select™",
+      "ok": true
+    },
+    {
+      "sourceId": "4",
+      "name": "Dance Pulse™",
+      "ok": true
+    },
+    {
+      "sourceId": "68",
+      "name": "Metal Select™",
+      "ok": true
+    },
+    {
+      "sourceId": "60",
+      "name": "Rap USA™",
+      "ok": true
+    },
+    {
+      "sourceId": "139",
+      "name": "Acoustic Hits™",
+      "ok": true
+    },
+    {
+      "sourceId": "1156",
+      "name": "BTS™",
+      "ok": true
+    }
+  ],
+  "stream_probe_success": 183,
+  "stream_probe_total": 191,
+  "workflow_run": 38201280333,
+  "workflow_result": "FAILURE: 8 fetch connection failures; all layout/playback/navigation assertions passed",
+  "evidence_artifact": 11725956591,
+  "existing_ci": {
+    "Passport CI": "PASS run 38201280263",
+    "Materialize official Passport channels": "PASS run 38201280279",
+    "Home radio mural": "SKIPPED by existing branch restriction",
+    "Passport Korean additions": "FAIL run 38201280318: historical expected totals 160 radios/72 world entries; current 351/263. Also compares unchanged grid.js with an older historical copy. Existing workflow/test preserved.",
+    "Passport 40": "FAIL run 38201280282: historical expected total 151 versus 351 and generated inventory order mismatch. Existing workflow/test preserved."
+  },
+  "remaining_limits": [
+    "8 connection failures do not prove permanent stream unavailability; supplied URLs retained and individually recorded.",
+    "Historical fixed-total CI tests are not compatible with the expanded catalog; no workflow or historical test was disabled.",
+    "Preview is a separate owner-private read-only proxy frozen at the implementation commit; later checkpoint-only commits do not change application bytes."
+  ]
 }

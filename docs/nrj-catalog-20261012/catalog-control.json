@@ -2867,5 +2867,70 @@
     }
   ],
   "duplicates": [],
-  "pending": []
+  "pending": [
+    {
+      "source_id": "1105",
+      "original_name": "NRJ LES GAGNANTS DES NMA 2025",
+      "passport_name": "Awards Winners 2025™",
+      "stream": "https://streaming.nrjaudio.fm/oupyuebgddr9",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "1810",
+      "original_name": "NRJ LES PLUS GRANDS GAGNANTS DES NMA",
+      "passport_name": "Awards Hall of Fame™",
+      "stream": "https://streaming.nrjaudio.fm/ouwrr5sk6j4d",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2213",
+      "original_name": "NRJ FAN POWER",
+      "passport_name": "Fan Power™",
+      "stream": "https://streaming.nrjaudio.fm/ou87u4gk7oiu",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2375",
+      "original_name": "NRJ LA PLAYLIST DE BRUNO MARS",
+      "passport_name": "Bruno Mars Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ou2yn9pw5hs7",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2376",
+      "original_name": "NRJ LA PLAYLIST DE MILEY",
+      "passport_name": "Miley Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ou72xcf3s5gi",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2377",
+      "original_name": "NRJ LA PLAYLIST DE DUA LIPA",
+      "passport_name": "Dua Lipa Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ouykiv36zcw2",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2383",
+      "original_name": "NRJ LA PLAYLIST DE VIANNEY",
+      "passport_name": "Vianney Mix™",
+      "stream": "https://streaming.nrjaudio.fm/oudqny2h9r57",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    },
+    {
+      "source_id": "2393",
+      "original_name": "NRJ LA PLAYLIST DE MARINE",
+      "passport_name": "Marine Mix™",
+      "stream": "https://streaming.nrjaudio.fm/ousovsm4z85f",
+      "result": "TypeError: fetch failed",
+      "classification": "LIVE_AVAILABILITY_UNCONFIRMED"
+    }
+  ]
 }
