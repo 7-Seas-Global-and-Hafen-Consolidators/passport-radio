@@ -12,7 +12,7 @@
   "validation": {
     "static_tests": "4 PASS",
     "transport_suffix": "byte-identical to exact GitHub source",
-    "live_media_layout_continuity": "PENDING one focused GitHub Actions round"
+    "live_media_layout_continuity": "PASS six sampled streams, single active audio, Home/Arquivo continuity, 4 responsive widths; 183/191 endpoint probes PASS, 8 connection failures individually recorded"
   },
   "collection_repeated": false,
   "new_audio_players": 0,
