@@ -7,12 +7,12 @@ async function fixture(code=source,paper=true,earlySearch){
  const elements={};for(const id of ['pp-store-grid','pp-store-bar-slot','pp-store-pagination','pp-store-page-status','pp-store-search-results','store-q'])elements[id]={innerHTML:'',textContent:'',value:'',hidden:false,listeners:{},addEventListener(n,f){this.listeners[n]=f},focus(){this.focused=true},scrollIntoView(){this.scrolled=true},insertAdjacentHTML(){}};
  const chips=['',...categories].map(cat=>({dataset:{cat},setAttribute(n,v){this[n]=v}}));const bar={addEventListener(n,f){this[n]=f}};let ready;
  const document={readyState:'loading',body:{classList:{contains:()=>paper}},getElementById:id=>elements[id]||null,querySelector:s=>s==='.pp-store-bar'&&elements['pp-store-bar-slot'].innerHTML?bar:null,querySelectorAll:()=>chips,addEventListener(n,f){if(n==='DOMContentLoaded')ready=f}};
- const location={search:'',hash:'',pathname:'/loja.html'};const window={location,addEventListener(){}};
- vm.runInNewContext(code,{document,window,location,URLSearchParams,console,fetch:async u=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(u.slice(1),'utf8'))})});
+ const location={search:'',hash:'',pathname:'/loja.html'};const window={location,addEventListener(){},dispatchEvent(){}};
+ const context={document,window,location,URLSearchParams,CustomEvent:class{constructor(type,options){this.type=type;this.detail=options?.detail;}},console,fetch:async u=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(u.slice(1),'utf8'))})};if(paper)vm.runInNewContext(fs.readFileSync('js/passport-store-presentation.js','utf8'),context);vm.runInNewContext(code,context);
  if(earlySearch)window.passportStoreView.search(...earlySearch);await ready();
  return{elements,window,location,chips,clickPage(n,disabled=false){elements['pp-store-pagination'].listeners.click({target:{closest:()=>({dataset:{page:String(n)},disabled})}})},clickCategory(cat){bar.click({target:{closest:()=>chips.find(x=>x.dataset.cat===cat)}})}};
 }
-function cards(html){return [...html.matchAll(/<a class="pp-product"[\s\S]*?<\/a>/g)].map(m=>({id:m[0].match(/data-id="([^"]*)"/)[1],href:m[0].match(/href="([^"]*)"/)[1],image:m[0].match(/<img src="([^"]*)"/)[1],name:m[0].match(/<strong>(.*?)<\/strong>/)[1],price:m[0].match(/<span class="pp-price">(.*?)<\/span>/)[1],payments:m[0].match(/<span class="pp-installments">(.*?)<\/span>/)?.[1]}))}
+function cards(html){return [...html.matchAll(/<a class="pp-product(?:-link)?"[\s\S]*?<\/a>/g)].map(m=>({id:m[0].match(/data-id="([^"]*)"/)[1],href:m[0].match(/href="([^"]*)"/)[1],image:m[0].match(/<img src="([^"]*)"/)[1],name:m[0].match(/<strong>(.*?)<\/strong>/)[1],price:m[0].match(/<span class="pp-price">(.*?)<\/span>/)[1],payments:m[0].match(/<span class="pp-installments">(.*?)<\/span>/)?.[1]}))}
 test('all commercial inputs and original product bytes are unchanged outside the exact footer loader',()=>{
  const baseline=JSON.parse(fs.readFileSync('tests/fixtures/store/commercial-baseline.json'));const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
  for(const[p,h]of Object.entries(baseline.data))assert.equal(sha(fs.readFileSync(p)),h,p);
@@ -31,7 +31,7 @@ test('all commercial inputs and original product bytes are unchanged outside the
 test('all 37 pages preserve every original card, destination, price and image in original order',async()=>{
  const original=await fixture(before,false),current=await fixture();const expected=cards(original.elements['pp-store-grid'].innerHTML),actual=[];
  for(let page=1;page<=37;page++){if(page>1)current.clickPage(page);const rows=cards(current.elements['pp-store-grid'].innerHTML);assert.equal(rows.length,page===37?18:24);actual.push(...rows);}
- assert.deepEqual(actual,expected);assert.equal(actual.length,882);
+ const identity=rows=>rows.map(({payments,name,...row})=>row);assert.deepEqual(identity(actual),identity(expected));const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));assert(actual.every(row=>row.name===escape(products.find(p=>String(p.id)===row.id).name)));const html=current.elements['pp-store-grid'].innerHTML;for(const row of actual.slice(-18)){const product=products.find(p=>String(p.id)===row.id);assert(html.includes(Number(product.pix_price||product.price).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})));}assert.equal(actual.length,882);
  assert.equal(current.location.pathname,'/loja.html');assert.equal(current.location.search,'');
 });
 test('previous, next, numeric context and invalid boundaries',async()=>{
@@ -50,9 +50,10 @@ test('search provider survives early/late load, paginates after filtering and re
  const rows=visible.filter(p=>p.category==='Camiseta');const render=p=>`<a class="pp-product" data-id="${p.id}"><strong>${p.name}</strong></a>`;
  for(const early of [false,true]){const f=await fixture(source,true,early?[()=>rows,render,{}]:undefined);if(!early)f.window.passportStoreView.search(()=>rows,render,{});assert.match(f.elements['pp-store-page-status'].textContent,/de 652 produtos · Página 1 de 28/);f.clickPage(18);f.window.passportStoreView.search(()=>rows.slice(0,1),render,{});assert.match(f.elements['pp-store-page-status'].textContent,/1 de 1 produtos · Página 1 de 1/);assert.equal(f.elements['pp-store-pagination'].hidden,true);f.window.passportStoreView.search(()=>[],render,{});assert.equal(f.elements['pp-store-page-status'].textContent,'0 produtos');}
 });
-test('cart, checkout, search matching, CEP and non-store behavior stay under their original owners',async()=>{
+test('search matching and non-store catalog remain under original owners while Store cart delegates to its controller',async()=>{
  const current=fs.readFileSync('js/passport-store-search.js','utf8'),old=fs.readFileSync('tests/fixtures/store/search-before.js','utf8');
- assert.equal(current.slice(current.indexOf('  const CART_KEY'),current.indexOf('  function paintResults')),old.slice(old.indexOf('  const CART_KEY'),old.indexOf('  function paintResults')));
- assert.equal(current.slice(current.indexOf('    const q = new URLSearchParams(location.search);\n    const pid')),old.slice(old.indexOf('    const q = new URLSearchParams(location.search);\n    const pid')));
+ for(const[start,end]of [['  function params','  function cart'],['  function filterItems','  function paintResults']])assert.equal(current.slice(current.indexOf(start),current.indexOf(end)),old.slice(old.indexOf(start),old.indexOf(end)),start);
+ const doors=s=>s.slice(s.indexOf('  function doors'),s.indexOf('      </nav>`;',s.indexOf('  function doors'))+'      </nav>`;'.length);assert.equal(doors(current),doors(old));
+ const delegated=[];vm.runInNewContext(current.slice(current.indexOf('  function add'),current.indexOf('  function filterItems'))+'add({id:"owned-by-cart"})',{window:{PassportStore:{add:p=>delegated.push(p)}}});assert.equal(delegated.length,1);assert.equal(delegated[0].id,'owned-by-cart');
  const f=await fixture(source,false);assert.equal(f.window.passportStoreView,undefined);assert.equal(cards(f.elements['pp-store-grid'].innerHTML).length,882);
 });

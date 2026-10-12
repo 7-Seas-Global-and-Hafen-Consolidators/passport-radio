@@ -10,7 +10,7 @@ const out='reports/store-checkout';fs.mkdirSync(out,{recursive:true});const fixt
  if(path.endsWith('/checkout')){created++;assert(authenticated);assert.equal(body.shipping_id,'03298');assert.equal(body.customer.person_type,'pf');assert.equal(body.address.zip.replace(/\D/g,''),'03490000');return route.fulfill({json:{order_id:fixture.order.order_id,status:'PENDING_PAYMENT'}});}
  if(path.includes('/orders/'))return route.fulfill({json:fixture.order});return route.fulfill({status:404,json:{error:'Unknown isolated fixture endpoint'}});
  });
- async function shot(name,full=true){await page.screenshot({path:out+'/'+name+'.png',fullPage:full});report.screenshots.push(name+'.png');}
+ async function shot(name,full=true){const cookie=page.getByRole('button',{name:'ACEITAR COOKIES',exact:true});if(await cookie.isVisible())await cookie.click();await page.screenshot({path:out+'/'+name+'.png',fullPage:full});report.screenshots.push(name+'.png');}
  if(!process.env.STORE_BROWSER_RESUME){await page.goto('http://127.0.0.1:4173/loja.html');await page.waitForFunction(()=>document.querySelectorAll('#pp-store-grid .pp-product').length===24);
  await page.getByRole('button',{name:'ACEITAR COOKIES',exact:true}).click().catch(()=>{});
  assert.equal(await page.evaluate(()=>window.PassportStoreCatalog.length),933);assert.match(await page.locator('#pp-store-page-status').textContent(),/1–24 de 882/);
