@@ -1,0 +1,18 @@
+{
+  "status": "IMPLEMENTED_LIVE_TEST_PENDING",
+  "base": "1635bfafeeff638731ac5c3ddd87114772eaf42c",
+  "branch": "feat/passport-nrj-191-20261012",
+  "previous_radios": 160,
+  "added_radios": 191,
+  "final_radios": 351,
+  "preserved_program_selectors": 11,
+  "duplicate_channels": [],
+  "missing_stream_channels": [],
+  "implementation": "Append only to World Dial station data and Home inventory; unchanged playback implementation and grid callback; compact CSS only.",
+  "validation": {"static_tests": "4 PASS", "transport_suffix": "byte-identical to exact GitHub source", "live_media_layout_continuity": "PENDING one focused GitHub Actions round"},
+  "collection_repeated": false,
+  "new_audio_players": 0,
+  "production_modified": false,
+  "merged": false,
+  "next": "Collect the single focused workflow result; fix only proved failures; publish frozen-commit preview; update this checkpoint without rerunning completed tests."
+}
