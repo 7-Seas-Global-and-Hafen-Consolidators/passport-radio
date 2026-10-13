@@ -1,0 +1,68 @@
+{
+  "application_head": "9721481bc414dfe5bb8b5e8d95338a8d5451d919",
+  "edge": {
+    "version": 7,
+    "status": "ACTIVE",
+    "sha256": "8a8c4a4d30bcf67be81148ae1db54217674617ef82afb0f984663f51019a3a68"
+  },
+  "checks": {
+    "new_shipping_tests": 2,
+    "affected_existing_edge_flow": 1,
+    "passed": 3,
+    "controller_syntax": "passed",
+    "provider_requests_in_tests": 0,
+    "real_charges": 0
+  },
+  "http": [
+    {
+      "path": "/api/store/health",
+      "status": 200,
+      "body": {
+        "ok": true,
+        "service": "passport-store",
+        "storage": "supabase-postgres",
+        "catalog_count": 933,
+        "checkout_active": false,
+        "payment_configured": true,
+        "webhook_configured": false,
+        "shipping_configured": false,
+        "shipping_profiles": 0,
+        "missing": [
+          "MP_WEBHOOK_SECRET",
+          "CORREIOS_USERNAME + CORREIOS_CODIGO_ACESSO (ou CORREIOS_TOKEN)",
+          "CORREIOS_SERVICES",
+          "VERIFIED_SUPPLIER_SHIPPING_PROFILES"
+        ]
+      }
+    },
+    {
+      "path": "/api/store/shipping/quote",
+      "status": 422,
+      "body": {
+        "code": "SHIPPING_PROFILE_UNVERIFIED",
+        "error": "Origem e embalagem de expedição ainda não confirmadas.",
+        "skus": [
+          "1409342"
+        ]
+      }
+    }
+  ],
+  "profile_examples": {
+    "count": 3,
+    "test_only": true,
+    "commercially_verified": false
+  },
+  "preview": {
+    "url": "https://passport-store-checkout-preview.mr-nomad.chatgpt.site",
+    "source_head": "73afd3f5b481ea792fa0863f6b3e837c8187481a",
+    "deployment": "appgdep_6ace5d6d4b048191a27bdeafca4452f9",
+    "application_revision": "9721481bc414dfe5bb8b5e8d95338a8d5451d919"
+  },
+  "real_shipping_completed": false,
+  "missing_shipping": [
+    "CORREIOS_USERNAME",
+    "CORREIOS_SERVICES containing actually authorized service codes",
+    "real dispatch origin, parcel weight/dimensions and capacity for DEFAULT or supplier-specific profiles"
+  ],
+  "merge_performed": false
+}
