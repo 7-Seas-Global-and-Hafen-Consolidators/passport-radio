@@ -1,0 +1,33 @@
+{
+  "edge_function": "passport-store",
+  "published_version": 6,
+  "catalog_count": 933,
+  "catalog_fields_preserved": true,
+  "new_local_tests_passed": 2,
+  "live_health_http": 200,
+  "live_payment_options_http": 200,
+  "live_account_connected": true,
+  "provider_methods": [
+    "pix",
+    "card",
+    "prepaid",
+    "boleto",
+    "debit",
+    "mercado_pago"
+  ],
+  "specific_caixa_acceptance_verified": false,
+  "persistent_registration_http": 200,
+  "session_http": 200,
+  "history_http": 200,
+  "guest_checkout_http": 401,
+  "shipping_http": 422,
+  "shipping_code": "SHIPPING_DATA_MISSING",
+  "example_missing_sku": "1409342",
+  "webhook_configured": false,
+  "shipping_profiles": 0,
+  "real_payment_operations_created": 0,
+  "real_charges": 0,
+  "test_account_removed": true,
+  "public_store_changed": false,
+  "merge": false
+}
