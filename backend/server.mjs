@@ -1,45 +1,7 @@
-// Passport Store — checkout server-side. Never commit credentials.
-// Node.js 20+. Start: MP_ACCESS_TOKEN=... node backend/server.mjs
-import http from 'node:http';
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import crypto from 'node:crypto';
-
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const port = Number(process.env.PORT || 3000);
-const token = process.env.MP_ACCESS_TOKEN;
-const site = process.env.STORE_ORIGIN || 'https://passportradio.online';
-const allowedOrigin = new URL(site).origin;
-const respond = (res, status, data) => {
-  res.writeHead(status, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','Access-Control-Allow-Origin':allowedOrigin,'Vary':'Origin'});
-  res.end(JSON.stringify(data));
-};
-async function inventory() {
-  const data = JSON.parse(await fs.readFile(path.join(root,'data/store_inventory.json'),'utf8'));
-  if (Array.isArray(data.products)) return data.products;
-  if (!Array.isArray(data.chunks)) throw new Error('Inventory structure unsupported');
-  const chunks = await Promise.all(data.chunks.map(async entry => {
-    const rel = typeof entry === 'string' ? entry : entry.path;
-    if (!rel || /^https?:/i.test(rel)) throw new Error('Unexpected inventory chunk');
-    const file = path.resolve(root, rel.replace(/^\//,''));
-    if (!file.startsWith(root + path.sep)) throw new Error('Unsafe inventory path');
-    return JSON.parse(await fs.readFile(file,'utf8')).products || [];
-  }));
-  return chunks.flat();
-}
-const server = http.createServer(async (req,res) => {
-  if (req.method === 'OPTIONS') {res.writeHead(204,{'Access-Control-Allow-Origin':allowedOrigin,'Access-Control-Allow-Methods':'POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Vary':'Origin'});return res.end();}
-  if (req.url === '/api/health' && req.method === 'GET') return respond(res,200,{ok:true,checkoutConfigured:!!token});
-  if (req.url !== '/api/checkout' || req.method !== 'POST') return respond(res,404,{error:'Not found'});
-  if (req.headers.origin && req.headers.origin !== allowedOrigin) return respond(res,403,{error:'Origin not allowed'});
-  if (!token) return respond(res,503,{error:'Checkout not configured'});
-  try {
-    let raw=''; for await (const chunk of req) {raw+=chunk; if(raw.length>16384) throw new Error('Payload too large');}
-    const payload=JSON.parse(raw);
-    if (!Array.isArray(payload.items) || !payload.items.length || payload.items.length>30) return respond(res,400,{error:'Invalid cart'});
-    // Shipping is NOT implemented: never accept an arbitrary shipping value from the browser.
-    return respond(res,503,{error:'Checkout awaiting verified Correios shipping calculation; no payment created'});
-  } catch(e) {return respond(res,400,{error:'Invalid request'});}
-});
-server.listen(port,()=>console.log('Passport Store backend listening on '+port));
+import {currentAccount,accountAction} from './src/routes/account.mjs';
+// Passport Store server-side checkout, continuing PR #553. Node 24+, persistent SQLite volume.
+import http from 'node:http';import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';import {database} from './src/database/sqlite.mjs';import {loadCatalog} from './src/services/catalog.mjs';import {CorreiosProvider} from './src/services/shippingProvider.mjs';import {MercadoPagoService} from './src/services/mpService.mjs';import {quoteShipping} from './src/routes/shipping.mjs';import {createCheckout,applyPayment,orderStatus} from './src/routes/checkout.mjs';import {StoreError} from './src/services/errors.mjs';
+export async function createServer(options={}){const env=options.env||process.env,root=options.root||path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),db=options.db||database(env.STORE_DB_PATH||path.join(root,'backend/var/store.sqlite'));const catalog=options.catalog||await loadCatalog(root),provider=options.provider||new CorreiosProvider(env),mp=options.mp||new MercadoPagoService(env),ctx={env,db,catalog,provider,mp};const allowed=new Set((env.STORE_ALLOWED_ORIGINS||'https://passportradio.online,https://www.passportradio.online').split(',').filter(Boolean));const clients=new Map();
+ const server=http.createServer(async(req,res)=>{const url=new URL(req.url,'http://localhost'),origin=req.headers.origin;const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Vary':'Origin'};if(allowed.has(origin)){headers['Access-Control-Allow-Origin']=origin;headers['Access-Control-Allow-Credentials']='true';}const send=(status,data)=>{res.writeHead(status,headers);res.end(JSON.stringify(data));};if(origin&&!allowed.has(origin))return send(403,{error:'Origem não permitida.',code:'INVALID_ORIGIN'});if(req.method==='OPTIONS'){res.writeHead(204,{...headers,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Authorization'});return res.end();}
+ try{const user=currentAccount(req,db),requestCtx={...ctx,user};if(req.method==='GET'&&url.pathname==='/api/store/account/me')return send(200,{user});if(req.method==='GET'&&url.pathname==='/api/store/payment-options')return send(200,await mp.availableMethods());if(req.method==='GET'&&['/api/health','/api/store/health'].includes(url.pathname))return send(200,{ok:true,payment_configured:!!env.MP_ACCESS_TOKEN,shipping_configured:provider.configured(),checkout_active:env.STORE_PAYMENTS_ENABLED==='true',shipping_profiles:db.db.prepare('SELECT count(*) n FROM shipping_profiles').get().n});if(req.method==='GET'&&url.pathname.startsWith('/api/store/orders/'))return send(200,await orderStatus(url.pathname.split('/').pop(),String(req.headers.authorization||'').replace(/^Bearer /,''),requestCtx));if(req.method!=='POST')return send(404,{error:'Não encontrado.'});const ip=req.socket.remoteAddress,now=Date.now(),counter=clients.get(ip);if(!counter||counter.until<now)clients.set(ip,{until:now+60000,count:1});else if(++counter.count>30)return send(429,{error:'Aguarde um momento antes de tentar novamente.'});if(clients.size>5000)for(const [k,v]of clients)if(v.until<now)clients.delete(k);let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>32768)throw new StoreError('PAYLOAD_TOO_LARGE','Solicitação muito grande.',413);}const payload=JSON.parse(raw||'{}');if(url.pathname.startsWith('/api/store/account/')){if(!origin||!allowed.has(origin))throw new StoreError('INVALID_ORIGIN','Origem não permitida.',403);const action=url.pathname.split('/').pop();const result=await accountAction(action,payload,req,db,env);headers['Set-Cookie']=result.cookie;return send(200,result.data);}if(url.pathname==='/api/store/shipping/quote')return send(200,await quoteShipping(payload,ctx));if(['/api/checkout','/api/store/checkout'].includes(url.pathname))return send(201,await createCheckout(payload,requestCtx));if(url.pathname==='/api/store/webhooks/mercadopago'){const id=mp.verifySignature(req.headers,url);const payment=await mp.payment(id);applyPayment(payment,db,env);return send(200,{received:true});}return send(404,{error:'Não encontrado.'});}catch(error){if(error instanceof StoreError)return send(error.status,{error:error.message,code:error.code,...(error.details?{details:error.details}:{})});return send(400,{error:'Não foi possível concluir a solicitação.',code:'INVALID_REQUEST'});}});server.store=ctx;server.on('close',()=>db.close());return server;}
+if(process.argv[1]===fileURLToPath(import.meta.url)){const server=await createServer();server.listen(Number(process.env.PORT||3000),'0.0.0.0',()=>console.log('Passport Store backend ready'));}
