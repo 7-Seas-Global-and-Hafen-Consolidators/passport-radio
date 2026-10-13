@@ -42,6 +42,7 @@ jobs:
             /data/store*
             /data/store-search/
             /assets/payments/
+            /images/security/
             /images/payments/
             /images/store/
             /tests/passport_store_*
@@ -55,10 +56,13 @@ jobs:
         id: changed
         run: |
           if git diff --name-only HEAD^ HEAD | grep -Eq '^(loja.html|checkout.html|pedido.html|js/passport-store-|css/passport-store-commercial|tests/passport_store_browser|docs/store-checkout-20261012/preview-fixture.json)'; then echo 'browser=true' >> "$GITHUB_OUTPUT"; else echo 'browser=false' >> "$GITHUB_OUTPUT"; fi
+          if git diff --name-only HEAD^ HEAD | grep -Ev '^(js/passport-store-(checkout|presentation)\.js|css/passport-store-commercial\.css|images/security/|docs/store-checkout-20261012/|tests/passport_store_browser\.cjs|\.github/workflows/passport-store-checkout\.yml)' | grep -q .; then echo 'capture=all' >> "$GITHUB_OUTPUT"; else echo 'capture=checkout-order' >> "$GITHUB_OUTPUT"; fi
       - name: Browser tooling outside application
         if: steps.changed.outputs.browser == 'true'
         run: npm install --prefix /tmp/passport-store-browser --no-save --package-lock=false playwright
       - name: Catalog, cart and checkout evidence — mocked providers only
+        env:
+          STORE_BROWSER_CAPTURE_SCOPE: ${{ steps.changed.outputs.capture }}
         if: steps.changed.outputs.browser == 'true'
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/passport-store-http.log 2>&1 &
