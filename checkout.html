@@ -29,9 +29,11 @@
 <div class="ps-delivery-payment"><section class="ps-checkout-panel"><h2><span class="ps-step">2</span> ENTREGA</h2><p class="ps-panel-intro">As opções consideram todas as remessas do pedido.</p><button type="button" id="ps-calc-checkout" class="pp-btn pp-btn--ink">CALCULAR FRETE</button><div id="ps-shipping-results"></div></section>
 <section class="ps-checkout-panel ps-payments"><h2><span class="ps-step">3</span> PAGAMENTO</h2><div class="ps-processor" data-mp-logo></div><p id="ps-method-status" class="ps-payment-note" role="status">Consultando disponibilidade de pagamento…</p>
 <label class="ps-payment-option"><input type="radio" name="payment_method" value="pix" checked disabled><span data-pix-logo></span><strong>Pix</strong></label>
-<label class="ps-payment-option"><input type="radio" name="payment_method" value="card" disabled><strong>Cartão de crédito</strong></label>
+<label class="ps-payment-option"><input type="radio" name="payment_method" value="card" disabled><strong>Cartão de crédito e parcelamento</strong></label>
+<label class="ps-payment-option"><input type="radio" name="payment_method" value="debit" disabled><span data-caixa-logo></span><strong>Cartão de débito<br><small>Débito Virtual CAIXA quando aceito pelo Mercado Pago</small></strong></label>
+<label class="ps-payment-option"><input type="radio" name="payment_method" value="prepaid" disabled><strong>Cartão pré-pago</strong></label>
 <label class="ps-payment-option"><input type="radio" name="payment_method" value="boleto" disabled><strong>Boleto</strong></label>
-<label class="ps-payment-option" id="ps-wallet-option" hidden><input type="radio" name="payment_method" value="mercado_pago" disabled><strong>Saldo Mercado Pago</strong></label>
+<label class="ps-payment-option" id="ps-wallet-option"><input type="radio" name="payment_method" value="mercado_pago" disabled><strong>Conta Mercado Pago</strong></label><div id="ps-extra-methods"></div>
 <div id="ps-method-conditions" class="ps-method-conditions"></div><div class="ps-card-brands" data-card-brands aria-label="Bandeiras; aceitação confirmada pelo processador"></div><p class="ps-payment-note">Bandeiras e condições confirmadas pelo Mercado Pago no pagamento.</p></section></div>
 <div class="ps-review-column"><aside class="ps-checkout-review"><h2>REVISE SEU PEDIDO</h2><ul id="ps-review-items" class="ps-cart-items"></ul><div id="ps-review-totals"></div></aside><button type="submit" id="ps-complete">CONCLUIR PEDIDO</button><p id="ps-checkout-status" role="status" aria-live="polite"></p><a class="ps-back-store" href="/loja.html#pp-store-cart">Voltar ao carrinho</a></div>
 </form><section id="ps-security-info" class="ps-trust-row" data-store-trust aria-label="Pagamento e conexão segura"></section></main>

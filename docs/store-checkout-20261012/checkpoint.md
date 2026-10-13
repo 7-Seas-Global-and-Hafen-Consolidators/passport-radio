@@ -94,3 +94,14 @@ Scope comparison: original catalog data and all product HTML bytes unchanged; no
 - `tests/passport_store_browser.cjs`
 - `tests/store_pagination.test.cjs`
 - `tests/store_preview_fixture.mjs`
+
+## Final bounded correction — 2026-10-13 UTC
+Resume HEAD: a0551b4c9a40196e3b974e1501448b22a3ec64de, same PR #554/branch. Owner attachment reused byte-for-byte (SHA-256 0daee9404f9e3d751f1913d2f2b1636c0bad44bd5e2288e483ef0f8da9b83f07). Two original seal graphics displayed by CSS cropping only; max 150px each, centered max 320px/16px gap/20px margins; mobile max 280px/12px gap. Safe Browsing link remains the Passport domain query; no assertion of a separate Google certification is added. Existing images/payments/caixa.png reused.
+
+Local payment availability now handles active debit/prepaid methods and all additional provider types. Chosen provider method sets the Checkout Pro default without excluding payment types. Actual account acceptance/CAIXA acceptance is NOT verified: no provider network requests were performed and commercial backend remains inactive. Disabled options are not claimed active. No account, CWS, shipping, price or provider acceptance is fabricated.
+
+Transactional persistent order-number mapping starts PASS010 and continues PASS011/PASS012; UUID stays internal for authorization/idempotency/provider reconciliation. Migration numbers existing orders deterministically; saved payload/API exposes the same number to existing consumers, confirmation renders it. SKU untouched. Invoice metadata remains in the authenticated order payload/status. No new fiscal issuer, email integration or Meus Pedidos page was created: email delivery/Meus Pedidos consumption are not demonstrated in the existing inspected modules and must use the same persisted order_number when connected. Mandatory account/PF/PJ/document/address validation unchanged.
+
+Checkout adjusted only to max1200px, 34/34/32 columns, 24px gap, 46px controls, mobile stacking. Masthead/footer/product pages/catalog unchanged. Correios service code, shipping module/styles, tariffs/prices/days/quote fixture preserved; PAC, SEDEX, SEDEX Hoje, SEDEX 10, SEDEX 12 remain configuration-dependent. Preview order fixture only gains order_number PASS010.
+
+Focused checks: syntax of modified JS/routes/provider passed; three NEW checks passed (persistent commercial sequence/UUID/SKU/retry; active debit/prepaid/other vs inactive methods; provider selection without exclusions). Frozen fixture quote/cart deep equality passed. Previously approved CI/backend/catalog suites NOT rerun manually. Automatic existing CI on push is not disabled or modified. Zero real charge/quote/provider calls. Dedicated Node/SQLite hosting, verified supplier profiles/CWS/contract codes, payment acceptance/webhook remain external blockers. STORE_PAYMENTS_ENABLED remains false until valid activation. No protected-system modification, new PR/branch or merge.
