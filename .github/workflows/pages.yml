@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    paths: ['.github/workflows/pages.yml']
+    paths: ['.github/workflows/pages.yml', 'scripts/generate-sitemaps.mjs', 'scripts/validate-sitemaps.py', 'sitemap*.xml', 'robots.txt']
   workflow_dispatch:
 
 permissions:
@@ -28,11 +28,19 @@ jobs:
       - name: Setup Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
+      - name: Set up Node for public sitemaps
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Generate the nine public sitemaps
+        run: node scripts/generate-sitemaps.mjs
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+      - name: Validate sitemap XML and HTTP 200 against the generated Pages artifact
+        run: python3 scripts/validate-sitemaps.py --root _site --http
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

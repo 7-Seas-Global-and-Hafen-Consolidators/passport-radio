@@ -1,0 +1,33 @@
+{
+  "counts": {
+    "sitemap.xml": 61,
+    "sitemap-blog.xml": 23163,
+    "sitemap-loja.xml": 892,
+    "sitemap-agenda.xml": 1,
+    "sitemap-radios.xml": 28,
+    "sitemap-bandas.xml": 3295,
+    "sitemap-podcasts.xml": 1,
+    "sitemap-jogos.xml": 1,
+    "sitemap-shows.xml": 694
+  },
+  "total": 28136,
+  "heads_checked": 28144,
+  "previous_indexable_public_urls_preserved": 28136,
+  "excluded": 8,
+  "baseline_existing_public_urls": 27343,
+  "baseline_preserved_indexable_urls": 27343,
+  "baseline_removed_only_by_logged_technical_rule": [],
+  "source_head": "3ea94d6bf684d741d903ac983f70b3a37af4f81e",
+  "private_or_preview_html_not_candidates": 37,
+  "public_http_samples": {
+    "/": 200,
+    "/blog/e/abba.html": 200,
+    "/loja/p/5770202.html": 200,
+    "/jogos.html": 200,
+    "www/jogos.html": "301 to the official bare-domain URL"
+  },
+  "xml_validation": "passed",
+  "local_head_200_verified": 28136,
+  "focused_generator_test": "passed",
+  "production_http_all_urls": "not crawled; verification performed on local publication files"
+}

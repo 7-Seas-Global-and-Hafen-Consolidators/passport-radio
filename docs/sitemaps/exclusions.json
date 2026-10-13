@@ -1,0 +1,36 @@
+[
+  {
+    "url": "https://passportradio.online/bass-legends/",
+    "reason": "noindex"
+  },
+  {
+    "url": "https://passportradio.online/cookies.html",
+    "reason": "redirect",
+    "target": "https://passportradio.online/privacidade.html"
+  },
+  {
+    "url": "https://passportradio.online/exhibitions/drum-masters/",
+    "reason": "noindex"
+  },
+  {
+    "url": "https://passportradio.online/exposicao.html",
+    "reason": "noindex"
+  },
+  {
+    "url": "https://passportradio.online/eye-of-the-tiger.html",
+    "reason": "canonical",
+    "target": "https://passportradio.online/historias/eye-of-the-tiger.html"
+  },
+  {
+    "url": "https://passportradio.online/instrument-masters.html",
+    "reason": "noindex"
+  },
+  {
+    "url": "https://passportradio.online/passport-player-v2.html",
+    "reason": "noindex"
+  },
+  {
+    "url": "https://passportradio.online/passport-player.html",
+    "reason": "noindex"
+  }
+]
