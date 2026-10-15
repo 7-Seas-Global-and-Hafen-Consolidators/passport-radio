@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+// Input is a public-page text snapshot exported from PassportGlobal.collect().
+// Build all requested locales completely BEFORE publishing any packet or manifest.
+import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';import {pathToFileURL} from 'node:url';
+import {TranslationProvider} from '../tools/passport-global/translation-provider.mjs';
+export async function buildPacks({root,input,provider,dryRun=false}){
+ const base=path.join(root,'data/passport-global'),manifestPath=path.join(base,'manifest.json'),manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8')),staged=[];
+ for(const page of input.pages){if(typeof page.path!=='string'||!page.path.startsWith('/')||page.path.includes('..')||page.path.includes('?')||page.path.includes('#'))throw Error('INVALID_PAGE_PATH');const sourceFile=path.join(root,page.path==='/'?'index.html':page.path.slice(1));if(!fs.existsSync(sourceFile))throw Error('SOURCE_PAGE_MISSING');
+ const texts=[...new Set(page.texts.map(s=>String(s).trim()).filter(Boolean))];const key=createHash('sha256').update(page.path).digest('hex').slice(0,24),target=path.join(base,'pages',key+'.json');let previous={};const existing=manifest.pages[page.path];if(existing){const p=path.join(root,existing.slice(1));if(fs.existsSync(p))previous=JSON.parse(fs.readFileSync(p,'utf8'));}
+ const translations={};for(const locale of ['en-GB','es','fr','de']){const prior=previous.translations?.[locale]||{},missing=texts.filter(t=>prior[t]==null);translations[locale]=Object.fromEntries(texts.filter(t=>prior[t]!=null).map(t=>[t,prior[t]]));if(dryRun)continue;let batch=[],characters=0;const flush=async()=>{if(!batch.length)return;const values=await provider.translate(batch,locale);batch.forEach((t,i)=>{translations[locale][t]=values[i];});batch=[];characters=0;};for(const text of missing){if(text.length>20000)throw Error('SEGMENT_TOO_LONG');if(batch.length===100||characters+text.length>20000)await flush();batch.push(text);characters+=text.length;}await flush();}
+ staged.push({path:page.path,target,texts:texts.length,content:{version:1,sourceLocale:'pt-BR',sourceDigest:createHash('sha256').update(JSON.stringify(texts)).digest('hex'),provider:'Google Cloud Translation LLM',translations}});
+ }
+ if(!dryRun){for(const p of staged){fs.mkdirSync(path.dirname(p.target),{recursive:true});const temp=p.target+'.tmp';fs.writeFileSync(temp,JSON.stringify(p.content,null,2)+'\n');fs.renameSync(temp,p.target);manifest.pages[p.path]='/'+path.relative(root,p.target).split(path.sep).join('/');}const temp=manifestPath+'.tmp';fs.writeFileSync(temp,JSON.stringify(manifest,null,2)+'\n');fs.renameSync(temp,manifestPath);}
+ return {dryRun,pages:staged.length,segments:staged.reduce((n,p)=>n+p.texts,0),locales:['en-GB','es','fr','de']};
+}
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){const inputFile=process.argv[2];if(!inputFile)throw Error('Usage: node scripts/passport-global-build.mjs public-snapshots.json [--dry-run]');console.log(JSON.stringify(await buildPacks({root:process.cwd(),input:JSON.parse(fs.readFileSync(inputFile,'utf8')),provider:new TranslationProvider(),dryRun:process.argv.includes('--dry-run')})));}
