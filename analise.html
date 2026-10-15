@@ -12,4 +12,5 @@ document.getElementById('share').addEventListener('click',async()=>{
   try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);document.getElementById('status').textContent='Link copiado!';}}
   catch(e){if(e.name!=='AbortError')document.getElementById('status').textContent='Copie o endereço desta página para compartilhar.';}
 });
-</script></body></html>
+</script><script src="/js/passport-universal-footer.js?v=20261010" defer></script>
+</body></html>

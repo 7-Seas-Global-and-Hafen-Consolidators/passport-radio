@@ -5,7 +5,7 @@
   const groups = [
     ['EXPLORE', [['Home','/'],['Notícias','/noticias.html'],['Arquivo','/editorial.html'],['Agenda','/agenda.html'],['Bandas','/bandas/index.html'],['Vídeos','/videos.html'],['Desafios','/jogos.html'],['Podcast & Broadcast','/radio.html'],['Rádio 24H','/radio.html']]],
     ['PARTICIPE', [['Participe','/divulgar-bandas.html'],['Envie sua história','/blog/envie-sua-historia.html'],['Divulgue sua banda','/divulgar-bandas.html'],['Promoções','/promocoes.html']]],
-    ['A PASSPORT', [['Loja','/loja.html'],['Anuncie','/anuncie.html'],['Apoie','/doe.html'],['Contato','/contato.html']]],
+    ['A PASSPORT', [['Loja','/loja.html'],['Anuncie','/anuncie.html'],['Apoie','/doe.html'],['Contato','/contato.html'],['contato@passportradio.online','mailto:contato@passportradio.online']]],
     ['ACOMPANHE', [['WhatsApp','https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k'],['Telegram','https://t.me/+FKto2N185cs4OGU0'],['Reddit','https://www.reddit.com/user/Passportradio_26/'],['X','https://x.com/JasonAdriagg']]]
   ];
   const brands = [['visa','Visa'],['mastercard','Mastercard'],['elo','Elo'],['amex','American Express'],['hipercard','Hipercard'],['diners','Diners Club']];

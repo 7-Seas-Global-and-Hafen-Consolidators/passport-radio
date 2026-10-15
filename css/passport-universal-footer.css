@@ -29,3 +29,6 @@ footer[data-passport-universal-footer]>:not([data-universal-footer-content]):not
 #passport-universal-footer-content .puf-legal a{font-size:12px}
 @media(max-width:700px){#passport-universal-footer-content .puf-navigation{grid-template-columns:repeat(2,minmax(0,1fr))}#passport-universal-footer-content .puf-methods{gap:14px 20px}}
 @media(max-width:360px){#passport-universal-footer-content .puf-navigation{gap:24px 16px}#passport-universal-footer-content .puf-group a{overflow-wrap:anywhere}}
+
+/* Corporate contact only: keep the address inside narrow footer columns. */
+#passport-universal-footer-content .puf-group a[href="mailto:contato@passportradio.online"]{max-width:100%;overflow-wrap:anywhere}
