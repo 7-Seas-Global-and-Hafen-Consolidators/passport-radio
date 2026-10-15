@@ -37,3 +37,15 @@ Evidência real de navegador em `evidence/browser.json` e capturas desktop/table
 Streams de mídia foram bloqueados somente no navegador de teste. Portanto reprodução real, continuidade sonora e todos os fluxos comerciais NÃO foram testados; os módulos correspondentes não foram alterados. Preservados catálogo, preços, SKUs, Pix, Mercado Pago, fretes, rádios, players, mutex/interlock, conteúdo original, identidade e URLs.
 
 Sem merge. Sem deploy na Passport Radio. Preview separado e privado; backend comercial não é disponibilizado por ele.
+
+## Entrega persistida
+
+- PR rascunho: https://github.com/7-Seas-Global-and-Hafen-Consolidators/passport-radio/pull/559
+- Commit de implementação e evidências: `bf5f9b03490324524dbd69c3cfb417240658b8f1`.
+- Preview privado publicado com sucesso: https://passport-global-preview.mr-nomad.chatgpt.site
+- Matéria integral: https://passport-global-preview.mr-nomad.chatgpt.site/editorial/2026/10/10/brian-may-esclarece-boatos-e-nega-ter-anunciado-o-fim-definitivo-das-turnes-do-queen-82a3ea32cb.html
+- Preview usa fonte pública fixada no commit de implementação, sem proxy para APIs ou acesso ao cofre. Worker separado, sem novos segredos. Versão Sites `appgprj_6ad10ee8d5b081919761587b01285c51~appgver_893a5037b8088191ace77eed9995e22c`; resultado nativo `succeeded`. Não representa deploy no domínio Passport.
+- Verificação final de navegador: en-GB/es/fr/de efetivos na matéria; menu fecha por Escape; preferência de; zero autoplay; altura do cabeçalho não muda com a presença do seletor. Foram observados nove elementos de áudio já geridos pela aplicação: isso NÃO é prova de reprodução única ou continuidade sonora, que não foram exercitadas.
+- Limites restantes além do backfill: revisão de nomes protegidos no restante do acervo, estados dinâmicos de todas as páginas e navegação integral multilíngue ainda não validados. Não declarar cobertura total nem aprovação de regressão geral.
+
+A atualização final altera somente documentação; o preview continua fixado no mesmo código de aplicação e evidências.
