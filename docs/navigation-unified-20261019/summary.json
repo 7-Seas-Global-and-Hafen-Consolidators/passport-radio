@@ -1,0 +1,27 @@
+{
+  "base": "66c51d4ce62776667964978023c4b709283f9bfd",
+  "principalDestinations": 17,
+  "representativePages": 15,
+  "viewportWidths": [
+    1440,
+    768,
+    390
+  ],
+  "navigationLayoutChecksPassed": 45,
+  "bootstrapChecks": {
+    "pages": 4,
+    "layouts": 12,
+    "result": "passed; detailed validation.json"
+  },
+  "footerUnchangedAfterRemovingBootstrap": true,
+  "mediaLogicFilesChanged": false,
+  "wholeSuiteRun": false,
+  "netlifyDeployed": false,
+  "merged": false,
+  "limitations": [
+    "Remote/media/commercial requests blocked in QA; no playback claim.",
+    "Manual Netlify/local copy not assumed equal to main or modified."
+  ],
+  "notes": "14 initial page checks passed; article checked separately after allowing its unchanged shell loader in the QA filter. Existence check uses only the destinations table.",
+  "unknownRoutePreservesOriginalSectionMarker": "passed in isolated DOM check"
+}

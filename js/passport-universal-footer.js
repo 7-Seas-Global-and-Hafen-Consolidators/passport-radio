@@ -1,6 +1,11 @@
 /* Institutional footer only. Existing page, framework and audio nodes retain ownership. */
 (() => {
   'use strict';
+  // Reuse the existing navigation enhancer on pages that do not load it themselves.
+  if (!window.PassportNavigation && ![...document.scripts].some(s => s.src && new URL(s.src, location.href).pathname === '/js/passport-games-navigation.js')) {
+    const nav = document.createElement('script'); nav.src = '/js/passport-games-navigation.js?v=20261019';
+    document.head.append(nav);
+  }
   if (window.PassportUniversalFooter) { window.PassportUniversalFooter.mount(); return; }
   const groups = [
     ['EXPLORE', [['Home','/'],['Notícias','/noticias.html'],['Arquivo','/editorial.html'],['Agenda','/agenda.html'],['Bandas','/bandas/index.html'],['Vídeos','/videos.html'],['Desafios','/jogos.html'],['Podcast & Broadcast','/radio.html'],['Rádio 24H','/radio.html']]],
