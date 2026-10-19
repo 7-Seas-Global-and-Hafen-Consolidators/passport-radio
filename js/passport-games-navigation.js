@@ -13,13 +13,19 @@
     ['/anuncie.html', 'Anuncie'], ['/doe.html', 'Apoie']
   ];
   const excluded = 'footer,main,article,.player,[id*="player"],.passport-continuity-controls';
+  const localMenus = '.pp-top-actions,.hub-nav,.agenda-tabs,.res-quick,.blog-crumbs,.passport-blog-shell-editorial,[role="tablist"],#challenge-pagination,#pp-store-pagination,#videos-collections-nav';
+  const retired = new WeakMap();
+  let primaryNav;
   const principal = '.pb-nav,.news-nav,.archive-nav,.participe-paper-nav,.promo-paper-nav,.podcast-nav,.pp-nav,nav[aria-label="Seções"]';
   const key = anchor => {
     try {
       const url = new URL(anchor.getAttribute('href'), location.href);
-      if (url.origin !== location.origin) return null;
+      if (url.origin !== location.origin && !['passportradio.online', 'www.passportradio.online'].includes(url.hostname)) return null;
       let path = url.pathname === '/index.html' ? '/' : url.pathname;
-      if (path === '/bandas/') path = '/bandas/index.html';
+      if (['/bandas', '/bandas/'].includes(path)) path = '/bandas/index.html';
+      if (path === '/index') path = '/';
+      const pretty = destinations.find(([href]) => href.endsWith('.html') && href.slice(0, -5) === path.replace(/\/$/, ''));
+      if (pretty) path = pretty[0];
       if (path === '/' && url.hash === '#passport-radio-catalog') return '/#passport-radio-catalog';
       if (url.hash || url.search) return null; // Keep cart actions and page tools untouched.
       return path;
@@ -39,13 +45,20 @@
     const container = nav.querySelector(':scope > ul,:scope > ol,:scope > .pp-nav-in') || nav;
     const list = /^(UL|OL)$/.test(container.tagName);
     const existing = new Map();
-    for (const a of container.querySelectorAll('a[href]')) {
+    for (const a of [...nav.querySelectorAll('a[href]')].filter(a => a.closest('nav') === nav)) {
       const k = key(a);
       if (!destinations.some(([href]) => href === k)) continue;
       if (existing.has(k)) {
-        const item = list ? a.closest('li') : a;
-        if (item && (!list || item.parentElement === container)) item.remove();
+        const li = a.closest('li');
+        if (li && li.closest('nav') === nav && li.querySelectorAll('a,button,input,select').length === 1) li.remove();
+        else a.remove();
         continue;
+      }
+      // Manual HTML may contain links before/after its ul or in a second wrapper.
+      // Consolidate the original anchor, not a clone, so its handlers survive.
+      if (!container.contains(a)) {
+        if (list) { const li = document.createElement('li'); li.append(a); container.append(li); }
+        else container.append(a);
       }
       existing.set(k, a);
     }
@@ -79,11 +92,20 @@
   function mount() {
     if (!document.body) return;
     let navs = [...document.querySelectorAll('nav')].filter(nav => {
-      if (nav.closest(excluded) || nav.matches('.pp-top-actions,.hub-nav')) return false;
+      if (nav.closest(excluded) || nav.matches(localMenus)) return false;
       if (nav.matches(principal)) return true;
       const links = [...nav.querySelectorAll('a[href]')].map(key);
-      return links.includes('/blog.html') && links.includes('/loja.html') && links.some(p => ['/', '/noticias.html'].includes(p));
+      return (links.includes('/blog.html') && links.includes('/loja.html') && links.some(p => ['/', '/noticias.html'].includes(p)))
+        || (links.includes('/') && new Set(links.filter(p => destinations.some(([href]) => href === p))).size >= 3);
     });
+    // Restore only menus retired by this module before selecting the current visible shell.
+    for (const nav of navs) if (retired.has(nav)) {
+      const previous = retired.get(nav); nav.hidden = previous.hidden;
+      if (previous.aria === null) nav.removeAttribute('aria-hidden'); else nav.setAttribute('aria-hidden', previous.aria);
+      nav.removeAttribute('data-passport-navigation-retired');
+      if (previous.display) nav.style.setProperty('display', previous.display, previous.priority); else nav.style.removeProperty('display');
+      retired.delete(nav);
+    }
     // Some hubs and product pages have a masthead but only local/category links.
     if (!navs.length && !/^\/(?:app\/|radio-|player-|passport-player|adapter-lab)/.test(location.pathname) && !/-player\.html$/.test(location.pathname)) {
       const header = [...document.querySelectorAll('header')].find(n => !n.closest(excluded));
@@ -95,10 +117,31 @@
     if (!navs.length) return;
     if (!document.querySelector('link[data-passport-navigation-style]')) {
       const css = document.createElement('link'); css.rel = 'stylesheet';
-      css.href = '/css/passport-navigation.css?v=20261019'; css.dataset.passportNavigationStyle = '1';
+      css.href = '/css/passport-navigation.css?v=20261019r2'; css.dataset.passportNavigationStyle = '1';
       document.head.append(css);
     }
-    navs.forEach(complete);
+    const outer = navs.filter(nav => !navs.some(other => other !== nav && other.contains(nav)));
+    const visible = outer.filter(nav => !nav.closest('[hidden],[aria-hidden="true"]') && getComputedStyle(nav).display !== 'none');
+    const choices = visible.length ? visible : outer;
+    // Prefer the existing menu with local actions (e.g. Carrinho), not a plain duplicate.
+    const actions = nav => [...nav.querySelectorAll('a[href]')].filter(a => a.closest('nav') === nav && !destinations.some(([href]) => href === key(a))).length;
+    const selected = choices.reduce((best, nav) => !best || actions(nav) > actions(best) ? nav : best, choices.includes(primaryNav) ? primaryNav : null);
+    if (!selected) return;
+    primaryNav = selected;
+    for (const nav of navs) if (nav !== selected) {
+      // Preserve page-specific links/actions if a redundant institutional menu owns them.
+      for (const node of [...nav.querySelectorAll('a[href],button,form')].filter(n => n.closest('nav') === nav && !n.parentElement.closest('a,button,form'))) {
+        if (node.matches('a') && destinations.some(([href]) => href === key(node))) continue;
+        if (node.querySelector('nav')) continue;
+        const container = selected.querySelector(':scope > ul,:scope > ol,:scope > .pp-nav-in') || selected;
+        if (/^(UL|OL)$/.test(container.tagName)) { const li = document.createElement('li'); li.append(node); container.append(li); }
+        else container.append(node);
+      }
+      retired.set(nav, {hidden:nav.hidden, aria:nav.getAttribute('aria-hidden'), display:nav.style.getPropertyValue('display'), priority:nav.style.getPropertyPriority('display')});
+      nav.dataset.passportNavigationRetired = '1'; nav.style.setProperty('display', 'none', 'important'); nav.hidden = true; nav.setAttribute('aria-hidden', 'true');
+      nav.removeAttribute('data-passport-navigation');
+    }
+    complete(selected);
   }
   function schedule() {
     if (queued) return;
@@ -111,4 +154,5 @@
   window.addEventListener('passport:editorial-rendered', schedule);
   window.addEventListener('popstate', schedule);
   window.addEventListener('hashchange', schedule);
+  window.addEventListener('resize', schedule, {passive:true});
 })();

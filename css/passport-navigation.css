@@ -58,3 +58,6 @@ nav[data-passport-navigation] a[href]:focus-visible {
   outline: 2px solid #111111;
   outline-offset: 3px;
 }
+
+/* Retired institutional copies stay out of layout and keyboard navigation. */
+nav[data-passport-navigation-retired="1"] { display: none !important; }

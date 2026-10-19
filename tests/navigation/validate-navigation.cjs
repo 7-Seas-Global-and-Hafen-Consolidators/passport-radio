@@ -39,6 +39,14 @@ const types = {html:'text/html', css:'text/css', js:'text/javascript', json:'app
       await page.waitForSelector('header');
       if (route === '/' || route === article) await page.waitForSelector('.pb-nav');
       await page.waitForTimeout(200);
+      if (['/agenda.html','/editorial.html'].includes(route)) await page.evaluate(() => {
+        const nav=document.querySelector('nav[aria-label="Seções"]');
+        const duplicate=nav.cloneNode(true);duplicate.className='legacy-institutional-nav';duplicate.dataset.rescueFixture='duplicate-menu';nav.after(duplicate);
+        // The manual copy can also have canonical-host links outside its first list.
+        const wrapper=document.createElement('div');wrapper.dataset.rescueFixture='extra-wrapper';
+        for(const a of [...nav.querySelectorAll('a')].slice(0,4)){const copy=a.cloneNode(true);copy.href='https://www.passportradio.online'+new URL(a.href).pathname;wrapper.append(copy);}
+        nav.append(wrapper);
+      });
       await page.evaluate(() => {
         window.__navigationBefore = {
           nodes:[...document.querySelectorAll('audio,video,iframe,#passport-player,[data-radio-id]')],
@@ -47,19 +55,21 @@ const types = {html:'text/html', css:'text/css', js:'text/javascript', json:'app
           text:document.querySelector('main')?.innerHTML,
           header:document.querySelector('header'),
           height:document.querySelector('header').getBoundingClientRect().height,
-          anchor:document.querySelector('nav[aria-label="Seções"] a[href="/blog.html"]')
+          anchor:document.querySelector('nav[aria-label="Seções"] a[href="/blog.html"]'),
+          local:[...document.querySelectorAll('.agenda-tabs,.pp-top-actions,.hub-nav,.res-quick,.blog-crumbs,#challenge-pagination,#pp-store-pagination,#videos-collections-nav')].map(n=>({node:n,html:n.outerHTML}))
         };
       });
       if(!bootstrap) await page.addScriptTag({path:path.join(root, 'js/passport-games-navigation.js')});
       await page.waitForSelector('nav[data-passport-navigation]');
       await page.waitForFunction(() => [...document.styleSheets].some(s=>s.href?.includes('/css/passport-navigation.css')));
       const check = await page.evaluate(() => {
+        const institutional=[...document.querySelectorAll('nav')].filter(n=>!n.closest('footer,main,article')&&!n.matches('.pp-top-actions,.hub-nav,.agenda-tabs,.res-quick,.blog-crumbs')&&(n.matches('[data-passport-navigation],.pb-nav,.news-nav,.archive-nav,.participe-paper-nav,.promo-paper-nav,.podcast-nav,.pp-nav,[aria-label="Seções"]')||[...n.querySelectorAll('a')].filter(a=>['Home','Notícias','Agenda','Arquivo','Loja'].includes(a.textContent.trim())).length>=3)).filter(n=>n.getClientRects().length&&getComputedStyle(n).display!=='none');
         const nav = document.querySelector('nav[data-passport-navigation]'), expected = PassportNavigation.destinations;
         const links = [...nav.querySelectorAll('a')];
         const before = window.__navigationBefore;
         return {
           route:location.pathname,
-          expected:expected.length,
+          expected:expected.length,visibleInstitutionalMenus:institutional.length,localPreserved:before.local.every(({node,html})=>node.isConnected&&node.outerHTML===html),
           destinations:expected.map(([href,label])=>({href,label,count:links.filter(a=>a.getAttribute('href')===href&&a.textContent===label).length})),
           active:links.filter(a=>a.getAttribute('aria-current')==='page').map(a=>a.getAttribute('href')),
           originalAnchorPreserved:!before.anchor||before.anchor.isConnected&&links.includes(before.anchor),
@@ -70,7 +80,7 @@ const types = {html:'text/html', css:'text/css', js:'text/javascript', json:'app
           bootstrapPresent:[...document.scripts].some(s=>s.src.includes('/js/passport-games-navigation.js'))
         };
       });
-      assert.equal(check.expected,17);check.destinations.forEach(d=>assert.equal(d.count,1,route+' '+d.label));
+      assert.equal(check.visibleInstitutionalMenus,1,route+' duplicate institutional menus');assert(check.localPreserved,route+' local controls changed');assert.equal(check.expected,17);check.destinations.forEach(d=>assert.equal(d.count,1,route+' '+d.label));
       assert.equal(check.active.length,1,route+' current section');
       for(const name of ['originalAnchorPreserved','mediaPreserved','mainPreserved','mastheadPreserved','bootstrapPresent']) assert(check[name],route+' '+name);
       assert.equal(check.autoplay,false);
@@ -82,13 +92,18 @@ const types = {html:'text/html', css:'text/css', js:'text/javascript', json:'app
           return {width:innerWidth,height:box.height,allVisible:links.every(a=>{const r=a.getBoundingClientRect(),s=getComputedStyle(a);return r.width>0&&r.height>0&&r.left>=-1&&r.right<=innerWidth+1&&r.top>=box.top-1&&r.bottom<=box.bottom+1&&s.visibility!=='hidden'&&s.display!=='none'}),navOverflow:nav.scrollWidth>nav.clientWidth+1};
         });
         assert(layout.allVisible,route+' links clipped at '+width);assert(!layout.navOverflow,route+' menu overflow at '+width);
-        rows.push({route,...layout,active:check.active[0],mediaPreserved:check.mediaPreserved,mainPreserved:check.mainPreserved,mastheadPreserved:check.mastheadPreserved});
+        rows.push({route,...layout,active:check.active[0],mediaPreserved:check.mediaPreserved,mainPreserved:check.mainPreserved,mastheadPreserved:check.mastheadPreserved,visibleInstitutionalMenus:check.visibleInstitutionalMenus,localPreserved:check.localPreserved,duplicateFixture:['/agenda.html','/editorial.html'].includes(route)});
       }
       // Repeat mounting and an editorial event: no duplicate links/observers or replaced anchors.
       await page.evaluate(()=>{PassportNavigation.mount();window.dispatchEvent(new Event('passport:editorial-rendered'));});
       await page.waitForFunction(()=>{const links=[...document.querySelector('nav[data-passport-navigation]').querySelectorAll('a')];return PassportNavigation.destinations.every(([href])=>links.filter(a=>a.getAttribute('href')===href).length===1);});
       const repeated = await page.evaluate(()=>{const links=[...document.querySelector('nav[data-passport-navigation]').querySelectorAll('a')];const expected=PassportNavigation.destinations;return {counts:expected.map(([href])=>links.filter(a=>a.getAttribute('href')===href).length),total:links.length,extra:links.filter(a=>!expected.some(([href])=>a.getAttribute('href')===href)).length};});
       repeated.counts.forEach(count=>assert.equal(count,1));assert.equal(repeated.total,17+repeated.extra);
+      if (['/agenda.html','/editorial.html'].includes(route)) {
+        await page.evaluate(()=>{const nav=document.querySelector('nav[data-passport-navigation]');nav.after(nav.cloneNode(true));});
+        await page.waitForFunction(()=>[...document.querySelectorAll('nav[data-passport-navigation]')].filter(n=>n.getClientRects().length&&getComputedStyle(n).display!=='none').length===1);
+        assert.equal(await page.locator('nav[data-passport-navigation]').count(),1);
+      }
       await page.close();
     }
     const files = new Set(execFileSync('git',['ls-tree','-r','--name-only','HEAD'],{cwd:root,encoding:'utf8'}).split('\n'));
@@ -97,7 +112,7 @@ const types = {html:'text/html', css:'text/css', js:'text/javascript', json:'app
     assert.equal(destinations.length,17);
     for(const href of destinations) assert(files.has(href.split('#')[0]==='/'?'index.html':href.split('#')[0].slice(1)),href+' missing file');
     assert(fs.readFileSync(path.join(root,'js/passport-radio-grid.js'),'utf8').includes("catalog.id = 'passport-radio-catalog'"));
-    fs.writeFileSync(path.join(root,'docs/navigation-unified-20261019/validation.json'),JSON.stringify({scope:'Local navigation only; remote/media/commercial scripts blocked. Not a playback or Netlify test.',base:'66c51d4ce62776667964978023c4b709283f9bfd',bootstrap,passed:true,layouts:rows.length,samples:rows},null,2)+'\n');
+    fs.writeFileSync(process.env.PASSPORT_QA_REPORT||path.join(root,'docs/navigation-unified-20261019/rescue-validation.json'),JSON.stringify({scope:'Rescue regression: duplicate-menu and extra canonical-host-link fixtures in Agenda/Arquivo; local navigation only; remote/media/commercial scripts blocked. Not a playback or Netlify test.',base:'9e63d19cb65bfad3b2a34d3fd158dbb1793d1031',bootstrap,passed:true,layouts:rows.length,samples:rows},null,2)+'\n');
     console.log(JSON.stringify({passed:true,pages:rows.length/3,bootstrap,layouts:rows.length,destinations:17,linksExist:true,sourceContentAndMediaNodesPreserved:true}));
   } finally {await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);process.exitCode=1});
