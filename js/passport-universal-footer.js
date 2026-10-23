@@ -20,7 +20,8 @@
   };
   const socialLink = ([label,href]) => {
     const [slug,color] = social[label];
-    return `<a class="puf-social-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}"><span class="puf-social-icon" style="--social-color:${color};--social-mask:url('https://cdn.jsdelivr.net/npm/simple-icons@15/icons/${slug}.svg')" aria-hidden="true"></span><span class="puf-social-label">${label}</span></a>`;
+    const mask = label === 'Kwai' ? 'https://www.svgrepo.com/show/517319/kwai.svg' : `https://cdn.jsdelivr.net/npm/simple-icons@15/icons/${slug}.svg`;
+    return `<a class="puf-social-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}"><span class="puf-social-icon" style="--social-color:${color};--social-mask:url('${mask}')" aria-hidden="true"></span><span class="puf-social-label">${label}</span></a>`;
   };
   const socialLinks = groups[3][1];
   function mountHeaderSocial() {
@@ -32,6 +33,12 @@
     box.className='passport-header-social';
     box.setAttribute('aria-label','Redes sociais oficiais da Passport Radio');
     box.innerHTML=socialLinks.map(socialLink).join('');
+    // Existing legacy icon strips remain in markup, but must not duplicate the unified row.
+    const domains = ['whatsapp.com','t.me/','reddit.com','x.com/','twitter.com','youtube.com','kwai.com','tiktok.com'];
+    for (const a of header.querySelectorAll('a[href]')) {
+      if (a.closest('[data-passport-header-social]')) continue;
+      if (domains.some(domain => a.href.includes(domain))) a.hidden = true;
+    }
     header.append(box);
   }
   const brands = [['visa','Visa'],['mastercard','Mastercard'],['elo','Elo'],['amex','American Express'],['hipercard','Hipercard'],['diners','Diners Club']];
