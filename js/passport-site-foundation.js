@@ -19,7 +19,8 @@
       const href = link.getAttribute("href") || "";
       if (/^https?:\/\/(?:wa\.me|api\.whatsapp\.com)\//i.test(href)) link.href = PASSPORT.whatsapp;
       if (/^https?:\/\/t\.me\//i.test(href)) link.href = PASSPORT.telegram;
-      if (/^mailto:/i.test(href) && /passport/i.test(href)) link.href = `mailto:${PASSPORT.email}`;
+      // Institutional mastheads preserve their original email; the shared footer owns its contact address.
+      if (/^mailto:/i.test(href) && /passport/i.test(href) && !link.closest("header,.topbar,.mn-head,.top,[data-universal-footer-content]")) link.href = `mailto:${PASSPORT.email}`;
     });
   };
   const mount = () => {
