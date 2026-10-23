@@ -20,9 +20,11 @@
 /* Festa PLOC only. Values reused from Participe/Apoiar and Anuncie; video geometry from the existing article habitat. */
 .festa-ploc-paper .participe-content{max-width:1200px}
 .festa-ploc-paper .article,.festa-ploc-paper .shell{width:100%;max-width:760px;margin-inline:auto}
+.festa-ploc-paper .article{min-width:0;overflow-wrap:anywhere}
 .festa-ploc-paper .hero,.festa-ploc-paper .intro,.festa-ploc-paper .chapter,.festa-ploc-paper .signature{padding:28px 0;border-bottom:1px solid var(--pr-ink)}
-.festa-ploc-paper .hero{padding-top:0}
-.festa-ploc-paper .hero>img{display:block;width:100%;max-width:760px;height:auto;object-fit:contain;margin:0 auto 24px}
+.festa-ploc-paper .hero{padding-top:0;min-height:0;height:auto}
+.festa-ploc-paper .hero-copy{width:100%;min-width:0}
+.festa-ploc-paper .hero>img{display:block;width:100%;max-width:760px;height:auto;aspect-ratio:auto;object-fit:contain;margin:0 auto 24px}
 .festa-ploc-paper .hero-copy h1{max-width:22ch;font-size:clamp(38px,5vw,64px);margin:16px 0}
 .festa-ploc-paper .eyebrow,.festa-ploc-paper .tag{display:block;color:var(--pr-red);font:700 10px/1.4 var(--pr-sans);letter-spacing:.18em;text-transform:uppercase}
 .festa-ploc-paper .tag{margin-bottom:16px}
@@ -40,7 +42,8 @@
 .festa-ploc-paper .passport-support-float__copy{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 @media(max-width:560px){.festa-ploc-paper .participe-content{padding-top:28px}}
 
-.festa-ploc-paper .story-photo{margin:28px 0}
+.festa-ploc-paper .story-photo{width:100%;margin:28px 0}
+.festa-ploc-paper .story-photo--portrait{max-width:520px;margin-inline:auto}
 .festa-ploc-paper .story-photo img{display:block;width:100%;height:auto}
 .festa-ploc-paper .story-photo figcaption{margin-top:8px;font:400 14px/1.5 var(--pr-body)}
 
@@ -65,7 +68,7 @@
   </ul></nav>
 <main id="ploc-main" class="participe-content"><article class="article">
 <section class="hero">
-<img src="/images/dionne-warwick-rio-2026-vivo-rio-01.webp" alt="Dionne Warwick cantando sentada no palco do Vivo Rio em 2026" width="1319" height="880">
+<img src="/images/dionne-warwick-rio-2026-vivo-rio-01.webp" alt="Dionne Warwick cantando sentada no palco do Vivo Rio em 2026" width="1319" height="880" decoding="async">
 <div class="hero-copy">
 <h1>Aos 85, Dionne Warwick se despede dos palcos — mas existe um pequeno problema: ela não consegue se despedir do Brasil</h1>
 <p class="dek">No Vivo Rio, foram Bacharach, Hal David, Jobim, Ary Barroso, seis décadas de carreira e uma promessa maravilhosa: o palco pode ficar para trás, mas restaurante, shopping e praia continuam no roteiro. Pela primeira vez, Dionne Warwick entra na Passport Radio.</p>
@@ -113,7 +116,7 @@
 </section>
 
 <figure class="story-photo">
-<img src="/images/dionne-warwick-rio-2026-vivo-rio-02.jpg" alt="Dionne Warwick durante sua apresentação no Rio de Janeiro em outubro de 2026" loading="lazy" width="1000" height="667">
+<img src="/images/dionne-warwick-rio-2026-vivo-rio-02.jpg" alt="Dionne Warwick durante sua apresentação no Rio de Janeiro em outubro de 2026" loading="lazy" width="1000" height="667" decoding="async">
 <figcaption>Dionne Warwick no Rio em 2026. A despedida é dos palcos — o Brasil continua na conversa.</figcaption>
 </figure>
 
@@ -151,8 +154,8 @@
 <p>Para quem canta Jobim, Ary Barroso e atravessa décadas voltando ao Brasil, talvez a gramática possa esperar um pouquinho.</p>
 </section>
 
-<figure class="story-photo">
-<img src="/images/dionne-warwick-rio-2026-vivo-rio-03.jpg" alt="Dionne Warwick sentada e cantando durante o show de despedida no Vivo Rio" loading="lazy" width="1320" height="1979">
+<figure class="story-photo story-photo--portrait">
+<img src="/images/dionne-warwick-rio-2026-vivo-rio-03.jpg" alt="Dionne Warwick sentada e cantando durante o show de despedida no Vivo Rio" loading="lazy" width="1320" height="1979" decoding="async">
 <figcaption>Sentada, cantando e dona de um repertório que atravessou gerações. Sim: muito fofa. 🥰</figcaption>
 </figure>
 
@@ -211,8 +214,8 @@
 <p>E uma carreira que recusou a ideia de pertencer a uma única década.</p>
 </section>
 
-<figure class="story-photo">
-<img src="/images/dionne-warwick-rio-2026-vivo-rio-04.jpg" alt="Dionne Warwick no palco durante a turnê de despedida no Rio de Janeiro" loading="lazy" width="1319" height="1979">
+<figure class="story-photo story-photo--portrait">
+<img src="/images/dionne-warwick-rio-2026-vivo-rio-04.jpg" alt="Dionne Warwick no palco durante a turnê de despedida no Rio de Janeiro" loading="lazy" width="1319" height="1979" decoding="async">
 <figcaption>O palco pode estar ficando para trás. A música, não.</figcaption>
 </figure>
 
