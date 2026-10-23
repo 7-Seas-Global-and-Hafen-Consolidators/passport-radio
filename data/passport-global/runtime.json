@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "sourceLocale": "pt-BR",
+  "locales": [
+    "pt-BR",
+    "en-GB",
+    "es",
+    "fr",
+    "de"
+  ],
+  "common": "/data/passport-global/common.json",
+  "manifest": "/data/passport-global/manifest.json"
+}
