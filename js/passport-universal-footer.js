@@ -6,8 +6,34 @@
     ['EXPLORE', [['Home','/'],['Notícias','/noticias.html'],['Arquivo','/editorial.html'],['Agenda','/agenda.html'],['Bandas','/bandas/index.html'],['Vídeos','/videos.html'],['Desafios','/jogos.html'],['Podcast & Broadcast','/radio.html'],['Rádio 24H','/radio.html']]],
     ['PARTICIPE', [['Participe','/divulgar-bandas.html'],['Envie sua história','/blog/envie-sua-historia.html'],['Divulgue sua banda','/divulgar-bandas.html'],['Promoções','/promocoes.html']]],
     ['A PASSPORT', [['Loja','/loja.html'],['Anuncie','/anuncie.html'],['Apoie','/doe.html'],['Contato','/contato.html'],['contato@passportradio.online','mailto:contato@passportradio.online']]],
-    ['ACOMPANHE', [['WhatsApp','https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k'],['Telegram','https://t.me/+FKto2N185cs4OGU0'],['Reddit','https://www.reddit.com/user/Passportradio_26/'],['X','https://x.com/JasonAdriagg']]]
+    ['ACOMPANHE', [['WhatsApp','https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k'],['Telegram','https://t.me/+FKto2N185cs4OGU0'],['Reddit','https://www.reddit.com/user/Passportradio_26/'],['X','https://x.com/PassportRadio'],['YouTube','https://www.youtube.com/@PassportRadio-Official'],['Kwai','https://www.kwai.com/@passportradio.online'],['TikTok','https://www.tiktok.com/@passportradio.online']]]
   ];
+  // Official platform glyphs from Simple Icons, rendered as monochrome SVG masks in brand colors.
+  const social = {
+    WhatsApp:['whatsapp','#25D366'],
+    Telegram:['telegram','#26A5E4'],
+    Reddit:['reddit','#FF4500'],
+    X:['x','#111111'],
+    YouTube:['youtube','#FF0033'],
+    Kwai:['kwai','#FF7700'],
+    TikTok:['tiktok','#111111']
+  };
+  const socialLink = ([label,href]) => {
+    const [slug,color] = social[label];
+    return `<a class="puf-social-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}"><span class="puf-social-icon" style="--social-color:${color};--social-mask:url('https://cdn.jsdelivr.net/npm/simple-icons@15/icons/${slug}.svg')" aria-hidden="true"></span><span class="puf-social-label">${label}</span></a>`;
+  };
+  const socialLinks = groups[3][1];
+  function mountHeaderSocial() {
+    if (document.querySelector('[data-passport-header-social]')) return;
+    const header = document.querySelector('header');
+    if (!header || header.closest('footer')) return;
+    const box = document.createElement('div');
+    box.dataset.passportHeaderSocial='1';
+    box.className='passport-header-social';
+    box.setAttribute('aria-label','Redes sociais oficiais da Passport Radio');
+    box.innerHTML=socialLinks.map(socialLink).join('');
+    header.append(box);
+  }
   const brands = [['visa','Visa'],['mastercard','Mastercard'],['elo','Elo'],['amex','American Express'],['hipercard','Hipercard'],['diners','Diners Club']];
   const anchor = ([label,href]) => `<a href="${href}"${href.startsWith('https:')?' target="_blank" rel="noopener noreferrer"':''}>${label}</a>`;
   // Boleto/card symbols copied from the approved Home bundle; no replacement artwork.
@@ -15,7 +41,7 @@
   const card = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>';
   const markup = `<div id="passport-universal-footer-content" data-universal-footer-content>
     <div class="puf-identity"><a class="puf-wordmark" href="/" aria-label="Passport Radio — Home">Passport <em>Radio</em></a><p>Primeiro a história. Depois a música.</p></div>
-    <nav class="puf-navigation" aria-label="Navegação institucional do rodapé">${groups.map(([title,links])=>`<section class="puf-group"><h2>${title}</h2>${links.map(anchor).join('')}</section>`).join('')}</nav>
+    <nav class="puf-navigation" aria-label="Navegação institucional do rodapé">${groups.map(([title,links])=>`<section class="puf-group"><h2>${title}</h2>${links.map(title==='ACOMPANHE'?socialLink:anchor).join('')}</section>`).join('')}</nav>
     <div class="puf-payments" aria-label="Meios de pagamento">
       <div class="puf-methods"><span><img src="/images/payments/pix.png" alt="" width="16" height="16">PIX</span><span>${boleto}BOLETO</span><span>${card}CARTÃO</span><span><img src="/images/payments/caixa.png" alt="" width="20" height="16">CAIXA</span></div>
       <div class="puf-brands" aria-label="Bandeiras de cartão">${brands.map(([file,label])=>`<img src="/images/payments/${file}.png" alt="${label}" decoding="async">`).join('')}</div>
@@ -37,6 +63,7 @@
       const css=document.createElement('link');css.rel='stylesheet';css.href='/css/passport-universal-footer.css?v=20261010';css.dataset.passportUniversalFooterStyle='1';document.head.append(css);
     }
     host.dataset.passportUniversalFooter='1';
+    mountHeaderSocial();
     if (!host.querySelector(':scope > [data-universal-footer-content]')) host.insertAdjacentHTML('beforeend',markup);
     for (const footer of footers) if(footer!==host&&!footer.hasAttribute('data-retired-institutional-footer')) {footer.dataset.retiredInstitutionalFooter='1';footer.hidden=true;footer.setAttribute('aria-hidden','true');}
     // Old payment strips are footer presentation only; checkout/payment controls are excluded.
