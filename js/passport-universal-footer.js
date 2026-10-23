@@ -67,7 +67,7 @@
     if (!footers.length) return; // Widget/player-only documents do not gain an institutional shell.
     const host = footers.find(node=>node.hasAttribute('data-passport-universal-footer')) || footers[0];
     if (!document.querySelector('link[data-passport-universal-footer-style]')) {
-      const css=document.createElement('link');css.rel='stylesheet';css.href='/css/passport-universal-footer.css?v=20261023';css.dataset.passportUniversalFooterStyle='1';document.head.append(css);
+      const css=document.createElement('link');css.rel='stylesheet';css.href='/css/passport-universal-footer.css?v=20261023b';css.dataset.passportUniversalFooterStyle='1';document.head.append(css);
     }
     host.dataset.passportUniversalFooter='1';
     mountHeaderSocial();
