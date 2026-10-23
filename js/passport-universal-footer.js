@@ -6,40 +6,61 @@
     ['EXPLORE', [['Home','/'],['Notícias','/noticias.html'],['Arquivo','/editorial.html'],['Agenda','/agenda.html'],['Bandas','/bandas/index.html'],['Vídeos','/videos.html'],['Desafios','/jogos.html'],['Podcast & Broadcast','/radio.html'],['Rádio 24H','/radio.html']]],
     ['PARTICIPE', [['Participe','/divulgar-bandas.html'],['Envie sua história','/blog/envie-sua-historia.html'],['Divulgue sua banda','/divulgar-bandas.html'],['Promoções','/promocoes.html']]],
     ['A PASSPORT', [['Loja','/loja.html'],['Anuncie','/anuncie.html'],['Apoie','/doe.html'],['Contato','/contato.html'],['contato@passportradio.online','mailto:contato@passportradio.online']]],
-    ['ACOMPANHE', [['WhatsApp','https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k'],['Telegram','https://t.me/+FKto2N185cs4OGU0'],['Reddit','https://www.reddit.com/user/Passportradio_26/'],['X','https://x.com/PassportRadio'],['YouTube','https://www.youtube.com/@PassportRadio-Official'],['Kwai','https://www.kwai.com/@passportradio.online'],['TikTok','https://www.tiktok.com/@passportradio.online']]]
+    ['ACOMPANHE', [['WhatsApp','https://whatsapp.com/channel/0029Vb8OD91BfxoBCBG36F0k'],['Telegram','https://t.me/+FKto2N185cs4OGU0'],['Reddit','https://www.reddit.com/user/Passportradio_26/'],['X','https://x.com/PassportRadio'],['YouTube','https://www.youtube.com/@PassportRadio-Official'],['Kwai','https://www.kwai.com/@passportradio.online'],['TikTok','https://www.tiktok.com/@passportradio.online'],['E-mail','mailto:contato@passportradio.online']]]
   ];
-  // Official platform glyphs from Simple Icons, rendered as monochrome SVG masks in brand colors.
+  // Local SVG marks: no third-party image or CSS-mask request is needed.
   const social = {
-    WhatsApp:['whatsapp','#25D366'],
-    Telegram:['telegram','#26A5E4'],
-    Reddit:['reddit','#FF4500'],
-    X:['x','#111111'],
-    YouTube:['youtube','#FF0033'],
-    Kwai:['kwai','#FF7700'],
-    TikTok:['tiktok','#111111']
+    WhatsApp:'whatsapp', Telegram:'telegram', Reddit:'reddit', X:'x',
+    YouTube:'youtube', Kwai:'kwai', TikTok:'tiktok', 'E-mail':'email'
   };
   const socialLink = ([label,href]) => {
-    const [slug,color] = social[label];
-    const mask = label === 'Kwai' ? 'https://www.svgrepo.com/show/517319/kwai.svg' : `https://cdn.jsdelivr.net/npm/simple-icons@15/icons/${slug}.svg`;
-    return `<a class="puf-social-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}"><span class="puf-social-icon" style="--social-color:${color};--social-mask:url('${mask}')" aria-hidden="true"></span><span class="puf-social-label">${label}</span></a>`;
+    const external = href.startsWith('https:') ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return `<a class="puf-social-link" href="${href}"${external} aria-label="${label}" title="${label}"><img class="puf-social-icon" src="/images/social/${social[label]}.svg" width="24" height="24" alt="" aria-hidden="true"><span class="puf-social-label">${label}</span></a>`;
   };
   const socialLinks = groups[3][1];
   function mountHeaderSocial() {
-    if (document.querySelector('[data-passport-header-social]')) return;
-    const header = document.querySelector('header');
-    if (!header || header.closest('footer')) return;
-    const box = document.createElement('div');
-    box.dataset.passportHeaderSocial='1';
-    box.className='passport-header-social';
-    box.setAttribute('aria-label','Redes sociais oficiais da Passport Radio');
-    box.innerHTML=socialLinks.map(socialLink).join('');
-    // Existing legacy icon strips remain in markup, but must not duplicate the unified row.
-    const domains = ['whatsapp.com','t.me/','reddit.com','x.com/','twitter.com','youtube.com','kwai.com','tiktok.com'];
-    for (const a of header.querySelectorAll('a[href]')) {
-      if (a.closest('[data-passport-header-social]')) continue;
-      if (domains.some(domain => a.href.includes(domain))) a.hidden = true;
+    // Only institutional chrome outside the page's content and playback UI.
+    const excluded = 'main,article,footer,.player,.player-dock,[id*="player"],[class*="player-"],.pe-prose,.mn-prose';
+    const header = [...document.querySelectorAll('header,.topbar,.mn-head,.top')].find(node =>
+      !node.closest(excluded) && (
+        node.matches('.pb-mast,.news-mast,.participe-paper-mast,.mast,.site-header,.hub-head,.editorial-paper-header,.archive-mast,.promo-paper-mast,.podcast-mast,.ba-mast,.pp-topbar,.pp-top-masthead') ||
+        node.querySelector('.brand,.pe-brand,.mn-brand,.story-brand,.editorial-paper-wordmark') ||
+        [...node.querySelectorAll('a,h1')].some(el => /^passport\s*radio$/i.test(el.textContent.trim()))
+      ));
+    if (!header) return;
+    const mast = header.querySelector('.editorial-paper-mast,.hub-shell') || header;
+    const years = mast.querySelector('.pb-mast__years,.news-mast__years,.participe-paper-mast__years,.editorial-paper-years,.archive-mast__years,.promo-paper-mast__years,.podcast-mast__years') ||
+      [...mast.children].find(node => /^(?:1\s*9\s*9\s*8)\s*[·–—-]\s*(?:2\s*0\s*2\s*6)$/.test(node.textContent.trim()));
+    let box = header.querySelector('[data-passport-header-social]');
+    if (!box) {
+      const email = header.querySelector('a[href^="mailto:"]');
+      const links = socialLinks.map(([label,href]) => [label,label === 'E-mail' && email ? email.getAttribute('href') : href]);
+      box = document.createElement('div');
+      box.dataset.passportHeaderSocial='1';
+      box.className='passport-header-social';
+      box.setAttribute('aria-label','Redes sociais e e-mail da Passport Radio');
+      box.innerHTML=links.map(socialLink).join('');
     }
-    header.append(box);
+    // Retire only legacy social/contact icons in this masthead, never page content.
+    for (const node of header.querySelectorAll('.pb-mast__social')) {
+      if (!node.hidden) { node.hidden=true; node.dataset.passportLegacySocial='1'; }
+    }
+    const domains = ['whatsapp.com','wa.me','t.me','reddit.com','x.com','twitter.com','youtube.com','www.kwai.com','www.tiktok.com'];
+    for (const link of header.querySelectorAll('a[href]')) {
+      if (link.closest('[data-passport-header-social]')) continue;
+      const url = new URL(link.href,location.href);
+      if (url.protocol === 'mailto:' || domains.some(domain => url.hostname === domain || url.hostname.endsWith('.'+domain))) {
+        if (!link.hidden) { link.hidden=true; link.dataset.passportLegacySocial='1'; }
+      }
+    }
+    // Follow the dates when present. Other templates use their existing brand area.
+    const brand = mast.querySelector('.brand,.pe-brand,.mn-brand,.story-brand,.editorial-paper-wordmark,.news-mast__logo,.participe-paper-mast__logo,.pb-mast__logo') ||
+      [...mast.querySelectorAll('a')].find(el => /passport\s*radio/i.test(el.textContent.trim()) || /passport/i.test(el.getAttribute('aria-label') || ''));
+    const brandArea = brand && brand.parentElement !== mast ? [...mast.children].find(node => node.contains(brand)) : brand;
+    const anchor = years || brandArea;
+    if (anchor && anchor.parentElement && !anchor.parentElement.closest('nav')) {
+      if (anchor.nextElementSibling !== box) anchor.after(box);
+    } else if (box.parentElement !== mast) mast.prepend(box);
   }
   const brands = [['visa','Visa'],['mastercard','Mastercard'],['elo','Elo'],['amex','American Express'],['hipercard','Hipercard'],['diners','Diners Club']];
   const anchor = ([label,href]) => `<a href="${href}"${href.startsWith('https:')?' target="_blank" rel="noopener noreferrer"':''}>${label}</a>`;
@@ -67,7 +88,7 @@
     if (!footers.length) return; // Widget/player-only documents do not gain an institutional shell.
     const host = footers.find(node=>node.hasAttribute('data-passport-universal-footer')) || footers[0];
     if (!document.querySelector('link[data-passport-universal-footer-style]')) {
-      const css=document.createElement('link');css.rel='stylesheet';css.href='/css/passport-universal-footer.css?v=20261023b';css.dataset.passportUniversalFooterStyle='1';document.head.append(css);
+      const css=document.createElement('link');css.rel='stylesheet';css.href='/css/passport-universal-footer.css?v=20261023c';css.dataset.passportUniversalFooterStyle='1';document.head.append(css);
     }
     host.dataset.passportUniversalFooter='1';
     mountHeaderSocial();
