@@ -32,3 +32,13 @@ footer[data-passport-universal-footer]>:not([data-universal-footer-content]):not
 
 /* Corporate contact only: keep the address inside narrow footer columns. */
 #passport-universal-footer-content .puf-group a[href="mailto:contato@passportradio.online"]{max-width:100%;overflow-wrap:anywhere}
+
+/* Official social marks — shared footer and header. */
+#passport-universal-footer-content .puf-social-link{display:inline-flex;align-items:center;gap:9px;min-height:28px}
+.puf-social-icon{display:inline-block;width:20px;height:20px;flex:0 0 20px;background:var(--social-color);-webkit-mask:var(--social-mask) center/contain no-repeat;mask:var(--social-mask) center/contain no-repeat}
+#passport-universal-footer-content .puf-social-link:hover .puf-social-label{color:#C41E3A}
+.passport-header-social{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:5px 12px}
+.passport-header-social .puf-social-link{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:0;background:transparent;text-decoration:none}
+.passport-header-social .puf-social-icon{width:19px;height:19px;flex-basis:19px}
+.passport-header-social .puf-social-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.passport-header-social .puf-social-link:focus-visible{outline:2px solid #C41E3A;outline-offset:2px}
