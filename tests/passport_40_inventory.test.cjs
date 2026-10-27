@@ -8,7 +8,9 @@ test('112 existing radios and 11 program selectors survive unchanged; all 39 app
  for(const row of approved){const found=added.find(r=>r.id===row.id);assert.equal(found.name,row.name);assert.equal(found.stream,row.stream);assert.equal(found.section,row.passportGroup);assert.ok(!before.records.some(r=>r.name===row.name||r.stream===row.stream));}
 });
 test('protected engines, universal player, Bus, continuity, video, podcast and broadcast are byte-identical',()=>{
- for(const [p,hash] of Object.entries(before.hashes)){if(p==='js/world-radio-player.js')continue;assert.equal(crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),hash,p);}
+ // PR #569, commit e4ecb78: approved a-ha native MP4 support, already merged before C-Pop.
+ const approvedVideoHash='9ec235063f8d0c7ba5fbd38b8b0f7599479ea3a5032f9226066615578fb5ca2d';
+ for(const [p,hash] of Object.entries(before.hashes)){if(p==='js/world-radio-player.js')continue;assert.equal(crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),p==='js/passport-videos.js'?approvedVideoHash:hash,p);}
  const old=cp.execFileSync('git',['show',`${before.base}:js/world-radio-player.js`],{encoding:'utf8'});const current=fs.readFileSync('js/world-radio-player.js','utf8');
  assert.equal(current.slice(current.indexOf('const $=')),old.slice(old.indexOf('const $=')),'World transport body changed');
  const originalArray=old.slice(old.indexOf('const stations='),old.indexOf('\n];'));
