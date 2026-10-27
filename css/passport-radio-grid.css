@@ -73,3 +73,16 @@
 /* Fixed artwork/copy/wave order for every script; only the text follows its native direction. */
 #passport-radio-catalog .living-radio-card{direction:ltr}
 #passport-radio-catalog .living-radio-copy{text-align:start}
+
+/* Living Collection™ — Dance shares the approved cards; its header is scoped here. */
+#passport-radio-catalog .living-dance{margin:48px 0}
+#passport-radio-catalog .living-dance .living-category-header{height:auto;min-height:160px;padding:20px;grid-template-columns:minmax(0,1fr) 146px;gap:20px;overflow:visible}
+#passport-radio-catalog .living-dance .living-category-header:after{display:none}
+#passport-radio-catalog .living-dance .living-category-header h3{font-size:11px}
+#passport-radio-catalog .living-disco-ball{display:block;width:130px;height:130px;position:absolute;right:16px;top:50%;transform:translateY(-50%)}
+@media(max-width:600px){
+ #passport-radio-catalog .living-dance .living-category-header{min-height:120px;padding:12px;grid-template-columns:minmax(0,1fr) 100px;gap:10px}
+ #passport-radio-catalog .living-dance .living-category-header h3{font-size:11px}
+ #passport-radio-catalog .living-dance .living-category-deck{font-size:13px}
+ #passport-radio-catalog .living-disco-ball{width:90px;height:90px;right:10px}
+}

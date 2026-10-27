@@ -1,0 +1,1848 @@
+{
+  "mode": "desktop",
+  "layouts": [
+    {
+      "viewport": 1024,
+      "catalogWidth": 1024,
+      "columns": 3,
+      "header": 160,
+      "globe": 130,
+      "title": 30,
+      "gap": 16,
+      "hidden": 0,
+      "overflow": false,
+      "cards": [
+        {
+          "name": "Dance Nation™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Old School Groove™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Disco Fever™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Deep Vibes™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Club Classics™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Flash House Classics™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "One Way™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "House 90™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sam's Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "DJ Sessions™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Mix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Disco",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Flash House",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Mosimann Mix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Friday New Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Now™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sunset Beats™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Season Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance Season 2026™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Beach Club™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Full Moon Party™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Spring Break Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hi-Fi Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 500™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Pulse™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Electro Chill™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 2026™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Ibiza Nights™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Fresh Dance Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hits Remix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Club Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance Summer 2026™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance Mix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "EDM Select™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Deep Sessions™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 90s™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 2000™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 2010™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Classic Dance Select™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Electro Pulse™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Clubbin'™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hardstyle™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Techno Story™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Hits Select™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Afro House™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Electro Fitness™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sport Dance Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "David Guetta™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hugel™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Nightclub Frequencies™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        }
+      ]
+    },
+    {
+      "viewport": 1440,
+      "catalogWidth": 1320,
+      "columns": 4,
+      "header": 160,
+      "globe": 130,
+      "title": 30,
+      "gap": 16,
+      "hidden": 0,
+      "overflow": false,
+      "cards": [
+        {
+          "name": "Dance Nation™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Old School Groove™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Disco Fever™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Deep Vibes™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Club Classics™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Flash House Classics™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "One Way™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "House 90™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sam's Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "DJ Sessions™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Mix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Disco",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Flash House",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Mosimann Mix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Friday New Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Now™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sunset Beats™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Season Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance Season 2026™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Beach Club™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Full Moon Party™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Spring Break Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hi-Fi Dance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 500™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Pulse™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Electro Chill™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 2026™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Ibiza Nights™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Fresh Dance Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hits Remix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Club Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance Summer 2026™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance Mix™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "EDM Select™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Deep Sessions™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 90s™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 2000™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance 2010™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Classic Dance Select™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Electro Pulse™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Clubbin'™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hardstyle™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Extravadance™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Techno Story™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Dance Hits Select™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Afro House™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Electro Fitness™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sport Dance Hits™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "David Guetta™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Hugel™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Nightclub Frequencies™",
+          "height": 100,
+          "font": 14,
+          "overlap": false,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        }
+      ]
+    }
+  ],
+  "rotation": [
+    {
+      "time": 44141.70000000112,
+      "angle": 304.34,
+      "frames": 288,
+      "period": 40000,
+      "sha256": "7101a37cec50e836ce0a05ba0f0583299b0cf5b7d84312a9175281d5a0f0a3f6"
+    },
+    {
+      "time": 49157.09999999963,
+      "angle": 349.49,
+      "frames": 382,
+      "period": 40000,
+      "sha256": "3a56271ed8f3e60652f6f1942c1f06200a40082e6d1909355925ab3630fdfd61"
+    },
+    {
+      "time": 54339.40000000037,
+      "angle": 395.83,
+      "frames": 478,
+      "period": 40000,
+      "sha256": "dc22650976579308ea624f03593a22ca8a080e6051602800b7080d2711e94cff"
+    },
+    {
+      "time": 59412.90000000037,
+      "angle": 441.73,
+      "frames": 573,
+      "period": 40000,
+      "sha256": "2ed62f892e035026c42c216473ccda17b20d068fc323f6374bad20bf0c781e14"
+    },
+    {
+      "time": 64459.90000000037,
+      "angle": 487.18,
+      "frames": 668,
+      "period": 40000,
+      "sha256": "07987b261db0996ca1a92dafbec6e12fc9cb3e08d2e2d4ad42d657c287a44d42"
+    },
+    {
+      "time": 69510.20000000112,
+      "angle": 532.48,
+      "frames": 763,
+      "period": 40000,
+      "sha256": "c0e36f4f20f66b70ed9339f49a445a0cf84ead097b58975f4f5bd08b38b42369"
+    },
+    {
+      "time": 74557,
+      "angle": 578.08,
+      "frames": 860,
+      "period": 40000,
+      "sha256": "b01ffe1893bfed64937071f9db88d3697d05b350d8fb6be1653385901e724991"
+    },
+    {
+      "time": 79606.20000000112,
+      "angle": 623.67,
+      "frames": 956,
+      "period": 40000,
+      "sha256": "642d9b5e860606c67964b844c36d50685db575efeef6e14ff223c4cd3b7ee463"
+    },
+    {
+      "time": 84657.90000000037,
+      "angle": 668.97,
+      "frames": 1051,
+      "period": 40000,
+      "sha256": "c5e5ad16b6c5aa0a8c8795096b9fef78784eea7f8e81719a7e74818ad6f09e30"
+    }
+  ],
+  "errors": [],
+  "fonts": [
+    {
+      "font": "600 14px \"Instrument Sans\"",
+      "count": 1,
+      "loaded": true
+    },
+    {
+      "font": "700 30px \"Bodoni Moda\"",
+      "count": 1,
+      "loaded": true
+    },
+    {
+      "font": "400 15px \"Source Serif 4\"",
+      "count": 1,
+      "loaded": true
+    }
+  ],
+  "initial": {
+    "active": 0,
+    "radios": 412
+  },
+  "artworks": [
+    {
+      "id": "passport-dance-nation",
+      "source": "/images/radio/living-collection/passport-dance-nation.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-old-school-groove",
+      "source": "/images/radio/living-collection/passport-old-school-groove.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-disco-fever",
+      "source": "/images/radio/living-collection/passport-disco-fever.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-deep-vibes",
+      "source": "/images/radio/living-collection/passport-deep-vibes.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-club-classics",
+      "source": "/images/radio/living-collection/passport-club-classics.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-flash-house-classics",
+      "source": "/images/radio/living-collection/passport-flash-house-classics.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-one-way",
+      "source": "/images/radio/living-collection/passport-one-way.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-house-90",
+      "source": "/images/radio/living-collection/passport-house-90.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-sam-s-dance",
+      "source": "/images/radio/living-collection/passport-sam-s-dance.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-dj-sessions",
+      "source": "/images/radio/living-collection/passport-dj-sessions.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-dance-mix",
+      "source": "/images/radio/living-collection/passport-dance-mix.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "disco:main",
+      "source": "/images/radio/living-collection/disco%3Amain.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "flash:main",
+      "source": "/images/radio/living-collection/flash%3Amain.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2378",
+      "source": "/images/radio/living-collection/passport-nrj-2378.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1675",
+      "source": "/images/radio/living-collection/passport-nrj-1675.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2404",
+      "source": "/images/radio/living-collection/passport-nrj-2404.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1539",
+      "source": "/images/radio/living-collection/passport-nrj-1539.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2350",
+      "source": "/images/radio/living-collection/passport-nrj-2350.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2373",
+      "source": "/images/radio/living-collection/passport-nrj-2373.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2313",
+      "source": "/images/radio/living-collection/passport-nrj-2313.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2331",
+      "source": "/images/radio/living-collection/passport-nrj-2331.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2009",
+      "source": "/images/radio/living-collection/passport-nrj-2009.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1960",
+      "source": "/images/radio/living-collection/passport-nrj-1960.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1779",
+      "source": "/images/radio/living-collection/passport-nrj-1779.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-4",
+      "source": "/images/radio/living-collection/passport-nrj-4.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1665",
+      "source": "/images/radio/living-collection/passport-nrj-1665.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2128",
+      "source": "/images/radio/living-collection/passport-nrj-2128.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-53",
+      "source": "/images/radio/living-collection/passport-nrj-53.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2003",
+      "source": "/images/radio/living-collection/passport-nrj-2003.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-163",
+      "source": "/images/radio/living-collection/passport-nrj-163.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-221",
+      "source": "/images/radio/living-collection/passport-nrj-221.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2326",
+      "source": "/images/radio/living-collection/passport-nrj-2326.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1604",
+      "source": "/images/radio/living-collection/passport-nrj-1604.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-534",
+      "source": "/images/radio/living-collection/passport-nrj-534.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-558",
+      "source": "/images/radio/living-collection/passport-nrj-558.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-250",
+      "source": "/images/radio/living-collection/passport-nrj-250.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1699",
+      "source": "/images/radio/living-collection/passport-nrj-1699.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2364",
+      "source": "/images/radio/living-collection/passport-nrj-2364.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1568",
+      "source": "/images/radio/living-collection/passport-nrj-1568.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1268",
+      "source": "/images/radio/living-collection/passport-nrj-1268.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-24",
+      "source": "/images/radio/living-collection/passport-nrj-24.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1272",
+      "source": "/images/radio/living-collection/passport-nrj-1272.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-49",
+      "source": "/images/radio/living-collection/passport-nrj-49.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1191",
+      "source": "/images/radio/living-collection/passport-nrj-1191.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-278",
+      "source": "/images/radio/living-collection/passport-nrj-278.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2352",
+      "source": "/images/radio/living-collection/passport-nrj-2352.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-1322",
+      "source": "/images/radio/living-collection/passport-nrj-1322.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2330",
+      "source": "/images/radio/living-collection/passport-nrj-2330.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 1067,
+      "waveLeft": 1329,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-188",
+      "source": "/images/radio/living-collection/passport-nrj-188.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 95,
+      "waveLeft": 357,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-nrj-2293",
+      "source": "/images/radio/living-collection/passport-nrj-2293.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 419,
+      "waveLeft": 681,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    },
+    {
+      "id": "passport-add-20261012-radio-44",
+      "source": "/images/radio/living-collection/passport-add-20261012-radio-44.webp",
+      "natural": [
+        512,
+        512
+      ],
+      "radius": 8,
+      "imageLeft": 743,
+      "waveLeft": 1005,
+      "copyDirection": "ltr",
+      "dir": "ltr"
+    }
+  ],
+  "searchPreserved": true,
+  "first": {
+    "time": 1.008,
+    "decoded": 21316,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.8,
+    "active": 1
+  },
+  "after": {
+    "time": 41.660883,
+    "decoded": 671661,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.8,
+    "active": 1
+  },
+  "news": {
+    "same": true,
+    "paused": false,
+    "time": 1.643889,
+    "volume": 0.4
+  },
+  "home": {
+    "time": 3.035048,
+    "decoded": 53916,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.4,
+    "active": 1
+  },
+  "otherRadio": {
+    "time": 1.004089,
+    "decoded": 31974,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.4,
+    "active": 1
+  },
+  "reducedMotion": {
+    "first": "0",
+    "last": "0"
+  },
+  "offscreenPaused": true,
+  "worldGlobePreserved": true
+}

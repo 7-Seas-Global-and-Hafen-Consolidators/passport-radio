@@ -70,6 +70,15 @@
         globe.dataset.texture = '/images/radio/living-collection/earth-blue-marble.jpg';
         copy.append(heading, lead, deck); header.append(copy, globe); section.append(header);
       }
+      if (number === 1) {
+        section.classList.add('living-collection', 'living-dance');
+        const header = document.createElement('header'); header.className = 'living-category-header';
+        const copy = document.createElement('div'); copy.className = 'living-category-copy';
+        const lead = document.createElement('p'); lead.className = 'living-category-title'; lead.textContent = 'A pista nunca para.';
+        const deck = document.createElement('p'); deck.className = 'living-category-deck'; deck.textContent = 'Dance, disco, house, eurodance e os clássicos das pistas.';
+        const sphere = document.createElement('canvas'); sphere.className = 'living-disco-ball'; sphere.setAttribute('role','img'); sphere.setAttribute('aria-label','Bola espelhada tridimensional em rotação');
+        copy.append(heading, lead, deck); header.append(copy, sphere); section.append(header);
+      }
       rows.forEach(row => {
         const button = document.createElement('button'); button.type = 'button'; button.id = row.new ? row.id : `passport-card-${row.id.replace(/[^a-z0-9-]/gi, '-')}`;
         button.className = 'passport-radio-card'; button.dataset.radioId = row.id;
@@ -77,7 +86,7 @@
         button.lang = row.lang || 'pt-BR'; button.dir = row.dir || 'ltr'; button.setAttribute('aria-pressed', 'false');
         const icon = document.createElement('span'); icon.className = 'passport-radio-icon'; icon.textContent = row.kind === 'program' ? '▶' : '◉'; icon.setAttribute('aria-hidden', 'true');
         const name = document.createElement('span'); name.textContent = row.name;
-        if (number === 8) {
+        if (number === 8 || number === 1) {
           button.classList.add('living-radio-card'); button.setAttribute('aria-label',row.name);
           name.className = 'living-radio-name';
           // Presentation-only mapping: each stable ID owns its individual local artwork.
@@ -97,7 +106,7 @@
         });
         grid.append(button);
       });
-      if (number !== 8) section.append(heading);
+      if (number !== 8 && number !== 1) section.append(heading);
       section.append(grid); catalog.append(section);
     });
     const tv = document.createElement('a'); tv.href = '/clips-tv.html'; tv.className = 'passport-tv-door';
@@ -107,6 +116,9 @@
     player.after(catalog);
     if (!document.querySelector('script[data-living-earth]')) {
       const script = document.createElement('script'); script.src = '/js/passport-living-earth.js'; script.dataset.livingEarth = '1'; document.head.append(script);
+    }
+    if (!document.querySelector('script[data-living-disco]')) {
+      const script = document.createElement('script'); script.src = '/js/passport-living-disco.js'; script.dataset.livingDisco = '1'; document.head.append(script);
     }
     document.body.classList.add('passport-complete-catalog');
     sync();

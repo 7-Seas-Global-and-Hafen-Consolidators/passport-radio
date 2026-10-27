@@ -1,0 +1,124 @@
+{
+  "base": "2a737231ad368f5c56026ad19817d977e52f7c09",
+  "radioCount": 401,
+  "programSelectors": 11,
+  "dance": 51,
+  "worldDial": 42,
+  "uniqueArtworks": 51,
+  "unitTests": {
+    "pass": 18,
+    "fail": 0,
+    "skip": 0
+  },
+  "browser": "Chromium, desktop and mobile/touch emulation; not a physical phone",
+  "viewports": [
+    1024,
+    1440,
+    320,
+    375,
+    390,
+    768
+  ],
+  "rotation": {
+    "degrees": 364.63000000000005,
+    "elapsed_ms": 40516.199999999255,
+    "period_ms": 40000,
+    "frames": 9,
+    "evidence": "disco-rotation-real.gif"
+  },
+  "audio": {
+    "desktop": {
+      "first": {
+        "time": 1.008,
+        "decoded": 21316,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.8,
+        "active": 1
+      },
+      "after": {
+        "time": 41.660883,
+        "decoded": 671661,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.8,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "paused": false,
+        "time": 1.643889,
+        "volume": 0.4
+      },
+      "home": {
+        "time": 3.035048,
+        "decoded": 53916,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.4,
+        "active": 1
+      },
+      "otherRadio": {
+        "time": 1.004089,
+        "decoded": 31974,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.4,
+        "active": 1
+      }
+    },
+    "mobile": {
+      "first": {
+        "time": 1.016189,
+        "decoded": 21316,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.8,
+        "active": 1
+      },
+      "after": {
+        "time": 3.250069,
+        "decoded": 56842,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.8,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "paused": false,
+        "time": 1.578223,
+        "volume": 0.4
+      },
+      "home": {
+        "time": 2.983173,
+        "decoded": 52663,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.4,
+        "active": 1
+      },
+      "otherRadio": {
+        "time": 1.033555,
+        "decoded": 32601,
+        "paused": false,
+        "ready": 4,
+        "volume": 0.4,
+        "active": 1
+      }
+    }
+  },
+  "preservation": {
+    "inventory": true,
+    "streams": true,
+    "audioSystems": true,
+    "worldDialAssetsAndGlobe": true,
+    "otherCategories": true,
+    "selectionHandler": true,
+    "search": true,
+    "editorialHome": true,
+    "navigationFooter": true
+  },
+  "noMerge": true,
+  "noPublication": true
+}
