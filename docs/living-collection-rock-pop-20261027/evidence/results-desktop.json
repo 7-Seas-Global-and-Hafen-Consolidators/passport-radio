@@ -1,0 +1,8237 @@
+{
+  "mode": "desktop",
+  "physicalDevice": false,
+  "fontFixture": "institutional font files already in repository",
+  "layouts": [
+    {
+      "section": "passport-radio-family-2",
+      "width": 1024,
+      "columns": 3,
+      "catalog": 1024,
+      "overflow": false,
+      "hidden": 0,
+      "header": {
+        "height": 250,
+        "equipment": [
+          260,
+          195.4375
+        ],
+        "inside": true,
+        "overlap": false
+      },
+      "cards": [
+        {
+          "id": "passport-new-wave",
+          "name": "New Wave™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-rock-brasil-80",
+          "name": "Rock Brasil 80™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-rock-legends",
+          "name": "Rock Legends™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:0",
+          "name": "Power Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:1",
+          "name": "Symphonic Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:2",
+          "name": "Death Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:3",
+          "name": "Hair Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:4",
+          "name": "Nu Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:5",
+          "name": "Metalcore",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:6",
+          "name": "Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:7",
+          "name": "Harte Saite",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:0",
+          "name": "Gothic Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:1",
+          "name": "Rockabilly",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:2",
+          "name": "Country",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:3",
+          "name": "Emo",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:4",
+          "name": "Southern Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:5",
+          "name": "Alternative Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:6",
+          "name": "Britpop",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:7",
+          "name": "Stoner Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:8",
+          "name": "Folk Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:9",
+          "name": "Singer-Songwriter",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:10",
+          "name": "Electro Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:11",
+          "name": "Ska",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:12",
+          "name": "Classic Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:13",
+          "name": "Hard Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:14",
+          "name": "Punk",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:15",
+          "name": "Grunge",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:16",
+          "name": "Women of Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:17",
+          "name": "Blues",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:18",
+          "name": "College Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:19",
+          "name": "Prog Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:20",
+          "name": "Rock Oldies",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:0",
+          "name": "Mittelalter Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:1",
+          "name": "Rock Made in Germany",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:2",
+          "name": "Livestream National",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:3",
+          "name": "Livestream Hessen",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:4",
+          "name": "Livestream NRW",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:5",
+          "name": "Livestream Schleswig-Holstein",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:6",
+          "name": "Deutsch Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "brrock:main",
+          "name": "Rock Brasil",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-5",
+          "name": "Rock Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1280",
+          "name": "Pop Rock Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-249",
+          "name": "Classic Rock Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-68",
+          "name": "Metal Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1957",
+          "name": "Linkin Park™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-33",
+          "name": "Alternative Heritage™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "section": "passport-radio-family-3",
+      "width": 1024,
+      "columns": 3,
+      "catalog": 1024,
+      "overflow": false,
+      "hidden": 0,
+      "header": {
+        "height": 267.515625,
+        "equipment": [
+          300,
+          225.515625
+        ],
+        "inside": true,
+        "overlap": false
+      },
+      "cards": [
+        {
+          "id": "passport-love-songs",
+          "name": "Love Songs™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-pop-mix",
+          "name": "Pop Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-love-ballads",
+          "name": "Love Ballads™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-retro-crush",
+          "name": "Retro Crush™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-replay-80",
+          "name": "Replay 80™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:0",
+          "name": "Pop 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:1",
+          "name": "Soft 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:2",
+          "name": "Country 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:3",
+          "name": "Soft R&B 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:4",
+          "name": "R&B 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:5",
+          "name": "Hair Metal 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:0",
+          "name": "70er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:1",
+          "name": "80er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:2",
+          "name": "90er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:3",
+          "name": "2000er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "5060:main",
+          "name": "50s & 60s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "jg:main",
+          "name": "Jovem Guarda",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "hits:main",
+          "name": "Hits",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "nostalgia:main",
+          "name": "Nostalgia",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-global-pop",
+          "name": "Global Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-gold-hits",
+          "name": "Gold Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-top-hits",
+          "name": "Top Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-158",
+          "name": "French Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1",
+          "name": "Hits Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2213",
+          "name": "Fan Power™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2376",
+          "name": "Miley Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2377",
+          "name": "Dua Lipa Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2383",
+          "name": "Vianney Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2393",
+          "name": "Marine Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2384",
+          "name": "Eva Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2392",
+          "name": "Miki Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2382",
+          "name": "Adèle Castillon Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1087",
+          "name": "Friday New Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-307",
+          "name": "Hits Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2348",
+          "name": "Latino Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2403",
+          "name": "Vice City Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2339",
+          "name": "Fresh Season Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2349",
+          "name": "French Season Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2027",
+          "name": "Verão Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2292",
+          "name": "Que Calor™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2335",
+          "name": "Season Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2337",
+          "name": "Motivation Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2095",
+          "name": "Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2281",
+          "name": "Tropical Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2363",
+          "name": "Global Streams™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2362",
+          "name": "French Streams™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2053",
+          "name": "Morning Boost™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2311",
+          "name": "Fresh Sounds™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2280",
+          "name": "GOAT Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1974",
+          "name": "Hits 2025™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1990",
+          "name": "French Hits 2025™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1895",
+          "name": "Hi-Fi Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2318",
+          "name": "20 Years of Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1441",
+          "name": "Decade Top 100™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2269",
+          "name": "Summer Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2244",
+          "name": "Summer Classics™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1546",
+          "name": "TikTok Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1989",
+          "name": "Fresh Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2091",
+          "name": "Next Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2090",
+          "name": "Best Hits 2020–2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2074",
+          "name": "French Best 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1882",
+          "name": "Fuego Latino™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1809",
+          "name": "Number One Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1852",
+          "name": "Flashback Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1838",
+          "name": "10 Years of Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1680",
+          "name": "Fresh Hits Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-27",
+          "name": "New Releases™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1729",
+          "name": "10.000 Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1754",
+          "name": "Summer 500™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-67",
+          "name": "Latino Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1986",
+          "name": "Latino 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1705",
+          "name": "Latino Classics™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1655",
+          "name": "Hitlist Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-350",
+          "name": "Fiesta Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-331",
+          "name": "Made in France™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-524",
+          "name": "Euro Top 30™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1778",
+          "name": "Classic Hits Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1294",
+          "name": "Eighties Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-848",
+          "name": "Nineties Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2145",
+          "name": "Superstars 2000™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-849",
+          "name": "Millennium Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-891",
+          "name": "Hits 2010™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2360",
+          "name": "French Hits 2010™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2358",
+          "name": "Hits 2010–2015™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2359",
+          "name": "Hits 2015–2020™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-755",
+          "name": "Happy Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-168",
+          "name": "Party Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1362",
+          "name": "Disney Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1267",
+          "name": "French Hits Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-960",
+          "name": "French New Releases™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-26",
+          "name": "French Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-349",
+          "name": "Best Hits Ever™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-92",
+          "name": "No Repeat Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-526",
+          "name": "Latino Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-826",
+          "name": "Fiesta Latina™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-112",
+          "name": "Raï™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-224",
+          "name": "Oriental Sounds™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2130",
+          "name": "Pop 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2235",
+          "name": "French Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-3",
+          "name": "Pop Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1583",
+          "name": "Sport Motivation™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1297",
+          "name": "Workout Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2321",
+          "name": "Beach Running™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1298",
+          "name": "Running Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2246",
+          "name": "Road Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-58",
+          "name": "Workday Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-69",
+          "name": "Love Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-29",
+          "name": "Michael Jackson™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2341",
+          "name": "Katseye™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-975",
+          "name": "Shakira™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-446",
+          "name": "Miley™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1109",
+          "name": "Taylor Swift™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1906",
+          "name": "Lady Gaga™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-03",
+          "name": "Northern Frequencies™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-08",
+          "name": "Digital Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-15",
+          "name": "Northern Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-16",
+          "name": "Double Frequency™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-18",
+          "name": "Next Generation Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-36",
+          "name": "Pop Without Borders™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-45",
+          "name": "Paulista Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-49",
+          "name": "German Soundwave™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-50",
+          "name": "Memórias Musicais™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-52",
+          "name": "Universe™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "section": "passport-radio-family-2",
+      "width": 1440,
+      "columns": 4,
+      "catalog": 1320,
+      "overflow": false,
+      "hidden": 0,
+      "header": {
+        "height": 312.609375,
+        "equipment": [
+          360,
+          270.609375
+        ],
+        "inside": true,
+        "overlap": false
+      },
+      "cards": [
+        {
+          "id": "passport-new-wave",
+          "name": "New Wave™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-rock-brasil-80",
+          "name": "Rock Brasil 80™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-rock-legends",
+          "name": "Rock Legends™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:0",
+          "name": "Power Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:1",
+          "name": "Symphonic Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:2",
+          "name": "Death Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:3",
+          "name": "Hair Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:4",
+          "name": "Nu Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:5",
+          "name": "Metalcore",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:6",
+          "name": "Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:7",
+          "name": "Harte Saite",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:0",
+          "name": "Gothic Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:1",
+          "name": "Rockabilly",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:2",
+          "name": "Country",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:3",
+          "name": "Emo",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:4",
+          "name": "Southern Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:5",
+          "name": "Alternative Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:6",
+          "name": "Britpop",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:7",
+          "name": "Stoner Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:8",
+          "name": "Folk Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:9",
+          "name": "Singer-Songwriter",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:10",
+          "name": "Electro Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:11",
+          "name": "Ska",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:12",
+          "name": "Classic Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:13",
+          "name": "Hard Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:14",
+          "name": "Punk",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:15",
+          "name": "Grunge",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:16",
+          "name": "Women of Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:17",
+          "name": "Blues",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:18",
+          "name": "College Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:19",
+          "name": "Prog Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:20",
+          "name": "Rock Oldies",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:0",
+          "name": "Mittelalter Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:1",
+          "name": "Rock Made in Germany",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:2",
+          "name": "Livestream National",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:3",
+          "name": "Livestream Hessen",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:4",
+          "name": "Livestream NRW",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:5",
+          "name": "Livestream Schleswig-Holstein",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:6",
+          "name": "Deutsch Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "brrock:main",
+          "name": "Rock Brasil",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-5",
+          "name": "Rock Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1280",
+          "name": "Pop Rock Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-249",
+          "name": "Classic Rock Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-68",
+          "name": "Metal Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1957",
+          "name": "Linkin Park™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-33",
+          "name": "Alternative Heritage™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "section": "passport-radio-family-3",
+      "width": 1440,
+      "columns": 4,
+      "catalog": 1320,
+      "overflow": false,
+      "hidden": 0,
+      "header": {
+        "height": 357.71875,
+        "equipment": [
+          420,
+          315.71875
+        ],
+        "inside": true,
+        "overlap": false
+      },
+      "cards": [
+        {
+          "id": "passport-love-songs",
+          "name": "Love Songs™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-pop-mix",
+          "name": "Pop Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-love-ballads",
+          "name": "Love Ballads™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-retro-crush",
+          "name": "Retro Crush™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-replay-80",
+          "name": "Replay 80™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:0",
+          "name": "Pop 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:1",
+          "name": "Soft 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:2",
+          "name": "Country 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:3",
+          "name": "Soft R&B 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:4",
+          "name": "R&B 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:5",
+          "name": "Hair Metal 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:0",
+          "name": "70er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:1",
+          "name": "80er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:2",
+          "name": "90er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:3",
+          "name": "2000er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "5060:main",
+          "name": "50s & 60s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "jg:main",
+          "name": "Jovem Guarda",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "hits:main",
+          "name": "Hits",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "nostalgia:main",
+          "name": "Nostalgia",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-global-pop",
+          "name": "Global Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-gold-hits",
+          "name": "Gold Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-top-hits",
+          "name": "Top Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-158",
+          "name": "French Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1",
+          "name": "Hits Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2213",
+          "name": "Fan Power™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2376",
+          "name": "Miley Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2377",
+          "name": "Dua Lipa Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2383",
+          "name": "Vianney Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2393",
+          "name": "Marine Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2384",
+          "name": "Eva Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2392",
+          "name": "Miki Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2382",
+          "name": "Adèle Castillon Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1087",
+          "name": "Friday New Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-307",
+          "name": "Hits Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2348",
+          "name": "Latino Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2403",
+          "name": "Vice City Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2339",
+          "name": "Fresh Season Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2349",
+          "name": "French Season Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2027",
+          "name": "Verão Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2292",
+          "name": "Que Calor™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2335",
+          "name": "Season Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2337",
+          "name": "Motivation Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2095",
+          "name": "Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2281",
+          "name": "Tropical Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2363",
+          "name": "Global Streams™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2362",
+          "name": "French Streams™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2053",
+          "name": "Morning Boost™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2311",
+          "name": "Fresh Sounds™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2280",
+          "name": "GOAT Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1974",
+          "name": "Hits 2025™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1990",
+          "name": "French Hits 2025™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1895",
+          "name": "Hi-Fi Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2318",
+          "name": "20 Years of Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1441",
+          "name": "Decade Top 100™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2269",
+          "name": "Summer Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2244",
+          "name": "Summer Classics™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1546",
+          "name": "TikTok Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1989",
+          "name": "Fresh Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2091",
+          "name": "Next Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2090",
+          "name": "Best Hits 2020–2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2074",
+          "name": "French Best 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1882",
+          "name": "Fuego Latino™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1809",
+          "name": "Number One Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1852",
+          "name": "Flashback Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1838",
+          "name": "10 Years of Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1680",
+          "name": "Fresh Hits Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-27",
+          "name": "New Releases™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1729",
+          "name": "10.000 Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1754",
+          "name": "Summer 500™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-67",
+          "name": "Latino Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1986",
+          "name": "Latino 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1705",
+          "name": "Latino Classics™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1655",
+          "name": "Hitlist Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-350",
+          "name": "Fiesta Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-331",
+          "name": "Made in France™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-524",
+          "name": "Euro Top 30™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1778",
+          "name": "Classic Hits Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1294",
+          "name": "Eighties Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-848",
+          "name": "Nineties Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2145",
+          "name": "Superstars 2000™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-849",
+          "name": "Millennium Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-891",
+          "name": "Hits 2010™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2360",
+          "name": "French Hits 2010™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2358",
+          "name": "Hits 2010–2015™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2359",
+          "name": "Hits 2015–2020™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-755",
+          "name": "Happy Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-168",
+          "name": "Party Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1362",
+          "name": "Disney Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1267",
+          "name": "French Hits Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-960",
+          "name": "French New Releases™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-26",
+          "name": "French Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-349",
+          "name": "Best Hits Ever™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-92",
+          "name": "No Repeat Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-526",
+          "name": "Latino Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-826",
+          "name": "Fiesta Latina™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-112",
+          "name": "Raï™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-224",
+          "name": "Oriental Sounds™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2130",
+          "name": "Pop 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2235",
+          "name": "French Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-3",
+          "name": "Pop Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1583",
+          "name": "Sport Motivation™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1297",
+          "name": "Workout Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2321",
+          "name": "Beach Running™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1298",
+          "name": "Running Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2246",
+          "name": "Road Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-58",
+          "name": "Workday Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-69",
+          "name": "Love Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-29",
+          "name": "Michael Jackson™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2341",
+          "name": "Katseye™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-975",
+          "name": "Shakira™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-446",
+          "name": "Miley™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1109",
+          "name": "Taylor Swift™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1906",
+          "name": "Lady Gaga™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-03",
+          "name": "Northern Frequencies™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-08",
+          "name": "Digital Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-15",
+          "name": "Northern Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-16",
+          "name": "Double Frequency™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-18",
+          "name": "Next Generation Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-36",
+          "name": "Pop Without Borders™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-45",
+          "name": "Paulista Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-49",
+          "name": "German Soundwave™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-50",
+          "name": "Memórias Musicais™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-52",
+          "name": "Universe™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "section": "passport-radio-family-2",
+      "width": 1920,
+      "columns": 4,
+      "catalog": 1320,
+      "overflow": false,
+      "hidden": 0,
+      "header": {
+        "height": 312.609375,
+        "equipment": [
+          360,
+          270.609375
+        ],
+        "inside": true,
+        "overlap": false
+      },
+      "cards": [
+        {
+          "id": "passport-new-wave",
+          "name": "New Wave™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-rock-brasil-80",
+          "name": "Rock Brasil 80™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-rock-legends",
+          "name": "Rock Legends™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:0",
+          "name": "Power Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:1",
+          "name": "Symphonic Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:2",
+          "name": "Death Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:3",
+          "name": "Hair Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:4",
+          "name": "Nu Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:5",
+          "name": "Metalcore",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:6",
+          "name": "Metal",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "metalx:7",
+          "name": "Harte Saite",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:0",
+          "name": "Gothic Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:1",
+          "name": "Rockabilly",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:2",
+          "name": "Country",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:3",
+          "name": "Emo",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:4",
+          "name": "Southern Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:5",
+          "name": "Alternative Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:6",
+          "name": "Britpop",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:7",
+          "name": "Stoner Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:8",
+          "name": "Folk Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:9",
+          "name": "Singer-Songwriter",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:10",
+          "name": "Electro Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:11",
+          "name": "Ska",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:12",
+          "name": "Classic Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:13",
+          "name": "Hard Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:14",
+          "name": "Punk",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:15",
+          "name": "Grunge",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:16",
+          "name": "Women of Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:17",
+          "name": "Blues",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:18",
+          "name": "College Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:19",
+          "name": "Prog Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "rockx:20",
+          "name": "Rock Oldies",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:0",
+          "name": "Mittelalter Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:1",
+          "name": "Rock Made in Germany",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:2",
+          "name": "Livestream National",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:3",
+          "name": "Livestream Hessen",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:4",
+          "name": "Livestream NRW",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:5",
+          "name": "Livestream Schleswig-Holstein",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "germanyx:6",
+          "name": "Deutsch Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "brrock:main",
+          "name": "Rock Brasil",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-5",
+          "name": "Rock Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1280",
+          "name": "Pop Rock Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-249",
+          "name": "Classic Rock Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-68",
+          "name": "Metal Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1957",
+          "name": "Linkin Park™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-33",
+          "name": "Alternative Heritage™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "section": "passport-radio-family-3",
+      "width": 1920,
+      "columns": 4,
+      "catalog": 1320,
+      "overflow": false,
+      "hidden": 0,
+      "header": {
+        "height": 357.71875,
+        "equipment": [
+          420,
+          315.71875
+        ],
+        "inside": true,
+        "overlap": false
+      },
+      "cards": [
+        {
+          "id": "passport-love-songs",
+          "name": "Love Songs™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-pop-mix",
+          "name": "Pop Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-love-ballads",
+          "name": "Love Ballads™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-retro-crush",
+          "name": "Retro Crush™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-replay-80",
+          "name": "Replay 80™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:0",
+          "name": "Pop 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:1",
+          "name": "Soft 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:2",
+          "name": "Country 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:3",
+          "name": "Soft R&B 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:4",
+          "name": "R&B 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "80s:5",
+          "name": "Hair Metal 80s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:0",
+          "name": "70er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:1",
+          "name": "80er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:2",
+          "name": "90er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "decadesx:3",
+          "name": "2000er Rock",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "5060:main",
+          "name": "50s & 60s",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "jg:main",
+          "name": "Jovem Guarda",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "hits:main",
+          "name": "Hits",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "nostalgia:main",
+          "name": "Nostalgia",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-global-pop",
+          "name": "Global Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-gold-hits",
+          "name": "Gold Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-top-hits",
+          "name": "Top Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-158",
+          "name": "French Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1",
+          "name": "Hits Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2213",
+          "name": "Fan Power™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2376",
+          "name": "Miley Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2377",
+          "name": "Dua Lipa Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2383",
+          "name": "Vianney Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2393",
+          "name": "Marine Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2384",
+          "name": "Eva Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2392",
+          "name": "Miki Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2382",
+          "name": "Adèle Castillon Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1087",
+          "name": "Friday New Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-307",
+          "name": "Hits Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2348",
+          "name": "Latino Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2403",
+          "name": "Vice City Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2339",
+          "name": "Fresh Season Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2349",
+          "name": "French Season Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2027",
+          "name": "Verão Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2292",
+          "name": "Que Calor™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2335",
+          "name": "Season Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2337",
+          "name": "Motivation Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2095",
+          "name": "Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2281",
+          "name": "Tropical Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2363",
+          "name": "Global Streams™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2362",
+          "name": "French Streams™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2053",
+          "name": "Morning Boost™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2311",
+          "name": "Fresh Sounds™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2280",
+          "name": "GOAT Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1974",
+          "name": "Hits 2025™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1990",
+          "name": "French Hits 2025™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1895",
+          "name": "Hi-Fi Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2318",
+          "name": "20 Years of Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1441",
+          "name": "Decade Top 100™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2269",
+          "name": "Summer Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2244",
+          "name": "Summer Classics™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1546",
+          "name": "TikTok Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1989",
+          "name": "Fresh Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2091",
+          "name": "Next Hits 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2090",
+          "name": "Best Hits 2020–2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2074",
+          "name": "French Best 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1882",
+          "name": "Fuego Latino™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1809",
+          "name": "Number One Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1852",
+          "name": "Flashback Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1838",
+          "name": "10 Years of Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1680",
+          "name": "Fresh Hits Now™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-27",
+          "name": "New Releases™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1729",
+          "name": "10.000 Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1754",
+          "name": "Summer 500™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-67",
+          "name": "Latino Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1986",
+          "name": "Latino 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1705",
+          "name": "Latino Classics™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1655",
+          "name": "Hitlist Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-350",
+          "name": "Fiesta Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-331",
+          "name": "Made in France™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-524",
+          "name": "Euro Top 30™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1778",
+          "name": "Classic Hits Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1294",
+          "name": "Eighties Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-848",
+          "name": "Nineties Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2145",
+          "name": "Superstars 2000™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-849",
+          "name": "Millennium Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-891",
+          "name": "Hits 2010™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2360",
+          "name": "French Hits 2010™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2358",
+          "name": "Hits 2010–2015™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2359",
+          "name": "Hits 2015–2020™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-755",
+          "name": "Happy Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-168",
+          "name": "Party Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1362",
+          "name": "Disney Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1267",
+          "name": "French Hits Mix™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-960",
+          "name": "French New Releases™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-26",
+          "name": "French Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-349",
+          "name": "Best Hits Ever™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-92",
+          "name": "No Repeat Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-526",
+          "name": "Latino Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-826",
+          "name": "Fiesta Latina™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-112",
+          "name": "Raï™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-224",
+          "name": "Oriental Sounds™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2130",
+          "name": "Pop 2026™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2235",
+          "name": "French Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-3",
+          "name": "Pop Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1583",
+          "name": "Sport Motivation™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1297",
+          "name": "Workout Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2321",
+          "name": "Beach Running™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1298",
+          "name": "Running Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2246",
+          "name": "Road Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-58",
+          "name": "Workday Hits™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-69",
+          "name": "Love Select™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-29",
+          "name": "Michael Jackson™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-2341",
+          "name": "Katseye™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-975",
+          "name": "Shakira™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-446",
+          "name": "Miley™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1109",
+          "name": "Taylor Swift™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-nrj-1906",
+          "name": "Lady Gaga™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-03",
+          "name": "Northern Frequencies™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-08",
+          "name": "Digital Pulse™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-15",
+          "name": "Northern Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-16",
+          "name": "Double Frequency™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-18",
+          "name": "Next Generation Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-36",
+          "name": "Pop Without Borders™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-45",
+          "name": "Paulista Pop™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-49",
+          "name": "German Soundwave™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-50",
+          "name": "Memórias Musicais™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        },
+        {
+          "id": "passport-add-20261012-radio-52",
+          "name": "Universe™",
+          "image": [
+            512,
+            512,
+            68,
+            68
+          ],
+          "font": 14,
+          "radius": 12,
+          "height": 100,
+          "clipped": false,
+          "overlap": false
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "rock": {
+      "station": "passport-add-20261012-radio-33",
+      "active": 1,
+      "id": "world-audio",
+      "time": 1.013497,
+      "decoded": 10508,
+      "volume": 0.8,
+      "muted": false
+    },
+    "pop": {
+      "station": "80s:0",
+      "active": 1,
+      "id": "passport80sAudio",
+      "time": 1.007679,
+      "decoded": 21316,
+      "volume": 0.8,
+      "muted": false
+    },
+    "beforeNavigation": {
+      "active": 1,
+      "id": "passport80sAudio",
+      "time": 0.148351,
+      "decoded": 7523,
+      "volume": 0.4,
+      "muted": false
+    },
+    "news": {
+      "same": true,
+      "paused": false,
+      "time": 1.196727,
+      "active": 1,
+      "volume": 0.4
+    },
+    "home": {
+      "active": 1,
+      "id": "passport80sAudio",
+      "time": 2.388808,
+      "decoded": 43468,
+      "volume": 0.4,
+      "muted": false
+    }
+  },
+  "animations": {
+    "rock": {
+      "frames": [
+        {
+          "time": 65330.800000000745,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0.298375,
+            0
+          ]
+        },
+        {
+          "time": 65542.10000000056,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 65752.70000000019,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 65954.70000000019,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 66150,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 66352.30000000075,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 66551.40000000037,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 66754.90000000037,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0.425261
+          ]
+        },
+        {
+          "time": 66950.30000000075,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 67150.20000000019,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 67351.40000000037,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0.175618
+          ]
+        },
+        {
+          "time": 67557.30000000075,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0.176946,
+            0
+          ]
+        },
+        {
+          "time": 67751.5,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 67950.60000000056,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 68151.30000000075,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0.593018,
+            0
+          ]
+        },
+        {
+          "time": 68351.20000000019,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 68551.40000000037,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        },
+        {
+          "time": 68751.30000000075,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0.176689,
+            0
+          ]
+        },
+        {
+          "time": 68962.20000000019,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0.176946
+          ]
+        },
+        {
+          "time": 69173.90000000037,
+          "motion": "running",
+          "reels": [],
+          "hits": [
+            0,
+            0
+          ]
+        }
+      ],
+      "audioBefore": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 2.465131,
+        "decoded": 44721,
+        "volume": 0.4,
+        "muted": false
+      },
+      "audioAfter": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 6.417343,
+        "decoded": 107833,
+        "volume": 0.4,
+        "muted": false
+      },
+      "offscreenPaused": true
+    },
+    "pop": {
+      "frames": [
+        {
+          "time": 69517.30000000075,
+          "motion": "running",
+          "reels": [
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)",
+            "matrix(1, 0, 0, 1, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 69731.20000000019,
+          "motion": "running",
+          "reels": [
+            "matrix(0.963159, 0.268932, -0.268932, 0.963159, 0, 0)",
+            "matrix(0.978146, 0.207921, -0.207921, 0.978146, 0, 0)",
+            "matrix(0.974368, 0.224962, -0.224962, 0.974368, 0, 0)",
+            "matrix(0.98357, 0.180528, -0.180528, 0.98357, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 69944.70000000019,
+          "motion": "running",
+          "reels": [
+            "matrix(0.855401, 0.517966, -0.517966, 0.855401, 0, 0)",
+            "matrix(0.913568, 0.406687, -0.406687, 0.913568, 0, 0)",
+            "matrix(0.89882, 0.438318, -0.438318, 0.89882, 0, 0)",
+            "matrix(0.934842, 0.355063, -0.355063, 0.934842, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 70164.5,
+          "motion": "running",
+          "reels": [
+            "matrix(0.684568, 0.728949, -0.728949, 0.684568, 0, 0)",
+            "matrix(0.80903, 0.587767, -0.587767, 0.80903, 0, 0)",
+            "matrix(0.777161, 0.629302, -0.629302, 0.777161, 0, 0)",
+            "matrix(0.855374, 0.518011, -0.518011, 0.855374, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 70381.10000000056,
+          "motion": "running",
+          "reels": [
+            "matrix(0.463285, 0.88621, -0.88621, 0.463285, 0, 0)",
+            "matrix(0.669123, 0.743152, -0.743152, 0.669123, 0, 0)",
+            "matrix(0.615653, 0.788017, -0.788017, 0.615653, 0, 0)",
+            "matrix(0.747792, 0.663933, -0.663933, 0.747792, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 70597.20000000019,
+          "motion": "running",
+          "reels": [
+            "matrix(0.207981, 0.978133, -0.978133, 0.207981, 0, 0)",
+            "matrix(0.500047, 0.865998, -0.865998, 0.500047, 0, 0)",
+            "matrix(0.422672, 0.906283, -0.906283, 0.422672, 0, 0)",
+            "matrix(0.615699, 0.787982, -0.787982, 0.615699, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 70815.60000000056,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.0627617, 0.998029, -0.998029, -0.0627617, 0, 0)",
+            "matrix(0.309038, 0.95105, -0.95105, 0.309038, 0, 0)",
+            "matrix(0.207935, 0.978143, -0.978143, 0.207935, 0, 0)",
+            "matrix(0.463313, 0.886195, -0.886195, 0.463313, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 71034.30000000075,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.32876, 0.944413, -0.944413, -0.32876, 0, 0)",
+            "matrix(0.104615, 0.994513, -0.994513, 0.104615, 0, 0)",
+            "matrix(-0.0173585, 0.999849, -0.999849, -0.0173585, 0, 0)",
+            "matrix(0.29578, 0.955256, -0.955256, 0.29578, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 71257.90000000037,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.58766, 0.809108, -0.809108, -0.58766, 0, 0)",
+            "matrix(-0.120419, 0.992723, -0.992723, -0.120419, 0, 0)",
+            "matrix(-0.258695, 0.965959, -0.965959, -0.258695, 0, 0)",
+            "matrix(0.104631, 0.994511, -0.994511, 0.104631, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 71464.80000000075,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.770415, 0.637543, -0.637543, -0.770415, 0, 0)",
+            "matrix(-0.308904, 0.951093, -0.951093, -0.308904, 0, 0)",
+            "matrix(-0.453876, 0.891065, -0.891065, -0.453876, 0, 0)",
+            "matrix(-0.0626877, 0.998033, -0.998033, -0.0626877, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 71691.60000000056,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.921836, 0.387581, -0.387581, -0.921836, 0, 0)",
+            "matrix(-0.51384, 0.857886, -0.857886, -0.51384, 0, 0)",
+            "matrix(-0.656015, 0.754748, -0.754748, -0.656015, 0, 0)",
+            "matrix(-0.2554, 0.966835, -0.966835, -0.2554, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 71897.80000000075,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.989262, 0.146153, -0.146153, -0.989262, 0, 0)",
+            "matrix(-0.66909, 0.743181, -0.743181, -0.66909, 0, 0)",
+            "matrix(-0.7986, 0.601862, -0.601862, -0.7986, 0, 0)",
+            "matrix(-0.413061, 0.910703, -0.910703, -0.413061, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 72135,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.989289, -0.145972, 0.145972, -0.989289, 0, 0)",
+            "matrix(-0.818331, 0.574747, -0.574747, -0.818331, 0, 0)",
+            "matrix(-0.920468, 0.390818, -0.390818, -0.920468, 0, 0)",
+            "matrix(-0.582062, 0.813144, -0.813144, -0.582062, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 72355,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.904893, -0.425639, 0.425639, -0.904893, 0, 0)",
+            "matrix(-0.92613, 0.377205, -0.377205, -0.92613, 0, 0)",
+            "matrix(-0.987668, 0.156562, -0.156562, -0.987668, 0, 0)",
+            "matrix(-0.728898, 0.684622, -0.684622, -0.728898, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 72584.70000000019,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.757151, -0.65324, 0.65324, -0.757151, 0, 0)",
+            "matrix(-0.984306, 0.176472, -0.176472, -0.984306, 0, 0)",
+            "matrix(-0.997578, -0.0695583, 0.0695583, -0.997578, 0, 0)",
+            "matrix(-0.840481, 0.541842, -0.541842, -0.840481, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 72805.30000000075,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.535957, -0.844245, 0.844245, -0.535957, 0, 0)",
+            "matrix(-0.998838, -0.0481946, 0.0481946, -0.998838, 0, 0)",
+            "matrix(-0.951096, -0.308894, 0.308894, -0.951096, 0, 0)",
+            "matrix(-0.929739, 0.36822, -0.36822, -0.929739, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 73022,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.28926, -0.957251, 0.957251, -0.28926, 0, 0)",
+            "matrix(-0.967007, -0.254749, 0.254749, -0.967007, 0, 0)",
+            "matrix(-0.85727, -0.514868, 0.514868, -0.85727, 0, 0)",
+            "matrix(-0.980924, 0.19439, -0.19439, -0.980924, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 73234.70000000019,
+          "motion": "running",
+          "reels": [
+            "matrix(-0.0419882, -0.999118, 0.999118, -0.0419882, 0, 0)",
+            "matrix(-0.900006, -0.435878, 0.435878, -0.900006, 0, 0)",
+            "matrix(-0.731418, -0.68193, 0.68193, -0.731418, 0, 0)",
+            "matrix(-0.999608, 0.0279967, -0.0279967, -0.999608, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 73455.40000000037,
+          "motion": "running",
+          "reels": [
+            "matrix(0.248418, -0.968653, 0.968653, 0.248418, 0, 0)",
+            "matrix(-0.779809, -0.626017, 0.626017, -0.779809, 0, 0)",
+            "matrix(-0.544835, -0.838543, 0.838543, -0.544835, 0, 0)",
+            "matrix(-0.986027, -0.166585, 0.166585, -0.986027, 0, 0)"
+          ],
+          "hits": []
+        },
+        {
+          "time": 73665.70000000019,
+          "motion": "running",
+          "reels": [
+            "matrix(0.481618, -0.876381, 0.876381, 0.481618, 0, 0)",
+            "matrix(-0.644933, -0.764239, 0.764239, -0.644933, 0, 0)",
+            "matrix(-0.358488, -0.933534, 0.933534, -0.358488, 0, 0)",
+            "matrix(-0.94441, -0.328769, 0.328769, -0.94441, 0, 0)"
+          ],
+          "hits": []
+        }
+      ],
+      "audioBefore": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 6.662413,
+        "decoded": 112013,
+        "volume": 0.4,
+        "muted": false
+      },
+      "audioAfter": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 10.930424,
+        "decoded": 180140,
+        "volume": 0.4,
+        "muted": false
+      },
+      "offscreenPaused": true
+    }
+  },
+  "attempts": [
+    {
+      "station": "rockx:12",
+      "result": "playback not confirmed within test timeout"
+    }
+  ],
+  "errors": [],
+  "fonts": [
+    {
+      "font": "600 14px \"Instrument Sans\"",
+      "loaded": true
+    },
+    {
+      "font": "700 30px \"Bodoni Moda\"",
+      "loaded": true
+    },
+    {
+      "font": "400 15px \"Source Serif 4\"",
+      "loaded": true
+    }
+  ],
+  "worldGlobePreserved": true,
+  "danceSpherePreserved": true,
+  "searchPreserved": true
+}

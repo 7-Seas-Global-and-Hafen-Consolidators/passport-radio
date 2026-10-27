@@ -1,0 +1,179 @@
+{
+  "base": "14daec637ff970bd0b505276cc944be8d189bedc",
+  "referenceCounts": {
+    "rock": 47,
+    "pop": 115,
+    "total": 162
+  },
+  "actualInventoryCounts": {
+    "rock": 46,
+    "pop": 123,
+    "total": 169,
+    "globalRadios": 401,
+    "programSelectors": 11
+  },
+  "uniquePhotographs": 169,
+  "photographsBytes": 6803186,
+  "maximumPhotoBytes": 99178,
+  "unitTests": {
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0
+  },
+  "finalArtworkValidation": {
+    "passed": 2,
+    "failed": 0
+  },
+  "browser": {
+    "desktop": {
+      "sectionsVerified": 6,
+      "widths": [
+        1024,
+        1440,
+        1920
+      ]
+    },
+    "mobileEmulation": {
+      "sectionsVerified": 8,
+      "widths": [
+        585,
+        768
+      ]
+    },
+    "physicalPhone": false,
+    "fonts": "institutional font files already present in the repository; isolated test fixture"
+  },
+  "playback": {
+    "desktop": {
+      "rock": {
+        "station": "passport-add-20261012-radio-33",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.013497,
+        "decoded": 10508,
+        "volume": 0.8,
+        "muted": false
+      },
+      "pop": {
+        "station": "80s:0",
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 1.007679,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "beforeNavigation": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 0.148351,
+        "decoded": 7523,
+        "volume": 0.4,
+        "muted": false
+      },
+      "news": {
+        "same": true,
+        "paused": false,
+        "time": 1.196727,
+        "active": 1,
+        "volume": 0.4
+      },
+      "home": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 2.388808,
+        "decoded": 43468,
+        "volume": 0.4,
+        "muted": false
+      }
+    },
+    "mobile": {
+      "rock": {
+        "station": "passport-nrj-249",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.011237,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "pop": {
+        "station": "80s:0",
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 1.007754,
+        "decoded": 21315,
+        "volume": 0.8,
+        "muted": false
+      },
+      "beforeNavigation": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 0.214025,
+        "decoded": 8359,
+        "volume": 0.4,
+        "muted": false
+      },
+      "news": {
+        "same": true,
+        "paused": false,
+        "time": 1.266121,
+        "active": 1,
+        "volume": 0.4
+      },
+      "home": {
+        "active": 1,
+        "id": "passport80sAudio",
+        "time": 2.414054,
+        "decoded": 43885,
+        "volume": 0.4,
+        "muted": false
+      }
+    }
+  },
+  "unconfirmedAttempts": {
+    "desktop": [
+      {
+        "station": "rockx:12",
+        "result": "playback not confirmed within test timeout"
+      }
+    ],
+    "mobile": [
+      {
+        "station": "rockx:12",
+        "reason": "TimeoutError: page.waitForFunction: Timeout 20000ms exceeded.",
+        "state": {
+          "active": 1,
+          "id": "passportCrecheAudio",
+          "time": 0,
+          "decoded": 0,
+          "volume": 0.8,
+          "muted": false
+        }
+      },
+      {
+        "station": "passport-add-20261012-radio-33",
+        "reason": "TimeoutError: page.waitForFunction: Timeout 20000ms exceeded.",
+        "state": {
+          "active": 1,
+          "id": "world-audio",
+          "time": 0.270793,
+          "decoded": 4739,
+          "volume": 0.8,
+          "muted": false
+        }
+      }
+    ]
+  },
+  "decorativeAudio": false,
+  "preserved": {
+    "worldDial": true,
+    "dance": true,
+    "inventoryAndStreams": true,
+    "playbackSystems": true,
+    "navigationFooter": true,
+    "otherCategoriesAndPages": true
+  },
+  "noMerge": true,
+  "noPublication": true
+}
