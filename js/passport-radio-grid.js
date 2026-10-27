@@ -14,6 +14,7 @@
       button.disabled = !runtime?.ready;
       const active = state && state.family === button.dataset.family && String(state.index) === button.dataset.index;
       button.setAttribute('aria-pressed', String(!!active));
+      if (button.classList.contains('living-radio-card')) button.dataset.playing = String(!!active && !!runtime?.state().playing);
     });
   }
   function mount() {
@@ -59,6 +60,16 @@
       const shortcut = document.createElement('a'); shortcut.href = `#${section.id}`; shortcut.textContent = shortcutLabels[number]; shortcut.setAttribute('aria-label', label); shortcuts.append(shortcut);
       const heading = document.createElement('h3'); heading.textContent = label;
       const grid = document.createElement('div'); grid.className = 'passport-radio-grid';
+      if (number === 8) {
+        section.classList.add('living-collection');
+        const header = document.createElement('header'); header.className = 'living-category-header';
+        const copy = document.createElement('div'); copy.className = 'living-category-copy';
+        const lead = document.createElement('p'); lead.className = 'living-category-title'; lead.textContent = 'O mundo está no ar.';
+        const deck = document.createElement('p'); deck.className = 'living-category-deck'; deck.textContent = 'Sons de todos os continentes.';
+        const globe = document.createElement('canvas'); globe.className = 'living-earth'; globe.setAttribute('role','img'); globe.setAttribute('aria-label','Globo terrestre tridimensional em rotação');
+        globe.dataset.texture = '/images/radio/living-collection/earth-blue-marble.jpg';
+        copy.append(heading, lead, deck); header.append(copy, globe); section.append(header);
+      }
       rows.forEach(row => {
         const button = document.createElement('button'); button.type = 'button'; button.id = row.new ? row.id : `passport-card-${row.id.replace(/[^a-z0-9-]/gi, '-')}`;
         button.className = 'passport-radio-card'; button.dataset.radioId = row.id;
@@ -66,7 +77,18 @@
         button.lang = row.lang || 'pt-BR'; button.dir = row.dir || 'ltr'; button.setAttribute('aria-pressed', 'false');
         const icon = document.createElement('span'); icon.className = 'passport-radio-icon'; icon.textContent = row.kind === 'program' ? '▶' : '◉'; icon.setAttribute('aria-hidden', 'true');
         const name = document.createElement('span'); name.textContent = row.name;
-        button.append(icon, name);
+        if (number === 8) {
+          button.classList.add('living-radio-card'); button.setAttribute('aria-label',row.name);
+          name.className = 'living-radio-name';
+          // Presentation-only mapping: each stable ID owns its individual local artwork.
+          const image = document.createElement('img'); image.className = 'living-radio-cover'; image.alt = ''; image.width = 68; image.height = 68; image.loading = 'lazy'; image.decoding = 'async';
+          image.src = row.artwork || `/images/radio/living-collection/${encodeURIComponent(row.id)}.webp`;
+          const description = document.createElement('span'); description.className = 'living-radio-description'; description.textContent = row.category;
+          const copy = document.createElement('span'); copy.className = 'living-radio-copy'; copy.dir = row.dir || 'ltr'; copy.append(name,description);
+          const waves = document.createElement('span'); waves.className = 'living-radio-waves'; waves.setAttribute('aria-hidden','true');
+          for (let i=0;i<4;i++) waves.append(document.createElement('i'));
+          button.append(image,copy,waves);
+        } else button.append(icon, name);
         button.addEventListener('click', () => {
           const runtime = window.PassportAudioRuntime;
           if (!runtime?.ready) return;
@@ -75,13 +97,17 @@
         });
         grid.append(button);
       });
-      section.append(heading, grid); catalog.append(section);
+      if (number !== 8) section.append(heading);
+      section.append(grid); catalog.append(section);
     });
     const tv = document.createElement('a'); tv.href = '/clips-tv.html'; tv.className = 'passport-tv-door';
     const tvName = document.createElement('strong'); tvName.textContent = 'Passport Clips TV™';
     const tvAction = document.createElement('span'); tvAction.textContent = 'CLIPES, HISTÓRIAS E MÚSICA · ASSISTIR →';
     tv.append(tvName, tvAction); catalog.append(tv);
     player.after(catalog);
+    if (!document.querySelector('script[data-living-earth]')) {
+      const script = document.createElement('script'); script.src = '/js/passport-living-earth.js'; script.dataset.livingEarth = '1'; document.head.append(script);
+    }
     document.body.classList.add('passport-complete-catalog');
     sync();
   }

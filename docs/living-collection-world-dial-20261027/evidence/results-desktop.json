@@ -1,0 +1,983 @@
+{
+  "mode": "desktop",
+  "layouts": [
+    {
+      "viewport": 1024,
+      "catalogWidth": 1024,
+      "columns": 3,
+      "header": 160,
+      "globe": 130,
+      "title": 30,
+      "gap": 16,
+      "hidden": 0,
+      "overflow": false,
+      "cards": [
+        {
+          "name": "Radio Paraguay",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio France",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Québec",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "한국 음악 라디오",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Türkiye Müzik Radyosu",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "中国音乐电台",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "中文流行音樂 · C-Pop ™️",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Українське музичне радіо",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "رادیو موسیقی ایران",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Venezuela",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Rádio África",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "پاکستانی موسیقی ریڈیو",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Muzică Românească",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Suomalainen rockradio",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "České rockové rádio",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Lietuvos roko radijas",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Ελληνικό ροκ ραδιόφωνο",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "רדיו מוזיקה ישראלית",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Italia",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "PASSPORT CATALUNYA™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "PASSPORT MÉXICO™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "パスポート日本™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "พาสปอร์ตประเทศไทย™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "ПАСПОРТ ҚАЗАҚСТАН™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "UK Hits",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Japan Hits™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sakura Revolution™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Neko Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Midnight Anime™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Otaku Dimension™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Eastern Fusion™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Anime After Dark™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Keystone Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Pacific Northwest Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Desert Southwest Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Granite State Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Silver State Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Big Sky Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Heartland Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Magnolia State Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Lone Star Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Eastern Gold™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        }
+      ]
+    },
+    {
+      "viewport": 1440,
+      "catalogWidth": 1320,
+      "columns": 4,
+      "header": 160,
+      "globe": 130,
+      "title": 30,
+      "gap": 16,
+      "hidden": 0,
+      "overflow": false,
+      "cards": [
+        {
+          "name": "Radio Paraguay",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio France",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Québec",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "한국 음악 라디오",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Türkiye Müzik Radyosu",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "中国音乐电台",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "中文流行音樂 · C-Pop ™️",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Українське музичне радіо",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "رادیو موسیقی ایران",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Venezuela",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Rádio África",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "پاکستانی موسیقی ریڈیو",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Muzică Românească",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Suomalainen rockradio",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "České rockové rádio",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Lietuvos roko radijas",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Ελληνικό ροκ ραδιόφωνο",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "רדיו מוזיקה ישראלית",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Radio Italia",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "PASSPORT CATALUNYA™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "PASSPORT MÉXICO™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "パスポート日本™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "พาสปอร์ตประเทศไทย™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "ПАСПОРТ ҚАЗАҚСТАН™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "UK Hits",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Japan Hits™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Sakura Revolution™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Neko Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Midnight Anime™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Otaku Dimension™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Eastern Fusion™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Anime After Dark™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Keystone Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Pacific Northwest Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Desert Southwest Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Granite State Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Silver State Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Big Sky Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Heartland Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Magnolia State Sounds™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Lone Star Frequencies™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        },
+        {
+          "name": "Eastern Gold™",
+          "height": 100,
+          "font": 14,
+          "clipped": false,
+          "thumb": 68,
+          "radius": 12,
+          "wave": 16
+        }
+      ]
+    }
+  ],
+  "rotation": [
+    {
+      "time": 52794.59999999998,
+      "angle": 155.39,
+      "frames": 334,
+      "period": 40000,
+      "sha256": "a62004d3aed54f9fe06411106a5c445c7f3a5265508bb07842fd9d73ac4d8cd8"
+    },
+    {
+      "time": 54827.69999999995,
+      "angle": 173.84,
+      "frames": 375,
+      "period": 40000,
+      "sha256": "af4cb7db0f79e9564fe1873ed2c2f95ad041b7810317aea407e55e610fd547d3"
+    },
+    {
+      "time": 56867.09999999998,
+      "angle": 192.29,
+      "frames": 416,
+      "period": 40000,
+      "sha256": "f949256f9770c9f5fa2ed957041793e42a3295cb781c9b45049ee928e949ade1"
+    },
+    {
+      "time": 58887.69999999995,
+      "angle": 210.29,
+      "frames": 456,
+      "period": 40000,
+      "sha256": "5eb3b56b370fa86db1eafa2ff61aa19ee7caf91a88dae7d10246f261d7c2c136"
+    },
+    {
+      "time": 60915.40000000002,
+      "angle": 228.74,
+      "frames": 497,
+      "period": 40000,
+      "sha256": "6ac04e8b3c6002b8ea55cabb2cc3f2768dd3ecb3463b8e824e5c85eea5c088aa"
+    },
+    {
+      "time": 62944.5,
+      "angle": 246.74,
+      "frames": 537,
+      "period": 40000,
+      "sha256": "3790e59348ebeeceba9505e3233e7663e7c0fc1403d9cc00e87f3e4b7dd856cd"
+    },
+    {
+      "time": 64996.30000000005,
+      "angle": 265.19,
+      "frames": 578,
+      "period": 40000,
+      "sha256": "973bd392ea38a59fe54b3fd474fbf37e580a2992f230448dfe1dafd401b1e4d2"
+    },
+    {
+      "time": 67036.80000000005,
+      "angle": 283.79,
+      "frames": 619,
+      "period": 40000,
+      "sha256": "b6b720dd2a62378dbcfd91da6f5da4c413bdf26ea518b27a88efb0bd8274100d"
+    },
+    {
+      "time": 69063.09999999998,
+      "angle": 301.79,
+      "frames": 659,
+      "period": 40000,
+      "sha256": "b178493d1cf0b6edb4a2b5f75cf2f75ace8ab1bc79dd2aca1f99af49ecfd676a"
+    },
+    {
+      "time": 71091.69999999995,
+      "angle": 320.24,
+      "frames": 700,
+      "period": 40000,
+      "sha256": "b7ccb93a675f286428ef34918dc54c0f6fd64354ae6fc0421f7e435044b80009"
+    },
+    {
+      "time": 73112.09999999998,
+      "angle": 338.24,
+      "frames": 740,
+      "period": 40000,
+      "sha256": "64eedc80917dc58cb6fb4a306bec23f77ec2ef869e4794375a58e402db09e5a4"
+    },
+    {
+      "time": 75144.59999999998,
+      "angle": 356.69,
+      "frames": 781,
+      "period": 40000,
+      "sha256": "4778133317a0bd6a5faf63de9ad1c6c8ee25aa297892a8c228b61f1e0d4ea244"
+    },
+    {
+      "time": 77171.5,
+      "angle": 374.83,
+      "frames": 821,
+      "period": 40000,
+      "sha256": "48ab5936320787d300bb8c706f8c2479440496a3f603136741ba2498c0a3870c"
+    },
+    {
+      "time": 79204.80000000005,
+      "angle": 393.28,
+      "frames": 862,
+      "period": 40000,
+      "sha256": "643cc85a15d25ff53c162d3f8f925a1a7cec222b3682f7daa38f1ed0b6188e36"
+    },
+    {
+      "time": 81222.90000000002,
+      "angle": 411.28,
+      "frames": 902,
+      "period": 40000,
+      "sha256": "3baa190fad5c8a20ad49136f62052c0665febdaf814d94f5e173771726191f5d"
+    },
+    {
+      "time": 83249,
+      "angle": 429.73,
+      "frames": 943,
+      "period": 40000,
+      "sha256": "78b1916caba534e18b3ddb339ae407cac55e82d9c1ff32145f34f027ae58f11f"
+    },
+    {
+      "time": 85271.30000000005,
+      "angle": 447.73,
+      "frames": 983,
+      "period": 40000,
+      "sha256": "b723b8da0f971e49789578389c0c0e8a5593b112af539dd00fd312f149072b9b"
+    },
+    {
+      "time": 87310.09999999998,
+      "angle": 466.18,
+      "frames": 1024,
+      "period": 40000,
+      "sha256": "95ebd06b06c28c9762f99e53597ebac79ef2cda85d20c2c0a7680bc863fc8dfb"
+    },
+    {
+      "time": 89325.90000000002,
+      "angle": 484.18,
+      "frames": 1064,
+      "period": 40000,
+      "sha256": "3020a2d71e35fa59aec0fb1f7bed1264cead9a43ea49491567b790ebe4d29ab5"
+    },
+    {
+      "time": 91370.19999999995,
+      "angle": 502.63,
+      "frames": 1105,
+      "period": 40000,
+      "sha256": "49ae97b6193268b742dfad232b730ba2adc434fb1179c08e8bf5ffc7b9a96e91"
+    },
+    {
+      "time": 93411.80000000005,
+      "angle": 521.08,
+      "frames": 1146,
+      "period": 40000,
+      "sha256": "9afa862ffaa8032062f2c856a2e992a2994a63303ab24f7ecaa132bbc9863daa"
+    }
+  ],
+  "errors": [],
+  "initial": {
+    "active": 0,
+    "radios": 412
+  },
+  "first": {
+    "time": 1.937083,
+    "decoded": 4850,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.8,
+    "active": 1
+  },
+  "after": {
+    "time": 42.482899,
+    "decoded": 657646,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.8,
+    "active": 1
+  },
+  "news": {
+    "same": true,
+    "paused": false,
+    "time": 3.095287,
+    "volume": 0.4
+  },
+  "home": {
+    "time": 4.633156,
+    "decoded": 55799,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.4,
+    "active": 1
+  },
+  "otherRadio": {
+    "time": 1.010706,
+    "decoded": 31974,
+    "paused": false,
+    "ready": 4,
+    "volume": 0.4,
+    "active": 1
+  },
+  "reducedMotion": {
+    "first": "0",
+    "last": "0"
+  }
+}
