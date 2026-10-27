@@ -1,0 +1,26 @@
+✔ 112 existing radios and 11 program selectors survive unchanged; all 39 approved historical additions plus the current expanded catalog (6.025993ms)
+✔ protected engines, universal player, Bus, continuity, video, podcast and broadcast are byte-identical (9.757671ms)
+✔ generated public inventory matches actual engine catalogues (36.837067ms)
+✔ Living Collection: all 401 radios, 11 selectors, streams, engines and editorial shell preserved (54.443279ms)
+✔ Living Collection: whole-card selection delegates byte-for-byte to the existing universal selector (11.698003ms)
+✔ Living Collection: original category order and non-pilot styling preserved (11.669937ms)
+✔ World artwork: exact 42 real IDs in original order, unchanged names and one unique local cover each (0.781961ms)
+✔ World artwork: all 42 sources are real 512-square profiled WebP under 100 KiB (6.337208ms)
+✔ World artwork: photographic globe and full radio inventory remain byte-identical to pilot (31.745357ms)
+✔ Dance: all 401 radios, 51 Dance identities, streams and protected systems unchanged (71.460605ms)
+✔ Dance: World Dial covers and approved evidence are byte-identical (21.90524ms)
+✔ Dance: original click handler, search, World Dial header and existing styles preserved exactly (8.998473ms)
+✔ Dance: exactly one distinct local cover per real ID in original order (1.7494ms)
+✔ Dance: all cover sources are 512x512 sRGB WebP, quality 82–88, below 100 KiB (5.209207ms)
+✔ 154 previous radios and every program preserved exactly (4.760342ms)
+✔ six distinct approved additions; Big B existing channel retained (12.110496ms)
+✔ existing transport restored exactly; protected files unchanged (41.893957ms)
+✔ C-Pop replacement keeps its original identity, language, position and inventory mapping (1.406446ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 431.451894
