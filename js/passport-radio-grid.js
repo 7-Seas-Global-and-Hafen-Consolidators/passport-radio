@@ -80,12 +80,11 @@
         if (number === 8) {
           button.classList.add('living-radio-card'); button.setAttribute('aria-label',row.name);
           name.className = 'living-radio-name';
-          // Art comes only from the approved reference; it never identifies a record or a stream.
-          const covers = {fr:'france',ca:'quebec',cn:'china','passport-chinese-pop':'china',mx:'mexico',catalunya:'catalunya',jp:'japan','passport-japan-hits':'japan'};
+          // Presentation-only mapping: each stable ID owns its individual local artwork.
           const image = document.createElement('img'); image.className = 'living-radio-cover'; image.alt = ''; image.width = 68; image.height = 68; image.loading = 'lazy'; image.decoding = 'async';
-          image.src = row.artwork || `/images/radio/living-collection/${covers[row.id] || 'world'}.webp`;
+          image.src = row.artwork || `/images/radio/living-collection/${encodeURIComponent(row.id)}.webp`;
           const description = document.createElement('span'); description.className = 'living-radio-description'; description.textContent = row.category;
-          const copy = document.createElement('span'); copy.className = 'living-radio-copy'; copy.append(name,description);
+          const copy = document.createElement('span'); copy.className = 'living-radio-copy'; copy.dir = row.dir || 'ltr'; copy.append(name,description);
           const waves = document.createElement('span'); waves.className = 'living-radio-waves'; waves.setAttribute('aria-hidden','true');
           for (let i=0;i<4;i++) waves.append(document.createElement('i'));
           button.append(image,copy,waves);

@@ -1,52 +1,55 @@
-# Magazine Grid | Living Collection™ — World Dial pilot
+# World Dial™ — Living Collection™
 
-Base: `db5322f53ea69c367dff6d3c268a01ba66e1a234` (`main`, after Dynamic 101).
+PR de trabalho: **#574** · branch `feat/living-collection-world-dial-20261027`.
+Correção artística continuada sobre `a607f91421d037df15285401d4625bdac06e46e8`, sem reconstruir o piloto.
 
-Scope: the existing **42 World Dial stations**, driven by the original public inventory. The remaining categories retain their card markup, category order, names and selectors. All **401 radio records and 11 program selectors** remain present. The catalog container adopts the requested outer maximum of 1320 px. No station, name, category, route, index or stream was edited.
+## 42 rádios, 42 capas
 
-## Reference and art
+As 42 miniaturas agora são composições musicais originais e individualizadas. A ordem, os IDs e os nomes vêm do inventário existente. Cada ID aponta para seu próprio arquivo local `images/radio/living-collection/<id>.webp`, sem capa genérica de reserva e sem dependência externa de imagens.
 
-Owner-approved reference: `image(20261027-142309).png`, SHA-256 `0f0761679788a9e4cb9ab7ef92386c633c2b932ef85ebf5f448d6430b9289aef`. Existing-home comparison: `image(20261027-141435).png`.
+O [manifesto](artwork-manifest.json) registra, para cada rádio, ID, nome oficial, caminho, tema musical/cultural e confirmação de identidade artística individual. Também registra dimensões, perfil de cor, peso e integridade dos arquivos.
 
-The seven thumbnail assets are direct crops of the approved World Dial artwork, not newly invented covers or claims about album artwork. France, Québec, China, Mexico, Catalunya and Japan use the matching territorial artwork; other stations use the approved World Dial cover. The mountain image in the reference is used for Japan, not attributed to Paraguay. Artwork is decorative and has empty alternative text; the full original station name remains its accessible label.
+- **42/42 arquivos WebP**, 512×512, RGB com perfil sRGB incorporado.
+- Exportação em qualidade 86; maior arquivo: **86.058 bytes**; conjunto completo: **2.048.658 bytes**.
+- Miniaturas exibidas em 68×68, `object-fit:cover`, raio de **8 px**.
+- Composições diferentes em tema, enquadramento e conteúdo; nenhuma repetição de planeta, bandeira ou pagode. Não são capas de álbuns ou retratos atribuídos a artistas reais.
+- As imagens não exibem créditos, logotipos, marcas d'água ou textos promocionais. Nenhum crédito ou procedência de imagem foi adicionado à interface.
+- Mapeamento de apresentação derivado dos IDs; inventário não alterado. Os arquivos genéricos rejeitados foram retirados.
 
-Earth surface: NASA Visible Earth **Blue Marble: Land Surface, Ocean Color, Sea Ice and Clouds**, imagery by Reto Stöckli / NASA GSFC. Source: https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57735/land_ocean_ice_cloud_2048.jpg . Background: https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/ . The texture is stored locally; visitors make no new request to NASA.
+[Prancha com as 42 capas e nomes reais](evidence/artwork-contact-sheet.webp)
 
-## Pilot implementation
+## Piloto preservado
 
-- World Dial: 4 / 3 / 2 columns, 16 px desktop/tablet gaps and 14 px mobile gaps.
-- White cards: minimum 100 px, 12 px radius, 1 px #E5E5E5 border and subtle shadow.
-- 68×68 thumbnails; full names in Instrument Sans, 14 px; red 16 px wave indicator. The native whole-card button and its original universal selection handler are retained. No separate play button, hiding filter, pagination or expansion.
-- Bodoni Moda 30 / 23 px category lead; Source Serif 4 description. World Dial header: 160 / 120 px. Earth: 130 / 90 px. Category spacing around the pilot: 48 px.
-- A camera-facing hemisphere is ray-cast into a canvas. Each pixel samples the NASA texture at its **rotated 3D longitude/latitude**, with spherical shading and edge alpha. This is not a spinning flat disk or emoji.
-- Rotation period: **40,000 ms**, uniform 360°; 25 fps maximum, raster 196×196, only while the header is visible and the document is active. Reduced-motion preference stops animation; it does not affect any radio.
-- Wave animation is enabled only when this station is selected and the existing runtime reports actual playback.
-- Future records continue to come from the existing inventory loop; there is no hard-coded list controlling inclusion. Optional `row.artwork` can supply future artwork, otherwise the approved World Dial cover is used. No new audio interface is introduced.
+Catálogo máximo 1320 px; grade 4/3/2; gaps 16/14 px; cartões brancos, mínimo 100 px, raio 12 px e borda #E5E5E5. Nomes completos em Instrument Sans 14 px, ondas vermelhas de 16 px, título em Bodoni Moda e descrição em Source Serif 4.
 
-The renderer and header classes form the visual structure for approved genre art. Rock, Pop/Nostalgia, Dance, Jazz/Clássica and K-Pop headers are **not redesigned in this World Dial pilot**. The editorial Home, news, navigation, footer and other card styles remain unchanged.
+A ordem de imagem, texto e ondas agora permanece consistente em todos os alfabetos. Apenas o bloco de texto usa sua direção nativa; o árabe e o hebraico não invertem a composição do cartão.
 
-## Verification
+**Globo preservado byte a byte**, incluindo `js/passport-living-earth.js`, textura Blue Marble e prova anterior de rotação completa. Mantidos 130/90 px, rotação de aproximadamente 40 s, órbita discreta, redução de movimento e suspensão fora da área visível. Nenhum código do globo foi refeito.
+
+**401 rádios e 11 seletores preservados**, incluindo 42 World Dial. Nenhum ID, nome, categoria, stream, posição, rota, handler, player, Bus, mutex, interlock ou mecanismo de continuidade alterado. Demais categorias, Home editorial, Notícias, navegação e rodapé preservados.
+
+## Testes executados
 
 `node --test tests/passport_40_inventory.test.cjs tests/passport_kpop_replacement.test.cjs`
 
-The existing Passport 40 inventory suite now includes the pilot preservation assertions; no workflow or skip guard was changed. The historical Korean suite advances only its exact grid-presentation hash and compares the original CSS prefix separately. Audio-engine and inventory comparisons remain byte-for-byte.
+**13/13 aprovados, sem skips locais.** Conferidos correspondência integral das 42 artes, unicidade visual e de arquivos, WebP real, 512×512, perfil incorporado, limite de peso, integridade e preservação do inventário/globo/motores. Os testes entram no workflow existente; nenhum workflow ou guarda foi alterado.
 
-Real-browser runner: `node tests/passport_40_living_collection_browser.cjs` and `node tests/passport_40_living_collection_browser.cjs --mobile`. Install Playwright outside the application; set `BROWSER_EXECUTABLE` if using a nonstandard Chromium executable. The runner serves the repository locally and uses real external radio sources. It records complete names, counts, dimensions, visibility, overflow, actual decoded audio, one active signal, play/pause/volume, persistent Home → Notícias → Home navigation, a second existing station, rotation pixel hashes and reduced motion.
+Rodada de navegador em **320, 375, 390, 768, 1024 e 1440 px**: nomes, imagens carregadas, 42 caminhos individuais, medidas, direção e ordem visual, cartões sem corte, todas as rádios expostas e ausência de rolagem horizontal aprovados. Todas as 42 composições foram inspecionadas visualmente na prancha.
 
-Screenshots and measured results are in `evidence/`. Mobile means Chromium viewport/touch emulation, not a physical phone. No merge, deployment, main update or infrastructure change is part of this PR.
+Áudio real, sem simulação:
 
-### Measured results
+- Dynamic 101 no desktop: tempo **2,104 → 4,169 s**, bytes decodificados **4.851 → 38.409**; globo avançou **17,99°** no mesmo intervalo.
+- Mobile emulado: **1,010 → 3,132 s**, **13.737 → 47.929 bytes**, globo avançou **18,45°**.
+- Play/pause, retomada, volume 0,4 e Home → Notícias → Home: mesmo elemento de áudio conectado e tocando, um único áudio ativo.
+- Outra rádio existente também reproduziu áudio real na troca pelo cartão: **31.974 bytes decodificados**, um único sinal.
+- Zero exceções de página. Mobile significa emulação Chromium; aparelho físico e Safari/iOS não testados.
 
-- **10/10 local preservation assertions passed**, no skips.
-- **320, 375, 390, 768, 1024 and 1440 px** passed: exact requested column counts, 68 px thumbnails, 14 px names, 16 px indicators, 12 px radii, 100 px minimum card height, header/globe/title dimensions, no clipped or hidden cards and no page horizontal overflow.
-- **412 rendered selectors = 401 radios + 11 programs**; all 42 World Dial names exactly match the unchanged inventory.
-- Desktop globe: **365.69° in 40.632 s**, measured from timestamps and distinct captured pixel hashes. `period=40000`; motion-reduction check passed. The GIF uses actual browser captures at their measured intervals, not accelerated or generated rotation.
-- Dynamic 101, desktop: native playback **1.937 → 42.483 s**, decoded audio **4,850 → 657,646 bytes**, one active audio element. Mobile: **1.017 → 3.216 s**, **16,324 → 51,255 bytes**. No simulated audio.
-- Play/pause/resume and volume **0.4** passed in both browser modes.
-- **Home → Notícias → Home:** same audio element remained connected and playing, selected station and volume preserved, one active audio.
-- Existing Korean station also reproduced real audio after card selection: **31,974 decoded bytes**, one active audio, in both modes.
-- No uncaught page errors. Physical mobile devices and Safari/iOS were not tested.
+A prova anterior de 365,69° em aproximadamente 40,6 s continua em [rotação real](evidence/earth-rotation-real.gif); não foi recriada nesta correção artística.
 
-[Desktop preview](evidence/preview-desktop.png) · [Mobile preview](evidence/preview-mobile.png) · [Actual 40-second Earth rotation](evidence/earth-rotation-real.gif)
+## Evidências atualizadas
 
-[Desktop full pilot](evidence/world-dial-1440.png) · [Mobile full pilot](evidence/world-dial-390.png) · [Desktop measurements](evidence/results-desktop.json) · [Mobile measurements](evidence/results-mobile.json)
+[Desktop](evidence/preview-desktop.png) · [Celular](evidence/preview-mobile.png) · [42 cartões desktop](evidence/world-dial-1440.png) · [42 cartões mobile](evidence/world-dial-390.png) · [Prancha de 42 capas](evidence/artwork-contact-sheet.webp)
+
+[Resultados desktop](evidence/artwork-results-desktop.json) · [Resultados mobile](evidence/artwork-results-mobile.json)
+
+Sem merge, publicação, alteração de main ou infraestrutura.
