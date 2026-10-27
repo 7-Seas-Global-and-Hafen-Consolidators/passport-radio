@@ -19,3 +19,5 @@ test('protected engines, universal player, Bus, continuity, video, podcast and b
 test('generated public inventory matches actual engine catalogues',()=>{
  const actual=require('../docs/passport-40-20261011/inventory.cjs');const korean=JSON.parse(cp.execFileSync('git',['show','1635bfafeeff638731ac5c3ddd87114772eaf42c:docs/passport-kpop-replacement-20261011/CHECKPOINT.json'],{encoding:'utf8'}));for(const c of korean.channels){const generated=actual.records.find(r=>r.id===c.id),published=after.records.find(r=>r.id===c.id);assert.equal(generated.route,c.page);assert.equal(published.route,'/radio-mundo-player.html?station='+c.id);generated.route=published.route;}const byId=rows=>rows.slice().sort((a,b)=>a.id.localeCompare(b.id));assert.equal(new Set(actual.records.map(r=>r.id)).size,actual.records.length);assert.deepEqual(byId(after.records),byId(actual.records));
 });
+
+require('./passport_40_living_collection.test.cjs');

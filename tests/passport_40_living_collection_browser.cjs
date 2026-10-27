@@ -1,0 +1,45 @@
+/* Real Home/real streams. Browser dependencies and executable supplied outside the application. */
+const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES?process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright':'playwright');
+const fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict'),crypto=require('crypto');
+const root=path.resolve(__dirname,'..'),out=path.join(root,'docs/living-collection-world-dial-20261027/evidence');fs.mkdirSync(out,{recursive:true});
+const mobile=process.argv.includes('--mobile'),mode=mobile?'mobile':'desktop',inventory=require('../data/passport-radio-inventory.json');
+const server=http.createServer((req,res)=>{const requested=decodeURIComponent(req.url.split('?')[0]);let file=path.join(root,requested);if(requested.endsWith('/'))file+='index.html';if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end();}fs.readFile(file,(err,bytes)=>{if(err){res.writeHead(404);return res.end();}res.setHeader('Content-Type',({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2'})[path.extname(file)]||'application/octet-stream');res.end(bytes);});});
+(async()=>{
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));
+ const browser=await chromium.launch({executablePath:process.env.BROWSER_EXECUTABLE||'/tmp/passport-headless/chrome-headless-shell-linux64/chrome-headless-shell',args:['--no-sandbox','--single-process','--no-zygote'],proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY,bypass:'127.0.0.1,localhost'}:undefined});
+ const context=await browser.newContext({ignoreHTTPSErrors:true,isMobile:mobile,hasTouch:mobile,viewport:{width:mobile?390:1440,height:1000}});const page=await context.newPage();
+ const report={mode,layouts:[],rotation:[],errors:[]};page.on('pageerror',e=>report.errors.push(e.message));
+ await page.goto(`http://127.0.0.1:${server.address().port}/`,{waitUntil:'domcontentloaded'});await page.locator('[data-radio-id="passport-chinese-pop"]:not([disabled])').waitFor({timeout:60000});
+ assert.equal(await page.locator('[data-radio-id]').count(),412);assert.equal(await page.locator('.living-radio-card').count(),42);
+ const names=await page.locator('.living-radio-name').allTextContents();assert.deepEqual(names,inventory.records.filter(r=>r.section===8).map(r=>r.name));
+ report.initial=await page.evaluate(()=>({active:[...document.querySelectorAll('audio')].filter(a=>!a.paused).length,radios:document.querySelectorAll('[data-radio-id]').length}));assert.equal(report.initial.active,0);
+ const section=page.locator('#passport-radio-family-8'),globe=page.locator('.living-earth');
+ for(const width of mobile?[320,375,390,768]:[1024,1440]){
+  await page.setViewportSize({width,height:1000});await section.locator('button').last().scrollIntoViewIfNeeded();await section.scrollIntoViewIfNeeded();
+  await page.waitForFunction(()=>[...document.querySelectorAll('.living-radio-cover')].every(i=>i.complete&&i.naturalWidth>0),{},{timeout:20000});
+  const layout=await section.evaluate(el=>({viewport:innerWidth,catalogWidth:document.getElementById('passport-radio-catalog').getBoundingClientRect().width,columns:getComputedStyle(el.querySelector('.passport-radio-grid')).gridTemplateColumns.split(' ').length,header:el.querySelector('header').getBoundingClientRect().height,globe:el.querySelector('canvas').getBoundingClientRect().width,title:parseFloat(getComputedStyle(el.querySelector('.living-category-title')).fontSize),gap:parseFloat(getComputedStyle(el.querySelector('.passport-radio-grid')).gap),hidden:[...document.querySelectorAll('[data-radio-id]')].filter(b=>!b.getClientRects().length).length,overflow:document.documentElement.scrollWidth>innerWidth+1,cards:[...el.querySelectorAll('button')].map(b=>({name:b.getAttribute('aria-label'),height:b.getBoundingClientRect().height,font:parseFloat(getComputedStyle(b.querySelector('.living-radio-name')).fontSize),clipped:b.scrollHeight>b.clientHeight+1||b.scrollWidth>b.clientWidth+1,thumb:b.querySelector('img').getBoundingClientRect().width,radius:parseFloat(getComputedStyle(b).borderRadius),wave:b.querySelector('.living-radio-waves').getBoundingClientRect().width}))}));
+  assert.equal(layout.columns,width<=600?2:width<=1024?3:4);assert.equal(layout.hidden,0);assert(!layout.overflow,'page overflow '+width);assert(layout.catalogWidth<=1320);assert.equal(layout.header,width<=600?120:160);assert.equal(layout.globe,width<=600?90:130);assert.equal(layout.title,width<=600?23:30);assert(layout.gap>=14&&layout.gap<=18);
+  for(const card of layout.cards){assert(card.height>=100);assert.equal(card.font,14);assert.equal(card.thumb,68);assert.equal(card.radius,12);assert.equal(card.wave,16);assert(!card.clipped,card.name);}
+  report.layouts.push(layout);await section.screenshot({path:path.join(out,`world-dial-${width}.png`)});
+ }
+ await page.setViewportSize({width:mobile?390:1440,height:1000});
+ const card=page.locator('[data-radio-id="passport-chinese-pop"]');await card.locator('img').click();
+ await page.waitForFunction(()=>{const a=document.getElementById('world-audio');return a&&!a.paused&&a.currentTime>1&&a.webkitAudioDecodedByteCount>0},{},{timeout:45000});
+ const state=()=>page.evaluate(()=>{const a=document.getElementById('world-audio');window.testLivingAudio=a;return {time:a.currentTime,decoded:a.webkitAudioDecodedByteCount,paused:a.paused,ready:a.readyState,volume:a.volume,active:[...document.querySelectorAll('audio')].filter(a=>!a.paused).length}});
+ report.first=await state();await globe.scrollIntoViewIfNeeded();await page.waitForFunction(()=>Number(document.querySelector('.living-earth').dataset.renderFrames)>2);
+ const rounds=mobile?2:21;
+ for(let i=0;i<rounds;i++){
+  if(i)await page.waitForTimeout(2000);
+  const rotation=await globe.evaluate(el=>({time:performance.now(),angle:Number(el.dataset.rotation),frames:Number(el.dataset.renderFrames),period:Number(el.dataset.period),pixels:el.toDataURL()}));
+  const pixels=rotation.pixels;delete rotation.pixels;rotation.sha256=crypto.createHash('sha256').update(pixels).digest('hex');report.rotation.push(rotation);
+  if(!mobile)fs.writeFileSync(path.join(out,`globe-${String(i).padStart(2,'0')}.png`),Buffer.from(pixels.split(',')[1],'base64'));
+ }
+ assert.notEqual(report.rotation[0].sha256,report.rotation.at(-1).sha256);const delta=report.rotation.at(-1).angle-report.rotation[0].angle,elapsed=report.rotation.at(-1).time-report.rotation[0].time;assert(Math.abs(delta-elapsed*360/40000)<3);if(!mobile)assert(delta>=350&&delta<=400);report.after=await state();assert(report.after.time>report.first.time);assert(report.after.decoded>report.first.decoded);assert.equal(report.after.active,1);
+ await page.locator('#passport-player .play-btn').click();assert(await page.evaluate(()=>window.testLivingAudio.paused));await page.locator('#passport-player .play-btn').click();await page.waitForFunction(()=>!window.testLivingAudio.paused&&window.testLivingAudio.currentTime>0);
+ const volume=page.locator('#pb-vol-range');await volume.focus();await volume.press('Home');for(let i=0;i<8;i++)await volume.press('ArrowRight');assert.equal((await state()).volume,.4);
+ await page.locator('.pb-nav a[href="/noticias.html"]').first().click();await page.waitForTimeout(1200);report.news=await page.evaluate(()=>({same:window.testLivingAudio.isConnected,paused:window.testLivingAudio.paused,time:window.testLivingAudio.currentTime,volume:window.testLivingAudio.volume}));assert(report.news.same&&!report.news.paused);
+ await page.locator('.pb-nav a[href="/"]').first().click();await page.waitForTimeout(1200);report.home=await state();assert.equal(report.home.active,1);assert.equal(report.home.volume,.4);
+ await page.locator('[data-radio-id="kr"] .living-radio-name').click();await page.waitForFunction(()=>{const a=document.getElementById('world-audio');return a.currentSrc.includes('/proxy/kpop')&&!a.paused&&a.currentTime>1&&a.webkitAudioDecodedByteCount>0},{},{timeout:45000});report.otherRadio=await state();assert.equal(report.otherRadio.active,1);
+ await page.emulateMedia({reducedMotion:'reduce'});await globe.scrollIntoViewIfNeeded();await page.waitForTimeout(500);const reducedFirst=await globe.getAttribute('data-rotation');await page.waitForTimeout(600);report.reducedMotion={first:reducedFirst,last:await globe.getAttribute('data-rotation')};assert.equal(report.reducedMotion.first,report.reducedMotion.last);
+ assert.equal(report.errors.length,0);fs.writeFileSync(path.join(out,`results-${mode}.json`),JSON.stringify(report,null,2));console.log(JSON.stringify({mode,layouts:report.layouts.length,radios:412,worldDial:42,rotation:delta,first:report.first,after:report.after,news:report.news,home:report.home,otherRadio:report.otherRadio,errors:report.errors}));await browser.close();server.close();
+})().catch(e=>{console.error(e);server.close();process.exit(1)});
