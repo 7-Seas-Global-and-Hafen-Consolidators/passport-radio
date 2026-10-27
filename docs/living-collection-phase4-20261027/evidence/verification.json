@@ -1,0 +1,266 @@
+{
+  "base": "f96f5868fc57f3ed5ef132666ea7ba012b260c35",
+  "radio_count": 401,
+  "program_selectors": 11,
+  "phase4_entries": 150,
+  "section_counts": {
+    "11": 22,
+    "4": 48,
+    "5": 10,
+    "6": 11,
+    "7": 42,
+    "9": 17
+  },
+  "individual_images": 150,
+  "unique_sha256": 150,
+  "unique_visual_hashes": 150,
+  "image_bytes": 4939828,
+  "profile": "sRGB",
+  "dimensions": [
+    512,
+    512
+  ],
+  "source_manifest": "artwork-manifest.json",
+  "unit_tests": {
+    "passed": 29,
+    "failed": 0,
+    "skipped": 0
+  },
+  "final_artwork_test": {
+    "passed": 1,
+    "failed": 0
+  },
+  "responsive": {
+    "widths": [
+      1920,
+      1440,
+      1024,
+      768,
+      430,
+      390,
+      360
+    ],
+    "section_checks": 42,
+    "desktop_checks": 18,
+    "mobile_and_tablet_checks": 24,
+    "columns": [
+      4,
+      3,
+      2
+    ]
+  },
+  "audio": {
+    "real_decoded_playback": true,
+    "simulated": false,
+    "samples_per_context": 6,
+    "desktop": {
+      "kpop": {
+        "station": "passport-nrj-1772",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.01742,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "soul": {
+        "station": "passport-nrj-51",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.014929,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "brasil": {
+        "station": "passport-samba-de-raiz",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.019665,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "jazz": {
+        "station": "passport-nrj-6",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.020253,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "live": {
+        "station": "passport-nrj-1784",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.013968,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "signals": {
+        "station": "continuous:0",
+        "active": 1,
+        "id": "passport-live-audio",
+        "time": 1.020586,
+        "decoded": 53289,
+        "volume": 0.8,
+        "muted": false
+      },
+      "beforeNavigation": {
+        "active": 1,
+        "id": "world-audio",
+        "time": 0.164631,
+        "decoded": 7941,
+        "volume": 0.4,
+        "muted": false
+      },
+      "news": {
+        "same": true,
+        "paused": false,
+        "time": 1.220441,
+        "active": 1,
+        "volume": 0.4
+      },
+      "home": {
+        "active": 1,
+        "id": "world-audio",
+        "time": 2.372684,
+        "decoded": 43050,
+        "volume": 0.4,
+        "muted": false
+      }
+    },
+    "mobile": {
+      "kpop": {
+        "station": "passport-nrj-1772",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.01281,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "soul": {
+        "station": "passport-nrj-51",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.010819,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "brasil": {
+        "station": "passport-samba-de-raiz",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.015682,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "jazz": {
+        "station": "passport-nrj-6",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.015075,
+        "decoded": 21315,
+        "volume": 0.8,
+        "muted": false
+      },
+      "live": {
+        "station": "passport-nrj-1784",
+        "active": 1,
+        "id": "world-audio",
+        "time": 1.012856,
+        "decoded": 21316,
+        "volume": 0.8,
+        "muted": false
+      },
+      "signals": {
+        "station": "continuous:0",
+        "active": 1,
+        "id": "passport-live-audio",
+        "time": 1.003541,
+        "decoded": 53289,
+        "volume": 0.8,
+        "muted": false
+      },
+      "beforeNavigation": {
+        "active": 1,
+        "id": "world-audio",
+        "time": 0.229725,
+        "decoded": 8777,
+        "volume": 0.4,
+        "muted": false
+      },
+      "news": {
+        "same": true,
+        "paused": false,
+        "time": 1.278414,
+        "active": 1,
+        "volume": 0.4
+      },
+      "home": {
+        "active": 1,
+        "id": "world-audio",
+        "time": 2.428737,
+        "decoded": 43886,
+        "volume": 0.4,
+        "muted": false
+      }
+    },
+    "unconfirmed_attempts": 0,
+    "physical_phone_tested": false,
+    "all_401_sources_individually_tested": false,
+    "single_audio": true,
+    "same_element_during_navigation": true
+  },
+  "special_selectors_checked_per_context": 11,
+  "motion": {
+    "visual_frames": {
+      "kpop": {
+        "actual_browser_frames": 3,
+        "distinct_pixel_frames": 3
+      },
+      "soul": {
+        "actual_browser_frames": 3,
+        "distinct_pixel_frames": 2
+      },
+      "brasil": {
+        "actual_browser_frames": 3,
+        "distinct_pixel_frames": 3
+      },
+      "jazz": {
+        "actual_browser_frames": 3,
+        "distinct_pixel_frames": 2
+      },
+      "live": {
+        "actual_browser_frames": 3,
+        "distinct_pixel_frames": 3
+      },
+      "signals": {
+        "actual_browser_frames": 3,
+        "distinct_pixel_frames": 3
+      }
+    },
+    "reduced_motion": true,
+    "offscreen_pause": true,
+    "audio_advanced_during_capture": true,
+    "gifs_added": 0
+  },
+  "preservation": {
+    "inventory": true,
+    "station_names_ids_order": true,
+    "audio_engines": true,
+    "bus_mutex_interlock": true,
+    "continuity_code": true,
+    "world_dance_rock_pop": true,
+    "editorial_navigation_footer": true
+  },
+  "merge_performed": false,
+  "publication_performed": false,
+  "main_modified_directly": false,
+  "infrastructure_changed": false
+}

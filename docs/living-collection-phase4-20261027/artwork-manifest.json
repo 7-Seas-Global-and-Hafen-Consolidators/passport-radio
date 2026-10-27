@@ -1509,17 +1509,17 @@
       "name": "Clássicos & Orquestras™",
       "section": 6,
       "image": "/images/radio/living-collection/passport-classicos-orquestras.webp",
-      "subject": "Vienna Philharmonic",
+      "subject": "Vienna Philharmonic Orchestra, Carnegie Hall, Michael Tilson Thomas, 2019",
       "width": 512,
       "height": 512,
       "color_space": "sRGB",
-      "bytes": 34034,
-      "sha256": "1d366c616c2478b6542aee0d93eec3f99d2ca6ab94d85c01107da97741610c03",
-      "visual_hash": "230d8eae06968e0e",
+      "bytes": 44920,
+      "sha256": "8d07b21e9edc32f8c34943ba5eff729e65273903f4f692fe9939ccc30fef7caa",
+      "visual_hash": "0f0fb335ae9a0505",
       "unique_artwork": true,
       "provenance": {
-        "page": "https://en.wikipedia.org/wiki/Vienna_Philharmonic",
-        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Wiener_Philharmoniker_logo.svg/960px-Wiener_Philharmoniker_logo.svg.png"
+        "page": "https://commons.wikimedia.org/wiki/File:Vienna%20Philharmonic%20Orchestra%2C%20Carnegie%20Hall%2C%20conducted%20by%20Michael%20Tilson%20Thomas%20%2847311081031%29.jpg",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Vienna_Philharmonic_Orchestra%2C_Carnegie_Hall%2C_conducted_by_Michael_Tilson_Thomas_%2847311081031%29.jpg/1280px-Vienna_Philharmonic_Orchestra%2C_Carnegie_Hall%2C_conducted_by_Michael_Tilson_Thomas_%2847311081031%29.jpg"
       }
     },
     {
@@ -1927,10 +1927,16 @@
       "width": 512,
       "height": 512,
       "color_space": "sRGB",
-      "bytes": 40768,
-      "sha256": "7765702124834fed88d55215e7121ce53938b1224507927b6012f2981df59675",
-      "visual_hash": "8f0e0f0c2427c3a3",
+      "bytes": 39300,
+      "sha256": "35e8662664843f20e041fca739247aa7f8c1c2547988a7c28c8e9806475c7b9f",
+      "visual_hash": "2cc9c41555e566c7",
       "unique_artwork": true,
+      "source_crop": [
+        250,
+        150,
+        625,
+        425
+      ],
       "provenance": {
         "page": "https://en.wikipedia.org/wiki/M%C3%A5neskin",
         "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/ESC_2021_Rotterdam_1st_Semi_Jury_Show_Italy2.jpg/960px-ESC_2021_Rotterdam_1st_Semi_Jury_Show_Italy2.jpg"

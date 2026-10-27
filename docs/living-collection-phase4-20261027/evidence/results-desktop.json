@@ -1,0 +1,85 @@
+{
+  "mode": "desktop",
+  "layouts": 18,
+  "audio": {
+    "kpop": {
+      "station": "passport-nrj-1772",
+      "active": 1,
+      "id": "world-audio",
+      "time": 1.01742,
+      "decoded": 21316,
+      "volume": 0.8,
+      "muted": false
+    },
+    "soul": {
+      "station": "passport-nrj-51",
+      "active": 1,
+      "id": "world-audio",
+      "time": 1.014929,
+      "decoded": 21316,
+      "volume": 0.8,
+      "muted": false
+    },
+    "brasil": {
+      "station": "passport-samba-de-raiz",
+      "active": 1,
+      "id": "world-audio",
+      "time": 1.019665,
+      "decoded": 21316,
+      "volume": 0.8,
+      "muted": false
+    },
+    "jazz": {
+      "station": "passport-nrj-6",
+      "active": 1,
+      "id": "world-audio",
+      "time": 1.020253,
+      "decoded": 21316,
+      "volume": 0.8,
+      "muted": false
+    },
+    "live": {
+      "station": "passport-nrj-1784",
+      "active": 1,
+      "id": "world-audio",
+      "time": 1.013968,
+      "decoded": 21316,
+      "volume": 0.8,
+      "muted": false
+    },
+    "signals": {
+      "station": "continuous:0",
+      "active": 1,
+      "id": "passport-live-audio",
+      "time": 1.020586,
+      "decoded": 53289,
+      "volume": 0.8,
+      "muted": false
+    },
+    "beforeNavigation": {
+      "active": 1,
+      "id": "world-audio",
+      "time": 0.164631,
+      "decoded": 7941,
+      "volume": 0.4,
+      "muted": false
+    },
+    "news": {
+      "same": true,
+      "paused": false,
+      "time": 1.220441,
+      "active": 1,
+      "volume": 0.4
+    },
+    "home": {
+      "active": 1,
+      "id": "world-audio",
+      "time": 2.372684,
+      "decoded": 43050,
+      "volume": 0.4,
+      "muted": false
+    }
+  },
+  "attempts": 0,
+  "errors": []
+}
