@@ -19,7 +19,7 @@ test('Phase 3: selection, search, category order and approved header code are un
  const now=bytes('js/passport-radio-grid.js').toString(),before=old('js/passport-radio-grid.js').toString();
  for(const expression of [/button.addEventListener\('click',[\s\S]*?\n        \}\);/,/const locate = \(\) => \{[\s\S]*?\n    \};/,/const sections = .*;/,/\[1,2,3,11,4,5,6,7,8,9,10\]/,/      if \(number === 8\) \{[\s\S]*?\n      \}/,/      if \(number === 1\) \{[\s\S]*?\n      \}/,/const tv = [\s\S]*?catalog.append\(tv\);/])assert.equal(now.match(expression)[0],before.match(expression)[0]);
  assert(bytes('css/passport-radio-grid.css').toString().startsWith(old('css/passport-radio-grid.css').toString()));
- assert(now.includes('if (number === 8 || number === 1 || number === 2 || number === 3)'));
+ assert(now.includes('if (number === 8 || number === 1 || number === 2 || number === 3 || phase4Sections[number])'));
 });
 test('Phase 3: all 169 stable IDs have one distinct local photograph in the real section order',()=>{
  const m=manifest();assert.equal(m.actual_count,169);assert.deepEqual(m.artworks.map(a=>[a.id,a.name,a.section]),rows.map(r=>[r.id,r.name,r.section]));

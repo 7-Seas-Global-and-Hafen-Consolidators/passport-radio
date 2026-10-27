@@ -26,3 +26,5 @@ require('./passport_40_world_artwork.test.cjs');
 require('./passport_40_living_dance.test.cjs');
 
 require('./passport_40_living_rock_pop.test.cjs');
+
+require('./passport_40_living_phase4.test.cjs');

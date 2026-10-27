@@ -1,0 +1,2714 @@
+{
+  "base": "f96f5868fc57f3ed5ef132666ea7ba012b260c35",
+  "actual_count": 150,
+  "counts": {
+    "11": 22,
+    "4": 48,
+    "5": 10,
+    "6": 11,
+    "7": 42,
+    "9": 17
+  },
+  "artworks": [
+    {
+      "id": "passport-kpop-now",
+      "name": "K-Pop Now™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-kpop-now.webp",
+      "subject": "Blackpink",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 25188,
+      "sha256": "b77d2f9b4ff3afbd57349642072da250316ca870d6392f810452314d8c5bde7a",
+      "visual_hash": "21b211953828dad9",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Blackpink",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/20240809_Blackpink_Pink_Carpet_09.png/960px-20240809_Blackpink_Pink_Carpet_09.png"
+      }
+    },
+    {
+      "id": "passport-kpop-mix",
+      "name": "K-Pop Mix™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-kpop-mix.webp",
+      "subject": "Twice",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 42692,
+      "sha256": "b08d8b9d46f9f656be65f987b0cb7ca4ddb532e43ab7cc0032982b9b9a367ede",
+      "visual_hash": "2624c09c9c9cbe5e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Twice",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Twice_260618.jpg/960px-Twice_260618.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1772",
+      "name": "K-Pop Select™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-nrj-1772.webp",
+      "subject": "Seventeen (South Korean band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 28258,
+      "sha256": "919c85c28a205efab5bc6216f14175538a8f5196221ab154103f9b42055839b7",
+      "visual_hash": "de5224a4a78e8e47",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Seventeen_(South_Korean_band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Seventeen_Carat_Land_24.jpg/960px-Seventeen_Carat_Land_24.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1156",
+      "name": "BTS™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-nrj-1156.webp",
+      "subject": "BTS",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22820,
+      "sha256": "8a2bac0eb0303169fa631104f1842092f9cdb7bac5d3d076c3b67b2775f29c72",
+      "visual_hash": "37d115ceae874761",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/BTS",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/BTS_during_a_White_House_press_conference_May_31%2C_2022_%28cropped%29.jpg/960px-BTS_during_a_White_House_press_conference_May_31%2C_2022_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-02",
+      "name": "Seoul Romance™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-02.webp",
+      "subject": "IU (singer)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 15250,
+      "sha256": "3f95a53a4636fe9b76a43172f05ae074e838f119525a5639abf3bcb61d0d0442",
+      "visual_hash": "e9dc9c8cb6b78e89",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/IU_(entertainer)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/IU_at_the_Est%C3%A9e_Lauder_launch_event%2C_26_February_2026_%2810%29.png/960px-IU_at_the_Est%C3%A9e_Lauder_launch_event%2C_26_February_2026_%2810%29.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-04",
+      "name": "Seoul Galaxy™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-04.webp",
+      "subject": "Exo",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 42586,
+      "sha256": "4a513c516214340c4f2bc6b96d0c69f49722e49651c7b4db188fa6a69ca87b3c",
+      "visual_hash": "da58b179ccf4d1e3",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Exo",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Exo_monster_160618_suwon.png/960px-Exo_monster_160618_suwon.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-05",
+      "name": "Kyiv Seoul Connection™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-05.webp",
+      "subject": "Aespa",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26416,
+      "sha256": "43b554ce57430985ea737a69d2c056c2e160484dc3cb19b035e3515a79fb0eab",
+      "visual_hash": "a149aa8696861737",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Aespa",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Aespa_Love_Your_W_2025_1.jpg/960px-Aespa_Love_Your_W_2025_1.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-06",
+      "name": "Monterrey Seoul Beat™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-06.webp",
+      "subject": "Stray Kids",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 19232,
+      "sha256": "9b0291991e5bb5947b1244dff0239312fb04c694806b516f0f21d2b9162f1aad",
+      "visual_hash": "1f9b8f472a08abab",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Stray_Kids",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Stray_Kids_at_the_40th_Golden_Disc_Awards%2C_January_10%2C_2026_%281%29.png/960px-Stray_Kids_at_the_40th_Golden_Disc_Awards%2C_January_10%2C_2026_%281%29.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-10",
+      "name": "Seoul Dancefloor™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-10.webp",
+      "subject": "Le Sserafim",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26054,
+      "sha256": "814fec2799197976107a1cb1be7d2f257bb20927f870228eaa55bbabd4be35f2",
+      "visual_hash": "93b6969349699482",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Le_Sserafim",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Le_Sserafim_at_2026_Golden_Disc_awards.png/960px-Le_Sserafim_at_2026_Golden_Disc_awards.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-12",
+      "name": "Girl Power Asia™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-12.webp",
+      "subject": "Itzy",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 28276,
+      "sha256": "c653e9dc55a9f097dd9235912012123f25f3c3c58c148ef63a0b70792551c04c",
+      "visual_hash": "d2923733333e6a6d",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Itzy",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/251110_ITZY.png/960px-251110_ITZY.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-13",
+      "name": "Seoul Voltage™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-13.webp",
+      "subject": "Enhypen",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34386,
+      "sha256": "1dc0ee5452cfb340e3a6487def122d0d756077ba3b03130d12c70da1bed5aaad",
+      "visual_hash": "adadcb5b5b591919",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Enhypen",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Enhypen%2C_June_2026.jpg/960px-Enhypen%2C_June_2026.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-14",
+      "name": "Seoul Soundwave™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-14.webp",
+      "subject": "Tomorrow X Together",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 23962,
+      "sha256": "b3044177a23c2322024bb90fad8f5d06d4aab060b169b58c259cc633655494cb",
+      "visual_hash": "9292b68e8eb4b292",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Tomorrow_X_Together",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tomorrow_X_Together_at_a_Dior_event%2C_April_18%2C_2025.png/960px-Tomorrow_X_Together_at_a_Dior_event%2C_April_18%2C_2025.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-17",
+      "name": "Seoul Cinema™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-17.webp",
+      "subject": "Mamamoo",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 31860,
+      "sha256": "fe2244a0548f01a9a3023e297643f6bf6d83c07333aead7747ac3202aef6e7f1",
+      "visual_hash": "4949aac4c6da5919",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Mamamoo",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Mamamoo_in_September_2022.png/960px-Mamamoo_in_September_2022.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-21",
+      "name": "Seoul Heatwave™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-21.webp",
+      "subject": "Ateez",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34220,
+      "sha256": "60aad233ceae2ded711b56af9826dad22507d3cf6eb41dc8f4100e06605f8456",
+      "visual_hash": "070f8f0f0737939b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Ateez",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/ATEEZ_in_August_2024_%28cropped%29.jpg/960px-ATEEZ_in_August_2024_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-22",
+      "name": "Korean Hit Machine™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-22.webp",
+      "subject": "NCT 127",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 29370,
+      "sha256": "0415de957ce9d80736aadcabf565ed746446bbcad4afaf6750900cd516eb4740",
+      "visual_hash": "4563c6596da5e351",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/NCT_127",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/NCT127_-_Fact_Check_press_conference_Oct_6_2023.jpg/960px-NCT127_-_Fact_Check_press_conference_Oct_6_2023.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-23",
+      "name": "Seoul Connection™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-23.webp",
+      "subject": "Red Velvet (group)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39902,
+      "sha256": "0d78e6a3595d98b258c2b66d11838768cf7d77886efb03582faed19995192bcd",
+      "visual_hash": "d45635868fada95a",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Red_Velvet_(group)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/%EB%A0%88%EB%93%9C%EB%B2%A8%EB%B2%B3%28Red_Velvet%29_%EC%BC%80%EC%9D%B4%EC%BD%98_%EC%9E%AC%ED%8C%AC_2024_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_KCON_JAPAN_2024_%281%29.jpg/960px-%EB%A0%88%EB%93%9C%EB%B2%A8%EB%B2%B3%28Red_Velvet%29_%EC%BC%80%EC%9D%B4%EC%BD%98_%EC%9E%AC%ED%8C%AC_2024_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_KCON_JAPAN_2024_%281%29.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-34",
+      "name": "Korean Time Machine™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-34.webp",
+      "subject": "Shinee",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 29422,
+      "sha256": "80294beaa1f60dcfca2311d222a85b804c9e7457b6417a7d3f8b2a0f0ddb3e50",
+      "visual_hash": "2d29d47662e6c1e3",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Shinee",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Shinee_for_Marie_Claire_Magazine_August_Issue_2021_07.jpg/960px-Shinee_for_Marie_Claire_Magazine_August_Issue_2021_07.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-37",
+      "name": "Seoul For You™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-37.webp",
+      "subject": "Girls' Generation",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 41528,
+      "sha256": "38c036b72546dd79e8a1cd7d40e665d92a07444e9366b5da1b9f077e1aaf40e1",
+      "visual_hash": "183990144ccca424",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Girls'_Generation",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/220728_GG_poleposition_266_%2853595169645%29.jpg/960px-220728_GG_poleposition_266_%2853595169645%29.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-38",
+      "name": "Seoul Hearts™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-38.webp",
+      "subject": "Ive (group)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 30672,
+      "sha256": "4b45f1eb64c2f12040cd8ef8efb78f47387fd4a1038352438c15384750595342",
+      "visual_hash": "766d1b7a71696c2d",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Ive_(group)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ive_at_the_40th_Golden_Disc_Awards%2C_January_10%2C_2026_%282%29.png/960px-Ive_at_the_40th_Golden_Disc_Awards%2C_January_10%2C_2026_%282%29.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-39",
+      "name": "Seoul Fitness Beats™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-39.webp",
+      "subject": "Kiss of Life (group)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34064,
+      "sha256": "8a98c0a96c5763d7549e0f1f06bbbe7d26357b9cc53291504b91cb61a4e1ed59",
+      "visual_hash": "e2126692d7868343",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Kiss_of_Life_(group)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/KISS_OF_LIFE_at_Music_Bank_%284K%29_20240705_02.png/960px-KISS_OF_LIFE_at_Music_Bank_%284K%29_20240705_02.png"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-40",
+      "name": "Korean Sound Factory™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-40.webp",
+      "subject": "Zerobaseone",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 23304,
+      "sha256": "6dd42507d4de96225e9b04bc54a1442b7b6c7deb868a234a11335b84a4095a92",
+      "visual_hash": "cf4f6fc95858082c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Zerobaseone",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/ZEROBASEONE_%40_40th_Golden_Disc_Awards_%2820260110%29.jpg/960px-ZEROBASEONE_%40_40th_Golden_Disc_Awards_%2820260110%29.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-42",
+      "name": "Seoul Nonstop™",
+      "section": 11,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-42.webp",
+      "subject": "Infinite (group)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 43864,
+      "sha256": "c46d9fd672e2868dd4c90907e478e2b59554244e9044853bc7c5b9c2f5bead6c",
+      "visual_hash": "5cb929109898881c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Infinite_(band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Infinite%28South_Korean_band%29_in_Cyworld_Dream_Music_Festival.jpg/960px-Infinite%28South_Korean_band%29_in_Cyworld_Dream_Music_Festival.jpg"
+      }
+    },
+    {
+      "id": "passport-black-grooves",
+      "name": "Black Grooves™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-black-grooves.webp",
+      "subject": "James Brown",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 43780,
+      "sha256": "c2d1034bfaca29987f8c4707d192887600c40eeeacbd8fa484053ad8a187f8d6",
+      "visual_hash": "73cfcf8f9f8f8e8e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/James_Brown",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/James_Brown_1996_%28HQ%29.jpg/960px-James_Brown_1996_%28HQ%29.jpg"
+      }
+    },
+    {
+      "id": "passport-reggae-roots",
+      "name": "Reggae Roots™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-reggae-roots.webp",
+      "subject": "Bob Marley",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 46394,
+      "sha256": "31e1fa4bd48b1b849d362bb09b47ccb50ae0e1a4478adef514024d0d3d81340d",
+      "visual_hash": "6c4ccccc8caccfaf",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Bob_Marley",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Bob_Marley_circa_1976_%28cropped%29.jpg/960px-Bob_Marley_circa_1976_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-charme",
+      "name": "Charme™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-charme.webp",
+      "subject": "Luther Vandross",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 41108,
+      "sha256": "56f512c765826289afe8d5361a4d876a3f7a8315343e10b26d43686994fe4dd2",
+      "visual_hash": "f8dcccccd8cc8c9e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Luther_Vandross",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Luther_Vandross_1985b.jpg/960px-Luther_Vandross_1985b.jpg"
+      }
+    },
+    {
+      "id": "soul:main",
+      "name": "Soul",
+      "section": 4,
+      "image": "/images/radio/living-collection/soul:main.webp",
+      "subject": "Aretha Franklin",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26786,
+      "sha256": "ff563b228271d4e60ce6f1e6479314798f16ca904e08085af1429dc449f7ef32",
+      "visual_hash": "f1e8ccccc0e1f130",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Aretha_Franklin",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Aretha_Franklin_1968.jpg/960px-Aretha_Franklin_1968.jpg"
+      }
+    },
+    {
+      "id": "reggae:main",
+      "name": "Reggae",
+      "section": 4,
+      "image": "/images/radio/living-collection/reggae:main.webp",
+      "subject": "Peter Tosh",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26898,
+      "sha256": "fc56d35685d9e4af3eb9b9a6533750127b152bd7fda02b64dd05cd2a44480d44",
+      "visual_hash": "1e183aeb8f2ebc3a",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Peter_Tosh",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/BushDoctor1978_%28cropped2%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2375",
+      "name": "Bruno Mars Mix™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2375.webp",
+      "subject": "Bruno Mars",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 37226,
+      "sha256": "07c0ee7a9cb537063b757530fa55bdec34228aebc052e1a7030c2b75e356912c",
+      "visual_hash": "190969e4cc860e66",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Bruno_Mars",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/BrunoMars24KMagicWorldTourLive_%28cropped%29.jpg/960px-BrunoMars24KMagicWorldTourLive_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2391",
+      "name": "Orelsan Mix™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2391.webp",
+      "subject": "Orelsan",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 27318,
+      "sha256": "30723c694fb869701453df6bcc99928a1bea574097b3c976d37b3428a0e12915",
+      "visual_hash": "16929a1b199b9a9e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Orelsan",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Orelsan_Deauville_2019.jpg/960px-Orelsan_Deauville_2019.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2379",
+      "name": "Gims Mix™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2379.webp",
+      "subject": "Gims",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 23386,
+      "sha256": "8205044d2cdb46252cbde7bbdf9525380d317da9fe056e66d3a067d0d9b78f1d",
+      "visual_hash": "edada33363171f0f",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Gims",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/NDLE2025Gims_1.jpg/960px-NDLE2025Gims_1.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1900",
+      "name": "Summer Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1900.webp",
+      "subject": "Kendrick Lamar",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 35642,
+      "sha256": "51733d398be998ccb3aeeb31aa2cf401fa912a784b4b6791299c755c4dbd17af",
+      "visual_hash": "2c84224ec6e46179",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Kendrick_Lamar",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg/960px-KendrickSZASPurs230725-144_%28cropped%29_desaturated.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2312",
+      "name": "Summer Afro™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2312.webp",
+      "subject": "Burna Boy",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34874,
+      "sha256": "050d863fe7e6d8293bb11a1807958e0fdab68b88c0679f0a0e97e72ec565a010",
+      "visual_hash": "0b13338e9c1a94d8",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Burna_Boy",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Untold_2024_-Burna_Boy_%2853926047977%29_%28cropped%29.jpg/960px-Untold_2024_-Burna_Boy_%2853926047977%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2346",
+      "name": "Season Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2346.webp",
+      "subject": "Travis Scott",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22734,
+      "sha256": "dc8fe0176966064d51306359ac6155bd96ed1d87a3c048eeb7091b2b034cf4f6",
+      "visual_hash": "0d0e0c0f37362634",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Travis_Scott",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Travis_Scott_-_Openair_Frauenfeld_2019_08.jpg/960px-Travis_Scott_-_Openair_Frauenfeld_2019_08.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2345",
+      "name": "Season Afro Hits™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2345.webp",
+      "subject": "Tyla",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34066,
+      "sha256": "c6bb1e59b0ce16aade112f177a53953aeb2a214df1fa3f8700afde52f0358eb1",
+      "visual_hash": "606160c041418681",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Tyla",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Guests_at_the_2026_Met_Gala_384_%28Tyla_facecrop%29.jpg/960px-Guests_at_the_2026_Met_Gala_384_%28Tyla_facecrop%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2139",
+      "name": "Rap 2026™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2139.webp",
+      "subject": "Central Cee",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 75954,
+      "sha256": "0bae2a5400c208101fce3ca2e50af669f13fa3918cbf197d241c6371e548b7e1",
+      "visual_hash": "191911122e2ec68e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Central_Cee",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Central_cee-5.jpg/960px-Central_cee-5.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2081",
+      "name": "French Rap Best 2025™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2081.webp",
+      "subject": "fr:Ninho",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 20466,
+      "sha256": "cf42b157b94c4673e09cfeb945ba74624eec40b7767e07e08a9bb555286853f3",
+      "visual_hash": "de8c243843033206",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://fr.wikipedia.org/wiki/Ninho",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Festival_des_Vieilles_Charrues_2022_-_Ninho_-_041.jpg/960px-Festival_des_Vieilles_Charrues_2022_-_Ninho_-_041.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2218",
+      "name": "Reggaeton Fever™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2218.webp",
+      "subject": "Daddy Yankee",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 32850,
+      "sha256": "28017797e2cd4dc92326954b1abb14d2b85df8705063267fdfebd749ac770050",
+      "visual_hash": "54c4e40b4646c6aa",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Daddy_Yankee",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Daddy_Yankee_-_The_Kingdom_%28Official_Q_%26_A%29.png"
+      }
+    },
+    {
+      "id": "passport-nrj-1700",
+      "name": "DJ Bens™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1700.webp",
+      "subject": "DJ Bens",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 35886,
+      "sha256": "35f14637933854e3c87a9b946b15b16a9607e66ff46dfe80bca930f968f505f1",
+      "visual_hash": "6769094d4a727362",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://djbens.com/biographie/",
+        "image": "https://djbens.com/wp-content/uploads/2018/03/bio.png"
+      }
+    },
+    {
+      "id": "passport-nrj-1552",
+      "name": "Afro Hits™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1552.webp",
+      "subject": "Rema (musician)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 11958,
+      "sha256": "5eeeabc01bbe6631ef60ba60c01b23dcace7096332ffd5deba627d5f29104349",
+      "visual_hash": "cfcfcf870b3b5f4b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Rema_(musician)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Rema_Performing_live_in_Boston_%28May_2025%29_%28cropped%29.jpg/960px-Rema_Performing_live_in_Boston_%28May_2025%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2122",
+      "name": "Afrobeats™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2122.webp",
+      "subject": "Wizkid",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 20846,
+      "sha256": "87173be38ea5bba96fea7964776e6e88ce2fdbb9299488ce7b9ad38ad957c7b0",
+      "visual_hash": "f8fce4e4cd45cdca",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Wizkid",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Artworks-UWHjOik17qMFy0Sb-64tibA-t500x500.jpg/960px-Artworks-UWHjOik17qMFy0Sb-64tibA-t500x500.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2361",
+      "name": "Rap 2010™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2361.webp",
+      "subject": "Nicki Minaj",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 27172,
+      "sha256": "106b079f02f25366ed7353ed6848e7752c9b38617d7e50faeed7cbd24ed59732",
+      "visual_hash": "0ece8e8fcfb4c608",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Nicki_Minaj",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Nicki_Minaj_2025_%283x4_cropped%29.jpg/960px-Nicki_Minaj_2025_%283x4_cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2338",
+      "name": "Caribbean Hits™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2338.webp",
+      "subject": "Sean Paul",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 42064,
+      "sha256": "5d6b58722ddaaa4b5e47c5f4dc0200de3f96f5b48ca7323e34a9d2df9f978247",
+      "visual_hash": "0e9e86a18f038366",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Sean_Paul",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Sean_Paul_2024_%28cropped%29.jpg/960px-Sean_Paul_2024_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-170",
+      "name": "Reggaeton Pulse™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-170.webp",
+      "subject": "Karol G",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34020,
+      "sha256": "1307dea69df366801c8db1d5f3c79f296c9332181d1695860eb660817fbd7938",
+      "visual_hash": "ce177b3b4b91883e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Karol_G",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/2023-11-16_Gala_de_los_Latin_Grammy%2C_15.jpg/960px-2023-11-16_Gala_de_los_Latin_Grammy%2C_15.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-66",
+      "name": "Reggae Select™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-66.webp",
+      "subject": "Jimmy Cliff",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 49420,
+      "sha256": "ae581c3b5333b8a99e65029e1d8ea7852fb28d04b611f490eb36157e4c5a3e5d",
+      "visual_hash": "1c1b3337470b3763",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jimmy_Cliff",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Jimmy_Cliff_-_Festival_du_Bout_du_Monde_2012_-_022_%28cropped%29.jpg/960px-Jimmy_Cliff_-_Festival_du_Bout_du_Monde_2012_-_022_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-60",
+      "name": "Rap USA™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-60.webp",
+      "subject": "Dr. Dre",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 29364,
+      "sha256": "a47ce19a53e8cc32fbdc2a91b667fd95e1b91db6858e656ee94e311a8cb7bc7f",
+      "visual_hash": "4ec62f2d39696199",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Dr._Dre",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Dr._Dre_at_Coachella_2012_cropped.jpg/960px-Dr._Dre_at_Coachella_2012_cropped.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-962",
+      "name": "Fresh French Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-962.webp",
+      "subject": "Tiakola",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 16808,
+      "sha256": "cac5bab8912ba015ec123d239f6ccae423e9c112b7cea6a09f42894858303bf5",
+      "visual_hash": "f7f7efefcfeeefef",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Tiakola",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/TiakolaConcert.jpg/960px-TiakolaConcert.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2347",
+      "name": "Afro Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2347.webp",
+      "subject": "Blaqbonez",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 37314,
+      "sha256": "8589dc453111e685a087f29993eb4aa08a7e9077bb5afbcfc8550f49f7664ecc",
+      "visual_hash": "0000889b5b5b1998",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Blaqbonez",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Blaqbonez_at_his_London_concert_2022.jpg/960px-Blaqbonez_at_his_London_concert_2022.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-61",
+      "name": "French Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-61.webp",
+      "subject": "MC Solaar",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 15234,
+      "sha256": "480fbf12088124e3ae93f1f006029f84fd7ca718347ea6f0277bae77ac63093e",
+      "visual_hash": "180c0e1627670f07",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/MC_Solaar",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/MC_Solaar_Invit%C3%A9_du_RH_Factor.jpg/960px-MC_Solaar_Invit%C3%A9_du_RH_Factor.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-109",
+      "name": "Urban Hits™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-109.webp",
+      "subject": "Usher (musician)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 23778,
+      "sha256": "749918b4e31b4e615f1812274a01ff30377f67fb13714dcde8d9034adfa38d75",
+      "visual_hash": "68d850484c5c6564",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Usher_(musician)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Usher_Milan_2026.jpg/960px-Usher_Milan_2026.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1550",
+      "name": "Marseille Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1550.webp",
+      "subject": "SCH (rapper)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 42714,
+      "sha256": "0baf3dbacdc28ed68bc8092328eb47e615789dfc555839d376396208334a78aa",
+      "visual_hash": "9bcdce8f951adea7",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/SCH_(rapper)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/SCH_en_concert_2.jpg/960px-SCH_en_concert_2.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-225",
+      "name": "Gangsta Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-225.webp",
+      "subject": "Ice Cube",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 15478,
+      "sha256": "4f9e733624133aa77f5f08df31da68bf8bb7a4f07da7554a04db98a2f237a686",
+      "visual_hash": "e9e06ce568f8f4cd",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Ice_Cube",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Ice_Cube_September_2025.png/960px-Ice_Cube_September_2025.png"
+      }
+    },
+    {
+      "id": "passport-nrj-1269",
+      "name": "Rap Select™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1269.webp",
+      "subject": "Nas",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 57450,
+      "sha256": "4ce96302ace8e825b688e4286f14081de26182eafdb794993d1daf564a0a972b",
+      "visual_hash": "f1716d4cd8b86d70",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Nas",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Nas_%2852380600682%29_%28cropped%29.jpg/960px-Nas_%2852380600682%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1495",
+      "name": "Rap 2000™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1495.webp",
+      "subject": "50 Cent",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 30378,
+      "sha256": "f8f26833c5a8654326935f5ef343f5272a5ed55649fd6307285e3b8615f6c7e0",
+      "visual_hash": "ce4be347476c96d2",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/50_Cent",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Curtis_%2250_Cent%22_Jackson_visits_Barksdale_AFB_%285%29_%28cropped%29.jpg/960px-Curtis_%2250_Cent%22_Jackson_visits_Barksdale_AFB_%285%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-730",
+      "name": "Hip-Hop & R&B Hits™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-730.webp",
+      "subject": "Beyoncé",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 60166,
+      "sha256": "b89ebab8dc8fe9ba8eeb558012443e99c26b796914d8ff411cf2e48169b0d3be",
+      "visual_hash": "6e2fcbcb91b42423",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg/960px-Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-247",
+      "name": "Classic Rap USA™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-247.webp",
+      "subject": "Tupac Shakur",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 14344,
+      "sha256": "27b843ffd39e63d609bbf828c54e87e46fc6384f859a435d5ba3509f6b3a9033",
+      "visual_hash": "e8c8c8c4e868f08a",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Tupac_Shakur",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Tupac_Shakur_in_1995.jpg/960px-Tupac_Shakur_in_1995.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-814",
+      "name": "Classic French Rap™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-814.webp",
+      "subject": "IAM (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 21014,
+      "sha256": "b14e8d857e4adcce27cb830ec00e17e629d9d85fec21808ab16d4b447e6ccef6",
+      "visual_hash": "0307162e4e8f0c1a",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/IAM_(band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/IAM_%C3%A0_l%27Olympia_de_Montr%C3%A9al.jpg/960px-IAM_%C3%A0_l%27Olympia_de_Montr%C3%A9al.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-248",
+      "name": "Classic R&B™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-248.webp",
+      "subject": "Aaliyah",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 15260,
+      "sha256": "257e8057cd66bcf7202c71f7da25ca6ab768b37ff76b4692112ff4e7471f5bd2",
+      "visual_hash": "671f1f17cfaeae8e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Aaliyah",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Aaliyah-02.jpg/960px-Aaliyah-02.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2146",
+      "name": "Old School R&B™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2146.webp",
+      "subject": "Mary J. Blige",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 41424,
+      "sha256": "93f46bc3635283f8c3abae8e1ae18616fc75c89f8b4cca20fb107c72434157a1",
+      "visual_hash": "e75353303367a72e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Mary_J._Blige",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Mary_J_Blige_in_2022.png/960px-Mary_J_Blige_in_2022.png"
+      }
+    },
+    {
+      "id": "passport-nrj-227",
+      "name": "R&B Select™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-227.webp",
+      "subject": "SZA",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 71544,
+      "sha256": "b38737f1e55776ff0643ea9cc92a69b00ea7bd966806fd124d11a6f2a029a7b6",
+      "visual_hash": "d8fce6e4cddb7cf0",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/SZA",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/KendrickSZASPurs230725-19_-_54683179509_%28cropped%29_%28cropped%29.jpg/960px-KendrickSZASPurs230725-19_-_54683179509_%28cropped%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-136",
+      "name": "French R&B™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-136.webp",
+      "subject": "Aya Nakamura",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 41690,
+      "sha256": "4a1e14235cd0fb56b706cc9fa6c7b0d30a53a7d8b46d0502bf555559cf2ab25f",
+      "visual_hash": "1f2eececdbe1ad29",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Aya_Nakamura",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Aya_Nakamura_IMG_4756_%28cropped%29.jpg/960px-Aya_Nakamura_IMG_4756_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-699",
+      "name": "Kizomba™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-699.webp",
+      "subject": "Bonga (musician)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22424,
+      "sha256": "dc472d49758ca36bd336f3bf55dd7f93eaa5ee6af1ab84e0763d8ef19f81a13c",
+      "visual_hash": "0081858787859332",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Bonga_(musician)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Festival_du_bout_du_Monde_2011_-_Bonga_en_concert_le_6_ao%C3%BBt-_006.jpg/960px-Festival_du_bout_du_Monde_2011_-_Bonga_en_concert_le_6_ao%C3%BBt-_006.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-87",
+      "name": "Zouk™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-87.webp",
+      "subject": "fr:Kassav'",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 43986,
+      "sha256": "1896f1fd1b255e2aaea0a7eca5cf0810e62b3ff5538506b5336f4a7240aee3b3",
+      "visual_hash": "622240889a2349c5",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://fr.wikipedia.org/wiki/Kassav'",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Kassav%27_1.jpg/960px-Kassav%27_1.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-171",
+      "name": "Funky Select™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-171.webp",
+      "subject": "Earth, Wind & Fire",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 21912,
+      "sha256": "1dd4db1db8849fa7ceb34c3884375d3028b5ca870bb82e008e52f962e7fabfc2",
+      "visual_hash": "0006064525e3e7c4",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Earth%2C_Wind_%26_Fire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Earth%2C_Wind_%26_Fire_%282%29.jpg/960px-Earth%2C_Wind_%26_Fire_%282%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-383",
+      "name": "Gims™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-383.webp",
+      "subject": "Gims",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 17562,
+      "sha256": "b9ccd19b51f452d4be06753b4067a19ae4a09e154dbf264c4fd7631fa9acf01e",
+      "visual_hash": "31131317130b0f06",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Gims",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/NDLE2025Gims_3.jpg/960px-NDLE2025Gims_3.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-642",
+      "name": "Jul™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-642.webp",
+      "subject": "Jul (rapper)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 33370,
+      "sha256": "62d1f75110fad34c332d684b83239141d89aec5cbcfb1a68451cb656b8703c8c",
+      "visual_hash": "0c0426a41c98a7e6",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jul_(rapper)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/JUL_-_Julien_Mari_2018.jpg/960px-JUL_-_Julien_Mari_2018.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1034",
+      "name": "Drake™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-1034.webp",
+      "subject": "Drake (musician)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 16616,
+      "sha256": "136c9cabecfcd0702169fec55f7437ac8f70d3835d478a4c7ca39b6841bc8785",
+      "visual_hash": "f88ca6dadae4e4e8",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Drake_(musician)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Drake_at_The_Carter_Effect_2017_%2836818935200%29_%28cropped%29.jpg/960px-Drake_at_The_Carter_Effect_2017_%2836818935200%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-51",
+      "name": "Rihanna™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-51.webp",
+      "subject": "Rihanna",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 27444,
+      "sha256": "dfdb128c5427cc27c8dd13cbea7605d56489aa4f581db8a6fa77fbefaf01bcaa",
+      "visual_hash": "6545c4c4c88c8c96",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Rihanna",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Rihanna_Fenty_2018.png/960px-Rihanna_Fenty_2018.png"
+      }
+    },
+    {
+      "id": "passport-nrj-2154",
+      "name": "Bruno Mars™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2154.webp",
+      "subject": "Bruno Mars",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 27908,
+      "sha256": "a5ae7fc2cb3667eee44ea1d12be91abb7da691750a12eb48c547ef39605e496f",
+      "visual_hash": "0707075357931111",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Bruno_Mars",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Lollapalooza_2018%2C_Chicago_%2850335129523%29.jpg/960px-Lollapalooza_2018%2C_Chicago_%2850335129523%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2155",
+      "name": "Bad Bunny™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-nrj-2155.webp",
+      "subject": "Bad Bunny",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 40844,
+      "sha256": "7468d182b7c6924b0360bc7e093e12d6492fe5c356938cc4fa51025dd97426ff",
+      "visual_hash": "dc8eeccc949c2c34",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Bad_Bunny",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg/960px-Bad_Bunny_2019_by_Glenn_Francis_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-43",
+      "name": "Urban Bassline™",
+      "section": 4,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-43.webp",
+      "subject": "Snoop Dogg",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 61276,
+      "sha256": "0a8af700a429ece6b3b12ed26a7826d52d478414285ffb5d066dd5e1f48ea228",
+      "visual_hash": "7959697979797a7e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Snoop_Dogg",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Snoop_Dogg%2C_WrestleMania_XL_%28cropped%29_%28cropped%29.jpg/960px-Snoop_Dogg%2C_WrestleMania_XL_%28cropped%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-samba-de-raiz",
+      "name": "Samba de Raiz™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-samba-de-raiz.webp",
+      "subject": "Cartola",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 40534,
+      "sha256": "af04dd96b9f0dfe3ee48bac22a5ad19b6eaa6bb64218d767a44401a6ffefed42",
+      "visual_hash": "f0f0f0d0d0d8c1c1",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Cartola",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/M%C3%BAsico_Cartola.jpg/960px-M%C3%BAsico_Cartola.jpg"
+      }
+    },
+    {
+      "id": "passport-sertanejo-brasil",
+      "name": "Sertanejo Brasil™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-sertanejo-brasil.webp",
+      "subject": "Chitãozinho & Xororó",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 23780,
+      "sha256": "9c1e96a272355cf8bb1f45f1140d77e9d838d5753737e3e4a722ed2eb4940a2b",
+      "visual_hash": "00003032221b2369",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Chit%C3%A3ozinho_%26_Xoror%C3%B3",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Chit%C3%A3ozinho_e_Xoror%C3%B3_%2820058650421%29.jpg/960px-Chit%C3%A3ozinho_e_Xoror%C3%B3_%2820058650421%29.jpg"
+      }
+    },
+    {
+      "id": "passport-sertanejo-raiz",
+      "name": "Sertanejo Raiz™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-sertanejo-raiz.webp",
+      "subject": "Almir Sater",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 21608,
+      "sha256": "a20b213ac81d8f14caa7e6f8c4d51598a0748af84ef3e184a22965261f67feb2",
+      "visual_hash": "cc8ececf93074f0e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Almir_Sater",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Show_com_Almir_Sater_em_Votuporanga_03.jpg/960px-Show_com_Almir_Sater_em_Votuporanga_03.jpg"
+      }
+    },
+    {
+      "id": "passport-sertanejo-fm",
+      "name": "Sertanejo FM™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-sertanejo-fm.webp",
+      "subject": "Jorge & Mateus",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26804,
+      "sha256": "942bef08feccf9c997f1b131ebbe68740d11fa4a2d76fa084f35b12797c5d2ed",
+      "visual_hash": "50135736376fc343",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jorge_%26_Mateus",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Jorge_%26_Mateus_show_na_Bahia.jpg/960px-Jorge_%26_Mateus_show_na_Bahia.jpg"
+      }
+    },
+    {
+      "id": "passport-brasil-remix",
+      "name": "Brasil Remix™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-brasil-remix.webp",
+      "subject": "Alok (DJ)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 14298,
+      "sha256": "88e53ed77350c9b3ced39a68b4985772fde2e11e0600b4121271be5513a625ad",
+      "visual_hash": "cbce9ea49cdcf256",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Alok_(DJ)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Alok_-_Lady_Night.png/960px-Alok_-_Lady_Night.png"
+      }
+    },
+    {
+      "id": "passport-samba-rock",
+      "name": "Samba Rock™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-samba-rock.webp",
+      "subject": "Jorge Ben Jor",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 42528,
+      "sha256": "2dbc8d795d4aa14dc65537b0bf761b3bda1a028e28500ffc250ac8272528c05b",
+      "visual_hash": "2c0424295990b0a0",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jorge_Ben",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Jorge_Ben%2C_1972.jpg/960px-Jorge_Ben%2C_1972.jpg"
+      }
+    },
+    {
+      "id": "passport-bossa-mpb",
+      "name": "Bossa & MPB™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-bossa-mpb.webp",
+      "subject": "João Gilberto",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 41550,
+      "sha256": "98a433e4f75697713b25d1192da604f2915b876e6ed057d217374556e9e4c1ac",
+      "visual_hash": "8b0189454b6bcd12",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jo%C3%A3o_Gilberto",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Jo%C3%A3o_Gilberto.jpg/960px-Jo%C3%A3o_Gilberto.jpg"
+      }
+    },
+    {
+      "id": "mpb:main",
+      "name": "MPB",
+      "section": 5,
+      "image": "/images/radio/living-collection/mpb:main.webp",
+      "subject": "Elis Regina",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26912,
+      "sha256": "df77c4edb37260b3809abfac26ac4bcb43f3a9ad83d56edbf7c067b18d63890e",
+      "visual_hash": "71f8f8f8f8f170ce",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Elis_Regina",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Elis_Regina_1965.jpg/960px-Elis_Regina_1965.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-48",
+      "name": "Brasil Universitário™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-48.webp",
+      "subject": "Marília Mendonça",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 25398,
+      "sha256": "5e7e89f741c5d2c0f52d87976901a0211e24086565ff4050b1baf581e7177fb1",
+      "visual_hash": "cd07272b23393b1b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Mar%C3%ADlia_Mendon%C3%A7a",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Marilia_Mendonca_Pecuaria_de_Goiania_2018_2.jpg/960px-Marilia_Mendonca_Pecuaria_de_Goiania_2018_2.jpg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-51",
+      "name": "Ritmos Metropolitanos™",
+      "section": 5,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-51.webp",
+      "subject": "Gilberto Gil",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 53294,
+      "sha256": "150913ffbd80409156ef55bde6a337a0e41098e421274eddd75a3bcb72cd771c",
+      "visual_hash": "1f1b4b29090ed2ce",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Gilberto_Gil",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/22.05.2026_-_Gilberto_Gil_%28cropped%29.jpg/960px-22.05.2026_-_Gilberto_Gil_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-lounge-sessions",
+      "name": "Lounge Sessions™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-lounge-sessions.webp",
+      "subject": "Norah Jones",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 62174,
+      "sha256": "ab6f1247370def660cfd3add1058cddea5b5795343df116e43248f86f8b621e5",
+      "visual_hash": "69ccc4cc6ee06448",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Norah_Jones",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/NorahJones-byPhilipRomano3.jpg/960px-NorahJones-byPhilipRomano3.jpg"
+      }
+    },
+    {
+      "id": "passport-music-gallery",
+      "name": "Music Gallery™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-music-gallery.webp",
+      "subject": "Miles Davis",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 24524,
+      "sha256": "2f1337ad219d728b374674fa71661a125f4e1cbff364bb2816c81140698a259c",
+      "visual_hash": "c0c0e6a323494d39",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Miles_Davis",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Miles_Davis_by_Palumbo_cropped.jpg/960px-Miles_Davis_by_Palumbo_cropped.jpg"
+      }
+    },
+    {
+      "id": "passport-art-sounds",
+      "name": "Art Sounds™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-art-sounds.webp",
+      "subject": "Martha Argerich",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39180,
+      "sha256": "5f4ee81ff02a7dec570c6bb1583dd8bf48e8787214922dc0107fecc44972236d",
+      "visual_hash": "0c0e0f0f0f07c7c6",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Martha_Argerich",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Martha_argerich_photo_%28cropped%29.jpg/960px-Martha_argerich_photo_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-classicos-orquestras",
+      "name": "Clássicos & Orquestras™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-classicos-orquestras.webp",
+      "subject": "Vienna Philharmonic",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34034,
+      "sha256": "1d366c616c2478b6542aee0d93eec3f99d2ca6ab94d85c01107da97741610c03",
+      "visual_hash": "230d8eae06968e0e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Vienna_Philharmonic",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Wiener_Philharmoniker_logo.svg/960px-Wiener_Philharmoniker_logo.svg.png"
+      }
+    },
+    {
+      "id": "passport-jazz-class",
+      "name": "Jazz & Class™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-jazz-class.webp",
+      "subject": "John Coltrane",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39290,
+      "sha256": "62eb40db13964051f79ecd2fdbd3884c48967c45046be2e4b45524fc85f4617f",
+      "visual_hash": "f9793859589a9ba6",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/John_Coltrane",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/John_Coltrane_1963_cropped_ver2.jpg/960px-John_Coltrane_1963_cropped_ver2.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2186",
+      "name": "Chill Moments™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-nrj-2186.webp",
+      "subject": "Nils Frahm",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 14044,
+      "sha256": "4461fc13a480c671a7e188b1e298706e0ec8913410f3f73bf2960919c6476621",
+      "visual_hash": "f0f37130343e36e7",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Nils_Frahm",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Nils_Frahm_%28Traumzeit_Festival_2014%29_IMGP4651_smial_wp.jpg/960px-Nils_Frahm_%28Traumzeit_Festival_2014%29_IMGP4651_smial_wp.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1749",
+      "name": "Summer Chill™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-nrj-1749.webp",
+      "subject": "Khruangbin",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 35286,
+      "sha256": "607cac353efee2bd7ce82e33cff3627284696bf0aa5e8a653c04d0e5e4910331",
+      "visual_hash": "af8e647777d3133b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Khruangbin",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Khruangbin_am_Haldern_Pop_Festival_2019_-_09_-_Foto_Alexander_Kellner.jpg/960px-Khruangbin_am_Haldern_Pop_Festival_2019_-_09_-_Foto_Alexander_Kellner.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1083",
+      "name": "Chill Vibes™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-nrj-1083.webp",
+      "subject": "Ólafur Arnalds",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 19524,
+      "sha256": "a78b377f180bf6b6451777b20eb76a3c2f0181543d0d1fb2956020b4b16cfd8a",
+      "visual_hash": "0f4fa72f5c5838b8",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/20190706-Rudolstadt-Festival-Olafur-Arnalds-8734.jpg/960px-20190706-Rudolstadt-Festival-Olafur-Arnalds-8734.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-139",
+      "name": "Acoustic Hits™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-nrj-139.webp",
+      "subject": "José González (singer)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 51156,
+      "sha256": "8ed2217140bc524e0b33f36b3b2164c0c3fa084b5a8120193e147bf45c2104c1",
+      "visual_hash": "46460e434b4befef",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jos%C3%A9_Gonz%C3%A1lez_(singer)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/POS17_%40Kristsll-640_%2836005372005%29_%28cropped%29.jpg/960px-POS17_%40Kristsll-640_%2836005372005%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-6",
+      "name": "Lounge Select™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-nrj-6.webp",
+      "subject": "Sade (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22850,
+      "sha256": "2ac564909359c189c7df556adf8df7696138ebfdb601538a9f0b21b3be014b2e",
+      "visual_hash": "4fcb2f071707c781",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Sade_(band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Sade_Adu_Band.jpg/960px-Sade_Adu_Band.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-296",
+      "name": "Relax Sounds™",
+      "section": 6,
+      "image": "/images/radio/living-collection/passport-nrj-296.webp",
+      "subject": "Ludovico Einaudi",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 36582,
+      "sha256": "62c505167ab01ac5e9c2c6ce06d3e4ee9be253fdb97dca2bc91224c8c41ccac0",
+      "visual_hash": "6e61c93064ce8dcd",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Ludovico_Einaudi",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Ludovico_Einaudi_in_Tehran_12_%28cropped%292.jpg"
+      }
+    },
+    {
+      "id": "passport-live-sessions",
+      "name": "Live Sessions™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-live-sessions.webp",
+      "subject": "Snarky Puppy",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 28724,
+      "sha256": "20ed65b1cf4fa68492d88d88d219ad9d1872ba50dc83eda2c6272192578dd75d",
+      "visual_hash": "a3e726662f1f3f3f",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.mixonline.com/recording/snarky-puppy-lauten-microphopnes",
+        "image": "https://www.mixonline.com/wp-content/uploads/2022/08/2022-08-04-lauten.jpg"
+      }
+    },
+    {
+      "id": "passport-gospel-sounds",
+      "name": "Gospel Sounds™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-gospel-sounds.webp",
+      "subject": "Hillsong United",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 16422,
+      "sha256": "5dd74d2358503626fd1080051be0385e7068d27d21eaad1bf7023f56050a5286",
+      "visual_hash": "0000080818047243",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Hillsong_United",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/HillsongUnited2019.png/960px-HillsongUnited2019.png"
+      }
+    },
+    {
+      "id": "passport-wellness-radio",
+      "name": "Wellness Radio™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-wellness-radio.webp",
+      "subject": "Oscar Peterson",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39190,
+      "sha256": "773b3c4fe2b00636cacc5f47739990a3833c1cd9a6f7a960ff058f807e8e8537",
+      "visual_hash": "a533331b1998de72",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Oscar_Peterson",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/In_de_serie_Jazz_at_the_Philharmonica_in_het_Concertgebouw_optreden_van_het_O%E2%80%A6%2C_Bestanddeelnr_910-2887.jpg/960px-In_de_serie_Jazz_at_the_Philharmonica_in_het_Concertgebouw_optreden_van_het_O%E2%80%A6%2C_Bestanddeelnr_910-2887.jpg"
+      }
+    },
+    {
+      "id": "passport-connection",
+      "name": "Connection™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-connection.webp",
+      "subject": "Simon & Garfunkel",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26080,
+      "sha256": "7a40d5da5aa9d95dffe0481e4b7b81dd4d089a18489aa203986841889c395b66",
+      "visual_hash": "676637303233f978",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Simon_%26_Garfunkel",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Simon_%26_Garfunkel%2C_Jazz_Fest_2010_%28cropped%29.jpg/960px-Simon_%26_Garfunkel%2C_Jazz_Fest_2010_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-music-stories",
+      "name": "Music Stories™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-music-stories.webp",
+      "subject": "Sun Studio",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 51876,
+      "sha256": "c83f9910a8e3f9b54c19ad6e456b0224044eb3d139dab7da0acd5424bdef3a4b",
+      "visual_hash": "86a5e4971516bc5c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://commons.wikimedia.org/wiki/Category:Sun_Studio",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Sun_Records_studio_tour.jpg/960px-Sun_Records_studio_tour.jpg"
+      }
+    },
+    {
+      "id": "passport-radio-humor",
+      "name": "Rádio Humor™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-radio-humor.webp",
+      "subject": "Beavis and Butt-Head Do America",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22742,
+      "sha256": "e670b703fa546e89ff9e5ef1dd5169a962d1d406ee9de59d03266804aee123ce",
+      "visual_hash": "0f0f8e8f072736f4",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.paramountpressexpress.com/paramount-plus/shows/mike-judges-beavis-and-butt-head/photos",
+        "image": "https://private-assets-pressexpress.s3.amazonaws.com/assets/photos/thumbnail/2023/06/23/BB212AB_Sleepover002_f.jpg"
+      }
+    },
+    {
+      "id": "passport-live-stage",
+      "name": "Live Stage™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-live-stage.webp",
+      "subject": "Queensrÿche",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 46314,
+      "sha256": "a8463513cd37eb3445de1bcaa70f0752504e27880d6aefc1fa42653863974ee0",
+      "visual_hash": "db0784b636731b24",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.rosshalfin.com/spotlight/queensryche-queensryche-in-rio-de-janeiro-1991/",
+        "image": "https://www.rosshalfin.com/wp-content/uploads/2024/08/ross-halfin_2019-03-30_Bvoyg19BxSR.jpg"
+      }
+    },
+    {
+      "id": "specialx:0",
+      "name": "Roadtrip",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:0.webp",
+      "subject": "Eliminator (car)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 37290,
+      "sha256": "195f8c7955ad919903dd71d1a26aa7a3e19a63b68bd41329cc4569444e256f78",
+      "visual_hash": "138686e2c0622c64",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://commons.wikimedia.org/wiki/File:ZZTopEliminator.jpg",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/ZZTopEliminator.jpg/1280px-ZZTopEliminator.jpg"
+      }
+    },
+    {
+      "id": "specialx:1",
+      "name": "Festival",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:1.webp",
+      "subject": "Glastonbury Festival",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 37306,
+      "sha256": "61b9256e6bd11787b9625e7cee83522aa19c9f507fdac5aac47d2a1626d11b7b",
+      "visual_hash": "61230769211ca040",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Glastonbury_Festival",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Glastonbury_Festival_2025_-_Night_-_Thursday_26th_June_to_Sunday_29th_June_2025.jpg/960px-Glastonbury_Festival_2025_-_Night_-_Thursday_26th_June_to_Sunday_29th_June_2025.jpg"
+      }
+    },
+    {
+      "id": "specialx:2",
+      "name": "Newcomer",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:2.webp",
+      "subject": "The Warning (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 33490,
+      "sha256": "c3f501e6f6b94a9f6e28ad1166ef6d6aa7d91b3dba5b967945c8802f19da4dac",
+      "visual_hash": "93565f5b2b29294c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/The_Warning_(band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/The_Warning.jpg/960px-The_Warning.jpg"
+      }
+    },
+    {
+      "id": "specialx:3",
+      "name": "Rockparty",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:3.webp",
+      "subject": "Andrew W.K.",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 31498,
+      "sha256": "92082767b10afee2f99146c3fd3be626ba27f6cd96155ab747ce8f203875d926",
+      "visual_hash": "38292d6f63070b0f",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Andrew_W.K.",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Andrew_WK-8_%2842987819594%29.jpg/960px-Andrew_WK-8_%2842987819594%29.jpg"
+      }
+    },
+    {
+      "id": "specialx:4",
+      "name": "Gaming Rock",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:4.webp",
+      "subject": "The 8-Bit Big Band",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 40120,
+      "sha256": "eafa5c6f58e0ef301b0ccdc1d124d5a15e1b775cc37fe9ddbc2b567d4606dd1d",
+      "visual_hash": "6daea94d1c9c0004",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.the8bitbigband.com/epk",
+        "image": "https://images.squarespace-cdn.com/content/v1/5a6d5fb4f6576ebde0e6b5c3/f621e3d4-a16c-4d09-b8ef-95800dd0fd95/8_BIT_BIG_BAND_1_27_20_S_0210.jpg"
+      }
+    },
+    {
+      "id": "specialx:5",
+      "name": "Guitar Heroes",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:5.webp",
+      "subject": "Accept (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 21990,
+      "sha256": "c51748d560bc634254b283bb87b8a04506b4b15c1f87fadd4d71a452ca9cdb27",
+      "visual_hash": "f070f4e4e0d0e0a8",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.acceptworldwide.com/the-band/",
+        "image": "https://www.acceptworldwide.com/wp-content/uploads/2026/03/Accept-2026-promo-photo-credit-Robert-John-2-scaled-3840x2560.jpg"
+      }
+    },
+    {
+      "id": "specialx:6",
+      "name": "Best of Rock",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:6.webp",
+      "subject": "Pink Floyd",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 35804,
+      "sha256": "42a1a690b503e62e89a4ce96724b8b1d35af6d92445ef2338b16a4cb63330d1b",
+      "visual_hash": "703038a2ccc24599",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Pink_Floyd",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Pink_floyd_live_8_london.jpg/960px-Pink_floyd_live_8_london.jpg"
+      }
+    },
+    {
+      "id": "specialx:7",
+      "name": "Unplugged",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:7.webp",
+      "subject": "Nirvana — Kurt Cobain no MTV Unplugged, 1993",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 25706,
+      "sha256": "aa4c2cc74b8aa8845ab8240addf4ff7452657a55f4ddecefb70c3d78665ad4ec",
+      "visual_hash": "1e1e1d1f1b2767c7",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://loudwire.com/nirvana-mtv-unplugged-performance-photos/",
+        "image": "https://townsquare.media/site/366/files/2021/11/attachment-kurt-cobain-nirvana-mtv-unplugged-frank-micelotta-archive-6.jpg"
+      }
+    },
+    {
+      "id": "specialx:8",
+      "name": "Rock Hits",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:8.webp",
+      "subject": "Måneskin",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 40768,
+      "sha256": "7765702124834fed88d55215e7121ce53938b1224507927b6012f2981df59675",
+      "visual_hash": "8f0e0f0c2427c3a3",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/M%C3%A5neskin",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/ESC_2021_Rotterdam_1st_Semi_Jury_Show_Italy2.jpg/960px-ESC_2021_Rotterdam_1st_Semi_Jury_Show_Italy2.jpg"
+      }
+    },
+    {
+      "id": "specialx:9",
+      "name": "Kuschelrock",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:9.webp",
+      "subject": "Scorpions (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 47634,
+      "sha256": "f2329c29194ac9d60fa02c00b50de2f113849ec1bb5d8b7a264656f01a81f255",
+      "visual_hash": "33979d88babbe8ba",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Scorpions_%28band%29",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Scorpions_2015.jpg/960px-Scorpions_2015.jpg"
+      }
+    },
+    {
+      "id": "specialx:10",
+      "name": "Summer Rock Hits",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:10.webp",
+      "subject": "Red Hot Chili Peppers",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 29384,
+      "sha256": "dfa68b1bea825abb8fb545cda14b9022913af1720edfaef1a013f7701923fecf",
+      "visual_hash": "1818ca53c3cb0904",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/RHCP_Live_in_London_26_June_2022.jpg/960px-RHCP_Live_in_London_26_June_2022.jpg"
+      }
+    },
+    {
+      "id": "specialx:11",
+      "name": "Christmas Rock",
+      "section": 7,
+      "image": "/images/radio/living-collection/specialx:11.webp",
+      "subject": "Trans-Siberian Orchestra",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 46380,
+      "sha256": "42fb90da5eaad9b8ed9c0bf5e915d26e87595df6f1fe2885607bb121bb2c8529",
+      "visual_hash": "9696c6c4e4d09061",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Trans-Siberian_Orchestra",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Trans-Siberian_Orchestra_4.jpg/960px-Trans-Siberian_Orchestra_4.jpg"
+      }
+    },
+    {
+      "id": "artistsx:0",
+      "name": "AC/DC Collection",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:0.webp",
+      "subject": "AC/DC",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 26210,
+      "sha256": "00e24711ca83d3ebedb9de8e4dd66e9124aa35ba92c3cc197a81e7a5cf086e5e",
+      "visual_hash": "20018186968b9b31",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/AC%2FDC",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_%284238680962%29.jpg/960px-AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_%284238680962%29.jpg"
+      }
+    },
+    {
+      "id": "artistsx:1",
+      "name": "Iron Maiden",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:1.webp",
+      "subject": "Iron Maiden",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 44804,
+      "sha256": "d7e206d4997f91ceedd0b6ba3923233db0d4ceb32a7bac11cf1985f90b2e1407",
+      "visual_hash": "871b1c0b0f13cc00",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Iron_Maiden",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Iron_Maiden_in_Chula_Vista.jpg/960px-Iron_Maiden_in_Chula_Vista.jpg"
+      }
+    },
+    {
+      "id": "artistsx:2",
+      "name": "Metallica",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:2.webp",
+      "subject": "Metallica",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 38326,
+      "sha256": "4838d19e76170edb601fdce4ea464024d075c00458ccf47d0dc26d35b27e3b63",
+      "visual_hash": "3a1c94d8cc8c8a4b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Metallica",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Metallica_March_2024.jpg/960px-Metallica_March_2024.jpg"
+      }
+    },
+    {
+      "id": "artistsx:3",
+      "name": "Motörhead",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:3.webp",
+      "subject": "Motörhead",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 29572,
+      "sha256": "8f89a6e20c50122f3800799dd749b5c378d1ad8d32aa42e075a27deac9716417",
+      "visual_hash": "c040010927260412",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Mot%C3%B6rhead",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Motorhead-03.jpg/960px-Motorhead-03.jpg"
+      }
+    },
+    {
+      "id": "artistsx:4",
+      "name": "Ozzy Osbourne",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:4.webp",
+      "subject": "Ozzy Osbourne",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 18392,
+      "sha256": "8e2074e1b015e2817efd4d455ee64925458c0ee41c4b4262eed813a9b3fa73ef",
+      "visual_hash": "92545a1b51d99c9c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Ozzy_Osbourne",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Blizzcon_2009_198.jpg/960px-Blizzcon_2009_198.jpg"
+      }
+    },
+    {
+      "id": "artistsx:5",
+      "name": "Queen",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:5.webp",
+      "subject": "Queen (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 34710,
+      "sha256": "13ff9df0f8e2bf79a90d5dca019013ab179f8df3be0c523c8648b1954de9e473",
+      "visual_hash": "3c3c989696c6179b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Queen_(band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Queen_A_Night_At_The_Opera_%281975_Elektra_publicity_photo_02%29.jpg/960px-Queen_A_Night_At_The_Opera_%281975_Elektra_publicity_photo_02%29.jpg"
+      }
+    },
+    {
+      "id": "artistsx:6",
+      "name": "KISS",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:6.webp",
+      "subject": "Kiss (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 30704,
+      "sha256": "ebf93394c749d9bc7a75aac8b3195271ba9ae594e7197b8d16483b492c316a7e",
+      "visual_hash": "9b334d39c3716172",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Kiss_%28band%29",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Kiss_au_Hellfest_2019.jpg/960px-Kiss_au_Hellfest_2019.jpg"
+      }
+    },
+    {
+      "id": "artistsx:7",
+      "name": "Rolling Stones",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:7.webp",
+      "subject": "The Rolling Stones",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 44492,
+      "sha256": "16274b61d0bc553d39ce51acf33a542b8465580158ce7d7c820939a8a759a656",
+      "visual_hash": "55622b2725359594",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/The_Rolling_Stones",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/RStonesHydePark030722_%28125_of_125%29_%2852194125170%29_%28cropped%29.jpg/960px-RStonesHydePark030722_%28125_of_125%29_%2852194125170%29_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "artistsx:8",
+      "name": "Tobias Sammet Rockshow",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:8.webp",
+      "subject": "Avantasia",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 52994,
+      "sha256": "b5721601ac4c7711120c9873e5793001544314fdb676e9b86be0c9e6cb36d060",
+      "visual_hash": "db17171111190d0e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Avantasia",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/20160611_Loreley_RockFels_Avantasia_0717.jpg/960px-20160611_Loreley_RockFels_Avantasia_0717.jpg"
+      }
+    },
+    {
+      "id": "artistsx:9",
+      "name": "Donots Rockshow",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:9.webp",
+      "subject": "Donots",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 25420,
+      "sha256": "32ece8c9eca24de90088e77b5e06805b9f2d89e058f4b2faf877a862dbdc0982",
+      "visual_hash": "0905022b6d0c0c0e",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://kkt.berlin/artist/donots/",
+        "image": "https://kkt.berlin/wp-content/uploads/2024/09/donots-marcel-weste-1200x798.jpg"
+      }
+    },
+    {
+      "id": "artistsx:10",
+      "name": "Fury in the Slaughterhouse",
+      "section": 7,
+      "image": "/images/radio/living-collection/artistsx:10.webp",
+      "subject": "Fury in the Slaughterhouse",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39538,
+      "sha256": "12750870228697398015a6ad4b7c3292e875b87775225dd42d71b497ac00cdee",
+      "visual_hash": "c4ccec61682e0909",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Fury_in_the_Slaughterhouse",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Fury_in_the_Slaughterhouse_-_2017165195245_2017-06-14_Zeltfestival_Rhein-Neckar_-_Sven_-_1D_X_II_-_0442_-_AK8I1312.jpg/960px-Fury_in_the_Slaughterhouse_-_2017165195245_2017-06-14_Zeltfestival_Rhein-Neckar_-_Sven_-_1D_X_II_-_0442_-_AK8I1312.jpg"
+      }
+    },
+    {
+      "id": "festx:0",
+      "name": "Wacken Radio",
+      "section": 7,
+      "image": "/images/radio/living-collection/festx:0.webp",
+      "subject": "Wacken Open Air",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39182,
+      "sha256": "9041a31bd7f6ed23792c7850b4fb1c787f07c56489496c33adecb5368adb1a6d",
+      "visual_hash": "6327625a9e1e2103",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Wacken_Open_Air",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Nightwish_-_Wacken_Open_Air_2018-3919.jpg/960px-Nightwish_-_Wacken_Open_Air_2018-3919.jpg"
+      }
+    },
+    {
+      "id": "festx:1",
+      "name": "Woodstock",
+      "section": 7,
+      "image": "/images/radio/living-collection/festx:1.webp",
+      "subject": "Woodstock",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 63194,
+      "sha256": "2ace58e330a66b462151320fc6fcdf70f30475f98b828da55858796a41cbeebc",
+      "visual_hash": "93d317328ca56446",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Woodstock",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Woodstock_redmond_stage.JPG/960px-Woodstock_redmond_stage.JPG"
+      }
+    },
+    {
+      "id": "festx:2",
+      "name": "Rock am Ring",
+      "section": 7,
+      "image": "/images/radio/living-collection/festx:2.webp",
+      "subject": "Rock am Ring",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 57472,
+      "sha256": "413667ebb958a74939c4882d9f58a14e8ddde4459008db47db360e04a0df7ea6",
+      "visual_hash": "7fff783a1a14b35b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Rock_am_Ring_and_Rock_im_Park",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/13-06-07_RaR_Cro_01.jpg/960px-13-06-07_RaR_Cro_01.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1784",
+      "name": "Music Awards 2026™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-1784.webp",
+      "subject": "68th Annual Grammy Awards",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22382,
+      "sha256": "ca0892963d5e4c5bdbbe86b0ba031508b41c112af088d65c7f30dc65fc830e87",
+      "visual_hash": "e76fefe3233371d0",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.grammy.com/live-blog/2026-grammy-awards/",
+        "image": "https://media.grammy.net/uploads/2026/02/GettyImages-2259488015-1024x683-1.avif"
+      }
+    },
+    {
+      "id": "passport-nrj-2396",
+      "name": "Awards Revelações Global™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-2396.webp",
+      "subject": "Chappell Roan",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 67916,
+      "sha256": "0c0c567c944266512c016c1e27462d2d6566e38286fe3e23e1a156b6a249fb89",
+      "visual_hash": "6f4d4d67272d3b57",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Chappell_Roan",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/ChappellRoanRockES200825-198_%28cropped%29.jpg/960px-ChappellRoanRockES200825-198_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2397",
+      "name": "Awards Revelações França™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-2397.webp",
+      "subject": "Gims à la cérémonie des Victoires de la Musique 2025",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 23608,
+      "sha256": "14910d5e6df5713cebd08bd867774d31bb189517601397f4893c3c1a7104e598",
+      "visual_hash": "6d3894191d1b183d",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://fr.billboard.com/victoires-musiques-2025-gagnants/",
+        "image": "https://fr.billboard.com/wp-content/uploads/2025/02/Gims-aux-Victoires-de-la-musique-BB-FR.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2398",
+      "name": "Awards Artistas França™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-2398.webp",
+      "subject": "Zaho de Sagazan",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 30938,
+      "sha256": "512cc6d5a3ecb46abdf72a62e0397f32b785b7353c72183bd8bfd7ddee524e85",
+      "visual_hash": "3074652f1e1a1c38",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Zaho_de_Sagazan",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/ZahodeSagazan_03.jpg/960px-ZahodeSagazan_03.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-2399",
+      "name": "Awards Artistas Global™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-2399.webp",
+      "subject": "Sabrina Carpenter",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 64582,
+      "sha256": "c87059eaa28c2756f628e5f1017f63ed62dfd9d860b2cd7f33899e12401a0b61",
+      "visual_hash": "4f0f3f3b7939498b",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Sabrina_Carpenter",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Sabrina_Carpenter_-_O2_Arena_2025_-_007_%28cropped%29.jpg/960px-Sabrina_Carpenter_-_O2_Arena_2025_-_007_%28cropped%29.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-1105",
+      "name": "Awards Winners 2025™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-1105.webp",
+      "subject": "67th Annual Grammy Awards",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 22976,
+      "sha256": "c809b8c519383ee723d7f1d55fba858242b58e48adb82c6aae26749baf26ab1d",
+      "visual_hash": "3337173235143633",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.grammy.com/news/beyonce-first-black-woman-best-country-album-win-2025-grammys-cowboy-carter/",
+        "image": "https://media.grammy.net/uploads/2026/05/beyonce-2025-grammys-speech.avif"
+      }
+    },
+    {
+      "id": "passport-nrj-1810",
+      "name": "Awards Hall of Fame™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-1810.webp",
+      "subject": "Rock and Roll Hall of Fame",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 51548,
+      "sha256": "3d814e4ac2b677b12673b6fc09530474fb530398fcc92adbe0aa44d81f20e224",
+      "visual_hash": "fe17077252198b2f",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://commons.wikimedia.org/wiki/File:2012_Rock_%26_Roll_Hall_of_Fame_Induction_Ceremony.jpg",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/2012_Rock_%26_Roll_Hall_of_Fame_Induction_Ceremony.jpg/960px-2012_Rock_%26_Roll_Hall_of_Fame_Induction_Ceremony.jpg"
+      }
+    },
+    {
+      "id": "passport-nrj-94",
+      "name": "Manu Morning Show™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-nrj-94.webp",
+      "subject": "Manu Levy",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 15902,
+      "sha256": "43db77255311b329c30d07d19bed6debcba7bc54f0efca99f634b005c948759e",
+      "visual_hash": "804181cf07d2d818",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://www.pexels.com/photo/radio-host-in-a-radio-studio-talking-to-a-microphone-23883631/",
+        "image": "https://images.pexels.com/photos/23883631/pexels-photo-23883631.jpeg"
+      }
+    },
+    {
+      "id": "passport-add-20261012-radio-47",
+      "name": "Boston Headlines™",
+      "section": 7,
+      "image": "/images/radio/living-collection/passport-add-20261012-radio-47.webp",
+      "subject": "Aerosmith",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 39408,
+      "sha256": "53ec3b8309a3e8881f49b9ae72a7f45e5fdb351f70356bc8f77c5439088e65b7",
+      "visual_hash": "7070786a6c6c2429",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Aerosmith",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Aerosmith_2015.jpg/960px-Aerosmith_2015.jpg"
+      }
+    },
+    {
+      "id": "continuous:0",
+      "name": "Metal",
+      "section": 9,
+      "image": "/images/radio/living-collection/continuous:0.webp",
+      "subject": "Judas Priest",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 35302,
+      "sha256": "5db572db9e41b1fb4a22e83126c6663c8ea85828a3eb4b4ce3b5faba86ca95c0",
+      "visual_hash": "79b3d25796176452",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Judas_Priest",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Judas_Priest_-_Wacken_Open_Air_2018_01.jpg/960px-Judas_Priest_-_Wacken_Open_Air_2018_01.jpg"
+      }
+    },
+    {
+      "id": "continuous:1",
+      "name": "Unplugged I",
+      "section": 9,
+      "image": "/images/radio/living-collection/continuous:1.webp",
+      "subject": "Alice in Chains",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 59186,
+      "sha256": "515735ebecf19e0049d102096f1381b6ee1cff53334720ca8b24ef4c0e77ea11",
+      "visual_hash": "8b8fc7cb8fce9793",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Alice_in_Chains",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Alice_in_Chains_2019.jpg/960px-Alice_in_Chains_2019.jpg"
+      }
+    },
+    {
+      "id": "continuous:2",
+      "name": "Unplugged II",
+      "section": 9,
+      "image": "/images/radio/living-collection/continuous:2.webp",
+      "subject": "Eric Clapton",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 43292,
+      "sha256": "9835313a6cd6b5375dcd317647b099bffeb3fade7ca33ba7d63a69893bb3c7d3",
+      "visual_hash": "733236260c1d2605",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://commons.wikimedia.org/wiki/File:Eric_Clapton_live_on_acoustic_guitar.jpg",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Eric_Clapton_live_on_acoustic_guitar.jpg/960px-Eric_Clapton_live_on_acoustic_guitar.jpg"
+      }
+    },
+    {
+      "id": "continuous:3",
+      "name": "Heavy Metal",
+      "section": 9,
+      "image": "/images/radio/living-collection/continuous:3.webp",
+      "subject": "Black Sabbath",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 24274,
+      "sha256": "e31522b54ff3dd1f0f8243578ba62b948089604a359fd5c53de4e58c70f35b42",
+      "visual_hash": "0f0e3c35919bcacb",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Black_Sabbath",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Black_Sabbath_1999-12-16_Stuttgart.jpg/960px-Black_Sabbath_1999-12-16_Stuttgart.jpg"
+      }
+    },
+    {
+      "id": "continuous:4",
+      "name": "Gothic Passport",
+      "section": 9,
+      "image": "/images/radio/living-collection/continuous:4.webp",
+      "subject": "The Mission (band)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 21828,
+      "sha256": "28a1c3206d59b547faa82d75e2b0aed511eba61786e25ccae47d707766d6d175",
+      "visual_hash": "c1e32431b9317961",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/The_Mission_(band)",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/The_Mission_2023.png/960px-The_Mission_2023.png"
+      }
+    },
+    {
+      "id": "continuous:5",
+      "name": "Live Jam",
+      "section": 9,
+      "image": "/images/radio/living-collection/continuous:5.webp",
+      "subject": "Jam session",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 42378,
+      "sha256": "5b2997a2f13edcdfc5cad6c8e4042c175654e0392a9f12d03825aabe460e0ebf",
+      "visual_hash": "e767081b1b171732",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://en.wikipedia.org/wiki/Jam_session",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Bluegrass_Music_Jam_Delafield_Fish_Hatchery_Wisconsin_February_2009.jpg/960px-Bluegrass_Music_Jam_Delafield_Fish_Hatchery_Wisconsin_February_2009.jpg"
+      }
+    },
+    {
+      "id": "live-rare:0",
+      "name": "Abrir Live & Rare",
+      "section": 9,
+      "image": "/images/radio/living-collection/live-rare:0.webp",
+      "subject": "The Cars",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 43756,
+      "sha256": "dd686a7988b2d33cbaa66916353c6200eb25a55d0501d377b6fad378598b5b6e",
+      "visual_hash": "8d0dd7c7cdd7f3f3",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://commons.wikimedia.org/wiki/File:The_Cars_1980_(Elektra_Press_Kit_Photo).jpg",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/The_Cars_1980_%28Elektra_Press_Kit_Photo%29.jpg/1280px-The_Cars_1980_%28Elektra_Press_Kit_Photo%29.jpg"
+      }
+    },
+    {
+      "id": "novelas:0",
+      "name": "Trilha 1",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:0.webp",
+      "subject": "pt:A Gata Comeu",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 14550,
+      "sha256": "ea400f579229d6752ed198425d588a944d3efd1edfd1eb09a93ba17754ffbc80",
+      "visual_hash": "0e0e0f5353432d4c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/A_Gata_Comeu",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/e/e5/Logotipo_de_A_Gata_Comeu.png/960px-Logotipo_de_A_Gata_Comeu.png"
+      }
+    },
+    {
+      "id": "novelas:1",
+      "name": "Trilha 2",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:1.webp",
+      "subject": "pt:Roque Santeiro",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 7656,
+      "sha256": "62611dc0c9e4a4757e35e99f4f7a0284b515bdea06e4083107a6a98c701b5bea",
+      "visual_hash": "00000c9571230000",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/Roque_Santeiro",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Roque-santeiro.jpg/960px-Roque-santeiro.jpg"
+      }
+    },
+    {
+      "id": "novelas:2",
+      "name": "Trilha 3",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:2.webp",
+      "subject": "pt:Vale Tudo",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 9628,
+      "sha256": "fe34eff9f6b37c1cdf5b1b6ebff920eef52f158dd372f4f4e37cb03c8aed6e59",
+      "visual_hash": "8ccc6b272b0f8d8c",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/Vale_Tudo",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/0/09/Logotipo_de_Vale_Tudo.png/960px-Logotipo_de_Vale_Tudo.png"
+      }
+    },
+    {
+      "id": "novelas:3",
+      "name": "Trilha 4",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:3.webp",
+      "subject": "pt:Tieta (telenovela)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 19806,
+      "sha256": "ee8625480e0c9cab81e4ae9104f14d1238e284990189fc2dfd27ee130229ca91",
+      "visual_hash": "7f3f3fde76326165",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/Tieta_(telenovela)",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/3/3a/Logotipo_de_Tieta.png/960px-Logotipo_de_Tieta.png"
+      }
+    },
+    {
+      "id": "novelas:4",
+      "name": "Trilha 5",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:4.webp",
+      "subject": "pt:O Rei do Gado",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 12968,
+      "sha256": "8e70c128bc6c2e7744efcf78860f909caa36f600e3a8fab001946fa6da8aae7e",
+      "visual_hash": "387c3b3307060323",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/O_Rei_do_Gado",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/8/83/Logotipo_O_Rei_do_Gado.jpg/960px-Logotipo_O_Rei_do_Gado.jpg"
+      }
+    },
+    {
+      "id": "novelas:5",
+      "name": "Trilha 6",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:5.webp",
+      "subject": "pt:Mulheres de Areia (1993)",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 13812,
+      "sha256": "cce16c88a64b6c2ef481fc70f4a63dfbf8e4126cb794da947135c5ba90407e9c",
+      "visual_hash": "09090b93651e3400",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/Mulheres_de_Areia_(1993)",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/9/90/Mulheres_de_Areia_%281993%29.png/960px-Mulheres_de_Areia_%281993%29.png"
+      }
+    },
+    {
+      "id": "novelas:6",
+      "name": "Trilha 7",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:6.webp",
+      "subject": "pt:A Próxima Vítima",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 9160,
+      "sha256": "2b93b291a18b4614f043287e07b8d911f61e25e9bb3004cec2429a234b68c518",
+      "visual_hash": "27460e0e0e1ec3c7",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://memoriaglobo.globo.com/entretenimento/novelas/a-proxima-vitima/noticia/a-proxima-vitima.ghtml",
+        "image": "https://s2-memoriaglobo.glbimg.com/QWXB5dNDm98yo2OsBrX2imnNP1I=/1440x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_ee6202d7f3f346a7a5d7affb807d8893/internal_photos/bs/2021/L/a/TJh0TSQZKekHnQqobw8Q/landscape-arte.jpg"
+      }
+    },
+    {
+      "id": "novelas:7",
+      "name": "Trilha 8",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:7.webp",
+      "subject": "pt:O Clone",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 15180,
+      "sha256": "295983344ee769724da14ffe2a21eba6d3b4da4a4a787af2e0bff9678ca8b366",
+      "visual_hash": "1820c3030f5ef8e0",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/O_Clone",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/4/48/O_clone_logo.jpg/960px-O_clone_logo.jpg"
+      }
+    },
+    {
+      "id": "novelas:8",
+      "name": "Trilha 9",
+      "section": 9,
+      "image": "/images/radio/living-collection/novelas:8.webp",
+      "subject": "pt:Laços de Família",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 20052,
+      "sha256": "3074e349219f104be5dee02c9e5fb29f9a2c1783b162f81487b45d27f2b48b3f",
+      "visual_hash": "8bf4e834b8cef169",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "https://pt.wikipedia.org/wiki/La%C3%A7os_de_Fam%C3%ADlia",
+        "image": "https://thumb.wikimedia.org/wikipedia/pt/thumb/9/9d/Logotipo_de_La%C3%A7os_de_Fam%C3%ADlia.png/960px-Logotipo_de_La%C3%A7os_de_Fam%C3%ADlia.png"
+      }
+    },
+    {
+      "id": "globo:0",
+      "name": "Abrir Globo de Ouro",
+      "section": 9,
+      "image": "/images/radio/living-collection/globo:0.webp",
+      "subject": "Disco de vinil dourado; composição fotográfica original sem inscrições",
+      "width": 512,
+      "height": 512,
+      "color_space": "sRGB",
+      "bytes": 27768,
+      "sha256": "ca4a9f921faae0bb1bcca29d8e0e44ecfde276ace102139cf4cb00b3749251ea",
+      "visual_hash": "71b092f0b2b6e271",
+      "unique_artwork": true,
+      "provenance": {
+        "page": "original: Passport Radio Phase 4",
+        "image": "original: gold vinyl record composition"
+      }
+    }
+  ]
+}
