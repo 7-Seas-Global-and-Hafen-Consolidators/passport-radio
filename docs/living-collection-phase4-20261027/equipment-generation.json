@@ -1,0 +1,66 @@
+{
+  "method": "built-in image generation tool",
+  "purpose": "original photorealistic decorative compositions, never photographs of fictitious people presented as artists",
+  "shared_header_prompt": "Use case: product-mockup. Asset type: decorative equipment photographic cutout for an elegant white music magazine website header. Ultra realistic professional studio/product photography, believable real materials, entire object visible, no people, no text, no logos, no watermark, no frame, no icons, no illustration, no cartoon. Transparent background with genuine alpha. Landscape composition 4:3. Object isolated with generous clear margin on every side, no cropped parts. The object must be physically accurate, crisp at 400 pixels wide.",
+  "headers": [
+    {
+      "image": "/images/radio/living-collection/phase4-kpop-stage.webp",
+      "primary_request": "A complete miniature professional K-pop concert stage, viewed straight on with slight elevation, wide stage platform, LED video panels with abstract restrained pink/lilac/blue/violet light, overhead rigging and eight realistic moving-head spotlights, realistic depth and refined concert lighting. Empty stage. Lighting confined to the stage. White surroundings, no black rectangular photo background.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "transparent_background": true
+    },
+    {
+      "image": "/images/radio/living-collection/phase4-soul-bass.webp",
+      "primary_request": "One beautiful professional four-string electric bass guitar in sunburst brown natural wood with black edges, entire instrument including headstock, four tuners, neck, frets, pickups, bridge, four taut clearly visible metallic strings, photographed almost front-on diagonally from bottom left body to upper right headstock. Accurate elegant proportions. Large enough to clearly see strings, no amplifier or stand.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "transparent_background": true
+    },
+    {
+      "image": "/images/radio/living-collection/phase4-brasil-instruments.webp",
+      "primary_request": "An elegant balanced arrangement of three authentic Brazilian musical instruments: one full natural wood six-string acoustic guitar standing angled left, one smaller authentic four-string cavaquinho standing angled right, one Brazilian pandeiro with wooden frame, realistic translucent skin and pairs of metal jingles in front between them. Full bodies and necks visible, no overlap hiding strings. Correct respective sizes. Premium warm wooden finishes.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "transparent_background": true
+    },
+    {
+      "image": "/images/radio/living-collection/phase4-jazz-piano.webp",
+      "primary_request": "A beautiful full-size cherry-red lacquer concert grand piano, lid raised, three legs and pedals visible, open keyboard angled toward camera so individual white and black keys are clearly visible across the foreground, three-quarter view. Entire piano visible, elegant red reflective surface, black inner lid and realistic strings and gold harp visible within. No bench, no text, no brand.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "transparent_background": true
+    },
+    {
+      "image": "/images/radio/living-collection/phase4-live-stage.webp",
+      "primary_request": "An empty professional rock concert stage ready for a band: complete real drum kit centered behind, two electric guitars on stands at left, bass guitar on stand right, amplifiers, central microphone and stand clearly in front, floor wedge monitors, tidy cables, overhead lighting truss and spotlights. No musicians. Wide stage composition with photographic depth, restrained warm-white and subtle red light, all equipment physically realistic, no black rectangular background.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "transparent_background": true
+    },
+    {
+      "image": "/images/radio/living-collection/phase4-signals-dish.webp",
+      "primary_request": "One professional large satellite parabolic reception antenna in silver/white metal, realistic concave circular reflector seen at three-quarter angle, feed arm and receiver precisely focused in front of dish, metal stand and base visible. Entire physical object isolated, detailed metallic materials, delicate reflections, no printed text or logos. A small discreet red indicator on the feed receiver. Elegant technological product photograph.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "transparent_background": true
+    }
+  ],
+  "gold_record": {
+    "image": "/images/radio/living-collection/globo:0.webp",
+    "transparent_background": false,
+    "prompt": "Use case: product-mockup. Asset type: single square cover photograph for Globo de Ouro music collection. A real-looking luxurious metallic GOLD VINYL RECORD, circular, photographed straight-on on a clean warm-white tabletop. Fine concentric pressed vinyl grooves, realistic metallic gold reflections, small plain red centre paper label with no writing, a tiny actual spindle hole. The entire circular record fits inside the square with 6 percent white margin all around. Refined studio product photography, natural soft directional light, crisp physically accurate material. No typography, no letters, no award frame, no CD, no cassette, no people, no illustration, no icon, no logos, no watermark."
+  }
+}

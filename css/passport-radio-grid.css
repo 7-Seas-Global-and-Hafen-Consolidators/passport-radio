@@ -127,3 +127,32 @@
  #passport-radio-catalog .living-performance-art .living-tape-reel,#passport-radio-catalog .living-performance-art .living-kick{animation:none}
  #passport-radio-catalog .living-performance-art .living-kick{opacity:0}
 }
+
+/* Living Collection™ — Phase 4: new headers only; the approved cards and engines are reused. */
+#passport-radio-catalog .living-phase4{margin:48px 0}
+#passport-radio-catalog .living-phase4-header{height:auto;min-height:300px;padding:20px;grid-template-columns:minmax(0,1fr) 420px;gap:24px;overflow:visible}
+#passport-radio-catalog .living-phase4-header:after{display:none}
+#passport-radio-catalog .living-phase4-header h3{margin:0;padding:0;border:0;color:#111111;font:700 30px/1.15 'Bodoni Moda',serif;letter-spacing:normal}
+#passport-radio-catalog .living-phase4-art{width:420px;aspect-ratio:1448/1086}
+#passport-radio-catalog .living-phase4 .living-radio-cover{border-radius:12px}
+#passport-radio-catalog .living-phase4-detail{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#passport-radio-catalog .living-phase4-string{fill:none;stroke:#FFFFFF;stroke-width:1.1;opacity:.3;animation:living-string-note 3.8s linear infinite;animation-delay:calc(var(--note)*-.29s);transform-origin:center}
+@keyframes living-string-note{0%,8%,100%{transform:translate(0,0);opacity:.2}1%,3%{transform:translate(1.7px,-1.4px);opacity:.55}2%,4%{transform:translate(-1.5px,1.2px)}5%,7%{transform:translate(.5px,-.4px)}}
+#passport-radio-catalog .living-phase4-key{fill:#111111;opacity:0;animation:living-piano-note 6.4s ease-in-out infinite;animation-delay:calc(var(--note)*-.57s);transform-box:fill-box;transform-origin:top center}
+@keyframes living-piano-note{0%,7%,20%,100%{opacity:0;transform:translateY(0)}10%,16%{opacity:.28;transform:translateY(2px)}}
+#passport-radio-catalog .living-phase4-beam{position:absolute;left:calc(11% + var(--beam)*14%);top:15%;height:62%;width:9%;background:linear-gradient(rgba(190,170,255,.18),rgba(190,170,255,0));clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);transform-origin:50% 0;animation:living-stage-light 10s ease-in-out infinite alternate;animation-delay:calc(var(--beam)*-1.3s);mix-blend-mode:screen}
+#passport-radio-catalog .living-live-stage .living-phase4-beam{top:23%;height:53%;background:linear-gradient(rgba(255,230,215,.2),rgba(196,30,58,0))}
+@keyframes living-stage-light{0%{transform:rotate(-13deg);opacity:.35}50%{opacity:.8}100%{transform:rotate(13deg);opacity:.5}}
+#passport-radio-catalog .living-phase4-stage-glow{position:absolute;left:15%;right:15%;top:29%;height:40%;background:radial-gradient(ellipse,rgba(194,155,240,.06),transparent 70%);animation:living-stage-glow 8s ease-in-out infinite alternate}
+@keyframes living-stage-glow{from{opacity:.2}to{opacity:.8}}
+#passport-radio-catalog .living-phase4-skin,#passport-radio-catalog .living-phase4-jingles{position:absolute;inset:0;background:url('/images/radio/living-collection/phase4-brasil-instruments.webp') center/100% 100% no-repeat;animation:living-pandeiro-note 2.8s linear infinite}
+#passport-radio-catalog .living-phase4-skin{clip-path:ellipse(15% 8% at 54% 79%)}
+#passport-radio-catalog .living-phase4-jingles{clip-path:ellipse(17% 4% at 54% 91.5%);animation-delay:-.3s;transform-origin:54% 91.5%}
+@keyframes living-pandeiro-note{0%,10%,100%{filter:brightness(1);transform:translateY(0)}3%{filter:brightness(1.12);transform:translateY(.45px)}5%{filter:brightness(1);transform:translateY(-.3px)}}
+#passport-radio-catalog .living-phase4-reception{position:absolute;left:70%;top:25%;width:14%;height:10%;border:1px solid rgba(196,30,58,.28);border-radius:50%;transform:rotate(-35deg);animation:living-reception-pulse 4.8s ease-out infinite;animation-delay:calc(var(--pulse)*-1.6s);opacity:0}
+@keyframes living-reception-pulse{0%{transform:rotate(-35deg) scale(.2);opacity:0}20%{opacity:.4}100%{transform:rotate(-35deg) scale(1.45);opacity:0}}
+#passport-radio-catalog .living-phase4-art *{animation-play-state:paused}
+#passport-radio-catalog .living-phase4-art[data-motion=running] *{animation-play-state:running}
+@media(max-width:1024px){#passport-radio-catalog .living-phase4-header{grid-template-columns:minmax(0,1fr) 300px;min-height:250px}#passport-radio-catalog .living-phase4-art{width:300px}}
+@media(max-width:600px){#passport-radio-catalog .living-phase4-header{grid-template-columns:minmax(0,1fr);min-height:0;padding:16px 12px;gap:16px}#passport-radio-catalog .living-phase4-header h3{font-size:23px}#passport-radio-catalog .living-phase4-art{width:280px}}
+@media(prefers-reduced-motion:reduce){#passport-radio-catalog .living-phase4-art *{animation:none!important}#passport-radio-catalog .living-phase4-key,#passport-radio-catalog .living-phase4-reception{opacity:0}#passport-radio-catalog .living-phase4-string{opacity:0}}

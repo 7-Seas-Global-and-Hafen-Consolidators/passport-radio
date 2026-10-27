@@ -2,6 +2,8 @@
 (() => {
   'use strict';
   const sections = ['DANCE, FLASH HOUSE & DISCOTECAS','ROCK, METAL & ALTERNATIVAS','POP, DÉCADAS & NOSTALGIA','SOUL, BLACK MUSIC & REGGAE','BRASIL: MPB, SAMBA & SERTANEJO','JAZZ, CLÁSSICA & AMBIENTES','AO VIVO, PROGRAMAS & ESPECIAIS','WORLD DIAL™','CONTINUOUS SIGNALS™ E PROJETOS PRÓPRIOS','DEMAIS RÁDIOS EXISTENTES','K-POP & MÚSICA COREANA'];
+  // Phase 4 presentation metadata; all station records and actions remain authoritative.
+  const phase4Sections = {11:'kpop-stage',4:'soul-bass',5:'brasil-instruments',6:'jazz-piano',7:'live-stage',9:'signals-dish'};
   let inventory, catalog;
   const home = () => /^\/(?:index\.html)?$/.test(location.pathname);
   function sync() {
@@ -98,6 +100,40 @@
         }
         header.append(copy, art); section.append(header);
       }
+      if (phase4Sections[number]) {
+        section.classList.add('living-collection', 'living-phase4');
+        const theme = phase4Sections[number];
+        const header = document.createElement('header'); header.className = 'living-category-header living-phase4-header';
+        const copy = document.createElement('div'); copy.className = 'living-category-copy';
+        const kicker = document.createElement('p'); kicker.className = 'living-performance-kicker'; kicker.textContent = 'LIVING COLLECTION™';
+        copy.append(kicker, heading);
+        const art = document.createElement('figure'); art.className = `living-performance-art living-phase4-art living-${theme}`; art.setAttribute('aria-hidden','true');
+        const photo = document.createElement('img'); photo.className = 'living-equipment-photo'; photo.alt = ''; photo.width = 1448; photo.height = 1086;
+        photo.src = `/images/radio/living-collection/phase4-${theme}.webp`; art.append(photo);
+        if (number === 11 || number === 7) {
+          for (let i=0;i<6;i++) { const beam = document.createElement('span'); beam.className = 'living-phase4-beam'; beam.style.setProperty('--beam',i); art.append(beam); }
+          const glow = document.createElement('span'); glow.className = 'living-phase4-stage-glow'; art.append(glow);
+        }
+        if (number === 4 || number === 5 || number === 6) {
+          const ns = 'http://www.w3.org/2000/svg';
+          const detail = document.createElementNS(ns,'svg'); detail.setAttribute('viewBox','0 0 1448 1086'); detail.classList.add('living-phase4-detail');
+          const shapes = number === 4 ? [
+            'M140 854 L1200 180','M152 878 L1206 192','M164 900 L1212 204','M176 922 L1218 216'
+          ] : number === 5 ? [
+            'M428 798 L352 178','M436 798 L359 178','M444 798 L366 178','M452 798 L373 178','M460 798 L380 178','M468 798 L387 178',
+            'M1070 838 L1128 408','M1080 838 L1136 408','M1090 838 L1144 408','M1100 838 L1152 408'
+          ] : [
+            'M300 590 L316 594 L306 614 L290 610 Z','M362 608 L378 612 L368 632 L352 628 Z',
+            'M424 626 L440 630 L430 650 L414 646 Z','M486 644 L502 648 L492 668 L476 664 Z',
+            'M548 662 L564 666 L554 686 L538 682 Z','M610 680 L626 684 L616 704 L600 700 Z'
+          ];
+          shapes.forEach((d,i) => { const shape = document.createElementNS(ns,'path'); shape.setAttribute('d',d); shape.classList.add(number === 6 ? 'living-phase4-key' : 'living-phase4-string'); shape.style.setProperty('--note',i); detail.append(shape); });
+          art.append(detail);
+          if (number === 5) { const skin = document.createElement('span'); skin.className = 'living-phase4-skin'; const jingles = document.createElement('span'); jingles.className = 'living-phase4-jingles'; art.append(skin,jingles); }
+        }
+        if (number === 9) for (let i=0;i<3;i++) { const pulse = document.createElement('span'); pulse.className = 'living-phase4-reception'; pulse.style.setProperty('--pulse',i); art.append(pulse); }
+        header.append(copy,art); section.append(header);
+      }
       rows.forEach(row => {
         const button = document.createElement('button'); button.type = 'button'; button.id = row.new ? row.id : `passport-card-${row.id.replace(/[^a-z0-9-]/gi, '-')}`;
         button.className = 'passport-radio-card'; button.dataset.radioId = row.id;
@@ -105,7 +141,7 @@
         button.lang = row.lang || 'pt-BR'; button.dir = row.dir || 'ltr'; button.setAttribute('aria-pressed', 'false');
         const icon = document.createElement('span'); icon.className = 'passport-radio-icon'; icon.textContent = row.kind === 'program' ? '▶' : '◉'; icon.setAttribute('aria-hidden', 'true');
         const name = document.createElement('span'); name.textContent = row.name;
-        if (number === 8 || number === 1 || number === 2 || number === 3) {
+        if (number === 8 || number === 1 || number === 2 || number === 3 || phase4Sections[number]) {
           button.classList.add('living-radio-card'); button.setAttribute('aria-label',row.name);
           name.className = 'living-radio-name';
           // Presentation-only mapping: each stable ID owns its individual local artwork.
@@ -125,7 +161,7 @@
         });
         grid.append(button);
       });
-      if (number !== 8 && number !== 1 && number !== 2 && number !== 3) section.append(heading);
+      if (number !== 8 && number !== 1 && number !== 2 && number !== 3 && !phase4Sections[number]) section.append(heading);
       section.append(grid); catalog.append(section);
     });
     const tv = document.createElement('a'); tv.href = '/clips-tv.html'; tv.className = 'passport-tv-door';

@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: 112 existing radios and 11 program selectors survive unchanged; all 39 approved historical additions plus the current expanded catalog
+ok 1 - 112 existing radios and 11 program selectors survive unchanged; all 39 approved historical additions plus the current expanded catalog
+  ---
+  duration_ms: 2.601848
+  type: 'test'
+  ...
+# Subtest: protected engines, universal player, Bus, continuity, video, podcast and broadcast are byte-identical
+ok 2 - protected engines, universal player, Bus, continuity, video, podcast and broadcast are byte-identical
+  ---
+  duration_ms: 6.185089
+  type: 'test'
+  ...
+# Subtest: generated public inventory matches actual engine catalogues
+ok 3 - generated public inventory matches actual engine catalogues
+  ---
+  duration_ms: 22.382072
+  type: 'test'
+  ...
+# Subtest: Living Collection: all 401 radios, 11 selectors, streams, engines and editorial shell preserved
+ok 4 - Living Collection: all 401 radios, 11 selectors, streams, engines and editorial shell preserved
+  ---
+  duration_ms: 41.958005
+  type: 'test'
+  ...
+# Subtest: Living Collection: whole-card selection delegates byte-for-byte to the existing universal selector
+ok 5 - Living Collection: whole-card selection delegates byte-for-byte to the existing universal selector
+  ---
+  duration_ms: 5.906478
+  type: 'test'
+  ...
+# Subtest: Living Collection: original category order and non-pilot styling preserved
+ok 6 - Living Collection: original category order and non-pilot styling preserved
+  ---
+  duration_ms: 5.749517
+  type: 'test'
+  ...
+# Subtest: World artwork: exact 42 real IDs in original order, unchanged names and one unique local cover each
+ok 7 - World artwork: exact 42 real IDs in original order, unchanged names and one unique local cover each
+  ---
+  duration_ms: 1.689124
+  type: 'test'
+  ...
+# Subtest: World artwork: all 42 sources are real 512-square profiled WebP under 100 KiB
+ok 8 - World artwork: all 42 sources are real 512-square profiled WebP under 100 KiB
+  ---
+  duration_ms: 4.674399
+  type: 'test'
+  ...
+# Subtest: World artwork: photographic globe and full radio inventory remain byte-identical to pilot
+ok 9 - World artwork: photographic globe and full radio inventory remain byte-identical to pilot
+  ---
+  duration_ms: 18.30954
+  type: 'test'
+  ...
+# Subtest: Dance: all 401 radios, 51 Dance identities, streams and protected systems unchanged
+ok 10 - Dance: all 401 radios, 51 Dance identities, streams and protected systems unchanged
+  ---
+  duration_ms: 38.410588
+  type: 'test'
+  ...
+# Subtest: Dance: World Dial covers and approved evidence are byte-identical
+ok 11 - Dance: World Dial covers and approved evidence are byte-identical
+  ---
+  duration_ms: 14.375456
+  type: 'test'
+  ...
+# Subtest: Dance: original click handler, search, World Dial header and existing styles preserved exactly
+ok 12 - Dance: original click handler, search, World Dial header and existing styles preserved exactly
+  ---
+  duration_ms: 7.264708
+  type: 'test'
+  ...
+# Subtest: Dance: exactly one distinct local cover per real ID in original order
+ok 13 - Dance: exactly one distinct local cover per real ID in original order
+  ---
+  duration_ms: 0.866525
+  type: 'test'
+  ...
+# Subtest: Dance: all cover sources are 512x512 sRGB WebP, quality 82–88, below 100 KiB
+ok 14 - Dance: all cover sources are 512x512 sRGB WebP, quality 82–88, below 100 KiB
+  ---
+  duration_ms: 5.773955
+  type: 'test'
+  ...
+# Subtest: Phase 3: 401 radios and actual 46 Rock + 123 Pop records retain every byte, name, order and stream
+ok 15 - Phase 3: 401 radios and actual 46 Rock + 123 Pop records retain every byte, name, order and stream
+  ---
+  duration_ms: 46.641933
+  type: 'test'
+  ...
+# Subtest: Phase 3: approved World Dial and Dance imagery/evidence remain intact
+ok 16 - Phase 3: approved World Dial and Dance imagery/evidence remain intact
+  ---
+  duration_ms: 23.088156
+  type: 'test'
+  ...
+# Subtest: Phase 3: selection, search, category order and approved header code are unchanged
+ok 17 - Phase 3: selection, search, category order and approved header code are unchanged
+  ---
+  duration_ms: 10.405669
+  type: 'test'
+  ...
+# Subtest: Phase 3: all 169 stable IDs have one distinct local photograph in the real section order
+ok 18 - Phase 3: all 169 stable IDs have one distinct local photograph in the real section order
+  ---
+  duration_ms: 4.367957
+  type: 'test'
+  ...
+# Subtest: Phase 3: all photos are profiled 512px square WebP; both photographic equipment cutouts retain alpha
+ok 19 - Phase 3: all photos are profiled 512px square WebP; both photographic equipment cutouts retain alpha
+  ---
+  duration_ms: 13.011332
+  type: 'test'
+  ...
+# Subtest: Phase 3: equipment animation contains no playback, network or catalogue operations
+ok 20 - Phase 3: equipment animation contains no playback, network or catalogue operations
+  ---
+  duration_ms: 0.572482
+  type: 'test'
+  ...
+# Subtest: Phase 4: exact 150 entries, 401 radios, identifiers and all protected behaviour preserved
+ok 21 - Phase 4: exact 150 entries, 401 radios, identifiers and all protected behaviour preserved
+  ---
+  duration_ms: 54.690062
+  type: 'test'
+  ...
+# Subtest: Phase 4: all three approved collections and their artwork remain byte-identical
+ok 22 - Phase 4: all three approved collections and their artwork remain byte-identical
+  ---
+  duration_ms: 43.000745
+  type: 'test'
+  ...
+# Subtest: Phase 4: 150 individually sourced profiled WebP photographs map to exact existing records
+ok 23 - Phase 4: 150 individually sourced profiled WebP photographs map to exact existing records
+  ---
+  duration_ms: 11.344122
+  type: 'test'
+  ...
+# Subtest: Phase 4: exact shared click handler, names, category order, search and previous header markup preserved
+ok 24 - Phase 4: exact shared click handler, names, category order, search and previous header markup preserved
+  ---
+  duration_ms: 7.388716
+  type: 'test'
+  ...
+# Subtest: Phase 4: six isolated photographic equipment resources and silent motion respect visibility and reduced motion
+ok 25 - Phase 4: six isolated photographic equipment resources and silent motion respect visibility and reduced motion
+  ---
+  duration_ms: 1.135941
+  type: 'test'
+  ...
+# Subtest: 154 previous radios and every program preserved exactly
+ok 26 - 154 previous radios and every program preserved exactly
+  ---
+  duration_ms: 3.826442
+  type: 'test'
+  ...
+# Subtest: six distinct approved additions; Big B existing channel retained
+ok 27 - six distinct approved additions; Big B existing channel retained
+  ---
+  duration_ms: 10.056612
+  type: 'test'
+  ...
+# Subtest: existing transport restored exactly; protected files unchanged
+ok 28 - existing transport restored exactly; protected files unchanged
+  ---
+  duration_ms: 29.247997
+  type: 'test'
+  ...
+# Subtest: C-Pop replacement keeps its original identity, language, position and inventory mapping
+ok 29 - C-Pop replacement keeps its original identity, language, position and inventory mapping
+  ---
+  duration_ms: 1.154598
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 497.014075

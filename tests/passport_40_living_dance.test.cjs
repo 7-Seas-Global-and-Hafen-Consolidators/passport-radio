@@ -19,7 +19,7 @@ test('Dance: original click handler, search, World Dial header and existing styl
  const js=bytes('js/passport-radio-grid.js').toString(),before=old('js/passport-radio-grid.js').toString();
  for(const expression of [/button.addEventListener\('click',[\s\S]*?\n        \}\);/,/const locate = \(\) => \{[\s\S]*?\n    \};/,/const sections = .*;/,/\[1,2,3,11,4,5,6,7,8,9,10\]/,/      if \(number === 8\) \{[\s\S]*?\n      \}/,/const tv = [\s\S]*?catalog.append\(tv\);/])assert.equal(js.match(expression)[0],before.match(expression)[0]);
  assert(bytes('css/passport-radio-grid.css').toString().startsWith(old('css/passport-radio-grid.css').toString()));
- assert(js.includes('if (number === 8 || number === 1 || number === 2 || number === 3)'));assert(js.includes('A pista nunca para.'));assert(js.includes('Dance, disco, house, eurodance e os clássicos das pistas.'));
+ assert(js.includes('if (number === 8 || number === 1 || number === 2 || number === 3 || phase4Sections[number])'));assert(js.includes('A pista nunca para.'));assert(js.includes('Dance, disco, house, eurodance e os clássicos das pistas.'));
 });
 test('Dance: exactly one distinct local cover per real ID in original order',()=>{
  const m=manifest();assert.equal(m.count,51);assert.deepEqual(m.artworks.map(a=>[a.id,a.name]),rows.map(r=>[r.id,r.name]));
