@@ -39,9 +39,24 @@
   function api(){if(window.YT?.Player)return Promise.resolve(window.YT);if(apiPromise)return apiPromise;apiPromise=new Promise((resolve,reject)=>{const old=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=()=>{try{old?.();}finally{resolve(window.YT);}};let script=document.querySelector('script[src="https://www.youtube.com/iframe_api"]');if(!script){script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';script.onerror=()=>reject(Error('player'));document.head.append(script);}setTimeout(()=>{if(window.YT?.Player)resolve(window.YT);else reject(Error('timeout'));},20000);});return apiPromise;}
   let activePreview=null,activeMedia=null,activeActions=null,activeMessage=null;
   function close(){generation++;player?.destroy?.();player=null;current=null;owned=false;revoked=false;if(activePreview&&activeMedia){activePreview.disabled=false;activeMedia.replaceChildren(activePreview);}if(activeMessage)activeMessage.textContent='';activeMessage=null;activeActions?.remove();activeActions=null;activePreview=null;activeMedia=null;}
+  function selectDirect(v,card,media,preview,message,token){
+    const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='metadata';video.poster=v.thumbnail;video.setAttribute('aria-label',v.artist+' — '+v.title);
+    const source=document.createElement('source');source.src=v.source.url;source.type=v.source.type;video.append(source);media.replaceChildren(video);
+    const actions=document.createElement('div');actions.className='videos-card-actions';activeActions=actions;
+    const start=document.createElement('button');start.type='button';start.textContent='REPRODUZIR';
+    const stop=document.createElement('button');stop.type='button';stop.textContent='FECHAR ×';stop.addEventListener('click',()=>{close();preview.focus();});
+    player={pauseVideo(){video.pause();},playVideo(){claim();video.play().catch(()=>{if(token===generation){preview.disabled=false;message.textContent='Não foi possível iniciar a reprodução. Use o botão Reproduzir para tentar novamente.';}});},destroy(){video.pause();source.remove();video.removeAttribute('src');video.load();}};
+    start.addEventListener('click',()=>player?.playVideo());actions.append(start,stop);card.append(actions);
+    video.addEventListener('loadedmetadata',()=>{if(token===generation){preview.disabled=false;message.textContent='';}});
+    video.addEventListener('play',()=>{if(token!==generation){video.pause();return;}if(!owned)claim();message.textContent='';});
+    video.addEventListener('playing',()=>{if(token!==generation||revoked)video.pause();});
+    video.addEventListener('error',()=>{if(token===generation){preview.disabled=false;message.textContent='Não foi possível carregar este vídeo. Use o botão Reproduzir para tentar novamente.';}});
+    player.playVideo();
+  }
   async function select(v,card,media,preview,message){
     close();const token=++generation;current=v;activePreview=preview;activeMedia=media;activeMessage=message;
     message.textContent='';
+    if(v.source?.type==='video/mp4'){message.textContent='Carregando reprodução…';preview.disabled=true;selectDirect(v,card,media,preview,message,token);return;}
     if(!v.embedAllowed){message.textContent='Este vídeo não permite reprodução incorporada.';return;}
     message.textContent='Carregando reprodução…';preview.disabled=true;
     try{
