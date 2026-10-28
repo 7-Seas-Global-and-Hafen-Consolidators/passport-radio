@@ -1,0 +1,77 @@
+[
+  {
+    "route": "/bandas/index.html",
+    "width": 1440,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/bandas/index.html",
+    "width": 390,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/blog/arquivo/letras.html",
+    "width": 1440,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/blog/arquivo/letras.html",
+    "width": 390,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/loja.html",
+    "width": 1440,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/loja.html",
+    "width": 390,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/cannibal-corpse.html",
+    "width": 1440,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/cannibal-corpse.html",
+    "width": 390,
+    "menu": {
+      "before": "false",
+      "after": "true"
+    },
+    "logoCount": 1
+  },
+  {
+    "route": "/therion-miskolc-experience-symphonic-metal.html",
+    "width": 1440,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/therion-miskolc-experience-symphonic-metal.html",
+    "width": 390,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/promocao-queen-budapest.html",
+    "width": 1440,
+    "menu": null,
+    "logoCount": 1
+  },
+  {
+    "route": "/promocao-queen-budapest.html",
+    "width": 390,
+    "menu": null,
+    "logoCount": 1
+  }
+]

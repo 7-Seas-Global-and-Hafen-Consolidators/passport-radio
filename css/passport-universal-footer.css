@@ -1,3 +1,4 @@
+@import url('/css/passport-masthead.css?v=20261028');
 @import url('/css/passport-footer-fonts.css');
 /* One footer; approved Home payment geometry and existing official wordmark. */
 footer[data-passport-universal-footer]{display:block!important;position:static!important;width:100%!important;max-width:none!important;height:auto!important;min-height:0!important;margin:0!important;padding:30px 16px 20px!important;border:0!important;border-top:3px solid #111111!important;border-radius:0!important;background:#FFFFFF!important;color:#111111!important;box-sizing:border-box!important;float:none!important;text-align:left!important}
