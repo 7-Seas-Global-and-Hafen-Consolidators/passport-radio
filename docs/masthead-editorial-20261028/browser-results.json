@@ -1,0 +1,1770 @@
+{
+  "base": "d1d2291c950389b3cfe82dc00676cd6da251f879",
+  "physicalDevice": false,
+  "checks": [
+    {
+      "path": "/",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/",
+      "width": 1200,
+      "logo": {
+        "x": 32,
+        "y": 22,
+        "w": 904,
+        "h": 190.640625,
+        "right": 936,
+        "bottom": 212.640625
+      },
+      "social": {
+        "x": 960,
+        "y": 121.3125,
+        "w": 208,
+        "h": 68,
+        "right": 1168,
+        "bottom": 189.3125
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1200
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "logo": {
+        "x": 62,
+        "y": 24,
+        "w": 900,
+        "h": 189.796875,
+        "right": 962,
+        "bottom": 213.796875
+      },
+      "social": {
+        "x": 28,
+        "y": 247.796875,
+        "w": 968,
+        "h": 30,
+        "right": 996,
+        "bottom": 277.796875
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1024
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "logo": {
+        "x": 28,
+        "y": 24,
+        "w": 712,
+        "h": 150.15625,
+        "right": 740,
+        "bottom": 174.15625
+      },
+      "social": {
+        "x": 28,
+        "y": 208.15625,
+        "w": 712,
+        "h": 30,
+        "right": 740,
+        "bottom": 238.15625
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 768
+    },
+    {
+      "path": "/",
+      "width": 430,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 406,
+        "h": 85.609375,
+        "right": 418,
+        "bottom": 105.609375
+      },
+      "social": {
+        "x": 12,
+        "y": 138.203125,
+        "w": 406,
+        "h": 28,
+        "right": 418,
+        "bottom": 166.203125
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 585
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 585
+    },
+    {
+      "path": "/",
+      "width": 360,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 336,
+        "h": 70.859375,
+        "right": 348,
+        "bottom": 90.859375
+      },
+      "social": {
+        "x": 12,
+        "y": 123.453125,
+        "w": 336,
+        "h": 28,
+        "right": 348,
+        "bottom": 151.453125
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 585
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 296,
+        "h": 62.421875,
+        "right": 308,
+        "bottom": 82.421875
+      },
+      "social": {
+        "x": 12,
+        "y": 115.015625,
+        "w": 296,
+        "h": 28,
+        "right": 308,
+        "bottom": 143.015625
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 585
+    },
+    {
+      "path": "/noticias.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/noticias.html",
+      "width": 1200,
+      "logo": {
+        "x": 32,
+        "y": 22,
+        "w": 904,
+        "h": 190.640625,
+        "right": 936,
+        "bottom": 212.640625
+      },
+      "social": {
+        "x": 960,
+        "y": 121.3125,
+        "w": 208,
+        "h": 68,
+        "right": 1168,
+        "bottom": 189.3125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1200
+    },
+    {
+      "path": "/noticias.html",
+      "width": 1024,
+      "logo": {
+        "x": 62,
+        "y": 24,
+        "w": 900,
+        "h": 189.796875,
+        "right": 962,
+        "bottom": 213.796875
+      },
+      "social": {
+        "x": 28,
+        "y": 247.796875,
+        "w": 968,
+        "h": 30,
+        "right": 996,
+        "bottom": 277.796875
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1024
+    },
+    {
+      "path": "/noticias.html",
+      "width": 768,
+      "logo": {
+        "x": 28,
+        "y": 24,
+        "w": 712,
+        "h": 150.15625,
+        "right": 740,
+        "bottom": 174.15625
+      },
+      "social": {
+        "x": 28,
+        "y": 208.15625,
+        "w": 712,
+        "h": 30,
+        "right": 740,
+        "bottom": 238.15625
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 768
+    },
+    {
+      "path": "/noticias.html",
+      "width": 430,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 406,
+        "h": 85.609375,
+        "right": 418,
+        "bottom": 105.609375
+      },
+      "social": {
+        "x": 12,
+        "y": 138.203125,
+        "w": 406,
+        "h": 28,
+        "right": 418,
+        "bottom": 166.203125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 430
+    },
+    {
+      "path": "/noticias.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/noticias.html",
+      "width": 360,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 336,
+        "h": 70.859375,
+        "right": 348,
+        "bottom": 90.859375
+      },
+      "social": {
+        "x": 12,
+        "y": 123.453125,
+        "w": 336,
+        "h": 28,
+        "right": 348,
+        "bottom": 151.453125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 360
+    },
+    {
+      "path": "/noticias.html",
+      "width": 320,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 296,
+        "h": 62.421875,
+        "right": 308,
+        "bottom": 82.421875
+      },
+      "social": {
+        "x": 12,
+        "y": 115.015625,
+        "w": 296,
+        "h": 28,
+        "right": 308,
+        "bottom": 143.015625
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 320
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 1200,
+      "logo": {
+        "x": 32,
+        "y": 22,
+        "w": 904,
+        "h": 190.640625,
+        "right": 936,
+        "bottom": 212.640625
+      },
+      "social": {
+        "x": 960,
+        "y": 121.3125,
+        "w": 208,
+        "h": 68,
+        "right": 1168,
+        "bottom": 189.3125
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1200
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 1024,
+      "logo": {
+        "x": 62,
+        "y": 24,
+        "w": 900,
+        "h": 189.796875,
+        "right": 962,
+        "bottom": 213.796875
+      },
+      "social": {
+        "x": 28,
+        "y": 247.796875,
+        "w": 968,
+        "h": 30,
+        "right": 996,
+        "bottom": 277.796875
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1024
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 768,
+      "logo": {
+        "x": 28,
+        "y": 24,
+        "w": 712,
+        "h": 150.15625,
+        "right": 740,
+        "bottom": 174.15625
+      },
+      "social": {
+        "x": 28,
+        "y": 208.15625,
+        "w": 712,
+        "h": 30,
+        "right": 740,
+        "bottom": 238.15625
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 768
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 430,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 406,
+        "h": 85.609375,
+        "right": 418,
+        "bottom": 105.609375
+      },
+      "social": {
+        "x": 12,
+        "y": 138.203125,
+        "w": 406,
+        "h": 28,
+        "right": 418,
+        "bottom": 166.203125
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 430
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 360,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 336,
+        "h": 70.859375,
+        "right": 348,
+        "bottom": 90.859375
+      },
+      "social": {
+        "x": 12,
+        "y": 123.453125,
+        "w": 336,
+        "h": 28,
+        "right": 348,
+        "bottom": 151.453125
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 360
+    },
+    {
+      "path": "/editorial/2026/10/28/paula-toller-cinco-discos-influencias-musicais.html",
+      "width": 320,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 296,
+        "h": 62.421875,
+        "right": 308,
+        "bottom": 82.421875
+      },
+      "social": {
+        "x": 12,
+        "y": 115.015625,
+        "w": 296,
+        "h": 28,
+        "right": 308,
+        "bottom": 143.015625
+      },
+      "navDestinations": 12,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 320
+    },
+    {
+      "path": "/agenda.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/agenda.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/editorial.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/editorial.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/bandas/index.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 64,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 274.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 173.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 241.4375
+      },
+      "navDestinations": 8,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/bandas/index.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 48,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 125.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 188.1875,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 216.1875
+      },
+      "navDestinations": 8,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/blog.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/blog.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/blog/arquivo/letras.html",
+      "width": 1440,
+      "logo": {
+        "x": 64.234375,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1064.234375,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/blog/arquivo/letras.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 303.59375,
+        "h": 64.015625,
+        "right": 315.59375,
+        "bottom": 84.015625
+      },
+      "social": {
+        "x": 12,
+        "y": 158.015625,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 186.015625
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/blog/arquivo/letra-a.html",
+      "width": 1440,
+      "logo": {
+        "x": 64.234375,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1064.234375,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/blog/arquivo/letra-a.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 303.59375,
+        "h": 64.015625,
+        "right": 315.59375,
+        "bottom": 84.015625
+      },
+      "social": {
+        "x": 12,
+        "y": 158.015625,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 186.015625
+      },
+      "navDestinations": 24,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/videos.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/videos.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/clips-tv.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 16,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/clips-tv.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 16,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/loja.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 13,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/loja.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 13,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/divulgar-bandas.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/divulgar-bandas.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/anuncie.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/anuncie.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 14,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/doe.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/doe.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/radio.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/radio.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/promocoes.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/promocoes.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/destinos.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 48,
+        "w": 1000,
+        "h": 211.890625,
+        "right": 1104,
+        "bottom": 259.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 157.9375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 225.9375
+      },
+      "navDestinations": 9,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/destinos.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 57,
+        "w": 366,
+        "h": 78.1875,
+        "right": 378,
+        "bottom": 135.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 170.1875,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 198.1875
+      },
+      "navDestinations": 9,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/signal.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 0,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/signal.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 131.1875,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 159.1875
+      },
+      "navDestinations": 0,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/tony-iommi-karl-brazil.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/tony-iommi-karl-brazil.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/therion-miskolc-experience-symphonic-metal.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/therion-miskolc-experience-symphonic-metal.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 15,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 411
+    },
+    {
+      "path": "/cannibal-corpse.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 7,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/cannibal-corpse.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 129.78125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.78125
+      },
+      "navDestinations": 7,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/thomas-youngblood-kamelot-trinta-anos-estrada.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 50.921875,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 261.8125,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 160.359375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 228.359375
+      },
+      "navDestinations": 5,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/thomas-youngblood-kamelot-trinta-anos-estrada.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 48.921875,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 126.109375,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 158.703125,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 186.703125
+      },
+      "navDestinations": 5,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/promocao-queen-budapest.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 3,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/promocao-queen-budapest.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 129.1875,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 157.1875
+      },
+      "navDestinations": 3,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    },
+    {
+      "path": "/index-95x.html",
+      "width": 1440,
+      "logo": {
+        "x": 104,
+        "y": 22,
+        "w": 1000,
+        "h": 210.890625,
+        "right": 1104,
+        "bottom": 232.890625,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 1200,
+        "y": 131.4375,
+        "w": 208,
+        "h": 68,
+        "right": 1408,
+        "bottom": 199.4375
+      },
+      "navDestinations": 5,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/index-95x.html",
+      "width": 390,
+      "logo": {
+        "x": 12,
+        "y": 20,
+        "w": 366,
+        "h": 77.1875,
+        "right": 378,
+        "bottom": 97.1875,
+        "fontSize": "0px"
+      },
+      "social": {
+        "x": 12,
+        "y": 148.1875,
+        "w": 366,
+        "h": 28,
+        "right": 378,
+        "bottom": 176.1875
+      },
+      "navDestinations": 5,
+      "footerUnchanged": true,
+      "searchPreserved": true,
+      "documentWidth": 390
+    }
+  ],
+  "audio": [
+    {
+      "mobile": false,
+      "tested": true,
+      "beforeControls": {
+        "time": 1.012712,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 21316,
+        "volume": 0.8
+      },
+      "before": {
+        "time": 1.0131,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 21316,
+        "volume": 0.4
+      },
+      "news": {
+        "time": 1.979414,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 36780,
+        "volume": 0.4
+      },
+      "home": {
+        "time": 3.053981,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 53917,
+        "volume": 0.4
+      }
+    },
+    {
+      "mobile": true,
+      "tested": true,
+      "beforeControls": {
+        "time": 1.009467,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 21316,
+        "volume": 0.8
+      },
+      "before": {
+        "time": 1.018285,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 21316,
+        "volume": 0.4
+      },
+      "news": {
+        "time": 2.004889,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 37198,
+        "volume": 0.4
+      },
+      "home": {
+        "time": 3.101186,
+        "same": true,
+        "paused": false,
+        "active": 1,
+        "decoded": 54752,
+        "volume": 0.4
+      }
+    }
+  ],
+  "limitations": [
+    {
+      "path": "/",
+      "width": 430,
+      "existingDocumentWidth": 585,
+      "currentDocumentWidth": 585,
+      "headerWithinViewport": true
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "existingDocumentWidth": 585,
+      "currentDocumentWidth": 585,
+      "headerWithinViewport": true
+    },
+    {
+      "path": "/",
+      "width": 360,
+      "existingDocumentWidth": 585,
+      "currentDocumentWidth": 585,
+      "headerWithinViewport": true
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "existingDocumentWidth": 585,
+      "currentDocumentWidth": 585,
+      "headerWithinViewport": true
+    },
+    {
+      "path": "/therion-miskolc-experience-symphonic-metal.html",
+      "width": 390,
+      "existingDocumentWidth": 411,
+      "currentDocumentWidth": 411,
+      "headerWithinViewport": true
+    }
+  ],
+  "errors": [],
+  "status": "passed",
+  "radioCount": 401,
+  "programSelectorCount": 11,
+  "remounts": 5
+}
