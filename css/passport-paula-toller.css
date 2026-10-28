@@ -1,0 +1,27 @@
+/* Paula Toller only: shared institutional chrome and complete approved narrative. */
+.paula-toller-paper .participe-content{max-width:1160px;margin:0 auto;padding:28px 24px 60px}
+.paula-toller-paper .story-return{display:inline-block;margin-bottom:24px;color:#C41E3A;font:600 12px/1.4 var(--pr-sans)}
+.paula-toller-paper .hero{border-bottom:1px solid #E5E5E5;padding-bottom:28px}
+.paula-toller-paper .hero-copy{max-width:1000px;margin:auto}
+.paula-toller-paper .eyebrow{color:#C41E3A;font:700 11px/1.6 var(--pr-sans);letter-spacing:.1em;text-transform:uppercase}
+.paula-toller-paper .hero h1{font:700 clamp(34px,4.2vw,58px)/1.09 var(--pr-display);letter-spacing:-.025em;margin:14px 0 20px}
+.paula-toller-paper .dek{max-width:74ch;font:400 20px/1.5 var(--pr-body);margin:0 0 18px}
+.paula-toller-paper .hero>img{display:block;width:100%;height:auto;max-height:620px;object-fit:cover;object-position:center;margin:24px auto 0}
+.paula-toller-paper #article-text{font:400 18px/1.66 var(--pr-body);overflow-wrap:break-word}
+.paula-toller-paper #article-text p{margin:0 0 16px}
+.paula-toller-paper #article-text h2{font:700 30px/1.18 var(--pr-display);margin:0 0 22px;text-wrap:balance}
+.paula-toller-paper .story-chapter{max-width:760px;margin:0 auto;padding:32px 0;border-bottom:1px solid #E5E5E5}
+.paula-toller-paper .story-opening>p:first-child::first-letter{float:left;font:700 66px/.9 var(--pr-display);color:#C41E3A;margin:8px 8px 0 0}
+.paula-toller-paper .album-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:36px 0}
+.paula-toller-paper .album-chapter{min-width:0;align-self:start;padding:26px;border:1px solid #E5E5E5;border-top:3px solid #C41E3A;border-radius:4px;background:#FFFFFF}
+.paula-toller-paper #article-text .album-chapter h2{font-size:27px}
+.paula-toller-paper .album-cover{float:left;width:140px;margin:0 20px 14px 0}
+.paula-toller-paper .album-cover img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.paula-toller-paper .video{clear:both;position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#111111;margin:24px 0 0}
+.paula-toller-paper .video iframe{display:block;position:absolute;inset:0;width:100%;height:100%;border:0}
+.paula-toller-paper #article-text a{color:#C41E3A;text-decoration:underline;text-underline-offset:3px}
+.paula-toller-paper .signature{border-top:2px solid #111111;padding-top:22px;margin-top:28px!important;font:700 18px/1.4 var(--pr-sans)}
+@media(max-width:800px){.paula-toller-paper .album-grid{grid-template-columns:1fr}.paula-toller-paper .album-chapter{padding:24px}.paula-toller-paper .hero>img{max-height:none}.paula-toller-paper .participe-content{padding-inline:20px}}
+@media(max-width:480px){.paula-toller-paper .participe-content{padding:24px 16px 40px}.paula-toller-paper .hero h1{font-size:34px}.paula-toller-paper .dek{font-size:18px}.paula-toller-paper #article-text{font-size:18px;line-height:1.6}.paula-toller-paper #article-text h2{font-size:26px}.paula-toller-paper .album-chapter{padding:18px}.paula-toller-paper .album-cover{width:112px;margin-right:14px}.paula-toller-paper .story-chapter{padding:26px 0}}
+.paula-toller-paper .photo-credit{margin:10px 0 0;font:400 12px/1.5 var(--pr-sans)}
+.paula-toller-paper .photo-credit a{text-decoration:underline;text-underline-offset:2px}
