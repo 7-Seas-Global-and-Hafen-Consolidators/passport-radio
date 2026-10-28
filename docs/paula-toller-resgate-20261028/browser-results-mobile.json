@@ -1,0 +1,106 @@
+{
+  "base": "84d64da81be0b089dc976b9f563931b907f309f5",
+  "layouts": [
+    {
+      "width": 390,
+      "scroll": 390,
+      "h1": 1,
+      "albums": 6,
+      "frames": [
+        {
+          "w": 320,
+          "h": 180
+        },
+        {
+          "w": 320,
+          "h": 180
+        },
+        {
+          "w": 320,
+          "h": 180
+        },
+        {
+          "w": 320,
+          "h": 180
+        },
+        {
+          "w": 320,
+          "h": 180
+        },
+        {
+          "w": 320,
+          "h": 180
+        }
+      ],
+      "images": [
+        {
+          "loaded": true,
+          "width": 358
+        },
+        {
+          "loaded": true,
+          "width": 112
+        },
+        {
+          "loaded": true,
+          "width": 112
+        },
+        {
+          "loaded": true,
+          "width": 112
+        },
+        {
+          "loaded": true,
+          "width": 112
+        },
+        {
+          "loaded": true,
+          "width": 112
+        },
+        {
+          "loaded": true,
+          "width": 112
+        }
+      ],
+      "footer": 1,
+      "height": 23981
+    }
+  ],
+  "physicalDevice": false,
+  "videoPlayback": "Not tested end to end; official embedded players retained, no autoplay.",
+  "audio": {
+    "tested": true,
+    "before": {
+      "time": 1.013149,
+      "same": true,
+      "paused": false,
+      "active": 1,
+      "decoded": 21316
+    },
+    "news": {
+      "time": 2.057577,
+      "same": true,
+      "paused": false,
+      "active": 1,
+      "decoded": 38034
+    },
+    "article": {
+      "time": 3.102531,
+      "same": true,
+      "paused": false,
+      "active": 1,
+      "decoded": 54752
+    },
+    "return": {
+      "time": 4.175474,
+      "same": true,
+      "paused": false,
+      "active": 1,
+      "decoded": 71889
+    }
+  },
+  "errors": [],
+  "beforeHeight": 36559,
+  "embeds": [],
+  "footerIdenticalToNews": true
+}
