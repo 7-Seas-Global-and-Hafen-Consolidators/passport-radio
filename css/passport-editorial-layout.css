@@ -126,3 +126,42 @@ html body.passport-editorial-rollout{background:#FFFFFF;color:#111111}
 @media(max-width:767px){.passport-editorial-rollout main.participe-content{padding:18px 18px 40px}.passport-editorial-rollout main .related>div{grid-template-columns:1fr}}
 @media(max-width:480px){.passport-editorial-rollout .editorial-prose .editorial-card{padding:18px}.passport-editorial-rollout .editorial-prose .editorial-chapter-photo{width:88px;height:88px;margin-right:14px}}
 @media(max-width:374px){.passport-editorial-rollout main.participe-content{padding-inline:16px}}
+/* Historical templates shipped !important type rules; override inside article main only. */
+html body.passport-editorial-rollout.passport-editorial-rollout main{--editorial-text-size:20px;--editorial-h1-size:56px;--editorial-h2-size:32px;--editorial-h3-size:24px;font:400 var(--editorial-text-size)/1.7 "Passport Editorial Text",Georgia,serif}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(p,li,blockquote){font-family:"Passport Editorial Text",Georgia,serif!important;font-size:var(--editorial-text-size)!important;line-height:1.7!important;color:#111111!important;letter-spacing:normal!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(h1,h2,h3,h4){font-family:"Passport Editorial Display",Georgia,serif!important;font-weight:700!important;color:#111111!important;letter-spacing:-.01em!important;max-width:100%;overflow-wrap:break-word}
+html body.passport-editorial-rollout.passport-editorial-rollout main h1{font-size:var(--editorial-h1-size)!important;line-height:1.12!important;max-width:1080px!important;margin:0 0 22px!important;text-wrap:balance}
+html body.passport-editorial-rollout.passport-editorial-rollout main h2{font-size:var(--editorial-h2-size)!important;line-height:1.18!important;margin:0 0 22px!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main h3{font-size:var(--editorial-h3-size)!important;line-height:1.2!important;margin:24px 0 16px!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-card h2{font-size:27px!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .dek{font-size:22px!important;line-height:1.55!important;color:#444444!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(.editorial-category,.editorial-byline,.chapter,.mn-chapter){font-family:"Passport Editorial Sans",sans-serif!important;font-size:13px!important;line-height:1.5!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-category{color:#C41E3A!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-byline{color:#666666!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .hero{min-height:0!important;height:auto!important;padding:0 0 32px!important;margin:0 0 30px!important;position:relative!important;overflow:visible}
+html body.passport-editorial-rollout.passport-editorial-rollout main .hero-copy{position:static!important;inset:auto!important;max-width:1080px!important;margin:auto!important;transform:none!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-layout{display:block!important;grid-template-columns:none!important;width:100%!important;max-width:1120px!important;padding:0!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(.article,.prose,.story-reading){max-width:1120px!important;min-width:0!important;width:100%!important;padding-inline:0!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-card :is(.shell,.pe-shell,.story-shell){width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-card{background:#FFFFFF!important;color:#111111!important;box-shadow:none!important}
+@media(min-width:768px) and (max-width:1199px){html body.passport-editorial-rollout.passport-editorial-rollout main{--editorial-text-size:19px;--editorial-h1-size:42px;--editorial-h2-size:29px;--editorial-h3-size:23px}html body.passport-editorial-rollout.passport-editorial-rollout main .dek{font-size:20px!important}}
+@media(max-width:767px){html body.passport-editorial-rollout.passport-editorial-rollout main{--editorial-text-size:18px;--editorial-h1-size:34px;--editorial-h2-size:26px;--editorial-h3-size:21px}html body.passport-editorial-rollout.passport-editorial-rollout main .dek{font-size:18px!important}html body.passport-editorial-rollout.passport-editorial-rollout main .editorial-card h2{font-size:26px!important}}
+@media(max-width:374px){html body.passport-editorial-rollout.passport-editorial-rollout main{--editorial-text-size:17.5px;--editorial-h1-size:32px}}
+/* Remove obsolete dark decorative overlays; the original photograph is a real image node. */
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(.hero,.hero-copy)::before,
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(.hero,.hero-copy)::after{content:none!important;display:none!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(p,h1,h2,h3,li){overflow-wrap:anywhere!important;word-break:normal!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .musician-card{min-width:0!important;width:100%!important;max-width:100%!important;margin-inline:0!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(.musicians-grid,.musician-grid){grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:100%}
+@media(max-width:800px){html body.passport-editorial-rollout.passport-editorial-rollout main :is(.musicians-grid,.musician-grid){grid-template-columns:1fr!important}}
+/* Restore the official payment icon dimensions where legacy img{width:100%} leaked into the shared footer. */
+body.passport-editorial-rollout #passport-universal-footer-content .puf-methods img{width:16px!important;height:16px!important}
+body.passport-editorial-rollout #passport-universal-footer-content .puf-methods img[src$="/caixa.png"]{width:20px!important}
+@media(max-width:800px){html body.passport-editorial-rollout.passport-editorial-rollout main .musician-grid{display:grid!important;grid-template-columns:1fr!important;width:100%!important;min-width:0!important;padding:0!important}}
+.passport-editorial-rollout .editorial-chapter-grid:has(>.editorial-card:only-child){grid-template-columns:1fr;max-width:760px;margin-inline:auto}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(h1,h2,h3)>span{font:inherit!important;color:inherit!important;letter-spacing:inherit!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(figcaption,.caption,.credit,.photo-credit){font:400 13px/1.5 "Passport Editorial Text",Georgia,serif!important;color:#666666!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main :is(h1,h2,h3){text-shadow:none!important}
+html body.passport-editorial-rollout.passport-editorial-rollout main .video{height:auto!important;aspect-ratio:16/9!important;padding:0!important;box-shadow:none!important;max-width:100%}
+html body.passport-editorial-rollout.passport-editorial-rollout main .video iframe{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important}
+.passport-editorial-rollout .editorial-chapter-photo{object-position:center 28%}

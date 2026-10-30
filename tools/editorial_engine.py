@@ -392,7 +392,27 @@ def esc(value: Any) -> str:
     return html.escape(clean(value), quote=True)
 
 
+def editorial_presentation(article: dict[str, Any]) -> dict[str, Any]:
+    """Local presentation assets only; no collection, routing or audio behavior."""
+    def key(value: Any) -> str:
+        return re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFD", str(value).lower()).encode("ascii", "ignore").decode())
+    subjects = [key(v) for v in (article.get("entities") or [])]
+    images: list[dict[str, Any]] = []
+    library = ROOT / "data" / "editorial-presentation-images.json"
+    if library.is_file():
+        for record in json.loads(library.read_text("utf-8")):
+            if key(record.get("subject")) in subjects and str(record.get("src", "")).startswith("/"):
+                images.append({**record, "primary": bool(subjects and key(record.get("subject")) == subjects[0])})
+    supplied = article.get("image") or article.get("hero_image")
+    supplied = {"src": supplied} if isinstance(supplied, str) else supplied
+    if isinstance(supplied, dict) and str(supplied.get("src", "")).startswith("/") and supplied["src"] != DEFAULT_LOGO:
+        images.insert(0, {**supplied, "alt": supplied.get("alt") or article.get("title", ""), "primary": True})
+    return {"hero": images[0] if images else None, "images": images,
+            "byline": PUBLIC_AUTHOR + " · " + str(article.get("published_at", ""))[:10]}
+
+
 def render_article(article: dict[str, Any], url_path: str, related: list[dict[str, Any]]) -> str:
+    presentation = json.dumps(editorial_presentation(article), ensure_ascii=False).replace("<", "\\u003c")
     title = article["title"]
     desc = article["meta_description"] or article["deck"]
     published = article["published_at"][:10]
@@ -429,12 +449,12 @@ def render_article(article: dict[str, Any], url_path: str, related: list[dict[st
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{SITE + DEFAULT_LOGO}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/editorial-engine.css?v=20260825"><link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
-<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><link rel="stylesheet" href="/css/passport-editorial-layout.css?v=20261030"><script defer src="/js/passport-editorial-layout.js?v=20261030"></script></head><body>
+<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><link rel="stylesheet" href="/css/passport-editorial-layout.css?v=20261030"><script defer src="/js/passport-editorial-layout.js?v=20261030"></script></head><body class="pp-article passport-editorial-rollout">
 <div class="pe-topbar">PASSPORT RADIO · {esc(fmt)} · {esc(category)}</div>
 <header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="{DEFAULT_LOGO}" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
-<main><section class="pe-hero"><div class="pe-shell"><span class="pe-kicker">{esc(article['kicker'])}</span><h1>{esc(title)}</h1><p>{esc(article['deck'])}</p><div class="pe-stamp"><b>PASSPORT RADIO</b><span>{esc(published)}</span></div></div></section>
+<main><script type="application/json" data-passport-editorial-presentation>{presentation}</script><section class="pe-hero"><div class="pe-shell"><span class="pe-kicker">{esc(article['kicker'])}</span><h1>{esc(title)}</h1><p>{esc(article['deck'])}</p><div class="pe-stamp"><b>PASSPORT RADIO</b><span>{esc(published)}</span></div></div></section>
 <div class="pe-shell pe-layout"><article class="pe-prose"><p class="pe-lead">{esc(article['deck'])}</p>{''.join(sections_html)}<div class="pe-closing"><small>PASSPORT RADIO · EDITORIAL</small><p>{esc(article.get('closing'))}</p></div><div class="pe-closing pe-house-signature"><small>PASSPORT RADIO</small><p>Contar histórias que dão vontade de ouvir.</p></div></article><aside class="pe-side"><div><small>PASSPORT RADIO</small><strong>Primeiro a história.<br>Depois a música.</strong><a href="/radio.html">ENTRAR NO AR →</a></div></aside></div>{related_html}</main>
-<footer class="pe-footer"><div class="pe-shell"><strong>PASSPORT RADIO</strong><span>Contar histórias que dão vontade de ouvir.</span></div></footer><script src="/js/passport-legal-footer.js?v=202608241345" defer></script></body></html>'''
+<footer class="pe-footer"><div class="pe-shell"><strong>PASSPORT RADIO</strong><span>Contar histórias que dão vontade de ouvir.</span></div></footer><script src="/js/passport-legal-footer.js?v=202608241345" defer></script><script src="/js/passport-universal-footer.js?v=20261010" data-passport-universal-footer defer></script></body></html>'''
 
 
 def update_sitemap(root: Path, paths: list[str], date: str) -> None:

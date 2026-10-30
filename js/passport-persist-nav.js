@@ -55,7 +55,7 @@
   }
   window.dispatchEvent(new CustomEvent('passport:editorial-rendered',{detail:{url:url.href}}));
   // Only page-content helpers run here. No source module, audio host or chrome scripts.
-  for(const name of ['passport-blog-search','passport-blog-cover','passport-news','passport-archive']){
+  for(const name of ['passport-blog-search','passport-blog-cover','passport-news','passport-archive','passport-editorial-layout']){
    const src=[...doc.scripts].find(s=>s.getAttribute('src')?.includes('/js/'+name+'.js'))?.getAttribute('src');
    if(!src)continue;
    if([...document.scripts].some(s=>s.getAttribute('src')?.split('?')[0]===src.split('?')[0]))continue;
