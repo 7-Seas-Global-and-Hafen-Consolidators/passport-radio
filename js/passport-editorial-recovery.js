@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  if(window.PassportEditorialRecovery)return;
- let catalog;
+ let catalog, imageLibrary;
  const text=node=>(node?.textContent||'').replace(/\s+/g,' ').trim();
  const added=node=>{node.dataset.prAdded='true';return node};
  const element=(tag,cls,content)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(content)n.textContent=content;return n};
@@ -16,9 +16,11 @@
   return children;
  }
  function photo(record){
+  const key=typeof record==='string'?record:null;if(key)record=imageLibrary?.[key];
   if(!record?.src?.startsWith('/'))return null;
   const f=added(element('figure','pr-photo')),im=element('img');im.src=record.src;im.alt=record.alt||record.subject||'';im.loading='lazy';im.decoding='async';
-  if(record.width&&record.height){im.width=record.width;im.height=record.height}
+  if(record.width&&record.height){im.width=record.width;im.height=record.height;im.style.maxWidth=record.width+'px'}
+  if(key)f.dataset.prImage=key;
   f.append(im);if(record.caption||record.credit)f.append(element('figcaption','', [record.caption||record.subject,record.credit].filter(Boolean).join(' · ')));
   return f;
  }
@@ -31,7 +33,7 @@
    else previous=words<85?node:null;
   }
  }
- function media(section){
+ function media(section,settings,record){
   section.querySelectorAll('iframe,video').forEach(frame=>{
    if(frame.closest('.pr-frame'))return;
    let box=frame.parentElement;
@@ -39,6 +41,8 @@
    const panel=element('div','pr-media');box.before(panel);panel.append(box);
    const title=frame.getAttribute('title');if(title&&!/^(?:youtube|vídeo|video)(?:\s+player)?$/i.test(title)){const h=added(element('p','pr-media-label',title));panel.prepend(h)}
    const next=panel.nextElementSibling;if(next?.matches('.caption,.party-caption'))panel.append(next);
+   const id=frame.getAttribute('src')?.match(/\/embed\/([^?&/]+)/)?.[1],keys=settings.mediaPhotos?.[id];
+   if(keys?.length&&!keys.includes(record.image)){const row=element('div','pr-performance');panel.before(row);for(const key of keys){const f=photo(key);if(f)row.append(f)}row.append(panel)}
   });
  }
  function feature(section,record){
@@ -63,7 +67,7 @@
   main.dataset.prPreparing='true';
   try{
    catalog ||= fetch('/data/editorial-recovery-phase1.json').then(r=>{if(!r.ok)throw Error('Catálogo editorial indisponível');return r.json()});
-   const settings=(await catalog).articles.find(a=>a.id===key);if(!settings)throw Error('Matéria fora do inventário da Fase 1');
+   const data=await catalog;imageLibrary=data.images||{};const settings=data.articles.find(a=>a.id===key);if(!settings)throw Error('Matéria fora do inventário da Fase 1');
    const hero=main.querySelector('.hero,.pe-hero,.story-hero');if(!hero)throw Error('Abertura editorial ausente');
    const config=main.querySelector('[data-passport-editorial-presentation]');
    const back=main.querySelector('.editorial-return,.story-return');
@@ -98,12 +102,17 @@
    hero.classList.add('pr-hero');
    const copy=hero.querySelector('.hero-copy,.hero__content,.story-hero__copy')||hero;
    copy.classList.add('pr-titlegroup');
-   if(settings.category&&!copy.querySelector('.pr-category,.editorial-category,.kicker,.pe-kicker'))copy.prepend(added(element('p','pr-category',settings.category)));
+   if(settings.category&&!copy.querySelector('.pr-category,.editorial-category,.kicker,.pe-kicker,span.eyebrow'))copy.prepend(added(element('p','pr-category',settings.category)));
    const im=hero.querySelector('img');
    if(im){let f=im.closest('figure');if(!f){f=element('figure','pr-hero-photo');im.before(f);f.append(im)}f.classList.add('pr-hero-photo');hero.append(f);im.loading='eager';if(settings.heroCaption)f.append(added(element('figcaption','',settings.heroCaption)))}
-   if(settings.date&&!copy.querySelector('time')){const t=added(element('time','pr-date',settings.date));t.dateTime=settings.isoDate;copy.append(t)}
+   if(settings.date&&!copy.querySelector('time')&&!text(copy).toLocaleLowerCase().includes(settings.date.toLocaleLowerCase())){const t=added(element('time','pr-date',settings.date));t.dateTime=settings.isoDate;copy.append(t)}
    compact(intro);
-   for(const {node:section,record}of sections){compact(section);feature(section,record);media(section);gallery(section,record.gallery);if(record.pair)section.dataset.prPair=record.pair;}
+   for(const {node:section,record}of sections){compact(section);feature(section,record);media(section,settings,record);gallery(section,record.gallery);if(record.pair)section.dataset.prPair=record.pair;}
+   for(const move of settings.imageMoves||[]){
+    const image=[...body.querySelectorAll('img')].find(im=>im.getAttribute('src')===move.src);
+    const target=sections.find(s=>s.record.sourceIndex===move.chapterSourceIndex)?.node;
+    if(image&&target){let figure=image.closest('figure');if(!figure){figure=element('figure','pr-photo');image.before(figure);figure.append(image)}let group=target.querySelector(':scope > .pr-original-gallery');if(!group){group=element('div','pr-gallery pr-original-gallery');target.append(group)}group.append(figure)}
+   }
    // Pair only the explicitly identified short passages; never trap a long chapter in a half column.
    for(let i=0;i<sections.length-1;i++){
     const a=sections[i],b=sections[i+1];
