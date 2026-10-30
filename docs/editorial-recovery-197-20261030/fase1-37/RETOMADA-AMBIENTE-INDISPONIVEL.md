@@ -66,3 +66,8 @@ HEAD local antes da desconexão: 91d59715652a6726ae0b4c041e20c8fdb27be930.
 - /tmp/recovery-component-index.json: árvore remota da implementação persistida.
 - Chrome local: /tmp/passport-recovery-browser/chrome-headless-shell-linux64/chrome-headless-shell.
 - Dependências Python: /tmp/recovery-deps.
+
+
+## Retomada de 30/10/2026 — estado posterior
+
+Volume recuperado e curadoria persistida. As 37 páginas/383 capítulos foram revisados; 222 combinações nas seis larguras passaram, além de 111 capturas de detalhes em resolução nativa. Áudio real aprovado em desktop/mobile via Notícias e Lambrini; 32 testes de preservação/editoriais aprovados. Evidências e fotografias em [REVISAO-VISUAL.md](REVISAO-VISUAL.md). Os três embeds foram testados, mas sua reprodução não passou: INXS e Shakira/Dua Lipa exibiram indisponibilidade; Taylor permaneceu em 0:00 no ambiente. Sem merge, publicação ou alteração dos motores. A aprovação visual continua com Mr. Nomad.
