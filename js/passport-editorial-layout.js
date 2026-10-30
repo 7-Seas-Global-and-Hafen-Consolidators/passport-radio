@@ -8,9 +8,19 @@
   const img=document.createElement('img');img.src=record.src;img.alt=record.alt||'';img.className=role;img.dataset.editorialAdded='image';img.decoding='async';img.loading=role==='editorial-hero-image'?'eager':'lazy';
   if(record.width&&record.height){img.width=record.width;img.height=record.height}return img;
  };
+ let recoveryLoader;
+ function recovery(main,key){
+  if(!recoveryLoader)recoveryLoader=new Promise((resolve,reject)=>{
+   const css=document.createElement('link');css.rel='stylesheet';css.href='/css/passport-editorial-recovery.css';
+   const script=document.createElement('script');script.src='/js/passport-editorial-recovery.js';
+   let count=0;const done=()=>{if(++count===2)resolve()};css.onload=done;script.onload=done;css.onerror=script.onerror=()=>reject(new Error('Recursos editoriais indisponíveis'));
+   document.head.append(css,script);
+  });
+  recoveryLoader.then(()=>window.PassportEditorialRecovery.prepare(main,key)).catch(e=>{main.dataset.prError=e.message});
+ }
  function prepare(main) {
   if(!main || main.dataset.editorialLayout==='2')return;
-  const settings=config(main);if(!settings.hero&&!settings.images)return;
+  const settings=config(main);if(settings.recovery){recovery(main,settings.recovery);return;}if(!settings.hero&&!settings.images)return;
   if(![...main.querySelectorAll('h1')].some(h=>h.closest('main')===main))return; const hero=main.querySelector('.hero,.pe-hero,.mn-hero,.story-hero');
   if(!hero || !main.querySelector('h1'))return;
   document.body.classList.add('passport-editorial-rollout'); main.classList.add('participe-content');main.dataset.editorialLayout='2';
