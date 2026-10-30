@@ -1,0 +1,37 @@
+✔ 112 existing radios and 11 program selectors survive unchanged; all 39 approved historical additions plus the current expanded catalog (3.513598ms)
+✔ protected engines, universal player, Bus, continuity, video, podcast and broadcast are byte-identical (7.436568ms)
+✔ generated public inventory matches actual engine catalogues (34.692452ms)
+✔ Living Collection: all 401 radios, 11 selectors, streams, engines and editorial shell preserved (53.224607ms)
+✔ Living Collection: whole-card selection delegates byte-for-byte to the existing universal selector (8.601334ms)
+✔ Living Collection: original category order and non-pilot styling preserved (6.254335ms)
+✔ World artwork: exact 42 real IDs in original order, unchanged names and one unique local cover each (2.444207ms)
+✔ World artwork: all 42 sources are real 512-square profiled WebP under 100 KiB (5.35472ms)
+✔ World artwork: photographic globe and full radio inventory remain byte-identical to pilot (17.006921ms)
+✔ Dance: all 401 radios, 51 Dance identities, streams and protected systems unchanged (52.028662ms)
+✔ Dance: World Dial covers and approved evidence are byte-identical (18.066528ms)
+✔ Dance: original click handler, search, World Dial header and existing styles preserved exactly (8.55916ms)
+✔ Dance: exactly one distinct local cover per real ID in original order (1.16672ms)
+✔ Dance: all cover sources are 512x512 sRGB WebP, quality 82–88, below 100 KiB (5.846626ms)
+✔ Phase 3: 401 radios and actual 46 Rock + 123 Pop records retain every byte, name, order and stream (57.369643ms)
+✔ Phase 3: approved World Dial and Dance imagery/evidence remain intact (46.725475ms)
+✔ Phase 3: selection, search, category order and approved header code are unchanged (12.7339ms)
+✔ Phase 3: all 169 stable IDs have one distinct local photograph in the real section order (1.664985ms)
+✔ Phase 3: all photos are profiled 512px square WebP; both photographic equipment cutouts retain alpha (10.668958ms)
+✔ Phase 3: equipment animation contains no playback, network or catalogue operations (0.446337ms)
+✔ Phase 4: exact 150 entries, 401 radios, identifiers and all protected behaviour preserved (47.143255ms)
+✔ Phase 4: all three approved collections and their artwork remain byte-identical (56.031873ms)
+✔ Phase 4: 150 individually sourced profiled WebP photographs map to exact existing records (53.831382ms)
+✔ Phase 4: exact shared click handler, names, category order, search and previous header markup preserved (9.324049ms)
+✔ Phase 4: six isolated photographic equipment resources and silent motion respect visibility and reduced motion (2.210642ms)
+✔ 154 previous radios and every program preserved exactly (4.469218ms)
+✔ six distinct approved additions; Big B existing channel retained (11.68798ms)
+✔ existing transport restored exactly; protected files unchanged (43.732081ms)
+✔ C-Pop replacement keeps its original identity, language, position and inventory mapping (1.49692ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 657.277054
