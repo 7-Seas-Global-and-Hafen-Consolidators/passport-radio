@@ -66,7 +66,7 @@ async function presentation(page,label) {
 (async()=>{
   fs.mkdirSync('test-results',{recursive:true});
   await new Promise(r=>server.listen(0,'127.0.0.1',r));origin='http://127.0.0.1:'+server.address().port;
-  const launchOptions = {executablePath:process.env.EDITORIAL_CHROME||'/usr/bin/google-chrome',args:['--no-sandbox','--single-process','--no-zygote','--autoplay-policy=document-user-activation-required'],proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}:undefined};let browser=await chromium.launch(launchOptions);
+  const launchOptions = {executablePath:process.env.EDITORIAL_CHROME||'/usr/bin/google-chrome',args:['--no-sandbox',...(process.env.CI?[]:['--single-process','--no-zygote']),'--autoplay-policy=document-user-activation-required'],proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}:undefined};let browser=await chromium.launch(launchOptions);
   try {
     if(!process.argv.includes('--mobile-only')){
     const ctx = await context(browser,{width:1280,height:900});
@@ -119,4 +119,4 @@ async function presentation(page,label) {
     record('Mobile direct article → Home continuity',{before:directHits,after:directAfter,sameDocument:true,sameTransport:true});
     await fresh.close();
   } finally { await browser.close(); server.close(); fs.writeFileSync('test-results/editorial-browser.json',JSON.stringify(report,null,2)); }
-})().catch(error=>{console.error(error);process.exitCode=1;});
+})().catch(error=>{server.close();console.error(error);process.exitCode=1;});
