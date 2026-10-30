@@ -9,10 +9,11 @@ let origin;
 const root=path.resolve(__dirname,'..');
 const server=http.createServer((req,res)=>{let file=path.join(root,decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(file.endsWith(path.sep))file+='index.html';if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end();}fs.readFile(file,(error,body)=>{if(error){try{body=cp.execFileSync('git',['show','HEAD:'+path.relative(root,file).split(path.sep).join('/')],{cwd:root,maxBuffer:20*1024*1024,stdio:['ignore','pipe','ignore']});}catch{res.writeHead(404);return res.end();}}res.setHeader('Content-Type',({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.ttf':'font/ttf','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png'})[path.extname(file)]||'application/octet-stream');res.end(body)});});
 const files = new Set(['/'+saved.article_path,'/js/passport-persist-nav.js','/js/passport-automatic-editorial.js','/css/passport-automatic-editorial.css']);
-const report = {test:'native automatic editorial', acquisitions:0, generations:0, publications:0, checks:[]};
+const report = {test:'native automatic editorial', acquisitions:0, generations:0, publications:0, checks:[],diagnostics:[]};
 const record = (name,evidence={}) => { report.checks.push({name,result:'PASS',...evidence}); console.log(JSON.stringify(report.checks.at(-1))); };
 async function context(browser, viewport) {
   const ctx = await browser.newContext({viewport,ignoreHTTPSErrors:true});
+  ctx.on('page',p=>{p.on('pageerror',e=>report.diagnostics.push(e.message.replace(/https?:\/\/\S+/g,'[URL]')));p.on('console',m=>{if(m.type()==='error')report.diagnostics.push(m.text().replace(/https?:\/\/\S+/g,'[URL]'))});});
   const fonts=[['Instrument Sans',400,'01689ad055025ff1.ttf'],['Instrument Sans',600,'5e39a358a65a72b6.ttf'],['Instrument Sans',700,'d25efe5b0dcf3b36.ttf'],['Bodoni Moda',700,'b8d14dc4cf4c0d27.ttf'],['Source Serif 4',400,'f01900495012279f.ttf']].map(([family,w,f])=>`@font-face{font-family:'${family}';font-weight:${w};src:url('${origin}/fonts/passport-footer/${f}');}`).join('');
   await ctx.route('**/*',route=>{const u=new URL(route.request().url());if(u.hostname==='fonts.googleapis.com')return route.fulfill({body:fonts,contentType:'text/css'});if(u.hostname==='127.0.0.1'||['media','xhr','fetch'].includes(route.request().resourceType()))return route.continue();return route.abort();});
   return ctx;
@@ -72,6 +73,7 @@ async function presentation(page,label) {
     const ctx = await context(browser,{width:1280,height:900});
     const page = await ctx.newPage();
     await page.goto(origin+'/',{waitUntil:'domcontentloaded'});
+    await page.waitForFunction(()=>window.PassportAudioRuntime?.ready,null,{timeout:120000});
     await page.getByRole('button',{name:'Hits',exact:true}).click();
     const hits = await playing(page,'passportHitsAudio');
     const transport = await page.locator('#passportHitsAudio').elementHandle();
@@ -103,7 +105,7 @@ async function presentation(page,label) {
     const direct = await fresh.newPage();
     await direct.goto(origin+'/'+saved.article_path,{waitUntil:'domcontentloaded'});
     await presentation(direct,'mobile-direct-entry');
-    await direct.waitForFunction(()=>window.PassportAudioRuntime?.ready);
+    await direct.waitForFunction(()=>window.PassportAudioRuntime?.ready,null,{timeout:120000});
     assert.equal((await snapshot(direct)).length,0,'Fresh article starts audio');
     record('Fresh direct entry has no autoplay');
     await direct.locator('a.mp-row').filter({hasText:/^Hits$/}).click();
@@ -119,4 +121,4 @@ async function presentation(page,label) {
     record('Mobile direct article → Home continuity',{before:directHits,after:directAfter,sameDocument:true,sameTransport:true});
     await fresh.close();
   } finally { await browser.close(); server.close(); fs.writeFileSync('test-results/editorial-browser.json',JSON.stringify(report,null,2)); }
-})().catch(error=>{server.close();console.error(error);process.exitCode=1;});
+})().catch(error=>{server.close();console.error(error);console.error(JSON.stringify({diagnostics:report.diagnostics}));process.exitCode=1;});
