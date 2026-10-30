@@ -9,7 +9,7 @@ let origin;
 const root=path.resolve(__dirname,'..');
 const server=http.createServer((req,res)=>{let file=path.join(root,decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(file.endsWith(path.sep))file+='index.html';if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end();}fs.readFile(file,(error,body)=>{if(error){try{body=cp.execFileSync('git',['show','HEAD:'+path.relative(root,file).split(path.sep).join('/')],{cwd:root,maxBuffer:20*1024*1024,stdio:['ignore','pipe','ignore']});}catch{res.writeHead(404);return res.end();}}res.setHeader('Content-Type',({'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.ttf':'font/ttf','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png'})[path.extname(file)]||'application/octet-stream');res.end(body)});});
 const files = new Set(['/'+saved.article_path,'/js/passport-persist-nav.js','/js/passport-automatic-editorial.js','/css/passport-automatic-editorial.css']);
-const report = {test:'native automatic editorial', acquisitions:0, generations:0, publications:0, checks:[],diagnostics:[]};
+const report = {test:'native automatic editorial', acquisitions:0, generations:0, publications:0, checks:[],diagnostics:[],imageReadiness:[]};
 const record = (name,evidence={}) => { report.checks.push({name,result:'PASS',...evidence}); console.log(JSON.stringify(report.checks.at(-1))); };
 async function context(browser, viewport) {
   const ctx = await browser.newContext({viewport,ignoreHTTPSErrors:true});
@@ -50,7 +50,16 @@ async function presentation(page,label) {
   await page.locator('.fofonete-dock').waitFor();
   assert.equal(await page.locator('.fofonete-dock').evaluate(node=>getComputedStyle(node).position),'static');
   assert.equal(await page.locator('.passport-support-float').evaluate(node=>getComputedStyle(node).display),'none','Duplicate support anchor');
-  await page.waitForFunction(() => [...document.querySelectorAll('main img')].every(i=>i.complete && i.naturalWidth>0));
+  const imageStates = () => page.locator('main img').evaluateAll(images=>images.map(i=>({src:i.getAttribute('src'),complete:i.complete,naturalWidth:i.naturalWidth,loading:i.loading})));
+  report.imageReadiness.push({label,phase:'before',images:await imageStates()});
+  try {
+    await page.waitForFunction(() => [...document.querySelectorAll('main img')].every(i=>i.complete && i.naturalWidth>0));
+  } catch(error) {
+    const images=(await imageStates()).filter(i=>!i.complete||i.naturalWidth===0);
+    report.imageReadiness.push({label,phase:'timeout',images});
+    console.error(JSON.stringify({label,blockedImages:images}));
+    throw error;
+  }
   assert.equal(await page.locator('main .hero img').first().getAttribute('src'),saved.image);
   const geometry = await page.evaluate(() => ({width:innerWidth,scroll:document.documentElement.scrollWidth,article:document.querySelector('#article-text p').getBoundingClientRect().width,logo:getComputedStyle(document.querySelector('.pb-mast__logo'),'::before').backgroundImage,titleFont:getComputedStyle(document.querySelector('main h1')).fontFamily,bodyFont:getComputedStyle(document.querySelector('#article-text p')).fontFamily}));
   assert(geometry.scroll<=geometry.width+1,'Horizontal overflow');
