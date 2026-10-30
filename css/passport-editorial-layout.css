@@ -1,0 +1,128 @@
+/* Fase 2 shared presentation. Institutional chrome and transport are untouched. */
+@font-face{font-family:"Passport Editorial Display";font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/passport-footer/b8d14dc4cf4c0d27.ttf') format('truetype')}
+@font-face{font-family:"Passport Editorial Text";font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/passport-footer/f01900495012279f.ttf') format('truetype')}
+@font-face{font-family:"Passport Editorial Sans";font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/passport-footer/5e39a358a65a72b6.ttf') format('truetype')}
+.passport-editorial-rollout .participe-content{box-sizing:border-box;width:100%;max-width:1240px;margin:0 auto;padding:24px 24px 56px}
+.passport-editorial-rollout .article{width:100%;max-width:1200px;min-width:0;margin:0 auto;color:#111111;overflow-wrap:break-word}
+.passport-editorial-rollout .editorial-return{display:inline-flex;align-items:center;min-height:44px;margin:0 0 18px;color:#C41E3A;font:600 12px/1.4 "Passport Editorial Sans","Instrument Sans",sans-serif;text-decoration:none}
+.passport-editorial-rollout .editorial-return:hover{text-decoration:underline;text-underline-offset:3px}
+.passport-editorial-rollout .hero{padding:0 0 32px;border-bottom:1px solid #111111}
+.passport-editorial-rollout .hero-copy{width:100%;max-width:1080px;margin:0 auto}
+.passport-editorial-rollout .editorial-category{margin:0 0 14px;color:#C41E3A;font:600 13px/1.4 "Passport Editorial Sans","Instrument Sans",sans-serif;letter-spacing:.12em}
+.passport-editorial-rollout .hero-copy h1{max-width:none;margin:0 0 22px;color:#111111;font:700 56px/1.12 "Passport Editorial Display","Bodoni Moda",Georgia,serif;letter-spacing:-.018em;text-wrap:balance}
+.passport-editorial-rollout .dek{max-width:78ch;margin:0 0 20px;color:#444444;font:400 22px/1.55 "Passport Editorial Text","Source Serif 4",Georgia,serif}
+.passport-editorial-rollout .editorial-byline{margin:0;color:#666666;font:600 13px/1.5 "Passport Editorial Sans","Instrument Sans",sans-serif;letter-spacing:.015em}
+.passport-editorial-rollout .hero>img{display:block;width:100%;max-width:1000px;height:auto;aspect-ratio:1000/606;object-fit:contain;margin:28px auto 0}
+.passport-editorial-rollout :is(#article-text,.editorial-prose){width:100%;max-width:760px;margin:0 auto;padding:0;border:0;font:400 20px/1.7 "Passport Editorial Text","Source Serif 4",Georgia,serif}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) p{margin:0 0 18px;text-wrap:pretty}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) p:last-child{margin-bottom:0}
+.passport-editorial-rollout .editorial-chapter{min-width:0;margin:0;padding:30px 0;border-bottom:1px solid #E5E5E5}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) h2{margin:0 0 20px;color:#111111;font:700 32px/1.18 "Passport Editorial Display","Bodoni Moda",Georgia,serif;letter-spacing:-.01em;text-wrap:balance}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) h3{margin:24px 0 16px;color:#111111;font:700 24px/1.2 "Passport Editorial Display","Bodoni Moda",Georgia,serif;text-wrap:balance}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) strong{font-weight:700}
+.passport-editorial-rollout .editorial-opening>p:first-child::first-letter{float:left;margin:7px 8px 0 0;color:#C41E3A;font:700 68px/.9 "Passport Editorial Display","Bodoni Moda",Georgia,serif}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-pullquote{margin:24px 0;padding:4px 0 4px 20px;border-left:3px solid #C41E3A;font:700 26px/1.25 "Passport Editorial Display","Bodoni Moda",Georgia,serif}
+.passport-editorial-rollout .editorial-live{margin:30px 0;padding:28px;border:1px solid #E5E5E5;border-top:3px solid #111111;border-radius:4px;background:#FFFFFF}
+.passport-editorial-rollout .video{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:24px 0;overflow:hidden;background:#111111}
+.passport-editorial-rollout .video iframe{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:100%;border:0}
+.passport-editorial-rollout .editorial-invitation{border-top:2px solid #111111;border-bottom:2px solid #111111}
+.passport-editorial-rollout .editorial-closing{border-bottom:0;padding-bottom:0}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) a{color:#C41E3A;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(min-width:768px) and (max-width:1199px){
+ .passport-editorial-rollout .participe-content{padding-inline:24px}
+ .passport-editorial-rollout .hero-copy h1{font-size:42px}
+ .passport-editorial-rollout .dek{font-size:20px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose){font-size:19px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) h2{font-size:29px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) h3{font-size:23px}
+}
+@media(max-width:767px){
+ .passport-editorial-rollout .participe-content{padding:18px 18px 40px}
+ .passport-editorial-rollout .editorial-return{margin-bottom:16px}
+ .passport-editorial-rollout .hero{padding-bottom:24px}
+ .passport-editorial-rollout .hero-copy h1{font-size:34px;line-height:1.15;margin-bottom:18px;letter-spacing:-.015em}
+ .passport-editorial-rollout .editorial-category{font-size:12px;margin-bottom:12px}
+ .passport-editorial-rollout .dek{font-size:18px;line-height:1.6;margin-bottom:18px}
+ .passport-editorial-rollout .editorial-byline{font-size:12px}
+ .passport-editorial-rollout .hero>img{margin-top:24px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose){font-size:18px;line-height:1.7}
+ .passport-editorial-rollout .editorial-chapter{padding:26px 0}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) h2{font-size:26px;line-height:1.2;margin-bottom:18px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) h3{font-size:21px}
+ .passport-editorial-rollout .editorial-live{padding:20px 16px;margin:26px 0}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-pullquote{font-size:23px;padding-left:16px}
+ .passport-editorial-rollout .editorial-opening>p:first-child::first-letter{font-size:58px}
+}
+@media(max-width:374px){.passport-editorial-rollout .participe-content{padding-inline:16px}.passport-editorial-rollout .hero-copy h1{font-size:32px}.passport-editorial-rollout :is(#article-text,.editorial-prose){font-size:17.5px}}
+/* Keep the existing support link in the document flow instead of over the prose. */
+.passport-editorial-rollout :is(.passport-support-float,#fofonete-dock){position:static!important;inset:auto!important;transform:none!important;float:none!important;width:fit-content;max-width:calc(100% - 36px);margin:24px auto!important;box-shadow:none!important}
+
+/* Paula Toller composition: reading passages alternate with paired chapter cards.
+   These wrappers retain the original DOM reading order, including the live show. */
+.passport-editorial-rollout :is(#article-text,.editorial-prose){max-width:1120px}
+.passport-editorial-rollout .editorial-opening,
+.passport-editorial-rollout .editorial-outro,
+.passport-editorial-rollout .editorial-closing{max-width:760px;margin-inline:auto}
+.passport-editorial-rollout .editorial-chapter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0}
+.passport-editorial-rollout .editorial-chapter-grid>.editorial-chapter{align-self:start;padding:26px;border:1px solid #E5E5E5;border-top:3px solid #C41E3A;border-radius:4px;background:#FFFFFF}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-chapter-grid h2{font-size:27px;line-height:1.18;margin-bottom:22px;text-align:left;text-wrap:pretty}
+.passport-editorial-rollout .editorial-live{display:block;padding:28px;margin:36px 0;border-top:3px solid #C41E3A}
+.passport-editorial-rollout .editorial-stage-copy{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;margin-bottom:24px}
+.passport-editorial-rollout .editorial-performance{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:28px;min-width:0}
+.passport-editorial-rollout .editorial-performance>h3{grid-column:1;grid-row:1}
+.passport-editorial-rollout .editorial-performance>p:first-of-type{grid-column:1;grid-row:2}
+.passport-editorial-rollout .editorial-performance>p:last-of-type{grid-column:1;grid-row:3}
+.passport-editorial-rollout .editorial-performance>.video{grid-column:2;grid-row:1 / span 3;align-self:center}
+.passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-performance h3{margin:0 0 16px;font-size:24px}
+.passport-editorial-rollout .editorial-performance .video{margin:20px 0}
+.passport-editorial-rollout .editorial-closing{padding-top:30px;border-top:2px solid #111111}
+@media(min-width:801px) and (max-width:1199px){
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-chapter-grid h2{font-size:26px}
+ .passport-editorial-rollout .editorial-chapter-grid>.editorial-chapter{padding:24px}
+}
+@media(max-width:800px){
+ .passport-editorial-rollout .editorial-chapter-grid{grid-template-columns:1fr;gap:24px;margin:28px 0}
+ .passport-editorial-rollout .editorial-chapter-grid>.editorial-chapter{padding:24px}
+ .passport-editorial-rollout .editorial-live{padding:24px;margin:28px 0}
+ .passport-editorial-rollout .editorial-stage-copy,.passport-editorial-rollout .editorial-performance{display:block}
+}
+@media(max-width:480px){
+ .passport-editorial-rollout .editorial-chapter-grid{gap:20px;margin:24px 0}
+ .passport-editorial-rollout .editorial-chapter-grid>.editorial-chapter{padding:18px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-chapter-grid h2{font-size:26px;line-height:1.2;margin-bottom:18px}
+ .passport-editorial-rollout .editorial-live{padding:18px;gap:20px}
+ .passport-editorial-rollout :is(#article-text,.editorial-prose) .editorial-performance h3{font-size:21px}
+}
+
+html body.passport-editorial-rollout{background:#FFFFFF;color:#111111}
+.passport-editorial-rollout main.participe-content{width:100%;max-width:1240px;margin-inline:auto;padding:24px 24px 56px}
+.passport-editorial-rollout .editorial-layout{display:block;width:100%;max-width:1120px;margin:auto;padding:0}
+.passport-editorial-rollout .editorial-prose{max-width:1120px!important;width:100%;min-width:0;margin:auto;padding:0!important;columns:auto!important;color:#111111!important;background:#FFFFFF!important}
+.passport-editorial-rollout .editorial-prose>p,.passport-editorial-rollout .editorial-prose>:is(.pe-closing,.mn-nomad,.signature,.mn-lead,.pe-lead){max-width:760px;margin-inline:auto}
+.passport-editorial-rollout .hero{display:block!important;grid-template-columns:none!important;background:#FFFFFF!important;color:#111111!important;box-shadow:none!important}
+.passport-editorial-rollout .hero-copy{padding:0!important}
+.passport-editorial-rollout .hero :is(.pe-shell,.shell){width:100%;max-width:1080px}
+.passport-editorial-rollout .hero .editorial-hero-figure{display:block;width:100%;max-width:1000px;margin:28px auto 0!important;padding:0}
+.passport-editorial-rollout .hero .editorial-hero-image{display:block;width:100%;height:auto!important;max-height:620px;object-fit:contain!important;aspect-ratio:auto!important;margin:0 auto!important}
+.passport-editorial-rollout .editorial-prose .editorial-card{min-width:0;max-width:none;margin:0;padding:26px;border:1px solid #E5E5E5;border-top:3px solid #C41E3A;border-radius:4px;background:#FFFFFF;box-shadow:none;align-self:start;display:flow-root}
+.passport-editorial-rollout .editorial-card :is(h2,h3){text-align:left}
+.passport-editorial-rollout .editorial-prose .editorial-chapter-photo{float:left;width:104px;height:104px;object-fit:cover;border-radius:4px;margin:0 18px 12px 0}
+.passport-editorial-rollout .editorial-prose .editorial-card img:not(.editorial-chapter-photo){max-width:100%;height:auto;object-fit:contain}
+.passport-editorial-rollout .editorial-prose .editorial-multimedia :is(.video,.editorial-media-frame){clear:both}
+.passport-editorial-rollout .editorial-media-frame{position:relative;width:100%;aspect-ratio:16/9;clear:both;margin:24px 0;background:#111111}
+.passport-editorial-rollout .editorial-media-frame :is(iframe,video){position:absolute;inset:0;width:100%!important;height:100%!important;max-width:100%;border:0}
+.passport-editorial-rollout .editorial-card :is(figure,.video){max-width:100%}
+.passport-editorial-rollout .editorial-card>span:is(.chapter,.mn-chapter){display:block;margin:0 0 12px;font:600 12px/1.4 "Passport Editorial Sans",sans-serif;color:#C41E3A}
+.passport-editorial-rollout .editorial-context{max-width:760px;margin:32px auto;padding:24px;border-block:1px solid #E5E5E5;position:static;float:none;width:auto}
+.passport-editorial-rollout .editorial-context>*{position:static;background:#FFFFFF;color:#111111}
+.passport-editorial-rollout main .related{max-width:1120px;margin:40px auto;padding:24px 0;border-top:1px solid #111111}
+.passport-editorial-rollout main .related>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.passport-editorial-rollout main .related a{min-width:0;color:#111111;background:#FFFFFF;box-shadow:none;border:1px solid #E5E5E5;padding:20px}
+.passport-editorial-rollout .mn-roster{width:100%;overflow-wrap:anywhere}
+.passport-editorial-rollout .mn-roster-row{display:block;padding:16px 0;border-bottom:1px solid #E5E5E5}
+.passport-editorial-rollout .mn-roster-row>div{display:grid;gap:4px;margin-bottom:10px}
+.passport-editorial-rollout main :is(table,pre){max-width:100%;overflow:auto}
+@media(max-width:800px){.passport-editorial-rollout .editorial-prose .editorial-card{padding:24px}}
+@media(max-width:767px){.passport-editorial-rollout main.participe-content{padding:18px 18px 40px}.passport-editorial-rollout main .related>div{grid-template-columns:1fr}}
+@media(max-width:480px){.passport-editorial-rollout .editorial-prose .editorial-card{padding:18px}.passport-editorial-rollout .editorial-prose .editorial-chapter-photo{width:88px;height:88px;margin-right:14px}}
+@media(max-width:374px){.passport-editorial-rollout main.participe-content{padding-inline:16px}}

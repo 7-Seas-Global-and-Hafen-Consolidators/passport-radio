@@ -429,7 +429,7 @@ def render_article(article: dict[str, Any], url_path: str, related: list[dict[st
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{SITE + DEFAULT_LOGO}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/editorial-engine.css?v=20260825"><link rel="stylesheet" href="/css/passport-legal-footer.css?v=202608241345">
-<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script></head><body>
+<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script><link rel="stylesheet" href="/css/passport-editorial-layout.css?v=20261030"><script defer src="/js/passport-editorial-layout.js?v=20261030"></script></head><body>
 <div class="pe-topbar">PASSPORT RADIO · {esc(fmt)} · {esc(category)}</div>
 <header class="pe-header"><div class="pe-shell"><a class="pe-brand" href="/"><img src="{DEFAULT_LOGO}" alt="Passport Radio"><strong>PASSPORT RADIO</strong></a><nav><a href="/">AGORA</a><a href="/editorial.html">EDITORIAL</a><a href="/radio.html">AO VIVO</a><a href="/destinos.html">ARQUIVOS</a><a href="/loja.html">LOJA</a></nav></div></header>
 <main><section class="pe-hero"><div class="pe-shell"><span class="pe-kicker">{esc(article['kicker'])}</span><h1>{esc(title)}</h1><p>{esc(article['deck'])}</p><div class="pe-stamp"><b>PASSPORT RADIO</b><span>{esc(published)}</span></div></div></section>
