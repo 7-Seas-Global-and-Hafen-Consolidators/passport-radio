@@ -1,0 +1,412 @@
+{
+  "base": "674a1fe6092eaf34ac01db09c7d465d1f00821a3",
+  "physicalDevice": false,
+  "layouts": [
+    {
+      "width": 1440,
+      "beforeHeight": 11546,
+      "afterHeight": 6765,
+      "headline": {
+        "width": 1080,
+        "height": 188.15625,
+        "x": 180,
+        "right": 1260,
+        "font": "\"Passport Editorial Display\", \"Bodoni Moda\", Georgia, serif",
+        "size": "56px",
+        "lineHeight": "62.72px"
+      },
+      "body": {
+        "width": 760,
+        "height": 5537.375,
+        "x": 340,
+        "right": 1100,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "20px",
+        "lineHeight": "34px"
+      },
+      "image": {
+        "src": "/images/editorial/2026/10/22/lambrini-girls-no-refunds-the-basement-spilt.jpg",
+        "loaded": true,
+        "natural": [
+          1000,
+          606
+        ],
+        "width": 1000,
+        "height": 606,
+        "x": 220,
+        "right": 1220,
+        "font": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px"
+      },
+      "video": {
+        "width": 702,
+        "height": 394.875,
+        "x": 369,
+        "right": 1071,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "20px",
+        "lineHeight": "34px"
+      },
+      "footerIdentical": true,
+      "headerIdentical": true,
+      "h2Count": 14
+    },
+    {
+      "width": 1024,
+      "beforeHeight": 11141,
+      "afterHeight": 6518,
+      "headline": {
+        "width": 976,
+        "height": 141.09375,
+        "x": 24,
+        "right": 1000,
+        "font": "\"Passport Editorial Display\", \"Bodoni Moda\", Georgia, serif",
+        "size": "42px",
+        "lineHeight": "47.04px"
+      },
+      "body": {
+        "width": 760,
+        "height": 5364.78125,
+        "x": 132,
+        "right": 892,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "19px",
+        "lineHeight": "32.3px"
+      },
+      "image": {
+        "src": "/images/editorial/2026/10/22/lambrini-girls-no-refunds-the-basement-spilt.jpg",
+        "loaded": true,
+        "natural": [
+          1000,
+          606
+        ],
+        "width": 976,
+        "height": 591.453125,
+        "x": 24,
+        "right": 1000,
+        "font": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px"
+      },
+      "video": {
+        "width": 702,
+        "height": 394.875,
+        "x": 161,
+        "right": 863,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "19px",
+        "lineHeight": "32.3px"
+      },
+      "footerIdentical": true,
+      "headerIdentical": true,
+      "h2Count": 14
+    },
+    {
+      "width": 768,
+      "beforeHeight": 11109,
+      "afterHeight": 6536,
+      "headline": {
+        "width": 720,
+        "height": 141.09375,
+        "x": 24,
+        "right": 744,
+        "font": "\"Passport Editorial Display\", \"Bodoni Moda\", Georgia, serif",
+        "size": "42px",
+        "lineHeight": "47.04px"
+      },
+      "body": {
+        "width": 720,
+        "height": 5537.5,
+        "x": 24,
+        "right": 744,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "19px",
+        "lineHeight": "32.3px"
+      },
+      "image": {
+        "src": "/images/editorial/2026/10/22/lambrini-girls-no-refunds-the-basement-spilt.jpg",
+        "loaded": true,
+        "natural": [
+          1000,
+          606
+        ],
+        "width": 720,
+        "height": 436.3125,
+        "x": 24,
+        "right": 744,
+        "font": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px"
+      },
+      "video": {
+        "width": 662,
+        "height": 372.375,
+        "x": 53,
+        "right": 715,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "19px",
+        "lineHeight": "32.3px"
+      },
+      "footerIdentical": true,
+      "headerIdentical": true,
+      "h2Count": 14
+    },
+    {
+      "width": 390,
+      "beforeHeight": 13321,
+      "afterHeight": 9333,
+      "headline": {
+        "width": 354,
+        "height": 273.65625,
+        "x": 18,
+        "right": 372,
+        "font": "\"Passport Editorial Display\", \"Bodoni Moda\", Georgia, serif",
+        "size": "34px",
+        "lineHeight": "39.1px"
+      },
+      "body": {
+        "width": 354,
+        "height": 8393.9375,
+        "x": 18,
+        "right": 372,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "18px",
+        "lineHeight": "30.6px"
+      },
+      "image": {
+        "src": "/images/editorial/2026/10/22/lambrini-girls-no-refunds-the-basement-spilt.jpg",
+        "loaded": true,
+        "natural": [
+          1000,
+          606
+        ],
+        "width": 354,
+        "height": 214.515625,
+        "x": 18,
+        "right": 372,
+        "font": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px"
+      },
+      "video": {
+        "width": 320,
+        "height": 180,
+        "x": 35,
+        "right": 355,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "18px",
+        "lineHeight": "30.6px"
+      },
+      "footerIdentical": true,
+      "headerIdentical": true,
+      "h2Count": 14
+    },
+    {
+      "width": 360,
+      "beforeHeight": 13911,
+      "afterHeight": 9980,
+      "headline": {
+        "width": 328,
+        "height": 257.578125,
+        "x": 16,
+        "right": 344,
+        "font": "\"Passport Editorial Display\", \"Bodoni Moda\", Georgia, serif",
+        "size": "32px",
+        "lineHeight": "36.8px"
+      },
+      "body": {
+        "width": 328,
+        "height": 9043.203125,
+        "x": 16,
+        "right": 344,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "17.5px",
+        "lineHeight": "29.75px"
+      },
+      "image": {
+        "src": "/images/editorial/2026/10/22/lambrini-girls-no-refunds-the-basement-spilt.jpg",
+        "loaded": true,
+        "natural": [
+          1000,
+          606
+        ],
+        "width": 328,
+        "height": 198.765625,
+        "x": 16,
+        "right": 344,
+        "font": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px"
+      },
+      "video": {
+        "width": 294,
+        "height": 165.375,
+        "x": 33,
+        "right": 327,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "17.5px",
+        "lineHeight": "29.75px"
+      },
+      "footerIdentical": true,
+      "headerIdentical": true,
+      "h2Count": 14
+    },
+    {
+      "width": 320,
+      "beforeHeight": 14708,
+      "afterHeight": 10965,
+      "headline": {
+        "width": 288,
+        "height": 257.578125,
+        "x": 16,
+        "right": 304,
+        "font": "\"Passport Editorial Display\", \"Bodoni Moda\", Georgia, serif",
+        "size": "32px",
+        "lineHeight": "36.8px"
+      },
+      "body": {
+        "width": 288,
+        "height": 10023.6875,
+        "x": 16,
+        "right": 304,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "17.5px",
+        "lineHeight": "29.75px"
+      },
+      "image": {
+        "src": "/images/editorial/2026/10/22/lambrini-girls-no-refunds-the-basement-spilt.jpg",
+        "loaded": true,
+        "natural": [
+          1000,
+          606
+        ],
+        "width": 288,
+        "height": 174.515625,
+        "x": 16,
+        "right": 304,
+        "font": "\"Instrument Sans\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px"
+      },
+      "video": {
+        "width": 254,
+        "height": 142.875,
+        "x": 33,
+        "right": 287,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "17.5px",
+        "lineHeight": "29.75px"
+      },
+      "footerIdentical": true,
+      "headerIdentical": true,
+      "h2Count": 14
+    }
+  ],
+  "fonts": [
+    {
+      "font": "700 56px \"Passport Editorial Display\"",
+      "loaded": true
+    },
+    {
+      "font": "400 20px \"Passport Editorial Text\"",
+      "loaded": true
+    },
+    {
+      "font": "600 13px \"Passport Editorial Sans\"",
+      "loaded": true
+    }
+  ],
+  "audio": [
+    {
+      "mobile": false,
+      "tested": true,
+      "before": {
+        "same": true,
+        "time": 1.018795,
+        "paused": false,
+        "decoded": 21316,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "time": 1.862776,
+        "paused": false,
+        "decoded": 35109,
+        "active": 1
+      },
+      "article": {
+        "same": true,
+        "time": 2.905014,
+        "paused": false,
+        "decoded": 51827,
+        "active": 1
+      },
+      "return": {
+        "same": true,
+        "time": 3.776942,
+        "paused": false,
+        "decoded": 65620,
+        "active": 1
+      }
+    },
+    {
+      "mobile": true,
+      "tested": true,
+      "before": {
+        "same": true,
+        "time": 1.012384,
+        "paused": false,
+        "decoded": 21316,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "time": 1.854329,
+        "paused": false,
+        "decoded": 34690,
+        "active": 1
+      },
+      "article": {
+        "same": true,
+        "time": 2.900978,
+        "paused": false,
+        "decoded": 51409,
+        "active": 1
+      },
+      "return": {
+        "same": true,
+        "time": 3.770038,
+        "paused": false,
+        "decoded": 65619,
+        "active": 1
+      }
+    }
+  ],
+  "errors": [
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred."
+  ],
+  "video": {
+    "src": "https://www.youtube-nocookie.com/embed/fpzBSVpE9Lk",
+    "autoplay": false,
+    "fullPlaybackTested": false,
+    "frameLoaded": true,
+    "visibleText": "Lambrini Girls – Full Show, live | 2025 | Rockpalast\nWDR Rockpalast\nWDR Rockpalast\n606K subscribers\nWatch on"
+  },
+  "status": "passed"
+}
