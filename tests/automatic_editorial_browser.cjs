@@ -52,6 +52,8 @@ async function presentation(page,label) {
   assert.equal(await page.locator('.passport-support-float').evaluate(node=>getComputedStyle(node).display),'none','Duplicate support anchor');
   const imageStates = () => page.locator('main img').evaluateAll(images=>images.map(i=>({src:i.getAttribute('src'),complete:i.complete,naturalWidth:i.naturalWidth,loading:i.loading})));
   report.imageReadiness.push({label,phase:'before',images:await imageStates()});
+  // Full-page evidence must request off-screen lazy photos before waiting for every image.
+  await page.locator('main img').evaluateAll(images=>images.forEach(i=>{i.loading='eager';}));
   try {
     await page.waitForFunction(() => [...document.querySelectorAll('main img')].every(i=>i.complete && i.naturalWidth>0));
   } catch(error) {
@@ -60,6 +62,7 @@ async function presentation(page,label) {
     console.error(JSON.stringify({label,blockedImages:images}));
     throw error;
   }
+  report.imageReadiness.push({label,phase:'loaded',images:await imageStates()});
   assert.equal(await page.locator('main .hero img').first().getAttribute('src'),saved.image);
   const geometry = await page.evaluate(() => ({width:innerWidth,scroll:document.documentElement.scrollWidth,article:document.querySelector('#article-text p').getBoundingClientRect().width,logo:getComputedStyle(document.querySelector('.pb-mast__logo'),'::before').backgroundImage,titleFont:getComputedStyle(document.querySelector('main h1')).fontFamily,bodyFont:getComputedStyle(document.querySelector('#article-text p')).fontFamily}));
   assert(geometry.scroll<=geometry.width+1,'Horizontal overflow');
