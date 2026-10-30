@@ -56,3 +56,40 @@
 @media(max-width:374px){.passport-editorial-pilot .participe-content{padding-inline:16px}.passport-editorial-pilot .hero-copy h1{font-size:32px}.passport-editorial-pilot #article-text{font-size:17.5px}}
 /* Keep the existing support link in the document flow instead of over the prose. */
 .passport-editorial-pilot :is(.passport-support-float,#fofonete-dock){position:static!important;inset:auto!important;transform:none!important;float:none!important;width:fit-content;max-width:calc(100% - 36px);margin:24px auto!important;box-shadow:none!important}
+
+/* Paula Toller composition: reading passages alternate with paired chapter cards.
+   These wrappers retain the original DOM reading order, including the live show. */
+.passport-editorial-pilot #article-text{max-width:1120px}
+.passport-editorial-pilot .editorial-opening,
+.passport-editorial-pilot .editorial-outro,
+.passport-editorial-pilot .editorial-closing{max-width:760px;margin-inline:auto}
+.passport-editorial-pilot .editorial-chapter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0}
+.passport-editorial-pilot .editorial-chapter-grid>.editorial-chapter{align-self:start;padding:26px;border:1px solid #E5E5E5;border-top:3px solid #C41E3A;border-radius:4px;background:#FFFFFF}
+.passport-editorial-pilot #article-text .editorial-chapter-grid h2{font-size:27px;line-height:1.18;margin-bottom:22px;text-align:left;text-wrap:pretty}
+.passport-editorial-pilot .editorial-live{display:block;padding:28px;margin:36px 0;border-top:3px solid #C41E3A}
+.passport-editorial-pilot .editorial-stage-copy{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;margin-bottom:24px}
+.passport-editorial-pilot .editorial-performance{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:28px;min-width:0}
+.passport-editorial-pilot .editorial-performance>h3{grid-column:1;grid-row:1}
+.passport-editorial-pilot .editorial-performance>p:first-of-type{grid-column:1;grid-row:2}
+.passport-editorial-pilot .editorial-performance>p:last-of-type{grid-column:1;grid-row:3}
+.passport-editorial-pilot .editorial-performance>.video{grid-column:2;grid-row:1 / span 3;align-self:center}
+.passport-editorial-pilot #article-text .editorial-performance h3{margin:0 0 16px;font-size:24px}
+.passport-editorial-pilot .editorial-performance .video{margin:20px 0}
+.passport-editorial-pilot .editorial-closing{padding-top:30px;border-top:2px solid #111111}
+@media(min-width:801px) and (max-width:1199px){
+ .passport-editorial-pilot #article-text .editorial-chapter-grid h2{font-size:26px}
+ .passport-editorial-pilot .editorial-chapter-grid>.editorial-chapter{padding:24px}
+}
+@media(max-width:800px){
+ .passport-editorial-pilot .editorial-chapter-grid{grid-template-columns:1fr;gap:24px;margin:28px 0}
+ .passport-editorial-pilot .editorial-chapter-grid>.editorial-chapter{padding:24px}
+ .passport-editorial-pilot .editorial-live{padding:24px;margin:28px 0}
+ .passport-editorial-pilot .editorial-stage-copy,.passport-editorial-pilot .editorial-performance{display:block}
+}
+@media(max-width:480px){
+ .passport-editorial-pilot .editorial-chapter-grid{gap:20px;margin:24px 0}
+ .passport-editorial-pilot .editorial-chapter-grid>.editorial-chapter{padding:18px}
+ .passport-editorial-pilot #article-text .editorial-chapter-grid h2{font-size:26px;line-height:1.2;margin-bottom:18px}
+ .passport-editorial-pilot .editorial-live{padding:18px;gap:20px}
+ .passport-editorial-pilot #article-text .editorial-performance h3{font-size:21px}
+}

@@ -1,0 +1,380 @@
+{
+  "base": "fc0365a714352b67edc56d5dbc882688d9c4ed00",
+  "physicalDevice": false,
+  "layouts": [
+    {
+      "width": 1440,
+      "beforeHeight": 6765,
+      "afterHeight": 5444,
+      "body": {
+        "width": 1120,
+        "height": 4216.3125,
+        "x": 160,
+        "right": 1280,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "20px",
+        "lineHeight": "34px"
+      },
+      "composition": {
+        "grids": [
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          }
+        ],
+        "chapters": 15,
+        "overflow": [],
+        "fonts": [
+          "700 56px \"Passport Editorial Display\"",
+          "400 20px \"Passport Editorial Text\"",
+          "600 13px \"Passport Editorial Sans\""
+        ]
+      },
+      "headerIdentical": true,
+      "footerIdentical": true
+    },
+    {
+      "width": 1024,
+      "beforeHeight": 6518,
+      "afterHeight": 5567,
+      "body": {
+        "width": 976,
+        "height": 4413.5625,
+        "x": 24,
+        "right": 1000,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "19px",
+        "lineHeight": "32.3px"
+      },
+      "composition": {
+        "grids": [
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          },
+          {
+            "columns": 2,
+            "chapters": 2
+          }
+        ],
+        "chapters": 15,
+        "overflow": [],
+        "fonts": [
+          "700 56px \"Passport Editorial Display\"",
+          "400 20px \"Passport Editorial Text\"",
+          "600 13px \"Passport Editorial Sans\""
+        ]
+      },
+      "headerIdentical": true,
+      "footerIdentical": true
+    },
+    {
+      "width": 768,
+      "beforeHeight": 6536,
+      "afterHeight": 6820,
+      "body": {
+        "width": 720,
+        "height": 5822.078125,
+        "x": 24,
+        "right": 744,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "19px",
+        "lineHeight": "32.3px"
+      },
+      "composition": {
+        "grids": [
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          }
+        ],
+        "chapters": 15,
+        "overflow": [],
+        "fonts": [
+          "700 56px \"Passport Editorial Display\"",
+          "400 20px \"Passport Editorial Text\"",
+          "600 13px \"Passport Editorial Sans\""
+        ]
+      },
+      "headerIdentical": true,
+      "footerIdentical": true
+    },
+    {
+      "width": 390,
+      "beforeHeight": 9333,
+      "afterHeight": 10136,
+      "body": {
+        "width": 354,
+        "height": 9196.5625,
+        "x": 18,
+        "right": 372,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "18px",
+        "lineHeight": "30.6px"
+      },
+      "composition": {
+        "grids": [
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          }
+        ],
+        "chapters": 15,
+        "overflow": [],
+        "fonts": [
+          "700 56px \"Passport Editorial Display\"",
+          "400 20px \"Passport Editorial Text\"",
+          "600 13px \"Passport Editorial Sans\""
+        ]
+      },
+      "headerIdentical": true,
+      "footerIdentical": true
+    },
+    {
+      "width": 360,
+      "beforeHeight": 9980,
+      "afterHeight": 10726,
+      "body": {
+        "width": 328,
+        "height": 9789.84375,
+        "x": 16,
+        "right": 344,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "17.5px",
+        "lineHeight": "29.75px"
+      },
+      "composition": {
+        "grids": [
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          }
+        ],
+        "chapters": 15,
+        "overflow": [],
+        "fonts": [
+          "700 56px \"Passport Editorial Display\"",
+          "400 20px \"Passport Editorial Text\"",
+          "600 13px \"Passport Editorial Sans\""
+        ]
+      },
+      "headerIdentical": true,
+      "footerIdentical": true
+    },
+    {
+      "width": 320,
+      "beforeHeight": 10965,
+      "afterHeight": 12134,
+      "body": {
+        "width": 288,
+        "height": 11192.640625,
+        "x": 16,
+        "right": 304,
+        "font": "\"Passport Editorial Text\", \"Source Serif 4\", Georgia, serif",
+        "size": "17.5px",
+        "lineHeight": "29.75px"
+      },
+      "composition": {
+        "grids": [
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          },
+          {
+            "columns": 1,
+            "chapters": 2
+          }
+        ],
+        "chapters": 15,
+        "overflow": [],
+        "fonts": [
+          "700 56px \"Passport Editorial Display\"",
+          "400 20px \"Passport Editorial Text\"",
+          "600 13px \"Passport Editorial Sans\""
+        ]
+      },
+      "headerIdentical": true,
+      "footerIdentical": true
+    }
+  ],
+  "fonts": [
+    {
+      "font": "700 56px \"Passport Editorial Display\"",
+      "loaded": true
+    },
+    {
+      "font": "400 20px \"Passport Editorial Text\"",
+      "loaded": true
+    },
+    {
+      "font": "600 13px \"Passport Editorial Sans\"",
+      "loaded": true
+    }
+  ],
+  "audio": [
+    {
+      "mobile": false,
+      "tested": true,
+      "before": {
+        "same": true,
+        "time": 1.012565,
+        "paused": false,
+        "decoded": 21316,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "time": 1.854467,
+        "paused": false,
+        "decoded": 34691,
+        "active": 1
+      },
+      "article": {
+        "same": true,
+        "time": 2.901569,
+        "paused": false,
+        "decoded": 51409,
+        "active": 1
+      },
+      "return": {
+        "same": true,
+        "time": 3.768931,
+        "paused": false,
+        "decoded": 65620,
+        "active": 1
+      }
+    },
+    {
+      "mobile": true,
+      "tested": true,
+      "before": {
+        "same": true,
+        "time": 1.020823,
+        "paused": false,
+        "decoded": 21316,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "time": 1.887827,
+        "paused": false,
+        "decoded": 35526,
+        "active": 1
+      },
+      "article": {
+        "same": true,
+        "time": 3.011781,
+        "paused": false,
+        "decoded": 53080,
+        "active": 1
+      },
+      "return": {
+        "same": true,
+        "time": 3.8841,
+        "paused": false,
+        "decoded": 67291,
+        "active": 1
+      }
+    }
+  ],
+  "errors": [
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred.",
+    "A network error occurred."
+  ],
+  "video": {
+    "src": "https://www.youtube-nocookie.com/embed/fpzBSVpE9Lk",
+    "autoplay": false,
+    "fullPlaybackTested": false
+  },
+  "status": "layout_and_audio_passed_with_network_messages"
+}
