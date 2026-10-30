@@ -1,0 +1,90 @@
+{
+  "status": "passed_in_focused_desktop_and_mobile_runs",
+  "checks": [
+    {
+      "name": "desktop",
+      "result": "PASS",
+      "width": 1280,
+      "scroll": 1280,
+      "article": 494,
+      "logo": "url(\"http://127.0.0.1:34141/images/brand/passport-radio-masthead-2026.svg\")",
+      "titleFont": "\"Passport Editorial Display\", Georgia, serif",
+      "bodyFont": "\"Passport Editorial Text\", Georgia, serif"
+    },
+    {
+      "name": "Hits Home → Arquivo → Badmotorfinger",
+      "result": "PASS",
+      "before": {
+        "id": "passportHitsAudio",
+        "time": 1.014189,
+        "ready": 4,
+        "volume": 0.8,
+        "sourceHash": "07e9613a0bce1cad6726b4923c093125a68fa17b48edc194deaee9c56496cd36"
+      },
+      "after": {
+        "id": "passportHitsAudio",
+        "time": 3.744002,
+        "ready": 4,
+        "volume": 0.8,
+        "sourceHash": "07e9613a0bce1cad6726b4923c093125a68fa17b48edc194deaee9c56496cd36"
+      },
+      "sameDocument": true,
+      "sameTransport": true
+    },
+    {
+      "name": "Explicit Hits → MPB mutex and return Home",
+      "result": "PASS",
+      "before": {
+        "id": "passportMPBAudio",
+        "time": 1.013774,
+        "ready": 4,
+        "volume": 0.8,
+        "sourceHash": "1dc7f45d5dd5dc4698b3716982ecb35d012dc463b4dce59a237a3055b088a076"
+      },
+      "after": {
+        "id": "passportMPBAudio",
+        "time": 1.435787,
+        "ready": 4,
+        "volume": 0.8,
+        "sourceHash": "1dc7f45d5dd5dc4698b3716982ecb35d012dc463b4dce59a237a3055b088a076"
+      },
+      "sameDocument": true,
+      "sameTransport": true
+    },
+    {
+      "name": "mobile-direct-entry",
+      "result": "PASS",
+      "width": 390,
+      "scroll": 390,
+      "article": 316,
+      "logo": "url(\"http://127.0.0.1:34141/images/brand/passport-radio-masthead-2026.svg\")",
+      "titleFont": "\"Passport Editorial Display\", Georgia, serif",
+      "bodyFont": "\"Passport Editorial Text\", Georgia, serif"
+    },
+    {
+      "name": "Fresh direct entry has no autoplay",
+      "result": "PASS"
+    },
+    {
+      "name": "Mobile direct article → Home continuity",
+      "result": "PASS",
+      "before": {
+        "id": "passportHitsAudio",
+        "time": 1.013986,
+        "ready": 4,
+        "volume": 0.8,
+        "sourceHash": "07e9613a0bce1cad6726b4923c093125a68fa17b48edc194deaee9c56496cd36"
+      },
+      "after": {
+        "id": "passportHitsAudio",
+        "time": 1.27188,
+        "ready": 4,
+        "volume": 0.8,
+        "sourceHash": "07e9613a0bce1cad6726b4923c093125a68fa17b48edc194deaee9c56496cd36"
+      },
+      "sameDocument": true,
+      "sameTransport": true
+    }
+  ],
+  "note": "Desktop native playback/mutex checked in first run; mobile direct-entry checked separately after allowing real media XHR/fetch in the test network policy. No production audio changes."
+}

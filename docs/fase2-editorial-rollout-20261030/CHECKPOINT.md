@@ -28,3 +28,9 @@ A única mudança no leitor existente é o registro do auxiliar de apresentaçã
 A auditoria exaustiva de layout bloqueia mídia externa e usa os arquivos reais de fontes locais. Os 361 embeds foram preservados e sua apresentação responsiva verificada; não foram reproduzidos integralmente 361 vídeos. Não houve teste em aparelho físico: mobile usa emulação Chromium com toque. A continuidade foi comprovada no percurso descrito, não em todas as combinações de páginas/estações. A revisão visual usa amostras das famílias; não equivale a revisão humana integral de 197 reportagens. Fotografias históricas de baixa resolução foram preservadas quando não havia substituto factual adequado.
 
 Catálogo das 401 rádios, streams, player, Bus, mutex, interlock, Home editorial, Notícias, masthead e rodapé compartilhados e infraestrutura preservados. Nenhum merge e nenhuma publicação executados.
+
+## Validação adicional do leitor nativo e correções de CI
+
+O teste Native editorial browser foi adaptado ao masthead SVG e ao cartão público Hits já aprovados, e serve o checkout da PR em vez de depender da Home publicada. O servidor de teste lê recursos ausentes do checkout parcial diretamente dos blobs Git; não modifica workflows nem infraestrutura. Permite requisições reais de mídia e suas requisições XHR/fetch. Fontes de rádio não são escritas no relatório: somente hashes para comparar identidade.
+
+Comprovados em execuções focadas: Hits Home → Arquivo → Badmotorfinger no mesmo documento/elemento; troca explícita Hits → MPB com áudio único e retorno Home; entrada direta móvel sem autoplay, seleção voluntária e continuidade ao retornar Home. Relatório native-browser-results.json (6 verificações observadas). Os testes históricos receberam a normalização exata em cada arquivo porque os workflows usam checkouts parciais que não incluem auxiliares novos. Nenhuma verificação foi desativada.

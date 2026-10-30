@@ -40,7 +40,7 @@ class EditorialRollout(unittest.TestCase):
     self.assertTrue(image['src'].startswith('/'));file=ROOT/image['src'].lstrip('/');self.assertTrue(file.is_file(),file);self.assertGreater(file.stat().st_size,100);self.assertGreater(image['width'],0);self.assertGreater(image['height'],0)
  def test_protected_existing_files_unchanged(self):
   changed=subprocess.check_output(['git','diff','--name-only','--diff-filter=MD',BASE],cwd=ROOT).decode().splitlines()
-  allowed={a['path']for a in self.articles}|{'tools/editorial_engine.py','tests/test_lambrini_editorial_pilot.py','js/passport-persist-nav.js'}
+  allowed={a['path']for a in self.articles}|{'tools/editorial_engine.py','tests/test_lambrini_editorial_pilot.py','tests/automatic_editorial_browser.cjs','js/passport-persist-nav.js'}
   allowed |= {'tests/'+name+'.test.cjs' for name in ['passport_40_inventory','passport_40_living_collection','passport_40_living_dance','passport_40_living_rock_pop','passport_40_living_phase4','passport_kpop_replacement']}
   self.assertEqual(set(changed)-allowed,set())
   old_nav=original('js/passport-persist-nav.js');expected=old_nav.replace("['passport-blog-search','passport-blog-cover','passport-news','passport-archive']","['passport-blog-search','passport-blog-cover','passport-news','passport-archive','passport-editorial-layout']",1);self.assertEqual((ROOT/'js/passport-persist-nav.js').read_text(),expected)
