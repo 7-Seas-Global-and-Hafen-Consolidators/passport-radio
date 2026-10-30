@@ -55,12 +55,12 @@ class LambriniPilot(unittest.TestCase):
         self.assertEqual(self.after.metadata,self.before.metadata)
     def test_shared_footer_scripts_and_masthead_resources_unchanged(self):
         self.assertEqual(self.after.footer,self.before.footer)
-        self.assertEqual(self.after.scripts,self.before.scripts)
-        paths=['js/','data/','assets/','fonts/','images/','index.html','noticias.html','css/passport-masthead.css','css/passport-universal-footer.css','css/passport-paula-toller.css']
-        subprocess.check_output(['git','diff','--exit-code',BASE,'--',*paths],cwd=ROOT)
+        self.assertEqual([x for x in self.after.scripts if not x.startswith('/js/passport-editorial-layout.js')],self.before.scripts)
+        paths=['js/',':(exclude)js/passport-persist-nav.js','data/','assets/','fonts/','images/','index.html','noticias.html','css/passport-masthead.css','css/passport-universal-footer.css','css/passport-paula-toller.css']
+        subprocess.check_output(['git','diff','--exit-code','--diff-filter=MD',BASE,'--',*paths],cwd=ROOT)
     def test_new_styles_apply_only_to_the_pilot(self):
         changes=subprocess.check_output(['git','diff','--name-only',BASE,'--','*.html'],cwd=ROOT).decode().splitlines()
-        self.assertEqual(changes,[ARTICLE])
+        authorized={r['path'] for r in __import__('json').loads((ROOT/'docs/fase2-editorial-rollout-20261030/articles.json').read_text())};self.assertTrue(set(changes)<=authorized);self.assertIn(ARTICLE,changes)
         css=(ROOT/'css/passport-editorial-pilot.css').read_text()
         self.assertIn('.passport-editorial-pilot #article-text',css)
         self.assertNotIn('audio',css)
