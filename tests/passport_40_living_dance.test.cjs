@@ -1,7 +1,7 @@
 /* Stage 2 presentation regression: immutable inventory, audio and World Dial baseline. */
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
 const base='2a737231ad368f5c56026ad19817d977e52f7c09';
-const bytes=p=>fs.existsSync(p)?fs.readFileSync(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:12*1024*1024});
+const bytes=p=>fs.existsSync(p)?require('./editorial_presentation_preservation.cjs').read(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:12*1024*1024});
 const old=p=>cp.execFileSync('git',['show',`${base}:${p}`],{maxBuffer:12*1024*1024});
 const inventory=JSON.parse(bytes('data/passport-radio-inventory.json')),rows=inventory.records.filter(r=>r.section===1);
 const manifest=()=>JSON.parse(bytes('docs/living-collection-dance-20261027/artwork-manifest.json'));

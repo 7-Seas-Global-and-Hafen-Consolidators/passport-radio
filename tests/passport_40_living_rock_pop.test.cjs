@@ -1,7 +1,7 @@
 /* Phase 3: exact preservation plus presentation-only coverage for both real sections. */
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
 const base='14daec637ff970bd0b505276cc944be8d189bedc';
-const bytes=p=>fs.existsSync(p)?fs.readFileSync(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:20*1024*1024});
+const bytes=p=>fs.existsSync(p)?require('./editorial_presentation_preservation.cjs').read(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:20*1024*1024});
 const old=p=>cp.execFileSync('git',['show',`${base}:${p}`],{maxBuffer:20*1024*1024});
 const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
 const inventory=JSON.parse(bytes('data/passport-radio-inventory.json')),rows=[...inventory.records.filter(r=>r.section===2),...inventory.records.filter(r=>r.section===3)];

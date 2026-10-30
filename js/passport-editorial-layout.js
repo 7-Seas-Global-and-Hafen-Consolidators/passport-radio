@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  if (window.PassportEditorialLayout) return;
- const config = main => {try {const own=[...main.querySelectorAll('script[data-passport-editorial-presentation]')].find(n=>n.closest('main')===main);const dossier=main.closest('#mr-nomad-dossier')&&document.head.querySelector('script[data-passport-editorial-presentation]');return JSON.parse((own||dossier)?.textContent||'{}')}catch{return {}}};
+ const config = main => {try {const own=[...main.querySelectorAll('[data-passport-editorial-presentation]')].find(n=>n.closest('main')===main);const dossier=main.closest('#mr-nomad-dossier')&&document.head.querySelector('[data-passport-editorial-presentation]');const data=own||dossier;return JSON.parse(data?.content?.textContent||data?.textContent||'{}')}catch{return {}}};
  const image = (record, role) => {
   if (!record?.src || !record.src.startsWith('/')) return null;
   const img=document.createElement('img');img.src=record.src;img.alt=record.alt||'';img.className=role;img.dataset.editorialAdded='image';img.decoding='async';img.loading=role==='editorial-hero-image'?'eager':'lazy';
@@ -39,7 +39,7 @@
     if(node.nodeType===1&&node.matches('section,.album-grid,.editorial-chapter-grid,.editorial-outro,.pe-closing,.mn-nomad,.signature')){section=null;continue}
     if(node.nodeType===1&&node.matches('h2')){
      section=document.createElement('section');section.className='editorial-chapter';node.before(section);
-     const previous=section.previousElementSibling;if(previous?.matches('span.chapter,.mn-chapter,.chapter-label'))section.append(previous);
+     const previous=section.previousElementSibling;const label=previous?.matches('span.chapter,.mn-chapter,.chapter-label')?previous:previous?.lastElementChild?.matches('span.chapter,.mn-chapter,.chapter-label')?previous.lastElementChild:null;if(label)section.append(label);
     }
     if(section)section.append(node);
    }

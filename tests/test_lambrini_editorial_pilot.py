@@ -56,7 +56,7 @@ class LambriniPilot(unittest.TestCase):
     def test_shared_footer_scripts_and_masthead_resources_unchanged(self):
         self.assertEqual(self.after.footer,self.before.footer)
         self.assertEqual([x for x in self.after.scripts if not x.startswith('/js/passport-editorial-layout.js')],self.before.scripts)
-        paths=['js/','data/','assets/','fonts/','images/','index.html','noticias.html','css/passport-masthead.css','css/passport-universal-footer.css','css/passport-paula-toller.css']
+        paths=['js/',':(exclude)js/passport-persist-nav.js','data/','assets/','fonts/','images/','index.html','noticias.html','css/passport-masthead.css','css/passport-universal-footer.css','css/passport-paula-toller.css']
         subprocess.check_output(['git','diff','--exit-code','--diff-filter=MD',BASE,'--',*paths],cwd=ROOT)
     def test_new_styles_apply_only_to_the_pilot(self):
         changes=subprocess.check_output(['git','diff','--name-only',BASE,'--','*.html'],cwd=ROOT).decode().splitlines()

@@ -1,0 +1,81 @@
+{
+  "physicalDevice": false,
+  "audio": [
+    {
+      "mobile": false,
+      "tested": true,
+      "before": {
+        "same": true,
+        "time": 1.200389,
+        "paused": false,
+        "decoded": 24242,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "time": 2.149395,
+        "paused": false,
+        "decoded": 39288,
+        "active": 1
+      },
+      "article": {
+        "same": true,
+        "time": 3.742617,
+        "paused": false,
+        "decoded": 65202,
+        "active": 1
+      },
+      "return": {
+        "same": true,
+        "time": 4.629436,
+        "paused": false,
+        "decoded": 79412,
+        "active": 1
+      },
+      "pause": true,
+      "resume": true,
+      "volume": {
+        "control": 0.05,
+        "audio": 0.05
+      }
+    },
+    {
+      "mobile": true,
+      "tested": true,
+      "before": {
+        "same": true,
+        "time": 1.009496,
+        "paused": false,
+        "decoded": 21316,
+        "active": 1
+      },
+      "news": {
+        "same": true,
+        "time": 1.973798,
+        "paused": false,
+        "decoded": 36363,
+        "active": 1
+      },
+      "article": {
+        "same": true,
+        "time": 3.138548,
+        "paused": false,
+        "decoded": 55589,
+        "active": 1
+      },
+      "return": {
+        "same": true,
+        "time": 4.020651,
+        "paused": false,
+        "decoded": 69381,
+        "active": 1
+      },
+      "pause": true,
+      "resume": true,
+      "volume": {
+        "control": 0.05,
+        "audio": 0.05
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 /* Phase 4 verifies presentation against the consolidated Phase 3 base. */
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
 const base='f96f5868fc57f3ed5ef132666ea7ba012b260c35',doc='docs/living-collection-phase4-20261027';
-const bytes=p=>fs.existsSync(p)?fs.readFileSync(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:30*1024*1024});
+const bytes=p=>fs.existsSync(p)?require('./editorial_presentation_preservation.cjs').read(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:30*1024*1024});
 const old=p=>cp.execFileSync('git',['show',`${base}:${p}`],{maxBuffer:30*1024*1024});
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),manifest=()=>JSON.parse(bytes(doc+'/artwork-manifest.json'));
 const inventory=JSON.parse(bytes('data/passport-radio-inventory.json')),order=[11,4,5,6,7,9],rows=order.flatMap(n=>inventory.records.filter(r=>r.section===n));

@@ -22,7 +22,7 @@ class EditorialRollout(unittest.TestCase):
    with self.subTest(path=row['path']):
     text=(ROOT/row['path']).read_text();self.assertEqual(text.count(HOOK),1)
     self.assertEqual(text.count('data-passport-editorial-presentation>'),1)
-    text=text.replace(HOOK,'');text=text.replace(' passport-editorial-rollout','',1);text=re.sub(r'<script type="application/json" data-passport-editorial-presentation>.*?</script>','',text,flags=re.S)
+    text=text.replace(HOOK,'');text=text.replace(' passport-editorial-rollout','',1);text=re.sub(r'<template data-passport-editorial-presentation>.*?</template>','',text,flags=re.S)
     # Map image changes by occurrence; no anchor, embed or narrative replacements are permitted.
     changes=[c for c in self.changes if c['path']==row['path']]
     for c in reversed(changes):
@@ -35,12 +35,13 @@ class EditorialRollout(unittest.TestCase):
     self.assertEqual(text,original(row['path']))
  def test_all_configured_photos_are_local_present_and_nonempty(self):
   for row in self.articles:
-   text=(ROOT/row['path']).read_text();config=json.loads(re.search(r'data-passport-editorial-presentation>(.*?)</script>',text,re.S)[1]);self.assertTrue(config['hero']);self.assertTrue(config['images'])
+   text=(ROOT/row['path']).read_text();config=json.loads(re.search(r'data-passport-editorial-presentation>(.*?)</template>',text,re.S)[1]);self.assertTrue(config['hero']);self.assertTrue(config['images'])
    for image in config['images']:
     self.assertTrue(image['src'].startswith('/'));file=ROOT/image['src'].lstrip('/');self.assertTrue(file.is_file(),file);self.assertGreater(file.stat().st_size,100);self.assertGreater(image['width'],0);self.assertGreater(image['height'],0)
  def test_protected_existing_files_unchanged(self):
   changed=subprocess.check_output(['git','diff','--name-only','--diff-filter=MD',BASE],cwd=ROOT).decode().splitlines()
   allowed={a['path']for a in self.articles}|{'tools/editorial_engine.py','tests/test_lambrini_editorial_pilot.py','js/passport-persist-nav.js'}
+  allowed |= {'tests/'+name+'.test.cjs' for name in ['passport_40_inventory','passport_40_living_collection','passport_40_living_dance','passport_40_living_rock_pop','passport_40_living_phase4','passport_kpop_replacement']}
   self.assertEqual(set(changed)-allowed,set())
   old_nav=original('js/passport-persist-nav.js');expected=old_nav.replace("['passport-blog-search','passport-blog-cover','passport-news','passport-archive']","['passport-blog-search','passport-blog-cover','passport-news','passport-archive','passport-editorial-layout']",1);self.assertEqual((ROOT/'js/passport-persist-nav.js').read_text(),expected)
   js=(ROOT/'js/passport-editorial-layout.js').read_text()
@@ -51,5 +52,5 @@ class EditorialRollout(unittest.TestCase):
   article={'title':'Um título preservado','deck':'Um resumo preservado','meta_description':'Descrição','published_at':'2026-10-30','category':'rock','format':'STORY','kicker':'ROCK','entities':['Amy Winehouse'],'sections':[{'heading':'Um capítulo','paragraphs':['Texto integral.']}],'closing':'Encerramento.'}
   rendered=engine.render_article(article,'/editorial/future-test.html',[])
   self.assertIn(HOOK,rendered);self.assertIn('Um título preservado',rendered);self.assertIn('Texto integral.',rendered)
-  config=json.loads(re.search(r'data-passport-editorial-presentation>(.*?)</script>',rendered,re.S)[1]);self.assertTrue(config['hero']);self.assertTrue(config['hero']['src'].startswith('/'));self.assertIn('Amy Winehouse',[i.get('subject')for i in config['images']])
+  config=json.loads(re.search(r'data-passport-editorial-presentation>(.*?)</template>',rendered,re.S)[1]);self.assertTrue(config['hero']);self.assertTrue(config['hero']['src'].startswith('/'));self.assertIn('Amy Winehouse',[i.get('subject')for i in config['images']])
 if __name__=='__main__':unittest.main(verbosity=2)

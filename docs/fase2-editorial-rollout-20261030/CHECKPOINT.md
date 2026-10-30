@@ -1,60 +1,30 @@
-# CHECKPOINT DE RETOMADA — FASE 2 TOTAL
+# Fase 2 editorial — implementação retomada e concluída para avaliação
 
-PR: #583. Branch: feat/fase2-editorial-rollout-all-articles-20261030.
-Base main: 4139873dc89454c17116534691651f125fdf6e90.
-Primeiro commit remoto: 478431766e55993f73b17ce2d4327bf39ebf1f7b.
+PR #583 · branch `feat/fase2-editorial-rollout-all-articles-20261030`.
+Base main: `4139873dc89454c17116534691651f125fdf6e90`.
+O checkpoint integral foi materializado no commit `1be2011738632d2346d0bbfda0ad70b0e38bbe58`; o bundle permanece como cópia histórica de segurança. Não é mais necessário recuperar o trabalho do bundle.
 
-Interrupção determinada pelo proprietário para salvar créditos. NÃO MERGEAR. NÃO PUBLICAR.
+## Implementação
 
-## Trabalho produzido e preservado neste checkpoint
-- 197 matérias identificadas: 166 em editorial/ e 31 reportagens públicas na raiz/historias.
-- Integração do CSS/JS editorial compartilhado e configurações de apresentação nas 197 páginas.
-- Tipografia local: Bodoni Moda, Source Serif 4 e Instrument Sans.
-- Imagens locais adquiridas, procedência, inventário das matérias e biblioteca de apresentação.
-- 40 referências de imagens localizadas/reparadas, registradas em image-changes.json. Vídeos e URLs de incorporação preservados.
-- Ajustes do gerador editorial futuro em tools/editorial_engine.py.
-- Testes escritos em tests/test_editorial_rollout.py e tests/editorial_rollout_browser.cjs.
-- 69 testes observados aprovados: 5 novos de integridade/gerador, 4 de preservação do piloto, 57 Node e 3 do editorial automático.
+197 páginas públicas de matérias (166 editorial/ e 31 raiz/historias, incluindo espelhos), mais o gerador das futuras matérias. CSS/JS compartilhados de apresentação: Bodoni Moda, Source Serif 4 e Instrument Sans locais; leitura centralizada, capítulos pareados, fotografias, multimídia proporcional e encerramento organizado. O inventário completo está em articles-adapted.md e articles.json.
 
-## Resultado de navegador efetivamente recuperado
-- 152 matérias registradas; 0 matérias com problemas no arquivo recuperado.
-- Larguras do cenário: 1440, 1024, 768, 390, 360 e 320 px.
-- O relatório completo está em browser-layouts.json. Não tratar este checkpoint como aprovação visual final.
+Texto original, títulos, sequência narrativa, links e atributos dos 361 embeds YouTube preservados pelo teste de comparação de fonte. Imagens existentes aproveitadas; imagens adquiridas/localizadas e sua procedência estão em acquired-images.json, localized-images.json e image-provenance.json. image-changes.json registra 44 referências de src localizadas/reparadas, incluindo quatro anúncios antigos cujo PNG não existe no repositório, agora com o masthead oficial local. Uma foto indisponível do BMTH foi substituída por fotografia real de apresentação de 2025. Fotografias históricas pequenas não foram artificialmente ampliadas.
 
-## Próximas tarefas pendentes — NÃO RECOMEÇAR
-1. Conferir o resumo de browser-layouts.json e resolver somente os problemas restantes, se houver.
-2. Conferir a integração ao leitor que navega no mesmo documento. js/passport-persist-nav.js copia main/estilos, mas carrega apenas alguns auxiliares: o novo script e os dados de apresentação ainda precisam ser comprovados nesse percurso. Nenhum arquivo de navegação/áudio foi alterado. Avaliar carregar os dados junto ao conteúdo e usar um ponto de apresentação existente; não reescrever a navegação.
-3. Gerar capturas reais de desktop/tablet/mobile e antes/depois. Estas evidências finais ainda NÃO foram produzidas nesta operação.
-4. Executar teste real de continuidade de áudio desta expansão. O teste do piloto anterior não substitui esse teste; ainda NÃO foi executado neste rollout.
-5. Conferir o resultado visual integral, salvar os ajustes finais na MESMA PR #583 e retirar o rascunho somente após completar a validação.
+A única mudança no leitor existente é o registro do auxiliar de apresentação na lista de auxiliares. Os dados inertes de cada artigo viajam em template com o próprio main. Nenhuma lógica de áudio/roteamento foi reescrita. Os testes históricos normalizam exclusivamente essa entrada e continuam comparando os demais bytes; o teste novo também exige que essa seja a única alteração no leitor.
 
-## Recursos já adquiridos — NÃO PESQUISAR NOVAMENTE
-- images/editorial/fase2-20261030/: fotografias adquiridas/localizadas.
-- acquired-images.json: imagens obtidas e origem.
-- localized-images.json: fotografias externas preservadas em arquivos locais, incluindo fotos históricas pequenas.
-- image-changes.json: trocas/localizações exatas de src; texto, legendas e embeds preservados.
-- image-provenance.json: acervo reutilizado e procedência.
-- articles.json: as 197 matérias e suas configurações/fotos.
-- data/editorial-presentation-images.json: biblioteca local para geração futura.
+## Testes executados
 
-Uma fotografia indisponível do BMTH foi substituída por uma apresentação real de 2025, sem alterar a legenda de contexto. Não foram modificados players, catálogo, sinais, bus, mutex, interlock, infraestrutura, Home, Notícias ou loja.
+- 5 testes de inventário, preservação integral, imagens, gerador e arquivos protegidos: aprovados.
+- 4 testes de preservação do piloto: aprovados.
+- 57 testes Node de inventário, coleções, preservação de sistemas, seleção e cópia editorial: aprovados.
+- 3 testes do editorial automático: aprovados.
+- Navegador Chromium real: 197 páginas × 6 larguras (1440, 1024, 768, 390, 360, 320 px), zero páginas com problemas no relatório final. Testes conferem imagens, títulos, cards, rodapé único e ausência de transbordamento. Rechecagens focadas somente nos defeitos corrigidos. Relatório: browser-layouts.json.
+- Áudio real, clique voluntário, desktop e mobile emulado: Home → Notícias → Lambrini → Notícias; mesmo elemento conectado, tempo e bytes decodificados avançando, um áudio ativo. Pausar/retomar e volume pelos controles existentes aprovados. Relatório: audio-results.json. Sem mock de áudio.
+- Capturas reais em 1440, 768 e 390 px de sete famílias: Lambrini, Paula, acervo, dossiê dinâmico, Top 10, artigo automático e reportagem legada. Abertura, capítulos e página completa, mais rodapé e antes/depois de acervo/dossiê. Arquivos WebP nesta pasta e índice captures.json. Capturas completas muito altas foram reduzidas proporcionalmente a 16.000 px; recortes internos preservam legibilidade.
+- node --check e git diff --check executados.
 
-Arquivos temporários de /tmp foram perdidos na indisponibilidade do ambiente; os recursos do projeto e os relatórios aqui presentes são o checkpoint real. Não afirmar que a operação está concluída nem que todos os vídeos foram reproduzidos integralmente.
+## Limites comprováveis
 
-## Pacote completo salvo nesta PR
+A auditoria exaustiva de layout bloqueia mídia externa e usa os arquivos reais de fontes locais. Os 361 embeds foram preservados e sua apresentação responsiva verificada; não foram reproduzidos integralmente 361 vídeos. Não houve teste em aparelho físico: mobile usa emulação Chromium com toque. A continuidade foi comprovada no percurso descrito, não em todas as combinações de páginas/estações. A revisão visual usa amostras das famílias; não equivale a revisão humana integral de 197 reportagens. Fotografias históricas de baixa resolução foram preservadas quando não havia substituto factual adequado.
 
-O arquivo `checkpoint-20261030.bundle` contém o commit integral de trabalho `9d810f3406d9b08782563705671331200195f0ac`, com **288 arquivos alterados** (código, todas as páginas adaptadas, fotos, inventários, origem das imagens e relatórios recuperados).
-
-O bundle foi verificado localmente por `git bundle verify` e seu blob remoto foi conferido pelo hash `b6e8a9cd0fa26521b3f5e658d08a52508be5e016`. Tamanho: 10.057.208 bytes.
-
-O terminal não possui credencial para push. Por isso o checkpoint integral está guardado como bundle na mesma PR; os 288 arquivos ainda precisam ser materializados no diff da branch na retomada.
-
-Para retomar num checkout da mesma branch, sem refazer aquisições:
-
-```bash
-git fetch origin feat/fase2-editorial-rollout-all-articles-20261030
-git bundle verify docs/fase2-editorial-rollout-20261030/checkpoint-20261030.bundle
-git fetch docs/fase2-editorial-rollout-20261030/checkpoint-20261030.bundle HEAD:resgate-fase2-20261030
-```
-
-O commit recuperado tem como pai `478431766e55993f73b17ce2d4327bf39ebf1f7b`. Preservar esta documentação/pacote ao continuar a branch remota. Não fazer reset destrutivo nem iniciar nova PR. Conferir o estado remoto antes de integrar o commit recuperado.
+Catálogo das 401 rádios, streams, player, Bus, mutex, interlock, Home editorial, Notícias, masthead e rodapé compartilhados e infraestrutura preservados. Nenhum merge e nenhuma publicação executados.
