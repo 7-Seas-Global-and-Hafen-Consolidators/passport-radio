@@ -1,0 +1,69 @@
+/* PR #584 — four explicit editorial models, opted in by exactly 37 articles. */
+html body.passport-editorial-rollout main.pr-recovery{--pr-text:20px;--pr-title:56px;--pr-heading:32px;box-sizing:border-box;max-width:1240px!important;width:100%;margin-inline:auto!important;padding:24px 24px 56px!important;color:#111111;background:#FFFFFF;overflow-wrap:break-word}
+html body.passport-editorial-rollout main.pr-recovery *{box-sizing:border-box;min-width:0}
+html body.passport-editorial-rollout main.pr-recovery :is(.article,.intro,.pr-body){width:100%!important;max-width:1120px!important;margin-inline:auto!important;padding:0!important;columns:auto!important;background:#FFFFFF!important;box-shadow:none!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-hero{display:flex!important;flex-direction:column;align-items:stretch;max-width:1120px!important;background:#FFFFFF!important;padding:0 0 30px!important;margin:0 auto 28px!important;border-bottom:1px solid #E5E5E5!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-titlegroup{width:100%;max-width:1080px!important;margin:0 auto!important;padding:0!important;text-align:left;position:static!important;transform:none!important}
+html body.passport-editorial-rollout main.pr-recovery h1{font:700 var(--pr-title)/1.12 "Passport Editorial Display","Bodoni Moda",Georgia,serif!important;letter-spacing:-.018em!important;margin:0 0 22px!important;text-wrap:balance;color:#111111!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-titlegroup :is(.dek,.mn-deck){font:400 22px/1.55 "Passport Editorial Text","Source Serif 4",Georgia,serif!important;color:#444444!important;max-width:78ch;margin:0 0 20px!important}
+html body.passport-editorial-rollout main.pr-recovery :is(.pr-category,.editorial-category,.pr-titlegroup .kicker){font:600 13px/1.5 "Passport Editorial Sans","Instrument Sans",sans-serif!important;color:#C41E3A!important;letter-spacing:.1em!important;margin:0 0 14px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-titlegroup :is(.eyebrow,.byline,.editorial-byline,.pr-date){display:block;font:600 13px/1.5 "Passport Editorial Sans","Instrument Sans",sans-serif!important;color:#666666!important;letter-spacing:normal!important;margin:0 0 5px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-return{display:inline-flex;align-items:center;min-height:44px;margin:0 0 18px!important;color:#C41E3A!important;text-decoration:none;font:600 12px/1.4 "Passport Editorial Sans","Instrument Sans",sans-serif!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-hero-photo{display:block;align-self:center;width:100%;max-width:1000px;margin:26px auto 0!important;padding:0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-hero-photo img{display:block;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;margin:0!important;border:0;border-radius:0;box-shadow:none!important}
+html body.passport-editorial-rollout main.pr-recovery :is(p,li,blockquote){font:400 var(--pr-text)/1.7 "Passport Editorial Text","Source Serif 4",Georgia,serif!important;color:#111111!important;letter-spacing:normal!important;word-break:normal;overflow-wrap:break-word!important;text-wrap:pretty}
+html body.passport-editorial-rollout main.pr-recovery .pr-body p{margin:0 0 18px!important;padding:0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-body :is(p,blockquote,ul,ol,table,pre,.listen,.quote){width:100%;max-width:760px;margin-inline:auto!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-body :is(ul,ol){padding-left:26px}
+html body.passport-editorial-rollout main.pr-recovery .pr-reading{max-width:760px!important;margin:0 auto 32px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-intro>p:first-child::first-letter{float:left;color:#C41E3A;font:700 68px/.9 "Passport Editorial Display","Bodoni Moda",serif;margin:7px 8px 0 0}
+html body.passport-editorial-rollout main.pr-recovery .pr-chapter{width:100%!important;max-width:1120px!important;display:flow-root;margin:36px auto 0!important;padding:24px 0 0!important;border:0!important;border-top:2px solid #C41E3A!important;background:#FFFFFF!important;border-radius:0;box-shadow:none!important;position:static!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-chapter>h2{font:700 var(--pr-heading)/1.18 "Passport Editorial Display","Bodoni Moda",Georgia,serif!important;margin:0 0 24px!important;letter-spacing:-.01em!important;max-width:100%!important;text-align:left!important;text-transform:none;text-wrap:pretty}
+html body.passport-editorial-rollout main.pr-recovery .pr-body h3{font:700 24px/1.2 "Passport Editorial Display","Bodoni Moda",serif!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-interjection{font-size:var(--pr-text)!important;line-height:1.7!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-feature{display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr);gap:24px;align-items:start;margin:0 0 24px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-feature-copy{min-width:0}
+html body.passport-editorial-rollout main.pr-recovery .pr-photo{display:block;float:none!important;width:100%!important;max-width:760px;margin:0 auto 24px!important;padding:0!important;border:0;border-radius:0;box-shadow:none!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-photo img{display:block;width:100%!important;height:auto!important;max-width:100%;max-height:440px;object-fit:contain!important;aspect-ratio:auto!important;border-radius:0;box-shadow:none!important;margin:0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-small-original{max-width:480px}
+html body.passport-editorial-rollout main.pr-recovery .pr-feature>.pr-photo{margin:0!important;max-width:none}
+html body.passport-editorial-rollout main.pr-recovery :is(figcaption,.caption,.party-caption,.photo-credit){display:block;font:400 13px/1.5 "Passport Editorial Text","Source Serif 4",serif!important;color:#666666!important;margin:10px 0 0!important;padding:0!important;text-align:left!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-media{max-width:960px;margin:24px auto!important;padding:20px!important;border:1px solid #E5E5E5;border-top:2px solid #C41E3A;background:#FFFFFF;border-radius:0;box-shadow:none}
+html body.passport-editorial-rollout main.pr-recovery .pr-media .pr-media-label{font:600 14px/1.5 "Passport Editorial Sans","Instrument Sans",sans-serif!important;margin:0 0 16px!important;color:#111111!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-frame{position:relative!important;display:block;width:100%!important;max-width:100%!important;height:auto!important;aspect-ratio:16/9!important;padding:0!important;margin:0!important;overflow:hidden;background:#111111;box-shadow:none!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-frame :is(iframe,video){position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important;max-width:100%;padding:0!important;margin:0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-pair>.pr-chapter{padding:26px!important;margin:0!important;border:1px solid #E5E5E5!important;border-top:3px solid #C41E3A!important;border-radius:4px;align-self:start}
+html body.passport-editorial-rollout main.pr-recovery .pr-pair>.pr-chapter h2{font-size:27px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-pair .pr-feature{display:block}
+html body.passport-editorial-rollout main.pr-recovery .pr-pair .pr-photo{margin-bottom:20px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-pair .pr-photo img{max-height:260px}
+html body.passport-editorial-rollout main.pr-recovery .pr-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:28px auto;max-width:1120px}
+html body.passport-editorial-rollout main.pr-recovery .pr-gallery .pr-photo{margin:0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-gallery img{max-height:280px}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc{max-width:1120px;margin:30px auto;border-block:1px solid #E5E5E5;border-top:2px solid #C41E3A;padding:18px 0}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc-title{font:600 13px/1.4 "Passport Editorial Sans","Instrument Sans",sans-serif!important;text-transform:uppercase;letter-spacing:.08em!important;margin:0 0 10px!important;color:#111111!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 28px;max-width:none;padding-left:24px;margin:0!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc :is(li,a){font:600 13px/1.45 "Passport Editorial Sans","Instrument Sans",sans-serif!important;text-decoration:none;color:#111111!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc li::marker{color:#C41E3A}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc a{display:flex;align-items:center;min-height:44px;padding:5px 0}
+html body.passport-editorial-rollout main.pr-recovery .pr-toc a:hover{text-decoration:underline;text-underline-offset:3px}
+html body.passport-editorial-rollout main.pr-recovery .pr-chapter>.controversy-rank{font:700 64px/1 "Passport Editorial Display","Bodoni Moda",serif!important;color:#C41E3A!important;margin:0 0 14px!important;max-width:none}
+html body.passport-editorial-rollout main.pr-recovery .pr-fact{padding:18px 0!important;border-block:1px solid #E5E5E5;font:700 34px/1.2 "Passport Editorial Display","Bodoni Moda",serif!important;color:#C41E3A!important;margin-block:22px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-closing{max-width:760px!important;border-top:2px solid #111111!important;margin-top:40px!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-body blockquote{padding:4px 0 4px 20px!important;border:0!important;border-left:3px solid #C41E3A!important;background:#FFFFFF!important;margin-block:24px!important;box-shadow:none!important}
+html body.passport-editorial-rollout main.pr-recovery .pr-body hr{display:none}
+html body.passport-editorial-rollout main.pr-recovery .pr-body :is(.listen,.quote){padding:18px 0!important;margin-block:22px!important;border-block:1px solid #E5E5E5;background:#FFFFFF!important;box-shadow:none!important;color:#111111!important}
+html body.passport-editorial-rollout main.pr-recovery [id]{scroll-margin-top:24px}
+@media(min-width:768px) and (max-width:1199px){html body.passport-editorial-rollout main.pr-recovery{--pr-text:19px;--pr-title:42px;--pr-heading:29px}html body.passport-editorial-rollout main.pr-recovery .pr-titlegroup .dek{font-size:20px!important}}
+@media(max-width:800px){html body.passport-editorial-rollout main.pr-recovery :is(.pr-feature,.pr-pair){grid-template-columns:1fr}html body.passport-editorial-rollout main.pr-recovery .pr-feature{gap:20px}html body.passport-editorial-rollout main.pr-recovery .pr-pair>.pr-chapter{padding:24px!important}html body.passport-editorial-rollout main.pr-recovery .pr-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){html body.passport-editorial-rollout main.pr-recovery{--pr-text:18px;--pr-title:34px;--pr-heading:26px;padding:18px 18px 40px!important}html body.passport-editorial-rollout main.pr-recovery .pr-titlegroup .dek{font-size:18px!important}html body.passport-editorial-rollout main.pr-recovery .pr-toc ol{grid-template-columns:1fr}html body.passport-editorial-rollout main.pr-recovery .pr-chapter>.controversy-rank{font-size:46px!important}html body.passport-editorial-rollout main.pr-recovery .pr-gallery{grid-template-columns:1fr}html body.passport-editorial-rollout main.pr-recovery .pr-intro>p:first-child::first-letter{font-size:58px}html body.passport-editorial-rollout main.pr-recovery .pr-chapter{margin-top:28px!important;padding-top:22px!important}}
+@media(max-width:480px){html body.passport-editorial-rollout main.pr-recovery .pr-pair>.pr-chapter{padding:18px!important}html body.passport-editorial-rollout main.pr-recovery .pr-pair>.pr-chapter h2{font-size:26px!important}html body.passport-editorial-rollout main.pr-recovery .pr-media{padding:14px!important}}
+@media(max-width:374px){html body.passport-editorial-rollout main.pr-recovery{--pr-text:17.5px;--pr-title:32px;padding-inline:16px!important}}
+/* Individual performer context stays with the corresponding original performance. */
+html body.passport-editorial-rollout main.pr-recovery .pr-performance{display:grid;grid-template-columns:minmax(0, .8fr) minmax(0, 1.2fr);gap:24px;align-items:start;margin:28px 0;padding:22px 0;border-top:1px solid #E5E5E5}
+html body.passport-editorial-rollout main.pr-recovery .pr-performance>.pr-photo,html body.passport-editorial-rollout main.pr-recovery .pr-performance>.pr-media{margin:0;width:100%;min-width:0}
+html body.passport-editorial-rollout main.pr-recovery .pr-performance>.pr-photo img{max-height:420px;object-fit:contain}
+@media(max-width:800px){html body.passport-editorial-rollout main.pr-recovery .pr-performance{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+html body.passport-editorial-rollout main.pr-recovery .pr-titlegroup>span.eyebrow:first-child{color:#C41E3A!important;letter-spacing:.08em!important;margin-bottom:14px!important}

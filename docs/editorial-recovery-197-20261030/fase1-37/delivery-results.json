@@ -1,0 +1,25 @@
+{
+  "articles": 37,
+  "chapters": 383,
+  "testedWidths": [
+    1440,
+    1024,
+    768,
+    390,
+    360,
+    320
+  ],
+  "layoutCases": 222,
+  "layoutFailures": 0,
+  "nativeDetailCases": 111,
+  "unitTestsPassed": 32,
+  "audioRoute": "Home → Notícias → Lambrini → Notícias → Home",
+  "audioDesktopPassed": true,
+  "audioMobilePassed": true,
+  "protectedChanges": [],
+  "videoPlaybackPassed": 0,
+  "videoPlaybackTested": 3,
+  "physicalDevice": false,
+  "merge": false,
+  "publication": false
+}
