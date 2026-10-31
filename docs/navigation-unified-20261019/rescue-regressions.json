@@ -1,0 +1,115 @@
+{
+  "scope": "Synthetic Agenda fixture; no Netlify source/authentication claim.",
+  "results": [
+    {
+      "variant": "original",
+      "visibleMenus": 2,
+      "homeLinks": 3,
+      "expectedFailureConfirmed": true
+    },
+    {
+      "variant": "first-menu-only",
+      "visibleMenus": 2,
+      "homeLinks": 3,
+      "expectedFailureConfirmed": true
+    },
+    {
+      "variant": "rescue",
+      "width": 1440,
+      "visibleMenus": 1,
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "active": [
+        "/agenda.html"
+      ],
+      "localPreserved": true,
+      "audioPreserved": true,
+      "mainPreserved": true,
+      "cartPreserved": true
+    },
+    {
+      "variant": "rescue",
+      "width": 768,
+      "visibleMenus": 1,
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "active": [
+        "/agenda.html"
+      ],
+      "localPreserved": true,
+      "audioPreserved": true,
+      "mainPreserved": true,
+      "cartPreserved": true
+    },
+    {
+      "variant": "rescue",
+      "width": 390,
+      "visibleMenus": 1,
+      "counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "active": [
+        "/agenda.html"
+      ],
+      "localPreserved": true,
+      "audioPreserved": true,
+      "mainPreserved": true,
+      "cartPreserved": true
+    },
+    {
+      "variant": "rescue",
+      "lateCopyAndShellReplacement": true,
+      "cartHandlerPreserved": true
+    }
+  ]
+}
