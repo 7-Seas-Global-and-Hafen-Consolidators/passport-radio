@@ -1,0 +1,25 @@
+/* Selector only: no existing header, logo, menu or player geometry is changed. */
+.passport-global-host{position:relative}
+.passport-global{position:absolute;z-index:90;display:block;width:180px;height:28px;margin:0;padding:0;background:#FFFFFF;color:#111111;font:600 11px/1 "Instrument Sans",sans-serif;letter-spacing:.3px;text-transform:none;isolation:isolate}
+.passport-global *{box-sizing:border-box}
+.passport-global__full{display:flex;align-items:center;width:180px;height:28px;white-space:nowrap}
+.passport-global button{appearance:none;position:relative;display:inline-flex;justify-content:center;align-items:center;flex:none;width:32px;height:28px;min-height:0;margin:0;padding:0;border:0;border-radius:0;background:transparent;color:#111111;font:600 11px/1 "Instrument Sans",sans-serif;letter-spacing:.3px;cursor:pointer;box-shadow:none;transform:none;transition:none;text-transform:none}
+.passport-global button:hover{color:#C41E3A}
+.passport-global button:focus-visible{outline:2px solid #111111;outline-offset:2px}
+.passport-global button[aria-pressed="true"],.passport-global button[aria-checked="true"]{color:#C41E3A;font-weight:700;background:#FFFFFF}
+.passport-global__full button span{display:inline-block;padding-bottom:2px;border-bottom:2px solid transparent}
+.passport-global__full button[aria-pressed="true"] span{border-bottom-color:#C41E3A}
+.passport-global__separator{display:block;flex:none;width:1px;height:11px;margin:0 2px;background:#111111;opacity:.4}
+.passport-global__compact{display:none!important;width:64px!important;height:28px!important;background:#FFFFFF!important}
+.passport-global__compact::before{content:"";position:absolute;top:-8px;left:0;width:64px;height:44px}
+.passport-global__compact span{pointer-events:none}
+.passport-global[data-compact="true"]{width:64px}
+.passport-global[data-compact="true"] .passport-global__full{display:none}
+.passport-global[data-compact="true"] .passport-global__compact{display:inline-flex!important}
+.passport-global__menu{position:absolute;top:36px;right:0;width:180px;max-width:calc(100vw - 24px);margin:0;padding:0;border:1px solid #111111;background:#FFFFFF;box-shadow:none;list-style:none}
+.passport-global__menu[hidden]{display:none!important}
+.passport-global__menu button{display:flex;width:100%;height:44px;min-height:44px;justify-content:flex-start;padding:0 14px;font:600 13px/1.4 "Instrument Sans",sans-serif;letter-spacing:0}
+.passport-global__menu button[aria-checked="true"]::after{content:"✓";margin-left:auto;color:#C41E3A}
+.passport-global__status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.passport-global[hidden]{display:none!important}
