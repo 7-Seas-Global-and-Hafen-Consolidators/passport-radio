@@ -6,7 +6,7 @@
   const count = document.querySelector("#news-count");
   const more = document.querySelector("#news-more");
   if (!grid) return;
-  let all = [], shown = 0, term = "";
+  let all = [], shown = 0, term = "", month = "";
   const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => {
     if (c === "&") return "&" + "amp;";
     if (c === "<") return "&" + "lt;";
@@ -103,14 +103,38 @@
       }, { once: true });
     });
   };
+  const MONTHS = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+  const archive = document.querySelector("#news-archive");
+  const monthLabel = (key) => {
+    const [y, m] = String(key).split("-");
+    const name = MONTHS[(parseInt(m, 10) || 1) - 1] || m;
+    return name + " " + y;
+  };
+  const fillArchive = () => {
+    if (!archive) return;
+    const keys = [];
+    const seenM = new Set();
+    all.forEach((x) => {
+      const key = String(x.published_at || "").slice(0, 7);
+      if (key.length === 7 && !seenM.has(key)) { seenM.add(key); keys.push(key); }
+    });
+    keys.sort().reverse();
+    const current = month;
+    archive.innerHTML = '<option value="">Arquivo</option>' + keys.map((key) => `<option value="${esc(key)}">${esc(monthLabel(key))}</option>`).join("");
+    archive.value = current;
+  };
   const paint = () => {
-    const filtered = all.filter((x) => (x.title + " " + (x.deck || "") + " " + (x.category || "")).toLowerCase().includes(term));
-    grid.innerHTML = filtered.slice(0, shown).map((x) => {
+    const filtered = all.filter((x) => {
+      if (month && !String(x.published_at || "").startsWith(month)) return false;
+      return (x.title + " " + (x.deck || "") + " " + (x.category || "")).toLowerCase().includes(term);
+    });
+    grid.innerHTML = filtered.slice(0, shown).map((x, i) => {
       const photo = usablePhoto(x);
       const im = photo
         ? `<figure class="list-media"><img src="${esc(photo.src)}" alt="${esc(photo.alt || "")}" loading="lazy" decoding="async"></figure>`
         : verbete(x);
-      return `<article class="news-card list-card">${im}<div class="list-copy"><span class="journey-kicker">${esc(String(x.category || x.format || "Notícias").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<time>${esc(stamp(x.published_at))}</time></div></article>`;
+      const who = esc(x.author || "Passport Radio");
+      return `<article class="news-card list-card${i === 0 ? " news-lead" : ""}">${im}<div class="list-copy"><span class="journey-kicker">${esc(String(x.category || x.format || "Notícias").replace(/_/g, " "))}</span><h2><a href="${safe(x.url)}">${esc(x.title)}</a></h2>${x.deck ? `<p>${esc(x.deck)}</p>` : ""}<p class="news-by">${who}</p><time>${esc(stamp(x.published_at))}</time></div></article>`;
     }).join("");
     markFit(grid);
     if (count) count.textContent = filtered.length + " notícia" + (filtered.length === 1 ? "" : "s");
@@ -122,10 +146,12 @@
       all = [...(rss.items || []), ...(manual.items || [])].filter((x) => x?.url && !seen.has(x.url) && (seen.add(x.url), true))
         .sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
       shown = 12;
+      fillArchive();
       paint();
     })
     .catch(() => { grid.innerHTML = '<p class="journey-empty">As notícias estão sendo atualizadas.</p>'; });
   search?.addEventListener("input", () => { term = search.value.trim().toLowerCase(); shown = 12; paint(); });
+  archive?.addEventListener("change", () => { month = archive.value; shown = 12; paint(); });
   more?.addEventListener("click", () => { shown += 12; paint(); });
   window.__passportSafe = safe;
 })();
