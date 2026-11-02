@@ -1,0 +1,793 @@
+{
+  "base": "e4152f766784acc0e8a02ee27821d0e6ff2dd428",
+  "compositor": "js/passport-editorial-recovery.js (unmodified)",
+  "images": {
+    "sisters-1984": {
+      "key": "sisters-1984",
+      "source": "https://www.loudersound.com/features/robert-plant-said-we-captured-the-spirit-of-zeppelin-i-think-he-meant-we-were-as-debauched-as-they-were-the-chaotic-story-of-the-mission-the-goth-band-who-wanted-to-be-led-zeppelin",
+      "original": "https://cdn.mos.cms.futurecdn.net/5SSkZwSZtdHJbHqjWvUg8S.jpg",
+      "subject": "sisters-1984",
+      "alt": "The Sisters of Mercy em 1984 · Wayne Hussey à direita",
+      "caption": "The Sisters of Mercy em 1984 · Wayne Hussey à direita",
+      "credit": "Steve Rapport / Getty Images",
+      "src": "/images/editorial/home-seven-20261102/sisters-1984.webp",
+      "width": 1280,
+      "height": 720,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "status": "selected"
+    },
+    "wayne-1987": {
+      "key": "wayne-1987",
+      "source": "https://www.loudersound.com/features/robert-plant-said-we-captured-the-spirit-of-zeppelin-i-think-he-meant-we-were-as-debauched-as-they-were-the-chaotic-story-of-the-mission-the-goth-band-who-wanted-to-be-led-zeppelin",
+      "original": "https://cdn.mos.cms.futurecdn.net/GfRnhBBM3NMmmuJRuwgG8S.jpg",
+      "subject": "wayne-1987",
+      "alt": "Wayne Hussey no Brixton Academy, Londres, 1987",
+      "caption": "Wayne Hussey no Brixton Academy, Londres, 1987",
+      "credit": "Pete Still / Redferns",
+      "src": "/images/editorial/home-seven-20261102/wayne-1987.webp",
+      "width": 1280,
+      "height": 720,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "status": "selected"
+    },
+    "wt-2007": {
+      "key": "wt-2007",
+      "source": "https://www.loudersound.com/features/within-temptation-heart-of-everything-album-interview",
+      "original": "https://cdn.mos.cms.futurecdn.net/zRP4X66MU9sgnV869ntnEn.jpg",
+      "subject": "wt-2007",
+      "alt": "Within Temptation · fotografia de imprensa de 2007",
+      "caption": "Within Temptation · fotografia de imprensa de 2007",
+      "credit": "Divulgação / acervo Louder",
+      "src": "/images/editorial/home-seven-20261102/wt-2007.webp",
+      "width": 1280,
+      "height": 720,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "status": "selected"
+    },
+    "sharon-2007": {
+      "key": "sharon-2007",
+      "source": "https://www.loudersound.com/features/within-temptation-heart-of-everything-album-interview",
+      "original": "https://cdn.mos.cms.futurecdn.net/wtYhKFjSqFgdX4c4RzgMUm.jpg",
+      "subject": "sharon-2007",
+      "alt": "Sharon den Adel no TMF Awards de 2007",
+      "caption": "Sharon den Adel no TMF Awards de 2007",
+      "credit": "Paul Bergen / Redferns",
+      "src": "/images/editorial/home-seven-20261102/sharon-2007.webp",
+      "width": 1280,
+      "height": 720,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "status": "selected"
+    },
+    "wt-press": {
+      "key": "wt-press",
+      "source": "https://atomsplitterpr.com/within-temptation/",
+      "original": "https://atomsplitterpr.com/wp-content/uploads/2014/08/WT_1500.jpg",
+      "subject": "Within Temptation",
+      "alt": "Within Temptation · material de imprensa",
+      "caption": "Within Temptation · material de imprensa",
+      "credit": "Divulgação / Atom Splitter PR",
+      "src": "/images/editorial/home-seven-20261102/wt-press.webp",
+      "width": 1500,
+      "height": 844,
+      "originalWidth": 1500,
+      "originalHeight": 844,
+      "status": "selected"
+    },
+    "billy": {
+      "key": "billy",
+      "source": "https://commons.wikimedia.org/wiki/File:ZZ_Top_performing_at_Caesars_Windsor%2C_2025-06-18_20_%28cropped%29.jpg",
+      "original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/ZZ_Top_performing_at_Caesars_Windsor%2C_2025-06-18_20_%28cropped%29.jpg/960px-ZZ_Top_performing_at_Caesars_Windsor%2C_2025-06-18_20_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "subject": "Billy Gibbons",
+      "alt": "Gibbons performing in 2025",
+      "caption": "Gibbons performing in 2025",
+      "credit": "Chris Woodrich · CC BY-SA 4.0",
+      "file_page": "https://commons.wikimedia.org/wiki/File:ZZ_Top_performing_at_Caesars_Windsor%2C_2025-06-18_20_%28cropped%29.jpg",
+      "src": "/images/editorial/home-seven-20261102/billy.webp",
+      "width": 960,
+      "height": 1396,
+      "originalWidth": 960,
+      "originalHeight": 1396,
+      "status": "selected",
+      "license": "CC BY-SA 4.0",
+      "photographer": "Chris Woodrich"
+    },
+    "frank": {
+      "key": "frank",
+      "source": "https://commons.wikimedia.org/wiki/File:Frank_Beard_in_1983_%28cropped%29.png",
+      "original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Frank_Beard_in_1983_%28cropped%29.png/960px-Frank_Beard_in_1983_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "subject": "Frank Beard (musician)",
+      "alt": "Beard in 1983",
+      "caption": "Beard in 1983",
+      "credit": "Aaron Rapoport · CC BY-SA 3.0",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Frank_Beard_in_1983_%28cropped%29.png",
+      "src": "/images/editorial/home-seven-20261102/frank.webp",
+      "width": 960,
+      "height": 1335,
+      "originalWidth": 960,
+      "originalHeight": 1335,
+      "status": "selected",
+      "license": "CC BY-SA 3.0",
+      "photographer": "Aaron Rapoport"
+    },
+    "queen-1977": {
+      "key": "queen-1977",
+      "src": "/images/editorial/home-seven-20261102/queen-1977.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Queen_News_Of_The_World_%281977_Press_Kit_Photo_01%29.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Queen_News_Of_The_World_%281977_Press_Kit_Photo_01%29.jpg/1280px-Queen_News_Of_The_World_%281977_Press_Kit_Photo_01%29.jpg",
+      "alt": "Queen · fotografia de imprensa, 1977",
+      "caption": "Queen · fotografia de imprensa, 1977",
+      "credit": "Elektra Records · acervo Wikimedia",
+      "subject": "queen-1977",
+      "width": 1280,
+      "height": 720,
+      "status": "selected"
+    },
+    "the-cross-band": {
+      "key": "the-cross-band",
+      "src": "/images/editorial/home-seven-20261102/the-cross-band.webp",
+      "source": "https://www.last.fm/music/The+Cross",
+      "original": "https://lastfm.freetls.fastly.net/i/u/ar0/2862a4ddfa4aea79c82843ded8addd4b.jpg",
+      "subject": "The Cross",
+      "alt": "Roger Taylor com os integrantes do The Cross",
+      "caption": "The Cross · Roger Taylor à frente da banda",
+      "credit": "Divulgação · acervo Last.fm",
+      "width": 951,
+      "height": 951,
+      "status": "selected"
+    },
+    "john-lennon": {
+      "src": "/assets/blog/artists/john-lennon.jpg",
+      "subject": "John Lennon",
+      "alt": "John Lennon",
+      "caption": "John Lennon · registro de acervo",
+      "width": 800,
+      "height": 800,
+      "source": "https://www.deezer.com/artist/226",
+      "credit": "Imagem promocional",
+      "status": "selected",
+      "acquisitionStatus": "existing_candidate",
+      "key": "john-lennon"
+    },
+    "roger": {
+      "key": "roger",
+      "source": "https://commons.wikimedia.org/wiki/File:QueenLambertO2060622_%2832_of_49%29_%2852162868898%29_%28Roger_Taylor_crop%29.jpg",
+      "original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/QueenLambertO2060622_%2832_of_49%29_%2852162868898%29_%28Roger_Taylor_crop%29.jpg/960px-QueenLambertO2060622_%2832_of_49%29_%2852162868898%29_%28Roger_Taylor_crop%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "subject": "Roger Taylor (Queen drummer)",
+      "alt": "Roger_Taylor_(Queen_drummer)",
+      "caption": "Taylor with Queen + Adam Lambert in 2022",
+      "credit": "Raph_PH · CC BY 2.0",
+      "file_page": "https://commons.wikimedia.org/wiki/File:QueenLambertO2060622_%2832_of_49%29_%2852162868898%29_%28Roger_Taylor_crop%29.jpg",
+      "src": "/images/editorial/home-seven-20261102/roger.webp",
+      "width": 960,
+      "height": 1279,
+      "originalWidth": 960,
+      "originalHeight": 1279,
+      "status": "selected",
+      "license": "CC BY 2.0",
+      "photographer": "Raph_PH"
+    },
+    "josh-live": {
+      "key": "josh-live",
+      "src": "/images/editorial/home-seven-20261102/josh-live.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:2018_RiP_-_Greta_Van_Fleet_-_by_2eight_-_3SC7223.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/2018_RiP_-_Greta_Van_Fleet_-_by_2eight_-_3SC7223.jpg/960px-2018_RiP_-_Greta_Van_Fleet_-_by_2eight_-_3SC7223.jpg",
+      "alt": "Josh Kiszka · Rock im Park, 2018",
+      "caption": "Josh Kiszka · Rock im Park, 2018",
+      "credit": "Stefan Brending / 2eight · CC BY-SA 4.0",
+      "subject": "josh-live",
+      "width": 960,
+      "height": 637,
+      "status": "selected"
+    },
+    "jake": {
+      "key": "jake",
+      "source": "https://commons.wikimedia.org/wiki/File:Jake_Kiszka.jpg",
+      "original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Jake_Kiszka.jpg/960px-Jake_Kiszka.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "subject": "Jake Kiszka",
+      "alt": "Jake_Kiszka",
+      "caption": "Jake Kiszka",
+      "credit": "Troy Larson · CC BY-SA 4.0",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Jake_Kiszka.jpg",
+      "src": "/images/editorial/home-seven-20261102/jake.webp",
+      "width": 960,
+      "height": 1288,
+      "originalWidth": 960,
+      "originalHeight": 1288,
+      "status": "selected",
+      "license": "CC BY-SA 4.0",
+      "photographer": "Troy Larson"
+    },
+    "sam-gw": {
+      "key": "sam-gw",
+      "source": "https://www.guitarworld.com/artists/sam-kiszka-hard-rock-is-alive-with-greta-van-fleet",
+      "original": "https://cdn.mos.cms.futurecdn.net/DSfa45UibPWdDVeLUEf9Hb-1234-80.jpg",
+      "subject": "sam-gw",
+      "alt": "Sam Kiszka com seu baixo",
+      "caption": "Sam Kiszka · baixo e teclados do Greta Van Fleet",
+      "credit": "Acervo Guitar World / Bass Player",
+      "src": "/images/editorial/home-seven-20261102/sam-gw.webp",
+      "width": 1234,
+      "height": 718,
+      "originalWidth": 1234,
+      "originalHeight": 718,
+      "status": "selected"
+    },
+    "danny-official": {
+      "key": "danny-official",
+      "source": "https://vicfirth.com/blogs/artist/danny-wagner-vf",
+      "original": "https://vicfirth.com/cdn/shop/files/daniel_wagner_header.png?v=13437010898670148569",
+      "subject": "danny-official",
+      "alt": "Danny Wagner · retrato do músico em seu perfil de artista",
+      "caption": "Danny Wagner · retrato do músico em seu perfil de artista",
+      "credit": "Divulgação / Vic Firth",
+      "src": "/images/editorial/home-seven-20261102/danny-official.webp",
+      "width": 1600,
+      "height": 700,
+      "originalWidth": 1728,
+      "originalHeight": 756,
+      "status": "selected"
+    },
+    "whitecross": {
+      "key": "whitecross",
+      "source": "https://commons.wikimedia.org/wiki/File:Whitecross-EoR2013-02.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Whitecross-EoR2013-02.jpg/960px-Whitecross-EoR2013-02.jpg",
+      "subject": "Whitecross (band)",
+      "alt": "Whitecross in 2013",
+      "caption": "Whitecross in 2013",
+      "credit": "Lahminewski Lab · CC BY-SA 4.0",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Whitecross-EoR2013-02.jpg",
+      "src": "/images/editorial/home-seven-20261102/whitecross.webp",
+      "width": 960,
+      "height": 540,
+      "originalWidth": 330,
+      "originalHeight": 186,
+      "status": "selected",
+      "license": "CC BY-SA 4.0",
+      "photographer": "Lahminewski Lab"
+    },
+    "taylor-momsen": {
+      "src": "/images/editorial/recovery-phase1-20261030/taylormomsen.webp",
+      "subject": "Taylor Momsen",
+      "alt": "Taylor Momsen",
+      "caption": "Taylor Momsen · registro fotográfico",
+      "width": 933,
+      "height": 1400,
+      "source": "https://en.wikipedia.org/wiki/Taylor_Momsen",
+      "original": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/The_Pretty_Reckless_%40_The_Wiltern_07_31_2026_%2855507430235%29_Cropped.jpg/960px-The_Pretty_Reckless_%40_The_Wiltern_07_31_2026_%2855507430235%29_Cropped.jpg",
+      "file_page": "https://commons.wikimedia.org/wiki/File:The_Pretty_Reckless_%40_The_Wiltern_07_31_2026_%2855507430235%29_Cropped.jpg",
+      "credit": "Justin Higuchi",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "status": "selected",
+      "acquisitionStatus": "new_candidate",
+      "key": "taylor-momsen"
+    },
+    "dave-metlife-ff": {
+      "key": "dave-metlife-ff",
+      "source": "https://therockrevival.com/concert-reviews/review-photos-ac-dc-shake-metlife-stadium-to-its-foundations-with-foo-fighters/",
+      "original": "https://therockrevival.com/wp-content/uploads/2026/10/h0a2937-1024x683.jpg",
+      "subject": "dave-metlife-ff",
+      "alt": "Foo Fighters [Matt Bishop/The Rock Revival] · MetLife Stadium, 2 de outubro de 2026",
+      "caption": "Foo Fighters [Matt Bishop/The Rock Revival] · MetLife Stadium, 2 de outubro de 2026",
+      "credit": "Matt Bishop / The Rock Revival",
+      "src": "/images/editorial/home-seven-20261102/dave-metlife-ff.webp",
+      "width": 1024,
+      "height": 683,
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "status": "selected"
+    },
+    "dave-metlife-stage": {
+      "key": "dave-metlife-stage",
+      "source": "https://therockrevival.com/concert-reviews/review-photos-ac-dc-shake-metlife-stadium-to-its-foundations-with-foo-fighters/",
+      "original": "https://therockrevival.com/wp-content/uploads/2026/10/h0a3419-1024x683.jpg",
+      "subject": "dave-metlife-stage",
+      "alt": "AC/DC [Matt Bishop/The Rock Revival] · MetLife Stadium, 2 de outubro de 2026",
+      "caption": "AC/DC [Matt Bishop/The Rock Revival] · MetLife Stadium, 2 de outubro de 2026",
+      "credit": "Matt Bishop / The Rock Revival",
+      "src": "/images/editorial/home-seven-20261102/dave-metlife-stage.webp",
+      "width": 1024,
+      "height": 683,
+      "originalWidth": 1024,
+      "originalHeight": 683,
+      "status": "selected"
+    },
+    "dave-metlife-acdc": {
+      "key": "dave-metlife-acdc",
+      "source": "https://therockrevival.com/concert-reviews/review-photos-ac-dc-shake-metlife-stadium-to-its-foundations-with-foo-fighters/",
+      "original": "https://therockrevival.com/wp-content/uploads/2026/10/h0a3118-1024x819.jpg",
+      "subject": "dave-metlife-acdc",
+      "alt": "AC/DC [Matt Bishop/The Rock Revival] · MetLife Stadium, 2 de outubro de 2026",
+      "caption": "AC/DC [Matt Bishop/The Rock Revival] · MetLife Stadium, 2 de outubro de 2026",
+      "credit": "Matt Bishop / The Rock Revival",
+      "src": "/images/editorial/home-seven-20261102/dave-metlife-acdc.webp",
+      "width": 1024,
+      "height": 819,
+      "originalWidth": 1024,
+      "originalHeight": 819,
+      "status": "selected"
+    },
+    "sharon-robert-2007": {
+      "key": "sharon-robert-2007",
+      "source": "https://www.loudersound.com/features/within-temptation-heart-of-everything-album-interview",
+      "original": "https://cdn.mos.cms.futurecdn.net/VUtwfUAnKVWw9UajXH5Fam.jpg",
+      "subject": "sharon-robert-2007",
+      "alt": "Sharon den Adel e Robert Westerholt em Londres, 2007",
+      "caption": "Sharon den Adel e Robert Westerholt em Londres, 2007",
+      "credit": "Rob Monk / Classic Rock / Future via Getty Images",
+      "src": "/images/editorial/home-seven-20261102/sharon-robert-2007.webp",
+      "width": 1280,
+      "height": 720,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "status": "selected"
+    }
+  },
+  "articles": [
+    {
+      "id": "home-seven-1",
+      "number": 1,
+      "path": "editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html",
+      "title": "The Mission nasceu no corredor de saída do Sisters of Mercy.",
+      "model": "C",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "01 · LEEDS, 1985. PODE LEVAR A MALA.",
+          "kind": "chapter",
+          "image": "sisters-1984"
+        },
+        {
+          "sourceIndex": 1,
+          "title": "02 · AÍ COMEÇOU A PARTE ADULTA DA SEPARAÇÃO.",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 2,
+          "title": "03 · TÁ. VOCÊ SAIU. E AGORA?",
+          "kind": "chapter",
+          "image": "wayne-1987"
+        },
+        {
+          "sourceIndex": 3,
+          "title": "04 · THE MISSION · BUTTERFLY ON A WHEEL",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 4,
+          "title": "05 · E QUEM FICOU NA CASA?",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 5,
+          "title": "06 · THE SISTERS OF MERCY · UNDER THE GUN",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 6,
+          "title": "07 · ENTÃO UM VIROU ISSO. O OUTRO VIROU AQUILO.",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 7,
+          "title": "08 · PARA NÃO PERDER NINGUÉM NO CORREDOR",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 8,
+          "title": "09 · CONSTRUIR OU FUGIR?",
+          "kind": "closing"
+        }
+      ],
+      "toc": true,
+      "heroCaption": "The Mission em 1988 · Mick Brown, Simon Hinkler, Craig Adams e Wayne Hussey · Graham Tucker / Redferns"
+    },
+    {
+      "id": "home-seven-2",
+      "number": 2,
+      "path": "sharon-den-adel-within-temptation-30-anos.html",
+      "title": "Três pessoas na plateia. Trinta anos depois, Sharon den Adel quer mudar tudo outra vez.",
+      "model": "A",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "Within Temptation nunca passou três décadas tentando gravar o mesmo disco outra vez.",
+          "kind": "chapter",
+          "image": "wt-2007"
+        },
+        {
+          "sourceIndex": 9,
+          "title": "Sharon. Espera. Quero fazer uma coisa.",
+          "kind": "chapter",
+          "image": "sharon-2007"
+        },
+        {
+          "sourceIndex": 10,
+          "title": "Trinta anos não fizeram o Within Temptation chegar a um destino. Deram à banda mais lugares para ir.",
+          "kind": "chapter",
+          "image": "wt-press"
+        },
+        {
+          "sourceIndex": 11,
+          "title": "Leia. Ouça. Compre. Anuncie. Apoie.",
+          "kind": "closing"
+        }
+      ],
+      "toc": false,
+      "gallery": {
+        "afterSourceIndex": -1,
+        "images": [
+          "sharon-robert-2007"
+        ]
+      }
+    },
+    {
+      "id": "home-seven-3",
+      "number": 3,
+      "path": "frank-beard-zz-top-1949-2026.html",
+      "title": "FRANK BEARD. THE HEARTBEAT OF ZZ TOP.",
+      "model": "C",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "FRANK LEE BEARD",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 1,
+          "title": "ENTÃO VEIO BILLY GIBBONS",
+          "kind": "chapter",
+          "image": "billy"
+        },
+        {
+          "sourceIndex": 3,
+          "title": "TRES HOMBRES",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 5,
+          "title": "A BANDA FICOU GRANDE",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 6,
+          "title": "FRANK TAMBÉM PRECISOU SOBREVIVER À ESTRADA",
+          "kind": "chapter",
+          "image": "frank"
+        },
+        {
+          "sourceIndex": 7,
+          "title": "ELIMINATOR",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 8,
+          "title": "ESCUTE FRANK",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 9,
+          "title": "AS DÉCADAS PASSARAM",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 10,
+          "title": "ROCK & ROLL HALL OF FAME",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 11,
+          "title": "DUSTY",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 12,
+          "title": "FRANK CONTINUOU TOCANDO",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 13,
+          "title": "THE FINAL BEAT",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 14,
+          "title": "MR. NOMAD IS IN MOURNING",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 17,
+          "title": "ROUGH BOY",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 18,
+          "title": "ONE MINUTE OF SILENCE.",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 19,
+          "title": "Dusty Hill",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 20,
+          "title": "Frank Beard",
+          "kind": "closing"
+        }
+      ],
+      "toc": true
+    },
+    {
+      "id": "home-seven-4",
+      "number": 4,
+      "path": "roger-taylor-i-see-you-now-novo-album-2026.html",
+      "title": "ROGER TAYLOR. NÃO VIVE DO PASSADO.",
+      "model": "A",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "UM MUNDO BONITO QUE PARECE DETERMINADO A SE DESTRUIR",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 1,
+          "title": "“I SEE YOU NOW”",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 3,
+          "title": "ESPERE. “O BATERISTA DO QUEEN”?",
+          "kind": "chapter",
+          "image": "queen-1977"
+        },
+        {
+          "sourceIndex": 4,
+          "title": "E AQUELA VOZ?",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 5,
+          "title": "ANTES DO QUEEN, EXISTIA SMILE",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 6,
+          "title": "THE CROSS",
+          "kind": "chapter",
+          "image": "the-cross-band"
+        },
+        {
+          "sourceIndex": 8,
+          "title": "E ENTÃO APARECE UM CORO DA ÁFRICA DO SUL",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 9,
+          "title": "JOHN LENNON",
+          "kind": "chapter",
+          "image": "john-lennon"
+        },
+        {
+          "sourceIndex": 11,
+          "title": "BEATLES, ECLETISMO E A RECUSA EM FICAR NUMA CAIXA",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 12,
+          "title": "A NASA ENTROU NESSA HISTÓRIA",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 13,
+          "title": "ROGER AINDA QUER SUBIR NUM PALCO",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 14,
+          "title": "ELE NUNCA FOI APENAS O CARA ATRÁS DE FREDDIE",
+          "kind": "chapter",
+          "image": "roger"
+        },
+        {
+          "sourceIndex": 15,
+          "title": "A FOTO",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 16,
+          "title": "MR. NOMAD'S FINAL NOTE",
+          "kind": "closing"
+        }
+      ],
+      "toc": true
+    },
+    {
+      "id": "home-seven-5",
+      "number": 5,
+      "path": "greta-van-fleet-palace-for-the-people.html",
+      "title": "Greta Van Fleet anuncia novo álbum e lança “Saw You Stand”",
+      "model": "D",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "Antes da notícia, as apresentações",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 1,
+          "title": "Voz principal · Gaita Joshua Michael Kiszka — Josh Kiszka",
+          "kind": "chapter",
+          "image": "josh-live",
+          "pair": "greta-members-1"
+        },
+        {
+          "sourceIndex": 2,
+          "title": "Guitarra · Vocais Jacob Thomas Kiszka — Jake Kiszka",
+          "kind": "chapter",
+          "image": "jake",
+          "pair": "greta-members-1"
+        },
+        {
+          "sourceIndex": 3,
+          "title": "Baixo · Teclados · Vocais Samuel Francis Kiszka — Sam Kiszka",
+          "kind": "chapter",
+          "image": "sam-gw",
+          "pair": "greta-members-2"
+        },
+        {
+          "sourceIndex": 4,
+          "title": "Bateria · Percussão · Vocais Daniel Robert Wagner — Danny Wagner",
+          "kind": "chapter",
+          "image": "danny-official",
+          "pair": "greta-members-2"
+        },
+        {
+          "sourceIndex": 5,
+          "title": "Um novo palácio para o povo",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 6,
+          "title": "O susto que durou poucos dias",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 7,
+          "title": "Não é Led. E esse é justamente o ponto.",
+          "kind": "closing"
+        }
+      ],
+      "toc": true
+    },
+    {
+      "id": "home-seven-6",
+      "number": 6,
+      "path": "white-metal-isso-e-musica-crista.html",
+      "title": "WHITE METAL. ISSO É MÚSICA CRISTÃ?",
+      "model": "B",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "PRIMEIRO: “WHITE METAL” NÃO É UM SOM",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 1,
+          "title": "MORTIFICATION",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 3,
+          "title": "TROUBLE",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 5,
+          "title": "E ENTÃO CHEGARAM QUATRO HOMENS DE AMARELO E PRETO",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 8,
+          "title": "WHITECROSS",
+          "kind": "chapter",
+          "image": "whitecross"
+        },
+        {
+          "sourceIndex": 10,
+          "title": "DELIVERANCE",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 12,
+          "title": "EXTOL",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 15,
+          "title": "SEIS BANDAS. UM MONTE DE RESPOSTAS DIFERENTES.",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 16,
+          "title": "MAS ESPERE: METAL E CRISTIANISMO NÃO ERAM INIMIGOS?",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 17,
+          "title": "A EXPERIÊNCIA PASSPORT",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 18,
+          "title": "SEIS PORTAS DE ENTRADA",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 19,
+          "title": "ENTÃO... ISSO É MÚSICA CRISTÃ?",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 20,
+          "title": "MR. NOMAD'S FINAL NOTE",
+          "kind": "closing"
+        }
+      ],
+      "toc": true
+    },
+    {
+      "id": "home-seven-7",
+      "number": 7,
+      "path": "editorial/2026/10/07/dave-grohl-acdc-highway-to-hell.html",
+      "title": "Dave Grohl sobe ao palco com AC/DC para tocar “Highway to Hell” — e vira o garoto de 11 anos outra vez",
+      "model": "D",
+      "chapters": [
+        {
+          "sourceIndex": 0,
+          "title": "PRIMEIRO, TAYLOR MOMsen TELEFONOU",
+          "kind": "chapter",
+          "image": "taylor-momsen"
+        },
+        {
+          "sourceIndex": 1,
+          "title": "DAVE TINHA 11 ANOS",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 2,
+          "title": "O FOO FIGHTERS ABRIU PARA O AC/DC",
+          "kind": "chapter",
+          "image": "dave-metlife-ff"
+        },
+        {
+          "sourceIndex": 3,
+          "title": "“DAVID GROHL!”",
+          "kind": "chapter",
+          "image": "dave-metlife-stage"
+        },
+        {
+          "sourceIndex": 5,
+          "title": "O GAROTO DE 11 ANOS CHEGOU LÁ",
+          "kind": "chapter",
+          "image": "dave-metlife-acdc"
+        },
+        {
+          "sourceIndex": 6,
+          "title": "E NÃO FOI A PRIMEIRA VEZ QUE ESSES CAMINHOS SE CRUZARAM",
+          "kind": "chapter"
+        },
+        {
+          "sourceIndex": 7,
+          "title": "AGORA APERTA O PLAY",
+          "kind": "closing"
+        }
+      ],
+      "toc": true
+    }
+  ]
+}

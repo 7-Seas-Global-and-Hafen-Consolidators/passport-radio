@@ -4,7 +4,8 @@
  if(window.PassportPersistNav)return;
  const originalURL=location.href,originalTitle=document.title;
  const home=url=>/^\/(?:index\.html)?$/.test(url.pathname);
- const known=url=>/^\/blog(?:\.html|\/)/.test(url.pathname)||/^\/(?:noticias|editorial)\.html$/.test(url.pathname)||/^\/(?:editorial|historias)\//.test(url.pathname);
+ const homeArticles=new Set(['/sharon-den-adel-within-temptation-30-anos.html','/frank-beard-zz-top-1949-2026.html','/roger-taylor-i-see-you-now-novo-album-2026.html','/greta-van-fleet-palace-for-the-people.html','/white-metal-isso-e-musica-crista.html']);
+ const known=url=>homeArticles.has(url.pathname)||/^\/blog(?:\.html|\/)/.test(url.pathname)||/^\/(?:noticias|editorial)\.html$/.test(url.pathname)||/^\/(?:editorial|historias)\//.test(url.pathname);
  const excluded=/\/(?:radio[^/]*|globo-de-ouro-player|passport-player[^/]*|adapter-lab)\.html$/i;
  const compatible=url=>url.origin===location.origin&&!!document.querySelector('#root #passport-editorial-outlet')&&!excluded.test(url.pathname)&&(home(url)||known(url));
  let serial=0,current=null;const cache=new Map();

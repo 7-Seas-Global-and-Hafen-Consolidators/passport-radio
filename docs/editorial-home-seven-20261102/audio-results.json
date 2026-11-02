@@ -1,0 +1,440 @@
+{
+  "physicalDevice": false,
+  "route": "Home → article → Home",
+  "cases": [
+    {
+      "number": 7,
+      "path": "editorial/2026/10/07/dave-grohl-acdc-highway-to-hell.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 1.028224,
+        "decoded": 21734,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 2.858221,
+        "decoded": 50991,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 4.020456,
+        "decoded": 69381,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 1,
+      "path": "editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 4.052515,
+        "decoded": 69799,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 4.963698,
+        "decoded": 84428,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 5.99978,
+        "decoded": 101146,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 2,
+      "path": "sharon-den-adel-within-temptation-30-anos.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 6.005554,
+        "decoded": 101146,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 7.302067,
+        "decoded": 122044,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 8.136187,
+        "decoded": 135419,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 3,
+      "path": "frank-beard-zz-top-1949-2026.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 8.138888,
+        "decoded": 135419,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 2,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 9.044478,
+        "decoded": 149630,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 10.736989,
+        "decoded": 176797,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 4,
+      "path": "roger-taylor-i-see-you-now-novo-album-2026.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 10.782524,
+        "decoded": 177633,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 2,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 11.819089,
+        "decoded": 193933,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 13.055821,
+        "decoded": 213995,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 5,
+      "path": "greta-van-fleet-palace-for-the-people.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 13.270835,
+        "decoded": 217339,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 2,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 14.658145,
+        "decoded": 239909,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 16.154227,
+        "decoded": 263315,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 6,
+      "path": "white-metal-isso-e-musica-crista.html",
+      "width": 1440,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 16.372673,
+        "decoded": 267076,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 22.125982,
+        "decoded": 362371,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 23.523905,
+        "decoded": 384523,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 7,
+      "path": "editorial/2026/10/07/dave-grohl-acdc-highway-to-hell.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 1.010858,
+        "decoded": 21316,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 2.194457,
+        "decoded": 40124,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 3.221563,
+        "decoded": 56425,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 1,
+      "path": "editorial/2026/08/27/the-mission-historia-integrantes-wayne-hussey-craig-adams.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 3.232495,
+        "decoded": 56843,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 4.254369,
+        "decoded": 73143,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 5.40361,
+        "decoded": 91533,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 2,
+      "path": "sharon-den-adel-within-temptation-30-anos.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 5.412315,
+        "decoded": 91951,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 6.563894,
+        "decoded": 109923,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 7.54222,
+        "decoded": 125806,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 3,
+      "path": "frank-beard-zz-top-1949-2026.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 7.548389,
+        "decoded": 126224,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 2,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 8.439484,
+        "decoded": 140016,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 9.375286,
+        "decoded": 155063,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 4,
+      "path": "roger-taylor-i-see-you-now-novo-album-2026.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 9.387088,
+        "decoded": 155481,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 2,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 10.277679,
+        "decoded": 169692,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 11.34565,
+        "decoded": 186410,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 5,
+      "path": "greta-van-fleet-palace-for-the-people.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 11.388159,
+        "decoded": 187246,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 2,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 12.502977,
+        "decoded": 205218,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 13.487572,
+        "decoded": 220683,
+        "paused": false,
+        "active": 1
+      }
+    },
+    {
+      "number": 6,
+      "path": "white-metal-isso-e-musica-crista.html",
+      "width": 390,
+      "passed": true,
+      "before": {
+        "same": true,
+        "sameDocument": true,
+        "time": 13.49213,
+        "decoded": 221101,
+        "paused": false,
+        "active": 1
+      },
+      "homeLinkCount": 1,
+      "article": {
+        "same": true,
+        "sameDocument": true,
+        "time": 14.463168,
+        "decoded": 236565,
+        "paused": false,
+        "active": 1
+      },
+      "home": {
+        "same": true,
+        "sameDocument": true,
+        "time": 15.349003,
+        "decoded": 250358,
+        "paused": false,
+        "active": 1
+      }
+    }
+  ]
+}
