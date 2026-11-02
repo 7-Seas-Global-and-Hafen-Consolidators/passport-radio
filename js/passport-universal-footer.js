@@ -1,6 +1,12 @@
 /* Institutional footer only. Existing page, framework and audio nodes retain ownership. */
 (() => {
   'use strict';
+  if (!document.querySelector('script[data-passport-media-artwork]')) {
+    const identity = document.createElement('script');
+    identity.src = '/js/passport-media-artwork.js?v=20261102';
+    identity.dataset.passportMediaArtwork = '1';
+    document.head.append(identity);
+  }
   if (window.PassportUniversalFooter) { window.PassportUniversalFooter.mount(); return; }
   const groups = [
     ['EXPLORE', [['Home','/'],['Notícias','/noticias.html'],['Arquivo','/editorial.html'],['Agenda','/agenda.html'],['Bandas','/bandas/index.html'],['Vídeos','/videos.html'],['Desafios','/jogos.html'],['Podcast & Broadcast','/radio.html'],['Rádio 24H','/radio.html']]],
