@@ -22,7 +22,7 @@ Aberturas nas seis larguras; páginas completas e detalhes de capítulos/vídeos
 
 ## Fotografias
 
-25 arquivos fotográficos novos, além dos arquivos existentes reaproveitados. Nenhuma fotografia se repete dentro da mesma matéria: conferência por conteúdo e inspeção do [contato fotográfico](photographs-contact.webp). Nenhuma imagem externa é necessária para carregar as fotos. Fontes incluem imprensa musical, fotógrafos de apresentações, materiais oficiais de artistas/fabricantes e Wikimedia. Não foram escolhidas versões com marcas d’água ou logotipos sobrepostos de terceiros. Banners e inscrições que fazem parte do palco fotografado não são marcas adicionadas à imagem.
+25 arquivos fotográficos novos, além dos arquivos existentes reaproveitados. Nenhuma fotografia se repete dentro da mesma matéria: conferência por conteúdo e inspeção do [contato fotográfico](photographs-contact.webp). Nenhuma imagem externa é necessária para carregar as fotos. Fontes incluem imprensa musical, fotógrafos de apresentações, materiais oficiais de artistas/fabricantes e Wikimedia. Não foram escolhidas versões com marcas d’água ou logotipos sobrepostos de terceiros.
 
 O [manifesto por matéria e capítulo](photo-video-manifest.json) registra imagens mantidas, acrescentadas e substituídas, procedência, crédito e motivo. A capa da Melody Maker e as duas ilustrações narradas no texto de The Mission permanecem identificadas como documentos/ilustrações originais. Os dois anúncios Passport preservados em Roger/White Metal são elementos da matéria original, não fotografias de artistas.
 
@@ -61,3 +61,5 @@ python -m unittest discover -s tests -p test_lambrini_editorial_pilot.py
 ```
 
 Para recompor: `tools/editorial_home_seven_normalize.py`, `tools/editorial_home_seven_build.cjs`, `tools/editorial_home_seven_credits.py` e `tools/editorial_home_seven_manifest.py`, nessa ordem. O inventário preserva o conteúdo original para comparar. Os arquivos de mídia selecionados já estão versionados.
+
+CI do commit 46b8435: Passport CI, Native editorial browser e Materialize official Passport channels aprovados. Ajuste fotográfico final de Dave verificado novamente nas seis larguras, sem falhas.

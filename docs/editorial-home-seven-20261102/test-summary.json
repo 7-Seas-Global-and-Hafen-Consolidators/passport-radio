@@ -83,5 +83,11 @@
     "status": "Playback confirmation pending; original videos preserved as ordered."
   },
   "capturedFiles": 151,
-  "ci": "Native editorial browser will run on the new PR; status linked in the PR."
+  "ci": {
+    "commit": "46b8435b340a04b30addeab0cbcfb35c57e0bba6",
+    "Passport CI": "success",
+    "Native editorial browser": "success",
+    "Materialize official Passport channels": "success",
+    "finalPhotoAdjustment": "Dave retested at all six widths; no audio or navigation changes."
+  }
 }
