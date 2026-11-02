@@ -1,0 +1,545 @@
+{
+  "base": "365eeb6251fafc14a34f70c60c2f21227ae0fcc2",
+  "physicalPhone": false,
+  "physicalLockScreen": "NOT TESTED — no physical mobile device is available in this environment.",
+  "network": "Real radio streams; unrelated page images and external iframe documents blocked identically before/after. Brand images served normally.",
+  "checks": [
+    {
+      "name": "Metadata only; Home DOM unchanged; no autoplay",
+      "width": 390,
+      "before": {
+        "metadata": null,
+        "icons": [],
+        "active": 0
+      },
+      "bodyIdenticalDuringInstallation": true,
+      "officialArtwork": [
+        {
+          "sizes": "192x192",
+          "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+          "type": "image/png"
+        },
+        {
+          "sizes": "512x512",
+          "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Real stream continues with official artwork after another tab opens",
+      "family": "Hits",
+      "width": 390,
+      "start": {
+        "id": "passportHitsAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://listen.181fm.com/181-power_128k.mp3",
+        "time": 1.020655,
+        "decoded": 21316,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "after": {
+        "id": "passportHitsAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://listen.181fm.com/181-power_128k.mp3",
+        "time": 4.084133,
+        "decoded": 70217,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "hiddenObserved": false
+    },
+    {
+      "name": "Real stream continues with official artwork after another tab opens",
+      "family": "MPB",
+      "width": 390,
+      "start": {
+        "id": "passportMPBAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1793641406362",
+        "time": 1.017619,
+        "decoded": 53244,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "after": {
+        "id": "passportMPBAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1793641406362",
+        "time": 4.058577,
+        "decoded": 174348,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "hiddenObserved": false
+    },
+    {
+      "name": "Real stream continues with official artwork after another tab opens",
+      "family": "Soul",
+      "width": 390,
+      "start": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 1.01942,
+        "decoded": 31974,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "after": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 4.06464,
+        "decoded": 105325,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "hiddenObserved": false
+    },
+    {
+      "name": "Home → Notícias → Home: same playing audio, source, volume and official artwork",
+      "width": 390,
+      "start": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 4.070732,
+        "decoded": 105325,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "news": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 11.234032,
+        "decoded": 277107,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "home": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 15.816369,
+        "decoded": 387448,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Metadata only; Home DOM unchanged; no autoplay",
+      "width": 1440,
+      "before": {
+        "metadata": null,
+        "icons": [],
+        "active": 0
+      },
+      "bodyIdenticalDuringInstallation": true,
+      "officialArtwork": [
+        {
+          "sizes": "192x192",
+          "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+          "type": "image/png"
+        },
+        {
+          "sizes": "512x512",
+          "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Real stream continues with official artwork after another tab opens",
+      "family": "Hits",
+      "width": 1440,
+      "start": {
+        "id": "passportHitsAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://listen.181fm.com/181-power_128k.mp3",
+        "time": 1.008877,
+        "decoded": 21315,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "after": {
+        "id": "passportHitsAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://listen.181fm.com/181-power_128k.mp3",
+        "time": 4.04057,
+        "decoded": 69799,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "hiddenObserved": false
+    },
+    {
+      "name": "Real stream continues with official artwork after another tab opens",
+      "family": "MPB",
+      "width": 1440,
+      "start": {
+        "id": "passportMPBAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1793641453413",
+        "time": 1.016686,
+        "decoded": 53244,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "after": {
+        "id": "passportMPBAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://srv1.braudio.com.br:7008/;?t=1793641453413",
+        "time": 4.106101,
+        "decoded": 176436,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "hiddenObserved": false
+    },
+    {
+      "name": "Real stream continues with official artwork after another tab opens",
+      "family": "Soul",
+      "width": 1440,
+      "start": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 1.015413,
+        "decoded": 31974,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "after": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 4.048678,
+        "decoded": 104699,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "hiddenObserved": false
+    },
+    {
+      "name": "Home → Notícias → Home: same playing audio, source, volume and official artwork",
+      "width": 1440,
+      "start": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 4.056347,
+        "decoded": 104699,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "news": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 4.945883,
+        "decoded": 126015,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      },
+      "home": {
+        "id": "passportSoulAudio",
+        "same": true,
+        "sameDocument": true,
+        "source": "https://onair7.xdevel.com/proxy/xautocloud_atvn_1069?mp=%2F%3B1%2F",
+        "time": 5.853163,
+        "decoded": 148585,
+        "volume": 0.8,
+        "paused": false,
+        "active": 1,
+        "visibility": "visible",
+        "artwork": [
+          {
+            "sizes": "192x192",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-192-20261102.png",
+            "type": "image/png"
+          },
+          {
+            "sizes": "512x512",
+            "src": "http://127.0.0.1:43017/images/brand/passport-radio-media-512-20261102.png",
+            "type": "image/png"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Individual radio brand replaces Route 66 at identical dimensions",
+      "houses": [
+        {
+          "src": "/images/passport-radio-definitive.jpg",
+          "width": 36,
+          "height": 36,
+          "naturalWidth": 1248
+        },
+        {
+          "src": "/images/brand/passport-radio-media-192-20261102.png",
+          "width": 36,
+          "height": 36,
+          "naturalWidth": 192
+        }
+      ]
+    }
+  ]
+}

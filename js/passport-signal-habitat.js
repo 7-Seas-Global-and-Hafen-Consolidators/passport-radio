@@ -2,6 +2,12 @@
    Motor intocado. Chrome só em página inteira. Iframe = carcaça da Home. */
 (() => {
   "use strict";
+  if (!document.querySelector('script[data-passport-media-artwork]')) {
+    const identity = document.createElement('script');
+    identity.src = '/js/passport-media-artwork.js?v=20261102';
+    identity.dataset.passportMediaArtwork = '1';
+    document.head.append(identity);
+  }
   let framed = false;
   try { framed = window.self !== window.top; } catch (_) { framed = true; }
   const root = document.documentElement;
@@ -25,7 +31,7 @@
     header.setAttribute("role", "banner");
     header.innerHTML =
       '<a class="pp-signal-brand" href="/" target="_top">' +
-      '<img src="/images/passport-radio-definitive.jpg" alt="Passport Radio" width="36" height="36">' +
+      '<img src="/images/brand/passport-radio-media-192-20261102.png" alt="Passport Radio" width="36" height="36">' +
       "<span><b>PASSPORT RADIO</b><small>Contar histórias que dão vontade de ouvir</small></span></a>" +
       '<nav class="pp-signal-nav" aria-label="Portas da Passport">' +
       '<a href="/" target="_top">Home</a>' +
