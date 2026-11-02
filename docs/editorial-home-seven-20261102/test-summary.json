@@ -1,0 +1,93 @@
+{
+  "base": "e4152f766784acc0e8a02ee27821d0e6ff2dd428",
+  "branch": "feat/editorial-home-seven-phase15-20261102",
+  "layoutChecks": {
+    "passed": 42,
+    "failed": 0,
+    "widths": [
+      1440,
+      1024,
+      768,
+      390,
+      360,
+      320
+    ]
+  },
+  "contentPreservation": {
+    "1": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    },
+    "2": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    },
+    "3": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    },
+    "4": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    },
+    "5": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    },
+    "6": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    },
+    "7": {
+      "text": true,
+      "videos": true,
+      "links": true,
+      "ids": true,
+      "uniqueIds": true
+    }
+  },
+  "audio": {
+    "passed": 14,
+    "failed": 0,
+    "sameAudioElement": true,
+    "sameDocument": true,
+    "activeStreams": 1,
+    "desktop": 1440,
+    "mobile": 390
+  },
+  "nativeBrowserChecks": 6,
+  "unittestChecks": 7,
+  "videos": {
+    "originalIdsAndUrlsPreserved": 18,
+    "playbackConfirmed": 0,
+    "providerUnavailable": 10,
+    "playerLoadedButNoDecodedFrames": 8,
+    "status": "Playback confirmation pending; original videos preserved as ordered."
+  },
+  "capturedFiles": 151,
+  "ci": {
+    "commit": "46b8435b340a04b30addeab0cbcfb35c57e0bba6",
+    "Passport CI": "success",
+    "Native editorial browser": "success",
+    "Materialize official Passport channels": "success",
+    "finalPhotoAdjustment": "Dave retested at all six widths; no audio or navigation changes."
+  }
+}
