@@ -28,3 +28,10 @@
   padding: .7rem 1.1rem;
 }
 .passport-blog-comments button:disabled { opacity: .65; }
+
+.passport-blog-approved { margin-top: 2rem; border-top: 1px solid #c41e3a; }
+.passport-blog-approved h3 { font-family: "Bodoni Moda", Georgia, serif; }
+.passport-blog-approved ol { list-style: none; padding: 0; margin: 0; }
+.passport-blog-approved li { padding: 1rem 0; border-bottom: 1px solid #ddd; overflow-wrap: anywhere; }
+.passport-blog-approved time { display: block; font: .85rem "Instrument Sans", sans-serif; }
+.passport-blog-approved li p { white-space: pre-wrap; }
