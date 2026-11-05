@@ -85,7 +85,7 @@
           finish('Envio recusado. Confira os campos e tente novamente em instantes.');
         }
       }
-      const timeout = setTimeout(() => finish('O envio não foi confirmado. Você pode tentar novamente.'), 20000);
+      const timeout = setTimeout(() => finish('O envio não foi confirmado. Você pode tentar novamente.'), 60000);
       window.addEventListener('message', receive);
     });
   }
