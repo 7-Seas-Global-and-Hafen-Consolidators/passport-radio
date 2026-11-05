@@ -11,10 +11,96 @@
     (editorialPattern.test(location.pathname) && new URLSearchParams(location.search).get('passport-area') === 'blog');
   const googleOrigin = /^https:\/\/(?:script\.google\.com|(?:[a-z0-9-]+\.)?script\.googleusercontent\.com|[a-z0-9-]+-script\.googleusercontent\.com)$/;
 
+  let stopApproved = () => {};
+  function mountApproved(section) {
+    stopApproved();
+    const article = location.pathname;
+    const publication = document.createElement('section');
+    publication.className = 'passport-blog-approved';
+    publication.setAttribute('aria-label', 'Comentários aprovados');
+    const heading = document.createElement('h3');
+    heading.textContent = 'Comentários dos leitores';
+    const message = document.createElement('p');
+    message.setAttribute('role', 'status');
+    message.setAttribute('aria-live', 'polite');
+    const list = document.createElement('ol');
+    publication.append(heading, message, list);
+    section.append(publication);
+    let disposed = false;
+    let pending = false;
+    let cleanupRequest = () => {};
+    const current = () => !disposed && section.isConnected && isBlogArticle() && location.pathname === article;
+    function refresh() {
+      if (!current()) { stopApproved(); return; }
+      if (pending) return;
+      pending = true;
+      const bytes = crypto.getRandomValues(new Uint8Array(16));
+      const name = 'PassportApprovedComments_' + Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+      const script = document.createElement('script');
+      const url = new URL(endpoint);
+      url.searchParams.set('article', article);
+      url.searchParams.set('callback', name);
+      url.searchParams.set('_', Date.now().toString());
+      script.src = url.href;
+      script.referrerPolicy = 'no-referrer';
+      function finish() {
+        clearTimeout(timeout);
+        delete window[name];
+        script.remove();
+        pending = false;
+      }
+      function unavailable() {
+        if (current()) { list.replaceChildren(); message.textContent = 'Não foi possível atualizar os comentários.'; }
+        finish();
+      }
+      window[name] = payload => {
+        if (!current()) { finish(); return; }
+        if (payload?.type !== 'passport-approved-comments' || payload.article !== article || payload.unavailable || !Array.isArray(payload.comments)) { unavailable(); return; }
+        const fragment = document.createDocumentFragment();
+        const seen = new Set();
+        for (const item of payload.comments) {
+          if (!item || typeof item.id !== 'string' || seen.has(item.id) ||
+              typeof item.nickname !== 'string' || typeof item.comment !== 'string' ||
+              typeof item.submittedAt !== 'string' || !Number.isFinite(Date.parse(item.submittedAt))) continue;
+          seen.add(item.id);
+          const entry = document.createElement('li');
+          const author = document.createElement('strong');
+          author.textContent = item.nickname;
+          const date = document.createElement('time');
+          date.dateTime = item.submittedAt;
+          date.textContent = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date(item.submittedAt));
+          const text = document.createElement('p');
+          text.textContent = item.comment;
+          entry.append(author, date, text);
+          fragment.append(entry);
+        }
+        list.replaceChildren(fragment);
+        message.textContent = seen.size ? '' : 'Ainda não há comentários aprovados.';
+        finish();
+      };
+      const timeout = setTimeout(unavailable, 20000);
+      cleanupRequest = finish;
+      script.onerror = unavailable;
+      document.head.append(script);
+    }
+    const interval = setInterval(refresh, 30000);
+    const visible = () => { if (!document.hidden) refresh(); };
+    document.addEventListener('visibilitychange', visible);
+    stopApproved = () => {
+      disposed = true;
+      clearInterval(interval);
+      cleanupRequest();
+      document.removeEventListener('visibilitychange', visible);
+    };
+    message.textContent = 'Carregando comentários…';
+    refresh();
+  }
+
   function mount() {
     const main = document.querySelector('#passport-editorial-outlet main') || document.querySelector('main');
     if (!main) return;
     if (!isBlogArticle()) {
+      stopApproved();
       main.querySelectorAll('.passport-blog-comments').forEach(section => section.remove());
       return;
     }
@@ -51,6 +137,7 @@
       status.textContent = 'Envio em preparação.';
       return;
     }
+    mountApproved(section);
     fields.disabled = false;
     form.action = endpoint;
     form.elements.article.value = location.pathname;
