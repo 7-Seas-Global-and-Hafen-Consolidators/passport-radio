@@ -24,6 +24,10 @@
  let proseObserver;
  function decorate(main){
   proseObserver?.disconnect();if(!main)return;
+  if (/^\/blog\/w\/[a-z0-9-]+\.html$/.test(location.pathname)) {
+   load('link','/css/passport-blog-comments.css');
+   load('script','/js/passport-blog-comments.js');
+  }
   document.body.dataset.passportBlogShell='1';document.body.dataset.editorialPaperChrome='1';
   load('link','/css/payment-footer-trust.css');
   load('link','https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;700&display=swap');
@@ -41,6 +45,10 @@
   if(!/^\/blog(?:\.html|\/)/.test(location.pathname))return;
   const main=document.querySelector('main');
   if(!main)return;
+  if (/^\/blog\/w\/[a-z0-9-]+\.html$/.test(location.pathname)) {
+   load('link','/css/passport-blog-comments.css');
+   load('script','/js/passport-blog-comments.js');
+  }
   // The editorial pages already ship their own masthead, navigation, content
   // and footer. Do not destroy that document and boot the Home SPA over it.
   // This was the source of the doubled Home/editorial chrome on direct entry.

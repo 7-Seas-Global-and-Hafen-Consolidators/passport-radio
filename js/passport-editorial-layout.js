@@ -89,7 +89,18 @@
    const wrap=document.createElement('div');wrap.className='editorial-media-frame';media.before(wrap);wrap.append(media);
   });
  }
- const install=()=>document.querySelectorAll('main').forEach(prepare);
+ const install=()=>{
+  document.querySelectorAll('main').forEach(prepare);
+  if (!/^\/editorial\/\d{4}\/\d{2}\/\d{2}\/[a-z0-9-]+\.html$/.test(location.pathname) ||
+      document.querySelector('script[data-passport-blog-comments]')) return;
+  const style=document.createElement('link');
+  style.rel='stylesheet';
+  style.href='/css/passport-blog-comments.css';
+  const script=document.createElement('script');
+  script.dataset.passportBlogComments='1';
+  script.src='/js/passport-blog-comments.js';
+  document.head.append(style,script);
+ };
  window.PassportEditorialLayout=Object.freeze({prepare,install});
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
  // The existing profile renderer and institutional reader may insert their own main asynchronously.
