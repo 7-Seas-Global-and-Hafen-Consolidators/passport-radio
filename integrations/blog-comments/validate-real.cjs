@@ -11,7 +11,7 @@ const article = '/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.html
 const files = ['/js/passport-blog-shell.js', '/js/passport-editorial-layout.js', '/js/passport-blog-comments.js', '/css/passport-blog-comments.css'];
 const endpoint = fs.readFileSync(path.join(root, files[2]), 'utf8').match(/const endpoint = '([^']+)'/)[1];
 const report = {
-  testedHead: '5d9d3a53058918fb66e778e56f19efaf551302bf',
+  testedHead: require('node:child_process').execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
   browser: 'Chromium, new contexts without Google login',
   physicalPhone: false,
   method: 'Public pages with exactly four PR resources intercepted from the tested commit. Real radio streams and Google endpoint. No HTML fixture or audio response substitution.',
@@ -144,8 +144,8 @@ const save = () => fs.writeFileSync(path.join(output, resultFile), JSON.stringif
         await page.locator('#passport-editorial-outlet main').waitFor();
         await page.waitForTimeout(800);
         await snapshot('Blog');
-        await page.locator('#passport-editorial-outlet a[href="' + article + '"]').first().click();
-        await page.waitForURL(site + article);
+        await page.locator('#passport-editorial-outlet a[href="' + article + '?passport-area=blog"]').first().click();
+        await page.waitForURL(site + article + '?passport-area=blog');
         const form = page.locator('#passport-editorial-outlet .passport-blog-comments');
         await form.waitFor();
         await page.waitForTimeout(800);

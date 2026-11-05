@@ -53,14 +53,17 @@ const editorial = '/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.ht
     await page.goto(site + '/blog.html');
     assert.equal(await page.locator('.passport-blog-comments').count(), 0);
     active = true;
-    for (const entry of [article, editorial]) {
+    await page.goto(site + editorial);
+    await page.getByRole('heading', { name: 'Matéria', exact: true }).waitFor();
+    assert.equal(await page.locator('.passport-blog-comments').count(), 0);
+    for (const entry of [article, editorial + '?passport-area=blog']) {
       await page.goto(site + entry);
       await page.getByLabel('Apelido').fill('Leitor');
       await page.getByLabel('Comentário', { exact: true }).fill('Ótima matéria.');
       await page.evaluate(() => { window.originalRadio = document.querySelector('#radio'); });
       await page.getByRole('button', { name: 'ENVIAR', exact: true }).click();
       await page.getByText('Comentário recebido para moderação.').waitFor();
-      assert.equal(posts.at(-1).article, entry);
+      assert.equal(posts.at(-1).article, entry.split('?')[0]);
       assert.equal(posts.at(-1).nickname, 'Leitor');
       assert.equal(posts.at(-1).comment, 'Ótima matéria.');
       assert(await page.evaluate(() => window.originalRadio === document.querySelector('#radio')));
@@ -76,6 +79,8 @@ const editorial = '/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.ht
     await page.getByLabel('Apelido').waitFor();
     assert.equal(await page.locator('.passport-blog-comments').count(), 1);
     assert.equal(posts.length, 2);
+    await page.evaluate(route => { history.pushState(null, '', route); dispatchEvent(new Event('passport:editorial-rendered')); }, editorial);
+    assert.equal(await page.locator('.passport-blog-comments').count(), 0);
     console.log('PASS: inactive form, Blog cover exclusion, two article entries, anonymous POST and receipt, original nodes, editorial navigation event.');
   } finally {
     await browser.close();

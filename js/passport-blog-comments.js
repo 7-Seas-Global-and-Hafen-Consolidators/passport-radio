@@ -5,12 +5,20 @@
 
   // Fill only after the owner has deployed and verified the anonymous web app.
   const endpoint = 'https://script.google.com/macros/s/AKfycbw2OU703B9TnicycjN1ZsXCcLSfcwm8dlAF2yvvkmVJDfCuEu3WgpaOQFAkfQD2NiDI/exec';
-  const articlePattern = /^\/(?:blog\/w\/|editorial\/\d{4}\/\d{2}\/\d{2}\/)[a-z0-9-]+\.html$/;
+  const blogArticlePattern = /^\/blog\/w\/[a-z0-9-]+\.html$/;
+  const editorialPattern = /^\/editorial\/\d{4}\/\d{2}\/\d{2}\/[a-z0-9-]+\.html$/;
+  const isBlogArticle = () => blogArticlePattern.test(location.pathname) ||
+    (editorialPattern.test(location.pathname) && new URLSearchParams(location.search).get('passport-area') === 'blog');
   const googleOrigin = /^https:\/\/(?:script\.google\.com|(?:[a-z0-9-]+\.)?script\.googleusercontent\.com|[a-z0-9-]+-script\.googleusercontent\.com)$/;
 
   function mount() {
     const main = document.querySelector('#passport-editorial-outlet main') || document.querySelector('main');
-    if (!main || !articlePattern.test(location.pathname) || main.querySelector('.passport-blog-comments')) return;
+    if (!main) return;
+    if (!isBlogArticle()) {
+      main.querySelectorAll('.passport-blog-comments').forEach(section => section.remove());
+      return;
+    }
+    if (main.querySelector('.passport-blog-comments')) return;
     const presentation = main.querySelector('template[data-passport-editorial-presentation]');
     if (presentation && main.dataset.prReady !== 'true' && !main.dataset.prError) {
       try {
