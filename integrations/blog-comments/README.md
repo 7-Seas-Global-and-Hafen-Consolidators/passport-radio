@@ -42,3 +42,7 @@ No projeto Apps Script já associado à planilha, atualizar Code.gs com a versã
 Após essa atualização, a consulta anônima /exec?article=/blog/w/000001-led-zeppelin.html deve retornar JSON com type passport-approved-comments. A resposta com callback é JSONP, permitindo leitura no Firefox e outros navegadores sem expor a planilha ou depender de CORS. Callbacks e caminhos aceitos são restritos; texto é escapado na resposta e exibido por textContent.
 
 Validar com linhas de teste identificadas: PENDENTE não aparece; APROVADO aparece somente na matéria da URL registrada, com apelido, texto integral e data; REJEITADO desaparece na próxima atualização. Esta mudança não altera doPost, confirmação, prevenção de duplicação ou notificações.
+
+## Estado confirmado em 05/11/2026 — versão 2 ativa
+
+Após autorização expressa do proprietário, a implantação existente foi atualizada para a versão 2, conservando o mesmo /exec. Leitura real validada: PENDENTE invisível; APROVADO aparece sem recarregar na matéria correta, com apelido, texto completo e data; REJEITADO é retirado na atualização seguinte. Novo envio e uma notificação Gmail confirmados após a atualização. Planilha continua privada. Provas em docs/blog-approved-comments-20261105/VALIDACAO.md. Não é necessário repetir a configuração nem criar outra implantação. Site oficial não publicado por esta etapa.
