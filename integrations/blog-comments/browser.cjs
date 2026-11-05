@@ -39,7 +39,9 @@ const editorial = '/editorial/2026/10/07/kurt-cobain-lennon-mccartney-beatles.ht
         const file = path.join(root, url.pathname);
         if (!fs.existsSync(file)) return route.fulfill({ status: 404 });
         let body = fs.readFileSync(file, 'utf8');
-        if (active && url.pathname.endsWith('/passport-blog-comments.js')) body = body.replace("const endpoint = ''", 'const endpoint = ' + JSON.stringify(endpoint));
+        if (url.pathname.endsWith('/passport-blog-comments.js')) {
+          body = body.replace(/const endpoint = '[^']*';/, 'const endpoint = ' + JSON.stringify(active ? endpoint : '') + ';');
+        }
         return route.fulfill({ body, contentType: url.pathname.endsWith('.css') ? 'text/css' : 'application/javascript; charset=utf-8' });
       }
       return route.abort();
