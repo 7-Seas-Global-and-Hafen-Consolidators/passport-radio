@@ -1,0 +1,81 @@
+{
+  "codeCommit": "98cecdb8bcbd86effe40b2db94b3c0d8fcc9f337",
+  "previewSource": "c91f3483999c1c20171709f6736d60befd9a89f4",
+  "previewStatus": "succeeded",
+  "browser": "Chrome",
+  "firefoxTested": false,
+  "remoteAuthenticatedTest": false,
+  "cases": [
+    {
+      "area": "Notícias",
+      "forms": 0,
+      "audio": [
+        {
+          "id": "passportHitsAudio",
+          "paused": false,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 21.529725
+        }
+      ]
+    },
+    {
+      "area": "Blog",
+      "forms": 1,
+      "contentEqual": true,
+      "mediaEqual": true,
+      "audio": [
+        {
+          "id": "passportHitsAudio",
+          "paused": false,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 90.259662
+        }
+      ]
+    },
+    {
+      "area": "Envio Blog",
+      "confirmation": [
+        "Comentário recebido para moderação."
+      ],
+      "audio": [
+        {
+          "id": "passportHitsAudio",
+          "paused": false,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 160.662692
+        }
+      ]
+    },
+    {
+      "area": "Capa Notícias após Blog",
+      "forms": 0,
+      "audio": [
+        {
+          "id": "passportHitsAudio",
+          "paused": false,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 298.659273
+        }
+      ]
+    },
+    {
+      "area": "Retorno Home",
+      "audio": [
+        {
+          "id": "passportHitsAudio",
+          "paused": false,
+          "src": "https://listen.181fm.com/181-power_128k.mp3",
+          "time": 300.45463
+        }
+      ]
+    }
+  ],
+  "directNewsForms": 0,
+  "moderation": {
+    "id": "841887f2-d46a-4f12-b8ea-f2e12102e4b2",
+    "sheetRowCount": 1,
+    "status": "PENDENTE",
+    "gmailStatus": "ENVIADO",
+    "gmailCount": 1
+  }
+}
