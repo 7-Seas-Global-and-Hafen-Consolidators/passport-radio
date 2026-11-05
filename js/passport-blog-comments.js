@@ -4,7 +4,7 @@
   window.PassportBlogComments = true;
 
   // Fill only after the owner has deployed and verified the anonymous web app.
-  const endpoint = '';
+  const endpoint = 'https://script.google.com/macros/s/AKfycbw2OU703B9TnicycjN1ZsXCcLSfcwm8dlAF2yvvkmVJDfCuEu3WgpaOQFAkfQD2NiDI/exec';
   const articlePattern = /^\/(?:blog\/w\/|editorial\/\d{4}\/\d{2}\/\d{2}\/)[a-z0-9-]+\.html$/;
   const googleOrigin = /^https:\/\/(?:script\.google\.com|(?:[a-z0-9-]+\.)?script\.googleusercontent\.com|[a-z0-9-]+-script\.googleusercontent\.com)$/;
 
