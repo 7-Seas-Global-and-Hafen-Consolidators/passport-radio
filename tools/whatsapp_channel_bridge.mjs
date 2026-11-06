@@ -44,6 +44,8 @@ if (phoneMode && !/^\d{10,15}$/.test(pairPhone || '')) {
 }
 const invite = '0029Vb8OD91BfxoBCBG36F0k';
 const origin = 'https://passportradio.online';
+const cardMode = process.argv.includes('--authorized-37-cards');
+if (cardMode && process.argv.length !== 3) throw new Error('Use --authorized-37-cards sozinho');
 const batchMode = process.argv.includes('--authorized-37');
 const watchMode = process.argv.includes('--watch');
 
@@ -98,7 +100,57 @@ export async function deliver(items, journal, save, send, createId) {
   }
 }
 
-function confirmedSend(sock, channelJid, text, messageId) {
+async function readCardAsset(value, base, type, limit) {
+  const target = new URL(value, base);
+  if (target.origin !== origin || target.username || target.password) {
+    throw new Error('Endereço de prévia fora da Passport Radio');
+  }
+  const response = await fetch(target, { redirect: 'error', signal: AbortSignal.timeout(20000) });
+  if (!response.ok || !response.headers.get('content-type')?.startsWith(type)) {
+    await response.body?.cancel();
+    throw new Error('Resposta inválida para ' + target.pathname + ' (HTTP ' + response.status + ')');
+  }
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of response.body) {
+    size += chunk.length;
+    if (size > limit) throw new Error('Arquivo de prévia acima do limite');
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
+export async function passportCard(url, sharp) {
+  const html = (await readCardAsset(articleUrl(url), origin, 'text/html', 4_000_000)).toString('utf8');
+  const meta = new Map();
+  for (const [tag] of html.matchAll(/<meta\b(?:[^"'<>]|"[^"]*"|'[^']*')*>/gi)) {
+    const attrs = Object.fromEntries(Array.from(
+      tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g),
+      ([, name, double, single]) => [name.toLowerCase(), double ?? single]
+    ));
+    if (attrs.property && attrs.content && !meta.has(attrs.property)) {
+      meta.set(attrs.property, attrs.content);
+    }
+  }
+  const named = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ' };
+  const decode = value => value?.replace(/&(#x[\da-f]+|#\d+|amp|quot|apos|lt|gt|nbsp);/gi,
+    (entity, key) => {
+      if (key[0] !== '#') return named[key.toLowerCase()] ?? entity;
+      const point = key[1].toLowerCase() === 'x' ? parseInt(key.slice(2), 16) : Number(key.slice(1));
+      return point > 0 && point <= 0x10ffff ? String.fromCodePoint(point) : entity;
+    }).trim();
+  const title = decode(meta.get('og:title'));
+  const description = decode(meta.get('og:description'));
+  const cover = decode(meta.get('og:image'));
+  if (!title || !description || !cover) throw new Error('Metadados Open Graph incompletos');
+  const image = await readCardAsset(cover, url, 'image/', 10_000_000);
+  const jpegThumbnail = await sharp(image, { limitInputPixels: 25_000_000 })
+    .rotate().resize({ width: 300, height: 300, fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 75 }).toBuffer();
+  return { 'canonical-url': url, 'matched-text': url, title, description, jpegThumbnail };
+}
+
+function confirmedSend(sock, channelJid, text, messageId, linkPreview = null) {
   return new Promise((resolve, reject) => {
     const event = 'CB:ack,class:message';
     const finish = (error, id) => {
@@ -113,7 +165,7 @@ function confirmedSend(sock, channelJid, text, messageId) {
     };
     const timer = setTimeout(() => finish(new Error('WhatsApp confirmation timed out')), 30000);
     sock.ws.on(event, onAck);
-    sock.sendMessage(channelJid, { text }, { messageId }).catch(error => finish(error));
+    sock.sendMessage(channelJid, { text, linkPreview }, { messageId }).catch(error => finish(error));
   });
 }
 
@@ -208,7 +260,40 @@ async function main() {
       return urls;
     };
     const makeItem = url => ({ id: url, url, text: '🎸 PASSPORT RADIO\n\n' + url });
-    if (batchMode) {
+    if (cardMode) {
+      const urls = authorizedUrls();
+      if (journal.reconciledInvite !== invite || urls.some(url => journal.deliveries[url]?.status !== 'sent')) {
+        throw new Error('O lote original precisa ter os 37 recibos confirmados');
+      }
+      const cardFile = path.join(ROOT, 'data', 'whatsapp-channel-card-state.json');
+      const cards = readJson(cardFile, { sent: [], deliveries: {} });
+      if (!Array.isArray(cards.sent) || !cards.deliveries || typeof cards.deliveries !== 'object' ||
+          Array.isArray(cards.deliveries) || Object.entries(cards.deliveries).some(([url, receipt]) =>
+            !urls.includes(url) || receipt?.status !== 'sent' ||
+            !/^\d+$/.test(receipt.serverId || '') ||
+            receipt.link !== 'https://whatsapp.com/channel/' + invite + '/' + receipt.serverId)) {
+        throw new Error('Histórico de cartões inválido ou com envio pendente. Confira o canal antes de retomar.');
+      }
+      const remaining = urls.filter(url => !Object.hasOwn(cards.deliveries, url));
+      const previews = new Map();
+      if (remaining.length) {
+        const { default: sharp } = await import('sharp');
+        for (const url of remaining) {
+          try {
+            previews.set(url, await passportCard(url, sharp));
+          } catch (error) {
+            throw new Error('Prévia inválida para ' + url + ': ' + error.message);
+          }
+        }
+        console.log('Cartões validados antes do envio:', previews.size);
+        for (const url of remaining) {
+          await deliver([makeItem(url)], cards, value => atomicJson(cardFile, value),
+            (text, id) => confirmedSend(sock, channelJid, text, id, previews.get(url)),
+            () => generateMessageIDV2(sock.user?.id));
+        }
+      }
+      for (const url of urls) console.log('Recibo do cartão:', url, cards.deliveries[url].link);
+    } else if (batchMode) {
       const urls = authorizedUrls();
       if (journal.reconciledInvite !== invite) throw new Error('Reconcile the official channel history before sending');
       if (!journal.baseline) {
