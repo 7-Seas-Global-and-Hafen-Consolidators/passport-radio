@@ -100,9 +100,11 @@ export async function deliver(items, journal, save, send, createId) {
   }
 }
 
+const allowedCardOrigins = new Set([origin, 'https://www.passportradio.online']);
+
 async function readCardAsset(value, base, type, limit) {
   const target = new URL(value, base);
-  if (target.origin !== origin || target.username || target.password) {
+  if (!allowedCardOrigins.has(target.origin) || target.username || target.password) {
     throw new Error('Endereço de prévia fora da Passport Radio');
   }
   const response = await fetch(target, { redirect: 'error', signal: AbortSignal.timeout(20000) });
