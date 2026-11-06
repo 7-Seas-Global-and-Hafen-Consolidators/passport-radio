@@ -4,6 +4,8 @@ import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
 const site = 'https://passportradio.online';
+const officialChat = '@passportradioofficial';
+const officialBot = 'PassportRadioOficial_bot';
 
 export function canonical(value) {
   const url = new URL(value, site);
@@ -53,11 +55,47 @@ export async function publish({ urls, state, save, send, limit = 10 }) {
   return Math.max(0, queue.length - limit);
 }
 
+async function telegram(token, method, parameters) {
+  let response;
+  try {
+    response = await fetch('https://api.telegram.org/bot' + token + '/' + method, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(parameters),
+      signal: AbortSignal.timeout(20000),
+    });
+  } catch {
+    throw Error('Telegram ' + method + ': resposta indisponível');
+  }
+  if (!response.ok) throw Error('Telegram ' + method + ': HTTP ' + response.status);
+  const payload = await response.json();
+  if (!payload.ok) throw Error('Telegram recusou ' + method);
+  return payload.result;
+}
+
+export async function verifyDestination(call, chat) {
+  const bot = await call('getMe', {});
+  if (bot?.username?.toLowerCase() !== officialBot.toLowerCase()) throw Error('Bot diferente do oficial');
+  const channel = await call('getChat', { chat_id: chat });
+  if (channel?.type !== 'channel' || '@' + channel.username?.toLowerCase() !== officialChat) {
+    throw Error('Destino diferente do canal oficial');
+  }
+  const member = await call('getChatMember', { chat_id: channel.id, user_id: bot.id });
+  if (member?.status !== 'administrator' || member.can_post_messages !== true) {
+    throw Error('Bot sem permissão para publicar no canal oficial');
+  }
+  return channel.id;
+}
+
 async function main() {
   const stateDir = process.env.TELEGRAM_STATE_DIR;
   const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
-  const chat = process.env.TELEGRAM_CHAT_ID?.trim();
-  if (!token || !chat) throw Error('TELEGRAM_BOT_TOKEN e TELEGRAM_CHAT_ID são obrigatórios');
+  const chat = process.env.TELEGRAM_CHAT_ID?.trim() || officialChat;
+  if (!token) throw Error('TELEGRAM_BOT_TOKEN é obrigatório');
+  const call = (method, parameters) => telegram(token, method, parameters);
+  const channelId = await verifyDestination(call, chat);
+  console.log('Bot, canal oficial e permissão de postagem verificados');
+  if (process.argv.includes('--verify')) return;
   if (!stateDir) throw Error('Diretório do histórico obrigatório');
   const stateFile = path.join(stateDir, 'telegram-sent.json');
   const state = JSON.parse(await fs.readFile(stateFile, 'utf8'));
@@ -81,21 +119,11 @@ async function main() {
       git('push', 'origin', 'HEAD:refs/heads/telegram-delivery-state');
     },
     async send(url) {
-      let response;
-      try {
-        response = await fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ chat_id: chat, text: '🎸 NOVA NA PASSPORT RADIO\n\n' + url }),
-          signal: AbortSignal.timeout(20000),
-        });
-      } catch {
-        throw Error('Resposta do Telegram indisponível. Confira o envio no canal.');
-      }
-      if (!response.ok) throw Error('Telegram retornou HTTP ' + response.status);
-      const result = await response.json();
-      if (!result.ok) throw Error('Telegram recusou a publicação');
-      return result.result?.message_id;
+      const message = await call('sendMessage', {
+        chat_id: channelId,
+        text: '🎸 NOVA NA PASSPORT RADIO\n\n' + url,
+      });
+      return message?.message_id;
     },
   });
   console.log('Matérias aguardando próximo lote:', remaining);

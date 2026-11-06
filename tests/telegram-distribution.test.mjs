@@ -37,3 +37,20 @@ test('ambiguous delivery blocks retry and failed persistence prevents sending', 
     send: async () => assert.fail('sent without persistence') }), /push/);
   await assert.rejects(publish({ ...options, state: {} }), /Histórico/);
 });
+
+test('verifies the official bot, destination and posting permission using read methods', async () => {
+  const { verifyDestination } = await import('../scripts/disparar-telegram.mjs');
+  const calls = [];
+  const call = async (method, params) => {
+    calls.push([method, params]);
+    return {
+      getMe: { id: 1, username: 'PassportRadioOficial_bot' },
+      getChat: { id: -1001, username: 'passportradioofficial', type: 'channel' },
+      getChatMember: { status: 'administrator', can_post_messages: true },
+    }[method];
+  };
+  assert.equal(await verifyDestination(call, '@passportradioofficial'), -1001);
+  assert.deepEqual(calls.map(([method]) => method), ['getMe', 'getChat', 'getChatMember']);
+  await assert.rejects(verifyDestination(async (method, params) =>
+    method === 'getChat' ? { type: 'channel', username: 'wrong' } : call(method, params), '@wrong'), /Destino/);
+});

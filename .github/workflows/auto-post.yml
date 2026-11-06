@@ -1,5 +1,8 @@
 name: Passport Telegram Auto Post
 on:
+  pull_request:
+    branches: [main]
+    paths: ['.github/workflows/auto-post.yml', 'scripts/disparar-telegram.mjs', 'tests/telegram-distribution.test.mjs']
   workflow_run:
     workflows: [Passport Pages]
     types: [completed]
@@ -13,8 +16,32 @@ concurrency:
   group: passport-telegram
   cancel-in-progress: false
 jobs:
+  verify:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.number == 591 &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'fix/editorial-channel-distribution'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            tests
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test tests/telegram-distribution.test.mjs
+      - name: Verify Telegram credentials without posting
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/disparar-telegram.mjs --verify
   telegram:
     if: >-
+      github.event_name != 'pull_request' &&
       github.ref == 'refs/heads/main' &&
       vars.PASSPORT_TELEGRAM_ENABLED == 'true' &&
       (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
