@@ -25,6 +25,7 @@ import pino from 'pino';
 import QRCode from 'qrcode';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import makeWASocket, {
+  Browsers,
   generateMessageIDV2,
   fetchLatestBaileysVersion,
   useMultiFileAuthState,
@@ -139,7 +140,7 @@ async function main() {
     version,
     logger: pino({ level: 'warn' }),
     agent: process.env.HTTPS_PROXY ? new HttpsProxyAgent(process.env.HTTPS_PROXY) : undefined,
-    browser: ['Passport Radio', 'Chrome', '1.0.0'],
+    browser: Browsers.macOS('Chrome'),
   });
   sock.ev.on('creds.update', saveCreds);
 
