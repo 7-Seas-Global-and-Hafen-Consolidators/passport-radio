@@ -36,7 +36,12 @@ const AUTH_DIR = path.join(ROOT, '.passport-wa-auth');
 const QR_FILE = path.join(AUTH_DIR, 'pairing.png');
 const OUTBOX = path.join(ROOT, 'data', 'whatsapp-channel-outbox.json');
 const STATE = path.join(ROOT, 'data', 'whatsapp-channel-local-state.json');
-const pairMode = process.argv.includes('--pair');
+const phoneMode = process.argv.includes('--pair-phone');
+const pairMode = process.argv.includes('--pair') || phoneMode;
+const pairPhone = process.env.PASSPORT_WA_PAIR_PHONE?.trim();
+if (phoneMode && !/^\d{10,15}$/.test(pairPhone || '')) {
+  throw new Error('PASSPORT_WA_PAIR_PHONE must contain country code and digits only');
+}
 const invite = '0029Vb8OD91BfxoBCBG36F0k';
 const origin = 'https://passportradio.online';
 const batchMode = process.argv.includes('--authorized-37');
@@ -147,9 +152,16 @@ async function main() {
   try {
     await new Promise((resolve, reject) => {
       const timer = setTimeout(() => reject(new Error('WhatsApp connection timeout')), 120000);
+      let pairingRequested = false;
       sock.ev.on('connection.update', ({ connection, lastDisconnect, qr }) => {
-        if (qr && pairMode) {
-          QRCode.toFile(QR_FILE, qr, { width: 480 }).then(() => console.log('QR ready at .passport-wa-auth/pairing.png'), reject);
+        if (qr && phoneMode && !sock.authState.creds.registered && !pairingRequested) {
+          pairingRequested = true;
+          sock.requestPairingCode(pairPhone)
+            .then(code => console.log('WhatsApp pairing code:', code))
+            .catch(reject);
+        } else if (qr && pairMode && !phoneMode) {
+          QRCode.toFile(QR_FILE, qr, { width: 480 })
+            .then(() => console.log('QR ready at .passport-wa-auth/pairing.png'), reject);
         }
         if (connection === 'open') {
           clearTimeout(timer); resolve();
