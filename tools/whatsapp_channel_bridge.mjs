@@ -10,32 +10,110 @@
  each unseen item to the configured Channel/newsletter JID.
 
  Install locally:
-   npm install @whiskeysockets/baileys pino
+   npm install --no-save @whiskeysockets/baileys@7.0.0-rc14 pino@10.4.0 qrcode@1.5.4 https-proxy-agent@9.1.0
  Pair once with the Passport Radio WhatsApp Business account:
    node tools/whatsapp_channel_bridge.mjs --pair
  Then run:
-   PASSPORT_WA_CHANNEL_JID='...@newsletter' node tools/whatsapp_channel_bridge.mjs
+   node tools/whatsapp_channel_bridge.mjs --authorized-37
 */
 
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { pathToFileURL } from 'node:url';
 import pino from 'pino';
+import QRCode from 'qrcode';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 import makeWASocket, {
-  DisconnectReason,
+  generateMessageIDV2,
   fetchLatestBaileysVersion,
   useMultiFileAuthState,
 } from '@whiskeysockets/baileys';
 
 const ROOT = process.cwd();
 const AUTH_DIR = path.join(ROOT, '.passport-wa-auth');
+const QR_FILE = path.join(AUTH_DIR, 'pairing.png');
 const OUTBOX = path.join(ROOT, 'data', 'whatsapp-channel-outbox.json');
 const STATE = path.join(ROOT, 'data', 'whatsapp-channel-local-state.json');
 const pairMode = process.argv.includes('--pair');
+const invite = '0029Vb8OD91BfxoBCBG36F0k';
+const origin = 'https://passportradio.online';
+const batchMode = process.argv.includes('--authorized-37');
+const watchMode = process.argv.includes('--watch');
+
+function articleUrl(value) {
+  const url = new URL(value);
+  if (url.origin !== origin || url.username || url.password || !url.pathname.endsWith('.html')) {
+    throw new Error('Invalid Passport article URL');
+  }
+  return origin + url.pathname;
+}
+
+async function liveArticles() {
+  const read = async filename => {
+    const response = await fetch(origin + '/' + filename, { signal: AbortSignal.timeout(25000) });
+    if (!response.ok) throw new Error('Passport source HTTP ' + response.status);
+    return response.text();
+  };
+  const sources = await Promise.all(['sitemap.xml', 'sitemap-blog.xml'].map(read));
+  const feeds = await Promise.all(['editorial-feed', 'editorial-manual-feed', 'editorial-priority-feed', 'blog-feed']
+    .map(async name => JSON.parse(await read('data/' + name + '.json')).items));
+  const known = new Set(feeds.flat().filter(item => item.url).map(item => new URL(item.url, origin).pathname));
+  const urls = new Set();
+  for (const source of sources) {
+    if (!source.includes('</urlset>')) throw new Error('Invalid Passport sitemap');
+    for (const [, loc] of source.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+      const url = new URL(loc.replaceAll('&amp;', '&'));
+      if (url.origin !== origin || !url.pathname.endsWith('.html')) continue;
+      if (known.has(url.pathname) || /^\/(?:editorial|blog)\/\d{4}\/\d{2}\/\d{2}\//.test(url.pathname) ||
+          url.pathname.startsWith('/blog/w/')) urls.add(articleUrl(url.href));
+    }
+  }
+  if (!urls.size) throw new Error('Passport sitemap has no recognized articles');
+  return [...urls];
+}
+
+export async function deliver(items, journal, save, send, createId) {
+  if (Object.values(journal.deliveries).some(entry => entry.status === 'pending')) {
+    throw new Error('Unconfirmed WhatsApp delivery. Reconcile the channel before retrying.');
+  }
+  for (const item of items) {
+    const url = articleUrl(item.url);
+    if (Object.hasOwn(journal.deliveries, url) || journal.sent.includes(item.id)) continue;
+    const messageId = createId();
+    journal.deliveries[url] = { status: 'pending', messageId };
+    save(journal);
+    const serverId = await send(item.text, messageId);
+    if (!/^\d+$/.test(serverId || '')) throw new Error('WhatsApp did not confirm a channel post ID');
+    journal.deliveries[url] = { status: 'sent', messageId, serverId,
+      link: 'https://whatsapp.com/channel/' + invite + '/' + serverId };
+    save(journal);
+    console.log('WhatsApp confirmed:', url, journal.deliveries[url].link);
+  }
+}
+
+function confirmedSend(sock, channelJid, text, messageId) {
+  return new Promise((resolve, reject) => {
+    const event = 'CB:ack,class:message';
+    const finish = (error, id) => {
+      clearTimeout(timer);
+      sock.ws.off(event, onAck);
+      if (error) reject(error); else resolve(id);
+    };
+    const onAck = node => {
+      if (node.attrs?.id !== messageId) return;
+      if (node.attrs.error) finish(new Error('WhatsApp refused the message'));
+      else finish(null, node.attrs.server_id || node.attrs.message_id);
+    };
+    const timer = setTimeout(() => finish(new Error('WhatsApp confirmation timed out')), 30000);
+    sock.ws.on(event, onAck);
+    sock.sendMessage(channelJid, { text }, { messageId }).catch(error => finish(error));
+  });
+}
 
 function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); }
-  catch { return fallback; }
+  catch (error) { if (error.code === 'ENOENT') return fallback; throw error; }
 }
 function atomicJson(file, value) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -51,54 +129,109 @@ function normalizeJid(value) {
   return jid;
 }
 async function main() {
-  const channelJid = normalizeJid(process.env.PASSPORT_WA_CHANNEL_JID);
+  if (!pairMode && !fs.existsSync(path.join(AUTH_DIR, 'creds.json'))) throw new Error('Pair the administrator account first');
   const { state, saveCreds } = await useMultiFileAuthState(AUTH_DIR);
-  const { version } = await fetchLatestBaileysVersion();
+  const { version } = await fetchLatestBaileysVersion({ signal: AbortSignal.timeout(10000) });
   const sock = makeWASocket({
     auth: state,
     version,
     logger: pino({ level: 'warn' }),
-    printQRInTerminal: pairMode,
+    agent: process.env.HTTPS_PROXY ? new HttpsProxyAgent(process.env.HTTPS_PROXY) : undefined,
     browser: ['Passport Radio', 'Chrome', '1.0.0'],
   });
   sock.ev.on('creds.update', saveCreds);
 
   await new Promise((resolve, reject) => {
     const timer = setTimeout(() => reject(new Error('WhatsApp connection timeout')), 120000);
-    sock.ev.on('connection.update', ({ connection, lastDisconnect }) => {
+    sock.ev.on('connection.update', ({ connection, lastDisconnect, qr }) => {
+      if (qr && pairMode) {
+        QRCode.toFile(QR_FILE, qr, { width: 480 }).then(() => console.log('QR ready at .passport-wa-auth/pairing.png'), reject);
+      }
       if (connection === 'open') {
         clearTimeout(timer); resolve();
       }
       if (connection === 'close') {
         const code = lastDisconnect?.error?.output?.statusCode;
-        if (code === DisconnectReason.loggedOut) {
-          clearTimeout(timer); reject(new Error('WhatsApp session logged out; pair again'));
-        }
+        clearTimeout(timer);
+        if (pairMode && code === 515 && state.creds.registered) resolve();
+        else reject(new Error('WhatsApp connection closed: ' + (code || 'unknown')));
       }
     });
   });
 
-  const outbox = readJson(OUTBOX, { items: [] });
-  const local = readJson(STATE, { sent: [] });
-  const sent = new Set(local.sent || []);
-  let count = 0;
-
-  for (const item of outbox.items || []) {
-    if (!item?.id || sent.has(item.id)) continue;
-    const text = String(item.text || '').trim();
-    if (!text) continue;
-    await sock.sendMessage(channelJid, { text });
-    sent.add(item.id);
-    atomicJson(STATE, { version: 1, sent: [...sent].sort() });
-    count += 1;
-    console.log('WhatsApp Channel published:', item.id);
+  if (pairMode) {
+    await saveCreds();
+    fs.rmSync(QR_FILE, { force: true });
+    console.log('WhatsApp paired');
+    sock.end(undefined);
+    return;
   }
 
-  console.log('WhatsApp Channel publication complete:', count);
-  sock.end(undefined);
+  try {
+    const channel = await sock.newsletterMetadata('invite', invite);
+    const channelJid = normalizeJid(channel?.id);
+    if (process.env.PASSPORT_WA_CHANNEL_JID && channelJid !== process.env.PASSPORT_WA_CHANNEL_JID) {
+      throw new Error('Resolved channel differs from the configured destination');
+    }
+    const role = channel.viewer_metadata?.role ?? channel.viewerMetadata?.role;
+    if (!['ADMIN', 'OWNER'].includes(String(role).toUpperCase())) {
+      throw new Error('The linked account lacks confirmed administrator access to the official channel');
+    }
+    if (process.argv.includes('--verify')) {
+      console.log('Official WhatsApp channel and administrator role verified');
+      return;
+    }
+    const journal = readJson(STATE, { sent: [], deliveries: {} });
+    journal.deliveries ??= {};
+    if (!Array.isArray(journal.sent) || !journal.deliveries || Array.isArray(journal.deliveries) ||
+        typeof journal.deliveries !== 'object') throw new Error('Invalid delivery history');
+    const save = value => atomicJson(STATE, value);
+    const publish = items => deliver(items, journal, save,
+      (text, id) => confirmedSend(sock, channelJid, text, id), () => generateMessageIDV2(sock.user?.id));
+    const authorizedUrls = () => {
+      const urls = fs.readFileSync(new URL('./whatsapp-authorized-37.txt', import.meta.url), 'utf8').trim()
+        .split(/\r?\n/).map(articleUrl);
+      if (urls.length !== 37 || new Set(urls).size !== 37) throw new Error('Expected exactly 37 unique articles');
+      return urls;
+    };
+    const makeItem = url => ({ id: url, url, text: '🎸 PASSPORT RADIO\n\n' + url });
+    if (batchMode) {
+      const urls = authorizedUrls();
+      if (journal.reconciledInvite !== invite) throw new Error('Reconcile the official channel history before sending');
+      if (!journal.baseline) {
+        journal.baseline = await liveArticles();
+        save(journal);
+      }
+      await publish(urls.map(makeItem));
+    } else if (watchMode) {
+      if (!Array.isArray(journal.baseline) || !journal.baseline.length) throw new Error('Complete the authorized batch first');
+      if (authorizedUrls().some(url => journal.deliveries[url]?.status !== 'sent')) {
+        throw new Error('All 37 deliveries must be confirmed before automatic distribution');
+      }
+      const baseline = new Set(journal.baseline);
+      while (true) {
+        await publish((await liveArticles()).filter(url => !baseline.has(url)).map(makeItem));
+        await new Promise(resolve => setTimeout(resolve, 300000));
+      }
+    } else {
+      await publish(readJson(OUTBOX, { items: [] }).items);
+    }
+  } finally {
+    sock.end(undefined);
+  }
 }
 
-main().catch((err) => {
-  console.error(err?.stack || err);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const lock = path.join(AUTH_DIR, 'bridge.lock');
+  fs.mkdirSync(AUTH_DIR, { recursive: true, mode: 0o700 });
+  const handle = fs.openSync(lock, 'wx', 0o600);
+  try {
+    await main();
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+  } finally {
+    fs.closeSync(handle);
+    fs.rmSync(lock, { force: true });
+  }
+}
