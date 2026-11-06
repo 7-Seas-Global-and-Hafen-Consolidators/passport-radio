@@ -54,39 +54,6 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node scripts/disparar-telegram.mjs --verify
-  authorized-batch-37:
-    needs: verify
-    if: >-
-      github.event_name == 'pull_request' &&
-      github.event.action == 'synchronize' &&
-      github.event.pull_request.number == 591 &&
-      github.event.pull_request.head.repo.full_name == github.repository &&
-      github.event.pull_request.head.ref == 'fix/editorial-channel-distribution'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          sparse-checkout: scripts
-      - uses: actions/checkout@v4
-        with:
-          ref: telegram-delivery-state
-          path: delivery-state
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - name: Configure journal author
-        run: |
-          git -C delivery-state config user.name passport-telegram-bot
-          git -C delivery-state config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: Deliver published articles
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_STATE_DIR: delivery-state
-        run: node scripts/disparar-telegram.mjs --authorized-37
   telegram:
     if: >-
       github.event_name != 'pull_request' &&
