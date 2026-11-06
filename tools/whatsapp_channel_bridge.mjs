@@ -129,8 +129,10 @@ function normalizeJid(value) {
   return jid;
 }
 async function main() {
-  if (!pairMode && !fs.existsSync(path.join(AUTH_DIR, 'creds.json'))) throw new Error('Pair the administrator account first');
   const { state, saveCreds } = await useMultiFileAuthState(AUTH_DIR);
+  if (!pairMode && state.creds.registered !== true) {
+    throw new Error('WhatsApp session is not authenticated; no messages were attempted');
+  }
   const { version } = await fetchLatestBaileysVersion({ signal: AbortSignal.timeout(10000) });
   const sock = makeWASocket({
     auth: state,
@@ -141,33 +143,31 @@ async function main() {
   });
   sock.ev.on('creds.update', saveCreds);
 
-  await new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error('WhatsApp connection timeout')), 120000);
-    sock.ev.on('connection.update', ({ connection, lastDisconnect, qr }) => {
-      if (qr && pairMode) {
-        QRCode.toFile(QR_FILE, qr, { width: 480 }).then(() => console.log('QR ready at .passport-wa-auth/pairing.png'), reject);
-      }
-      if (connection === 'open') {
-        clearTimeout(timer); resolve();
-      }
-      if (connection === 'close') {
-        const code = lastDisconnect?.error?.output?.statusCode;
-        clearTimeout(timer);
-        if (pairMode && code === 515 && state.creds.registered) resolve();
-        else reject(new Error('WhatsApp connection closed: ' + (code || 'unknown')));
-      }
-    });
-  });
-
-  if (pairMode) {
-    await saveCreds();
-    fs.rmSync(QR_FILE, { force: true });
-    console.log('WhatsApp paired');
-    sock.end(undefined);
-    return;
-  }
-
   try {
+    await new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error('WhatsApp connection timeout')), 120000);
+      sock.ev.on('connection.update', ({ connection, lastDisconnect, qr }) => {
+        if (qr && pairMode) {
+          QRCode.toFile(QR_FILE, qr, { width: 480 }).then(() => console.log('QR ready at .passport-wa-auth/pairing.png'), reject);
+        }
+        if (connection === 'open') {
+          clearTimeout(timer); resolve();
+        }
+        if (connection === 'close') {
+          const code = lastDisconnect?.error?.output?.statusCode;
+          clearTimeout(timer);
+          if (pairMode && code === 515 && state.creds.registered) resolve();
+          else reject(new Error('WhatsApp connection closed: ' + (code || 'unknown')));
+        }
+      });
+    });
+
+    if (pairMode) {
+      await saveCreds();
+      console.log('WhatsApp paired');
+      return;
+    }
+
     const channel = await sock.newsletterMetadata('invite', invite);
     const channelJid = normalizeJid(channel?.id);
     if (process.env.PASSPORT_WA_CHANNEL_JID && channelJid !== process.env.PASSPORT_WA_CHANNEL_JID) {
@@ -217,6 +217,7 @@ async function main() {
       await publish(readJson(OUTBOX, { items: [] }).items);
     }
   } finally {
+    fs.rmSync(QR_FILE, { force: true });
     sock.end(undefined);
   }
 }

@@ -12,3 +12,7 @@ A ponte existente ganhou pareamento isolado, resolução do destino pelo convite
 ## Evidência desta etapa
 
 O socket da ponte abriu o fluxo de pareamento e gerou QR real. Sem pareamento concluído, o destino, o papel administrativo e os recibos reais continuam pendentes. Dois testes simulados passaram, cobrindo gravação em ordem, reexecução sem duplicação e bloqueio após confirmação ambígua. Nenhum token, QR ou arquivo de sessão faz parte da PR.
+
+## Diagnóstico de acesso
+
+A solicitação de código pelo número foi rejeitada com bad-request quando a ponte aguardou a resposta do servidor. Os arquivos de sessão locais permaneceram com registered=false. A existência do arquivo ou de um identificador de conta não confirma autenticação. A ponte agora interrompe envio e verificação antes da conexão se a sessão não estiver registrada, fecha o socket e remove o QR temporário ao encerrar. A aba autenticada no Edge do proprietário não está entre as superfícies disponíveis. Nenhum pareamento adicional foi tentado nesta revisão. Os testes de entrega são simulados, e a causa interna da rejeição do WhatsApp não foi identificada.
