@@ -31,8 +31,8 @@ export function selectArticles(sitemaps, indexedUrls = []) {
   return [...found];
 }
 
-export async function publish({ urls, state, save, send, limit = 10 }) {
-  if (!Array.isArray(state.baseline) || !state.baseline.length || !state.deliveries ||
+export async function publish({ urls, state, save, send, limit = 10, authorizedBatch = false }) {
+  if (!Array.isArray(state.baseline) || (!authorizedBatch && !state.baseline.length) || !state.deliveries ||
       Array.isArray(state.deliveries) || typeof state.deliveries !== 'object') {
     throw Error('Histórico ausente ou inválido. Revise o marco e os envios anteriores.');
   }
@@ -42,7 +42,7 @@ export async function publish({ urls, state, save, send, limit = 10 }) {
     }
   }
   const baseline = new Set(state.baseline.map(canonical));
-  const queue = urls.filter(url => !baseline.has(url) && !Object.hasOwn(state.deliveries, url));
+  const queue = urls.filter(url => (authorizedBatch || !baseline.has(url)) && !Object.hasOwn(state.deliveries, url));
   for (const url of queue.slice(0, limit)) {
     state.deliveries[url] = { status: 'pending' };
     await save(state);
@@ -104,12 +104,22 @@ async function main() {
     if (!res.ok) throw Error('Falha ao ler ' + name + ': HTTP ' + res.status);
     return res.text();
   };
+  const batch = process.argv.includes('--authorized-37');
+  let urls;
+  if (batch) {
+    urls = (await fs.readFile(new URL('./telegram-authorized-37.txt', import.meta.url), 'utf8')).trim().split(/\r?\n/);
+    if (urls.length !== 37 || new Set(urls).size !== 37 ||
+        urls.some(url => canonical(url) !== url || !url.endsWith('.html'))) {
+      throw Error('Lista autorizada inválida');
+    }
+  } else {
   const sitemaps = await Promise.all(['sitemap-blog.xml', 'sitemap.xml'].map(read));
   const indexes = await Promise.all(['editorial-feed', 'editorial-manual-feed', 'editorial-priority-feed', 'blog-feed']
     .map(async name => JSON.parse(await read('data/' + name + '.json')).items.map(item => item.url).filter(Boolean)));
-  const urls = selectArticles(sitemaps, indexes.flat());
+  urls = selectArticles(sitemaps, indexes.flat());
+  }
   const remaining = await publish({
-    urls, state,
+    urls, state, authorizedBatch: batch, limit: batch ? 37 : 10,
     async save(value) {
       await fs.writeFile(stateFile + '.tmp', JSON.stringify(value, null, 2) + '\n');
       await fs.rename(stateFile + '.tmp', stateFile);
@@ -123,6 +133,7 @@ async function main() {
         chat_id: channelId,
         text: '🎸 NOVA NA PASSPORT RADIO\n\n' + url,
       });
+      if (batch) await new Promise(resolve => setTimeout(resolve, 1200));
       return message?.message_id;
     },
   });
