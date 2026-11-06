@@ -34,6 +34,21 @@ jobs:
         with:
           node-version: '24'
       - run: node --test tests/telegram-distribution.test.mjs
+      - name: Inspect public channel history
+        run: |
+          curl --fail --silent --show-error --location --max-time 30 https://t.me/s/passportradioofficial -o "${RUNNER_TEMP}/telegram-history.html"
+          python - <<'PYTHON'
+          import os, pathlib, re
+          html = (pathlib.Path(os.environ['RUNNER_TEMP']) / 'telegram-history.html').read_text()
+          posts = re.findall(r'data-post="passportradioofficial/(\d+)"', html, re.I)
+          print(f'Mensagens na página pública: {len(set(posts))}')
+          for match in re.finditer(r'data-post="passportradioofficial/(\d+)"([\s\S]*?)(?=data-post="|\Z)', html, re.I):
+              for url in sorted(set(re.findall(r'https://(?:www\.)?passportradio\.online/[^"<>\s?]+\.html', match[2]))):
+                  print(f'Post público {match[1]}: {url}')
+          if not posts:
+              raise SystemExit('Página pública sem mensagens verificáveis. Histórico ainda não conciliado.')
+          PYTHON
+        continue-on-error: true
       - name: Verify Telegram credentials without posting
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

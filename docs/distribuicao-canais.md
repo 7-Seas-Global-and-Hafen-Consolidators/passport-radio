@@ -21,3 +21,16 @@ Telegram oficial referenciado pelo site: https://t.me/+FKto2N185cs4OGU0. A assoc
 ## Testes
 
 node --test tests/telegram-distribution.test.mjs cobre Notícias e Blog, deduplicação, histórico dispensado, retomada em lotes, falha de persistência e resultado ambíguo. Todos os envios no teste são simulados.
+
+## Verificação operacional da PR #591
+
+O canal informado pelo proprietário é @passportradioofficial. O verificador usa esse nome público como chat ID padrão, aceita a configuração TELEGRAM_CHAT_ID quando presente e confirma a identidade do bot, do canal e a permissão can_post_messages antes de qualquer envio. Não imprime credenciais nem respostas brutas da API. O job verify da PR executa apenas testes, leitura pública e as consultas getMe, getChat e getChatMember. O job telegram fica excluído de eventos de PR.
+
+Na execução 42229631156, os quatro testes passaram e a checagem parou com TELEGRAM_BOT_TOKEN ausente no ambiente do job. Essa evidência não distingue um segredo de ambiente, de organização, de outro repositório ou indisponível para o evento. O token não chegou a ser consultado na API. A branch telegram-delivery-state foi preparada com histórico vazio e bloqueia qualquer envio até a conciliação. A página pública t.me/s/passportradioofficial ficou indisponível no ambiente local. Uma página parcial ou sem mensagens verificáveis não estabelece que o canal esteja vazio.
+
+## Operação da ponte WhatsApp existente
+
+- Resolva o identificador real com newsletterMetadata('invite', código do link oficial) na sessão Baileys da conta administradora. Confira o nome retornado e o JID @newsletter. O código do convite não é o JID. A operação newsletterMetadata existe no código upstream em https://github.com/WhiskeySockets/Baileys/blob/master/src/Socket/newsletter.ts.
+- A ponte atual exige PASSPORT_WA_CHANNEL_JID até no modo --pair e o modo de pareamento segue para o laço de envio depois de conectar. Para validar apenas a sessão, use um diretório local isolado, com a fila ausente ou comprovadamente vazia, e mantenha .passport-wa-auth/ fora do Git. Pareie no WhatsApp da conta administradora. Confirme a abertura da sessão e a contagem zero antes de alimentar a fila.
+- Gere a fila com python tools/whatsapp_channel_outbox.py queue-changed --catalog CATÁLOGO.jsonl --delta DELTA.json --outbox data/whatsapp-channel-outbox.json. O delta deve conter somente slugs e revisões explicitamente autorizados. Confira título, URL, texto e IDs antes de iniciar a ponte. Preserve data/whatsapp-channel-local-state.json, execute uma instância por vez e concilie o canal se a sessão cair durante o envio. O ID atual é slug@revision, portanto uma revisão nova pode republicar a mesma URL.
+- Com autorização de postagem, execute PASSPORT_WA_CHANNEL_JID='JID_VERIFICADO' node tools/whatsapp_channel_bridge.mjs e compare a entrada publicada no próprio canal com o estado local. A leitura do código e o teste do produtor validam o encadeamento local. Pareamento, permissão da conta e entrega real continuam dependentes da sessão administradora e não foram executados nesta auditoria.
