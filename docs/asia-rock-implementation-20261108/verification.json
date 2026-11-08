@@ -1,0 +1,111 @@
+{
+  "base": "d070f26a9e40918950e66a1a0abbac936747c336",
+  "inventory": {
+    "pass": true,
+    "originalRadios": 401,
+    "originalSelectors": 11,
+    "allOriginalRecordsIdentical": true,
+    "allOriginalStationIndicesIdentical": true,
+    "engineLogicIdentical": true,
+    "radioCount": 402,
+    "selectorCount": 11,
+    "total": 413
+  },
+  "layout": [
+    {
+      "width": 1440,
+      "columns": 4,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 768,
+      "columns": 3,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 480,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 390,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 359,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    }
+  ],
+  "playback": {
+    "simulatedMedia": true,
+    "note": "Real production engine and approved selection; deterministic WAV replaces network media only. This does not certify the remote signal.",
+    "play": true,
+    "pause": true,
+    "resume": true,
+    "newWaveSwitch": true,
+    "returnToAsia": true,
+    "singleActiveAudio": true,
+    "tabFocusContinuity": true,
+    "editorialNavigationContinuity": true,
+    "publicIdentityOnly": true
+  },
+  "screenshots": [
+    "before-1440.png",
+    "after-1440.png",
+    "before-768.png",
+    "after-768.png",
+    "before-480.png",
+    "after-480.png",
+    "before-390.png",
+    "after-390.png",
+    "before-359.png",
+    "after-359.png"
+  ]
+}

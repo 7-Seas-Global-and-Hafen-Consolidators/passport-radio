@@ -1,0 +1,12 @@
+{
+  "method": "Approved endpoint sampled directly; sample was decoded with ffmpeg. No alternate source or intermediary.",
+  "bytes": 277107,
+  "durationSeconds": 17.32,
+  "codec": "mp3",
+  "sampleRate": 44100,
+  "channels": 2,
+  "decodedSeconds": 8,
+  "meanVolumeDb": -9.5,
+  "maxVolumeDb": 0,
+  "audioDecoded": true
+}
