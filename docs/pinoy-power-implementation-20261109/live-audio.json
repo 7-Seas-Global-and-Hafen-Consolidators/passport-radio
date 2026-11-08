@@ -1,0 +1,17 @@
+{
+  "method": "Real approved-page endpoint sampled with curl; no alternate source or proxy added to product. Endpoint retained only in operational registrations.",
+  "httpStatus": 200,
+  "contentType": "audio/mpeg",
+  "bytes": 425065,
+  "durationSeconds": 17.711042,
+  "codec": "mp3",
+  "sampleRate": 44100,
+  "channels": 2,
+  "decodedSeconds": 8,
+  "meanVolumeDb": -14.6,
+  "maxVolumeDb": 0,
+  "curlExit": 28,
+  "curlExitExplanation": "Deliberate 20-second limit on continuous live response; received sample was decoded successfully.",
+  "ffprobeExit": 0,
+  "ffmpegExit": 0
+}

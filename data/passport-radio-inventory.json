@@ -1,6 +1,6 @@
 {
   "base": "391191cab504ea070ce2d65513d04c71e4ddb14f",
-  "radioCount": 402,
+  "radioCount": 403,
   "programSelectorCount": 11,
   "records": [
     {
@@ -590,6 +590,23 @@
       "stream": "https://stream.zeno.fm/6cyjqwlkz4ptv?nocache=1",
       "engine": "js/world-radio-player.js",
       "route": "/#passport-asia-rock",
+      "section": 2,
+      "kind": "radio",
+      "bus": "PassportBus.claim/silence; shared existing engine",
+      "continuity": "PassportAudioRuntime + PassportContinuity; existing persistent navigation",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "new": true
+    },
+    {
+      "category": "Pinoy · Indie · Rock alternativo filipino",
+      "id": "passport-pinoy-power",
+      "family": "world",
+      "index": 314,
+      "name": "Pinoy Power™",
+      "stream": "https://fiaradio.org/listen/fia_radio/radio.mp3",
+      "engine": "js/world-radio-player.js",
+      "route": "/#passport-pinoy-power",
       "section": 2,
       "kind": "radio",
       "bus": "PassportBus.claim/silence; shared existing engine",

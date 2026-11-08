@@ -1,0 +1,16 @@
+{
+  "command": "node --test --test-reporter=tap tests/passport_40_inventory.test.cjs tests/passport_kpop_replacement.test.cjs",
+  "exitCode": 0,
+  "summary": [
+    "# tests 31",
+    "# pass 31",
+    "# fail 0",
+    "# skipped 0",
+    "# duration_ms 44524.954599"
+  ],
+  "syntaxCheck": {
+    "command": "node --check js/world-radio-player.js",
+    "exitCode": 0
+  },
+  "scope": "Only one station object appended, one inventory row inserted, one image, tests and evidence. No previous record or transport logic changed."
+}

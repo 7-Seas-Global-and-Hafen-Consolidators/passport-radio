@@ -1,0 +1,228 @@
+{
+  "base": "e86a1042fbf24ebe88c16582fd271204500faef3",
+  "inventory": {
+    "pass": true,
+    "originalRadios": 402,
+    "originalSelectors": 11,
+    "allOriginalRecordsIdentical": true,
+    "allOriginalStationIndicesIdentical": true,
+    "engineLogicIdentical": true,
+    "radioCount": 403,
+    "selectorCount": 11,
+    "total": 414
+  },
+  "layout": [
+    {
+      "width": 1440,
+      "columns": 4,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 1024,
+      "columns": 3,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 768,
+      "columns": 3,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 600,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 480,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": true,
+      "pageOverflowAfter": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 390,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": true,
+      "pageOverflowAfter": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    },
+    {
+      "width": 359,
+      "columns": 2,
+      "pass": true,
+      "existingCardStylesUnchanged": true,
+      "headerUnchanged": true,
+      "cardTypography": {
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(229, 229, 229)",
+        "radius": "12px",
+        "font": "600 14px / 18.2px \"Instrument Sans\", sans-serif",
+        "fontDescription": "11px / 14.3px \"Source Serif 4\", serif"
+      },
+      "pageOverflowBefore": true,
+      "pageOverflowAfter": true,
+      "artworkLoaded": true,
+      "order": [
+        "passport-asia-rock",
+        "passport-pinoy-power",
+        "passport-new-wave",
+        "passport-rock-brasil-80",
+        "passport-rock-legends"
+      ]
+    }
+  ],
+  "playback": {
+    "mobileTouch": true,
+    "keyboardFocus": true,
+    "hoverExercised": true,
+    "zoom200Percent": true,
+    "simulatedMedia": true,
+    "note": "Real production engine and approved selection; deterministic WAV replaces network media only. This does not certify the remote signal.",
+    "play": true,
+    "pause": true,
+    "resume": true,
+    "newWaveSwitch": true,
+    "asiaSwitch": true,
+    "returnToPinoy": true,
+    "singleActiveAudio": true,
+    "tabFocusContinuity": true,
+    "editorialNavigationContinuity": true,
+    "publicIdentityOnly": true
+  },
+  "screenshots": [
+    "before-1440.png",
+    "after-1440.png",
+    "before-1024.png",
+    "after-1024.png",
+    "before-768.png",
+    "after-768.png",
+    "before-600.png",
+    "after-600.png",
+    "before-480.png",
+    "after-480.png",
+    "before-390.png",
+    "after-390.png",
+    "before-359.png",
+    "after-359.png"
+  ],
+  "liveBrowser": {
+    "pass": false,
+    "simulatedMedia": false,
+    "error": "page.waitForFunction: Timeout 25000ms exceeded.",
+    "networkFailures": [
+      "net::ERR_CERT_AUTHORITY_INVALID",
+      "net::ERR_CERT_AUTHORITY_INVALID",
+      "net::ERR_CERT_AUTHORITY_INVALID"
+    ]
+  }
+}
