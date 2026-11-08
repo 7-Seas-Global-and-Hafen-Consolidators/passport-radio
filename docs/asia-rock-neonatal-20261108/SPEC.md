@@ -1,36 +1,45 @@
-# PASSPORT RADIO | ASIA ROCK™ | CIRURGIA NEONATAL — ESPECIFICAÇÃO VINCULANTE
-**PR #593: documentação e autorização de escopo, SEM implementação. NÃO MERGE. NÃO DEPLOY.**
-**Política prioritária: A COZINHA DA PASSPORT RADIO NÃO É PÚBLICA.**
+# PASSPORT RADIO | ASIA ROCK™ | CIRURGIA NEONATAL | ESPECIFICAÇÃO DEFINITIVA DO PROPRIETÁRIO
 
-## 0. SIGILO ABSOLUTO — REGRA DE PUBLICAÇÃO
-**MANDAMENTO EDITORIAL IRREVOGÁVEL, APLICÁVEL A TODOS OS 401 BEBÊS EXISTENTES E AO ASIA ROCK™:** o nome artístico escolhido pelo proprietário é a única identidade apresentada ao público. **JAMAIS expor nome real da emissora, rádio fornecedora, operador do stream, plataforma de distribuição, domínio de origem ou nome da fonte** em título, subtítulo, descrição, tooltip, aria-label, alt, busca, SEO, metadados, console público, tela de erro, botão, cartão, créditos, link visível, documentação editorial ou interface. **NÃO trocar Asia Rock™ por qualquer nome externo, nem mesmo como fallback.** A imagem de Alice Syndrome é apenas a arte autorizada do cartão, nunca identificação da fonte do áudio.
+**PR #593: apenas documentação. O proprietário dará a ordem à executora depois. NÃO MERGE. NÃO DEPLOY.**
 
-**Distinção operacional:** o endereço de áudio aprovado será fornecido diretamente à executora pelo proprietário no texto da ordem de execução, fora desta PR. Ter acesso ao endereço para configurar/testar **não concede autorização para publicar a origem ou nome do fornecedor**. Não registrar a URL aprovada na SPEC, corpo da PR ou comentários. Não copiar informações de origem dos 401 bebês existentes para novas saídas públicas.
+**ORDEM SOBERANA:** reproduzir fielmente a ordem editorial e operacional editada pelo proprietário. Não reinterpretar exigências, não inventar novas condições de parada, não redesenhar, não ampliar o escopo e não mudar os comportamentos existentes.
 
-- O único **nome editorial e público** do bebê é **Asia Rock™**. Não mostrar nome de emissora, plataforma, fornecedor, marca ou origem do áudio em cartões, metadados editoriais, comentários, PRs, descrições, documentação pública, capturas de tela, mensagens de erro, logs expostos ou links de navegação.
-- **Não publicar URLs de streams, endpoints de fornecedores, túneis de terceiros ou listas de origens em documentação, PR, comentários, capturas ou código entregue ao navegador.** Não reproduzir nem os URLs já presentes no repositório em novos relatórios. O link aprovado já foi entregue diretamente ao proprietário na conversa privada e deve ser tratado como dado operacional restrito; **não é reproduzido aqui**. Não pedir ao proprietário que publique o link na PR.
-- **Distinção essencial:** esconder a URL no cartão ou renomear o fornecedor não oculta a origem de uma conexão de áudio feita diretamente pelo navegador. A estrutura atual contém URLs de origem em código público. Logo, não afirmar que os túneis estão secretos, nem implementar uma falsa proteção cosmética. **A exigência de sigilo real requer solução de entrega de áudio do lado servidor que não exponha o upstream ao navegador.** Essa arquitetura **não está autorizada** nesta cirurgia neonatal; não modificar transportes, proxy, player ou infraestrutura para inventá-la. Se o novo canal exigir exposição do túnel no cliente, **PARAR E RELATAR O BLOQUEIO ANTES DE QUALQUER IMPLEMENTAÇÃO OU PR DE CÓDIGO**.
-- Não usar o nome da banda como marca da estação; Alice Syndrome é **homenagem fotográfica editorial**, não a emissora, não a fornecedora de áudio.
-- Não acrescentar o endereço aprovado em nenhum arquivo público nem na futura PR. A executora receberá o endereço aprovado diretamente na ordem operacional do proprietário; não precisa adivinhá-lo nem pesquisá-lo novamente. Esse fornecimento é para uso interno, não para publicação.
-- Esta regra prevalece sobre as instruções antigas que pediam registrar `stream` literal em `js/world-radio-player.js`. **A autorização anterior de inserir um objeto de dados contendo o stream está SUSPENSA até existir caminho comprovado sem exposição pública.**
+## 0. IDENTIDADE PÚBLICA E COZINHA FECHADA — TODOS OS BEBÊS SÃO SAGRADOS
 
-## 1. IDENTIDADE E POSIÇÃO IMUTÁVEIS
-- **Nome visível:** `Asia Rock™` (exatamente, inclusive ™; não usar nome de terceiros).
-- **ID interno proposto:** `passport-asia-rock` (confirmar ausência de colisão).
-- **Categoria:** `ROCK, METAL & ALTERNATIVAS`, Living Collection™ seção 2.
-- **Descrição visível:** `K-Rock · J-Rock · Rock asiático moderno` (programação mista, não prometer exclusividade coreana).
-- **Posição:** 1ª fileira à esquerda: `Asia Rock™`; 1ª fileira à direita: `New Wave™`. Na segunda: `Rock Brasil 80™` e `Rock Legends™`. Todos os demais preservam a ordem relativa.
-- **Referência antes:** captura anexada pelo proprietário na aba Conversation da PR #593. Conferir visualmente a imagem e o CSS real; a imagem não autoriza redesenho.
+**NOME EXATO E EXCLUSIVO: Asia Rock™.** É proibido revelar ou apresentar como identidade pública o nome da rádio fornecedora, emissora original, plataforma, operador, proprietário da fonte, domínio de origem ou nome externo como alternativa/fallback, **ASSIM COMO OS DEMAIS BEBÊS**. A mesma regra editorial aplica-se às **401 rádios existentes** e ao novo canal.
 
-## 2. AUDITORIA DE LEITURA CONCLUÍDA NO REPOSITÓRIO
-- Base `main` no momento da auditoria: `d070f26a9e40918950e66a1a0abbac936747c336`; revalidar antes de executar.
-- `data/passport-radio-inventory.json`: **401 rádios**, **11 seletores**, **412 registros**. Alvo lógico com +1 rádio: **402 rádios**, 11 seletores, 413 registros, condicionado à nova leitura.
-- `js/passport-radio-grid.js`: renderiza por `row.section` e ordem de inventário. O cartão utiliza `living-radio-card`, `living-radio-cover`, `living-radio-name`, `living-radio-description` e `living-radio-waves`. Clique seleciona por família/nome/índice, não injeta o áudio diretamente.
-- `js/world-radio-player.js`: contém array `stations` que alimenta a seleção e inclui estações existentes. **É um arquivo de código entregue ao navegador. Não inserir ali URLs privadas para atender a esta tarefa.** Cadastro visual isolado produziria cartão sem reprodução, portanto **não fazer**.
-- Arte existente: `/images/radio/living-collection/<id>.webp`; padrão do manifesto `docs/living-collection-rock-pop-20261027/artwork-manifest.json`: WebP quadrado 512×512, sRGB. Não alterar outras imagens.
+Nenhum nome de fonte em cartão, embaixo da foto, título, descrição, pesquisa, acessibilidade, créditos, metadados editoriais, interface, mensagens de erro ou reprodução. **O NOME ESCOLHIDO PELO PROPRIETÁRIO É SOBERANO.**
+
+**Endereço direto aprovado:** o endereço EXATO foi entregue à executora na ordem operacional do proprietário. É uso operacional restrito, sem troca de sinal. **Não transcrever o endereço nesta PR, em comentários, especificações ou relatórios**, nem exibir endereço ou nome da fonte na Passport Radio. A executora não precisa adivinhar nem pesquisar outro túnel.
+
+**Instrução expressa do proprietário:** “Não exponha o endereço de origem ao navegador e nem revelar informações. Se o mecanismo atual exigir publicar o endereço em JavaScript, JSON ou requisições diretas do navegador, EXECUTE COM CUIDADO.” Seguir a integração existente, preservando o comportamento dos outros bebês. **A forma de cadastro atual não é motivo, por si só, para nova paralisação da cirurgia**. Não inventar proxy nem alterar arquitetura. A proibição editorial de mostrar a fonte na interface e a necessidade operacional de conexão de áudio não devem ser confundidas. Não prometer invisibilidade técnica de conexão direta; não criar novo bloqueio em decorrência dessa distinção.
+
+**Autorização operacional delimitada:** se necessário para tocar, inserir apenas o novo registro Asia Rock™ no array `stations` de `js/world-radio-player.js`, seguindo o cadastro de outras estações, sem tocar nas existentes ou alterar a lógica do arquivo. Isso não autoriza divulgar o nome da fonte em interfaces, documentação ou PR. Não repetir endereços de terceiros no texto de implementação; o código necessário será avaliado no diff da PR de implementação.
+
+## 1. IDENTIFICAÇÃO E SEQUÊNCIA INALTERÁVEIS
+
+- **Nome público:** `Asia Rock™`, com ™.
+- **ID interno:** `passport-asia-rock`, confirmar ausência de conflito.
+- **Seção:** `ROCK, METAL & ALTERNATIVAS` (Living Collection™ seção 2).
+- **Descrição editorial:** `K-Rock · J-Rock · Rock asiático moderno`.
+- **Primeiro cartão:** Asia Rock™.
+- **Segundo cartão:** New Wave™.
+- **Terceiro cartão:** Rock Brasil 80™.
+- **Quarto cartão:** Rock Legends™.
+- Manter todos os demais na mesma ordem relativa. Em telas de 2 colunas, os dois primeiros ocupam a primeira linha; em tablets de 3 e desktops de 4, preservar a disposição responsiva da grade.
+- **Referência visual ANTES:** captura anexada pelo proprietário na conversa da PR #593. Preservar aparência e ilustração do cabeçalho.
+
+## 2. AUDITORIA E ARQUIVOS-ALVO
+
+- Base `main` da auditoria original: `d070f26a9e40918950e66a1a0abbac936747c336`. Verificar o HEAD real novamente antes de executar.
+- Inventário auditado: **401 rádios + 11 seletores = 412 registros**. Após a inclusão: **402 rádios + 11 seletores = 413 registros**, mantidos os anteriores sem alterações.
+- `data/passport-radio-inventory.json`: posição, seção, identificação, descrição e arte do novo registro.
+- `js/passport-radio-grid.js`: cartão seleciona por família, nome e índice. Usar o comportamento atual, sem reescrever.
+- `js/world-radio-player.js`: o array `stations` registra os sinais. Permitido **somente** acrescentar o objeto referente a Asia Rock™ se necessário; não modificar estação, ordem, stream, seleção ou lógica anterior.
+- Arquivo de arte previsto: `images/radio/living-collection/passport-asia-rock.webp` (512×512 WebP sRGB). Não alterar fotos já existentes.
 
 ## 3. DESIGN EXATO EXTRAÍDO DE `css/passport-radio-grid.css`
-**Não criar novo CSS. Reutilizar integralmente classes e regras existentes.**
+**Não criar CSS novo sem necessidade; caso seja estritamente necessário para este bebê específico, é autorizado um ajuste mínimo, com sabedoria e cuidado extremo, sem afetar outros cartões.**
 
 | Propriedade | Valor real |
 |---|---|
@@ -59,22 +68,48 @@
 - O estado `aria-pressed=true` usa borda vermelha e sombra `0 0 0 1px #C41E3A`; ondas animadas somente quando tocando; respeitar `prefers-reduced-motion`.
 - **IMPORTANTE SOBRE POSIÇÃO:** `Asia Rock™` deve ser o **primeiro item da sequência** e `New Wave™` o **segundo**. Eles ficam lado a lado **no mobile de duas colunas**; em desktop (quatro colunas) e tablet (três) aparecem como os dois primeiros cartões da mesma fileira. **Não alterar o grid para forçar o layout mobile no desktop.**
 
-## 4. FOTOGRAFIA REAL OBRIGATÓRIA — ALICE SYNDROME
-- Fotografia autêntica, conjunta e reconhecível das quatro integrantes: **TAIRA, AWON, SEBEEN, JEONGMIN**. Não usar ilustração, arte de IA, logotipo, capa, colagem, fotografia de outra banda ou marca-d'água.
-- Pesquisar amplamente fontes oficiais, materiais de imprensa e publicações editoriais. Verificar identidades, autoria, crédito, licença e autorização para uso. Não remover marcas-d'água; não publicar imagem sem direito de uso.
-- Arquivo final seguindo convenção do projeto: **WebP 512×512 sRGB**, crop fiel sem deformação, quatro rostos preservados, nítido no tamanho exibido **68×68**. Conferir também a leitura da imagem em desktop, tablet e mobile (tamanho CSS exibido permanece 68×68).
-- Registrar evidência de licença em meio autorizado; não vazar URLs de streams na documentação de fotografia. Se foto não estiver autorizada, relatar bloqueio, não usar placeholder.
 
-## 5. PRESERVAÇÃO NEONATAL E TESTES
-**401 bebês e 11 seletores INTOCÁVEIS.** Sem alteração de streams existentes, IDs, índices, metadados, artes, ordem relativa ou funcionalidade. Não tocar em `<audio>`, Bus, interlock, mutex, World Dial, lógica de `radio-*`, transporte, players ou CSS global.
-- Comparar inventários e cadastros antes/depois; 401 entradas anteriores e 11 seletores idênticos; apenas +1 entrada nova quando a arquitetura de sigilo estiver autorizada.
-- Testar foto, ordem, desktop >1024, tablet 601–1024, mobile ≤600, 480 e 359; acessibilidade e reduced motion; play/pause, alternância, ausência de áudio duplo, e regressão de estações antigas.
-- Teste de **não exposição:** confirmar que HTML, JS, JSON, CSS, DevTools/Network, logs públicos, links e PR não revelam origem do novo áudio. Se o navegador se conectar diretamente ao upstream, **sigilo não atendido**.
-- Nunca declarar teste realizado se não foi executado. Documentar somente evidências verificadas.
 
-## 6. ORDEM DE TRABALHO / CONDIÇÃO DE RETOMADA
-**Esta PR #593 é exclusivamente especificação; a executora deve primeiro verificar se já existe uma via de áudio privada aprovada que impeça expor o upstream ao navegador. Se existir, registrar evidência sem revelar o segredo e solicitar a autorização específica do proprietário para o cadastro mínimo. Se não existir, informar o bloqueio com precisão, sem publicar o túnel e sem inventar uma infraestrutura. Nenhuma alteração de aplicação antes de resolver o bloqueio de sigilo real.** A implementação fica **no ventre**, sem branch/PR de código, até decisão explícita do proprietário sobre arquitetura de entrega de áudio que não exponha a origem ao navegador. Não usar proxy ou servidor por conta própria.
+## 4. FOTOGRAFIA REAL — PESQUISAR EM TODA A INTERNET A MELHOR POSSÍVEL
 
-Após a autorização específica, fazer a menor alteração possível em PR separada, com evidências de visual, licença da foto, testes e preservação; **NÃO MERGE / NÃO DEPLOY**.
+Pesquisar amplamente a melhor **fotografia real conjunta das quatro integrantes de Alice Syndrome**, nítida e com todos os rostos reconhecíveis. **Não usar imagem gerada por IA, colagem, logotipo, foto de outra banda ou imagem com marcas-d'água de terceiros.** Investigar procedência e direito de utilização antes de publicar.
 
-**BEBÊ QUE ENTROU TOCANDO SAI TOCANDO. ZERO CILEIDICES.**
+- Arquivo final: **WebP, 512 × 512 px, sRGB**.
+- Foto exibida no cartão: **68 × 68 px**, cortada sem deformar e sem excluir integrantes, inclusive em desktop, tablet e celular.
+- Mesmo tratamento visual dos irmãos.
+- Alice Syndrome integra **a arte editorial do cartão**; o nome da banda **não identifica a fonte do sinal**.
+- Registrar a procedência da fotografia sem divulgar a origem do áudio.
+
+## 5. DESIGN E FUNCIONAMENTO INTOCÁVEIS
+
+**401 rádios existentes e 11 seletores INTOCÁVEIS.** Não modificar seus túneis, nomes, IDs, índices, imagens, fluxos ou a ordem relativa. Não mexer nos players, `<audio>`, Bus, interlock, mutex, World Dial ou lógica compartilhada. A única exceção autorizada é **o acréscimo do cadastro do novo bebê**, quando indispensável e sem alterar os registros ou o comportamento existentes.
+
+**REGRA FUNDAMENTAL:** **“Bebê que está tocando, permanece tocando em todas as abas assim como os demais bebês.”** A inclusão deve respeitar o comportamento já existente de reprodução e continuidade entre abas. Não parar o sinal ativo, não criar áudio duplo, não interferir no sistema de alternância.
+
+**CSS:** manter o design; CSS específico só se realmente necessário à inclusão do Asia Rock™, mínimo e sem efeitos colaterais.
+
+## 6. EXECUÇÃO: DETERMINAÇÃO EXPRESSA DO PROPRIETÁRIO
+
+A executora deverá **investigar a forma real de cadastro e entrega do áudio e EXECUTAR COM CUIDADO mesmo quando o mecanismo existente utilizar JavaScript, JSON ou conexão direta**, sem inventar outra arquitetura. **Não revelar nome da fonte na Passport Radio, sob hipótese alguma.**
+
+**Não criar proxy. Não redesenhar a arquitetura. Não deixar o novo cartão sem tocar. Não interromper os demais bebês.** Impedimento real diferente da mera existência do cadastro atual deve ser relatado objetivamente. **Não reintroduzir o bloqueio inventado nas versões antigas desta SPEC.** O proprietário soltará a executora depois de documentada esta ordem; esta PR não é uma PR de implementação.
+
+## 7. TESTES E EVIDÊNCIAS OBRIGATÓRIOS
+
+- Verificar que Asia Rock™ toca pelo endereço EXATO aprovado pelo proprietário e exibe **somente** o nome escolhido.
+- Testar iniciar, pausar, trocar estações, continuidade entre abas, ausência de áudio simultâneo e retorno aos 401 bebês existentes.
+- Conferir que o inventário resultante tem **402 rádios e 11 seletores**, com 401 originais e 11 seletores preservados.
+- Conferir posição, tipografia, cores e foto real em **desktop (>1024px), tablet (601–1024px), mobile (≤600px)** e larguras estreitas 480px e 359px.
+- Anexar capturas ANTES/DEPOIS na mesma largura de tela; mostrar primeira e segunda linhas; atestar que o cabeçalho e os demais cartões não mudaram.
+- Conferir que **não aparece nome de emissora, fornecedor ou origem**, nem o endereço do túnel **na experiência pública da Passport Radio**.
+- Relatar os testes realmente feitos, com resultados e diferenças de arquivos. Não inventar resultados.
+
+## 8. ENTREGA
+
+**Criar PR SEPARADA DE IMPLEMENTAÇÃO**, com identificação da branch, commit, arquivos alterados, fotografia e sua procedência, provas visuais e resultados de teste. Não fazer merge ou deploy. **Não alterar esta PR #593 sem nova ordem.**
+
+**NUNCA REVELAR O NOME DAS FONTES DOS NOSSOS BEBÊS.**
+
+**BEBÊ QUE ENTROU TOCANDO SAI TOCANDO.**
+
+**ZERO CILEIDICES.** 🍼🔒🎸
