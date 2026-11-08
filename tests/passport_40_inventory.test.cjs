@@ -1,17 +1,9 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
-// Only the new editorial helper is normalized; all transport bytes remain compared.
-const preservedPresentationRead=(p,encoding)=>{
- let value=fs.readFileSync(p,encoding);
- if(p==='js/passport-persist-nav.js'){
-  const source=value.toString(),addition=",'passport-editorial-layout'";
-  assert.equal(source.split(addition).length,2,'exactly one editorial helper registration');
-  const normalized=source.replace(addition,'');value=encoding?normalized:Buffer.from(normalized);
- }
- return value;
-};
+// Compare historic catalogs without only the approved Asia Rock addition.
+const {read:preservedPresentationRead,reference:approvedReference,asiaBase}=require('./passport_40_approved_baseline.cjs');
 const before=require('../docs/passport-40-20261011/before.json'),after=require('../data/passport-radio-inventory.json'),approved=require('../docs/passport-40-20261011/approved-additions.json');
 test('112 existing radios and 11 program selectors survive unchanged; all 39 approved historical additions plus the current expanded catalog',()=>{
- assert.equal(before.radioCount,112);assert.equal(after.radioCount,401);assert.equal(after.programSelectorCount,before.programSelectorCount);
+ assert.equal(before.radioCount,112);assert.equal(after.radioCount,402);assert.equal(after.programSelectorCount,before.programSelectorCount);
  for(const old of before.records){const found=after.records.find(r=>r.id===old.id);assert.ok(found,old.id);assert.deepEqual(found,old);}
  const approvedIds=new Set(approved.map(r=>r.id));const added=after.records.filter(r=>approvedIds.has(r.id));assert.equal(added.length,39);assert.equal(new Set(after.records.map(r=>r.id)).size,after.records.length);
  assert.equal(new Set(added.map(r=>r.name)).size,39);assert.equal(new Set(added.map(r=>r.stream)).size,39);
@@ -20,7 +12,7 @@ test('112 existing radios and 11 program selectors survive unchanged; all 39 app
 test('protected engines, universal player, Bus, continuity, video, podcast and broadcast are byte-identical',()=>{
  // PR #569, commit e4ecb78: approved a-ha native MP4 support, already merged before C-Pop.
  const approvedVideoHash='9ec235063f8d0c7ba5fbd38b8b0f7599479ea3a5032f9226066615578fb5ca2d';
- for(const [p,hash] of Object.entries(before.hashes)){if(p==='js/world-radio-player.js')continue;assert.equal(crypto.createHash('sha256').update(preservedPresentationRead(p)).digest('hex'),p==='js/passport-videos.js'?approvedVideoHash:hash,p);}
+ for(const [p,hash] of Object.entries(before.hashes)){if(p==='js/world-radio-player.js')continue;if(p==='js/passport-persist-nav.js'){assert.deepEqual(fs.readFileSync(p),approvedReference(p),p);continue;}assert.equal(crypto.createHash('sha256').update(preservedPresentationRead(p)).digest('hex'),p==='js/passport-videos.js'?approvedVideoHash:hash,p);}
  const old=cp.execFileSync('git',['show',`${before.base}:js/world-radio-player.js`],{encoding:'utf8'});const current=fs.readFileSync('js/world-radio-player.js','utf8');
  assert.equal(current.slice(current.indexOf('const $=')),old.slice(old.indexOf('const $=')),'World transport body changed');
  const originalArray=old.slice(old.indexOf('const stations='),old.indexOf('\n];'));
