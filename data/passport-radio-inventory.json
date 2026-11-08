@@ -1,6 +1,6 @@
 {
   "base": "391191cab504ea070ce2d65513d04c71e4ddb14f",
-  "radioCount": 401,
+  "radioCount": 402,
   "programSelectorCount": 11,
   "records": [
     {
@@ -574,6 +574,23 @@
       "engine": "js/world-radio-player.js",
       "route": "/#passport-pop-mix",
       "section": 3,
+      "kind": "radio",
+      "bus": "PassportBus.claim/silence; shared existing engine",
+      "continuity": "PassportAudioRuntime + PassportContinuity; existing persistent navigation",
+      "lang": "pt-BR",
+      "dir": "ltr",
+      "new": true
+    },
+    {
+      "category": "K-Rock · J-Rock · Rock asiático moderno",
+      "id": "passport-asia-rock",
+      "family": "world",
+      "index": 313,
+      "name": "Asia Rock™",
+      "stream": "https://stream.zeno.fm/6cyjqwlkz4ptv?nocache=1",
+      "engine": "js/world-radio-player.js",
+      "route": "/#passport-asia-rock",
+      "section": 2,
       "kind": "radio",
       "bus": "PassportBus.claim/silence; shared existing engine",
       "continuity": "PassportAudioRuntime + PassportContinuity; existing persistent navigation",

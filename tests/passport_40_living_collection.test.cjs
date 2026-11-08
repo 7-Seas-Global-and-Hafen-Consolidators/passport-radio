@@ -1,16 +1,8 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process');
-// Only the new editorial helper is normalized; all transport bytes remain compared.
-const preservedPresentationRead=(p,encoding)=>{
- let value=fs.readFileSync(p,encoding);
- if(p==='js/passport-persist-nav.js'){
-  const source=value.toString(),addition=",'passport-editorial-layout'";
-  assert.equal(source.split(addition).length,2,'exactly one editorial helper registration');
-  const normalized=source.replace(addition,'');value=encoding?normalized:Buffer.from(normalized);
- }
- return value;
-};
+// Compare historic catalogs without only the approved Asia Rock addition.
+const {read:preservedPresentationRead,reference:approvedReference,asiaBase}=require('./passport_40_approved_baseline.cjs');
 const base='db5322f53ea69c367dff6d3c268a01ba66e1a234';
-const old=p=>cp.execFileSync('git',['show',`${base}:${p}`],{encoding:'utf8',maxBuffer:12*1024*1024});
+const old=p=>cp.execFileSync('git',['show',`${['js/passport-persist-nav.js','js/passport-universal-footer.js'].includes(p)?asiaBase:base}:${p}`],{encoding:'utf8',maxBuffer:12*1024*1024});
 const read=p=>preservedPresentationRead(p,'utf8');
 test('Living Collection: all 401 radios, 11 selectors, streams, engines and editorial shell preserved',()=>{
  for(const p of ['data/passport-radio-inventory.json','js/world-radio-player.js','js/passport-bus.js','js/passport-audio-mutex.js','js/passport-audio-continuity.js','js/passport-persist-nav.js','assets/index-DgBCruM8.js','index.html','noticias.html','js/passport-universal-footer.js'])assert.equal(read(p),old(p),p);

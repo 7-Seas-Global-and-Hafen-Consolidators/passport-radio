@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto');
 const base='a607f91421d037df15285401d4625bdac06e46e8',rows=require('../data/passport-radio-inventory.json').records.filter(r=>r.section===8);
-const bytes=p=>fs.existsSync(p)?fs.readFileSync(p):cp.execFileSync('git',['show',`HEAD:${p}`],{maxBuffer:4*1024*1024});
+const {read:bytes}=require('./passport_40_approved_baseline.cjs');
 const manifest=JSON.parse(bytes('docs/living-collection-world-dial-20261027/artwork-manifest.json'));
 test('World artwork: exact 42 real IDs in original order, unchanged names and one unique local cover each',()=>{
  assert.equal(manifest.count,42);assert.equal(manifest.artworks.length,42);assert.deepEqual(manifest.artworks.map(x=>[x.id,x.name]),rows.map(x=>[x.id,x.name]));
