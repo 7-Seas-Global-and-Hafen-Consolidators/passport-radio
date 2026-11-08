@@ -3,11 +3,15 @@
 **Política prioritária: A COZINHA DA PASSPORT RADIO NÃO É PÚBLICA.**
 
 ## 0. SIGILO ABSOLUTO — REGRA DE PUBLICAÇÃO
+**MANDAMENTO EDITORIAL IRREVOGÁVEL, APLICÁVEL A TODOS OS 401 BEBÊS EXISTENTES E AO ASIA ROCK™:** o nome artístico escolhido pelo proprietário é a única identidade apresentada ao público. **JAMAIS expor nome real da emissora, rádio fornecedora, operador do stream, plataforma de distribuição, domínio de origem ou nome da fonte** em título, subtítulo, descrição, tooltip, aria-label, alt, busca, SEO, metadados, console público, tela de erro, botão, cartão, créditos, link visível, documentação editorial ou interface. **NÃO trocar Asia Rock™ por qualquer nome externo, nem mesmo como fallback.** A imagem de Alice Syndrome é apenas a arte autorizada do cartão, nunca identificação da fonte do áudio.
+
+**Distinção operacional:** o endereço de áudio aprovado será fornecido diretamente à executora pelo proprietário no texto da ordem de execução, fora desta PR. Ter acesso ao endereço para configurar/testar **não concede autorização para publicar a origem ou nome do fornecedor**. Não registrar a URL aprovada na SPEC, corpo da PR ou comentários. Não copiar informações de origem dos 401 bebês existentes para novas saídas públicas.
+
 - O único **nome editorial e público** do bebê é **Asia Rock™**. Não mostrar nome de emissora, plataforma, fornecedor, marca ou origem do áudio em cartões, metadados editoriais, comentários, PRs, descrições, documentação pública, capturas de tela, mensagens de erro, logs expostos ou links de navegação.
 - **Não publicar URLs de streams, endpoints de fornecedores, túneis de terceiros ou listas de origens em documentação, PR, comentários, capturas ou código entregue ao navegador.** Não reproduzir nem os URLs já presentes no repositório em novos relatórios. O link aprovado já foi entregue diretamente ao proprietário na conversa privada e deve ser tratado como dado operacional restrito; **não é reproduzido aqui**. Não pedir ao proprietário que publique o link na PR.
 - **Distinção essencial:** esconder a URL no cartão ou renomear o fornecedor não oculta a origem de uma conexão de áudio feita diretamente pelo navegador. A estrutura atual contém URLs de origem em código público. Logo, não afirmar que os túneis estão secretos, nem implementar uma falsa proteção cosmética. **A exigência de sigilo real requer solução de entrega de áudio do lado servidor que não exponha o upstream ao navegador.** Essa arquitetura **não está autorizada** nesta cirurgia neonatal; não modificar transportes, proxy, player ou infraestrutura para inventá-la. Se o novo canal exigir exposição do túnel no cliente, **PARAR E RELATAR O BLOQUEIO ANTES DE QUALQUER IMPLEMENTAÇÃO OU PR DE CÓDIGO**.
 - Não usar o nome da banda como marca da estação; Alice Syndrome é **homenagem fotográfica editorial**, não a emissora, não a fornecedora de áudio.
-- Não acrescentar o endereço aprovado em nenhum arquivo público nem na futura PR. Se for necessário acesso operacional, solicitar um canal privado autorizado pelo proprietário e referenciar apenas um identificador opaco, sem conteúdo sensível.
+- Não acrescentar o endereço aprovado em nenhum arquivo público nem na futura PR. A executora receberá o endereço aprovado diretamente na ordem operacional do proprietário; não precisa adivinhá-lo nem pesquisá-lo novamente. Esse fornecimento é para uso interno, não para publicação.
 - Esta regra prevalece sobre as instruções antigas que pediam registrar `stream` literal em `js/world-radio-player.js`. **A autorização anterior de inserir um objeto de dados contendo o stream está SUSPENSA até existir caminho comprovado sem exposição pública.**
 
 ## 1. IDENTIDADE E POSIÇÃO IMUTÁVEIS
@@ -69,7 +73,7 @@
 - Nunca declarar teste realizado se não foi executado. Documentar somente evidências verificadas.
 
 ## 6. ORDEM DE TRABALHO / CONDIÇÃO DE RETOMADA
-**Esta PR #593 é exclusivamente especificação; nenhuma alteração de aplicação deve ocorrer antes de resolver o bloqueio de sigilo real.** A implementação fica **no ventre**, sem branch/PR de código, até decisão explícita do proprietário sobre arquitetura de entrega de áudio que não exponha a origem ao navegador. Não usar proxy ou servidor por conta própria.
+**Esta PR #593 é exclusivamente especificação; a executora deve primeiro verificar se já existe uma via de áudio privada aprovada que impeça expor o upstream ao navegador. Se existir, registrar evidência sem revelar o segredo e solicitar a autorização específica do proprietário para o cadastro mínimo. Se não existir, informar o bloqueio com precisão, sem publicar o túnel e sem inventar uma infraestrutura. Nenhuma alteração de aplicação antes de resolver o bloqueio de sigilo real.** A implementação fica **no ventre**, sem branch/PR de código, até decisão explícita do proprietário sobre arquitetura de entrega de áudio que não exponha a origem ao navegador. Não usar proxy ou servidor por conta própria.
 
 Após a autorização específica, fazer a menor alteração possível em PR separada, com evidências de visual, licença da foto, testes e preservação; **NÃO MERGE / NÃO DEPLOY**.
 
