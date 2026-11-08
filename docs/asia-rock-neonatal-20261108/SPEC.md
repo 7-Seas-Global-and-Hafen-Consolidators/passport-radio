@@ -14,6 +14,19 @@ Não substituir URL, remover query string ou criar proxy. O proprietário aprovo
 - `docs/living-collection-rock-pop-20261027/artwork-manifest.json`: convenção de artes individuais em `/images/radio/living-collection/`, 512×512, sRGB, WebP. `passport-new-wave.webp` retrata New Order. Reproduzir a convenção, com arte autêntica de Alice Syndrome, sem alterar as demais.
 - `js/passport-radio-grid.js` exibe contagem diretamente de `inventory.radioCount`. Com exatamente uma rádio nova, alvo é **402 rádios + 11 seletores = 413 registros**, sujeito à conferência da branch base no momento da implementação.
 
+## Referência visual anexada pelo proprietário na conversa da PR #593
+**A captura de tela da seção ROCK, METAL & ALTERNATIVAS foi anexada pelo proprietário em um comentário da própria PR #593.** Ela é a referência visual obrigatória do estado **ANTES** da implementação. A executora deve abrir a aba **Conversation** da PR e localizar o comentário com a imagem; não usar a miniatura ou a captura como substituto da inspeção do CSS real.
+
+**ANTES (imagem anexada):** primeira fileira: `New Wave™` à esquerda e `Rock Brasil 80™` à direita; abaixo `Rock Legends™` e `Power Metal`, seguindo a ordem atual.
+
+**DEPOIS (resultado exigido):** primeira fileira: `Asia Rock™` à esquerda e `New Wave™` à direita; `Rock Brasil 80™` passa a abrir a fileira seguinte, seguida de `Rock Legends™`, `Power Metal` etc. **Nenhum cartão antigo é apagado nem reordenado em relação aos outros cartões antigos**; apenas uma nova posição é inserida no início.
+
+O cartão Asia Rock™ deve ter **a mesma geometria, tipografia, cores, borda, sombra, espaçamento, ícone de ondas vermelhas e interação** dos vizinhos. **Nada de um cartão especial ou maior.** No mobile, respeitar o grid de duas colunas **observado na captura**, confirmando as regras CSS efetivamente aplicadas no viewport. O cabeçalho da coleção, a bateria ilustrativa e os cartões antigos permanecem intocados.
+
+**Prova obrigatória na PR de implementação:** duas capturas do mesmo trecho e largura de viewport (antes/depois), mostrando a primeira e a segunda fileiras; registrar que a foto real das quatro Alice Syndrome está presente no novo cartão, com enquadramento nítido, e que os outros cartões não sofreram mudanças.
+
+**Interpretação correta dos checks verdes da PR #593:** comprovam apenas o estado dos checks **da documentação**. Não demonstram funcionamento de áudio, fotografia, responsividade ou ausência de regressão da futura implementação. Todos esses testes devem ser executados e evidenciados **na PR de implementação**.
+
 ## Layout e identidade visual: obrigatório
 **Nome:** `Asia Rock™`. **ID proposto:** `passport-asia-rock` (validar inexistência). **Descrição editorial:** `K-Rock · J-Rock · Rock asiático moderno`. **Seção:** `2`. Primeiro cartão esquerda; `New Wave™` segundo direita. Não mudar nome, imagem, categoria, stream, índice, ordem relativa ou comportamento de nenhuma estação anterior. A foto não deve ser de logo da emissora: deve mostrar as quatro Alice Syndrome juntas, nítidas, bem enquadradas no quadrado. Confirmar identidades na fonte e proveniência. Buscar fontes oficiais, editoriais e press kits; registrar URL da imagem, crédito, licença/autorização, resolução, data e evidência. **Não escolher fotografia apenas pela aparência**.
 
