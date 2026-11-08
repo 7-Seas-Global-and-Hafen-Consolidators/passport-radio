@@ -1,0 +1,31 @@
+# PASSPORT RADIO — ORDEM DE CIRURGIA NEONATAL / ASIA ROCK™
+**Status:** especificação e auditoria de leitura; IMPLEMENTAÇÃO NÃO AUTORIZADA NESTA PR. A executora 🐄 implementará posteriormente em outra PR. **NÃO MERGE. NÃO DEPLOY.**
+
+## Decisão fechada
+Adicionar **Asia Rock™** à primeira posição da seção **LIVING COLLECTION™ / ROCK, METAL & ALTERNATIVAS**. **New Wave™** fica imediatamente à direita, como segundo cartão. Preservar a ordem relativa de todos os demais. Fotografia **real das quatro integrantes de Alice Syndrome** obrigatória. **Sem logos, marcas-d'água, ilustrações, capas ou imagens geradas por IA.** Não adulterar imagens de terceiros. A fotografia escolhida deve ter autorização/licença de uso verificada; se não houver, registrar bloqueio e não publicar imagem não autorizada.
+
+**Stream exato aprovado pelo proprietário em escuta no celular:** `https://stream.zeno.fm/6cyjqwlkz4ptv?nocache=1`
+Não substituir URL, remover query string ou criar proxy. O proprietário aprovou a escuta; esta PR de especificação **não executou teste automatizado de reprodução**. A programação é mista (K-rock/J-rock e outros gêneros); não descrever como K-rock exclusivo.
+
+## Evidência real inspecionada no repositório
+- `data/passport-radio-inventory.json`: `radioCount: 401`, `programSelectorCount: 11`, **412 registros** ao todo (401 rádios + 11 seletores). Primeiro registro da seção 2: `passport-new-wave`, `family: world`, `index: 33`, `stream: https://centova4.transmissaodigital.com:20040/stream`. **Não substituir New Wave**.
+- `js/passport-radio-grid.js`: filtra `inventory.records` por `row.section` e renderiza na ordem do array; seção 2 usa `living-collection living-performance living-rock`; cria `living-radio-card` com imagem `living-radio-cover`, nome `living-radio-name`, descrição `living-radio-description`, ícone `living-radio-waves`. A imagem usa `row.artwork` ou `/images/radio/living-collection/<id>.webp`. Clique chama `runtime.engine.select(row.family,row.name,row.index)`. **Adicionar só o registro ao inventário não garante áudio: a fonte de dados do motor precisa reconhecer a estação; investigar o cadastro real, sem mexer em outros canais.**
+- `css/passport-radio-grid.css` (valores verificados): fundo `#FFFFFF`; texto `#111111`; borda `1px solid #E5E5E5`; card `border-radius:12px`, `min-height:100px`, `padding:14px`, `gap:12px`, sombra `0 2px 7px rgba(17,17,17,.035)`; foto `68×68px`, `object-fit:cover`, `border-radius:8px`; título `600 14px/1.3 'Instrument Sans',sans-serif`; descrição `400 11px/1.3 'Source Serif 4',serif`, `rgba(17,17,17,.7)`; ondas vermelhas `#C41E3A`. Kicker `LIVING COLLECTION™`: `600 11px/1.3 'Instrument Sans'`, `#C41E3A`; cabeçalho `700 30px/1.15 'Bodoni Moda'` (23px na regra mobile). No mobile, os cartões da Living Collection passam a grade interna `minmax(0,1fr) 16px`, imagem na primeira linha e ondas na coluna direita. **Herdar todas as media queries existentes**; não fixar tamanhos com CSS novo.
+- `docs/living-collection-rock-pop-20261027/artwork-manifest.json`: convenção de artes individuais em `/images/radio/living-collection/`, 512×512, sRGB, WebP. `passport-new-wave.webp` retrata New Order. Reproduzir a convenção, com arte autêntica de Alice Syndrome, sem alterar as demais.
+- `js/passport-radio-grid.js` exibe contagem diretamente de `inventory.radioCount`. Com exatamente uma rádio nova, alvo é **402 rádios + 11 seletores = 413 registros**, sujeito à conferência da branch base no momento da implementação.
+
+## Layout e identidade visual: obrigatório
+**Nome:** `Asia Rock™`. **ID proposto:** `passport-asia-rock` (validar inexistência). **Descrição editorial:** `K-Rock · J-Rock · Rock asiático moderno`. **Seção:** `2`. Primeiro cartão esquerda; `New Wave™` segundo direita. Não mudar nome, imagem, categoria, stream, índice, ordem relativa ou comportamento de nenhuma estação anterior. A foto não deve ser de logo da emissora: deve mostrar as quatro Alice Syndrome juntas, nítidas, bem enquadradas no quadrado. Confirmar identidades na fonte e proveniência. Buscar fontes oficiais, editoriais e press kits; registrar URL da imagem, crédito, licença/autorização, resolução, data e evidência. **Não escolher fotografia apenas pela aparência**.
+
+## Protocolo de execução para 🐄
+1. Inspecionar branch `main` e HEAD atuais, `data/passport-radio-inventory.json`, fonte de cadastro da família `world`, `js/passport-radio-grid.js`, `css/passport-radio-grid.css`, arte e testes existentes. Revalidar contagem e verificar que o ID não existe.
+2. Localizar o mecanismo de registro de estação já suportado pelo motor. Criar **somente** o novo cadastro necessário; não editar interlock, mutex, bus, `<audio>`, motores `radio-*`, World Dial, players ou controles compartilhados sem autorização explícita. Se o motor não suportar acréscimo isolado, **parar e reportar o bloqueio**, não improvisar.
+3. Buscar e verificar a foto real das quatro Alice Syndrome. Converter para WebP quadrado 512×512 sRGB com nitidez e enquadramento adequados, mantendo o arquivo original intacto e a licença documentada. Nunca remover marcas-d'água.
+4. Adicionar o registro `passport-asia-rock` com stream exato, seção 2 e arte local; inserir imediatamente antes de `passport-new-wave`. Atualizar contagem somente após validar cardinalidade. **Nenhuma alteração global de CSS**.
+5. Testar comparação de inventários antes/depois: exatamente um ID novo, todos os 401 anteriores idênticos (inclusive URL/índice), 11 seletores idênticos, ordem relativa inalterada, e somente New Wave deslocada visualmente à segunda posição. Testar mobile e desktop, imagem, play/pause, troca entre canais, continuidade, ausência de dois áudios simultâneos, erros e regressões. Não declarar testes que não rodaram.
+6. Criar PR **separada de implementação** com diff mínimo, provas visuais, fonte/licença da foto, contagem, resultados dos testes e lista exata de arquivos. **NÃO MERGE. NÃO DEPLOY.**
+
+## Proibições absolutas
+Nada de refatorar adjacências, mexer nos 401 bebês, remover ou substituir New Wave, mexer em player/Bus/interlock/mutex/World Dial/`radio-*`, adicionar banners, selos ou redesign, usar logos ou foto com marca-d'água, alterar o túnel, inventar teste ou aplicar merge.
+
+**BEBÊ QUE ENTROU TOCANDO SAI TOCANDO.** Cirurgia neonatal, não reforma do hospital.
