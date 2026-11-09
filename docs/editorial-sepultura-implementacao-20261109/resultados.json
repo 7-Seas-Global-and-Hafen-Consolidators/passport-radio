@@ -1,0 +1,382 @@
+{
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 900,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          1000,
+          580
+        ],
+        [
+          2048,
+          1365,
+          482,
+          321
+        ],
+        [
+          1200,
+          675,
+          482,
+          271
+        ],
+        [
+          768,
+          512,
+          482,
+          321
+        ]
+      ],
+      "videos": [
+        [
+          918,
+          516
+        ],
+        [
+          918,
+          516
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          1000,
+          580
+        ],
+        [
+          2048,
+          1365,
+          482,
+          321
+        ],
+        [
+          1200,
+          675,
+          482,
+          271
+        ],
+        [
+          768,
+          512,
+          482,
+          321
+        ]
+      ],
+      "videos": [
+        [
+          918,
+          516
+        ],
+        [
+          918,
+          516
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          976,
+          566
+        ],
+        [
+          2048,
+          1365,
+          419,
+          279
+        ],
+        [
+          1200,
+          675,
+          419,
+          236
+        ],
+        [
+          768,
+          512,
+          419,
+          279
+        ]
+      ],
+      "videos": [
+        [
+          918,
+          516
+        ],
+        [
+          918,
+          516
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          720,
+          418
+        ],
+        [
+          2048,
+          1365,
+          720,
+          440
+        ],
+        [
+          1200,
+          675,
+          720,
+          405
+        ],
+        [
+          768,
+          512,
+          720,
+          440
+        ]
+      ],
+      "videos": [
+        [
+          678,
+          381
+        ],
+        [
+          678,
+          381
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          354,
+          205
+        ],
+        [
+          2048,
+          1365,
+          354,
+          236
+        ],
+        [
+          1200,
+          675,
+          354,
+          199
+        ],
+        [
+          768,
+          512,
+          354,
+          236
+        ]
+      ],
+      "videos": [
+        [
+          324,
+          182
+        ],
+        [
+          324,
+          182
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          339,
+          197
+        ],
+        [
+          2048,
+          1365,
+          339,
+          226
+        ],
+        [
+          1200,
+          675,
+          339,
+          191
+        ],
+        [
+          768,
+          512,
+          339,
+          226
+        ]
+      ],
+      "videos": [
+        [
+          309,
+          174
+        ],
+        [
+          309,
+          174
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "chapters": 12,
+      "anchors": 12,
+      "overflow": false,
+      "photos": [
+        [
+          1000,
+          580,
+          288,
+          167
+        ],
+        [
+          2048,
+          1365,
+          288,
+          192
+        ],
+        [
+          1200,
+          675,
+          288,
+          162
+        ],
+        [
+          768,
+          512,
+          288,
+          192
+        ]
+      ],
+      "videos": [
+        [
+          258,
+          145
+        ],
+        [
+          258,
+          145
+        ]
+      ],
+      "dropcap": "rgb(196, 30, 58)",
+      "logo": true,
+      "footer": true
+    }
+  ],
+  "flow": [
+    {
+      "label": "Home",
+      "sameAudio": true,
+      "sameDocument": true,
+      "sameSource": true,
+      "paused": false,
+      "active": 1,
+      "time": 0.511861
+    },
+    {
+      "label": "Notícias",
+      "sameAudio": true,
+      "sameDocument": true,
+      "sameSource": true,
+      "paused": false,
+      "active": 1,
+      "time": 1.190199
+    },
+    {
+      "label": "Matéria",
+      "sameAudio": true,
+      "sameDocument": true,
+      "sameSource": true,
+      "paused": false,
+      "active": 1,
+      "time": 1.457462
+    },
+    {
+      "label": "Capítulo 5",
+      "sameAudio": true,
+      "sameDocument": true,
+      "sameSource": true,
+      "paused": false,
+      "active": 1,
+      "time": 1.535357
+    },
+    {
+      "label": "Volta a Notícias",
+      "sameAudio": true,
+      "sameDocument": true,
+      "sameSource": true,
+      "paused": false,
+      "active": 1,
+      "time": 1.649909
+    },
+    {
+      "label": "Blog",
+      "sameAudio": true,
+      "sameDocument": true,
+      "sameSource": true,
+      "paused": false,
+      "active": 1,
+      "time": 1.705274
+    }
+  ]
+}
