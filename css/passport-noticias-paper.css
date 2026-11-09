@@ -4,7 +4,7 @@ body.passport-news-paper {
   --news-paper: #fff;
   --news-ink: #111;
   --news-soft: #444;
-  --news-red: #d0021b;
+  --news-red: #c41e3a;
   --news-warm: #f6f3ec;
   --news-display: "Bodoni Moda", Georgia, serif;
   --news-sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
@@ -90,4 +90,43 @@ body.passport-news-paper #passport-cookie-notice button { background: var(--news
   .passport-news-paper #news-count { margin-left: 0; }
   .passport-news-paper .news-grid { grid-template-columns: minmax(0,1fr); }
   .passport-news-paper h2 { font-size: 26px; }
+}
+
+/* Lista sob a manchete. A foto continua a que o motor já escolheu. */
+.passport-news-paper .news-grid { display: flex; flex-direction: column; gap: 0; }
+.passport-news-paper .news-lead { padding-bottom: 28px; margin-bottom: 8px; border-bottom: 3px solid var(--news-red); }
+.passport-news-paper .news-lead h2 { font-size: clamp(32px, 4vw, 48px); }
+.passport-news-paper .news-by { margin: 0; color: var(--news-ink); font: 600 13px/1.3 var(--news-sans); }
+.passport-news-paper .news-card:not(.news-lead) {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #111;
+}
+.passport-news-paper .news-card:not(.news-lead) .list-media { width: 72px; aspect-ratio: 1; margin: 0; }
+.passport-news-paper .news-card:not(.news-lead) .list-media--verbete,
+.passport-news-paper .news-card:not(.news-lead) .list-media--empty { min-height: 0; height: 72px; padding: 8px; gap: 4px; }
+.passport-news-paper .news-card:not(.news-lead) .list-media--verbete b { font-size: 12px; }
+.passport-news-paper .news-card:not(.news-lead) .list-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  gap: 4px 14px;
+  align-items: baseline;
+}
+.passport-news-paper .news-card:not(.news-lead) .list-copy p:not(.news-by) { display: none; }
+.passport-news-paper .news-card:not(.news-lead) h2 { font-size: clamp(18px, 2vw, 24px); }
+.passport-news-paper #news-archive {
+  height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #111;
+  border-radius: 0;
+  background: #fff;
+  color: #111;
+  font: 500 14px/1.2 var(--news-sans);
+}
+@media (max-width: 720px) {
+  .passport-news-paper .news-card:not(.news-lead) { grid-template-columns: 1fr; }
+  .passport-news-paper .news-card:not(.news-lead) .list-copy { grid-template-columns: 1fr; }
 }
