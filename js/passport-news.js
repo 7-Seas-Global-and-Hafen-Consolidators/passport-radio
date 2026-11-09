@@ -1,11 +1,13 @@
 /* Notícias: leitor de feeds existentes, sem alterar RSS ou Engine. */
-(() => {
+(function mountNews() {
   "use strict";
+  window.addEventListener("passport:editorial-rendered", mountNews);
   const grid = document.querySelector("#news-grid");
   const search = document.querySelector("#news-search");
   const count = document.querySelector("#news-count");
   const more = document.querySelector("#news-more");
-  if (!grid) return;
+  if (!grid || grid.dataset.newsMounted) return;
+  grid.dataset.newsMounted = "1";
   let all = [], shown = 0, term = "";
   const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => {
     if (c === "&") return "&" + "amp;";
