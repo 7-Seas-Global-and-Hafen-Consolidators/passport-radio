@@ -1,0 +1,38 @@
+/* Ajustes exclusivos da matéria Sepultura, inclusive dentro da navegação persistente. */
+html body.passport-sepultura .passport-support-float {
+  display: none !important;
+}
+
+html body.passport-sepultura main.pr-recovery .pr-body {
+  line-height: 1.58 !important;
+}
+
+html body.passport-sepultura main.pr-recovery .pr-body :is(p, h3),
+html body.passport-sepultura main.pr-recovery .pr-reading {
+  max-width: 820px !important;
+}
+
+html body.passport-sepultura main.pr-recovery .pr-body p {
+  line-height: inherit !important;
+  margin-bottom: 10px !important;
+}
+
+/* Aproxima frases consecutivas e mantém a pausa ao fim de cada sequência. */
+html body.passport-sepultura main.pr-recovery .pr-body p.pr-short {
+  margin-bottom: 3px !important;
+}
+
+html body.passport-sepultura main.pr-recovery .pr-feature {
+  gap: clamp(16px, 2vw, 24px);
+  margin-bottom: 18px !important;
+}
+
+html body.passport-sepultura main.pr-recovery .pr-feature-copy > p:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 767px) {
+  html body.passport-sepultura main.pr-recovery .pr-feature {
+    gap: 14px;
+  }
+}
