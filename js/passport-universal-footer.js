@@ -7,6 +7,11 @@
     identity.dataset.passportMediaArtwork = '1';
     document.head.append(identity);
   }
+  if (!document.querySelector('script[src="/assets/legal-shield.js"]')) {
+    const shield = document.createElement('script');
+    shield.src = '/assets/legal-shield.js';
+    document.head.append(shield);
+  }
   if (window.PassportUniversalFooter) { window.PassportUniversalFooter.mount(); return; }
   const groups = [
     ['EXPLORE', [['Home','/'],['Notícias','/noticias.html'],['Arquivo','/editorial.html'],['Agenda','/agenda.html'],['Bandas','/bandas/index.html'],['Vídeos','/videos.html'],['Desafios','/jogos.html'],['Podcast & Broadcast','/radio.html'],['Rádio 24H','/radio.html']]],
@@ -81,7 +86,7 @@
       <div class="puf-brands" aria-label="Bandeiras de cartão">${brands.map(([file,label])=>`<img src="/images/payments/${file}.png" alt="${label}" decoding="async">`).join('')}</div>
       <div class="puf-provider"><a href="https://link.mercadopago.com.br/passportradio" target="_blank" rel="noopener noreferrer" aria-label="Pagar com Mercado Pago"><img src="/images/payments/mercado-pago.svg" alt="Mercado Pago" width="70" decoding="async"></a></div>
     </div>
-    <div class="puf-legal"><p>© 1998–2026 Passport Radio · Todos os direitos reservados.</p><nav aria-label="Informações legais">${[['Política de Privacidade','/politica-de-privacidade.html'],['Termos de Uso','/termos.html'],['Política de Cookies','/cookies.html'],['Contato','/contato.html']].map(anchor).join('')}</nav></div>
+    <div class="puf-legal"><p>© 1998–2026 Passport Radio · Todos os direitos reservados.</p><p style="font-size:0.78rem;color:#666;max-width:880px;margin:0.5rem auto;text-align:center">Passport Radio® — Emissora &amp; Produtora Fonográfica Constituída · CNPJ 68.923.772/0001-39 · Av. Dr. José Bonifácio Coutinho Nogueira, 150 — Galleria Plaza, Campinas/SP, Brasil. Todo o conteúdo musical, visual, fonográfico e editorial é protegido pela Lei Federal nº 9.610/98 (Direitos Autorais) e tratados internacionais (DMCA / Convenção de Berna). Proibida a reprodução, extração ou download não autorizado.</p><nav aria-label="Informações legais">${[['Política de Privacidade','/politica-de-privacidade.html'],['Termos de Uso','/termos.html'],['Política de Cookies','/cookies.html'],['Contato','/contato.html'],['Direitos Autorais &amp; Propriedade Intelectual','/direitos-autorais.html']].map(anchor).join('')}</nav></div>
   </div>`;
   let queued = false;
   function mount() {
