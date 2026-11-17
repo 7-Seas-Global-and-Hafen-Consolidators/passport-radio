@@ -89,8 +89,29 @@
     <div class="puf-legal"><p>© 1998–2026 Passport Radio · Todos os direitos reservados.</p><p style="font-size:0.78rem;color:#666;max-width:880px;margin:0.5rem auto;text-align:center">Passport Radio® — Emissora &amp; Produtora Fonográfica Constituída · CNPJ 68.923.772/0001-39 · Av. Dr. José Bonifácio Coutinho Nogueira, 150 — Galleria Plaza, Campinas/SP, Brasil. Todo o conteúdo musical, visual, fonográfico e editorial é protegido pela Lei Federal nº 9.610/98 (Direitos Autorais) e tratados internacionais (DMCA / Convenção de Berna). Proibida a reprodução, extração ou download não autorizado.</p><nav aria-label="Informações legais">${[['Política de Privacidade','/politica-de-privacidade.html'],['Termos de Uso','/termos.html'],['Política de Cookies','/cookies.html'],['Contato','/contato.html'],['Direitos Autorais &amp; Propriedade Intelectual','/direitos-autorais.html']].map(anchor).join('')}</nav></div>
   </div>`;
   let queued = false;
+  function mountOriginalsLink() {
+    for (const nav of document.querySelectorAll('nav')) {
+      if (nav.closest('main, article, footer')) continue;
+      const links = [...nav.querySelectorAll('a[href]')];
+      const path = link => new URL(link.href, location.href).pathname;
+      const support = links.find(link => path(link) === '/doe.html');
+      if (!support || links.some(link => path(link) === '/originals.html')) continue;
+      const originals = document.createElement('a');
+      originals.href = '/originals.html';
+      originals.textContent = 'ORIGINALS';
+      originals.className = support.className;
+      originals.style.fontWeight = '700';
+      const item = support.closest('li');
+      if (item && item.closest('nav') === nav) {
+        const li = document.createElement('li');
+        li.append(originals);
+        item.after(li);
+      } else support.after(originals);
+    }
+  }
   function mount() {
     if (!document.body) return;
+    mountOriginalsLink();
     const footers = [...document.querySelectorAll('footer')].filter(node=>!node.closest('article,.player,.player-dock,[id*="player"],[class*="player-"],.pe-prose,.mn-prose'));
     const mediaOnly = /^\/(?:app\/|radio-|player-|passport-player|adapter-lab)/.test(location.pathname) || /-player\.html$/.test(location.pathname);
     if (!footers.length && !mediaOnly && document.querySelector('main') && !document.querySelector('meta[http-equiv="refresh" i]')) {
