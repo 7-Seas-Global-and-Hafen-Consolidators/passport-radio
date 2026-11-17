@@ -1,0 +1,134 @@
+{
+  "sugar-oni": [
+    {
+      "id": "rin",
+      "name": "RIN",
+      "role": "Bateria & Percussão de Alta Velocidade",
+      "photo": "assets/members/sugar-oni-rin.jpg",
+      "bio": "O metrônomo humano da Sugar Oni. Rin comanda viradas de caixa acima de 185 BPM e trovoadas de pedal duplo com alegria punk explosiva e precisão cirúrgica."
+    },
+    {
+      "id": "kira",
+      "name": "KIRA",
+      "role": "Contrabaixo",
+      "photo": "assets/members/sugar-oni-kira.jpg",
+      "bio": "Ancorando a tempestade sonora com linhas de baixo rasgadas no overdrive, Kira encaixa no groove da Rin como uma turbina de alta voltagem."
+    },
+    {
+      "id": "aiko",
+      "name": "AIKO",
+      "role": "Vocal Principal",
+      "photo": "assets/members/sugar-oni-aiko.jpg",
+      "bio": "A voz destemida e frontwoman da Sugar Oni, unindo vocais melódicos cristalinos a um carisma imparável de arena."
+    },
+    {
+      "id": "hana",
+      "name": "HANA",
+      "role": "Guitarra Base & Harmônicas",
+      "photo": "assets/members/sugar-oni-hana.jpg",
+      "bio": "Construindo camadas de harmônicos brilhantes e power chords velozes, Hana entrega a parede sonora melódica característica da Sugar Oni."
+    },
+    {
+      "id": "yuki",
+      "name": "YUKI",
+      "role": "Guitarra Solo",
+      "photo": "assets/members/sugar-oni-yuki.jpg",
+      "bio": "Mestre dos solos neoclássicos ultrarrápidos e palhetadas implacáveis, trazendo puro fogo thrash embrulhado em rebeldia kawaii."
+    }
+  ],
+  "kowai-goth": [
+    {
+      "id": "rin",
+      "name": "RIN",
+      "role": "Bateria Industrial & Tribal",
+      "photo": "assets/members/kowai-goth-rin.jpg",
+      "bio": "Batendo com precisão mecânica e peso seco de estádio, Rin transforma cada compasso em uma marcha industrial sombria."
+    },
+    {
+      "id": "megumi",
+      "name": "MEGUMI",
+      "role": "Sintetizadores Korg & Órgão de Tubos",
+      "photo": "assets/members/kowai-goth-megumi.jpg",
+      "bio": "Invocando órgãos de catedral, coros gregorianos e texturas atmosféricas assombrosas diretamente de sua workstation Korg."
+    },
+    {
+      "id": "kira",
+      "name": "KIRA",
+      "role": "Baixo Fuzz",
+      "photo": "assets/members/kowai-goth-kira.jpg",
+      "bio": "Entregando graves subterrâneos de fuzz industrial que fazem o peito vibrar e formam o pulso obscuro de cada ritual."
+    },
+    {
+      "id": "aiko",
+      "name": "AIKO",
+      "role": "Vocal Soprano Sombrio & Narração",
+      "photo": "assets/members/kowai-goth-aiko.jpg",
+      "bio": "Comandando o palco com dramaturgia gélida e vocais sopranos góticos juvenis que cortam a névoa."
+    },
+    {
+      "id": "yuki",
+      "name": "YUKI",
+      "role": "Guitarra Solo Sombria",
+      "photo": "assets/members/kowai-goth-yuki.jpg",
+      "bio": "Esculpindo riffs doom em trítonos arrastados e ecos de microfonia que esmagam o subsolo."
+    },
+    {
+      "id": "hana",
+      "name": "HANA",
+      "role": "Guitarra Schecter Corsair-12",
+      "photo": "assets/members/kowai-goth-hana.jpg",
+      "bio": "Transformando o timbre metálico de 12 cordas da sua Schecter Wayne Hussey Corsair-12 em uma arma gótica com reverb de catedral e distorção pesada."
+    }
+  ],
+  "nox-lacrimae": [
+    {
+      "id": "freya",
+      "name": "FREYA",
+      "role": "Vocal Lírico & Sinfônico",
+      "photo": "assets/members/nox-lacrimae-freya.jpg",
+      "bio": "A voz operística monumental da Nox Lacrimae, unindo a elegância dramática do soprano clássico à potência do heavy metal."
+    },
+    {
+      "id": "astrid",
+      "name": "ASTRID",
+      "role": "Violino & Teclados Noturnos",
+      "photo": "assets/members/nox-lacrimae-astrid.jpg",
+      "bio": "Virtuose mascarada da Nox Lacrimae, tecendo melodias clássicas de violino e atmosferas góticas noturnas."
+    },
+    {
+      "id": "klara",
+      "name": "KLARA",
+      "role": "Guitarra Gótica de 7 Cordas",
+      "photo": "assets/members/nox-lacrimae-klara.jpg",
+      "bio": "Desferindo riffs maciços de 7 cordas e harmonias sombrias intrincadas sobre paisagens sonoras de catedral."
+    },
+    {
+      "id": "helena",
+      "name": "HELENA",
+      "role": "Piano de Cauda & Cordas Sinfônicas",
+      "photo": "assets/members/nox-lacrimae-helena.jpg",
+      "bio": "Compondo os temas melancólicos de piano de cauda e os arranjos orquestrais grandiosos por trás da Nox Lacrimae."
+    },
+    {
+      "id": "maja",
+      "name": "MAJA",
+      "role": "Bateria DW & Percussão de Arena",
+      "photo": "assets/members/nox-lacrimae-maja.jpg",
+      "bio": "Liberando trovoadas implacáveis em sua bateria DW de arena e percussão sinfônica dinâmica com energia indomável."
+    },
+    {
+      "id": "lukas",
+      "name": "LUKAS",
+      "role": "Baixo Custom Dragon",
+      "photo": "assets/members/nox-lacrimae-lukas.jpg",
+      "bio": "Sustentando a tempestade sinfônica da Nox Lacrimae com seu baixo customizado em formato de dragão e arranjos eruditos."
+    },
+    {
+      "id": "viktor",
+      "name": "VIKTOR",
+      "role": "Guitarra Double-Neck & Programação Sinfônica",
+      "photo": "assets/members/nox-lacrimae-viktor.jpg",
+      "bio": "Comandando guitarras góticas de braço duplo e programações corais sombrias sob o céu da catedral à meia-noite."
+    }
+  ]
+}
