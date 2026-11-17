@@ -98,12 +98,15 @@
   }
   audio.addEventListener('ended', () => { if (index + 1 < tracks.length) choose(index + 1, true); else refresh(); });
 
+  const media = element("div", panel);
+  let list;
+
   function render(band, profiles, catalog) {
     const [id, label, intro, order] = band;
     audioRequested = false;
     audio.pause();
     video?.pause();
-    panel.replaceChildren();
+    media.replaceChildren();
     panel.hidden = false;
     panel.setAttribute('aria-labelledby', 'tab-' + id);
     for (const tab of tabs.children) {
@@ -111,28 +114,41 @@
       tab.setAttribute('aria-selected', String(active));
       tab.tabIndex = active ? 0 : -1;
     }
-    element('img', panel, {class:'band-banner', src:'/assets/bands/' + id + '.png', alt:label, draggable:'false', 'data-originals-protected':''});
-    element('p', panel, {'data-originals-protected':''}, intro);
-    video = element('video', panel, {src:'/assets/videos/' + id.toUpperCase() + '-OFFICIAL-PRESENTATION.mp4', controls:'', playsinline:'', controlsList:'nodownload', preload:'metadata', draggable:'false', 'aria-label':'Vídeo oficial · ' + label, 'data-originals-protected':''});
+    element('img', media, {class:'band-banner', src:'/assets/bands/' + id + '.png', alt:label, draggable:'false', 'data-originals-protected':''});
+    element('p', media, {'data-originals-protected':''}, intro);
+    video = element('video', media, {src:'/assets/videos/' + id.toUpperCase() + '-OFFICIAL-PRESENTATION.mp4', controls:'', playsinline:'', controlsList:'nodownload', preload:'metadata', draggable:'false', 'aria-label':'Vídeo oficial · ' + label, 'data-originals-protected':''});
     video.addEventListener('play', event => {
       if (event.currentTarget !== video || video.paused) return;
       audioRequested = false;
       audio.pause();
       pauseRadio();
     });
-    element('h2', panel, {'data-originals-protected':''}, 'Integrantes');
-    const gallery = element('div', panel, {class:'originals-gallery', 'data-originals-protected':''});
+    element('h2', media, {'data-originals-protected':''}, 'Integrantes');
+    const gallery = element('div', media, {class:'originals-gallery', 'data-originals-protected':''});
     for (const memberId of order.split(' ')) {
       const member = profiles[id].find(person => person.id === memberId);
       const card = element('article', gallery);
       element('img', card, {class:'member-photo', src:'/' + member.photo, alt:member.name, draggable:'false', loading:'lazy'});
       element('h3', card, {}, member.name);
       element('p', card, {}, member.role);
-      element('p', card, {}, member.bio);
+      element('p', card, {'data-originals-protected':''}, member.bio);
     }
 
     tracks = catalog[id];
-    player = element('section', panel, {class:'originals-player', 'data-theme':id, 'aria-label':'Player · ' + label});
+    if (!player) mountPlayer();
+    player.dataset.band = id;
+    player.setAttribute('aria-label', 'Player · ' + label);
+    list.replaceChildren();
+    rows = tracks.map((track, i) => {
+      const row = element('button', element('li', list), {type:'button', 'data-originals-protected':''}, track.title);
+      row.onclick = () => choose(i, true);
+      return row;
+    });
+    choose(0, false);
+  }
+
+  function mountPlayer() {
+    player = element('section', panel, {class:'originals-player'});
     element('h2', player, {'data-originals-protected':''}, 'Músicas');
     current = element('p', player, {'data-originals-protected':'', 'aria-live':'polite'});
     const actions = element('div', player, {class:'originals-actions'});
@@ -143,13 +159,7 @@
     seek = element('input', player, {type:'range', min:0, max:0, step:'any', value:0, 'aria-label':'Progresso da faixa'});
     seek.oninput = () => { audio.currentTime = Number(seek.value); };
     clock = element('p', player, {class:'originals-time'});
-    const list = element('ol', player, {class:'originals-list'});
-    rows = tracks.map((track, i) => {
-      const row = element('button', element('li', list), {type:'button', 'data-originals-protected':''}, track.title);
-      row.onclick = () => choose(i, true);
-      return row;
-    });
-    choose(0, false);
+    list = element('ol', player, {class:'originals-list'});
   }
 
   async function read(path) {

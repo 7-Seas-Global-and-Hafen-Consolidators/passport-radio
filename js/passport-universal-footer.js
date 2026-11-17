@@ -92,21 +92,24 @@
   function mountOriginalsLink() {
     for (const nav of document.querySelectorAll('nav')) {
       if (nav.closest('main, article, footer')) continue;
-      const links = [...nav.querySelectorAll('a[href]')];
+      const links = [...nav.querySelectorAll('a[href]')].filter(link => link.closest('nav') === nav);
       const path = link => new URL(link.href, location.href).pathname;
-      const support = links.find(link => path(link) === '/doe.html');
-      if (!support || links.some(link => path(link) === '/originals.html')) continue;
-      const originals = document.createElement('a');
-      originals.href = '/originals.html';
-      originals.textContent = 'ORIGINALS';
-      originals.className = support.className;
-      originals.style.fontWeight = '700';
-      const item = support.closest('li');
+      const home = links.find(link => /^home$/i.test(link.textContent.trim()) && ['/', '/index.html'].includes(path(link)));
+      if (!home) continue;
+      let originals = links.find(link => path(link) === '/originals.html');
+      if (!originals) {
+        originals = document.createElement('a');
+        originals.href = '/originals.html';
+        originals.textContent = 'ORIGINALS';
+        originals.className = home.className;
+        originals.style.fontWeight = '700';
+      }
+      const item = home.closest('li');
       if (item && item.closest('nav') === nav) {
-        const li = document.createElement('li');
-        li.append(originals);
-        item.after(li);
-      } else support.after(originals);
+        const entry = originals.closest('li') || document.createElement('li');
+        if (!entry.contains(originals)) entry.append(originals);
+        if (item.nextElementSibling !== entry) item.after(entry);
+      } else if (home.nextElementSibling !== originals) home.after(originals);
     }
   }
   function mount() {
